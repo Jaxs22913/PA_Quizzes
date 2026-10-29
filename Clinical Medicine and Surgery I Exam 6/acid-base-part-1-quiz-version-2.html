@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));window.__paErrQ=[];['error','unhandledrejection'].forEach(function(t){addEventListener(t,function(e){var q=window.__paErrQ;if(q&&!q.done)q.push(e)})});</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #b45357; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acid-Base Part I Quiz 2 — CMS I Exam 6</title>
+<style>
+  :root{
+    --navy:#7a2d30; --indigo:#b45357; --gold:#c08a2e; --ice:#faefee;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#7a2d30;--gold-l:#c08a2e;--indigo-l:#b45357;--navy:#ec9392;--indigo:#d06c6e;--gold:#c08a2e;--ice:#36191a;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#d06c6e;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#7a2d30;--indigo-t:#b45357;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Acid-Base Part I &mdash; Quiz 2</h1>
+    <div class="sub">Clinical Medicine and Surgery I &middot; Exam 6 &middot; Lecture 34</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px"></p>
+    <div class="chips"><span class="chip">Normal values and buffers</span><span class="chip">Potassium and oxygen</span><span class="chip">Respiratory acidosis</span><span class="chip">Respiratory alkalosis</span><span class="chip">Metabolic alkalosis</span><span class="chip">Metabolic acidosis and the anion gap</span><span class="chip">Compensation</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Homeostasis and buffering", "io": "Describe the major buffer systems of the body.", "q": "When water combines with carbon dioxide in the body's main buffer, which acid forms?", "opts": [["Ammonium chloride", "Ammonium chloride is how the kidneys excrete acid when compensating for respiratory acidosis; it is not formed from water and carbon dioxide. Those two form carbonic acid. Tell: ammonium chloride leaves in urine, carbonic acid stays in the buffer equation."], ["Carbonic acid", "Correct. Water and carbon dioxide combine to form carbonic acid, which dissociates into hydrogen and bicarbonate ions. The reaction runs both ways, which is how the lungs (carbon dioxide) and kidneys (bicarbonate) act on one buffer."], ["Hydrochloric acid", "Hydrochloric acid is lost with vomiting in saline-responsive metabolic alkalosis; it is not formed when water and carbon dioxide combine. That reaction forms carbonic acid. Tell: the product of water plus carbon dioxide must later split into hydrogen and bicarbonate."], ["Lactic acid", "Lactic acid is one of the anions that raises the anion gap; it is not the product of water plus carbon dioxide. The reaction forms carbonic acid. Tell: lactic acid is a metabolic anion, while the buffer product is the one that releases bicarbonate."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 16", "slot": "etiology", "qid": "s5x0t8"}, {"topic": "Metabolic acidosis and the anion gap", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "What is the normal anion gap?", "opts": [["3 to 6", "3 to 6 is below the normal range, so it is not the reference gap. The normal anion gap is 9 to 15. Tell: the gap range must match 9 to 15, which is much higher than this option."], ["9 to 15", "Correct. The normal anion gap is 9 to 15, calculated as sodium minus the sum of chloride and bicarbonate (the measured cation minus the measured anions). Serum albumin accounts for most of this normal gap."], ["22 to 26", "22 to 26 is the normal bicarbonate in mEq/L, one of the values the gap subtracts. The normal anion gap is 9 to 15. Tell: the range 22 to 26 is a measured ion, not a calculated gap."], ["36 to 44", "36 to 44 is the normal arterial carbon dioxide in mm Hg. The normal anion gap is 9 to 15. Tell: the gap is a small number compared with the carbon dioxide range."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 47", "slot": "test finding", "qid": "18fkfan"}, {"topic": "Metabolic alkalosis", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "Which physical finding is associated with the hypokalemia of metabolic alkalosis?", "opts": [["Papilledema", "Papilledema is a finding of severe hypercapnia. The hypokalemia of metabolic alkalosis causes weakness and hyporeflexia. Tell: papilledema reflects raised pressure from hypercapnia, not hypokalemia."], ["Hyporeflexia", "Correct. Metabolic alkalosis has no characteristic findings, but the associated hypokalemia causes weakness and hyporeflexia. Orthostatic hypotension may also be present."], ["Asterixis", "Asterixis belongs to respiratory acidosis. The hypokalemia of metabolic alkalosis causes weakness and hyporeflexia. Tell: asterixis goes with carbon dioxide retention."], ["Kussmaul respirations", "Kussmaul breathing, deep and rapid, is the compensation of metabolic acidosis, as in diabetic ketoacidosis. Hypokalemia in metabolic alkalosis causes hyporeflexia. Tell: alkalosis is compensated by slower breathing."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slides 23, 24, 38, 39, 50, 51", "slot": "manifestation", "qid": "19en16a"}, {"topic": "Compensation rules", "io": "Identify compensatory mechanisms for simple acid-base disorders.", "q": "What restores a normal pH in an acid-base disorder?", "opts": [["Waiting for full compensation", "Compensation never returns the pH to normal, however long it runs, so waiting does not restore it. The underlying disorder has to be corrected. Tell: compensation is a partial response, correction of the cause is the fix."], ["Breathing into a paper bag", "A paper bag does not fix carbon dioxide and may lower oxygen; any benefit is a placebo effect. Normal pH returns when the underlying disorder is corrected. Tell: the fix targets the cause, not a breathing trick."], ["Giving oxygen to every patient", "Oxygen is not a pH treatment, and giving it to every patient does not address the cause. The underlying disorder must be corrected to restore a normal pH. Tell: the treatment is specific to the disorder."], ["Correcting the underlying disorder", "Correct. Compensation never returns the pH to normal, so the underlying disorder must be corrected to restore a normal pH. For every simple disorder, treatment starts with the cause."]], "c": 3, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 19", "slot": "first-line", "qid": "bblhh2"}, {"topic": "Respiratory acidosis", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "What is the first-line management of acute respiratory acidosis?", "opts": [["Breathe into a paper bag", "A paper bag is not a treatment here (it does not fix carbon dioxide and may decrease oxygen). Acute respiratory acidosis needs ventilation restored. Tell: the paper bag belongs to hyperventilation, not hypoventilation."], ["Wait for the kidneys to compensate", "Renal compensation begins only after 6 to 12 hours and never returns the pH to normal. Acute disease needs ventilation restored, and the cause treated. Tell: compensation is not a treatment."], ["Restore ventilation and treat the cause", "Correct. Respiratory acidosis is treated by treating the underlying cause. In acute disease the priority is restoring ventilation, because hypoventilation is what raises the carbon dioxide."], ["Give a bicarbonate infusion first", "Bicarbonate infusion is not the listed treatment; the acidosis comes from retained carbon dioxide. Restore ventilation and treat the cause. Tell: the problem is a gas, so the fix is breathing."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 28", "slot": "first-line", "qid": "ats7qx"}, {"topic": "Definitions and normal values", "io": "Explain how acid-base disorders affect electrolytes and oxygenation.", "q": "Which effect is listed for a pH beyond the sustainable range?", "opts": [["Joint swelling", "Joint swelling is not on the list for an unsustainable pH. The effects are cardiac hypocontractility or irritability, seizures, cerebral edema and metabolic disturbances. Tell: the listed effects are cardiac and neurologic, not joint findings."], ["Skin rash", "A skin rash is not a listed effect of an unsustainable pH. The listed effects are cardiac problems, seizures, cerebral edema and metabolic disturbances. Tell: the effects come from heart and brain dysfunction, not skin findings."], ["Seizures", "Correct. A pH beyond the sustainable range (below 6.7 or above 7.6) may cause cardiac hypocontractility or irritability, seizures, cerebral edema and metabolic disturbances, so seizures are listed among the effects."], ["Hair loss", "Hair loss is not an effect of extreme pH. The listed effects are cardiac hypocontractility or irritability, seizures, cerebral edema and metabolic disturbances. Tell: the effects involve the heart, brain and metabolism, not hair."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 8", "slot": "complication", "qid": "11wjevv"}, {"topic": "Respiratory acidosis", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "Which thoracic trauma is listed as a cause of acute respiratory acidosis?", "opts": [["High altitude exposure", "High altitude causes hyperventilation secondary to hypoxia, which gives respiratory alkalosis. Flail chest is the thoracic trauma that causes respiratory acidosis. Tell: high altitude lowers carbon dioxide, flail chest raises it."], ["Heat exposure", "Heat exposure is listed under respiratory alkalosis. Flail chest and pneumothorax are the thoracic trauma causes of respiratory acidosis. Tell: the stem asks for trauma to the chest, and heat is not trauma."], ["Flail chest", "Correct. Thoracic trauma causes acute respiratory acidosis through pneumothorax or flail chest, which impair ventilation. Hypoventilation lets carbon dioxide build up, the pH falls, and the picture is respiratory acidosis."], ["Rib contusion with normal breathing", "A rib contusion with normal breathing does not impair ventilation, so it does not cause respiratory acidosis. The listed thoracic trauma causes are pneumothorax and flail chest. Tell: the cause must impair ventilation."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 26", "slot": "etiology", "qid": "f4t9dv"}, {"topic": "Definitions and normal values", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "What is the normal range for serum bicarbonate?", "opts": [["9 to 15 mEq/L", "9 to 15 is the normal anion gap, a calculated difference (sodium minus the sum of chloride and bicarbonate), not the bicarbonate level. Serum bicarbonate is 22 to 26 mEq/L. Tell: the anion gap is computed from three measured values, while bicarbonate is measured directly."], ["12 to 18 mEq/L", "12 to 18 mEq/L lies below the normal bicarbonate range of 22 to 26, so it would be a low bicarbonate, as seen in metabolic acidosis. It is not the normal range. Tell: a normal range must contain the 24 midpoint."], ["22 to 26 mEq/L", "Correct. Normal serum bicarbonate is 22 to 26 mEq/L, with 24 as the working midpoint. It sits beside the other normal blood gas values: arterial carbon dioxide 36 to 44 mm Hg and pH 7.35 to 7.45."], ["36 to 44 mEq/L", "36 to 44 is the arterial carbon dioxide range, and it is in mm Hg, not mEq/L of bicarbonate. Bicarbonate is 22 to 26 mEq/L. Tell: 36 to 44 pairs with carbon dioxide pressure, 22 to 26 pairs with bicarbonate."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slides 5, 47", "slot": "test finding", "qid": "1cwfuf4"}, {"topic": "Homeostasis and buffering", "io": "Identify mechanisms for maintaining acid-base homeostasis.", "q": "Over what time scale does the renal mechanism adjust plasma bicarbonate?", "opts": [["Weeks to months", "Weeks to months is too slow. The renal mechanism adjusts bicarbonate over hours to days; compensation for respiratory acidosis begins 6 to 12 hours after onset. Tell: renal compensation starts within hours, complete compensation may take days."], ["After about a year", "No year-long delay applies; renal compensation starts within hours and complete compensation may take days. The kidney adjusts bicarbonate over hours to days. Tell: the time scale is measured in hours to days, not years."], ["Hours to days", "Correct. The renal mechanism controls plasma bicarbonate by excreting or retaining filtered bicarbonate in urine, and it works over hours to days, slower than the lungs' control of carbon dioxide."], ["Seconds", "Seconds fits breathing changes, not the kidney. Renal control of plasma bicarbonate occurs over hours to days. Tell: the lungs react quickly, the kidney builds its response across hours to days."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 15", "slot": "etiology", "qid": "5mjcxv"}, {"topic": "Potassium and oxygen effects", "io": "Explain how acid-base disorders affect electrolytes and oxygenation.", "q": "In acidosis, what happens to oxygen delivery to the tissues?", "opts": [["It stops entirely", "Delivery does not stop in acidosis. Hemoglobin lets go of oxygen more easily, so tissue delivery increases. Tell: the change is a shift in degree, not an all-or-none stop."], ["It is unaffected", "pH does change delivery. Acidosis lowers hemoglobin's affinity and increases oxygen delivery to the tissues. Tell: the acid-base state sets how tightly hemoglobin holds oxygen."], ["It increases", "Correct. Acidosis decreases hemoglobin's affinity for oxygen and shifts the dissociation curve to the right, so hemoglobin releases more oxygen to the tissues and oxygen delivery increases. Alkalosis does the reverse."], ["It decreases", "Decreased delivery is the alkalosis effect, caused by higher affinity. In acidosis, affinity falls and delivery increases. Tell: acid releases oxygen to tissues, alkali holds it back."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 10", "slot": "manifestation", "qid": "p44tj8"}, {"topic": "Compensation rules", "io": "Identify compensatory mechanisms for simple acid-base disorders.", "q": "How far do compensatory mechanisms move the pH?", "opts": [["Toward normal but never back to normal", "Correct. The body attempts to correct a disturbance, but compensation never returns the pH to normal and never corrects it beyond normal. The pH moves toward normal without reaching it."], ["Fully back to normal", "Compensation never returns the pH fully to normal; only correcting the underlying disorder restores it. Tell: the word 'fully' fails, since compensation stops short of normal."], ["Past normal to the opposite side", "Compensation never overcorrects beyond normal to the opposite side. It moves the pH toward normal without reaching it. Tell: a pH on the opposite side of normal points to a second disorder, not compensation."], ["Further from normal", "Compensation works against the disturbance, moving the pH toward normal rather than away from it. It never reaches normal. Tell: compensation opposes the primary change, so the pH moves closer to normal."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 19", "slot": "prognosis", "qid": "xjedyy"}, {"topic": "Definitions and normal values", "io": "Explain how acid-base disorders affect electrolytes and oxygenation.", "q": "Beyond which arterial pH values is the state unsustainable?", "opts": [["Below 6.7 or above 7.6", "Correct. A pH below 6.7 or above 7.6 is unsustainable. It may cause cardiac hypocontractility or irritability, seizures, cerebral edema and metabolic disturbances, and may warrant therapy to normalize pH along with treating the underlying cause."], ["Below 7.35 or above 7.45", "7.35 to 7.45 is the normal range; values just outside it are acidemia or alkalemia, which are abnormal but not yet unsustainable. The unsustainable limits are below 6.7 or above 7.6. Tell: the normal range and the unsustainable limits are different thresholds."], ["Below 7.0 or above 7.5", "These limits are not the stated ones; 7.5 is only a mild alkalemia and 7.0 is still above the lower limit. A pH below 6.7 or above 7.6 is the unsustainable range. Tell: the limits sit well outside the normal 7.35 to 7.45 band."], ["Below 6.0 or above 8.0", "These values lie far beyond the stated limits, so the state would already be unsustainable well before reaching them. It becomes unsustainable below 6.7 or above 7.6. Tell: the limits are only about 0.65 below and 0.15 above the normal range edges."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 8", "slot": "complication", "qid": "qiaal0"}, {"topic": "Homeostasis and buffering", "io": "Identify mechanisms for maintaining acid-base homeostasis.", "q": "A rise in carbon dioxide leads to which change in breathing?", "opts": [["No change in breathing", "The chemoreceptor exists to respond: more carbon dioxide lowers cerebral pH and increases ventilation. Breathing does change. Tell: a regulated system reacts to its input, so no change would defeat the purpose."], ["Increased ventilation", "Correct. A rise in carbon dioxide lowers cerebral pH, and the brain stem chemoreceptor answers by increasing ventilation, which blows the carbon dioxide off and corrects the change."], ["Decreased ventilation", "Decreased ventilation would let carbon dioxide rise further, the opposite of what the chemoreceptor does. The brain stem responds to falling cerebral pH by increasing ventilation. Tell: the reflex corrects the change, it does not amplify it."], ["Breath holding", "Breath holding would worsen hypercapnia, not relieve it. A rise in carbon dioxide lowers cerebral pH and the brain stem increases ventilation. Tell: the reflex pushes breathing up so carbon dioxide falls."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 13", "slot": "etiology", "qid": "1nyxkzo"}, {"topic": "Metabolic acidosis and the anion gap", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "An elevated anion gap is usually due to which change?", "opts": [["A decrease in unmeasured anions", "Fewer unmeasured anions would lower the gap. An elevated gap usually means more unmeasured anions. Tell: the gap moves with the anions in the same direction."], ["An increase in unmeasured cations", "More unmeasured cations would lower the gap; a decrease in unmeasured cations is the less common cause of an elevated gap. Tell: cations move the gap the opposite way."], ["An increase in serum chloride", "A high chloride goes with normal-gap (hyperchloremic) acidosis, where chloride replaces the lost bicarbonate. An elevated gap usually means more unmeasured anions. Tell: the chloride is part of the formula, not the gap."], ["An increase in unmeasured anions", "Correct. An elevated anion gap is usually due to an increase in unmeasured anions. Less often it is due to a decrease in unmeasured cations (calcium, magnesium, potassium, gamma-globulins)."]], "c": 3, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 48", "slot": "etiology", "qid": "47v07f"}, {"topic": "Homeostasis and buffering", "io": "Identify mechanisms for maintaining acid-base homeostasis.", "q": "Where is the chemoreceptor that regulates respiration in response to carbon dioxide?", "opts": [["In the brain stem", "Correct. A chemoreceptor in the brain stem regulates respiration. Increased carbon dioxide lowers cerebral pH, which the brain stem answers with increased ventilation to clear the carbon dioxide."], ["In the kidney", "The kidney controls bicarbonate over hours to days; it does not hold the breathing chemoreceptor. The chemoreceptor that regulates respiration is in the brain stem. Tell: the kidney is the slow chemical system, the brain stem is the fast breathing controller."], ["In the liver", "The liver is not part of the breathing control loop for carbon dioxide. The chemoreceptor that regulates respiration is in the brain stem. Tell: the reflex senses cerebral pH, so it must be in the brain."], ["In the spinal cord", "The spinal cord relays signals but does not hold the chemoreceptor that senses cerebral pH and drives respiration. That chemoreceptor is in the brain stem. Tell: the sensing site is where cerebral pH is read, the brain stem."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 13", "slot": "etiology", "qid": "xvd0d3"}, {"topic": "Metabolic alkalosis", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "What does saline-responsive metabolic alkalosis signal about the patient's fluid status?", "opts": [["Extracellular volume contraction", "Correct. Saline-responsive metabolic alkalosis is a sign of extracellular volume contraction, which is why isotonic saline corrects the deficit. Saline-unresponsive alkalosis occurs with euvolemia or hypervolemia."], ["Euvolemia or hypervolemia", "Euvolemia or hypervolemia goes with saline-unresponsive alkalosis. The responsive type signals extracellular volume contraction. Tell: responsive means there is a volume deficit to fix."], ["Isolated hyperkalemia", "Hyperkalemia is not the sign; metabolic alkalosis tends to lower potassium, and the question asks about fluid status. Saline responsiveness signals extracellular volume contraction. Tell: the answer is a volume state."], ["Normal fluid status", "A normal volume status points away from saline responsiveness. The responsive type signals extracellular volume contraction, which isotonic saline corrects. Tell: no deficit means nothing for saline to correct."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 37", "slot": "etiology", "qid": "nkq38m"}, {"topic": "Metabolic alkalosis", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "In saline-responsive metabolic alkalosis, what is the urine chloride?", "opts": [["Above 40 mEq/L", "A urine chloride above 40 mEq/L points to saline-unresponsive alkalosis. The responsive type has a value below 25 mEq/L. Tell: low urine chloride means responsive, high means unresponsive."], ["Exactly 100 mEq/L", "No such value defines either type; the cutoffs are below 25 mEq/L for saline responsive and above 40 mEq/L for saline unresponsive. Tell: the responsive type is the low one."], ["The same as the serum chloride", "The rule compares urine chloride with set cutoffs, not with the serum level. A urine chloride below 25 mEq/L means saline responsive. Tell: the test is a urine value against the 25 and 40 cutoffs."], ["Below 25 mEq/L", "Correct. Urine chloride is lower in saline-responsive alkalosis (below 25 mEq/L) and higher in saline-unresponsive alkalosis (above 40 mEq/L). The responsive type is the volume-contracted one."]], "c": 3, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 41", "slot": "test finding", "qid": "19dag0x"}, {"topic": "Metabolic acidosis and the anion gap", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "Which substance accounts for most of the physiologic (normal) anion gap?", "opts": [["Chloride", "Chloride is one of the measured anions subtracted in the formula, so it is not part of the gap. Albumin accounts for most of it. Tell: the gap is made of anions other than chloride and bicarbonate."], ["Bicarbonate", "Bicarbonate is subtracted in the formula, so it is not part of the gap. Albumin accounts for most of the normal gap. Tell: the gap is what is left after chloride and bicarbonate."], ["Sodium", "Sodium is the cation the formula starts from, not an unmeasured anion. Albumin accounts for most of the normal gap. Tell: the gap is made of anions, and sodium is a cation."], ["Albumin", "Correct. The anion gap is the concentration of anions other than chloride and bicarbonate. Serum albumin accounts for most of the normal gap; lactate, ketones, phosphate and sulfate also contribute."]], "c": 3, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 46", "slot": "etiology", "qid": "19ba4d4"}, {"topic": "Compensation rules", "io": "Identify compensatory mechanisms for simple acid-base disorders.", "q": "Using about 2 mEq/L per 10 mm Hg acutely and 5 per 10 chronically, which bicarbonate fits acute respiratory alkalosis with a carbon dioxide of 30 mm Hg (normal 36 to 44, midpoint 40) from a baseline bicarbonate of 24?", "opts": [["19 mEq/L", "19 is 24 - 5, which applies the chronic response of 5 per 10 mm Hg. The stem is acute, where the fall is 2 per 10: 24 - 2 = 22. Tell: acute uses 2, chronic uses 5."], ["22 mEq/L", "Correct. The carbon dioxide fell 10 mm Hg (40 to 30), and acute respiratory alkalosis lowers bicarbonate about 2 mEq/L per 10 mm Hg. So 24 - 2 = 22 mEq/L is the expected bicarbonate."], ["24 mEq/L", "24 assumes no compensation at all. Even acutely, bicarbonate falls about 2 mEq/L per 10 mm Hg of carbon dioxide decline: 24 - 2 = 22. Tell: alkalosis lowers bicarbonate from baseline."], ["26 mEq/L", "26 is a rise in bicarbonate, the direction seen with respiratory acidosis. Alkalosis lowers it: 24 - 2 = 22. Tell: for a low carbon dioxide, bicarbonate falls."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 59", "slot": "test finding", "qid": "1aecqyx"}, {"topic": "Respiratory alkalosis", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "Which cause of respiratory alkalosis works through hypoxia-driven hyperventilation?", "opts": [["Myasthenia gravis", "Myasthenia gravis is a neuromuscular cause of acute respiratory acidosis, from weakened breathing. High altitude drives hypoxic hyperventilation. Tell: hypoxia that increases breathing leads to alkalosis."], ["Obesity hypoventilation syndrome", "Obesity hypoventilation syndrome causes chronic respiratory acidosis through hypoventilation. High altitude causes hypoxia-driven respiratory alkalosis. Tell: hypoventilation raises carbon dioxide, hypoxic hyperventilation lowers it."], ["Flail chest", "Flail chest impairs ventilation and causes acute respiratory acidosis. High altitude drives hyperventilation through hypoxia. Tell: impaired ventilation raises carbon dioxide, hypoxic drive lowers it."], ["High altitude", "Correct. Hyperventilation secondary to hypoxia causes respiratory alkalosis, and high altitude is a listed example. The others on that list are severe anemia, ventilation-perfusion mismatch and hypotension."]], "c": 3, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 33", "slot": "etiology", "qid": "1kl9z4n"}, {"topic": "Metabolic acidosis and the anion gap", "io": "Identify compensatory mechanisms for simple acid-base disorders.", "q": "In metabolic acidosis, the measured carbon dioxide is higher than the Winter formula predicts. What does that indicate?", "opts": [["A coexisting respiratory acidosis", "Correct. If the actual carbon dioxide is higher than the Winter formula's expected value, the patient has metabolic acidosis together with respiratory acidosis. This can be a sign of impending respiratory failure."], ["A coexisting respiratory alkalosis", "A respiratory alkalosis would pull carbon dioxide below the predicted range, and the stem has it higher. Higher than predicted means an added respiratory acidosis. Tell: direction matters, above the range means acidosis."], ["Appropriate compensation", "Appropriate compensation falls within the predicted range (plus or minus 2). A value above it means the lungs are not compensating enough, an added respiratory acidosis. Tell: the stem says higher than predicted."], ["Metabolic alkalosis instead", "The bicarbonate is low in a metabolic acidosis, so this is still metabolic acidosis, with a second problem. A carbon dioxide above the Winter range adds a respiratory acidosis. Tell: alkalosis would not raise carbon dioxide."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 58", "slot": "complication", "qid": "1m1vcbx"}, {"topic": "Metabolic acidosis and the anion gap", "io": "Identify compensatory mechanisms for simple acid-base disorders.", "q": "By the Winter formula, what is the expected carbon dioxide when bicarbonate is 10 mEq/L?", "opts": [["13 to 17 mm Hg", "13 to 17 is 1.5 x 10 = 15, plus or minus 2, without adding the 8. Adding 8 gives 23, so the range is 21 to 25. Tell: the formula has a constant of 8 after the multiplication."], ["16 to 20 mm Hg", "16 to 20 comes from using 1.0 instead of 1.5 times the bicarbonate (10 + 8 = 18). The formula is 1.5 x 10 + 8 = 23, range 21 to 25. Tell: the multiplier is 1.5."], ["21 to 25 mm Hg", "Correct. Winter formula: expected carbon dioxide = 1.5 x bicarbonate + 8. With bicarbonate 10: 1.5 x 10 + 8 = 15 + 8 = 23, plus or minus 2, so 21 to 25 mm Hg is the appropriately compensated value."], ["36 to 44 mm Hg", "36 to 44 is the normal range, and compensation for metabolic acidosis lowers carbon dioxide. Winter gives 1.5 x 10 + 8 = 23, range 21 to 25. Tell: the expected value is well below normal."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 58", "slot": "test finding", "qid": "uw6rdi"}, {"topic": "Potassium and oxygen effects", "io": "Explain how acid-base disorders affect electrolytes and oxygenation.", "q": "Which way does acidosis shift the oxygen-hemoglobin dissociation curve?", "opts": [["Upward without a shift", "The pH effect is a sideways shift of the whole curve, not a lift upward. Acidosis moves the curve to the right. Tell: the answer is a direction, left or right."], ["It does not shift", "The curve does shift with pH. Acidosis shifts it to the right and alkalosis shifts it to the left. Tell: pH is the signal that moves the curve, so it cannot stay fixed."], ["To the right", "Correct. Acidosis shifts the oxygen-hemoglobin dissociation curve to the right. Hemoglobin's affinity for oxygen falls, so more oxygen is delivered to the tissues. Alkalosis shifts the curve to the left."], ["To the left", "A left shift is the alkalosis pattern, with higher affinity and less delivery. Acidosis shifts the curve to the right. Tell: acidosis goes right (releases oxygen), alkalosis goes left (holds oxygen)."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 11", "slot": "manifestation", "qid": "1xq0y56"}, {"topic": "Metabolic acidosis and the anion gap", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "Sodium 138 mEq/L (normal 135 to 145), chloride 114 mEq/L (normal 98 to 106) and bicarbonate 14 mEq/L (normal 22 to 26). What is the calculated anion gap?", "opts": [["10", "Correct. Anion gap = 138 - (114 + 14) = 138 - 128 = 10, within the normal 9 to 15. With a low bicarbonate and a high chloride, this is a normal-gap (hyperchloremic) metabolic acidosis."], ["14", "14 is the bicarbonate value itself, not the gap. The gap is calculated: 138 - (114 + 14) = 10. Tell: the gap comes from the subtraction, not a single listed value."], ["24", "24 comes from 138 - 114, leaving out the bicarbonate. Subtract both measured anions: 138 - 128 = 10. Tell: the sum of chloride and bicarbonate is 128."], ["38", "38 adds the bicarbonate instead of subtracting it (138 - 114 + 14). The gap is 138 - (114 + 14) = 10. Tell: add the two anions, then subtract the sum from sodium."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 47", "slot": "test finding", "qid": "1hm28pb"}, {"topic": "Definitions and normal values", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "Which describes a mixed acid-base disorder?", "opts": [["More than one primary disturbance at once", "Correct. A mixed acid-base disorder is more than one primary disturbance occurring at the same time, each with its own compensation. A simple disorder is one primary disturbance plus its corresponding compensation."], ["One primary disturbance plus compensation", "One primary disturbance with its corresponding compensation is the definition of a simple acid-base disorder, the opposite of mixed. Mixed means more than one primary disturbance at once. Tell: count the primary problems, one is simple, two or more is mixed."], ["A disorder with a normal pH", "A normal pH does not define a mixed disorder; mixed disturbances may push the pH the same way or in opposite directions, so the pH can land anywhere. The defining feature is more than one primary disturbance at once. Tell: look at the number of primary problems, not the pH."], ["An acidosis that has fully compensated", "Compensation never returns the pH fully to normal, and a disorder with its own compensation is simple, not mixed. Mixed means more than one primary disturbance simultaneously. Tell: compensation is a response to one problem, while mixed involves a second primary problem."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 4", "slot": "differential", "qid": "1kznw64"}, {"topic": "Metabolic alkalosis", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "Which test separates saline-responsive from saline-unresponsive metabolic alkalosis?", "opts": [["Serum anion gap", "The anion gap sorts metabolic acidosis into normal and elevated gap. Urine chloride sorts metabolic alkalosis. Tell: the anion gap is an acidosis tool."], ["Serum albumin", "Albumin explains most of the normal anion gap; it does not type an alkalosis. Urine chloride separates the saline-responsive from the saline-unresponsive type. Tell: a urine value, not a serum protein."], ["Arterial oxygen pressure", "Oxygen pressure does not classify metabolic alkalosis. Urine chloride separates saline-responsive from unresponsive types. Tell: oxygen is not a metabolic classifier."], ["Urine chloride", "Correct. Urine chloride differentiates the two types. It is lower in saline-responsive alkalosis (below 25 mEq/L) and higher in saline-unresponsive alkalosis (above 40 mEq/L), as printed."]], "c": 3, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 41", "slot": "initial test", "qid": "bqdza3"}, {"topic": "Respiratory alkalosis", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "What is the usual course of hyperventilation causing respiratory alkalosis?", "opts": [["Self-limited", "Correct. Hyperventilation is usually self-limited. Treatment targets the underlying cause, and a paper bag is not necessary because it does not fix carbon dioxide and may lower oxygen."], ["Progressive without treatment", "Hyperventilation usually resolves on its own, so it is self-limited rather than progressive. The cause is treated, not the breathing pattern with a bag. Tell: the course is self-limited."], ["Fatal within hours", "Fatal within hours overstates it; hyperventilation is usually self-limited. Tell: the usual course is resolution by itself, with the underlying cause treated."], ["Chronic in most patients", "Most hyperventilation is self-limited rather than chronic. A chronic respiratory alkalosis needs a persisting cause. Tell: the word usually points to a self-limited course."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 35", "slot": "prognosis", "qid": "1aaeoon"}, {"topic": "Potassium and oxygen effects", "io": "Explain how acid-base disorders affect electrolytes and oxygenation.", "q": "What happens to serum potassium in alkalosis?", "opts": [["It is lost in the stool", "Stool loss is not the pH effect described here. In alkalosis potassium shifts from the extracellular to the intracellular fluid, which lowers the serum level. Tell: the mechanism is a shift between compartments, not a loss from the body."], ["It falls as potassium moves into cells", "Correct. In alkalosis, hydrogen ions shift from the intracellular to the extracellular space while potassium shifts from the extracellular to the intracellular space. Serum potassium therefore falls, giving hypokalemia."], ["It rises as potassium leaves cells", "Potassium leaving cells and rising serum potassium is the acidosis pattern. In alkalosis potassium moves into cells and serum potassium falls. Tell: alkalosis pulls potassium in, acidosis pushes it out."], ["It stays the same", "pH shifts move potassium across cell membranes, so serum potassium does change. In alkalosis potassium moves into cells, causing hypokalemia. Tell: in alkalosis hydrogen leaves cells while potassium enters, so the serum level falls."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 9", "slot": "manifestation", "qid": "1v3qpxt"}, {"topic": "Reading a blood gas", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "What is the first step in analyzing acid-base status?", "opts": [["Check the urine chloride", "Urine chloride types a metabolic alkalosis and sits far down the pathway. The first step is the pH. Tell: begin with whether the blood is acidic or alkaline."], ["Look at the pH", "Correct. Analysis starts with the pH to decide acidosis or alkalosis. Then ask which of carbon dioxide or bicarbonate is consistent with it (respiratory or metabolic), whether it could be mixed, and what the compensation is."], ["Calculate the anion gap", "The anion gap comes later, once a metabolic acidosis is identified. The first step is the pH. Tell: the gap helps sort one type of acidosis, so it cannot be first."], ["Apply the Winter formula", "The Winter formula checks compensation in metabolic acidosis, which is a later step. The analysis begins with the pH. Tell: compensation is judged after the primary disorder is known."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 61", "slot": "initial test", "qid": "1ewql70"}, {"topic": "Respiratory alkalosis", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "Which endocrine state is a listed cause of respiratory alkalosis?", "opts": [["Hypothyroidism", "Hyperthyroidism, not hypothyroidism, is the listed endocrine cause. Pregnancy and hyperthyroidism are the endocrine causes of respiratory alkalosis. Tell: the listed thyroid cause is the overactive one."], ["Primary aldosteronism", "Primary aldosteronism causes a hypertensive saline-unresponsive metabolic alkalosis. Pregnancy is the listed endocrine cause of respiratory alkalosis. Tell: aldosteronism is a metabolic alkalosis cause with high blood pressure."], ["Adrenal insufficiency", "Adrenal insufficiency is a cause of normal anion gap metabolic acidosis. Pregnancy is an endocrine cause of respiratory alkalosis. Tell: the stem asks for respiratory alkalosis, not metabolic acidosis."], ["Pregnancy", "Correct. The endocrine causes of respiratory alkalosis are pregnancy and hyperthyroidism. Septicemia, heat exposure and hepatic failure are also listed among the causes, and all drive hyperventilation."]], "c": 3, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 34", "slot": "etiology", "qid": "qr52ie"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll" && window.startExamModeTour) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

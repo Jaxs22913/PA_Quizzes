@@ -56,7 +56,7 @@ FIELDS = [
     ("mortality", "Mortality &#9733;"),
 ]
 BLOCKS = {1: "Dermatology", 2: "Ophthalmology", 3: "Ear, nose and throat", 4: "Cardiology I",
-          5: "Cardiology II"}
+          5: "Cardiology II", 6: "Respiratory I"}
 
 e = lambda s: html.escape(s or "", quote=True)
 

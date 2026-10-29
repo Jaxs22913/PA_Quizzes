@@ -11,7 +11,8 @@ import html as H, json, os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 BASE = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2/Pharmacology I Inbox/Exam 3/recordings/")
 FILES = {"L9": "pharm-l9-diuretics-heart-failure-2026-09-30.transcript.txt",
-         "L10": "pharm-l10-antiarrhythmics-2026-10-12.transcript.txt"}
+         "L10": "pharm-l10-antiarrhythmics-2026-10-12.transcript.txt",
+         "L11": "pharm-l11-pulmonology-2026-10-26.transcript.txt"}
 KINDS = {"marker", "rule", "shape", "scope", "emphasis"}
 _cache = {}
 

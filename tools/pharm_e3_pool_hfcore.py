@@ -301,10 +301,10 @@ QUESTIONS = [
 {"topic": AC, "io": IO_PROT, "slot": "monitoring",
  "q": "A patient on a loop diuretic is started on an angiotensin-converting enzyme inhibitor. What should be monitored?",
  "opts": [
-  ["Serum potassium and renal function", "Correct. The inhibitor can raise potassium and impair renal function, and the loop pushes potassium the other way."],
-  ["Serum calcium and phosphate", "These are not the values most affected by the combination; potassium and renal function are."],
-  ["Blood glucose and ketones", "These are not the values most affected by the combination; potassium and renal function are."],
-  ["White blood cell count", "This is not a problem listed for the combination; potassium and renal function are."]],
+  ["Serum potassium and renal function", "Correct. The drug being added is the angiotensin-converting enzyme inhibitor, and its listed problems include impairment of renal function and elevation of serum potassium, along with hypotension, cough and angioedema. Those two are the laboratory values on the list, so serum potassium and renal function are what to follow as the inhibitor starts."],
+  ["Serum calcium and phosphate", "Calcium and phosphate are not on the problem list of an angiotensin-converting enzyme inhibitor: impaired renal function, hypotension, raised serum potassium, cough and angioedema. Two items on that list, serum potassium and renal function, are laboratory values, so they are the ones to check. The tell: monitor what the newly added drug affects."],
+  ["Blood glucose and ketones", "Glucose and ketones are not on the problem list of an angiotensin-converting enzyme inhibitor: impaired renal function, hypotension, raised serum potassium, cough and angioedema. That list points to potassium and renal function instead. The tell: nothing about starting the inhibitor involves glucose, so it answers a question the stem never asks."],
+  ["White blood cell count", "A white blood cell count is not on the problem list of an angiotensin-converting enzyme inhibitor: impaired renal function, hypotension, raised serum potassium, cough and angioedema. Nothing in the stem points to infection. The tell: the inhibitor's problems involve the kidney and potassium, so the labs follow those, not the blood count."]],
  "c": 0, "cite": D + ", Slide 56"},
 
 {"topic": AC, "io": IO_INTER, "slot": "interaction",
@@ -338,10 +338,10 @@ QUESTIONS = [
 {"topic": BB, "io": IO_CLASS, "slot": "class",
  "q": "Which three beta blockers reduce mortality in heart failure?",
  "opts": [
-  ["Carvedilol, metoprolol succinate, bisoprolol", "Correct. These three have been shown to lower mortality in heart failure."],
-  ["Metoprolol tartrate, atenolol, nadolol", "Only the extended-release succinate form of metoprolol is named, and atenolol and nadolol show no mortality benefit in heart failure."],
-  ["Propranolol, labetalol, acebutolol", "None of these three is among the agents with a proven mortality benefit in heart failure."],
-  ["Esmolol, timolol, labetalol", "None of these three is among the agents with a proven mortality benefit in heart failure."]],
+  ["Carvedilol, metoprolol succinate, bisoprolol", "Correct. Carvedilol, metoprolol succinate XL (extended release) and bisoprolol are the beta blockers with a mortality benefit in heart failure, even though beta blockers were classically considered contraindicated in it. To use them, the patient should be stable first (in hospital preferred), start at very low doses and titrate up slowly over 6 to 8 weeks."],
+  ["Metoprolol tartrate, atenolol, nadolol", "Metoprolol is half right, but the form with a mortality benefit is metoprolol succinate XL (extended release), not the tartrate salt, and atenolol and nadolol are not on the list at all. The named three are carvedilol, metoprolol succinate XL and bisoprolol. The tell: the wrong form of metoprolol does not earn the benefit."],
+  ["Propranolol, labetalol, acebutolol", "None of these three is among the beta blockers with a mortality benefit, and the benefit is not a class effect: beta blockers were classically considered contraindicated in heart failure. Only carvedilol, metoprolol succinate XL (extended release) and bisoprolol carry it. The tell: this option has neither carvedilol nor bisoprolol."],
+  ["Esmolol, timolol, labetalol", "Esmolol, timolol and labetalol are beta blockers, but none is among the three with a mortality benefit in heart failure. Those three, carvedilol, metoprolol succinate XL (extended release) and bisoprolol, are started in a stable patient at very low doses and titrated up slowly. The tell: the right set includes a metoprolol; this one has none."]],
  "c": 0, "cite": D + ", Slide 57"},
 
 {"topic": BB, "io": IO_IND, "slot": "drug choice",

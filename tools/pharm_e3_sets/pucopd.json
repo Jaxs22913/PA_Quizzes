@@ -1,0 +1,818 @@
+{
+ "pucopd1": [
+  {
+   "topic": "Treatment groups",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "Which regular therapy is acceptable on its own in chronic obstructive pulmonary disease but never on its own in asthma?",
+   "opts": [
+    [
+     "An inhaled corticosteroid",
+     "In asthma the inhaled corticosteroid is the mainstay controller; in chronic obstructive pulmonary disease a steroid is added only at the top group, combined, when asthma features overlap.",
+     "reversed direction or value"
+    ],
+    [
+     "A leukotriene receptor antagonist",
+     "A leukotriene receptor antagonist is an other controller option in asthma and is not on the chronic obstructive pulmonary disease table; long-acting bronchodilators are.",
+     "adjacent fact"
+    ],
+    [
+     "An anti-immunoglobulin E antibody",
+     "Omalizumab is an asthma add-on for the top step; the chronic obstructive pulmonary disease groups list bronchodilators and no biologics.",
+     "adjacent fact"
+    ],
+    [
+     "A long-acting beta-2 agonist",
+     "Correct. In chronic obstructive pulmonary disease a long-acting muscarinic antagonist or a long-acting beta-2 agonist alone is regular treatment; in asthma a long-acting beta-2 agonist is never used alone."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 102"
+  },
+  {
+   "topic": "Smoking cessation agents",
+   "io": "Outline appropriate patient education for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "education",
+   "q": "In which form is nicotine polacrilex given?",
+   "opts": [
+    [
+     "Patch",
+     "The patch is the nicotine transdermal system; nicotine polacrilex is the gum.",
+     "adjacent fact"
+    ],
+    [
+     "Spray",
+     "The nicotine spray is a separate listed form; nicotine polacrilex is the gum.",
+     "adjacent fact"
+    ],
+    [
+     "Inhaler",
+     "The nicotine inhaler is a separate listed form; nicotine polacrilex is the gum.",
+     "adjacent fact"
+    ],
+    [
+     "Gum",
+     "Correct. Nicotine polacrilex is the nicotine gum; with the patches, the gum is available over the counter."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 104"
+  },
+  {
+   "topic": "Treatment groups",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "indication",
+   "q": "For which patients with chronic obstructive pulmonary disease is long-term oxygen therapy listed?",
+   "opts": [
+    [
+     "Those with persistent hypoxemia",
+     "Correct. Long-term oxygen therapy is listed, for patients in any group, if there is chronic (persistent) hypoxemia."
+    ],
+    [
+     "Those in the high-risk groups",
+     "High risk (two or more exacerbations a year) moves a patient to group C or D and decides the inhaler, not oxygen; oxygen is listed for chronic hypoxemia.",
+     "adjacent fact"
+    ],
+    [
+     "Those with asthma overlap",
+     "Features of asthma overlap make a combination glucocorticoid-long-acting beta-2 agonist inhaler preferred in group D; long-term oxygen is for chronic hypoxemia.",
+     "adjacent fact"
+    ],
+    [
+     "Those who still smoke",
+     "Smokers are told to avoid the risk factor and are offered cessation; long-term oxygen therapy is listed for chronic hypoxemia.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 102"
+  },
+  {
+   "topic": "Chronic obstructive pulmonary disease",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "In chronic obstructive pulmonary disease, when do symptoms generally develop?",
+   "opts": [
+    [
+     "Before lung function begins to decline",
+     "Lung function falls first; patients stay asymptomatic while it is normal and early in its decline, and symptoms appear after a significant fall in forced expiratory volume in 1 second (FEV1).",
+     "reversed direction or value"
+    ],
+    [
+     "After a significant decline in lung function",
+     "Correct. Symptoms generally develop only after a significant decline in forced expiratory volume in 1 second (FEV1) has occurred, and they progress as lung function deteriorates further."
+    ],
+    [
+     "As soon as lung function first falls",
+     "Patients remain asymptomatic in the first stretch of reduced lung function; symptoms develop only after a significant decline in forced expiratory volume in 1 second (FEV1).",
+     "wrong stage or severity"
+    ],
+    [
+     "When lung function returns to normal",
+     "Chronic obstructive pulmonary disease is generally not fully reversible, and symptoms rise as forced expiratory volume in 1 second (FEV1) keeps falling after a significant decline.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 101"
+  },
+  {
+   "topic": "Smoking cessation",
+   "io": "Outline appropriate patient education for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "education",
+   "q": "In a patient with chronic obstructive pulmonary disease, what can stopping smoking do to the decline in ventilatory function?",
+   "opts": [
+    [
+     "Return it to the normal age-related rate",
+     "Correct. Smoking cessation can return the decline in ventilatory function to the normal age-related rate and reduce the risk of lung cancer."
+    ],
+    [
+     "Reverse the existing obstruction fully",
+     "Chronic obstructive pulmonary disease is generally not fully reversible; stopping smoking returns the rate of decline to the normal age-related rate.",
+     "common lay belief"
+    ],
+    [
+     "Stop age-related decline entirely",
+     "Age-related decline continues after quitting; what cessation can do is return the decline to the normal age-related rate.",
+     "reversed direction or value"
+    ],
+    [
+     "Speed it up for the first year",
+     "Quitting does not accelerate the decline; it can return the decline in ventilatory function to the normal age-related rate and reduce lung cancer risk.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 103"
+  },
+  {
+   "topic": "Varenicline",
+   "io": "Summarize side effects and toxic manifestations of respiratory drugs",
+   "slot": "adverse effect",
+   "q": "Which black box warning is listed for varenicline?",
+   "opts": [
+    [
+     "Lowered seizure threshold",
+     "A seizure disorder is the reason bupropion is avoided; varenicline's black box warning is for neuropsychiatric events.",
+     "adjacent fact"
+    ],
+    [
+     "Cardiac tachyarrhythmias",
+     "Tachyarrhythmias are the cardiovascular caution for nicotine replacement; varenicline's black box warning is for neuropsychiatric events.",
+     "adjacent fact"
+    ],
+    [
+     "Neuropsychiatric events",
+     "Correct. Varenicline's black box warning is for neuropsychiatric events such as depression and suicidal ideation."
+    ],
+    [
+     "Severe liver toxicity",
+     "Hepatitis is a concern with isoniazid and pyrazinamide; varenicline's black box warning is for neuropsychiatric events such as depression and suicidal ideation.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 107"
+  },
+  {
+   "topic": "Bupropion",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "mechanism",
+   "q": "How is bupropion thought to help a smoker quit?",
+   "opts": [
+    [
+     "It partially stimulates nicotine receptors",
+     "Partial nicotine receptor agonism, to a lesser degree than nicotine, is varenicline's mechanism; bupropion inhibits norepinephrine and dopamine uptake.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It replaces nicotine to ease withdrawal",
+     "Replacing nicotine to reduce craving and withdrawal is what the patch, gum, spray and inhaler do; bupropion inhibits norepinephrine and dopamine uptake.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It inhibits norepinephrine and dopamine uptake",
+     "Correct. Nicotine indirectly activates epinephrine and dopamine in the central nervous system, and bupropion is postulated to mimic these effects because it inhibits the uptake of norepinephrine and dopamine."
+    ],
+    [
+     "It blocks muscarinic acetylcholine receptors",
+     "Blocking acetylcholine at muscarinic receptors is the anticholinergic bronchodilator mechanism; bupropion inhibits norepinephrine and dopamine uptake.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 105"
+  },
+  {
+   "topic": "Nicotine replacement",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "What determines the dose and duration of nicotine replacement therapy?",
+   "opts": [
+    [
+     "Body weight and kidney function",
+     "Renal function guides many drug adjustments, but nicotine replacement is set by the patient's level of dependence and point in therapy.",
+     "adjacent fact"
+    ],
+    [
+     "The age at which smoking began",
+     "The age smoking began is not what sets therapy; nicotine replacement depends on the level of dependence and the point in therapy.",
+     "common lay belief"
+    ],
+    [
+     "The number of past quit attempts",
+     "Past quit attempts are not the stated basis; the dose and duration depend on the level of dependence and the point in therapy.",
+     "common lay belief"
+    ],
+    [
+     "Dependence level and stage of treatment",
+     "Correct. The dose and duration of nicotine replacement depend on the patient's level of dependence and point in therapy; the duration is between 6 and 12 weeks."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 106"
+  },
+  {
+   "topic": "Varenicline",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "mechanism",
+   "q": "Which smoking cessation agent is a partial nicotine receptor agonist?",
+   "opts": [
+    [
+     "Bupropion",
+     "Bupropion is postulated to work by inhibiting norepinephrine and dopamine uptake; the partial nicotine receptor agonist is varenicline.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Nicotine polacrilex",
+     "Nicotine polacrilex (gum) supplies nicotine itself to reduce craving and withdrawal; the partial agonist, acting to a lesser degree than nicotine, is varenicline.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Nicotine transdermal system",
+     "The nicotine patch supplies nicotine itself to reduce craving and withdrawal; the partial nicotine receptor agonist is varenicline.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Varenicline",
+     "Correct. Varenicline (Chantix) is a partial nicotine receptor agonist, acting to a lesser degree than nicotine."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 107"
+  },
+  {
+   "topic": "Nicotine replacement",
+   "io": "Identify contraindications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "contraindication",
+   "q": "Nicotine replacement calls for caution in which patients?",
+   "opts": [
+    [
+     "Those with cardiovascular problems",
+     "Correct. Nicotine replacement calls for caution in patients with cardiovascular problems because of the chance of tachyarrhythmias and hypertension."
+    ],
+    [
+     "Those with a seizure disorder",
+     "A seizure disorder is the reason to avoid bupropion; nicotine replacement calls for caution in cardiovascular problems.",
+     "adjacent fact"
+    ],
+    [
+     "Those taking a monoamine oxidase inhibitor",
+     "Monoamine oxidase inhibitors are a reason to avoid bupropion; nicotine replacement calls for caution in cardiovascular problems.",
+     "adjacent fact"
+    ],
+    [
+     "Those with a history of depression",
+     "Depression and suicidal ideation are varenicline's boxed neuropsychiatric warning; nicotine replacement calls for caution in cardiovascular problems.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 106"
+  },
+  {
+   "topic": "Nicotine replacement",
+   "io": "Outline appropriate patient education for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "education",
+   "q": "Which nicotine replacement forms are available over the counter?",
+   "opts": [
+    [
+     "Spray and inhaler",
+     "The nicotine spray and inhaler are listed forms, but the ones named as over the counter are the patches and gum.",
+     "reversed direction or value"
+    ],
+    [
+     "Patches and gum",
+     "Correct. Nicotine patches and gum are available over the counter; the spray and the inhaler are the other listed nicotine forms."
+    ],
+    [
+     "Gum and spray",
+     "The gum is over the counter, but the spray is not among the forms named as over the counter; those are the patches and gum.",
+     "adjacent fact"
+    ],
+    [
+     "Patches and inhaler",
+     "The patches are over the counter, but the inhaler is not among the forms named as over the counter; those are the patches and gum.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 106"
+  },
+  {
+   "topic": "Treatment groups",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "A high-risk patient with chronic obstructive pulmonary disease has severe breathlessness and no features of asthma. What is the suggested regular treatment?",
+   "opts": [
+    [
+     "A long-acting muscarinic antagonist alone",
+     "A long-acting muscarinic antagonist alone is the group D start when breathlessness is not severe, and the group C treatment; severe breathlessness calls for the combination.",
+     "wrong stage or severity"
+    ],
+    [
+     "A short-acting bronchodilator as needed",
+     "As-needed short-acting bronchodilator alone is the group A treatment; a high-risk, severely breathless patient is group D.",
+     "wrong stage or severity"
+    ],
+    [
+     "A long-acting beta-2 agonist plus muscarinic antagonist",
+     "Correct. Group D (more symptomatic, high risk) gets a long-acting muscarinic antagonist or, if breathlessness is severe, the combination of a long-acting beta-2 agonist and a long-acting muscarinic antagonist."
+    ],
+    [
+     "An inhaled glucocorticoid with a long-acting beta-2 agonist",
+     "The glucocorticoid-long-acting beta-2 agonist inhaler may be preferred only when features of asthma overlap, which this patient does not have.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 102"
+  },
+  {
+   "topic": "Treatment groups",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "A patient with chronic obstructive pulmonary disease must stop to catch breath when walking on level ground and had one exacerbation last year without hospitalization. What is the suggested regular treatment?",
+   "opts": [
+    [
+     "A short-acting bronchodilator as needed alone",
+     "As-needed short-acting bronchodilator alone is group A, the less symptomatic patient; stopping to catch breath on level ground makes this group B, which needs a regular long-acting bronchodilator.",
+     "wrong stage or severity"
+    ],
+    [
+     "A long-acting muscarinic antagonist or beta-2 agonist",
+     "Correct. Group B (more symptomatic, low risk) gets regular treatment with one long-acting bronchodilator, either a muscarinic antagonist or a beta-2 agonist by patient preference, plus a short-acting bronchodilator as needed."
+    ],
+    [
+     "An inhaled glucocorticoid with a long-acting beta-2 agonist",
+     "A glucocorticoid-long-acting beta-2 agonist inhaler is considered in group D when asthma features overlap; this low-risk patient is group B.",
+     "wrong stage or severity"
+    ],
+    [
+     "A long-acting beta-2 agonist plus muscarinic antagonist",
+     "The two long-acting bronchodilators together are for group D with severe breathlessness; with only one exacerbation and no hospitalization this patient is group B.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 102"
+  },
+  {
+   "topic": "Treatment groups",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "A patient with chronic obstructive pulmonary disease has frequent hospitalized exacerbations, marked breathlessness and features that overlap with asthma. Which inhaler may be preferred?",
+   "opts": [
+    [
+     "A long-acting beta-2 agonist on its own",
+     "A long-acting beta-2 agonist is not used alone in asthma, and asthma overlap is the reason a glucocorticoid-long-acting beta-2 agonist combination may be preferred.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "A long-acting muscarinic antagonist on its own",
+     "A long-acting muscarinic antagonist alone is the group C and milder group D treatment; asthma overlap makes the glucocorticoid-long-acting beta-2 agonist inhaler preferable.",
+     "wrong stage or severity"
+    ],
+    [
+     "A glucocorticoid plus long-acting beta-2 agonist",
+     "Correct. In group D a combination glucocorticoid-long-acting beta-2 agonist inhaler may be preferred if features of asthma and chronic obstructive pulmonary disease overlap."
+    ],
+    [
+     "A short-acting beta-2 agonist plus antimuscarinic",
+     "The short-acting beta-2 agonist and antimuscarinic combination is an as-needed group A choice; overlap with asthma in group D favors the glucocorticoid-long-acting beta-2 agonist inhaler.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 102"
+  }
+ ],
+ "pucopd2": [
+  {
+   "topic": "Smoking cessation",
+   "io": "Outline appropriate patient education for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "education",
+   "q": "Which factor directly correlates with a patient's success in quitting smoking?",
+   "opts": [
+    [
+     "Using medication without counseling",
+     "Effective programs combine drug therapy with counseling rather than replacing it; the intensity and frequency of counseling correlate with success.",
+     "reversed direction or value"
+    ],
+    [
+     "Daily cigarette count at the start",
+     "The level of dependence guides the dose and duration of nicotine replacement, but the factor tied directly to quitting success is the intensity and frequency of counseling.",
+     "adjacent fact"
+    ],
+    [
+     "Length of the smoking history",
+     "Quitting is a complex physical, psychological and social issue; the factor that directly correlates with success is the intensity and frequency of counseling.",
+     "common lay belief"
+    ],
+    [
+     "Intensity and frequency of counseling",
+     "Correct. Effective programs combine pharmacologic intervention with counseling, and the intensity and frequency of counseling directly correlate with the success of quitting."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 103"
+  },
+  {
+   "topic": "Nicotine replacement",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "indication",
+   "q": "What is the purpose of the nicotine replacement agents?",
+   "opts": [
+    [
+     "To reduce craving and physical withdrawal",
+     "Correct. Nicotine replacement reduces the craving to smoke and minimizes physical withdrawal (anxiety, irritability, restlessness, insomnia, headache, depression and nausea)."
+    ],
+    [
+     "To inhibit norepinephrine and dopamine uptake",
+     "Inhibiting norepinephrine and dopamine uptake is bupropion's postulated mechanism; nicotine replacement reduces craving and physical withdrawal.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "To partly block the nicotine receptor",
+     "Varenicline is the partial nicotine receptor agonist; nicotine replacement supplies nicotine to reduce craving and physical withdrawal.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "To make cigarettes taste unpleasant",
+     "Nicotine replacement does not work by aversion; it reduces the craving to smoke and minimizes physical withdrawal symptoms.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 106"
+  },
+  {
+   "topic": "Immunizations",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "indication",
+   "q": "Why is annual influenza vaccination highly recommended for patients with chronic obstructive pulmonary disease?",
+   "opts": [
+    [
+     "Influenza triggers most asthma attacks",
+     "Viral respiratory infection triggers most asthma attacks, but the reason for the vaccine in chronic obstructive pulmonary disease is the risk of serious influenza pneumonia.",
+     "adjacent fact"
+    ],
+    [
+     "The vaccine slows the fall in lung function",
+     "Smoking cessation is what can return the decline in lung function to the normal rate; the vaccine guards against serious influenza pneumonia.",
+     "adjacent fact"
+    ],
+    [
+     "It replaces the pneumococcal vaccine",
+     "Patients should also receive the pneumococcal vaccine; annual influenza vaccination is given because influenza pneumonia carries significant morbidity and mortality.",
+     "reversed direction or value"
+    ],
+    [
+     "They risk serious pneumonia from influenza",
+     "Correct. Patients with chronic obstructive pulmonary disease are at risk for significant morbidity and mortality from pneumonia caused by influenza, so annual vaccination is highly recommended."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 108"
+  },
+  {
+   "topic": "Bupropion",
+   "io": "Identify contraindications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "contraindication",
+   "q": "A patient with a seizure disorder asks for help to stop smoking. Which agent should be avoided?",
+   "opts": [
+    [
+     "Varenicline",
+     "Varenicline's listed side effects are nausea, sleep disturbance and headache, with a black box warning for neuropsychiatric events; the agent to avoid in a seizure disorder is bupropion.",
+     "adjacent fact"
+    ],
+    [
+     "Bupropion",
+     "Correct. Bupropion sustained release is to be avoided in patients with seizure disorders and in patients taking monoamine oxidase inhibitors."
+    ],
+    [
+     "Nicotine gum",
+     "Nicotine replacement calls for caution in cardiovascular problems (tachyarrhythmias, hypertension); the agent to avoid in a seizure disorder is bupropion.",
+     "adjacent fact"
+    ],
+    [
+     "Nicotine patch",
+     "The patch reduces craving and withdrawal and needs caution in cardiovascular problems; bupropion is the agent avoided in seizure disorders.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 105"
+  },
+  {
+   "topic": "Treatment groups",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "A patient with chronic obstructive pulmonary disease has mild symptoms but had two exacerbations last year, one needing hospitalization. What is the suggested regular treatment?",
+   "opts": [
+    [
+     "A regular long-acting beta-2 agonist",
+     "A long-acting beta-2 agonist is one of the two group B choices; group C, the high-risk patient with mild symptoms, gets a long-acting muscarinic antagonist.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "A short-acting bronchodilator as needed",
+     "As-needed short-acting bronchodilator alone is for group A, the low-risk patient; two exacerbations with a hospitalization make this patient high risk, group C.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "A regular long-acting muscarinic antagonist",
+     "Correct. Group C (less symptomatic, high risk: two or more exacerbations a year with one or more hospitalized) gets regular treatment with a long-acting muscarinic antagonist, with a short-acting beta-2 agonist for relief."
+    ],
+    [
+     "An inhaled glucocorticoid with a long-acting beta-2 agonist",
+     "A glucocorticoid-long-acting beta-2 agonist inhaler is considered in group D when asthma features overlap; group C gets a long-acting muscarinic antagonist.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 102"
+  },
+  {
+   "topic": "Treatment groups",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "A patient with chronic obstructive pulmonary disease is breathless only with strenuous exercise and had no exacerbations last year. What is the suggested treatment?",
+   "opts": [
+    [
+     "A short-acting bronchodilator as needed",
+     "Correct. Group A (mild or infrequent symptoms, 0 or 1 exacerbation without hospitalization) is treated with a short-acting bronchodilator, beta-2 agonist, antimuscarinic or both, as needed."
+    ],
+    [
+     "A regular long-acting bronchodilator",
+     "A regular long-acting bronchodilator is for group B, the more symptomatic low-risk patient; mild symptoms with no exacerbations is group A, a short-acting bronchodilator as needed.",
+     "wrong stage or severity"
+    ],
+    [
+     "A regular long-acting muscarinic antagonist",
+     "A regular long-acting muscarinic antagonist is an option for groups B, C and D; this low-risk, mildly symptomatic patient is group A, which needs only a short-acting bronchodilator as needed.",
+     "wrong stage or severity"
+    ],
+    [
+     "A long-acting beta-2 agonist plus muscarinic antagonist",
+     "The long-acting combination is reserved for group D with severe breathlessness; this patient is group A and needs only a short-acting bronchodilator as needed.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 102"
+  },
+  {
+   "topic": "Smoking cessation agents",
+   "io": "Identify respiratory drug classes and commonly prescribed drugs for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "class",
+   "q": "Which smoking cessation agent is marketed as Zyban?",
+   "opts": [
+    [
+     "Varenicline",
+     "Varenicline is marketed as Chantix, a partial nicotine receptor agonist; Zyban is bupropion sustained release.",
+     "adjacent fact"
+    ],
+    [
+     "Nicotine polacrilex",
+     "Nicotine polacrilex is the nicotine gum, available over the counter; Zyban is bupropion sustained release.",
+     "adjacent fact"
+    ],
+    [
+     "Bupropion",
+     "Correct. Bupropion sustained release (Zyban) is one of the six listed smoking cessation agents, with the nicotine patch, gum, spray and inhaler, and varenicline (Chantix)."
+    ],
+    [
+     "Nicotine transdermal system",
+     "The nicotine transdermal system is the patch, available over the counter; Zyban is bupropion sustained release.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 104"
+  },
+  {
+   "topic": "Treatment groups",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "Which finding places a patient with chronic obstructive pulmonary disease in a high-risk treatment group?",
+   "opts": [
+    [
+     "Two exacerbations a year, one hospitalized",
+     "Correct. High risk (groups C and D) is two or more exacerbations per year with one or more leading to hospitalization; 0 or 1 exacerbation without hospitalization is low risk."
+    ],
+    [
+     "Breathlessness walking on level ground",
+     "Breathlessness on level ground is the symptom axis, which separates more symptomatic (B, D) from less symptomatic (A, C) patients; risk is set by exacerbations.",
+     "competing diagnosis"
+    ],
+    [
+     "Chronic hypoxemia needing oxygen",
+     "Chronic hypoxemia calls for long-term oxygen therapy in any group; the high-risk groups are defined by two or more exacerbations a year with a hospitalization.",
+     "adjacent fact"
+    ],
+    [
+     "One exacerbation without hospitalization",
+     "Zero or one exacerbation in the past year without hospitalization is the low-risk definition (groups A and B); high risk needs two or more with a hospitalization.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 102"
+  },
+  {
+   "topic": "Nicotine replacement",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "What is the usual duration of nicotine replacement therapy?",
+   "opts": [
+    [
+     "2 to 4 weeks",
+     "Two to four weeks is shorter than the stated course; nicotine replacement runs between 6 and 12 weeks.",
+     "reversed direction or value"
+    ],
+    [
+     "6 to 12 weeks",
+     "Correct. The duration of nicotine replacement therapy is between 6 and 12 weeks, set by the level of dependence and point in therapy."
+    ],
+    [
+     "16 to 20 weeks",
+     "Sixteen to twenty weeks is longer than the stated course; nicotine replacement runs between 6 and 12 weeks.",
+     "reversed direction or value"
+    ],
+    [
+     "24 to 52 weeks",
+     "Six months to a year is far longer than the stated course; nicotine replacement runs between 6 and 12 weeks.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 106"
+  },
+  {
+   "topic": "Varenicline",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Which side effects are listed for varenicline?",
+   "opts": [
+    [
+     "Nausea, sleep disturbance and headache",
+     "Correct. Varenicline's listed side effects are nausea, sleep disturbance and headache, and it carries a black box warning for neuropsychiatric events."
+    ],
+    [
+     "Tachyarrhythmias and hypertension",
+     "Tachyarrhythmias and hypertension are the reason for caution with nicotine replacement in cardiovascular problems; varenicline causes nausea, sleep disturbance and headache.",
+     "adjacent fact"
+    ],
+    [
+     "Orange tears, sweat and urine",
+     "Orange-colored secretions are a rifampin effect; varenicline's listed side effects are nausea, sleep disturbance and headache.",
+     "adjacent fact"
+    ],
+    [
+     "Oral thrush and growth delay",
+     "Oral candidiasis and growth suppression in children belong to inhaled corticosteroids; varenicline causes nausea, sleep disturbance and headache.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 107"
+  },
+  {
+   "topic": "Treatment groups",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "Which measure is recommended for every patient with chronic obstructive pulmonary disease, whatever the treatment group?",
+   "opts": [
+    [
+     "A regular long-acting bronchodilator",
+     "A regular long-acting bronchodilator is the treatment for group B (and the long-acting muscarinic antagonist for groups C and D), not a measure for every patient; pneumococcal vaccination is.",
+     "wrong stage or severity"
+    ],
+    [
+     "An inhaled glucocorticoid",
+     "A combination glucocorticoid-long-acting beta-2 agonist inhaler is considered in group D when asthma features overlap; pneumococcal vaccination applies to every group.",
+     "wrong stage or severity"
+    ],
+    [
+     "A long-acting muscarinic antagonist",
+     "A regular long-acting muscarinic antagonist is the treatment for groups C and D; the measure for every group is pneumococcal vaccination, with annual influenza vaccination.",
+     "wrong stage or severity"
+    ],
+    [
+     "Pneumococcal vaccination",
+     "Correct. Measures for all groups are avoiding risk factors such as smoking, annual influenza and pneumococcal vaccination, regular physical activity, inhaler technique review, long-term oxygen if chronically hypoxemic and pulmonary rehabilitation."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 102"
+  },
+  {
+   "topic": "Varenicline",
+   "io": "Outline appropriate patient education for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "When should varenicline be started relative to the quit date?",
+   "opts": [
+    [
+     "On the quit date itself",
+     "Varenicline is not started on the quit date; it begins one week before it and continues for 12 weeks.",
+     "wrong stage or severity"
+    ],
+    [
+     "One week after the quit date",
+     "Starting after quitting reverses the timing; varenicline begins one week before the quit date and continues for 12 weeks.",
+     "reversed direction or value"
+    ],
+    [
+     "One week before the quit date",
+     "Correct. Varenicline is started one week before the quit date and continued for 12 weeks."
+    ],
+    [
+     "Once withdrawal symptoms begin",
+     "Varenicline is not started in response to withdrawal; it begins one week before the quit date and continues for 12 weeks.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 107"
+  },
+  {
+   "topic": "Bupropion",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "interaction",
+   "q": "In which patient should bupropion be avoided rather than used with caution?",
+   "opts": [
+    [
+     "One taking a tricyclic antidepressant",
+     "Tricyclic antidepressants, like venlafaxine, are noradrenergic antidepressants that call for caution with bupropion; avoidance is for monoamine oxidase inhibitors.",
+     "wrong stage or severity"
+    ],
+    [
+     "One with cardiovascular disease",
+     "Cardiovascular problems are the caution for nicotine replacement (tachyarrhythmias, hypertension); bupropion is avoided with monoamine oxidase inhibitors and seizure disorders.",
+     "adjacent fact"
+    ],
+    [
+     "One taking a monoamine oxidase inhibitor",
+     "Correct. Bupropion is avoided in patients taking monoamine oxidase inhibitors and in seizure disorders; noradrenergic antidepressants (tricyclics and venlafaxine) call only for caution."
+    ],
+    [
+     "One with a history of depression",
+     "Depression and suicidal ideation are the neuropsychiatric events in varenicline's black box warning; bupropion is avoided with monoamine oxidase inhibitors and seizure disorders.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 105"
+  },
+  {
+   "topic": "Chronic obstructive pulmonary disease",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "Which feature of the inflammation in chronic obstructive pulmonary disease distinguishes it from asthma?",
+   "opts": [
+    [
+     "It causes widespread reversible narrowing",
+     "Widespread reversible narrowing of the bronchial airways characterizes asthma; the inflammation of chronic obstructive pulmonary disease is generally not fully reversible.",
+     "competing diagnosis"
+    ],
+    [
+     "It is generally not fully reversible",
+     "Correct. Chronic obstructive pulmonary disease is chronic inflammation of the airways and lung parenchyma that is generally not fully reversible, with an accelerated decline in lung function."
+    ],
+    [
+     "It is eosinophilic in the bronchial mucosa",
+     "Eosinophilic inflammation of the bronchial mucosa is how asthma is characterized; chronic obstructive pulmonary disease is inflammation that is generally not fully reversible.",
+     "competing diagnosis"
+    ],
+    [
+     "It spares the lung parenchyma",
+     "The inflammation involves the airways and the lung parenchyma; what sets chronic obstructive pulmonary disease apart is that it is generally not fully reversible.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 101"
+  }
+ ]
+}

@@ -1,0 +1,1806 @@
+{
+ "set1": [
+  {
+   "topic": "Find the cause",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 58-year-old woman has type 2 diabetes treated with metformin, hypertension treated with a thiazide diuretic, glaucoma treated with an oral carbonic anhydrase inhibitor, and heartburn for which she takes a calcium carbonate antacid. Her kidney function has worsened, and serum ketones are negative. Arterial blood gas: pH 7.26 (normal 7.35 to 7.45), partial pressure of carbon dioxide 23 mm Hg (normal 36 to 44 mm Hg), bicarbonate 10 mEq/L (normal 22 to 26 mEq/L); sodium 139 mEq/L (normal 135 to 145 mEq/L), chloride 101 mEq/L (normal 98 to 106 mEq/L). Which of her medicines best accounts for this blood gas?",
+   "opts": [
+    [
+     "A carbonic anhydrase inhibitor",
+     "A carbonic anhydrase inhibitor causes a normal-gap metabolic acidosis, with a gap within 9 to 15 and a high chloride. Her gap is 28 and her chloride normal, so an elevated-gap cause is needed. Tell: calculate the gap before choosing between the two lists.",
+     "competing diagnosis"
+    ],
+    [
+     "Metformin",
+     "Correct. Low pH with a low bicarbonate is metabolic acidosis, and the gap is 139 - (101 + 10) = 28, above 9 to 15: elevated. Metformin is one of the elevated-gap causes (the M of the mnemonic), and negative ketones argue against ketoacidosis."
+    ],
+    [
+     "Her thiazide diuretic",
+     "Diuretic therapy causes saline-responsive metabolic alkalosis, with a high pH and a high bicarbonate. She has a pH of 7.26 and a bicarbonate of 10, the opposite. Tell: a diuretic raises the bicarbonate; hers has fallen.",
+     "reversed direction or value"
+    ],
+    [
+     "Her calcium carbonate antacid",
+     "Antacids are a cause of saline-responsive metabolic alkalosis, which would raise both her pH and her bicarbonate. Her values are both low. Tell: antacid alkalosis shows a bicarbonate above 26, not 10.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 55",
+   "slot": "etiology",
+   "lead": "etiology"
+  },
+  {
+   "topic": "Calculate the anion gap",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "A 70-year-old woman with cirrhosis and an albumin of 1.9 g/dL (normal 3.5 to 5.0 g/dL) has a metabolic acidosis, a chloride of 110 mEq/L (normal 98 to 106 mEq/L) and an anion gap of 11 (normal 9 to 15). Which finding most limits how much the normal gap can reassure you?",
+   "opts": [
+    [
+     "A low unmeasured cation level",
+     "Losing unmeasured cations (calcium, magnesium, potassium) raises the gap, so it would make a normal value less likely, not falsely reassuring. Her low albumin lowers it. Tell: fewer cations raise the gap; less albumin lowers it.",
+     "reversed direction or value"
+    ],
+    [
+     "Her low serum albumin",
+     "Correct. Albumin accounts for most of the normal anion gap, so hypoalbuminemia lowers the gap and can hide added unmeasured anions. A normal gap does not exclude a high-gap acidosis and should not override clinical concern."
+    ],
+    [
+     "Her metabolic acidosis itself",
+     "The acidosis is what the gap is meant to sort; it does not distort the number. Hypoalbuminemia does, by removing the anion that makes up most of the normal gap. Tell: look for the listed errors: low albumin, sodium extremes, antibiotics.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Her high chloride",
+     "A high chloride marks a true normal-gap (hyperchloremic) acidosis; it is a finding, not an error in the gap. Her low albumin is the listed source of error. Tell: hypoalbuminemia sits on the error list; chloride does not.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 49",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Is compensation appropriate?",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "A 30-year-old woman with a normal-gap metabolic acidosis from a ureteral diversion has a bicarbonate of 14 mEq/L (normal 22 to 26 mEq/L). By the Winter formula, what carbon dioxide range is expected if she is compensating appropriately?",
+   "opts": [
+    [
+     "19 to 23 mm Hg",
+     "19 to 23 is 1.5 x 14 = 21, plus or minus 2, without adding the 8. The formula adds 8, giving 29 and a range of 27 to 31. Tell: the midpoint of the range is 29.",
+     "reversed direction or value"
+    ],
+    [
+     "20 to 24 mm Hg",
+     "20 to 24 uses 1.0 instead of 1.5 times the bicarbonate (14 + 8 = 22). The formula is 1.5 x 14 + 8 = 29, giving a range of 27 to 31. Tell: the multiplier is 1.5.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "27 to 31 mm Hg",
+     "Correct. Winter formula: expected carbon dioxide = 1.5 x 14 + 8 = 21 + 8 = 29, plus or minus 2, so 27 to 31 mm Hg. The formula needs only the bicarbonate, whatever the anion gap is or its cause."
+    ],
+    [
+     "36 to 44 mm Hg",
+     "36 to 44 is the normal range, and in metabolic acidosis the lungs lower the carbon dioxide below it. Winter gives 27 to 31. Tell: expected carbon dioxide falls as bicarbonate falls.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 58",
+   "slot": "test finding",
+   "lead": "compensation"
+  },
+  {
+   "topic": "Read the blood gas",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "A 31-year-old woman has vomited repeatedly for three days and is dizzy on standing. Arterial blood gas: pH 7.50 (normal 7.35 to 7.45), partial pressure of carbon dioxide 47 mm Hg (normal 36 to 44 mm Hg), bicarbonate 35 mEq/L (normal 22 to 26 mEq/L); potassium 3.0 mEq/L (normal 3.5 to 5.0 mEq/L), chloride 91 mEq/L (normal 98 to 106 mEq/L). Which acid-base disorder is present?",
+   "opts": [
+    [
+     "Respiratory acidosis",
+     "Her carbon dioxide is mildly raised, but her pH is 7.50, so this cannot be an acidosis. The raised carbon dioxide is compensation for a metabolic alkalosis, from decreased ventilation. Tell: compensation never carries the pH beyond normal, so an alkaline pH means the primary disorder is an alkalosis.",
+     "reversed direction or value"
+    ],
+    [
+     "Metabolic acidosis",
+     "Metabolic acidosis is a low pH with a low bicarbonate. Her pH is 7.50 and her bicarbonate is 35, the opposite on both. Tell: vomiting loses acid, so it raises bicarbonate rather than lowering it.",
+     "reversed direction or value"
+    ],
+    [
+     "Metabolic alkalosis",
+     "Correct. The pH of 7.50 is alkalemia, and the bicarbonate of 35 is high and matches it, so it is metabolic. The carbon dioxide of 47 is respiratory compensation (about 0.75 per 1 mEq/L rise). Low potassium and chloride with orthostatic dizziness fit vomiting, which loses hydrochloric acid."
+    ],
+    [
+     "Respiratory alkalosis",
+     "Respiratory alkalosis needs a low carbon dioxide, and hers is 47, slightly high. The raised bicarbonate of 35 is what matches her high pH. Tell: a high pH with a high bicarbonate is metabolic.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slides 19, 39, 40, 42, 59",
+   "slot": "test finding",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Is compensation appropriate?",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "A 27-year-old woman with diabetic ketoacidosis has a bicarbonate of 10 mEq/L (normal 22 to 26 mEq/L) and a carbon dioxide of 22 mm Hg (normal 36 to 44 mm Hg). By the Winter formula, how is her respiratory compensation?",
+   "opts": [
+    [
+     "Appropriate",
+     "Correct. Winter formula: expected carbon dioxide = 1.5 x 10 + 8 = 23, plus or minus 2, so 21 to 25. Her measured 22 falls inside that range, so this is a simple, appropriately compensated metabolic acidosis."
+    ],
+    [
+     "Too little: added respiratory acidosis",
+     "An added respiratory acidosis would show a carbon dioxide above 25, the top of the Winter range for a bicarbonate of 10. Her 22 is within 21 to 25. Tell: above the range means too little compensation.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Too much: added respiratory alkalosis",
+     "An added respiratory alkalosis is not needed to explain her carbon dioxide: her 22 sits inside the expected 21 to 25, so compensation alone accounts for the fall. Tell: a value inside the Winter range is appropriate compensation.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "It cannot be judged without the gap",
+     "The anion gap types the acidosis but is not needed for the Winter check, which uses only the bicarbonate: 1.5 x 10 + 8 = 23, plus or minus 2. Tell: compensation is judged from bicarbonate and carbon dioxide.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 58",
+   "slot": "test finding",
+   "lead": "compensation"
+  },
+  {
+   "topic": "Read the blood gas",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "A 41-year-old woman with Crohn disease has had profuse watery diarrhea for five days. Arterial blood gas: pH 7.31 (normal 7.35 to 7.45), partial pressure of carbon dioxide 31 mm Hg (normal 36 to 44 mm Hg), bicarbonate 15 mEq/L (normal 22 to 26 mEq/L); sodium 137 mEq/L (normal 135 to 145 mEq/L), chloride 112 mEq/L (normal 98 to 106 mEq/L). Which acid-base disorder is present?",
+   "opts": [
+    [
+     "Normal anion gap metabolic acidosis",
+     "Correct. The pH of 7.31 is acidemia, and the bicarbonate of 15 is low and matches it: metabolic. Gap = 137 - (112 + 15) = 10, within 9 to 15, with a high chloride, so it is a normal-gap (hyperchloremic) acidosis. Bicarbonate loss in diarrhea fits."
+    ],
+    [
+     "Elevated anion gap metabolic acidosis",
+     "The gap is 137 - (112 + 15) = 10, inside 9 to 15, so it is normal, not elevated. Her high chloride of 112 is the hyperchloremic pattern of the normal-gap type. Tell: elevated-gap acidosis is normochloremic, and her chloride is high.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Respiratory acidosis",
+     "Respiratory acidosis needs a high carbon dioxide, and hers is 31, which is low. The low bicarbonate of 15 is what matches the acidemia. Tell: her low carbon dioxide is respiratory compensation.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Metabolic alkalosis",
+     "Metabolic alkalosis is a high pH with a high bicarbonate. Hers is 7.31 with a bicarbonate of 15, the reverse on both. Tell: diarrhea loses bicarbonate, which lowers it.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slides 47, 52, 56",
+   "slot": "test finding",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Find the cause",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 74-year-old woman with osteoarthritis has been taking large amounts of aspirin; she also has hypertension treated with a thiazide diuretic and type 2 diabetes treated with metformin. She is breathing fast. Arterial blood gas: pH 7.52 (normal 7.35 to 7.45), partial pressure of carbon dioxide 28 mm Hg (normal 36 to 44 mm Hg), bicarbonate 22 mEq/L (normal 22 to 26 mEq/L). Which of her medicines best accounts for this blood gas?",
+   "opts": [
+    [
+     "Her thiazide diuretic",
+     "Diuretics cause a metabolic alkalosis, with a high bicarbonate above 26 and a mildly raised carbon dioxide. Her bicarbonate is 22 and her carbon dioxide 28. Tell: diuretic alkalosis shows up in the bicarbonate, not as a low carbon dioxide.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Metformin",
+     "Metformin causes an elevated-gap metabolic acidosis, a low pH with a low bicarbonate. Her pH is 7.52, alkalemic. Tell: metformin pushes the pH below 7.35.",
+     "reversed direction or value"
+    ],
+    [
+     "The combination of diuretic and metformin",
+     "One drug causes metabolic alkalosis and the other metabolic acidosis; neither changes carbon dioxide first. Her primary change is the low carbon dioxide, which only hyperventilation explains. Tell: match the value that moved with the pH.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Aspirin",
+     "Correct. High pH with a low carbon dioxide of 28 is respiratory alkalosis, and her bicarbonate of 22 has barely fallen. Salicylates are a listed toxic cause of hyperventilation, and her fast breathing fits."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 33",
+   "slot": "etiology",
+   "lead": "etiology"
+  },
+  {
+   "topic": "Is compensation appropriate?",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "A 28-year-old woman with a severe asthma attack is tiring, and her carbon dioxide has risen over an hour to 60 mm Hg (normal 36 to 44 mm Hg). Using an acute bicarbonate rise of about 1 mEq/L per 10 mm Hg rise in carbon dioxide, from midpoints of 40 and 24, what bicarbonate is expected?",
+   "opts": [
+    [
+     "24 mEq/L",
+     "24 assumes no change at all; even acutely the bicarbonate rises about 1 per 10 mm Hg, to 26. Tell: some bicarbonate rise appears even acutely.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "26 mEq/L",
+     "Correct. Carbon dioxide rose 20 (40 to 60); acutely bicarbonate rises about 1 per 10, so 24 + 2 = 26 mEq/L. Asthma is a listed cause of acute respiratory acidosis, and a near-normal bicarbonate marks an acute process."
+    ],
+    [
+     "31 mEq/L",
+     "31 uses the chronic ratio of 3.5 per 10 (24 + 7). Her carbon dioxide rose over an hour, so the acute ratio applies: 26. Tell: an hour is acute.",
+     "wrong stage or severity"
+    ],
+    [
+     "34 mEq/L",
+     "34 uses 5 per 10, the chronic ratio for respiratory alkalosis, and adds it. Acute respiratory acidosis gives 24 + 2 = 26. Tell: match the ratio to the disorder and its stage.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 59",
+   "slot": "test finding",
+   "lead": "compensation"
+  },
+  {
+   "topic": "How the body compensates",
+   "io": "Describe the major buffer systems of the body.",
+   "q": "A 60-year-old woman with myasthenia gravis is hypoventilating, and her carbon dioxide is rising. Following water + carbon dioxide <-> carbonic acid <-> hydrogen ion + bicarbonate, what happens to her hydrogen ion concentration?",
+   "opts": [
+    [
+     "It rises, lowering her pH",
+     "Correct. Added carbon dioxide drives the carbonic acid reaction to the right, forming more carbonic acid and then more hydrogen ion and bicarbonate, so pH falls: hypoventilation, raised carbon dioxide, acidemia."
+    ],
+    [
+     "It falls, raising her pH",
+     "Falling hydrogen ion follows a fall in carbon dioxide, as in hyperventilation and respiratory alkalosis. Her carbon dioxide is rising. Tell: more carbon dioxide means more acid.",
+     "reversed direction or value"
+    ],
+    [
+     "It is unchanged; bicarbonate absorbs it",
+     "Bicarbonate is formed alongside the hydrogen ion in this reaction; it does not cancel it, and the pH falls. Compensation never fully corrects the pH. Tell: both products of the reaction rise together.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It rises once the kidneys respond",
+     "The hydrogen ion rises as soon as carbon dioxide rises; the kidneys respond later (6 to 12 hours) by retaining bicarbonate to blunt it. Tell: the chemistry is immediate; the renal response is slow.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 17",
+   "slot": "etiology",
+   "lead": "compensation"
+  },
+  {
+   "topic": "Treat the disorder",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 47-year-old woman has a metabolic alkalosis with normal blood pressure; she denies vomiting, diuretics and antacids. Arterial blood gas: pH 7.48 (normal 7.35 to 7.45), partial pressure of carbon dioxide 46 mm Hg (normal 36 to 44 mm Hg), bicarbonate 32 mEq/L (normal 22 to 26 mEq/L). Which test separates the saline-responsive from the saline-unresponsive type?",
+   "opts": [
+    [
+     "Winter formula",
+     "The Winter formula predicts the carbon dioxide in metabolic acidosis; it does not type an alkalosis. Tell: Winter checks compensation in acidosis only.",
+     "adjacent fact"
+    ],
+    [
+     "Serum albumin",
+     "Albumin matters for interpreting the anion gap, since low albumin lowers it. It does not split saline-responsive from unresponsive alkalosis. Tell: albumin goes with the gap.",
+     "adjacent fact"
+    ],
+    [
+     "Urine chloride",
+     "Correct. Urine chloride differentiates the two types: it is low (below 25 mEq/L) in saline-responsive alkalosis and high (above 40 mEq/L) in saline-unresponsive alkalosis. Her history gives no obvious cause, so the test sorts the list."
+    ],
+    [
+     "Anion gap",
+     "The anion gap sorts metabolic acidosis into normal and elevated gap; it does not type an alkalosis. Tell: anion gap for acidosis, urine chloride for alkalosis.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 41",
+   "slot": "initial test",
+   "lead": "test"
+  },
+  {
+   "topic": "Electrolytes and oxygen",
+   "io": "Explain how acid-base disorders affect electrolytes and oxygenation.",
+   "q": "A 57-year-old man in septic shock has a lactic acidosis. Arterial blood gas: pH 7.27 (normal 7.35 to 7.45), partial pressure of carbon dioxide 25 mm Hg (normal 36 to 44 mm Hg), bicarbonate 11 mEq/L (normal 22 to 26 mEq/L). How does his acidemia affect oxygen release from hemoglobin to his tissues?",
+   "opts": [
+    [
+     "Release is unchanged by pH",
+     "pH changes hemoglobin's affinity: acidosis lowers it (more release) and alkalosis raises it (less release). Tell: the dissociation curve moves with pH.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Release increases; the curve shifts right",
+     "Correct. Acidosis decreases hemoglobin's affinity for oxygen and shifts the oxygen-hemoglobin dissociation curve to the right, so hemoglobin releases oxygen more readily and delivery to the tissues increases."
+    ],
+    [
+     "Release decreases; the curve shifts left",
+     "A left shift with decreased delivery is the effect of alkalosis. His pH is 7.27, an acidemia. Tell: acidosis moves the curve right and unloads oxygen.",
+     "reversed direction or value"
+    ],
+    [
+     "Release decreases; the curve shifts right",
+     "This pairs the right shift of acidosis with the decreased delivery of alkalosis. A right shift means lower affinity and more oxygen released. Tell: the curve direction and the delivery change travel together.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 11",
+   "slot": "complication",
+   "lead": "complication"
+  },
+  {
+   "topic": "Read the blood gas",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "A 58-year-old man with chronic kidney failure who has missed several dialysis sessions is nauseated and fatigued. Arterial blood gas: pH 7.26 (normal 7.35 to 7.45), partial pressure of carbon dioxide 29 mm Hg (normal 36 to 44 mm Hg), bicarbonate 13 mEq/L (normal 22 to 26 mEq/L); sodium 138 mEq/L (normal 135 to 145 mEq/L), chloride 100 mEq/L (normal 98 to 106 mEq/L). Which acid-base disorder is present?",
+   "opts": [
+    [
+     "Normal anion gap metabolic acidosis",
+     "The gap is 138 - (100 + 13) = 25, above 15, so it is elevated, not normal. A normal-gap acidosis would have a gap within 9 to 15 and a high chloride, and his chloride of 100 is normal. Tell: do the subtraction before choosing the gap type.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Respiratory alkalosis",
+     "His carbon dioxide is low, but his pH of 7.26 is acidemia. A low carbon dioxide with a low pH is compensation for the metabolic acidosis, not a primary alkalosis. Tell: alkalosis requires a high pH.",
+     "reversed direction or value"
+    ],
+    [
+     "Respiratory acidosis",
+     "Respiratory acidosis needs a high carbon dioxide, and his is 29. The low bicarbonate of 13 matches the acidemia. Tell: a low carbon dioxide with a low bicarbonate means the lungs are compensating.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Elevated anion gap metabolic acidosis",
+     "Correct. The pH of 7.26 is acidemia, and the bicarbonate of 13 is low and matches it: metabolic. Gap = 138 - (100 + 13) = 25, above 9 to 15, so it is elevated; uremia is an elevated-gap cause. The carbon dioxide of 29 is compensation (Winter 1.5 x 13 + 8 = 27.5, plus or minus 2)."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 55",
+   "slot": "test finding",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Read the blood gas",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "A 37-year-old woman with myasthenia gravis has worsening weakness and shallow, labored breathing over a day. Arterial blood gas: pH 7.27 (normal 7.35 to 7.45), partial pressure of carbon dioxide 57 mm Hg (normal 36 to 44 mm Hg), bicarbonate 26 mEq/L (normal 22 to 26 mEq/L). Which acid-base disorder is present?",
+   "opts": [
+    [
+     "Acute respiratory acidosis",
+     "Correct. The pH of 7.27 is acidemia, and the carbon dioxide of 57 is high and matches it (respiratory). Bicarbonate rose only about 1 per 10 mm Hg (17 above 40 gives about 26), so it is acute. Myasthenia gravis is a listed neuromuscular cause of acute respiratory acidosis."
+    ],
+    [
+     "Chronic respiratory acidosis",
+     "Chronic compensation would raise bicarbonate about 3.5 per 10 mm Hg, to about 30 here (57 is 17 above 40). Her 26 is the acute response to a one-day crisis. Tell: the kidneys have not had time, and a sudden onset signals acute.",
+     "wrong stage or severity"
+    ],
+    [
+     "Metabolic acidosis",
+     "Metabolic acidosis needs a low bicarbonate, and hers is 26, which is normal. The high carbon dioxide from weak, shallow breathing matches the acidemia. Tell: a normal bicarbonate with a high carbon dioxide means respiratory.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Metabolic alkalosis",
+     "Her pH of 7.27 is low, so this cannot be an alkalosis. Her bicarbonate of 26 is inside the normal range, not high. Tell: metabolic alkalosis would need a high pH and a high bicarbonate.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slides 22, 26, 59",
+   "slot": "test finding",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Find the cause",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 55-year-old woman with known hypercalcemia has a metabolic alkalosis, a high urine chloride and a normal blood pressure. Arterial blood gas: pH 7.47 (normal 7.35 to 7.45), partial pressure of carbon dioxide 45 mm Hg (normal 36 to 44 mm Hg), bicarbonate 32 mEq/L (normal 22 to 26 mEq/L). In which group of metabolic alkalosis does she belong?",
+   "opts": [
+    [
+     "Saline responsive",
+     "Saline-responsive alkalosis has a low urine chloride (below 25 mEq/L) and volume contraction. Hers is high. Tell: high urine chloride rules out the responsive type.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Post-hypercapnic",
+     "Post-hypercapnic alkalosis is saline responsive and follows rapid correction of chronic hypercapnia; she has neither a low urine chloride nor that history. Tell: it sits on the saline-responsive list.",
+     "competing diagnosis"
+    ],
+    [
+     "Saline unresponsive, normotensive",
+     "Correct. A high urine chloride (above 40 mEq/L) marks saline-unresponsive alkalosis; with a normal blood pressure it is the normotensive group, which lists hypoparathyroidism and hypercalcemia and severe potassium depletion."
+    ],
+    [
+     "Saline unresponsive, hypertensive",
+     "The hypertensive group (primary aldosteronism, mineralocorticoids, licorice) needs a raised blood pressure. Hers is normal, and hypercalcemia sits in the normotensive group. Tell: blood pressure splits the unresponsive causes.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slides 28, 41, 42, 43",
+   "slot": "etiology",
+   "lead": "etiology"
+  },
+  {
+   "topic": "Find the cause",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 72-year-old man with severe chronic obstructive pulmonary disease was intubated with a carbon dioxide of 78 mm Hg (normal 36 to 44 mm Hg), and the ventilator brought it to 38 within a few hours. He has had no vomiting, nasogastric suction, diuretics or antacids. The next morning: pH 7.55 (normal 7.35 to 7.45), partial pressure of carbon dioxide 38 mm Hg (normal 36 to 44 mm Hg), bicarbonate 32 mEq/L (normal 22 to 26 mEq/L). What best explains his alkalemia?",
+   "opts": [
+    [
+     "Post-hypercapnic metabolic alkalosis",
+     "Correct. His kidneys had retained bicarbonate for his chronic hypercapnia; when the carbon dioxide was lowered quickly, that bicarbonate of 32 was left unopposed, a post-hypercapnic metabolic alkalosis. This is why rapid, aggressive carbon dioxide reduction is avoided in chronic respiratory acidosis."
+    ],
+    [
+     "Acute respiratory alkalosis",
+     "Respiratory alkalosis needs a low carbon dioxide, below 36. His is 38, within range; the high bicarbonate is what drives his pH up. Tell: in respiratory alkalosis the carbon dioxide, not the bicarbonate, is the abnormal value.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Renal compensation that overshot",
+     "Compensation never corrects the pH beyond normal, so an overshoot cannot explain a pH of 7.55. Here the compensating bicarbonate was stranded when the carbon dioxide it offset was removed. Tell: compensation alone stops short of 7.40.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Worsening chronic respiratory acidosis",
+     "Respiratory acidosis gives a low pH with a high carbon dioxide. His pH is 7.55 and his carbon dioxide 38, both pointing away from acidosis. Tell: acidosis lies below 7.35, and he is alkalemic.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 28",
+   "slot": "complication",
+   "lead": "complication"
+  },
+  {
+   "topic": "Electrolytes and oxygen",
+   "io": "Explain how acid-base disorders affect electrolytes and oxygenation.",
+   "q": "A 66-year-old woman with heart disease has a severe metabolic alkalosis from vomiting. Arterial blood gas: pH 7.56 (normal 7.35 to 7.45), partial pressure of carbon dioxide 49 mm Hg (normal 36 to 44 mm Hg), bicarbonate 43 mEq/L (normal 22 to 26 mEq/L). How does her alkalemia affect oxygen delivery to her tissues?",
+   "opts": [
+    [
+     "It shifts the curve to the right",
+     "A right shift is caused by acidosis. Alkalosis shifts the curve left, raising affinity and decreasing delivery. Tell: alkalosis left, acidosis right.",
+     "reversed direction or value"
+    ],
+    [
+     "It decreases delivery",
+     "Correct. Alkalosis increases hemoglobin's affinity for oxygen and shifts the oxygen-hemoglobin dissociation curve to the left, so hemoglobin holds oxygen and delivery to the tissues decreases."
+    ],
+    [
+     "It increases delivery",
+     "Increased delivery is the effect of acidosis, which lowers hemoglobin's affinity and shifts the curve right. Her pH is 7.56. Tell: alkalosis holds oxygen on hemoglobin; acidosis releases it.",
+     "reversed direction or value"
+    ],
+    [
+     "It does not change delivery",
+     "pH changes hemoglobin's affinity for oxygen in both directions; alkalosis raises affinity and decreases delivery. Tell: the dissociation curve shifts with pH.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 10",
+   "slot": "complication",
+   "lead": "complication"
+  },
+  {
+   "topic": "Treat the disorder",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 70-year-old man with hypertension treated with a thiazide diuretic is light-headed on standing. Arterial blood gas: pH 7.49 (normal 7.35 to 7.45), partial pressure of carbon dioxide 46 mm Hg (normal 36 to 44 mm Hg), bicarbonate 34 mEq/L (normal 22 to 26 mEq/L); potassium 3.2 mEq/L (normal 3.5 to 5.0 mEq/L); urine chloride is low. Along with isotonic saline, which medication change is indicated?",
+   "opts": [
+    [
+     "Add a second diuretic",
+     "A second diuretic would deepen the volume contraction and the alkalosis; diuretics are discontinued in saline-responsive alkalosis. Tell: the drug causing the alkalosis is stopped, not doubled.",
+     "reversed direction or value"
+    ],
+    [
+     "Start a mineralocorticoid",
+     "Mineralocorticoids cause a hypertensive, saline-unresponsive metabolic alkalosis, so adding one would worsen his. Tell: mineralocorticoids are on the cause list, not the treatment list.",
+     "reversed direction or value"
+    ],
+    [
+     "Start a calcium carbonate antacid",
+     "Antacids are a cause of saline-responsive metabolic alkalosis, so starting one adds alkali to an alkalemia. Tell: antacid, diuretic and vomiting sit together on the cause list.",
+     "reversed direction or value"
+    ],
+    [
+     "Stop the thiazide diuretic",
+     "Correct. Low urine chloride and orthostatic symptoms mark a saline-responsive metabolic alkalosis, and diuretic therapy is a listed cause. Treatment is isotonic saline for the volume deficit and discontinuing the diuretic."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 44",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Read the blood gas",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "A 29-year-old man hikes to 4,000 meters and develops headache and breathlessness. Arterial blood gas: pH 7.50 (normal 7.35 to 7.45), partial pressure of carbon dioxide 29 mm Hg (normal 36 to 44 mm Hg), bicarbonate 22 mEq/L (normal 22 to 26 mEq/L). Which acid-base disorder is present?",
+   "opts": [
+    [
+     "Metabolic alkalosis",
+     "Metabolic alkalosis needs a high bicarbonate, and his is 22. The low carbon dioxide matches his alkalemia. Tell: a high pH with a low carbon dioxide is respiratory.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Acute respiratory alkalosis",
+     "Correct. The pH of 7.50 is alkalemia, and the carbon dioxide of 29 is low and matches it (respiratory). Bicarbonate fell about 2 per 10 mm Hg (11 below 40 gives about 22), the acute response. High altitude drives hypoxia-induced hyperventilation."
+    ],
+    [
+     "Chronic respiratory alkalosis",
+     "Chronic compensation would lower bicarbonate about 5 per 10 mm Hg, to about 18 (11 below 40). His 22 shows only the acute response after a single climb. Tell: a short exposure gives the acute pattern.",
+     "wrong stage or severity"
+    ],
+    [
+     "Metabolic acidosis",
+     "Metabolic acidosis has a low pH, and his is 7.50. The low carbon dioxide of 29 is the primary change, not compensation. Tell: compensation never overcorrects, so the pH identifies the primary disorder.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 33",
+   "slot": "test finding",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Read the blood gas",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "A 33-year-old woman at 30 weeks of pregnancy has a routine arterial blood gas for mild breathlessness: pH 7.46 (normal 7.35 to 7.45), partial pressure of carbon dioxide 28 mm Hg (normal 36 to 44 mm Hg), bicarbonate 19 mEq/L (normal 22 to 26 mEq/L). Which acid-base disorder is present?",
+   "opts": [
+    [
+     "Acute respiratory alkalosis",
+     "Acute compensation lowers bicarbonate only about 2 per 10 mm Hg, to about 22 (12 below 40). Her 19 shows the fuller chronic response. Tell: pregnancy is a sustained state, so the kidneys have had time.",
+     "wrong stage or severity"
+    ],
+    [
+     "Metabolic acidosis",
+     "Her bicarbonate is low, but her pH of 7.46 is high, so this is not an acidosis. The low bicarbonate is compensation for the respiratory alkalosis. Tell: the pH direction identifies the primary disorder.",
+     "competing diagnosis"
+    ],
+    [
+     "Respiratory acidosis",
+     "Respiratory acidosis is a high carbon dioxide with a low pH. She has a low carbon dioxide of 28 and a high pH of 7.46. Tell: both values point the opposite way.",
+     "reversed direction or value"
+    ],
+    [
+     "Chronic respiratory alkalosis",
+     "Correct. The pH of 7.46 is alkalemia, and the carbon dioxide of 28 is low and matches it: respiratory alkalosis. Bicarbonate fell about 5 per 10 mm Hg (12 below 40 gives about 18 to 19), a chronic renal response. Pregnancy is a listed endocrine cause."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 34",
+   "slot": "test finding",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Find the cause",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 40-year-old man was ventilated for several days with his carbon dioxide held near 28 mm Hg (normal 36 to 44 mm Hg); the rate was then turned down quickly. The next gas: pH 7.30 (normal 7.35 to 7.45), partial pressure of carbon dioxide 40 mm Hg (normal 36 to 44 mm Hg), bicarbonate 19 mEq/L (normal 22 to 26 mEq/L). What best explains this result?",
+   "opts": [
+    [
+     "Elevated-gap lactic acidosis",
+     "No gap data point to added anions, and the timing ties the low bicarbonate to his ventilator change. Rapid correction of chronic respiratory alkalosis is the listed cause. Tell: the story is the ventilator, not a new acid.",
+     "competing diagnosis"
+    ],
+    [
+     "Post-hypocapnia metabolic acidosis",
+     "Correct. Days of low carbon dioxide let his kidneys excrete bicarbonate (chronic respiratory alkalosis compensation). Rapid correction left that low bicarbonate of 19 unopposed, a post-hypocapnia metabolic acidosis."
+    ],
+    [
+     "Acute respiratory acidosis",
+     "Respiratory acidosis needs a carbon dioxide above 44; his is 40, normal. The low bicarbonate is what matches his low pH. Tell: in respiratory acidosis the carbon dioxide is high.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Post-hypercapnic metabolic alkalosis",
+     "Post-hypercapnic alkalosis follows rapid correction of chronic high carbon dioxide and gives a high pH. He had low carbon dioxide and now has a low pH. Tell: hypocapnia corrected fast leaves acidosis.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 35",
+   "slot": "complication",
+   "lead": "complication"
+  },
+  {
+   "topic": "How the body compensates",
+   "io": "Identify mechanisms for maintaining acid-base homeostasis.",
+   "q": "A 29-year-old woman began hyperventilating at a high-altitude resort this afternoon. Before her kidneys respond, what is the initial compensation for her respiratory alkalosis?",
+   "opts": [
+    [
+     "The kidneys excrete bicarbonate",
+     "Renal bicarbonate excretion is the later response, working over hours to days. The first response is cellular hydrogen ion secretion in exchange for potassium. Tell: cells act first, kidneys follow.",
+     "wrong stage or severity"
+    ],
+    [
+     "She hypoventilates to retain carbon dioxide",
+     "Hypoventilation is the compensation for a metabolic alkalosis. Her primary problem is the breathing itself, so the compensation must come from cells and kidneys. Tell: respiratory disorders are not compensated by the lungs.",
+     "competing diagnosis"
+    ],
+    [
+     "The kidneys retain bicarbonate",
+     "Retaining bicarbonate would raise her pH further; it is the compensation for respiratory acidosis. Tell: alkalosis is offset by losing bicarbonate, not keeping it.",
+     "reversed direction or value"
+    ],
+    [
+     "Cells release hydrogen ions for potassium",
+     "Correct. The initial response to respiratory alkalosis is cellular secretion of hydrogen ions in exchange for potassium. Later the kidneys excrete bicarbonate and retain chloride, lowering bicarbonate, potassium and raising chloride."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 30",
+   "slot": "etiology",
+   "lead": "compensation"
+  },
+  {
+   "topic": "How the body compensates",
+   "io": "Identify mechanisms for maintaining acid-base homeostasis.",
+   "q": "A 57-year-old man with severe obesity and a high fever from pneumonia has a carbon dioxide of 62 mm Hg (normal 36 to 44 mm Hg). What usually causes a raised carbon dioxide like his?",
+   "opts": [
+    [
+     "Excess production from the fever",
+     "Fever increases carbon dioxide production, but hypercapnia is usually from under-excretion, not excess production; normal breathing clears the extra. Tell: blame the breathing first.",
+     "common lay belief"
+    ],
+    [
+     "Excess bicarbonate retained by the kidneys",
+     "Retained bicarbonate is compensation for a raised carbon dioxide; it does not raise the carbon dioxide itself. Tell: carbon dioxide is set by ventilation, bicarbonate by the kidneys.",
+     "reversed direction or value"
+    ],
+    [
+     "Hyperventilation",
+     "Hyperventilation increases excretion and lowers carbon dioxide (hypocapnia). His is raised. Tell: hypercapnia is under-breathing, hypocapnia over-breathing.",
+     "reversed direction or value"
+    ],
+    [
+     "Under-excretion from hypoventilation",
+     "Correct. Hypercapnia is usually the result of under-excretion (hypoventilation), not excess production. At steady state carbon dioxide production matches excretion, so a high level means ventilation is not keeping up."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 14",
+   "slot": "etiology",
+   "lead": "compensation"
+  },
+  {
+   "topic": "Is compensation appropriate?",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "A 47-year-old woman with a normal-gap metabolic acidosis has a bicarbonate of 18 mEq/L (normal 22 to 26 mEq/L). By the Winter formula, what carbon dioxide range is expected with appropriate compensation?",
+   "opts": [
+    [
+     "24 to 28 mm Hg",
+     "24 to 28 uses 1.0 instead of 1.5 times bicarbonate (18 + 8 = 26). Winter uses 1.5: 35, so 33 to 37. Tell: multiply by one and a half.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "25 to 29 mm Hg",
+     "25 to 29 is 1.5 x 18 = 27, plus or minus 2, without adding 8. Winter adds 8: 35, so 33 to 37. Tell: the formula is 1.5 times bicarbonate plus 8.",
+     "adjacent fact"
+    ],
+    [
+     "33 to 37 mm Hg",
+     "Correct. Winter formula: expected carbon dioxide = 1.5 x 18 + 8 = 27 + 8 = 35, plus or minus 2, so 33 to 37 mm Hg. A value above 37 would add a respiratory acidosis; below 33, a respiratory alkalosis."
+    ],
+    [
+     "36 to 44 mm Hg",
+     "36 to 44 is the normal carbon dioxide range. In metabolic acidosis the lungs lower carbon dioxide; Winter gives 33 to 37. Tell: a normal value here is under-compensation.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 58",
+   "slot": "test finding",
+   "lead": "compensation"
+  },
+  {
+   "topic": "Is compensation appropriate?",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "A 64-year-old man with septic shock and lactic acidosis is tiring. His bicarbonate is 12 mEq/L (normal 22 to 26 mEq/L) and his carbon dioxide is 38 mm Hg (normal 36 to 44 mm Hg). By the Winter formula, what does his carbon dioxide show?",
+   "opts": [
+    [
+     "An added respiratory alkalosis",
+     "An added respiratory alkalosis would push the carbon dioxide below 24. His 38 is above the range, which is the opposite problem. Tell: higher than predicted means added respiratory acidosis.",
+     "reversed direction or value"
+    ],
+    [
+     "Normal, since 38 is in range",
+     "38 sits inside the normal range, but in metabolic acidosis the lungs should lower it to 24 to 28. A normal value here is inadequate compensation. Tell: the expected carbon dioxide is set by the bicarbonate, not by the normal range.",
+     "common lay belief"
+    ],
+    [
+     "An added respiratory acidosis",
+     "Correct. Winter formula: 1.5 x 12 + 8 = 26, plus or minus 2, so 24 to 28. His carbon dioxide of 38 is well above it: metabolic acidosis together with respiratory acidosis, which can signal impending respiratory failure in a tiring patient."
+    ],
+    [
+     "Appropriate compensation",
+     "Appropriate compensation would put carbon dioxide at 24 to 28 for a bicarbonate of 12. His 38 is far above that range. Tell: compare the measured value with the Winter range, not with the normal range.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 58",
+   "slot": "complication",
+   "lead": "compensation"
+  },
+  {
+   "topic": "Is compensation appropriate?",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "A 70-year-old man with chronic lung disease has been vomiting for days. His bicarbonate is 40 mEq/L (normal 22 to 26 mEq/L), his pH 7.46 (normal 7.35 to 7.45), and his carbon dioxide 58 mm Hg (normal 36 to 44 mm Hg). What does the carbon dioxide level indicate?",
+   "opts": [
+    [
+     "Expected compensation alone",
+     "Compensation for metabolic alkalosis rarely takes carbon dioxide above 55, and his 58 is past that limit, so compensation alone does not explain it. Tell: the 55 ceiling separates compensation from a second disorder.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "A concurrent respiratory alkalosis",
+     "A respiratory alkalosis would lower carbon dioxide, and his is 58, which is high. The excess points to a concurrent respiratory acidosis. Tell: respiratory alkalosis would pull carbon dioxide below normal.",
+     "reversed direction or value"
+    ],
+    [
+     "A primary metabolic acidosis",
+     "His bicarbonate is 40 and his pH 7.46, both on the alkaline side, so there is no metabolic acidosis. The high carbon dioxide suggests an added respiratory acidosis. Tell: a metabolic acidosis would lower the bicarbonate.",
+     "reversed direction or value"
+    ],
+    [
+     "A concurrent primary respiratory acidosis",
+     "Correct. In metabolic alkalosis, respiratory compensation rarely raises carbon dioxide above 55 mm Hg. His 58 is above that (and above 52, the 16 x 0.75 rise from 40), so a concurrent primary respiratory acidosis fits, along with his chronic lung disease."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 38",
+   "slot": "differential",
+   "lead": "compensation"
+  },
+  {
+   "topic": "Electrolytes and oxygen",
+   "io": "Explain how acid-base disorders affect electrolytes and oxygenation.",
+   "q": "A 71-year-old man with long-standing chronic obstructive pulmonary disease has a stable chronic respiratory acidosis. Arterial blood gas: pH 7.34 (normal 7.35 to 7.45), partial pressure of carbon dioxide 60 mm Hg (normal 36 to 44 mm Hg), bicarbonate 33 mEq/L (normal 22 to 26 mEq/L). Which serum electrolyte finding is expected?",
+   "opts": [
+    [
+     "High chloride",
+     "Hyperchloremia is the pattern of respiratory alkalosis compensation (kidneys retain chloride) and of normal-gap metabolic acidosis. His kidneys are excreting chloride. Tell: chronic respiratory acidosis is the low-chloride state.",
+     "reversed direction or value"
+    ],
+    [
+     "Low bicarbonate",
+     "His kidneys retain bicarbonate to offset the carbon dioxide; his is 33, high. A low bicarbonate marks metabolic acidosis or respiratory alkalosis compensation. Tell: the compensation for retained carbon dioxide is retained bicarbonate.",
+     "reversed direction or value"
+    ],
+    [
+     "An elevated anion gap",
+     "An elevated gap marks a metabolic acidosis with added unmeasured anions; his disorder is respiratory, with a high bicarbonate. Tell: the gap is a tool for metabolic acidosis.",
+     "competing diagnosis"
+    ],
+    [
+     "Low chloride",
+     "Correct. In chronic respiratory acidosis the kidneys excrete acid as ammonium chloride and retain bicarbonate, so hypochloremia accompanies the raised bicarbonate of 33. This is the renal compensation."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 25",
+   "slot": "test finding",
+   "lead": "complication"
+  },
+  {
+   "topic": "Calculate the anion gap",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "A 36-year-old man is confused after drinking antifreeze (ethylene glycol). Sodium 140 mEq/L (normal 135 to 145 mEq/L), potassium 4.0 mEq/L (normal 3.5 to 5.0 mEq/L), chloride 102 mEq/L (normal 98 to 106 mEq/L), bicarbonate 8 mEq/L (normal 22 to 26 mEq/L). What is his anion gap?",
+   "opts": [
+    [
+     "30",
+     "Correct. Anion gap = sodium - (chloride + bicarbonate) = 140 - (102 + 8) = 140 - 110 = 30, above the normal 9 to 15: an elevated-gap metabolic acidosis, fitting ethylene glycol, the E of the mnemonic."
+    ],
+    [
+     "34",
+     "34 adds the potassium of 4.0 to the sodium. The formula used here is sodium minus (chloride plus bicarbonate), with no potassium: 140 - 110 = 30. Tell: potassium is not part of this anion gap formula.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "38",
+     "38 is 140 - 102, leaving out the bicarbonate. Both measured anions are subtracted: 140 - (102 + 8) = 30. Tell: the gap subtracts chloride and bicarbonate.",
+     "adjacent fact"
+    ],
+    [
+     "46",
+     "46 adds the bicarbonate instead of subtracting it (140 - 102 + 8). The bicarbonate sits inside the parentheses with chloride: 140 - (102 + 8) = 30. Tell: check the sign of the bicarbonate.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 47",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "How the body compensates",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "A 21-year-old woman in diabetic ketoacidosis has Kussmaul respirations (deep, rapid breathing). Arterial blood gas: pH 7.22 (normal 7.35 to 7.45), partial pressure of carbon dioxide 20 mm Hg (normal 36 to 44 mm Hg), bicarbonate 8 mEq/L (normal 22 to 26 mEq/L). What does her breathing pattern accomplish?",
+   "opts": [
+    [
+     "It signals impending respiratory failure",
+     "Impending respiratory failure is suggested when carbon dioxide is higher than the Winter formula predicts (1.5 x 8 + 8 = 20, plus or minus 2). Hers is 20, right on target. Tell: a tiring patient's carbon dioxide drifts up, not down.",
+     "wrong stage or severity"
+    ],
+    [
+     "It lowers carbon dioxide to offset the acidosis",
+     "Correct. Metabolic acidosis is compensated by increased ventilation to decrease carbon dioxide; in severe cases hyperventilation is profound, as Kussmaul respirations (increased tidal volume and tachypnea) in diabetic ketoacidosis. Her carbon dioxide of 20 shows it."
+    ],
+    [
+     "It retains carbon dioxide to raise her pH",
+     "Retaining carbon dioxide would lower the pH; it is how the lungs compensate a metabolic alkalosis. Deep, rapid breathing removes carbon dioxide. Tell: fast, deep breathing lowers carbon dioxide.",
+     "reversed direction or value"
+    ],
+    [
+     "It is a primary respiratory alkalosis",
+     "A primary respiratory alkalosis would raise the pH above 7.45. Hers is 7.22, so her low carbon dioxide is compensation for the metabolic acidosis. Tell: low carbon dioxide with a low pH is compensation.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 50",
+   "slot": "manifestation",
+   "lead": "compensation"
+  },
+  {
+   "topic": "Treat the disorder",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 23-year-old woman with type 1 diabetes has diabetic ketoacidosis with Kussmaul respirations (deep, rapid breathing). Arterial blood gas: pH 7.19 (normal 7.35 to 7.45), partial pressure of carbon dioxide 21 mm Hg (normal 36 to 44 mm Hg), bicarbonate 8 mEq/L (normal 22 to 26 mEq/L). Which approach corrects her acid-base disorder?",
+   "opts": [
+    [
+     "Treat the underlying disorder",
+     "Correct. Elevated-gap metabolic acidosis is treated by treating the underlying disorder; her pH of 7.19 is acidemic but not in the unsustainable range below 6.7. Her deep breathing is compensation and is left alone."
+    ],
+    [
+     "Slow her breathing to retain carbon dioxide",
+     "Her deep, rapid breathing is the compensation lowering carbon dioxide; slowing it would drop her pH further. Tell: compensatory hyperventilation is protective in metabolic acidosis.",
+     "reversed direction or value"
+    ],
+    [
+     "Paper bag rebreathing",
+     "Rebreathing would blunt her compensation, and a paper bag is not necessary even in hyperventilation, with only a placebo effect. Her acidosis is metabolic, and the cause is treated. Tell: a bag does not treat a metabolic acidosis.",
+     "reversed direction or value"
+    ],
+    [
+     "Bicarbonate until her pH is normal",
+     "Therapy to normalize the pH may be warranted at unsustainable values (below 6.7), along with treatment of the cause. At 7.19 she needs the ketoacidosis treated. Tell: treat the cause; pH-directed therapy belongs to unsustainable values.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slides 8, 35, 57, 58",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Read the blood gas",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "A 27-year-old man with type 1 diabetes ran out of insulin. He is vomiting, with Kussmaul respirations (deep, rapid breathing) and a fruity breath odor. Arterial blood gas: pH 7.17 (normal 7.35 to 7.45), partial pressure of carbon dioxide 20 mm Hg (normal 36 to 44 mm Hg), bicarbonate 7 mEq/L (normal 22 to 26 mEq/L); sodium 135 mEq/L (normal 135 to 145 mEq/L), chloride 99 mEq/L (normal 98 to 106 mEq/L). Which acid-base disorder is present?",
+   "opts": [
+    [
+     "Respiratory alkalosis",
+     "His carbon dioxide is low, but his pH is 7.17, an acidemia. A low carbon dioxide with a low pH is compensation for metabolic acidosis, not a primary alkalosis. Tell: alkalosis needs a high pH.",
+     "reversed direction or value"
+    ],
+    [
+     "Respiratory acidosis",
+     "Respiratory acidosis needs a high carbon dioxide, and his is 20. The low bicarbonate of 7 is what matches the acidemia. Tell: his Kussmaul breathing is blowing carbon dioxide off, not retaining it.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Elevated anion gap metabolic acidosis",
+     "Correct. The pH of 7.17 is acidemia, and the bicarbonate of 7 is low and matches it, so it is metabolic. Anion gap = 135 - (99 + 7) = 29, above 9 to 15, so it is elevated. Kussmaul breathing is the compensation, and diabetic ketoacidosis is an elevated-gap cause."
+    ],
+    [
+     "Normal anion gap metabolic acidosis",
+     "The gap here is 135 - (99 + 7) = 29, well above 15, so it is elevated, not normal. A normal-gap acidosis would be hyperchloremic, and his chloride is 99, within normal. Tell: calculate the gap, then check whether chloride is high.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 55",
+   "slot": "test finding",
+   "lead": "diagnosis"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Treat the disorder",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 24-year-old man with a panic attack is breathing fast, with perioral numbness and tingling hands. His roommate hands him a paper bag to breathe into. What is accurate education about the bag?",
+   "opts": [
+    [
+     "It is unnecessary and may lower his oxygen",
+     "Correct. Breathing into a paper bag is not necessary for hyperventilation: it fails to correct the carbon dioxide and may decrease oxygen, and any benefit is placebo. Hyperventilation is usually self-limited, and the cause is treated."
+    ],
+    [
+     "It safely corrects his carbon dioxide",
+     "The bag fails to correct carbon dioxide, and it may lower oxygen. Its effect is placebo. Tell: the paper bag fails on both counts, carbon dioxide and safety.",
+     "common lay belief"
+    ],
+    [
+     "It is needed to prevent tetany",
+     "Tetany can occur in severe respiratory alkalosis from low ionized calcium, but the bag does not prevent it; hyperventilation is usually self-limited. Tell: treat the cause, not the carbon dioxide with a bag.",
+     "common lay belief"
+    ],
+    [
+     "It works by raising his bicarbonate",
+     "Rebreathing does not act on bicarbonate; bicarbonate changes come from the kidneys over hours to days. The bag's benefit is placebo. Tell: bicarbonate is renal and slow; no bag reaches it.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 35",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Read the blood gas",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "A 45-year-old man has resistant hypertension, muscle weakness and a potassium of 2.8 mEq/L (normal 3.5 to 5.0 mEq/L). Arterial blood gas: pH 7.49 (normal 7.35 to 7.45), partial pressure of carbon dioxide 47 mm Hg (normal 36 to 44 mm Hg), bicarbonate 34 mEq/L (normal 22 to 26 mEq/L). Which acid-base disorder is present?",
+   "opts": [
+    [
+     "Respiratory acidosis",
+     "His pH of 7.49 is high, so this cannot be an acidosis. The mildly raised carbon dioxide is compensation for the metabolic alkalosis, from decreased ventilation. Tell: compensation never overcorrects the pH.",
+     "reversed direction or value"
+    ],
+    [
+     "Metabolic acidosis",
+     "Metabolic acidosis has a low pH and a low bicarbonate. He has a pH of 7.49 and a bicarbonate of 34, the reverse on both. Tell: hypokalemia goes with alkalosis, while acidosis may bring hyperkalemia.",
+     "reversed direction or value"
+    ],
+    [
+     "Metabolic alkalosis",
+     "Correct. The pH of 7.49 is alkalemia, and the bicarbonate of 34 is high and matches it, so it is metabolic. The carbon dioxide of 47 is slight respiratory compensation. Hypertension with hypokalemia points to a hypertensive saline-unresponsive cause such as primary aldosteronism."
+    ],
+    [
+     "Respiratory alkalosis",
+     "Respiratory alkalosis needs a low carbon dioxide, and his is 47. The raised bicarbonate of 34 matches his high pH. Tell: a high pH with a high bicarbonate means metabolic.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 43",
+   "slot": "test finding",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Is compensation appropriate?",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "A 40-year-old man has a pH of 7.30 (normal 7.35 to 7.45) and a carbon dioxide of 52 mm Hg (normal 36 to 44 mm Hg). To decide whether this respiratory problem is acute or chronic, which value is compared with its expected level?",
+   "opts": [
+    [
+     "Bicarbonate",
+     "Correct. For a respiratory disorder, compensation is renal, so the expected bicarbonate is checked. A small rise (about 1 per 10 mm Hg) means acute, and a large rise (about 3.5 per 10) means chronic."
+    ],
+    [
+     "Carbon dioxide",
+     "The expected carbon dioxide is calculated for a metabolic disorder, as with the Winter formula. A respiratory disorder is checked by its bicarbonate. Tell: his carbon dioxide is the primary problem, so it is not the compensation check.",
+     "reversed direction or value"
+    ],
+    [
+     "Anion gap",
+     "The anion gap sorts metabolic acidosis and says nothing about respiratory chronicity. The rise in bicarbonate does. Tell: the gap uses sodium, chloride and bicarbonate to type a metabolic disorder.",
+     "adjacent fact"
+    ],
+    [
+     "Urine chloride",
+     "Urine chloride types a metabolic alkalosis. Respiratory chronicity is judged from the bicarbonate. Tell: the kidney's compensation for respiratory problems appears in serum bicarbonate.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 61",
+   "slot": "test finding",
+   "lead": "compensation"
+  },
+  {
+   "topic": "Electrolytes and oxygen",
+   "io": "Explain how acid-base disorders affect electrolytes and oxygenation.",
+   "q": "A 44-year-old woman who moved to a high-altitude town months ago has a chronic respiratory alkalosis. Arterial blood gas: pH 7.47 (normal 7.35 to 7.45), partial pressure of carbon dioxide 27 mm Hg (normal 36 to 44 mm Hg), bicarbonate 19 mEq/L (normal 22 to 26 mEq/L). Which serum electrolyte pattern accompanies her renal compensation?",
+   "opts": [
+    [
+     "High chloride and low potassium",
+     "Correct. In respiratory alkalosis the kidneys excrete bicarbonate and retain chloride, giving a reduced bicarbonate, hyperchloremia and hypokalemia (cells also secrete hydrogen ions in exchange for potassium). Her bicarbonate of 19 shows that compensation."
+    ],
+    [
+     "Low chloride and high bicarbonate",
+     "Low chloride with a high bicarbonate is the compensation of chronic respiratory acidosis. Her bicarbonate is 19 and her carbon dioxide low. Tell: alkalosis compensation lowers bicarbonate and keeps chloride.",
+     "reversed direction or value"
+    ],
+    [
+     "High potassium and low chloride",
+     "High potassium accompanies acidosis, and low chloride belongs to chronic respiratory acidosis. Her alkalosis lowers potassium and raises chloride. Tell: flip both values for a respiratory alkalosis.",
+     "reversed direction or value"
+    ],
+    [
+     "Normal chloride with a high anion gap",
+     "A high gap with a normal chloride is the pattern of elevated-gap metabolic acidosis, a low pH disorder. Her pH is 7.47. Tell: the anion gap sorts metabolic acidosis, not respiratory alkalosis.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 30",
+   "slot": "test finding",
+   "lead": "complication"
+  },
+  {
+   "topic": "Is compensation appropriate?",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "A 30-year-old man arrived at a high-altitude camp two hours ago and is hyperventilating; his carbon dioxide is 25 mm Hg (normal 36 to 44 mm Hg). Using an acute bicarbonate fall of about 2 mEq/L per 10 mm Hg fall in carbon dioxide, from midpoints of 40 and 24, what bicarbonate is expected?",
+   "opts": [
+    [
+     "16.5 mEq/L",
+     "16.5 uses the chronic ratio of 5 per 10 (24 - 7.5). At two hours the kidneys have barely begun, so the acute ratio applies: 21. Tell: two hours is acute.",
+     "wrong stage or severity"
+    ],
+    [
+     "21 mEq/L",
+     "Correct. Carbon dioxide fell 15 (40 to 25); acutely bicarbonate falls about 2 per 10, so 24 - 3 = 21 mEq/L. Two hours is acute; altitude is a listed hypoxic cause of hyperventilation."
+    ],
+    [
+     "24 mEq/L",
+     "24 assumes no change; even acutely bicarbonate falls about 2 per 10 mm Hg, to 21. Tell: acute alkalosis still trims a little bicarbonate.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "27 mEq/L",
+     "27 adds the 3 instead of subtracting it. In respiratory alkalosis compensation lowers bicarbonate: 24 - 3 = 21. Tell: a low carbon dioxide is offset by a lower bicarbonate.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 59",
+   "slot": "test finding",
+   "lead": "compensation"
+  },
+  {
+   "topic": "Electrolytes and oxygen",
+   "io": "Explain how acid-base disorders affect electrolytes and oxygenation.",
+   "q": "A 19-year-old man with type 1 diabetes presents in diabetic ketoacidosis. Arterial blood gas: pH 7.19 (normal 7.35 to 7.45), partial pressure of carbon dioxide 19 mm Hg (normal 36 to 44 mm Hg), bicarbonate 7 mEq/L (normal 22 to 26 mEq/L); potassium 5.9 mEq/L (normal 3.5 to 5.0 mEq/L). What explains his high potassium?",
+   "opts": [
+    [
+     "Potassium enters cells as hydrogen ions leave",
+     "That is the shift of alkalosis, where potassium moves into cells and causes hypokalemia. His pH is 7.19, an acidosis, so the shift runs the other way. Tell: acidosis pushes potassium out of cells; alkalosis pulls it in.",
+     "reversed direction or value"
+    ],
+    [
+     "High pH binds more calcium to albumin",
+     "A high pH increasing calcium binding to albumin explains tetany in severe respiratory alkalosis. His pH is low, and calcium binding does not move potassium. Tell: the albumin-calcium effect belongs to alkalosis.",
+     "adjacent fact"
+    ],
+    [
+     "Kidneys excrete chloride and retain potassium",
+     "Chloride handling marks the compensation of respiratory disorders (hypochloremia in chronic respiratory acidosis, hyperchloremia in respiratory alkalosis); it is not why acidosis raises potassium. Tell: the potassium rise is a cell shift.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Hydrogen ions enter cells as potassium leaves",
+     "Correct. In acidosis, hydrogen ions shift from the extracellular fluid into cells and potassium shifts out of cells in exchange, raising the serum potassium. His pH of 7.19 is a marked acidemia, so hyperkalemia is expected."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 9",
+   "slot": "test finding",
+   "lead": "complication"
+  },
+  {
+   "topic": "Find the cause",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 52-year-old man has hypertension that is hard to control and muscle weakness. He takes no diuretics, has not vomited, and eats a bag of black licorice every day. Arterial blood gas: pH 7.47 (normal 7.35 to 7.45), partial pressure of carbon dioxide 47 mm Hg (normal 36 to 44 mm Hg), bicarbonate 33 mEq/L (normal 22 to 26 mEq/L); potassium 3.0 mEq/L (normal 3.5 to 5.0 mEq/L); urine chloride is high. Which part of his history best accounts for this blood gas?",
+   "opts": [
+    [
+     "Antacid use",
+     "Antacids cause a saline-responsive alkalosis, with a low urine chloride. His is high, and he is hypertensive rather than volume contracted. Tell: a high urine chloride steers you to the saline-unresponsive list.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Anxiety with hyperventilation",
+     "Hyperventilation causes respiratory alkalosis, with a carbon dioxide below 36. His is 47 and his bicarbonate 33, so the primary change is metabolic. Tell: respiratory alkalosis lowers the carbon dioxide; his is raised as compensation.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "His daily black licorice",
+     "Correct. High pH with a high bicarbonate is metabolic alkalosis; the high urine chloride makes it saline unresponsive, and his high blood pressure puts it in the hypertensive group, which lists licorice. Low potassium with weakness fits."
+    ],
+    [
+     "Hidden vomiting",
+     "Vomiting (loss of hydrochloric acid) causes a saline-responsive alkalosis with a low urine chloride, below 25 mEq/L, and volume contraction. His urine chloride is high and he is hypertensive. Tell: vomiting-type alkalosis has a low urine chloride.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 43",
+   "slot": "etiology",
+   "lead": "etiology"
+  },
+  {
+   "topic": "Electrolytes and oxygen",
+   "io": "Explain how acid-base disorders affect electrolytes and oxygenation.",
+   "q": "A 50-year-old woman with a metabolic alkalosis from repeated vomiting has generalized weakness and hyporeflexia. Arterial blood gas: pH 7.52 (normal 7.35 to 7.45), partial pressure of carbon dioxide 48 mm Hg (normal 36 to 44 mm Hg), bicarbonate 38 mEq/L (normal 22 to 26 mEq/L). Which laboratory finding best explains her weakness and hyporeflexia?",
+   "opts": [
+    [
+     "Low bicarbonate",
+     "Her bicarbonate is 38, high, which is what defines her metabolic alkalosis. A low bicarbonate belongs to metabolic acidosis. Tell: read her bicarbonate before choosing.",
+     "reversed direction or value"
+    ],
+    [
+     "Low potassium",
+     "Correct. Metabolic alkalosis brings hypokalemia (potassium shifts into cells, and vomiting adds losses), and the associated hypokalemia causes weakness and hyporeflexia. Her alkalemia at 7.52 fits."
+    ],
+    [
+     "High potassium",
+     "Hyperkalemia accompanies acidosis, as potassium shifts out of cells. Her pH is 7.52, and alkalosis shifts potassium into cells. Tell: alkalosis means low potassium.",
+     "reversed direction or value"
+    ],
+    [
+     "High carbon dioxide",
+     "Her mildly raised carbon dioxide of 48 is compensation for the alkalosis; severe hypercapnia causes somnolence and confusion, not hyporeflexia. Tell: the weakness of metabolic alkalosis comes from potassium.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 39",
+   "slot": "manifestation",
+   "lead": "complication"
+  },
+  {
+   "topic": "Find the cause",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 59-year-old man with cirrhosis and hepatic failure also has type 2 diabetes treated with metformin and takes an antacid for heartburn. Arterial blood gas: pH 7.48 (normal 7.35 to 7.45), partial pressure of carbon dioxide 31 mm Hg (normal 36 to 44 mm Hg), bicarbonate 23 mEq/L (normal 22 to 26 mEq/L). Which of his conditions best accounts for this blood gas?",
+   "opts": [
+    [
+     "His hepatic failure",
+     "Correct. High pH with a low carbon dioxide of 31 and a nearly normal bicarbonate is respiratory alkalosis. Hepatic failure is a listed cause of respiratory alkalosis; neither of his medicines lowers carbon dioxide."
+    ],
+    [
+     "His metformin",
+     "Metformin causes an elevated-gap metabolic acidosis, a low pH with a low bicarbonate. His pH is 7.48. Tell: metformin drives the pH down.",
+     "reversed direction or value"
+    ],
+    [
+     "His antacid",
+     "Antacids cause a metabolic alkalosis with a high bicarbonate above 26. His bicarbonate is 23, and his primary change is the low carbon dioxide. Tell: antacid alkalosis raises bicarbonate.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Ketoacidosis from his diabetes",
+     "Diabetic ketoacidosis is an elevated-gap metabolic acidosis with a low pH. His pH is 7.48, alkalemic. Tell: ketoacidosis lowers bicarbonate and pH.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 34",
+   "slot": "etiology",
+   "lead": "etiology"
+  },
+  {
+   "topic": "Read the blood gas",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "A 23-year-old woman has a panic attack before an exam, with light-headedness, perioral numbness and paresthesias (tingling) in both hands. Arterial blood gas: pH 7.53 (normal 7.35 to 7.45), partial pressure of carbon dioxide 27 mm Hg (normal 36 to 44 mm Hg), bicarbonate 22 mEq/L (normal 22 to 26 mEq/L). Which acid-base disorder is present?",
+   "opts": [
+    [
+     "Metabolic alkalosis",
+     "Metabolic alkalosis needs a high bicarbonate, and hers is 22, at the low edge of normal. The low carbon dioxide of 27 is what matches her alkalemia. Tell: in a respiratory alkalosis the bicarbonate is normal or low.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Respiratory acidosis",
+     "Respiratory acidosis is a low pH with a high carbon dioxide. Her pH is 7.53 with a carbon dioxide of 27, the reverse. Tell: an alkalemic pH with a low carbon dioxide cannot be a primary respiratory acidosis, which needs a high carbon dioxide.",
+     "reversed direction or value"
+    ],
+    [
+     "Acute respiratory alkalosis",
+     "Correct. The pH of 7.53 is alkalemia, and the carbon dioxide of 27 is low and matches it, so it is respiratory. Acutely, bicarbonate falls about 2 per 10 mm Hg fall in carbon dioxide: 13 below 40 predicts about 2.6 below the midpoint of 24, roughly 21 to 22, which matches her 22. Psychogenic hyperventilation is a listed cause, and perioral numbness is a listed finding."
+    ],
+    [
+     "Chronic respiratory alkalosis",
+     "Chronic respiratory alkalosis would lower bicarbonate about 5 per 10 mm Hg, to about 18 here (13 mm Hg below 40). Her 22 is the small acute fall. Tell: a bicarbonate of 22 fits the small acute fall; a chronic fall would take it near 18.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slides 29, 31, 33, 59",
+   "slot": "test finding",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Is compensation appropriate?",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "A 55-year-old woman with a bicarbonate of 9 mEq/L (normal 22 to 26 mEq/L) from ethylene glycol ingestion has a carbon dioxide of 28 mm Hg (normal 36 to 44 mm Hg). By the Winter formula, what does her carbon dioxide show?",
+   "opts": [
+    [
+     "Renal compensation for the acidosis",
+     "Metabolic acidosis is compensated by the lungs lowering carbon dioxide; renal compensation answers respiratory disorders. Her carbon dioxide of 28 is above the Winter range of 19.5 to 23.5. Tell: the Winter formula checks the breathing response, not the kidneys.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "An added respiratory acidosis",
+     "Correct. Winter formula: 1.5 x 9 + 8 = 21.5, plus or minus 2, so about 19.5 to 23.5. Her 28 is higher than expected, so she has a metabolic acidosis together with a respiratory acidosis, which can be a sign of impending respiratory failure."
+    ],
+    [
+     "Appropriate compensation",
+     "Appropriate compensation would leave carbon dioxide at about 19.5 to 23.5 for a bicarbonate of 9. Her 28 is above that range, so compensation alone does not explain it. Tell: compare the measured carbon dioxide with the calculated range.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "An added respiratory alkalosis",
+     "A respiratory alkalosis is a primary fall in carbon dioxide, and her 28 is higher than the Winter prediction, not lower. A carbon dioxide above the expected range means an added respiratory acidosis. Tell: higher than expected is the acidosis warning.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slides 22, 58, 59",
+   "slot": "test finding",
+   "lead": "compensation"
+  },
+  {
+   "topic": "Find the cause",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 34-year-old man after a motor vehicle crash has a flail chest (a chest wall segment moving paradoxically) and shallow breathing. Arterial blood gas: pH 7.27 (normal 7.35 to 7.45), partial pressure of carbon dioxide 56 mm Hg (normal 36 to 44 mm Hg), bicarbonate 25 mEq/L (normal 22 to 26 mEq/L). Which process explains this blood gas?",
+   "opts": [
+    [
+     "Lactic acidosis from blood loss",
+     "Lactic acidosis is a metabolic acidosis with a low bicarbonate below 22. His is 25, normal, and the raised carbon dioxide drives the pH. Tell: metabolic acidosis shows in the bicarbonate.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Chronic hypoventilation",
+     "Chronic respiratory acidosis would carry a bicarbonate raised about 3.5 per 10 mm Hg, near 30. His 25 shows the acute response to an injury hours old. Tell: an acute cause leaves bicarbonate near normal.",
+     "wrong stage or severity"
+    ],
+    [
+     "Hypoventilation from the chest injury",
+     "Correct. A high carbon dioxide of 56 matching a low pH, with a bicarbonate barely raised, is acute respiratory acidosis. Thoracic trauma, including flail chest and pneumothorax, is a listed acute cause."
+    ],
+    [
+     "Hyperventilation from pain and anxiety",
+     "Hyperventilation would lower carbon dioxide and raise the pH. His carbon dioxide is 56 and his pH 7.27. Tell: pain-driven fast breathing causes respiratory alkalosis.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 26",
+   "slot": "etiology",
+   "lead": "etiology"
+  },
+  {
+   "topic": "Read the blood gas",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "A 52-year-old woman with a body mass index of 58 has loud snoring, witnessed pauses in breathing at night and daytime sleepiness. Arterial blood gas: pH 7.34 (normal 7.35 to 7.45), partial pressure of carbon dioxide 55 mm Hg (normal 36 to 44 mm Hg), bicarbonate 30 mEq/L (normal 22 to 26 mEq/L). Which acid-base disorder is present?",
+   "opts": [
+    [
+     "Metabolic alkalosis",
+     "Her bicarbonate is high, but her pH is not high; the raised carbon dioxide of 55 explains the low pH, so the bicarbonate is compensation. Tell: with a high carbon dioxide and a low pH, the bicarbonate is responding, not driving.",
+     "competing diagnosis"
+    ],
+    [
+     "Respiratory alkalosis",
+     "Respiratory alkalosis needs a low carbon dioxide, and hers is 55. She is retaining carbon dioxide, the opposite. Tell: hypoventilation raises carbon dioxide, hyperventilation lowers it.",
+     "reversed direction or value"
+    ],
+    [
+     "Chronic respiratory acidosis",
+     "Correct. The pH of 7.34 is just below normal, with a carbon dioxide of 55 that is high and matches it. Bicarbonate is 30, a rise of about 5 (1.5 x 3.5), the size of chronic compensation. Obesity, sleep disordered breathing and chronic hypercapnia form the obesity hypoventilation triad."
+    ],
+    [
+     "Acute respiratory acidosis",
+     "Acute compensation would leave bicarbonate near 25 to 26 (55 is 15 above 40). Her 30 is the fuller chronic renal response, matching a long-standing condition. Tell: obesity hypoventilation is chronic, so expect the larger bicarbonate rise.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 27",
+   "slot": "test finding",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Calculate the anion gap",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "A 63-year-old woman with septic shock has a lactate elevation. Sodium 132 mEq/L (normal 135 to 145 mEq/L), potassium 4.0 mEq/L (normal 3.5 to 5.0 mEq/L), chloride 96 mEq/L (normal 98 to 106 mEq/L), bicarbonate 12 mEq/L (normal 22 to 26 mEq/L). What is her anion gap?",
+   "opts": [
+    [
+     "24",
+     "Correct. Anion gap = 132 - (96 + 12) = 132 - 108 = 24, above 9 to 15: elevated. Lactic acidosis, the L of the mnemonic, raises the gap through unmeasured anions."
+    ],
+    [
+     "28",
+     "28 adds the potassium of 4.0 to the sodium. This formula uses sodium minus (chloride plus bicarbonate) only: 132 - 108 = 24. Tell: leave potassium out.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "36",
+     "36 is 132 - 96, leaving out the bicarbonate. Both chloride and bicarbonate are subtracted: 132 - 108 = 24. Tell: two anions go inside the parentheses.",
+     "adjacent fact"
+    ],
+    [
+     "48",
+     "48 adds the bicarbonate instead of subtracting it (132 - 96 + 12). The correct result is 132 - (96 + 12) = 24. Tell: the parentheses make the bicarbonate a subtraction.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 47",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Read the blood gas",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "A 72-year-old man with chronic lung disease is drowsy and confused, with asterixis (a flapping tremor of the outstretched hands). Arterial blood gas: pH 7.22 (normal 7.35 to 7.45), partial pressure of carbon dioxide 75 mm Hg (normal 36 to 44 mm Hg), bicarbonate 30 mEq/L (normal 22 to 26 mEq/L). Which acid-base disorder best explains his findings?",
+   "opts": [
+    [
+     "Respiratory alkalosis",
+     "Respiratory alkalosis is a low carbon dioxide with a high pH. His carbon dioxide is 75 with a pH of 7.22, the reverse. Tell: asterixis and somnolence point to carbon dioxide retention.",
+     "reversed direction or value"
+    ],
+    [
+     "Respiratory acidosis",
+     "Correct. The pH of 7.22 is acidemia, and the carbon dioxide of 75 is high and matches it, so it is respiratory acidosis. Bicarbonate of 30 is the renal response. Somnolence, confusion and asterixis are its listed clinical findings, and chronic lung disease fits."
+    ],
+    [
+     "Metabolic acidosis",
+     "Metabolic acidosis needs a low bicarbonate, and his is 30, which is high. The high carbon dioxide drives his acidemia and his neurologic findings. Tell: drowsiness, confusion and asterixis come from carbon dioxide retention.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Metabolic alkalosis",
+     "His bicarbonate is high, but his pH of 7.22 is low, and a primary metabolic alkalosis would raise the pH. The bicarbonate is renal compensation for the retained carbon dioxide. Tell: the pH direction names the primary disorder.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 23",
+   "slot": "manifestation",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Find the cause",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 67-year-old man has hypertension treated with a thiazide diuretic, stable chronic obstructive pulmonary disease, and osteoarthritis for which he takes aspirin. He feels weak. Arterial blood gas: pH 7.48 (normal 7.35 to 7.45), partial pressure of carbon dioxide 46 mm Hg (normal 36 to 44 mm Hg), bicarbonate 33 mEq/L (normal 22 to 26 mEq/L); potassium 3.1 mEq/L (normal 3.5 to 5.0 mEq/L); urine chloride is low. Which part of his history best accounts for this blood gas?",
+   "opts": [
+    [
+     "His chronic lung disease",
+     "His lung disease would cause respiratory acidosis: a high carbon dioxide driving a low pH. His pH is 7.48, alkalemic, and the carbon dioxide of 46 is only the small rise that compensates a metabolic alkalosis. Tell: his pH is alkalemic, so the primary disorder is not an acidosis.",
+     "competing diagnosis"
+    ],
+    [
+     "His aspirin",
+     "Salicylates (aspirin) are a listed toxic cause of respiratory alkalosis, a primary fall in carbon dioxide. His carbon dioxide is 46 and his bicarbonate 33, so the primary change is metabolic. Tell: a salicylate alkalosis has a low carbon dioxide, not a high bicarbonate.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Primary aldosteronism",
+     "Primary aldosteronism is a saline-unresponsive, hypertensive cause, and saline-unresponsive alkalosis has a high urine chloride, above 40 mEq/L. His urine chloride is low, which points to a saline-responsive cause such as his diuretic. Tell: low urine chloride means saline responsive.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "His thiazide diuretic",
+     "Correct. High pH with a high bicarbonate is metabolic alkalosis, and the low urine chloride marks the saline-responsive type. Diuretic therapy is a saline-responsive cause, and the low potassium and weakness fit; the carbon dioxide of 46 is the expected compensation."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slides 33, 39, 41, 42, 43, 59",
+   "slot": "etiology",
+   "lead": "etiology"
+  },
+  {
+   "topic": "Read the blood gas",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "A 26-year-old man is found unresponsive at a party with pinpoint pupils and a respiratory rate of 6. Arterial blood gas: pH 7.24 (normal 7.35 to 7.45), partial pressure of carbon dioxide 62 mm Hg (normal 36 to 44 mm Hg), bicarbonate 26 mEq/L (normal 22 to 26 mEq/L). Which acid-base disorder is present?",
+   "opts": [
+    [
+     "Respiratory alkalosis",
+     "Respiratory alkalosis is a high pH from a low carbon dioxide. He has a pH of 7.24 and a carbon dioxide of 62, and both point the other way. Tell: check the pH first; 7.24 is acidemia, so no alkalosis is possible.",
+     "reversed direction or value"
+    ],
+    [
+     "Acute respiratory acidosis",
+     "Correct. The pH of 7.24 is acidemia, and the carbon dioxide of 62 is high, which matches it, so the problem is respiratory. Bicarbonate rose only about 1 per 10 mm Hg (22 above 40 gives about 26), the acute response. A slow rate of 6 fits central nervous system depression."
+    ],
+    [
+     "Chronic respiratory acidosis",
+     "Chronic respiratory acidosis would show a much larger bicarbonate rise, about 3.5 mEq/L per 10 mm Hg, or near 32 here (22 mm Hg above 40). His 26 is the small acute rise. Tell: a bicarbonate near 26 means the kidneys have not had their 6 to 12 hours or more.",
+     "wrong stage or severity"
+    ],
+    [
+     "Metabolic acidosis",
+     "Metabolic acidosis needs a low bicarbonate driving the low pH, and his bicarbonate is 26, within normal. The raised carbon dioxide of 62 is the value that matches the acidemia. Tell: when bicarbonate is normal and carbon dioxide is high, the problem is respiratory.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 21",
+   "slot": "test finding",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Electrolytes and oxygen",
+   "io": "Explain how acid-base disorders affect electrolytes and oxygenation.",
+   "q": "A 44-year-old man who ingested ethylene glycol has an arterial pH of 6.62 (normal 7.35 to 7.45). Which complications does this pH threaten?",
+   "opts": [
+    [
+     "Reduced oxygen release from hemoglobin",
+     "Reduced release is an alkalosis effect (left shift). Acidosis lowers hemoglobin's affinity and increases release. Tell: the extreme-pH list is seizures, cerebral edema and cardiac effects.",
+     "reversed direction or value"
+    ],
+    [
+     "Seizures, cerebral edema, cardiac irritability",
+     "Correct. A pH below 6.7 is unsustainable and may cause cardiac hypocontractility and irritability, seizures, cerebral edema and metabolic disturbances; it may warrant therapy to normalize the pH along with treating the cause."
+    ],
+    [
+     "Tetany from low ionized calcium",
+     "Tetany from increased calcium binding with albumin occurs at a high pH, in severe respiratory alkalosis. His pH is 6.62. Tell: tetany belongs to alkalemia.",
+     "reversed direction or value"
+    ],
+    [
+     "Hypokalemia from potassium entering cells",
+     "Potassium entering cells is the shift of alkalosis. In acidosis potassium leaves cells, so hyperkalemia may be present. Tell: acidosis raises potassium.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 8",
+   "slot": "complication",
+   "lead": "complication"
+  },
+  {
+   "topic": "Treat the disorder",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 50-year-old man has a metabolic alkalosis with a high urine chloride. He takes no diuretics and has not vomited. Arterial blood gas: pH 7.48 (normal 7.35 to 7.45), partial pressure of carbon dioxide 47 mm Hg (normal 36 to 44 mm Hg), bicarbonate 34 mEq/L (normal 22 to 26 mEq/L). Which finding should be checked next to narrow the cause?",
+   "opts": [
+    [
+     "His expected carbon dioxide by Winter",
+     "The Winter formula checks compensation in metabolic acidosis. His disorder is an alkalosis, and the cause list splits by blood pressure. Tell: Winter is for acidosis.",
+     "adjacent fact"
+    ],
+    [
+     "His blood pressure",
+     "Correct. A high urine chloride (above 40 mEq/L) means saline-unresponsive alkalosis, whose causes split by blood pressure: normotensive (severe potassium depletion, hypoparathyroidism and hypercalcemia) or hypertensive (primary aldosteronism, mineralocorticoids, licorice)."
+    ],
+    [
+     "His anion gap",
+     "The anion gap types a metabolic acidosis; it does not sort the causes of an alkalosis. Saline-unresponsive causes split by blood pressure. Tell: the gap belongs to acidosis.",
+     "adjacent fact"
+    ],
+    [
+     "His urine chloride again",
+     "His urine chloride is already high, placing him in the saline-unresponsive group; repeating it adds nothing. The next split is by blood pressure. Tell: urine chloride first, then blood pressure.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 43",
+   "slot": "differential",
+   "lead": "next step"
+  },
+  {
+   "topic": "How the body compensates",
+   "io": "Identify mechanisms for maintaining acid-base homeostasis.",
+   "q": "A 38-year-old woman develops an acute respiratory acidosis after aspiration pneumonitis two hours ago. When will her kidneys begin to compensate?",
+   "opts": [
+    [
+     "In 6 to 12 hours, completing over days",
+     "Correct. In respiratory acidosis the kidneys excrete acid as ammonium chloride and retain bicarbonate; this begins 6 to 12 hours after onset, and complete compensation may take days. At two hours her bicarbonate is near normal."
+    ],
+    [
+     "Within minutes, completing in an hour",
+     "Breathing changes carbon dioxide quickly, but renal bicarbonate control works over hours to days. Tell: the kidneys are the slow system.",
+     "wrong stage or severity"
+    ],
+    [
+     "After weeks, completing over months",
+     "Renal compensation begins within 6 to 12 hours and may be complete in days, not weeks. Tell: hours to start, days to finish.",
+     "wrong stage or severity"
+    ],
+    [
+     "They do not; the lungs compensate instead",
+     "When the cause is respiratory, the compensation is renal: the kidneys retain or excrete bicarbonate. The lungs compensate for metabolic disorders. Tell: respiratory problem, renal fix.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 22",
+   "slot": "prognosis",
+   "lead": "compensation"
+  },
+  {
+   "topic": "Read the blood gas",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "A 69-year-old woman with long-standing chronic obstructive pulmonary disease comes for a routine visit, at her baseline. Arterial blood gas: pH 7.34 (normal 7.35 to 7.45), partial pressure of carbon dioxide 58 mm Hg (normal 36 to 44 mm Hg), bicarbonate 32 mEq/L (normal 22 to 26 mEq/L). Which acid-base disorder is present?",
+   "opts": [
+    [
+     "Chronic respiratory acidosis",
+     "Correct. Her carbon dioxide of 58 is high and her pH of 7.34 is just below normal, so the process is respiratory acidosis. Bicarbonate is 32, a rise of about 6 (1.8 x 3.5), the size of chronic compensation. Chronic obstructive pulmonary disease is a classic chronic cause."
+    ],
+    [
+     "Acute respiratory acidosis",
+     "Acute compensation raises bicarbonate only about 1 per 10 mm Hg, to about 26 here (58 is 18 above 40). Her 32 shows the fuller renal response of chronic disease. Tell: she is at her baseline with long-standing lung disease, so the kidneys have had days.",
+     "wrong stage or severity"
+    ],
+    [
+     "Metabolic alkalosis",
+     "A raised bicarbonate can be primary, but then the carbon dioxide would not be the driver; her pH is 7.34, on the acid side, and the raised carbon dioxide of 58 explains it. The bicarbonate is the renal compensation. Tell: here carbon dioxide is the primary change.",
+     "competing diagnosis"
+    ],
+    [
+     "Metabolic acidosis",
+     "Metabolic acidosis needs a low bicarbonate, below 22, driving the pH down; hers is 32, high. The raised carbon dioxide of 58 is what matches her low pH, and the high bicarbonate is the kidneys' compensation. Tell: in metabolic acidosis the bicarbonate and carbon dioxide both fall.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 27",
+   "slot": "test finding",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Find the cause",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 34-year-old woman has glaucoma treated with an oral carbonic anhydrase inhibitor, type 2 diabetes treated with metformin, and daily aspirin use for headaches. Arterial blood gas: pH 7.32 (normal 7.35 to 7.45), partial pressure of carbon dioxide 30 mm Hg (normal 36 to 44 mm Hg), bicarbonate 15 mEq/L (normal 22 to 26 mEq/L); sodium 140 mEq/L (normal 135 to 145 mEq/L), chloride 115 mEq/L (normal 98 to 106 mEq/L). Which of her medicines best accounts for this blood gas?",
+   "opts": [
+    [
+     "Metformin",
+     "Metformin causes an elevated-gap acidosis, above 15. Her gap is 140 - (115 + 15) = 10, normal, and her chloride is high, the pattern of the normal-gap list. Tell: metformin sits in the mnemonic for an increased gap.",
+     "competing diagnosis"
+    ],
+    [
+     "Aspirin",
+     "Salicylates are on the elevated-gap list, and an elevated-gap acidosis is normochloremic with a gap above 15. Her gap is 10 with a high chloride. Tell: a normal gap with a high chloride points to the normal-gap list, not aspirin.",
+     "competing diagnosis"
+    ],
+    [
+     "A respiratory cause, not a medicine",
+     "A respiratory acidosis needs a high carbon dioxide; hers is 30, low, and her bicarbonate of 15 is what matches the pH. The low carbon dioxide is compensation, as the Winter formula (1.5 x 15 + 8 = 30.5) predicts.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "The carbonic anhydrase inhibitor",
+     "Correct. Low pH and low bicarbonate make a metabolic acidosis; the gap is 140 - (115 + 15) = 10, within 9 to 15, with a high chloride: a normal-gap, hyperchloremic acidosis. Carbonic anhydrase inhibitors are on the normal-gap list (loss of bicarbonate)."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slides 47, 52, 55, 56, 58",
+   "slot": "etiology",
+   "lead": "etiology"
+  },
+  {
+   "topic": "Is compensation appropriate?",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "A 44-year-old man who drank methanol has a bicarbonate of 14 mEq/L (normal 22 to 26 mEq/L) and a carbon dioxide of 29 mm Hg (normal 36 to 44 mm Hg). By the Winter formula, what does his carbon dioxide show?",
+   "opts": [
+    [
+     "An added respiratory acidosis",
+     "An added respiratory acidosis is shown by a carbon dioxide higher than the Winter prediction, above 31 here. His 29 is inside the range of 27 to 31. Tell: compute 1.5 x 14 + 8 before calling it a second disorder.",
+     "reversed direction or value"
+    ],
+    [
+     "Impending respiratory failure",
+     "Impending respiratory failure is signaled when the carbon dioxide is higher than the Winter prediction, with an added respiratory acidosis. His 29 is within the expected 27 to 31. Tell: the warning is a carbon dioxide above the range.",
+     "reversed direction or value"
+    ],
+    [
+     "Appropriate compensation",
+     "Correct. Winter formula: 1.5 x 14 + 8 = 29, plus or minus 2, so 27 to 31. His 29 sits inside that range, so the fall in carbon dioxide is the expected respiratory compensation for his elevated-gap metabolic acidosis from methanol, with no second disorder."
+    ],
+    [
+     "An added respiratory alkalosis",
+     "A respiratory alkalosis is a primary fall in carbon dioxide, and his fall is fully accounted for by the compensation the Winter formula predicts, 27 to 31. No second disorder is needed to explain a 29. Tell: inside the range means compensation alone explains it.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slides 55, 58, 59",
+   "slot": "test finding",
+   "lead": "compensation"
+  },
+  {
+   "topic": "Treat the disorder",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 45-year-old man with Guillain-Barré syndrome has worsening weakness and shallow breathing. Arterial blood gas: pH 7.26 (normal 7.35 to 7.45), partial pressure of carbon dioxide 58 mm Hg (normal 36 to 44 mm Hg), bicarbonate 26 mEq/L (normal 22 to 26 mEq/L). What is the priority treatment for his acid-base disorder?",
+   "opts": [
+    [
+     "Give sodium bicarbonate to raise the pH",
+     "His acidosis comes from retained carbon dioxide, so the fix is ventilation; therapy aimed at the pH itself is reserved for an unsustainable pH (below 6.7), alongside the cause. His pH is 7.26. Tell: respiratory acidosis is treated by breathing, not by bicarbonate.",
+     "wrong stage or severity"
+    ],
+    [
+     "Wait for renal compensation",
+     "Renal compensation begins only after 6 to 12 hours, takes days, and never returns the pH to normal. His breathing is failing now. Tell: compensation alone never restores the pH; the disorder must be corrected.",
+     "wrong stage or severity"
+    ],
+    [
+     "Careful oxygen titration alone",
+     "Careful oxygen titration is the approach for chronic respiratory acidosis. His is acute (bicarbonate 26), and the priority is restoring ventilation. Tell: acute equals restore ventilation; chronic equals careful oxygen.",
+     "wrong stage or severity"
+    ],
+    [
+     "Restore adequate ventilation",
+     "Correct. A high carbon dioxide with a low pH and a barely raised bicarbonate is acute respiratory acidosis, and Guillain-Barré syndrome is a listed neuromuscular cause. Acute respiratory acidosis is treated by restoring ventilation while the cause is treated."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 28",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Find the cause",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 60-year-old man with type 2 diabetes treated with metformin received several liters of normal saline during abdominal surgery. He has had no diarrhea. Arterial blood gas: pH 7.33 (normal 7.35 to 7.45), partial pressure of carbon dioxide 33 mm Hg (normal 36 to 44 mm Hg), bicarbonate 17 mEq/L (normal 22 to 26 mEq/L); sodium 141 mEq/L (normal 135 to 145 mEq/L), chloride 114 mEq/L (normal 98 to 106 mEq/L). Which explains this blood gas?",
+   "opts": [
+    [
+     "His metformin",
+     "Metformin causes an elevated-gap acidosis, above 15. His gap is 141 - (114 + 17) = 10, and his chloride is high. Tell: a normal gap with a high chloride points to the normal-gap list.",
+     "competing diagnosis"
+    ],
+    [
+     "Diabetic ketoacidosis",
+     "Diabetic ketoacidosis raises the gap with ketones; his gap of 10 is normal and his chloride high. Tell: ketoacidosis belongs to the elevated-gap mnemonic.",
+     "competing diagnosis"
+    ],
+    [
+     "Postoperative hypoventilation",
+     "Hypoventilation raises carbon dioxide above 44; his is 33, lowered as compensation (Winter: 1.5 x 17 + 8 = 33.5). Tell: the low bicarbonate, not the carbon dioxide, matches his pH.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "The large saline infusion",
+     "Correct. Low pH with a low bicarbonate is metabolic acidosis; the gap is 141 - (114 + 17) = 10, within 9 to 15, with a high chloride: a normal-gap, hyperchloremic acidosis. Saline infusion is a listed normal-gap cause (chloride retention)."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 56",
+   "slot": "etiology",
+   "lead": "etiology"
+  },
+  {
+   "topic": "Find the cause",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 48-year-old woman five days after hip replacement develops sudden pleuritic chest pain and fast breathing. Arterial blood gas: pH 7.51 (normal 7.35 to 7.45), partial pressure of carbon dioxide 30 mm Hg (normal 36 to 44 mm Hg), bicarbonate 23 mEq/L (normal 22 to 26 mEq/L); partial pressure of oxygen 68 mm Hg (normal 80 to 100 mm Hg). Which process best accounts for this blood gas?",
+   "opts": [
+    [
+     "Hypoventilation from opioid pain medicine",
+     "Opioids depress breathing and raise carbon dioxide, causing respiratory acidosis with a low pH. Her carbon dioxide is 30 and her pH 7.51. Tell: hypoventilation pushes carbon dioxide above 44.",
+     "reversed direction or value"
+    ],
+    [
+     "Diuretic-induced metabolic alkalosis",
+     "A diuretic alkalosis has a high bicarbonate above 26; hers is 23, and her primary change is the low carbon dioxide. Tell: in metabolic alkalosis the carbon dioxide rises slightly, it does not fall.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Obesity hypoventilation syndrome",
+     "Obesity hypoventilation syndrome is a triad ending in chronic hypercapnia, a high carbon dioxide. Hers is low and her illness began suddenly. Tell: that syndrome causes chronic respiratory acidosis, not an acute alkalosis.",
+     "reversed direction or value"
+    ],
+    [
+     "Hyperventilation from a pulmonary embolism",
+     "Correct. High pH with a low carbon dioxide of 30 is respiratory alkalosis, and her bicarbonate of 23 has barely moved (acute). Pulmonary embolism is a listed pulmonary cause; after surgery, with sudden pleuritic pain and a low oxygen, it fits."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 34",
+   "slot": "etiology",
+   "lead": "etiology"
+  },
+  {
+   "topic": "Treat the disorder",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 40-year-old man who drank methanol is obtunded. Arterial blood gas: pH 6.65 (normal 7.35 to 7.45), partial pressure of carbon dioxide 18 mm Hg (normal 36 to 44 mm Hg), bicarbonate 2 mEq/L (normal 22 to 26 mEq/L). Besides treating the poisoning, what does this pH warrant?",
+   "opts": [
+    [
+     "Waiting for respiratory compensation",
+     "He is already hyperventilating to a carbon dioxide of 18, and compensation never returns the pH to normal. At 6.65 the pH is unsustainable. Tell: compensation cannot rescue a pH below 6.7.",
+     "wrong stage or severity"
+    ],
+    [
+     "Therapy to raise the serum pH",
+     "Correct. A pH below 6.7 is unsustainable: it may cause cardiac hypocontractility and irritability, seizures and cerebral edema, and may warrant therapy to normalize the serum pH along with treatment of the underlying cause. His pH is 6.65."
+    ],
+    [
+     "No pH-directed therapy",
+     "Treating the cause is the rule, but a pH below 6.7 is unsustainable and may warrant therapy to normalize it as well. His 6.65 is past that threshold. Tell: extreme pH values earn their own therapy.",
+     "wrong stage or severity"
+    ],
+    [
+     "Paper bag rebreathing",
+     "Rebreathing would raise carbon dioxide and lower the pH further; it is a placebo for hyperventilation. His low carbon dioxide is life-saving compensation. Tell: never blunt the breathing that compensates a metabolic acidosis.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 8",
+   "slot": "escalation",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Treat the disorder",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "A 22-year-old college athlete with gastroenteritis has vomited for three days and is dizzy on standing. Arterial blood gas: pH 7.51 (normal 7.35 to 7.45), partial pressure of carbon dioxide 48 mm Hg (normal 36 to 44 mm Hg), bicarbonate 37 mEq/L (normal 22 to 26 mEq/L); potassium 3.1 mEq/L (normal 3.5 to 5.0 mEq/L); urine chloride is low. In addition to treating the cause, which therapy is indicated?",
+   "opts": [
+    [
+     "A sodium bicarbonate infusion",
+     "Bicarbonate is alkali; exogenous alkali is itself a cause of metabolic alkalosis and would push his pH of 7.51 higher. Isotonic saline treats the volume loss behind his alkalosis. Tell: adding alkali to an alkalemia raises the pH further.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Paper bag rebreathing",
+     "Breathing into a paper bag is not necessary even for hyperventilation: it fails to correct carbon dioxide and may decrease oxygen. His carbon dioxide is already raised as compensation. Tell: this is metabolic, and the fix is volume.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Starting a thiazide diuretic",
+     "Diuretic therapy is a cause of saline-responsive alkalosis, and diuretics are stopped, not started, in this disorder. He needs volume, not more volume loss. Tell: discontinuing diuretics is part of the treatment.",
+     "reversed direction or value"
+    ],
+    [
+     "Isotonic saline",
+     "Correct. Vomiting (loss of hydrochloric acid) with orthostatic dizziness and a low urine chloride is saline-responsive metabolic alkalosis, a sign of extracellular volume contraction. Isotonic saline corrects that volume deficit."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slides 35, 39, 42, 43, 44",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Is compensation appropriate?",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "A 66-year-old man has had respiratory acidosis for several days, and his carbon dioxide is 60 mm Hg (normal 36 to 44 mm Hg). Using bicarbonate rises of about 1 mEq/L per 10 mm Hg acutely and about 3.5 per 10 chronically, from a midpoint of 24, which bicarbonate fits chronic compensation?",
+   "opts": [
+    [
+     "24 mEq/L",
+     "24 assumes no compensation at all. After several days the kidneys have retained bicarbonate, to about 31. Tell: a respiratory problem that lasts days shows a rise in bicarbonate.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "26 mEq/L",
+     "26 is the acute response, 1 per 10 mm Hg (24 + 2). Several days in, the chronic response is about 24 + 7 = 31. Tell: the stem gives the time course, and several days means chronic.",
+     "wrong stage or severity"
+    ],
+    [
+     "31 mEq/L",
+     "Correct. Carbon dioxide rose 20 mm Hg (40 to 60). Chronically bicarbonate rises about 3.5 per 10 mm Hg, so 24 + 7 = 31; acutely it would be only 24 + 2 = 26. Renal compensation takes days to complete, and he has had several days."
+    ],
+    [
+     "38 mEq/L",
+     "38 overshoots; it would need about 7 per 10 mm Hg. The chronic ratio of 3.5 per 10 gives 24 + 7 = 31. Tell: apply 3.5 to the 20 mm Hg rise, which is two steps of 10.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 59",
+   "slot": "test finding",
+   "lead": "compensation"
+  },
+  {
+   "topic": "Is compensation appropriate?",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "A 48-year-old woman with metabolic alkalosis from diuretics has a bicarbonate of 32 mEq/L (normal 22 to 26 mEq/L) (8 above the working midpoint of 24). Using a carbon dioxide rise of about 0.75 mm Hg per 1 mEq/L rise in bicarbonate, from a midpoint of 40, what carbon dioxide is expected?",
+   "opts": [
+    [
+     "34 mm Hg",
+     "34 subtracts the 6 instead of adding it, but carbon dioxide rises to compensate for alkalosis. The expected value is 40 + 6 = 46. Tell: compensation for alkalosis is hypoventilation.",
+     "reversed direction or value"
+    ],
+    [
+     "40 mm Hg",
+     "40 assumes no compensation. Metabolic alkalosis is compensated by hypoventilation, which retains carbon dioxide: 40 + (8 x 0.75) = 46. Tell: an alkalosis raises the expected carbon dioxide.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "46 mm Hg",
+     "Correct. Bicarbonate rose 8 (24 to 32), and 8 x 0.75 = 6, so the expected carbon dioxide is 40 + 6 = 46 mm Hg. That is well under the 55 above which a concurrent respiratory acidosis is suspected."
+    ],
+    [
+     "52 mm Hg",
+     "52 comes from multiplying by 1.5 (8 x 1.5 = 12, as in the Winter formula for acidosis) instead of 0.75. The alkalosis ratio gives 40 + 6 = 46. Tell: the Winter multiplier belongs to metabolic acidosis.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 59",
+   "slot": "test finding",
+   "lead": "compensation"
+  }
+ ]
+}

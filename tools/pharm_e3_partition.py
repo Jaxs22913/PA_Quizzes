@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Split and guard the Pharmacology Exam 3 topic pools (Lecture 9, Diuretics and Heart Failure Drugs).
+"""Split and guard the Pharmacology Exam 3 topic pools (Lectures 9, 10 and 11).
 
 One pool module per topic: tools/pharm_e3_pool_<key>.py exposes QUESTIONS (key authored FIRST, c == 0). This script holds
 the guards (imported by the vignette partition too) and writes ONE sets file per topic, tools/pharm_e3_sets/<key>.json
@@ -46,7 +46,7 @@ BAD_KEY = re.compile(r"^\s*(about |up to |roughly )?[\d.,]+\s*(-|to)?\s*[\d.,]*\
 BREADTH = ("indication", "education", "adverse effect", "contraindication", "drug choice")
 BACKGROUND = ("mechanism", "physiology")
 SLOTS = set(BREADTH) | set(BACKGROUND) | {"class", "interaction", "monitoring", "protocol"}
-CITE_RX = re.compile(r"^(Diuretics and Heart Failure Drugs|Antiarrhythmics|Antihypertensives|Myocardial Ischemia Drugs|Ophthalmology-2)\.pptx, Slide \d+$")   # a cross-lecture fact cites the deck that states it
+CITE_RX = re.compile(r"^(Diuretics and Heart Failure Drugs|Antiarrhythmics|Pulmonology-2|Antihypertensives|Myocardial Ischemia Drugs|Ophthalmology-2)\.pptx, (Slide \d+|Slides \d+(, \d+)+)$")   # a cross-lecture fact cites the deck that states it; "Slides 89, 71" when the deciding fact spans slides (primary first)
 
 
 def hard_cites(text):
@@ -90,6 +90,7 @@ def check(pool, label):
 MIS = ("competing diagnosis", "wrong stage or severity", "ruled out by a stated finding",
        "confused mechanism or drug class", "adjacent fact", "reversed direction or value", "common lay belief")
 WRITER_RULES = {"aa1a", "aa1bc", "aa24", "aa3", "aamisc"}      # Lecture 10 pools (WRITER.md v1)
+WRITER_RULES |= {"pucap", "puhap", "putb", "puana", "pubd", "puctl", "puinh", "pucopd"}   # Lecture 11 pools
 _ABSOL = re.compile(r"\b(always|never|only|all|none)\b", re.I)
 
 

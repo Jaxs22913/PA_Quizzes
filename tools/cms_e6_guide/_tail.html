@@ -1,0 +1,89 @@
+<footer class="guide-foot">
+  <p style="text-align:center;margin:0 0 10px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+  <p style="text-align:center;">Built from your PAJ 5500 lecture decks for personal study &middot; Class of 2028.</p>
+  <p style="text-align:center;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+</footer>
+</main>
+</div>
+
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+
+<style>
+  .cond{border:1px solid var(--c-line);border-radius:10px;padding:12px 15px;margin:12px 0;
+        background:var(--c-ice);}
+  .cond h4{margin:0 0 8px;font-size:1.02rem;display:flex;align-items:baseline;gap:9px;
+           flex-wrap:wrap;}
+  .cond .u{font-size:.66rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+           padding:2px 8px;border-radius:999px;white-space:nowrap;}
+  .cond .u.emerg{background:#8c1d12;color:#fff;} .cond .u.urg{background:#7a5a08;color:#fff;}
+  .cond .u.rout{background:#3f5c46;color:#fff;}
+  .cond .give{margin:0 0 10px;padding:8px 11px;border-radius:8px;background:var(--c-gv-bg,#f7f0dc);
+              color:var(--c-gv-b,#5b4708);font-size:.9rem;}
+  dl.eight{display:grid;grid-template-columns:180px 1fr;gap:6px 14px;margin:0;}
+  dl.eight dt{font-size:.7rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+              color:var(--c-mute);padding-top:3px;}
+  dl.eight dd{margin:0;font-size:.9rem;line-height:1.55;}
+  .cond .src{margin:9px 0 0;font-size:.7rem;color:var(--c-mute);font-variant-numeric:tabular-nums;}
+  .cond figure.fig{float:right;max-width:190px;margin:0 0 10px 14px;}
+  .cond figure.fig img{width:100%;height:auto;border-radius:8px;border:1px solid var(--c-line);}
+  table.wr{width:100%;border-collapse:collapse;font-size:.88rem;}
+  table.wr th{text-align:left;background:var(--c-panel);color:var(--c-panel-fg);padding:8px;}
+  table.wr td{padding:8px;border-top:1px solid var(--c-line);}
+  .tbl-wrap{overflow-x:auto;margin:10px 0;}
+  @media (max-width:640px){dl.eight{grid-template-columns:1fr;gap:2px;}
+    dl.eight dd{margin-bottom:7px;} .cond figure.fig{float:none;max-width:100%;margin:0 0 10px;}}
+</style>
+</body>
+</html>

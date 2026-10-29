@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — CMS I Exam 6</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#b8860b;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--primary-l:#b8860b;--primary:#af8325;}:root[data-theme="dark"] body[data-dark="tokens"] #l33-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l33-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l33-devices{--acc-bg:#361919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c97473!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l33-devices"]{color:#c16d6c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l33-neb{--acc-bg:#36191a!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#d26e71!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l33-neb"]{color:#ca676a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l34-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l34-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l34-read{--acc-bg:#361919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c97473!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l34-read"]{color:#c16d6c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l34-resp{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l34-resp"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l34-metab{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l34-metab"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #l34-lytes{--acc-bg:#0e2919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5c9873!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l34-lytes"]{color:#55916c!important}:root[data-theme="light"] body[data-dark="tokens"]{--primary-t:#8f6a1d;}:root[data-theme="light"] body[data-dark="tokens"] #l33-emph{--acc-ink:#88661b!important}:root[data-theme="light"] body[data-dark="tokens"] #l34-emph{--acc-ink:#88661b!important}</style><!--DARK-TOKENS:END-->
+  <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="cms-exam-6-cram-sheet.docx" title="Editable Word copy">
+</head>
+<body data-dark="tokens" data-dark-kind="cram">
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Clinical Medicine and Surgery I · Exam 6 · Class of 2028</div>
+    <h1>CMS I Exam 6 Cram Sheet</h1>
+    <p class="sub">Respiratory Block Exam I, condensed from the Exam 6 study guide. Lectures covered so far: 33 (oxygen delivery), 34 (acid-base part I). Each lecture opens with a gold card of what its lecturer stressed on the recording (starred); every fact still comes from the slides.</p>
+    <div class="toc">
+      <a href="#l33-emph" style="color:#906909"><span class="dot" style="background:#b8860b"></span>★ Professor Emphasized — Who Gets Oxygen, Who Qualifies, Fire</a>
+      <a href="#l33-devices" style="color:#5f2325"><span class="dot" style="background:#7a2d30"></span>Delivery Devices</a>
+      <a href="#l33-neb" style="color:#8c4144"><span class="dot" style="background:#b45357"></span>Nebulizers, Response &amp; Education</a>
+      <a href="#l34-emph" style="color:#906909"><span class="dot" style="background:#b8860b"></span>★ Professor Emphasized — Normals, Winter Formula, Anion Gap</a>
+      <a href="#l34-read" style="color:#5f2325"><span class="dot" style="background:#7a2d30"></span>Reading the Gas &amp; Compensation</a>
+      <a href="#l34-resp" style="color:#254953"><span class="dot" style="background:#2f5d6b"></span>Respiratory Acidosis &amp; Alkalosis</a>
+      <a href="#l34-metab" style="color:#46306c"><span class="dot" style="background:#5a3d8a"></span>Metabolic Alkalosis &amp; Acidosis</a>
+      <a href="#l34-lytes" style="color:#18482d"><span class="dot" style="background:#1f5c3a"></span>Electrolytes &amp; Oxygen</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="cms-exam-6-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="l33-emph" style="--acc:#b8860b;--acc-bg:#f5eedd;--acc-zebra:#faf7ee;--acc-ink:#906909">
+    <div class="shead"><span class="dot" style="background:#b8860b"></span><h2>★ Professor Emphasized — Who Gets Oxygen, Who Qualifies, Fire</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ Indications</td><td><b>Hypoxia</b>; acute medical or surgical needs (perioperative, postoperative); respiratory conditions (<b>carbon monoxide poisoning</b>); special indications without hypoxia: <b>air hunger</b> (end of life) and <b>cluster headache</b>. &ldquo;One of the big things.&rdquo;</td></tr>
+          <tr><td class="h">★ Fire</td><td>Benefit: correction of hypoxia, symptom relief, therapeutic benefit. Risk: <b>fire hazard</b> &mdash; &ldquo;probably one of the biggest risks.&rdquo; Also hypercapnia (carbon dioxide retention), mucosal irritation, vasoconstriction.</td></tr>
+          <tr><td class="h">Myocardial infarction</td><td>Vasoconstriction: <b>not given unless saturation is below 91%</b> (the slide&rsquo;s value; current guidelines use 90%).</td></tr>
+          <tr><td class="h">★ Home qualification</td><td>Documented hypoxia by arterial blood gas or pulse oximetry at rest, with exertion and/or during sleep, <b>performed at the time of need</b>. Rest: saturation <b>&le; 88%</b> on room air or partial pressure of oxygen <b>&le; 55 mm Hg</b>. Exertion: <b>&le; 88% and improves with oxygen</b>. Sleep: <b>&le; 88% with a drop of 5% or more</b>.</td></tr>
+          <tr><td class="h">Group I vs II</td><td><b>Group I</b> (qualifies): &le; 55 mm Hg or &le; 88% &rarr; recertify at <b>12 months</b>. <b>Group II</b> (conditional): 56&ndash;59 mm Hg or 89% <b>plus</b> pulmonary hypertension, cor pulmonale (right heart failure) or polycythemia (hematocrit above 56%) &rarr; recertify at <b>3 months</b>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l33-devices" style="--acc:#7a2d30;--acc-bg:#ece2e2;--acc-zebra:#f6f0f1;--acc-ink:#5f2325">
+    <div class="shead"><span class="dot" style="background:#7a2d30"></span><h2>Delivery Devices</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Varies or fixed</td><td>Nasal cannula, simple mask: fraction varies with respiratory rate, inspiratory flow, tidal volume. Partial rebreather, non-rebreather: varies with patient demand. <b>Air entrainment (Venturi, air-entrainment nebulizer): fixed</b>, does not fluctuate.</td></tr>
+          <tr><td class="h">Nasal cannula</td><td><b>Low flow</b>, 1&ndash;6 L/min, <b>24&ndash;44%</b> (room air 21%; about <b>+4% per liter</b>: 1 = 24, 2 = 28, 3 = 32, 4 = 36, 5 = 40, 6 = 44). Maxes at 44% even above 6 L/min. <b>Humidity above 4 L/min.</b> Mild hypoxia; most commonly used.</td></tr>
+          <tr><td class="h">Simple mask</td><td><b>Low flow</b>, 5&ndash;10 L/min, .35&ndash;.50 (5&ndash;6 L/min 35%, 6&ndash;7 40%, 7&ndash;8 50%). Mild to moderate respiratory distress.</td></tr>
+          <tr><td class="h">Partial rebreather</td><td>Some exhaled gas gets into the reservoir bag; <b>not commonly used</b>. Its fraction differs between slides (60&ndash;80% vs .40&ndash;.70): never tested.</td></tr>
+          <tr><td class="h">Non-rebreather</td><td><b>Low flow device, but with a high fraction</b>: 10&ndash;15 L/min = <b>60&ndash;100%</b>. Reservoir bag + one-way valve (no inhaling exhaled air). Flow set to <b>keep the bag from collapsing</b>. <b>Severely hypoxic patients still ventilating well.</b></td></tr>
+          <tr><td class="h">Venturi mask</td><td><b>High flow</b>, precise; ports change the fraction; 4&ndash;10 L/min &rarr; <b>24&ndash;50%</b>; total flow above inspiratory demand. <b>Chronic obstructive pulmonary disease</b> (precision).</td></tr>
+          <tr><td class="h">Air-entrainment nebulizer</td><td>Aerosol mask, open face mask, T-piece, tracheostomy collar. Can deliver higher but <b>not recommended above .50</b>.</td></tr>
+          <tr><td class="h">Advanced airways</td><td>Bag-valve mask (resuscitator bag); oropharyngeal and nasopharyngeal airways; endotracheal tube, tracheostomy; tube changer and bougie; laryngeal mask airway.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l33-neb" style="--acc:#b45357;--acc-bg:#f4e7e7;--acc-zebra:#faf3f3;--acc-ink:#8c4144">
+    <div class="shead"><span class="dot" style="background:#b45357"></span><h2>Nebulizers, Response &amp; Education</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Why a nebulizer</td><td>Liquid medication <b>directly to the airways</b>; medication chosen for the specific treatment; <b>secretion clearance</b>; <b>inhalers are challenging</b> in certain situations; <b>severe exacerbations</b> of respiratory illness.</td></tr>
+          <tr><td class="h">Is it working?</td><td>Clinical: symptoms, work of breathing, color and perfusion. Objective: saturation improves (target varies); blood gas shows a <b>higher oxygen without a higher carbon dioxide</b> and a corrected pH. Vital signs; watch for complications.</td></tr>
+          <tr><td class="h">★ Home safety</td><td>Highly flammable, compressed gas. <b>No smoking</b>; &ldquo;No Smoking&rdquo; and &ldquo;Oxygen in Use&rdquo; signs. <b>At least 10 feet</b> from heat sources (pilot lights, electric appliances, candles). <b>No petroleum products</b> (lip balms, lotions, oils, grease). Smoke and carbon monoxide alarms <b>tested monthly</b>. Proper storage and disposal.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l34-emph" style="--acc:#b8860b;--acc-bg:#f5eedd;--acc-zebra:#faf7ee;--acc-ink:#906909">
+    <div class="shead"><span class="dot" style="background:#b8860b"></span><h2>★ Professor Emphasized — Normals, Winter Formula, Anion Gap</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ Normal values</td><td>pH <b>7.35&ndash;7.45</b> (&ldquo;burn this into your eyeballs&rdquo;); carbon dioxide <b>36&ndash;44</b> mm Hg (midpoint 40); bicarbonate <b>22&ndash;26</b> mEq/L (midpoint 24). Acidemia below 7.35, alkalemia above 7.45.</td></tr>
+          <tr><td class="h">★ Winter formula</td><td>Metabolic acidosis: expected carbon dioxide = <b>1.5 &times; bicarbonate + 8, &plusmn; 2</b>. Higher than expected = <b>added respiratory acidosis</b>, can signal impending respiratory failure.</td></tr>
+          <tr><td class="h">★ Anion gap</td><td><b>Sodium &minus; (chloride + bicarbonate)</b>, normal <b>9&ndash;15</b>. Above 15 = elevated-gap acidosis.</td></tr>
+          <tr><td class="h">★ Treatment</td><td>&ldquo;Always going to be correct the underlying disorder.&rdquo; Therapy aimed at the pH itself only when it is unsustainable: <b>below 6.7 or above 7.6</b>.</td></tr>
+          <tr><td class="h">★ Frequent questions</td><td>Obesity hypoventilation triad; paper bag = placebo; saline responsive is the common alkalosis; carbon dioxide rarely above 55 in compensation; urine chloride splits the alkaloses.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l34-read" style="--acc:#7a2d30;--acc-bg:#ece2e2;--acc-zebra:#f6f0f1;--acc-ink:#5f2325">
+    <div class="shead"><span class="dot" style="background:#7a2d30"></span><h2>Reading the Gas &amp; Compensation</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Steps</td><td>1. pH: acidosis or alkalosis. 2. Which value (carbon dioxide or bicarbonate) matches the pH. 3. Mixed? pH more or less than expected. 4. Compensation: respiratory disorder &rarr; expected <b>bicarbonate</b>; metabolic disorder &rarr; expected <b>carbon dioxide</b>. 5. Don&rsquo;t neglect the patient.</td></tr>
+          <tr><td class="h">Rules</td><td>Compensation <b>never returns pH to normal</b> and never past it; respiratory cause &rarr; renal compensation; metabolic cause &rarr; respiratory compensation. Normal pH with abnormal values = <b>mixed disorder</b>.</td></tr>
+          <tr><td class="h">Ratios (given in questions)</td><td>Respiratory acidosis: bicarbonate +<b>1</b> per 10 mm Hg acute, +<b>3.5</b> chronic. Respiratory alkalosis: &minus;<b>2</b> per 10 acute, &minus;<b>5</b> chronic. Metabolic acidosis: carbon dioxide &minus;1.3 per 1 mEq/L (use Winter). Metabolic alkalosis: +<b>0.75</b> per 1 mEq/L, <b>rarely above 55</b> (above = concurrent respiratory acidosis).</td></tr>
+          <tr><td class="h">Timing</td><td>Renal compensation <b>begins 6&ndash;12 hours</b> after onset, complete over <b>days</b>: small bicarbonate change = acute, large = chronic.</td></tr>
+          <tr><td class="h">Algorithm</td><td>pH below 7.4 + carbon dioxide above 40 = respiratory acidosis (acute or chronic?); below 40 = compensating metabolic acidosis (check the gap). pH above 7.4 + carbon dioxide above 40 = compensating metabolic alkalosis; below 40 = respiratory alkalosis.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l34-resp" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Respiratory Acidosis &amp; Alkalosis</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Respiratory acidosis</td><td>Hypoventilation &rarr; carbon dioxide above 40 &rarr; low pH, &plusmn; hypoxemia. Somnolence, confusion, altered mental status, asterixis, myoclonus; severe: raised cerebral blood flow and intracranial pressure, papilledema. Labs: low pH, high carbon dioxide, high bicarbonate, <b>hypochloremia if chronic</b> (ammonium chloride excretion).</td></tr>
+          <tr><td class="h">Acute causes</td><td>Airway obstruction; pneumonia, asthma, pulmonary edema, aspiration pneumonitis; central nervous system depression (recreational drugs, intracranial catastrophe, intravenous sedation); myasthenia gravis, Guillain-Barr&eacute; syndrome; pneumothorax, flail chest.</td></tr>
+          <tr><td class="h">Chronic causes</td><td><b>Chronic obstructive pulmonary disease</b> (&ldquo;first thing that comes to mind&rdquo;), interstitial lung disease, idiopathic pulmonary fibrosis; muscular dystrophy, amyotrophic lateral sclerosis; <b>★ obesity hypoventilation (Pickwickian) syndrome: obesity + sleep disordered breathing + chronic hypercapnia</b>.</td></tr>
+          <tr><td class="h">Treat</td><td>Underlying cause. Acute: <b>restore ventilation</b>. Chronic: <b>careful oxygen titration</b>; avoid rapid carbon dioxide reduction &rarr; <b>post-hypercapnic metabolic alkalosis</b>.</td></tr>
+          <tr><td class="h">Respiratory alkalosis</td><td>Hyperventilation &rarr; low carbon dioxide &rarr; high pH. Light-headedness, anxiety, perioral numbness, paresthesias; severe: <b>tetany</b> (high pH binds calcium to albumin). Compensation: cells trade hydrogen ions for potassium, then kidneys excrete bicarbonate and keep chloride (low bicarbonate, hypokalemia, hyperchloremia).</td></tr>
+          <tr><td class="h">Alkalosis causes</td><td>Psychogenic, stroke, raised intracranial pressure; hypoxia (high altitude, severe anemia, ventilation-perfusion mismatch, hypotension); salicylates, caffeine, nicotine, catecholamines, thyroxine; pulmonary embolism, pneumonia, pulmonary edema, mechanical hyperventilation, interstitial lung disease; pregnancy, hyperthyroidism; septicemia, heat exposure, hepatic failure.</td></tr>
+          <tr><td class="h">Treat</td><td>Underlying cause; usually self-limited. <b>★ Paper bag not necessary</b>: does not correct carbon dioxide, may lower oxygen, placebo. Rapid correction of chronic alkalosis &rarr; post-hypocapnia metabolic acidosis.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l34-metab" style="--acc:#5a3d8a;--acc-bg:#e8e4ef;--acc-zebra:#f3f1f7;--acc-ink:#46306c">
+    <div class="shead"><span class="dot" style="background:#5a3d8a"></span><h2>Metabolic Alkalosis &amp; Acidosis</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Metabolic alkalosis</td><td>High bicarbonate &rarr; high pH. No characteristic findings; orthostatic hypotension; hypokalemia &rarr; weakness, hyporeflexia. Labs: high pH and bicarbonate, raised carbon dioxide, low potassium, low chloride.</td></tr>
+          <tr><td class="h">★ Urine chloride</td><td><b>Below 25 mEq/L = saline responsive</b> (more common; volume contraction): diuretics, post-hypercapnia, vomiting or nasogastric suction, antacids, volume contraction. <b>Above 40 = saline unresponsive</b> (euvolemic or hypervolemic) &rarr; check <b>blood pressure</b>.</td></tr>
+          <tr><td class="h">Unresponsive groups</td><td><b>Normotensive:</b> severe potassium depletion; hypoparathyroidism and hypercalcemia. <b>Hypertensive:</b> primary aldosteronism, exogenous alkali, mineralocorticoids, <b>licorice</b> (&ldquo;a unicorn&rdquo;).</td></tr>
+          <tr><td class="h">Treat alkalosis</td><td>Underlying cause; saline responsive: <b>isotonic saline</b> and <b>stop diuretics</b>.</td></tr>
+          <tr><td class="h">Metabolic acidosis</td><td>Low bicarbonate &rarr; low pH, low carbon dioxide; hyperkalemia may be present. Signs of the cause + compensatory hyperventilation; <b>Kussmaul respirations</b> (increased tidal volume and tachypnea) in diabetic ketoacidosis. Normal gap = hyperchloremic; elevated gap = normochloremic.</td></tr>
+          <tr><td class="h">Elevated gap: MUDPILES</td><td>Methanol, metformin &middot; uremia &middot; diabetic ketoacidosis &middot; paraldehyde &middot; isoniazid, iron &middot; lactic acidosis &middot; ethylene glycol &middot; salicylates, starvation.</td></tr>
+          <tr><td class="h">Normal gap: USEDCAR</td><td>Ureteral diversion &middot; saline infusion &middot; exogenous acid &middot; diarrhea &middot; carbonic anhydrase inhibitors &middot; adrenal insufficiency &middot; renal tubular acidosis (bicarbonate loss, chloride retention).</td></tr>
+          <tr><td class="h">Gap pitfalls</td><td>Albumin makes most of the normal gap; <b>hypoalbuminemia</b>, sodium extremes and antibiotics distort it. A normal gap does not exclude acidosis and should not override clinical concern. Fewer unmeasured cations (calcium, magnesium, potassium) raise it.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l34-lytes" style="--acc:#1f5c3a;--acc-bg:#e0e8e3;--acc-zebra:#eff4f1;--acc-ink:#18482d">
+    <div class="shead"><span class="dot" style="background:#1f5c3a"></span><h2>Electrolytes &amp; Oxygen</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Potassium</td><td><b>Acidosis</b>: hydrogen into cells, potassium out &rarr; <b>hyperkalemia</b>. <b>Alkalosis</b>: potassium into cells &rarr; <b>hypokalemia</b>.</td></tr>
+          <tr><td class="h">Oxygen</td><td><b>Acidosis</b>: lower hemoglobin affinity, curve <b>right</b>, <b>more</b> oxygen to tissues. <b>Alkalosis</b>: higher affinity, curve <b>left</b>, <b>less</b> oxygen to tissues.</td></tr>
+          <tr><td class="h">Unsustainable pH</td><td><b>Below 6.7 or above 7.6</b>: cardiac hypocontractility and irritability, seizures, cerebral edema, metabolic disturbances.</td></tr>
+          <tr><td class="h">Buffers</td><td>Chemical buffering (extracellular, intracellular), respiratory (carbon dioxide, fast), renal (bicarbonate, hours to days). Water + carbon dioxide &harr; carbonic acid &harr; hydrogen ion + bicarbonate. Brainstem chemoreceptor: more carbon dioxide &rarr; lower cerebral pH &rarr; more breathing. Hypercapnia usually from <b>under-excretion</b>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the CMS I Exam 6 Study Guide (Class of 2028). For the full explanation behind any of these, see the full guide.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
