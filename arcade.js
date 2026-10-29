@@ -13114,6 +13114,19 @@ function semesterOfClass(classId) {
 function findDeck(id) { return DEMO_DECKS.find(function (d) { return d.id === id; }); }
 function deckIdFromURL() { return new URLSearchParams(location.search).get("deck"); }
 
+/* Acid-Base Case Chain sets (2026-10-29): chained multistep cases played on
+   arcade-chain.html?set=<id>. The case data lives in arcade-chain/<id>.json;
+   this registry only carries what the Arcade home card shows, and
+   tools/build_acid_base_chain.py rewrites it from the data on every build. */
+var CHAIN_SETS = [
+  // <!--ABCHAIN-SETS-->
+  // written by tools/build_acid_base_chain.py from arcade-chain/*.json; do not hand-edit
+  { id: "pdm-e4", name: "Acid-Base Case Chains", course: "Principles of Diagnostic Medicine I", exam: "Exam 4", color: "accent3", cases: 20, steps: 99 },
+  { id: "cms-e6", name: "Acid-Base Case Chains", course: "Clinical Medicine and Surgery I", exam: "Exam 6", color: "accent3", cases: 20, steps: 122 },
+  // <!--/ABCHAIN-SETS-->
+];
+function findChainSet(id) { return CHAIN_SETS.find(function (s) { return s.id === id; }); }
+
 // Real Class Tabs -> Exam Accordion structure, mirroring the main site's
 // tab/exam-section pattern. deckIds fill in as real decks are authored per
 // class/exam.
@@ -13150,7 +13163,7 @@ var DEMO_CLASSES = [
     ] },
     { id: "exam4", name: "Exam 4", deckIds: [
       "pdm-pulmonary-imaging", "pdm-acid-base", "pdm-pulmonary-function"
-    ] }
+    ], chainSets: ["pdm-e4"] }
   ]},
 
   { id: "physical-diagnosis-2", name: "Physical Diagnosis 2", exams: [
@@ -13197,7 +13210,7 @@ var DEMO_CLASSES = [
     ] },
     { id: "exam6", name: "Exam 6", deckIds: [
       "cms-e6-l33-devices", "cms-e6-l33-indications", "cms-e6-l34-normals", "cms-e6-l34-respiratory", "cms-e6-l34-metabolic", "cms-e6-l35-basics", "cms-e6-l35-dx", "cms-e6-l35-rx", "cms-e6-l36-basics", "cms-e6-l36-dx", "cms-e6-l36-rx"
-    ] }
+    ], chainSets: ["cms-e6"] }
   ]},
 
   { id: "anatomy", name: "Anatomy", exams: [
