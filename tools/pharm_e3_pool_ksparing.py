@@ -251,10 +251,10 @@ QUESTIONS = [
 {"topic": AA, "io": IO_IND, "slot": "indication",
  "q": "Besides edema, which cardiovascular conditions are indications for aldosterone antagonists?",
  "opts": [
-  ["Hypertension and heart failure", "Correct. Aldosterone antagonists are used for hypertension and for heart failure, along with edematous conditions."],
-  ["Stable angina and arrhythmia", "These are not listed indications; the cardiovascular uses are hypertension and heart failure."],
-  ["Hyperlipidemia and claudication", "These are not indications for aldosterone antagonists, which are diuretics and antihypertensives."],
-  ["Variant angina and stroke", "These are not listed indications; the cardiovascular uses are hypertension and heart failure."]],
+  ["Hypertension and heart failure", "Correct. Besides edematous conditions such as cirrhosis (secondary hyperaldosteronism) and nephrotic syndrome, the cardiovascular uses of aldosterone antagonists are hypertension and heart failure, specifically class IV with symptoms at rest. Primary aldosteronism is the remaining listed use, fitting a drug that is most effective when aldosterone is high."],
+  ["Stable angina and arrhythmia", "Stable angina and arrhythmia are not among the clinical uses, which name hypertension and class IV heart failure (symptoms at rest) as the cardiovascular indications. The drugs work best when aldosterone is high. The tell: each listed use is aldosterone excess or fluid retention, from primary aldosteronism to cirrhosis and nephrotic syndrome."],
+  ["Hyperlipidemia and claudication", "Hyperlipidemia and claudication are not among the clinical uses: aldosterone antagonists have only a modest effect on lipid, glucose and uric acid levels, so treating lipids is not their role. Their cardiovascular uses are hypertension and class IV heart failure. The tell: a modest effect on lipids is a side profile, not an indication."],
+  ["Variant angina and stroke", "Variant angina and stroke are not among the clinical uses, which name hypertension and class IV heart failure as the cardiovascular indications. These are weak diuretics, blocking only 2 to 3% of sodium chloride reabsorption while reducing potassium loss. The tell: angina and stroke are ischemic events, and no listed use is ischemic."]],
  "c": 0, "cite": D + ", Slide 37"},
 
 {"topic": AA, "io": IO_AE, "slot": "adverse effect",
