@@ -13121,8 +13121,8 @@ function deckIdFromURL() { return new URLSearchParams(location.search).get("deck
 var CHAIN_SETS = [
   // <!--ABCHAIN-SETS-->
   // written by tools/build_acid_base_chain.py from arcade-chain/*.json; do not hand-edit
-  { id: "pdm-e4", name: "Acid-Base Case Chains", course: "Principles of Diagnostic Medicine I", exam: "Exam 4", color: "accent3", cases: 20, steps: 99, ver: "287bd668b1" },
-  { id: "cms-e6", name: "Acid-Base Case Chains", course: "Clinical Medicine and Surgery I", exam: "Exam 6", color: "accent3", cases: 20, steps: 122, ver: "b225d736db" },
+  { id: "pdm-e4", name: "Acid-Base Case Chains", course: "Principles of Diagnostic Medicine I", exam: "Exam 4", color: "accent3", cases: 20, steps: 99, ver: "43d3653453" },
+  { id: "cms-e6", name: "Acid-Base Case Chains", course: "Clinical Medicine and Surgery I", exam: "Exam 6", color: "accent3", cases: 20, steps: 122, ver: "3c66704781" },
   // <!--/ABCHAIN-SETS-->
 ];
 function findChainSet(id) { return CHAIN_SETS.find(function (s) { return s.id === id; }); }

@@ -183,9 +183,9 @@ def step_ph(x):
                      "label marks the extremes of pH, not its direction." % (ph, word)))
         slides = [17, 18, 19]
     else:
-        opts.append(("Normal pH", "A normal arterial pH is %s to %s, and %s is %s it. Compensation never brings the pH "
-                     "back to normal, so an abnormal value like this one is never read as normal. Tell: compare the "
-                     "pH with its range first." % (f(lo), f(hi), ph, "below" if x.dir == ACID else "above")))
+        opts.append(("Normal pH", "A normal arterial pH is %s to %s, and %s is %s it. Compensation never returns the pH "
+                     "to normal, so a compensated disorder still shows an abnormal pH. Tell: compare the pH with its "
+                     "range first." % (f(lo), f(hi), ph, "below" if x.dir == ACID else "above")))
         opts.append((cfg["extreme"], "A pH is unsustainable below 6.7 or above 7.6. A pH of %s is abnormal but inside "
                      "those limits, so it is %s to be explained, not an unsustainable value. Tell: unsustainable "
                      "describes how far the pH has moved, not which way." % (ph, word)))
@@ -201,23 +201,27 @@ def _other_value_sentence(x):
     p, h = f(x.p), f(x.h)
     if x.primary == MACID:
         if x.ps == "low":
+            tail = ("; whether that response is enough is the next check" if any(
+                (st[0] if isinstance(st, tuple) else st) == "winter_calc" for st in x.c["steps"]) else "")
             return ("The carbon dioxide of %s is low too, but a low carbon dioxide would raise the pH, so it did not "
-                    "cause the %s; it is the lungs responding." % (p, x.phword()))
-        return "The carbon dioxide of %s is %s, so it does not explain the low pH." % (p, x.pdesc())
+                    "cause the %s; it is the lungs responding%s." % (p, x.phword(), tail))
+        tail = ("; whether the lungs responded enough is the next check" if any(
+            (st[0] if isinstance(st, tuple) else st) == "winter_calc" for st in x.c["steps"]) else "")
+        return "The carbon dioxide of %s is %s, so it did not cause the %s%s." % (p, x.pdesc(), x.phword(), tail)
     if x.primary == MALK:
         if x.ps == "high":
             return ("The carbon dioxide of %s is high too, but a high carbon dioxide would lower the pH, so it did not "
                     "cause the %s." % (p, x.phword()))
-        return "The carbon dioxide of %s is %s, so it does not explain the high pH." % (p, x.pdesc())
+        return "The carbon dioxide of %s is %s, so it did not cause the %s." % (p, x.pdesc(), x.phword())
     if x.primary == RACID:
         if x.hs == "high":
             return ("The bicarbonate of %s is high, which would raise the pH, so it is not the cause; it is the "
                     "kidneys compensating." % h)
-        return "The bicarbonate of %s is still %s, so it does not explain the low pH." % (h, x.hdesc())
+        return "The bicarbonate of %s is still %s, so it did not cause the %s." % (h, x.hdesc(), x.phword())
     if x.hs == "low":
         return ("The bicarbonate of %s is low, which would lower the pH, so it is not the cause; it is the kidneys "
                 "compensating." % h)
-    return "The bicarbonate of %s is still %s, so it does not explain the high pH." % (h, x.hdesc())
+    return "The bicarbonate of %s is still %s, so it did not cause the %s." % (h, x.hdesc(), x.phword())
 
 
 def step_primary(x):
@@ -234,53 +238,71 @@ def step_primary(x):
         expl[RALK] = ("Correct. The pH of %s is high, and the carbon dioxide of %s is below %s: breathing off carbon "
                       "dioxide raises the pH, so the problem is respiratory. %s" % (ph, p, f(plo), _other_value_sentence(x)))
     elif x.primary == MACID:
-        expl[MACID] = ("Correct. The pH of %s is low, and the bicarbonate of %s is below %s: losing bicarbonate lowers "
+        expl[MACID] = ("Correct. The pH of %s is low, and the bicarbonate of %s is below %s: a low bicarbonate lowers "
                        "the pH, so the problem is metabolic. %s" % (ph, h, f(hlo), _other_value_sentence(x)))
     else:
-        expl[MALK] = ("Correct. The pH of %s is high, and the bicarbonate of %s is above %s: extra bicarbonate raises "
+        expl[MALK] = ("Correct. The pH of %s is high, and the bicarbonate of %s is above %s: a high bicarbonate raises "
                       "the pH, so the problem is metabolic. %s" % (ph, h, f(hhi), _other_value_sentence(x)))
-    # wrong choices
+    # wrong choices.  Never state a bare threshold rule ("needs a carbon dioxide above 40"): a later CMS step can
+    # find an added respiratory or metabolic component, so each wrong choice says only that the value did not move
+    # the pH the way it went (slide 60: concurrent disturbances may push pH in the same or opposite direction).
+    pfx = {"high": "a high carbon dioxide lowers the pH", "low": "a low carbon dioxide raises the pH",
+           "normal": "a normal carbon dioxide does not move the pH"}[x.ps]
+    hfx = {"high": "a high bicarbonate raises the pH", "low": "a low bicarbonate lowers the pH",
+           "normal": "a normal bicarbonate does not move the pH"}[x.hs]
+    pstate = "%s, %s" % (x.ps, x.pdesc()) if x.ps != "normal" else "normal, %s" % x.pdesc()
+    hstate = "%s, %s" % (x.hs, x.hdesc()) if x.hs != "normal" else "normal, %s" % x.hdesc()
+    later = ""
+    if x.course == "cms":
+        later = (" Whether the lungs add a problem of their own is a later check." if not x.resp
+                 else " Whether the kidneys add a problem of their own is a later check.")
+    moved = "lower" if x.dir == ACID else "raise"
     if x.dir == ACID:
         cause = "the high carbon dioxide of %s" % p if x.primary == RACID else "the low bicarbonate of %s" % h
         if x.primary != RACID:
-            expl[RACID] = ("Respiratory acidosis needs a carbon dioxide above %s mm Hg. Here it is %s, %s, so it cannot "
-                           "be what lowered the pH; %s is. Tell: in respiratory acidosis carbon dioxide rises as the pH "
-                           "falls." % ("40" if x.course == "cms" else f(phi), p, x.pdesc(), cause))
+            expl[RACID] = ("The carbon dioxide of %s is %s, and %s, so it did not %s this pH; %s did.%s Tell: in a "
+                           "primary respiratory acidosis carbon dioxide rises as the pH falls."
+                           % (p, pstate, pfx, moved, cause, later))
         if x.primary != MACID:
-            expl[MACID] = ("Metabolic acidosis needs a bicarbonate below %s. Here it is %s, %s, so it did not lower the "
-                           "pH; %s did. Tell: in metabolic acidosis bicarbonate falls with the pH."
-                           % (f(hlo), h, x.hdesc(), cause))
-        lowp = ("The low carbon dioxide of %s is the lungs responding to the acidosis, not a primary problem." % p
-                if x.ps == "low" else "Its carbon dioxide of %s is not low either." % p)
-        expl[RALK] = ("Respiratory alkalosis raises the pH above %s, and this pH is %s, %s. %s Tell: the pH sets the "
-                      "direction before anything else." % (f(cfg["ph"][1]), ph, word, lowp))
-        highh = ("The high bicarbonate of %s is the kidneys compensating, not the cause." % h if x.hs == "high"
+            expl[MACID] = ("The bicarbonate of %s is %s, and %s, so it did not %s this pH; %s did.%s Tell: in a "
+                           "primary metabolic acidosis bicarbonate falls with the pH."
+                           % (h, hstate, hfx, moved, cause, later))
+        lowp = ("The carbon dioxide of %s is low, but a low carbon dioxide raises the pH, so it does not explain this "
+                "%s; the bicarbonate does." % (p, word) if x.ps == "low"
+                else "Its carbon dioxide of %s is not low either." % p)
+        expl[RALK] = ("A respiratory alkalosis on its own raises the pH above %s, and this pH is %s, %s. %s Tell: the "
+                      "pH sets the direction before anything else." % (f(cfg["ph"][1]), ph, word, lowp))
+        highh = ("The bicarbonate of %s is high, but a high bicarbonate raises the pH, so it does not explain this "
+                 "%s; the carbon dioxide does." % (h, word) if x.hs == "high"
                  else "Its bicarbonate of %s is not high either." % h)
-        expl[MALK] = ("Metabolic alkalosis raises the pH above %s, and this pH is %s, %s. %s Tell: in metabolic "
-                      "alkalosis bicarbonate and pH both rise." % (f(cfg["ph"][1]), ph, word, highh))
+        expl[MALK] = ("A metabolic alkalosis on its own raises the pH above %s, and this pH is %s, %s. %s Tell: in a "
+                      "primary metabolic alkalosis bicarbonate and pH both rise." % (f(cfg["ph"][1]), ph, word, highh))
     else:
         cause = "the low carbon dioxide of %s" % p if x.primary == RALK else "the high bicarbonate of %s" % h
         if x.primary != RALK:
-            expl[RALK] = ("Respiratory alkalosis needs a carbon dioxide below %s mm Hg. Here it is %s, %s, so it did "
-                          "not raise the pH; %s did. Tell: in respiratory alkalosis carbon dioxide falls as the pH "
-                          "rises." % (f(plo), p, x.pdesc(), cause))
+            expl[RALK] = ("The carbon dioxide of %s is %s, and %s, so it did not %s this pH; %s did.%s Tell: in a "
+                          "primary respiratory alkalosis carbon dioxide falls as the pH rises."
+                          % (p, pstate, pfx, moved, cause, later))
         if x.primary != MALK:
-            expl[MALK] = ("Metabolic alkalosis needs a bicarbonate above %s. Here it is %s, %s, so it did not raise "
-                          "the pH; %s did. Tell: in metabolic alkalosis bicarbonate rises with the pH."
-                          % (f(hhi), h, x.hdesc(), cause))
-        highp = ("The carbon dioxide of %s is high, but a high carbon dioxide would lower the pH, so it did not cause "
-                 "this %s." % (p, word) if x.ps == "high" else "Its carbon dioxide of %s is not high either." % p)
-        expl[RACID] = ("Respiratory acidosis lowers the pH below %s, and this pH is %s, %s. %s Tell: an acidosis needs "
-                       "a pH below %s." % (f(cfg["ph"][0]), ph, word, highp, f(cfg["ph"][0])))
-        lowh = ("The low bicarbonate of %s is the kidneys compensating, not the cause." % h if x.hs == "low"
+            expl[MALK] = ("The bicarbonate of %s is %s, and %s, so it did not %s this pH; %s did.%s Tell: in a "
+                          "primary metabolic alkalosis bicarbonate rises with the pH."
+                          % (h, hstate, hfx, moved, cause, later))
+        highp = ("The carbon dioxide of %s is high, but a high carbon dioxide pulls the pH down, so it does not "
+                 "explain this %s; the bicarbonate does." % (p, word) if x.ps == "high"
+                 else "Its carbon dioxide of %s is not high either." % p)
+        expl[RACID] = ("A respiratory acidosis on its own lowers the pH below %s, and this pH is %s, %s. %s Tell: the "
+                       "primary disorder is the value that moves the pH the way it went." % (f(cfg["ph"][0]), ph, word,
+                                                                                            highp))
+        lowh = ("The bicarbonate of %s is low, but a low bicarbonate lowers the pH, so it does not explain this "
+                "%s; the carbon dioxide does." % (h, word) if x.hs == "low"
                 else "Its bicarbonate of %s is not low either." % h)
-        expl[MACID] = ("Metabolic acidosis lowers the pH below %s, and this pH is %s, %s. %s Tell: in metabolic "
-                       "acidosis bicarbonate and pH both fall." % (f(cfg["ph"][0]), ph, word, lowh))
+        expl[MACID] = ("A metabolic acidosis on its own lowers the pH below %s, and this pH is %s, %s. %s Tell: in a "
+                       "primary metabolic acidosis bicarbonate and pH both fall." % (f(cfg["ph"][0]), ph, word, lowh))
     opts = [(k, expl[k]) for k in (RACID, RALK, MACID, MALK)]
     pmove = {"high": "a high carbon dioxide lowers the pH", "low": "a low carbon dioxide raises the pH",
-             "normal": "a normal carbon dioxide does not move the pH"}[x.ps]
+             "normal": "a normal carbon dioxide is not the primary change"}[x.ps]
     hmove = {"high": "a high bicarbonate raises the pH", "low": "a low bicarbonate lowers the pH",
-             "normal": "a normal bicarbonate does not move the pH"}[x.hs]
+             "normal": "a normal bicarbonate is not the primary change"}[x.hs]
     match = "carbon dioxide" if x.resp else "bicarbonate"
     walk = ["pH %s: %s." % (ph, word),
             "Carbon dioxide %s (normal %s): %s, and %s." % (p, rng(cfg["pco2"]), x.ps, pmove),
@@ -363,30 +385,29 @@ def step_comp_pdm(x):
     if key != good:
         # the "good" direction is offered but this case has not compensated (or the other way round)
         if good in (KUP, KDOWN):
-            E[good] = ("%s would show a bicarbonate %s %s. Here the bicarbonate is %s, still inside %s, so the kidneys "
-                       "have not responded yet. Tell: renal compensation takes days to appear."
-                       % (good, "above" if good == KUP else "below", f(hhi) if good == KUP else f(hlo), h, vrange))
+            E[good] = ("%s would show a %s bicarbonate. Here the bicarbonate is %s, still inside %s, the pattern "
+                       "before the kidneys respond. Tell: renal compensation takes days to appear."
+                       % (good, "raised" if good == KUP else "lowered", h, vrange))
         else:
-            E[good] = ("%s would show a carbon dioxide %s %s. Here it is %s, still inside %s. Tell: compensation is "
-                       "read from the value that is not the primary problem."
-                       % (good, "below" if good == LDOWN else "above", f(plo) if good == LDOWN else f(phi), p, vrange))
+            E[good] = ("%s would show a %s carbon dioxide. Here it is %s, still inside %s, the pattern before the "
+                       "lungs respond. Tell: compensation is read from the value that is not the primary problem."
+                       % (good, "lowered" if good == LDOWN else "raised", p, vrange))
     # wrong direction
     if x.resp:
         E[wrongdir] = ("%s would push the pH further the wrong way. In %s the kidneys offset the change by moving "
                        "bicarbonate the same way as carbon dioxide; here bicarbonate is %s, %s. Tell: compensation "
-                       "always pulls the pH back toward normal." % (wrongdir, pr.lower(), h, x.hdesc()))
-        E[wrongsys] = ("The lungs are the source of this problem: the carbon dioxide of %s is %s because of how he or "
-                       "she is breathing. A respiratory disorder is compensated by the kidneys, through bicarbonate. "
+                       "pulls the pH back toward normal." % (wrongdir, pr.lower(), h, x.hdesc()))
+        E[wrongsys] = ("The lungs are the source of this problem: the carbon dioxide of %s is %s because of a change in "
+                       "ventilation. A respiratory disorder is compensated by the kidneys, through bicarbonate. "
                        "Tell: the system that compensates is the one that is not the cause."
                        % (p, "high" if pr == RACID else "low"))
     else:
         E[wrongdir] = ("%s would push the pH further the wrong way. In %s the lungs offset the change by moving carbon "
-                       "dioxide the same way as bicarbonate; here carbon dioxide is %s, %s. Tell: compensation always "
+                       "dioxide the same way as bicarbonate; here carbon dioxide is %s, %s. Tell: compensation "
                        "pulls the pH back toward normal." % (wrongdir, pr.lower(), p, x.pdesc()))
         E[wrongsys] = ("The bicarbonate is where this problem lies: it is %s, %s. A metabolic disorder is compensated by "
                        "the lungs, through carbon dioxide, within minutes to hours. Tell: the system that compensates "
                        "is the one that is not the cause." % (h, x.hdesc()))
-    E[wrongsys] = E[wrongsys].replace("he or she is", "the patient is")
     opts = [(t, E[t]) for t in (NONE, good, wrongdir, wrongsys)]
     if x.resp:
         walk = ["Primary disorder: %s." % pr.lower(),
@@ -451,8 +472,9 @@ def step_chronicity(x):
     E = {}
     if ch == "acute":
         key = ACU
-        why = ("the kidneys have not had time to compensate, which begins 6 to 12 hours after onset" if acid
-               else "the kidneys have not yet lowered it")
+        why = ("the kidneys have not yet raised it much; renal compensation begins 6 to 12 hours after onset and "
+               "takes days to complete" if acid
+               else "only the small acute fall has occurred, not the larger chronic one")
         E[ACU] = ("Correct. Carbon dioxide %s %s mm Hg (40 to %s). Acutely, bicarbonate moves about %s per 10, to "
                   "about %s; chronically about %s per 10, to about %s. The measured %s matches the acute value: %s."
                   % (mv, f(d), p, f(ar), A_, f(cr), C_, h, why))
@@ -582,9 +604,10 @@ def step_winter_read(x):
         E[APPROP] = ("Appropriate compensation would put carbon dioxide inside %s mm Hg. The measured %s is above that "
                      "range%s. Tell: compare with the Winter range, not with the normal range."
                      % (r, p, ", even though it sits in the normal 36 to 44" if in_normal else ""))
-        E[PRALK] = ("A primary respiratory alkalosis would raise the pH, and this pH is %s, acidemic. Far from being too "
-                    "low, the carbon dioxide of %s is higher than the expected %s. Tell: the pH rules out any primary "
-                    "alkalosis." % (ph, p, r))
+        E[PRALK] = ("A primary respiratory alkalosis would raise the pH, and this pH is %s, acidemic. The carbon dioxide "
+                    "of %s is %shigher than the expected %s, so the lungs are not overshooting into an alkalosis. Tell: "
+                    "an acidemic pH points away from a primary alkalosis."
+                    % (ph, p, "below normal but " if x.p < 36 else "", r))
     E[RENALC] = ("A metabolic acidosis is compensated by the lungs, through carbon dioxide; the kidneys compensate "
                  "respiratory disorders. The carbon dioxide of %s is the respiratory response, and it sits %s the "
                  "expected %s. Tell: metabolic problems get a respiratory response."
@@ -628,20 +651,23 @@ def step_alk_comp(x, tail=""):
     if key == EXPC:
         E[EXPC] = ("Correct. Bicarbonate rose %s (24 to %s), and %s x 0.75 = %s, so carbon dioxide should be about 40 + "
                    "%s = %s. The measured %s fits that and stays under 55, the level compensation rarely exceeds. "
-                   "Breathing has slowed to retain carbon dioxide." % (f(dh), h, f(dh), f(inc), f(inc), f(pred), p))
+                   "The lungs retain carbon dioxide by decreasing ventilation, the expected compensation." % (f(dh), h, f(dh), f(inc), f(inc), f(pred), p))
         E[CONRA] = ("A concurrent respiratory acidosis is considered when carbon dioxide climbs above 55 mm Hg. The "
                     "measured %s is below that and matches the predicted %s. Tell: a modest rise is the lungs "
                     "compensating." % (p, f(pred)))
     else:
         E[CONRA] = ("Correct. Compensation for metabolic alkalosis rarely takes carbon dioxide above 55 mm Hg, and the "
                     "measured %s is above it; the 0.75 rule predicts only about %s (40 + %s x 0.75). A carbon dioxide "
-                    "this high means a concurrent primary respiratory acidosis%s." % (p, f(pred), f(dh), tail))
+                    "this high calls for considering a concurrent primary respiratory acidosis%s." % (p, f(pred), f(dh), tail))
         E[EXPC] = ("Compensation alone predicts about %s and rarely goes above 55 mm Hg; the measured %s is above both. "
                    "Tell: past 55, look for a second, respiratory, disorder." % (f(pred), p))
     E[RENALK] = ("Compensation never returns the pH to normal; only correcting the underlying disorder does. The pH "
-                 "here is %s, still above 7.45. Tell: compensation narrows the pH change but never erases it." % fph(x.ph))
-    E[CONRALK] = ("A respiratory alkalosis would lower the carbon dioxide below 36, and here it is %s, raised. Tell: "
-                  "with a metabolic alkalosis, carbon dioxide goes up, never down, as compensation." % p)
+                 "here is %s, still above 7.45. Tell: compensation does not return the pH to normal." % fph(x.ph))
+    E[CONRALK] = ("A concurrent respiratory alkalosis would leave the carbon dioxide below the value expected from the "
+                  "bicarbonate, about %s. The measured %s %s. Tell: with a metabolic alkalosis, the lungs compensate by "
+                  "retaining carbon dioxide, so it goes up."
+                  % (f(pred), p, "matches that prediction, so the lungs are compensating, not adding a separate "
+                     "problem" if key == EXPC else "is above that prediction, not below it"))
     opts = [(t, E[t]) for t in (EXPC, CONRA, RENALK, CONRALK)]
     walk = ["Bicarbonate rise: %s - 24 = %s." % (h, f(dh)),
             "Expected carbon dioxide rise: %s x 0.75 = %s." % (f(dh), f(inc)),
@@ -931,18 +957,20 @@ def saline_of(x):
 
 
 def step_saline(x):
+    # volume_clue is a plain statement from the vignette ("he is volume depleted", "he is not dehydrated ..."):
+    # the type is decided on the urine chloride (slide 41); slide 37 ties each type to its volume status
     key = saline_of(x)
     clue = x.c["volume_clue"]
     E = {}
     if key == SRC_:
-        E[SRC_] = ("Correct. The urine chloride is low, which marks the saline-responsive type, and %s show extracellular "
-                   "volume contraction, the sign that goes with it. Saline-responsive is the more common type." % clue)
-        E[SUE] = ("The saline-unresponsive type has a high urine chloride and no volume contraction. Here the urine "
-                  "chloride is low and %s point to a contracted volume. Tell: a low urine chloride means saline "
+        E[SRC_] = ("Correct. The urine chloride is low, which marks the saline-responsive type, and %s: saline-responsive "
+                   "alkalosis is a sign of extracellular volume contraction. Saline-responsive is the more common type."
+                   % clue)
+        E[SUE] = ("The saline-unresponsive type has a high urine chloride, with an elevated bicarbonate and a normal or "
+                  "high volume. Here the urine chloride is low and %s. Tell: a low urine chloride means saline "
                   "responsive." % clue)
         E[SRE] = ("Saline-responsive alkalosis is itself a sign of extracellular volume contraction, so it does not come "
-                  "with euvolemia or hypervolemia; and %s show contraction here. Tell: responsive goes with a "
-                  "contracted volume." % clue)
+                  "with euvolemia or hypervolemia, and here %s. Tell: responsive goes with a contracted volume." % clue)
         E[SUC] = ("A contracted volume is the saline-responsive picture, and the low urine chloride agrees. The "
                   "unresponsive type has a high urine chloride with a normal or high volume. Tell: low urine chloride "
                   "and a contracted volume travel together.")
@@ -952,14 +980,15 @@ def step_saline(x):
         E[SRC_] = ("The saline-responsive type has a low urine chloride and a contracted volume. Here the urine chloride "
                    "is high and %s. Tell: a high urine chloride means saline unresponsive." % clue)
         E[SRE] = ("Saline-responsive alkalosis is a sign of volume contraction and carries a low urine chloride; this "
-                  "urine chloride is high. Tell: a high urine chloride rules out the responsive type.")
+                  "urine chloride is high. Tell: a high urine chloride points to the unresponsive type.")
         E[SUC] = ("The unresponsive type comes with euvolemia or hypervolemia, not volume contraction, and %s. Tell: "
                   "volume contraction belongs to the responsive type." % clue)
     opts = [(t, E[t]) for t in (SRC_, SUE, SRE, SUC)]
     walk = ["Urine chloride separates the two types: lower (below 25 mEq/L) in saline responsive, higher (above 40 "
             "mEq/L) in saline unresponsive.",
-            "Here the urine chloride is %s." % x.c["urine_cl"],
-            "Volume: %s, %s." % (clue, "contracted" if key == SRC_ else "not contracted"),
+            "Here the urine chloride is %s, so the type is saline %s." % (
+                x.c["urine_cl"], "responsive" if key == SRC_ else "unresponsive"),
+            "Volume, from the history: %s (%s)." % (clue, "contracted" if key == SRC_ else "not contracted"),
             "So: %s." % key.lower()]
     return opts, key, walk, [37, 41]
 

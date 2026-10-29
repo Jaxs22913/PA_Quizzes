@@ -80,15 +80,16 @@ dict(id="cms-01", who="22-year-old woman",
           "Starvation is also an elevated gap cause, but she has been eating normally; what stopped two days ago was "
           "her insulin. Tell: diabetes, no insulin and a very high glucose point to diabetic ketoacidosis."),
          ("Lactic acidosis", "ma-elevated",
-          "Lactic acidosis is another elevated gap cause, but she is well perfused, and her urine is strongly positive "
-          "for ketones. Tell: the history and the ketones name the acid."),
+          "Lactic acidosis is another elevated gap cause, but her history (type 1 diabetes, no insulin, a very high "
+          "glucose) and strongly positive ketones name diabetic ketoacidosis. Tell: the ketones name the acid."),
          ("Diarrhea", "ma-normal",
           "Diarrhea is a normal anion gap cause (the D of USEDCAR) with a high chloride. Her gap is 26 and her chloride "
-          "99, normal. Tell: an elevated gap rules out the normal gap list."),
+          "99, normal. Tell: an elevated gap points to the MUDPILES list, and nothing in her history suggests a normal "
+          "gap cause."),
      ], "Diabetic ketoacidosis",
        ["Elevated anion gap metabolic acidosis: the MUDPILES list (methanol, metformin, uremia, diabetic ketoacidosis, paraldehyde, isoniazid, iron, lactic acidosis, ethylene glycol, salicylates, starvation).",
         "Type 1 diabetes, no insulin for two days, very high glucose, strongly positive ketones.",
-        "Well perfused (not lactic), eating normally (not starvation).",
+        "Eating normally (not starvation); the ketones name the acid.",
         "So: diabetic ketoacidosis."],
        [50, 54, 55]),
      summary="Elevated anion gap metabolic acidosis from diabetic ketoacidosis, appropriately compensated, with "
@@ -104,20 +105,22 @@ dict(id="cms-02", who="45-year-old man",
      cause=C([
          ("Methanol", "ma-elevated",
           "Correct. Methanol is the first M of MUDPILES, a drug or chemical anion that raises the gap, here to 27 with a "
-          "normal chloride. He drank washer fluid that contains methanol; his loose stools cannot raise the gap."),
+          "normal chloride. He drank washer fluid that contains methanol; his loose stools, a normal gap cause, do not "
+          "fit an elevated gap."),
          ("Ethylene glycol", "ma-elevated",
           "Ethylene glycol is also an elevated gap cause, but he drank methanol-containing washer fluid, not "
           "antifreeze. Tell: the ingested product names the toxin."),
          ("Diarrhea", "ma-normal",
           "He has had loose stools, but diarrhea loses bicarbonate and gives a normal gap with a high chloride. His gap "
-          "is 27 with a normal chloride of 101. Tell: an elevated gap means an added acid, not lost base."),
+          "is 27 with a normal chloride of 101. Tell: diarrhea gives a normal gap; an elevated gap usually means added "
+          "unmeasured anions."),
          ("Saline infusion", "ma-normal",
           "Saline infusion is a normal gap cause (the S of USEDCAR), and he has had no intravenous fluids. Tell: a gap "
           "of 27 is not on the normal gap list."),
      ], "Methanol",
        ["Elevated anion gap metabolic acidosis: the MUDPILES list (methanol, metformin, uremia, diabetic ketoacidosis, paraldehyde, isoniazid, iron, lactic acidosis, ethylene glycol, salicylates, starvation).",
         "He drank washer fluid containing methanol and has had loose stools; glucose, ketones and kidneys are normal.",
-        "Diarrhea is a normal gap cause, so it cannot explain a gap of 27 with a normal chloride.",
+        "Diarrhea is a normal gap cause, so it does not fit a gap of 27 with a normal chloride.",
         "So: methanol."],
        [54, 55, 56]),
      summary="Elevated anion gap metabolic acidosis from methanol, appropriately compensated."),
@@ -132,7 +135,8 @@ dict(id="cms-03", who="50-year-old woman",
      cause=C([
          ("Ethylene glycol", "ma-elevated",
           "Correct. Ethylene glycol is the E of MUDPILES, a chemical anion that raises the gap, here to 28 with a "
-          "normal chloride. She drank antifreeze containing it; her glaucoma tablet cannot raise the gap."),
+          "normal chloride. She drank antifreeze containing it; her glaucoma tablet, a normal gap cause, does not fit an "
+          "elevated gap."),
          ("Methanol", "ma-elevated",
           "Methanol is also an elevated gap cause, but she drank antifreeze containing ethylene glycol. Tell: the "
           "product she drank names the toxin."),
@@ -147,7 +151,7 @@ dict(id="cms-03", who="50-year-old woman",
        ["Elevated anion gap metabolic acidosis: the MUDPILES list (methanol, metformin, uremia, diabetic ketoacidosis, paraldehyde, isoniazid, iron, lactic acidosis, ethylene glycol, salicylates, starvation).",
         "She drank antifreeze that contains ethylene glycol and takes a carbonic anhydrase inhibitor; no ketones, "
         "normal glucose.",
-        "A carbonic anhydrase inhibitor is a normal gap cause, so it cannot explain a gap of 28 with a normal "
+        "A carbonic anhydrase inhibitor is a normal gap cause, so it does not fit a gap of 28 with a normal "
         "chloride.",
         "So: ethylene glycol."],
        [54, 55, 56]),
@@ -170,7 +174,7 @@ dict(id="cms-04", who="67-year-old man",
           "24 and his chloride 100. Tell: kidney failure with an elevated gap is uremia."),
          ("Ureteral diversion", "ma-normal",
           "Ureteral diversion is a normal gap cause, and he has had no urinary diversion surgery. Tell: an elevated gap "
-          "is never on the USEDCAR list."),
+          "points to the MUDPILES list, not USEDCAR."),
          ("Diabetic ketoacidosis", "ma-elevated",
           "Diabetic ketoacidosis is an elevated gap cause, but he has no diabetes. His missed dialysis and extremely "
           "high urea point to uremia. Tell: diabetic ketoacidosis needs diabetes and ketones."),
@@ -204,16 +208,17 @@ dict(id="cms-05", who="31-year-old woman",
           "chloride 102. Tell: elevated gap, think MUDPILES."),
      ], "Lactic acidosis",
        ["Elevated anion gap metabolic acidosis: the MUDPILES list (methanol, metformin, uremia, diabetic ketoacidosis, paraldehyde, isoniazid, iron, lactic acidosis, ethylene glycol, salicylates, starvation).",
-        "A long seizure and a markedly raised lactate; type 1 diabetes, but a normal glucose and no ketones.",
+        "A markedly raised lactate; type 1 diabetes, but a normal glucose and no ketones.",
         "So: lactic acidosis."],
        [54, 55, 56]),
-     summary="Elevated anion gap metabolic acidosis from lactic acidosis after a long seizure, with an added "
+     summary="Elevated anion gap metabolic acidosis from lactic acidosis (a markedly raised lactate), with an added "
              "respiratory acidosis hidden inside a normal-looking carbon dioxide of 37."),
 
 dict(id="cms-06", who="58-year-old woman",
      vignette=("A 58-year-old woman who takes metformin for diabetes has had a week of profuse watery diarrhea after a "
-               "family gathering where several relatives also fell ill. She is weak and lightheaded. Her glucose and "
-               "urine ketones are normal, her kidney function is normal, and she is well perfused."),
+               "family gathering where several relatives also fell ill. She is weak and lightheaded. She takes no other "
+               "medicines. Her glucose and urine ketones are normal, her kidney function is normal, and she is well "
+               "perfused."),
      labs=dict(ph=7.29, pco2=28, hco3=13, na=136, cl=111, k=4.0),
      expect=dict(primary="Metabolic acidosis", winter="appropriate", gap="normal"),
      steps=["ph", "primary", ("winter_calc", "A"), "winter_read", ("ag_calc", "2"), "ag_type", "cause"],
@@ -222,18 +227,20 @@ dict(id="cms-06", who="58-year-old woman",
           "Correct. Diarrhea is the D of USEDCAR: bicarbonate is lost in the stool, so the gap stays normal (12) while "
           "the chloride rises (111). A week of profuse watery diarrhea fits."),
          ("Lactic acidosis", "ma-elevated",
-          "Lactic acidosis raises the gap, and her gap of 12 is normal; she is also well perfused. Tell: a normal gap, "
-          "hyperchloremic acidosis points to the USEDCAR list."),
+          "Lactic acidosis is an elevated gap cause (an L of MUDPILES), and nothing in her numbers points to it: her gap "
+          "of 12 with a high chloride of 111 points to the USEDCAR list. Tell: a normal gap, hyperchloremic acidosis "
+          "points to the USEDCAR list."),
          ("Metformin", "ma-elevated",
-          "She takes metformin, but metformin is an elevated gap cause (an M of MUDPILES), and her gap is 12, normal, "
-          "with a high chloride of 111. Tell: a drug on the elevated gap list cannot explain a normal gap."),
+          "She takes metformin, but metformin is an elevated gap cause (an M of MUDPILES), and nothing in her numbers "
+          "points to it: her gap of 12 with a high chloride of 111 points to the USEDCAR list. Tell: her week of "
+          "diarrhea is the USEDCAR cause the history gives."),
          ("Carbonic anhydrase inhibitors", "ma-normal",
           "Carbonic anhydrase inhibitors are also a normal gap cause, but she takes none; her only medicine is "
           "metformin. Her week of diarrhea explains the lost bicarbonate. Tell: choose the normal gap cause the "
           "history contains."),
      ], "Diarrhea",
        ["Normal anion gap, hyperchloremic metabolic acidosis: the USEDCAR list (ureteral diversion, saline infusion, exogenous acid, diarrhea, carbonic anhydrase inhibitors, adrenal insufficiency, renal tubular acidosis).",
-        "A week of profuse diarrhea; she takes metformin, but the gap is normal, so the elevated gap list is out.",
+        "A week of profuse diarrhea; she takes metformin, but a normal gap with a high chloride points to the USEDCAR list.",
         "So: diarrhea."],
        [54, 55, 56]),
      summary="Normal anion gap, hyperchloremic metabolic acidosis from diarrhea, appropriately compensated."),
@@ -256,13 +263,14 @@ dict(id="cms-07", who="70-year-old man",
           "Renal tubular acidosis is also a normal gap cause, but he has no known kidney tubule disorder; the tablet "
           "he takes every day explains it. Tell: the medicine list names the cause."),
          ("Starvation", "ma-elevated",
-          "He has eaten very little, but starvation is an elevated gap cause (an S of MUDPILES), and his gap is 11, "
-          "normal, with a high chloride of 112. Tell: a normal gap, hyperchloremic acidosis points to the USEDCAR "
+          "He has eaten very little, but starvation is an elevated gap cause (an S of MUDPILES); his gap of 11 with a "
+          "high chloride of 112 points to the USEDCAR list, and his daily tablet is on it. Tell: a normal gap, hyperchloremic acidosis points to the USEDCAR "
           "list."),
      ], "Carbonic anhydrase inhibitors",
        ["Normal anion gap, hyperchloremic metabolic acidosis: the USEDCAR list (ureteral diversion, saline infusion, exogenous acid, diarrhea, carbonic anhydrase inhibitors, adrenal insufficiency, renal tubular acidosis).",
         "He takes a carbonic anhydrase inhibitor daily and has eaten little; no diarrhea, no diversion surgery.",
-        "Starvation is an elevated gap cause, so it cannot explain a gap of 11 with a high chloride.",
+        "Starvation is an elevated gap cause; his gap of 11 with a high chloride points to the USEDCAR list, and the "
+        "daily carbonic anhydrase inhibitor supplies the cause.",
         "So: carbonic anhydrase inhibitors."],
        [54, 55, 56]),
      summary="Normal anion gap, hyperchloremic metabolic acidosis from a carbonic anhydrase inhibitor."),
@@ -297,10 +305,10 @@ dict(id="cms-08", who="66-year-old man",
 # ------------------------------------------------------------------ metabolic alkalosis
 dict(id="cms-09", who="61-year-old man",
      vignette=("A 61-year-old man has vomited after nearly every meal for a week because an ulcer has narrowed the "
-               "outlet of his stomach. He is dizzy when he stands (orthostatic hypotension: blood pressure drops on "
-               "standing) and his mouth is dry. His urine chloride is low. He takes no diuretics but eats black licorice most days."),
+               "outlet of his stomach. He is volume depleted. His urine chloride is low. He takes no diuretics but eats "
+               "black licorice most days."),
      labs=dict(ph=7.49, pco2=49, hco3=36, na=137, cl=88, k=3.0),
-     urine_cl="low", volume="contracted", volume_clue="his dizziness on standing and dry mouth",
+     urine_cl="low", volume="contracted", volume_clue="he is volume depleted",
      expect=dict(primary="Metabolic alkalosis", alk_comp="expected"),
      steps=["ph", "primary", "alk_comp", "saline", "potassium", "cause", "next"],
      cause=C([
@@ -312,22 +320,21 @@ dict(id="cms-09", who="61-year-old man",
           "the lost acid. Tell: choose the responsive cause in the history."),
          ("Primary aldosteronism", "malk-unresp-htn",
           "Primary aldosteronism is a saline-unresponsive cause with hypertension and a high urine chloride. His urine "
-          "chloride is low and his pressure drops on standing. Tell: unresponsive causes do not contract the volume."),
+          "chloride is low and he is volume depleted. Tell: unresponsive causes come with a normal or high volume."),
          ("Licorice", "malk-unresp-htn",
           "He does eat licorice, but licorice causes a saline-unresponsive alkalosis with hypertension and a high urine "
-          "chloride. His urine chloride is low and his pressure drops on standing. Tell: a low urine chloride rules out "
-          "the unresponsive list."),
+          "chloride. His urine chloride is low. Tell: a low urine chloride points to the responsive list."),
      ], "Vomiting",
        ["Saline-responsive metabolic alkalosis: diuretics, post-hypercapnia, loss of hydrochloric acid (vomiting or "
         "nasogastric suction), antacids, volume contraction.",
-        "A week of vomiting and daily licorice; no diuretics.",
-        "Licorice is a saline-unresponsive cause, so his low urine chloride and contracted volume rule it out.",
+        "A week of vomiting and licorice most days; no diuretics.",
+        "Licorice is a saline-unresponsive cause, so his low urine chloride and contracted volume point away from it.",
         "So: vomiting."],
        [42, 43], prompt="Which cause fits the type of alkalosis you found?"),
      next=C([
          (SALINE, "tx-saline",
           "Correct. Saline-responsive metabolic alkalosis is treated by treating the cause and, in addition, giving "
-          "isotonic saline to correct the extracellular volume deficit, which his dizziness on standing shows."),
+          "isotonic saline to correct the extracellular volume deficit; he is volume depleted."),
          (BAG, "tx-paperbag",
           "Breathing into a paper bag is not necessary even for hyperventilation: it does not correct the carbon "
           "dioxide and may lower the oxygen. His problem is metabolic. Tell: this alkalosis needs volume, not a bag."),
@@ -341,7 +348,7 @@ dict(id="cms-09", who="61-year-old man",
        ["Treat the underlying cause in every acid-base disorder.",
         "If the alkalosis is saline responsive, also give isotonic saline to correct the volume deficit, and stop any "
         "diuretic.",
-        "His low urine chloride and orthostatic hypotension say saline responsive.",
+        "His low urine chloride says saline responsive, and he is volume depleted.",
         "So: isotonic saline infusion."],
        [35, 44], prompt="Along with treating the cause, what does this type of alkalosis also call for?"),
      summary="Saline-responsive metabolic alkalosis from vomiting, with expected respiratory compensation and "
@@ -349,11 +356,10 @@ dict(id="cms-09", who="61-year-old man",
 
 dict(id="cms-10", who="74-year-old woman",
      vignette=("A 74-year-old woman took a high-dose diuretic for ankle swelling for several months. The swelling is "
-               "gone, but for the past week she has been lightheaded on standing (orthostatic hypotension) and her mouth "
-               "is dry. She stopped the diuretic two days ago. Her urine chloride is low. She has not vomited "
-               "and eats no licorice."),
+               "gone, and she is now volume depleted. She stopped the diuretic two days ago. Her urine chloride is low. She "
+               "has not vomited and eats no licorice."),
      labs=dict(ph=7.47, pco2=46, hco3=32, na=136, cl=94, k=3.3),
-     urine_cl="low", volume="contracted", volume_clue="her lightheadedness on standing and dry mouth",
+     urine_cl="low", volume="contracted", volume_clue="she is volume depleted",
      expect=dict(primary="Metabolic alkalosis", alk_comp="expected"),
      steps=["ph", "primary", "alk_comp", "saline", "cause", "next"],
      cause=C([
@@ -365,11 +371,10 @@ dict(id="cms-10", who="74-year-old woman",
           "the responsive cause in the history."),
          ("Primary aldosteronism", "malk-unresp-htn",
           "Primary aldosteronism is a saline-unresponsive, hypertensive cause with a high urine chloride. Her urine "
-          "chloride is low and her pressure falls on standing. Tell: a contracted volume points to the responsive "
-          "list."),
+          "chloride is low and she is volume depleted. Tell: a contracted volume points to the responsive list."),
          ("Licorice", "malk-unresp-htn",
-          "Licorice is a saline-unresponsive cause, and she eats none. Tell: a low urine chloride rules out the "
-          "unresponsive list."),
+          "Licorice is a saline-unresponsive cause, and she eats none. Tell: a low urine chloride points to the "
+          "responsive list, and licorice is on the unresponsive list."),
      ], "Diuretic therapy",
        ["Saline-responsive metabolic alkalosis: diuretics, post-hypercapnia, vomiting or suction, antacids, volume "
         "contraction.",
@@ -379,8 +384,7 @@ dict(id="cms-10", who="74-year-old woman",
      next=C([
          (SALINE, "tx-saline",
           "Correct. Besides treating the cause (and discontinuing a diuretic, which she already has), saline-responsive "
-          "alkalosis calls for isotonic saline to correct the extracellular volume deficit shown by her lightheadedness "
-          "on standing."),
+          "alkalosis calls for isotonic saline to correct the extracellular volume deficit; she is volume depleted."),
          (BAG, "tx-paperbag",
           "Breathing into a paper bag is not necessary even for hyperventilation: it does not correct the carbon "
           "dioxide and may lower the oxygen. Tell: her problem is volume, not breathing."),
@@ -418,7 +422,7 @@ dict(id="cms-11", who="48-year-old man",
           "hypertensive group, the history picks the cause."),
          ("Vomiting", "malk-resp",
           "Vomiting is saline responsive, with a low urine chloride and a contracted volume. His urine chloride is high "
-          "and he has not vomited. Tell: a high urine chloride rules out the responsive list."),
+          "and he has not vomited. Tell: a high urine chloride points to the unresponsive list."),
          ("Diuretic therapy", "malk-resp",
           "Diuretic therapy is saline responsive, and none of his medicines is a diuretic. Tell: his high blood "
           "pressure and high urine chloride point to the unresponsive group."),
@@ -453,10 +457,10 @@ dict(id="cms-11", who="48-year-old man",
 dict(id="cms-12", who="62-year-old woman",
      vignette=("A 62-year-old woman with obesity hypoventilation syndrome (the triad of obesity, sleep-disordered "
                "breathing and long-standing high carbon dioxide) is four days out from bowel surgery. A nasogastric tube "
-               "has drained large volumes of stomach fluid by continuous suction. Her mouth is dry and her heart rate "
-               "rises when she sits up. Her urine chloride is low. She takes no diuretic and eats no licorice."),
+               "has drained large volumes of stomach fluid by continuous suction. She is volume depleted. Her urine "
+               "chloride is low. She takes no diuretic and eats no licorice."),
      labs=dict(ph=7.46, pco2=60, hco3=41, na=138, cl=90),
-     urine_cl="low", volume="contracted", volume_clue="her dry mouth and the rise in heart rate when she sits up",
+     urine_cl="low", volume="contracted", volume_clue="she is volume depleted",
      alk_tail=", which fits her obesity hypoventilation syndrome",
      expect=dict(primary="Metabolic alkalosis", alk_comp="concurrent respiratory acidosis"),
      steps=["ph", "primary", "alk_comp", "saline", "cause", "next"],
@@ -469,7 +473,7 @@ dict(id="cms-12", who="62-year-old woman",
           "choose the responsive cause the history contains."),
          ("Primary aldosteronism", "malk-unresp-htn",
           "Primary aldosteronism is saline unresponsive, with a high urine chloride and no volume contraction. Hers is "
-          "low and her volume is contracted. Tell: a low urine chloride rules out the unresponsive list."),
+          "low and her volume is contracted. Tell: a low urine chloride points to the responsive list."),
          ("Licorice", "malk-unresp-htn",
           "Licorice is a saline-unresponsive cause, and she eats none. Tell: a contracted volume belongs to the "
           "responsive list."),
@@ -482,7 +486,7 @@ dict(id="cms-12", who="62-year-old woman",
      next=C([
          (SALINE, "tx-saline",
           "Correct. Besides treating the cause, a saline-responsive alkalosis calls for isotonic saline to correct the "
-          "extracellular volume deficit, which her dry mouth and rising heart rate on sitting show."),
+          "extracellular volume deficit; she is volume depleted."),
          (RAPID, "tx-rapidco2",
           "Rapid, aggressive carbon dioxide reduction is exactly what to avoid in chronic hypercapnia: it causes "
           "posthypercapnic metabolic alkalosis and would add to her alkalosis. Tell: chronic carbon dioxide retention "
@@ -514,7 +518,7 @@ dict(id="cms-13", who="41-year-old man",
      cause=C([
          ("Neuromuscular disorder", "racid-any",
           "Correct. Guillain-Barre syndrome is a neuromuscular disorder, a recognized cause of acute respiratory acidosis: "
-          "weak breathing muscles cannot clear carbon dioxide, which has risen to 58 within days."),
+          "weak breathing muscles cannot clear carbon dioxide, which has risen to 58 today."),
          ("Central nervous system depression", "racid-acute",
           "Central nervous system depression (recreational drugs, intracranial catastrophe, intravenous sedation) is an "
           "acute cause, but he takes no sedatives or drugs. His weak muscles are the problem. Tell: he takes no "
@@ -567,8 +571,9 @@ dict(id="cms-14", who="29-year-old woman",
           "Neuromuscular disorders weaken the breathing muscles, but she has none; her chest wall is mechanically "
           "broken. Tell: the crash and the flail segment name the cause."),
          ("Central nervous system depression", "racid-acute",
-          "Central nervous system depression is an acute cause, but she received no sedation. Tell: the injured chest "
-          "wall, not a depressed drive, explains her breathing."),
+          "Central nervous system depression is an acute cause, but nothing in her history points to it: she received "
+          "no sedation, and her flail chest is a chest wall cause that explains her breathing. Tell: the injured chest "
+          "wall names the cause."),
          ("Obesity hypoventilation syndrome", "racid-chronic",
           "Obesity hypoventilation syndrome is a chronic cause (obesity, sleep-disordered breathing, chronic "
           "hypercapnia), and she is a normal weight with an acute rise. Tell: chronic causes raise the bicarbonate."),
@@ -580,9 +585,10 @@ dict(id="cms-14", who="29-year-old woman",
      next=C([
          (VENT, "tx-ventilation",
           "Correct. Along with treating the cause, acute respiratory acidosis is managed by restoring ventilation; her "
-          "bicarbonate of 25 shows no time has passed for compensation."),
+          "bicarbonate of 25 matches the acute pattern, so restoring ventilation is the step."),
          (O2T, "tx-o2",
-          "Careful oxygen titration is for chronic respiratory acidosis. Hers began with the crash. Tell: acute means "
+          "Careful oxygen titration is for chronic respiratory acidosis. Hers is acute: her bicarbonate of 25 matches "
+          "the acute prediction. Tell: acute means "
           "restore ventilation."),
          (BAG, "tx-paperbag",
           "Breathing into a paper bag is not necessary even for hyperventilation: it does not correct the carbon "
@@ -609,13 +615,13 @@ dict(id="cms-15", who="72-year-old man",
      cause=C([
          ("Chronic lung disease", "racid-chronic",
           "Correct. Lung disease such as chronic obstructive pulmonary disease is a recognized cause of chronic respiratory "
-          "acidosis; years of it let the kidneys raise bicarbonate to 33 against a carbon dioxide of 66."),
+          "acidosis; its chronic course has let the kidneys raise bicarbonate to 33 against a carbon dioxide of 66."),
          ("Neuromuscular disorder", "racid-any",
           "Neuromuscular disorders cause respiratory acidosis too, but he has none. Decades of smoking and lung disease "
           "explain his. Tell: the history names the lungs."),
          ("Central nervous system depression", "racid-acute",
           "Central nervous system depression is an acute cause, and he takes no sedatives; his bicarbonate of 33 shows "
-          "years of compensation. Tell: a fully raised bicarbonate means chronic."),
+          "chronic compensation (days or longer). Tell: a fully raised bicarbonate means chronic."),
          ("Thoracic trauma", "racid-acute",
           "Thoracic trauma is an acute cause, and he has had no chest injury. Tell: chronic numbers need a chronic "
           "cause."),
@@ -630,9 +636,9 @@ dict(id="cms-15", who="72-year-old man",
           "Correct. Along with treating the cause, chronic respiratory acidosis is managed with careful oxygen "
           "titration, avoiding a rapid or aggressive drop in carbon dioxide."),
          (RAPID, "tx-rapidco2",
-          "Rapid, aggressive carbon dioxide reduction is what the chronic patient must avoid: his kidneys have built up "
-          "bicarbonate (33), and dropping the carbon dioxide fast leaves it behind as posthypercapnic metabolic "
-          "alkalosis. Tell: lower chronic carbon dioxide slowly."),
+          "Rapid, aggressive carbon dioxide reduction is to be avoided in chronic respiratory acidosis, to avoid "
+          "posthypercapnic metabolic alkalosis. Tell: chronic carbon dioxide retention calls for careful oxygen "
+          "titration, not a rapid drop."),
          (BAG, "tx-paperbag",
           "Breathing into a paper bag is not necessary even for hyperventilation: it does not correct the carbon "
           "dioxide and may lower the oxygen. Tell: he retains carbon dioxide already."),
@@ -667,8 +673,8 @@ dict(id="cms-16", who="52-year-old woman",
           "Neuromuscular disorders can cause chronic respiratory acidosis, but she has none. Tell: the triad of "
           "obesity, sleep-disordered breathing and high carbon dioxide has its own name."),
          ("Central nervous system depression", "racid-acute",
-          "Central nervous system depression is an acute cause, and she takes no sedatives; her raised bicarbonate "
-          "says chronic. Tell: daytime sleepiness here is the hypercapnia, not a drug."),
+          "Central nervous system depression is an acute cause, and she takes no sedatives. Tell: her raised "
+          "bicarbonate says chronic, not acute."),
      ], "Obesity hypoventilation syndrome",
        ["Chronic respiratory acidosis causes include obesity hypoventilation syndrome: obesity, sleep-disordered "
         "breathing, chronic hypercapnia.",
@@ -680,8 +686,8 @@ dict(id="cms-16", who="52-year-old woman",
           "Correct. Along with treating the cause, chronic respiratory acidosis calls for careful oxygen titration and "
           "avoiding rapid carbon dioxide reduction."),
          (RAPID, "tx-rapidco2",
-          "Rapid carbon dioxide reduction is to be avoided in chronic hypercapnia: her bicarbonate of 30 would be left "
-          "behind as posthypercapnic metabolic alkalosis. Tell: chronic means slow."),
+          "Rapid carbon dioxide reduction is to be avoided in chronic respiratory acidosis, to avoid posthypercapnic "
+          "metabolic alkalosis. Tell: chronic carbon dioxide retention calls for careful oxygen titration."),
          (BAG, "tx-paperbag",
           "Breathing into a paper bag is not necessary even for hyperventilation: it does not correct the carbon "
           "dioxide and may lower the oxygen. Tell: she already retains carbon dioxide."),
@@ -714,8 +720,8 @@ dict(id="cms-17", who="19-year-old woman",
           "Salicylates, caffeine, nicotine, catecholamines and thyroxine can cause it, but nothing in her history points "
           "to a drug or toxin. Tell: the panic attack names the cause."),
          ("Pulmonary embolism", "ralk",
-          "Pulmonary embolism is a pulmonary cause, but nothing suggests it: no lung disease, a normal oxygen, and a "
-          "clear panic trigger. Tell: the history decides among hyperventilation causes."),
+          "Pulmonary embolism is a pulmonary cause, but nothing in her history points to it, and the panic attack is a "
+          "clear trigger. Tell: the history decides among hyperventilation causes."),
      ], "Psychogenic hyperventilation",
        ["Respiratory alkalosis causes: central (voluntary or psychogenic, stroke, raised intracranial pressure), "
         "hypoxia, toxic or drug, pulmonary, endocrine, septicemia, heat, hepatic failure.",
@@ -728,7 +734,7 @@ dict(id="cms-17", who="19-year-old woman",
           "self-limited, so calming her panic is the treatment."),
          (BAG, "tx-paperbag",
           "Breathing into a paper bag is not necessary: it does not correct the carbon dioxide, may lower the oxygen, "
-          "and works only as a placebo. Tell: the bag is a myth, not a treatment."),
+          "and its effect is a placebo effect. Tell: the bag is not necessary."),
          (SALINE, "tx-saline",
           "Isotonic saline treats saline-responsive metabolic alkalosis. Hers is respiratory, with a normal "
           "bicarbonate. Tell: match the treatment to the primary disorder."),
@@ -744,28 +750,28 @@ dict(id="cms-17", who="19-year-old woman",
      summary="Acute respiratory alkalosis from psychogenic hyperventilation; treat the cause, no paper bag."),
 
 dict(id="cms-18", who="57-year-old woman",
-     vignette=("A 57-year-old woman develops sudden shortness of breath and sharp chest pain five days after knee "
-               "replacement surgery, and she is breathing fast. She lives at sea level, is not pregnant, has no fever, "
-               "and takes no aspirin or other salicylates."),
+     vignette=("A 57-year-old woman develops sudden shortness of breath and sharp chest pain, and she is breathing "
+               "fast. A chest scan shows blood clots blocking arteries in both lungs. She lives at sea level, is not "
+               "pregnant, has no fever, and takes no aspirin or other salicylates."),
      labs=dict(ph=7.51, pco2=27, hco3=21, po2=64),
      expect=dict(primary="Respiratory alkalosis", chronicity="acute"),
      steps=["ph", "primary", "chronicity", "o2", "cause"],
      cause=C([
          ("Pulmonary embolism", "ralk",
-          "Correct. Pulmonary embolism is a recognized pulmonary cause of respiratory alkalosis. Sudden breathlessness and "
-          "chest pain days after knee surgery, fast breathing and a low oxygen of 64 fit."),
+          "Correct. Pulmonary embolism is a recognized pulmonary cause of respiratory alkalosis, and the scan shows clots "
+          "blocking arteries in both of her lungs. Her history points away from the other offered causes."),
          ("High altitude", "ralk",
           "High altitude causes hyperventilation secondary to hypoxia, but she lives at sea level. Tell: altitude needs "
           "an altitude history."),
          ("Pregnancy", "ralk",
-          "Pregnancy is an endocrine cause of respiratory alkalosis, but she is not pregnant. Tell: the sudden onset "
-          "after surgery points to the lungs."),
+          "Pregnancy is an endocrine cause of respiratory alkalosis, but she is not pregnant. Tell: the clots on the "
+          "scan point to the lungs."),
          ("Salicylates", "ralk",
           "Salicylates are a toxic cause, but she takes none. Tell: a drug cause needs the drug in the history."),
      ], "Pulmonary embolism",
        ["Respiratory alkalosis: pulmonary causes include pulmonary embolism, pneumonia, pulmonary edema, mechanical "
         "hyperventilation, interstitial lung disease.",
-        "Sudden symptoms after surgery with a low oxygen; sea level, not pregnant, no salicylates.",
+        "Clots blocking arteries in both lungs on the scan; sea level, not pregnant, no salicylates.",
         "So: pulmonary embolism."],
        [33, 34]),
      summary="Acute respiratory alkalosis from pulmonary embolism, with a left-shifted curve."),

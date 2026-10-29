@@ -134,7 +134,7 @@ dict(id="pdm-03", who="33-year-old man",
        ["The gas is an acute respiratory acidosis.",
         "Impaired function of the respiratory center (anesthesia, narcotics, barbiturates, head trauma) raises carbon "
         "dioxide.",
-        "He has a serious head injury, took no drugs, and has no lung disease.",
+        "He has a serious head injury, took no drugs, and was healthy before the crash.",
         "So: head trauma."],
        [22, 27, 32]),
      summary="Acute respiratory acidosis from head trauma impairing the respiratory center."),
@@ -153,7 +153,7 @@ dict(id="pdm-04", who="68-year-old man",
           "pattern."),
          ("Opioid overdose", "racid-acute",
           "Opioid respiratory depression causes acute respiratory acidosis with a still-normal bicarbonate. He takes no "
-          "sedating medicines, and his bicarbonate of 33 shows years of compensation. Tell: a drug cause is acute."),
+          "sedating medicines, and his bicarbonate of 33 shows long-standing compensation. Tell: a drug cause is acute."),
          ("Hypoxia-driven hyperventilation", "ralk",
           "Hypoxia is a recognized cause of a low carbon dioxide, through faster breathing. His oxygen is low at 62, but his "
           "carbon dioxide is 64, high, so he is not hyperventilating. Tell: check which way the carbon dioxide moved."),
@@ -254,17 +254,18 @@ dict(id="pdm-07", who="45-year-old woman",
      summary="Respiratory alkalosis from pain-driven hyperventilation."),
 
 dict(id="pdm-08", who="61-year-old man",
-     vignette=("A 61-year-old man is four days out from hip replacement surgery when he develops sudden, sharp chest pain "
-               "and shortness of breath. He is breathing fast. He is not on a ventilator and has no lung disease or "
-               "diabetes."),
+     vignette=("A 61-year-old man develops sudden, sharp chest pain and shortness of breath, and he is breathing fast. "
+               "A chest scan shows blood clots blocking arteries in both lungs. He is not on a ventilator and has no "
+               "lung disease or diabetes."),
      labs=dict(ph=7.52, pco2=29, hco3=23, po2=60),
      expect=dict(primary="Respiratory alkalosis", comp="No compensation yet"),
      steps=["ph", "primary", "comp", "o2", "cause"],
      cause=C([
          ("Pulmonary emboli", "ralk",
           "Correct. Pulmonary emboli are counted both among the causes of a low carbon dioxide and among the causes of a "
-          "low oxygen, and his carbon dioxide of 29 with an oxygen of 60 fits. He is not on a ventilator, and the "
-          "other choices raise carbon dioxide or lower the pH."),
+          "low oxygen, and the scan shows clots in his lung arteries; his carbon dioxide of 29 and oxygen of 60 fit "
+          "both lists. Mechanical over-ventilation needs a ventilator, emphysema raises carbon dioxide, and diabetic "
+          "ketoacidosis lowers the pH."),
          ("Mechanical over-ventilation", "ralk",
           "Mechanical over-ventilation lowers carbon dioxide, but only in a patient on a ventilator. He is breathing on "
           "his own. Tell: this cause needs a ventilator in the history."),
@@ -278,7 +279,8 @@ dict(id="pdm-08", who="61-year-old man",
        ["The gas is a respiratory alkalosis with a low oxygen.",
         "Pulmonary emboli and hypoxia are recognized causes of a low carbon dioxide, and pulmonary embolism is counted among "
         "the causes of a low oxygen.",
-        "Low carbon dioxide with a low oxygen of 60; breathing on his own, no lung disease, pH high.",
+        "Clots in the lung arteries on the scan, a low carbon dioxide and a low oxygen of 60; no ventilator, no lung "
+        "disease, pH high.",
         "So: pulmonary emboli."],
        [15, 22, 29, 32]),
      summary="Respiratory alkalosis from pulmonary emboli, with a low oxygen and a left-shifted curve."),
@@ -297,8 +299,8 @@ dict(id="pdm-09", who="29-year-old woman",
           "Pulmonary emboli are counted among the causes of a low carbon dioxide and of a low oxygen, but her oxygen is "
           "102, not low, and she feels well. Tell: she is pregnant and well; the history names the cause."),
          ("Anxiety", "ralk",
-          "Anxiety is a recognized cause of hyperventilation, but she is calm, and her lowered bicarbonate shows the "
-          "kidneys have had days to respond. Tell: a lowered bicarbonate means the process has lasted days."),
+          "Anxiety is a recognized cause of hyperventilation, but she feels well and calm. Tell: anxiety needs an "
+          "anxious patient; hers is a pregnancy."),
          ("Chronic bronchitis", "racid-chronic",
           "Chronic bronchitis raises carbon dioxide. Hers is 29, low, and she has no lung disease. Tell: obstructive "
           "lung disease is a respiratory acidosis cause."),
@@ -328,8 +330,8 @@ dict(id="pdm-10", who="70-year-old man",
           "Fever is a recognized cause of respiratory alkalosis, but he has no fever. The high ventilator rate explains the "
           "low carbon dioxide. Tell: choose the cause the history contains."),
          ("Anesthetic respiratory depression", "racid-acute",
-          "Anesthetic respiratory depression raises carbon dioxide. His is 26, low, because the ventilator is breathing "
-          "for him. Tell: depression of breathing causes acidosis."),
+          "Anesthetic respiratory depression raises carbon dioxide. His is 26, low, because the ventilator is set to "
+          "deliver many large breaths that blow off carbon dioxide. Tell: depression of breathing causes acidosis."),
      ], "Mechanical over-ventilation",
        ["The gas is a respiratory alkalosis.",
         "Mechanical over-ventilation is a recognized cause.",
@@ -381,8 +383,8 @@ dict(id="pdm-12", who="70-year-old woman",
      cause=C([
          ("Lactic acidosis", "ma-acidgain",
           "Correct. Severe congestive heart failure causes hypoperfusion, which leads to lactic acidosis, an acid-gain "
-          "cause; lactate is an unmeasured anion that raises the gap, here to 22. Her shock and markedly raised lactate "
-          "fit."),
+          "cause; lactate is an unmeasured anion that raises the gap, here to 22. Her very low blood pressure, poor "
+          "perfusion and markedly raised lactate fit."),
          ("Diabetic ketoacidosis", "ma-acidgain",
           "Diabetic ketoacidosis needs ketoacids. She does not have diabetes and her ketones are negative; her raised "
           "lactate names the acid. Tell: the measured acid decides between the acid-gain causes."),
@@ -391,11 +393,12 @@ dict(id="pdm-12", who="70-year-old woman",
           "raises the gap, here to 22. Tell: she has no diarrhea, and her markedly raised lactate names the acid."),
          ("Renal tubular acidosis", "ma-baseloss",
           "Renal tubular acidosis is a loss-of-base cause, but nothing in her history points to the kidney tubules. Her "
-          "markedly raised lactate in shock names an acid gained instead. Tell: the measured acid decides."),
+          "markedly raised lactate with poor perfusion names an acid gained instead. Tell: the measured acid decides."),
      ], "Lactic acidosis",
        ["The gas is a metabolic acidosis with an elevated gap (22).",
         "Severe congestive heart failure results in hypoperfusion, then lactic acidosis, then metabolic acidosis.",
-        "She is in shock from heart failure with a markedly raised lactate; no diabetes, no ketones, no diarrhea.",
+        "Severe heart failure with very low blood pressure, poor perfusion and a markedly raised lactate; no diabetes, "
+        "no ketones, no diarrhea.",
         "So: lactic acidosis."],
        [29, 32, 47]),
      summary="Elevated anion gap metabolic acidosis from lactic acidosis (hypoperfusion in severe heart failure)."),
@@ -471,7 +474,7 @@ dict(id="pdm-15", who="28-year-old woman",
           "which separates it from renal failure."),
          ("Renal failure", "ma-acidgain",
           "Renal failure is an acid-gain cause, and her creatinine is normal. Her problem is a tubule that loses "
-          "bicarbonate. Tell: normal kidney function rules out renal failure."),
+          "bicarbonate. Tell: renal failure needs abnormal kidney function."),
          ("Diarrhea", "ma-baseloss",
           "Diarrhea is the other loss-of-base cause, and she has none. Tell: with no diarrhea, the base is being lost "
           "through the kidney."),
@@ -495,25 +498,25 @@ dict(id="pdm-16", who="36-year-old man",
      steps=["ph", "primary", "comp", ("ag_calc", "2"), "ag_read", "cause"],
      cause=C([
          ("Lactic acidosis", "ma-acidgain",
-          "Correct. Lactic acidosis is a recognized acid-gain cause, from anaerobic metabolism; a long seizure and a markedly "
-          "raised lactate fit. His albumin of 2.0 hides part of the gap, which is why it must be corrected before it "
+          "Correct. Lactic acidosis is a recognized acid-gain cause, from anaerobic metabolism, and his markedly raised "
+          "lactate fits. His albumin of 2.0 hides part of the gap, which is why it must be corrected before it "
           "is read."),
          ("Diabetic ketoacidosis", "ma-acidgain",
           "He has type 1 diabetes, but diabetic ketoacidosis needs ketoacids, and his glucose is normal with no urine "
-          "ketones. His raised lactate after the seizure names the acid. Tell: the measured acid decides."),
+          "ketones. His markedly raised lactate names the acid. Tell: the measured acid decides."),
          ("Renal tubular acidosis", "ma-baseloss",
           "Renal tubular acidosis loses base through the kidney; nothing in his history suggests it, and his lactate is "
           "markedly raised. Tell: nothing in his history points to the kidney, and his lactate names the acid."),
          ("Diarrhea", "ma-baseloss",
-          "Diarrhea is a loss-of-base cause, and he has none. Tell: a long seizure with a raised lactate is acid gain."),
+          "Diarrhea is a loss-of-base cause, and he has none. Tell: a markedly raised lactate is acid gain, not base loss."),
      ], "Lactic acidosis",
        ["The gas is a metabolic acidosis; the gap reads 14 only because the albumin is low.",
         "Acid gain includes lactic acidosis and anaerobic metabolism.",
-        "A 15-minute seizure, markedly raised lactate; type 1 diabetes, but a normal glucose and no ketones; normal "
+        "A markedly raised lactate; type 1 diabetes, but a normal glucose and no ketones; normal "
         "kidneys, no diarrhea.",
         "So: lactic acidosis."],
        [32, 45, 48]),
-     summary="Lactic acidosis after a long seizure, with an anion gap that must be corrected for a low albumin."),
+     summary="Lactic acidosis (a markedly raised lactate), with an anion gap that must be corrected for a low albumin."),
 
 dict(id="pdm-17", who="26-year-old woman",
      vignette=("A 26-year-old woman has vomited many times a day for three days with a stomach virus. She feels weak and "
@@ -609,11 +612,11 @@ dict(id="pdm-20", who="18-year-old woman",
      cause=C([
          ("Asthma", "racid-acute",
           "Correct. Asthma is a recognized airway obstruction cause of a raised carbon dioxide. Six hours of severe "
-          "wheezing have tired her, so carbon dioxide has climbed to 52, and the bicarbonate of 25 shows there has been "
-          "no time for renal compensation."),
+          "wheezing have tired her, so carbon dioxide has climbed to 52, and the bicarbonate of 25 shows renal "
+          "compensation has not appeared yet."),
          ("Emphysema", "racid-chronic",
-          "Emphysema raises carbon dioxide over years, with a renal rise in bicarbonate. She is 18, has no other lung "
-          "disease, and her bicarbonate of 25 is normal. Tell: chronic causes raise the bicarbonate."),
+          "Emphysema is a chronic cause of a raised carbon dioxide, with a renal rise in bicarbonate. She has no other "
+          "lung disease, and her bicarbonate of 25 is normal. Tell: chronic causes raise the bicarbonate."),
          ("Anxiety", "ralk",
           "Anxiety speeds breathing and lowers carbon dioxide. Her carbon dioxide is 52, high. Tell: anxiety is a "
           "respiratory alkalosis cause."),
