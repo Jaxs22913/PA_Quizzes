@@ -66,7 +66,7 @@ PDM_CAUSES = {
     "excess bicarbonate": "malk-basegain", "vomiting": "malk-acidloss", "nasogastric suction": "malk-acidloss",
 }
 CMS_CAUSES = {
-    "methanol": "ma-elevated", "uremia": "ma-elevated", "diabetic ketoacidosis": "ma-elevated",
+    "methanol": "ma-elevated", "metformin": "ma-elevated", "uremia": "ma-elevated", "diabetic ketoacidosis": "ma-elevated",
     "isoniazid": "ma-elevated", "lactic acidosis": "ma-elevated", "ethylene glycol": "ma-elevated",
     "starvation": "ma-elevated", "salicylates": "ralk",       # salicylates only ever offered as a respiratory cause
     "ureteral diversion": "ma-normal", "saline infusion": "ma-normal", "diarrhea": "ma-normal",
@@ -310,7 +310,11 @@ def check_case(sid, S, c):
                 fail(WS, "gap reading step needs an albumin")
                 continue
             if alb < R["alb"][0]:
-                want = "Correct for albumin first"
+                want = "Correct it for the low albumin first"
+                if not 9 <= ag <= 15:
+                    fail(WS, "low-albumin case needs a gap that looks normal uncorrected (got %s)" % ag)
+                if any(t in ("Elevated anion gap", "Normal anion gap") for t in opts):
+                    fail(WS, "low-albumin reading must not offer an elevated/normal label (both defensible)")
             else:
                 want = "Elevated anion gap" if ag > 15 else "Normal anion gap" if ag >= 9 else "Decreased anion gap"
         elif k == "potassium":

@@ -19,7 +19,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 from abchain_common import (Ctx, GEN, NUMERIC, COURSES, LABEL, UNIT, ORDER, computed_answers, chron_prompt, cite,
-                            f, fph)
+                            f, fph, ag_read_prompt, ag_calc_prompt)
 import abchain_pdm_e4
 import abchain_cms_e6
 
@@ -67,6 +67,10 @@ def raw_steps(mod, case):
             label, prompt, gen = GEN[kind]
             if kind == "chronicity":
                 prompt = chron_prompt(x)
+            elif kind == "ag_read":
+                prompt = ag_read_prompt(x)
+            elif kind == "ag_calc":
+                prompt = ag_calc_prompt(x)
             if kind in NUMERIC:
                 opts, key, walk, slides = gen(x, arg)
             elif kind == "alk_comp":

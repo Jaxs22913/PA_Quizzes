@@ -70,13 +70,12 @@ dict(id="pdm-01", who="24-year-old man",
           "compensation. He has no chest wall disease, and the normal bicarbonate says this began recently. Tell: chest "
           "wall disease is a long-standing cause."),
          ("Pulmonary emboli", "ralk",
-          "Pulmonary emboli are listed among the causes of a low carbon dioxide, because they drive faster breathing. "
-          "His carbon dioxide is 62, high, and his breathing is slow. Tell: a cause of hyperventilation cannot raise "
-          "carbon dioxide."),
+          "Pulmonary emboli are counted among the causes of a low carbon dioxide, and his carbon dioxide is 62, high, "
+          "with slow breathing. Tell: a cause of a low carbon dioxide does not fit a high one."),
      ], "Opioid overdose",
        ["The gas is an acute respiratory acidosis: high carbon dioxide, bicarbonate not yet raised.",
         "Acute respiratory acidosis comes from respiratory depression; drugs such as opioids, barbiturates and "
-        "anesthetics are the listed causes.",
+        "anesthetics are the recognized causes.",
         "He took opioid pills, breathes slowly, and has no long-standing lung or chest wall disease.",
         "So: opioid overdose."],
        [12, 22, 27, 28]),
@@ -90,7 +89,7 @@ dict(id="pdm-02", who="58-year-old woman",
      steps=["ph", "primary", "comp", "cause"],
      cause=C([
          ("Anesthesia", "racid-acute",
-          "Correct. Anesthetics are a listed cause of acute respiratory acidosis through respiratory depression: her "
+          "Correct. Anesthetics are a recognized cause of acute respiratory acidosis through respiratory depression: her "
           "carbon dioxide of 56 is high and her bicarbonate of 24 is still normal. She is drowsy and breathing shallowly "
           "straight after general anesthesia."),
          ("Chronic bronchitis", "racid-chronic",
@@ -98,14 +97,14 @@ dict(id="pdm-02", who="58-year-old woman",
           "raising bicarbonate. She has no lung disease and her bicarbonate of 24 is normal. Tell: chronic causes come "
           "with renal compensation."),
          ("Severe pain", "ralk",
-          "Pain is a listed cause of a low carbon dioxide, because it speeds breathing. Her carbon dioxide is 56, high, "
+          "Pain is a recognized cause of a low carbon dioxide, because it speeds breathing. Her carbon dioxide is 56, high, "
           "she is not in pain, and she is breathing shallowly. Tell: hyperventilation lowers carbon dioxide."),
          ("Excess bicarbonate", "malk-basegain",
           "Excessive bicarbonate administration is a base-gain cause of metabolic alkalosis, with a high pH and high "
           "bicarbonate. Her pH is 7.25 and her bicarbonate 24. Tell: a bicarbonate cause raises the bicarbonate."),
      ], "Anesthesia",
        ["The gas is an acute respiratory acidosis: carbon dioxide high, bicarbonate normal.",
-        "Respiratory depression from anesthetics is a listed acute cause.",
+        "Respiratory depression from anesthetics is a recognized acute cause.",
         "She has just had general anesthesia and is drowsy with shallow breathing; nothing points to lung disease, pain "
         "or bicarbonate given.",
         "So: anesthesia."],
@@ -120,7 +119,7 @@ dict(id="pdm-03", who="33-year-old man",
      steps=["ph", "primary", "comp", "cause"],
      cause=C([
          ("Head trauma", "racid-acute",
-          "Correct. Head trauma impairs the respiratory center, a listed cause of a raised carbon dioxide. His slow, "
+          "Correct. Head trauma impairs the respiratory center, a recognized cause of a raised carbon dioxide. His slow, "
           "irregular breathing after the head injury fits, and the normal bicarbonate of 25 shows it is acute."),
          ("Emphysema", "racid-chronic",
           "Emphysema raises carbon dioxide over years and brings a renal rise in bicarbonate. He was healthy before the "
@@ -149,14 +148,14 @@ dict(id="pdm-04", who="68-year-old man",
      steps=["ph", "primary", "comp", "cause"],
      cause=C([
          ("Emphysema", "racid-chronic",
-          "Correct. Emphysema is obstructive lung disease, a listed cause of a raised carbon dioxide. Years of it give "
+          "Correct. Emphysema is obstructive lung disease, a recognized cause of a raised carbon dioxide. Years of it give "
           "the kidneys time to raise bicarbonate, and his bicarbonate of 33 with a carbon dioxide of 64 is that chronic "
           "pattern."),
          ("Opioid overdose", "racid-acute",
           "Opioid respiratory depression causes acute respiratory acidosis with a still-normal bicarbonate. He takes no "
           "sedating medicines, and his bicarbonate of 33 shows years of compensation. Tell: a drug cause is acute."),
          ("Hypoxia-driven hyperventilation", "ralk",
-          "Hypoxia is a listed cause of a low carbon dioxide, through faster breathing. His oxygen is low at 62, but his "
+          "Hypoxia is a recognized cause of a low carbon dioxide, through faster breathing. His oxygen is low at 62, but his "
           "carbon dioxide is 64, high, so he is not hyperventilating. Tell: check which way the carbon dioxide moved."),
          ("Vomiting", "malk-acidloss",
           "Vomiting is an acid-loss cause of metabolic alkalosis, which needs a high pH. His pH is 7.34, low; the high "
@@ -184,8 +183,8 @@ dict(id="pdm-05", who="54-year-old woman",
           "Barbiturates depress breathing and cause acute respiratory acidosis with a normal bicarbonate. She takes no "
           "sedating medicines, and her bicarbonate of 31 shows long compensation. Tell: drug causes are acute."),
          ("Severe asthma attack", "racid-acute",
-          "An asthma attack obstructs the airway acutely, with no time for the kidneys to raise bicarbonate. She has no "
-          "asthma, and her bicarbonate of 31 is raised. Tell: an attack is acute; a raised bicarbonate is chronic."),
+          "Asthma is an airway obstruction cause of a raised carbon dioxide, but she has no asthma; her long-standing "
+          "kyphoscoliosis fits a bicarbonate of 31. Tell: choose the cause the history contains."),
          ("Diarrhea", "ma-baseloss",
           "Diarrhea is a loss-of-base cause of metabolic acidosis, which lowers the bicarbonate. Her bicarbonate is 31, "
           "high. Tell: a metabolic acidosis cause lowers the bicarbonate."),
@@ -206,22 +205,22 @@ dict(id="pdm-06", who="22-year-old man",
      steps=["ph", "primary", "comp", "cause"],
      cause=C([
          ("Anxiety", "ralk",
-          "Correct. Anxiety is a listed cause of a low carbon dioxide: emotional states stimulate faster breathing. His "
+          "Correct. Anxiety is a recognized cause of a low carbon dioxide: emotional states stimulate faster breathing. His "
           "carbon dioxide of 27 is low with a normal bicarbonate, and his oxygen of 104 is not low, so hypoxia is not "
           "driving the breathing."),
          ("Fever", "ralk",
-          "Fever is also a listed cause of respiratory alkalosis, but he has no fever. The attack of fear before the "
+          "Fever is also a recognized cause of respiratory alkalosis, but he has no fever. The attack of fear before the "
           "exam explains the fast breathing. Tell: pick the cause the history actually contains."),
          ("Pulmonary emboli", "ralk",
-          "Pulmonary emboli lower carbon dioxide, but they also lower the oxygen. His oxygen is 104, not low. Tell: a "
-          "pulmonary embolus comes with a low oxygen."),
+          "Pulmonary emboli are counted among the causes of a low carbon dioxide and of a low oxygen, but his oxygen is "
+          "104, not low, and his history is an attack of fear before an exam. Tell: the history names the fear."),
          ("Opioid overdose", "racid-acute",
           "Opioids slow breathing and raise carbon dioxide. His carbon dioxide is 27, low, and he is breathing fast. "
           "Tell: respiratory depression causes acidosis."),
      ], "Anxiety",
        ["The gas is a respiratory alkalosis: low carbon dioxide, normal bicarbonate.",
         "Respiratory alkalosis most commonly results from hyperventilation; anxiety and other emotional states are "
-        "listed causes.",
+        "recognized causes.",
         "He has an attack of fear, no fever, and a normal-to-high oxygen.",
         "So: anxiety."],
        [12, 15, 22, 27, 29]),
@@ -235,10 +234,10 @@ dict(id="pdm-07", who="45-year-old woman",
      steps=["ph", "primary", "comp", "cause"],
      cause=C([
          ("Severe pain", "ralk",
-          "Correct. Pain is a listed cause of a low carbon dioxide, because it drives faster breathing. Her carbon "
+          "Correct. Pain is a recognized cause of a low carbon dioxide, because it drives faster breathing. Her carbon "
           "dioxide of 30 is low with a normal bicarbonate of 23, and her severe kidney stone pain is the trigger."),
          ("Pregnancy", "ralk",
-          "Pregnancy is a listed cause of a low carbon dioxide, but she is not pregnant. Her severe pain explains the "
+          "Pregnancy is a recognized cause of a low carbon dioxide, but she is not pregnant. Her severe pain explains the "
           "fast breathing. Tell: choose the hyperventilation cause the patient actually has."),
          ("Head trauma", "racid-acute",
           "Head trauma impairs the respiratory center and raises carbon dioxide. She has no head injury, and her carbon "
@@ -248,7 +247,7 @@ dict(id="pdm-07", who="45-year-old woman",
           "23 and she has not vomited. Tell: metabolic alkalosis needs a high bicarbonate."),
      ], "Severe pain",
        ["The gas is a respiratory alkalosis.",
-        "Pain, anxiety and pregnancy are listed causes of a low carbon dioxide through hyperventilation.",
+        "Pain, anxiety and pregnancy are recognized causes of a low carbon dioxide through hyperventilation.",
         "She is in severe pain, not pregnant, with no head injury or vomiting.",
         "So: severe pain."],
        [12, 22, 29, 34]),
@@ -263,9 +262,9 @@ dict(id="pdm-08", who="61-year-old man",
      steps=["ph", "primary", "comp", "o2", "cause"],
      cause=C([
          ("Pulmonary emboli", "ralk",
-          "Correct. Pulmonary emboli are listed both among the causes of a low carbon dioxide and among the causes of a "
-          "low oxygen. Sudden chest pain and breathlessness days after hip surgery, a carbon dioxide of 29 and an "
-          "oxygen of 60 fit."),
+          "Correct. Pulmonary emboli are counted both among the causes of a low carbon dioxide and among the causes of a "
+          "low oxygen, and his carbon dioxide of 29 with an oxygen of 60 fits. He is not on a ventilator, and the "
+          "other choices raise carbon dioxide or lower the pH."),
          ("Mechanical over-ventilation", "ralk",
           "Mechanical over-ventilation lowers carbon dioxide, but only in a patient on a ventilator. He is breathing on "
           "his own. Tell: this cause needs a ventilator in the history."),
@@ -277,9 +276,9 @@ dict(id="pdm-08", who="61-year-old man",
           "is 7.52 and his bicarbonate 23. Tell: an acidosis cause needs a low pH."),
      ], "Pulmonary emboli",
        ["The gas is a respiratory alkalosis with a low oxygen.",
-        "Pulmonary emboli and hypoxia are listed causes of a low carbon dioxide, and pulmonary embolism is listed among "
+        "Pulmonary emboli and hypoxia are recognized causes of a low carbon dioxide, and pulmonary embolism is counted among "
         "the causes of a low oxygen.",
-        "Sudden chest pain and breathlessness after surgery, breathing on his own, no lung disease.",
+        "Low carbon dioxide with a low oxygen of 60; breathing on his own, no lung disease, pH high.",
         "So: pulmonary emboli."],
        [15, 22, 29, 32]),
      summary="Respiratory alkalosis from pulmonary emboli, with a low oxygen and a left-shifted curve."),
@@ -292,20 +291,20 @@ dict(id="pdm-09", who="29-year-old woman",
      steps=["ph", "primary", "comp", "cause"],
      cause=C([
          ("Pregnancy", "ralk",
-          "Correct. Pregnancy is a listed cause of a low carbon dioxide through stimulation of breathing. Weeks of it "
+          "Correct. Pregnancy is a recognized cause of a low carbon dioxide through stimulation of breathing. Weeks of it "
           "give the kidneys time to lower bicarbonate, and her carbon dioxide of 29 with a bicarbonate of 21 fits."),
          ("Pulmonary emboli", "ralk",
-          "Pulmonary emboli lower carbon dioxide but also lower the oxygen, and they come on suddenly. She feels well "
-          "and her oxygen is 102. Tell: a pulmonary embolus brings a low oxygen."),
+          "Pulmonary emboli are counted among the causes of a low carbon dioxide and of a low oxygen, but her oxygen is "
+          "102, not low, and she feels well. Tell: she is pregnant and well; the history names the cause."),
          ("Anxiety", "ralk",
-          "Anxiety is a listed cause of hyperventilation, but she is calm, and a low bicarbonate shows a process lasting "
-          "days or more. Tell: anxiety is sudden; her pregnancy has lasted months."),
+          "Anxiety is a recognized cause of hyperventilation, but she is calm, and her lowered bicarbonate shows the "
+          "kidneys have had days to respond. Tell: a lowered bicarbonate means the process has lasted days."),
          ("Chronic bronchitis", "racid-chronic",
           "Chronic bronchitis raises carbon dioxide. Hers is 29, low, and she has no lung disease. Tell: obstructive "
           "lung disease is a respiratory acidosis cause."),
      ], "Pregnancy",
        ["The gas is a respiratory alkalosis with the kidneys lowering bicarbonate (days or longer).",
-        "Pregnancy is a listed cause of a low carbon dioxide.",
+        "Pregnancy is a recognized cause of a low carbon dioxide.",
         "She is 34 weeks pregnant, well and calm, with a normal oxygen.",
         "So: pregnancy."],
        [12, 15, 22, 29, 50]),
@@ -320,20 +319,20 @@ dict(id="pdm-10", who="70-year-old man",
      steps=["ph", "primary", "comp", "potassium", "cause"],
      cause=C([
          ("Mechanical over-ventilation", "ralk",
-          "Correct. Mechanical over-ventilation is a listed cause of respiratory alkalosis: a ventilator set to many large "
+          "Correct. Mechanical over-ventilation is a recognized cause of respiratory alkalosis: a ventilator set to many large "
           "breaths blows off carbon dioxide, here down to 26, with the bicarbonate still normal at 23."),
          ("Anxiety", "ralk",
           "Anxiety drives fast breathing, but he is sedated and comfortable, and the ventilator is setting his breathing. "
           "Tell: on a ventilator, look at the settings first."),
          ("Fever", "ralk",
-          "Fever is a listed cause of respiratory alkalosis, but he has no fever. The high ventilator rate explains the "
+          "Fever is a recognized cause of respiratory alkalosis, but he has no fever. The high ventilator rate explains the "
           "low carbon dioxide. Tell: choose the cause the history contains."),
          ("Anesthetic respiratory depression", "racid-acute",
           "Anesthetic respiratory depression raises carbon dioxide. His is 26, low, because the ventilator is breathing "
           "for him. Tell: depression of breathing causes acidosis."),
      ], "Mechanical over-ventilation",
        ["The gas is a respiratory alkalosis.",
-        "Mechanical over-ventilation is a listed cause.",
+        "Mechanical over-ventilation is a recognized cause.",
         "He is on a ventilator set to many large breaths, sedated, with no fever.",
         "So: mechanical over-ventilation."],
        [22, 27, 29]),
@@ -356,8 +355,8 @@ dict(id="pdm-11", who="19-year-old woman",
           "poor perfusion. Her blood pressure is normal, and the strongly positive ketones point to ketoacids. Tell: "
           "ketones name the acid."),
          ("Diarrhea", "ma-baseloss",
-          "Diarrhea is a loss-of-base cause, and she has none. Her gap of 26 is elevated by unmeasured anions, which "
-          "loss of base does not add. Tell: an elevated gap points to an acid that was gained."),
+          "Diarrhea is a loss-of-base cause, and she has had none. Her missed insulin and strongly positive ketones "
+          "name the acid instead. Tell: a cause needs its own history."),
          ("Renal failure", "ma-acidgain",
           "Renal failure is an acid-gain cause, but her kidney function is normal. The missed insulin and ketones fit "
           "diabetic ketoacidosis. Tell: renal failure needs abnormal kidney function."),
@@ -388,11 +387,11 @@ dict(id="pdm-12", who="70-year-old woman",
           "Diabetic ketoacidosis needs ketoacids. She does not have diabetes and her ketones are negative; her raised "
           "lactate names the acid. Tell: the measured acid decides between the acid-gain causes."),
          ("Diarrhea", "ma-baseloss",
-          "Diarrhea causes metabolic acidosis by loss of base, and she has none. Her gap of 22 is elevated by an "
-          "unmeasured anion, lactate. Tell: an elevated gap points to an acid that was gained."),
+          "Diarrhea causes metabolic acidosis by loss of base, and she has none. Lactate is an unmeasured anion that "
+          "raises the gap, here to 22. Tell: she has no diarrhea, and her markedly raised lactate names the acid."),
          ("Renal tubular acidosis", "ma-baseloss",
-          "Renal tubular acidosis is a loss-of-base cause. Her elevated gap and markedly raised lactate in shock point "
-          "to an acid gained instead. Tell: loss of base does not add an unmeasured anion."),
+          "Renal tubular acidosis is a loss-of-base cause, but nothing in her history points to the kidney tubules. Her "
+          "markedly raised lactate in shock names an acid gained instead. Tell: the measured acid decides."),
      ], "Lactic acidosis",
        ["The gas is a metabolic acidosis with an elevated gap (22).",
         "Severe congestive heart failure results in hypoperfusion, then lactic acidosis, then metabolic acidosis.",
@@ -410,7 +409,7 @@ dict(id="pdm-13", who="64-year-old man",
      steps=["ph", "primary", "comp", ("ag_calc", "2c"), "ag_read", "cause"],
      cause=C([
          ("Renal failure", "ma-acidgain",
-          "Correct. Renal failure is a listed acid-gain cause of metabolic acidosis. He has kidney failure, has missed "
+          "Correct. Renal failure is a recognized acid-gain cause of metabolic acidosis. He has kidney failure, has missed "
           "dialysis, and his creatinine is far above normal; his gap of 21 is elevated."),
          ("Diabetic ketoacidosis", "ma-acidgain",
           "Diabetic ketoacidosis is an acid-gain cause, but he has no diabetes. His missed dialysis and very high "
@@ -423,7 +422,7 @@ dict(id="pdm-13", who="64-year-old man",
           "it is missed dialysis."),
      ], "Renal failure",
        ["The gas is a metabolic acidosis with an elevated gap (21).",
-        "Renal failure is a listed acid-gain cause.",
+        "Renal failure is a recognized acid-gain cause.",
         "Kidney failure, missed dialysis, very high creatinine; no diabetes, no diarrhea, normal perfusion.",
         "So: renal failure."],
        [32, 47]),
@@ -438,8 +437,8 @@ dict(id="pdm-14", who="40-year-old woman",
      steps=["ph", "primary", "comp", ("ag_calc", "2"), "ag_read", "cause"],
      cause=C([
          ("Diarrhea", "ma-baseloss",
-          "Correct. Diarrhea is a listed loss-of-base cause of metabolic acidosis: bicarbonate is lost in the stool, so "
-          "her bicarbonate falls to 15 without an added unmeasured anion, and her gap of 10 stays normal."),
+          "Correct. Diarrhea is a recognized loss-of-base cause of metabolic acidosis, and four days of profuse "
+          "diarrhea fit. Her bicarbonate is 15, and her calculated gap of 10 is inside 9 to 15."),
          ("Diabetic ketoacidosis", "ma-acidgain",
           "Diabetic ketoacidosis adds ketoacids, unmeasured anions that raise the gap. Her glucose and ketones are "
           "normal and her gap of 10 is not elevated. Tell: no ketones, no ketoacidosis."),
@@ -452,7 +451,7 @@ dict(id="pdm-14", who="40-year-old woman",
      ], "Diarrhea",
        ["The gas is a metabolic acidosis with a normal gap (10).",
         "Metabolic acidosis comes from acid gain or from loss of base; diarrhea and renal tubular acidosis are the "
-        "listed loss-of-base causes.",
+        "recognized loss-of-base causes.",
         "Four days of profuse diarrhea; normal glucose, ketones and kidney function.",
         "So: diarrhea."],
        [32, 34, 47]),
@@ -467,7 +466,7 @@ dict(id="pdm-15", who="28-year-old woman",
      steps=["ph", "primary", "comp", ("ag_calc", "1"), "ag_read", "cause"],
      cause=C([
          ("Renal tubular acidosis", "ma-baseloss",
-          "Correct. Renal tubular acidosis is a listed loss-of-base cause: her kidney tubules fail to reclaim "
+          "Correct. Renal tubular acidosis is a recognized loss-of-base cause: her kidney tubules fail to reclaim "
           "bicarbonate, so it falls to 16 while the gap stays normal at 11. Her overall kidney function is normal, "
           "which separates it from renal failure."),
          ("Renal failure", "ma-acidgain",
@@ -488,29 +487,30 @@ dict(id="pdm-15", who="28-year-old woman",
      summary="Normal anion gap metabolic acidosis from renal tubular acidosis (loss of base)."),
 
 dict(id="pdm-16", who="36-year-old man",
-     vignette=("A 36-year-old man with epilepsy had a generalized seizure lasting 15 minutes before it was stopped. His "
-               "blood lactate is markedly raised. He is chronically malnourished. His glucose, urine ketones and kidney "
-               "function are normal, and he has no diarrhea."),
+     vignette=("A 36-year-old man with epilepsy and type 1 diabetes had a generalized seizure lasting 15 minutes before "
+               "it was stopped. His blood lactate is markedly raised, while his glucose is normal and his urine has no "
+               "ketones. He is chronically malnourished. His kidney function is normal, and he has no diarrhea."),
      labs=dict(ph=7.34, pco2=31, hco3=16, na=136, cl=106, k=4.0, alb=2.0),
      expect=dict(primary="Metabolic acidosis", comp="Lungs lowering carbon dioxide", gap="normal"),
      steps=["ph", "primary", "comp", ("ag_calc", "2"), "ag_read", "cause"],
      cause=C([
          ("Lactic acidosis", "ma-acidgain",
-          "Correct. Lactic acidosis is a listed acid-gain cause, from anaerobic metabolism; a long seizure and a markedly "
+          "Correct. Lactic acidosis is a recognized acid-gain cause, from anaerobic metabolism; a long seizure and a markedly "
           "raised lactate fit. His albumin of 2.0 hides part of the gap, which is why it must be corrected before it "
           "is read."),
          ("Diabetic ketoacidosis", "ma-acidgain",
-          "Diabetic ketoacidosis needs ketoacids, and his glucose and ketones are normal. His raised lactate after the "
-          "seizure names the acid. Tell: the measured acid decides."),
+          "He has type 1 diabetes, but diabetic ketoacidosis needs ketoacids, and his glucose is normal with no urine "
+          "ketones. His raised lactate after the seizure names the acid. Tell: the measured acid decides."),
          ("Renal tubular acidosis", "ma-baseloss",
           "Renal tubular acidosis loses base through the kidney; nothing in his history suggests it, and his lactate is "
-          "markedly raised. Tell: a gap that only looks normal because albumin is low is not a loss-of-base clue."),
+          "markedly raised. Tell: nothing in his history points to the kidney, and his lactate names the acid."),
          ("Diarrhea", "ma-baseloss",
           "Diarrhea is a loss-of-base cause, and he has none. Tell: a long seizure with a raised lactate is acid gain."),
      ], "Lactic acidosis",
        ["The gas is a metabolic acidosis; the gap reads 14 only because the albumin is low.",
         "Acid gain includes lactic acidosis and anaerobic metabolism.",
-        "A 15-minute seizure, markedly raised lactate; normal glucose, ketones and kidneys, no diarrhea.",
+        "A 15-minute seizure, markedly raised lactate; type 1 diabetes, but a normal glucose and no ketones; normal "
+        "kidneys, no diarrhea.",
         "So: lactic acidosis."],
        [32, 45, 48]),
      summary="Lactic acidosis after a long seizure, with an anion gap that must be corrected for a low albumin."),
@@ -523,8 +523,8 @@ dict(id="pdm-17", who="26-year-old woman",
      steps=["ph", "primary", "comp", "potassium", "cause"],
      cause=C([
          ("Vomiting", "malk-acidloss",
-          "Correct. Vomiting is a listed acid-loss cause of metabolic alkalosis: losing stomach acid leaves bicarbonate "
-          "behind, here 34, with a pH of 7.47. Three days of repeated vomiting fit."),
+          "Correct. Vomiting is a recognized acid-loss cause of metabolic alkalosis, and her bicarbonate is 34 with a pH "
+          "of 7.47. Three days of repeated vomiting fit."),
          ("Excess bicarbonate", "malk-basegain",
           "Excessive bicarbonate administration is a base-gain cause, but she has received no bicarbonate. Her "
           "vomiting explains the lost acid. Tell: a base-gain cause needs bicarbonate in the history."),
@@ -553,7 +553,7 @@ dict(id="pdm-18", who="67-year-old man",
      steps=["ph", "primary", "comp", "o2", "cause"],
      cause=C([
          ("Nasogastric suction", "malk-acidloss",
-          "Correct. Loss of gastric acid through nasogastric tube suction is a listed acid-loss cause of metabolic "
+          "Correct. Loss of gastric acid through nasogastric tube suction is a recognized acid-loss cause of metabolic "
           "alkalosis. Four days of suction draining stomach fluid explain his bicarbonate of 33."),
          ("Vomiting", "malk-acidloss",
           "Vomiting is the other acid-loss cause, but he has not vomited; the stomach acid is leaving through the tube. "
@@ -581,7 +581,7 @@ dict(id="pdm-19", who="55-year-old woman",
      steps=["ph", "primary", "comp", "cause"],
      cause=C([
          ("Excess bicarbonate", "malk-basegain",
-          "Correct. Excessive bicarbonate administration is the listed base-gain cause of metabolic alkalosis. Repeated "
+          "Correct. Excessive bicarbonate administration is the recognized base-gain cause of metabolic alkalosis. Repeated "
           "intravenous sodium bicarbonate during her resuscitation explains her bicarbonate of 33."),
          ("Vomiting", "malk-acidloss",
           "Vomiting is an acid-loss cause, and she has not vomited. Tell: acid loss needs a route, vomiting or suction; "
@@ -608,7 +608,7 @@ dict(id="pdm-20", who="18-year-old woman",
      steps=["ph", "primary", "comp", "cause"],
      cause=C([
          ("Asthma", "racid-acute",
-          "Correct. Asthma is a listed airway obstruction cause of a raised carbon dioxide. Six hours of severe "
+          "Correct. Asthma is a recognized airway obstruction cause of a raised carbon dioxide. Six hours of severe "
           "wheezing have tired her, so carbon dioxide has climbed to 52, and the bicarbonate of 25 shows there has been "
           "no time for renal compensation."),
          ("Emphysema", "racid-chronic",

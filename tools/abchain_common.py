@@ -245,7 +245,7 @@ def step_primary(x):
         if x.primary != RACID:
             expl[RACID] = ("Respiratory acidosis needs a carbon dioxide above %s mm Hg. Here it is %s, %s, so it cannot "
                            "be what lowered the pH; %s is. Tell: in respiratory acidosis carbon dioxide rises as the pH "
-                           "falls." % (f(phi), p, x.pdesc(), cause))
+                           "falls." % ("40" if x.course == "cms" else f(phi), p, x.pdesc(), cause))
         if x.primary != MACID:
             expl[MACID] = ("Metabolic acidosis needs a bicarbonate below %s. Here it is %s, %s, so it did not lower the "
                            "pH; %s did. Tell: in metabolic acidosis bicarbonate falls with the pH."
@@ -335,10 +335,10 @@ def step_comp_pdm(x):
                        "bicarbonate are the findings of respiratory alkalosis before the kidneys respond, which takes "
                        "days." % (h, vrange))
         elif pr == MACID:
-            E[NONE] = ("Correct. The carbon dioxide of %s is still inside %s, the finding listed for metabolic acidosis "
+            E[NONE] = ("Correct. The carbon dioxide of %s is still inside %s, the expected finding in metabolic acidosis "
                        "before the lungs respond." % (p, vrange))
         else:
-            E[NONE] = ("Correct. The carbon dioxide of %s is still inside %s, the finding listed for metabolic "
+            E[NONE] = ("Correct. The carbon dioxide of %s is still inside %s, the expected finding in metabolic "
                        "alkalosis before the lungs respond." % (p, vrange))
     else:
         E[NONE] = ("The %s of %s is outside its normal %s, moved in the direction that pulls the pH back toward "
@@ -451,37 +451,36 @@ def step_chronicity(x):
     E = {}
     if ch == "acute":
         key = ACU
+        why = ("the kidneys have not had time to compensate, which begins 6 to 12 hours after onset" if acid
+               else "the kidneys have not yet lowered it")
         E[ACU] = ("Correct. Carbon dioxide %s %s mm Hg (40 to %s). Acutely, bicarbonate moves about %s per 10, to "
-                  "about %s; chronically about %s per 10, to about %s. The measured %s matches the acute value: the "
-                  "kidneys have not had time to compensate, which begins 6 to 12 hours after onset."
-                  % (mv, f(d), p, f(ar), A_, f(cr), C_, h))
+                  "about %s; chronically about %s per 10, to about %s. The measured %s matches the acute value: %s."
+                  % (mv, f(d), p, f(ar), A_, f(cr), C_, h, why))
+        tell = ("complete renal compensation takes days" if acid
+                else "the chronic rule predicts a much lower bicarbonate")
         E[CHR] = ("Chronic compensation would move bicarbonate about %s per 10 mm Hg, to about %s. The measured %s sits "
-                  "near the acute %s instead. Tell: complete renal compensation takes days." % (f(cr), f(c), h, f(a)))
+                  "near the acute %s instead. Tell: %s." % (f(cr), f(c), h, f(a), tell))
     else:
         key = CHR
+        why = ("the kidneys have adjusted bicarbonate over days" if acid
+               else "the kidneys have lowered bicarbonate, the chronic finding")
         E[CHR] = ("Correct. Carbon dioxide %s %s mm Hg (40 to %s). Chronic compensation predicts about %s per 10, so "
-                  "%s; the acute rule gives only %s. The measured %s matches the chronic value: the kidneys have "
-                  "adjusted bicarbonate over days." % (mv, f(d), p, f(cr), C_, A_, h))
+                  "%s; the acute rule gives only %s. The measured %s matches the chronic value: %s."
+                  % (mv, f(d), p, f(cr), C_, A_, h, why))
+        tell = ("a change this large takes days of renal work" if acid
+                else "a bicarbonate this low is the chronic finding")
         E[ACU] = ("Acute compensation moves bicarbonate only about %s per 10 mm Hg, to about %s. The measured %s is "
-                  "well past that and matches the chronic %s. Tell: a change this large takes days of renal work."
-                  % (f(ar), f(a), h, f(c)))
+                  "well past that and matches the chronic %s. Tell: %s." % (f(ar), f(a), h, f(c), tell))
     keyval = f(a) if ch == "acute" else f(c)
-    if acid:
-        E[MIXA] = ("An added metabolic alkalosis would push bicarbonate above even the chronic prediction of about %s. "
-                   "The measured %s fits the %s rule (about %s), so compensation explains it without a second "
-                   "disorder. Tell: call a mixed disorder only when compensation cannot account for the value."
-                   % (f(c), h, ch, keyval))
-        E[MIXB] = ("An added metabolic acidosis would hold bicarbonate below even the acute prediction of about %s. The "
-                   "measured %s matches the %s value of about %s. Tell: a value that fits the expected compensation "
-                   "is a simple disorder." % (f(a), h, ch, keyval))
-    else:
-        E[MIXA] = ("An added metabolic acidosis would pull bicarbonate below even the chronic prediction of about %s. "
-                   "The measured %s fits the %s rule (about %s), so compensation explains it without a second "
-                   "disorder. Tell: call a mixed disorder only when compensation cannot account for the value."
-                   % (f(c), h, ch, keyval))
-        E[MIXB] = ("An added metabolic alkalosis would keep bicarbonate above even the acute prediction of about %s. "
-                   "The measured %s matches the %s value of about %s. Tell: a value that fits the expected "
-                   "compensation is a simple disorder." % (f(a), h, ch, keyval))
+    up, down = ("push bicarbonate above", "hold bicarbonate below") if acid else ("keep bicarbonate above",
+                                                                                  "pull bicarbonate below")
+    E[MIXA] = ("%s would %s the %s prediction of about %s. The measured %s fits that prediction, so compensation "
+               "explains it without a second disorder. Tell: call a mixed disorder only when compensation cannot "
+               "account for the value." % (MIXA.replace("With an added", "An added"), up if acid else down, ch,
+                                           keyval, h))
+    E[MIXB] = ("%s would %s the %s prediction of about %s. The measured %s matches it. Tell: a value that fits the "
+               "expected compensation is a simple disorder." % (MIXB.replace("With an added", "An added"),
+                                                               down if acid else up, ch, keyval, h))
     opts = [(t, E[t]) for t in (ACU, CHR, MIXA, MIXB)]
     walk = ["Change in carbon dioxide from 40: %s %s mm Hg." % (p, "- 40 = " + f(d) if acid else "is " + f(d) + " below 40"),
             "Acute prediction: bicarbonate %s %s x %s/10 = %s." % ("24 +" if acid else "24 -", f(ar), f(d), f(a)),
@@ -601,7 +600,7 @@ def step_winter_read(x):
 
 # CMS metabolic alkalosis: slide 38 (rarely above 55) with the slide 59 ratio given in the prompt.
 EXPC, CONRA = "Expected respiratory compensation", "Concurrent respiratory acidosis"
-RENALK, CONRALK = "Renal compensation for the alkalosis", "Concurrent respiratory alkalosis"
+RENALK, CONRALK = "Compensation back to a normal pH", "Concurrent respiratory alkalosis"
 ALK_PROMPT = ("What does the carbon dioxide show? In metabolic alkalosis carbon dioxide rises about 0.75 mm Hg per "
               "1 mEq/L rise in bicarbonate, counting from midpoints of 40 mm Hg and 24 mEq/L.")
 
@@ -639,9 +638,8 @@ def step_alk_comp(x, tail=""):
                     "this high means a concurrent primary respiratory acidosis%s." % (p, f(pred), f(dh), tail))
         E[EXPC] = ("Compensation alone predicts about %s and rarely goes above 55 mm Hg; the measured %s is above both. "
                    "Tell: past 55, look for a second, respiratory, disorder." % (f(pred), p))
-    E[RENALK] = ("The bicarbonate excess is the problem itself; a metabolic disorder is compensated by breathing, which "
-                 "retains carbon dioxide. The rise to %s is that respiratory response%s. Tell: metabolic problems get a "
-                 "respiratory response." % (p, "" if key == EXPC else ", and more"))
+    E[RENALK] = ("Compensation never returns the pH to normal; only correcting the underlying disorder does. The pH "
+                 "here is %s, still above 7.45. Tell: compensation narrows the pH change but never erases it." % fph(x.ph))
     E[CONRALK] = ("A respiratory alkalosis would lower the carbon dioxide below 36, and here it is %s, raised. Tell: "
                   "with a metabolic alkalosis, carbon dioxide goes up, never down, as compensation." % p)
     opts = [(t, E[t]) for t in (EXPC, CONRA, RENALK, CONRALK)]
@@ -651,7 +649,7 @@ def step_alk_comp(x, tail=""):
             "Measured carbon dioxide: %s, which %s." % (p, "fits the expected value" if key == EXPC
                                                         else "is above 55"),
             "So: %s." % key.lower()]
-    return opts, key, walk, [20, 38, 59]
+    return opts, key, walk, [19, 20, 38, 59]
 
 
 # Anion gap arithmetic (PDM slide 46, CMS slide 47).
@@ -662,8 +660,13 @@ def step_ag_calc(x, pattern):
     ag = x.ag
     agl = x.cfg["ag"]
     cat = "elevated" if ag > agl[1] else "normal" if ag >= agl[0] else "decreased"
+    lowalb = "alb" in L and L["alb"] < x.cfg["alb"][0]
+    if lowalb:
+        catx = "inside that range before any albumin correction" if cat == "normal" else "%s before any albumin correction" % cat
+    else:
+        catx = cat
     keyexp = ("Correct. Anion gap = sodium - (chloride + bicarbonate) = %s - (%s + %s) = %s - %s = %s. The normal gap is "
-              "9 to 15, so this gap is %s." % (f(na), f(cl), f(h), f(na), f(cl + h), f(ag), cat))
+              "9 to 15, so this gap is %s." % (f(na), f(cl), f(h), f(na), f(cl + h), f(ag), catx))
     cand = {
         "nobicarb": (na - cl, "%s is sodium minus chloride only (%s - %s); the bicarbonate was left out. Both measured "
                      "anions come off the sodium: %s - (%s + %s) = %s. Tell: add chloride and bicarbonate first, then "
@@ -691,6 +694,7 @@ def step_ag_calc(x, pattern):
     walk = ["Anion gap = sodium - (chloride + bicarbonate).",
             "Chloride + bicarbonate = %s + %s = %s." % (f(cl), f(h), f(cl + h)),
             "Sodium - %s = %s - %s = %s." % (f(cl + h), f(na), f(cl + h), f(ag)),
+            ("Normal gap: 9 to 15; %s is %s." % (f(ag), catx.replace("that range", "it"))) if lowalb else
             "Normal gap: 9 to 15, so %s is %s." % (f(ag), cat)]
     return opts, f(ag), walk, ([45, 46] if x.course == "pdm" else [46, 47])
 
@@ -757,10 +761,50 @@ def ag_read_of(x):
     return AGD
 
 
+ALB_KEY = "Correct it for the low albumin first"
+ALB_NORM, ALB_K, ALB_DEC = "Read it as normal as it stands", "Add the potassium before reading it", \
+    "Read it as a decreased gap"
+
+
+def ag_calc_prompt(x):
+    if "alb" in x.L and x.L["alb"] < x.cfg["alb"][0]:
+        return "Calculate the anion gap from the measured sodium, chloride and bicarbonate."
+    return "Calculate the anion gap."
+
+
+def ag_read_prompt(x):
+    if ag_read_of(x) == AGALB:
+        return "The calculated gap is %s and the albumin is %s g/dL. How should this gap be handled?" % (
+            f(x.ag), "%.1f" % x.L["alb"])
+    return "How should this anion gap be read?"
+
+
 def step_ag_read(x):
-    ag, alb = f(x.ag), f(x.L["alb"], 1)
+    ag, alb = f(x.ag), "%.1f" % x.L["alb"]
     key = ag_read_of(x)
     cat = "elevated" if x.ag > 15 else "normal" if x.ag >= 9 else "decreased"
+    if key == AGALB:
+        assert 9 <= x.ag <= 15, "%s: the low-albumin case needs a gap that looks normal uncorrected" % x.c["id"]
+        E = {
+            ALB_KEY: ("Correct. The anion gap must be corrected when albumin is abnormal, and %s g/dL is well below "
+                      "normal. Albumin is most of the normal gap, so a low albumin pulls the gap down and can hide a "
+                      "real rise; the correction adds to the gap for each 1 g/dL of albumin below 4.5." % alb),
+            ALB_NORM: ("%s sits inside 9 to 15, but with an albumin of %s g/dL that number understates the gap. A low "
+                       "albumin must be corrected for first, and the correction can only raise the gap. Tell: check "
+                       "the albumin before calling a gap normal." % (ag, alb)),
+            ALB_K: ("The gap formula has no potassium: sodium - (chloride + bicarbonate). What changes the reading here "
+                    "is the albumin of %s g/dL, which must be corrected for. Tell: albumin, not potassium, adjusts "
+                    "the gap." % alb),
+            ALB_DEC: ("A decreased gap is one below 9, and this gap is %s. A low albumin pulls the gap down, so the fix "
+                      "is to correct it upward for the albumin, not to call it decreased. Tell: a gap inside 9 to 15 "
+                      "is not decreased." % ag),
+        }
+        opts = [(t, E[t]) for t in (ALB_NORM, ALB_K, ALB_DEC, ALB_KEY)]
+        walk = ["Check the albumin first: %s g/dL against 3.5 to 5.0 is low." % alb,
+                "An abnormal albumin means the gap must be corrected before it is read; albumin is most of the normal "
+                "gap.",
+                "So the calculated gap of %s is not read as it stands: %s." % (ag, ALB_KEY.lower())]
+        return opts, ALB_KEY, walk, [45, 46, 48]
     E = {}
     if key == AGE:
         E[AGE] = ("Correct. The gap of %s is above the normal 9 to 15, so it is elevated. An elevated gap usually means "
@@ -768,35 +812,19 @@ def step_ag_read(x):
                   "needs no correction." % (ag, alb))
         E[AGNm] = ("A normal gap is 9 to 15, and this gap is %s, above it, with a normal albumin of %s g/dL that "
                    "needs no correction. Tell: a gap above 15 is elevated." % (ag, alb))
-    elif key == AGNm:
+    else:
         E[AGNm] = ("Correct. The gap of %s lies inside the normal 9 to 15, and the albumin of %s g/dL is normal, so the "
                    "gap can be read as it stands: it is not elevated." % (ag, alb))
         E[AGE] = ("An elevated gap is above 15, usually from added unmeasured anions such as ketoacids or lactate. This "
                   "gap is %s, inside 9 to 15. Tell: compare the calculated gap with 9 to 15." % ag)
-    else:
-        E[AGALB] = ("Correct. The albumin is %s g/dL, well below normal, and the anion gap must be corrected when albumin "
-                    "is abnormal. Albumin accounts for most of the normal gap, so a low albumin pulls the gap down and "
-                    "can hide a real rise; the uncorrected %s cannot be read as normal." % (alb, ag))
-        E[AGNm] = ("%s sits inside 9 to 15, but the albumin is %s g/dL, low. Because albumin is most of the normal gap, "
-                   "the gap must be corrected before it is read; uncorrected, it understates the gap. Tell: check the "
-                   "albumin before reading the gap." % (ag, alb))
-        E[AGE] = ("Uncorrected, this gap of %s is not above 15, and with an albumin of %s g/dL it has to be corrected "
-                  "before anyone can call it elevated or normal. Tell: an abnormal albumin comes first."
-                  % (ag, alb))
-    if key != AGALB:
-        E[AGALB] = ("The gap needs correcting only when albumin is abnormal, and this albumin is %s g/dL, normal. So the "
-                    "gap of %s is read as it stands: %s. Tell: correct the gap only for an abnormal albumin."
-                    % (alb, ag, cat))
+    E[AGALB] = ("The gap needs correcting only when albumin is abnormal, and this albumin is %s g/dL, normal. So the "
+                "gap of %s is read as it stands: %s. Tell: correct the gap only for an abnormal albumin."
+                % (alb, ag, cat))
     E[AGD] = ("A decreased gap is below 9, usually from added unmeasured cations such as lithium. This gap is %s. Tell: "
               "only a gap below 9 is decreased." % ag)
     opts = [(t, E[t]) for t in (AGE, AGNm, AGD, AGALB)]
-    alst = "low" if key == AGALB else "normal"
-    walk = ["Check the albumin first: %s g/dL against 3.5 to 5.0 is %s." % (alb, alst)]
-    if key == AGALB:
-        walk += ["An abnormal albumin means the gap must be corrected before it is read; albumin is most of the "
-                 "normal gap.", "So the uncorrected gap of %s is not read as normal: correct it for albumin first." % ag]
-    else:
-        walk += ["Gap %s against 9 to 15: %s." % (ag, cat), "So: %s." % key.lower()]
+    walk = ["Check the albumin first: %s g/dL against 3.5 to 5.0 is normal." % alb,
+            "Gap %s against 9 to 15: %s." % (ag, cat), "So: %s." % key.lower()]
     return opts, key, walk, [45, 46, 47, 48]
 
 
@@ -863,7 +891,7 @@ def step_o2(x):
     E = {}
     if key == OR_:
         E[OR_] = ("Correct. The pH of %s is acidic, and acidosis shifts the oxygen-hemoglobin dissociation curve to the "
-                  "right: hemoglobin's affinity for oxygen falls, so oxygen is released to the tissues more easily."
+                  "right: oxygen is released more easily from hemoglobin."
                   % ph)
         E[OL_] = ("A left shift, with oxygen held more tightly, is what alkalosis does. This pH of %s is acidic, which "
                   "shifts the curve right. Tell: a low pH shifts right and lets oxygen go." % ph)
@@ -873,7 +901,7 @@ def step_o2(x):
                   "from alkalosis, not this acidic pH of %s. Tell: acid shifts right." % ph)
     else:
         E[OL_] = ("Correct. The pH of %s is alkaline, and alkalosis shifts the curve to the left: hemoglobin binds "
-                  "oxygen more tightly, so less oxygen is delivered to the tissues." % ph)
+                  "oxygen more tightly." % ph)
         E[OR_] = ("A right shift, with oxygen released more easily, is what acidosis does. This pH of %s is alkaline, "
                   "which shifts the curve left. Tell: a high pH shifts left and holds oxygen." % ph)
         E[OLX] = ("A left shift raises hemoglobin's hold on oxygen, so oxygen is released less easily, not more. "
