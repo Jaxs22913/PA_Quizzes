@@ -1,0 +1,1806 @@
+{
+ "set1": [
+  {
+   "topic": "Judging the response",
+   "io": "Evaluate the patient’s response to oxygen therapy.",
+   "q": "A 59-year-old man with pneumonia is started on a simple mask. Thirty minutes later he is breathing more easily, his lips are pink instead of dusky, and his saturation is up to his target. Which is the next step in evaluating his response?",
+   "opts": [
+    [
+     "Keep checking vitals and watch for complications",
+     "Correct. His symptoms, work of breathing and color have improved and his saturation is at target; evaluation continues with vital signs and further monitoring for complications of oxygen therapy."
+    ],
+    [
+     "Stop oxygen now that he looks better",
+     "Improvement on oxygen is the reason to continue, not to stop. Evaluation continues with vital signs and monitoring for complications while the cause is treated.",
+     "wrong stage or severity"
+    ],
+    [
+     "Increase to a non-rebreather mask",
+     "He is improving at target, so escalating is not indicated and adds the hazard of carbon dioxide retention. Continue vitals and monitoring for complications.",
+     "reversed direction or value"
+    ],
+    [
+     "Order a home oxygen qualification today",
+     "Qualification is for a patient who still needs oxygen at the time of need for home use. This acute response is followed with vitals and monitoring.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 25",
+   "slot": "complication",
+   "lead": "next step"
+  },
+  {
+   "topic": "Choosing a device",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 58-year-old man is placed on a non-rebreather mask at 10 L/min for severe hypoxia. The nurse notices the reservoir bag collapses completely each time he breathes in. Which adjustment is needed?",
+   "opts": [
+    [
+     "Increase the flow until the bag stays inflated",
+     "Correct. A non-rebreather is dosed so the flow prevents the reservoir bag from collapsing on inspiration; within 10 to 15 L/min, raise the flow until the bag stays filled."
+    ],
+    [
+     "Switch to a nasal cannula at 6 L/min",
+     "A nasal cannula maxes out at 44%, far below what severe hypoxia needs. The collapsing bag means the non-rebreather's flow is too low; raise it.",
+     "wrong stage or severity"
+    ],
+    [
+     "Remove the one-way valve",
+     "Removing the valve would let him inhale exhaled air and lower the fraction. The collapsing bag is fixed by raising the flow.",
+     "reversed direction or value"
+    ],
+    [
+     "Lower the flow to 5 L/min",
+     "Lowering the flow would collapse the bag further. The rule is enough flow to prevent bag collapse on inspiration, so the flow goes up.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 17",
+   "slot": "escalation",
+   "lead": "next step"
+  },
+  {
+   "topic": "Who qualifies for home oxygen",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 74-year-old man with chronic obstructive pulmonary disease has poor finger perfusion, and the pulse oximeter will not give a steady reading. His arterial oxygen pressure is 55 mm Hg on room air at rest. What is his home oxygen status?",
+   "opts": [
+    [
+     "Qualifies in Group I",
+     "Correct. Hypoxia can be documented by arterial blood gas as well as by oximetry, and an oxygen pressure of 55 mm Hg or lower at rest qualifies outright, Group I, recertified at 12 months."
+    ],
+    [
+     "Qualifies in Group II",
+     "Group II is for an oxygen pressure of 56 to 59 mm Hg with a comorbidity. At exactly 55 he meets the Group I cutoff on his own.",
+     "adjacent fact"
+    ],
+    [
+     "Cannot qualify without oximetry",
+     "Qualification accepts an arterial blood gas or pulse oximetry. His blood gas oxygen pressure of 55 documents the hypoxia.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Does not qualify at 55 mm Hg",
+     "The cutoff is 55 mm Hg or lower, so 55 qualifies. He meets the Group I criterion.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 5",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Choosing a device",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 71-year-old man with chronic obstructive pulmonary disease is admitted with a flare. His oxygen saturation is 86% on room air, and the team wants to give him an exact, adjustable fraction of inspired oxygen rather than a fraction that changes with his breathing. Which delivery device is the best choice?",
+   "opts": [
+    [
+     "Nasal cannula",
+     "A nasal cannula gives 24% to 44%, but its fraction varies with respiratory rate, inspiratory flow and tidal volume. The stated need for an exact fraction in this disease points to the Venturi mask.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Simple mask",
+     "A simple mask's fraction also varies with rate, inspiratory flow and tidal volume. For a fixed, adjustable fraction in chronic obstructive pulmonary disease, the Venturi mask is the device.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Venturi mask",
+     "Correct. The clue is chronic obstructive pulmonary disease plus the need for an exact fraction: the Venturi mask is a high flow device whose ports dial in 24% to 50% precisely, which is why it is often used in this disease."
+    ],
+    [
+     "Non-rebreather mask",
+     "The non-rebreather delivers 60% to 100% and its fraction varies with demand, so it cannot give this patient a precise, adjustable fraction. It is kept for severe hypoxia in a patient still ventilating well.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 16",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Oxygen safety at home",
+   "io": "Discuss patient education for oxygen delivery",
+   "q": "A 77-year-old woman is going home on oxygen tanks. Her son asks what to do with the tanks and how to store them. Which property of the tanks drives the storage and disposal teaching?",
+   "opts": [
+    [
+     "They hold compressed gas",
+     "Correct. Oxygen tanks contain compressed gas, so the teaching covers proper storage and disposal, in addition to the warning that oxygen is highly flammable."
+    ],
+    [
+     "They hold a liquid fuel",
+     "Oxygen tanks do not hold fuel. They hold compressed gas, which is why storage and disposal are taught, alongside oxygen's flammability.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "They emit carbon monoxide",
+     "Oxygen tanks do not produce carbon monoxide. They hold compressed gas, so storage and disposal are taught; separately, homes need working carbon monoxide alarms.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "They spoil within a week",
+     "Spoilage is not the issue. The tanks contain compressed gas, so proper storage and disposal are part of the teaching.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 7",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Who qualifies for home oxygen",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 70-year-old man admitted with a heart failure exacerbation still needs 2 L/min of oxygen on hospital day 1. His team plans to discharge him in a few days. When should his home oxygen qualification be performed?",
+   "opts": [
+    [
+     "On admission day, while he is acutely ill",
+     "On day 1 he is still being treated and may improve off oxygen. Qualification documents need at the time of need, when he is otherwise ready to go home but still hypoxic.",
+     "wrong stage or severity"
+    ],
+    [
+     "After a year on home oxygen",
+     "He cannot go home on oxygen without first qualifying. The documentation is done at the time of need, before discharge; recertification comes later at 3 or 12 months.",
+     "reversed direction or value"
+    ],
+    [
+     "At his first outpatient visit",
+     "Waiting for clinic would send him home without the oxygen he needs. Qualification is done at the time of need, before discharge, by oximetry or blood gas.",
+     "wrong stage or severity"
+    ],
+    [
+     "At the time of need, before discharge",
+     "Correct. Qualification is performed at the time of need: once he is treated and ready for discharge but still needs oxygen, his hypoxia is documented by pulse oximetry or arterial blood gas at rest, exertion or sleep."
+    ]
+   ],
+   "c": 3,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 5",
+   "slot": "initial test",
+   "lead": "next step"
+  },
+  {
+   "topic": "Escalating oxygen",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 58-year-old man with bronchitis is on a nasal cannula at 6 L/min with a saturation of 89%. He now has mild to moderate respiratory distress but is ventilating well. Which step fits his severity?",
+   "opts": [
+    [
+     "Turn the cannula to 10 L/min",
+     "Above 6 L/min the cannula stays at about 44%, so more flow adds nothing. His mild to moderate distress fits a simple mask.",
+     "reversed direction or value"
+    ],
+    [
+     "Go straight to a bag-valve mask",
+     "A bag-valve mask gives assisted breaths to a patient who cannot ventilate; he is ventilating well. A simple mask matches mild to moderate distress.",
+     "wrong stage or severity"
+    ],
+    [
+     "Stop oxygen and recheck in an hour",
+     "Stopping oxygen in a patient who is hypoxic and in distress leaves him worse. He needs escalation from the maxed-out cannula to a simple mask.",
+     "wrong stage or severity"
+    ],
+    [
+     "Change to a simple mask at 5 to 10 L/min",
+     "Correct. The cannula is at its 6 L/min, 44% ceiling, and he now has mild to moderate respiratory distress, the simple mask's indication; at 5 to 10 L/min it gives about 35% to 50%."
+    ]
+   ],
+   "c": 3,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 13",
+   "slot": "escalation",
+   "lead": "next step"
+  },
+  {
+   "topic": "Judging the response",
+   "io": "Evaluate the patient’s response to oxygen therapy.",
+   "q": "A 65-year-old woman with chronic lung disease and a 60-year-old man with pneumonia are both on oxygen. The nurse asks what saturation target to use for each. Which principle applies?",
+   "opts": [
+    [
+     "Both should be kept at 88%",
+     "88% is the home oxygen qualifying cutoff, not a universal target. The saturation target varies with the patient.",
+     "adjacent fact"
+    ],
+    [
+     "Both should match room air",
+     "Matching room air is not a target; it would ignore their hypoxia. The saturation target when giving oxygen varies with the patient.",
+     "common lay belief"
+    ],
+    [
+     "The target varies with the patient",
+     "Correct. When evaluating the response to oxygen, the saturation should improve, but the target varies with the patient, read together with the blood gas, vital signs and clinical assessment."
+    ],
+    [
+     "Both should be kept at 100%",
+     "A fixed 100% target is not the rule; extra oxygen risks carbon dioxide retention, a listed hazard. The target varies from patient to patient.",
+     "common lay belief"
+    ]
+   ],
+   "c": 2,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 25",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Hazards on the patient",
+   "io": "Identify the indications, benefits, and hazards of oxygen therapy.",
+   "q": "An 80-year-old man on home oxygen at 5 L/min by nasal cannula with no humidifier complains of a sore, dry nose and occasional bleeding. Which change addresses the cause?",
+   "opts": [
+    [
+     "Apply a petroleum lip and nose balm",
+     "Petroleum products are to be avoided with oxygen because of fire. The fix for his irritation is humidity at flows above 4 L/min.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Switch to a non-rebreather mask",
+     "A non-rebreather is for severe hypoxia and does not cure irritation from dry gas. Humidifying his cannula oxygen above 4 L/min does.",
+     "wrong stage or severity"
+    ],
+    [
+     "Add humidity to the oxygen",
+     "Correct. His dry, bleeding nose is mucosal irritation, a listed hazard; humidity is used with nasal cannula flows greater than 4 L/min, and he is at 5 without it."
+    ],
+    [
+     "Increase the flow to 6 L/min",
+     "More dry flow would worsen the irritation. Above 4 L/min, the cannula's oxygen should be humidified.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 9",
+   "slot": "complication",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Oxygen safety at home",
+   "io": "Discuss patient education for oxygen delivery",
+   "q": "A 71-year-old man starting home oxygen asks why he must be so careful at home if oxygen is \"just air.\" Which property of oxygen underlies the safety teaching?",
+   "opts": [
+    [
+     "It is heavier than water",
+     "The weight of the gas is not the issue. The safety teaching rests on oxygen being highly flammable and stored as compressed gas.",
+     "common lay belief"
+    ],
+    [
+     "It turns into carbon monoxide",
+     "Oxygen does not become carbon monoxide; carbon monoxide alarms are part of general fire safety. The core property is that oxygen is highly flammable.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It is highly flammable",
+     "Correct. Oxygen is highly flammable, and tanks hold it as compressed gas, so patients are taught no smoking, distance from heat sources, avoiding petroleum products, signage and working alarms."
+    ],
+    [
+     "It is toxic to breathe for visitors",
+     "Visitors are not harmed by breathing near it; the teaching is about fire. Oxygen is highly flammable, which drives every home safety rule.",
+     "common lay belief"
+    ]
+   ],
+   "c": 2,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 7",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Reading the fraction from the flow",
+   "io": "Compare and contrast the different oxygen delivery systems.",
+   "q": "A 63-year-old woman with pneumonia is on a nasal cannula at 2 L/min. Her flow is increased to 5 L/min. About what fraction of inspired oxygen is she receiving now?",
+   "opts": [
+    [
+     "28%",
+     "28% is what she received at 2 L/min, before the change. At 5 L/min the cannula delivers about 40%, three 4% steps higher.",
+     "adjacent fact"
+    ],
+    [
+     "40%",
+     "Correct. Room air is 21%; a nasal cannula gives about 24% at 1 L/min and adds about 4% per liter: 28% at 2, 32% at 3, 36% at 4 and 40% at 5 L/min."
+    ],
+    [
+     "44%",
+     "44% is the cannula at 6 L/min, its maximum setting. At 5 L/min she receives about 40%, one 4% step lower.",
+     "adjacent fact"
+    ],
+    [
+     "60%",
+     "60% is the bottom of the non-rebreather's range; a nasal cannula never exceeds about 44%. At 5 L/min she receives about 40%.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 9",
+   "slot": "agent/regimen",
+   "lead": "test"
+  },
+  {
+   "topic": "Nebulizer or inhaler",
+   "io": "Explain the rationale for a nebulizer treatment.",
+   "q": "A 45-year-old man with a severe exacerbation of his chronic lung disease is too short of breath to use his inhaler properly. Which delivery method is preferred for his inhaled medication?",
+   "opts": [
+    [
+     "An oropharyngeal airway",
+     "An oropharyngeal airway keeps an airway open; it does not deliver medication. A nebulizer delivers his liquid medication to the airways.",
+     "adjacent fact"
+    ],
+    [
+     "Nebulizer",
+     "Correct. A severe exacerbation of respiratory illness and an inhaler that is challenging in the situation are both listed rationales for nebulizer treatment, which delivers liquid medication directly to the airways."
+    ],
+    [
+     "His usual inhaler, used faster",
+     "Using the inhaler faster does not overcome breathlessness that already prevents good technique. A nebulizer is the listed choice in a severe exacerbation.",
+     "common lay belief"
+    ],
+    [
+     "A trach collar",
+     "A trach collar delivers to a tracheostomy, which he does not have. His inhaled medication goes by nebulizer during the severe exacerbation.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 1,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 24",
+   "slot": "escalation",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Judging the response",
+   "io": "Evaluate the patient’s response to oxygen therapy.",
+   "q": "A 70-year-old woman with heart failure is started on oxygen. An hour later her arterial oxygen pressure has risen, but her arterial carbon dioxide has also risen and her pH has fallen. How should this response be read?",
+   "opts": [
+    [
+     "A good response: pH is moving",
+     "Her pH is falling, the wrong direction; a good response corrects the pH. Together with rising carbon dioxide this is not a good response.",
+     "reversed direction or value"
+    ],
+    [
+     "Cannot be judged without a chest film",
+     "A chest film is not one of the listed measures. The blood gas already answers it: rising carbon dioxide and a falling pH mean the response is not good.",
+     "adjacent fact"
+    ],
+    [
+     "Not a good response: carbon dioxide is rising",
+     "Correct. A good response raises arterial oxygen without raising carbon dioxide, with correction of the pH. Her rising carbon dioxide and falling pH show carbon dioxide retention, a hazard to act on."
+    ],
+    [
+     "A good response: oxygen pressure has risen",
+     "A higher oxygen pressure alone is not enough; the response must come without a rise in carbon dioxide and with pH correction. Hers fails on both.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 25",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Oxygen safety at home",
+   "io": "Discuss patient education for oxygen delivery",
+   "q": "A 72-year-old man starting home oxygen says he smokes on his back porch and that his wife smokes in the kitchen. Which teaching applies?",
+   "opts": [
+    [
+     "His wife may smoke if he is in another room",
+     "Another room is still the home, and oxygen and its tanks are throughout it. The teaching is that no one smokes in the home, because the fire danger is too great.",
+     "common lay belief"
+    ],
+    [
+     "Smoking is fine if the tank is turned off",
+     "Turning off the flow does not make the home safe; tanks hold compressed, highly flammable oxygen. No one should smoke in the home.",
+     "common lay belief"
+    ],
+    [
+     "He must stop; visitors are exempt",
+     "Visitors are not exempt; signage (No Smoking, Oxygen in Use) exists to warn everyone in the home. No one smokes in the home of an oxygen user.",
+     "common lay belief"
+    ],
+    [
+     "No one should smoke in the home",
+     "Correct. Oxygen is highly flammable, so no one should smoke in the home of a patient on oxygen; the fire danger is too great. That covers his wife in the kitchen, and the home is posted with No Smoking signs."
+    ]
+   ],
+   "c": 3,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 7",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Oxygen safety at home",
+   "io": "Discuss patient education for oxygen delivery",
+   "q": "A 79-year-old woman using home oxygen keeps an electric space heater beside her recliner, where she sits with her tubing. Which teaching applies?",
+   "opts": [
+    [
+     "Lower her flow while the heater runs",
+     "Lower flow still feeds a fire. The rule is distance: at least 10 feet from heat sources, electric appliances included.",
+     "common lay belief"
+    ],
+    [
+     "Keep the heater 3 feet away",
+     "Three feet is well inside the safety distance. Oxygen should be at least 10 feet from heat sources.",
+     "reversed direction or value"
+    ],
+    [
+     "Keep oxygen at least 10 feet from the heater",
+     "Correct. Electric appliances are heat sources, and home oxygen should be kept at least 10 feet from heat sources such as pilot lights, electric appliances and candles because oxygen is highly flammable."
+    ],
+    [
+     "A heater is safe because it has no flame",
+     "Electric appliances are named among the heat sources to keep away from oxygen; no open flame is needed for the hazard. Keep at least 10 feet away.",
+     "common lay belief"
+    ]
+   ],
+   "c": 2,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 7",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "What to avoid",
+   "io": "Identify the indications, benefits, and hazards of oxygen therapy.",
+   "q": "A 78-year-old man with chronic obstructive pulmonary disease has mild hypoxia, saturation 87%, during a cold. A student suggests a non-rebreather mask at 15 L/min \"to be safe.\" Why should that be avoided?",
+   "opts": [
+    [
+     "It cannot raise his saturation",
+     "A non-rebreather can raise saturation powerfully, 60% to 100% at 10 to 15 L/min. The problem is the opposite: too much oxygen for mild hypoxia, risking carbon dioxide retention in a patient with this disease.",
+     "reversed direction or value"
+    ],
+    [
+     "It causes vasoconstriction in the lungs",
+     "Vasoconstriction is the hazard behind withholding oxygen in myocardial infarction, not the concern here. The concern for him is carbon dioxide retention from excess oxygen.",
+     "adjacent fact"
+    ],
+    [
+     "It is a fire hazard in hospitals",
+     "Fire is a hazard wherever oxygen is used, home included, and it is not why this device is wrong for him. The issue is carbon dioxide retention from an unnecessarily high fraction.",
+     "adjacent fact"
+    ],
+    [
+     "It risks carbon dioxide retention",
+     "Correct. Hypercapnia, carbon dioxide retention, is a listed hazard of oxygen therapy, and a non-rebreather gives 60% to 100%, far more than his mild hypoxia needs. His disease is why a precise, lower fraction (the Venturi mask) is often used instead."
+    ]
+   ],
+   "c": 3,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 3",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Oxygen safety at home",
+   "io": "Discuss patient education for oxygen delivery",
+   "q": "A 68-year-old woman going home on oxygen asks what signs to post. Which signage is taught?",
+   "opts": [
+    [
+     "A sign with her recertification date",
+     "Recertification is paperwork, not a safety warning. The teaching is No Smoking and Oxygen in Use signage.",
+     "adjacent fact"
+    ],
+    [
+     "No Smoking and Oxygen in Use signs",
+     "Correct. Patients are taught to post No Smoking signage and, potentially, Oxygen in Use signs within the home, because oxygen is highly flammable and compressed."
+    ],
+    [
+     "A sign with her oxygen flow rate",
+     "The flow rate is part of the prescription, not a safety sign. The signage taught is No Smoking and Oxygen in Use.",
+     "adjacent fact"
+    ],
+    [
+     "A sign with her pharmacy's number",
+     "A pharmacy number is not the safety signage. The home should carry No Smoking and Oxygen in Use signs.",
+     "common lay belief"
+    ]
+   ],
+   "c": 1,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 7",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Nebulizer or inhaler",
+   "io": "Explain the rationale for a nebulizer treatment.",
+   "q": "A 4-year-old boy with wheezing cannot coordinate pressing a metered-dose inhaler with breathing in, even with coaching. Which delivery method is the rationale for his medication?",
+   "opts": [
+    [
+     "A larger-dose inhaler",
+     "A bigger dose does not fix his inability to coordinate the inhaler. The nebulizer delivers liquid medication to the airways without that technique.",
+     "common lay belief"
+    ],
+    [
+     "A non-rebreather mask",
+     "A non-rebreather delivers oxygen, not medication, and is for severe hypoxia. His problem is inhaler technique, solved by a nebulizer.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "A Venturi mask",
+     "A Venturi mask sets a precise oxygen fraction; it does not deliver his medication. A nebulizer is the rationale when an inhaler is too hard to use.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "A nebulizer",
+     "Correct. A rationale for nebulizer treatment is that inhalers are challenging in certain situations, here a young child who cannot coordinate the inhaler; the nebulizer delivers liquid medication directly to the airways."
+    ]
+   ],
+   "c": 3,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 24",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Reading the fraction from the flow",
+   "io": "Compare and contrast the different oxygen delivery systems.",
+   "q": "A 57-year-old man with bronchitis is placed on a simple mask at 6 to 7 L/min. About what fraction of inspired oxygen is he receiving?",
+   "opts": [
+    [
+     "28%",
+     "28% is a nasal cannula at 2 L/min, below any simple mask setting. At 6 to 7 L/min the simple mask gives about 40%.",
+     "adjacent fact"
+    ],
+    [
+     "40%",
+     "Correct. A simple mask delivers about 35% at 5 to 6 L/min, 40% at 6 to 7 L/min and 50% at 7 to 8 L/min, within its 35% to 50% range."
+    ],
+    [
+     "50%",
+     "50% is the simple mask at 7 to 8 L/min, one step higher. At 6 to 7 L/min it gives about 40%.",
+     "adjacent fact"
+    ],
+    [
+     "80%",
+     "80% is beyond a simple mask; reservoir devices such as the non-rebreather reach that range. At 6 to 7 L/min the simple mask gives about 40%.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 13",
+   "slot": "agent/regimen",
+   "lead": "test"
+  },
+  {
+   "topic": "Choosing a device",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 55-year-old woman develops severe hypoxia, saturation 79%, from pneumonia. She is alert, breathing at a steady rate with good chest rise, and her arterial carbon dioxide is normal. Which device delivers the high fraction she needs?",
+   "opts": [
+    [
+     "Non-rebreather mask",
+     "Correct. Severe hypoxia (79%) in a patient still ventilating well, alert with normal carbon dioxide, is the non-rebreather's indication: 10 to 15 L/min through a reservoir bag and one-way valve gives 60% to 100%."
+    ],
+    [
+     "Nasal cannula",
+     "A nasal cannula tops out at 44% and is most commonly used for mild hypoxia; her saturation of 79% is severe. The non-rebreather delivers 60% to 100% to a patient still ventilating well.",
+     "wrong stage or severity"
+    ],
+    [
+     "Simple mask",
+     "A simple mask reaches only about 35% to 50% and is for mild to moderate distress. Her severe hypoxia with good ventilation needs the non-rebreather's 60% to 100%.",
+     "wrong stage or severity"
+    ],
+    [
+     "Bag-valve mask",
+     "A bag-valve mask is an advanced airway tool for a patient who needs assisted breaths. She is alert and ventilating well, so the non-rebreather supplies the high fraction instead.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 0,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 15",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Who qualifies for home oxygen",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 69-year-old woman with chronic lung disease is assessed for home oxygen before discharge. Her resting room-air saturation is exactly 88%, and she has no other findings. What is her qualification?",
+   "opts": [
+    [
+     "Group I, recertified at 12 months",
+     "Correct. The resting criterion is a saturation of 88% or lower, so exactly 88% qualifies outright with no comorbidity: Group I, recertified every 12 months."
+    ],
+    [
+     "Group II, recertified at 3 months",
+     "Group II is the conditional group for a saturation of 89% (or oxygen pressure 56 to 59) with a comorbidity. Her 88% meets Group I on its own.",
+     "adjacent fact"
+    ],
+    [
+     "Not qualified without a comorbidity",
+     "A comorbidity is needed only at 89%; at 88% the resting criterion is met by itself. She qualifies in Group I.",
+     "wrong stage or severity"
+    ],
+    [
+     "Qualified for exertion oxygen",
+     "Her qualifying value is at rest, so she qualifies for resting oxygen in Group I, not only during exertion.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 6",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Who qualifies for home oxygen",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 73-year-old man with chronic obstructive pulmonary disease is ready for discharge after his treatment is optimized. His resting saturation on room air is 87%, and he has no pulmonary hypertension, cor pulmonale (right-sided heart failure from lung disease) or high hematocrit. How often will his home oxygen be recertified?",
+   "opts": [
+    [
+     "Every 1 month",
+     "One month is not a recertification interval in the criteria. His saturation of 87% at rest places him in Group I, recertified every 12 months; Group II, the conditional group, is the one rechecked sooner, at 3 months.",
+     "reversed direction or value"
+    ],
+    [
+     "Every 3 months",
+     "Three months is the Group II interval, for a borderline value (saturation 89% or oxygen pressure 56 to 59) that qualifies only with a comorbidity. His 87% qualifies outright in Group I, rechecked at 12 months. Tell: no comorbidity was needed.",
+     "adjacent fact"
+    ],
+    [
+     "Every 12 months",
+     "Correct. A resting room-air saturation of 87% is at or below 88%, so he qualifies outright in Group I with no comorbidity needed; Group I home oxygen is recertified every 12 months."
+    ],
+    [
+     "Every 24 months",
+     "Two years is longer than any interval in the criteria. Group I, which his resting 87% meets, is recertified every 12 months, and the conditional Group II every 3 months.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 6",
+   "slot": "prognosis",
+   "lead": "test"
+  },
+  {
+   "topic": "Judging the response",
+   "io": "Evaluate the patient’s response to oxygen therapy.",
+   "q": "A 52-year-old woman with asthma is started on oxygen. She says she feels better, but her lips remain dusky, her accessory muscles are still working hard, and her saturation has not moved. How should her response be judged?",
+   "opts": [
+    [
+     "Not yet adequate on clinical and objective measures",
+     "Correct. Response is judged by symptoms, work of breathing and color/perfusion together with objective data. Her persistent dusky color, heavy work of breathing and unchanged saturation outweigh her saying she feels better."
+    ],
+    [
+     "Adequate, because she feels better",
+     "Feeling better is one measure, but her work of breathing, color and saturation have not improved. Judged on all of them, the response is not yet adequate.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Adequate, because oxygen is running",
+     "Running oxygen is not a response. The measures are symptoms, work of breathing, color/perfusion and objective data, and hers show no improvement.",
+     "common lay belief"
+    ],
+    [
+     "Cannot be judged without a chest film",
+     "A chest film is not among the listed measures. Her symptoms, work of breathing, color and saturation already show the response is inadequate.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 25",
+   "slot": "manifestation",
+   "lead": "test"
+  },
+  {
+   "topic": "Indications and the infarction caution",
+   "io": "Identify the indications, benefits, and hazards of oxygen therapy.",
+   "q": "A 62-year-old man with chest pain has a myocardial infarction with ST elevation. He is alert, with an oxygen saturation of 96% on room air. Which is the right approach to oxygen?",
+   "opts": [
+    [
+     "Give a nasal cannula at 2 L/min",
+     "Even low-flow oxygen is not given in myocardial infarction when saturation is 96%; oxygen's vasoconstriction is the reason, and the threshold is below 91%.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Give a Venturi mask at 28%",
+     "A precise fraction is still oxygen, and oxygen is withheld in myocardial infarction unless saturation is below 91%. At 96% none is needed.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Withhold oxygen at this saturation",
+     "Correct. Oxygen causes vasoconstriction, so it is not given in myocardial infarction unless saturation is below 91%; at 96% it would add vasoconstriction without correcting any hypoxia."
+    ],
+    [
+     "Give a non-rebreather at 15 L/min",
+     "Oxygen at 60% to 100% in a non-hypoxic infarction patient adds vasoconstriction, a listed hazard. At 96% oxygen is withheld; the threshold is below 91%.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 3",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Escalating oxygen",
+   "io": "Select the appropriate equipment and supplies necessary for initiating oxygen therapy.",
+   "q": "A 57-year-old man with a chronic lung disease flare needs both inhaled medication by nebulizer and supplemental oxygen. He has no tracheostomy. Which air-entrainment interface over his face suits him?",
+   "opts": [
+    [
+     "Nasal cannula",
+     "A nasal cannula delivers oxygen through the nostrils but is not an air-entrainment nebulizer interface. An aerosol mask over the face is.",
+     "adjacent fact"
+    ],
+    [
+     "Aerosol mask",
+     "Correct. The air-entrainment nebulizer is delivered over the face by an aerosol mask or open face mask (and to an airway by a T-piece or trach collar); with no tracheostomy, an aerosol mask fits him."
+    ],
+    [
+     "Trach collar",
+     "A trach collar delivers air-entrainment nebulizer oxygen to a tracheostomy, which he does not have. Over his face, an aerosol mask is used.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Non-rebreather mask",
+     "A non-rebreather delivers high-fraction oxygen through a reservoir bag; it is not an air-entrainment nebulizer interface. The aerosol mask delivers the nebulized system over the face.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 18",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Judging the response",
+   "io": "Evaluate the patient’s response to oxygen therapy.",
+   "q": "A 64-year-old man with pneumonia has an arterial blood gas before and after starting oxygen. After oxygen, his arterial oxygen pressure is higher, his carbon dioxide is unchanged, and his pH has returned toward normal. How is this response read?",
+   "opts": [
+    [
+     "A good response",
+     "Correct. A good response on the blood gas is a higher arterial oxygen without a rise in carbon dioxide and with correction of the pH; all three are present for him."
+    ],
+    [
+     "Carbon dioxide retention",
+     "Retention would show a rising carbon dioxide; his is unchanged. Higher oxygen with steady carbon dioxide and pH correction is a good response.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "No response",
+     "His oxygen pressure rose and his pH corrected, so there was a response. With carbon dioxide unchanged, it is a good one.",
+     "reversed direction or value"
+    ],
+    [
+     "A response if saturation reaches 100%",
+     "There is no single 100% target; the saturation target varies with the patient. His blood gas already shows a good response.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 25",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Indications and the infarction caution",
+   "io": "Identify the indications, benefits, and hazards of oxygen therapy.",
+   "q": "A 68-year-old woman with diabetes and an acute myocardial infarction has an oxygen saturation of 87% on room air. Which is the right approach to oxygen?",
+   "opts": [
+    [
+     "Withhold oxygen because of vasoconstriction",
+     "Vasoconstriction is why oxygen is not given routinely in infarction, yet the rule has an exception: saturation below 91%. At 87% she needs oxygen.",
+     "wrong stage or severity"
+    ],
+    [
+     "Wait for an arterial blood gas first",
+     "Her pulse oximetry already shows 87%, below the 91% threshold. Oxygen is started for the hypoxia; the blood gas can follow in evaluating response.",
+     "wrong stage or severity"
+    ],
+    [
+     "Withhold oxygen because of her diabetes",
+     "Diabetes is not a listed reason to withhold oxygen. The infarction rule turns on saturation: below 91%, as hers is at 87%, oxygen is given.",
+     "common lay belief"
+    ],
+    [
+     "Give oxygen, since saturation is below 91%",
+     "Correct. Oxygen is withheld in myocardial infarction because of vasoconstriction, but only unless saturation is below 91%; at 87% she is hypoxic, and correcting hypoxia is oxygen's benefit."
+    ]
+   ],
+   "c": 3,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 3",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Choosing a device",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 48-year-old woman with influenza has mild to moderate respiratory distress and a saturation of 88%. She keeps mouth-breathing because her nose is congested. Which low flow device delivers through both nose and mouth?",
+   "opts": [
+    [
+     "Nasal cannula",
+     "A nasal cannula delivers only through the nostrils, and her clue is mouth-breathing with a congested nose. For mild to moderate distress, the simple mask covers nose and mouth.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Non-rebreather mask",
+     "A non-rebreather is for severe hypoxia in a patient still ventilating well; her distress is mild to moderate. The simple mask matches her severity.",
+     "wrong stage or severity"
+    ],
+    [
+     "Trach collar",
+     "A trach collar delivers to a tracheostomy, which she does not have. Her mild to moderate distress with mouth-breathing fits a simple mask.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Simple mask",
+     "Correct. A simple mask is a low flow device set at 5 to 10 L/min and used in mild to moderate respiratory distress; it covers nose and mouth, giving about 35% to 50%."
+    ]
+   ],
+   "c": 3,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 13",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Who qualifies for home oxygen",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 72-year-old man with chronic obstructive pulmonary disease has a daytime saturation of 93%. Overnight oximetry shows his saturation falling to 87% for long stretches. What does he qualify for?",
+   "opts": [
+    [
+     "Oxygen during exertion",
+     "Exertional qualification needs a walking test showing 88% or lower that improves on oxygen; none was done. His overnight result qualifies him for nocturnal oxygen.",
+     "adjacent fact"
+    ],
+    [
+     "Nocturnal oxygen",
+     "Correct. During sleep his saturation falls to 87% (88% or lower) and drops 6 points from his 93% baseline (5% or more), meeting the sleep criterion; he qualifies for nocturnal oxygen."
+    ],
+    [
+     "Continuous oxygen at rest",
+     "His resting daytime saturation of 93% is above 88%, so he does not qualify at rest. The sleep values, 87% with a 6-point drop, qualify him for nocturnal oxygen.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Nothing, since daytime is normal",
+     "A normal daytime value does not end the assessment; qualification also tests sleep. His overnight fall to 87% with a drop of 5% or more meets the sleep criterion.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 5",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Escalating oxygen",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 62-year-old woman with pneumonia is on a Venturi mask. She is breathing fast and deep, and her saturation dips each time she takes a big breath. Which dosing principle is being violated?",
+   "opts": [
+    [
+     "The fraction must stay under 0.50",
+     "The 0.50 ceiling is the air-entrainment nebulizer's recommendation. Her problem is total flow below her inspiratory demand on the Venturi mask.",
+     "adjacent fact"
+    ],
+    [
+     "Total flow must exceed inspiratory demand",
+     "Correct. For a Venturi mask, the total flow should be higher than the patient's inspiratory demand; her fast, deep breaths outstrip it, so room air dilutes the set fraction and her saturation dips."
+    ],
+    [
+     "The bag must not collapse on inspiration",
+     "Preventing bag collapse is the non-rebreather's dosing rule; a Venturi mask has no reservoir bag. Her dips mean total flow is below her inspiratory demand.",
+     "adjacent fact"
+    ],
+    [
+     "Humidity is needed above 4 L/min",
+     "Humidity above 4 L/min applies to the nasal cannula and prevents mucosal irritation; it does not explain saturation dips with big breaths. The Venturi rule is total flow above inspiratory demand.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 17",
+   "slot": "agent/regimen",
+   "lead": "next step"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Who qualifies for home oxygen",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 67-year-old woman with lung disease is being assessed for home oxygen. Her resting room-air saturation is 92%. Which is the next step in her qualification?",
+   "opts": [
+    [
+     "Order a complete blood count",
+     "A hematocrit over 56% matters only for a borderline Group II value. With a resting 92%, the next step is to test her saturation with exertion.",
+     "adjacent fact"
+    ],
+    [
+     "Check her saturation with exertion",
+     "Correct. Qualification documents hypoxia at rest, with exertion and/or during sleep. At rest she is above 88%, so the next step is to measure her saturation while she walks and, if it falls to 88% or lower, show it improves with oxygen."
+    ],
+    [
+     "Stop: she does not qualify",
+     "A resting 92% only rules out the resting criterion. Exertion and sleep are also tested, so stopping here could miss an exertional qualifier.",
+     "wrong stage or severity"
+    ],
+    [
+     "Prescribe oxygen at 2 L/min now",
+     "She has not met any criterion yet; at rest she is 92%. Oxygen is prescribed after hypoxia is documented, so the exertional measurement comes first.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 5",
+   "slot": "initial test",
+   "lead": "next step"
+  },
+  {
+   "topic": "Hazards on the patient",
+   "io": "Identify the indications, benefits, and hazards of oxygen therapy.",
+   "q": "A 67-year-old man on home oxygen for chronic obstructive pulmonary disease arrives with burns to his lips and nose after lighting a cigarette while wearing his cannula. Which hazard does this show?",
+   "opts": [
+    [
+     "Mucosal irritation",
+     "Mucosal irritation is dryness from high-flow oxygen, not a burn. His burns while smoking show oxygen's fire hazard.",
+     "adjacent fact"
+    ],
+    [
+     "Vasoconstriction",
+     "Vasoconstriction is the infarction caution and does not burn tissue. His injury is the fire hazard of highly flammable oxygen.",
+     "adjacent fact"
+    ],
+    [
+     "Fire",
+     "Correct. Fire is a listed hazard of oxygen therapy: oxygen is highly flammable, which is why no one should smoke in the home and No Smoking signs are posted."
+    ],
+    [
+     "Hypercapnia",
+     "Hypercapnia is carbon dioxide retention, a gas-exchange hazard, not a burn. Facial burns while smoking on oxygen show the fire hazard.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 3",
+   "slot": "complication",
+   "lead": "complication"
+  },
+  {
+   "topic": "What to avoid",
+   "io": "Identify the indications, benefits, and hazards of oxygen therapy.",
+   "q": "A 67-year-old man has a myocardial infarction and is placed on oxygen in the ambulance although his saturation was 98%. Which effect of oxygen makes this a problem?",
+   "opts": [
+    [
+     "Vasoconstriction",
+     "Correct. Vasoconstriction is a listed hazard of oxygen therapy and the reason oxygen is not given in myocardial infarction unless saturation is below 91%; at 98% he gains nothing while his vessels constrict."
+    ],
+    [
+     "Carbon dioxide retention",
+     "Carbon dioxide retention is an oxygen hazard, typically in a patient prone to retaining it, but it is not the reason given for the infarction rule. That rule rests on vasoconstriction.",
+     "adjacent fact"
+    ],
+    [
+     "Mucosal irritation",
+     "Mucosal irritation is a nuisance hazard of dry oxygen, not the infarction concern. Oxygen in a non-hypoxic infarction patient is a problem because of vasoconstriction.",
+     "adjacent fact"
+    ],
+    [
+     "Fire risk",
+     "Fire is oxygen's biggest safety hazard but is unrelated to the infarction rule. The physiologic problem in a non-hypoxic infarction is vasoconstriction.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 3",
+   "slot": "complication",
+   "lead": "complication"
+  },
+  {
+   "topic": "Oxygen safety at home",
+   "io": "Discuss patient education for oxygen delivery",
+   "q": "A 69-year-old woman on home oxygen has dry, cracked lips and uses a petroleum jelly lip balm several times a day. Which teaching applies?",
+   "opts": [
+    [
+     "Use more balm to protect the lips",
+     "More petroleum balm increases the fire risk where oxygen flows over her face. The teaching is to avoid petroleum-based products altogether.",
+     "reversed direction or value"
+    ],
+    [
+     "Switch her oxygen to a non-rebreather",
+     "Changing the device does not remove a petroleum product from her face; a non-rebreather is for severe hypoxia. The teaching is to avoid petroleum-based products.",
+     "adjacent fact"
+    ],
+    [
+     "Stop her home oxygen",
+     "Stopping needed oxygen would leave her hypoxic. The fix is to avoid petroleum-based products while continuing oxygen safely.",
+     "wrong stage or severity"
+    ],
+    [
+     "Stop using petroleum-based products",
+     "Correct. Patients on oxygen should avoid petroleum-based products (lip balms, lotions, oils, grease), because oxygen is highly flammable and these products can feed a fire on the face where the oxygen flows."
+    ]
+   ],
+   "c": 3,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 7",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Oxygen safety at home",
+   "io": "Discuss patient education for oxygen delivery",
+   "q": "A 74-year-old man on home oxygen has a gas water heater with a pilot light in the hallway where he likes to sit. How far from it should his oxygen be kept?",
+   "opts": [
+    [
+     "At least 2 feet",
+     "Two feet is far too close to a flame. The safety rule is at least 10 feet from heat sources such as a pilot light.",
+     "reversed direction or value"
+    ],
+    [
+     "At least 5 feet",
+     "Five feet is still inside the danger zone. Oxygen should be kept at least 10 feet from heat sources like pilot lights, appliances and candles.",
+     "reversed direction or value"
+    ],
+    [
+     "At least 10 feet",
+     "Correct. Home oxygen should be kept at least 10 feet from heat sources such as pilot lights, electric appliances and candles, because oxygen is highly flammable."
+    ],
+    [
+     "At least 50 feet",
+     "Fifty feet is not the rule and would be unworkable at home. The safety distance from heat sources is at least 10 feet.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 7",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Who qualifies for home oxygen",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 70-year-old woman with interstitial lung disease, pulmonary hypertension and a hematocrit of 52% has a resting room-air saturation of 89%. Which finding makes her qualify?",
+   "opts": [
+    [
+     "Nothing; 89% does not qualify",
+     "89% does qualify when a listed finding is present. Her pulmonary hypertension is one, so she qualifies in Group II.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Her pulmonary hypertension",
+     "Correct. At 89% she qualifies only conditionally (Group II), with pulmonary hypertension, cor pulmonale or a hematocrit over 56%. Her pulmonary hypertension qualifies her; her hematocrit of 52% does not reach 56%."
+    ],
+    [
+     "Her hematocrit of 52%",
+     "The hematocrit criterion is over 56%, and 52% falls short. Her qualifying finding is pulmonary hypertension.",
+     "reversed direction or value"
+    ],
+    [
+     "Her interstitial lung disease",
+     "The underlying lung disease is not one of the three Group II findings. Pulmonary hypertension, cor pulmonale or a hematocrit over 56% are; she has pulmonary hypertension.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 6",
+   "slot": "risk factors",
+   "lead": "test"
+  },
+  {
+   "topic": "What to avoid",
+   "io": "Identify the indications, benefits, and hazards of oxygen therapy.",
+   "q": "A 71-year-old woman with chronic obstructive pulmonary disease has a myocardial infarction. Her saturation is 93% on room air. A colleague wants to start oxygen by nasal cannula. Which is the right call?",
+   "opts": [
+    [
+     "Hold oxygen at a saturation of 93%",
+     "Correct. Oxygen causes vasoconstriction, so in myocardial infarction it is not given unless saturation is below 91%; at 93% she is above the threshold, and her lung disease adds the risk of carbon dioxide retention."
+    ],
+    [
+     "Start the nasal cannula at 2 L/min",
+     "Low flow is still oxygen. In myocardial infarction oxygen is held unless saturation is below 91%; her 93% is above that, so it would add vasoconstriction without correcting hypoxia.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Start a Venturi mask for her lung disease",
+     "Her lung disease is a reason to choose precision when she needs oxygen, not a reason to start it. In infarction, oxygen waits until saturation is below 91%.",
+     "adjacent fact"
+    ],
+    [
+     "Start a non-rebreather mask",
+     "A non-rebreather is for severe hypoxia in a patient ventilating well, and she is not hypoxic by the infarction rule. It would also risk carbon dioxide retention with her lung disease.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 3",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Choosing a device",
+   "io": "Compare and contrast the different oxygen delivery systems.",
+   "q": "A 75-year-old woman with chronic obstructive pulmonary disease is on a nasal cannula. Her breathing rate and depth change constantly, and her saturation swings with them. Which feature of a different device would give her a steady fraction?",
+   "opts": [
+    [
+     "A reservoir bag that holds oxygen",
+     "A reservoir bag raises the fraction in the partial and non-rebreather masks, but their delivery still varies with demand. Only an air-entrainment system gives a fixed fraction.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "A higher flow on the same cannula",
+     "More cannula flow still varies with respiratory rate, inspiratory flow and tidal volume, and it caps at 44%. A fixed fraction needs an air-entrainment system.",
+     "common lay belief"
+    ],
+    [
+     "A mask that covers nose and mouth",
+     "A simple mask covers nose and mouth, but its fraction varies with breathing just like the cannula. A fixed fraction comes from an air-entrainment system.",
+     "adjacent fact"
+    ],
+    [
+     "A fixed fraction regardless of demand",
+     "Correct. Her clue is a fraction that swings with her breathing, which is how a nasal cannula behaves. An air-entrainment system such as the Venturi mask delivers a fixed fraction that does not fluctuate with demand."
+    ]
+   ],
+   "c": 3,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 8",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Choosing a device",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 69-year-old man with pneumonia is on a nasal cannula. His nurse turned the flow up to 8 L/min and his saturation is still 84%. He is alert and moving air well. Which is the next step?",
+   "opts": [
+    [
+     "Turn the cannula up to 12 L/min",
+     "Above 6 L/min the nasal cannula's fraction stays at about 44%, so more flow will not raise his saturation. A higher-fraction device, the non-rebreather, is needed.",
+     "reversed direction or value"
+    ],
+    [
+     "Add a second nasal cannula",
+     "A second cannula does not get past the cannula's 44% ceiling. His persistent saturation of 84% while ventilating well needs a non-rebreather mask.",
+     "common lay belief"
+    ],
+    [
+     "Lower the flow to 2 L/min",
+     "Lowering the flow would drop him toward 28% while he is already at 84%. He needs escalation to a non-rebreather mask.",
+     "reversed direction or value"
+    ],
+    [
+     "Change to a non-rebreather mask",
+     "Correct. A nasal cannula maxes out at about 44% even above 6 L/min, so turning it to 8 adds nothing. Severe hypoxia in an alert patient ventilating well calls for the non-rebreather's 60% to 100%."
+    ]
+   ],
+   "c": 3,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 11",
+   "slot": "escalation",
+   "lead": "next step"
+  },
+  {
+   "topic": "Who qualifies for home oxygen",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 66-year-old man with heart disease and type 2 diabetes has a resting room-air saturation of 89%. He has no pulmonary hypertension, no cor pulmonale (right-sided heart failure from lung disease), and his hematocrit is 44%. Does he qualify for home oxygen at rest?",
+   "opts": [
+    [
+     "Yes, because his hematocrit is high",
+     "A hematocrit of 44% is not high by the criteria; Group II needs a hematocrit over 56%. With no qualifying finding, his 89% does not qualify at rest.",
+     "reversed direction or value"
+    ],
+    [
+     "No, 89% needs a listed comorbidity",
+     "Correct. A resting saturation of 89% qualifies only with pulmonary hypertension, cor pulmonale or a hematocrit over 56% (Group II). He has none of the three, and his hematocrit of 44% is well under 56%, so he does not qualify at rest."
+    ],
+    [
+     "Yes, in Group I",
+     "Group I requires 88% or lower at rest, and he is at 89%. The borderline value would need a qualifying comorbidity, which he lacks. Tell: Group I is 88% or lower, never 89%.",
+     "wrong stage or severity"
+    ],
+    [
+     "Yes, in Group II because of diabetes",
+     "Diabetes is not one of the Group II findings; only pulmonary hypertension, cor pulmonale or a hematocrit over 56% make 89% qualify. Heart disease in general does not count either.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 6",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Who qualifies for home oxygen",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 68-year-old woman who smoked for 40 years has an arterial oxygen pressure of 57 mm Hg at rest on room air and a hematocrit of 58%. Which recertification interval applies to her home oxygen?",
+   "opts": [
+    [
+     "Every 1 month",
+     "One month is not an interval in the criteria. Her oxygen pressure of 57 with a hematocrit of 58% is Group II, which is recertified every 3 months.",
+     "reversed direction or value"
+    ],
+    [
+     "Every 3 months",
+     "Correct. An oxygen pressure of 57 sits in the conditional 56 to 59 mm Hg range, and her hematocrit of 58% is over 56% (polycythemia (a hematocrit above 56%)), so she qualifies in Group II, which is recertified every 3 months."
+    ],
+    [
+     "Every 12 months",
+     "Twelve months is Group I, which needs an oxygen pressure of 55 or lower. Her 57 is in the 56 to 59 range and qualifies only because of her hematocrit over 56%, so she is Group II, rechecked at 3 months.",
+     "adjacent fact"
+    ],
+    [
+     "Every 24 months",
+     "Two years is longer than any listed interval. A conditional qualifier like her (oxygen pressure 57 with hematocrit over 56%) is recertified sooner, every 3 months.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 6",
+   "slot": "prognosis",
+   "lead": "test"
+  },
+  {
+   "topic": "Hazards on the patient",
+   "io": "Identify the indications, benefits, and hazards of oxygen therapy.",
+   "q": "A 70-year-old woman on a nasal cannula at 6 L/min without humidification develops nosebleeds and a sore, crusted nose. Which hazard of oxygen therapy is this?",
+   "opts": [
+    [
+     "Hypercapnia",
+     "Hypercapnia is carbon dioxide retention, which causes drowsiness and confusion, not nosebleeds. Her dry, crusted nose is mucosal irritation.",
+     "adjacent fact"
+    ],
+    [
+     "Vasoconstriction",
+     "Vasoconstriction is the infarction caution, not a cause of a crusted nose. Her symptoms are mucosal irritation from dry oxygen above 4 L/min.",
+     "adjacent fact"
+    ],
+    [
+     "Oxygen toxicity of the lungs",
+     "Lung toxicity is not on the hazard list here. The listed hazard that matches a crusted, bleeding nose on dry high-flow oxygen is mucosal irritation.",
+     "adjacent fact"
+    ],
+    [
+     "Mucosal irritation",
+     "Correct. Mucosal irritation is a listed hazard of oxygen therapy; at 6 L/min, above the 4 L/min threshold for humidity, dry oxygen has irritated her nasal mucosa."
+    ]
+   ],
+   "c": 3,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 3",
+   "slot": "complication",
+   "lead": "complication"
+  },
+  {
+   "topic": "Choosing a device",
+   "io": "Select the appropriate equipment and supplies necessary for initiating oxygen therapy.",
+   "q": "A 72-year-old man with a long-term tracheostomy after head and neck cancer needs humidified supplemental oxygen at home. Which interface delivers air-entrainment nebulizer oxygen to his airway?",
+   "opts": [
+    [
+     "Simple mask",
+     "A simple mask sits over the nose and mouth, above a tracheostomy that breathes below them. The trach collar is the tracheostomy interface.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Open face mask",
+     "An open face mask is an air-entrainment interface for the face, not for a tracheostomy. His tracheostomy takes a trach collar.",
+     "adjacent fact"
+    ],
+    [
+     "Trach collar",
+     "Correct. A trach collar delivers air-entrainment nebulizer oxygen over a tracheostomy; the clue is the tracheostomy, which bypasses the nose and mouth that face masks and cannulas use."
+    ],
+    [
+     "Nasal cannula",
+     "A nasal cannula delivers through the nostrils, which his tracheostomy bypasses. Oxygen reaches his airway through a trach collar.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 19",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Who qualifies for home oxygen",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 70-year-old woman with chronic obstructive pulmonary disease and an echocardiogram showing pulmonary hypertension has a resting room-air saturation of 89%. Which statement about home oxygen applies to her?",
+   "opts": [
+    [
+     "She qualifies in Group II",
+     "Correct. A saturation of exactly 89% qualifies only conditionally, Group II, when there is evidence of pulmonary hypertension, cor pulmonale or a hematocrit over 56%; her pulmonary hypertension is that evidence, and Group II is recertified at 3 months."
+    ],
+    [
+     "She qualifies in Group I",
+     "Group I needs a resting saturation of 88% or lower (or oxygen pressure 55 or lower). Her 89% misses that cutoff by one point, so she qualifies only through her pulmonary hypertension, in Group II. Tell: 89% is never Group I.",
+     "wrong stage or severity"
+    ],
+    [
+     "She does not qualify at 89%",
+     "89% alone would not qualify, but she has pulmonary hypertension, one of the three findings (with cor pulmonale and hematocrit over 56%) that make 89% qualify in Group II. Reading the saturation without the comorbidity misses it.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "She qualifies for sleep oxygen alone",
+     "Nocturnal oxygen depends on a sleep study showing 88% or lower with a drop of 5% or more, which she has not had. Her resting 89% with pulmonary hypertension qualifies her in Group II for resting oxygen.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 6",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Indications and the infarction caution",
+   "io": "Identify the indications, benefits, and hazards of oxygen therapy.",
+   "q": "A 34-year-old man is brought in after running a generator in a closed garage. He has a headache and is confused; pulse oximetry reads 98%. Which treatment is indicated?",
+   "opts": [
+    [
+     "Oxygen therapy",
+     "Correct. Carbon monoxide poisoning is a listed respiratory indication for oxygen therapy; the garage generator, headache and confusion point to it, and a normal-looking oximetry reading does not remove the indication."
+    ],
+    [
+     "No oxygen, since saturation is normal",
+     "Carbon monoxide poisoning is itself a listed indication for oxygen, whatever the oximeter shows. His garage exposure, headache and confusion call for oxygen therapy.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "A nebulized bronchodilator",
+     "A nebulizer delivers liquid medication to the airways for things like bronchospasm or secretions. Carbon monoxide poisoning is an indication for oxygen therapy.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Breathing into a paper bag",
+     "A paper bag adds nothing here and reduces fresh air. His carbon monoxide exposure is a listed indication for oxygen therapy.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 3",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Who qualifies for home oxygen",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 71-year-old man with chronic obstructive pulmonary disease and cor pulmonale (right-sided heart failure from lung disease) has an arterial oxygen pressure of 58 mm Hg at rest. What is his qualification status?",
+   "opts": [
+    [
+     "Group I, recertified at 12 months",
+     "Group I needs an oxygen pressure of 55 or lower; his 58 is above it and qualifies only because of cor pulmonale, which makes him Group II, rechecked at 3 months. Tell: a value in 56 to 59 is always the conditional group.",
+     "adjacent fact"
+    ],
+    [
+     "Not qualified at 58 mm Hg",
+     "58 alone would not qualify, but cor pulmonale is a listed qualifying finding for the 56 to 59 range. Missing the comorbidity misreads him as unqualified.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Qualified for sleep oxygen",
+     "No sleep study was done; his qualifying value is a resting oxygen pressure of 58 with cor pulmonale, which is Group II resting oxygen.",
+     "adjacent fact"
+    ],
+    [
+     "Group II, recertified at 3 months",
+     "Correct. An oxygen pressure of 58 is in the conditional 56 to 59 mm Hg range, and cor pulmonale is one of the three findings that make it qualify; that is Group II, recertified every 3 months."
+    ]
+   ],
+   "c": 3,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 6",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Escalating oxygen",
+   "io": "Select the appropriate equipment and supplies necessary for initiating oxygen therapy.",
+   "q": "A 46-year-old woman with mild hypoxia, saturation 89%, had both nostrils packed for a severe nosebleed. She is comfortable otherwise. Which low flow device can still deliver her oxygen?",
+   "opts": [
+    [
+     "Trach collar",
+     "A trach collar is for a tracheostomy, which she does not have. A simple mask delivers oxygen to a mouth-breathing patient.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Non-rebreather at 15 L/min",
+     "A non-rebreather is for severe hypoxia; her 89% is mild. A simple mask gives a modest fraction through the mouth.",
+     "wrong stage or severity"
+    ],
+    [
+     "Simple mask",
+     "Correct. With both nostrils packed, a nasal cannula has no open path; a simple mask covers nose and mouth and is a low flow device (5 to 10 L/min, about 35% to 50%) suitable while she breathes through her mouth."
+    ],
+    [
+     "Nasal cannula at 2 L/min",
+     "A nasal cannula delivers through the nostrils, and hers are packed. A simple mask over nose and mouth reaches her mouth-breathing.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 13",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Nebulizer or inhaler",
+   "io": "Explain the rationale for a nebulizer treatment.",
+   "q": "A 52-year-old woman with chronic lung disease has thick secretions she struggles to cough up during a severe exacerbation. Besides medication delivery, which listed rationale for a nebulizer applies?",
+   "opts": [
+    [
+     "Secretion clearance",
+     "Correct. Secretion clearance is a listed rationale for nebulizer therapy, and so is a severe exacerbation of respiratory illness; her thick, hard-to-clear secretions during a flare fit both."
+    ],
+    [
+     "Delivering a fixed oxygen fraction",
+     "A fixed fraction is an air-entrainment system's role, not a nebulizer rationale. Her thick secretions make secretion clearance the rationale.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Preventing carbon dioxide retention",
+     "Carbon dioxide retention is a hazard of oxygen, not something a nebulizer prevents. The rationale here is secretion clearance.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Replacing her need for oxygen",
+     "A nebulizer does not replace oxygen; oxygen can even run the nebulizer. Her thick secretions point to the secretion-clearance rationale.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 24",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Indications and the infarction caution",
+   "io": "Identify the indications, benefits, and hazards of oxygen therapy.",
+   "q": "A 38-year-old man has attacks of severe one-sided headache around his eye, each lasting under an hour, several days in a row. His saturation is 99%. Which therapy is a listed special indication for him?",
+   "opts": [
+    [
+     "No oxygen, since he is not hypoxic",
+     "Hypoxia is not required for the special indications. Cluster headache and air hunger are treated with oxygen even with a normal saturation such as his 99%.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "A bag-valve mask",
+     "A bag-valve mask gives assisted breaths to a patient who is not ventilating. He is breathing normally; his cluster headache is a special indication for oxygen.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Oxygen therapy",
+     "Correct. Cluster headache is a special indication for oxygen therapy: oxygen is given for the symptom even though, like this patient at 99%, the patient is not hypoxic."
+    ],
+    [
+     "Nebulized saline",
+     "Nebulized liquid helps secretion clearance and airway medication delivery, not headache. Cluster headache is a special indication for oxygen.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 3",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Reading the fraction from the flow",
+   "io": "Compare and contrast the different oxygen delivery systems.",
+   "q": "A 75-year-old man's family turned his home nasal cannula up to 9 L/min because he felt short of breath. About what fraction of inspired oxygen does he receive at that setting?",
+   "opts": [
+    [
+     "44%",
+     "Correct. A nasal cannula can be turned above 6 L/min, but the fraction maxes out at about 44%; at 9 L/min he receives no more than at 6 L/min, so more flow will not help."
+    ],
+    [
+     "56%",
+     "Adding 4% per liter past 6 L/min would give 56%, but the cannula does not keep climbing; it maxes out at about 44%. Tell: the 4%-per-liter rule stops at 6 L/min.",
+     "reversed direction or value"
+    ],
+    [
+     "60%",
+     "60% needs a reservoir device such as the non-rebreather. A nasal cannula turned to 9 L/min still delivers only about 44%.",
+     "reversed direction or value"
+    ],
+    [
+     "100%",
+     "100% is the top of the non-rebreather's range. A nasal cannula's fraction caps at about 44%, whatever the flow above 6 L/min.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 11",
+   "slot": "agent/regimen",
+   "lead": "test"
+  },
+  {
+   "topic": "Who qualifies for home oxygen",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 65-year-old woman has a daytime saturation of 95%. Overnight oximetry shows her falling to 91% at the lowest. Does she qualify for nocturnal oxygen?",
+   "opts": [
+    [
+     "Yes, since she drops during sleep",
+     "Any drop is not enough; the sleep criterion needs 88% or lower with a fall of 5% or more. Her lowest of 91% (a 4-point fall from 95%) does not meet it.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Yes, in Group II",
+     "Group II is the conditional resting group (89% or 56 to 59 mm Hg with pulmonary hypertension, cor pulmonale or hematocrit over 56%). Her sleep value of 91% meets neither the sleep nor the Group II criteria.",
+     "adjacent fact"
+    ],
+    [
+     "Yes, if she also has diabetes",
+     "Diabetes is not a qualifying finding. The sleep criterion is a value of 88% or lower with a drop of 5% or more, and her 91% does not reach it.",
+     "adjacent fact"
+    ],
+    [
+     "No, her sleep value stays above 88%",
+     "Correct. The sleep criterion needs a saturation of 88% or lower with a drop of 5% or more from baseline. Her 4-point drop to 91% fails on both counts, so she does not qualify for nocturnal oxygen."
+    ]
+   ],
+   "c": 3,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 5",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Indications and the infarction caution",
+   "io": "Identify the indications, benefits, and hazards of oxygen therapy.",
+   "q": "An 84-year-old woman in hospice with metastatic cancer has air hunger (a distressing sense of not getting enough breath). Her saturation is 95%. Which therapy is a listed special indication?",
+   "opts": [
+    [
+     "An endotracheal tube",
+     "A tracheal airway secures an airway in a patient who cannot maintain one. Her air hunger is managed with oxygen for symptom relief.",
+     "wrong stage or severity"
+    ],
+    [
+     "Oxygen for symptom relief",
+     "Correct. Air hunger is a special indication for oxygen therapy, given for symptom relief even when saturation is adequate, as hers is at 95%; symptom relief is one of oxygen's listed benefits."
+    ],
+    [
+     "No oxygen, since saturation is normal",
+     "The special indications do not need hypoxia. Air hunger is treated with oxygen for symptom relief even at a saturation of 95%.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "A home oxygen qualification test",
+     "Qualification documents hypoxia for home oxygen coverage; she is not hypoxic and the goal is comfort. Air hunger itself is a special indication for oxygen.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 3",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Who qualifies for home oxygen",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 69-year-old woman with chronic lung disease drops from 94% to 86% while walking. Oxygen at 2 and then 4 L/min is added, but her saturation stays at 86% while walking. How does this result bear on ambulatory oxygen?",
+   "opts": [
+    [
+     "It does not meet the exertion criterion",
+     "Correct. The exertion criterion needs a saturation of 88% or lower that improves when oxygen is given. She drops to 86%, but oxygen at 2 and 4 L/min does not raise it, so the improvement half of the criterion is not met."
+    ],
+    [
+     "It qualifies her for ambulatory oxygen",
+     "Desaturating to 86% is only half the criterion; the saturation must also improve on oxygen. Hers stays at 86% on 2 and 4 L/min, so exertional qualification is not met.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "It qualifies her in Group I at rest",
+     "Group I at rest needs 88% or lower at rest, and her resting value is 94%. Her test was during walking, and it lacked the improvement on oxygen the exertion criterion needs.",
+     "adjacent fact"
+    ],
+    [
+     "It qualifies her for sleep oxygen",
+     "A walking test says nothing about sleep; nocturnal oxygen needs a sleep value of 88% or lower with a drop of 5% or more. Her exertional result fails because oxygen did not improve it.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 5",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "What to avoid",
+   "io": "Compare and contrast the different oxygen delivery systems.",
+   "q": "A 54-year-old man with severe pneumonia is on an aerosol mask from an air-entrainment nebulizer. The team wants to raise its fraction to 0.80. Why is that setting a concern?",
+   "opts": [
+    [
+     "It cannot go above 0.28",
+     "The air-entrainment nebulizer can deliver well above 0.28; the limit is a recommendation not to exceed 0.50. Setting 0.80 is the concern.",
+     "reversed direction or value"
+    ],
+    [
+     "It is recommended above 0.50",
+     "The recommendation runs the other way: an air-entrainment nebulizer is not recommended above 0.50. At 0.80 it is outside that advice.",
+     "reversed direction or value"
+    ],
+    [
+     "It changes with his breathing rate",
+     "A varying fraction describes the nasal cannula and simple mask. The air-entrainment issue at 0.80 is that it is not recommended above 0.50.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It is not recommended above 0.50",
+     "Correct. An air-entrainment nebulizer (aerosol mask, open face mask, T-piece, trach collar) can deliver a higher fraction, but it is not recommended above 0.50; a patient needing about 0.80 needs a different device."
+    ]
+   ],
+   "c": 3,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 17",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "What to avoid",
+   "io": "Discuss patient education for oxygen delivery",
+   "q": "A 66-year-old man on home oxygen restores old cars in his garage and rubs grease off his hands with an oil-based cleanser while wearing his cannula. Which teaching applies?",
+   "opts": [
+    [
+     "Use a Venturi mask when working",
+     "A Venturi mask sets a precise fraction; it does not make grease safe. Petroleum-based oils and grease should be avoided with oxygen.",
+     "adjacent fact"
+    ],
+    [
+     "Avoid petroleum-based oils and grease",
+     "Correct. Patients on oxygen should avoid petroleum-based products, including oils and grease as well as lip balms and lotions, because oxygen is highly flammable and these products can feed a fire."
+    ],
+    [
+     "Turn the flow up while working",
+     "More oxygen near grease adds fuel to a possible fire. The teaching is to avoid petroleum-based oils and grease while using oxygen.",
+     "reversed direction or value"
+    ],
+    [
+     "Wear a simple mask in the garage",
+     "Changing the device does not remove the fire risk from petroleum products. The teaching is to avoid oils and grease with oxygen.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 7",
+   "slot": "education",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Judging the response",
+   "io": "Evaluate the patient’s response to oxygen therapy.",
+   "q": "A 60-year-old man with heart failure is on oxygen while his fluid overload is treated. Over two days his breathing eases, his saturation stays at target, and his vital signs settle. Which ongoing step is part of evaluating his oxygen therapy?",
+   "opts": [
+    [
+     "Start home oxygen qualification today",
+     "He is still improving on treatment; qualification documents need at the time of need, near discharge. Now the step is monitoring for complications.",
+     "wrong stage or severity"
+    ],
+    [
+     "Keep monitoring for complications",
+     "Correct. Evaluating the response includes clinical assessment, objective data, vital signs and further monitoring for complications of oxygen therapy, such as carbon dioxide retention or mucosal irritation, while the cause is treated."
+    ],
+    [
+     "Stop checking his saturation",
+     "Saturation is part of the objective data and keeps guiding his oxygen as he improves. Monitoring continues, including for complications.",
+     "wrong stage or severity"
+    ],
+    [
+     "Raise his flow to secure the gains",
+     "More oxygen than needed risks carbon dioxide retention; he is already at target. The step is continued monitoring for complications.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 25",
+   "slot": "complication",
+   "lead": "next step"
+  },
+  {
+   "topic": "Escalating oxygen",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 70-year-old man with chronic obstructive pulmonary disease is on a Venturi mask set at 28%. His saturation is still below his target, and he is comfortable and alert. Which adjustment raises his fraction precisely?",
+   "opts": [
+    [
+     "Add a reservoir bag to the mask",
+     "Reservoir bags belong to the partial and non-rebreather masks, not the Venturi mask. The Venturi fraction is changed by its ports.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Switch to a nasal cannula at 2 L/min",
+     "A cannula at 2 L/min gives about 28%, no higher than now, and its fraction varies with breathing. The precise step up is a higher Venturi port.",
+     "reversed direction or value"
+    ],
+    [
+     "Change to a higher-fraction port",
+     "Correct. On a Venturi mask, different ports change the fraction delivered, from 24% to 50%; moving up a port raises his fraction precisely, keeping the advantage that makes it a common choice in this disease."
+    ],
+    [
+     "Switch to a non-rebreather at 15 L/min",
+     "A non-rebreather jumps to 60% to 100% and its delivery varies with demand, losing the precision his disease calls for. A higher Venturi port raises the fraction in a controlled step.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 16",
+   "slot": "escalation",
+   "lead": "next step"
+  },
+  {
+   "topic": "Who qualifies for home oxygen",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 61-year-old man with interstitial lung disease has a resting room-air saturation of 93%. When he walks the hallway it falls to 85%, and with 2 L/min by nasal cannula it rises to 92% while walking. What does he qualify for?",
+   "opts": [
+    [
+     "Nothing, since rest is normal",
+     "A normal resting value does not end the assessment. Qualification also tests exertion and sleep; his exertional 85% that improves on oxygen meets the exertion criterion.",
+     "wrong stage or severity"
+    ],
+    [
+     "Oxygen during sleep",
+     "Sleep oxygen requires a sleep measurement of 88% or lower with a drop of 5% or more, which was not done. His documented qualifier is exertional desaturation that improves on oxygen.",
+     "adjacent fact"
+    ],
+    [
+     "Oxygen during exertion",
+     "Correct. At rest (93%) he does not qualify, but with exertion his saturation falls to 85%, at or below 88%, and improves when oxygen is given (to 92%). That meets the exertion criterion, so he qualifies for ambulatory oxygen, documented with the flow that corrected it."
+    ],
+    [
+     "Oxygen at rest",
+     "His resting saturation of 93% is above the 88% cutoff, so he does not qualify at rest. The fall to 85% with walking that improves on oxygen qualifies him for oxygen during exertion.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 5",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Choosing a device",
+   "io": "Discuss the selection and application of oxygen delivery",
+   "q": "A 64-year-old man on postoperative day 1 after a knee replacement has an oxygen saturation of 89% on room air. He is comfortable, speaking full sentences, with no distress. Which device is the usual first choice?",
+   "opts": [
+    [
+     "Simple mask at 10 L/min",
+     "A simple mask is for mild to moderate respiratory distress, and he has none. His mild hypoxia is handled by a low-flow nasal cannula first.",
+     "wrong stage or severity"
+    ],
+    [
+     "Venturi mask at 50%",
+     "A Venturi mask is chosen for a precise fraction, often in chronic obstructive pulmonary disease; nothing here asks for precision, and 50% is more than mild hypoxia needs.",
+     "wrong stage or severity"
+    ],
+    [
+     "Nasal cannula at a low flow",
+     "Correct. Mild hypoxia in a comfortable postoperative patient fits the nasal cannula, the low flow device most commonly used in mild hypoxia; each liter adds about 4%, from 24% at 1 L/min."
+    ],
+    [
+     "Non-rebreather mask",
+     "A non-rebreather gives 60% to 100% and is for severe hypoxia in someone still ventilating well. This patient's 89% with no distress is mild, the nasal cannula's territory.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 11",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Choosing a device",
+   "io": "Select the appropriate equipment and supplies necessary for initiating oxygen therapy.",
+   "q": "A 60-year-old man is found unresponsive and is not breathing. He has a pulse. A colleague reaches for a non-rebreather mask. Which piece of equipment fits his situation instead?",
+   "opts": [
+    [
+     "Non-rebreather mask",
+     "A non-rebreather only delivers oxygen to a patient who is still ventilating well. He is not breathing, so oxygen alone cannot reach his lungs; a bag-valve mask gives the breaths.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Nasal cannula",
+     "A nasal cannula supplies oxygen to a breathing patient with mild hypoxia. He is not breathing, so he needs a bag-valve mask for assisted breaths.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Venturi mask",
+     "A Venturi mask gives a precise fraction to a breathing patient. Because he is not breathing, a bag-valve mask is needed.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Bag-valve mask",
+     "Correct. A non-rebreather is for a hypoxic patient who is still ventilating well; he is not breathing, so he needs assisted breaths from a bag-valve mask, listed among the advanced airway equipment."
+    ]
+   ],
+   "c": 3,
+   "cite": "35. Oxygen Delivery 2026.pptx, Slide 21",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  }
+ ]
+}

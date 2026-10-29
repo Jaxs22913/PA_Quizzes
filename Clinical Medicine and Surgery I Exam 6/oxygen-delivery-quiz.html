@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));window.__paErrQ=[];['error','unhandledrejection'].forEach(function(t){addEventListener(t,function(e){var q=window.__paErrQ;if(q&&!q.done)q.push(e)})});</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #b45357; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oxygen Delivery Quiz 1 — CMS I Exam 6</title>
+<style>
+  :root{
+    --navy:#7a2d30; --indigo:#b45357; --gold:#c08a2e; --ice:#faefee;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#7a2d30;--gold-l:#c08a2e;--indigo-l:#b45357;--navy:#ec9392;--indigo:#d06c6e;--gold:#c08a2e;--ice:#36191a;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#d06c6e;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#7a2d30;--indigo-t:#b45357;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Oxygen Delivery &mdash; Quiz 1</h1>
+    <div class="sub">Clinical Medicine and Surgery I &middot; Exam 6 &middot; Lecture 33</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px"></p>
+    <div class="chips"><span class="chip">Indications and hazards</span><span class="chip">Home oxygen qualification</span><span class="chip">Delivery devices</span><span class="chip">Flow rates</span><span class="chip">Nebulizers</span><span class="chip">Evaluating the response</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Delivery devices", "io": "Select the appropriate equipment and supplies necessary for initiating oxygen therapy.", "q": "Which interfaces deliver air-entrainment nebulizer oxygen over the face?", "opts": [["Bag-valve mask and resuscitator bag", "These are advanced airway tools for assisted breaths. Air-entrainment nebulizer oxygen uses an aerosol mask or open face mask."], ["Aerosol mask and open face mask", "Correct. Air-entrainment nebulizer oxygen is delivered over the face by an aerosol mask or an open face mask, and to an airway by a T-piece or trach collar."], ["Nasal cannula and simple mask", "These are low flow devices whose fraction varies with breathing. Air-entrainment nebulizer oxygen uses an aerosol mask or open face mask."], ["Partial and non-rebreather masks", "These are reservoir-bag masks. Air-entrainment nebulizer oxygen goes over the face by an aerosol mask or an open face mask."]], "c": 1, "cite": "35. Oxygen Delivery 2026.pptx, Slide 18", "slot": "agent/regimen"}, {"topic": "Indications, benefits and hazards", "io": "Identify the indications, benefits, and hazards of oxygen therapy.", "q": "Which hazard of oxygen therapy is a risk for anyone near the patient, not only the patient?", "opts": [["Mucosal irritation", "Mucosal irritation affects only the patient's own nose and airway. The hazard that reaches everyone nearby is fire, because the gas is highly flammable and compressed."], ["Vasoconstriction", "Vasoconstriction is a hazard inside the patient's own circulation. The risk to everyone in the home is fire, as oxygen is highly flammable and held under pressure."], ["Fire", "Correct. Oxygen is a fire hazard: it is highly flammable and stored as compressed gas, so the risk extends to the household, which is why no-smoking and oxygen-in-use signs are posted."], ["Hypercapnia", "Hypercapnia, carbon dioxide retention, is a hazard to the patient receiving oxygen only. The hazard that endangers everyone nearby is fire, since oxygen is highly flammable."]], "c": 2, "cite": "35. Oxygen Delivery 2026.pptx, Slide 3", "slot": "complication"}, {"topic": "Home oxygen qualification", "io": "Discuss the selection and application of oxygen delivery", "q": "At rest on room air, a saturation at or below what cutoff qualifies a patient for home oxygen with no comorbidity required?", "opts": [["84%", "84% is lower than the cutoff, so it would miss patients at 85 to 88% who qualify. The resting room-air cutoff is a saturation of 88% or lower."], ["88%", "Correct. At rest on room air, an oxygen saturation of 88% or lower qualifies for home oxygen on its own (Group I), as does an arterial oxygen pressure of 55 mm Hg or lower."], ["92%", "A cutoff of 92% would qualify patients who are not hypoxic enough. At rest on room air, home oxygen needs a saturation of 88% or lower; 89% qualifies only with a comorbidity."], ["96%", "96% is a normal saturation and is not a qualifying cutoff. The resting room-air criterion is a saturation of 88% or lower, or an oxygen pressure of 55 mm Hg or lower."]], "c": 1, "cite": "35. Oxygen Delivery 2026.pptx, Slide 5", "slot": "test finding"}, {"topic": "Home oxygen qualification", "io": "Discuss the selection and application of oxygen delivery", "q": "Why does a patient who qualifies only because of a moderately abnormal value plus a chronic disease complication face earlier recertification?", "opts": [["The conditional group is rechecked at 3 months", "Correct. A moderately abnormal blood gas or saturation with pulmonary hypertension, cor pulmonale or polycythemia is the conditional group, recertified at 3 months rather than 12."], ["The conditional group is rechecked yearly", "Yearly (12-month) recertification is for Group I. The conditional group, borderline values plus a chronic disease complication, is rechecked earlier, at 3 months."], ["The conditional group is exempt from rechecks", "The conditional group is not exempt; it is rechecked sooner. Moderately abnormal values with a chronic disease complication require recertification at 3 months."], ["The conditional group is rechecked weekly", "Weekly rechecks are not part of the criteria. The conditional group is recertified at 3 months, compared with 12 months for Group I."]], "c": 0, "cite": "35. Oxygen Delivery 2026.pptx, Slide 5", "slot": "prognosis"}, {"topic": "Flow rates and fraction of inspired oxygen", "io": "Compare and contrast the different oxygen delivery systems.", "q": "A non-rebreather mask at 10 to 15 L/min delivers what fraction of inspired oxygen?", "opts": [["60% to 100%", "Correct. A non-rebreather mask at 10 to 15 L/min delivers 60% to 100%: a reservoir bag holds a high concentration and a one-way valve stops the patient inhaling exhaled air."], ["24% to 44%", "24% to 44% is the nasal cannula's range at 1 to 6 L/min. The non-rebreather at 10 to 15 L/min delivers 60% to 100%."], ["35% to 50%", "35% to 50% is the simple mask's range at 5 to 10 L/min. A non-rebreather at 10 to 15 L/min delivers 60% to 100%."], ["24% to 50%", "24% to 50% is the Venturi mask's precise range. The non-rebreather delivers 60% to 100% at 10 to 15 L/min."]], "c": 0, "cite": "35. Oxygen Delivery 2026.pptx, Slide 15", "slot": "agent/regimen"}, {"topic": "Indications, benefits and hazards", "io": "Identify the indications, benefits, and hazards of oxygen therapy.", "q": "Why is oxygen withheld in myocardial infarction unless the saturation is low?", "opts": [["It causes carbon dioxide retention", "Carbon dioxide retention is an oxygen hazard, but it is not the reason given for the infarction rule. The caution in myocardial infarction is vasoconstriction."], ["It irritates the nasal mucosa", "Mucosal irritation is a hazard of oxygen, yet it is not why oxygen is held in myocardial infarction. The reason given is that oxygen causes vasoconstriction."], ["It is a fire hazard at the bedside", "Fire is a real hazard of oxygen, but it is not why the infarction rule exists. Oxygen is withheld there because it causes vasoconstriction unless saturation is under 91%."], ["It causes vasoconstriction", "Correct. Vasoconstriction is listed among oxygen's hazards, so oxygen is not given in myocardial infarction unless saturation is under 91%; extra oxygen could narrow vessels without benefit."]], "c": 3, "cite": "35. Oxygen Delivery 2026.pptx, Slide 3", "slot": "avoid"}, {"topic": "Delivery devices", "io": "Discuss the selection and application of oxygen delivery", "q": "Why is the Venturi mask often used in chronic obstructive pulmonary disease?", "opts": [["It delivers up to 100% oxygen", "Up to 100% is the non-rebreather's range, and blasting oxygen risks carbon dioxide retention. The Venturi mask is chosen for its precise, adjustable fraction."], ["It runs without oxygen flow", "The Venturi mask runs on 4 to 10 L/min of flow. It is chosen in chronic obstructive pulmonary disease for its precise fraction."], ["It lets exhaled gas refill the bag", "Exhaled gas entering a reservoir bag describes the partial rebreather. The Venturi mask is chosen for its precise fraction of inspired oxygen."], ["Its fraction can be dialed in precisely", "Correct. The Venturi mask is often used in chronic obstructive pulmonary disease because its precision lets the fraction be dialed in to the patient's oxygen requirement, from 24% to 50%."]], "c": 3, "cite": "35. Oxygen Delivery 2026.pptx, Slide 16", "slot": "first-line"}, {"topic": "Delivery devices", "io": "Compare and contrast the different oxygen delivery systems.", "q": "Which delivery device is classed as a high flow device?", "opts": [["Nasal cannula", "The nasal cannula is a low flow device, 1 to 6 L/min. The high flow device is the Venturi mask."], ["Simple mask", "The simple mask is a low flow device set at 5 to 10 L/min. The Venturi mask is the high flow device."], ["Non-rebreather mask", "The non-rebreather is described as a low flow device with a high fraction of inspired oxygen. The Venturi mask is the high flow device."], ["Venturi mask", "Correct. The Venturi mask is a high flow device that allows precise delivery of oxygen; different ports change the fraction delivered, from 24% to 50% at 4 to 10 L/min."]], "c": 3, "cite": "35. Oxygen Delivery 2026.pptx, Slide 16", "slot": "agent/regimen"}, {"topic": "Flow rates and fraction of inspired oxygen", "io": "Compare and contrast the different oxygen delivery systems.", "q": "What fraction of inspired oxygen does room air provide?", "opts": [["16%", "16% is below room air. Room air provides a fraction of inspired oxygen of 21%, the baseline from which the nasal cannula adds about 4% per liter."], ["21%", "Correct. Room air is 21% oxygen (a fraction of 0.21); each liter per minute through a nasal cannula adds about 4%, so 1 L/min gives 24% and 6 L/min gives 44%."], ["24%", "24% is what a nasal cannula delivers at 1 L/min. Room air itself is 21%, and each added liter raises it by about 4%."], ["28%", "28% is the nasal cannula at 2 L/min. Room air is 21% oxygen, the starting point before any supplemental flow."]], "c": 1, "cite": "35. Oxygen Delivery 2026.pptx, Slide 9", "slot": "test finding"}, {"topic": "Flow rates and fraction of inspired oxygen", "io": "Compare and contrast the different oxygen delivery systems.", "q": "Across which fraction of inspired oxygen can a Venturi mask be set?", "opts": [["24% to 50%", "Correct. A Venturi mask allows precise delivery: its ports and a flow of 4 to 10 L/min set the fraction of inspired oxygen anywhere from 24% to 50%."], ["21% to 30%", "21% to 30% is too narrow and starts at room air. The Venturi mask can be set from 24% to 50% through its ports."], ["40% to 70%", "40% to 70% is closer to a reservoir mask's range. The Venturi mask is set precisely from 24% to 50%."], ["60% to 100%", "60% to 100% is the non-rebreather's range at 10 to 15 L/min. The Venturi mask runs from 24% to 50%."]], "c": 0, "cite": "35. Oxygen Delivery 2026.pptx, Slide 16", "slot": "agent/regimen"}, {"topic": "Nebulizer therapy", "io": "Explain the rationale for a nebulizer treatment.", "q": "During which phase of a respiratory illness is nebulizer therapy listed as a rationale?", "opts": [["The recovery after discharge", "Recovery is not the listed indication. Nebulizer therapy is a rationale in a severe exacerbation of respiratory illness."], ["The first mild cough", "A first mild cough is not the phase listed. Nebulizer treatment is listed for a severe exacerbation of respiratory illness."], ["A severe exacerbation", "Correct. A severe exacerbation of respiratory illness is a listed rationale for nebulizer treatment, alongside challenging inhaler use, medication choice and secretion clearance."], ["The symptom-free period", "A symptom-free period does not call for a nebulizer. The listed phase is a severe exacerbation of respiratory illness."]], "c": 2, "cite": "35. Oxygen Delivery 2026.pptx, Slide 24", "slot": "escalation"}, {"topic": "Delivery devices", "io": "Compare and contrast the different oxygen delivery systems.", "q": "On a Venturi mask, what changes the fraction of inspired oxygen delivered?", "opts": [["Inflating the reservoir bag", "A reservoir bag belongs to the partial rebreather and non-rebreather. On a Venturi mask the different ports change the fraction delivered."], ["Tightening the head strap", "The strap only holds the mask on. The fraction on a Venturi mask is changed by switching to a different port."], ["Opening a one-way valve", "A one-way valve is the non-rebreather's feature. On a Venturi mask the ports change the fraction delivered."], ["Changing the port", "Correct. A Venturi mask has different ports, and each port changes the fraction of inspired oxygen delivered, with flow adjusted from 4 to 10 L/min to give 24% to 50%."]], "c": 3, "cite": "35. Oxygen Delivery 2026.pptx, Slide 16", "slot": "agent/regimen"}, {"topic": "Advanced airways", "io": "Select the appropriate equipment and supplies necessary for initiating oxygen therapy.", "q": "Which two airways are listed as tracheal airways?", "opts": [["Oropharyngeal and nasopharyngeal", "These are the artificial airways in the list. The tracheal airways are the endotracheal tube and the tracheostomy."], ["Bag-valve mask and resuscitator bag", "These deliver assisted breaths; they are not tracheal airways. The tracheal airways are the endotracheal tube and the tracheostomy."], ["Aerosol mask and open face mask", "These are air-entrainment nebulizer interfaces. The tracheal airways are the endotracheal tube and the tracheostomy."], ["Endotracheal tube and tracheostomy", "Correct. The tracheal airways listed are the endotracheal tube and the tracheostomy; the oropharyngeal and nasopharyngeal airways are the artificial airways."]], "c": 3, "cite": "35. Oxygen Delivery 2026.pptx, Slide 21", "slot": "agent/regimen"}, {"topic": "Home oxygen qualification", "io": "Discuss the selection and application of oxygen delivery", "q": "What must happen during exercise for a saturation of 88% or lower to qualify a patient for ambulatory oxygen?", "opts": [["It recovers on room air within a minute", "Quick recovery on room air does not qualify. The exertion criterion is a saturation of 88% or lower that improves when oxygen is given."], ["It stays the same on oxygen and room air", "An unchanged saturation on oxygen shows no benefit and does not qualify. Exertional qualification needs 88% or lower that improves when oxygen is applied."], ["It falls further once oxygen is added", "A further fall on oxygen would not qualify. The criterion is a saturation of 88% or lower during exertion that improves when oxygen is given."], ["It improves when oxygen is given", "Correct. With exertion, the saturation must be 88% or lower and improve when oxygen is given; the improvement on oxygen documents that the prescription works and qualifies ambulatory oxygen."]], "c": 3, "cite": "35. Oxygen Delivery 2026.pptx, Slide 5", "slot": "test finding"}, {"topic": "Patient education and safety", "io": "Discuss patient education for oxygen delivery", "q": "How far from a heat source such as a candle or pilot light should home oxygen be kept?", "opts": [["At least 2 feet", "2 feet is far too close. Home oxygen should be kept at least 10 feet from heat sources such as pilot lights, electric appliances and candles."], ["At least 5 feet", "5 feet is closer than the safety rule allows. Home oxygen should be kept at least 10 feet from heat sources."], ["At least 10 feet", "Correct. Home oxygen safety teaching is to keep the equipment at least 10 feet away from heat sources such as pilot lights, electric appliances and candles."], ["At least 50 feet", "50 feet would be impractical in a home and is not the rule. The safety distance from heat sources is at least 10 feet."]], "c": 2, "cite": "35. Oxygen Delivery 2026.pptx, Slide 7", "slot": "education"}, {"topic": "Flow rates and fraction of inspired oxygen", "io": "Compare and contrast the different oxygen delivery systems.", "q": "A nasal cannula set at 3 L/min delivers about what fraction of inspired oxygen?", "opts": [["24%", "24% is the nasal cannula at 1 L/min. At 3 L/min, with about 4% added per liter, it delivers 32%."], ["32%", "Correct. A nasal cannula delivers 24% at 1 L/min and adds about 4% per liter: 28% at 2 L/min, 32% at 3 L/min, 36% at 4, 40% at 5 and 44% at 6 L/min."], ["36%", "36% is the nasal cannula at 4 L/min. At 3 L/min it delivers 32%, four points lower."], ["44%", "44% is the nasal cannula's maximum, reached at 6 L/min. At 3 L/min it delivers 32%, three steps of 4% above 1 L/min."]], "c": 1, "cite": "35. Oxygen Delivery 2026.pptx, Slide 9", "slot": "agent/regimen"}, {"topic": "Patient education and safety", "io": "Discuss patient education for oxygen delivery", "q": "Which products should a patient on home oxygen avoid using on the face?", "opts": [["Unscented soaps and plain water", "Plain soap and water are not a hazard. The products to avoid are petroleum-based: lip balms, lotions, oils and grease."], ["Cotton tissues and soft cloths", "Tissues are not the warning. Petroleum-based lip balms, lotions, oils and grease should be avoided because oxygen is highly flammable."], ["Petroleum-based lip balms and lotions", "Correct. Patients on oxygen should avoid petroleum-based products (lip balms, lotions, oils, grease) because oxygen is highly flammable and these products can feed a fire."], ["Water-based saline nasal sprays", "Water-based saline is not the product to avoid. The safety teaching is to avoid petroleum-based products such as lip balms, lotions, oils and grease."]], "c": 2, "cite": "35. Oxygen Delivery 2026.pptx, Slide 7", "slot": "education"}, {"topic": "Delivery devices", "io": "Compare and contrast the different oxygen delivery systems.", "q": "Which delivery system gives a fixed fraction of inspired oxygen that does not fluctuate with the patient's demand?", "opts": [["Air-entrainment system", "Correct. An air-entrainment system (such as the Venturi mask) delivers a fixed fraction of inspired oxygen that does not fluctuate with patient demand; cannula and mask fractions vary."], ["Nasal cannula", "The nasal cannula's fraction varies with respiratory rate, inspiratory flow and tidal volume. The fixed fraction comes from an air-entrainment system."], ["Simple mask", "The simple mask's fraction varies with respiratory rate, inspiratory flow and tidal volume, like the cannula. An air-entrainment system gives a fixed fraction."], ["Non-rebreather mask", "The non-rebreather's delivered fraction varies with patient demand. Only the air-entrainment system gives a fixed fraction that does not fluctuate."]], "c": 0, "cite": "35. Oxygen Delivery 2026.pptx, Slide 8", "slot": "agent/regimen"}, {"topic": "Advanced airways", "io": "Select the appropriate equipment and supplies necessary for initiating oxygen therapy.", "q": "Which tools are shown for exchanging or guiding an endotracheal tube?", "opts": [["A tube changer and a bougie", "Correct. The endotracheal tube changer and the bougie are the tools shown with the endotracheal tube, used to exchange or guide the tube."], ["A Venturi port and adapter", "Venturi ports set a fraction of inspired oxygen on a mask. The tools for an endotracheal tube are the tube changer and the bougie."], ["A reservoir bag and valve", "A reservoir bag and one-way valve belong to the non-rebreather mask. The endotracheal tube tools are the tube changer and the bougie."], ["A nebulizer cup and tubing", "A nebulizer cup holds liquid medication. The tools for an endotracheal tube are the tube changer and the bougie."]], "c": 0, "cite": "35. Oxygen Delivery 2026.pptx, Slide 22", "slot": "agent/regimen"}, {"topic": "Patient education and safety", "io": "Discuss patient education for oxygen delivery", "q": "What signage should a patient on home oxygen post in the home?", "opts": [["A sign naming the oxygen supplier", "The supplier's name is not the safety message. Patients post No Smoking and potentially Oxygen in Use signs in the home."], ["A sign with the recertification date", "Recertification dates are not posted for safety. The signage taught is No Smoking and Oxygen in Use, because the gas is highly flammable."], ["No Smoking and Oxygen in Use signs", "Correct. Patient education for home oxygen includes posting No Smoking signage and, potentially, Oxygen in Use signs within the home, because oxygen is highly flammable."], ["A sign listing the oxygen flow rate", "The flow rate is part of the prescription, not the safety signage. Patients post No Smoking and Oxygen in Use signs because oxygen is highly flammable."]], "c": 2, "cite": "35. Oxygen Delivery 2026.pptx, Slide 7", "slot": "education"}, {"topic": "Home oxygen qualification", "io": "Discuss the selection and application of oxygen delivery", "q": "On an arterial blood gas, an arterial oxygen pressure at or below what cutoff qualifies a patient for home oxygen with no comorbidity required?", "opts": [["50 mm Hg", "A 50 mm Hg cutoff is too strict and would miss patients at 51 to 55 mm Hg who qualify. Without a comorbidity, the cutoff is an arterial oxygen pressure of 55 mm Hg or lower."], ["55 mm Hg", "Correct. An arterial oxygen pressure of 55 mm Hg or lower (or a saturation of 88% or lower) qualifies on its own, Group I; 56 to 59 mm Hg qualifies only with a listed comorbidity."], ["59 mm Hg", "59 mm Hg is the top of the conditional Group II range (56 to 59), which needs pulmonary hypertension, cor pulmonale or a hematocrit over 56%. Alone, the cutoff is 55 mm Hg."], ["65 mm Hg", "65 mm Hg is above both qualifying ranges. Without a comorbidity, home oxygen needs an arterial oxygen pressure of 55 mm Hg or lower."]], "c": 1, "cite": "35. Oxygen Delivery 2026.pptx, Slide 6", "slot": "test finding"}, {"topic": "Home oxygen qualification", "io": "Discuss the selection and application of oxygen delivery", "q": "How often is Group I home oxygen recertified?", "opts": [["Every 1 month", "One month is not a listed interval. Group I home oxygen is recertified every 12 months, and Group II, the conditional group, every 3 months."], ["Every 3 months", "3 months is the Group II interval, for the conditional group with a comorbidity. Group I is recertified every 12 months."], ["Every 12 months", "Correct. Group I, saturation 88% or lower or oxygen pressure 55 or lower, is recertified at 12 months; the conditional Group II is recertified sooner, at 3 months."], ["Every 24 months", "24 months is too long. Group I is recertified every 12 months; Group II, the conditional group, every 3 months."]], "c": 2, "cite": "35. Oxygen Delivery 2026.pptx, Slide 6", "slot": "prognosis"}, {"topic": "Flow rates and fraction of inspired oxygen", "io": "Compare and contrast the different oxygen delivery systems.", "q": "If a nasal cannula is turned above 6 L/min, what happens to the fraction of inspired oxygen?", "opts": [["It stays at about 44%", "Correct. The nasal cannula can be turned past 6 L/min, but the fraction of inspired oxygen maxes out at 44%; a patient who needs more needs a different device."], ["It climbs past 60%", "Past 60% requires a reservoir device such as a non-rebreather. The nasal cannula maxes out at 44% even when the flow is turned above 6 L/min."], ["It falls back toward 21%", "Higher flow does not lower the fraction toward room air. Above 6 L/min the nasal cannula simply stays at its maximum of about 44%."], ["It reaches 100%", "100% is the top of the non-rebreather range at 10 to 15 L/min. A nasal cannula maxes out at 44%, whatever the flow above 6 L/min."]], "c": 0, "cite": "35. Oxygen Delivery 2026.pptx, Slide 11", "slot": "escalation"}, {"topic": "Home oxygen qualification", "io": "Discuss the selection and application of oxygen delivery", "q": "A resting arterial oxygen pressure of 56 to 59 mm Hg qualifies for home oxygen only with evidence of which finding?", "opts": [["Seasonal allergies", "Allergies do not make the conditional criterion qualify. Group II needs evidence of pulmonary hypertension, cor pulmonale or a hematocrit over 56%."], ["Controlled hypertension", "Systemic hypertension is not a qualifying finding. The conditional criterion needs pulmonary hypertension, cor pulmonale or a hematocrit above 56%."], ["A recent upper respiratory infection", "A recent cold does not satisfy the conditional criterion. Group II requires pulmonary hypertension, cor pulmonale or a hematocrit over 56% as evidence of chronic disease."], ["Cor pulmonale", "Correct. The conditional (Group II) criterion, an arterial oxygen pressure of 56 to 59 mm Hg or saturation of 89%, needs pulmonary hypertension, cor pulmonale or a hematocrit over 56%."]], "c": 3, "cite": "35. Oxygen Delivery 2026.pptx, Slide 6", "slot": "risk factors"}, {"topic": "Indications, benefits and hazards", "io": "Identify the indications, benefits, and hazards of oxygen therapy.", "q": "Which acute medical or surgical period is named as an indication for oxygen therapy?", "opts": [["The first trimester of pregnancy", "Pregnancy is not an indication for oxygen therapy. The acute medical or surgical need named is the perioperative and postoperative period."], ["The week after a routine vaccine", "Vaccination is not an oxygen indication. The acute medical or surgical need listed is the perioperative and postoperative period, besides hypoxia itself."], ["Recovery after a simple sprain", "A sprain is not an indication for oxygen. The acute medical or surgical indication is the perioperative and postoperative period, when patients may need support."], ["The perioperative and postoperative period", "Correct. Acute medical and surgical needs, specifically the perioperative and postoperative period, are listed indications for oxygen therapy, along with hypoxia and certain respiratory conditions."]], "c": 3, "cite": "35. Oxygen Delivery 2026.pptx, Slide 3", "slot": "first-line"}, {"topic": "Indications, benefits and hazards", "io": "Identify the indications, benefits, and hazards of oxygen therapy.", "q": "Which respiratory condition is listed as an indication for oxygen therapy even though the problem is the gas the patient breathed, not the lungs?", "opts": [["Iron deficiency anemia", "Anemia is not on the oxygen indications list. The respiratory condition named as an indication is carbon monoxide poisoning, along with hypoxia and acute surgical needs."], ["Carbon monoxide poisoning", "Correct. Carbon monoxide poisoning is listed under the respiratory conditions that are indications for oxygen therapy, alongside hypoxia, acute medical or surgical needs and the special indications."], ["Spontaneous pneumothorax", "A pneumothorax is not on the indications list for oxygen therapy. The respiratory condition named there is carbon monoxide poisoning, beside hypoxia and perioperative needs."], ["Seasonal allergic rhinitis", "Allergic rhinitis is not an indication for oxygen therapy; a stuffy nose does not lower oxygen. The respiratory condition listed is carbon monoxide poisoning."]], "c": 1, "cite": "35. Oxygen Delivery 2026.pptx, Slide 3", "slot": "first-line"}, {"topic": "Evaluating the response", "io": "Evaluate the patient’s response to oxygen therapy.", "q": "Which clinical assessment findings are used to judge the response to oxygen therapy?", "opts": [["Symptoms, work of breathing, color and perfusion", "Correct. The clinical assessment of the response to oxygen is symptom improvement, work of breathing and color/perfusion, read with objective data: saturation, blood gas and vital signs."], ["Appetite, sleep quality and weight", "These are not the listed measures. Clinical assessment of the response to oxygen looks at symptom improvement, work of breathing, and color and perfusion."], ["Hair growth, nail shape and skin turgor", "These are chronic signs, not response measures. The response to oxygen is judged by symptoms, work of breathing and color/perfusion, plus objective data."], ["Reflexes, pupil size and grip strength", "Neurologic signs are not the listed assessment. Response to oxygen is judged by symptom improvement, work of breathing and color/perfusion."]], "c": 0, "cite": "35. Oxygen Delivery 2026.pptx, Slide 25", "slot": "manifestation"}, {"topic": "Delivery devices", "io": "Compare and contrast the different oxygen delivery systems.", "q": "What does the one-way valve on a non-rebreather mask do?", "opts": [["Stops the patient inhaling exhaled air", "Correct. On a non-rebreather mask a one-way valve prevents the patient from inhaling exhaled air, while the reservoir bag supplies a high oxygen concentration (60% to 100% at 10 to 15 L/min)."], ["Mixes room air in at a fixed ratio", "Mixing room air at a fixed ratio is how an air-entrainment (Venturi) device sets a precise fraction. The non-rebreather's valve stops inhaled exhaled air."], ["Adds humidity to the oxygen flow", "Humidity is added separately, at cannula flows above 4 L/min. The one-way valve on a non-rebreather prevents inhaling exhaled air."], ["Releases medication into the mask", "Delivering liquid medication is a nebulizer's job. The non-rebreather's one-way valve keeps the patient from inhaling exhaled air."]], "c": 0, "cite": "35. Oxygen Delivery 2026.pptx, Slide 15", "slot": "agent/regimen"}, {"topic": "Indications, benefits and hazards", "io": "Identify the indications, benefits, and hazards of oxygen therapy.", "q": "Besides cluster headache, which symptom is a special indication for oxygen therapy?", "opts": [["Chest wall pain", "Chest wall pain is not listed as an oxygen indication. The special indications are air hunger and cluster headache; oxygen otherwise treats hypoxia or acute surgical needs."], ["Nasal congestion", "Nasal congestion does not call for oxygen. The special indications are air hunger and cluster headache, where oxygen is given for the symptom even without hypoxia."], ["Air hunger", "Correct. Air hunger is a special indication for oxygen therapy alongside cluster headache: oxygen is given to relieve the sensation of breathlessness, not only to correct a low oxygen level."], ["Chronic cough", "A chronic cough is not a special indication for oxygen. The two special indications listed are air hunger and cluster headache, where oxygen treats the symptom."]], "c": 2, "cite": "35. Oxygen Delivery 2026.pptx, Slide 3", "slot": "first-line"}, {"topic": "Flow rates and fraction of inspired oxygen", "io": "Select the appropriate equipment and supplies necessary for initiating oxygen therapy.", "q": "Above what nasal cannula flow rate is humidity added?", "opts": [["1 L/min", "1 L/min is the lowest cannula setting and does not call for humidity. It is added at flow rates greater than 4 L/min."], ["4 L/min", "Correct. Humidity is used with nasal cannula flow rates greater than 4 L/min, because higher flows of dry compressed oxygen dry out the mucosa (mucosal irritation is a hazard of oxygen)."], ["6 L/min", "6 L/min is the top of the cannula range, not the humidity threshold. Humidity is used with flow rates greater than 4 L/min."], ["10 L/min", "10 L/min is beyond a nasal cannula's range. Humidity is used with nasal cannula flow rates greater than 4 L/min."]], "c": 1, "cite": "35. Oxygen Delivery 2026.pptx, Slide 9", "slot": "agent/regimen"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll" && window.startExamModeTour) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
