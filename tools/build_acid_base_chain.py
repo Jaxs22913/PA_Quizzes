@@ -13,7 +13,7 @@ Option order: number sets (Winter range, anion gap) stay ascending with the key 
 rule 8); every other step gets a key position from a balanced, seeded list, so each of A-D is keyed about equally
 often across a set, and the distractors are shuffled with the same seed.
 """
-import json, os, random, re, sys
+import hashlib, json, os, random, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -25,6 +25,9 @@ import abchain_cms_e6
 
 MODULES = [abchain_pdm_e4, abchain_cms_e6]
 OUT = os.path.join(ROOT, "arcade-chain")
+# word labels for the phone lab strip (the full table keeps LABEL's "ABBREV (full term)" form)
+SHORT = {"ph": "pH", "pco2": "Carbon dioxide", "hco3": "Bicarbonate", "po2": "Oxygen", "na": "Sodium",
+         "cl": "Chloride", "k": "Potassium", "alb": "Albumin"}
 SEED = 20261029
 
 
@@ -45,7 +48,7 @@ def lab_rows(course, labs):
         rtext = ("greater than %s" % f(lo)) if hi is None else "%s to %s" % (
             fph(lo) if k == "ph" else ("%.1f" % lo if k in ("k", "alb") else f(lo)),
             fph(hi) if k == "ph" else ("%.1f" % hi if k in ("k", "alb") else f(hi)))
-        rows.append(dict(k=k, label=LABEL[k], v=vs, n=v, unit=UNIT[k], range=rtext, lo=lo, hi=hi))
+        rows.append(dict(k=k, label=LABEL[k], short=SHORT[k], v=vs, n=v, unit=UNIT[k], range=rtext, lo=lo, hi=hi))
     return rows
 
 
@@ -143,8 +146,8 @@ def write_registry(meta):
     assert a in src and b in src, "arcade.js is missing the ABCHAIN-SETS markers"
     lines = [a, "  // written by tools/build_acid_base_chain.py from arcade-chain/*.json; do not hand-edit"]
     for m in meta:
-        lines.append('  { id: "%s", name: "%s", course: "%s", exam: "%s", color: "accent3", cases: %d, steps: %d },'
-                     % (m["id"], m["name"], m["course"], m["exam"], m["cases"], m["steps"]))
+        lines.append('  { id: "%s", name: "%s", course: "%s", exam: "%s", color: "accent3", cases: %d, steps: %d, '
+                     'ver: "%s" },' % (m["id"], m["name"], m["course"], m["exam"], m["cases"], m["steps"], m["ver"]))
     lines.append(b)
     new = re.sub(re.escape(a) + r".*?" + re.escape(b), lambda _: "\n".join(lines), src, flags=re.S)
     if new != src:
@@ -161,7 +164,7 @@ def main():
         s = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
         open(path, "w", encoding="utf-8").write(s)
         meta.append(dict(id=data["id"], name=data["name"], course=data["course"], exam=data["exam"], cases=nc,
-                         steps=ns))
+                         steps=ns, ver=hashlib.sha1(s.encode("utf-8")).hexdigest()[:10]))
         print("wrote %-28s %2d cases, %3d steps, %5.1f KB" % (os.path.relpath(path, ROOT), nc, ns, len(s) / 1024.0))
     changed = write_registry(meta)
     print("arcade.js CHAIN_SETS", "updated" if changed else "unchanged")

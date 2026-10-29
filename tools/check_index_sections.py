@@ -100,7 +100,8 @@ def check(path):
         href = m.group(1)
         line = src.count("\n", 0, m.start()) + 1
         seen.setdefault(href, []).append(line)
-        if not os.path.exists(os.path.join(os.path.dirname(path), unquote(href))):
+        target = re.split(r"[?#]", href, maxsplit=1)[0]   # a ?query/#fragment is not part of the file name
+        if not os.path.exists(os.path.join(os.path.dirname(path), unquote(target))):
             problems.append("%s:%d  link target does not exist: %s"
                             % (rel, line, unquote(href)))
 

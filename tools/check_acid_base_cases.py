@@ -36,7 +36,7 @@ or mnemonics in the PDM set; delta-delta, osmolar gap, the Winter mirror anywher
 labels; no reference to a lecture, slide or professor in student-facing text; key positions balanced; the arcade.js
 CHAIN_SETS counts match the data.
 """
-import glob, json, math, os, re, sys
+import glob, hashlib, json, math, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -424,7 +424,8 @@ def main():
     reg = open(os.path.join(ROOT, "arcade.js"), encoding="utf-8").read()
     total_cases = total_steps = 0
     for path in paths:
-        d = json.load(open(path, encoding="utf-8"))
+        raw = open(path, encoding="utf-8").read()
+        d = json.loads(raw)
         sid = d.get("id")
         S = SETS.get(sid)
         if not S:
@@ -440,9 +441,11 @@ def main():
         for c in d["cases"]:
             pos += check_case(sid, S, c) or []
             nsteps += len(c["steps"])
-        m = re.search(r'\{ id: "%s",[^}]*cases: (\d+), steps: (\d+) \}' % re.escape(sid), reg)
+        m = re.search(r'\{ id: "%s",[^}]*cases: (\d+), steps: (\d+), ver: "([0-9a-f]{10})" \}' % re.escape(sid), reg)
         if not m:
             fail(sid, "not registered in arcade.js CHAIN_SETS")
+        elif m.group(3) != hashlib.sha1(raw.encode("utf-8")).hexdigest()[:10]:
+            fail(sid, "arcade.js ver does not match the data file (re-run build_acid_base_chain.py)")
         elif (int(m.group(1)), int(m.group(2))) != (len(ids), nsteps):
             fail(sid, "arcade.js says %s cases / %s steps, data has %d / %d (re-run build_acid_base_chain.py)"
                  % (m.group(1), m.group(2), len(ids), nsteps))

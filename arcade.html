@@ -85,6 +85,31 @@
     );
   }
 
+  // Case Chains card (2026-10-29): chained multistep cases, played on arcade-chain.html
+  function chainCardHTML(set) {
+    var p = chainProgress(set.id);
+    var pct = Math.round(p.done / set.cases * 100);
+    return (
+      '<div class="deck-card chain-card" style="border-top-color:var(--' + set.color + ')">' +
+        '<div class="deck-top">' +
+          '<div class="deck-name-row">' +
+            '<div class="deck-icon" style="background:var(--' + set.color + '-soft);color:var(--' + set.color + ')">' +
+              '<svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>' +
+            '</div>' +
+            '<div><div class="deck-name">' + set.name + '</div><div class="deck-count">' + set.cases + ' cases \u00b7 ' + set.steps + ' steps</div></div>' +
+          '</div>' +
+          '<div class="due-badge ' + (p.done ? "none" : "some") + '">' + (p.done ? p.done + " of " + set.cases + " done" : "new mode") + '</div>' +
+        '</div>' +
+        '<div class="mastery-bar"><div class="mastery-seg mastered" style="width:' + pct + '%"></div></div>' +
+        '<div class="mastery-labels"><span>One patient, one step at a time</span><span>' +
+          (p.steps ? Math.round(p.first / p.steps * 100) + "% first try" : "") + '</span></div>' +
+        '<div class="deck-actions">' +
+          '<a class="btn sprint" href="arcade-chain.html?set=' + set.id + '">' + (p.done ? "Keep going" : "Play cases") + '</a>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
   var ACTIVE_TAB_KEY = "fc_active_tab";
 
   /* Semester currently being shown. Shared with the homepage through the same
@@ -162,8 +187,9 @@
     panelsEl.innerHTML = classes.map(function (cls) {
       var examsHTML = cls.exams.map(function (exam) {
         var decks = exam.deckIds.map(findDeck).filter(Boolean);
+        var chains = (exam.chainSets || []).map(findChainSet).filter(Boolean);
         var decksHTML = decks.length
-          ? decks.map(deckCardHTML).join("")
+          ? chains.map(chainCardHTML).join("") + decks.map(deckCardHTML).join("")
           : '<div class="empty-state soon"><div class="big">' + window.SiteIcon("layers", 22) + '</div>' +
             '<p>Decks for this exam are on the way. Each lecture gets its own deck, and it shows up here the day it is built.</p></div>';
         // "due" counts only cards already studied: to a newcomer every card
@@ -178,7 +204,8 @@
         });
         var meta = decks.length
           ? '<span class="exam-meta"><span>' + decks.length + (decks.length === 1 ? " deck" : " decks") +
-            " \u00b7 " + cards + " cards</span>" +
+            " \u00b7 " + cards + " cards" +
+            chains.map(function (c) { return " \u00b7 " + c.cases + " cases"; }).join("") + "</span>" +
             (started ? '<span class="due">' + (due ? due + " due" : "all caught up") + "</span>" : "") +
             '<span class="mode-dots" title="Study, Learn, Sprint and Match" aria-label="Four modes: Study, Learn, Sprint, Match"><i class="m1"></i><i class="m2"></i><i class="m3"></i><i class="m4"></i></span></span>'
           : '<span class="exam-meta"><span>Coming soon</span></span>';

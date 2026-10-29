@@ -13121,11 +13121,29 @@ function deckIdFromURL() { return new URLSearchParams(location.search).get("deck
 var CHAIN_SETS = [
   // <!--ABCHAIN-SETS-->
   // written by tools/build_acid_base_chain.py from arcade-chain/*.json; do not hand-edit
-  { id: "pdm-e4", name: "Acid-Base Case Chains", course: "Principles of Diagnostic Medicine I", exam: "Exam 4", color: "accent3", cases: 20, steps: 99 },
-  { id: "cms-e6", name: "Acid-Base Case Chains", course: "Clinical Medicine and Surgery I", exam: "Exam 6", color: "accent3", cases: 20, steps: 122 },
+  { id: "pdm-e4", name: "Acid-Base Case Chains", course: "Principles of Diagnostic Medicine I", exam: "Exam 4", color: "accent3", cases: 20, steps: 99, ver: "287bd668b1" },
+  { id: "cms-e6", name: "Acid-Base Case Chains", course: "Clinical Medicine and Surgery I", exam: "Exam 6", color: "accent3", cases: 20, steps: 122, ver: "b225d736db" },
   // <!--/ABCHAIN-SETS-->
 ];
 function findChainSet(id) { return CHAIN_SETS.find(function (s) { return s.id === id; }); }
+/* Progress lives under its own key (abchain_v1), never in the quiz qc:/qa:/qm: records, so a case chain
+   never feeds the medals, the exam countdown or Pip. { sets: { <id>: { cases: { <caseId>: { done, steps } } } } } */
+var CHAIN_STORE_KEY = "abchain_v1";
+function loadChainStore() {
+  try { var s = JSON.parse(localStorage.getItem(CHAIN_STORE_KEY) || "null"); if (s && s.sets) return s; } catch (e) {}
+  return { v: 1, sets: {} };
+}
+function saveChainStore(s) { try { localStorage.setItem(CHAIN_STORE_KEY, JSON.stringify(s)); } catch (e) {} }
+function chainProgress(id) {
+  var rec = (loadChainStore().sets[id] || {}).cases || {}, done = 0, first = 0, steps = 0;
+  Object.keys(rec).forEach(function (k) {
+    var c = rec[k];
+    if (!c || !c.done) return;
+    done++;
+    Object.keys(c.steps || {}).forEach(function (sid) { steps++; if (c.steps[sid].first) first++; });
+  });
+  return { done: done, first: first, steps: steps };
+}
 
 // Real Class Tabs -> Exam Accordion structure, mirroring the main site's
 // tab/exam-section pattern. deckIds fill in as real decks are authored per

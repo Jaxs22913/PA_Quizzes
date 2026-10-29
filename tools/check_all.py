@@ -87,6 +87,11 @@ def main(argv):
     if inbox:
         checks.append(("spelling vs inbox", ["tools/check_spelling.py", folder, inbox], True))
     checks.append(("accordions closed", ["tools/check_accordions_closed.py"], False))
+    # site-wide: the Acid-Base Case Chains (arcade-chain/*.json) re-derived from the slide rules, plus spelling
+    checks.append(("acid-base cases", ["tools/check_acid_base_cases.py"], False))
+    checks.append(("chain US spelling", ["tools/check_us_spelling.py"] + sorted(
+        os.path.join("arcade-chain", f) for f in os.listdir(os.path.join(ROOT, "arcade-chain"))
+        if f.endswith(".json")), False))
     # site-wide: every Semester 2+ quiz question carries a permanent id (a re-render drops
     # them; tools/add_stable_qids.py puts them back from the last committed version)
     checks.append(("permanent ids", ["tools/add_stable_qids.py", "--check"], False))
