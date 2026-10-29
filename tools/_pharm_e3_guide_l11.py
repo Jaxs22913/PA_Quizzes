@@ -667,7 +667,7 @@ BODY += '''
   <p>Used for the <strong>eosinophilic phenotype</strong> (peripheral blood eosinophils above 150 per microliter), with <strong>a side-effect profile similar to omalizumab&rsquo;s</strong>.</p>
   <table>
     <tr><th>Group</th><th>Drugs (brands) [slide 81]</th></tr>
-    <tr><td><strong>Anti-interleukin-5</strong></td><td>Mepolizumab (Nucala); benralizumab (Fasenra); <strong>reslizumab (Cinqair), given intravenously</strong></td></tr>
+    <tr><td><strong>Anti-interleukin-5</strong></td><td>Mepolizumab (Nucala); benralizumab (Fasenra); <strong>reslizumab (Cinqair), given intravenously</strong> (the slide spells it &ldquo;Resilzumab&rdquo;)</td></tr>
     <tr><td><strong>Anti-interleukin-4</strong></td><td><strong>Dupilumab</strong> (Dupixent)</td></tr>
   </table>
 ''' + star("1:14:19", "So you can either target IL-5 or IL-4. I&rsquo;m not going to really care if you know the difference between the two, I would just recognize that these are affecting interleukin. So instead of targeting IgE, they&rsquo;re going to be targeting these interleukins here.",
