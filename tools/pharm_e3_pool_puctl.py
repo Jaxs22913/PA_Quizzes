@@ -195,7 +195,7 @@ Q("Omalizumab and biologics", IO_ADME, "class",
   # whole anti-interleukin-5 list, so mepolizumab was defensible from the slide). The brand is unambiguous.
   "Which asthma biologic is sold as Cinqair?",
   [["Reslizumab", "Correct. Reslizumab (Cinqair) is one of the anti-interleukin-5 biologics, with mepolizumab and benralizumab, used for the eosinophilic phenotype."],
-   ["Omalizumab", "Omalizumab is the anti-immunoglobulin E antibody sold as Xolair, given subcutaneously every 2 to 4 weeks; Cinqair is reslizumab.", ADJ],
+   ["Omalizumab", "Omalizumab is the anti-immunoglobulin E antibody sold as Xolair; Cinqair is reslizumab, one of the anti-interleukin-5 biologics.", ADJ],
    ["Mepolizumab", "Mepolizumab is the anti-interleukin-5 biologic sold as Nucala; Cinqair is reslizumab, another anti-interleukin-5 biologic.", ADJ],
    ["Dupilumab", "Dupilumab is the anti-interleukin-4 biologic sold as Dupixent; Cinqair is reslizumab, an anti-interleukin-5 biologic.", ADJ]], 81),
 

@@ -116,11 +116,11 @@ dict(q="Which antibiotic gives great methicillin-resistant Staphylococcus aureus
             ("Cefepime", "Cefepime is an antipseudomonal cephalosporin that requires renal adjustment; gram-positive coverage is vancomycin or linezolid.")]),
 
 dict(q="Which drug is primarily used for empiric methicillin-resistant Staphylococcus aureus coverage, with a trough drawn before the third or fourth dose?",
-     ans="Vancomycin", src=("PU", 29),
+     ans="Vancomycin", src=("PU", 29, 25),
      why="Vancomycin is primarily used for empiric methicillin-resistant Staphylococcus aureus coverage; its trough is drawn before the third or fourth dose, at steady state.",
      wrong=[("Linezolid", "Linezolid also covers methicillin-resistant Staphylococcus aureus but needs no renal dose adjustment, and no trough is listed for it."),
             ("Amikacin", "Amikacin is an aminoglycoside for gram-negative combination therapy, adjusted on levels; gram-positive coverage is vancomycin or linezolid."),
-            ("Meropenem", "Meropenem is an antipseudomonal carbapenem for gram-negative coverage; gram-positive coverage is vancomycin or linezolid.")]),
+            ("Meropenem", "Meropenem is an antipseudomonal carbapenem with less seizure risk than imipenem/cilastatin; empiric methicillin-resistant Staphylococcus aureus coverage is vancomycin.")]),
 
 dict(q="Which antibiotic class uses extended-interval (once daily or longer) dosing because of poor lung penetration?",
      ans="Aminoglycosides", src=("PU", 28),
@@ -138,11 +138,11 @@ dict(q="Broad nosocomial coverage pairs an antipseudomonal beta-lactam with whic
             ("Macrolides", "Macrolides partner a beta-lactam in community-acquired pneumonia, not in broad nosocomial coverage.")]),
 
 dict(q="Which drug supplies the gram-positive coverage in a broad regimen of meropenem plus amikacin?",
-     ans="Vancomycin", src=("PU", 23),
+     ans="Vancomycin", src=("PU", 23, 25, 28),
      why="Meropenem (antipseudomonal carbapenem) plus amikacin (aminoglycoside) is the gram-negative pair; vancomycin or linezolid adds gram-positive coverage.",
      wrong=[("Piperacillin-tazobactam", "Piperacillin-tazobactam is another antipseudomonal beta-lactam, a gram-negative agent like meropenem; the gram-positive drug is vancomycin or linezolid."),
             ("Gentamicin", "Gentamicin is another aminoglycoside, a gram-negative agent; the gram-positive drug is vancomycin or linezolid."),
-            ("Levofloxacin", "Levofloxacin is an antipseudomonal fluoroquinolone, a gram-negative agent; the gram-positive drug is vancomycin or linezolid.")]),
+            ("Levofloxacin", "Levofloxacin is an antipseudomonal fluoroquinolone, the other choice for the second agent of the gram-negative pair; the gram-positive drug is vancomycin or linezolid.")]),
 
 # ---- tuberculosis (slides 37-45; the slide 46 second-line list is out of scope) ----
 dict(q="Which tuberculosis drug causes peripheral neuritis from pyridoxine deficiency, so pyridoxine (vitamin B6) is given?",
@@ -326,11 +326,11 @@ dict(q="Foradil is the brand name of which long-acting beta-2 agonist?",
             ("Tiotropium", "Tiotropium is a long-acting anticholinergic sold as Spiriva, not a beta-2 agonist.")]),
 
 dict(q="Which beta-2 agonist is sold as ProAir and Ventolin?",
-     ans="Albuterol", src=("PU", 70),
+     ans="Albuterol", src=("PU", 70, 86),     # 86: ipratropium is the short-acting anticholinergic (explanation D)
      why="Albuterol (ProAir, Ventolin) is a short-acting beta-2 agonist, listed with levalbuterol (Xopenex).",
      wrong=[("Levalbuterol", "Levalbuterol is the other short-acting beta-2 agonist, sold as Xopenex."),
             ("Salmeterol", "Salmeterol is a long-acting beta-2 agonist sold as Serevent."),
-            ("Ipratropium", "Ipratropium is a short-acting anticholinergic sold as Atrovent, not a beta-2 agonist.")]),
+            ("Ipratropium", "Ipratropium is an anticholinergic, not a beta-2 agonist; ProAir and Ventolin are brands of albuterol.")]),
 
 dict(q="Which drug class must never be used alone for asthma?",
      ans="Long-acting beta-2 agonists", src=("PU", 70, 67),     # 67: the long-term controller list
