@@ -55,6 +55,7 @@ CONTESTED on the slides, so NEVER KEYED the contested way (the guide notes each)
 
 DECK = "PAJ5500 CMSI Acid Base MBF 2026sc.pptx"
 C = lambda n: "%s, Slide %d" % (DECK, n)
+Cs = lambda *ns: "%s, Slides %s" % (DECK, ", ".join(str(n) for n in ns))
 
 IO_A = "Describe the major buffer systems of the body."
 IO_B = "Explain how acid-base disorders affect electrolytes and oxygenation."

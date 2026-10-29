@@ -55,6 +55,7 @@ CONTESTED on the slides, so NEVER KEYED the contested way (the guide notes each)
 
 DECK = "35. Oxygen Delivery 2026.pptx"
 C = lambda n: "%s, Slide %d" % (DECK, n)
+Cs = lambda *ns: "%s, Slides %s" % (DECK, ", ".join(str(n) for n in ns))
 
 IO_A = "Identify the indications, benefits, and hazards of oxygen therapy."
 IO_B = "Select the appropriate equipment and supplies necessary for initiating oxygen therapy."
