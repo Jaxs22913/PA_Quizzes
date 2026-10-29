@@ -79,7 +79,7 @@ V(LYTES, IO_B,
   C(11), "complication", "complication"),
 
 V(LYTES, IO_B,
-  "A 71-year-old man with long-standing chronic obstructive pulmonary disease has a stable chronic respiratory acidosis. Arterial blood gas: " + gas("7.36", "60", "33") + ". Which serum electrolyte finding is expected?",
+  "A 71-year-old man with long-standing chronic obstructive pulmonary disease has a stable chronic respiratory acidosis. Arterial blood gas: " + gas("7.34", "60", "33") + ". Which serum electrolyte finding is expected?",
   [["Low chloride",
     "Correct. In chronic respiratory acidosis the kidneys excrete acid as ammonium chloride and retain bicarbonate, so hypochloremia accompanies the raised bicarbonate of 33. This is the renal compensation."],
    ["High chloride",
