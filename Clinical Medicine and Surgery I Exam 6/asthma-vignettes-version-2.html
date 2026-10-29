@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));window.__paErrQ=[];['error','unhandledrejection'].forEach(function(t){addEventListener(t,function(e){var q=window.__paErrQ;if(q&&!q.done)q.push(e)})});</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #b45357; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asthma Vignettes 2 — CMS I Exam 6</title>
+<style>
+  :root{
+    --navy:#7a2d30; --indigo:#b45357; --gold:#c08a2e; --ice:#faefee;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#7a2d30;--gold-l:#c08a2e;--indigo-l:#b45357;--navy:#ec9392;--indigo:#d06c6e;--gold:#c08a2e;--ice:#36191a;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#d06c6e;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#7a2d30;--indigo-t:#b45357;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Asthma &mdash; Vignettes 2</h1>
+    <div class="sub">Clinical Medicine and Surgery I &middot; Exam 6 &middot; Lecture 35</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px"></p>
+    <div class="chips"><span class="chip">Wheeze and cough</span><span class="chip">Classifying severity</span><span class="chip">Controller choice</span><span class="chip">Drugs to avoid</span><span class="chip">Aspirin and exercise</span><span class="chip">Action plans</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Severity classification", "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.", "q": "A 24-year-old woman has asthma symptoms 2 days a week, wakes at night with cough twice a month, uses albuterol 2 days a week, and has no limitation of activity. Her forced expiratory volume in 1 second is 88% predicted with a normal ratio, and she had no exacerbations requiring oral steroids this year. Which severity classification fits?", "opts": [["Intermittent", "Correct. Symptoms on 2 or fewer days a week, night awakenings 2 or fewer times a month, rescue use on 2 or fewer days a week, no interference, a 1-second volume above 80% with a normal ratio, and 0 to 1 steroid-requiring exacerbations a year all sit in the intermittent column."], ["Mild persistent", "Mild persistent asthma needs symptoms or rescue use on more than 2 days a week, or 3 to 4 night awakenings a month. She is at exactly 2 days and 2 nights. Tell: the intermittent limits are 2 or fewer, so reaching but not exceeding 2 stays intermittent."], ["Moderate persistent", "Moderate persistent asthma means daily symptoms, daily rescue use and a 1-second volume of 60% to 80%. Her symptoms are 2 days a week and her function is 88%. Tell: nothing in her history is daily."], ["Severe persistent", "Severe persistent asthma brings symptoms throughout the day, near-nightly waking and a 1-second volume under 60%. Every feature she has is at the mildest level. Tell: no feature reaches even the mild persistent column."]], "c": 0, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 62", "slot": "test finding", "lead": "classify", "qid": "u3kfai"}, {"topic": "Course and prognosis", "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly", "q": "A 22-year-old woman had asthma as a young child, then had no symptoms throughout adolescence. Over the past 2 months her episodic wheezing and night cough have returned. Which statement best explains her course?", "opts": [["Wheeze returning at 22 means cardiac asthma", "Cardiac asthma is wheezing from decompensated heart failure, and she has no heart disease. Tell: in a young adult with childhood asthma, returning symptoms fit asthma coming back after a quiet adolescence."], ["Asthma can return in adulthood", "Correct. Asthma presents at any age, with a peak at 3 years; it may become asymptomatic during adolescence and may return in adulthood. Her childhood asthma, quiet teenage years and returning symptoms follow that pattern."], ["Her first diagnosis must have been wrong", "A symptom-free adolescence does not disprove childhood asthma; asthma can become asymptomatic in adolescence and return later. Tell: her course, early onset then a quiet gap then return, is a known pattern."], ["Asthma that remits in adolescence stays gone", "Remission in adolescence is not permanent for every patient; asthma may return in adulthood. Tell: her returning wheeze and night cough after a quiet adolescence fit that described course."]], "c": 1, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 12", "slot": "prognosis", "lead": "complication", "qid": "po3vzx"}, {"topic": "Medications", "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.", "q": "A 27-year-old man has just finished a 5-day course of oral corticosteroids for an asthma exacerbation and feels well. He asks whether he must slowly taper the medicine. Which reply is correct?", "opts": [["He must taper over the next 2 weeks", "A taper is not required after a short exacerbation course of systemic corticosteroids. Tell: short courses for exacerbations stop without a taper, while long-term systemic use is the setting where dose minimizing matters."], ["He should continue it long term", "Long-term systemic corticosteroids are reserved for refractory or poorly controlled cases because of side effects such as osteoporosis and hypertension. Tell: after an exacerbation course he returns to his inhaled controller, not to oral steroids."], ["He should switch to an inhaled form for 5 days", "Inhaled corticosteroids are long-term controllers whose maximum response may take months, not a 5-day bridge. Tell: the exacerbation course simply ends without a taper, and his regular inhaled controller continues."], ["No taper is needed after a short course", "Correct. Systemic corticosteroids are used for control during exacerbations as a short course, and no taper is required. Long-term systemic therapy is different; it is reserved for severe or refractory cases at the minimum dose needed."]], "c": 3, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 76", "slot": "education", "lead": "education", "qid": "15ncoiu"}, {"topic": "Severity classification", "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.", "q": "A 31-year-old man reports asthma symptoms 4 days a week but not every day, wakes at night 3 times a month, uses albuterol 4 days a week but not daily, and notes minor limitation when hiking. His forced expiratory volume in 1 second is 84% predicted with a normal ratio. Which severity classification fits?", "opts": [["Intermittent", "Intermittent asthma allows symptoms and rescue use on only 2 or fewer days a week and night waking 2 or fewer times a month. He has 4 days and 3 nights. Tell: crossing either 2-a-week line moves him into persistent asthma."], ["Mild persistent", "Correct. Symptoms and rescue use on more than 2 days a week but not daily, 3 to 4 night awakenings a month, minor limitation, and a 1-second volume above 80% with a normal ratio all fall in the mild persistent column."], ["Moderate persistent", "Moderate persistent asthma requires daily symptoms and daily rescue use, night waking more than once a week, and a 1-second volume of 60% to 80%. His symptoms are not daily and his function is 84%. Tell: not daily keeps him below moderate."], ["Severe persistent", "Severe persistent asthma brings symptoms throughout the day, rescue use several times a day and a 1-second volume below 60%. His features are all mild persistent. Tell: minor limitation and 84% function are far from extremely limited and under 60%."]], "c": 1, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 62", "slot": "test finding", "lead": "classify", "qid": "yecftv"}, {"topic": "Medications", "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly", "q": "A 68-year-old woman taking theophylline for asthma has nausea, vomiting, headache and a rapid irregular heartbeat. Her potassium is low and her glucose high. Which explanation best fits her presentation?", "opts": [["Theophylline toxicity", "Correct. Theophylline has a narrow toxic-therapeutic range, and its toxic effects are nausea, vomiting, tachyarrhythmias, headache, seizure, hyperglycemia and hypokalemia, matching this woman's picture. That toxicity is why it is rarely used and needs close monitoring."], ["Albuterol side effects", "Albuterol's listed side effects are muscle tremor and palpitations. Vomiting, headache, low potassium and high glucose together are not explained by it. Tell: the full cluster, with low potassium and high glucose, matches theophylline toxicity."], ["Inhaled corticosteroid side effects", "Inhaled corticosteroids cause local effects: hoarseness, cough and oral thrush. They do not cause vomiting, arrhythmia or low potassium. Tell: her systemic toxic picture belongs to the drug with a narrow toxic-therapeutic range, theophylline."], ["Aspirin-sensitive reaction", "An aspirin-sensitive reaction brings rhinorrhea, conjunctival irritation, flushing and wheeze after aspirin, and she took no aspirin. Tell: vomiting, arrhythmia, hypokalemia and hyperglycemia in a theophylline user point to toxicity."]], "c": 0, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 81, 82", "slot": "complication", "lead": "complication", "qid": "187c3d2"}, {"topic": "Types of asthma", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.", "q": "A 27-year-old woman with asthma notices that her wheezing and chest tightness flare at the same predictable point in every menstrual cycle and are mild the rest of the month. Which type of asthma describes this pattern?", "opts": [["Intrinsic asthma", "Intrinsic asthma is defined by negative allergy testing, adult onset and often nasal polyps, not by cyclic timing. Tell: the decisive clue here is the predictable menstrual timing, the definition of catamenial asthma."], ["Aspirin-sensitive asthma", "Aspirin-sensitive asthma flares within minutes to 12 hours of taking aspirin, and the stem mentions no drug. Tell: her flares are tied to the menstrual cycle, not to a medication."], ["Catamenial asthma", "Correct. Catamenial asthma is asthma whose symptoms occur at predictable times during the menstrual cycle, as with this woman's monthly flares. It is one of the other types of asthma alongside occupational, cardiac, exercise-induced and aspirin-sensitive patterns."], ["Occupational asthma", "Occupational asthma follows the work week, improving on weekends and vacations. Her flares follow her menstrual cycle. Tell: a monthly rhythm points to hormones, a weekly rhythm to the workplace."]], "c": 2, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 36", "slot": "manifestation", "lead": "diagnosis", "qid": "ezypz3"}, {"topic": "Aspirin-sensitive asthma", "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.", "q": "A 58-year-old woman with asthma and nasal polyps developed wheezing, facial flushing and a runny nose within an hour of taking aspirin last year. She now has painful knee osteoarthritis and asks for an anti-inflammatory pain reliever. Which drug is the most appropriate choice?", "opts": [["Naproxen", "Naproxen is a non-selective anti-inflammatory drug, and patients with aspirin-sensitive asthma cross-react with that group. Her past aspirin reaction rules it out. Tell: the safe choices for her are the selective agents, celecoxib and meloxicam."], ["Diclofenac", "Diclofenac is on the list of non-selective anti-inflammatory drugs to avoid in aspirin-sensitive asthma, and her flushing and wheeze after aspirin show that sensitivity. Tell: selective agents such as celecoxib are the ones she may use."], ["Indomethacin", "Indomethacin is a non-selective anti-inflammatory drug, the group that worsens aspirin-sensitive asthma, so her aspirin reaction rules it out. Tell: only the selective agents (celecoxib, meloxicam) are allowed in aspirin-sensitive asthma."], ["Celecoxib", "Correct. Her wheeze, flushing and rhinorrhea after aspirin mark aspirin-sensitive asthma, so non-selective anti-inflammatory drugs must be avoided. Selective agents such as celecoxib or meloxicam may be used, which treats her knee pain without the cross-reaction."]], "c": 3, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 92, 93", "slot": "avoid", "lead": "treatment", "qid": "18a6d81"}, {"topic": "Types of asthma", "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly", "q": "A 15-year-old soccer player has cough, chest tightness and wheezing that start within 3 minutes after hard running, peak about 10 to 15 minutes later, and clear within an hour. She has no symptoms at rest or at night. Which diagnosis is most likely?", "opts": [["Moderate persistent asthma", "Moderate persistent asthma brings daily symptoms and night awakenings more than once a week. She has none at rest or at night. Tell: symptoms tied only to exercise and gone within an hour fit exercise-induced bronchospasm."], ["Vocal fold dysfunction", "Vocal fold dysfunction is an upper airway mimic, but the pattern of onset within 3 minutes, a 10-to-15-minute peak and resolution by an hour is the exercise-induced bronchospasm timeline. Tell: the precise post-exercise timing is the decisive clue."], ["Catamenial asthma", "Catamenial asthma follows the menstrual cycle. Her symptoms follow exercise, appearing within minutes and clearing within the hour. Tell: the trigger is running, not a point in a monthly cycle."], ["Exercise-induced bronchospasm", "Correct. Exercise-induced bronchospasm is common in children and adolescents, begins during or within 3 minutes after exercise, peaks in 10 to 15 minutes and resolves by 60 minutes, exactly this player's pattern, with no symptoms at rest or at night."]], "c": 3, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 94, 95", "slot": "manifestation", "lead": "diagnosis", "qid": "i7knit"}, {"topic": "Medications", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.", "q": "A 25-year-old woman with allergic asthma triggered by cat dander is considering allergen immunotherapy against that single allergen. Which statement about this therapy applies to her?", "opts": [["It can be self-given safely at home", "Immunotherapy carries a risk of inducing bronchoconstriction that may need urgent treatment, so it is not self-given at home. Tell: the requirement is a controlled environment able to treat complications."], ["It works poorly against a single allergen", "Immunotherapy is most useful in the context of single-allergen therapy, so her one identified trigger makes her a good candidate. Tell: single allergen is the favorable setting, not the poor one."], ["It is reserved for non-allergic asthma", "Immunotherapy is considered for patients who have allergic triggers; non-allergic, intrinsic asthma lacks an allergen to target. Tell: her cat dander allergy is exactly the indication."], ["It must be given in a controlled setting", "Correct. Immunotherapy may be considered when there are allergic triggers and is most useful against a single allergen, as for her cat dander. It must be done in a controlled environment because it can induce bronchoconstriction and may require urgent treatment of complications."]], "c": 3, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 85", "slot": "agent/regimen", "lead": "education", "qid": "1paiu2a"}, {"topic": "Diagnostic testing", "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases", "q": "A 35-year-old man has had stable, well-controlled asthma for 2 years. How often should his spirometry be repeated to monitor progression?", "opts": [["Every month", "Monthly spirometry is far more often than needed for stable disease; home peak flow readings handle frequent monitoring. Tell: office spirometry for monitoring is repeated once a year."], ["Every 3 months", "Repeating spirometry every 3 months is more often than recommended for monitoring stable asthma. Tell: the interval for monitoring progression with spirometry is annual, while peak flow covers day-to-day control."], ["Every year", "Correct. Spirometry is best done before and after a short-acting bronchodilator and is repeated annually to monitor progression. For this man with stable, controlled disease, a yearly test tracks his lung function between routine follow-up visits."], ["Every 5 years", "A 5-year gap is too long; spirometry is repeated annually to monitor progression. Tell: once a year is the monitoring interval, so 5 years would miss changes in his lung function."]], "c": 2, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 52", "slot": "test finding", "lead": "test", "qid": "wp45r9"}, {"topic": "Diagnostic testing", "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases", "q": "A 16-year-old basketball player has cough and wheezing starting a few minutes into every practice, gone within an hour. Resting spirometry is normal. Which test best confirms the suspected cause?", "opts": [["Methacholine challenge", "Methacholine or histamine challenge is the general provocation test for nondiagnostic spirometry. Tell: when the suspected trigger is exercise, the matching provocation test is an exercise challenge."], ["Allergy skin testing", "Allergy testing identifies allergen triggers, and his trigger is exercise, not an allergen. Tell: exercise-induced bronchospasm is confirmed by reproducing it with an exercise challenge."], ["Chest x-ray", "A chest x-ray in asthma is usually normal or shows hyperinflation, and it cannot show bronchospasm that comes and goes with exercise. Tell: a symptom triggered by exercise is tested by an exercise challenge."], ["Exercise challenge", "Correct. Symptoms starting soon after exercise and gone within the hour suggest exercise-induced bronchospasm, and normal resting spirometry is not diagnostic. Among the provocation tests, an exercise challenge is the one used when exercise-induced bronchospasm is suspected."]], "c": 3, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 58, 94", "slot": "initial test", "lead": "test", "qid": "7ku2tu"}, {"topic": "Education and action plans", "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.", "q": "A 28-year-old pregnant woman with allergic asthma asks whether keeping her baby away from dust, pets and pollen will prevent the child from developing asthma. Which statement is accurate?", "opts": [["Avoidance does not lower the risk", "Correct. Inhaled allergens are common triggers and are implicated in sensitization, but avoiding allergens does not reduce the risk of developing asthma, and early exposure may even be protective by building tolerance."], ["Strict avoidance prevents asthma", "Avoiding allergens does not reduce the risk of developing asthma, so strict avoidance is not prevention. Tell: early exposure may be protective through tolerance, the opposite of what strict avoidance assumes."], ["Early exposure guarantees asthma", "Early exposure may be protective through tolerance, and not all atopic individuals develop asthma. Tell: exposure early in life is not a cause the evidence supports avoiding."], ["Avoidance matters just for pet dander", "No single allergen is singled out; allergen avoidance in general does not reduce the risk of developing asthma. Tell: avoidance controls triggers in someone who has asthma, but does not prevent it."]], "c": 0, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 29", "slot": "risk factors", "lead": "education", "qid": "1qgurrn"}, {"topic": "Severity classification", "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.", "q": "A 33-year-old man with asthma has symptoms 1 day a week, wakes at night once a month, uses albuterol 1 day a week, and has a forced expiratory volume in 1 second of 91% predicted. In the past year, however, he needed 3 separate courses of oral corticosteroids for exacerbations. How should his asthma be classified?", "opts": [["As intermittent asthma", "His day-to-day impairment alone fits intermittent asthma, but the risk domain counts too, and intermittent allows only 0 to 1 steroid-requiring exacerbation a year. He had 3. Tell: the risk domain can move a quiet patient into persistent asthma."], ["As persistent asthma", "Correct. His impairment is intermittent-level, but patients with 2 or more exacerbations requiring oral systemic corticosteroids in the past year may be considered the same as patients with persistent asthma, even without persistent-level impairment. Three steroid courses put him in the persistent risk row."], ["As well-controlled with no change", "Three steroid-requiring exacerbations in a year are not well controlled; the risk domain treats 2 or more as persistent asthma. Tell: a good week-to-week picture does not cancel repeated exacerbations."], ["As exercise-induced bronchospasm", "Nothing ties his symptoms to exercise, and exercise-induced bronchospasm does not explain repeated steroid-requiring exacerbations. Tell: the decisive fact is the count of oral steroid courses, 3 in a year, which defines persistent risk."]], "c": 1, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 62", "slot": "test finding", "lead": "classify", "qid": "1bl0vof"}, {"topic": "Medications", "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly", "q": "A 61-year-old man with moderate persistent asthma controlled on an inhaled corticosteroid now has hypertension and new stable angina. His cardiologist is choosing a medicine for both. Which drug class should be avoided in him?", "opts": [["Inhaled corticosteroids", "His inhaled corticosteroid is the preferred first-line control medicine for persistent asthma and is keeping him controlled; stopping it would risk exacerbations. Tell: the drug class that worsens asthma, and could come with his heart treatment, is the beta blocker."], ["Leukotriene modifiers", "Leukotriene modifiers are asthma add-on medicines with modest benefit, not triggers. Tell: the two medication triggers to avoid in asthma are aspirin and beta blockers, and only the beta blocker would come with his heart treatment."], ["Beta blockers", "Correct. Beta blockers are listed with aspirin as medications that worsen asthma and should be avoided in asthmatic patients. For this man's angina and hypertension, another drug class is needed so his airways are not provoked."], ["Short-acting beta-2 agonists", "Short-acting beta-2 agonists are his rescue medicine, which every patient with asthma needs; they relax airway smooth muscle. Tell: the agonist opens the airway while the blocker provokes it, so the name to avoid is the beta blocker."]], "c": 2, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 40", "slot": "avoid", "lead": "avoid", "qid": "kudf6p"}, {"topic": "Aspergillosis", "io": "Define, describe, and discuss aspergillosis as it relates to asthma.", "q": "A 29-year-old man with long-standing asthma has had several exacerbations this year despite good inhaler technique and compliance. Testing shows a strong hypersensitivity to Aspergillus fumigatus with markedly raised immunoglobulin E and immunoglobulin G antibodies to the mold. Which diagnosis explains his worsening?", "opts": [["Allergic bronchopulmonary aspergillosis", "Correct. Allergic bronchopulmonary aspergillosis is a hypersensitivity reaction to Aspergillus fumigatus that occurs almost exclusively in asthma or cystic fibrosis; exposure causes a vigorous immunoglobulin E and G response that produces acute asthma symptoms and exacerbations, as in this patient."], ["Steroid-resistant asthma", "Steroid-resistant asthma is very uncommon, and nothing here shows a failed steroid response. His specific antibody response to Aspergillus explains the exacerbations. Tell: a named mold with raised immunoglobulin E and G points to aspergillosis, not to drug resistance."], ["Occupational asthma", "Occupational asthma comes from workplace chemicals and improves away from work. His trigger is an identified mold with a vigorous antibody response. Tell: the stem names Aspergillus and the antibodies, the hallmark of allergic bronchopulmonary aspergillosis."], ["Non-compliance with the controller", "Non-compliance is the most common reason for poor control, but the stem states good technique and compliance. Tell: once compliance is confirmed, the antibody response to Aspergillus is the stated explanation for his exacerbations."]], "c": 0, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 65", "slot": "complication", "lead": "diagnosis", "qid": "s5mopz"}, {"topic": "Medications", "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly", "q": "A 63-year-old postmenopausal woman with refractory, poorly controlled asthma will need long-term oral corticosteroids to suppress her symptoms. Which addition reduces the bone loss from this therapy?", "opts": [["Montelukast", "Montelukast is a leukotriene modifier used as add-on asthma therapy with modest benefit. It does not prevent steroid-related bone loss. Tell: the question asks about bone, and calcium and vitamin D are the supplements named for that purpose."], ["Cromolyn sodium", "Cromolyn sodium is a mast cell stabilizer that prevents symptoms in mild persistent or exercise-induced asthma, not a bone treatment. Tell: long-term systemic corticosteroid use calls for calcium and vitamin D to reduce bone mineral loss."], ["Calcium and vitamin D", "Correct. When long-term systemic corticosteroids are needed, calcium and vitamin D supplementation should be considered to reduce bone mineral loss, since osteoporosis is a known side effect. Her postmenopausal status adds to the bone risk, and the minimum effective steroid dose is used."], ["Theophylline", "Theophylline gives mild bronchodilation and is rarely used because of toxicity; it does nothing to protect bone. Tell: the bone-protecting step with long-term systemic steroids is calcium and vitamin D supplementation."]], "c": 2, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 76", "slot": "complication", "lead": "treatment", "qid": "hnbmpg"}, {"topic": "Diagnostic testing", "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases", "q": "A 17-year-old girl having spirometry for suspected asthma gives inconsistent, half-hearted blows, and her results vary widely between attempts. Which step is most appropriate before interpreting the test?", "opts": [["Report her best result as normal", "Results from poor effort are unreliable in either direction, so the best of several weak blows is not a trustworthy normal. Tell: effort-dependent tests need coaching and repeat before any interpretation."], ["Move straight to a methacholine challenge", "Methacholine challenge is used when good-quality spirometry is not diagnostic; hers is not yet valid. Tell: fix the effort problem with coaching first, since spirometry depends on patient effort."], ["Replace spirometry with a chest x-ray", "A chest x-ray in asthma is usually normal or shows hyperinflation and cannot measure airflow. Tell: spirometry stays the objective test; the fix for poor effort is coaching and repeating it."], ["Coach and encourage her, then repeat", "Correct. Spirometry results depend on patient effort, so the patient may need coaching and encouragement to achieve good results. Her inconsistent blows make the current numbers unreliable, and repeating with coaching gives a valid test."]], "c": 3, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 54", "slot": "initial test", "lead": "next step", "qid": "w5kicm"}, {"topic": "Severity classification", "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.", "q": "A 47-year-old woman has asthma symptoms 3 days a week, wakes at night 3 times a month, and uses albuterol 3 days a week but not daily. She has minor limitation of activity. Her forced expiratory volume in 1 second is 72% predicted with a ratio reduced by 4%. Which severity classification fits?", "opts": [["Mild persistent", "Most of her features are mild persistent, but mild persistent requires a 1-second volume above 80%; hers is 72%. Severity follows the worst feature. Tell: lung function between 60% and 80% sets her one class higher."], ["Moderate persistent", "Correct. Her symptoms, night waking, rescue use and minor limitation fit mild persistent, but a 1-second volume between 60% and 80% predicted (72%) is a moderate persistent feature, and severity follows the most severe category in which any feature occurs."], ["Intermittent", "Intermittent asthma allows symptoms on 2 or fewer days a week and a 1-second volume above 80%. She has 3 days a week and 72% function. Tell: both her symptoms and her spirometry exceed the intermittent column."], ["Severe persistent", "Severe persistent asthma needs a 1-second volume below 60% or features such as symptoms throughout the day. Her worst feature, 72%, sits in the moderate band. Tell: 72% is above the 60% line that marks severe disease."]], "c": 1, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 62", "slot": "test finding", "lead": "classify", "qid": "59y1sg"}, {"topic": "Course and prognosis", "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly", "q": "A 35-year-old man with asthma and a body mass index of 36 asks how his weight relates to his asthma. Which statement is accurate?", "opts": [["Obesity matters just for exercise-induced symptoms", "The link between obesity and asthma is not limited to exercise; asthma is more frequent and harder to control overall above a body mass index of 30. Tell: the effect covers his asthma as a whole."], ["Obesity makes asthma harder to control", "Correct. Asthma is more frequent in people with a body mass index above 30, and their symptoms are more difficult to control, although the mechanism is unknown. His body mass index of 36 places him in that group."], ["Obesity has no link to asthma", "Obesity is a listed endogenous factor: asthma is more frequent in people with a body mass index above 30. Tell: weight is linked to both how often asthma occurs and how hard it is to control."], ["Obesity makes asthma milder", "Obesity makes asthma symptoms more difficult to control, not milder. Tell: a body mass index above 30 is linked to more frequent asthma and harder control."]], "c": 1, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 27", "slot": "risk factors", "lead": "education", "qid": "1lzkwxy"}, {"topic": "Exercise-induced bronchospasm", "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly", "q": "A 15-year-old soccer player develops cough and wheezing within minutes of hard running, peaking about 10 minutes later and resolving within an hour. She is otherwise symptom-free. Which treatment should she use before exercise?", "opts": [["Inhaled short-acting beta-2 agonist", "Correct. Her symptoms begin within minutes of exercise, peak at 10 to 15 minutes and resolve by an hour, the exercise-induced bronchospasm pattern. An inhaled short-acting beta-2 agonist used before exercise decreases the bronchoconstriction."], ["Long-acting beta-2 agonist alone", "A long-acting beta-2 agonist has no anti-inflammatory effect and should not be used as monotherapy in asthma. Tell: the pre-exercise treatment for exercise-induced bronchospasm is the short-acting agent."], ["Tiotropium", "Tiotropium is an anticholinergic with a slow onset of action and is less effective than beta-2 agonists, so it suits neither quick protection nor her pattern. Tell: a short-acting beta-2 agonist before exercise is the treatment for exercise-induced bronchospasm."], ["A short oral corticosteroid course", "Short systemic corticosteroid courses control exacerbations; she has brief, predictable symptoms only with exercise. Tell: exercise-induced bronchospasm is treated with an inhaled short-acting beta-2 agonist before exercise and best prevented with a regular inhaled steroid."]], "c": 0, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 94, 96", "slot": "first-line", "lead": "treatment", "qid": "a9wtbu"}, {"topic": "Education and action plans", "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.", "q": "A 21-year-old man with extrinsic asthma flares whenever he cleans his apartment, and allergy skin testing shows sensitivity to house dust mites. His controller and rescue inhalers are prescribed. Which non-drug measure should be added?", "opts": [["Limit his physical activity", "Exercise is a trigger only in exercise-induced bronchospasm, and asthma treatment aims for no limitation on physical activity. Tell: his trigger, shown by skin testing and cleaning flares, is dust mites, so avoidance targets the home."], ["Start allergen immunotherapy at home", "Immunotherapy may be considered for allergic triggers, but it must be done in a controlled environment because it can induce bronchoconstriction. Tell: home use is unsafe, and the first non-drug step is avoiding the dust mite trigger."], ["Move from the city to a rural area", "Air pollution's role is controversial, and asthma prevalence shows no difference between rural and urban areas. Tell: his identified trigger is dust mites inside his home, so environmental control there is the measure."], ["Reduce dust mite exposure at home", "Correct. Non-pharmacological asthma treatment is trigger avoidance and environmental control. Dust mites are the most common inhaled allergen trigger, and his skin test and cleaning-related flares identify it, so reducing his exposure at home is the added measure."]], "c": 3, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 38, 67", "slot": "education", "lead": "education", "qid": "1vpklwd"}, {"topic": "Diagnostic testing", "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases", "q": "A 27-year-old man describes cough and chest tightness with cold air and smoke over several months. His spirometry is normal, with no meaningful change after albuterol. Asthma is still suspected. Which test is most appropriate next?", "opts": [["Chest x-ray", "The chest x-ray in asthma is usually normal or shows hyperinflation, so it adds little after normal spirometry. Tell: when spirometry fails to show asthma, the next step is to provoke airway hyper-responsiveness with methacholine."], ["Repeat spirometry in 1 year", "Annual spirometry is for monitoring the progression of known disease, not for settling a suspected diagnosis today. Tell: when spirometry is not diagnostic, bronchial provocation testing is the next test."], ["Methacholine challenge", "Correct. Bronchial provocation testing with methacholine or histamine is useful when spirometry is not diagnostic, as here, where a typical history meets normal spirometry. His normal lung function also clears the rule that provocation is not done below 65% predicted."], ["Exercise challenge", "An exercise challenge is the provocation test used when exercise-induced bronchospasm is suspected. His triggers are cold air and smoke, not exercise. Tell: for a nondiagnostic spirometry with general triggers, methacholine or histamine challenge is the test."]], "c": 2, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 58", "slot": "initial test", "lead": "test", "qid": "wypnm2"}, {"topic": "Diagnostic testing", "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases", "q": "A 31-year-old woman has spirometry for suspected asthma. Before a bronchodilator her forced expiratory volume in 1 second is 61% predicted with a ratio of 55%; after albuterol it is 94% predicted, a 53% improvement. Which interpretation fits?", "opts": [["Poor patient effort", "Spirometry does depend on effort, and coaching helps, but poor effort would not produce a clear 53% rise after a bronchodilator. Tell: a large, consistent response to albuterol reflects reversible obstruction, not inconsistent effort."], ["Reversible airflow obstruction", "Correct. A reduced 1-second volume and a reduced ratio before the bronchodilator show airflow limitation, and a 53% improvement after albuterol, far above the 12% threshold, shows reversibility. A positive bronchodilator response strongly supports asthma."], ["Fixed airflow obstruction", "Fixed obstruction would barely change after a bronchodilator. Her 1-second volume rose by 53%, from 61% to 94% predicted. Tell: a rise of 12% or more is the reversible pattern that supports asthma."], ["Normal spirometry", "Before the bronchodilator her 1-second volume was 61% predicted with a 55% ratio, both reduced, so the test is not normal. Tell: the pre-bronchodilator values show obstruction, and the post-bronchodilator values show it reversing."]], "c": 1, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 53, 54, 57", "slot": "test finding", "lead": "test", "qid": "17mba7g"}, {"topic": "Education and action plans", "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.", "q": "A 34-year-old man with moderate persistent asthma returns for a scheduled follow-up visit 2 months after starting an inhaled corticosteroid. He reports few symptoms. Which task belongs at this visit?", "opts": [["Repeat a bronchial provocation test", "Provocation testing helps diagnose asthma when spirometry is not diagnostic; his diagnosis is established. Tell: follow-up visits monitor control and review medicines, compliance and the action plan."], ["Stop his written action plan", "Few symptoms are the goal of treatment, but the action plan stays in use and is reviewed and updated at each follow-up. Tell: chronic management keeps patient education, including the red, yellow and green zones, going."], ["Start a long-term oral corticosteroid", "Long-term systemic corticosteroids are for refractory or poorly controlled cases, and he is doing well. Tell: a follow-up visit in a controlled patient reviews medicines, compliance and the action plan."], ["Review and update his action plan", "Correct. Follow-up visits assess and monitor control, review medications and compliance, adjust medications as needed, and review and update the action plan, then schedule the next follow-up. Good control does not remove these tasks."]], "c": 3, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 43, 90", "slot": "education", "lead": "next step", "qid": "9qkr3s"}, {"topic": "Education and action plans", "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.", "q": "A 41-year-old man with asthma is reviewing his written action plan with you. Which finding is a danger sign telling him to take his quick-relief medicine and go to the hospital or call an ambulance now?", "opts": [["Blue lips or fingernails", "Correct. The action plan's danger signs are trouble walking and talking because of shortness of breath, and lips or fingernails that are blue. Either one means take the quick-relief medicine and go to the hospital or call an ambulance now, without waiting."], ["Coughing at night", "Night cough, like waking at night with asthma, is a yellow-zone sign that asthma is getting worse. Tell: yellow means add quick-relief medicine and keep the controller; the danger signs are blue lips or trouble walking and talking."], ["Peak flow at 75% of personal best", "A reading of 75% of personal best falls in the yellow zone, 50% to 79%. Tell: the red zone starts below 50%, and the danger signs are blue lips or fingernails and trouble walking and talking from breathlessness."], ["Mild wheeze with the first signs of a cold", "The first signs of a cold and mild wheeze are caution, or yellow-zone, features. Tell: those call for adding quick-relief medicine, while blue lips or fingernails call for the hospital now."]], "c": 0, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 88, 89", "slot": "education", "lead": "education", "qid": "1ytk6kl"}, {"topic": "Refractory asthma", "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.", "q": "A 45-year-old woman with severe persistent asthma has needed 4 courses of oral corticosteroids this year despite confirmed adherence and good technique with her inhaled corticosteroid and long-acting beta-2 agonist. Which step is most appropriate?", "opts": [["Refer to a lung or allergy specialist", "Correct. With adherence and technique confirmed, her repeated steroid-requiring exacerbations make her asthma refractory. Monoclonal antibody agents are used by pulmonology and allergy specialists and reduced the need for corticosteroids in trials, so specialist referral fits."], ["Add theophylline", "Theophylline gives mild bronchodilation but has a narrow toxic-therapeutic range and is rarely used because of toxicity concerns. Tell: refractory disease needing repeated steroids is a specialist referral, where steroid-sparing antibody therapy is available."], ["Start allergen immunotherapy at home", "Immunotherapy must be done in a controlled environment because it can induce bronchoconstriction, and it targets allergic triggers. Tell: her problem is refractory severe asthma, which calls for specialist care."], ["Stop the long-acting beta-2 agonist", "Removing part of a regimen she uses correctly would not explain or fix her exacerbations. Tell: refractory, steroid-dependent asthma despite adherence calls for a specialist, who can offer agents that reduce the need for steroids."]], "c": 0, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 84, 91", "slot": "referral", "lead": "referral", "qid": "ulym1q"}, {"topic": "Education and action plans", "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.", "q": "A 28-year-old woman with moderate persistent asthma is given a peak flow meter to assess her control at home. When should she take her readings?", "opts": [["Each morning and each afternoon", "Correct. Peak flow is measured in the morning before the bronchodilator and in the afternoon after it. A 20% change between those readings, or from day to day, indicates poor control, so this schedule lets her and her clinician see variation."], ["Just when she is wheezing", "Readings taken only during symptoms cannot establish her baseline or show the morning-to-afternoon variation that marks poor control. Tell: the schedule is morning before and afternoon after the bronchodilator, every day."], ["At bedtime after exercise", "Exercise adds a separate trigger and bedtime is not the reference point. Tell: the comparison that shows control is morning before the bronchodilator against afternoon after it, with a 20% change meaning poor control."], ["Once a month at the clinic", "Peak flow is a personal, at-home measurement; monthly office readings cannot show daily variation. Tell: the 20% day-to-day or morning-to-afternoon change can only be seen with regular home readings."]], "c": 0, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 60", "slot": "education", "lead": "education", "qid": "147uxgc"}, {"topic": "Severity classification", "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.", "q": "A 42-year-old woman has asthma symptoms every day, uses her albuterol inhaler daily, wakes at night with symptoms twice a week, and has had to cut back some activities. Her forced expiratory volume in 1 second is 68% predicted with a reduced ratio. Which severity classification fits?", "opts": [["Intermittent", "Intermittent asthma allows symptoms on 2 or fewer days a week and normal function between exacerbations. She is symptomatic daily with 68% function. Tell: every one of her features is above the intermittent limits."], ["Mild persistent", "Mild persistent asthma has symptoms on more than 2 days a week but not daily, 3 to 4 night awakenings a month, and a 1-second volume above 80%. She has daily symptoms and 68% function. Tell: daily symptoms move her past mild."], ["Moderate persistent", "Correct. Daily symptoms, daily short-acting beta-2 agonist use, night awakenings more than once a week but not nightly, some limitation of activity, and a 1-second volume between 60% and 80% predicted with a reduced ratio all fall in the moderate persistent column."], ["Severe persistent", "Severe persistent asthma has symptoms throughout the day, waking often 7 times a week, rescue use several times a day, extreme limitation and a 1-second volume below 60%. She wakes twice a week with 68% function. Tell: 68% sits in the 60% to 80% moderate band."]], "c": 2, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 62", "slot": "test finding", "lead": "classify", "qid": "17mehcp"}, {"topic": "Types of asthma", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.", "q": "A 19-year-old college student has had episodes of wheezing, chest tightness and cough for 2 years, worse at night and after cleaning his dusty dorm room. He has allergic rhinitis and atopic dermatitis (eczema). Between episodes his lung exam is normal. Spirometry shows a reduced forced expiratory volume in 1 second that improves 18% after albuterol. Which diagnosis is most likely?", "opts": [["Chronic obstructive pulmonary disease", "Chronic obstructive pulmonary disease is a lower airway mimic, but its obstruction is largely irreversible and it follows years of smoke exposure. This student's obstruction reversed by 18% after albuterol. Tell: a large bronchodilator response in a young atopic patient supports asthma."], ["Vocal fold dysfunction", "Vocal fold dysfunction is an upper airway mimic in the differential, but it would not produce reversible lower airway obstruction on spirometry or travel with eczema and rhinitis. Tell: reversible obstruction plus atopy places the problem in the lower airways, not the larynx."], ["Extrinsic asthma", "Correct. Episodic wheeze, chest tightness and cough worse at night, a dust trigger, allergic rhinitis and eczema (the atopic triad), a normal exam between episodes, and an 18% rise in the 1-second volume after albuterol (12% or more is a positive response) make allergic, extrinsic asthma the diagnosis."], ["Intrinsic asthma", "Intrinsic asthma is non-atopic and of later, adult onset, often with nasal polyps and aspirin sensitivity. This 19-year-old has rhinitis, eczema and a dust trigger, an atopic picture. Tell: the atopic triad and an allergen trigger point to extrinsic, not intrinsic, asthma."]], "c": 2, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 25, 35, 53", "slot": "manifestation", "lead": "diagnosis", "qid": "frkxfe"}, {"topic": "Medications", "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.", "q": "A 44-year-old woman using an inhaled corticosteroid for moderate persistent asthma has hoarseness and white plaques on her tongue. She uses her inhaler without a spacer and does not rinse afterward. Which advice is most appropriate?", "opts": [["Use the inhaler just during attacks", "Inhaled corticosteroids are controllers, and their maximum response may take months; they do not relieve attacks. Tell: attacks are treated with the short-acting rescue inhaler, while thrush is prevented with a spacer and rinsing."], ["Use a spacer and rinse the mouth after each dose", "Correct. Hoarseness and oral thrush (oropharyngeal candidiasis) are local side effects of inhaled corticosteroids, and they may be decreased by using an inhalation chamber and rinsing the mouth with water after dosing. She keeps her preferred first-line controller."], ["Stop the inhaled corticosteroid", "Stopping her preferred first-line controller would leave moderate persistent asthma untreated and risk exacerbations. Tell: local side effects such as thrush are managed with a spacer and mouth rinsing, not by stopping the drug."], ["Switch to a long-term oral corticosteroid", "Long-term systemic corticosteroids carry osteoporosis, hypertension, ulcers and weight gain, and are kept for refractory cases. Tell: a local inhaler side effect is handled with a spacer and rinsing, not a move to systemic therapy."]], "c": 1, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 75", "slot": "education", "lead": "education", "qid": "w3hlt"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll" && window.startExamModeTour) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
