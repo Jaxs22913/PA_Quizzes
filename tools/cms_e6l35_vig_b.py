@@ -1,0 +1,287 @@
+# -*- coding: utf-8 -*-
+"""Lecture 35 vignette pool B -- Asthma: choosing, avoiding and adjusting medicines for the patient in front
+of you, including comorbidities that change the choice.
+
+KEYS ARE WRITTEN SHORT ON PURPOSE -- detail lives in the explanation.
+EXPLANATIONS follow tools/question_writing/EXPLAIN_DEEP.md (2026-10-29). Contraindication items say why the
+key is safe for this patient when the obvious choice is not.
+
+Class-level drug items only (generic names, no doses, no step numbers). No emergency management.
+"""
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _cmse3_q import Q
+from cms_e6l35_scope import *
+
+
+def S(topic, io, q, opts, cite, slot):
+    d = Q(topic, io, q, opts, cite); d["slot"] = slot; return d
+
+
+def V(topic, io, q, opts, cite, slot, lead):
+    d = S(topic, io, q, opts, cite, slot); d["lead"] = lead; return d
+
+
+MED = "Medications"
+ASA = "Aspirin-sensitive asthma"
+EIB = "Exercise-induced bronchospasm"
+REF = "Refractory asthma"
+EDU = "Education and action plans"
+
+QUESTIONS = [
+
+# ---------------------------------------------------------------- comorbidities that change the choice
+V(ASA, IO_PLAN,
+  "A 58-year-old woman with asthma and nasal polyps developed wheezing, facial flushing and a runny nose within an hour of taking aspirin last year. She now has painful knee osteoarthritis and asks for an anti-inflammatory pain reliever. Which drug is the most appropriate choice?",
+  [["Celecoxib",
+    "Correct. Her wheeze, flushing and rhinorrhea after aspirin mark aspirin-sensitive asthma, so non-selective anti-inflammatory drugs must be avoided. Selective agents such as celecoxib or meloxicam may be used, which treats her knee pain without the cross-reaction."],
+   ["Naproxen",
+    "Naproxen is a non-selective anti-inflammatory drug, and patients with aspirin-sensitive asthma cross-react with that group. Her past aspirin reaction rules it out. Tell: the safe choices for her are the selective agents, celecoxib and meloxicam.", "confused mechanism or drug class"],
+   ["Diclofenac",
+    "Diclofenac is on the list of non-selective anti-inflammatory drugs to avoid in aspirin-sensitive asthma, and her flushing and wheeze after aspirin show that sensitivity. Tell: selective agents such as celecoxib are the ones she may use.", "confused mechanism or drug class"],
+   ["Indomethacin",
+    "Indomethacin is a non-selective anti-inflammatory drug, the group that worsens aspirin-sensitive asthma, so her aspirin reaction rules it out. Tell: only the selective agents (celecoxib, meloxicam) are allowed in aspirin-sensitive asthma.", "confused mechanism or drug class"]],
+  CS(92, 93), "avoid", "treatment"),
+
+V(ASA, IO_POP,
+  "A 66-year-old man with asthma had facial flushing, red eyes and wheezing several hours after taking aspirin last month. He now has low back pain from lifting. Which medication should he avoid?",
+  [["Ibuprofen",
+    "Correct. Flushing, conjunctival irritation and wheeze after aspirin, even when delayed up to 12 hours, mark aspirin-sensitive asthma. Ibuprofen is a non-selective anti-inflammatory drug that cross-reacts and must be avoided; selective agents may be used."],
+   ["Meloxicam",
+    "Meloxicam is a selective anti-inflammatory drug, and selective agents may be used in aspirin-sensitive asthma. It is a safe pain option for this man. Tell: the agents he must avoid are the non-selective ones, such as ibuprofen and naproxen.", "reversed direction or value"],
+   ["Celecoxib",
+    "Celecoxib is a selective anti-inflammatory drug, which aspirin-sensitive patients may take, so it is not one he must avoid. Tell: his aspirin reaction rules out the non-selective group, of which ibuprofen is the common example.", "reversed direction or value"],
+   ["Albuterol",
+    "Albuterol is his short-acting rescue bronchodilator, which every patient with asthma needs; it relaxes airway smooth muscle and is not a trigger. Tell: the medications that worsen asthma are aspirin and its non-selective relatives, and beta blockers.", "adjacent fact"]],
+  CS(92, 93), "avoid", "avoid"),
+
+V(MED, IO_POP,
+  "A 61-year-old man with moderate persistent asthma controlled on an inhaled corticosteroid now has hypertension and new stable angina. His cardiologist is choosing a medicine for both. Which drug class should be avoided in him?",
+  [["Beta blockers",
+    "Correct. Beta blockers are listed with aspirin as medications that worsen asthma and should be avoided in asthmatic patients. For this man's angina and hypertension, another drug class is needed so his airways are not provoked."],
+   ["Short-acting beta-2 agonists",
+    "Short-acting beta-2 agonists are his rescue medicine, which every patient with asthma needs; they relax airway smooth muscle. Tell: the agonist opens the airway while the blocker provokes it, so the name to avoid is the beta blocker.", "reversed direction or value"],
+   ["Inhaled corticosteroids",
+    "His inhaled corticosteroid is the preferred first-line control medicine for persistent asthma and is keeping him controlled; stopping it would risk exacerbations. Tell: the drug class that worsens asthma, and could come with his heart treatment, is the beta blocker.", "reversed direction or value"],
+   ["Leukotriene modifiers",
+    "Leukotriene modifiers are asthma add-on medicines with modest benefit, not triggers. Tell: the two medication triggers to avoid in asthma are aspirin and beta blockers, and only the beta blocker would come with his heart treatment.", "adjacent fact"]],
+  C(40), "avoid", "avoid"),
+
+V(MED, IO_PLAN,
+  "A 52-year-old man with severe persistent asthma also has poorly controlled hypertension, osteoporosis, and a gastric ulcer last year. His asthma remains poorly controlled. Which medication's side effects most threaten his other conditions?",
+  [["Long-term oral corticosteroids",
+    "Correct. Systemic corticosteroid side effects include hypertension, osteoporosis and gastric ulceration, all 3 of his other conditions, plus truncal obesity, bruising and depression. If he needs them, the minimum dose that gives control is used."],
+   ["Inhaled corticosteroids",
+    "Inhaled corticosteroids act locally; their side effects are hoarseness, cough and oral thrush, not hypertension or ulcers. They are the preferred controller for persistent asthma. Tell: the systemic form carries the risks that match his comorbidities.", "adjacent fact"],
+   ["Short-acting beta-2 agonists",
+    "Short-acting beta-2 agonists cause muscle tremor and palpitations, not hypertension, bone loss or ulcers, and every patient with asthma needs one for rescue. Tell: his 3 comorbidities are listed side effects of systemic corticosteroids.", "adjacent fact"],
+   ["Leukotriene modifiers",
+    "Leukotriene modifiers are oral add-on controllers with modest benefit; nothing ties them to ulcers, bone loss or high blood pressure. Tell: hypertension, osteoporosis and gastric ulceration together point to long-term systemic corticosteroids.", "adjacent fact"]],
+  CS(76, 77), "avoid", "avoid"),
+
+V(MED, IO_POP,
+  "A 63-year-old postmenopausal woman with refractory, poorly controlled asthma will need long-term oral corticosteroids to suppress her symptoms. Which addition reduces the bone loss from this therapy?",
+  [["Calcium and vitamin D",
+    "Correct. When long-term systemic corticosteroids are needed, calcium and vitamin D supplementation should be considered to reduce bone mineral loss, since osteoporosis is a known side effect. Her postmenopausal status adds to the bone risk, and the minimum effective steroid dose is used."],
+   ["Theophylline",
+    "Theophylline gives mild bronchodilation and is rarely used because of toxicity; it does nothing to protect bone. Tell: the bone-protecting step with long-term systemic steroids is calcium and vitamin D supplementation.", "adjacent fact"],
+   ["Montelukast",
+    "Montelukast is a leukotriene modifier used as add-on asthma therapy with modest benefit. It does not prevent steroid-related bone loss. Tell: the question asks about bone, and calcium and vitamin D are the supplements named for that purpose.", "adjacent fact"],
+   ["Cromolyn sodium",
+    "Cromolyn sodium is a mast cell stabilizer that prevents symptoms in mild persistent or exercise-induced asthma, not a bone treatment. Tell: long-term systemic corticosteroid use calls for calcium and vitamin D to reduce bone mineral loss.", "adjacent fact"]],
+  C(76), "complication", "treatment"),
+
+V(MED, IO_POP,
+  "A 68-year-old woman taking theophylline for asthma has nausea, vomiting, headache and a rapid irregular heartbeat. Her potassium is low and her glucose high. Which explanation best fits her presentation?",
+  [["Theophylline toxicity",
+    "Correct. Theophylline has a narrow toxic-therapeutic range, and its toxic effects are nausea, vomiting, tachyarrhythmias, headache, seizure, hyperglycemia and hypokalemia, matching this woman's picture. That toxicity is why it is rarely used and needs close monitoring."],
+   ["Albuterol side effects",
+    "Albuterol's listed side effects are muscle tremor and palpitations. Vomiting, headache, low potassium and high glucose together are not explained by it. Tell: the full cluster, with low potassium and high glucose, matches theophylline toxicity.", "adjacent fact"],
+   ["Inhaled corticosteroid side effects",
+    "Inhaled corticosteroids cause local effects: hoarseness, cough and oral thrush. They do not cause vomiting, arrhythmia or low potassium. Tell: her systemic toxic picture belongs to the drug with a narrow toxic-therapeutic range, theophylline.", "adjacent fact"],
+   ["Aspirin-sensitive reaction",
+    "An aspirin-sensitive reaction brings rhinorrhea, conjunctival irritation, flushing and wheeze after aspirin, and she took no aspirin. Tell: vomiting, arrhythmia, hypokalemia and hyperglycemia in a theophylline user point to toxicity.", "ruled out by a stated finding"]],
+  CS(81, 82), "complication", "complication"),
+
+# ---------------------------------------------------------------- building and fixing the regimen
+V(MED, IO_PLAN,
+  "A 16-year-old has asthma symptoms 3 days a week, wakes at night 3 times a month, and uses albuterol 3 days a week, with a forced expiratory volume in 1 second of 85% predicted. Which long-term control medication is preferred for him?",
+  [["Inhaled corticosteroid",
+    "Correct. His symptoms and rescue use on more than 2 days a week, 3 night awakenings a month and 85% function make mild persistent asthma. Inhaled corticosteroids are the preferred first-line treatment for persistent asthma, and most patients respond to twice-daily dosing."],
+   ["Leukotriene modifier",
+    "Leukotriene modifiers have modest benefit, are useful as add-on therapy, and are less effective than inhaled corticosteroids as monotherapy. Tell: for a first controller in persistent asthma, the inhaled corticosteroid is preferred.", "adjacent fact"],
+   ["Long-acting beta-2 agonist alone",
+    "A long-acting beta-2 agonist has no anti-inflammatory effect and should not be used as monotherapy; it is combined with an inhaled corticosteroid. Tell: alone it leaves the inflammation of persistent asthma untreated.", "confused mechanism or drug class"],
+   ["Theophylline",
+    "Theophylline gives mild bronchodilation but has a narrow toxic-therapeutic range and is rarely used because of toxicity concerns. Tell: a teenager with mild persistent asthma starts on the preferred first-line agent, an inhaled corticosteroid.", "adjacent fact"]],
+  CS(62, 74), "first-line", "treatment"),
+
+V(MED, IO_PLAN,
+  "A 36-year-old woman with moderate persistent asthma was given salmeterol by itself at an urgent care visit and it has been her sole controller for a month. Which change does her regimen need?",
+  [["Add an inhaled corticosteroid",
+    "Correct. A long-acting beta-2 agonist such as salmeterol has no anti-inflammatory effect and should not be used as monotherapy; it is used in combination with an inhaled corticosteroid. Adding one treats her airway inflammation and may allow control at a lower steroid dose."],
+   ["Continue salmeterol alone",
+    "Salmeterol bronchodilates for up to 12 hours, but it has no anti-inflammatory effect, and monotherapy is specifically warned against. Tell: the combination with an inhaled corticosteroid is what makes a long-acting beta-2 agonist appropriate.", "confused mechanism or drug class"],
+   ["Switch it to cromolyn sodium",
+    "Cromolyn is a mast cell stabilizer for prevention in mild persistent or exercise-induced asthma. Swapping it in still leaves her without the preferred anti-inflammatory controller. Tell: the missing piece is the inhaled corticosteroid.", "adjacent fact"],
+   ["Replace it with tiotropium",
+    "Tiotropium, an anticholinergic, is less effective than beta-2 agonists, slow in onset, and not an anti-inflammatory. Tell: her problem is a bronchodilator used without the inhaled corticosteroid it must be paired with.", "adjacent fact"]],
+  C(78), "escalation", "next step"),
+
+V(MED, IO_EDU,
+  "A 22-year-old man with mild persistent asthma well controlled on an inhaled corticosteroid dislikes inhalers and asks to switch to montelukast tablets alone. Which statement should guide the counseling?",
+  [["It is less effective than his inhaled steroid",
+    "Correct. Montelukast is a leukotriene modifier with modest clinical benefit, useful as add-on therapy, and less effective than inhaled corticosteroids as monotherapy. His inhaled steroid is the preferred first-line treatment for persistent asthma."],
+   ["It works as well as his inhaled steroid",
+    "Leukotriene modifiers are less effective than inhaled corticosteroids when used alone, so the switch would trade a better controller for a weaker one. Tell: the tablet's role is add-on therapy or exercise-induced bronchospasm, not replacing the inhaled steroid.", "reversed direction or value"],
+   ["It is a rescue medicine for attacks",
+    "Montelukast is a long-term control medicine; quick relief comes from a short-acting beta-2 agonist, which every patient needs. Tell: rescue medicines act within minutes on smooth muscle, while leukotriene modifiers are controllers.", "adjacent fact"],
+   ["It is a long-acting beta-2 agonist",
+    "Montelukast is a leukotriene modifier, not a beta-2 agonist. Long-acting beta-2 agonists such as salmeterol bronchodilate for up to 12 hours and must be paired with an inhaled corticosteroid. Tell: montelukast is a tablet; long-acting beta-2 agonists are inhaled.", "adjacent fact"]],
+  CS(74, 83), "education", "education"),
+
+V(EIB, IO_POP,
+  "A 15-year-old soccer player develops cough and wheezing within minutes of hard running, peaking about 10 minutes later and resolving within an hour. She is otherwise symptom-free. Which treatment should she use before exercise?",
+  [["Inhaled short-acting beta-2 agonist",
+    "Correct. Her symptoms begin within minutes of exercise, peak at 10 to 15 minutes and resolve by an hour, the exercise-induced bronchospasm pattern. An inhaled short-acting beta-2 agonist used before exercise decreases the bronchoconstriction."],
+   ["Long-acting beta-2 agonist alone",
+    "A long-acting beta-2 agonist has no anti-inflammatory effect and should not be used as monotherapy in asthma. Tell: the pre-exercise treatment for exercise-induced bronchospasm is the short-acting agent.", "confused mechanism or drug class"],
+   ["Tiotropium",
+    "Tiotropium is an anticholinergic with a slow onset of action and is less effective than beta-2 agonists, so it suits neither quick protection nor her pattern. Tell: a short-acting beta-2 agonist before exercise is the treatment for exercise-induced bronchospasm.", "adjacent fact"],
+   ["A short oral corticosteroid course",
+    "Short systemic corticosteroid courses control exacerbations; she has brief, predictable symptoms only with exercise. Tell: exercise-induced bronchospasm is treated with an inhaled short-acting beta-2 agonist before exercise and best prevented with a regular inhaled steroid.", "adjacent fact"]],
+  CS(94, 96), "first-line", "treatment"),
+
+V(EIB, IO_POP,
+  "A 17-year-old runner with exercise-induced bronchospasm uses albuterol before every practice, yet still has frequent symptoms during training. Which change is most likely to prevent his episodes?",
+  [["Regular inhaled corticosteroid use",
+    "Correct. Exercise-induced bronchospasm is treated with a short-acting beta-2 agonist before exercise but is best prevented with regular inhaled corticosteroid use. His frequent symptoms despite pre-exercise albuterol call for the regular controller."],
+   ["Saving albuterol for after symptoms start",
+    "Albuterol helps most when used before exercise, and moving it to after symptoms begin gives up that protection. Tell: when pre-exercise albuterol is not enough, prevention comes from a regular inhaled corticosteroid.", "adjacent fact"],
+   ["Cromolyn sodium taken during symptoms",
+    "Cromolyn prevents symptoms but does not relieve them once present, so taking it during an episode does not help. Tell: the agent that best prevents exercise-induced bronchospasm is a regular inhaled corticosteroid.", "adjacent fact"],
+   ["Stopping exercise permanently",
+    "Asthma treatment aims for no limitation on physical activity, so giving up running is not the goal. Tell: regular inhaled corticosteroid use best prevents exercise-induced bronchospasm and keeps him training.", "common lay belief"]],
+  CS(66, 96), "escalation", "next step"),
+
+V(MED, IO_EDU,
+  "A 17-year-old with exercise-induced bronchospasm takes cromolyn sodium only after her wheezing starts during a game and finds that it does not help. Which explains the lack of relief?",
+  [["It prevents but does not relieve symptoms",
+    "Correct. Cromolyn is a mast cell stabilizer: it inhibits mast cell activation and eosinophil recruitment to prevent symptoms in mild persistent or exercise-induced asthma, but it does not relieve symptoms once present. Taking it after wheezing starts is too late."],
+   ["It is a bronchodilator with slow onset",
+    "Slow onset describes tiotropium, the anticholinergic. Cromolyn is a preventive mast cell stabilizer and does not bronchodilate. Tell: cromolyn works only if taken before the trigger, never as relief.", "adjacent fact"],
+   ["She has become resistant to it",
+    "Nothing suggests resistance; cromolyn simply has no relieving action once symptoms are present. Tell: relief during an episode comes from a short-acting beta-2 agonist, while cromolyn is taken beforehand to prevent symptoms.", "common lay belief"],
+   ["It works just for allergic triggers",
+    "Cromolyn is described as useful in exercise-induced asthma as well as mild persistent asthma, so exercise is not the problem. Tell: the issue is timing; a preventive taken after symptoms begin cannot relieve them.", "ruled out by a stated finding"]],
+  C(79), "education", "education"),
+
+V(MED, IO_EDU,
+  "A 44-year-old woman using an inhaled corticosteroid for moderate persistent asthma has hoarseness and white plaques on her tongue. She uses her inhaler without a spacer and does not rinse afterward. Which advice is most appropriate?",
+  [["Use a spacer and rinse the mouth after each dose",
+    "Correct. Hoarseness and oral thrush (oropharyngeal candidiasis) are local side effects of inhaled corticosteroids, and they may be decreased by using an inhalation chamber and rinsing the mouth with water after dosing. She keeps her preferred first-line controller."],
+   ["Stop the inhaled corticosteroid",
+    "Stopping her preferred first-line controller would leave moderate persistent asthma untreated and risk exacerbations. Tell: local side effects such as thrush are managed with a spacer and mouth rinsing, not by stopping the drug.", "common lay belief"],
+   ["Switch to a long-term oral corticosteroid",
+    "Long-term systemic corticosteroids carry osteoporosis, hypertension, ulcers and weight gain, and are kept for refractory cases. Tell: a local inhaler side effect is handled with a spacer and rinsing, not a move to systemic therapy.", "confused mechanism or drug class"],
+   ["Use the inhaler just during attacks",
+    "Inhaled corticosteroids are controllers, and their maximum response may take months; they do not relieve attacks. Tell: attacks are treated with the short-acting rescue inhaler, while thrush is prevented with a spacer and rinsing.", "adjacent fact"]],
+  C(75), "education", "education"),
+
+V(MED, IO_EDU,
+  "A 27-year-old man has just finished a 5-day course of oral corticosteroids for an asthma exacerbation and feels well. He asks whether he must slowly taper the medicine. Which reply is correct?",
+  [["No taper is needed after a short course",
+    "Correct. Systemic corticosteroids are used for control during exacerbations as a short course, and no taper is required. Long-term systemic therapy is different; it is reserved for severe or refractory cases at the minimum dose needed."],
+   ["He must taper over the next 2 weeks",
+    "A taper is not required after a short exacerbation course of systemic corticosteroids. Tell: short courses for exacerbations stop without a taper, while long-term systemic use is the setting where dose minimizing matters.", "reversed direction or value"],
+   ["He should continue it long term",
+    "Long-term systemic corticosteroids are reserved for refractory or poorly controlled cases because of side effects such as osteoporosis and hypertension. Tell: after an exacerbation course he returns to his inhaled controller, not to oral steroids.", "adjacent fact"],
+   ["He should switch to an inhaled form for 5 days",
+    "Inhaled corticosteroids are long-term controllers whose maximum response may take months, not a 5-day bridge. Tell: the exacerbation course simply ends without a taper, and his regular inhaled controller continues.", "adjacent fact"]],
+  C(76), "education", "education"),
+
+V(MED, IO_EDU,
+  "A 19-year-old college student has just been prescribed albuterol for newly diagnosed asthma. Which side effects should she be told to expect?",
+  [["Muscle tremor and palpitations",
+    "Correct. Short-acting beta-2 agonists such as albuterol relax airway smooth muscle for about 3 to 6 hours, and their side effects include muscle tremors and palpitations. Knowing this keeps a new user from stopping her rescue inhaler out of alarm."],
+   ["Oral thrush and hoarseness",
+    "Thrush and hoarseness are local side effects of inhaled corticosteroids, reduced with a spacer and rinsing. Tell: albuterol is a bronchodilator, and its side effects are tremor and palpitations.", "adjacent fact"],
+   ["Insomnia and acid reflux",
+    "Insomnia, dyspepsia and acid reflux are side effects of theophylline, the methylxanthine. Tell: albuterol's side effects come from beta-2 stimulation, tremor and palpitations.", "adjacent fact"],
+   ["Bruising and truncal weight gain",
+    "Bruising and truncal obesity are side effects of systemic corticosteroids, which also cause osteoporosis and hypertension. Tell: a short-acting bronchodilator causes tremor and palpitations, not steroid effects.", "adjacent fact"]],
+  C(71), "education", "education"),
+
+V(EDU, IO_EDU,
+  "A 21-year-old man with extrinsic asthma flares whenever he cleans his apartment, and allergy skin testing shows sensitivity to house dust mites. His controller and rescue inhalers are prescribed. Which non-drug measure should be added?",
+  [["Reduce dust mite exposure at home",
+    "Correct. Non-pharmacological asthma treatment is trigger avoidance and environmental control. Dust mites are the most common inhaled allergen trigger, and his skin test and cleaning-related flares identify it, so reducing his exposure at home is the added measure."],
+   ["Limit his physical activity",
+    "Exercise is a trigger only in exercise-induced bronchospasm, and asthma treatment aims for no limitation on physical activity. Tell: his trigger, shown by skin testing and cleaning flares, is dust mites, so avoidance targets the home.", "common lay belief"],
+   ["Start allergen immunotherapy at home",
+    "Immunotherapy may be considered for allergic triggers, but it must be done in a controlled environment because it can induce bronchoconstriction. Tell: home use is unsafe, and the first non-drug step is avoiding the dust mite trigger.", "adjacent fact"],
+   ["Move from the city to a rural area",
+    "Air pollution's role is controversial, and asthma prevalence shows no difference between rural and urban areas. Tell: his identified trigger is dust mites inside his home, so environmental control there is the measure.", "common lay belief"]],
+  CS(38, 67), "education", "education"),
+
+V(MED, IO_A,
+  "A 25-year-old woman with allergic asthma triggered by cat dander is considering allergen immunotherapy against that single allergen. Which statement about this therapy applies to her?",
+  [["It must be given in a controlled setting",
+    "Correct. Immunotherapy may be considered when there are allergic triggers and is most useful against a single allergen, as for her cat dander. It must be done in a controlled environment because it can induce bronchoconstriction and may require urgent treatment of complications."],
+   ["It can be self-given safely at home",
+    "Immunotherapy carries a risk of inducing bronchoconstriction that may need urgent treatment, so it is not self-given at home. Tell: the requirement is a controlled environment able to treat complications.", "adjacent fact"],
+   ["It works poorly against a single allergen",
+    "Immunotherapy is most useful in the context of single-allergen therapy, so her one identified trigger makes her a good candidate. Tell: single allergen is the favorable setting, not the poor one.", "reversed direction or value"],
+   ["It is reserved for non-allergic asthma",
+    "Immunotherapy is considered for patients who have allergic triggers; non-allergic, intrinsic asthma lacks an allergen to target. Tell: her cat dander allergy is exactly the indication.", "reversed direction or value"]],
+  C(85), "agent/regimen", "education"),
+
+V(MED, IO_POP,
+  "A 14-year-old girl with moderate persistent asthma comes in for her yearly influenza vaccine, and her mother asks whether she can have the nasal spray form instead of a shot. Which vaccine form calls for caution in her?",
+  [["The intranasal influenza vaccine",
+    "Correct. Annual influenza vaccination is recommended because vaccine-preventable illness can trigger asthma exacerbations, but intranasal influenza vaccines call for caution, since they can be associated with exacerbation in younger patients such as this 14-year-old."],
+   ["Any influenza vaccine this year",
+    "Annual influenza vaccination is recommended in asthma because influenza can trigger exacerbations, so she should be vaccinated. Tell: the caution is about one form, the intranasal vaccine, not influenza vaccination itself.", "reversed direction or value"],
+   ["The pneumonia vaccine",
+    "Pneumonia vaccination is recommended in asthma, since vaccine-preventable illness can exacerbate symptoms. Tell: the form that carries a caution in younger patients is the intranasal influenza vaccine.", "adjacent fact"],
+   ["Every vaccine during asthma treatment",
+    "Vaccination is part of asthma care because vaccine-preventable illness can trigger exacerbations; being on controllers is not a reason to delay it. Tell: the one caution named is the intranasal influenza vaccine in younger patients.", "common lay belief"]],
+  C(86), "avoid", "avoid"),
+
+# ---------------------------------------------------------------- poor control and referral
+V(REF, IO_PLAN,
+  "A 40-year-old woman has persistent asthma symptoms and frequent rescue inhaler use despite a prescribed inhaled corticosteroid plus long-acting beta-2 agonist. She has not been seen since the prescription 6 months ago. Which step should come first?",
+  [["Check adherence and inhaler technique",
+    "Correct. Non-compliance is the most common reason for poor symptom control, and follow-up visits review medications, compliance and correct use before adjusting therapy. Her increased rescue use signals poor control, so adherence and technique are checked first."],
+   ["Refer for a monoclonal antibody",
+    "Monoclonal antibodies are specialist therapy for severe disease that persists despite proper treatment. Her adherence and technique have not yet been checked. Tell: non-compliance, the most common cause of poor control, is ruled out before escalating.", "adjacent fact"],
+   ["Start long-term oral corticosteroids",
+    "Long-term systemic steroids are kept for refractory cases because of osteoporosis, hypertension and ulcer risk. Tell: refractory means poor control despite correct use, which has not been established in this patient.", "adjacent fact"],
+   ["Test for steroid-resistant asthma",
+    "Steroid-resistant asthma is very uncommon, while non-compliance is the most common reason for poor control. Tell: check the common cause, adherence and technique, before chasing a rare one.", "adjacent fact"]],
+  CS(43, 90, 91), "escalation", "next step"),
+
+V(REF, IO_PLAN,
+  "A 45-year-old woman with severe persistent asthma has needed 4 courses of oral corticosteroids this year despite confirmed adherence and good technique with her inhaled corticosteroid and long-acting beta-2 agonist. Which step is most appropriate?",
+  [["Refer to a lung or allergy specialist",
+    "Correct. With adherence and technique confirmed, her repeated steroid-requiring exacerbations make her asthma refractory. Monoclonal antibody agents are used by pulmonology and allergy specialists and reduced the need for corticosteroids in trials, so specialist referral fits."],
+   ["Add theophylline",
+    "Theophylline gives mild bronchodilation but has a narrow toxic-therapeutic range and is rarely used because of toxicity concerns. Tell: refractory disease needing repeated steroids is a specialist referral, where steroid-sparing antibody therapy is available.", "adjacent fact"],
+   ["Start allergen immunotherapy at home",
+    "Immunotherapy must be done in a controlled environment because it can induce bronchoconstriction, and it targets allergic triggers. Tell: her problem is refractory severe asthma, which calls for specialist care.", "adjacent fact"],
+   ["Stop the long-acting beta-2 agonist",
+    "Removing part of a regimen she uses correctly would not explain or fix her exacerbations. Tell: refractory, steroid-dependent asthma despite adherence calls for a specialist, who can offer agents that reduce the need for steroids.", "common lay belief"]],
+  CS(84, 91), "referral", "referral"),
+
+V(MED, IO_A,
+  "A 29-year-old man with asthma uses his albuterol inhaler several times a day, refills it every 2 weeks, and stopped his inhaled corticosteroid months ago. Which feature of his history most raises his risk of death from asthma?",
+  [["Heavy rescue use without a steroid inhaler",
+    "Correct. The risk of death from asthma rises with poorly controlled asthma shown by frequent bronchodilator use, no inhaled corticosteroids, poor compliance with them, and previous admissions for near-fatal attacks. His heavy albuterol use after stopping his steroid combines the first 3."],
+   ["Atopic dermatitis as a child",
+    "Childhood eczema is part of the atopic triad and raises the chance of asthma, but it is not a listed risk factor for death. Tell: death risk tracks control and treatment, frequent bronchodilator use and missing inhaled corticosteroids.", "adjacent fact"],
+   ["Asthma that began at 3 years of age",
+    "Asthma can present at any age, with a peak at 3 years, so early onset is common and not a listed risk factor for death. Tell: his danger comes from poor control and the inhaled corticosteroid he stopped, not when his asthma began.", "adjacent fact"],
+   ["Allergy to cat dander",
+    "An allergen trigger defines extrinsic asthma, the most common form, but it is not a listed risk factor for death. Tell: the death-risk features are frequent bronchodilator use, no or poorly taken inhaled corticosteroids, and past near-fatal admissions.", "adjacent fact"]],
+  CS(14, 71), "prognosis", "complication"),
+]
