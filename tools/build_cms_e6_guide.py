@@ -92,6 +92,8 @@ def main():
     assert "data-dark=" in new, "dark_tokens could not read the page palette"
     open(OUT, "w", encoding="utf-8").write(new)
     print("dark tokens: written")
+    print("next: python3 tools/apply_guide_additions.py && python3 tools/check_guide_additions_inline.py "
+          "(a rebuild drops the added lines), then tools/build_guide_links.py")
 
 
 if __name__ == "__main__":
