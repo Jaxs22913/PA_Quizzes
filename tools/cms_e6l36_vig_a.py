@@ -268,6 +268,6 @@ ORD(V(PRG, IO_A,
    ["57%",
     "About 57% belongs to scores of 5 to 6, which would need 2 more points. Tell: his total is 1 (airflow) + 2 (walk) = 3. A total of 3 sits in the 3-to-4 band.", "wrong stage or severity"],
    ["80%",
-    "About 80% needs a total of 0 to 2. His walk of 160 meters alone scores 2 and his 1-second volume adds 1. Tell: 3 points moves him to the 67% band. Walk distance under 250 meters costs him 2 points.", "wrong stage or severity"]],
+    "About 80% needs a total of 0 to 2. His walk of 160 meters alone scores 2 and his 1-second volume adds 1. Tell: 3 points moves him to the 67% band. A walk of 150 to 249 meters costs him 2 points.", "wrong stage or severity"]],
   C(52), "prognosis", "classify"), [1, 2, 0, 3]),
 ]
