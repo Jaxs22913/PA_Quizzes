@@ -156,7 +156,7 @@ S(HOM, IO_C,
    ["It stays the same",
     "Ventilation changes carbon dioxide directly; the steady state, with production matching excretion, holds only while ventilation stays constant. Increasing ventilation raises excretion, so carbon dioxide falls. Tell: when excretion exceeds production, the level cannot stay the same.", "common lay belief"],
    ["It turns into bicarbonate",
-    "The carbonic acid equation does link carbon dioxide and bicarbonate, but increased ventilation removes carbon dioxide from the body, lowering it. Tell: ventilation clears carbon dioxide; the kidneys compensate for respiratory disorders by retaining or excreting bicarbonate.", "confused mechanism or drug class"]],
+    "Carbon dioxide is not converted away here: increased ventilation removes carbon dioxide from the body, lowering it. Tell: ventilation clears carbon dioxide; the kidneys compensate for respiratory disorders by retaining or excreting bicarbonate.", "confused mechanism or drug class"]],
   Cs(12, 22, 30), "etiology"),
 
 S(HOM, IO_C,
