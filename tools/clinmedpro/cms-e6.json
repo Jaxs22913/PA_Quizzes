@@ -1,0 +1,151 @@
+{
+ "schema": "clinmedpro/1",
+ "course": "Clinical Medicine and Surgery I",
+ "exam": 6,
+ "block": "Respiratory I",
+ "folder": "Clinical Medicine and Surgery I Exam 6",
+ "page": "cms-exam-6-clin-med-pro-guide.html",
+ "fields": [
+  "name",
+  "definition",
+  "etiology",
+  "epidemiology",
+  "risk_factors",
+  "pathology",
+  "clinical",
+  "diagnosis",
+  "treatment",
+  "mortality"
+ ],
+ "not_covered": "Not covered in the lecture",
+ "lectures": [
+  {
+   "lecture": 33,
+   "title": "Oxygen Delivery",
+   "lecturer": "Lauren Reynolds, MSPA, PA-C",
+   "deck": "35. Oxygen Delivery 2026.pptx",
+   "note": "Oxygen delivery is a therapy lecture, not a disease lecture, so it has no condition cards: its indications, devices, home oxygen qualification and safety teaching are in section 1 of the Exam 6 study guide and on the cram sheet. The deck file is numbered 35; the calendar calls it Lecture 33.",
+   "conditions": []
+  },
+  {
+   "lecture": 34,
+   "title": "Acid-Base Part I",
+   "lecturer": "Megan B. Finck, MMS, PA-C",
+   "deck": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx",
+   "note": "Built from the slides plus the lecture recording: the recording only chooses which facts to star, it adds no content. The four simple disorders are the conditions. The slides give no incidence or mortality figures; the only outcome stated is the unsustainable pH (below 6.7 or above 7.6), kept as the slide prints it. The board cases at the end of the lecture are not in the deck and are not used.",
+   "conditions": [
+    {
+     "id": "l34-resp-acid",
+     "name": "Respiratory acidosis",
+     "prof": true,
+     "prof_note": "Chronic obstructive pulmonary disease is the first cause to think of; the sleepy, confused patient; acute versus chronic is read from how far the kidneys have compensated; the obesity hypoventilation syndrome triad is a frequent question.",
+     "fields": {
+      "name": "Respiratory acidosis (acute or chronic)",
+      "definition": "Hypoventilation raising the partial pressure of carbon dioxide (greater than 40 mm Hg) and causing acidemia (pH below 7.35); may be accompanied by hypoxemia; may be acute or chronic",
+      "etiology": "Acute: airway obstruction; pulmonary disease (pneumonia, asthma, pulmonary edema, aspiration pneumonitis); central nervous system depression (recreational drugs, intracranial catastrophe, intravenous sedation); neuromuscular disorders (myasthenia gravis, Guillain-Barré syndrome); thoracic trauma (pneumothorax, flail chest). Chronic: lung disease ([[★ chronic obstructive pulmonary disease]], interstitial lung disease, idiopathic pulmonary fibrosis); neuromuscular disorders (muscular dystrophy, amyotrophic lateral sclerosis); obesity hypoventilation syndrome",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "[[★ Obesity hypoventilation syndrome (Pickwickian syndrome): the triad of obesity, sleep disordered breathing and chronic hypercapnia]]",
+      "pathology": "Hypercapnia is usually from under-excretion (hypoventilation), not excess production. Compensation is renal: the kidneys excrete acid as ammonium chloride and retain bicarbonate, beginning 6 to 12 hours after onset; complete compensation may take days. Bicarbonate rises about 1 mEq/L per 10 mm Hg rise in carbon dioxide acutely and about 3.5 chronically",
+      "clinical": "Somnolence, confusion, altered mental status, asterixis, myoclonus. Severe hypercapnia: increased cerebral blood flow, intracranial pressure and cerebrospinal fluid pressure; papilledema may be seen",
+      "diagnosis": "Low arterial pH, increased carbon dioxide, elevated serum bicarbonate; hypochloremia with chronic acidosis (renal excretion of acid as ammonium chloride). Respiratory disorder: compare the bicarbonate with its expected level to judge acute versus chronic",
+      "treatment": "Treat the underlying cause. Acute: restore ventilation. Chronic: careful oxygen titration; avoid rapid or aggressive carbon dioxide reduction, which causes posthypercapnic metabolic alkalosis",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "21",
+      "definition": "21",
+      "etiology": "26-27",
+      "risk_factors": "27",
+      "pathology": "14, 22, 59",
+      "clinical": "23-24",
+      "diagnosis": "25, 61",
+      "treatment": "28"
+     }
+    },
+    {
+     "id": "l34-resp-alk",
+     "name": "Respiratory alkalosis",
+     "prof": true,
+     "prof_note": "The paper bag \"doesn't actually do anything\": it is not necessary, does not correct carbon dioxide, may lower oxygen and works as a placebo.",
+     "fields": {
+      "name": "Respiratory alkalosis (acute or chronic)",
+      "definition": "Hyperventilation lowering the partial pressure of carbon dioxide and causing alkalemia (pH above 7.45)",
+      "etiology": "Central hyperventilation (voluntary or psychogenic, cerebrovascular accident, increased intracranial pressure); hyperventilation from hypoxia (high altitude, severe anemia, ventilation-perfusion mismatch, hypotension); toxic or pharmacologic (salicylates, caffeine, nicotine, catecholamines, thyroxine); pulmonary (pulmonary embolism, pneumonia, pulmonary edema, mechanical hyperventilation, interstitial lung disease); endocrine (pregnancy, hyperthyroidism); septicemia; heat exposure; hepatic failure",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Not covered in the lecture",
+      "pathology": "Hypocapnia is usually from excess excretion (hyperventilation). Initial compensation: cells secrete hydrogen ions in exchange for potassium. Then the kidneys excrete bicarbonate and retain chloride, giving a reduced bicarbonate, hypokalemia and hyperchloremia. Bicarbonate falls about 2 mEq/L per 10 mm Hg fall in carbon dioxide acutely and about 5 chronically",
+      "clinical": "Light-headedness, anxiety, perioral numbness, paresthesias; in severe cases tetany from low calcium, because a high pH increases calcium binding with albumin",
+      "diagnosis": "Elevated arterial pH, low carbon dioxide; decreased bicarbonate in chronic respiratory alkalosis",
+      "treatment": "Treat the underlying cause; hyperventilation is usually self-limited. [[★ Breathing into a paper bag is not necessary: it does not correct carbon dioxide, may decrease oxygen, and works as a placebo]]. Rapid correction of chronic respiratory alkalosis may cause posthypocapnia metabolic acidosis",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "29",
+      "definition": "29",
+      "etiology": "33-34",
+      "pathology": "14, 30, 59",
+      "clinical": "31",
+      "diagnosis": "32",
+      "treatment": "35"
+     }
+    },
+    {
+     "id": "l34-met-alk",
+     "name": "Metabolic alkalosis",
+     "prof": true,
+     "prof_note": "Saline responsive is the common type; compensation rarely takes carbon dioxide above 55 mm Hg; urine chloride splits the two types and blood pressure then sorts the saline-unresponsive causes; licorice is \"a unicorn\".",
+     "fields": {
+      "name": "Metabolic alkalosis (saline responsive or saline unresponsive)",
+      "definition": "Elevated serum bicarbonate causing alkalemia. Two types: saline responsive (a sign of extracellular volume contraction) and saline unresponsive (elevated bicarbonate with euvolemia or hypervolemia)",
+      "etiology": "Saline responsive: diuretic therapy, posthypercapnia, loss of hydrochloric acid (vomiting, nasogastric suction), antacids, volume contraction. Saline unresponsive, normotensive: severe potassium depletion, hypoparathyroidism and hypercalcemia. Saline unresponsive, hypertensive: primary aldosteronism, exogenous alkali, mineralocorticoids, licorice",
+      "epidemiology": "[[★ Saline responsive is the more common type]]",
+      "risk_factors": "Not covered in the lecture",
+      "pathology": "Compensation is decreased ventilation to retain carbon dioxide, about 0.75 mm Hg per 1 mEq/L rise in bicarbonate; [[★ carbon dioxide is rarely above 55 mm Hg from compensation, so a higher value suggests a concurrent primary respiratory acidosis]]",
+      "clinical": "No characteristic findings; may have orthostatic hypotension; associated hypokalemia causes weakness and hyporeflexia",
+      "diagnosis": "Elevated arterial pH and serum bicarbonate; increased carbon dioxide with respiratory compensation; decreased potassium and chloride. [[★ Urine chloride differentiates the types: lower in saline responsive (below 25 mEq/L), higher in saline unresponsive (above 40 mEq/L)]]",
+      "treatment": "Treat the underlying cause. If saline responsive: isotonic saline to correct the extracellular volume deficit, and discontinue diuretics if present",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "36",
+      "definition": "36-37",
+      "etiology": "42-43",
+      "epidemiology": "36",
+      "pathology": "38, 59",
+      "clinical": "39",
+      "diagnosis": "40-41",
+      "treatment": "44"
+     }
+    },
+    {
+     "id": "l34-met-acid",
+     "name": "Metabolic acidosis",
+     "prof": true,
+     "prof_note": "\"By far the most complex\": know the two mnemonics, and commit the Winter formula and the anion gap calculation to memory.",
+     "fields": {
+      "name": "Metabolic acidosis (normal anion gap or elevated anion gap)",
+      "definition": "Reduced serum bicarbonate causing acidemia: acids added (intrinsic or exogenous), acid excretion impaired, or bicarbonate lost. Two types: normal anion gap and elevated anion gap",
+      "etiology": "Elevated anion gap (MUDPILES): methanol, metformin, uremia, diabetic ketoacidosis, paraldehyde, isoniazid, iron, lactic acidosis, ethylene glycol, salicylates, starvation (metabolic and drug or chemical anions). Normal anion gap (USEDCAR): ureteral diversion, saline infusion, exogenous acid, diarrhea, carbonic anhydrase inhibitors, adrenal insufficiency, renal tubular acidosis (loss of bicarbonate, chloride retention, acids)",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Not covered in the lecture",
+      "pathology": "Increased acid production or ingestion, loss of bicarbonate, or decreased renal acid excretion. Compensation is increased ventilation to lower carbon dioxide; in severe cases hyperventilation is profound, as Kussmaul respirations (increased tidal volume and tachypnea) in diabetic ketoacidosis. The anion gap is the anions other than chloride and bicarbonate; albumin makes up most of the normal gap",
+      "clinical": "Mainly the signs and symptoms of the underlying disorder, plus compensatory hyperventilation",
+      "diagnosis": "Decreased pH, bicarbonate and carbon dioxide; hyperkalemia may be present. [[★ Anion gap = sodium - (chloride + bicarbonate), normal 9 to 15]]: normal gap is hyperchloremic, elevated gap is normochloremic. A normal gap does not exclude acidosis and should not override clinical concern (errors: hypoalbuminemia, hypernatremia or hyponatremia, antibiotics). [[★ Winter formula: expected carbon dioxide = 1.5 x measured bicarbonate + 8, plus or minus 2]]; a higher measured value means an added respiratory acidosis, a possible sign of impending respiratory failure",
+      "treatment": "Treat the underlying disorder, for both gap types; assess the compensatory response with the Winter formula. A pH below 6.7 may warrant therapy to normalize the pH along with treatment of the cause",
+      "mortality": "A pH below 6.7 (or above 7.6) is unsustainable: it may cause cardiac hypocontractility or irritability, seizures, cerebral edema and metabolic disturbances"
+     },
+     "slides": {
+      "name": "45",
+      "definition": "45, 53",
+      "etiology": "54-56",
+      "pathology": "46, 50, 53",
+      "clinical": "51",
+      "diagnosis": "47-49, 52, 58",
+      "treatment": "8, 57-58",
+      "mortality": "8"
+     }
+    }
+   ]
+  }
+ ]
+}
