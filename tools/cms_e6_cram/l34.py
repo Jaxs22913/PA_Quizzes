@@ -4,7 +4,7 @@
 TOPICS = [
 {"id": "l34-emph", "label": "★ Professor Emphasized — Normals, Winter Formula, Anion Gap", "color": "#b8860b", "rows": [
  ["★ Normal values", "pH <b>7.35&ndash;7.45</b> (&ldquo;burn this into your eyeballs&rdquo;); carbon dioxide <b>36&ndash;44</b> mm Hg (midpoint 40); bicarbonate <b>22&ndash;26</b> mEq/L (midpoint 24). Acidemia below 7.35, alkalemia above 7.45."],
- ["★ Winter formula", "Metabolic acidosis: expected carbon dioxide = <b>1.5 &times; bicarbonate + 8, &plusmn; 2</b>. Higher than expected = <b>added respiratory acidosis</b>, can signal impending respiratory failure. Lower than expected = added respiratory alkalosis."],
+ ["★ Winter formula", "Metabolic acidosis: expected carbon dioxide = <b>1.5 &times; bicarbonate + 8, &plusmn; 2</b>. Higher than expected = <b>added respiratory acidosis</b>, can signal impending respiratory failure."],
  ["★ Anion gap", "<b>Sodium &minus; (chloride + bicarbonate)</b>, normal <b>9&ndash;15</b>. Above 15 = elevated-gap acidosis."],
  ["★ Treatment", "&ldquo;Always going to be correct the underlying disorder.&rdquo; Therapy aimed at the pH itself only when it is unsustainable: <b>below 6.7 or above 7.6</b>."],
  ["★ Frequent questions", "Obesity hypoventilation triad; paper bag = placebo; saline responsive is the common alkalosis; carbon dioxide rarely above 55 in compensation; urine chloride splits the alkaloses."],

@@ -37,11 +37,11 @@
    "opts": [
     [
      "Increase the flow until the bag stays inflated",
-     "Correct. A bag that collapses completely on every breath means the flow is too low for his inspiratory demand, and a collapsed reservoir cannot deliver the high fraction. A non-rebreather needs 10-15 L/min, and the bag must not collapse on inspiration, so raise the flow until it stays inflated."
+     "Correct. The non-rebreather dosing rule is to prevent bag collapse on inspiration, within a flow of 10-15 L/min. His bag collapses completely on every breath at 10 L/min, the bottom of that range; with room up to 15 L/min, raising the flow within the range is the adjustment that works toward that rule."
     ],
     [
      "Switch to a nasal cannula at 6 L/min",
-     "A nasal cannula at 6 L/min delivers at most 44%, far below the high fraction a severely hypoxic man needs. Switching would downgrade his oxygen when the real problem is flow into the bag. Tell: a collapsing bag is fixed by turning up the flow on the same mask.",
+     "A nasal cannula at 6 L/min delivers at most 44%, far below the high fraction a severely hypoxic man needs. Switching would downgrade his oxygen when the real problem is flow into the bag. Tell: keep the mask and adjust its flow within 10-15 L/min.",
      "wrong stage or severity"
     ],
     [
@@ -51,12 +51,12 @@
     ],
     [
      "Lower the flow to 5 L/min",
-     "Lowering the flow to 5 L/min would make the bag collapse even more, because the mask needs at least 10 L/min to work. It would cut the oxygen reaching a severely hypoxic patient. Tell: bag collapse always calls for more flow, never less.",
+     "Lowering the flow to 5 L/min would take the mask below its 10-15 L/min range and work against the rule to prevent bag collapse. A severely hypoxic patient needs the high fraction the full flow gives. Tell: a collapsing bag is a reason to raise the flow, not lower it.",
      "reversed direction or value"
     ]
    ],
    "c": 0,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 17",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 11, 15, 17",
    "slot": "escalation",
    "lead": "next step"
   },
@@ -261,12 +261,12 @@
     ],
     [
      "Increase the flow to 6 L/min",
-     "Raising the flow to 6 L/min would dry the nose further. Humidity is already needed above 4 L/min, and he has none. Tell: the cause is dry gas, so fix the humidity, not the flow.",
+     "Raising the flow to 6 L/min keeps him above 4 L/min, where humidity is already needed and he has none. A higher flow leaves the missing humidity in place. Tell: fix the humidity, not the flow.",
      "reversed direction or value"
     ]
    ],
    "c": 2,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 9",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 3, 7, 9, 15",
    "slot": "complication",
    "lead": "treatment"
   },
@@ -321,12 +321,12 @@
     ],
     [
      "60%",
-     "60% is above the nasal cannula's range, which tops out at 44%. Fractions of 60% and above belong to the non-rebreather mask at 10-15 L/min. Tell: a cannula cannot reach 60%, whatever the knob says.",
+     "60% is above the nasal cannula's range, which tops out at 44%. Fractions of 60% and above come from reservoir-bag masks such as the non-rebreather at 10-15 L/min. Tell: a cannula cannot reach 60%, whatever the knob says.",
      "reversed direction or value"
     ]
    ],
    "c": 1,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 9",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 9, 11, 14, 15",
    "slot": "agent/regimen",
    "lead": "test"
   },
@@ -412,7 +412,7 @@
     ],
     [
      "No one should smoke in the home",
-     "Correct. Home oxygen teaching is that oxygen is highly flammable, and no one should smoke in the home. He smokes on the porch and his wife smokes in the kitchen. The rule covers the whole home, so both must follow it, and the fire hazard applies to everyone."
+     "Correct. Home oxygen teaching is that oxygen is highly flammable, and no one should smoke in the home. His wife smokes in the kitchen, inside the home, so the rule applies to her, and the fire danger is the same whoever lights the cigarette."
     ]
    ],
    "c": 3,
@@ -457,26 +457,26 @@
    "opts": [
     [
      "It cannot raise his saturation",
-     "A non-rebreather can raise his saturation; at 10-15 L/min it delivers 60-100%. The concern is that it raises it too much for a mild problem. Tell: this mask is powerful, and that power is the hazard in his case.",
+     "A non-rebreather can raise his saturation; at 10-15 L/min it delivers 60-100%. The problem is that its high fraction is meant for severe hypoxia, and his is mild at 87%. Tell: this mask is powerful, which is why it is kept for severe hypoxia.",
      "reversed direction or value"
     ],
     [
      "It causes vasoconstriction in the lungs",
-     "Vasoconstriction is the listed concern when oxygen is given in a myocardial infarction. He has a cold with chronic obstructive pulmonary disease, not a cardiac event. Tell: vasoconstriction goes with a myocardial infarction; carbon dioxide retention goes with chronic lung disease.",
+     "Vasoconstriction is the listed concern when oxygen is given in a myocardial infarction, not a lung effect in a cold. He has no cardiac event, and his issue is a device too strong for mild hypoxia. Tell: vasoconstriction goes with a myocardial infarction; severity decides the device.",
      "adjacent fact"
     ],
     [
      "It is a fire hazard in hospitals",
-     "Fire is a listed hazard of any oxygen therapy near an ignition source. It is not the reason to avoid this device in this man, and it does not depend on his lung disease. Tell: the reason specific to a patient with chronic obstructive pulmonary disease is carbon dioxide retention.",
+     "Fire is a listed hazard of any oxygen therapy, whichever device is used, so it is not a reason to avoid this mask in particular. The reason here is that the non-rebreather is for severe hypoxia and his is mild. Tell: a hazard shared by every device cannot single out one of them.",
      "adjacent fact"
     ],
     [
-     "It risks carbon dioxide retention",
-     "Correct. He has chronic obstructive pulmonary disease with only mild hypoxia (87%), and a non-rebreather at 15 L/min delivers a very high fraction (60-100%). Carbon dioxide retention is a listed hazard of oxygen, so a high-fraction device for a mild problem risks it."
+     "It is meant for severe hypoxia",
+     "Correct. His hypoxia is mild at 87%, and a non-rebreather mask is used in severely hypoxic patients who are still ventilating well, delivering 60-100% at 10-15 L/min. For mild hypoxia the nasal cannula is the most commonly used device, so the non-rebreather overshoots his need."
     ]
    ],
    "c": 3,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 3",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 3, 11, 15",
    "slot": "avoid",
    "lead": "avoid"
   },
@@ -566,7 +566,7 @@
     ]
    ],
    "c": 1,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 13",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 9, 13, 14, 15",
    "slot": "agent/regimen",
    "lead": "test"
   },
@@ -697,7 +697,7 @@
    "opts": [
     [
      "Give a nasal cannula at 2 L/min",
-     "A nasal cannula at 2 L/min is a mild-hypoxia device, and he is not hypoxic at 96%. In a myocardial infarction oxygen is withheld unless the saturation is below 91%, so even a low dose is not called for. Tell: the rule depends on the saturation threshold, not the dose.",
+     "A nasal cannula is most commonly used in mild hypoxia, and at 96% he is not hypoxic. In a myocardial infarction oxygen is withheld unless the saturation is below 91%, so even a low dose is not called for. Tell: the rule depends on the saturation threshold, not the dose.",
      "ruled out by a stated finding"
     ],
     [
@@ -711,12 +711,12 @@
     ],
     [
      "Give a non-rebreather at 15 L/min",
-     "A non-rebreather at 15 L/min is the highest-fraction low flow device and is for severely hypoxic patients. His saturation is 96%, so this adds oxygen he does not need and risks vasoconstriction in a myocardial infarction. Tell: a normal saturation in a myocardial infarction means no oxygen, not a bigger device.",
+     "A non-rebreather at 15 L/min is a low flow device with a high fraction, used in severely hypoxic patients. His saturation is 96%, so this adds oxygen he does not need and risks vasoconstriction in a myocardial infarction. Tell: a normal saturation in a myocardial infarction means no oxygen, not a bigger device.",
      "ruled out by a stated finding"
     ]
    ],
    "c": 2,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 3",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 3, 11, 15, 16",
    "slot": "avoid",
    "lead": "avoid"
   },
@@ -813,7 +813,7 @@
   {
    "topic": "Choosing a device",
    "io": "Discuss the selection and application of oxygen delivery",
-   "q": "A 48-year-old woman with influenza has mild to moderate respiratory distress and a saturation of 88%. She keeps mouth-breathing because her nose is congested. Which low flow device delivers through both nose and mouth?",
+   "q": "A 48-year-old woman with influenza has mild to moderate respiratory distress and a saturation of 88%. She keeps mouth-breathing because her nose is congested. Which device suits her level of distress and delivers through both nose and mouth?",
    "opts": [
     [
      "Nasal cannula",
@@ -827,7 +827,7 @@
     ],
     [
      "Trach collar",
-     "A trach collar is an air-entrainment nebulizer interface that fits over a tracheostomy, so it delivers to the airway through the stoma, not through the nose and mouth. She has no tracheostomy and it is not a low flow device. Tell: the collar goes on a tracheostomy; the mask goes over the face.",
+     "A trach collar is an air-entrainment nebulizer interface that fits over a tracheostomy, so it delivers to the airway through the stoma, not through the nose and mouth. She has no tracheostomy. Tell: the collar goes on a tracheostomy; the mask goes over the face.",
      "ruled out by a stated finding"
     ],
     [
@@ -836,7 +836,7 @@
     ]
    ],
    "c": 3,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 13",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 11, 13, 15, 19",
    "slot": "agent/regimen",
    "lead": "treatment"
   },
@@ -923,7 +923,7 @@
     ],
     [
      "Prescribe oxygen at 2 L/min now",
-     "Prescribing oxygen now has no documented hypoxia behind it. A saturation of 92% at rest does not meet the rest criterion of 88% or less, and a qualifying low value must first be documented. Tell: document first, then prescribe the lowest effective flow.",
+     "Prescribing oxygen now has no documented hypoxia behind it. A saturation of 92% at rest does not meet the rest criterion of 88% or less, and a qualifying low value must first be documented. Tell: document first, then prescribe.",
      "wrong stage or severity"
     ]
    ],
@@ -953,12 +953,12 @@
     ],
     [
      "Hypercapnia",
-     "Hypercapnia, or carbon dioxide retention, would show up as drowsiness and confusion with a rising carbon dioxide, even in a patient with chronic obstructive pulmonary disease. His injury is burns after a lit cigarette. Tell: burns from a flame mean fire, not carbon dioxide.",
+     "Hypercapnia, or carbon dioxide retention, is a listed hazard of oxygen, but it is retained gas, not a burn. His injury is burns after a lit cigarette. Tell: burns from a flame mean fire, not carbon dioxide.",
      "adjacent fact"
     ]
    ],
    "c": 2,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 3",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 3, 7, 9",
    "slot": "complication",
    "lead": "complication"
   },
@@ -973,7 +973,7 @@
     ],
     [
      "Carbon dioxide retention",
-     "Carbon dioxide retention is the hazard seen with chronic lung disease, such as chronic obstructive pulmonary disease. This man has a myocardial infarction and no lung disease is described. Tell: the myocardial infarction rule points to vasoconstriction.",
+     "Carbon dioxide retention is a listed hazard of oxygen, but it is not the reason oxygen is withheld in a myocardial infarction; that reason is vasoconstriction. Tell: the myocardial infarction rule points to vasoconstriction.",
      "adjacent fact"
     ],
     [
@@ -988,7 +988,7 @@
     ]
    ],
    "c": 0,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 3",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 3, 9",
    "slot": "complication",
    "lead": "complication"
   },
@@ -1018,7 +1018,7 @@
     ]
    ],
    "c": 3,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 7",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 7, 15",
    "slot": "education",
    "lead": "education"
   },
@@ -1089,7 +1089,7 @@
    "opts": [
     [
      "Hold oxygen at a saturation of 93%",
-     "Correct. Oxygen is not given in a myocardial infarction unless the saturation is below 91%, because of vasoconstriction. Her saturation of 93% is above that, so oxygen is held. Her chronic obstructive pulmonary disease does not change this, and a high fraction would add carbon dioxide retention risk."
+     "Correct. Oxygen is not given in a myocardial infarction unless the saturation is below 91%, because of vasoconstriction. Her saturation of 93% is above that, so oxygen is held."
     ],
     [
      "Start the nasal cannula at 2 L/min",
@@ -1103,49 +1103,49 @@
     ],
     [
      "Start a non-rebreather mask",
-     "A non-rebreather delivers 60-100% and is for severe hypoxia. She is at 93%, above the 91% line, and she has chronic obstructive pulmonary disease, where high fractions risk carbon dioxide retention. Tell: no hypoxia means no oxygen, and certainly not the highest-fraction mask.",
+     "A non-rebreather delivers 60-100% and is used in severely hypoxic patients. She is at 93%, above the 91% line in a myocardial infarction, so no device is called for. Tell: no hypoxia means no oxygen, and certainly not a high-fraction mask.",
      "wrong stage or severity"
     ]
    ],
    "c": 0,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 3",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 3, 9, 15, 16",
    "slot": "avoid",
    "lead": "avoid"
   },
   {
    "topic": "Choosing a device",
    "io": "Compare and contrast the different oxygen delivery systems.",
-   "q": "A 75-year-old woman with chronic obstructive pulmonary disease is on a nasal cannula. Her breathing rate and depth change constantly, and her saturation swings with them. Which feature of a different device would give her a steady fraction?",
+   "q": "A 75-year-old woman with chronic obstructive pulmonary disease is on a nasal cannula. Her breathing rate and depth change constantly, and her saturation swings with them. Which delivery system would hold her fraction of inspired oxygen steady?",
    "opts": [
     [
-     "A reservoir bag that holds oxygen",
-     "A reservoir bag holds oxygen, as on the non-rebreather, but that device still varies with patient demand. It would give her a high fraction without making it steady. Tell: a bag raises the fraction; only air entrainment makes it fixed.",
+     "A non-rebreather mask",
+     "A non-rebreather mask delivers a high fraction from its reservoir bag, but its fraction still varies with patient demand. It would raise her oxygen without making it steady. Tell: of the listed devices, only the air-entrainment system has a fixed fraction.",
      "confused mechanism or drug class"
     ],
     [
-     "A higher flow on the same cannula",
-     "A higher flow on the same cannula still gives a fraction that depends on her breathing, and it caps at 44% above 6 L/min. It raises the number but does not steady it. Tell: more liters change how much oxygen she may get, not how consistent it is.",
+     "A partial rebreather mask",
+     "A partial rebreather mask also uses a reservoir bag, and some exhaled gas gets into it; its fraction varies with patient demand. It is also not commonly used in a clinical setting. Tell: a reservoir bag raises the fraction; air entrainment is what fixes it.",
      "common lay belief"
     ],
     [
-     "A mask that covers nose and mouth",
-     "A mask that covers nose and mouth, such as the simple mask, still has a fraction that varies with respiratory rate, inspiratory flow and tidal volume. Covering both openings does not fix the fraction. Tell: steadiness comes from air entrainment, not from the mask shape.",
+     "A simple oxygen mask",
+     "A simple oxygen mask covers nose and mouth, but like the cannula its fraction varies with respiratory rate, inspiratory flow and tidal volume. Switching to it would leave the swings in place. Tell: mask shape does not fix the fraction; air entrainment does.",
      "adjacent fact"
     ],
     [
-     "A fixed fraction regardless of demand",
-     "Correct. A cannula gives a fraction that varies with respiratory rate, inspiratory flow and tidal volume, which explains why her saturation swings with her breathing. An air-entrainment device such as the Venturi mask gives a fixed fraction that does not fluctuate with patient demand."
+     "An air-entrainment system",
+     "Correct. A nasal cannula's fraction varies with respiratory rate, inspiratory flow and tidal volume, which is why her saturation swings as her breathing changes. An air-entrainment system gives a fixed fraction that does not fluctuate with patient demand, so it would hold her fraction steady."
     ]
    ],
    "c": 3,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 8",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 8, 14, 15",
    "slot": "agent/regimen",
    "lead": "treatment"
   },
   {
    "topic": "Choosing a device",
    "io": "Discuss the selection and application of oxygen delivery",
-   "q": "A 69-year-old man with pneumonia is on a nasal cannula. His nurse turned the flow up to 8 L/min and his saturation is still 84%. He is alert and moving air well. Which is the next step?",
+   "q": "A 69-year-old man with pneumonia is on a nasal cannula. His nurse turned the flow up to 8 L/min and his saturation is still 84%. He is alert and still ventilating well. Which is the next step?",
    "opts": [
     [
      "Turn the cannula up to 12 L/min",
@@ -1164,11 +1164,11 @@
     ],
     [
      "Change to a non-rebreather mask",
-     "Correct. His cannula is already above its limit: the cannula covers 1-6 L/min and its fraction tops out at 44%, so more turning gains nothing. He is still at 84% but alert and moving air well, so he is ventilating well. The non-rebreather mask (60-100% at 10-15 L/min) is the step up for severe hypoxia."
+     "Correct. His cannula is already above its limit: the cannula covers 1-6 L/min and its fraction tops out at 44%, so more turning gains nothing. He is still at 84% and still ventilating well, which is the listed use of the non-rebreather mask: severely hypoxic patients who are still ventilating well. At 10-15 L/min it delivers 60-100%, well above the cannula's ceiling."
     ]
    ],
    "c": 3,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 11",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 9, 11, 15",
    "slot": "escalation",
    "lead": "next step"
   },
@@ -1239,7 +1239,7 @@
    "opts": [
     [
      "Hypercapnia",
-     "Hypercapnia would present as drowsiness or confusion with a rising arterial carbon dioxide. Her problem is local to the nose, with bleeding and crusting. Tell: hypercapnia is a systemic problem seen in breathing and mentation; mucosal irritation is local to the nose.",
+     "Hypercapnia, or carbon dioxide retention, is a listed hazard, but it is not a local nasal problem. Her problem is local to the nose, with bleeding and crusting. Tell: hypercapnia is retained carbon dioxide; mucosal irritation is local to the nose.",
      "adjacent fact"
     ],
     [
@@ -1258,7 +1258,7 @@
     ]
    ],
    "c": 3,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 3",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 3, 9",
    "slot": "complication",
    "lead": "complication"
   },
@@ -1385,11 +1385,11 @@
   {
    "topic": "Escalating oxygen",
    "io": "Select the appropriate equipment and supplies necessary for initiating oxygen therapy.",
-   "q": "A 46-year-old woman with mild hypoxia, saturation 89%, had both nostrils packed for a severe nosebleed. She is comfortable otherwise. Which low flow device can still deliver her oxygen?",
+   "q": "A 46-year-old woman with mild hypoxia, saturation 89%, had both nostrils packed for a severe nosebleed. She is comfortable otherwise. Which device suits her mild hypoxia with her nose blocked?",
    "opts": [
     [
      "Trach collar",
-     "A trach collar is an air-entrainment nebulizer interface for a patient with a tracheostomy. She has no tracheostomy, and the collar is not a low flow device. Tell: the collar fits a stoma; the mask fits the face.",
+     "A trach collar is an air-entrainment nebulizer interface for a patient with a tracheostomy. She has no tracheostomy. Tell: the collar fits a stoma; the mask fits the face.",
      "ruled out by a stated finding"
     ],
     [
@@ -1408,7 +1408,7 @@
     ]
    ],
    "c": 2,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 13",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 11, 13, 15, 19",
    "slot": "agent/regimen",
    "lead": "treatment"
   },
@@ -1498,7 +1498,7 @@
     ]
    ],
    "c": 0,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 11",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 9, 11, 14, 15",
    "slot": "agent/regimen",
    "lead": "test"
   },
@@ -1539,7 +1539,7 @@
    "opts": [
     [
      "An endotracheal tube",
-     "An endotracheal tube is an advanced airway placed in the trachea. She is alert and breathing, and her complaint is the sensation of breathlessness, so an airway device is not the listed therapy. Tell: air hunger is relieved by oxygen for symptom relief.",
+     "An endotracheal tube is an advanced airway placed in the trachea. Her complaint is the sensation of breathlessness, and an airway device is not the listed therapy for it. Tell: air hunger is relieved by oxygen for symptom relief.",
      "wrong stage or severity"
     ],
     [
@@ -1553,12 +1553,12 @@
     ],
     [
      "A home oxygen qualification test",
-     "A home oxygen qualification test documents hypoxia during rest, exertion or sleep using a saturation or arterial gas value. Her symptom indication does not depend on qualifying values, and her saturation is 95%. Tell: qualification applies to coverage at home; air hunger is an indication in itself.",
+     "A home oxygen qualification test documents hypoxia during rest, exertion or sleep using a saturation or arterial gas value. Her saturation is 95%, and the listed indication here is air hunger, not documented hypoxia. Tell: qualification documents hypoxia for home oxygen; air hunger is a special indication in itself.",
      "wrong stage or severity"
     ]
    ],
    "c": 1,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 3",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 3, 5, 21",
    "slot": "first-line",
    "lead": "treatment"
   },
@@ -1638,7 +1638,7 @@
     ],
     [
      "Turn the flow up while working",
-     "Turning the flow up makes more oxygen available around flammable oils and grease. The teaching is to avoid petroleum-based products, not to raise the flow. Tell: the fix is to change the product, not the oxygen setting.",
+     "Turning the flow up does not remove the petroleum product; the teaching is to avoid petroleum-based oils and grease, not to change the flow. Tell: the fix is to change the product, not the oxygen setting.",
      "reversed direction or value"
     ],
     [
@@ -1648,7 +1648,7 @@
     ]
    ],
    "c": 1,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 7",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 7, 13, 16",
    "slot": "education",
    "lead": "avoid"
   },
@@ -1749,7 +1749,7 @@
    "opts": [
     [
      "Simple mask at 10 L/min",
-     "A simple mask at 10 L/min is the top of its range and suits mild to moderate respiratory distress. He has no distress and only mild hypoxia, so a mask is more than he needs as a first step. Tell: the cannula is the most commonly used device for mild hypoxia; the simple mask comes next in severity.",
+     "A simple mask at 10 L/min is the top of its range and suits mild to moderate respiratory distress. He has no distress at all, so a mask is more than he needs as a first step. Tell: the cannula is the most commonly used device for mild hypoxia; the simple mask comes next in severity.",
      "wrong stage or severity"
     ],
     [
@@ -1759,46 +1759,46 @@
     ],
     [
      "Nasal cannula at a low flow",
-     "Correct. After knee replacement he is comfortable and speaking full sentences with a saturation of 89%, which is mild hypoxia. The nasal cannula, a low flow device set at 1-6 L/min, is the usual first choice for mild hypoxia and gives 24-44%."
+     "Correct. After knee replacement he is comfortable and speaking full sentences with a saturation of 89% and no distress, so his hypoxia sits at the mild end. The nasal cannula, a low flow device set at 1-6 L/min, is the usual first choice for mild hypoxia and gives 24-44%."
     ],
     [
      "Non-rebreather mask",
-     "A non-rebreather mask is reserved for severely hypoxic patients who are still ventilating well, and it delivers 60-100% at 10-15 L/min. He is comfortable and only mildly hypoxic, so this overshoots. Tell: severe hypoxia with a reservoir bag means a non-rebreather; mild hypoxia with no distress means a cannula.",
+     "A non-rebreather mask is reserved for severely hypoxic patients who are still ventilating well, and it delivers 60-100% at 10-15 L/min. He is comfortable at 89% with no distress, so this overshoots. Tell: severe hypoxia with a reservoir bag means a non-rebreather; mild hypoxia with no distress means a cannula.",
      "wrong stage or severity"
     ]
    ],
    "c": 2,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 11",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 11, 13, 15, 16",
    "slot": "first-line",
    "lead": "treatment"
   },
   {
    "topic": "Choosing a device",
    "io": "Select the appropriate equipment and supplies necessary for initiating oxygen therapy.",
-   "q": "A 60-year-old man is found unresponsive and is not breathing. He has a pulse. A colleague reaches for a non-rebreather mask. Which piece of equipment fits his situation instead?",
+   "q": "A 60-year-old man is found unresponsive and is not breathing. He has a pulse. A colleague reaches for a non-rebreather mask. Why does that device not fit his situation?",
    "opts": [
     [
-     "Non-rebreather mask",
-     "A non-rebreather mask is used for severely hypoxic patients who are still ventilating well. He is not breathing at all, so a reservoir bag of oxygen near his face would deliver nothing. Tell: the non-rebreather needs a patient who breathes; the bag-valve mask breathes for him.",
+     "Its fraction of oxygen is too low",
+     "A non-rebreather delivers a high fraction, 60-100% at 10-15 L/min, so a low fraction is not the problem. Its listed use is a severely hypoxic patient who is still ventilating well, and he is not breathing. Tell: the mask's strength is not in question; his breathing is.",
      "ruled out by a stated finding"
     ],
     [
-     "Nasal cannula",
-     "A nasal cannula depends on the patient breathing in the oxygen and is used for mild hypoxia, which he does not have. Without breaths, flow past the nostrils would do nothing. Tell: cannula and masks assume spontaneous breathing; the resuscitator does not.",
+     "It is a high flow oxygen device",
+     "The non-rebreather is a low flow device, but with a high fraction; the high flow device on the list is the Venturi mask. Its flow type is not what rules it out here. Tell: he fails the mask's requirement that the patient is still ventilating well.",
      "ruled out by a stated finding"
     ],
     [
-     "Venturi mask",
-     "A Venturi mask delivers a precise, fixed fraction to a patient who is breathing, often one with chronic obstructive pulmonary disease. It does not move air in a patient who is not breathing. Tell: the Venturi mask fixes the fraction; it cannot ventilate.",
+     "Its bag must collapse on each breath",
+     "The dosing rule is the reverse: prevent bag collapse on inspiration, at 10-15 L/min. A bag rule does not explain why the mask fails a man who is not breathing. Tell: the non-rebreather is for patients who are still ventilating well.",
      "ruled out by a stated finding"
     ],
     [
-     "Bag-valve mask",
-     "Correct. He is unresponsive and not breathing, so he is not ventilating on his own. A non-rebreather only improves the oxygen content of what a breathing patient inhales. The bag-valve mask, a resuscitator bag, supplies the breaths for a patient with a pulse who is not breathing."
+     "It is for patients ventilating well",
+     "Correct. He is unresponsive and not breathing, though he has a pulse. A non-rebreather mask is used in severely hypoxic patients who are still ventilating well, and he is not breathing at all, so the mask's listed use does not fit him."
     ]
    ],
    "c": 3,
-   "cite": "35. Oxygen Delivery 2026.pptx, Slide 21",
+   "cite": "35. Oxygen Delivery 2026.pptx, Slides 15, 16, 17, 20",
    "slot": "agent/regimen",
    "lead": "treatment"
   }
