@@ -7,7 +7,8 @@ lecture: each per-lecture builder writes a fragment in tools/pdm_e4/l<N>_guide.h
 objectives, answered in order; figures from the decks with the slide cited), and this script
 assembles whichever fragments exist. Lecture 17 (Pulmonary Imaging, Professor Fowler, guest) is the
 first; Lecture 20 (Pulmonary Function Testing and Oxygenation, Professor Fowler; syllabus Topic Outline 18)
-the second. Labs: lecture content only for now (pdm_exam_spec); lab handling is decided with Jaxon.
+the second; Lecture 19 (Acid-Base Balance and Blood Gas Interpretation, Professor Finck; syllabus Topic
+Outline 19) the third, placed in lecture order before 20. Labs: lecture content only for now (pdm_exam_spec); lab handling is decided with Jaxon.
 
 Chrome and CSS come from the live Exam 3 guide (the class's current template) with the Exam 4
 palette swapped in (film-viewer slate, x-ray blue, dark amber; tools/pdm_e4/palette.json, the same
@@ -31,7 +32,8 @@ FRAG = os.path.join(HERE, "pdm_e4")
 IMG = "pdm-exam-4-study-guide-images"
 LECTURES = range(17, 22)
 
-TY_KEYS = {17: ("pulmonaryimaging", "Pulmonary Imaging"), 20: ("pulmonaryfunction", "Pulmonary Function Testing")}
+TY_KEYS = {17: ("pulmonaryimaging", "Pulmonary Imaging"), 19: ("acidbase", "Acid-Base and Blood Gases"),
+           20: ("pulmonaryfunction", "Pulmonary Function Testing")}
 
 # Exam 3 palette -> Exam 4 palette (same roles). Quizzes use navy #1c2733, indigo #3a6797,
 # gold #c9873a; amber is too light for heading text, so the guide's third accent is the same hue,
@@ -61,13 +63,14 @@ E3_HEXES = ("#1f2024", "#faf8f8", "#33363d", "#b23a48", "#8a6420", "#e3dee0", "#
             "#f3e6e8", "#f2f0f1", "#f5eef0", "#f6f0e3", "#f8eced", "#f5f3f4", "#ebe7e8", "#e8a3ac")
 
 HOW = '''<div class="prof-flag"><span class="prof-flag-label">&#9733; How this exam is written</span>
-  <p>Exam 4 is the pulmonary block. The course rules below come from Professor Reynolds&rsquo; first lecture and hold for every exam in this class; the last rows are what they mean for imaging and for pulmonary function testing.</p>
+  <p>Exam 4 is the pulmonary block. The course rules below come from Professor Reynolds&rsquo; first lecture and hold for every exam in this class; the last rows are what they mean for imaging, for blood gases and for pulmonary function testing.</p>
   <table>
     <tr><th>The rule</th><th>What it means for you</th></tr>
     <tr><td><em>&ldquo;I&rsquo;m not going to just throw a random number at you and not give you context of whether that&rsquo;s high or low.&rdquo;</em> (Professor Reynolds, Lecture 1)</td><td><strong>Reference ranges are supplied.</strong> A creatinine or any other value in a stem comes with the range that reads it. Learn what a value <em>means</em>.</td></tr>
     <tr><td><em>&ldquo;It&rsquo;s going to likely be more related to the tests themselves rather than maybe the specific diagnosis.&rdquo;</em> (Lecture 1)</td><td>Which study, why, its cautions and what normal looks like on it carry most of the marks (17.7).</td></tr>
     <tr><td>Questions are vignette and next-best-test: <em>&ldquo;what would be the next test that you would order?&rdquo;</em></td><td>In imaging the next test is a study: the radiograph first; the angiogram first for a suspected pulmonary embolism; computed tomography when the radiograph is inconclusive; the ventilation/perfusion scan when contrast cannot be given (17.7).</td></tr>
     <tr><td>Images are in play: radiographs and scans alongside the vignette.</td><td>Expect a film or a slice. Read the technique first (17.6), then the structures (17.1&ndash;17.5), then the pattern (17.8).</td></tr>
+    <tr><td>Blood gases: every pH, gas pressure, bicarbonate and electrolyte in a stem comes with its normal range. The anion gap is the one calculation: <em>&ldquo;I do want you to memorize and understand this equation&rdquo;</em> (Professor Finck, Lecture 19).</td><td>Read the gas step by step: the pH, then the values outside their range (the carbon dioxide for the lungs, the bicarbonate for the metabolic side), then whether the labs fit the patient (19.5). Know the four patterns and their compensation (19.5, 19.6). Work out the gap as sodium minus (chloride plus bicarbonate), with no potassium (19.7).</td></tr>
     <tr><td>Pulmonary function tests: a value comes with its reference (percent of predicted, or the report&rsquo;s own reference column).</td><td>Read a report in order: the ratio first, then the forced vital capacity, then the total lung capacity (20.6). Expect a tracing, a loop or a report: know the normal shapes and the scoop and the witch&rsquo;s hat (20.5). The next test: spirometry for obstruction, lung volumes for restriction, the diffusing capacity for a gas transfer problem (20.7).</td></tr>
   </table>
 </div>'''
@@ -91,6 +94,23 @@ TY = {
   {"q": "What is the classic radiograph sign of a pleural effusion?",
    "choices": ["Jet-black space with a compressed lung", "Blunted costophrenic angles", "Honeycombing", "Cephalization of vessels"], "correct": 1,
    "explain": "The normally sharp costophrenic angles are blunted. Jet-black space with a compressed lung is a pneumothorax; honeycombing is interstitial lung disease; cephalization is edema."},
+ ],
+ "acidbase": [
+  {"q": "Which value is looked at first in a step-wise read of a blood gas?",
+   "choices": ["The carbon dioxide pressure", "The bicarbonate", "The pH", "The anion gap"], "correct": 2,
+   "explain": "Step one is the pH (low is acidosis, high is alkalosis); then which values are outside the normal range; then whether the labs fit the clinical presentation."},
+  {"q": "pH low, carbon dioxide high, bicarbonate normal: which disorder?",
+   "choices": ["Acute respiratory acidosis", "Metabolic acidosis", "Chronic respiratory acidosis", "Respiratory alkalosis"], "correct": 0,
+   "explain": "Acute respiratory acidosis: pH below 7.35, carbon dioxide high, bicarbonate normal, as with respiratory depression from opioids or barbiturates. A risen bicarbonate would mean the chronic, compensated form."},
+  {"q": "How does the body compensate for a metabolic acidosis?",
+   "choices": ["The kidneys raise the bicarbonate over days", "Breathing lowers the carbon dioxide", "Breathing raises the carbon dioxide", "The kidneys lower the bicarbonate"], "correct": 1,
+   "explain": "Metabolic disorders are compensated by adjusting the ventilatory rate and carbon dioxide over minutes to hours: metabolic acidosis by a decrease in carbon dioxide. Kidney bicarbonate changes compensate respiratory disorders."},
+  {"q": "In acidosis, which way does potassium move?",
+   "choices": ["Into the cells: hypokalemia", "Into the urine only", "It does not move", "Out of the cells: hyperkalemia"], "correct": 3,
+   "explain": "pH changes cause changes in serum potassium: acidosis shifts potassium into the extracellular space (hyperkalemia); alkalosis shifts it into the cells (hypokalemia)."},
+  {"q": "Sodium 140, chloride 102, bicarbonate 24 (mEq/L): what is the anion gap?",
+   "choices": ["14", "24", "38", "62"], "correct": 0,
+   "explain": "Anion gap = sodium minus (chloride plus bicarbonate) = 140 minus 126 = 14, inside the normal 9 to 15. Forgetting the bicarbonate gives 38."},
  ],
  "pulmonaryfunction": [
   {"q": "Which value is assessed first when reading spirometry?",
