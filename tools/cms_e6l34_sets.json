@@ -1,0 +1,1746 @@
+{
+ "set1": [
+  {
+   "topic": "Metabolic alkalosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "Which saline-unresponsive cause of metabolic alkalosis comes with hypertension?",
+   "opts": [
+    [
+     "Hypoparathyroidism with hypercalcemia",
+     "Hypoparathyroidism with hypercalcemia is a normotensive saline-unresponsive cause. Primary aldosteronism is the hypertensive one.",
+     "adjacent fact"
+    ],
+    [
+     "Diuretic therapy",
+     "Diuretics cause saline-responsive alkalosis. Primary aldosteronism is a hypertensive saline-unresponsive cause.",
+     "adjacent fact"
+    ],
+    [
+     "Nasogastric suction",
+     "Nasogastric suction removes acid and causes saline-responsive alkalosis. Primary aldosteronism is hypertensive and unresponsive.",
+     "adjacent fact"
+    ],
+    [
+     "Primary aldosteronism",
+     "Correct. Hypertensive saline-unresponsive alkalosis comes from primary aldosteronism, mineralocorticoids and licorice; normotensive causes are severe potassium depletion and hypoparathyroidism with hypercalcemia."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 43",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Respiratory alkalosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "What can follow rapid correction of chronic respiratory alkalosis?",
+   "opts": [
+    [
+     "Post-hypocapnia metabolic acidosis",
+     "Correct. Rapid correction of chronic respiratory alkalosis may result in post-hypocapnia metabolic acidosis, because the kidneys had lowered the bicarbonate and need time to restore it."
+    ],
+    [
+     "Posthypercapnic metabolic alkalosis",
+     "Posthypercapnic metabolic alkalosis follows rapid correction of chronic respiratory acidosis. Correcting chronic respiratory alkalosis too fast leaves a metabolic acidosis.",
+     "reversed direction or value"
+    ],
+    [
+     "Hyperkalemia from potassium release",
+     "Potassium is not the stated risk. Rapid correction leaves a post-hypocapnia metabolic acidosis.",
+     "adjacent fact"
+    ],
+    [
+     "Respiratory acidosis from hypoventilation",
+     "The stated risk is metabolic, from the low bicarbonate left behind: post-hypocapnia metabolic acidosis.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 35",
+   "slot": "complication"
+  },
+  {
+   "topic": "Metabolic acidosis and the anion gap",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "By the Winter formula, what is the expected carbon dioxide when bicarbonate is 12 mEq/L?",
+   "opts": [
+    [
+     "16 to 20 mm Hg",
+     "16 to 20 comes from 1.5 x 12 = 18, plus or minus 2, without adding 8. The formula adds 8: 26, so 24 to 28.",
+     "reversed direction or value"
+    ],
+    [
+     "24 to 28 mm Hg",
+     "Correct. Winter formula: expected carbon dioxide = 1.5 x bicarbonate + 8, plus or minus 2 = 1.5 x 12 + 8 = 18 + 8 = 26, so 24 to 28 mm Hg."
+    ],
+    [
+     "30 to 34 mm Hg",
+     "30 to 34 adds 8 twice or uses a higher bicarbonate. With 12: 1.5 x 12 + 8 = 26, range 24 to 28.",
+     "reversed direction or value"
+    ],
+    [
+     "36 to 44 mm Hg",
+     "36 to 44 is the normal carbon dioxide; compensation should lower it. Winter gives 1.5 x 12 + 8 = 26, range 24 to 28.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 58",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Metabolic acidosis and the anion gap",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "Which is a listed cause of error in interpreting the anion gap?",
+   "opts": [
+    [
+     "Hypoalbuminemia",
+     "Correct. Causes for error in anion gap interpretation are hypoalbuminemia, hypernatremia or hyponatremia, and antibiotics; a normal gap does not exclude acidosis and should not override clinical concern."
+    ],
+    [
+     "Hypercalcemia",
+     "Calcium is an unmeasured cation whose fall can raise the gap, but hypercalcemia is not on the error list. Hypoalbuminemia is.",
+     "adjacent fact"
+    ],
+    [
+     "Hyperglycemia",
+     "Glucose is not in the formula and not on the error list. Hypoalbuminemia, sodium disorders and antibiotics are.",
+     "adjacent fact"
+    ],
+    [
+     "Anemia",
+     "Anemia is not on the list. Hypoalbuminemia is a listed cause of error, since albumin makes up most of the normal gap.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 49",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Potassium and oxygen effects",
+   "io": "Explain how acid-base disorders affect electrolytes and oxygenation.",
+   "q": "In acidosis, which shift explains hyperkalemia?",
+   "opts": [
+    [
+     "Bicarbonate carries potassium into blood",
+     "Bicarbonate does not carry potassium. The hyperkalemia of acidosis is hydrogen moving into cells while potassium moves out.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Hydrogen moves into cells and potassium moves out",
+     "Correct. In acidosis hydrogen ions shift from extracellular to intracellular fluid and potassium shifts from intracellular to extracellular fluid, resulting in hyperkalemia."
+    ],
+    [
+     "Potassium moves into cells and hydrogen moves out",
+     "That is the alkalosis shift, which causes hypokalemia. In acidosis hydrogen enters cells and potassium leaves them.",
+     "reversed direction or value"
+    ],
+    [
+     "The kidney retains extra potassium",
+     "The listed explanation is a cellular shift, not renal retention. In acidosis potassium moves out of cells as hydrogen moves in.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 9",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Definitions and normal values",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "Which term describes an arterial pH below 7.35?",
+   "opts": [
+    [
+     "Alkalemia",
+     "Alkalemia is the opposite finding, a pH above 7.45. A pH below 7.35 is acidemia.",
+     "reversed direction or value"
+    ],
+    [
+     "Hypercapnia",
+     "Hypercapnia is a raised carbon dioxide, one cause of a low pH, not the name for the low pH itself. A pH below 7.35 is acidemia.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Acidemia",
+     "Correct. Normal arterial pH is 7.35 to 7.45; a pH below 7.35 is acidemia (a blood finding), while acidosis is the pathologic condition of excessively acidic body fluids or tissues that causes it."
+    ],
+    [
+     "Acidosis",
+     "Acidosis names the pathologic condition of excessively acidic body fluids or tissues, the process. The blood finding of a pH under 7.35 is acidemia. Tell: '-emia' is the number in the blood, '-osis' is the process.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 3",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Respiratory acidosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "Which oxygen strategy is used in chronic respiratory acidosis?",
+   "opts": [
+    [
+     "Careful oxygen titration",
+     "Correct. Chronic respiratory acidosis is managed by treating the cause, careful oxygen titration and avoiding rapid or aggressive carbon dioxide reduction (which risks posthypercapnic metabolic alkalosis)."
+    ],
+    [
+     "High-flow oxygen to 100%",
+     "Aggressive oxygen risks further carbon dioxide retention and rapid shifts. The listed strategy is careful oxygen titration.",
+     "reversed direction or value"
+    ],
+    [
+     "Withholding oxygen entirely",
+     "Oxygen is not withheld; it is titrated carefully. Careful titration is the listed strategy.",
+     "reversed direction or value"
+    ],
+    [
+     "Oxygen during sleep alone",
+     "Sleep timing is not the listed strategy. Chronic respiratory acidosis calls for careful oxygen titration.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 28",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Respiratory acidosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "Which neurologic finding is listed for respiratory acidosis?",
+   "opts": [
+    [
+     "Asterixis",
+     "Correct. Respiratory acidosis causes somnolence, confusion, altered mental status, asterixis and myoclonus; severe hypercapnia can raise cerebral blood flow and intracranial pressure, with papilledema."
+    ],
+    [
+     "Perioral numbness",
+     "Perioral numbness is a respiratory alkalosis symptom, with light-headedness and paresthesias. Respiratory acidosis gives asterixis, somnolence and confusion.",
+     "competing diagnosis"
+    ],
+    [
+     "Tetany",
+     "Tetany from low calcium appears in severe respiratory alkalosis. Respiratory acidosis gives asterixis and myoclonus.",
+     "competing diagnosis"
+    ],
+    [
+     "Hyperreflexia",
+     "Hyperreflexia is not listed; reduced reflexes appear with the hypokalemia of metabolic alkalosis. Respiratory acidosis lists asterixis and myoclonus.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 23",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Metabolic alkalosis",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "In metabolic alkalosis, a carbon dioxide above what level suggests a concurrent primary respiratory acidosis?",
+   "opts": [
+    [
+     "40 mm Hg",
+     "40 mm Hg is the normal midpoint; compensation is expected to raise carbon dioxide above it. The warning level is above 55.",
+     "reversed direction or value"
+    ],
+    [
+     "45 mm Hg",
+     "45 mm Hg is just above normal and expected with compensation. Concern for a second disorder begins above 55 mm Hg.",
+     "reversed direction or value"
+    ],
+    [
+     "55 mm Hg",
+     "Correct. Respiratory compensation for metabolic alkalosis rarely raises the carbon dioxide above 55 mm Hg; a higher value suggests a concurrent primary respiratory acidosis."
+    ],
+    [
+     "80 mm Hg",
+     "80 mm Hg is well past the cutoff; concern starts once carbon dioxide passes 55 mm Hg.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 38",
+   "slot": "differential"
+  },
+  {
+   "topic": "Metabolic alkalosis",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "How is metabolic alkalosis compensated?",
+   "opts": [
+    [
+     "Increased ventilation to blow off carbon dioxide",
+     "Blowing off carbon dioxide compensates metabolic acidosis. Metabolic alkalosis is compensated by slower breathing that retains carbon dioxide.",
+     "reversed direction or value"
+    ],
+    [
+     "Renal retention of bicarbonate",
+     "Retaining bicarbonate would worsen an alkalosis, and the kidneys compensate respiratory disorders. Here the lungs retain carbon dioxide.",
+     "reversed direction or value"
+    ],
+    [
+     "Renal excretion of ammonium chloride",
+     "Ammonium chloride excretion is the renal compensation for respiratory acidosis. Metabolic alkalosis is compensated by hypoventilation.",
+     "adjacent fact"
+    ],
+    [
+     "Decreased ventilation to retain carbon dioxide",
+     "Correct. Metabolic alkalosis is compensated by decreased ventilation to retain carbon dioxide; the carbon dioxide rarely rises above 55 mm Hg from compensation alone."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 38",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Respiratory alkalosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "Which symptom is typical of respiratory alkalosis?",
+   "opts": [
+    [
+     "Perioral numbness",
+     "Correct. Respiratory alkalosis causes light-headedness, anxiety, perioral numbness and paresthesias, and in severe cases tetany from low calcium."
+    ],
+    [
+     "Somnolence",
+     "Somnolence is a respiratory acidosis symptom, from carbon dioxide retention. Respiratory alkalosis brings perioral numbness and paresthesias.",
+     "reversed direction or value"
+    ],
+    [
+     "Asterixis",
+     "Asterixis is listed under respiratory acidosis. Respiratory alkalosis causes perioral numbness, paresthesias and light-headedness.",
+     "competing diagnosis"
+    ],
+    [
+     "Papilledema",
+     "Papilledema comes with severe hypercapnia in respiratory acidosis. Respiratory alkalosis causes perioral numbness.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 31",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Homeostasis and buffering",
+   "io": "Identify mechanisms for maintaining acid-base homeostasis.",
+   "q": "What happens to carbon dioxide when ventilation increases?",
+   "opts": [
+    [
+     "It increases",
+     "Carbon dioxide rises with decreased ventilation. More ventilation blows it off, so it falls.",
+     "reversed direction or value"
+    ],
+    [
+     "It stays the same",
+     "Ventilation changes carbon dioxide directly; the steady state holds only while production matches excretion. More ventilation lowers it.",
+     "common lay belief"
+    ],
+    [
+     "It turns into bicarbonate",
+     "The carbonic acid equation links the two, but blowing off carbon dioxide removes it from the body. Increased ventilation lowers carbon dioxide.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It decreases",
+     "Correct. Increased ventilation decreases carbon dioxide and decreased ventilation increases it; in a steady state production matches excretion."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 12",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Homeostasis and buffering",
+   "io": "Describe the major buffer systems of the body.",
+   "q": "Carbonic acid dissociates into which two ions?",
+   "opts": [
+    [
+     "Sodium and chloride",
+     "Sodium and chloride are the electrolytes in the anion gap formula, not carbonic acid's products. It dissociates into hydrogen and bicarbonate.",
+     "adjacent fact"
+    ],
+    [
+     "Potassium and hydrogen",
+     "Potassium and hydrogen trade places across cell membranes as pH changes, but carbonic acid yields hydrogen and bicarbonate.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Ammonium and chloride",
+     "Ammonium chloride is the renal route for excreting acid. Carbonic acid dissociates into hydrogen and bicarbonate.",
+     "adjacent fact"
+    ],
+    [
+     "Hydrogen and bicarbonate",
+     "Correct. Carbonic acid dissociates into hydrogen ions and bicarbonate ions, and the reverse also occurs, so the buffer can be shifted from the respiratory side (carbon dioxide) or the renal side (bicarbonate)."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 16",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Respiratory acidosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "Which triad defines obesity hypoventilation (Pickwickian) syndrome?",
+   "opts": [
+    [
+     "Obesity, hyperventilation, hypocapnia",
+     "Hyperventilation and hypocapnia are the opposite of this syndrome. Its triad ends in chronic hypercapnia, a high carbon dioxide.",
+     "reversed direction or value"
+    ],
+    [
+     "Daytime sleepiness, snoring, normal carbon dioxide",
+     "A normal carbon dioxide excludes it; the triad requires chronic hypercapnia, with obesity and sleep disordered breathing.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Obesity, sleep disordered breathing, chronic hypercapnia",
+     "Correct. Obesity hypoventilation syndrome, also called Pickwickian syndrome, is the triad of obesity, sleep disordered breathing and chronic hypercapnia, a cause of chronic respiratory acidosis."
+    ],
+    [
+     "Obesity, hypertension, hyperglycemia",
+     "That mixes metabolic syndrome features. The obesity hypoventilation triad is obesity, sleep disordered breathing and chronic hypercapnia.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 27",
+   "slot": "risk factors"
+  },
+  {
+   "topic": "Metabolic acidosis and the anion gap",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "What is the treatment of metabolic acidosis, whether the anion gap is normal or elevated?",
+   "opts": [
+    [
+     "Give isotonic saline for every case",
+     "Isotonic saline treats saline-responsive metabolic alkalosis, and saline infusion can itself cause a normal-gap acidosis. Treat the underlying disorder.",
+     "adjacent fact"
+    ],
+    [
+     "Stop the diuretics",
+     "Stopping diuretics is part of treating saline-responsive metabolic alkalosis. Metabolic acidosis is treated by treating its underlying disorder.",
+     "adjacent fact"
+    ],
+    [
+     "Treat the underlying disorder",
+     "Correct. For both increased and normal anion gap metabolic acidosis, treatment is to treat the underlying disorder, while assessing the compensatory response with the Winter formula."
+    ],
+    [
+     "Breathe into a paper bag",
+     "A paper bag has no role and does not fix carbon dioxide. Metabolic acidosis is treated by treating the underlying disorder.",
+     "common lay belief"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 57",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Reading a blood gas",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "To check compensation in a primary respiratory disorder, which expected value is calculated?",
+   "opts": [
+    [
+     "The expected urine chloride",
+     "Urine chloride types metabolic alkalosis. Respiratory compensation is judged by the expected bicarbonate.",
+     "adjacent fact"
+    ],
+    [
+     "The expected bicarbonate",
+     "Correct. For a respiratory disorder, compensation is renal, so the expected bicarbonate is checked; for a metabolic disorder, compensation is respiratory, so the expected carbon dioxide is checked."
+    ],
+    [
+     "The expected carbon dioxide",
+     "The expected carbon dioxide is calculated for a metabolic disorder (for example, by the Winter formula). A respiratory disorder is checked by the expected bicarbonate.",
+     "reversed direction or value"
+    ],
+    [
+     "The expected anion gap",
+     "The anion gap sorts metabolic acidosis; it is not a compensation check. A respiratory disorder is checked by the expected bicarbonate.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 61",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Potassium and oxygen effects",
+   "io": "Explain how acid-base disorders affect electrolytes and oxygenation.",
+   "q": "How does alkalosis change hemoglobin's affinity for oxygen?",
+   "opts": [
+    [
+     "Increases it, so tissues get less oxygen",
+     "Correct. Alkalosis increases hemoglobin's affinity for oxygen, so less oxygen is delivered to the tissues; the dissociation curve shifts left."
+    ],
+    [
+     "Decreases it, so tissues get more oxygen",
+     "Decreased affinity with more delivery is the acidosis effect (curve shifts right). Alkalosis increases affinity and reduces delivery.",
+     "reversed direction or value"
+    ],
+    [
+     "Has no effect on affinity",
+     "pH does change hemoglobin's hold on oxygen. Alkalosis increases affinity and decreases delivery to the tissues.",
+     "common lay belief"
+    ],
+    [
+     "Increases it, so tissues get more oxygen",
+     "Higher affinity means hemoglobin holds on tighter and releases less to the tissues. Alkalosis increases affinity and decreases delivery.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 10",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Respiratory alkalosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "Which toxic or pharmacologic agent causes respiratory alkalosis?",
+   "opts": [
+    [
+     "Licorice",
+     "Licorice causes a saline-unresponsive metabolic alkalosis with hypertension. Salicylates cause respiratory alkalosis.",
+     "competing diagnosis"
+    ],
+    [
+     "Salicylates",
+     "Correct. Toxic and pharmacologic causes of respiratory alkalosis are salicylates, caffeine, nicotine, catecholamines and thyroxine, all of which drive hyperventilation."
+    ],
+    [
+     "Intravenous sedation",
+     "Intravenous sedation depresses breathing and causes respiratory acidosis. Salicylates drive hyperventilation and respiratory alkalosis.",
+     "reversed direction or value"
+    ],
+    [
+     "Recreational opioids",
+     "Recreational drugs that depress the central nervous system cause respiratory acidosis. Salicylates cause respiratory alkalosis.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 33",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Respiratory acidosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "Which sequence produces respiratory acidosis?",
+   "opts": [
+    [
+     "Bicarbonate loss, low bicarbonate, acidemia",
+     "A primary fall in bicarbonate is metabolic acidosis. Respiratory acidosis starts with hypoventilation and a rising carbon dioxide.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Vomiting, raised bicarbonate, alkalemia",
+     "Vomiting with a raised bicarbonate is metabolic alkalosis. Respiratory acidosis is hypoventilation with a raised carbon dioxide.",
+     "competing diagnosis"
+    ],
+    [
+     "Hypoventilation, raised carbon dioxide, acidemia",
+     "Correct. Respiratory acidosis is hypoventilation leading to an elevated arterial carbon dioxide (above 40 mm Hg) and acidemia; it may be accompanied by hypoxemia and may be acute or chronic."
+    ],
+    [
+     "Hyperventilation, low carbon dioxide, alkalemia",
+     "That is respiratory alkalosis. Respiratory acidosis is the reverse: hypoventilation, a raised carbon dioxide and acidemia.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 21",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Metabolic alkalosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "Which type of metabolic alkalosis is more common?",
+   "opts": [
+    [
+     "Saline unresponsive",
+     "Saline-unresponsive alkalosis, with euvolemia or hypervolemia, is the less common type. The more common is saline responsive.",
+     "reversed direction or value"
+    ],
+    [
+     "Both are equally common",
+     "They are not equal; saline responsive is the more common type, the one with extracellular volume contraction.",
+     "common lay belief"
+    ],
+    [
+     "Neither; most are respiratory",
+     "This question is about metabolic alkalosis, defined by a raised bicarbonate. Of its two types, saline responsive is more common.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Saline responsive",
+     "Correct. Metabolic alkalosis is saline responsive or saline unresponsive, and saline responsive is the more common; it signals extracellular volume contraction and improves with isotonic saline."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 36",
+   "slot": "epidemiology"
+  },
+  {
+   "topic": "Respiratory acidosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "Which eye finding may appear with severe hypercapnia?",
+   "opts": [
+    [
+     "Cotton-wool spots",
+     "Cotton-wool spots are retinal infarcts, not a hypercapnia finding. Severe hypercapnia raises intracranial pressure and may cause papilledema.",
+     "adjacent fact"
+    ],
+    [
+     "Conjunctival pallor",
+     "Pallor points to anemia. Severe hypercapnia's eye finding is papilledema from raised intracranial pressure.",
+     "adjacent fact"
+    ],
+    [
+     "A fixed dilated pupil",
+     "A fixed pupil is not on the list. Severe hypercapnia may cause papilledema as intracranial and cerebrospinal fluid pressures rise.",
+     "adjacent fact"
+    ],
+    [
+     "Papilledema",
+     "Correct. Severe hypercapnia increases cerebral blood flow, intracranial pressure and cerebrospinal fluid pressure, and papilledema may be seen."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 24",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Metabolic acidosis and the anion gap",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "What is the anion gap formula?",
+   "opts": [
+    [
+     "1.5 x bicarbonate + 8",
+     "That is the Winter formula for expected carbon dioxide. The anion gap is sodium - (chloride + bicarbonate).",
+     "adjacent fact"
+    ],
+    [
+     "Sodium - (chloride + bicarbonate)",
+     "Correct. The anion gap = sodium - (chloride + bicarbonate), using serum electrolyte values; the normal anion gap is 9 to 15."
+    ],
+    [
+     "(Sodium + potassium) - chloride",
+     "This drops bicarbonate, one of the two measured anions. The formula is sodium - (chloride + bicarbonate).",
+     "adjacent fact"
+    ],
+    [
+     "Chloride - (sodium + bicarbonate)",
+     "This reverses the cation and anions. The gap starts from sodium: sodium - (chloride + bicarbonate).",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 47",
+   "slot": "initial test"
+  },
+  {
+   "topic": "Respiratory alkalosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "Which pulmonary cause is listed for respiratory alkalosis?",
+   "opts": [
+    [
+     "Airway obstruction",
+     "Airway obstruction blocks ventilation and causes acute respiratory acidosis. Pulmonary embolism drives hyperventilation.",
+     "reversed direction or value"
+    ],
+    [
+     "Aspiration pneumonitis",
+     "Aspiration pneumonitis is listed under acute respiratory acidosis. Pulmonary embolism is a respiratory alkalosis cause.",
+     "reversed direction or value"
+    ],
+    [
+     "Pulmonary embolism",
+     "Correct. Pulmonary causes of respiratory alkalosis include pulmonary embolism, pneumonia, pulmonary edema, mechanical hyperventilation and interstitial lung disease."
+    ],
+    [
+     "Chronic obstructive pulmonary disease",
+     "Chronic obstructive pulmonary disease is the classic cause of chronic respiratory acidosis. Pulmonary embolism is a listed alkalosis cause.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 34",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Compensation rules",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "If the primary acid-base problem is metabolic, how is it compensated?",
+   "opts": [
+    [
+     "Potassium is excreted in the urine",
+     "Potassium shifts with pH but is not the compensation. Metabolic disorders are compensated by the lungs through carbon dioxide.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Chloride is retained by the gut",
+     "The gut is not the compensating system. A metabolic disorder is compensated by breathing, retaining or blowing off carbon dioxide.",
+     "adjacent fact"
+    ],
+    [
+     "Carbon dioxide is retained or excreted by breathing",
+     "Correct. When the cause of acidosis or alkalosis is renal (metabolic), compensation is respiratory: carbon dioxide is retained or excreted by changing ventilation."
+    ],
+    [
+     "Bicarbonate is retained or excreted by the kidney",
+     "Renal handling of bicarbonate compensates a respiratory problem. A metabolic problem is compensated by breathing.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 20",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Homeostasis and buffering",
+   "io": "Identify mechanisms for maintaining acid-base homeostasis.",
+   "q": "What usually causes hypercapnia?",
+   "opts": [
+    [
+     "Excess production by the tissues",
+     "Hypercapnia is usually not from excess production. It results from under-excretion, breathing too little to clear carbon dioxide.",
+     "reversed direction or value"
+    ],
+    [
+     "Excess excretion from hyperventilation",
+     "Hyperventilation over-excretes carbon dioxide and causes hypocapnia, the reverse. Hypercapnia is usually under-excretion from hypoventilation.",
+     "reversed direction or value"
+    ],
+    [
+     "Loss of bicarbonate in the urine",
+     "Bicarbonate loss is a metabolic process. Hypercapnia, a high carbon dioxide, is usually under-excretion from hypoventilation.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Under-excretion from hypoventilation",
+     "Correct. Hypercapnia is usually the result of under-excretion (hypoventilation), not excess carbon dioxide production; hypocapnia is usually excess excretion (hyperventilation)."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 14",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Homeostasis and buffering",
+   "io": "Identify mechanisms for maintaining acid-base homeostasis.",
+   "q": "Which variable does the respiratory mechanism control?",
+   "opts": [
+    [
+     "Serum albumin",
+     "Albumin accounts for most of the normal anion gap; breathing does not control it. The respiratory mechanism controls carbon dioxide.",
+     "adjacent fact"
+    ],
+    [
+     "Carbon dioxide",
+     "Correct. The respiratory mechanism controls carbon dioxide: increased ventilation lowers it and decreased ventilation raises it; the renal mechanism controls plasma bicarbonate."
+    ],
+    [
+     "Plasma bicarbonate",
+     "Plasma bicarbonate is the renal mechanism's variable, adjusted over hours to days. Breathing controls carbon dioxide.",
+     "adjacent fact"
+    ],
+    [
+     "Serum potassium",
+     "Potassium shifts with pH but is not what breathing controls. The respiratory mechanism controls carbon dioxide.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 12",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Respiratory alkalosis",
+   "io": "Explain how acid-base disorders affect electrolytes and oxygenation.",
+   "q": "Which electrolyte pattern results from renal compensation for respiratory alkalosis?",
+   "opts": [
+    [
+     "Low bicarbonate, hypokalemia, hyperchloremia",
+     "Correct. In respiratory alkalosis the kidneys excrete bicarbonate in urine and retain chloride, giving a reduced serum bicarbonate, hypokalemia and hyperchloremia."
+    ],
+    [
+     "High bicarbonate, hyperkalemia, hypochloremia",
+     "High bicarbonate with low chloride is the chronic respiratory acidosis pattern. Respiratory alkalosis lowers bicarbonate and raises chloride.",
+     "reversed direction or value"
+    ],
+    [
+     "Normal bicarbonate, normal potassium, normal chloride",
+     "Compensation changes these values. Respiratory alkalosis brings low bicarbonate, hypokalemia and hyperchloremia.",
+     "common lay belief"
+    ],
+    [
+     "High bicarbonate, hypokalemia, hypochloremia",
+     "A high bicarbonate with low potassium and chloride is metabolic alkalosis. Respiratory alkalosis compensation lowers bicarbonate.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 30",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Metabolic acidosis and the anion gap",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "Why is a carbon dioxide above the Winter prediction in metabolic acidosis a warning sign?",
+   "opts": [
+    [
+     "It confirms an elevated anion gap",
+     "The anion gap is calculated separately from sodium, chloride and bicarbonate. A carbon dioxide above Winter warns of respiratory failure.",
+     "adjacent fact"
+    ],
+    [
+     "It can signal impending respiratory failure",
+     "Correct. A carbon dioxide higher than the Winter formula predicts means metabolic acidosis with respiratory acidosis, and this can be a sign of impending respiratory failure."
+    ],
+    [
+     "It means the acidosis is resolving",
+     "Resolution would show a rising bicarbonate, not under-compensation. A carbon dioxide above the prediction can signal impending respiratory failure.",
+     "reversed direction or value"
+    ],
+    [
+     "It means the kidneys are compensating",
+     "The kidneys do not compensate a metabolic disorder; the lungs do. Their failure to lower carbon dioxide warns of respiratory failure.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 58",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "Definitions and normal values",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "What is the normal range for arterial partial pressure of carbon dioxide?",
+   "opts": [
+    [
+     "22 to 26 mm Hg",
+     "22 to 26 is the normal bicarbonate range in mEq/L, not a carbon dioxide pressure. Arterial carbon dioxide is 36 to 44 mm Hg.",
+     "adjacent fact"
+    ],
+    [
+     "36 to 44 mm Hg",
+     "Correct. Normal arterial partial pressure of carbon dioxide is 36 to 44 mm Hg (40 is the working midpoint); venous carbon dioxide runs higher, 40 to 52 mm Hg."
+    ],
+    [
+     "40 to 52 mm Hg",
+     "40 to 52 mm Hg is the venous carbon dioxide range. Arterial carbon dioxide is 36 to 44 mm Hg.",
+     "adjacent fact"
+    ],
+    [
+     "80 to 100 mm Hg",
+     "80 to 100 mm Hg is the arterial oxygen pressure range. Arterial carbon dioxide is 36 to 44 mm Hg.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 5",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Metabolic acidosis and the anion gap",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "Which breathing pattern is the profound compensation for metabolic acidosis in diabetic ketoacidosis?",
+   "opts": [
+    [
+     "Kussmaul respirations",
+     "Correct. Metabolic acidosis is compensated by increased ventilation to lower carbon dioxide; in severe cases such as diabetic ketoacidosis it is profound: Kussmaul respirations, increased tidal volume with tachypnea."
+    ],
+    [
+     "Slow, shallow breathing",
+     "Slow, shallow breathing retains carbon dioxide, the compensation for metabolic alkalosis. Ketoacidosis drives deep, rapid Kussmaul breathing.",
+     "reversed direction or value"
+    ],
+    [
+     "Breath holding",
+     "Breath holding would raise carbon dioxide and worsen the acidosis. The compensation is Kussmaul respirations.",
+     "reversed direction or value"
+    ],
+    [
+     "Normal quiet breathing",
+     "Compensation changes breathing; in ketoacidosis it is profound, with deep and rapid Kussmaul respirations.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 50",
+   "slot": "manifestation"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Homeostasis and buffering",
+   "io": "Describe the major buffer systems of the body.",
+   "q": "When water combines with carbon dioxide in the body's main buffer, which acid forms?",
+   "opts": [
+    [
+     "Ammonium chloride",
+     "Ammonium chloride is how the kidneys excrete acid in compensating respiratory acidosis. Water and carbon dioxide form carbonic acid.",
+     "adjacent fact"
+    ],
+    [
+     "Carbonic acid",
+     "Correct. Water and carbon dioxide combine to form carbonic acid, which dissociates into hydrogen and bicarbonate ions; the reaction runs both ways, linking the lungs (carbon dioxide) and kidneys (bicarbonate)."
+    ],
+    [
+     "Hydrochloric acid",
+     "Hydrochloric acid is stomach acid, lost with vomiting in metabolic alkalosis; it is not formed from water and carbon dioxide. That reaction forms carbonic acid.",
+     "adjacent fact"
+    ],
+    [
+     "Lactic acid",
+     "Lactic acid comes from anaerobic metabolism and raises the anion gap; it is not the product of water plus carbon dioxide. Carbonic acid is.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 16",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Metabolic acidosis and the anion gap",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "What is the normal anion gap?",
+   "opts": [
+    [
+     "3 to 6",
+     "3 to 6 is below the normal range; a gap that low is not the reference. The normal anion gap is 9 to 15.",
+     "reversed direction or value"
+    ],
+    [
+     "9 to 15",
+     "Correct. The normal anion gap is 9 to 15, calculated as sodium - (chloride + bicarbonate); albumin accounts for most of it."
+    ],
+    [
+     "22 to 26",
+     "22 to 26 is the normal bicarbonate in mEq/L, one of the values the gap subtracts. The normal anion gap is 9 to 15.",
+     "adjacent fact"
+    ],
+    [
+     "36 to 44",
+     "36 to 44 is the normal arterial carbon dioxide in mm Hg. The normal anion gap is 9 to 15.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 47",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Metabolic alkalosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "Which physical finding is associated with the hypokalemia of metabolic alkalosis?",
+   "opts": [
+    [
+     "Papilledema",
+     "Papilledema is a severe hypercapnia finding. The hypokalemia of metabolic alkalosis causes weakness and hyporeflexia.",
+     "competing diagnosis"
+    ],
+    [
+     "Hyporeflexia",
+     "Correct. Metabolic alkalosis has no characteristic findings, but the associated hypokalemia causes weakness and hyporeflexia, and orthostatic hypotension may be present."
+    ],
+    [
+     "Asterixis",
+     "Asterixis belongs to respiratory acidosis. The hypokalemia of metabolic alkalosis causes weakness and hyporeflexia.",
+     "competing diagnosis"
+    ],
+    [
+     "Kussmaul respirations",
+     "Kussmaul breathing (deep, rapid) is the compensation of metabolic acidosis, as in diabetic ketoacidosis. Hypokalemia in metabolic alkalosis causes hyporeflexia.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 39",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Compensation rules",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "What restores a normal pH in an acid-base disorder?",
+   "opts": [
+    [
+     "Waiting for full compensation",
+     "Compensation never returns the pH to normal, however long it runs. The underlying disorder has to be corrected.",
+     "wrong stage or severity"
+    ],
+    [
+     "Breathing into a paper bag",
+     "A paper bag does nothing to fix carbon dioxide and may lower oxygen; it is a placebo. Normal pH returns when the underlying disorder is corrected.",
+     "common lay belief"
+    ],
+    [
+     "Giving oxygen to every patient",
+     "Oxygen is not a pH treatment. The underlying disorder must be corrected to restore a normal pH.",
+     "common lay belief"
+    ],
+    [
+     "Correcting the underlying disorder",
+     "Correct. Compensation never returns the pH to normal, so the underlying disorder must be corrected to restore normal pH; every simple disorder's treatment starts with treating the cause."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 19",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Respiratory acidosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "What is the first-line management of acute respiratory acidosis?",
+   "opts": [
+    [
+     "Breathe into a paper bag",
+     "A paper bag has no role here and would further impair gas exchange. Acute respiratory acidosis needs ventilation restored.",
+     "reversed direction or value"
+    ],
+    [
+     "Wait for the kidneys to compensate",
+     "Renal compensation begins only after 6 to 12 hours and never normalizes pH. Acute disease needs ventilation restored now.",
+     "wrong stage or severity"
+    ],
+    [
+     "Restore ventilation and treat the cause",
+     "Correct. Respiratory acidosis is treated by treating the underlying cause; in acute disease the priority is restoring ventilation, since hypoventilation is what raises the carbon dioxide."
+    ],
+    [
+     "Give a bicarbonate infusion first",
+     "Bicarbonate is not the listed treatment; the acidosis comes from retained carbon dioxide. Restore ventilation and treat the cause.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 28",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Definitions and normal values",
+   "io": "Explain how acid-base disorders affect electrolytes and oxygenation.",
+   "q": "Which effect is listed for a pH beyond the sustainable range?",
+   "opts": [
+    [
+     "Joint swelling",
+     "Joint swelling is not on the list. Extreme pH may cause cardiac hypocontractility or irritability, seizures, cerebral edema and metabolic disturbances.",
+     "adjacent fact"
+    ],
+    [
+     "Skin rash",
+     "A rash is not a listed effect. An unsustainable pH may cause cardiac problems, seizures, cerebral edema and metabolic disturbances.",
+     "adjacent fact"
+    ],
+    [
+     "Seizures",
+     "Correct. A pH below 6.7 or above 7.6 may cause cardiac hypocontractility or irritability, seizures, cerebral edema and metabolic disturbances, and may warrant therapy to normalize pH along with treating the cause."
+    ],
+    [
+     "Hair loss",
+     "Hair loss is not an effect of extreme pH. Listed effects are cardiac hypocontractility or irritability, seizures, cerebral edema and metabolic disturbances.",
+     "common lay belief"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 8",
+   "slot": "complication"
+  },
+  {
+   "topic": "Respiratory acidosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "Which thoracic trauma is listed as a cause of acute respiratory acidosis?",
+   "opts": [
+    [
+     "High altitude exposure",
+     "High altitude causes hyperventilation and respiratory alkalosis. Flail chest is the thoracic trauma that causes respiratory acidosis.",
+     "reversed direction or value"
+    ],
+    [
+     "Heat exposure",
+     "Heat exposure is listed under respiratory alkalosis. Flail chest and pneumothorax are the trauma causes of respiratory acidosis.",
+     "reversed direction or value"
+    ],
+    [
+     "Flail chest",
+     "Correct. Thoracic trauma causes acute respiratory acidosis through pneumothorax or flail chest, which impair ventilation."
+    ],
+    [
+     "Rib contusion with normal breathing",
+     "A bruise without impaired breathing does not cause respiratory acidosis. The listed thoracic trauma causes are pneumothorax and flail chest.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 26",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Definitions and normal values",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "What is the normal range for serum bicarbonate?",
+   "opts": [
+    [
+     "9 to 15 mEq/L",
+     "9 to 15 is the normal anion gap, a calculated difference, not bicarbonate. Serum bicarbonate is 22 to 26 mEq/L.",
+     "adjacent fact"
+    ],
+    [
+     "12 to 18 mEq/L",
+     "12 to 18 mEq/L would be a low bicarbonate, as seen in metabolic acidosis. Normal is 22 to 26 mEq/L.",
+     "reversed direction or value"
+    ],
+    [
+     "22 to 26 mEq/L",
+     "Correct. Normal bicarbonate is 22 to 26 mEq/L (24 is the working midpoint); arterial carbon dioxide is 36 to 44 mm Hg and pH 7.35 to 7.45."
+    ],
+    [
+     "36 to 44 mEq/L",
+     "36 to 44 is the arterial carbon dioxide range in mm Hg, not bicarbonate. Bicarbonate is 22 to 26 mEq/L.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 5",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Homeostasis and buffering",
+   "io": "Identify mechanisms for maintaining acid-base homeostasis.",
+   "q": "Over what time scale does the renal mechanism adjust plasma bicarbonate?",
+   "opts": [
+    [
+     "Weeks to months",
+     "Weeks to months is too slow. The renal mechanism adjusts bicarbonate over hours to days; respiratory acidosis compensation begins 6 to 12 hours after onset.",
+     "reversed direction or value"
+    ],
+    [
+     "After about a year",
+     "No year-long delay applies; renal compensation starts within hours. The kidney adjusts bicarbonate over hours to days.",
+     "reversed direction or value"
+    ],
+    [
+     "Hours to days",
+     "Correct. The renal mechanism controls plasma bicarbonate by excreting or retaining filtered bicarbonate, and it works over hours to days, slower than the lungs' control of carbon dioxide."
+    ],
+    [
+     "Seconds",
+     "Seconds fits breathing changes, not the kidney. Renal control of bicarbonate occurs over hours to days.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 15",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Potassium and oxygen effects",
+   "io": "Explain how acid-base disorders affect electrolytes and oxygenation.",
+   "q": "In acidosis, what happens to oxygen delivery to the tissues?",
+   "opts": [
+    [
+     "It stops entirely",
+     "Delivery does not stop. In acidosis hemoglobin lets go of oxygen more easily and tissue delivery increases.",
+     "reversed direction or value"
+    ],
+    [
+     "It is unaffected",
+     "pH changes delivery. Acidosis lowers affinity and increases oxygen delivery to the tissues.",
+     "common lay belief"
+    ],
+    [
+     "It increases",
+     "Correct. Acidosis decreases hemoglobin's affinity for oxygen, shifting the curve right, so more oxygen is released and oxygen delivery to the tissues increases."
+    ],
+    [
+     "It decreases",
+     "Decreased delivery is the alkalosis effect, from higher affinity. In acidosis affinity falls and delivery increases.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 10",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Compensation rules",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "How far do compensatory mechanisms move the pH?",
+   "opts": [
+    [
+     "Toward normal but never back to normal",
+     "Correct. The body attempts to correct the disturbance, but compensation never returns the pH to normal and never corrects it beyond normal; the underlying disorder must be corrected to restore normal pH."
+    ],
+    [
+     "Fully back to normal",
+     "Compensation never returns pH to normal. Only correcting the underlying disorder restores it.",
+     "reversed direction or value"
+    ],
+    [
+     "Past normal to the opposite side",
+     "Compensation never overcorrects beyond normal. It moves the pH toward normal without reaching it.",
+     "reversed direction or value"
+    ],
+    [
+     "Further from normal",
+     "Compensation works against the disturbance, moving the pH toward normal, though never all the way.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 19",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "Definitions and normal values",
+   "io": "Explain how acid-base disorders affect electrolytes and oxygenation.",
+   "q": "Beyond which arterial pH values is the state unsustainable?",
+   "opts": [
+    [
+     "Below 6.7 or above 7.6",
+     "Correct. A pH below 6.7 or above 7.6 is unsustainable; it may cause cardiac hypocontractility or irritability, seizures, cerebral edema and metabolic disturbances, and may warrant therapy to normalize pH while the cause is treated."
+    ],
+    [
+     "Below 7.35 or above 7.45",
+     "7.35 to 7.45 is the normal range; just outside it is acidemia or alkalemia, not yet unsustainable. The unsustainable limits are below 6.7 or above 7.6.",
+     "wrong stage or severity"
+    ],
+    [
+     "Below 7.0 or above 7.5",
+     "These are not the stated limits, and 7.5 is only mild alkalemia. A pH below 6.7 or above 7.6 is unsustainable.",
+     "reversed direction or value"
+    ],
+    [
+     "Below 6.0 or above 8.0",
+     "These values are far past the stated limits. The state becomes unsustainable below 6.7 or above 7.6.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 8",
+   "slot": "complication"
+  },
+  {
+   "topic": "Homeostasis and buffering",
+   "io": "Identify mechanisms for maintaining acid-base homeostasis.",
+   "q": "A rise in carbon dioxide leads to which change in breathing?",
+   "opts": [
+    [
+     "No change in breathing",
+     "The chemoreceptor exists to respond: more carbon dioxide lowers cerebral pH and increases ventilation.",
+     "common lay belief"
+    ],
+    [
+     "Increased ventilation",
+     "Correct. Increased carbon dioxide decreases cerebral pH, which the brain stem chemoreceptor answers with increased ventilation to blow the carbon dioxide off."
+    ],
+    [
+     "Decreased ventilation",
+     "Decreased ventilation would raise carbon dioxide further. The brain stem chemoreceptor responds to the falling cerebral pH by increasing ventilation.",
+     "reversed direction or value"
+    ],
+    [
+     "Breath holding",
+     "Breath holding would worsen hypercapnia. A rise in carbon dioxide lowers cerebral pH and increases ventilation.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 13",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Metabolic acidosis and the anion gap",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "An elevated anion gap is usually due to which change?",
+   "opts": [
+    [
+     "A decrease in unmeasured anions",
+     "Fewer unmeasured anions would lower the gap. An elevated gap usually means more unmeasured anions.",
+     "reversed direction or value"
+    ],
+    [
+     "An increase in unmeasured cations",
+     "More unmeasured cations would lower the gap; a decrease in unmeasured cations is the less common cause of an elevated gap.",
+     "reversed direction or value"
+    ],
+    [
+     "An increase in serum chloride",
+     "A high chloride goes with normal-gap (hyperchloremic) acidosis. An elevated gap usually means more unmeasured anions.",
+     "competing diagnosis"
+    ],
+    [
+     "An increase in unmeasured anions",
+     "Correct. An elevated anion gap is usually due to an increase in unmeasured anions; less often it is a decrease in unmeasured cations (calcium, magnesium, potassium, gamma-globulins)."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 48",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Homeostasis and buffering",
+   "io": "Identify mechanisms for maintaining acid-base homeostasis.",
+   "q": "Where is the chemoreceptor that regulates respiration in response to carbon dioxide?",
+   "opts": [
+    [
+     "In the brain stem",
+     "Correct. A chemoreceptor in the brain stem regulates respiration: increased carbon dioxide lowers cerebral pH, which increases ventilation."
+    ],
+    [
+     "In the kidney",
+     "The kidney handles bicarbonate, not the breathing reflex. The chemoreceptor that drives ventilation is in the brain stem.",
+     "adjacent fact"
+    ],
+    [
+     "In the liver",
+     "The liver is not part of the breathing control loop. The chemoreceptor is in the brain stem.",
+     "adjacent fact"
+    ],
+    [
+     "In the spinal cord",
+     "The spinal cord relays signals to the breathing muscles but does not hold this chemoreceptor. It is in the brain stem.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 13",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Metabolic alkalosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "What does saline-responsive metabolic alkalosis signal about the patient's fluid status?",
+   "opts": [
+    [
+     "Extracellular volume contraction",
+     "Correct. Saline-responsive metabolic alkalosis is a sign of extracellular volume contraction, which is why isotonic saline corrects the deficit; saline-unresponsive alkalosis occurs with euvolemia or hypervolemia."
+    ],
+    [
+     "Euvolemia or hypervolemia",
+     "Euvolemia or hypervolemia goes with saline-unresponsive alkalosis. The responsive type signals volume contraction.",
+     "reversed direction or value"
+    ],
+    [
+     "Isolated hyperkalemia",
+     "Hyperkalemia is not the sign; metabolic alkalosis tends to lower potassium. Saline responsiveness signals extracellular volume contraction.",
+     "reversed direction or value"
+    ],
+    [
+     "Normal fluid status",
+     "A normal volume status points away from saline responsiveness. The responsive type signals extracellular volume contraction.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 37",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Metabolic alkalosis",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "In saline-responsive metabolic alkalosis, what is the urine chloride?",
+   "opts": [
+    [
+     "Above 40 mEq/L",
+     "A urine chloride above 40 mEq/L points to saline-unresponsive alkalosis. The responsive type has a value below 25.",
+     "reversed direction or value"
+    ],
+    [
+     "Exactly 100 mEq/L",
+     "No such value defines either type. Saline-responsive alkalosis has a urine chloride below 25 mEq/L.",
+     "reversed direction or value"
+    ],
+    [
+     "The same as the serum chloride",
+     "The rule compares urine chloride with set cutoffs, not with the serum level. Below 25 mEq/L means saline responsive.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Below 25 mEq/L",
+     "Correct. Urine chloride is lower in saline-responsive alkalosis (below 25 mEq/L) and higher in saline-unresponsive alkalosis (above 40 mEq/L)."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 41",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Metabolic acidosis and the anion gap",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "Which substance accounts for most of the physiologic (normal) anion gap?",
+   "opts": [
+    [
+     "Chloride",
+     "Chloride is one of the measured anions subtracted in the formula, so it is not part of the gap. Albumin accounts for most of it.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Bicarbonate",
+     "Bicarbonate is subtracted in the formula, so it is not in the gap. Albumin accounts for most of the normal gap.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Sodium",
+     "Sodium is the cation the formula starts from, not an unmeasured anion. Albumin accounts for most of the normal gap.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Albumin",
+     "Correct. The anion gap is the concentration of anions other than chloride and bicarbonate; serum albumin accounts for most of the normal gap, with lactate, ketones, phosphate, sulfate and other organic anions contributing."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 46",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Compensation rules",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "Using about 2 mEq/L per 10 mm Hg acutely and 5 per 10 chronically, which bicarbonate fits acute respiratory alkalosis with a carbon dioxide of 30 mm Hg (normal 36 to 44, midpoint 40) from a baseline bicarbonate of 24?",
+   "opts": [
+    [
+     "19 mEq/L",
+     "19 is 24 - 5, the chronic response of 5 per 10. Acutely the fall is 2: 24 - 2 = 22.",
+     "wrong stage or severity"
+    ],
+    [
+     "22 mEq/L",
+     "Correct. The carbon dioxide fell 10 mm Hg (40 to 30); acute respiratory alkalosis lowers bicarbonate about 2 mEq/L per 10 mm Hg, so 24 - 2 = 22."
+    ],
+    [
+     "24 mEq/L",
+     "24 assumes no compensation. Even acutely bicarbonate falls about 2 per 10 mm Hg: 22.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "26 mEq/L",
+     "26 is a rise in bicarbonate, the response to respiratory acidosis. Alkalosis lowers it: 22.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 59",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Respiratory alkalosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "Which cause of respiratory alkalosis works through hypoxia-driven hyperventilation?",
+   "opts": [
+    [
+     "Myasthenia gravis",
+     "Myasthenia gravis weakens breathing and causes respiratory acidosis. High altitude drives hypoxic hyperventilation.",
+     "reversed direction or value"
+    ],
+    [
+     "Obesity hypoventilation syndrome",
+     "Obesity hypoventilation causes chronic respiratory acidosis. High altitude causes hypoxia-driven respiratory alkalosis.",
+     "reversed direction or value"
+    ],
+    [
+     "Flail chest",
+     "Flail chest impairs ventilation and causes acute respiratory acidosis. High altitude drives hyperventilation.",
+     "reversed direction or value"
+    ],
+    [
+     "High altitude",
+     "Correct. Hyperventilation secondary to hypoxia causes respiratory alkalosis: high altitude, severe anemia, ventilation-perfusion mismatch and hypotension."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 33",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Metabolic acidosis and the anion gap",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "In metabolic acidosis, the measured carbon dioxide is higher than the Winter formula predicts. What does that indicate?",
+   "opts": [
+    [
+     "A coexisting respiratory acidosis",
+     "Correct. If the actual carbon dioxide is higher than the Winter formula's expected value, the patient has metabolic acidosis together with respiratory acidosis, which can be a sign of impending respiratory failure."
+    ],
+    [
+     "A coexisting respiratory alkalosis",
+     "A carbon dioxide lower than predicted would suggest an added respiratory alkalosis. Higher than predicted means an added respiratory acidosis.",
+     "reversed direction or value"
+    ],
+    [
+     "Appropriate compensation",
+     "Appropriate compensation falls within the predicted range. A value above it means the lungs are not compensating, an added respiratory acidosis.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Metabolic alkalosis instead",
+     "The bicarbonate is low, so this is still metabolic acidosis. A carbon dioxide above the Winter range adds a respiratory acidosis.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 58",
+   "slot": "complication"
+  },
+  {
+   "topic": "Metabolic acidosis and the anion gap",
+   "io": "Identify compensatory mechanisms for simple acid-base disorders.",
+   "q": "By the Winter formula, what is the expected carbon dioxide when bicarbonate is 10 mEq/L?",
+   "opts": [
+    [
+     "13 to 17 mm Hg",
+     "13 to 17 is 1.5 x 10 = 15, plus or minus 2, without adding 8. Add 8: 23, range 21 to 25.",
+     "reversed direction or value"
+    ],
+    [
+     "16 to 20 mm Hg",
+     "16 to 20 uses 1.0 instead of 1.5 times bicarbonate (10 + 8). The formula is 1.5 x 10 + 8 = 23, range 21 to 25.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "21 to 25 mm Hg",
+     "Correct. Winter formula: 1.5 x 10 + 8 = 15 + 8 = 23, plus or minus 2, so 21 to 25 mm Hg is the appropriately compensated carbon dioxide."
+    ],
+    [
+     "36 to 44 mm Hg",
+     "36 to 44 is the normal range; compensation for metabolic acidosis lowers carbon dioxide. Winter gives 21 to 25.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 58",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Potassium and oxygen effects",
+   "io": "Explain how acid-base disorders affect electrolytes and oxygenation.",
+   "q": "Which way does acidosis shift the oxygen-hemoglobin dissociation curve?",
+   "opts": [
+    [
+     "Upward without a shift",
+     "The pH effect is a sideways shift of the whole curve, not a lift. Acidosis moves it to the right.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It does not shift",
+     "The curve does shift with pH. Acidosis shifts it right; alkalosis shifts it left.",
+     "common lay belief"
+    ],
+    [
+     "To the right",
+     "Correct. Acidosis shifts the oxygen-hemoglobin dissociation curve to the right: hemoglobin's affinity falls and more oxygen is delivered to the tissues. Alkalosis shifts it left."
+    ],
+    [
+     "To the left",
+     "A left shift is alkalosis, with higher affinity and less delivery. Acidosis shifts the curve to the right.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 11",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Metabolic acidosis and the anion gap",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "Sodium 138 mEq/L (normal 135 to 145), chloride 114 mEq/L (normal 98 to 106) and bicarbonate 14 mEq/L (normal 22 to 26). What is the calculated anion gap?",
+   "opts": [
+    [
+     "10",
+     "Correct. Anion gap = 138 - (114 + 14) = 138 - 128 = 10, within the normal 9 to 15; with a low bicarbonate and high chloride this is a normal-gap (hyperchloremic) metabolic acidosis."
+    ],
+    [
+     "14",
+     "14 is the bicarbonate value itself, not the gap. The gap is 138 - (114 + 14) = 10.",
+     "adjacent fact"
+    ],
+    [
+     "24",
+     "24 comes from 138 - 114, leaving out bicarbonate. Subtract both measured anions: 138 - 128 = 10.",
+     "reversed direction or value"
+    ],
+    [
+     "38",
+     "38 adds bicarbonate instead of subtracting it (138 - 114 + 14). The gap is 138 - (114 + 14) = 10.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 47",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Definitions and normal values",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "Which describes a mixed acid-base disorder?",
+   "opts": [
+    [
+     "More than one primary disturbance at once",
+     "Correct. A mixed acid-base disorder is more than one primary disturbance occurring simultaneously, each with its own compensation; a simple disorder is one primary disturbance plus its compensation."
+    ],
+    [
+     "One primary disturbance plus compensation",
+     "One primary disturbance with its corresponding compensation is a simple acid-base disorder. Mixed means more than one primary disturbance at the same time.",
+     "adjacent fact"
+    ],
+    [
+     "A disorder with a normal pH",
+     "A normal pH does not define a mixed disorder; mixed disturbances may push the pH the same or opposite ways. The definition is more than one primary disturbance at once.",
+     "adjacent fact"
+    ],
+    [
+     "An acidosis that has fully compensated",
+     "Compensation never returns the pH to normal, and compensation is part of a simple disorder. Mixed means more than one primary disturbance simultaneously.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 4",
+   "slot": "differential"
+  },
+  {
+   "topic": "Metabolic alkalosis",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "Which test separates saline-responsive from saline-unresponsive metabolic alkalosis?",
+   "opts": [
+    [
+     "Serum anion gap",
+     "The anion gap sorts metabolic acidosis into normal and elevated gap. Urine chloride sorts metabolic alkalosis.",
+     "adjacent fact"
+    ],
+    [
+     "Serum albumin",
+     "Albumin explains most of the normal anion gap; it does not type an alkalosis. Urine chloride does.",
+     "adjacent fact"
+    ],
+    [
+     "Arterial oxygen pressure",
+     "Oxygen pressure does not classify metabolic alkalosis. The urine chloride separates saline-responsive from unresponsive.",
+     "adjacent fact"
+    ],
+    [
+     "Urine chloride",
+     "Correct. Urine chloride differentiates the types: it is lower in saline-responsive alkalosis (below 25 mEq/L) and higher in saline-unresponsive alkalosis (above 40 mEq/L)."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 41",
+   "slot": "initial test"
+  },
+  {
+   "topic": "Respiratory alkalosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "What is the usual course of hyperventilation causing respiratory alkalosis?",
+   "opts": [
+    [
+     "Self-limited",
+     "Correct. Hyperventilation is usually self-limited; treatment targets the underlying cause, and a paper bag is not necessary because it does not correct carbon dioxide and may lower oxygen."
+    ],
+    [
+     "Progressive without treatment",
+     "Hyperventilation usually resolves on its own; it is self-limited. The cause is treated, not the breathing pattern with a bag.",
+     "reversed direction or value"
+    ],
+    [
+     "Fatal within hours",
+     "That overstates it; hyperventilation is usually self-limited. Unsustainable pH is above 7.6, which ordinary hyperventilation rarely reaches.",
+     "wrong stage or severity"
+    ],
+    [
+     "Chronic in most patients",
+     "Most hyperventilation is self-limited rather than chronic. Chronic respiratory alkalosis needs a persisting cause such as altitude or pregnancy.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 35",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "Potassium and oxygen effects",
+   "io": "Explain how acid-base disorders affect electrolytes and oxygenation.",
+   "q": "What happens to serum potassium in alkalosis?",
+   "opts": [
+    [
+     "It is lost in the stool",
+     "Stool losses are not the pH effect. In alkalosis potassium shifts from extracellular to intracellular fluid, lowering the serum level.",
+     "adjacent fact"
+    ],
+    [
+     "It falls as potassium moves into cells",
+     "Correct. In alkalosis hydrogen ions shift from intracellular to extracellular fluid and potassium shifts from extracellular to intracellular, resulting in hypokalemia."
+    ],
+    [
+     "It rises as potassium leaves cells",
+     "Potassium leaving cells and rising is the acidosis pattern. In alkalosis potassium moves into cells and serum potassium falls.",
+     "reversed direction or value"
+    ],
+    [
+     "It stays the same",
+     "pH shifts move potassium across cell membranes. In alkalosis potassium moves into cells, causing hypokalemia.",
+     "common lay belief"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 9",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Reading a blood gas",
+   "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations",
+   "q": "What is the first step in analyzing acid-base status?",
+   "opts": [
+    [
+     "Check the urine chloride",
+     "Urine chloride types a metabolic alkalosis, far down the pathway. The first step is the pH.",
+     "wrong stage or severity"
+    ],
+    [
+     "Look at the pH",
+     "Correct. Analysis starts with the pH to decide acidosis or alkalosis; then which of the carbon dioxide or bicarbonate is consistent with it (respiratory or metabolic), whether it could be mixed, and the compensation."
+    ],
+    [
+     "Calculate the anion gap",
+     "The anion gap comes later, once a metabolic acidosis is identified. The first step is the pH.",
+     "wrong stage or severity"
+    ],
+    [
+     "Apply the Winter formula",
+     "The Winter formula checks compensation in metabolic acidosis, a later step. The analysis begins with the pH.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 61",
+   "slot": "initial test"
+  },
+  {
+   "topic": "Respiratory alkalosis",
+   "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis",
+   "q": "Which endocrine state is a listed cause of respiratory alkalosis?",
+   "opts": [
+    [
+     "Hypothyroidism",
+     "Hyperthyroidism, not hypothyroidism, is listed. Pregnancy and hyperthyroidism are the endocrine causes of respiratory alkalosis.",
+     "reversed direction or value"
+    ],
+    [
+     "Primary aldosteronism",
+     "Primary aldosteronism causes a hypertensive saline-unresponsive metabolic alkalosis. Pregnancy is the listed endocrine cause of respiratory alkalosis.",
+     "competing diagnosis"
+    ],
+    [
+     "Adrenal insufficiency",
+     "Adrenal insufficiency is a normal-anion-gap metabolic acidosis cause. Pregnancy is an endocrine cause of respiratory alkalosis.",
+     "competing diagnosis"
+    ],
+    [
+     "Pregnancy",
+     "Correct. The endocrine causes of respiratory alkalosis are pregnancy and hyperthyroidism; septicemia, heat exposure and hepatic failure are also listed."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 34",
+   "slot": "etiology"
+  }
+ ]
+}

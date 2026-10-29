@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));window.__paErrQ=[];['error','unhandledrejection'].forEach(function(t){addEventListener(t,function(e){var q=window.__paErrQ;if(q&&!q.done)q.push(e)})});</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #b45357; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acid-Base Part I Vignettes 2 — CMS I Exam 6</title>
+<style>
+  :root{
+    --navy:#7a2d30; --indigo:#b45357; --gold:#c08a2e; --ice:#faefee;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#7a2d30;--gold-l:#c08a2e;--indigo-l:#b45357;--navy:#ec9392;--indigo:#d06c6e;--gold:#c08a2e;--ice:#36191a;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#d06c6e;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#7a2d30;--indigo-t:#b45357;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Acid-Base Part I &mdash; Vignettes 2</h1>
+    <div class="sub">Clinical Medicine and Surgery I &middot; Exam 6 &middot; Lecture 34</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Every value comes with its normal range. Work each case the same way: the pH first, then which of the carbon dioxide or the bicarbonate matches it, then the compensation, then the patient.</p>
+    <div class="chips"><span class="chip">Read the blood gas</span><span class="chip">Anion gap</span><span class="chip">Winter formula</span><span class="chip">Saline responsive or not</span><span class="chip">Find the cause</span><span class="chip">Treat the cause</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Treat the disorder", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "A 24-year-old man with a panic attack is breathing fast, with perioral numbness and tingling hands. His roommate hands him a paper bag to breathe into. What is accurate education about the bag?", "opts": [["It is unnecessary and may lower his oxygen", "Correct. Breathing into a paper bag is not necessary for hyperventilation: it fails to correct the carbon dioxide and may decrease oxygen, and any benefit is placebo. Hyperventilation is usually self-limited, and the cause is treated."], ["It safely corrects his carbon dioxide", "The bag fails to correct carbon dioxide, and it may lower oxygen. Its effect is placebo. Tell: the paper bag fails on both counts, carbon dioxide and safety."], ["It is needed to prevent tetany", "Tetany can occur in severe respiratory alkalosis from low ionized calcium, but the bag does not prevent it; hyperventilation is usually self-limited. Tell: treat the cause, not the carbon dioxide with a bag."], ["It works by raising his bicarbonate", "Rebreathing does not act on bicarbonate; bicarbonate changes come from the kidneys over hours to days. The bag's benefit is placebo. Tell: bicarbonate is renal and slow; no bag reaches it."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 35", "slot": "education", "lead": "education"}, {"topic": "Read the blood gas", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "A 45-year-old man has resistant hypertension, muscle weakness and a potassium of 2.8 mEq/L (normal 3.5 to 5.0 mEq/L). Arterial blood gas: pH 7.49 (normal 7.35 to 7.45), partial pressure of carbon dioxide 47 mm Hg (normal 36 to 44 mm Hg), bicarbonate 34 mEq/L (normal 22 to 26 mEq/L). Which acid-base disorder is present?", "opts": [["Respiratory acidosis", "His pH is high, so this is not an acidosis; the mildly raised carbon dioxide is compensation for metabolic alkalosis."], ["Metabolic acidosis", "Metabolic acidosis has a low pH and low bicarbonate; he has a pH of 7.49 and a bicarbonate of 34."], ["Metabolic alkalosis", "Correct. pH 7.49 is alkalemia, and the high bicarbonate of 34 matches it: metabolic alkalosis with slight respiratory compensation (carbon dioxide 47). Hypertension with hypokalemia points to a hypertensive saline-unresponsive cause such as primary aldosteronism."], ["Respiratory alkalosis", "Respiratory alkalosis needs a low carbon dioxide; his is 47. The raised bicarbonate matches his high pH."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 43", "slot": "test finding", "lead": "diagnosis"}, {"topic": "Is compensation appropriate?", "io": "Identify compensatory mechanisms for simple acid-base disorders.", "q": "A 40-year-old man has a pH of 7.30 (normal 7.35 to 7.45) and a carbon dioxide of 52 mm Hg (normal 36 to 44 mm Hg). To decide whether this respiratory problem is acute or chronic, which value is compared with its expected level?", "opts": [["Bicarbonate", "Correct. For a respiratory disorder compensation is renal, so the expected bicarbonate is checked: a small rise (about 1 per 10 mm Hg) means acute, a large rise (about 3.5 per 10) chronic."], ["Carbon dioxide", "The expected carbon dioxide is calculated for a metabolic disorder, as with the Winter formula. A respiratory disorder is checked by its bicarbonate."], ["Anion gap", "The anion gap sorts metabolic acidosis; it says nothing about respiratory chronicity. The bicarbonate's rise does."], ["Urine chloride", "Urine chloride types a metabolic alkalosis. Respiratory chronicity is judged from the bicarbonate."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 61", "slot": "test finding", "lead": "compensation"}, {"topic": "Electrolytes and oxygen", "io": "Explain how acid-base disorders affect electrolytes and oxygenation.", "q": "A 44-year-old woman who moved to a high-altitude town months ago has a chronic respiratory alkalosis. Arterial blood gas: pH 7.47 (normal 7.35 to 7.45), partial pressure of carbon dioxide 27 mm Hg (normal 36 to 44 mm Hg), bicarbonate 19 mEq/L (normal 22 to 26 mEq/L). Which serum electrolyte pattern accompanies her renal compensation?", "opts": [["High chloride and low potassium", "Correct. In respiratory alkalosis the kidneys excrete bicarbonate and retain chloride, giving a reduced bicarbonate, hyperchloremia and hypokalemia (cells also secrete hydrogen ions in exchange for potassium). Her bicarbonate of 19 shows that compensation."], ["Low chloride and high bicarbonate", "Low chloride with a high bicarbonate is the compensation of chronic respiratory acidosis. Her bicarbonate is 19 and her carbon dioxide low. Tell: alkalosis compensation lowers bicarbonate and keeps chloride."], ["High potassium and low chloride", "High potassium accompanies acidosis, and low chloride belongs to chronic respiratory acidosis. Her alkalosis lowers potassium and raises chloride. Tell: flip both values for a respiratory alkalosis."], ["Normal chloride with a high anion gap", "A high gap with a normal chloride is the pattern of elevated-gap metabolic acidosis, a low pH disorder. Her pH is 7.47. Tell: the anion gap sorts metabolic acidosis, not respiratory alkalosis."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 30", "slot": "test finding", "lead": "complication"}, {"topic": "Is compensation appropriate?", "io": "Identify compensatory mechanisms for simple acid-base disorders.", "q": "A 30-year-old man arrived at a high-altitude camp two hours ago and is hyperventilating; his carbon dioxide is 25 mm Hg (normal 36 to 44 mm Hg). Using an acute bicarbonate fall of about 2 mEq/L per 10 mm Hg fall in carbon dioxide, from midpoints of 40 and 24, what bicarbonate is expected?", "opts": [["16.5 mEq/L", "16.5 uses the chronic ratio of 5 per 10 (24 - 7.5). At two hours the kidneys have barely begun, so the acute ratio applies: 21. Tell: two hours is acute."], ["21 mEq/L", "Correct. Carbon dioxide fell 15 (40 to 25); acutely bicarbonate falls about 2 per 10, so 24 - 3 = 21 mEq/L. Two hours is acute; altitude is a listed hypoxic cause of hyperventilation."], ["24 mEq/L", "24 assumes no change; even acutely bicarbonate falls about 2 per 10 mm Hg, to 21. Tell: acute alkalosis still trims a little bicarbonate."], ["27 mEq/L", "27 adds the 3 instead of subtracting it. In respiratory alkalosis compensation lowers bicarbonate: 24 - 3 = 21. Tell: a low carbon dioxide is offset by a lower bicarbonate."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 59", "slot": "test finding", "lead": "compensation"}, {"topic": "Electrolytes and oxygen", "io": "Explain how acid-base disorders affect electrolytes and oxygenation.", "q": "A 19-year-old man with type 1 diabetes presents in diabetic ketoacidosis. Arterial blood gas: pH 7.19 (normal 7.35 to 7.45), partial pressure of carbon dioxide 19 mm Hg (normal 36 to 44 mm Hg), bicarbonate 7 mEq/L (normal 22 to 26 mEq/L); potassium 5.9 mEq/L (normal 3.5 to 5.0 mEq/L). What explains his high potassium?", "opts": [["Potassium enters cells as hydrogen ions leave", "That is the shift of alkalosis, where potassium moves into cells and causes hypokalemia. His pH is 7.19, an acidosis, so the shift runs the other way. Tell: acidosis pushes potassium out of cells; alkalosis pulls it in."], ["High pH binds more calcium to albumin", "A high pH increasing calcium binding to albumin explains tetany in severe respiratory alkalosis. His pH is low, and calcium binding does not move potassium. Tell: the albumin-calcium effect belongs to alkalosis."], ["Kidneys excrete chloride and retain potassium", "Chloride handling marks the compensation of respiratory disorders (hypochloremia in chronic respiratory acidosis, hyperchloremia in respiratory alkalosis); it is not why acidosis raises potassium. Tell: the potassium rise is a cell shift."], ["Hydrogen ions enter cells as potassium leaves", "Correct. In acidosis, hydrogen ions shift from the extracellular fluid into cells and potassium shifts out of cells in exchange, raising the serum potassium. His pH of 7.19 is a marked acidemia, so hyperkalemia is expected."]], "c": 3, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 9", "slot": "test finding", "lead": "complication"}, {"topic": "Find the cause", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "A 52-year-old man has hypertension that is hard to control and muscle weakness. He takes no diuretics, has not vomited, and eats a bag of black licorice every day. Arterial blood gas: pH 7.47 (normal 7.35 to 7.45), partial pressure of carbon dioxide 47 mm Hg (normal 36 to 44 mm Hg), bicarbonate 33 mEq/L (normal 22 to 26 mEq/L); potassium 3.0 mEq/L (normal 3.5 to 5.0 mEq/L); urine chloride is high. Which part of his history best accounts for this blood gas?", "opts": [["Antacid use", "Antacids cause a saline-responsive alkalosis, with a low urine chloride. His is high, and he is hypertensive rather than volume contracted. Tell: a high urine chloride steers you to the saline-unresponsive list."], ["Anxiety with hyperventilation", "Hyperventilation causes respiratory alkalosis, with a carbon dioxide below 36. His is 47 and his bicarbonate 33, so the primary change is metabolic. Tell: respiratory alkalosis lowers the carbon dioxide; his is raised as compensation."], ["His daily black licorice", "Correct. High pH with a high bicarbonate is metabolic alkalosis; the high urine chloride makes it saline unresponsive, and his high blood pressure puts it in the hypertensive group, which lists licorice. Low potassium with weakness fits."], ["Hidden vomiting", "Vomiting (loss of hydrochloric acid) causes a saline-responsive alkalosis with a low urine chloride, below 25 mEq/L, and volume contraction. His urine chloride is high and he is hypertensive. Tell: vomiting-type alkalosis has a low urine chloride."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 43", "slot": "etiology", "lead": "etiology"}, {"topic": "Electrolytes and oxygen", "io": "Explain how acid-base disorders affect electrolytes and oxygenation.", "q": "A 50-year-old woman with a metabolic alkalosis from repeated vomiting has generalized weakness and hyporeflexia. Arterial blood gas: pH 7.52 (normal 7.35 to 7.45), partial pressure of carbon dioxide 48 mm Hg (normal 36 to 44 mm Hg), bicarbonate 38 mEq/L (normal 22 to 26 mEq/L). Which laboratory finding best explains her weakness and hyporeflexia?", "opts": [["Low bicarbonate", "Her bicarbonate is 38, high, which is what defines her metabolic alkalosis. A low bicarbonate belongs to metabolic acidosis. Tell: read her bicarbonate before choosing."], ["Low potassium", "Correct. Metabolic alkalosis brings hypokalemia (potassium shifts into cells, and vomiting adds losses), and the associated hypokalemia causes weakness and hyporeflexia. Her alkalemia at 7.52 fits."], ["High potassium", "Hyperkalemia accompanies acidosis, as potassium shifts out of cells. Her pH is 7.52, and alkalosis shifts potassium into cells. Tell: alkalosis means low potassium."], ["High carbon dioxide", "Her mildly raised carbon dioxide of 48 is compensation for the alkalosis; severe hypercapnia causes somnolence and confusion, not hyporeflexia. Tell: the weakness of metabolic alkalosis comes from potassium."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 39", "slot": "manifestation", "lead": "complication"}, {"topic": "Find the cause", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "A 59-year-old man with cirrhosis and hepatic failure also has type 2 diabetes treated with metformin and takes an antacid for heartburn. Arterial blood gas: pH 7.48 (normal 7.35 to 7.45), partial pressure of carbon dioxide 31 mm Hg (normal 36 to 44 mm Hg), bicarbonate 23 mEq/L (normal 22 to 26 mEq/L). Which of his conditions best accounts for this blood gas?", "opts": [["His hepatic failure", "Correct. High pH with a low carbon dioxide of 31 and a nearly normal bicarbonate is respiratory alkalosis. Hepatic failure is a listed cause of respiratory alkalosis; neither of his medicines lowers carbon dioxide."], ["His metformin", "Metformin causes an elevated-gap metabolic acidosis, a low pH with a low bicarbonate. His pH is 7.48. Tell: metformin drives the pH down."], ["His antacid", "Antacids cause a metabolic alkalosis with a high bicarbonate above 26. His bicarbonate is 23, and his primary change is the low carbon dioxide. Tell: antacid alkalosis raises bicarbonate."], ["Ketoacidosis from his diabetes", "Diabetic ketoacidosis is an elevated-gap metabolic acidosis with a low pH. His pH is 7.48, alkalemic. Tell: ketoacidosis lowers bicarbonate and pH."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 34", "slot": "etiology", "lead": "etiology"}, {"topic": "Read the blood gas", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "A 23-year-old woman has a panic attack before an exam, with light-headedness, perioral numbness and paresthesias (tingling) in both hands. Arterial blood gas: pH 7.53 (normal 7.35 to 7.45), partial pressure of carbon dioxide 27 mm Hg (normal 36 to 44 mm Hg), bicarbonate 22 mEq/L (normal 22 to 26 mEq/L). Which acid-base disorder is present?", "opts": [["Metabolic alkalosis", "Metabolic alkalosis needs a high bicarbonate; hers is 22. The low carbon dioxide is what matches her alkalemia."], ["Respiratory acidosis", "Respiratory acidosis is a low pH with a high carbon dioxide. Her pH is 7.53 with a carbon dioxide of 27, the reverse."], ["Acute respiratory alkalosis", "Correct. pH 7.53 is alkalemia; carbon dioxide of 27 is low and matches it, so it is respiratory; bicarbonate fell only about 2 per 10 mm Hg (to 22), the acute response. Anxiety-driven hyperventilation with perioral numbness fits."], ["Chronic respiratory alkalosis", "Chronic compensation lowers bicarbonate about 5 per 10 mm Hg, to about 18 here; her 22 is the small acute fall. A minutes-long panic attack is acute."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 29", "slot": "test finding", "lead": "diagnosis"}, {"topic": "Is compensation appropriate?", "io": "Identify compensatory mechanisms for simple acid-base disorders.", "q": "A 55-year-old woman with a bicarbonate of 9 mEq/L (normal 22 to 26 mEq/L) from ethylene glycol ingestion has a carbon dioxide of 15 mm Hg (normal 36 to 44 mm Hg). By the Winter formula, what does her carbon dioxide show?", "opts": [["Impending respiratory failure", "Impending respiratory failure is suggested when carbon dioxide is higher than Winter predicts. Hers is lower."], ["An added respiratory alkalosis", "Correct. Winter formula: 1.5 x 9 + 8 = 21.5, plus or minus 2, so about 19.5 to 23.5. Her 15 is below that range, more lowering than compensation explains: an added respiratory alkalosis, a second primary disorder."], ["Appropriate compensation", "Appropriate compensation would leave carbon dioxide at about 19.5 to 23.5 for a bicarbonate of 9. Her 15 is below it."], ["An added respiratory acidosis", "An added respiratory acidosis would leave carbon dioxide above the Winter range. Hers is below it, the opposite."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 58", "slot": "test finding", "lead": "compensation"}, {"topic": "Find the cause", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "A 34-year-old man after a motor vehicle crash has a flail chest (a chest wall segment moving paradoxically) and shallow breathing. Arterial blood gas: pH 7.27 (normal 7.35 to 7.45), partial pressure of carbon dioxide 56 mm Hg (normal 36 to 44 mm Hg), bicarbonate 25 mEq/L (normal 22 to 26 mEq/L). Which process explains this blood gas?", "opts": [["Lactic acidosis from blood loss", "Lactic acidosis is a metabolic acidosis with a low bicarbonate below 22. His is 25, normal, and the raised carbon dioxide drives the pH. Tell: metabolic acidosis shows in the bicarbonate."], ["Chronic hypoventilation", "Chronic respiratory acidosis would carry a bicarbonate raised about 3.5 per 10 mm Hg, near 30. His 25 shows the acute response to an injury hours old. Tell: an acute cause leaves bicarbonate near normal."], ["Hypoventilation from the chest injury", "Correct. A high carbon dioxide of 56 matching a low pH, with a bicarbonate barely raised, is acute respiratory acidosis. Thoracic trauma, including flail chest and pneumothorax, is a listed acute cause."], ["Hyperventilation from pain and anxiety", "Hyperventilation would lower carbon dioxide and raise the pH. His carbon dioxide is 56 and his pH 7.27. Tell: pain-driven fast breathing causes respiratory alkalosis."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 26", "slot": "etiology", "lead": "etiology"}, {"topic": "Read the blood gas", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "A 52-year-old woman with a body mass index of 58 has loud snoring, witnessed pauses in breathing at night and daytime sleepiness. Arterial blood gas: pH 7.35 (normal 7.35 to 7.45), partial pressure of carbon dioxide 55 mm Hg (normal 36 to 44 mm Hg), bicarbonate 30 mEq/L (normal 22 to 26 mEq/L). Which acid-base disorder is present?", "opts": [["Metabolic alkalosis", "Her bicarbonate is high, but her pH is not high; the raised carbon dioxide explains the low-normal pH, so the bicarbonate is compensation."], ["Respiratory alkalosis", "Respiratory alkalosis needs a low carbon dioxide; hers is 55. She is retaining carbon dioxide, the opposite."], ["Chronic respiratory acidosis", "Correct. pH at the low edge with a carbon dioxide of 55 (high, matching) and a bicarbonate of 30 that rose about 3.5 per 10 mm Hg: chronic respiratory acidosis. Obesity, sleep disordered breathing and chronic hypercapnia make the obesity hypoventilation triad."], ["Acute respiratory acidosis", "Acute compensation would leave bicarbonate near 25 to 26; her 30 is the fuller chronic renal response, matching a long-standing condition."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 27", "slot": "test finding", "lead": "diagnosis"}, {"topic": "Calculate the anion gap", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "A 63-year-old woman with septic shock has a lactate elevation. Sodium 132 mEq/L (normal 135 to 145 mEq/L), potassium 4.0 mEq/L (normal 3.5 to 5.0 mEq/L), chloride 96 mEq/L (normal 98 to 106 mEq/L), bicarbonate 12 mEq/L (normal 22 to 26 mEq/L). What is her anion gap?", "opts": [["24", "Correct. Anion gap = 132 - (96 + 12) = 132 - 108 = 24, above 9 to 15: elevated. Lactic acidosis, the L of the mnemonic, raises the gap through unmeasured anions."], ["28", "28 adds the potassium of 4.0 to the sodium. This formula uses sodium minus (chloride plus bicarbonate) only: 132 - 108 = 24. Tell: leave potassium out."], ["36", "36 is 132 - 96, leaving out the bicarbonate. Both chloride and bicarbonate are subtracted: 132 - 108 = 24. Tell: two anions go inside the parentheses."], ["48", "48 adds the bicarbonate instead of subtracting it (132 - 96 + 12). The correct result is 132 - (96 + 12) = 24. Tell: the parentheses make the bicarbonate a subtraction."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 47", "slot": "test finding", "lead": "test"}, {"topic": "Read the blood gas", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "A 72-year-old man with chronic lung disease is drowsy and confused, with asterixis (a flapping tremor of the outstretched hands). Arterial blood gas: pH 7.22 (normal 7.35 to 7.45), partial pressure of carbon dioxide 75 mm Hg (normal 36 to 44 mm Hg), bicarbonate 30 mEq/L (normal 22 to 26 mEq/L). Which acid-base disorder best explains his findings?", "opts": [["Respiratory alkalosis", "Respiratory alkalosis is a low carbon dioxide with a high pH; his carbon dioxide is 75 with a pH of 7.22."], ["Respiratory acidosis", "Correct. pH 7.22 is acidemia and the carbon dioxide of 75 is high and matches it: respiratory acidosis. Somnolence, confusion and asterixis are its listed clinical findings."], ["Metabolic acidosis", "Metabolic acidosis needs a low bicarbonate; his is 30. The high carbon dioxide drives his acidemia and his neurologic findings."], ["Metabolic alkalosis", "His bicarbonate is high, but his pH is low; a primary metabolic alkalosis would raise the pH. The bicarbonate is compensation."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 23", "slot": "manifestation", "lead": "diagnosis"}, {"topic": "Find the cause", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "A 67-year-old man has hypertension treated with a thiazide diuretic, stable chronic obstructive pulmonary disease, and osteoarthritis for which he takes aspirin. He feels weak. Arterial blood gas: pH 7.48 (normal 7.35 to 7.45), partial pressure of carbon dioxide 46 mm Hg (normal 36 to 44 mm Hg), bicarbonate 33 mEq/L (normal 22 to 26 mEq/L); potassium 3.1 mEq/L (normal 3.5 to 5.0 mEq/L); urine chloride is low. Which part of his history best accounts for this blood gas?", "opts": [["His chronic lung disease", "His lung disease would cause respiratory acidosis: a high carbon dioxide driving a low pH. His pH is 7.48, alkalemic, and the carbon dioxide of 46 is only the small rise that compensates a metabolic alkalosis. Tell: in lung-driven acidosis the pH sits below 7.35."], ["His aspirin", "Salicylates (aspirin) cause respiratory alkalosis by driving hyperventilation, which lowers carbon dioxide below 36. His carbon dioxide is 46 and his bicarbonate 33, so the primary change is metabolic. Tell: a salicylate alkalosis has a low carbon dioxide, not a high bicarbonate."], ["Primary aldosteronism", "Primary aldosteronism is a saline-unresponsive, hypertensive cause, and saline-unresponsive alkalosis has a high urine chloride, above 40 mEq/L. His urine chloride is low, which points to a saline-responsive cause such as his diuretic. Tell: low urine chloride means saline responsive."], ["His thiazide diuretic", "Correct. High pH with a high bicarbonate is metabolic alkalosis, and the low urine chloride marks the saline-responsive type. Diuretic therapy is a saline-responsive cause, and the low potassium and weakness fit; the carbon dioxide of 46 is the expected compensation."]], "c": 3, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 42", "slot": "etiology", "lead": "etiology"}, {"topic": "Read the blood gas", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "A 26-year-old man is found unresponsive at a party with pinpoint pupils and a respiratory rate of 6. Arterial blood gas: pH 7.24 (normal 7.35 to 7.45), partial pressure of carbon dioxide 62 mm Hg (normal 36 to 44 mm Hg), bicarbonate 26 mEq/L (normal 22 to 26 mEq/L). Which acid-base disorder is present?", "opts": [["Respiratory alkalosis", "Respiratory alkalosis is a high pH from a low carbon dioxide; he has a pH of 7.24 and a carbon dioxide of 62, both pointing the other way."], ["Acute respiratory acidosis", "Correct. The pH of 7.24 is acidemia; the carbon dioxide of 62 is high and matches it, so the problem is respiratory; bicarbonate has barely moved (about +1 per 10 mm Hg acutely), so it is acute. Slowed breathing from a central nervous system depressant fits."], ["Chronic respiratory acidosis", "Chronic disease would show a much larger bicarbonate rise, about 3.5 mEq/L per 10 mm Hg, near 32 here; his 26 is the small acute rise. Tell: an hours-old overdose has not given the kidneys their 6 to 12 hours to days."], ["Metabolic acidosis", "Metabolic acidosis needs a low bicarbonate driving the low pH; his bicarbonate is 26, normal. The raised carbon dioxide is what matches the acidemia."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 21", "slot": "test finding", "lead": "diagnosis"}, {"topic": "Electrolytes and oxygen", "io": "Explain how acid-base disorders affect electrolytes and oxygenation.", "q": "A 44-year-old man who ingested ethylene glycol has an arterial pH of 6.62 (normal 7.35 to 7.45). Which complications does this pH threaten?", "opts": [["Reduced oxygen release from hemoglobin", "Reduced release is an alkalosis effect (left shift). Acidosis lowers hemoglobin's affinity and increases release. Tell: the extreme-pH list is seizures, cerebral edema and cardiac effects."], ["Seizures, cerebral edema, cardiac irritability", "Correct. A pH below 6.7 is unsustainable and may cause cardiac hypocontractility and irritability, seizures, cerebral edema and metabolic disturbances; it may warrant therapy to normalize the pH along with treating the cause."], ["Tetany from low ionized calcium", "Tetany from increased calcium binding with albumin occurs at a high pH, in severe respiratory alkalosis. His pH is 6.62. Tell: tetany belongs to alkalemia."], ["Hypokalemia from potassium entering cells", "Potassium entering cells is the shift of alkalosis. In acidosis potassium leaves cells, so hyperkalemia may be present. Tell: acidosis raises potassium."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 8", "slot": "complication", "lead": "complication"}, {"topic": "Treat the disorder", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "A 50-year-old man has a metabolic alkalosis with a high urine chloride. He takes no diuretics and has not vomited. Arterial blood gas: pH 7.48 (normal 7.35 to 7.45), partial pressure of carbon dioxide 47 mm Hg (normal 36 to 44 mm Hg), bicarbonate 34 mEq/L (normal 22 to 26 mEq/L). Which finding should be checked next to narrow the cause?", "opts": [["His expected carbon dioxide by Winter", "The Winter formula checks compensation in metabolic acidosis. His disorder is an alkalosis, and the cause list splits by blood pressure. Tell: Winter is for acidosis."], ["His blood pressure", "Correct. A high urine chloride (above 40 mEq/L) means saline-unresponsive alkalosis, whose causes split by blood pressure: normotensive (severe potassium depletion, hypoparathyroidism and hypercalcemia) or hypertensive (primary aldosteronism, mineralocorticoids, licorice)."], ["His anion gap", "The anion gap types a metabolic acidosis; it does not sort the causes of an alkalosis. Saline-unresponsive causes split by blood pressure. Tell: the gap belongs to acidosis."], ["His urine chloride again", "His urine chloride is already high, placing him in the saline-unresponsive group; repeating it adds nothing. The next split is by blood pressure. Tell: urine chloride first, then blood pressure."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 43", "slot": "differential", "lead": "next step"}, {"topic": "How the body compensates", "io": "Identify mechanisms for maintaining acid-base homeostasis.", "q": "A 38-year-old woman develops an acute respiratory acidosis after aspiration pneumonitis two hours ago. When will her kidneys begin to compensate?", "opts": [["In 6 to 12 hours, completing over days", "Correct. In respiratory acidosis the kidneys excrete acid as ammonium chloride and retain bicarbonate; this begins 6 to 12 hours after onset, and complete compensation may take days. At two hours her bicarbonate is near normal."], ["Within minutes, completing in an hour", "Breathing changes carbon dioxide quickly, but renal bicarbonate control works over hours to days. Tell: the kidneys are the slow system."], ["After weeks, completing over months", "Renal compensation begins within 6 to 12 hours and may be complete in days, not weeks. Tell: hours to start, days to finish."], ["They do not; the lungs compensate instead", "When the cause is respiratory, the compensation is renal: the kidneys retain or excrete bicarbonate. The lungs compensate for metabolic disorders. Tell: respiratory problem, renal fix."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 22", "slot": "prognosis", "lead": "compensation"}, {"topic": "Read the blood gas", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "A 69-year-old woman with long-standing chronic obstructive pulmonary disease comes for a routine visit, at her baseline. Arterial blood gas: pH 7.36 (normal 7.35 to 7.45), partial pressure of carbon dioxide 58 mm Hg (normal 36 to 44 mm Hg), bicarbonate 32 mEq/L (normal 22 to 26 mEq/L). Which acid-base disorder is present?", "opts": [["Chronic respiratory acidosis", "Correct. Her carbon dioxide of 58 is high and her pH sits at the low end; the kidneys have retained bicarbonate to 32, about 3.5 mEq/L per 10 mm Hg rise, the size of chronic compensation. Her lung disease is the classic chronic cause."], ["Acute respiratory acidosis", "Acute compensation raises bicarbonate only about 1 per 10 mm Hg, to about 26 here; her 32 shows the fuller renal response of chronic disease, matching her years of lung disease."], ["Metabolic alkalosis", "A raised bicarbonate can be primary, but then the pH would be high; hers is 7.36, on the acid side, and the raised carbon dioxide explains it. The bicarbonate is compensation."], ["No disorder; the pH is normal", "A pH within range does not mean no disorder; compensation never fully returns pH to normal, and her carbon dioxide of 58 and bicarbonate of 32 are both abnormal."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 27", "slot": "test finding", "lead": "diagnosis"}, {"topic": "Find the cause", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "A 34-year-old woman has glaucoma treated with an oral carbonic anhydrase inhibitor, type 2 diabetes treated with metformin, and daily aspirin use for headaches. Arterial blood gas: pH 7.32 (normal 7.35 to 7.45), partial pressure of carbon dioxide 30 mm Hg (normal 36 to 44 mm Hg), bicarbonate 15 mEq/L (normal 22 to 26 mEq/L); sodium 140 mEq/L (normal 135 to 145 mEq/L), chloride 115 mEq/L (normal 98 to 106 mEq/L). Which of her medicines best accounts for this blood gas?", "opts": [["Metformin", "Metformin causes an elevated-gap acidosis, above 15. Her gap is 140 - (115 + 15) = 10, normal, and her chloride is high, the pattern of the normal-gap list. Tell: metformin sits in the mnemonic for an increased gap."], ["Aspirin", "Salicylates give an elevated-gap acidosis and can drive respiratory alkalosis; neither fits a gap of 10 with a high chloride. Tell: a salicylate acidosis raises the gap above 15 and leaves the chloride normal."], ["A respiratory cause, not a medicine", "A respiratory acidosis needs a high carbon dioxide; hers is 30, low, and her bicarbonate of 15 is what matches the pH. The low carbon dioxide is compensation, as the Winter formula (1.5 x 15 + 8 = 30.5) predicts."], ["The carbonic anhydrase inhibitor", "Correct. Low pH and low bicarbonate make a metabolic acidosis; the gap is 140 - (115 + 15) = 10, within 9 to 15, with a high chloride: a normal-gap, hyperchloremic acidosis. Carbonic anhydrase inhibitors are on the normal-gap list (loss of bicarbonate)."]], "c": 3, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 56", "slot": "etiology", "lead": "etiology"}, {"topic": "Is compensation appropriate?", "io": "Identify compensatory mechanisms for simple acid-base disorders.", "q": "A 70-year-old woman who overdosed on aspirin (a salicylate) has a bicarbonate of 14 mEq/L (normal 22 to 26 mEq/L) and a carbon dioxide of 20 mm Hg (normal 36 to 44 mm Hg). By the Winter formula, what does her carbon dioxide show?", "opts": [["An added respiratory acidosis", "An added respiratory acidosis would leave carbon dioxide above 31. Hers is below the range. Tell: above Winter means respiratory acidosis; below means respiratory alkalosis."], ["Impending respiratory failure", "Impending respiratory failure is signaled by a carbon dioxide higher than Winter predicts. Hers is lower. Tell: a failing patient retains carbon dioxide."], ["An added respiratory alkalosis", "Correct. Winter: 1.5 x 14 + 8 = 29, plus or minus 2, so 27 to 31. Her 20 is below that: a second, respiratory alkalosis on top of the metabolic acidosis. Salicylates appear on both lists, elevated-gap acidosis and toxic respiratory alkalosis."], ["Appropriate compensation", "Appropriate compensation would put her carbon dioxide at 27 to 31 for a bicarbonate of 14. Her 20 is below the range. Tell: compute 1.5 x 14 + 8 before calling it appropriate."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 58", "slot": "test finding", "lead": "compensation"}, {"topic": "Treat the disorder", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "A 45-year-old man with Guillain-Barré syndrome has worsening weakness and shallow breathing. Arterial blood gas: pH 7.26 (normal 7.35 to 7.45), partial pressure of carbon dioxide 58 mm Hg (normal 36 to 44 mm Hg), bicarbonate 26 mEq/L (normal 22 to 26 mEq/L). What is the priority treatment for his acid-base disorder?", "opts": [["Give sodium bicarbonate to raise the pH", "His acidosis comes from retained carbon dioxide, so the fix is ventilation; therapy aimed at the pH itself is reserved for an unsustainable pH (below 6.7), alongside the cause. His pH is 7.26. Tell: respiratory acidosis is treated by breathing, not by bicarbonate."], ["Wait for renal compensation", "Renal compensation begins only after 6 to 12 hours, takes days, and never returns the pH to normal. His breathing is failing now. Tell: compensation alone never restores the pH; the disorder must be corrected."], ["Careful oxygen titration alone", "Careful oxygen titration is the approach for chronic respiratory acidosis. His is acute (bicarbonate 26), and the priority is restoring ventilation. Tell: acute equals restore ventilation; chronic equals careful oxygen."], ["Restore adequate ventilation", "Correct. A high carbon dioxide with a low pH and a barely raised bicarbonate is acute respiratory acidosis, and Guillain-Barré syndrome is a listed neuromuscular cause. Acute respiratory acidosis is treated by restoring ventilation while the cause is treated."]], "c": 3, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 28", "slot": "first-line", "lead": "treatment"}, {"topic": "Find the cause", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "A 60-year-old man with type 2 diabetes treated with metformin received several liters of normal saline during abdominal surgery. He has had no diarrhea. Arterial blood gas: pH 7.33 (normal 7.35 to 7.45), partial pressure of carbon dioxide 33 mm Hg (normal 36 to 44 mm Hg), bicarbonate 17 mEq/L (normal 22 to 26 mEq/L); sodium 141 mEq/L (normal 135 to 145 mEq/L), chloride 114 mEq/L (normal 98 to 106 mEq/L). Which explains this blood gas?", "opts": [["His metformin", "Metformin causes an elevated-gap acidosis, above 15. His gap is 141 - (114 + 17) = 10, and his chloride is high. Tell: a normal gap with a high chloride points to the normal-gap list."], ["Diabetic ketoacidosis", "Diabetic ketoacidosis raises the gap with ketones; his gap of 10 is normal and his chloride high. Tell: ketoacidosis belongs to the elevated-gap mnemonic."], ["Postoperative hypoventilation", "Hypoventilation raises carbon dioxide above 44; his is 33, lowered as compensation (Winter: 1.5 x 17 + 8 = 33.5). Tell: the low bicarbonate, not the carbon dioxide, matches his pH."], ["The large saline infusion", "Correct. Low pH with a low bicarbonate is metabolic acidosis; the gap is 141 - (114 + 17) = 10, within 9 to 15, with a high chloride: a normal-gap, hyperchloremic acidosis. Saline infusion is a listed normal-gap cause (chloride retention)."]], "c": 3, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 56", "slot": "etiology", "lead": "etiology"}, {"topic": "Find the cause", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "A 48-year-old woman five days after hip replacement develops sudden pleuritic chest pain and fast breathing. Arterial blood gas: pH 7.51 (normal 7.35 to 7.45), partial pressure of carbon dioxide 30 mm Hg (normal 36 to 44 mm Hg), bicarbonate 23 mEq/L (normal 22 to 26 mEq/L); partial pressure of oxygen 68 mm Hg (normal 80 to 100 mm Hg). Which process best accounts for this blood gas?", "opts": [["Hypoventilation from opioid pain medicine", "Opioids depress breathing and raise carbon dioxide, causing respiratory acidosis with a low pH. Her carbon dioxide is 30 and her pH 7.51. Tell: hypoventilation pushes carbon dioxide above 44."], ["Diuretic-induced metabolic alkalosis", "A diuretic alkalosis has a high bicarbonate above 26; hers is 23, and her primary change is the low carbon dioxide. Tell: in metabolic alkalosis the carbon dioxide rises slightly, it does not fall."], ["Obesity hypoventilation syndrome", "Obesity hypoventilation syndrome is a triad ending in chronic hypercapnia, a high carbon dioxide. Hers is low and her illness began suddenly. Tell: that syndrome causes chronic respiratory acidosis, not an acute alkalosis."], ["Hyperventilation from a pulmonary embolism", "Correct. High pH with a low carbon dioxide of 30 is respiratory alkalosis, and her bicarbonate of 23 has barely moved (acute). Pulmonary embolism is a listed pulmonary cause; after surgery, with sudden pleuritic pain and a low oxygen, it fits."]], "c": 3, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 34", "slot": "etiology", "lead": "etiology"}, {"topic": "Treat the disorder", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "A 40-year-old man who drank methanol is obtunded. Arterial blood gas: pH 6.65 (normal 7.35 to 7.45), partial pressure of carbon dioxide 18 mm Hg (normal 36 to 44 mm Hg), bicarbonate 2 mEq/L (normal 22 to 26 mEq/L). Besides treating the poisoning, what does this pH warrant?", "opts": [["Waiting for respiratory compensation", "He is already hyperventilating to a carbon dioxide of 18, and compensation never returns the pH to normal. At 6.65 the pH is unsustainable. Tell: compensation cannot rescue a pH below 6.7."], ["Therapy to raise the serum pH", "Correct. A pH below 6.7 is unsustainable: it may cause cardiac hypocontractility and irritability, seizures and cerebral edema, and may warrant therapy to normalize the serum pH along with treatment of the underlying cause. His pH is 6.65."], ["No pH-directed therapy", "Treating the cause is the rule, but a pH below 6.7 is unsustainable and may warrant therapy to normalize it as well. His 6.65 is past that threshold. Tell: extreme pH values earn their own therapy."], ["Paper bag rebreathing", "Rebreathing would raise carbon dioxide and lower the pH further; it is a placebo for hyperventilation. His low carbon dioxide is life-saving compensation. Tell: never blunt the breathing that compensates a metabolic acidosis."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 8", "slot": "escalation", "lead": "treatment"}, {"topic": "Treat the disorder", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "A 22-year-old college athlete with gastroenteritis has vomited for three days and is dizzy on standing. Arterial blood gas: pH 7.51 (normal 7.35 to 7.45), partial pressure of carbon dioxide 48 mm Hg (normal 36 to 44 mm Hg), bicarbonate 37 mEq/L (normal 22 to 26 mEq/L); potassium 3.1 mEq/L (normal 3.5 to 5.0 mEq/L); urine chloride is low. In addition to treating the cause, which therapy is indicated?", "opts": [["A sodium bicarbonate infusion", "Bicarbonate is alkali; exogenous alkali is itself a cause of metabolic alkalosis and would push his pH of 7.51 higher. Isotonic saline treats the volume loss behind his alkalosis. Tell: adding alkali to an alkalemia raises the pH further."], ["Paper bag rebreathing", "Paper bag breathing is a placebo for hyperventilation; it fails to correct carbon dioxide and may lower oxygen. His carbon dioxide is already raised as compensation. Tell: this is metabolic, and the fix is volume."], ["Starting a thiazide diuretic", "Diuretic therapy is a cause of saline-responsive alkalosis, and diuretics are stopped, not started, in this disorder. He needs volume, not more volume loss. Tell: discontinuing diuretics is part of the treatment."], ["Isotonic saline", "Correct. Vomiting (loss of hydrochloric acid) with orthostatic dizziness and a low urine chloride is saline-responsive metabolic alkalosis, a sign of extracellular volume contraction. Isotonic saline corrects that volume deficit."]], "c": 3, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 44", "slot": "first-line", "lead": "treatment"}, {"topic": "Is compensation appropriate?", "io": "Identify compensatory mechanisms for simple acid-base disorders.", "q": "A 66-year-old man has had respiratory acidosis for several days, and his carbon dioxide is 60 mm Hg (normal 36 to 44 mm Hg). Using bicarbonate rises of about 1 mEq/L per 10 mm Hg acutely and about 3.5 per 10 chronically, from a midpoint of 24, which bicarbonate fits chronic compensation?", "opts": [["24 mEq/L", "24 assumes no compensation at all; after several days the kidneys have retained bicarbonate, to about 31."], ["26 mEq/L", "26 is the acute response, 1 per 10 mm Hg (24 + 2). Several days in, the chronic response is about 24 + 7 = 31."], ["31 mEq/L", "Correct. Carbon dioxide rose 20 (40 to 60). Chronically bicarbonate rises about 3.5 per 10, so 24 + 7 = 31; acutely it would be only 24 + 2 = 26. Renal compensation takes days to complete."], ["38 mEq/L", "38 overshoots; it would need about 7 per 10. The chronic ratio of 3.5 per 10 gives 24 + 7 = 31."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 59", "slot": "test finding", "lead": "compensation"}, {"topic": "Is compensation appropriate?", "io": "Identify compensatory mechanisms for simple acid-base disorders.", "q": "A 48-year-old woman with metabolic alkalosis from diuretics has a bicarbonate of 32 mEq/L (normal 22 to 26 mEq/L) (8 above the working midpoint of 24). Using a carbon dioxide rise of about 0.75 mm Hg per 1 mEq/L rise in bicarbonate, from a midpoint of 40, what carbon dioxide is expected?", "opts": [["34 mm Hg", "34 subtracts the 6 instead of adding it; carbon dioxide rises to compensate alkalosis. Expected is 40 + 6 = 46."], ["40 mm Hg", "40 assumes no compensation. Metabolic alkalosis is compensated by hypoventilation: 40 + (8 x 0.75) = 46."], ["46 mm Hg", "Correct. Bicarbonate rose 8 (24 to 32); 8 x 0.75 = 6, so the expected carbon dioxide is 40 + 6 = 46 mm Hg, well under the 55 above which a concurrent respiratory acidosis is suspected."], ["52 mm Hg", "52 multiplies by 1.5 (as in the Winter formula for acidosis) instead of 0.75. The alkalosis ratio gives 40 + 6 = 46."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 59", "slot": "test finding", "lead": "compensation"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll" && window.startExamModeTour) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
