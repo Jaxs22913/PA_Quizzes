@@ -1,0 +1,760 @@
+{
+ "pucap1": [
+  {
+   "topic": "Outpatient pneumonia treatment",
+   "io": "Identify contraindications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "An outpatient with community-acquired pneumonia has risk factors for resistant Streptococcus pneumoniae and a beta-lactam allergy. Which drug fits?",
+   "opts": [
+    [
+     "Cefpodoxime",
+     "Cefpodoxime is a cephalosporin, a beta-lactam, so the allergy rules it out; a respiratory fluoroquinolone is the choice.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Amoxicillin",
+     "Amoxicillin is a beta-lactam and is ruled out by the allergy; with resistance risk factors and an allergy, a respiratory fluoroquinolone fits.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Azithromycin",
+     "A macrolide alone is first line only when there is no resistance risk; with risk factors and a beta-lactam allergy, a respiratory fluoroquinolone fits.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Moxifloxacin",
+     "Correct. A respiratory fluoroquinolone (levofloxacin or moxifloxacin) is the alternative to beta-lactam plus macrolide and is good for patients with a beta-lactam allergy."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 14"
+  },
+  {
+   "topic": "Pathogens by setting",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "Which exposure is a listed risk factor for penicillin-resistant Streptococcus pneumoniae?",
+   "opts": [
+    [
+     "Living in a nursing home",
+     "Nursing home residence is a criterion for health-care associated pneumonia; the listed exposure for resistant Streptococcus pneumoniae is a child in day care.",
+     "adjacent fact"
+    ],
+    [
+     "Attending hemodialysis",
+     "Hemodialysis is a criterion for health-care associated pneumonia; the exposure listed for penicillin-resistant Streptococcus pneumoniae is a child in day care.",
+     "adjacent fact"
+    ],
+    [
+     "Living in a college dormitory",
+     "Crowded adult housing is not on the list; the exposure listed for penicillin-resistant Streptococcus pneumoniae is a child in a day care center.",
+     "common lay belief"
+    ],
+    [
+     "A child who attends day care",
+     "Correct. Exposure to a child in a day care center is listed with age over 65, a beta-lactam within 3 months, alcoholism, immunosuppression and medical comorbidities."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 13"
+  },
+  {
+   "topic": "Acute bronchitis",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "A patient with acute bronchitis has documented Mycoplasma infection. Which antibiotic is preferred?",
+   "opts": [
+    [
+     "Azithromycin",
+     "Azithromycin is a macrolide, and macrolide resistance is the reason doxycycline is preferred for documented Mycoplasma.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Erythromycin",
+     "Erythromycin is a macrolide; because of macrolide resistance, doxycycline is preferred when Mycoplasma is documented.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Doxycycline",
+     "Correct. Doxycycline is preferred when Mycoplasma is documented, because of macrolide resistance."
+    ],
+    [
+     "Levofloxacin",
+     "A respiratory fluoroquinolone is avoided in acute bronchitis unless there was recent antibiotic exposure; doxycycline is preferred for Mycoplasma.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 8"
+  },
+  {
+   "topic": "Outpatient pneumonia treatment",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "An outpatient with community-acquired pneumonia has no risk factors for resistant Streptococcus pneumoniae. Which drug is first line?",
+   "opts": [
+    [
+     "Doxycycline",
+     "Doxycycline is the second-line choice for an outpatient without risk factors; the first-line drug is a macrolide such as azithromycin.",
+     "wrong stage or severity"
+    ],
+    [
+     "Azithromycin",
+     "Correct. With no risk of resistant Streptococcus pneumoniae, first line is a macrolide (azithromycin or clarithromycin); doxycycline and minocycline are second line."
+    ],
+    [
+     "Levofloxacin",
+     "A respiratory fluoroquinolone is an option when risk factors for resistant Streptococcus pneumoniae are present; without them a macrolide is first line.",
+     "wrong stage or severity"
+    ],
+    [
+     "Cefpodoxime",
+     "Cefpodoxime is the beta-lactam half of the beta-lactam-plus-macrolide regimen used when resistance risk factors are present; first line here is a macrolide.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 14"
+  },
+  {
+   "topic": "Acute bronchitis",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "Which group of pathogens is the common cause of acute bronchitis?",
+   "opts": [
+    [
+     "Atypical bacteria",
+     "Mycoplasma pneumoniae, Chlamydia pneumoniae and Bordetella pertussis cause acute bronchitis only occasionally; the common causes are respiratory viruses.",
+     "wrong stage or severity"
+    ],
+    [
+     "Gram-positive cocci",
+     "Streptococcus and Staphylococcus species are occasional bacterial causes, sometimes secondary to a viral illness; most acute bronchitis is viral.",
+     "wrong stage or severity"
+    ],
+    [
+     "Respiratory viruses",
+     "Correct. The common causes are viruses (rhinovirus, coronavirus, influenza, adenovirus); bacteria are only occasional causes, sometimes secondary to a viral illness."
+    ],
+    [
+     "Gram-negative bacilli",
+     "Gram-negative bacilli are named among the intensive care unit pneumonia pathogens; the common cause of acute bronchitis is respiratory viruses.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 6"
+  },
+  {
+   "topic": "Pneumonia: entry and diagnosis",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "Trauma is the example given for which route by which microbes reach the lung?",
+   "opts": [
+    [
+     "Oropharyngeal aspiration",
+     "Aspiration from the oropharynx is the route common in the elderly; trauma is the example given for direct inoculation.",
+     "adjacent fact"
+    ],
+    [
+     "Direct inoculation",
+     "Correct. Direct inoculation is the route of entry given with trauma as its example, alongside aspiration, inhalation and hematogenous spread."
+    ],
+    [
+     "Aerosol inhalation",
+     "Inhalation of infectious aerosols is airborne entry; trauma is the example given for direct inoculation.",
+     "adjacent fact"
+    ],
+    [
+     "Hematogenous spread",
+     "Hematogenous dissemination reaches the lung through the blood; trauma is the example given for direct inoculation.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 10"
+  },
+  {
+   "topic": "Inpatient pneumonia treatment",
+   "io": "Identify respiratory drug classes and commonly prescribed drugs for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "Which beta-lactam is listed for intravenous use in hospitalized patients with community-acquired pneumonia outside the intensive care unit?",
+   "opts": [
+    [
+     "Cefpodoxime",
+     "Cefpodoxime is an outpatient beta-lactam for patients with resistance risk factors; the ward choices are cefotaxime, ceftriaxone and high-dose ampicillin.",
+     "adjacent fact"
+    ],
+    [
+     "Cefotaxime",
+     "Correct. The intravenous beta-lactams for ward patients are cefotaxime, ceftriaxone and high-dose ampicillin, each given with a macrolide or doxycycline."
+    ],
+    [
+     "Cefepime",
+     "Cefepime is an antipseudomonal fourth-generation cephalosporin for broad nosocomial coverage, not a listed community-acquired ward choice.",
+     "adjacent fact"
+    ],
+    [
+     "Ceftazidime",
+     "Ceftazidime is an antipseudomonal cephalosporin that is rarely used; the ward beta-lactams are cefotaxime, ceftriaxone and high-dose ampicillin.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 15"
+  },
+  {
+   "topic": "Inpatient pneumonia treatment",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "Alongside an intravenous beta-lactam for a hospitalized ward patient with pneumonia, which drug may stand in for the macrolide?",
+   "opts": [
+    [
+     "Vancomycin",
+     "Vancomycin covers methicillin-resistant Staphylococcus aureus, which is considered in the intensive care unit; doxycycline is the macrolide alternative.",
+     "adjacent fact"
+    ],
+    [
+     "Gentamicin",
+     "Gentamicin is an aminoglycoside used as a second gram-negative agent in broad nosocomial coverage; doxycycline is the macrolide alternative.",
+     "adjacent fact"
+    ],
+    [
+     "Doxycycline",
+     "Correct. The ward regimen is an intravenous beta-lactam plus an intravenous or oral macrolide, or doxycycline in place of the macrolide."
+    ],
+    [
+     "Linezolid",
+     "Linezolid is gram-positive coverage for methicillin-resistant Staphylococcus aureus; the drug that may replace the macrolide on the ward is doxycycline.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 15"
+  },
+  {
+   "topic": "Outpatient pneumonia treatment",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "An outpatient with community-acquired pneumonia and no resistance risk factors needs a second-line option. Which drug is listed?",
+   "opts": [
+    [
+     "Moxifloxacin",
+     "A respiratory fluoroquinolone such as moxifloxacin is used when risk factors for resistant Streptococcus pneumoniae are present; second line here is doxycycline or minocycline.",
+     "wrong stage or severity"
+    ],
+    [
+     "Cefuroxime",
+     "Cefuroxime is paired with a macrolide when resistance risk factors are present; the second-line drug without them is doxycycline or minocycline.",
+     "wrong stage or severity"
+    ],
+    [
+     "Ceftriaxone",
+     "Ceftriaxone is an intravenous beta-lactam for hospitalized patients; the outpatient second-line drug without risk factors is doxycycline or minocycline.",
+     "adjacent fact"
+    ],
+    [
+     "Minocycline",
+     "Correct. Without risk of resistant Streptococcus pneumoniae, first line is a macrolide and second line is doxycycline or minocycline."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 14"
+  },
+  {
+   "topic": "Pneumonia: entry and diagnosis",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "How is community-acquired pneumonia usually managed in the outpatient setting?",
+   "opts": [
+    [
+     "Empiric antibiotics, no routine tests",
+     "Correct. Outpatients do well with empiric antibiotics, and diagnostic tests are not routinely performed."
+    ],
+    [
+     "Blood cultures before antibiotics",
+     "Blood and sputum cultures before antibiotics are for hospitalized patients; outpatients are treated empirically without routine tests.",
+     "adjacent fact"
+    ],
+    [
+     "Sputum culture to choose the drug",
+     "Sputum gram stain and culture is controversial (frequent contamination); outpatients do well with empiric antibiotics.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Sputum gram stain before treating",
+     "The sputum gram stain is controversial because samples are often contaminated; outpatient pneumonia is treated empirically.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 11"
+  },
+  {
+   "topic": "Acute bronchitis",
+   "io": "Outline appropriate patient education for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "education",
+   "q": "Why may antihistamines be avoided in acute bronchitis?",
+   "opts": [
+    [
+     "They increase mucus production",
+     "The concern runs the other way: antihistamines dehydrate bronchial secretions, which may prolong the symptoms of acute bronchitis.",
+     "reversed direction or value"
+    ],
+    [
+     "They suppress the cough reflex",
+     "Cough suppression is the role of the antitussives, which are part of supportive care; antihistamines are avoided because they dehydrate bronchial secretions.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "They dry out bronchial secretions",
+     "Correct. Antihistamines and sympathomimetics may be avoided because they dehydrate bronchial secretions and may prolong symptoms."
+    ],
+    [
+     "They promote antibiotic resistance",
+     "Resistance is a concern with unnecessary antibiotics, not antihistamines; antihistamines may be avoided because they dry bronchial secretions and prolong symptoms.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 7"
+  },
+  {
+   "topic": "Pneumonia: entry and diagnosis",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "Which route by which microbes reach the lung is common in elderly patients?",
+   "opts": [
+    [
+     "Aspiration from the oropharynx",
+     "Correct. Microbes enter the lung by aspiration from the oropharynx (common in the elderly), inhalation of aerosols, hematogenous spread or direct inoculation."
+    ],
+    [
+     "Inhalation of infectious aerosols",
+     "Inhalation of infectious aerosols is a route of entry, but the one singled out as common in the elderly is aspiration from the oropharynx.",
+     "adjacent fact"
+    ],
+    [
+     "Hematogenous dissemination",
+     "Hematogenous dissemination is a route of entry, but aspiration from the oropharynx is the route noted as common in the elderly.",
+     "adjacent fact"
+    ],
+    [
+     "Direct inoculation by trauma",
+     "Direct inoculation, as after trauma, is a route of entry; aspiration from the oropharynx is the one noted as common in the elderly.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 10"
+  },
+  {
+   "topic": "Acute bronchitis",
+   "io": "Identify contraindications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "contraindication",
+   "q": "In acute bronchitis, a respiratory fluoroquinolone is avoided unless which history is present?",
+   "opts": [
+    [
+     "Recent antibiotic exposure",
+     "Correct. In acute bronchitis a respiratory fluoroquinolone is to be avoided unless the patient has had recent antibiotic exposure."
+    ],
+    [
+     "Documented Mycoplasma infection",
+     "Documented Mycoplasma calls for doxycycline, preferred because of macrolide resistance, not for a fluoroquinolone.",
+     "adjacent fact"
+    ],
+    [
+     "A viral cause such as influenza",
+     "Influenza is one of the common viral causes, and viral acute bronchitis gets supportive care, not a fluoroquinolone.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Fever along with the cough",
+     "Fever is treated with antipyretics as part of supportive care; the exception for a fluoroquinolone is recent antibiotic exposure.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 8"
+  }
+ ],
+ "pucap2": [
+  {
+   "topic": "Inpatient pneumonia treatment",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "How does treatment of community-acquired pneumonia in the intensive care unit differ from treatment on the ward?",
+   "opts": [
+    [
+     "The beta-lactam is given by mouth",
+     "The beta-lactam is intravenous even on the ward; in the intensive care unit every drug is started intravenously.",
+     "reversed direction or value"
+    ],
+    [
+     "Every drug is started intravenously",
+     "Correct. Intensive care unit treatment uses the same regimens, but all treatment begins intravenously, and coverage for methicillin-resistant Staphylococcus aureus is considered if warranted."
+    ],
+    [
+     "Antibiotics wait for culture results",
+     "Cultures are drawn before antibiotics, but treatment does not wait for them; in the intensive care unit all treatment begins intravenously.",
+     "wrong stage or severity"
+    ],
+    [
+     "Staphylococcal coverage is mandatory",
+     "Coverage for methicillin-resistant Staphylococcus aureus is only considered if warranted; the stated difference is that all treatment begins intravenously.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 15"
+  },
+  {
+   "topic": "Inpatient pneumonia treatment",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "A patient is admitted to a medical ward, outside the intensive care unit, with community-acquired pneumonia. Which regimen fits?",
+   "opts": [
+    [
+     "Azithromycin by mouth alone",
+     "A macrolide alone is the outpatient first-line choice without resistance risk; hospitalized patients get an intravenous beta-lactam plus a macrolide.",
+     "wrong stage or severity"
+    ],
+    [
+     "Cefepime plus tobramycin",
+     "An antipseudomonal cephalosporin plus an aminoglycoside is broad gram-negative coverage for nosocomial pneumonia; the ward regimen is an intravenous beta-lactam plus a macrolide.",
+     "adjacent fact"
+    ],
+    [
+     "Doxycycline by mouth alone",
+     "Doxycycline alone is the outpatient second-line choice; on the ward, doxycycline may replace the macrolide but is given alongside an intravenous beta-lactam.",
+     "wrong stage or severity"
+    ],
+    [
+     "Ceftriaxone plus azithromycin",
+     "Correct. Non-intensive care inpatients get an intravenous beta-lactam (cefotaxime, ceftriaxone or high-dose ampicillin) plus an intravenous or oral macrolide."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 15"
+  },
+  {
+   "topic": "Acute bronchitis",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "Which patients does chronic bronchitis primarily affect?",
+   "opts": [
+    [
+     "Children exposed to a day care center",
+     "Exposure to a child in day care is a risk factor for penicillin-resistant Streptococcus pneumoniae; chronic bronchitis primarily affects patients with chronic obstructive pulmonary disease.",
+     "adjacent fact"
+    ],
+    [
+     "Those with chronic obstructive pulmonary disease",
+     "Correct. Acute bronchitis affects all ages, while chronic bronchitis primarily affects patients with chronic obstructive pulmonary disease."
+    ],
+    [
+     "Patients receiving mechanical ventilation",
+     "Mechanical ventilation raises the risk of nosocomial pneumonia; chronic bronchitis is the form that primarily affects patients with chronic obstructive pulmonary disease.",
+     "adjacent fact"
+    ],
+    [
+     "Previously healthy adults of every age",
+     "Every age is affected by ACUTE bronchitis; the chronic form primarily affects patients with chronic obstructive pulmonary disease.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 5"
+  },
+  {
+   "topic": "Acute bronchitis",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "In acute bronchitis, symptoms that persist beyond five days should prompt consideration of what?",
+   "opts": [
+    [
+     "Chronic bronchitis",
+     "Chronic bronchitis primarily affects patients with chronic obstructive pulmonary disease; persistence beyond 5 days in acute bronchitis raises bacterial involvement.",
+     "competing diagnosis"
+    ],
+    [
+     "Antihistamine therapy",
+     "Antihistamines may be avoided because they dehydrate bronchial secretions and prolong symptoms; persistence beyond 5 days raises the question of bacterial involvement.",
+     "reversed direction or value"
+    ],
+    [
+     "Bacterial involvement",
+     "Correct. Routine antibiotics are not recommended, but persistent symptoms beyond 5 days should prompt consideration of bacterial involvement."
+    ],
+    [
+     "A resistant virus",
+     "Acute bronchitis is usually viral and self-limited; when symptoms persist beyond 5 days, the consideration is bacterial involvement.",
+     "common lay belief"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 8"
+  },
+  {
+   "topic": "Acute bronchitis",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "Which drug group is part of the supportive care for acute bronchitis?",
+   "opts": [
+    [
+     "Antihistamines",
+     "Antihistamines may be avoided in acute bronchitis because they dehydrate bronchial secretions and may prolong symptoms; antitussives are part of supportive care.",
+     "reversed direction or value"
+    ],
+    [
+     "Antitussives",
+     "Correct. Supportive care for acute bronchitis is analgesics, antipyretics, antitussives and fluids."
+    ],
+    [
+     "Sympathomimetics",
+     "Sympathomimetics may be avoided because they dehydrate bronchial secretions and may prolong symptoms; antitussives are part of supportive care.",
+     "reversed direction or value"
+    ],
+    [
+     "Macrolides",
+     "Routine antibiotics such as macrolides are not recommended for acute bronchitis; supportive care is analgesics, antipyretics, antitussives and fluids.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 7"
+  },
+  {
+   "topic": "Pneumonia: entry and diagnosis",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "monitoring",
+   "q": "Why is the sputum gram stain and culture in pneumonia considered controversial?",
+   "opts": [
+    [
+     "It must follow the first antibiotic",
+     "The timing rule is the reverse: cultures for hospitalized patients are obtained prior to antibiotics. The controversy is contamination and missed pathogens.",
+     "reversed direction or value"
+    ],
+    [
+     "It cannot be done in hospitalized patients",
+     "Sputum cultures are in fact obtained for hospitalized patients; the controversy is that expectorated sputum is often contaminated.",
+     "reversed direction or value"
+    ],
+    [
+     "It replaces the need for blood cultures",
+     "Hospitalized patients get both blood and sputum cultures; the controversy is that expectorated sputum is frequently contaminated.",
+     "adjacent fact"
+    ],
+    [
+     "Expectorated samples are often contaminated",
+     "Correct. Sputum gram stain and culture is controversial: expectorated sputum is frequently contaminated and the responsible pathogen is not always identified."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 11"
+  },
+  {
+   "topic": "Acute bronchitis",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "A previously healthy adult has had a cough for three days after a cold and is diagnosed with acute bronchitis. What is the appropriate antibiotic plan?",
+   "opts": [
+    [
+     "Azithromycin",
+     "A macrolide is considered only when symptoms persist beyond 5 days and bacterial involvement is suspected; at day three, supportive care alone is appropriate.",
+     "wrong stage or severity"
+    ],
+    [
+     "Doxycycline",
+     "Doxycycline is preferred only when Mycoplasma is documented; uncomplicated acute bronchitis at day three gets supportive care and no routine antibiotic.",
+     "wrong stage or severity"
+    ],
+    [
+     "No antibiotic",
+     "Correct. Acute bronchitis is generally self-limited and treated with symptomatic, supportive care only; routine antibiotics are not recommended and are a common unnecessary prescription."
+    ],
+    [
+     "Levofloxacin",
+     "A respiratory fluoroquinolone is avoided in acute bronchitis unless there was recent antibiotic exposure; this patient needs supportive care only.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 8"
+  },
+  {
+   "topic": "Inpatient pneumonia treatment",
+   "io": "Identify contraindications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "A patient admitted to a ward with community-acquired pneumonia has a beta-lactam allergy. Which drug can be used in place of the beta-lactam-based regimen?",
+   "opts": [
+    [
+     "Cefotaxime",
+     "Cefotaxime is one of the intravenous beta-lactams on the ward regimen, so a beta-lactam allergy rules it out.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Ampicillin",
+     "Ampicillin is a beta-lactam (given high-dose on the ward regimen), so the allergy rules it out; a respiratory fluoroquinolone is used instead.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Levofloxacin",
+     "Correct. For hospitalized patients, a respiratory fluoroquinolone replaces the intravenous beta-lactam plus macrolide regimen when there is a beta-lactam allergy."
+    ],
+    [
+     "Doxycycline",
+     "Doxycycline can replace the macrolide, but it is still paired with an intravenous beta-lactam; the allergy alternative is a respiratory fluoroquinolone.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 15"
+  },
+  {
+   "topic": "Outpatient pneumonia treatment",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "An outpatient with community-acquired pneumonia has risk factors for resistant Streptococcus pneumoniae. Which beta-lactam is paired with a macrolide?",
+   "opts": [
+    [
+     "Cefuroxime",
+     "Correct. With resistance risk factors, a beta-lactam (amoxicillin with or without clavulanic acid, cefuroxime or cefpodoxime) is combined with a macrolide."
+    ],
+    [
+     "Cefepime",
+     "Cefepime is a fourth-generation antipseudomonal cephalosporin used for nosocomial pneumonia; the outpatient beta-lactams are amoxicillin, cefuroxime and cefpodoxime.",
+     "adjacent fact"
+    ],
+    [
+     "Ertapenem",
+     "Ertapenem is a narrow-spectrum carbapenem in the limited-spectrum nosocomial regimen; the outpatient beta-lactams are amoxicillin, cefuroxime and cefpodoxime.",
+     "adjacent fact"
+    ],
+    [
+     "Ceftazidime",
+     "Ceftazidime is an antipseudomonal cephalosporin that is rarely used; the outpatient beta-lactams paired with a macrolide are amoxicillin, cefuroxime and cefpodoxime.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 14"
+  },
+  {
+   "topic": "Pneumonia: entry and diagnosis",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "For a patient hospitalized with community-acquired pneumonia, when should blood and sputum cultures be obtained?",
+   "opts": [
+    [
+     "Before antibiotics are started",
+     "Correct. Blood and sputum cultures are obtained for hospitalized patients, and they are drawn prior to antibiotics."
+    ],
+    [
+     "After 48 hours of antibiotics",
+     "Forty-eight hours is the threshold that defines nosocomial pneumonia, not culture timing; cultures are drawn before antibiotics are given.",
+     "adjacent fact"
+    ],
+    [
+     "When empiric therapy fails",
+     "Cultures are not saved for failure; for hospitalized patients they are drawn at the start, prior to antibiotics.",
+     "wrong stage or severity"
+    ],
+    [
+     "At discharge from the hospital",
+     "Cultures guide therapy, so for hospitalized patients they are drawn prior to antibiotics, not at discharge.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 11"
+  },
+  {
+   "topic": "Pathogens by setting",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "Which medication history is a risk factor for penicillin-resistant Streptococcus pneumoniae?",
+   "opts": [
+    [
+     "A known allergy to beta-lactams",
+     "A beta-lactam allergy steers the choice toward a respiratory fluoroquinolone; it is not a risk factor for resistant pneumococcus. Recent beta-lactam use is.",
+     "adjacent fact"
+    ],
+    [
+     "A beta-lactam taken 2 years ago",
+     "The listed window is a beta-lactam within the past 3 months; a course 2 years ago falls outside it.",
+     "reversed direction or value"
+    ],
+    [
+     "Daily antitussive use for a cough",
+     "Antitussives are part of supportive care for bronchitis and are not a resistance risk; a beta-lactam within the past 3 months is.",
+     "common lay belief"
+    ],
+    [
+     "A beta-lactam within the past 3 months",
+     "Correct. A beta-lactam within the past 3 months is listed with age over 65, alcoholism, immunosuppression, comorbidities and day care exposure."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 13"
+  },
+  {
+   "topic": "Outpatient pneumonia treatment",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "A 70-year-old outpatient with community-acquired pneumonia took amoxicillin 2 months ago. Which single drug is an appropriate regimen?",
+   "opts": [
+    [
+     "Azithromycin",
+     "A macrolide alone is first line only when there is no risk of resistant Streptococcus pneumoniae; this patient has two risk factors.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Doxycycline",
+     "Doxycycline is second line for patients without resistance risk; age over 65 and a recent beta-lactam call for a respiratory fluoroquinolone or a combination.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Minocycline",
+     "Minocycline is second line only without resistance risk factors; age over 65 and recent amoxicillin call for a respiratory fluoroquinolone or a combination.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Levofloxacin",
+     "Correct. Age over 65 and a beta-lactam within 3 months are risk factors for resistant Streptococcus pneumoniae, so the options are beta-lactam plus macrolide or a respiratory fluoroquinolone alone."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 13"
+  },
+  {
+   "topic": "Pathogens by setting",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "Which pathogen is listed for intensive care unit pneumonia but not for outpatient pneumonia?",
+   "opts": [
+    [
+     "Staphylococcus aureus",
+     "Correct. Staphylococcus aureus appears on the intensive care unit list (with Legionella and gram-negative bacilli), not on the outpatient list."
+    ],
+    [
+     "Streptococcus pneumoniae",
+     "Streptococcus pneumoniae is listed in all three settings: outpatient, inpatient ward and intensive care unit.",
+     "adjacent fact"
+    ],
+    [
+     "Haemophilus influenzae",
+     "Haemophilus influenzae is listed in all three settings, including outpatient pneumonia; Staphylococcus aureus is the intensive care unit addition.",
+     "adjacent fact"
+    ],
+    [
+     "Moraxella catarrhalis",
+     "Moraxella catarrhalis is listed only for outpatient pneumonia, the reverse of what is asked; Staphylococcus aureus is the intensive care unit pathogen.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 12"
+  }
+ ]
+}

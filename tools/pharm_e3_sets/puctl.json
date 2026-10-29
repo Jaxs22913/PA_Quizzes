@@ -1,0 +1,934 @@
+{
+ "puctl1": [
+  {
+   "topic": "Combination inhalers",
+   "io": "Identify respiratory drug classes and commonly prescribed drugs for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "class",
+   "q": "Advair combines fluticasone with which long-acting beta-2 agonist?",
+   "opts": [
+    [
+     "Salmeterol",
+     "Correct. Advair is salmeterol with fluticasone; the two formoterol combinations are Symbicort (with budesonide) and Dulera (with mometasone)."
+    ],
+    [
+     "Formoterol",
+     "Formoterol is the long-acting beta-2 agonist in Symbicort and Dulera; Advair pairs fluticasone with salmeterol.",
+     "adjacent fact"
+    ],
+    [
+     "Levalbuterol",
+     "Levalbuterol (Xopenex) is a short-acting beta-2 agonist, not a long-acting one; Advair pairs fluticasone with salmeterol.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Tiotropium",
+     "Tiotropium (Spiriva) is a long-acting anticholinergic, not a beta-2 agonist; Advair pairs fluticasone with salmeterol.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 74"
+  },
+  {
+   "topic": "Inhaled corticosteroids",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "mechanism",
+   "q": "How do inhaled corticosteroids control asthma?",
+   "opts": [
+    [
+     "They inhibit the inflammatory cascade",
+     "Correct. Inhaled corticosteroids inhibit the inflammatory cascade, which reduces bronchial responsiveness over the long term."
+    ],
+    [
+     "They block leukotriene D4 receptors",
+     "Blocking the leukotriene D4 (cysteinyl leukotriene 1) receptor is montelukast's mechanism; inhaled corticosteroids inhibit the inflammatory cascade.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "They bind circulating immunoglobulin E",
+     "Binding circulating immunoglobulin E is omalizumab's mechanism; inhaled corticosteroids inhibit the inflammatory cascade.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "They relax airway smooth muscle",
+     "Relaxing airway smooth muscle through cyclic adenosine monophosphate is the beta-2 agonist action; inhaled corticosteroids inhibit the inflammatory cascade.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 73"
+  },
+  {
+   "topic": "Inhaled corticosteroids",
+   "io": "Identify respiratory drug classes and commonly prescribed drugs for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "class",
+   "q": "Pulmicort is the brand name of which inhaled corticosteroid?",
+   "opts": [
+    [
+     "Beclomethasone",
+     "Beclomethasone is the inhaled corticosteroid sold as QVAR; Pulmicort is budesonide.",
+     "adjacent fact"
+    ],
+    [
+     "Budesonide",
+     "Correct. Budesonide is sold as Pulmicort, and with formoterol it makes up Symbicort."
+    ],
+    [
+     "Fluticasone",
+     "Fluticasone is the inhaled corticosteroid sold as Flovent and, with salmeterol, as Advair; Pulmicort is budesonide.",
+     "adjacent fact"
+    ],
+    [
+     "Flunisolide",
+     "Flunisolide is the inhaled corticosteroid sold as Aerobid; Pulmicort is the brand of budesonide.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 72"
+  },
+  {
+   "topic": "Systemic corticosteroids",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Which metabolic side effect is shared by systemic corticosteroids and beta-2 agonists?",
+   "opts": [
+    [
+     "Hypertension",
+     "Hypertension is a systemic corticosteroid side effect, but the beta-2 agonist list gives hypotension instead; the shared effect is hyperglycemia.",
+     "adjacent fact"
+    ],
+    [
+     "Hyperuricemia",
+     "Raised uric acid is listed for ethambutol and pyrazinamide, not for corticosteroids or beta-2 agonists; both of those list hyperglycemia.",
+     "adjacent fact"
+    ],
+    [
+     "Hyperglycemia",
+     "Correct. Hyperglycemia is on both lists: the systemic corticosteroid side effects and the beta-2 agonist adverse effects."
+    ],
+    [
+     "Hypoglycemia",
+     "The direction is reversed: systemic corticosteroids and beta-2 agonists both raise blood sugar, which is listed as hyperglycemia.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slides 89, 71"
+  },
+  {
+   "topic": "Montelukast",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "indication",
+   "q": "In which form of asthma is montelukast described as effective?",
+   "opts": [
+    [
+     "Status asthmaticus",
+     "Status asthmaticus is a medical emergency treated with continuous nebulized albuterol, intravenous steroids, magnesium and ketamine if intubated; montelukast is described for aspirin-induced asthma.",
+     "wrong stage or severity"
+    ],
+    [
+     "Aspirin-induced asthma",
+     "Correct. Montelukast, an oral leukotriene D4 antagonist, is effective in aspirin-induced asthma."
+    ],
+    [
+     "Eosinophilic phenotype asthma",
+     "The eosinophilic phenotype is the target of the anti-interleukin-5 and anti-interleukin-4 biologics; montelukast is described as effective in aspirin-induced asthma.",
+     "adjacent fact"
+    ],
+    [
+     "Anaphylactic bronchospasm",
+     "Bronchospasm in anaphylaxis is treated with epinephrine and albuterol alongside fluids, histamine blockers and corticosteroids; montelukast is described for aspirin-induced asthma.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 75"
+  },
+  {
+   "topic": "Omalizumab and biologics",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "The anti-interleukin-5 and anti-interleukin-4 biologics have a side effect profile similar to which drug?",
+   "opts": [
+    [
+     "Montelukast",
+     "Montelukast is an oral leukotriene antagonist, not a biologic; the anti-interleukin biologics share omalizumab's side effect profile.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Omalizumab",
+     "Correct. The other asthma biologics have a side effect profile similar to omalizumab (Xolair), whose list includes gastrointestinal disturbances, anaphylaxis, injection site pain and bruising."
+    ],
+    [
+     "Prednisone",
+     "Prednisone is an oral systemic corticosteroid with adrenal and growth suppression among its side effects; the biologics resemble omalizumab.",
+     "adjacent fact"
+    ],
+    [
+     "Fluticasone",
+     "Fluticasone is an inhaled corticosteroid whose adverse effects include thrush; the anti-interleukin biologics share omalizumab's side effect profile.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 81"
+  },
+  {
+   "topic": "Inhaled corticosteroids",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Which effect of high-dose inhaled corticosteroids is a particular concern in children?",
+   "opts": [
+    [
+     "Red-green color loss",
+     "Decreased red-green discrimination is ethambutol's visual toxicity (its use is limited in children); high-dose inhaled corticosteroids suppress growth.",
+     "adjacent fact"
+    ],
+    [
+     "Convulsions",
+     "Convulsions are a danger of high theophylline levels, a central nervous system stimulant effect; high-dose inhaled corticosteroids suppress growth in children.",
+     "adjacent fact"
+    ],
+    [
+     "Tachycardia",
+     "Tachycardia is a beta-2 agonist and anticholinergic effect; the concern with high-dose inhaled corticosteroids in children is growth suppression.",
+     "adjacent fact"
+    ],
+    [
+     "Growth suppression",
+     "Correct. High-dose inhaled corticosteroids can suppress growth in children; they can also cause oral candidiasis and inhibit the immune system."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 73"
+  },
+  {
+   "topic": "Omalizumab and biologics",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Which acute, life-threatening reaction is listed among omalizumab's adverse effects?",
+   "opts": [
+    [
+     "Status asthmaticus",
+     "Status asthmaticus is an acute exacerbation unresponsive to initial bronchodilator treatment, not an omalizumab adverse effect; omalizumab lists anaphylaxis.",
+     "adjacent fact"
+    ],
+    [
+     "Convulsions",
+     "Convulsions are a danger of high theophylline levels; the acute life-threatening reaction listed for omalizumab is anaphylaxis.",
+     "adjacent fact"
+    ],
+    [
+     "Hepatitis",
+     "Hepatitis is listed for isoniazid, rifampin and pyrazinamide; omalizumab's acute life-threatening reaction is anaphylaxis.",
+     "adjacent fact"
+    ],
+    [
+     "Anaphylaxis",
+     "Correct. Omalizumab's adverse effects include anaphylaxis (about 0.1 percent), gastrointestinal disturbances, neutralizing antibodies and secondary malignancies."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 79"
+  },
+  {
+   "topic": "Omalizumab and biologics",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "indication",
+   "q": "Mepolizumab and reslizumab are used for which asthma phenotype?",
+   "opts": [
+    [
+     "Aspirin-induced",
+     "Montelukast is described as effective in aspirin-induced asthma; the anti-interleukin-5 biologics are for the eosinophilic phenotype.",
+     "adjacent fact"
+    ],
+    [
+     "Exercise-induced",
+     "Exercise is one of the nonspecific provokers of bronchospasm, with cold air and distilled water; the anti-interleukin-5 biologics target the eosinophilic phenotype.",
+     "adjacent fact"
+    ],
+    [
+     "Eosinophilic",
+     "Correct. The other asthma biologics (anti-interleukin-5 and anti-interleukin-4) are used for the eosinophilic phenotype, with peripheral blood eosinophils above 150 per microliter."
+    ],
+    [
+     "Viral-triggered",
+     "Viral respiratory infection triggers most asthma attacks, but the anti-interleukin-5 biologics are used for the eosinophilic phenotype.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 81"
+  },
+  {
+   "topic": "Omalizumab and biologics",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Besides urticaria and anaphylaxis, which local effects are listed for anti-immunoglobulin E therapy?",
+   "opts": [
+    [
+     "Injection site pain, bruising",
+     "Correct. Anti-immunoglobulin E side effects are urticaria (0.1 percent), anaphylaxis (0.1 percent), injection site pain and bruising."
+    ],
+    [
+     "Oral thrush and dry mouth",
+     "Oral thrush follows inhaled corticosteroids and dry mouth follows anticholinergics; anti-immunoglobulin E injections cause injection site pain and bruising.",
+     "adjacent fact"
+    ],
+    [
+     "Tremor and tachycardia",
+     "Tremor and tachycardia are beta-2 agonist adverse effects; anti-immunoglobulin E injections cause injection site pain and bruising.",
+     "adjacent fact"
+    ],
+    [
+     "Orange tears and sweat",
+     "Orange tears and sweat come from rifampin; the local effects of anti-immunoglobulin E injections are injection site pain and bruising.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 80"
+  },
+  {
+   "topic": "Mast cell stabilizers",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "mechanism",
+   "q": "Cromolyn and nedocromil prevent asthma attacks by which action?",
+   "opts": [
+    [
+     "Blocking leukotriene receptors",
+     "Blocking the leukotriene D4 receptor is montelukast's action; cromolyn and nedocromil stabilize mast cells.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Binding immunoglobulin E",
+     "Binding circulating immunoglobulin E is omalizumab's action, which reduces the high-affinity receptors on mast cells; cromolyn and nedocromil stabilize mast cells.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Inhibiting phosphodiesterase",
+     "Inhibiting phosphodiesterase is theophylline's action; cromolyn and nedocromil stabilize mast cells and must be taken before antigen exposure.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Stabilizing mast cells",
+     "Correct. Cromolyn and nedocromil remove the trigger or antigen by stabilizing mast cells; their exact mechanism is unknown and may involve interference with calcium."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 77"
+  },
+  {
+   "topic": "Combination inhalers",
+   "io": "Identify respiratory drug classes and commonly prescribed drugs for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "class",
+   "q": "Symbicort combines budesonide with which drug?",
+   "opts": [
+    [
+     "Salmeterol",
+     "Salmeterol is the long-acting beta-2 agonist in Advair, paired with fluticasone; Symbicort pairs budesonide with formoterol.",
+     "adjacent fact"
+    ],
+    [
+     "Albuterol",
+     "Albuterol is a short-acting beta-2 agonist and is not in Symbicort, Dulera or Advair; Symbicort pairs budesonide with formoterol.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Formoterol",
+     "Correct. Symbicort is formoterol with budesonide; Dulera is formoterol with mometasone, and Advair is salmeterol with fluticasone."
+    ],
+    [
+     "Montelukast",
+     "Montelukast is an oral leukotriene receptor antagonist, not part of an inhaler; Symbicort pairs budesonide with formoterol.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 74"
+  },
+  {
+   "topic": "Systemic corticosteroids",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "A patient admitted for an asthma exacerbation has taken a systemic corticosteroid for 8 days. What does the general rule say about stopping it?",
+   "opts": [
+    [
+     "Taper the dose rather than stop abruptly",
+     "Correct. The general rule is to taper when the course lasts more than 5 days, because systemic corticosteroids cause adrenal suppression; a 5-day course can simply stop."
+    ],
+    [
+     "Stop it at once; no taper is needed",
+     "Stopping at once fits a course of 5 days or less; beyond 5 days the general rule is to taper because of adrenal suppression.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Switch to theophylline before stopping",
+     "Theophylline is not a replacement for a systemic corticosteroid course; the rule for a course longer than 5 days is to taper.",
+     "adjacent fact"
+    ],
+    [
+     "Continue it indefinitely as a controller",
+     "Systemic corticosteroids are for exacerbations, limited by their side effects; daily control belongs to inhaled corticosteroids.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 89"
+  },
+  {
+   "topic": "Montelukast",
+   "io": "Identify respiratory drug classes and commonly prescribed drugs for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "class",
+   "q": "Montelukast (Singulair) belongs to which drug class?",
+   "opts": [
+    [
+     "Lipoxygenase inhibitors",
+     "Lipoxygenase inhibitors act earlier, at the enzyme that makes leukotrienes from arachidonic acid; montelukast is a leukotriene antagonist that blocks the receptor instead.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Mast cell stabilizers",
+     "Mast cell stabilizers are cromolyn and nedocromil, taken before antigen exposure; montelukast is a leukotriene antagonist.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Leukotriene antagonists",
+     "Correct. Montelukast is an oral leukotriene antagonist: it blocks the leukotriene D4 (cysteinyl leukotriene 1) receptor, which mediates inflammation, bronchial constriction and mucus secretion."
+    ],
+    [
+     "Inhaled corticosteroids",
+     "Inhaled corticosteroids such as fluticasone inhibit the inflammatory cascade; montelukast is an oral leukotriene antagonist.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 75"
+  },
+  {
+   "topic": "Systemic corticosteroids",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Which side effect is listed both for high-dose inhaled corticosteroids in children and for systemic corticosteroids?",
+   "opts": [
+    [
+     "Oral candidiasis",
+     "Oral candidiasis (thrush) is listed for inhaled corticosteroids, not among the systemic corticosteroid side effects; growth suppression is on both lists.",
+     "adjacent fact"
+    ],
+    [
+     "Growth suppression",
+     "Correct. Growth suppression appears on both lists: high-dose inhaled corticosteroids can suppress growth in children, and it is a systemic corticosteroid side effect."
+    ],
+    [
+     "Hypertension",
+     "Hypertension is a systemic corticosteroid side effect that is not on the inhaled corticosteroid list; growth suppression appears on both.",
+     "adjacent fact"
+    ],
+    [
+     "Steroid myopathy",
+     "Muscle weakness (steroid myopathy) is listed for systemic corticosteroids but not for inhaled corticosteroids; growth suppression appears on both lists.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slides 89, 73"
+  },
+  {
+   "topic": "Mast cell stabilizers",
+   "io": "Outline appropriate patient education for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "education",
+   "q": "What should a patient starting nedocromil expect?",
+   "opts": [
+    [
+     "Relief of wheezing within minutes",
+     "Rapid relief is the property of short-acting beta-2 agonists, which work rapidly and last 4 to 6 hours; nedocromil may take up to 4 weeks of regular use.",
+     "adjacent fact"
+    ],
+    [
+     "Plasma level checks for toxicity",
+     "Plasma level monitoring belongs to theophylline, which has a narrow therapeutic index; nedocromil may take up to 4 weeks of regular use to work.",
+     "adjacent fact"
+    ],
+    [
+     "Orange discoloration of the urine",
+     "Orange urine, tears and sweat are what to warn about with rifampin; nedocromil may take up to 4 weeks of regular use to work.",
+     "adjacent fact"
+    ],
+    [
+     "Up to 4 weeks of regular use to work",
+     "Correct. Cromolyn and nedocromil may take up to 4 weeks to work and must be taken regularly, before antigen exposure."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 78"
+  }
+ ],
+ "puctl2": [
+  {
+   "topic": "Montelukast",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "mechanism",
+   "q": "Which receptor does montelukast block?",
+   "opts": [
+    [
+     "High-affinity immunoglobulin E receptor",
+     "High-affinity immunoglobulin E receptors on mast cells decrease when omalizumab binds circulating immunoglobulin E; montelukast blocks the cysteinyl leukotriene 1 receptor.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Muscarinic receptor",
+     "Muscarinic receptors are blocked by the anticholinergics ipratropium and tiotropium; montelukast blocks the cysteinyl leukotriene 1 receptor.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Adenosine A2B receptor",
+     "The adenosine A2B receptor is antagonized by theophylline; montelukast blocks the cysteinyl leukotriene 1 receptor.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Cysteinyl leukotriene 1 receptor",
+     "Correct. Montelukast is a leukotriene D4 antagonist at the cysteinyl leukotriene 1 receptor, which mediates inflammation, bronchial constriction and mucus secretion."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 75"
+  },
+  {
+   "topic": "Montelukast",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "Leukotrienes are made from arachidonic acid through which enzyme?",
+   "opts": [
+    [
+     "Cyclooxygenase",
+     "Cyclooxygenase converts arachidonic acid to the prostaglandins and thromboxane A2; the leukotriene branch runs through 5-lipoxygenase.",
+     "adjacent fact"
+    ],
+    [
+     "Phosphodiesterase",
+     "Phosphodiesterase is the enzyme theophylline inhibits to raise cyclic adenosine and guanosine monophosphate; leukotrienes come from arachidonic acid by 5-lipoxygenase.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "5-lipoxygenase",
+     "Correct. Arachidonic acid is converted by 5-lipoxygenase to leukotriene A4 and on to leukotrienes B4, C4, D4 and E4; cyclooxygenase makes the prostaglandins and thromboxane."
+    ],
+    [
+     "Myosin light chain kinase",
+     "Myosin light chain kinase phosphorylates the myosin light chain in airway smooth muscle; leukotrienes are made from arachidonic acid by 5-lipoxygenase.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 76"
+  },
+  {
+   "topic": "Systemic corticosteroids",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "A patient who has needed several courses of oral corticosteroids now has trouble climbing stairs because of leg weakness. Which listed side effect fits?",
+   "opts": [
+    [
+     "Adrenal suppression",
+     "Adrenal suppression is the side effect addressed by tapering a longer course; leg weakness on oral corticosteroids is steroid myopathy.",
+     "adjacent fact"
+    ],
+    [
+     "Steroid myopathy",
+     "Correct. Muscle weakness (steroid myopathy) is a listed systemic corticosteroid side effect, alongside adrenal suppression, growth suppression, dermal thinning, hypertension, hyperglycemia, mood change and immunosuppression."
+    ],
+    [
+     "Peripheral neuritis",
+     "Peripheral neuritis from pyridoxine deficiency is isoniazid's toxicity; muscle weakness on oral corticosteroids is steroid myopathy.",
+     "adjacent fact"
+    ],
+    [
+     "Immunosuppression",
+     "Immunosuppression is a listed systemic corticosteroid side effect, but it does not explain leg weakness; this patient has steroid myopathy.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 89"
+  },
+  {
+   "topic": "Systemic corticosteroids",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Which systemic corticosteroid side effect is the reason a longer course is tapered rather than stopped abruptly?",
+   "opts": [
+    [
+     "Growth suppression",
+     "Growth suppression is a separate listed side effect (also seen with high-dose inhaled corticosteroids); the taper rule is tied to adrenal suppression.",
+     "adjacent fact"
+    ],
+    [
+     "Steroid myopathy",
+     "Muscle weakness (steroid myopathy) is a listed side effect, but tapering a longer course is the rule tied to adrenal suppression.",
+     "adjacent fact"
+    ],
+    [
+     "Hyperglycemia",
+     "Hyperglycemia is a listed side effect of systemic corticosteroids and of beta-2 agonists; the taper rule is tied to adrenal suppression.",
+     "adjacent fact"
+    ],
+    [
+     "Adrenal suppression",
+     "Correct. Systemic corticosteroids cause adrenal suppression, so the general rule is to taper a longer course rather than stop it suddenly."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 89"
+  },
+  {
+   "topic": "Systemic corticosteroids",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "indication",
+   "q": "Why are oral systemic corticosteroids reserved mainly for asthma exacerbations?",
+   "opts": [
+    [
+     "They are the least potent option",
+     "The reverse is true: oral systemic corticosteroids are the most potent option, and it is their side effects that limit their use.",
+     "reversed direction or value"
+    ],
+    [
+     "They take up to 8 weeks to work",
+     "Up to 8 weeks for maximal effect describes inhaled corticosteroids; oral systemic corticosteroids are limited by their side effects.",
+     "adjacent fact"
+    ],
+    [
+     "Their side effects limit their use",
+     "Correct. Oral systemic corticosteroids are the most potent option for suppressing airway inflammation, but their side effects limit their use, so they are used in asthma exacerbations."
+    ],
+    [
+     "They must be taken before exposure",
+     "Taking a drug before antigen exposure is the rule for cromolyn and nedocromil; oral systemic corticosteroids are limited by their side effects.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 88"
+  },
+  {
+   "topic": "Inhaled corticosteroids",
+   "io": "Identify respiratory drug classes and commonly prescribed drugs for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "class",
+   "q": "Fluticasone (Flovent) belongs to which drug class?",
+   "opts": [
+    [
+     "Inhaled corticosteroids",
+     "Correct. The inhaled corticosteroids are beclomethasone, budesonide, flunisolide, fluticasone (Flovent), mometasone and triamcinolone."
+    ],
+    [
+     "Long-acting beta-2 agonists",
+     "The long-acting beta-2 agonists are formoterol and salmeterol; fluticasone is an inhaled corticosteroid, paired with salmeterol in Advair.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Leukotriene modifiers",
+     "The leukotriene modifier is montelukast, an oral leukotriene D4 receptor antagonist; fluticasone is an inhaled corticosteroid.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Mast cell stabilizers",
+     "The mast cell stabilizers are cromolyn and nedocromil, taken before antigen exposure; fluticasone is an inhaled corticosteroid.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 72"
+  },
+  {
+   "topic": "Mast cell stabilizers",
+   "io": "Outline appropriate patient education for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "education",
+   "q": "When must cromolyn be taken to prevent an asthma attack?",
+   "opts": [
+    [
+     "At the start of an attack",
+     "Cromolyn does not reverse an attack in progress; it must be taken before the antigen insult, and a short-acting beta-2 agonist treats acute bronchospasm.",
+     "wrong stage or severity"
+    ],
+    [
+     "After symptoms appear",
+     "Waiting for symptoms is too late: cromolyn must be taken before the antigen insult, and it may take up to 4 weeks of regular use to work.",
+     "wrong stage or severity"
+    ],
+    [
+     "Before antigen exposure",
+     "Correct. Mast cell stabilizers such as cromolyn must be taken before the antigen insult; they remove the trigger rather than reverse bronchospasm."
+    ],
+    [
+     "During an exacerbation",
+     "Exacerbations call for quick-relief drugs such as systemic corticosteroids; cromolyn must be taken before the antigen insult.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 77"
+  },
+  {
+   "topic": "Omalizumab and biologics",
+   "io": "Identify respiratory drug classes and commonly prescribed drugs for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "class",
+   "q": "Dupilumab (Dupixent) and mepolizumab (Nucala), the biologics for eosinophilic asthma, block which kind of target?",
+   "opts": [
+    [
+     "Immunoglobulin E",
+     "Circulating immunoglobulin E is bound by omalizumab, which reduces the high-affinity receptors on mast cells; dupilumab and mepolizumab target interleukins.",
+     "adjacent fact"
+    ],
+    [
+     "Interleukins",
+     "Correct. They are anti-interleukin biologics (anti-interleukin-4 and anti-interleukin-5) for the eosinophilic phenotype; omalizumab, by contrast, binds immunoglobulin E."
+    ],
+    [
+     "Leukotriene D4 receptors",
+     "The leukotriene D4 receptor is blocked by montelukast, an oral leukotriene antagonist; dupilumab and mepolizumab are anti-interleukin antibodies.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Phosphodiesterase",
+     "Phosphodiesterase is inhibited by theophylline, a methylxanthine; dupilumab and mepolizumab are injected antibodies against interleukins.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 81"
+  },
+  {
+   "topic": "Systemic corticosteroids",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "Among the oral systemic corticosteroids for asthma, which one is listed as an oral liquid rather than a tablet?",
+   "opts": [
+    [
+     "Prednisone",
+     "Prednisone (Deltasone) is listed as an oral tablet; the oral liquid on the list is prednisolone (Ora-Pred).",
+     "adjacent fact"
+    ],
+    [
+     "Methylprednisolone",
+     "Methylprednisolone (Solu-Medrol) is listed for oral or parenteral use, not as the oral liquid; prednisolone (Ora-Pred) is the liquid.",
+     "adjacent fact"
+    ],
+    [
+     "Prednisolone",
+     "Correct. Prednisolone (Ora-Pred) is listed as the oral liquid; prednisone (Deltasone) is the oral tablet, and methylprednisolone and dexamethasone are oral or parenteral."
+    ],
+    [
+     "Fluticasone",
+     "Fluticasone is an inhaled corticosteroid for long-term control, not an oral systemic corticosteroid; prednisolone is the oral liquid.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 88"
+  },
+  {
+   "topic": "Inhaled corticosteroids",
+   "io": "Outline appropriate patient education for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "education",
+   "q": "A patient starting a controller inhaler is told it can take up to 8 weeks to reach its maximal effect. Which drug group is this?",
+   "opts": [
+    [
+     "Inhaled corticosteroids",
+     "Correct. Inhaled corticosteroids inhibit the inflammatory cascade and can take up to 8 weeks for maximal effects, which is why controllers are used daily rather than for quick relief."
+    ],
+    [
+     "Mast cell stabilizers",
+     "Cromolyn and nedocromil may take up to 4 weeks to work and must be taken regularly; up to 8 weeks for maximal effect describes inhaled corticosteroids.",
+     "adjacent fact"
+    ],
+    [
+     "Short-acting beta-2 agonists",
+     "A short-acting beta-2 agonist is a quick-relief drug, not a controller: it works rapidly and lasts 4 to 6 hours. The 8-week controller is an inhaled corticosteroid.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Anticholinergics",
+     "Short-acting anticholinergics are quick-relief drugs lasting up to 8 hours, not weeks; up to 8 weeks for maximal effect describes inhaled corticosteroids.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 73"
+  },
+  {
+   "topic": "Inhaled corticosteroids",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Which adverse effect of inhaled corticosteroids is an infection in the mouth?",
+   "opts": [
+    [
+     "Dry mouth",
+     "Dry mouth ('dry as a bone') is part of anticholinergic toxicity and is not an infection; inhaled corticosteroids cause oral candidiasis (thrush).",
+     "adjacent fact"
+    ],
+    [
+     "Heartburn",
+     "Heartburn is listed for theophylline, which stimulates gastric acid; the inhaled corticosteroid mouth infection is oral candidiasis.",
+     "adjacent fact"
+    ],
+    [
+     "Injection site pain",
+     "Injection site pain follows anti-immunoglobulin E injections such as omalizumab; inhaled corticosteroids cause oral candidiasis (thrush).",
+     "adjacent fact"
+    ],
+    [
+     "Oral candidiasis",
+     "Correct. Oral candidiasis (thrush) is an inhaled corticosteroid adverse effect, along with growth suppression in children at high dose and inhibition of the immune system."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 73"
+  },
+  {
+   "topic": "Combination inhalers",
+   "io": "Identify respiratory drug classes and commonly prescribed drugs for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "class",
+   "q": "Symbicort, Dulera and Advair each pair which two drug classes?",
+   "opts": [
+    [
+     "A short-acting beta-2 agonist and an anticholinergic",
+     "A short-acting beta-2 agonist with a short-acting anticholinergic is an as-needed option for group A chronic obstructive pulmonary disease; these inhalers pair a long-acting beta-2 agonist with an inhaled corticosteroid.",
+     "adjacent fact"
+    ],
+    [
+     "A long-acting beta-2 agonist and an inhaled corticosteroid",
+     "Correct. Each combines a long-acting beta-2 agonist (formoterol or salmeterol) with an inhaled corticosteroid (budesonide, mometasone or fluticasone)."
+    ],
+    [
+     "A long-acting beta-2 agonist and an anticholinergic",
+     "A long-acting beta-2 agonist plus a long-acting anticholinergic is the combination for severe breathlessness in group D chronic obstructive pulmonary disease; these inhalers pair the beta-2 agonist with an inhaled corticosteroid.",
+     "adjacent fact"
+    ],
+    [
+     "An inhaled corticosteroid and a leukotriene modifier",
+     "An inhaled corticosteroid plus a leukotriene receptor antagonist is an alternative controller option, not one of these inhalers; Symbicort, Dulera and Advair pair an inhaled corticosteroid with a long-acting beta-2 agonist.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 74"
+  },
+  {
+   "topic": "Omalizumab and biologics",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "mechanism",
+   "q": "How does omalizumab prevent mast cell degranulation?",
+   "opts": [
+    [
+     "It binds circulating immunoglobulin E",
+     "Correct. Omalizumab, a humanized monoclonal antibody, binds circulating immunoglobulin E, which decreases the high-affinity receptors on mast cells and prevents degranulation."
+    ],
+    [
+     "It stabilizes the mast cell membrane",
+     "Mast cell stabilization is the action of cromolyn and nedocromil; omalizumab binds circulating immunoglobulin E.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It blocks interleukin-5",
+     "Blocking interleukin-5 is the action of the anti-interleukin-5 biologics such as mepolizumab; omalizumab binds circulating immunoglobulin E.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It blocks leukotriene receptors",
+     "Blocking the leukotriene D4 receptor is montelukast's action; omalizumab binds circulating immunoglobulin E and so prevents degranulation.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 79"
+  },
+  {
+   "topic": "Omalizumab and biologics",
+   "io": "Describe absorption, distribution, metabolism, and excretion of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "class",
+   "q": "Which asthma biologic is sold as Cinqair?",
+   "opts": [
+    [
+     "Reslizumab",
+     "Correct. Reslizumab (Cinqair) is one of the anti-interleukin-5 biologics, with mepolizumab and benralizumab, used for the eosinophilic phenotype."
+    ],
+    [
+     "Omalizumab",
+     "Omalizumab is the anti-immunoglobulin E antibody sold as Xolair; Cinqair is reslizumab, one of the anti-interleukin-5 biologics.",
+     "adjacent fact"
+    ],
+    [
+     "Mepolizumab",
+     "Mepolizumab is the anti-interleukin-5 biologic sold as Nucala; Cinqair is reslizumab, another anti-interleukin-5 biologic.",
+     "adjacent fact"
+    ],
+    [
+     "Dupilumab",
+     "Dupilumab is the anti-interleukin-4 biologic sold as Dupixent; Cinqair is reslizumab, an anti-interleukin-5 biologic.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 81"
+  },
+  {
+   "topic": "Omalizumab and biologics",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Which long-term risk is listed among omalizumab's adverse effects?",
+   "opts": [
+    [
+     "Growth suppression",
+     "Growth suppression is listed for high-dose inhaled corticosteroids and for systemic corticosteroids; omalizumab lists secondary malignancies.",
+     "adjacent fact"
+    ],
+    [
+     "Secondary malignancies",
+     "Correct. Omalizumab's listed adverse effects are gastrointestinal disturbances, anaphylaxis, neutralizing antibodies and secondary malignancies."
+    ],
+    [
+     "Adrenal suppression",
+     "Adrenal suppression is a systemic corticosteroid side effect; the long-term risk on omalizumab's list is secondary malignancies.",
+     "adjacent fact"
+    ],
+    [
+     "Peripheral neuritis",
+     "Peripheral neuritis from pyridoxine deficiency is an isoniazid adverse effect; omalizumab lists secondary malignancies.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 79"
+  },
+  {
+   "topic": "Montelukast",
+   "io": "Describe absorption, distribution, metabolism, and excretion of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "class",
+   "q": "By which route is montelukast taken?",
+   "opts": [
+    [
+     "By inhalation",
+     "Inhalation is the route of the inhaled corticosteroids and of cromolyn and nedocromil; montelukast is an oral leukotriene antagonist.",
+     "adjacent fact"
+    ],
+    [
+     "By subcutaneous injection",
+     "Subcutaneous injection every 2 to 4 weeks is the route of omalizumab; montelukast is taken by mouth.",
+     "adjacent fact"
+    ],
+    [
+     "By intravenous infusion",
+     "Intravenous use is listed for reslizumab, an anti-interleukin-5 biologic; montelukast is taken by mouth.",
+     "adjacent fact"
+    ],
+    [
+     "By mouth",
+     "Correct. Montelukast is an oral leukotriene antagonist, so unlike the inhaled controllers it is taken by mouth."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 75"
+  }
+ ]
+}

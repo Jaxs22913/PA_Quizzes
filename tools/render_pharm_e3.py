@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Render the Pharmacology I Exam 3 topic quizzes and vignette pairs: Lecture 9 (Diuretics and Heart Failure Drugs)
-and Lecture 10 (Antiarrhythmic Drugs). Topic sets come from tools/pharm_e3_sets/<key>.json (pharm_e3_partition.py),
+"""Render the Pharmacology I Exam 3 topic quizzes and vignette pairs: Lecture 9 (Diuretics and Heart Failure Drugs),
+Lecture 10 (Antiarrhythmic Drugs) and Lecture 11 (Pulmonary Infections, Asthma and Chronic Obstructive Pulmonary Disease; vignettes in
+tools/pharm_e3_l11_vignette_sets.json, key v11). Topic sets come from tools/pharm_e3_sets/<key>.json (pharm_e3_partition.py),
 the vignettes from tools/pharm_e3_vignette_sets.json (Lecture 9) and tools/pharm_e3_l10_vignette_sets.json (Lecture 10).
 Rendering skips whatever is not built yet.
 
@@ -101,6 +102,65 @@ TOPICS10 = [
   "flutter, and <b>magnesium sulfate</b> treats torsades de pointes."),
 ]
 
+SUB11 = "Pharmacology I &middot; Exam 3 &middot; Pulmonary Infections, Asthma and Chronic Obstructive Pulmonary Disease"
+NOTE11 = ("<b>What these do and do not ask.</b> <b>Drug choice, indications, adverse effects, contraindications and patient "
+          "education are in</b>, weighted above mechanism. <b>Doses are out</b> (milligram amounts, fluid volumes, inhaler "
+          "and nebulizer doses), and so are bare drug levels and the slide points that current guidelines no longer follow, "
+          "which is why the sets run shorter than the usual 30. Every option carries its own reason, correct and incorrect alike.")
+
+# Lecture 11 topics: key, heading, file stem, chips, blurb
+TOPICS11 = [
+ ("pucap", "Acute Bronchitis &amp; Community-Acquired Pneumonia", "pulm-bronchitis-cap-quiz",
+  ["Acute bronchitis", "Pathogens by setting", "Resistant pneumococcus", "Outpatient regimens", "Inpatient regimens"],
+  "Acute bronchitis is usually <b>viral</b> and needs supportive care, not routine antibiotics. Community-acquired pneumonia "
+  "is treated <b>by setting</b>: outpatient, inpatient ward or intensive care unit, and by whether the patient carries a "
+  "<b>risk factor for drug-resistant <i>Streptococcus pneumoniae</i></b>."),
+ ("puhap", "Nosocomial Pneumonia &amp; Its Antibiotics", "pulm-nosocomial-pneumonia-quiz",
+  ["Hospital-acquired pneumonia", "Limited or broad spectrum", "Antipseudomonal agents", "Aminoglycosides", "Vancomycin and linezolid"],
+  "Pneumonia that starts <b>more than 48 hours after admission</b> is treated at once, broadly, and must cover "
+  "<b>methicillin-resistant <i>Staphylococcus aureus</i></b> and <b><i>Pseudomonas</i></b> when multidrug-resistant risk factors are present. "
+  "Know the antipseudomonal agents, which ones need renal adjustment, and what sets linezolid apart."),
+ ("putb", "Tuberculosis Drugs", "pulm-tuberculosis-drugs-quiz",
+  ["Combination therapy", "Isoniazid", "Rifampin", "Ethambutol", "Pyrazinamide", "Second-line agents"],
+  "Active tuberculosis is never treated with one drug. Four drugs for two months, then <b>isoniazid and rifampin</b> for four, "
+  "and each first-line drug has a signature: <b>peripheral neuritis</b> (give pyridoxine), <b>orange secretions</b> and enzyme "
+  "induction, <b>red-green color vision</b> loss, and <b>hyperuricemia with hepatitis</b>."),
+ ("puana", "Anaphylaxis Treatment", "pulm-anaphylaxis-quiz",
+  ["Epinephrine", "Volume expansion", "Histamine blockers", "Albuterol", "Corticosteroids"],
+  "Anaphylaxis is a severe, systemic allergic reaction. <b>Epinephrine</b> (intramuscular unless the patient is coding) is the "
+  "drug that acts on both alpha and beta receptors; fluids, histamine H1 and H2 blockers, albuterol and corticosteroids each treat one "
+  "part of the reaction, and corticosteroids take hours to work."),
+ ("pubd", "Asthma &amp; the Bronchodilators", "asthma-bronchodilators-quiz",
+  ["Asthma basics", "Quick relief or controller", "Beta-2 agonists", "Theophylline", "Anticholinergics"],
+  "Asthma is <b>reversible</b> airway narrowing driven by inflammation. The bronchodilators reverse bronchospasm: "
+  "<b>beta-2 agonists</b> raise cyclic adenosine monophosphate (short-acting for relief; long-acting never alone in asthma), "
+  "<b>theophylline</b> has a narrow therapeutic index, and the <b>anticholinergics</b> block muscarinic receptors."),
+ ("puctl", "Asthma Controllers: Steroids, Leukotriene Modifiers, Mast Cell Stabilizers &amp; Biologics", "asthma-controllers-quiz",
+  ["Inhaled corticosteroids", "Combination inhalers", "Montelukast", "Cromolyn and nedocromil", "Omalizumab and biologics", "Systemic steroids"],
+  "The drugs that <b>control inflammation</b> long term: inhaled corticosteroids (thrush, growth), the combination inhalers, "
+  "<b>montelukast</b>, the mast cell stabilizers that must be taken <b>before</b> exposure, <b>omalizumab</b> and the other "
+  "biologics, and the systemic steroids kept for exacerbations because of their side effects."),
+ ("puinh", "Asthma Steps, Inhaler Devices &amp; Status Asthmaticus", "asthma-inhalers-status-quiz",
+  ["Stepwise therapy", "Nebulizers", "Dry powder inhalers", "Metered dose inhalers and spacers", "Technique", "Status asthmaticus"],
+  "How the drug reaches the lung matters as much as which drug it is. Match the <b>device to the patient</b> (coordination, "
+  "inspiratory force), teach the <b>technique</b>, read albuterol overuse as poor control, and know the escalation for "
+  "<b>status asthmaticus</b>."),
+ ("pucopd", "Chronic Obstructive Pulmonary Disease, Smoking Cessation &amp; Immunizations", "copd-smoking-cessation-quiz",
+  ["Chronic obstructive pulmonary disease", "Treatment groups", "Bupropion", "Nicotine replacement", "Varenicline", "Vaccines"],
+  "Chronic obstructive pulmonary disease is <b>not fully reversible</b>, and stopping smoking is the intervention that changes "
+  "its course. Know the treatment by group, what each smoking cessation drug does and <b>who must avoid it</b>, and the two "
+  "vaccines every patient should get."),
+]
+
+VCHIPS11 = ["Pneumonia", "Tuberculosis", "Anaphylaxis", "Asthma", "Inhalers", "Smoking cessation"]
+VINTRO11 = ("Clinical vignettes that open with a patient rather than a fact. The topic quizzes test the drugs one at a time; "
+            "these ask what you would <b>choose</b> for the setting, what you would <b>avoid</b>, which drug explains a new "
+            "symptom and what you would <b>teach</b>. The last sentence decides the answer, so read it twice. Expect the "
+            "classic contrasts: outpatient against inpatient pneumonia, limited against broad hospital coverage, the "
+            "signature toxicity of each tuberculosis drug, quick-relief against controller inhalers, and which smoking "
+            "cessation drug a seizure history rules out. <b>No doses</b> are asked. Every option carries its own reason, "
+            "correct and incorrect alike, and every question cites its slide.")
+
 VCHIPS10 = ["Class IA", "Class IB and IC", "Beta blockers", "Calcium channel blockers", "Class III", "Adenosine and digoxin"]
 VINTRO10 = ("Clinical vignettes that open with a patient rather than a fact. The topic quizzes test the drugs one at a time; "
             "these ask what you would <b>choose</b>, what you would <b>avoid</b>, which toxicity explains a new symptom "
@@ -167,18 +227,22 @@ def vignettes(setfile, stem, topic_title, topic_h1, chips, intro):
 
 def main():
     want = set(a for a in sys.argv[1:] if not a.startswith("-"))
-    known = {t[0] for t in TOPICS + TOPICS10} | {"v9", "v10"}
+    known = {t[0] for t in TOPICS + TOPICS10 + TOPICS11} | {"v9", "v10", "v11"}
     bad = want - known
     if bad:
         sys.exit("unknown key(s): %s (known: %s)" % (", ".join(sorted(bad)), ", ".join(sorted(known))))
     topics(TOPICS, SUB, NOTE, want)
     topics(TOPICS10, SUB10, NOTE10, want)
+    topics(TOPICS11, SUB11, NOTE11, want)
     if not want or "v9" in want:
         vignettes("pharm_e3_vignette_sets.json", "pharm-e3-vignettes", "Diuretics and Heart Failure Drugs",
                   "Diuretics &amp; Heart Failure Drugs", VCHIPS, VINTRO)
     if not want or "v10" in want:
         vignettes("pharm_e3_l10_vignette_sets.json", "pharm-e3-antiarrhythmic-vignettes", "Antiarrhythmic Drugs",
                   "Antiarrhythmic Drugs", VCHIPS10, VINTRO10)
+    if not want or "v11" in want:
+        vignettes("pharm_e3_l11_vignette_sets.json", "pharm-e3-pulmonary-vignettes",
+                  "Pulmonary Infections, Asthma and Chronic Obstructive Pulmonary Disease", "Pulmonary Infections, Asthma &amp; Chronic Obstructive Pulmonary Disease", VCHIPS11, VINTRO11)
 
 
 if __name__ == "__main__":

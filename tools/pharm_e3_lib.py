@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Shared pieces for the Pharmacology I Exam 3 reference charts.
 
-Data lives in tools/pharm_e3/<L9|L10|...>.json, one file per lecture, so a new lecture is one new
+Data lives in tools/pharm_e3/<L9|L10|L11|...>.json, one file per lecture, so a new lecture is one new
 file (Lectures 10-13 arrive later). Every row carries the slide it came from and `verify`
 substrings that must appear on that slide, exactly as the Exam 1 charts do.
 
@@ -17,6 +17,7 @@ BASE = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2/Pharmacology I Inbox/
 LECTURES = {
     "L9": {"n": 9, "title": "Diuretics and Heart Failure Drugs", "deck": "Diuretics and Heart Failure Drugs.pptx"},
     "L10": {"n": 10, "title": "Antiarrhythmic Drugs", "deck": "Antiarrhythmics.pptx"},
+    "L11": {"n": 11, "title": "Drugs for Pulmonary Infections, Asthma and Chronic Obstructive Pulmonary Disease", "deck": "Pulmonology-2.pptx"},
 }
 KINDS = ("indications", "sideeffects", "contra")
 _cache = {}

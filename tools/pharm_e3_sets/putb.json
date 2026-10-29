@@ -1,0 +1,934 @@
+{
+ "putb1": [
+  {
+   "topic": "Combination therapy",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "indication",
+   "q": "In which situation is isoniazid used as a single drug?",
+   "opts": [
+    [
+     "Tuberculosis prophylaxis",
+     "Correct. Isoniazid is used alone for prophylaxis; in active disease it is always part of combination therapy."
+    ],
+    [
+     "Active tuberculosis",
+     "Active disease needs combination therapy, because single agents breed resistance; isoniazid alone is the prophylactic use.",
+     "wrong stage or severity"
+    ],
+    [
+     "Meningococcal prophylaxis",
+     "Meningococcal prophylaxis is a use of rifampin, not isoniazid; isoniazid alone is used for tuberculosis prophylaxis.",
+     "adjacent fact"
+    ],
+    [
+     "Infective endocarditis",
+     "Endocarditis is listed among rifampin's uses; isoniazid as a single drug is reserved for tuberculosis prophylaxis.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 39"
+  },
+  {
+   "topic": "Pyrazinamide",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "monitoring",
+   "q": "Which laboratory monitoring does pyrazinamide require?",
+   "opts": [
+    [
+     "Drug trough levels",
+     "Trough levels are drawn for vancomycin, and aminoglycoside doses follow levels; pyrazinamide is monitored with liver enzymes.",
+     "adjacent fact"
+    ],
+    [
+     "Red-green color vision",
+     "Red-green discrimination is tested for ethambutol's visual effects and is not a laboratory test; pyrazinamide needs liver enzymes.",
+     "adjacent fact"
+    ],
+    [
+     "Liver enzymes",
+     "Correct. Pyrazinamide causes hepatitis in about 15 percent of patients, so liver enzymes are monitored."
+    ],
+    [
+     "Kidney function",
+     "Kidney function is watched with aminoglycosides and vancomycin, which are nephrotoxic; pyrazinamide causes hepatitis, so liver enzymes are monitored.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 45"
+  },
+  {
+   "topic": "Ethambutol",
+   "io": "Describe absorption, distribution, metabolism, and excretion of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "monitoring",
+   "q": "Which first-line tuberculosis drug needs its dose adjusted in renal disease because about 75 percent is excreted unchanged?",
+   "opts": [
+    [
+     "Isoniazid",
+     "Isoniazid is mostly (75 to 95 percent) excreted as an acetylated metabolite, so acetylation, not unchanged renal excretion, sets its half-life.",
+     "adjacent fact"
+    ],
+    [
+     "Ethambutol",
+     "Correct. About 75 percent of ethambutol is excreted unchanged, so its dose is adjusted in renal disease."
+    ],
+    [
+     "Rifampin",
+     "Rifampin's listed concern is the liver (jaundice, hepatitis in chronic liver disease) and enzyme induction; ethambutol is the one excreted unchanged.",
+     "adjacent fact"
+    ],
+    [
+     "Pyrazinamide",
+     "Pyrazinamide is limited to two months for liver toxicity and is monitored with liver enzymes; ethambutol is the one adjusted in renal disease.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 44"
+  },
+  {
+   "topic": "Isoniazid",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Which patient factor raises the risk of isoniazid hepatitis?",
+   "opts": [
+    [
+     "Younger age",
+     "The risk runs the other way: isoniazid hepatitis increases with age, and it is also increased in alcoholics.",
+     "reversed direction or value"
+    ],
+    [
+     "Renal disease",
+     "Renal disease calls for adjusting ethambutol, which is mostly excreted unchanged; isoniazid hepatitis is increased in alcoholics and with age.",
+     "adjacent fact"
+    ],
+    [
+     "Hyperuricemia",
+     "Raised uric acid is an effect of pyrazinamide and ethambutol, not a risk factor for liver injury; isoniazid hepatitis is increased in alcoholics.",
+     "adjacent fact"
+    ],
+    [
+     "Alcoholism",
+     "Correct. Isoniazid hepatitis is increased in alcoholics and increases with age."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 39"
+  },
+  {
+   "topic": "Rifampin",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "interaction",
+   "q": "Rifampin interacts with anticoagulants, contraceptives, digoxin and theophylline through which action?",
+   "opts": [
+    [
+     "Induction of cytochrome P450 enzymes",
+     "Correct. Rifampin induces cytochrome P450 enzymes (CYP1A2, CYP2C9 and CYP3A4), which is how it interacts with anticoagulants, contraceptives, digoxin, ketoconazole and theophylline."
+    ],
+    [
+     "Inhibition of cytochrome P450 enzymes",
+     "The direction is reversed: rifampin induces cytochrome P450 enzymes such as CYP3A4 (cytochrome P450 3A4), and that drives its interactions.",
+     "reversed direction or value"
+    ],
+    [
+     "Inhibition of human RNA polymerase",
+     "Rifampin inhibits the bacterial DNA-dependent RNA polymerase and has no effect on the human enzyme; its interactions come from cytochrome P450 induction.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Inhibition of mycolic acid synthesis",
+     "Inhibiting mycolic acid production is isoniazid's antibacterial action; rifampin's drug interactions come from inducing cytochrome P450 enzymes.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 42"
+  },
+  {
+   "topic": "Ethambutol",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "mechanism",
+   "q": "What does ethambutol's weakening of the mycobacterial cell wall do for combination therapy?",
+   "opts": [
+    [
+     "It kills the bacteria outright",
+     "Ethambutol is bacteriostatic, so it does not kill outright; its weakened cell wall lets the other agents in more easily.",
+     "reversed direction or value"
+    ],
+    [
+     "It shortens the treatment course",
+     "Shortening combined therapy is pyrazinamide's contribution; ethambutol's weakened cell wall gives other agents better access.",
+     "adjacent fact"
+    ],
+    [
+     "It lets other agents in more easily",
+     "Correct. Ethambutol inhibits mycolic acid incorporation into membranes, and the weakened cell wall allows other agents better access."
+    ],
+    [
+     "It keeps resistance from forming",
+     "Resistance to ethambutol develops quickly if it is used alone; its weakened cell wall helps by letting other agents in.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 43"
+  },
+  {
+   "topic": "Isoniazid",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Which allergic reaction is listed for isoniazid?",
+   "opts": [
+    [
+     "Flu-like syndrome",
+     "A flu-like syndrome is rifampin's hypersensitivity reaction, seen in about 20 percent of patients; isoniazid's is a lupus-like syndrome.",
+     "adjacent fact"
+    ],
+    [
+     "Lupus-like syndrome",
+     "Correct. Isoniazid's allergic reactions include a lupus-like syndrome."
+    ],
+    [
+     "Peripheral neuritis",
+     "Peripheral neuritis is isoniazid's pyridoxine-deficiency effect, not an allergic reaction; the allergic reaction is a lupus-like syndrome.",
+     "adjacent fact"
+    ],
+    [
+     "Hepatitis",
+     "Hepatitis is an isoniazid adverse effect tied to alcohol and age, not its allergic reaction; the allergic reaction is a lupus-like syndrome.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 39"
+  },
+  {
+   "topic": "Mycobacteria",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "Why do antimicrobials that act on cell division work less well against Mycobacterium tuberculosis?",
+   "opts": [
+    [
+     "It grows slowly and can lie dormant",
+     "Correct. Mycobacterium tuberculosis is very slow growing and can exist in dormant states for long periods, so drugs that act on dividing cells work less well."
+    ],
+    [
+     "It divides faster than drugs can act",
+     "The reverse is true: Mycobacterium tuberculosis is very slow growing and can stay dormant for long periods, which blunts drugs that act on division.",
+     "reversed direction or value"
+    ],
+    [
+     "It has no cell wall for drugs to target",
+     "Mycobacteria have a distinct cell wall whose mycolic acid layer forms a waxy coat; the problem for these drugs is slow growth and dormancy.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It is a gram-negative rod",
+     "Mycobacteria are classed as acid-fast bacilli with a waxy mycolic acid coat; drugs acting on division fail because the organism grows slowly and lies dormant.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 34"
+  },
+  {
+   "topic": "Rifampin",
+   "io": "Identify contraindications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "contraindication",
+   "q": "Rifampin's jaundice and hepatitis are a particular concern in which patients?",
+   "opts": [
+    [
+     "Chronic kidney disease",
+     "Renal disease calls for adjusting ethambutol, which is mostly excreted unchanged; rifampin's liver effects matter most in chronic liver disease.",
+     "adjacent fact"
+    ],
+    [
+     "Pregnancy in any trimester",
+     "Pregnancy is the listed reason to avoid pyrazinamide; rifampin's jaundice and hepatitis are the concern in chronic liver disease.",
+     "adjacent fact"
+    ],
+    [
+     "Chronic liver disease",
+     "Correct. Rifampin can cause jaundice and hepatitis, a particular concern in chronic liver disease."
+    ],
+    [
+     "Gout or high uric acid",
+     "Raised uric acid is a pyrazinamide and ethambutol effect; rifampin's jaundice and hepatitis are the concern in chronic liver disease.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 42"
+  },
+  {
+   "topic": "Combination therapy",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "Which four drugs make up the first two months of combination therapy for tuberculosis?",
+   "opts": [
+    [
+     "Isoniazid, rifampin, ethambutol, vancomycin",
+     "Vancomycin is the empiric methicillin-resistant Staphylococcus aureus (MRSA) pneumonia drug; pyrazinamide completes the first-phase four with isoniazid, rifampin and ethambutol.",
+     "adjacent fact"
+    ],
+    [
+     "Isoniazid, rifampin, pyrazinamide, amikacin",
+     "Amikacin is an aminoglycoside dosed by levels and limited by ototoxicity and nephrotoxicity; ethambutol completes the first-phase four with the other three.",
+     "adjacent fact"
+    ],
+    [
+     "Rifampin, ethambutol, pyrazinamide, doxycycline",
+     "Doxycycline is a second-line outpatient choice for community-acquired pneumonia; isoniazid completes the first-phase four with rifampin, ethambutol and pyrazinamide.",
+     "adjacent fact"
+    ],
+    [
+     "Isoniazid, rifampin, ethambutol, pyrazinamide",
+     "Correct. The first two months combine isoniazid, rifampin, ethambutol and pyrazinamide, followed by four months of isoniazid and rifampin."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 35"
+  },
+  {
+   "topic": "Rifampin",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "mechanism",
+   "q": "What does rifampin inhibit in Mycobacterium tuberculosis?",
+   "opts": [
+    [
+     "DNA-dependent RNA polymerase",
+     "Correct. Rifampin inhibits the bacterial DNA-dependent RNA polymerase by forming a complex with the enzyme, with no effect on the human enzyme."
+    ],
+    [
+     "Mycolic acid production",
+     "Inhibiting mycolic acid production is isoniazid's mechanism; rifampin inhibits the DNA-dependent RNA polymerase.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Bacterial catalase-peroxidase",
+     "Catalase-peroxidase is the bacterial enzyme that activates isoniazid; rifampin inhibits the DNA-dependent RNA polymerase.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Cytochrome P450 enzymes",
+     "Rifampin induces cytochrome P450 enzymes rather than inhibiting them, and that is its interaction effect; its antibacterial target is the RNA polymerase.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 41"
+  },
+  {
+   "topic": "Rifampin",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "A patient notices orange tears and orange urine after starting tuberculosis therapy. Which drug explains this?",
+   "opts": [
+    [
+     "Isoniazid",
+     "Isoniazid causes a lupus-like syndrome, hepatitis and peripheral neuritis, not colored secretions; rifampin turns tears, sweat and urine orange.",
+     "adjacent fact"
+    ],
+    [
+     "Ethambutol",
+     "Ethambutol affects vision (red-green discrimination and acuity) and raises uric acid; orange tears and urine come from rifampin.",
+     "adjacent fact"
+    ],
+    [
+     "Rifampin",
+     "Correct. Rifampin colors secretions orange: tears, sweat and urine."
+    ],
+    [
+     "Pyrazinamide",
+     "Pyrazinamide causes hepatitis and hyperuricemia; orange tears, sweat and urine come from rifampin.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 42"
+  },
+  {
+   "topic": "Pyrazinamide",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "What does pyrazinamide add to combined tuberculosis therapy?",
+   "opts": [
+    [
+     "It prevents peripheral neuritis",
+     "Peripheral neuritis is prevented by giving pyridoxine (vitamin B6) with isoniazid; pyrazinamide shortens combined therapy.",
+     "adjacent fact"
+    ],
+    [
+     "It weakens the cell wall",
+     "Weakening the cell wall to give other agents better access is ethambutol's contribution; pyrazinamide shortens combined therapy.",
+     "adjacent fact"
+    ],
+    [
+     "It induces liver enzymes",
+     "Inducing cytochrome P450 enzymes is rifampin's interaction effect, not a benefit; pyrazinamide's contribution is a shorter course.",
+     "adjacent fact"
+    ],
+    [
+     "It shortens the treatment course",
+     "Correct. Pyrazinamide decreases the duration of combined therapy; it is given during the first two months only."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 45"
+  },
+  {
+   "topic": "Isoniazid",
+   "io": "Describe absorption, distribution, metabolism, and excretion of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "monitoring",
+   "q": "Isoniazid's half-life varies widely between patients (about 70 minutes versus 2.5 hours). What explains the difference?",
+   "opts": [
+    [
+     "Renal function",
+     "Renal function governs ethambutol, which is about 75 percent excreted unchanged; isoniazid's half-life split follows fast or slow acetylation.",
+     "adjacent fact"
+    ],
+    [
+     "Bacterial catalase-peroxidase",
+     "The bacterial catalase-peroxidase activates isoniazid inside the organism; the patient's half-life split follows fast or slow acetylation.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Cytochrome P450 induction",
+     "Cytochrome P450 induction is rifampin's interaction effect; isoniazid's 70-minute versus 2.5-hour half-life follows fast or slow acetylation.",
+     "adjacent fact"
+    ],
+    [
+     "Fast or slow acetylation",
+     "Correct. Most isoniazid (75 to 95 percent) is excreted as an acetylated metabolite, and fast acetylators clear it in about 70 minutes against 2.5 hours in slow acetylators."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 37"
+  },
+  {
+   "topic": "Combination therapy",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "After the first two months of tuberculosis treatment, which two drugs continue for the next four months?",
+   "opts": [
+    [
+     "Ethambutol and pyrazinamide",
+     "These two belong to the first two months only; pyrazinamide is limited to the first two months to avoid liver toxicity, and isoniazid and rifampin continue.",
+     "wrong stage or severity"
+    ],
+    [
+     "Isoniazid and rifampin",
+     "Correct. After two months of four drugs, isoniazid and rifampin continue for four more months."
+    ],
+    [
+     "Isoniazid and ethambutol",
+     "Ethambutol is part of the first two months; the four-month continuation pairs isoniazid with rifampin.",
+     "wrong stage or severity"
+    ],
+    [
+     "Rifampin and pyrazinamide",
+     "Pyrazinamide is given in the first two months only, to avoid liver toxicity; rifampin continues with isoniazid for four months.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 35"
+  },
+  {
+   "topic": "Pyrazinamide",
+   "io": "Summarize side effects and toxic manifestations of respiratory drugs",
+   "slot": "adverse effect",
+   "q": "Which drug inhibits uric acid excretion, so that nearly all patients taking it become hyperuricemic?",
+   "opts": [
+    [
+     "Isoniazid",
+     "Isoniazid's adverse effects are a lupus-like syndrome, hepatitis, peripheral neuritis and central nervous system effects; pyrazinamide inhibits uric acid excretion.",
+     "adjacent fact"
+    ],
+    [
+     "Pyrazinamide",
+     "Correct. Pyrazinamide inhibits uric acid excretion, and all patients taking it are hyperuricemic."
+    ],
+    [
+     "Rifampin",
+     "Rifampin induces cytochrome P450 enzymes, colors secretions orange and causes a flu-like syndrome; pyrazinamide inhibits uric acid excretion.",
+     "adjacent fact"
+    ],
+    [
+     "Vancomycin",
+     "Vancomycin's listed adverse effects are ototoxicity and nephrotoxicity with other nephrotoxins; pyrazinamide inhibits uric acid excretion.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 45"
+  }
+ ],
+ "putb2": [
+  {
+   "topic": "Rifampin",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "Why is rifampin rarely used alone?",
+   "opts": [
+    [
+     "Its spectrum is narrow",
+     "Rifampin is broad spectrum, so a narrow spectrum is not the problem; it is rarely used alone because tolerance develops rapidly.",
+     "reversed direction or value"
+    ],
+    [
+     "It causes jaundice",
+     "Jaundice and hepatitis are rifampin adverse effects, a concern in chronic liver disease; it is rarely used alone because tolerance develops rapidly.",
+     "adjacent fact"
+    ],
+    [
+     "It turns urine orange",
+     "Orange secretions are a harmless rifampin effect to warn about; the reason it is rarely used alone is rapid tolerance.",
+     "adjacent fact"
+    ],
+    [
+     "Tolerance develops rapidly",
+     "Correct. Rifampin is rarely used alone because rapid tolerance develops; in tuberculosis it is always combined."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 41"
+  },
+  {
+   "topic": "Rifampin",
+   "io": "Outline appropriate patient education for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "education",
+   "q": "A woman who takes an oral contraceptive is starting rifampin for tuberculosis. What should she be told about the combination?",
+   "opts": [
+    [
+     "Her contraceptive may work less well",
+     "Correct. Rifampin induces cytochrome P450 enzymes and lowers contraceptive levels, so the contraceptive may fail; she needs counseling about pregnancy risk."
+    ],
+    [
+     "Her contraceptive levels will rise",
+     "The direction is reversed: rifampin INDUCES cytochrome P450 enzymes, which lowers contraceptive levels rather than raising them.",
+     "reversed direction or value"
+    ],
+    [
+     "Her contraceptive will weaken rifampin",
+     "The interaction runs the other way: rifampin, an enzyme inducer, lowers the contraceptive's levels; it is not weakened by the contraceptive.",
+     "reversed direction or value"
+    ],
+    [
+     "The two drugs do not interact",
+     "Contraceptives are on rifampin's listed interactions, through cytochrome P450 induction, so the contraceptive may work less well.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 42"
+  },
+  {
+   "topic": "Pyrazinamide",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "A patient with chronic liver disease needs tuberculosis therapy. Which first-line drug has no listed liver toxicity?",
+   "opts": [
+    [
+     "Isoniazid",
+     "Isoniazid lists hepatitis, more likely with age and alcohol use; ethambutol is the first-line drug without a listed liver toxicity.",
+     "adjacent fact"
+    ],
+    [
+     "Rifampin",
+     "Rifampin lists jaundice and hepatitis, a particular concern in chronic liver disease; ethambutol has no listed liver toxicity.",
+     "adjacent fact"
+    ],
+    [
+     "Ethambutol",
+     "Correct. Ethambutol's listed adverse effects are visual disturbances and raised uric acid; isoniazid, rifampin and pyrazinamide all list hepatitis."
+    ],
+    [
+     "Pyrazinamide",
+     "Pyrazinamide causes hepatitis in about 15 percent and needs liver enzyme monitoring; ethambutol has no listed liver toxicity.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 44"
+  },
+  {
+   "topic": "Isoniazid",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "mechanism",
+   "q": "How does Mycobacterium tuberculosis become resistant to isoniazid?",
+   "opts": [
+    [
+     "Faster acetylation of the drug by the patient",
+     "Fast or slow acetylation is a trait of the patient that changes isoniazid's half-life; bacterial resistance comes from mutation in the activating enzyme's gene.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Loss of the waxy mycolic acid layer of its wall",
+     "Isoniazid works by inhibiting mycolic acid production, so losing that layer is its effect, not resistance; resistance comes from mutation in the activating enzyme's gene.",
+     "reversed direction or value"
+    ],
+    [
+     "Mutation in the gene for its activating enzyme",
+     "Correct. Resistance comes from mutation in the DNA coding for the activating enzyme, the bacterial catalase-peroxidase, so isoniazid is never activated."
+    ],
+    [
+     "Long periods of dormancy inside the host",
+     "Dormancy explains why drugs that act on cell division work less well; isoniazid resistance comes from mutation in the activating enzyme's gene.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 38"
+  },
+  {
+   "topic": "Pyrazinamide",
+   "io": "Identify contraindications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "contraindication",
+   "q": "Which first-line tuberculosis drug should be avoided in pregnancy?",
+   "opts": [
+    [
+     "Isoniazid",
+     "No pregnancy warning is given for isoniazid; its concerns are hepatitis, peripheral neuritis and a lupus-like syndrome. Pyrazinamide is the one to avoid.",
+     "adjacent fact"
+    ],
+    [
+     "Rifampin",
+     "No pregnancy warning is given for rifampin; its concerns are enzyme induction, liver injury and orange secretions. Pyrazinamide is the one to avoid.",
+     "adjacent fact"
+    ],
+    [
+     "Ethambutol",
+     "No pregnancy warning is given for ethambutol; its concerns are vision, uric acid and renal dosing. Pyrazinamide is the one to avoid in pregnancy.",
+     "adjacent fact"
+    ],
+    [
+     "Pyrazinamide",
+     "Correct. Pyrazinamide is to be avoided in pregnancy; it also causes hepatitis and hyperuricemia."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 45"
+  },
+  {
+   "topic": "Isoniazid",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "mechanism",
+   "q": "What does isoniazid inhibit in Mycobacterium tuberculosis?",
+   "opts": [
+    [
+     "Mycolic acid production",
+     "Correct. Isoniazid inhibits mycolic acid production and so the waxy cell coat; it is bacteriostatic for latent and bactericidal for dividing bacteria."
+    ],
+    [
+     "DNA-dependent RNA polymerase",
+     "Inhibiting the DNA-dependent RNA polymerase is rifampin's mechanism; isoniazid inhibits mycolic acid production.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Mycolic acid incorporation",
+     "Blocking the incorporation of mycolic acid into membranes is ethambutol's action; isoniazid inhibits mycolic acid production itself.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Growth at normal pH",
+     "Lowering the pH so bacteria cannot grow is pyrazinamide's action, through pyrazinoic acid; isoniazid inhibits mycolic acid production.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 37"
+  },
+  {
+   "topic": "Rifampin",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "indication",
+   "q": "Besides tuberculosis, rifampin is used as prophylaxis against which infection?",
+   "opts": [
+    [
+     "Influenza",
+     "Influenza is prevented with the annual influenza vaccine; rifampin's prophylactic use is against meningococcal disease.",
+     "adjacent fact"
+    ],
+    [
+     "Pneumococcal pneumonia",
+     "Pneumococcal disease is prevented with the pneumococcal vaccine; rifampin's prophylactic use is against meningococcal disease.",
+     "adjacent fact"
+    ],
+    [
+     "Endocarditis",
+     "Endocarditis appears among rifampin's uses without the prophylactic label; the use marked prophylactic is meningococcal disease.",
+     "adjacent fact"
+    ],
+    [
+     "Meningococcal disease",
+     "Correct. Rifampin's primary use is tuberculosis, and it is also used prophylactically for meningococcal disease; endocarditis is listed as a use without the prophylactic label."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 41"
+  },
+  {
+   "topic": "Isoniazid",
+   "io": "Outline appropriate patient education for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "education",
+   "q": "A patient starting isoniazid is also given pyridoxine (vitamin B6). Which adverse effect does the pyridoxine prevent?",
+   "opts": [
+    [
+     "Hepatitis",
+     "Isoniazid hepatitis rises in alcoholics and with age and is not prevented by pyridoxine; pyridoxine prevents the peripheral neuritis of pyridoxine deficiency.",
+     "adjacent fact"
+    ],
+    [
+     "Peripheral neuritis",
+     "Correct. Isoniazid's peripheral neuritis comes from pyridoxine deficiency, so pyridoxine (vitamin B6) is given with it."
+    ],
+    [
+     "Lupus-like syndrome",
+     "The lupus-like syndrome is isoniazid's allergic reaction and is not a vitamin deficiency; pyridoxine prevents peripheral neuritis.",
+     "adjacent fact"
+    ],
+    [
+     "Red-green color loss",
+     "Decreased red-green discrimination is ethambutol's visual adverse effect; pyridoxine given with isoniazid prevents peripheral neuritis.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 39"
+  },
+  {
+   "topic": "Mycobacteria",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "Which component of the mycobacterial cell wall forms its waxy coat?",
+   "opts": [
+    [
+     "Peptidoglycan",
+     "Peptidoglycan sits beneath the arabinogalactan layer of the mycobacterial wall; the waxy coat is formed by the mycolic acid layer.",
+     "adjacent fact"
+    ],
+    [
+     "Mycolic acid",
+     "Correct. Mycobacteria are acid-fast bacilli whose distinct phosphoglycolipid layer, mycolic acid, forms the waxy cell coat."
+    ],
+    [
+     "Arabinogalactan",
+     "Arabinogalactan is the layer between peptidoglycan and mycolic acid, where ethambutol acts; the waxy coat itself is mycolic acid.",
+     "adjacent fact"
+    ],
+    [
+     "Plasma membrane",
+     "The plasma membrane lies inside the cell wall and is one of pyrazinamide's possible targets; the waxy coat is the mycolic acid layer.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 34"
+  },
+  {
+   "topic": "Combination therapy",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "Why is active tuberculosis never treated with a single drug?",
+   "opts": [
+    [
+     "To prevent resistance",
+     "Correct. Single agents are not used in active disease, to prevent resistance; rifampin and ethambutol in particular lose effect quickly when given alone."
+    ],
+    [
+     "To prevent liver toxicity",
+     "Liver toxicity is why pyrazinamide is limited to the first two months, not why drugs are combined; combination therapy prevents resistance.",
+     "adjacent fact"
+    ],
+    [
+     "To reach the central nervous system",
+     "Isoniazid on its own is well absorbed and enters the central nervous system; single agents are avoided in active disease to prevent resistance.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "To shorten the dormant phase",
+     "Dormancy explains why drugs acting on cell division work less well; drugs are combined in active disease to prevent resistance.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 36"
+  },
+  {
+   "topic": "Rifampin",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Which hypersensitivity reaction occurs in about 20 percent of patients taking rifampin?",
+   "opts": [
+    [
+     "Lupus-like syndrome",
+     "A lupus-like syndrome is isoniazid's allergic reaction; rifampin's hypersensitivity is a flu-like syndrome.",
+     "adjacent fact"
+    ],
+    [
+     "Peripheral neuritis",
+     "Peripheral neuritis is isoniazid's effect from pyridoxine deficiency; rifampin's hypersensitivity is a flu-like syndrome.",
+     "adjacent fact"
+    ],
+    [
+     "Flu-like syndrome",
+     "Correct. Rifampin hypersensitivity takes the form of a flu-like syndrome in about 20 percent of patients."
+    ],
+    [
+     "Visual disturbance",
+     "Visual disturbances belong to ethambutol (red-green discrimination, acuity); rifampin's hypersensitivity is a flu-like syndrome.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 42"
+  },
+  {
+   "topic": "Ethambutol",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Which visual change is a classic adverse effect of ethambutol?",
+   "opts": [
+    [
+     "Orange discoloration of tears",
+     "Orange tears, sweat and urine come from rifampin; ethambutol decreases red-green discrimination and visual acuity.",
+     "adjacent fact"
+    ],
+    [
+     "Decreased red-green discrimination",
+     "Correct. Ethambutol's visual disturbances are decreased red-green discrimination and decreased visual acuity."
+    ],
+    [
+     "Dilated pupils with blurry vision",
+     "Blurry vision with mydriasis is an anticholinergic effect (blind as a bat); ethambutol decreases red-green discrimination.",
+     "adjacent fact"
+    ],
+    [
+     "Yellowing of the whites of the eyes",
+     "Yellow eyes signal jaundice, listed with rifampin's hepatitis; ethambutol's visual effect is decreased red-green discrimination and visual acuity.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 44"
+  },
+  {
+   "topic": "Pyrazinamide",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "Why is pyrazinamide given only during the first two months of tuberculosis treatment?",
+   "opts": [
+    [
+     "To avoid hyperuricemia",
+     "Pyrazinamide does make all patients hyperuricemic, but the stated reason for stopping after two months is to avoid liver toxicity.",
+     "adjacent fact"
+    ],
+    [
+     "Because resistance is rapid",
+     "Rapid resistance when used alone is noted for ethambutol and rifampin; pyrazinamide is limited to two months to avoid liver toxicity.",
+     "adjacent fact"
+    ],
+    [
+     "To avoid liver toxicity",
+     "Correct. Pyrazinamide is given for the first two months only, to avoid liver toxicity; it causes hepatitis in about 15 percent of patients."
+    ],
+    [
+     "Because it stains secretions",
+     "Orange secretions are a rifampin effect; pyrazinamide is limited to the first two months to avoid liver toxicity.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 45"
+  },
+  {
+   "topic": "Combination therapy",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "How long is the course of treatment for pulmonary tuberculosis?",
+   "opts": [
+    [
+     "2 months",
+     "Two months is only the first, four-drug phase; it is followed by four months of isoniazid and rifampin, for 6 to 9 months in all.",
+     "wrong stage or severity"
+    ],
+    [
+     "6-9 months",
+     "Correct. Pulmonary tuberculosis is treated for 6 to 9 months, beginning with two months of four drugs and continuing with isoniazid and rifampin."
+    ],
+    [
+     "9-12 months",
+     "Nine to 12 months is the course given for patients with human immunodeficiency virus and tuberculosis; pulmonary tuberculosis is 6 to 9 months.",
+     "adjacent fact"
+    ],
+    [
+     "18-24 months",
+     "Eighteen to 24 months is for complicated disease in other body parts or for isoniazid or rifampin resistance; pulmonary tuberculosis is 6 to 9 months.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 36"
+  },
+  {
+   "topic": "Isoniazid",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "mechanism",
+   "q": "Isoniazid is activated by which bacterial enzyme?",
+   "opts": [
+    [
+     "RNA polymerase",
+     "The DNA-dependent RNA polymerase is the enzyme rifampin inhibits; isoniazid is activated by the bacterial catalase-peroxidase.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Cytochrome P450 3A4",
+     "Cytochrome P450 3A4 (CYP3A4) is a human enzyme that rifampin induces; isoniazid is activated by the bacterial catalase-peroxidase.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Phosphodiesterase",
+     "Phosphodiesterase is the enzyme theophylline inhibits; isoniazid is activated by the bacterial catalase-peroxidase.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Catalase-peroxidase",
+     "Correct. Isoniazid is metabolically activated by the bacterial catalase-peroxidase; mutation in the DNA coding for this enzyme produces resistance."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 38"
+  },
+  {
+   "topic": "Pyrazinamide",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "mechanism",
+   "q": "How does pyrazinamide stop mycobacterial growth?",
+   "opts": [
+    [
+     "Its acid product lowers the pH",
+     "Correct. Pyrazinamide is converted to pyrazinoic acid, which lowers the pH so the bacteria cannot grow; it also enters macrophages."
+    ],
+    [
+     "It inhibits RNA polymerase",
+     "Inhibiting the DNA-dependent RNA polymerase is rifampin's mechanism; pyrazinamide is converted to pyrazinoic acid, which lowers the pH.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It blocks mycolic acid synthesis",
+     "Inhibiting mycolic acid production is isoniazid's mechanism; pyrazinamide works through pyrazinoic acid lowering the pH.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It weakens the cell wall",
+     "Weakening the cell wall to let other agents in is ethambutol's action; pyrazinamide's pyrazinoic acid lowers the pH so bacteria cannot grow.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 45"
+  }
+ ]
+}

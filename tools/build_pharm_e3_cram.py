@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build the Pharmacology I Exam 3 cram sheet (Lectures 9 and 10 so far; Lectures 11 to 13 are added as delivered).
+"""Build the Pharmacology I Exam 3 cram sheet (Lectures 9, 10 and 11 so far; Lectures 12 and 13 are added as delivered).
 
 REFUSES TO WRITE unless every row verifies: each `verify` substring must appear on the slide it cites
 (pharm_e3_lib.slide_text, picture-slide text included) and each `quotes` substring in the recording transcript
 (check_pharm_e3_wood.transcript). No row may carry a milligram dose or a source word, and the HTML must be
 well formed. Topics live in _pharm_e3_cram_l9.py and _pharm_e3_cram_l10.py (one module per lecture, appended
-in order; each module's rows verify against its own lecture).
+in order; each module's rows verify against its own lecture). Lecture 11: _pharm_e3_cram_l11.py.
 """
 import os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -17,10 +17,11 @@ import pharm_e3_lib as L
 import check_pharm_e3_wood as W
 import _pharm_e3_cram_l9 as C9
 import _pharm_e3_cram_l10 as C10
+import _pharm_e3_cram_l11 as C11
 
 OUT = os.path.join(os.path.dirname(HERE), "Pharmacology I Exam 3/pharm-exam-3-cram-sheet.html")
-T = C9.T + C10.T
-LECS = [("L9", C9.REG), ("L10", C10.REG)]
+T = C9.T + C10.T + C11.T
+LECS = [("L9", C9.REG), ("L10", C10.REG), ("L11", C11.REG)]
 
 DOSE = re.compile(r"\b\d+(\.\d+)?\s*(mg|mcg|µg)\b", re.I)
 BRIT = re.compile(r"\b(colour|flavour|oedema|anaemia|haemoglobin|paediatric|foetus|oestrogen|litre|behaviour|centre|programme|tumour)\w*", re.I)
@@ -61,17 +62,17 @@ if fails:
     sys.exit("cram verification failed -- refusing to write the page")
 
 html = render(
-    title="Pharmacology I Exam 3 Cram Sheet &mdash; Lectures 9 and 10 so far",
+    title="Pharmacology I Exam 3 Cram Sheet &mdash; Lectures 9 to 11 so far",
     kicker="Pharmacology I &middot; Exam 3 &middot; Class of 2028",
     h1="Pharmacology I Exam 3 Cram Sheet",
-    sub="Lecture 9 (diuretics and heart failure drugs) and Lecture 10 (antiarrhythmic drugs), Adam Wood Pharm.D. DABAT. "
-        "Lectures 11 to 13 are added as delivered. "
+    sub="Lecture 9 (diuretics and heart failure drugs), Lecture 10 (antiarrhythmic drugs) and Lecture 11 (pulmonary infections, asthma and chronic obstructive pulmonary disease), Adam Wood Pharm.D. DABAT. "
+        "Lectures 12 and 13 are added as delivered. "
         "&#9733; = professor emphasized (from the recording); a star only sets weight and adds no fact the slides lack. "
         "Rows marked FLAG or &ldquo;Current guidelines differ&rdquo; say where a slide and the pharmacology disagree; "
         "the slides are what is tested.",
     topics=T,
     guide_href="pharm-exam-3-study-guide.html",
-    footer_note="Exam 3 covers Lectures 9 to 13 &mdash; this sheet covers Lectures 9 and 10 so far. "
+    footer_note="Exam 3 covers Lectures 9 to 13 &mdash; this sheet covers Lectures 9 to 11 so far. "
                 "The <a href=\"pharm-exam-3-study-guide.html\">study guide</a> has the full "
                 "treatment.")
 
