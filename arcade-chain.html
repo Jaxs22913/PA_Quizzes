@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acid-Base Case Chains — Arcade</title>
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="arcade.css">
+<link rel="stylesheet" href="arcade-chain.css">
+</head>
+<body class="chain-body">
+<svg class="edge-decor left" aria-hidden="true"></svg>
+<svg class="edge-decor right" aria-hidden="true"></svg>
+<div class="page page-wide chain-page">
+
+  <div class="chain-topnav">
+    <a class="back-link" id="chain-back" href="arcade.html">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <span id="chain-back-text">Back to Arcade</span>
+    </a>
+  </div>
+
+  <div class="brand-row">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      </div>
+      <div class="brand-text">
+        <h1>Case Chains</h1>
+        <p>One patient, one step at a time</p>
+      </div>
+    </div>
+  </div>
+  <div class="chain-subbar">
+  <div class="streak-pill" id="streak-pill"><span class="flame"><svg class="si si-flame" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3c1 3.2 5 5.4 5 10.2a5 5 0 0 1-10 0c0-2.3 1.1-3.7 2.3-4.9.2 1.7 1 2.8 2.2 3.2-.2-3.1-.1-5.6.5-8.5z"/></svg></span><b id="streak-count">0</b><span>-day streak</span></div>
+    <button type="button" class="chain-report-btn" onclick="event.preventDefault(); window.reportMistake()">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+      Report a mistake
+    </button>
+  </div>
+
+  <main id="chain-app">
+    <div class="empty-state"><p>Loading the cases…</p></div>
+  </main>
+  <p class="sr-only" id="chain-live" aria-live="polite"></p>
+</div>
+
+<div id="toast"></div>
+
+<script src="semesters.js"></script>
+<script src="arcade.js"></script>
+<script src="arcade-chain.js"></script>
+<script src="theme.js" defer></script>
+</body>
+</html>
