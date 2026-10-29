@@ -52,6 +52,11 @@ GUIDES = os.path.join(ROOT, "guides.html")
 
 # Hand-picked, overriding whatever the scorer proposes. Keyed by the card's href path.
 CURATED = {
+    # Microbiology Exam 3: two plates that read at strip height (a scheme or tree would not).
+    "Microbiology Exam 3/micro-exam-3-study-guide.html":
+        "Microbiology Exam 3/micro-exam-3-study-guide-images/l14-s048-emb-agar.jpg",
+    "Microbiology Exam 3/micro-exam-3-cram-sheet.html":
+        "Microbiology Exam 3/micro-exam-3-study-guide-images/l14-s064-rainbow-agar.jpg",
     # Clean and unmistakable, instead of the neonatal gonococcal discharge.
     "Clinical Medicine and Surgery I Exam 2/cms-exam-2-study-guide.html":
         "Clinical Medicine and Surgery I Exam 2/cms-ophtho-chart-images/l12-s028_1.jpg",

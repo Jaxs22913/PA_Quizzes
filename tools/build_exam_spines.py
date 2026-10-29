@@ -49,6 +49,7 @@ OVERRIDES = {
     "cms1-exam3": "#6a4fa3",         # keep the colour already shown on the live homepage
     "pd2-exam2": "#15707f",          # teal; exam 1 is green
     "micro-exam2": "#2a5f8f",        # blue; exam 1 is green
+    "micro-exam3": "#6a4fa3",        # violet (an existing site colour); exam 1 green, exam 2 blue
     "clinpath1-exam2": "#8a3d5b",    # rose; exam 1 is violet
     "medlit-book": "#4f5666",        # slate; the exam proper is rose
     "pharm1-exam2": "#4a7fa5",       # blue: keep the colour already shown on the live homepage

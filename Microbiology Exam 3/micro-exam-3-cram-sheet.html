@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — Microbiology Exam 3</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#1f4d2b;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--primary-l:#1f4d2b;--primary:#679771;}:root[data-theme="dark"] body[data-dark="tokens"] #l14-scope{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-scope"]{color:#608f6a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-endotoxin-sorting{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#509b65!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-endotoxin-sorting"]{color:#49945e!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-pseudomonas{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-pseudomonas"]{color:#608f6a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-zoonoses-human{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#509b65!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-zoonoses-human"]{color:#49945e!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-enterics{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-enterics"]{color:#608f6a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-ecoli{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#509b65!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-ecoli"]{color:#49945e!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-coliforms-proteus{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-coliforms-proteus"]{color:#608f6a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-salmonella-shigella{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#509b65!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-salmonella-shigella"]{color:#49945e!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-plague{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-plague"]{color:#608f6a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-pasteurella-haemophilus{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#509b65!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-pasteurella-haemophilus"]{color:#49945e!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-transmission{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-transmission"]{color:#608f6a!important}:root[data-theme="light"] body[data-dark="tokens"]{--primary-t:#1f4d2b;}</style><!--DARK-TOKENS:END-->
+  <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="micro-exam-3-cram-sheet.docx" title="Editable Word copy">
+</head>
+<body data-dark="tokens" data-dark-kind="cram">
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Microbiology · Exam 3 · Class of 2028</div>
+    <h1>Microbiology Exam 3 Cram Sheet</h1>
+    <p class="sub">Lecture 14 so far — Gram-Negative Bacilli of Medical Importance (the Exam 3 block is Lectures 14–19). ★ = emphasized in the lecture recording or starred on a slide. Exam 3 is Wednesday 2 December 2026.</p>
+    <div class="toc">
+      <a href="#l14-scope" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L14 · What the Lecturer Flagged</a>
+      <a href="#l14-endotoxin-sorting" style="color:#316c42"><span class="dot" style="background:#3f8a55"></span>L14 · Endotoxin & Sorting</a>
+      <a href="#l14-pseudomonas" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L14 · Pseudomonas & Its Relatives</a>
+      <a href="#l14-zoonoses-human" style="color:#316c42"><span class="dot" style="background:#3f8a55"></span>L14 · Brucella, Francisella, Bordetella, Legionella</a>
+      <a href="#l14-enterics" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L14 · The Enterics: Traits, Media, Antigens</a>
+      <a href="#l14-ecoli" style="color:#316c42"><span class="dot" style="background:#3f8a55"></span>L14 · Escherichia coli Pathotypes</a>
+      <a href="#l14-coliforms-proteus" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L14 · Other Coliforms & Proteus</a>
+      <a href="#l14-salmonella-shigella" style="color:#316c42"><span class="dot" style="background:#3f8a55"></span>L14 · Salmonella, Shigella, Enteric Yersinia</a>
+      <a href="#l14-plague" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L14 · Yersinia pestis & Plague</a>
+      <a href="#l14-pasteurella-haemophilus" style="color:#316c42"><span class="dot" style="background:#3f8a55"></span>L14 · Pasteurella & Haemophilus</a>
+      <a href="#l14-transmission" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L14 · Objective 2: How We Get Them</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="micro-exam-3-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="l14-scope" style="--acc:#1f4d2b;--acc-bg:#e0e6e1;--acc-zebra:#eff3f0;--acc-ink:#183c22">
+    <div class="shead"><span class="dot" style="background:#1f4d2b"></span><h2>L14 · What the Lecturer Flagged</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ The four E. coli strains</td><td>“There are four different strains of E. coli that you need to know. Hint, hint, hint, hint.” ENTEROTOXIGENIC (traveler's diarrhea) · ENTEROINVASIVE (no toxins, shigellosis-like) · ENTEROPATHOGENIC (infant wasting diarrhea, microvilli) · ENTEROHEMORRHAGIC O157:H7 (Shiga toxin, hemolytic uremic syndrome).</td></tr>
+          <tr><td class="h">★ Cystic fibrosis</td><td>Pseudomonas aeruginosa: “very, very, very common with cystic fibrosis patients” (the slide's own star). Burkholderia cepacia with it = 80% fatality.</td></tr>
+          <tr><td class="h">★ Endotoxin</td><td>“Any gram-negative organism will have that weapon.” Lipid A; released on lysis, so killing them with antibiotics can make the patient feel worse first.</td></tr>
+          <tr><td class="h">No drug questions</td><td>“I'm not going to be testing on which antibiotics.” Non-drug management (fluids, dialysis, plasmapheresis, vaccines, breast feeding, quarantine) is fair game.</td></tr>
+          <tr><td class="h">Not to memorize</td><td>Slide 8's endotoxin diagram · slide 19's body map of Pseudomonas infections (“it can hit you pretty much anywhere”) · percentages · slide 47's biochemical tree.</td></tr>
+          <tr><td class="h">Association only</td><td>Proteus and bladder/kidney stones: “association, not causation.”</td></tr>
+          <tr><td class="h">Where the time went</td><td>E. coli ~17 min · Pseudomonas 14 · plague 12 · endotoxin 10 · enterics 9 · Salmonella 9 · pertussis 8 · Legionella 8 (mostly outbreaks). One transcript only; she corrected no slide.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l14-endotoxin-sorting" style="--acc:#3f8a55;--acc-bg:#e4efe7;--acc-zebra:#f2f7f3;--acc-ink:#316c42">
+    <div class="shead"><span class="dot" style="background:#3f8a55"></span><h2>L14 · Endotoxin & Sorting</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Endotoxin</td><td>LIPOPOLYSACCHARIDE of the outer membrane. LIPID A = biologically active part. Released on LYSIS (including by antibiotics) and during rapid growth.</td></tr>
+          <tr><td class="h">Three parts</td><td>Lipid A (active) · core polysaccharide (same for large groups) · O antigen (unique per organism; repeat number = rough, semi-rough, smooth).</td></tr>
+          <tr><td class="h">Usually protective</td><td>Innate immunity via a lipopolysaccharide binding complex + Toll-like receptor → moderated inflammation keeps mucosal infection mucosal.</td></tr>
+          <tr><td class="h">Damaging</td><td>Complement (hemorrhagic necrosis) · coagulation (disseminated intravascular coagulation, bradykinin) · high levels impair neutrophil CHEMOTAXIS · macrophages release tumor necrosis factor, interleukins 1 and 6.</td></tr>
+          <tr><td class="h">Low vs flood</td><td>Low: fever, malaise, aches. Flood: SEPTIC SHOCK — microthrombi, vasodilation, cardiac output first UP (warm shock), then down → organ failure.</td></tr>
+          <tr><td class="h">Three sorting properties</td><td>OXYGEN requirement · LACTOSE fermentation · OXIDASE enzyme.</td></tr>
+          <tr><td class="h">Aerobes, no fermentation</td><td>Pseudomonas, Burkholderia, Bordetella, Francisella, Brucella, Alcaligenes. Pairs: Pseudomonas + Burkholderia OPPORTUNISTS · Brucella + Francisella ZOONOTIC · Bordetella + Legionella HUMAN.</td></tr>
+          <tr><td class="h">Facultative anaerobes</td><td>Lactose + (coliforms): Escherichia, Klebsiella, Citrobacter, Enterobacter. Lactose −, oxidase −: Salmonella, Shigella, Proteus, Yersinia and others. Lactose −, OXIDASE +: Haemophilus, Pasteurella. Obligate anaerobe: Bacteroides.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l14-pseudomonas" style="--acc:#1f4d2b;--acc-bg:#e0e6e1;--acc-zebra:#eff3f0;--acc-ink:#183c22">
+    <div class="shead"><span class="dot" style="background:#1f4d2b"></span><h2>L14 · Pseudomonas & Its Relatives</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Pseudomonads</td><td>Small rods, ONE POLAR flagellum · aerobic, NO fermentation · oxidase + catalase + · water-soluble pigments · soil and water.</td></tr>
+          <tr><td class="h">P. aeruginosa signs</td><td>GRAPELIKE odor · greenish-blue pigment PYOCYANIN · resists soaps, quaternary ammonium disinfectants, drying.</td></tr>
+          <tr><td class="h">Why hospitals</td><td>BIOFILMS → contaminates ventilators, intravenous solutions, anesthesia equipment. Major nosocomial agent.</td></tr>
+          <tr><td class="h">Virulence</td><td>Exotoxin A blocks PROTEIN SYNTHESIS · slime layer (anti-phagocytosis, biofilm) · exoenzyme S → T cell APOPTOSIS · multidrug resistant (permeability, enzymes, efflux pumps, gene transfer).</td></tr>
+          <tr><td class="h">Disease</td><td>★ Burns, neoplastic disease, CYSTIC FIBROSIS. Septicemia → endocarditis, meningitis. Healthy people: rash, urinary tract infection, SWIMMER'S EAR, CORNEAL ULCER (contact lenses).</td></tr>
+          <tr><td class="h">Vaccine</td><td>In development, for cystic fibrosis; but in CHRONIC cystic fibrosis infection it may worsen lung inflammation.</td></tr>
+          <tr><td class="h">Relatives</td><td>Obligate aerobes, no sugar fermentation, opportunists. B. cepacia: cystic fibrosis copathogen, mutates fast. B. pseudomallei: MELIOIDOSIS, tropical soil, injury or inhalation. A. baumannii: MONTHS on fomites, combat wounds. S. maltophilia: biofilms on equipment.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l14-zoonoses-human" style="--acc:#3f8a55;--acc-bg:#e4efe7;--acc-zebra:#f2f7f3;--acc-ink:#316c42">
+    <div class="shead"><span class="dot" style="background:#3f8a55"></span><h2>L14 · Brucella, Francisella, Bordetella, Legionella</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Brucella</td><td>Tiny coccobacilli. B. abortus (CATTLE), B. suis (PIGS). Malta / UNDULANT / Bang fever: fever fluctuating weeks to a year. Slaughtering, placentas, UNPASTEURIZED dairy. Agglutination titer. ANIMAL vaccine.</td></tr>
+          <tr><td class="h">Francisella tularensis</td><td>TULAREMIA, rabbit fever. Animals, water and dust, vector bites; 10–50 organisms. Ulcerative skin lesion + swollen nodes. Intracellular → RELAPSE. Attenuated vaccine.</td></tr>
+          <tr><td class="h">Bordetella pertussis</td><td>Minute encapsulated coccobacillus. Healthy CARRIERS; contact or aerosols. Binds and destroys CILIATED cells → mucus blocks airways.</td></tr>
+          <tr><td class="h">Pertussis stages</td><td>CATARRHAL (drainage, sneezing, occasional cough) → PAROXYSMAL (persistent cough + the WHOOP).</td></tr>
+          <tr><td class="h">Pertussis prevention</td><td>DTaP (diphtheria, tetanus and acellular pertussis): ACELLULAR, toxoid + antigens, 5 doses 2 months–6 years. Rising: infants under 2 months unvaccinable · WANING immunity · pertactin-negative strains.</td></tr>
+          <tr><td class="h">Legionella</td><td>WEAKLY Gram negative, pleomorphic. Hard to culture: CHARCOAL YEAST EXTRACT agar. Lives with AMEBAS in water. AEROSOLS (cooling towers, fountains). Legionnaires disease, Pontiac fever. Men over 50, smokers, nosocomial elderly.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l14-enterics" style="--acc:#1f4d2b;--acc-bg:#e0e6e1;--acc-zebra:#eff3f0;--acc-ink:#183c22">
+    <div class="shead"><span class="dot" style="background:#1f4d2b"></span><h2>L14 · The Enterics: Traits, Media, Antigens</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Family traits</td><td>Small non-spore-forming rods · FACULTATIVE anaerobes · ALL ferment GLUCOSE · nitrate → nitrite · OXIDASE − · catalase + · all have O antigen.</td></tr>
+          <tr><td class="h">Coliform vs not</td><td>COLIFORMS ferment LACTOSE; non-coliforms do not.</td></tr>
+          <tr><td class="h">Two kinds of diarrhea</td><td>TOXIGENIC: on the surface, oversecretion of fluid (enterotoxigenic E. coli). INVASIVE: enter the lining, bleeding (Shigella).</td></tr>
+          <tr><td class="h">Media</td><td>EMB (eosin methylene blue) and MacConkey's (crystal violet + BILE SALTS): both SELECTIVE for Gram negatives, DIFFERENTIAL for lactose fermenters (pink on MacConkey's).</td></tr>
+          <tr><td class="h">Antigens</td><td>H = FLAGELLAR · K = CAPSULE/fimbrial (Vi in Salmonella) · O = SOMATIC cell wall, all have it.</td></tr>
+          <tr><td class="h">Hospitals</td><td>With Pseudomonas, almost HALF of nosocomial infections; soap dishes, sinks, catheters, tracheal cannulas.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l14-ecoli" style="--acc:#3f8a55;--acc-bg:#e4efe7;--acc-zebra:#f2f7f3;--acc-ink:#316c42">
+    <div class="shead"><span class="dot" style="background:#3f8a55"></span><h2>L14 · Escherichia coli Pathotypes</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">E. coli</td><td>Common AEROBIC gut bacterium, but NOT the most prevalent (anaerobic Bacteroides, Bifidobacterium are). Virulence by PLASMID transfer.</td></tr>
+          <tr><td class="h">Enterotoxigenic</td><td>Heat-labile + heat-stable TOXINS → fluid secretion; fimbriae, SMALL intestine. TRAVELER'S DIARRHEA. Fluids; bismuth salicylate counters the toxin.</td></tr>
+          <tr><td class="h">Enteroinvasive</td><td>NO toxins, mechanical damage; LARGE intestine, like SHIGELLOSIS. Bloody diarrhea, high fever.</td></tr>
+          <tr><td class="h">Enteropathogenic</td><td>Adheres and destroys MICROVILLI. Wasting INFANTILE diarrhea, top infant killer worldwide. Prevention: BREAST FEEDING.</td></tr>
+          <tr><td class="h">Enterohemorrhagic O157:H7</td><td>SHIGA toxin binds RIBOSOMES. CATTLE reservoir: beef, water, vegetables; ~100 cells. Hemorrhagic colitis, HEMOLYTIC UREMIC SYNDROME. RAINBOW agar: BLACK colonies (glucuronidase −). Antibiotics may WORSEN it; dialysis, plasmapheresis.</td></tr>
+          <tr><td class="h">Outside the gut</td><td>Most URINARY TRACT INFECTIONS (women, catheters) · neonatal meningitis · COLIFORM COUNT = fecal contamination of water.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l14-coliforms-proteus" style="--acc:#1f4d2b;--acc-bg:#e0e6e1;--acc-zebra:#eff3f0;--acc-ink:#183c22">
+    <div class="shead"><span class="dot" style="background:#1f4d2b"></span><h2>L14 · Other Coliforms & Proteus</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Klebsiella pneumoniae</td><td>Normal RESPIRATORY flora · LARGE CAPSULE · NOSOCOMIAL PNEUMONIA.</td></tr>
+          <tr><td class="h">Serratia marcescens</td><td>RED pigment PRODIGIOSIN · pneumonia in chronic ALCOHOLICS, burns, urinary tract infections.</td></tr>
+          <tr><td class="h">Enterobacter · Citrobacter</td><td>Opportunistic urinary tract, wound and bloodstream infections.</td></tr>
+          <tr><td class="h">Proteus</td><td>HIGHLY MOTILE, peritrichous flagella → SWARMING waves. Urinary tract infection, bladder and KIDNEY STONES, Crohn's disease.</td></tr>
+          <tr><td class="h">Providencia · Morganella</td><td>Providencia: multiple ANIMAL reservoirs, CATHETER urinary infections. Morganella: like Proteus. Both multidrug resistant.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l14-salmonella-shigella" style="--acc:#3f8a55;--acc-bg:#e4efe7;--acc-zebra:#f2f7f3;--acc-ink:#316c42">
+    <div class="shead"><span class="dot" style="background:#3f8a55"></span><h2>L14 · Salmonella, Shigella, Enteric Yersinia</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Salmonella typhi</td><td>HUMANS the only host · resists BILE and dyes · fecal food or water (“boil it, cook it, peel it, or forget it”) · chronic GALLBLADDER carriers.</td></tr>
+          <tr><td class="h">Typhoid course</td><td>SMALL intestine → invasive → SEPTICEMIA → liver, spleen; ulceration, PERFORATION. Sustained fever 103–104, ROSE SPOTS. Vaccines: oral (4 doses), injected (1).</td></tr>
+          <tr><td class="h">Animal salmonelloses</td><td>Less severe than typhoid but MORE PREVALENT. Ingestion: POULTRY and EGGS, cattle, REPTILES (pet turtles), backyard flocks. S. cholerae-suis = swine.</td></tr>
+          <tr><td class="h">Shigella</td><td>Fecal food → invades LARGE-intestine villi; does NOT perforate or enter the blood. ENDOTOXIN → fever; ENTEROTOXIN → mucosal damage, blood and mucus. Dysentery; under-5s.</td></tr>
+          <tr><td class="h">Enteric yersinias</td><td>Y. enterocolitica: animals, fish, produce, water; ILEUM inflammation MIMICS APPENDICITIS. Y. pseudotuberculosis: MORE lymph node inflammation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l14-plague" style="--acc:#1f4d2b;--acc-bg:#e0e6e1;--acc-zebra:#eff3f0;--acc-ink:#183c22">
+    <div class="shead"><span class="dot" style="background:#1f4d2b"></span><h2>L14 · Yersinia pestis & Plague</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Organism</td><td>Tiny rod, BIPOLAR staining, capsule · COAGULASE, endotoxin, murine toxin. ~200 rodent reservoirs; United States cases WEST of the Mississippi.</td></tr>
+          <tr><td class="h">The flea</td><td>Coagulase CLOTS block the flea's esophagus → RAVENOUS, bites again → REGURGITATES bacteria into the bite. 3–50 bacilli.</td></tr>
+          <tr><td class="h">Sylvatic vs urban</td><td>SYLVATIC = wild animals · URBAN = domestic or semidomestic animals · human to human rare.</td></tr>
+          <tr><td class="h">Three forms</td><td>BUBONIC: lymph node necrosis, the BUBO (groin, axilla) · SEPTICEMIC: purpura → gangrene, the BLACK plague · PNEUMONIC: lungs, highly contagious by AEROSOL.</td></tr>
+          <tr><td class="h">Diagnose fast</td><td>Death within 2 days of symptoms. History, symptoms, ASPIRATE THE BUBO. Killed or attenuated vaccine (military, vets, lab). QUARANTINE + rodent control.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l14-pasteurella-haemophilus" style="--acc:#3f8a55;--acc-bg:#e4efe7;--acc-zebra:#f2f7f3;--acc-ink:#316c42">
+    <div class="shead"><span class="dot" style="background:#3f8a55"></span><h2>L14 · Pasteurella & Haemophilus</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Pasteurella multocida</td><td>OXIDASE +; zoonotic, normal ANIMAL flora. Animal BITES or SCRATCHES → local abscess → joints, bones, nodes. Veterinarians; septicemia if immunocompromised.</td></tr>
+          <tr><td class="h">Haemophilus</td><td>“Blood loving,” fastidious. CHOCOLATE agar (cooked blood): needs HEMIN, nicotinamide adenine dinucleotide (NAD) or its phosphate.</td></tr>
+          <tr><td class="h">H. influenzae</td><td>MISNAMED (not the flu). MENINGITIS, EPIGLOTTITIS, otitis media, sinusitis, pneumonia. SUBUNIT vaccine Hib (Haemophilus influenzae type b).</td></tr>
+          <tr><td class="h">Other species</td><td>H. aegyptius: PINK EYE, children, fingers and insects · H. ducreyi: CHANCROID, sexually transmitted · H. parainfluenzae, H. aphrophilus: oral flora → ENDOCARDITIS after dental work.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l14-transmission" style="--acc:#1f4d2b;--acc-bg:#e0e6e1;--acc-zebra:#eff3f0;--acc-ink:#183c22">
+    <div class="shead"><span class="dot" style="background:#1f4d2b"></span><h2>L14 · Objective 2: How We Get Them</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Water, soil, equipment</td><td>Pseudomonas (biofilms on ventilators, intravenous lines) · B. pseudomallei (injury, inhalation) · Acinetobacter (fomites) · Stenotrophomonas (biofilms).</td></tr>
+          <tr><td class="h">Animals</td><td>Brucella (slaughter, unpasteurized dairy) · Francisella (rabbits, water, dust, vectors) · O157:H7 (cattle) · animal salmonelloses (poultry, eggs, reptiles) · Pasteurella (bites) · plague (fleas, rodents).</td></tr>
+          <tr><td class="h">Air</td><td>Bordetella (carriers, aerosols) · Legionella (water aerosols) · pneumonic plague (aerosol).</td></tr>
+          <tr><td class="h">Fecal-oral</td><td>E. coli diarrheal strains, Salmonella typhi (humans only), Shigella.</td></tr>
+          <tr><td class="h">Self and partner</td><td>E. coli urinary tract infection (women, catheters) · H. parainfluenzae (own oral flora, dental work) · H. ducreyi (sexual) · H. aegyptius (fingers, insects).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the Microbiology Exam 3 Study Guide (Class of 2028). For the full explanation and figures behind any of these, see the full guide.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
