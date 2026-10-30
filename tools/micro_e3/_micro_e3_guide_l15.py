@@ -677,12 +677,12 @@ BODY = """
     <li><strong>Temperatures.</strong> Slide 5 gives mold at 30&nbsp;&deg;C and yeast at 37&nbsp;&deg;C; the slide 6
     figure gives the ranges below 30&nbsp;&deg;C and 35&ndash;40&nbsp;&deg;C, and slide 27 grows the mold below
     35&nbsp;&deg;C. They agree on direction; the quizzes use slide 5&rsquo;s two numbers.</li>
-    <li><strong>&ldquo;Black mold.&rdquo;</strong> Slide 63 calls mucormycosis &ldquo;black mould&rdquo;; slide 65 calls
+    <li><strong>&ldquo;Black mold.&rdquo;</strong> Slide 63 calls mucormycosis &ldquo;black mold&rdquo; (in British spelling); slide 65 calls
     <em>Stachybotrys</em> the &ldquo;black mold&rdquo; and says the two are very different. Know them apart by what
     they do: mucormycosis invades tissue (nose, eyes, brain) in diabetes and leukemia; <em>Stachybotrys</em> is the
     sick building mold.</li>
     <li><strong>Spellings.</strong> The deck&rsquo;s &ldquo;Blastomyces dermatiditis&rdquo; (slide 34) is <em>Blastomyces
-    dermatitidis</em>, as slide 33 spells it; &ldquo;mould&rdquo; is written mold here.</li>
+    dermatitidis</em>, as slide 33 spells it; the deck&rsquo;s British spellings are written in US spelling here.</li>
   </ul>
 
   <button type="button" class="test-yourself-btn" onclick="window.openTestYourself('Test yourself &mdash; Fungi of Medical Importance', TEST_YOURSELF.fungi)">Test yourself! &rarr;</button>
