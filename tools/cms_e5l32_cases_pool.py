@@ -1,0 +1,1506 @@
+# -*- coding: utf-8 -*-
+"""CMS I Exam 5, Lecture 32 (Infective Endocarditis, Reynolds): CASE VIGNETTES pool.
+
+WHY (Jaxon, 2026-10-29, the night before the Exam 5 retest): "I also downloaded some missing slides
+from prof reynolds lecture 32 CMS. Add that content and i think it gives examples of how the
+questions were pretty much written so write two new quizzes. (At least her vignettes)".
+
+The new file is `IE Missing Slide and Cases.pptx` (Exam 5 inbox, 5 slides):
+  slide 1   Pharmacotherapy, Antibiotics (cont.): other streptococci (Streptococcus gallolyticus
+            [bovis], associated with liver disease/cirrhosis and GI abnormalities, esp. colon cancer),
+            enterococci (ampicillin + ceftriaxone good for CKD/AKI with low creatinine clearance),
+            HACEK (penicillin allergy: could consider fluoroquinolones), culture-negative endocarditis.
+  slides 2-5 her four practice cases. HER answer key is in the speaker notes. Speaker notes are not
+            course content (slides_only_grounding); they are used ONLY as her key for her own four
+            cases, never to key a new item (no "lactic acid > 2 mmol/L" fact anywhere here).
+
+Her four cases are kept (fields case=2..5), adapted to four options: case 2 had five, and "high-speed
+fluid resuscitation while awaiting blood culture results" was dropped (the deck says nothing about
+fluids, so it could not be refuted from the slides; the other three can). Abbreviations are written out
+(injection drug use, blood pressure, temperature) and a fact case 4's own options assume (the large
+aortic vegetation on an earlier echocardiogram; fluconazole running) is stated in its stem.
+
+Everything else is new, written in HER shape: a short vignette (age, risk history, vitals with units,
+findings described rather than named, culture / echo results), then ONE ask: recommended initial
+treatment, most important next step, who needs prophylaxis, the modified Duke classification (main deck
+slides 22-24, "Application of Duke Criteria"), the likely organism, the surgical indication, or what to
+use instead given a comorbidity or allergy (the real-exam shape, cms_exam_spec).
+
+Rules carried from cms_e5l32_scope.py: no doses; Osler nodes painful on finger/toe pads, Janeway lesions
+painless and flat on palms/soles; fever stems never sit at 38.0 C; mortality only as a ranking; empiric
+therapy as slide 27 gives it; prophylaxis by injection is ampicillin/cefazolin/ceftriaxone. Splinter
+hemorrhages and palatal petechiae are never COUNTED as a Duke criterion (slide 22's vascular list does
+not name them). The Streptococcus gallolyticus / colon cancer link, banned as audio-only on 10-15, is now
+on a slide (new deck slide 1) and is keyed from there.
+
+Items: Q(topic, io, stem, opts, cite) with the key FIRST; distractors carry a `mis` tag (WRITER.md).
+Extra fields: ask (treatment | instead | next | duke | proph | organism | surgery | other), form
+("1", "2", or "S" = spare, used when review holds an item), case (her slide number) and order (a fixed
+display order for chronological options). Partition: tools/cms_e5l32_cases_partition.py.
+"""
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _cmse3_q import Q
+import cms_e5l32_scope as S
+
+M = S.DECK
+N = "IE Missing Slide and Cases.pptx"
+IO_A, IO_PROPH, IO_REG, IO_DUKE, IO_POP = S.IO_A, S.IO_PROPH, S.IO_REGIMEN, S.IO_DUKE, S.IO_POP
+
+TX, TI, NX, DK, PR, OR, SU, PO = ("Recommended treatment", "Treatment with a comorbidity", "Next step",
+                                  "Modified Duke criteria", "Prophylaxis", "Organisms and associations",
+                                  "Surgery and complications", "Populations and prognosis")
+
+
+def cite(m=(), n=()):
+    parts = []
+    if n:
+        parts.append("%s, Slide%s %s" % (N, "s" if len(n) > 1 else "", ", ".join(str(x) for x in n)))
+    if m:
+        parts.append("%s, Slide%s %s" % (M, "s" if len(m) > 1 else "", ", ".join(str(x) for x in m)))
+    return "; ".join(parts)
+
+
+def X(ask, form, topic, io, q, opts, c, case=None, order=None):
+    d = Q(topic, io, q, opts, c)
+    d.update(ask=ask, form=form, lec="l32")
+    if case:
+        d["case"] = case
+    if order:
+        d["order"] = order
+    return d
+
+
+QUESTIONS = [
+
+# =====================================================================================================
+# HER FOUR CASES (IE Missing Slide and Cases, slides 2-5; keyed as her own answer notes say)
+# =====================================================================================================
+
+X("treatment", "1", TX, IO_A,
+  "A 28-year-old man with a history of injection drug use is evaluated in the emergency department for fever "
+  "and fatigue. He is cachectic and diaphoretic. His pulse is regular at 110 beats per minute, temperature "
+  "38.4 °C (101.1 °F) orally and blood pressure 128/68 mm Hg (right arm, seated). A high-pitched murmur is "
+  "heard along the left lower sternal border, and small painless hemorrhages are noted on the conjunctivae, "
+  "palate and palms. What is the recommended initial treatment?",
+  [["Begin vancomycin, adjust per blood culture results",
+    "Correct. Fever, tachycardia, a new left lower sternal border murmur and painless hemorrhages on the "
+    "conjunctivae, palate and palms in a person who injects drugs point to endocarditis, most often from "
+    "Staphylococcus aureus, which may be methicillin-resistant. Vancomycin begins once blood cultures are drawn "
+    "and is adjusted when the organism and its sensitivities return."],
+   ["Begin an aminoglycoside with penicillin and cefepime",
+    "This mixes pieces of other regimens. The three-drug empiric regimen with an aminoglycoside (gentamicin) and "
+    "cefepime is for a prosthetic valve placed within the last year, and it is built on vancomycin, not "
+    "penicillin. He has a native valve, and methicillin-resistant Staphylococcus aureus needs vancomycin or "
+    "daptomycin.", "right action at the wrong stage or severity"],
+   ["Follow lactic acid, start antibiotics if above 2.5 mmol/L",
+    "Waiting for a lab threshold delays treatment of a febrile, tachycardic patient whose findings already "
+    "suggest endocarditis. When the picture suggests acute endocarditis, two blood cultures are drawn within "
+    "the first 1-2 hours and empiric antibiotics follow; no lactic acid level is needed to start them.",
+    "right action at the wrong stage or severity"],
+   ["Intramuscular penicillin, one dose",
+    "A single intramuscular dose is a prophylaxis-style regimen, not treatment. Endocarditis therapy must be "
+    "bactericidal, parenteral (intravenous) and prolonged, typically 4-6 weeks from the first negative blood "
+    "culture, and penicillin would not cover methicillin-resistant Staphylococcus aureus.",
+    "confused mechanism or drug class"]],
+  cite(m=(18, 25, 26, 27), n=(2,)), case=2),
+
+X("next", "2", NX, IO_A,
+  "A 68-year-old man is hospitalized with Streptococcus bovis (gallolyticus) endocarditis of the mitral valve. "
+  "He recovers completely with appropriate therapy. Which is the most important next step?",
+  [["Colonoscopy to look for mucosal lesions",
+    "Correct. Streptococcus gallolyticus (bovis) comes from the gastrointestinal tract and is associated with "
+    "liver disease or cirrhosis and with gastrointestinal abnormalities, especially colon cancer. Once the "
+    "endocarditis is cured, the most important step is looking for the colonic lesion that let the organism "
+    "into the blood."],
+   ["Dental hygiene and denture fitting",
+    "Oral hygiene targets the mouth's flora, viridans streptococci, the classic organism after dental work. "
+    "His organism is Streptococcus gallolyticus, a gastrointestinal organism, so the source to look for is in "
+    "the colon, not the teeth.", "adjacent fact from the same lecture"],
+   ["Repeat echocardiography in 6 weeks",
+    "He recovered completely, and nothing in his course calls for a follow-up scan of the valve. What his "
+    "organism does call for is a search of the colon: Streptococcus gallolyticus is linked to gastrointestinal "
+    "abnormalities, especially colon cancer.", "right action at the wrong stage or severity"],
+   ["Mitral valve replacement to prevent emboli",
+    "Surgery is for heart failure from valve dysfunction, infection not resolving on appropriate antibiotics, "
+    "an abscess or a fungal infection. He has none of these and recovered completely; the next step is a "
+    "colonoscopy because of the organism's link to colon cancer.", "right action at the wrong stage or severity"]],
+  cite(m=(17, 33), n=(1, 3)), case=3),
+
+X("surgery", "2", SU, IO_A,
+  "A 24-year-old man who uses intravenous drugs is admitted with 4 weeks of fever. An earlier echocardiogram "
+  "showed a large aortic valve vegetation. Three blood cultures have grown Candida species, he is receiving "
+  "fluconazole, and he suddenly develops a cold, blue toe. Which is the appropriate next step?",
+  [["Surgery consult for aortic valve replacement",
+    "Correct. Candida in three blood cultures with a large aortic vegetation is fungal endocarditis, and fungal "
+    "infection is difficult to cure with medication alone, which makes it an indication for surgery. The cold, "
+    "blue toe is the expected complication, embolism and occlusion of a larger peripheral artery, so the "
+    "definitive step is cardiovascular surgery to replace the valve."],
+   ["Repeat echo to see if the vegetation embolized",
+    "The cold, blue toe already shows that the vegetation has embolized: embolism and occlusion of larger "
+    "peripheral arteries is the most likely complication of fungal endocarditis. Another scan would not change "
+    "the plan, which is surgery for a fungal infection that medication alone rarely cures.",
+    "right action at the wrong stage or severity"],
+   ["Aortic angiography for a mycotic aneurysm",
+    "A mycotic (infected) aneurysm is a recognized complication, but a cold toe with Candida in the blood and a "
+    "large aortic vegetation is the expected embolic event of fungal endocarditis. Imaging the aorta delays the "
+    "step that treats the source, valve surgery.", "competing diagnosis"],
+   ["Switch fluconazole to amphotericin B",
+    "Changing the antifungal does not solve the problem: fungal endocarditis is difficult to cure with "
+    "medication alone, which is why fungal infection is itself an indication for surgery. Source control by "
+    "valve replacement, not a different drug, is the definitive management.",
+    "right action at the wrong stage or severity"]],
+  cite(m=(16, 33, 37), n=(4,)), case=4),
+
+X("proph", "1", PR, IO_PROPH,
+  "A patient with which of the following conditions requires antimicrobial prophylaxis before dental surgery?",
+  [["Previous infective endocarditis",
+    "Correct. Prophylaxis is reserved for high-risk cardiac conditions: prosthetic valves or valve-repair "
+    "material, previous infective endocarditis, certain congenital heart disease and cardiac transplant with "
+    "valve regurgitation. A past episode of endocarditis is on that list, so dental work that manipulates the "
+    "gums or tooth roots needs prophylaxis."],
+   ["Atrial septal defect",
+    "An atrial septal defect is not one of the high-risk conditions; only unrepaired cyanotic congenital heart "
+    "disease or repaired disease with a residual defect at a prosthetic patch or device qualifies. An isolated "
+    "atrial septal defect is even excluded from the Duke predisposing conditions.", "adjacent fact from the same lecture"],
+   ["Mitral valve prolapse, no regurgitation",
+    "Mitral valve prolapse without regurgitation is not on the high-risk list. Prophylaxis before dental work "
+    "is for prosthetic valves or repair material, previous endocarditis, certain congenital heart disease and "
+    "cardiac transplant with valve regurgitation.", "common lay belief"],
+   ["Previous coronary artery bypass grafting",
+    "Coronary bypass surgery does not place prosthetic valve material and is not a high-risk condition, so it "
+    "does not call for endocarditis prophylaxis. The list covers prosthetic valves or repair material, "
+    "previous endocarditis, certain congenital heart disease and transplant valvulopathy.", "common lay belief"]],
+  cite(m=(34, 36), n=(5,)), case=5),
+
+# =====================================================================================================
+# TREATMENT and WHAT INSTEAD (main deck slides 26-31 + new slide 1)
+# =====================================================================================================
+
+X("instead", "1", TI, IO_A,
+  "A 77-year-old man with chronic kidney disease (creatinine clearance 25 mL/min) and recurrent urinary tract "
+  "infections has 4 weeks of low-grade fever and a new murmur. Transesophageal echocardiography shows a native "
+  "aortic valve vegetation, and three sets of blood cultures grow Enterococcus faecalis. Which regimen is "
+  "preferred?",
+  [["Ampicillin plus ceftriaxone",
+    "Correct. Enterococcal endocarditis is treated with penicillin or ampicillin plus gentamicin, or with "
+    "ampicillin plus ceftriaxone, and ampicillin plus ceftriaxone is the combination marked as good for "
+    "chronic kidney disease or acute kidney injury with a low creatinine clearance. His clearance of 25 mL/min "
+    "makes the gentamicin-free pairing the better choice."],
+   ["Ampicillin plus gentamicin",
+    "Ampicillin plus gentamicin is a standard enterococcal regimen when kidney function is normal, but his "
+    "creatinine clearance is 25 mL/min. The gentamicin-free alternative, ampicillin plus ceftriaxone, is the "
+    "one listed for kidney disease with a low clearance.", "right action at the wrong stage or severity"],
+   ["Ceftriaxone alone",
+    "Ceftriaxone alone is listed for viridans and other streptococci and for HACEK (Haemophilus, "
+    "Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms, not for enterococci. Every enterococcal "
+    "regimen is a combination, and ceftriaxone appears there only paired with ampicillin.", "adjacent fact from the same lecture"],
+   ["Nafcillin or oxacillin",
+    "Nafcillin or oxacillin treats methicillin-susceptible Staphylococcus aureus, not enterococci. His cultures "
+    "grew Enterococcus faecalis, whose regimens are built on ampicillin (or penicillin), here paired with "
+    "ceftriaxone because of his kidney disease.", "confused mechanism or drug class"]],
+  cite(m=(30,), n=(1,))),
+
+X("instead", "S", TI, IO_A,
+  "A 68-year-old woman with end-stage kidney disease on hemodialysis three times a week has 3 weeks of fever and "
+  "fatigue. A new mitral regurgitation murmur is heard, transesophageal echocardiography shows a mitral "
+  "vegetation, and three sets of blood cultures grow Enterococcus faecalis. She has no drug allergies. Which "
+  "regimen fits her best?",
+  [["Ampicillin plus ceftriaxone",
+    "Correct. Her cultures grew an enterococcus, and her kidneys have failed. Of the enterococcal regimens, "
+    "ampicillin plus ceftriaxone is the one marked as good for chronic kidney disease or acute kidney injury "
+    "with a low creatinine clearance, because it leaves out gentamicin."],
+   ["Penicillin G plus gentamicin",
+    "Penicillin G plus gentamicin is an enterococcal regimen for patients with working kidneys. On hemodialysis "
+    "she has the lowest possible creatinine clearance, so the gentamicin-free combination, ampicillin plus "
+    "ceftriaxone, is chosen instead.", "right action at the wrong stage or severity"],
+   ["Vancomycin plus gentamicin",
+    "Vancomycin plus gentamicin is listed for enterococci, but it still carries gentamicin, the drug the kidney "
+    "alternative is designed to avoid. With end-stage kidney disease and no penicillin allergy, ampicillin plus "
+    "ceftriaxone fits.", "right action at the wrong stage or severity"],
+   ["Daptomycin alone",
+    "Daptomycin is the alternative to vancomycin for methicillin-resistant Staphylococcus aureus. Her organism "
+    "is Enterococcus faecalis, treated with an ampicillin-based combination, here ampicillin plus ceftriaxone "
+    "because of her kidney failure.", "confused mechanism or drug class"]],
+  cite(m=(30,), n=(1,))),
+
+X("instead", "2", TI, IO_A,
+  "A 71-year-old man with type 2 diabetes is on day 3 of ampicillin plus gentamicin for Enterococcus faecalis "
+  "endocarditis of his native aortic valve. His creatinine has risen from 1.0 to 2.6 mg/dL (normal 0.6-1.2), "
+  "an acute kidney injury, and his creatinine clearance has fallen. Which change is most appropriate?",
+  [["Replace gentamicin with ceftriaxone",
+    "Correct. Ampicillin plus ceftriaxone is the enterococcal combination marked as good for acute kidney "
+    "injury or chronic kidney disease with a low creatinine clearance. Swapping gentamicin for ceftriaxone "
+    "keeps a bactericidal two-drug regimen against the enterococcus while removing the drug kept away from "
+    "failing kidneys."],
+   ["Continue ampicillin plus gentamicin",
+    "Ampicillin plus gentamicin suits normal kidney function, but his creatinine has more than doubled. The "
+    "listed alternative for acute kidney injury with a low creatinine clearance is ampicillin plus "
+    "ceftriaxone, so the regimen should change rather than continue.", "ruled out by a stated finding"],
+   ["Switch to oral amoxicillin",
+    "Endocarditis antibiotics are given parenterally (intravenously) and for weeks, so a switch to pills on day "
+    "3 is not an option. The fix for his kidney injury is to drop gentamicin and pair ampicillin with "
+    "ceftriaxone.", "confused mechanism or drug class"],
+   ["Stop antibiotics until it recovers",
+    "Pausing treatment leaves bacteria alive in the vegetation, and every one of them must be killed with "
+    "bactericidal therapy, typically 4-6 weeks from the first negative culture. The kidney injury calls for a "
+    "different partner drug, not a pause.", "right action at the wrong stage or severity"]],
+  cite(m=(26, 30), n=(1,))),
+
+X("instead", "1", TI, IO_A,
+  "A 46-year-old woman with rheumatic mitral regurgitation has 6 weeks of low-grade fever, night sweats and "
+  "weight loss. Transesophageal echocardiography shows a mitral vegetation, and three sets of blood cultures "
+  "grow Aggregatibacter actinomycetemcomitans, a HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, "
+  "Eikenella, Kingella) organism. She had anaphylaxis to penicillin. Which antibiotic class could be considered?",
+  [["A fluoroquinolone",
+    "Correct. HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) endocarditis is "
+    "treated with ceftriaxone or another third-generation cephalosporin, and for a patient with a penicillin "
+    "allergy a fluoroquinolone could be considered. Her anaphylaxis to penicillin is the comorbidity that "
+    "points to this class."],
+   ["Ampicillin-sulbactam",
+    "Ampicillin-sulbactam is a listed HACEK regimen, but ampicillin is a penicillin and she had anaphylaxis to "
+    "penicillin. With that allergy a fluoroquinolone is the class to consider instead.", "ruled out by a stated finding"],
+   ["Nafcillin or oxacillin",
+    "Nafcillin and oxacillin are penicillins used for methicillin-susceptible Staphylococcus aureus. Her "
+    "organism is a gram-negative HACEK organism, and her anaphylaxis to penicillin rules these out twice over; "
+    "a fluoroquinolone could be considered.", "confused mechanism or drug class"],
+   ["Vancomycin plus gentamicin",
+    "Vancomycin plus gentamicin is an enterococcal regimen and is not listed for HACEK organisms, which are "
+    "gram-negative. For HACEK endocarditis in a patient allergic to penicillin, a fluoroquinolone could be "
+    "considered.", "adjacent fact from the same lecture"]],
+  cite(m=(20, 31), n=(1,))),
+
+X("instead", "2", TI, IO_A,
+  "A 59-year-old man with a bioprosthetic aortic valve placed 6 years ago has subacute endocarditis, and three "
+  "sets of blood cultures grow Cardiobacterium hominis. He had hives and throat swelling after amoxicillin, and "
+  "hives again after a dose of ceftriaxone last year. Which antibiotic fits?",
+  [["A fluoroquinolone",
+    "Correct. Cardiobacterium hominis is a HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, "
+    "Kingella) organism, normally treated with ceftriaxone or another third-generation cephalosporin. He has "
+    "reacted to both a penicillin and ceftriaxone, and for HACEK disease with a penicillin allergy a "
+    "fluoroquinolone could be considered."],
+   ["Ceftriaxone",
+    "Ceftriaxone is the usual HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) drug, "
+    "but he developed hives after it last year, a stated reaction that rules it out. The listed option for a "
+    "patient who cannot take the usual drugs because of allergy is a fluoroquinolone.", "ruled out by a stated finding"],
+   ["Ampicillin-sulbactam",
+    "Ampicillin-sulbactam is a listed HACEK alternative, but ampicillin is a penicillin, and he had hives with "
+    "throat swelling after amoxicillin. With that allergy a fluoroquinolone could be considered instead.",
+    "ruled out by a stated finding"],
+   ["Nafcillin or oxacillin",
+    "Nafcillin and oxacillin are penicillins for methicillin-susceptible Staphylococcus aureus. His organism is "
+    "a HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organism, and his penicillin "
+    "allergy rules these out as well.", "confused mechanism or drug class"]],
+  cite(m=(17, 31), n=(1,))),
+
+X("treatment", "2", TX, IO_A,
+  "A 63-year-old woman with type 2 diabetes has 5 weeks of low-grade fever and fatigue. Transesophageal "
+  "echocardiography shows an aortic valve vegetation, and three sets of blood cultures grow "
+  "penicillin-susceptible Streptococcus gallolyticus (bovis). She has no drug allergies. Which antibiotic is "
+  "appropriate?",
+  [["Ceftriaxone",
+    "Correct. Streptococcus gallolyticus (bovis) is one of the other streptococci, treated with penicillin, "
+    "cefazolin or ceftriaxone (or vancomycin plus ceftriaxone plus oral rifampin), and ceftriaxone is also "
+    "listed for penicillin-susceptible Streptococcus gallolyticus. With a susceptible isolate and no allergy, "
+    "ceftriaxone fits."],
+   ["Nafcillin or oxacillin",
+    "Nafcillin and oxacillin are the drugs for methicillin-susceptible Staphylococcus aureus. Her cultures grew "
+    "a streptococcus, Streptococcus gallolyticus, which is treated with penicillin, cefazolin or ceftriaxone.",
+    "confused mechanism or drug class"],
+   ["Daptomycin",
+    "Daptomycin is the alternative to vancomycin for methicillin-resistant Staphylococcus aureus. A "
+    "penicillin-susceptible streptococcus such as Streptococcus gallolyticus is treated with penicillin, "
+    "cefazolin or ceftriaxone.", "confused mechanism or drug class"],
+   ["A fluoroquinolone",
+    "A fluoroquinolone is the class to consider for HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, "
+    "Eikenella, Kingella) endocarditis when the patient is allergic to penicillin. She has a streptococcus and "
+    "no allergy, so penicillin, cefazolin or ceftriaxone is used.", "adjacent fact from the same lecture"]],
+  cite(m=(29,), n=(1,))),
+
+X("instead", "1", TI, IO_A,
+  "A 73-year-old man with a mechanical aortic valve placed 6 years ago has Staphylococcus aureus endocarditis of "
+  "the prosthesis and was started on vancomycin, rifampin and gentamicin. Susceptibility testing now shows "
+  "methicillin-susceptible Staphylococcus aureus, and he has no drug allergies. Which change is appropriate?",
+  [["Replace vancomycin with nafcillin",
+    "Correct. Staphylococcus aureus on a prosthetic valve is treated with an antistaphylococcal drug plus "
+    "rifampin plus gentamicin. Vancomycin is the drug for methicillin-resistant strains; when cultures show a "
+    "methicillin-susceptible strain, vancomycin can be changed to nafcillin or oxacillin while rifampin and "
+    "gentamicin continue."],
+   ["Stop rifampin and gentamicin",
+    "Dropping rifampin and gentamicin would leave a native-valve regimen. For Staphylococcus aureus on a "
+    "prosthetic valve both stay in the combination; the change a methicillin-susceptible result allows is "
+    "nafcillin or oxacillin in place of vancomycin.", "adjacent fact from the same lecture"],
+   ["Replace vancomycin with daptomycin",
+    "Daptomycin is the alternative to vancomycin for methicillin-RESISTANT Staphylococcus aureus. His isolate is "
+    "methicillin-susceptible, so the swap is to nafcillin or oxacillin, the drugs for susceptible strains.",
+    "reversed direction or value"],
+   ["Switch to oral rifampin alone",
+    "Rifampin is one part of the prosthetic valve combination and is never used alone here; endocarditis "
+    "therapy is parenteral, bactericidal and prolonged. He keeps rifampin and gentamicin, with nafcillin or "
+    "oxacillin replacing vancomycin.", "confused mechanism or drug class"]],
+  cite(m=(27, 28, 30))),
+
+X("instead", "1", TI, IO_A,
+  "A 74-year-old woman with chronic kidney disease (creatinine 2.7 mg/dL, normal 0.6-1.2) has uncomplicated "
+  "native mitral valve endocarditis from penicillin-susceptible viridans streptococci and is responding quickly "
+  "to therapy. Which regimen fits?",
+  [["Ceftriaxone alone",
+    "Correct. Viridans streptococci are treated with penicillin G or ceftriaxone, with or without gentamicin, "
+    "or with vancomycin. The 2-week regimen that adds gentamicin is only for uncomplicated disease with a rapid "
+    "response AND no chronic kidney disease, so with a creatinine of 2.7 mg/dL she gets ceftriaxone without "
+    "gentamicin."],
+   ["Ceftriaxone plus gentamicin, 2 weeks",
+    "The 2-week ceftriaxone-plus-gentamicin course needs uncomplicated disease, a rapid response and no chronic "
+    "kidney disease. She meets the first two, but her chronic kidney disease rules the gentamicin course out.",
+    "ruled out by a stated finding"],
+   ["Nafcillin or oxacillin",
+    "Nafcillin and oxacillin treat methicillin-susceptible Staphylococcus aureus. Her organism is a viridans "
+    "streptococcus, treated with penicillin G or ceftriaxone, here without gentamicin because of her kidney "
+    "disease.", "confused mechanism or drug class"],
+   ["Daptomycin alone",
+    "Daptomycin is the alternative to vancomycin for methicillin-resistant Staphylococcus aureus, not a "
+    "streptococcal regimen. Penicillin-susceptible viridans streptococci are treated with penicillin G or "
+    "ceftriaxone.", "confused mechanism or drug class"]],
+  cite(m=(27, 29))),
+
+X("treatment", "2", TX, IO_A,
+  "A 48-year-old woman with normal kidney function has uncomplicated native mitral valve endocarditis from "
+  "penicillin-susceptible viridans streptococci. Her fever settled within 2 days of starting therapy, and she "
+  "has no abscess or heart failure. The team wants the shortest course a regimen allows. Which regimen fits?",
+  [["Ceftriaxone plus gentamicin",
+    "Correct. Adding gentamicin to penicillin G or ceftriaxone allows a 2-week regimen for viridans "
+    "streptococcal endocarditis, but only when it is uncomplicated, responds rapidly and there is no chronic "
+    "kidney disease. She meets all three, so the combination gives the shortest course."],
+   ["Ceftriaxone alone",
+    "Ceftriaxone alone is a correct drug for susceptible viridans streptococci, but without gentamicin it runs "
+    "the full 4 weeks. Only the combination with gentamicin qualifies for the 2-week course in uncomplicated, "
+    "rapidly responding disease.", "right action at the wrong stage or severity"],
+   ["Vancomycin alone",
+    "Vancomycin is a listed alternative for viridans streptococci, but it is given for 4 weeks and has no "
+    "short-course version. The 2-week option is penicillin G or ceftriaxone plus gentamicin.",
+    "adjacent fact from the same lecture"],
+   ["Ampicillin plus ceftriaxone",
+    "Ampicillin plus ceftriaxone is an enterococcal regimen, given for 6 weeks. Her organism is a viridans "
+    "streptococcus, not an enterococcus, so the regimen that offers the shortest course is ceftriaxone plus "
+    "gentamicin for 2 weeks.", "adjacent fact from the same lecture"]],
+  cite(m=(27, 29, 30))),
+
+X("treatment", "1", TX, IO_A,
+  "An 80-year-old woman had her mitral valve replaced with a bioprosthesis 3 years ago. She now has 2 weeks of "
+  "fever to 38.9 °C (102.0 °F), fatigue and a new regurgitant murmur. Three sets of blood cultures have been "
+  "drawn, and results are pending. Which empiric regimen is most appropriate?",
+  [["Vancomycin plus ceftriaxone",
+    "Correct. Empiric therapy covers staphylococci, streptococci and enterococci. Vancomycin plus ceftriaxone is "
+    "the regimen for native valve endocarditis, a subacute presentation, or a prosthetic valve in place MORE "
+    "than 1 year, and her bioprosthesis is 3 years old."],
+   ["Vancomycin, gentamicin and cefepime",
+    "The three-drug regimen of vancomycin, gentamicin and cefepime is for a prosthetic valve in place 1 year or "
+    "LESS. Her valve was placed 3 years ago, so she gets the regimen used for older prostheses, vancomycin plus "
+    "ceftriaxone.", "right action at the wrong stage or severity"],
+   ["Nafcillin plus gentamicin",
+    "Nafcillin is a directed drug for methicillin-susceptible Staphylococcus aureus, not empiric therapy. Before "
+    "the organism is known, the regimen must cover methicillin-resistant staphylococci too, which is why "
+    "vancomycin anchors every empiric regimen.", "right action at the wrong stage or severity"],
+   ["Ceftriaxone alone",
+    "Ceftriaxone alone leaves staphylococci, including methicillin-resistant Staphylococcus aureus, uncovered. "
+    "Empiric therapy must cover staphylococci, streptococci and enterococci, so ceftriaxone is paired with "
+    "vancomycin.", "adjacent fact from the same lecture"]],
+  cite(m=(6, 27))),
+
+X("instead", "1", TI, IO_A,
+  "A 36-year-old man who injects drugs has native tricuspid valve endocarditis, and three sets of blood cultures "
+  "grow methicillin-resistant Staphylococcus aureus. Vancomycin was stopped on day 2 because of a severe "
+  "reaction to it. Which antibiotic should replace it?",
+  [["Daptomycin",
+    "Correct. Methicillin-resistant Staphylococcus aureus on a native valve is treated with vancomycin or "
+    "daptomycin. With vancomycin stopped because of a severe reaction, daptomycin is the listed alternative "
+    "for a resistant strain."],
+   ["Nafcillin",
+    "Nafcillin is the drug for methicillin-SUSCEPTIBLE Staphylococcus aureus. His strain is methicillin-resistant, "
+    "so nafcillin will not work; the alternative to vancomycin for a resistant strain is daptomycin.",
+    "reversed direction or value"],
+   ["Cefazolin",
+    "Cefazolin is listed for methicillin-susceptible Staphylococcus aureus, not for resistant strains. A "
+    "methicillin-resistant isolate needs vancomycin or daptomycin, and vancomycin is off the table here.",
+    "reversed direction or value"],
+   ["Ceftriaxone",
+    "Ceftriaxone is a streptococcal and HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, "
+    "Kingella) drug and part of empiric therapy, but it is not a directed treatment for methicillin-resistant "
+    "Staphylococcus aureus. That needs vancomycin or daptomycin.", "adjacent fact from the same lecture"]],
+  cite(m=(27, 30))),
+
+X("instead", "2", TI, IO_A,
+  "A 62-year-old woman has native aortic valve endocarditis from viridans streptococci after a dental "
+  "extraction. She had anaphylaxis to penicillin, and hives after ceftriaxone. Which antibiotic fits?",
+  [["Vancomycin",
+    "Correct. Viridans streptococci are treated with penicillin G or ceftriaxone (with or without gentamicin) or "
+    "with vancomycin. Her anaphylaxis to penicillin and her hives after ceftriaxone rule out the first two, "
+    "leaving vancomycin as the listed alternative."],
+   ["Penicillin G",
+    "Penicillin G is a first choice for viridans streptococci, but she had anaphylaxis to penicillin, which "
+    "rules it out. Vancomycin is the listed streptococcal option that avoids both of her allergies.",
+    "ruled out by a stated finding"],
+   ["Ceftriaxone plus gentamicin",
+    "Ceftriaxone plus gentamicin is a viridans streptococcal regimen, but she had hives after ceftriaxone. "
+    "With reactions to both penicillin and ceftriaxone, vancomycin is the option left.", "ruled out by a stated finding"],
+   ["Nafcillin",
+    "Nafcillin is a penicillin used for methicillin-susceptible Staphylococcus aureus. Her organism is a "
+    "viridans streptococcus and she is allergic to penicillin, so vancomycin fits.", "confused mechanism or drug class"]],
+  cite(m=(27,))),
+
+X("treatment", "1", TX, IO_A,
+  "A 27-year-old woman who injects drugs was started on vancomycin plus ceftriaxone after three sets of blood "
+  "cultures were drawn for suspected native tricuspid valve endocarditis. The cultures now grow "
+  "methicillin-resistant Staphylococcus aureus. Which adjustment fits?",
+  [["Continue vancomycin alone",
+    "Correct. Empiric therapy is adjusted to the culture result. Methicillin-resistant Staphylococcus aureus on a "
+    "native valve is treated with vancomycin or daptomycin, so vancomycin continues and ceftriaxone, there to "
+    "cover streptococci until the organism was known, is no longer needed."],
+   ["Switch to nafcillin",
+    "Nafcillin treats methicillin-SUSCEPTIBLE Staphylococcus aureus. Her strain is methicillin-resistant, so "
+    "switching to nafcillin would leave it untreated; vancomycin (or daptomycin) is the directed drug.",
+    "reversed direction or value"],
+   ["Add rifampin and gentamicin",
+    "Rifampin and gentamicin are added for Staphylococcus aureus on a PROSTHETIC valve. Her infection is on a "
+    "native tricuspid valve, where methicillin-resistant Staphylococcus aureus is treated with vancomycin or "
+    "daptomycin alone.", "adjacent fact from the same lecture"],
+   ["Switch to ceftriaxone alone",
+    "Ceftriaxone covers streptococci and HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, "
+    "Kingella) organisms, not methicillin-resistant Staphylococcus aureus. Of the empiric pair, vancomycin is "
+    "the drug her culture result keeps.", "reversed direction or value"]],
+  cite(m=(27, 30))),
+
+X("treatment", "2", TX, IO_A,
+  "A 58-year-old man with native mitral valve endocarditis was started on empiric vancomycin plus ceftriaxone. "
+  "Three sets of blood cultures now grow methicillin-susceptible Staphylococcus aureus, and he has no drug "
+  "allergies. Which directed therapy fits?",
+  [["Nafcillin or oxacillin",
+    "Correct. Once cultures show methicillin-susceptible Staphylococcus aureus on a native valve, therapy is "
+    "directed to nafcillin or oxacillin (or cefazolin). Resistant strains would instead need vancomycin or "
+    "daptomycin, so the culture result is what narrows his therapy."],
+   ["Vancomycin plus rifampin",
+    "Rifampin is added only for Staphylococcus aureus on a PROSTHETIC valve, together with gentamicin. His "
+    "infection is on a native valve, so no rifampin is added, and the directed drug for a susceptible strain is "
+    "nafcillin or oxacillin.", "adjacent fact from the same lecture"],
+   ["Daptomycin",
+    "Daptomycin is the alternative to vancomycin for methicillin-RESISTANT Staphylococcus aureus. His strain is "
+    "susceptible, so the directed drug is nafcillin or oxacillin (or cefazolin).", "reversed direction or value"],
+   ["Penicillin G plus gentamicin",
+    "Penicillin G plus gentamicin is a regimen for viridans streptococci and enterococci, not for "
+    "Staphylococcus aureus. His methicillin-susceptible staphylococcus is treated with nafcillin or oxacillin.",
+    "confused mechanism or drug class"]],
+  cite(m=(27, 30))),
+
+X("treatment", "S", TX, IO_A,
+  "A 45-year-old man with fever, a new murmur and splinter hemorrhages (thin dark lines under the nails) has "
+  "three sets of blood cultures drawn, and empiric antibiotics are about to start before any organism is known. "
+  "Which organisms must the empiric regimen cover?",
+  [["Staphylococci, streptococci, enterococci",
+    "Correct. Empiric therapy for endocarditis, started once blood cultures are drawn and before the organism "
+    "is known, must cover staphylococci, streptococci and enterococci, which is why vancomycin is paired with "
+    "ceftriaxone (or with gentamicin and cefepime for a prosthetic valve in its first year)."],
+   ["Streptococci and HACEK only",
+    "Covering only streptococci and HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) "
+    "organisms would miss staphylococci, including methicillin-resistant Staphylococcus aureus. Empiric therapy "
+    "covers staphylococci, streptococci and enterococci.", "adjacent fact from the same lecture"],
+   ["Staphylococci and Candida",
+    "Candida is a fungus, the cause of fungal endocarditis, and is not one of the groups the empiric antibiotic "
+    "regimen is built to cover. That regimen covers staphylococci, streptococci and enterococci.",
+    "adjacent fact from the same lecture"],
+   ["Enterococci and gram-negative rods",
+    "This leaves out staphylococci and streptococci, two of the three groups empiric therapy must cover; "
+    "gram-negative bacilli are organisms that do not cause endocarditis frequently.", "adjacent fact from the same lecture"]],
+  cite(m=(16, 22, 27))),
+
+X("treatment", "2", TX, IO_A,
+  "A 66-year-old woman with native mitral valve endocarditis was started on empiric vancomycin plus "
+  "ceftriaxone. Three sets of blood cultures now grow penicillin-susceptible viridans streptococci, and she "
+  "has no drug allergies. Which directed therapy fits?",
+  [["Penicillin G or ceftriaxone",
+    "Correct. Empiric therapy is narrowed once the organism is known. Penicillin-susceptible viridans "
+    "streptococci are treated with penicillin G or ceftriaxone, with or without gentamicin, so the directed "
+    "choice is one of those drugs; empiric vancomycin was there to cover staphylococci until the organism was "
+    "known."],
+   ["Vancomycin plus rifampin",
+    "Vancomycin plus rifampin belongs to the Staphylococcus aureus prosthetic valve regimen. Her organism is a "
+    "susceptible viridans streptococcus on a native valve, treated with penicillin G or ceftriaxone.",
+    "adjacent fact from the same lecture"],
+   ["Nafcillin or oxacillin",
+    "Nafcillin and oxacillin are the drugs for methicillin-susceptible Staphylococcus aureus. A "
+    "penicillin-susceptible viridans streptococcus is treated with penicillin G or ceftriaxone.",
+    "confused mechanism or drug class"],
+   ["Daptomycin",
+    "Daptomycin is the alternative to vancomycin for methicillin-resistant Staphylococcus aureus. Her organism "
+    "is a penicillin-susceptible viridans streptococcus, so penicillin G or ceftriaxone is the directed choice.",
+    "confused mechanism or drug class"]],
+  cite(m=(27, 29))),
+
+X("treatment", "2", TX, IO_A,
+  "A 52-year-old man with mitral regurgitation has 2 months of low-grade fever, and three sets of blood cultures "
+  "grow Kingella kingae, a HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) "
+  "organism. He has no drug allergies. Which antibiotic is first-line?",
+  [["Ceftriaxone",
+    "Correct. HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) endocarditis is "
+    "treated with ceftriaxone or another third-generation cephalosporin. With no allergy there is no reason to "
+    "move off it."],
+   ["A fluoroquinolone",
+    "A fluoroquinolone could be considered for HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, "
+    "Eikenella, Kingella) endocarditis when the patient has a penicillin allergy. He has no allergy, so "
+    "ceftriaxone is first-line.", "right action at the wrong stage or severity"],
+   ["Nafcillin",
+    "Nafcillin treats methicillin-susceptible Staphylococcus aureus. Kingella is a gram-negative HACEK "
+    "(Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organism, treated with ceftriaxone.",
+    "confused mechanism or drug class"],
+   ["Vancomycin plus gentamicin",
+    "Vancomycin plus gentamicin is an enterococcal regimen and is not listed for HACEK (Haemophilus, "
+    "Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms, which are gram-negative. Ceftriaxone is "
+    "first-line.", "adjacent fact from the same lecture"]],
+  cite(m=(20, 31), n=(1,))),
+
+# =====================================================================================================
+# PROPHYLAXIS (main deck slides 34-36, 42)
+# =====================================================================================================
+
+X("proph", "1", PR, IO_REG,
+  "A 57-year-old man with a prosthetic aortic valve needs a dental extraction. He had anaphylaxis to amoxicillin "
+  "10 years ago and swallows pills without difficulty. Which prophylactic agent fits?",
+  [["Oral doxycycline",
+    "Correct. A penicillin-allergic patient who can take oral medication gets azithromycin or clarithromycin, "
+    "cephalexin or doxycycline, as a single dose 30-60 minutes before the procedure. Cephalexin is ruled out "
+    "by his anaphylaxis, so doxycycline fits."],
+   ["Oral cephalexin",
+    "Cephalexin is on the penicillin-allergy list, but cephalosporins should not be used in a patient with a "
+    "history of anaphylaxis, angioedema or urticaria to penicillin or ampicillin. His anaphylaxis rules it out; "
+    "doxycycline does not carry that restriction.", "ruled out by a stated finding"],
+   ["Oral clindamycin",
+    "Clindamycin is no longer recommended for endocarditis prophylaxis because of the risk of Clostridioides "
+    "difficile infection. For an oral, penicillin-allergic patient the options are azithromycin, clarithromycin, "
+    "doxycycline or (without anaphylaxis) cephalexin.", "adjacent fact from the same lecture"],
+   ["Oral amoxicillin",
+    "Amoxicillin is the standard agent only for patients WITHOUT a penicillin allergy. He had anaphylaxis to "
+    "amoxicillin itself, so a non-penicillin oral agent such as doxycycline is used.", "ruled out by a stated finding"]],
+  cite(m=(35, 36))),
+
+X("proph", "2", PR, IO_REG,
+  "A 64-year-old woman whose mitral valve was repaired with an annuloplasty ring needs a root canal. Years ago "
+  "she developed lip and tongue swelling (angioedema) after ampicillin. She takes pills easily. Which "
+  "prophylaxis fits?",
+  [["Oral clarithromycin",
+    "Correct. Prosthetic material used for valve repair, such as an annuloplasty ring, is a high-risk condition, "
+    "and a root canal manipulates the periapical region, so she needs prophylaxis. With a penicillin allergy "
+    "and an oral route, clarithromycin or azithromycin (or doxycycline) fits; her angioedema bars cephalosporins."],
+   ["Oral cephalexin",
+    "Cephalexin is an oral option for penicillin allergy, but cephalosporins should not be used after "
+    "anaphylaxis, angioedema or urticaria to penicillin or ampicillin. Her lip and tongue swelling was "
+    "angioedema, so a macrolide such as clarithromycin is used.", "ruled out by a stated finding"],
+   ["No prophylaxis needed",
+    "She does need it: prosthetic material used for cardiac valve repair (annuloplasty rings, chords or clips) "
+    "is on the high-risk list, and a root canal manipulates the periapical region of the tooth.",
+    "ruled out by a stated finding"],
+   ["Intramuscular cefazolin",
+    "Cefazolin by injection is for penicillin-allergic patients who CANNOT take oral medication, and it is a "
+    "cephalosporin, barred by her angioedema. She swallows pills, so oral clarithromycin fits.",
+    "ruled out by a stated finding"]],
+  cite(m=(34, 35, 36))),
+
+X("proph", "2", PR, IO_REG,
+  "A 67-year-old man with a transcatheter aortic valve needs a tooth extraction. His chart lists a penicillin "
+  "allergy: years ago he had a mild, delayed rash with penicillin, with no hives, swelling or breathing "
+  "trouble. He takes pills. Which agent fits?",
+  [["Oral cephalexin",
+    "Correct. A transcatheter-implanted prosthesis is a high-risk condition, and an extraction manipulates the "
+    "gums. For a penicillin-allergic patient who can take pills, cephalexin is listed, and it is barred only "
+    "after anaphylaxis, angioedema or urticaria, none of which he had."],
+   ["Oral amoxicillin",
+    "Amoxicillin is the standard agent for patients WITHOUT a penicillin allergy. He reports an allergy (a "
+    "rash), so he moves to the penicillin-allergy row: cephalexin, azithromycin or clarithromycin, or "
+    "doxycycline.", "ruled out by a stated finding"],
+   ["Oral clindamycin",
+    "Clindamycin is no longer recommended for endocarditis prophylaxis because of the risk of Clostridioides "
+    "difficile infection. With a mild rash only, cephalexin is an acceptable oral choice.",
+    "adjacent fact from the same lecture"],
+   ["Intravenous vancomycin",
+    "Vancomycin is not part of the adult prophylaxis regimens, and he can take pills. The oral "
+    "penicillin-allergy options are cephalexin, azithromycin or clarithromycin, and doxycycline.",
+    "confused mechanism or drug class"]],
+  cite(m=(35, 36))),
+
+X("proph", "1", PR, IO_REG,
+  "A 70-year-old woman with a prosthetic mitral valve is intubated in intensive care and needs an urgent dental "
+  "extraction. She has no drug allergies and cannot take anything by mouth. Which prophylaxis fits?",
+  [["Intravenous ceftriaxone",
+    "Correct. A prosthetic valve is a high-risk condition, and an extraction manipulates the gums. A patient "
+    "with no penicillin allergy who cannot take oral medication gets an injection: ampicillin, or cefazolin or "
+    "ceftriaxone, intramuscular or intravenous, 30-60 minutes before the procedure."],
+   ["Oral amoxicillin",
+    "Oral amoxicillin is the standard regimen, but she is intubated and cannot take anything by mouth. The "
+    "regimen for a patient unable to take oral medication is ampicillin, cefazolin or ceftriaxone by injection.",
+    "ruled out by a stated finding"],
+   ["Oral azithromycin",
+    "Azithromycin is an oral option for penicillin-ALLERGIC patients. She has no allergy and cannot swallow, so "
+    "she needs an injectable agent such as ceftriaxone.", "ruled out by a stated finding"],
+   ["Intravenous clindamycin",
+    "Clindamycin is no longer recommended for endocarditis prophylaxis because of the risk of Clostridioides "
+    "difficile infection, by any route. Ampicillin, cefazolin or ceftriaxone by injection fits her.",
+    "adjacent fact from the same lecture"]],
+  cite(m=(35, 36))),
+
+X("proph", "2", PR, IO_REG,
+  "A 61-year-old man with previous infective endocarditis is scheduled for a dental cleaning at 9 AM. He has no "
+  "allergies and will take oral amoxicillin. When should he take it?",
+  [["30-60 minutes before",
+    "Correct. Prophylaxis is a single dose taken 30-60 minutes before the procedure, so the drug is already "
+    "circulating when the cleaning releases bacteria into the blood. Previous endocarditis makes him high risk, "
+    "and a cleaning manipulates the gums."],
+   ["The evening before",
+    "Prophylaxis is not taken the night before. The single dose is timed 30-60 minutes before the procedure so "
+    "that the drug is circulating during the cleaning itself.", "right action at the wrong stage or severity"],
+   ["Right after the cleaning",
+    "A dose after the procedure comes too late; the point is to have the drug in the blood when bacteria "
+    "enter it during the cleaning. The single dose is taken 30-60 minutes BEFORE.", "reversed direction or value"],
+   ["Daily for 3 days after",
+    "Prophylaxis is a single dose, not a course, and it is taken 30-60 minutes before the procedure rather than "
+    "afterward. Doses after the cleaning miss the moment bacteria enter the blood, which is during the "
+    "procedure itself.", "reversed direction or value"]],
+  cite(m=(35, 36)),
+  order=["The evening before", "30-60 minutes before", "Right after the cleaning", "Daily for 3 days after"]),
+
+X("proph", "1", PR, IO_PROPH,
+  "A 34-year-old woman with a mechanical mitral valve is having orthodontic brackets placed and will return "
+  "monthly for adjustments. She has no allergies. Which prophylaxis plan fits?",
+  [["None for brackets or adjustments",
+    "Correct. Her mechanical valve makes her high risk, but placing orthodontic brackets and adjusting "
+    "orthodontic appliances are on the list of procedures that do NOT need endocarditis prophylaxis. "
+    "Prophylaxis is for work that manipulates the gums or tooth roots or perforates the oral mucosa."],
+   ["Amoxicillin before each visit",
+    "Bracket placement and adjustments do not manipulate gingival tissue or the periapical region, and both are "
+    "listed as not needing prophylaxis, so a dose at every visit is not indicated even with a mechanical valve.",
+    "common lay belief"],
+   ["Amoxicillin before placement only",
+    "Placing orthodontic brackets is itself on the no-prophylaxis list, not just the later adjustments. Her "
+    "high-risk valve does not change that, because the procedure does not manipulate the gums or tooth roots.",
+    "right action at the wrong stage or severity"],
+   ["Azithromycin before each visit",
+    "Azithromycin is for penicillin-allergic patients, and she has no allergy; more to the point, brackets and "
+    "adjustments need no prophylaxis at all.", "common lay belief"]],
+  cite(m=(34, 36))),
+
+X("proph", "1", PR, IO_PROPH,
+  "A 69-year-old man with a bioprosthetic aortic valve is scheduled for bronchoscopy, during which a biopsy of "
+  "the airway mucosa is planned. He has no drug allergies and takes pills. Which plan fits?",
+  [["Oral amoxicillin beforehand",
+    "Correct. A prosthetic valve is high risk, and invasive respiratory procedures that incise or biopsy the "
+    "respiratory mucosa call for prophylaxis. Bronchoscopy is exempt only when no mucosal incision such as a "
+    "biopsy is made; his includes one, so he takes a single oral amoxicillin dose 30-60 minutes before."],
+   ["No prophylaxis for bronchoscopy",
+    "Bronchoscopy is exempt only when it involves no incision of the mucosa. A planned biopsy of the airway "
+    "mucosa makes it an invasive respiratory procedure, which in a high-risk patient needs prophylaxis.",
+    "ruled out by a stated finding"],
+   ["Amoxicillin for 3 days after",
+    "Prophylaxis is a single dose 30-60 minutes BEFORE the procedure, not a course afterward; the drug must be "
+    "circulating when the biopsy lets bacteria into the blood.", "reversed direction or value"],
+   ["Oral clindamycin beforehand",
+    "Clindamycin is no longer recommended for prophylaxis because of the risk of Clostridioides difficile "
+    "infection, and he has no penicillin allergy. Oral amoxicillin is the standard agent.",
+    "adjacent fact from the same lecture"]],
+  cite(m=(34, 35))),
+
+X("proph", "2", PR, IO_PROPH,
+  "A dental surgeon is reviewing four adult patients booked for extractions. Which patient should receive "
+  "endocarditis prophylaxis?",
+  [["Heart transplant with valve regurgitation",
+    "Correct. Cardiac transplant with valve regurgitation from a structurally abnormal valve is on the "
+    "high-risk list, together with prosthetic valves or repair material, previous endocarditis and certain "
+    "congenital heart disease. An extraction manipulates the gums, so this patient needs prophylaxis."],
+   ["Hypertrophic cardiomyopathy",
+    "Hypertrophic cardiomyopathy is a predisposing condition in the Duke criteria, but it is not on the "
+    "prophylaxis list. Prophylaxis is reserved for prosthetic valves or repair material, previous endocarditis, "
+    "certain congenital heart disease and transplant valvulopathy.", "adjacent fact from the same lecture"],
+   ["Coronary stents and prior bypass",
+    "Coronary stents and bypass grafting place no valve material and are not high-risk conditions, so they do "
+    "not call for endocarditis prophylaxis before dental work.", "common lay belief"],
+   ["Mitral prolapse without regurgitation",
+    "Mitral valve prolapse without regurgitation is not on the high-risk list. Of these patients, only the "
+    "transplant recipient with regurgitation from a structurally abnormal valve qualifies.", "common lay belief"]],
+  cite(m=(22, 36))),
+
+X("proph", "2", PR, IO_POP,
+  "A 10-year-old girl had an atrial septal defect closed with a prosthetic device 3 years ago, and "
+  "echocardiography shows no residual shunt. She needs a dental extraction. Which is appropriate regarding "
+  "endocarditis prophylaxis?",
+  [["No prophylaxis is needed",
+    "Correct. Repaired congenital heart disease calls for prophylaxis only in the first 6 months after repair "
+    "with prosthetic material or a device, or when a residual defect sits next to the prosthetic material. She "
+    "is 3 years out with no residual shunt, so neither applies."],
+   ["Give prophylaxis beforehand",
+    "She would qualify within the first 6 months after a device repair, or with a residual defect next to the "
+    "device. Three years out with no residual shunt, she is not on the high-risk list.",
+    "right action at the wrong stage or severity"],
+   ["Prophylaxis only with a murmur",
+    "A murmur is not what decides prophylaxis. The pediatric list turns on prosthetic material, previous "
+    "endocarditis, unrepaired cyanotic disease, the first 6 months after repair, or a residual defect next to "
+    "the repair.", "common lay belief"],
+   ["A 3-day course afterward",
+    "Prophylaxis, when indicated, is a single dose before the procedure, never a course afterward; and she does "
+    "not need it at all, being 3 years past the repair with no residual shunt.", "reversed direction or value"]],
+  cite(m=(42,))),
+
+X("proph", "1", PR, IO_PROPH,
+  "Four adults are booked for periodontal surgery that will manipulate the gums. Which patient needs "
+  "endocarditis prophylaxis?",
+  [["Unrepaired cyanotic congenital defect",
+    "Correct. Unrepaired cyanotic congenital heart disease is on the high-risk list, along with prosthetic "
+    "valves or repair material, previous endocarditis, repaired disease with a residual defect at a prosthetic "
+    "patch, and transplant valvulopathy. Periodontal surgery manipulates the gums, so prophylaxis is given."],
+   ["Pacemaker without valve disease",
+    "A pacemaker without valve disease is not a high-risk condition for dental prophylaxis. The list covers "
+    "prosthetic valves or valve-repair material, not pacemaker leads.", "adjacent fact from the same lecture"],
+   ["Native mitral regurgitation",
+    "Native valve disease with regurgitation is a predisposing condition in the Duke criteria, but it is not on "
+    "the prophylaxis list, which is reserved for prosthetic valves or repair material, previous endocarditis and "
+    "certain congenital and transplant conditions.", "adjacent fact from the same lecture"],
+   ["Coronary artery bypass grafting",
+    "Bypass grafting places no valve material and is not a high-risk condition. Of these patients, only the one "
+    "with unrepaired cyanotic congenital heart disease needs prophylaxis.", "common lay belief"]],
+  cite(m=(22, 36))),
+
+X("proph", "2", PR, IO_PROPH,
+  "A 52-year-old woman with previous infective endocarditis has four procedures planned this year. Before "
+  "which one should she receive prophylaxis?",
+  [["Dental cleaning",
+    "Correct. Previous endocarditis makes her high risk, and prophylaxis is given for dental procedures that "
+    "manipulate the gums or tooth roots, which includes dental cleaning. The other procedures are on the "
+    "no-prophylaxis list."],
+   ["Dental radiographs",
+    "Taking dental radiographs does not manipulate the gums or tooth roots and is listed as NOT needing "
+    "prophylaxis, even in a high-risk patient. The cleaning is the procedure that does.", "common lay belief"],
+   ["Screening colonoscopy",
+    "Gastrointestinal procedures such as colonoscopy do not need endocarditis prophylaxis in the absence of "
+    "active infection. Prophylaxis is for dental work on the gums or roots and for invasive respiratory "
+    "procedures.", "common lay belief"],
+   ["Cystoscopy",
+    "Genitourinary procedures such as cystoscopy do not require endocarditis prophylaxis. In a high-risk "
+    "patient, prophylaxis is given before dental work that manipulates the gums, such as a cleaning.",
+    "common lay belief"]],
+  cite(m=(34, 36))),
+
+X("proph", "1", PR, IO_POP,
+  "A 13-year-old boy with a prosthetic pulmonary valve needs incision and drainage of an infected skin abscess "
+  "on his forearm. Which is appropriate regarding endocarditis prophylaxis?",
+  [["Give prophylaxis before the procedure",
+    "Correct. A prosthetic valve is a high-risk pediatric condition, and prophylaxis is given not only for "
+    "gum-manipulating dental work and invasive respiratory procedures but also when a procedure is performed "
+    "over infected skin or musculoskeletal tissue. Draining an infected abscess qualifies."],
+   ["No prophylaxis; it is not dental",
+    "Dental work is not the only trigger. In high-risk children, a procedure over infected skin or "
+    "musculoskeletal tissue also calls for prophylaxis, and his prosthetic valve makes him high risk.",
+    "common lay belief"],
+   ["Prophylaxis only if he has a fever",
+    "Fever does not decide it. The indication is a high-risk cardiac condition (his prosthetic valve) plus a "
+    "procedure on infected skin or musculoskeletal tissue.", "common lay belief"],
+   ["Prophylaxis only after drainage",
+    "Prophylaxis is given BEFORE the procedure, so the drug is circulating when the procedure releases "
+    "bacteria into the blood, not afterward.", "reversed direction or value"]],
+  cite(m=(42,))),
+
+X("proph", "S", PR, IO_PROPH,
+  "A 27-year-old woman who had infective endocarditis 2 years ago is scheduled for a tonsillectomy. She has no "
+  "allergies and takes pills. Which plan fits?",
+  [["Oral amoxicillin beforehand",
+    "Correct. Previous endocarditis makes her high risk, and invasive respiratory procedures that incise the "
+    "mucosa, such as tonsillectomy, call for prophylaxis. With no allergy and an oral route, the agent is a "
+    "single dose of amoxicillin 30-60 minutes before."],
+   ["No prophylaxis needed",
+    "Tonsillectomy is named among the invasive respiratory procedures that need prophylaxis, and her previous "
+    "endocarditis puts her on the high-risk list.", "ruled out by a stated finding"],
+   ["Amoxicillin for 5 days after",
+    "Prophylaxis is a single dose taken 30-60 minutes before the procedure, not a course afterward. A course "
+    "that starts after the tonsillectomy misses the moment the incision lets bacteria into the blood.",
+    "reversed direction or value"],
+   ["Oral clindamycin beforehand",
+    "Clindamycin is no longer recommended for prophylaxis because of the risk of Clostridioides difficile "
+    "infection, and she has no penicillin allergy; amoxicillin is the standard agent.",
+    "adjacent fact from the same lecture"]],
+  cite(m=(34, 35))),
+
+X("proph", "2", PR, IO_PROPH,
+  "A 26-year-old man had a ventricular septal defect closed with a prosthetic patch at age 4. Echocardiography "
+  "now shows a small residual shunt at the edge of the patch. He needs a tooth extraction, has no allergies and "
+  "takes pills. Which plan fits?",
+  [["Oral amoxicillin beforehand",
+    "Correct. Repaired congenital heart disease with a residual shunt at or next to a prosthetic patch is a "
+    "high-risk condition, and an extraction manipulates the gums. With no allergy and an oral route, he takes "
+    "a single dose of amoxicillin 30-60 minutes before."],
+   ["No prophylaxis needed",
+    "The 6-month window after repair has long passed, but his residual shunt at the edge of the prosthetic "
+    "patch keeps him on the high-risk list, so prophylaxis is still needed.", "ruled out by a stated finding"],
+   ["Oral azithromycin beforehand",
+    "Azithromycin is the alternative for penicillin-ALLERGIC patients. He has no allergy, so the standard agent, "
+    "oral amoxicillin, is used.", "right action at the wrong stage or severity"],
+   ["Amoxicillin for 5 days after",
+    "Prophylaxis is one dose 30-60 minutes before the procedure, not a course afterward; the drug must be "
+    "circulating during the extraction.", "reversed direction or value"]],
+  cite(m=(35, 36, 42))),
+
+# =====================================================================================================
+# MODIFIED DUKE CRITERIA (main deck slides 22-24; slide 24 = "Application of Duke Criteria")
+# =====================================================================================================
+
+X("duke", "1", DK, IO_DUKE,
+  "A 54-year-old woman has 10 days of fever to 38.7 °C (101.7 °F) and fatigue that began after a dental "
+  "procedure. A new holosystolic murmur of mitral regurgitation is heard, and she has thin dark lines under "
+  "several fingernails and pinpoint hemorrhages on the conjunctivae. Transesophageal echocardiography shows a "
+  "vegetation on the mitral valve, and two separate blood cultures grow viridans streptococci. What is her "
+  "modified Duke classification?",
+  [["Definite: two major criteria",
+    "Correct. Viridans streptococci, a typical organism, in two separate blood cultures is one major criterion, "
+    "and a vegetation on transesophageal echocardiography is the second. Two major criteria make endocarditis "
+    "definite without counting minor ones; her fever and conjunctival hemorrhages are minor criteria on top."],
+   ["Possible: one major, one minor",
+    "This undercounts: both the culture result and the echocardiogram are major criteria. One major plus one "
+    "minor would be possible endocarditis, but two majors alone make it definite.", "reversed direction or value"],
+   ["Possible: three minor criteria",
+    "Her fever and conjunctival hemorrhages are minor criteria, but a typical organism in two separate cultures "
+    "and a valve vegetation are MAJOR criteria. With two major criteria the case is definite, not possible.",
+    "confused mechanism or drug class"],
+   ["Definite: five minor criteria",
+    "She does not have five minor criteria; fever and conjunctival hemorrhages are the clear ones, and a dental "
+    "procedure is not a predisposing heart condition. Her case is definite because of two MAJOR criteria.",
+    "confused mechanism or drug class"]],
+  cite(m=(22, 24))),
+
+X("duke", "2", DK, IO_DUKE,
+  "A 37-year-old woman who had rheumatic heart disease as a teenager and now has mitral regurgitation presents "
+  "with a temperature of 38.3 °C (100.9 °F) and painful, red nodules on the pads of several fingertips. Blood "
+  "cultures and echocardiography have not yet been done. What is her modified Duke classification at this point?",
+  [["Possible: three minor criteria",
+    "Correct. Rheumatic mitral regurgitation is a predisposing heart condition (valve disease with "
+    "regurgitation), 38.3 °C meets the fever criterion of 38.0 °C or more, and painful finger-pad nodules "
+    "(Osler nodes) are an immunologic phenomenon. Three minor criteria and no major make the case possible."],
+   ["Definite: two major criteria",
+    "No major criterion has been met yet: the major criteria are a positive blood culture and evidence of "
+    "endocardial involvement on echocardiography, and neither test has been done.", "confused mechanism or drug class"],
+   ["Possible: one major, one minor",
+    "This counts a major criterion she does not have. Her findings are all minor: a predisposing valve lesion, "
+    "fever and an immunologic phenomenon, three minor criteria, which is also possible endocarditis.",
+    "confused mechanism or drug class"],
+   ["Not yet possible or definite",
+    "Three minor criteria are enough for possible endocarditis, and she has exactly three: a predisposing valve "
+    "lesion, fever of 38.3 °C and painful finger-pad nodules.", "reversed direction or value"]],
+  cite(m=(22, 23, 24))),
+
+X("duke", "1", DK, IO_DUKE,
+  "A 39-year-old woman who had rheumatic heart disease as a teenager and now has mitral regurgitation has a "
+  "temperature of 38.6 °C (101.5 °F) and painful, red nodules on several finger pads. Blood cultures are "
+  "pending, and transesophageal echocardiography shows an oscillating mass on the mitral valve. What is her "
+  "modified Duke classification?",
+  [["Definite: one major, three minor",
+    "Correct. The oscillating mass on echocardiography is a major criterion (endocardial involvement). Her "
+    "rheumatic mitral regurgitation (predisposition), fever of 38.6 °C and painful finger-pad nodules (an "
+    "immunologic phenomenon) are three minor criteria. One major plus three minor is definite endocarditis."],
+   ["Possible: one major, two minor",
+    "This misses a minor criterion. Her predisposing valve lesion, her fever and her painful finger-pad nodules "
+    "are three, and one major plus three minor is definite, not possible.", "confused mechanism or drug class"],
+   ["Possible: three minor criteria",
+    "Without the echocardiogram she would have three minor criteria and a possible case, but the oscillating "
+    "mass on the valve adds a major criterion, which makes it definite.", "right action at the wrong stage or severity"],
+   ["Definite: two major criteria",
+    "Only one major criterion is met, the echocardiographic mass; blood cultures are still pending. She is "
+    "definite because one major plus three minor criteria also qualifies.", "confused mechanism or drug class"]],
+  cite(m=(22, 23, 24))),
+
+X("duke", "1", DK, IO_DUKE,
+  "A 31-year-old man who injects drugs has a temperature of 39.1 °C (102.4 °F) and painless, flat hemorrhagic "
+  "spots on his soles. He has no known heart disease. Blood cultures and echocardiography are pending. Which "
+  "single new result would make his endocarditis definite?",
+  [["Two separate cultures with Staphylococcus aureus",
+    "Correct. Injection drug use, fever and painless flat lesions on the soles (Janeway lesions, a vascular "
+    "phenomenon) are three minor criteria. Staphylococcus aureus, a typical organism, in two separate blood "
+    "cultures adds a major criterion, and one major plus three minor is definite."],
+   ["One culture with coagulase-negative staphylococci",
+    "A single positive culture for coagulase-negative staphylococci is excluded because it is a common culture "
+    "contaminant, so it adds nothing. A typical organism in two separate cultures would make the case definite.",
+    "adjacent fact from the same lecture"],
+   ["A positive rheumatoid factor",
+    "Rheumatoid factor is an immunologic minor criterion, so it would bring him to four minor criteria, still "
+    "possible. Definite needs five minor, or one major plus three minor.", "right action at the wrong stage or severity"],
+   ["Leukocytosis on the blood count",
+    "Leukocytosis is common in endocarditis but is not a Duke criterion. A major criterion, such as a typical "
+    "organism in two separate blood cultures, is what would make his case definite.", "adjacent fact from the same lecture"]],
+  cite(m=(13, 22, 25))),
+
+X("duke", "2", DK, IO_DUKE,
+  "A 49-year-old woman with a bioprosthetic mitral valve has a temperature of 38.8 °C (101.8 °F), hemorrhages "
+  "on both conjunctivae and a positive rheumatoid factor. One of three blood cultures grows Staphylococcus "
+  "aureus; the other two show no growth. Transesophageal echocardiography shows no vegetation, abscess or "
+  "dehiscence, and her murmur is unchanged. What is her modified Duke classification?",
+  [["Definite: five minor criteria",
+    "Correct. Her prosthetic valve (predisposition), fever of 38.8 °C, conjunctival hemorrhages (vascular), "
+    "rheumatoid factor (immunologic) and a single positive culture that does not meet the major criterion "
+    "(microbiologic) are five minor criteria. Five minor criteria make endocarditis definite."],
+   ["Possible: four minor criteria",
+    "This leaves one out, usually the single positive culture. A positive culture that does not meet the major "
+    "criterion still counts as microbiologic evidence, bringing her to five minor criteria: definite.",
+    "confused mechanism or drug class"],
+   ["Possible: one major, one minor",
+    "One culture of three is not the major blood-culture criterion, which needs a typical organism in two "
+    "separate cultures, and her echocardiogram is clear. She has no major criterion, but five minor ones.",
+    "confused mechanism or drug class"],
+   ["Definite: one major, three minor",
+    "She has no major criterion: one positive culture of three does not meet it and echocardiography shows no "
+    "vegetation, abscess or dehiscence. She is definite by five minor criteria instead.", "confused mechanism or drug class"]],
+  cite(m=(22, 23))),
+
+X("duke", "1", DK, IO_DUKE,
+  "A 42-year-old man who injects drugs took 10 days of oral antibiotics from an urgent care clinic for a chest "
+  "cold before any blood cultures were drawn. He now has a temperature of 38.9 °C (102.0 °F). Three sets of "
+  "blood cultures show no growth, and transesophageal echocardiography shows an oscillating mass on the "
+  "tricuspid valve. He has no skin, eye or kidney findings. What is his modified Duke classification?",
+  [["Possible: one major, two minor",
+    "Correct. The oscillating mass is a major criterion. Injection drug use and fever are two minor criteria. "
+    "His cultures are negative because antibiotics were given before they were drawn, so there is no second "
+    "major criterion. One major plus two minor meets possible (one major and one minor) but not definite."],
+   ["Definite: one major, three minor",
+    "He has only two minor criteria, injection drug use and fever; no skin, eye or kidney finding adds a third. "
+    "One major plus two minor is possible, one short of definite.", "reversed direction or value"],
+   ["Definite: two major criteria",
+    "The cultures grew nothing, so there is no blood-culture major criterion; the oscillating mass is his only "
+    "major one. Antibiotics given before cultures are a recognized cause of culture-negative endocarditis.",
+    "ruled out by a stated finding"],
+   ["Possible: three minor criteria",
+    "The oscillating mass on the tricuspid valve is a MAJOR criterion, not a minor one. He is possible because "
+    "of one major plus two minor criteria.", "reversed direction or value"]],
+  cite(m=(22,), n=(1,))),
+
+X("duke", "1", DK, IO_DUKE,
+  "A 56-year-old man who was treated for infective endocarditis 4 years ago has 3 weeks of fever to 38.7 °C "
+  "(101.7 °F) and painful red nodules on two finger pads. Two separate blood cultures grow Haemophilus species, a "
+  "HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organism. Transesophageal "
+  "echocardiography shows no vegetation, abscess or new regurgitation. What is his modified Duke classification?",
+  [["Definite: one major, three minor",
+    "Correct. A HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organism, a typical "
+    "organism, in two separate cultures is a major criterion. Prior endocarditis (predisposition), fever and "
+    "painful finger-pad nodules (immunologic) are three minor criteria. One major plus three minor is definite."],
+   ["Possible: one major, two minor",
+    "Prior endocarditis is itself a predisposing condition, so he has three minor criteria, not two: prior "
+    "endocarditis, fever and painful finger-pad nodules. With the culture major criterion that is definite.",
+    "confused mechanism or drug class"],
+   ["Possible: three minor criteria",
+    "The HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organism in two separate "
+    "cultures is a MAJOR criterion, not a minor one. One major plus three minor makes the case definite.",
+    "confused mechanism or drug class"],
+   ["Definite: two major criteria",
+    "His echocardiogram shows no vegetation, abscess or new regurgitation, so endocardial involvement is not "
+    "met; only the culture criterion is major. He is definite by one major plus three minor criteria.",
+    "ruled out by a stated finding"]],
+  cite(m=(22, 23))),
+
+X("duke", "2", DK, IO_DUKE,
+  "A 66-year-old woman with a mechanical aortic valve is being evaluated for endocarditis. She has a fever of "
+  "38.9 °C (102.0 °F), and blood cultures are pending. Which finding would count as a major modified Duke "
+  "criterion?",
+  [["New partial dehiscence of the valve",
+    "Correct. Evidence of endocardial involvement is a major criterion, and new partial dehiscence of a "
+    "prosthetic valve on echocardiography is one of its forms, along with an oscillating intracardiac mass and "
+    "an abscess. The other findings are minor criteria."],
+   ["Painful red nodules on finger pads",
+    "Painful finger-pad nodules (Osler nodes) are an immunologic phenomenon, a MINOR criterion. Major criteria "
+    "are a typical positive blood culture and echocardiographic evidence such as new partial dehiscence.",
+    "confused mechanism or drug class"],
+   ["Pinpoint conjunctival hemorrhages",
+    "Conjunctival hemorrhages are a vascular phenomenon, a MINOR criterion. New partial dehiscence of her "
+    "prosthetic valve would be a major one.", "confused mechanism or drug class"],
+   ["Her prosthetic valve itself",
+    "Having a prosthetic valve is a predisposing heart condition, a MINOR criterion. A major criterion would be "
+    "echocardiographic evidence such as new partial dehiscence of that valve.", "confused mechanism or drug class"]],
+  cite(m=(22,))),
+
+X("duke", "1", DK, IO_DUKE,
+  "A 36-year-old woman with an isolated atrial septal defect has a temperature of 38.7 °C (101.7 °F) and "
+  "fatigue. One of three blood cultures grows Staphylococcus aureus. Echocardiography shows no vegetation, "
+  "abscess or new regurgitation, and she has no skin, eye or kidney findings. How many minor modified Duke "
+  "criteria does she meet?",
+  [["Two",
+    "Correct. Fever of 38.7 °C is one minor criterion, and a single positive culture that does not meet the "
+    "major criterion is a second (microbiologic evidence). An isolated atrial septal defect is specifically "
+    "excluded from the predisposing congenital heart conditions, so it adds nothing."],
+   ["One",
+    "This misses the single positive culture. One culture growing Staphylococcus aureus does not meet the major "
+    "criterion but still counts as microbiologic evidence, a minor criterion, alongside her fever.",
+    "confused mechanism or drug class"],
+   ["Three",
+    "Three would count the atrial septal defect as a predisposing condition, but an isolated atrial septal "
+    "defect is excluded from that list. She has two: fever and a single positive culture.",
+    "adjacent fact from the same lecture"],
+   ["Four",
+    "She has no vascular or immunologic findings and her defect is excluded as a predisposition, so only fever "
+    "and the single positive culture count: two minor criteria.", "confused mechanism or drug class"]],
+  cite(m=(22,))),
+
+X("duke", "2", DK, IO_DUKE,
+  "A 71-year-old man with a bioprosthetic aortic valve has a temperature of 38.6 °C (101.5 °F). One of four "
+  "blood cultures grows coagulase-negative staphylococci, and the other three show no growth. Transesophageal "
+  "echocardiography shows new partial dehiscence of the prosthesis. What is his modified Duke classification?",
+  [["Possible: one major, two minor",
+    "Correct. New partial dehiscence of a prosthetic valve is a major criterion. His prosthetic valve "
+    "(predisposition) and fever are two minor criteria. A single culture of coagulase-negative staphylococci is "
+    "excluded as a likely contaminant, so it adds nothing; one major plus two minor is possible."],
+   ["Definite: one major, three minor",
+    "This counts the coagulase-negative staphylococcal culture as microbiologic evidence, but a single positive "
+    "culture for coagulase-negative staphylococci is excluded as a common contaminant. He has two minor "
+    "criteria, not three.", "adjacent fact from the same lecture"],
+   ["Definite: two major criteria",
+    "One culture of coagulase-negative staphylococci is not a major criterion: these are not typical organisms "
+    "and a single culture is excluded as a contaminant. Dehiscence is his only major criterion.",
+    "confused mechanism or drug class"],
+   ["Possible: three minor criteria",
+    "New partial dehiscence of a prosthetic valve is a MAJOR criterion, not a minor one, and the contaminant "
+    "culture does not count. He has one major plus two minor criteria.", "confused mechanism or drug class"]],
+  cite(m=(22,))),
+
+X("duke", "2", DK, IO_DUKE,
+  "A 29-year-old woman who injects drugs has a temperature of 39.0 °C (102.2 °F) and a cough, and chest imaging "
+  "shows septic pulmonary infarcts. One of three blood cultures grows Staphylococcus aureus. Transthoracic and "
+  "transesophageal echocardiography show no vegetation, abscess or new regurgitation. What is her modified Duke "
+  "classification?",
+  [["Possible: four minor criteria",
+    "Correct. Injection drug use, fever, septic pulmonary infarcts (a vascular phenomenon) and a single positive "
+    "culture that does not meet the major criterion are four minor criteria, with no major one. Three or more "
+    "minor criteria make the case possible; definite needs five."],
+   ["Definite: five minor criteria",
+    "She has four minor criteria, not five: injection drug use, fever, septic pulmonary infarcts and the single "
+    "positive culture. There is no immunologic finding to make a fifth.", "confused mechanism or drug class"],
+   ["Definite: one major, three minor",
+    "One positive culture of three is not the major criterion, which needs a typical organism in two separate "
+    "cultures, and the echocardiograms show no endocardial involvement. She has no major criterion.",
+    "confused mechanism or drug class"],
+   ["Ruled out by the normal echo",
+    "A normal transesophageal echocardiogram does not necessarily rule out endocarditis. Her four minor criteria "
+    "still make it possible.", "common lay belief"]],
+  cite(m=(22, 25))),
+
+X("duke", "S", DK, IO_DUKE,
+  "A 60-year-old man with previous infective endocarditis has a temperature of 38.8 °C (101.8 °F), painless, "
+  "flat hemorrhagic spots on his palms, biopsy-proven glomerulonephritis and a normocytic anemia. Blood cultures "
+  "are pending. How many minor modified Duke criteria does he meet?",
+  [["Four",
+    "Correct. Previous endocarditis (predisposition), fever, painless palm lesions (Janeway lesions, vascular) "
+    "and glomerulonephritis (immunologic) are four minor criteria. A normocytic anemia is a common lab finding "
+    "but not a Duke criterion."],
+   ["Two",
+    "This counts only the fever and one of the skin or kidney findings. Previous endocarditis is a predisposing "
+    "condition, and the palm lesions and glomerulonephritis are separate vascular and immunologic criteria: four.",
+    "confused mechanism or drug class"],
+   ["Three",
+    "Three usually misses previous endocarditis, which is a predisposing condition and a minor criterion. With "
+    "fever, the vascular palm lesions and immunologic glomerulonephritis he has four.", "confused mechanism or drug class"],
+   ["Five",
+    "Five would count the normocytic anemia, which is an expected lab finding in endocarditis but not one of the "
+    "Duke criteria. He has four minor criteria.", "adjacent fact from the same lecture"]],
+  cite(m=(22, 25))),
+
+X("duke", "1", DK, IO_DUKE,
+  "A 33-year-old man who injects drugs has a temperature of 39.2 °C (102.6 °F), painless, flat hemorrhagic "
+  "spots on his soles, hemorrhages on both conjunctivae and septic pulmonary infarcts on chest imaging. Blood "
+  "cultures and echocardiography are pending. How many minor modified Duke criteria does he meet?",
+  [["Three",
+    "Correct. Injection drug use (predisposition) and fever are two minor criteria. Janeway lesions, conjunctival "
+    "hemorrhages and septic pulmonary infarcts all belong to ONE criterion, vascular phenomena, so together they "
+    "count once. Three minor criteria make the case possible."],
+   ["Two",
+    "This leaves out a criterion he clearly meets. Injection drug use, fever and the vascular phenomena (his "
+    "skin, eye and lung findings, counted together) make three.", "confused mechanism or drug class"],
+   ["Four",
+    "Four would split the vascular findings in two. Janeway lesions, conjunctival hemorrhages and septic "
+    "pulmonary infarcts are all listed under the single vascular phenomena criterion.", "confused mechanism or drug class"],
+   ["Five",
+    "Five counts each vascular finding separately. They are one criterion, vascular phenomena, so he has three: "
+    "predisposition, fever and vascular phenomena.", "confused mechanism or drug class"]],
+  cite(m=(22, 23))),
+
+X("duke", "2", DK, IO_DUKE,
+  "A 45-year-old man with hypertrophic cardiomyopathy has a temperature of 38.9 °C (102.0 °F) and "
+  "white-centered retinal hemorrhages (Roth spots) on fundoscopy. Blood cultures and echocardiography are "
+  "pending. How many minor modified Duke criteria does he meet?",
+  [["Three",
+    "Correct. Hypertrophic cardiomyopathy is on the list of predisposing heart conditions, fever of 38.9 °C is "
+    "the fever criterion, and Roth spots are an immunologic phenomenon. Three minor criteria make the case "
+    "possible while cultures and echocardiography are pending."],
+   ["One",
+    "This counts only the fever. Hypertrophic cardiomyopathy is a listed predisposing condition and Roth spots "
+    "are an immunologic phenomenon, so he meets three.", "confused mechanism or drug class"],
+   ["Two",
+    "Two usually misses hypertrophic cardiomyopathy, which IS on the predisposing list even though it is not a "
+    "prophylaxis indication. With fever and Roth spots he has three.", "adjacent fact from the same lecture"],
+   ["Four",
+    "He has three findings that count: a predisposing heart condition, fever and one immunologic phenomenon. "
+    "Nothing in the stem supplies a fourth.", "confused mechanism or drug class"]],
+  cite(m=(12, 22))),
+
+X("duke", "2", DK, IO_DUKE,
+  "A 59-year-old woman with no known heart disease has 2 weeks of fever to 38.8 °C (101.8 °F) that began after "
+  "dental work, and pinpoint hemorrhages on both conjunctivae. One of three blood cultures grows viridans "
+  "streptococci, and transesophageal echocardiography shows a vegetation on the mitral valve. What is her "
+  "modified Duke classification?",
+  [["Definite: one major, three minor",
+    "Correct. The mitral vegetation is a major criterion. Fever, conjunctival hemorrhages (vascular) and a "
+    "single positive culture that does not meet the major criterion (microbiologic) are three minor criteria. "
+    "One major plus three minor is definite."],
+   ["Definite: two major criteria",
+    "The blood-culture major criterion needs a typical organism in TWO separate cultures; she has one of three. "
+    "That single culture counts as a minor criterion, so she is definite by one major plus three minor.",
+    "confused mechanism or drug class"],
+   ["Possible: one major, two minor",
+    "This misses the single positive culture. One culture of viridans streptococci does not meet the major "
+    "criterion but still counts as microbiologic evidence, her third minor criterion.", "confused mechanism or drug class"],
+   ["Possible: one major, one minor",
+    "She has more than one minor criterion: fever, conjunctival hemorrhages and the single positive culture. "
+    "With the vegetation that is one major plus three minor, definite.", "confused mechanism or drug class"]],
+  cite(m=(22, 24))),
+
+# =====================================================================================================
+# ORGANISMS, ASSOCIATIONS, CULTURE-NEGATIVE ENDOCARDITIS (main deck slides 16-20 + new slide 1)
+# =====================================================================================================
+
+X("organism", "1", OR, IO_A,
+  "A 74-year-old man was recently diagnosed with colon adenocarcinoma. He now has 3 weeks of low-grade fever "
+  "and a new murmur, and transesophageal echocardiography shows a mitral valve vegetation. He has had no dental "
+  "work, urinary symptoms or drug use. Which organism is most likely?",
+  [["Streptococcus gallolyticus",
+    "Correct. Streptococcus gallolyticus (bovis) comes from the gastrointestinal tract and is associated with "
+    "gastrointestinal abnormalities, especially colon cancer, and with liver disease. His new colon cancer, with "
+    "no dental, urinary or injection source, points to it."],
+   ["Viridans streptococci",
+    "Viridans streptococci come from the oral cavity and follow dental work or poor dentition, which he does "
+    "not have. A colon cancer points to the gastrointestinal organism, Streptococcus gallolyticus.",
+    "competing diagnosis"],
+   ["Enterococcus faecalis",
+    "Enterococci come from the genitourinary tract, and he has no urinary symptoms. The organism linked to "
+    "colon cancer is Streptococcus gallolyticus.", "competing diagnosis"],
+   ["Staphylococcus aureus",
+    "Staphylococci come from the skin, and Staphylococcus aureus dominates in people who inject drugs. He has "
+    "no drug use; his colon cancer points to Streptococcus gallolyticus.", "competing diagnosis"]],
+  cite(m=(17,), n=(1,))),
+
+X("organism", "2", OR, IO_A,
+  "A 61-year-old man with alcohol-related cirrhosis has 4 weeks of low-grade fever, fatigue and a new aortic "
+  "regurgitation murmur. Two separate blood cultures grow a streptococcus. He has had no recent dental work. "
+  "Which streptococcus is linked to his liver disease?",
+  [["Streptococcus gallolyticus",
+    "Correct. Streptococcus gallolyticus (bovis) is associated with liver disease or cirrhosis and with "
+    "gastrointestinal abnormalities, especially colon cancer. In a patient with cirrhosis and a streptococcal "
+    "endocarditis without a dental source, it is the one to name."],
+   ["Viridans streptococci",
+    "Viridans streptococci are oral organisms linked to dental work and poor dentition, which he does not have. "
+    "The streptococcus associated with cirrhosis is Streptococcus gallolyticus.", "competing diagnosis"],
+   ["Beta-hemolytic streptococci",
+    "Beta-hemolytic streptococci are a cause of ACUTE endocarditis, which rapidly damages cardiac structures "
+    "over days, not a 4-week low-grade illness, and they carry no liver association. Streptococcus "
+    "gallolyticus is the cirrhosis-linked organism.",
+    "competing diagnosis"],
+   ["Streptococcus pneumoniae",
+    "Streptococcus pneumoniae is named as a cause of fulminant, high-fever endocarditis in children. The "
+    "streptococcus tied to liver disease and cirrhosis is Streptococcus gallolyticus.", "adjacent fact from the same lecture"]],
+  cite(m=(10, 16, 17, 41), n=(1,))),
+
+X("organism", "1", OR, IO_A,
+  "A 64-year-old man completed 4 weeks of ceftriaxone for Streptococcus gallolyticus (bovis) endocarditis. A "
+  "colonoscopy last week was normal. Which other condition is this organism associated with?",
+  [["Liver disease or cirrhosis",
+    "Correct. Streptococcus gallolyticus (bovis) is associated with gastrointestinal abnormalities, especially "
+    "colon cancer, and with liver disease or cirrhosis. With a normal colonoscopy, liver disease is the other "
+    "association to keep in mind."],
+   ["Dental infection",
+    "Dental infection and poor dentition are the source of viridans streptococci, the oral organisms. "
+    "Streptococcus gallolyticus is a gastrointestinal organism linked to colon cancer and liver disease.",
+    "adjacent fact from the same lecture"],
+   ["Urinary tract infection",
+    "The genitourinary tract is the source of enterococci. Streptococcus gallolyticus is linked to "
+    "gastrointestinal abnormalities and to liver disease or cirrhosis.", "adjacent fact from the same lecture"],
+   ["Injection drug use",
+    "Injection drug use is linked to Staphylococcus aureus, which causes most endocarditis in people who inject "
+    "drugs. Streptococcus gallolyticus is associated with colon cancer and liver disease.",
+    "adjacent fact from the same lecture"]],
+  cite(m=(17, 18), n=(1,))),
+
+X("organism", "1", OR, IO_A,
+  "A 55-year-old woman with a bioprosthetic mitral valve placed 4 years ago took a week of oral antibiotics for "
+  "presumed bronchitis before her fevers were investigated. Three sets of blood cultures now show no growth, but "
+  "transesophageal echocardiography shows a new vegetation on the prosthesis. Which best explains the negative "
+  "cultures?",
+  [["Antibiotics given before cultures",
+    "Correct. Culture-negative endocarditis may be due to organisms not recovered by routine microbiology "
+    "testing or to antimicrobials given before blood cultures were drawn. Her week of antibiotics before any "
+    "cultures is the clear explanation, and the vegetation keeps endocarditis on the table."],
+   ["Too few culture sets drawn",
+    "Three sets from separate sites is the standard workup, and she had three. The negative result is explained "
+    "by the antibiotics she took before the cultures were drawn.", "ruled out by a stated finding"],
+   ["Endocarditis has been excluded",
+    "Negative cultures do not exclude endocarditis when antibiotics came first; this is culture-negative "
+    "endocarditis. The vegetation on her prosthesis is itself a major Duke criterion.", "common lay belief"],
+   ["An atrial myxoma, not infection",
+    "An atrial myxoma is a cardiac tumor that mimics endocarditis with fever and a new murmur (a tumor plop), "
+    "but she has a vegetation on a prosthetic valve and a clear reason for sterile cultures: prior antibiotics.",
+    "competing diagnosis"]],
+  cite(m=(21, 25), n=(1,))),
+
+X("organism", "2", OR, IO_A,
+  "A 50-year-old man with rheumatic mitral regurgitation has 6 weeks of low-grade fever and weight loss. He has "
+  "taken no antibiotics. Three sets of blood cultures drawn from separate sites show no growth, and "
+  "transesophageal echocardiography shows a mitral vegetation. Which best explains the negative cultures?",
+  [["An organism routine cultures miss",
+    "Correct. Culture-negative endocarditis may be due to organisms not recovered in routine microbiology "
+    "testing or to antimicrobials given before blood cultures. He has taken no antibiotics and had three proper "
+    "sets drawn, so an organism that routine testing does not recover is the explanation."],
+   ["Antibiotics given before cultures",
+    "Prior antibiotics are one cause of culture-negative endocarditis, but he has taken none. That leaves the "
+    "other cause: an organism not recovered in routine microbiology testing.", "ruled out by a stated finding"],
+   ["Endocarditis has been excluded",
+    "Negative cultures do not exclude endocarditis; culture-negative endocarditis is a recognized form, and his "
+    "mitral vegetation is a major Duke criterion.", "common lay belief"],
+   ["Too few culture sets drawn",
+    "Three sets from separate sites is the standard workup, and he had exactly that. The sterile result points "
+    "to an organism routine testing does not recover.", "ruled out by a stated finding"]],
+  cite(m=(25,), n=(1,))),
+
+X("organism", "2", OR, IO_A,
+  "A 44-year-old woman with mitral regurgitation has 2 months of low-grade fever, and blood cultures grow "
+  "Eikenella corrodens, a gram-negative HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, "
+  "Kingella) organism. Where in the body do these organisms normally come from?",
+  [["Upper respiratory tract",
+    "Correct. The HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms are "
+    "gram-negative bacteria whose source is the upper respiratory tract, and they are among the causes of "
+    "subacute endocarditis."],
+   ["Gastrointestinal tract",
+    "The gastrointestinal tract is the source of Streptococcus gallolyticus. HACEK (Haemophilus, "
+    "Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms come from the upper respiratory tract.",
+    "adjacent fact from the same lecture"],
+   ["Genitourinary tract",
+    "The genitourinary tract is the source of enterococci. HACEK (Haemophilus, Aggregatibacter, "
+    "Cardiobacterium, Eikenella, Kingella) organisms come from the upper respiratory tract.",
+    "adjacent fact from the same lecture"],
+   ["Skin surface",
+    "The skin is the source of staphylococci, including the coagulase-negative staphylococci of early "
+    "prosthetic valve infection. HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) "
+    "organisms come from the upper respiratory tract.", "adjacent fact from the same lecture"]],
+  cite(m=(16, 17, 20))),
+
+# =====================================================================================================
+# NEXT STEP, SURGERY, COMPLICATIONS, POPULATIONS
+# =====================================================================================================
+
+X("next", "1", NX, IO_A,
+  "A 68-year-old woman with a mechanical mitral valve has a fever of 38.8 °C (101.8 °F), and two separate blood "
+  "cultures grow Staphylococcus aureus. A transthoracic echocardiogram shows no vegetation. Which is the most "
+  "appropriate next step?",
+  [["Transesophageal echocardiography",
+    "Correct. Transesophageal echocardiography is highly sensitive and specific, detects vegetations and "
+    "defines the extent of disease, and it is required for optimal assessment of possible prosthetic valve "
+    "endocarditis. A clear transthoracic study does not settle the question in a prosthetic valve with "
+    "Staphylococcus aureus in the blood."],
+   ["Repeat transthoracic study in 6 weeks",
+    "Waiting 6 weeks for another transthoracic study leaves a prosthetic valve infection unassessed. The "
+    "transesophageal study is the one required for optimal assessment of possible prosthetic valve "
+    "endocarditis.", "right action at the wrong stage or severity"],
+   ["Stop the workup; echo was normal",
+    "Even a normal transesophageal echocardiogram does not necessarily rule out endocarditis, and hers was only "
+    "transthoracic. With a typical organism in two cultures and a prosthetic valve, the transesophageal study "
+    "comes next.", "common lay belief"],
+   ["Treat for 1 week, then reassess",
+    "A week of treatment is far short of endocarditis therapy, typically 4-6 weeks from the first negative "
+    "culture, and it skips the imaging she needs. The transesophageal study defines whether the prosthesis is "
+    "infected.", "right action at the wrong stage or severity"]],
+  cite(m=(22, 25))),
+
+X("next", "2", NX, IO_A,
+  "A 66-year-old man with known aortic stenosis is seen in clinic with 3 weeks of low-grade fevers, night "
+  "sweats, weight loss and a louder murmur. He is stable, and no antibiotics have been given. Which is the most "
+  "appropriate next step?",
+  [["Three culture sets from separate sites",
+    "Correct. Blood cultures, three sets from separate sites, come first, and empiric therapy is started ONLY "
+    "after they are drawn. Starting antibiotics before cultures is a recognized cause of culture-negative "
+    "endocarditis, which would leave the organism unknown."],
+   ["Start oral amoxicillin today",
+    "Treating before cultures risks culture-negative endocarditis, and endocarditis therapy is parenteral, not "
+    "oral. Cultures from separate sites come first.", "right action at the wrong stage or severity"],
+   ["One blood culture, then antibiotics",
+    "One culture is not enough: the workup is three sets of blood cultures from separate sites, all drawn "
+    "before any antibiotic is given, so the organism can be identified and therapy directed to it.",
+    "right action at the wrong stage or severity"],
+   ["Antibiotics now, cultures later",
+    "Empiric therapy is started ONLY after blood cultures have been drawn; antibiotics first can sterilize the "
+    "cultures and cause culture-negative endocarditis.", "reversed direction or value"]],
+  cite(m=(25, 26), n=(1,))),
+
+X("next", "1", NX, IO_A,
+  "A 71-year-old woman is seen in the office with 3 weeks of low-grade fever, weight loss, a new murmur and "
+  "painful red nodules on several finger pads. Her vital signs are stable. Which plan is most appropriate?",
+  [["Admit for cultures and intravenous therapy",
+    "Correct. Suspected endocarditis is managed in hospital: blood cultures first, then intravenous "
+    "antibiotics, hospital admission and close monitoring of labs, renal function and cardiovascular status by a "
+    "multidisciplinary team. Stable vital signs do not make it an office problem."],
+   ["Oral amoxicillin, recheck in 1 week",
+    "Oral antibiotics before cultures would risk culture-negative endocarditis, and endocarditis therapy is "
+    "parenteral. She needs admission, cultures and intravenous therapy.", "right action at the wrong stage or severity"],
+   ["Outpatient echo next week, no labs",
+    "Delaying a week and skipping blood cultures leaves out the most important test. Three culture sets from "
+    "separate sites, admission and intravenous antibiotics come first.", "right action at the wrong stage or severity"],
+   ["One intramuscular ceftriaxone dose now",
+    "A single injection is neither prolonged nor started after cultures; endocarditis treatment is bactericidal, "
+    "parenteral and lasts weeks, and cultures must be drawn before any antibiotic.", "confused mechanism or drug class"]],
+  cite(m=(13, 25, 26))),
+
+X("surgery", "1", SU, IO_A,
+  "Four patients are on day 5 of appropriate intravenous antibiotics for native valve endocarditis. Which one "
+  "needs evaluation for surgery?",
+  [["New heart failure from severe regurgitation",
+    "Correct. Heart failure due to valvular dysfunction is the most common indication for surgery, alongside "
+    "infection not resolving on appropriate antibiotics, abscess and fungal infection. New heart failure from "
+    "severe regurgitation calls for cardiothoracic surgery evaluation."],
+   ["Fever resolved, cultures now negative",
+    "A settled fever and negative cultures mean the infection is responding; that is the opposite of the "
+    "'not resolving with appropriate antibiotics' indication. This patient continues the course.",
+    "reversed direction or value"],
+   ["Mild anemia with a normal cell size",
+    "A normocytic anemia of chronic disease is an expected lab finding in endocarditis, not a surgical "
+    "indication. Surgery is for heart failure from valve dysfunction, persistent infection, abscess or fungal "
+    "infection.", "adjacent fact from the same lecture"],
+   ["Splinter hemorrhages still visible",
+    "Splinter hemorrhages are a peripheral embolic sign and are not an indication for surgery. Heart failure "
+    "from valvular dysfunction is the most common indication.", "adjacent fact from the same lecture"]],
+  cite(m=(12, 25, 33))),
+
+X("other", "1", SU, IO_A,
+  "A 63-year-old man with 6 weeks of subacute endocarditis suddenly develops a severe headache and left-sided "
+  "weakness. Brain imaging shows an intracranial hemorrhage. Which complication best explains this?",
+  [["Ruptured mycotic (infected) aneurysm",
+    "Correct. Subacute endocarditis is gradually progressive unless it is complicated by a major embolic event "
+    "or a ruptured mycotic (infected) aneurysm, and infective intracranial aneurysms and intracranial "
+    "hemorrhage are both on the brain's list of complications. A sudden bleed fits a ruptured aneurysm."],
+   ["Perivalvular abscess in the septum",
+    "An abscess that extends into the upper ventricular septum interrupts the conduction system, causing a new "
+    "heart block, not a brain hemorrhage. His bleed fits a ruptured mycotic aneurysm.", "adjacent fact from the same lecture"],
+   ["Septic pulmonary emboli",
+    "Septic pulmonary emboli come from right-sided (tricuspid) disease, typically in people who inject drugs, "
+    "and cause cough and lung lesions, not intracranial bleeding.", "adjacent fact from the same lecture"],
+   ["Immune complex glomerulonephritis",
+    "Glomerulonephritis is a kidney complication that shows up as blood and protein in the urine. A sudden "
+    "headache with weakness and an intracranial hemorrhage points to a ruptured mycotic aneurysm.",
+    "adjacent fact from the same lecture"]],
+  cite(m=(10, 11, 15, 25))),
+
+X("other", "1", PO, IO_POP,
+  "A 7-year-old girl with repaired congenital heart disease has 3 weeks of low-grade fever, fatigue and joint "
+  "aches, and blood cultures grow viridans streptococci. Her parent asks why the doctor found no spots on her "
+  "hands, nails or eyes. Which statement is accurate?",
+  [["Those signs are less common in children",
+    "Correct. Classic peripheral stigmata (Osler nodes, Janeway lesions, Roth spots, splinter hemorrhages) are "
+    "considerably less common in children than in adults. A child with congenital heart disease usually has an "
+    "indolent course, prolonged low-grade fever with fatigue and joint aches, as she does."],
+   ["Their absence rules out endocarditis",
+    "Missing peripheral signs do not rule out endocarditis, especially in a child, in whom they are "
+    "considerably less common. Her positive viridans streptococcal cultures and history fit the disease.",
+    "common lay belief"],
+   ["Children show them more than adults",
+    "This reverses the fact: peripheral stigmata are considerably LESS common in children than in adults. "
+    "Children with congenital heart disease more often have an indolent course of low-grade fever, fatigue and "
+    "joint aches without the classic skin and eye signs.", "reversed direction or value"],
+   ["They appear only with Candida",
+    "Peripheral signs are not specific to fungal infection; they appear with bacterial endocarditis in adults. "
+    "In children they are simply less common.", "adjacent fact from the same lecture"]],
+  cite(m=(41,))),
+
+X("other", "S", PO, IO_POP,
+  "A 5-year-old boy with congenital heart disease has infective endocarditis. His parents ask how children's "
+  "endocarditis differs from adults'. Compared with adults, which feature is more typical in children?",
+  [["More often right-sided",
+    "Correct. Compared with adults, pediatric endocarditis is more often right-sided, particularly with "
+    "congenital heart disease, carries a higher septic embolism rate and causes less heart failure. Peripheral "
+    "stigmata are less common."],
+   ["More heart failure",
+    "Children with endocarditis have LESS heart failure than adults; the risk rises only in those without "
+    "congenital heart disease, whose disease mirrors adults'.", "reversed direction or value"],
+   ["More peripheral skin signs",
+    "Classic peripheral stigmata such as Osler nodes, Janeway lesions and Roth spots are considerably less "
+    "common in children than in adults, so their absence in a child proves little. Right-sided disease is what "
+    "is more common in children.", "reversed direction or value"],
+   ["Mostly degenerative valve disease",
+    "Pediatric endocarditis is driven overwhelmingly by congenital heart disease and indwelling central venous "
+    "catheters rather than degenerative valve disease. What is more typical in children is right-sided disease.",
+    "adjacent fact from the same lecture"]],
+  cite(m=(39, 41))),
+
+X("other", "2", PO, IO_A,
+  "A 69-year-old woman had her aortic valve replaced with a prosthesis 3 months ago. She asks when her risk of "
+  "prosthetic valve endocarditis is highest. Which answer is accurate?",
+  [["Within the first year",
+    "Correct. The greatest risk of prosthetic valve endocarditis is within the first year after replacement; it "
+    "then gradually declines until it is similar to the risk for a native valve. At 3 months she is inside "
+    "that window."],
+   ["From year 2 to year 5",
+    "The risk is highest earlier, within the first year after replacement, and it declines afterward rather "
+    "than peaking in years 2 to 5.", "reversed direction or value"],
+   ["After 10 years",
+    "Risk does not climb late. It is greatest within the first year after replacement and then gradually falls "
+    "until it is similar to native-valve risk, so a valve 10 years old carries less risk than hers does now.",
+    "reversed direction or value"],
+   ["The same at all times",
+    "The risk is not constant: it is greatest within the first year after replacement and then gradually "
+    "declines until it matches native valve risk.", "common lay belief"]],
+  cite(m=(6,)),
+  order=["Within the first year", "From year 2 to year 5", "After 10 years", "The same at all times"]),
+
+X("other", "2", PO, IO_A,
+  "Four patients have infective endocarditis. Which one has the highest expected mortality?",
+  [["Staphylococcus aureus, prosthetic valve",
+    "Correct. Staphylococcus aureus is the most lethal organism, and its mortality is highest with a prosthetic "
+    "valve, higher than in people who do not inject drugs and much higher than in people who inject drugs. "
+    "Viridans streptococci carry a relatively good prognosis when treated early."],
+   ["Staphylococcus aureus, injects drugs",
+    "Staphylococcus aureus endocarditis in people who inject drugs has the LOWEST mortality of the "
+    "Staphylococcus aureus groups. The prosthetic valve group is the highest.", "reversed direction or value"],
+   ["Staphylococcus aureus, native valve",
+    "Staphylococcus aureus on a native valve in a person who does not inject drugs is serious, but its "
+    "mortality is lower than with a prosthetic valve.", "right action at the wrong stage or severity"],
+   ["Viridans streptococci, treated early",
+    "Viridans streptococcal endocarditis has a relatively good prognosis if antibiotics start before "
+    "complications occur, far better than Staphylococcus aureus on a prosthetic valve.", "reversed direction or value"]],
+  cite(m=(37,))),
+
+X("other", "S", PO, IO_A,
+  "A 30-year-old man who injects drugs has fever and a new murmur. Over 2 days he has developed painful, red, "
+  "raised nodules on the pads of several fingers that come in crops. Which finding is this?",
+  [["Osler nodes",
+    "Correct. Osler nodes are PAINFUL red nodules on the pads of the fingers and toes that appear in crops and "
+    "fade in 2-3 days; they are an immunologic phenomenon in the Duke criteria."],
+   ["Janeway lesions",
+    "Janeway lesions are PAINLESS (nontender), flat hemorrhagic lesions on the palms and soles. His nodules are "
+    "painful and on the finger pads, which makes them Osler nodes.", "competing diagnosis"],
+   ["Splinter hemorrhages",
+    "Splinter hemorrhages are thin dark lines under the fingernails or toenails, in the proximal nail plate, "
+    "not raised nodules on the finger pads. Painful nodules on the pads that come in crops are Osler nodes.",
+    "competing diagnosis"],
+   ["Roth spots",
+    "Roth spots are white-centered hemorrhages in the retina, from vasculitis of the small retinal arteries, "
+    "seen on fundoscopy rather than on the fingers. Painful finger-pad nodules are Osler nodes.",
+    "competing diagnosis"]],
+  cite(m=(12, 13))),
+
+X("other", "S", PO, IO_A,
+  "A 20-year-old woman with an unrepaired ventricular septal defect develops infective endocarditis. Where is "
+  "the vegetation most likely to form?",
+  [["Low-pressure side of the defect",
+    "Correct. Infective endocarditis affects heart valves most often, and also the low-pressure side of a "
+    "ventricular septal defect, endocardium damaged by aberrant jets of blood or foreign bodies, and "
+    "intracardiac devices. With her defect, the low-pressure side is the site."],
+   ["High-pressure side of the defect",
+    "This reverses the site: the vegetation forms on the LOW-pressure side of a ventricular septal defect, "
+    "where the jet of blood strikes and damages the endocardium.", "reversed direction or value"],
+   ["The left atrial wall",
+    "The atrial wall is not a listed site in her case. Endocarditis affects valves, the low-pressure side of a "
+    "ventricular septal defect, jet-damaged endocardium and devices.", "adjacent fact from the same lecture"],
+   ["The pericardial surface",
+    "The pericardium is involved only when a perivalvular abscess extends into the epicardium. The vegetation "
+    "itself forms on the low-pressure side of her ventricular septal defect.", "adjacent fact from the same lecture"]],
+  cite(m=(4, 15))),
+]

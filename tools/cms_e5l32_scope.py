@@ -68,8 +68,15 @@ CONTESTED on the slides, or slide vs audio, and how each is handled (truth wins)
       ceftriaxone) intramuscular or intravenous when oral is impossible. Keyed as the slides.
   Audio vs s34: she "kind of disagrees" with no prophylaxis for bronchoscopy; s34 and s36 (American
       Heart Association) say bronchoscopy without mucosal incision needs none. Keyed as the slides.
-  Audio only (never keyed, slides-only): Streptococcus gallolyticus and colon cancer; VRE; PICC lines;
-      trough levels; Coxiella and Bartonella regimens (s31, which she said was missing from the handout).
+  Audio only (never keyed, slides-only): VRE; PICC lines; trough levels; Coxiella and Bartonella regimens
+      (s31, which she said was missing from the handout).
+  2026-10-29: Jaxon added "IE Missing Slide and Cases.pptx" (same inbox). Its slide 1 ("Antibiotics
+      (cont.)") puts Streptococcus gallolyticus [bovis] with liver disease/cirrhosis and GI abnormalities,
+      esp. colon cancer, on a slide, so that link is no longer audio-only (the ban below is lifted); it
+      also adds ampicillin + ceftriaxone for enterococci with CKD/AKI, fluoroquinolones for HACEK with a
+      penicillin allergy, and the two causes of culture-negative endocarditis. Its slides 2-5 are the
+      cases slide 43 never reached (her key is in the notes, used only for those four cases). Both feed
+      tools/cms_e5l32_cases_pool.py; the topic pools above were not changed.
   s31 HACEK regimen: ceftriaxone (or ampicillin-sulbactam) is keyed; she also said ceftriaxone aloud.
 """
 
@@ -93,7 +100,6 @@ EXCLUDED_SLIDES = {1, 9, 38, 43}
 SCOPE_BANNED = [
     r"2023 Duke|Duke-ISCVID|ISCVID",
     r"\b(?:50|60|70)\s?(?:-|to|–)\s?70\s?%",            # s38's streptococcal share
-    r"colon cancer|colorectal|bovis",                   # audio-only association
     r"Coxiella|Bartonella|hydroxychloroquine",
     r"raised (?:or macular )?(?:hemorrhagic )?(?:lesion|macule)s? on the (?:palms|soles)",
     r"\bkg\b|per kilogram|milligrams? per",              # weight-based doses
