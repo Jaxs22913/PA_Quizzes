@@ -93,6 +93,24 @@
     .logo-mark-ink { stroke: #e5e7eb; }
     .logo-mark-accent { stroke: var(--primary); }
   }
+/*CRAM-OPTIONAL-CSS:BEGIN*/
+  /* memory-aid box + footnote rows (render.py emits this block only when a
+     topic uses "mnemonic" or a {"note": ...} row); theme variables only, so
+     the designed dark mode (tools/dark_tokens.py) recolours it for free */
+  .mnem{margin:10px 0 0;padding:11px 15px 12px;background:var(--card);border:1px solid var(--line);
+    border-left:4px solid var(--acc);border-radius:12px;box-shadow:var(--shadow);font-size:13.8px;color:var(--body)}
+  .mnem-k{font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--acc-ink,var(--ink));margin:0 0 4px}
+  .mnem p{margin:0 0 5px}
+  .mnem p:last-child{margin-bottom:0}
+  .mnem-hook{font-weight:700;color:var(--ink)}
+  .mnem-key span{display:inline-block;margin:0 16px 3px 0}
+  .mnem-key b{color:var(--acc-ink,var(--ink))}
+  .mnem-brk{color:var(--muted);font-size:13px}
+  .mnem-brk b{color:var(--body)}
+  td.rnote{font-size:12.8px;font-style:italic;color:var(--muted)}
+  @media print{.mnem{box-shadow:none;break-inside:avoid}}
+/*CRAM-OPTIONAL-CSS:END*/
 </style>
 </head>
 <body>

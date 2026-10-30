@@ -17,12 +17,392 @@ Disease and Aortic Aneurysm) and four for Lecture 28 (Cardiomyopathy). Lectures
 touches, recording times in parentheses. Lecture 27's emphasis follows when its
 audio arrives. Lectures 29-32 (Elwaya's two arrhythmia lectures, Reynolds's pericardial disease and infective endocarditis) were added 2026-10-15 from the slides, with each lecture's recording emphasis folded in the same day: a gold "<Lecturer> Emphasized" card on top and star labels with recording times (Lecture 29 from our own transcript; 30-32 from Notability's, cross-checked against ours, with times from ours). Same palette
 rotation as the guide (Exam 5 rose).
+
+2026-10-29: CRITERIA (top of the sheet) holds one table per criteria set, score, classification, named triad or
+threshold table the slides give, each with a labeled memory aid (Jaxon's standing rule: memory
+cram_criteria_tables). These come straight from the visible slides (pictures transcribed from the slide images)
+and were checked cell by cell against them by an independent reader. The same day, four Lecture 32 treatment rows
+(other streptococci, enterococci options, HACEK organisms, culture-negative endocarditis) were added to l32-treat from
+a slide missing from the original deck ("IE Missing Slide and Cases", slide 1); its slides 2-5 are cases, not cram content.
 """
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, os.path.join(HERE, "cram-sheet-template"))
 from render import render
+
+# ---- Criteria, scores and classifications (Jaxon, 2026-10-29: "If there are a criteria always add them to the
+# cram sheet as well (in the form of a table and also create a mneumonic for them"). One table per set, taken
+# from the visible slides (pictures transcribed from the slide images), in lecture and slide order; each has a
+# labeled memory aid that maps one-to-one onto the slide's items. Where two slides disagree, the table shows
+# the slide wording and a note row says so. They share one TOC chip (the first carries "toc_label").
+L26C, L27C, L28C, L29C, L30C, L31C, L32C = ("#a3341f", "#2f5d6b", "#5a3d8a", "#1f5c3a", "#7a2d47",
+                                            "#8a5a2b", "#7a2d5a")
+CRITERIA = [
+# ---- Lecture 26 (Shah, Venous Disorders)
+{"id": "crit-l26-cvi", "label": "Chronic Venous Insufficiency: Classification", "color": L26C,
+ "tag": "Criteria &middot; Lecture 26 &middot; slide 10",
+ "toc_label": "Criteria &amp; Scores (Lectures 26&ndash;32)",
+ "cols": ["Type", "Cause (slide 10)"], "widths": ["22%", "78%"], "rows": [
+ ("Primary", "Intrinsic structural or functional abnormality of the vein wall or the venous valves, leading to valvular reflux"),
+ ("Secondary", "Obstruction and/or valvular incompetence from a prior deep vein thrombosis"),
+ ], "mnemonic": {"hook": "Primary = the Pipe itself; Secondary = Sequel of a clot.",
+  "key": [["P", "Pipe: vein wall or valve abnormality"], ["S", "Sequel: a prior deep vein thrombosis"]]}},
+{"id": "crit-l26-virchow", "label": "Virchow Triad", "color": L26C, "toc": False,
+ "tag": "Criteria &middot; Lecture 26 &middot; slide 49",
+ "cols": ["Arm of the triad", "What slide 49 lists under it"], "widths": ["30%", "70%"], "rows": [
+ ("Venous stasis (alterations in blood flow)", "Immobilization (long flights, prolonged sitting, postoperative inactivity), about <b>20 times</b> the risk &middot; venous insufficiency &middot; heart failure"),
+ ("Hypercoagulable state (inherited or acquired)", "Factor V Leiden, prothrombin gene mutation, protein C or S deficiency, antithrombin deficiency &middot; cancer &middot; oral contraceptive pill (especially with smoking or obesity) or postmenopausal estrogen replacement therapy &middot; pregnancy"),
+ ("Trauma (vascular endothelial injury)", "Surgery (especially knee or hip replacement, or hip fracture) &middot; intravenous drug use (lower extremity injection) &middot; smoking &middot; hypertension &middot; trauma and burns"),
+ ], "mnemonic": {"hook": "<b>SHE</b> makes the clot.",
+  "key": [["S", "Stasis of venous blood flow"], ["H", "Hypercoagulable state"], ["E", "Endothelial injury (the slide&rsquo;s &ldquo;trauma&rdquo; arm)"]],
+  "breaks": "One risk factor can sit in more than one arm, and the slide files smoking and hypertension under the trauma arm."}},
+{"id": "crit-l26-wells", "label": "Wells Criteria for Deep Vein Thrombosis: Items", "color": L26C, "toc": False,
+ "tag": "Criteria &middot; Lecture 26 &middot; slides 54&ndash;55",
+ "cols": ["Item (slide 55)", "Points"], "widths": ["84%", "16%"], "rows": [
+ ("Active cancer (treatment or palliation within 6 months)", "+1"),
+ ("Bedridden recently more than 3 days, or major surgery within 12 weeks", "+1"),
+ ("Calf swelling more than 3 cm compared with the other leg (measured 10 cm below the tibial tuberosity)", "+1"),
+ ("Collateral (nonvaricose) superficial veins present", "+1"),
+ ("Entire leg swollen", "+1"),
+ ("Localized tenderness along the deep venous system", "+1"),
+ ("Pitting edema, confined to the symptomatic leg", "+1"),
+ ("Paralysis, paresis, or recent plaster immobilization of the lower extremity", "+1"),
+ ("Previously documented deep vein thrombosis", "+1"),
+ ("Alternative diagnosis to deep vein thrombosis as likely or more likely", "&minus;2"),
+ {"note": "Outpatient and emergency department use only, not inpatients (slide 54). Slide 55 shows two versions: the calculator picture lists all ten items; the table picture beside it has nine (no &ldquo;previously documented deep vein thrombosis&rdquo;). Travel is not an item."},
+ ], "mnemonic": {"hook": "3 C&rsquo;s and 3 P&rsquo;s ring the BEL; an Alternative takes 2 away.",
+  "key": [["C", "Cancer (active)"], ["C", "Calf swelling more than 3 cm"], ["C", "Collateral superficial veins"],
+          ["P", "Pitting edema in the symptomatic leg"], ["P", "Paralysis, paresis or plaster"], ["P", "Previous deep vein thrombosis"],
+          ["B", "Bedridden more than 3 days or surgery within 12 weeks"], ["E", "Entire leg swollen"], ["L", "Localized deep-vein tenderness"],
+          ["A", "Alternative diagnosis as likely: &minus;2"]],
+  "breaks": "Every letter is +1 except A (&minus;2). &ldquo;Previous deep vein thrombosis&rdquo; is only in the slide&rsquo;s calculator picture."}},
+{"id": "crit-l26-wells-score", "label": "Wells Criteria: Total, Likelihood and Next Test", "color": L26C, "toc": False,
+ "tag": "Criteria &middot; Lecture 26 &middot; slides 55&ndash;56",
+ "cols": ["Total", "Likelihood (slide 55)", "What to order (slide 56)"], "widths": ["16%", "22%", "62%"], "rows": [
+ ("0 or less", "Low", "<b>D-dimer</b>: negative &rarr; stop; positive &rarr; ultrasound of the thigh (negative &rarr; stop)"),
+ ("1 to 2", "Moderate", "Not on the slide 56 pathway, which shows only low and high risk"),
+ ("3 or more", "High", "<b>Ultrasound of the thigh</b> (a D-dimer, &ldquo;if taken&rdquo;, leads to the same ultrasound whatever its result); if negative, either ultrasound of the lower leg, phlebography, or a repeat thigh ultrasound in 1 week"),
+ ], "mnemonic": {"hook": "Low goes to the lab; high goes to the scanner.",
+  "key": [["0 or less", "lab first: the D-dimer rules it out"], ["1 to 2", "the middle band (no branch on the pathway)"], ["3 or more", "scan first: ultrasound of the thigh"]],
+  "breaks": "The pathway picture has no moderate branch; the three cut-offs come from the heading of slide 55&rsquo;s table."}},
+{"id": "crit-l26-vte-duration", "label": "Venous Thromboembolism: How Long to Anticoagulate", "color": L26C, "toc": False,
+ "tag": "Criteria &middot; Lecture 26 &middot; slides 63&ndash;64",
+ "cols": ["Category", "Examples on slide 64", "Treat for"], "widths": ["32%", "48%", "20%"], "rows": [
+ ("Any acute first episode (slide 63)", "Deep vein thrombosis or pulmonary embolism, every patient", "Minimum <b>3 months</b>"),
+ ("Provoked by a major transient or reversible risk factor", "Surgery under general anesthesia more than 30 minutes &middot; hospitalization or bed rest 3 days or more &middot; major trauma or fracture", "<b>3 months</b>"),
+ ("Provoked by a minor transient risk factor", "Estrogen therapy &middot; pregnancy &middot; minor surgery &middot; prolonged travel &middot; minor leg injury", "<b>3&ndash;6 months</b>"),
+ ("Unprovoked first venous thromboembolism", "No identifiable risk factor", "<b>Indefinite</b>"),
+ ], "mnemonic": {"hook": "The smaller the trigger, the longer the drug.",
+  "key": [["Floor", "every first episode gets at least 3 months"], ["Major trigger", "3 months"], ["Minor trigger", "3&ndash;6 months"], ["No trigger", "no end date"]],
+  "breaks": "Slide 64 itself names three categories; the 3-month floor comes from slide 63. Prolonged travel is a minor trigger here even though it is not a Wells item."}},
+{"id": "crit-l26-outpatient", "label": "Deep Vein Thrombosis: Outpatient or Hospital", "color": L26C, "toc": False,
+ "tag": "Criteria &middot; Lecture 26 &middot; slide 65",
+ "cols": ["Outpatient therapy appropriate for", "Outpatient therapy NOT appropriate for"], "widths": ["50%", "50%"], "rows": [
+ ("Hemodynamically stable", "Iliofemoral (proximal) deep vein thrombosis"),
+ ("Low bleeding risk", "Concurrent symptomatic pulmonary embolism"),
+ ("No renal insufficiency", "High bleeding risk"),
+ ("Good support and reliable (likely to adhere to the treatment plan and follow-up)", "Other comorbidities that warrant inpatient care"),
+ ], "mnemonic": {"hook": "Home needs four S&rsquo;s; the hospital keeps the high clot, the lung clot, the bleeder and the sick.",
+  "key": [["Stable", "hemodynamically"], ["Safe", "low bleeding risk"], ["Sound kidneys", "no renal insufficiency"], ["Supported", "good support, reliable"],
+          ["High clot", "iliofemoral (proximal)"], ["Lung clot", "concurrent symptomatic pulmonary embolism"], ["Bleeder", "high bleeding risk"], ["Sick", "other comorbidities needing inpatient care"]],
+  "breaks": "The two columns are separate lists, not pairs; kidney function appears only on the outpatient side."}},
+
+# ---- Lecture 27 (Carter, Arterial Occlusive Disease and Aneurysms)
+{"id": "crit-l27-leriche", "label": "Leriche Syndrome (Triad)", "color": L27C, "toc": False,
+ "tag": "Criteria &middot; Lecture 27 &middot; slide 14",
+ "cols": ["Triad item (slide 14)", "Detail on the slide"], "widths": ["36%", "64%"], "rows": [
+ ("Claudication", "Buttock and hip claudication: aching, may have weakness of the hip or thigh with walking (aortoiliac disease)"),
+ ("Absent or diminished femoral pulses", "Unilateral or bilateral"),
+ ("Erectile dysfunction", "Caused by severe aortoiliac disease"),
+ ], "mnemonic": {"hook": "Three L&rsquo;s when the aorta clogs at its fork: Limp, Lost pulse, Limp.",
+  "key": [["Limp", "claudication (buttock and hip)"], ["Lost pulse", "absent or diminished femoral pulses"], ["Limp", "erectile dysfunction"]],
+  "breaks": "The two &ldquo;limps&rdquo; are different organs; all three point to aortoiliac disease."}},
+{"id": "crit-l27-abi", "label": "Ankle-Brachial Index", "color": L27C, "toc": False,
+ "tag": "Criteria &middot; Lecture 27 &middot; slides 42&ndash;43",
+ "cols": ["Index", "Interpretation (slide 42)"], "widths": ["26%", "74%"], "rows": [
+ ("More than 1.3", "<b>Abnormal</b>: calcified artery walls, non-compressible arteries (for example, a diabetic patient)"),
+ ("More than 0.9 to 1.3", "<b>Normal</b>"),
+ ("0.4 to 0.9", "<b>Claudication</b>"),
+ ("0 to 0.4", "<b>Rest pain, tissue loss</b> (ulcer, gangrene)"),
+ {"note": "How to calculate (slide 43): each leg = its higher ankle pressure (posterior tibial or dorsalis pedis) &divide; the higher arm pressure (either arm); the lower of the two legs is the patient&rsquo;s overall index."},
+ ], "mnemonic": {"hook": "Nine is fine, four is the floor, over 1.3 is stone.",
+  "key": [["Nine is fine", "above 0.9 to 1.3 = normal"], ["Between nine and four", "0.4&ndash;0.9 = claudication (walking hurts)"],
+          ["Below the floor", "0&ndash;0.4 = rest pain, tissue loss"], ["Stone", "above 1.3 = calcified, non-compressible"]],
+  "breaks": "The slide&rsquo;s bands share their edges (0.4 and 0.9 each sit in two bands). The calculation note is not part of the rhyme."}},
+{"id": "crit-l27-six-p", "label": "Acute Limb Ischemia: the Six P&rsquo;s", "color": L27C, "toc": False,
+ "tag": "Criteria &middot; Lecture 27 &middot; slides 59, 61",
+ "cols": ["P (slide 61)", "What the slides add"], "widths": ["26%", "74%"], "rows": [
+ ("Pain", "Abrupt onset of severe pain (slide 59)"),
+ ("Pallor", "&mdash;"),
+ ("Pulselessness", "Absent pulses distal to the occlusion"),
+ ("Paresthesia", "Light-touch sensory fibers are highly susceptible to ischemia; a sensory deficit over the <b>dorsum of the foot</b> is often the earliest neurologic sign"),
+ ("Paralysis", "Test muscle strength"),
+ ("Poikilothermia", "Slide 61 also lists a cold, cyanotic extremity"),
+ ], "mnemonic": {"hook": "Artery, nerve, thermostat: three P&rsquo;s the artery shows you, two the nerve shows you, one the thermostat shows you.",
+  "key": [["Artery", "pain, pallor, pulselessness"], ["Nerve", "paresthesia, paralysis"], ["Thermostat", "poikilothermia (the cold limb)"]],
+  "breaks": "The grouping is ours; the slide simply lists six. The nerve pair is what moves a limb up the Rutherford stages below."}},
+{"id": "crit-l27-rutherford", "label": "Rutherford Classification of Acute Limb Ischemia", "color": L27C, "toc": False,
+ "tag": "Criteria &middot; Lecture 27 &middot; slides 62&ndash;65",
+ "cols": ["Stage", "Limb", "Prognosis", "Sensory loss", "Muscle weakness", "Arterial / venous Doppler", "Next step (slides 62&ndash;64)"],
+ "widths": ["7%", "13%", "17%", "16%", "13%", "15%", "19%"], "rows": [
+ ("I", "Viable", "Not immediately threatened", "None", "None", "Audible / audible", "Time for vascular imaging (for example computed tomography angiography)"),
+ ("IIA", "Marginally threatened", "Salvageable if promptly treated", "Minimal (toes) or none", "None", "Often inaudible / audible", "Time for vascular imaging"),
+ ("IIB", "Immediately threatened", "Salvageable with immediate revascularization", "More than the toes, pain at rest", "Mild or moderate", "Usually inaudible / audible", "Evaluate and treat in a surgical suite"),
+ ("III", "Irreversibly damaged", "Major tissue loss or permanent nerve damage inevitable", "Profound, anesthetic", "Profound, paralysis (rigor)", "Inaudible / inaudible", "Major amputation; vascular imaging generally not needed"),
+ {"note": "Slides disagree on IIA: the slide 65 table (shown) says arterial Doppler &ldquo;often inaudible&rdquo; and sensory loss &ldquo;minimal (toes) or none&rdquo;; slide 62 says arterial Doppler signals are &ldquo;often audible&rdquo;, with &ldquo;no sensory loss&rdquo; and &ldquo;minimal pain (in the toes)&rdquo;."},
+ ], "mnemonic": {"hook": "I is Intact, A is A little, B is Both, III is gone.",
+  "key": [["I", "Intact: no sensory loss, no weakness, both signals heard"], ["IIA", "A little: the toes at most, no weakness; time to image"],
+          ["IIB", "Both: sensory loss beyond the toes AND weakness; straight to the surgical suite"], ["III", "gone: profound loss, paralysis, both signals silent; amputate"]],
+  "breaks": "The venous signal stays audible until stage III; the IIA arterial signal is the cell the slides disagree on."}},
+{"id": "crit-l27-carotid", "label": "Carotid Stenosis: Who Gets Surgery", "color": L27C, "toc": False,
+ "tag": "Criteria &middot; Lecture 27 &middot; slides 72, 75",
+ "cols": ["Patient", "Definition (slide 72)", "Plan (slide 75)"], "widths": ["18%", "46%", "36%"], "rows": [
+ ("Symptomatic", "Focal neurologic symptoms: transient ischemic attack (focal loss of neurologic function lasting less than 24 hours) or stroke", "Surgery if stenosis is <b>more than 70%</b>"),
+ ("Asymptomatic", "Narrowing in one or both carotids with no ischemic stroke or transient ischemic attack within the last 6 months; they outnumber symptomatic patients 4:1", "Surgery if stenosis is <b>more than 80%</b> and life expectancy is <b>more than 5 years</b>"),
+ ("Either, low grade", "Stenosis less than 50%", "Medical management"),
+ ], "mnemonic": {"hook": "Symptoms lower the bar: 70 with symptoms, 80 (plus 5 years) without, under 50 is medicine.",
+  "key": [["70", "symptomatic: operate above 70%"], ["80 + 5", "asymptomatic: operate above 80% with more than 5 years to live"], ["Under 50", "medical management for both"]],
+  "breaks": "The slide gives no plan for stenosis between these cut-offs."}},
+{"id": "crit-l27-aneurysm", "label": "Aortic Aneurysm and Pseudoaneurysm: Size Thresholds", "color": L27C, "toc": False,
+ "tag": "Criteria &middot; Lecture 27 &middot; slides 82&ndash;83, 95, 99&ndash;101, 108&ndash;109, 113",
+ "cols": ["Size or growth", "What it means"], "widths": ["30%", "70%"], "rows": [
+ {"group": "Abdominal aortic aneurysm"},
+ ("More than 3 cm", "Aneurysmal: the average infrarenal aorta is 2 cm (slide 83); an aneurysm is a localized dilation more than 50% of normal diameter (slide 82)"),
+ ("3.0&ndash;3.9 cm", "Ultrasound every <b>3 years</b> (slide 95)"),
+ ("4.0&ndash;5.4 cm", "Ultrasound or computed tomography every <b>6&ndash;12 months</b> (slide 95)"),
+ ("4.5 cm or larger", "Vascular specialist referral for observation and assessment; aneurysmal pain at any size = urgent referral (slide 100)"),
+ ("5.0 cm or larger", "Women: elective repair (slide 95). Consider vascular surgery referral (slide 101). Rarely ruptures until it exceeds 5 cm (slide 99)."),
+ ("More than 5.5 cm", "Men: elective repair (slide 95 reads &ldquo;&gt;5.5 cm or larger&rdquo;); increased rupture risk (slide 99)"),
+ ("Growth of 0.5 cm in 6 months", "Rapid growth: repair (slide 95, &ldquo;0.5 cm/6 months&rdquo;); increased rupture risk (slide 99, &ldquo;&gt; 0.5 cm in six months&rdquo;)"),
+ {"note": "Slides differ on the growth trigger: slide 95 says rapid growth is 0.5 cm/6 months; slide 99 says more than 0.5 cm in six months. Slide 95 also writes the men&rsquo;s repair size as &ldquo;&gt;5.5 cm or larger&rdquo;."},
+ {"group": "Thoracic aortic aneurysm (root, ascending or descending)"},
+ ("Less than 4.5 cm", "Computed tomography or magnetic resonance imaging every <b>3&ndash;5 years</b> (slide 109)"),
+ ("4.5&ndash;5.4 cm", "Computed tomography or magnetic resonance imaging every <b>6&ndash;12 months</b> (slide 109)"),
+ ("Ascending more than 5.5 cm", "Surgical repair generally indicated (slide 109)"),
+ ("Descending more than 6.0 cm", "Surgical repair generally indicated (slide 109)"),
+ ("Growth of more than 0.5 cm per year", "Surgical repair (slide 109)"),
+ ("Any size, symptomatic", "Repair all symptomatic thoracic aneurysms; chest or back pain needs urgent imaging (slide 108)"),
+ {"group": "Pseudoaneurysm (false aneurysm)"},
+ ("Less than 2 cm", "Watch and wait: may undergo spontaneous thrombosis and regression (slide 113). The slide also lists ultrasound-guided thrombin injection to seal the leak."),
+ ], "mnemonic": {"hook": "Belly: 3 to call it, 4 to scan it, 4.5 to refer it, 5 to fix it (men 5.5). Chest: 5.5 up, 6 down. False: under 2, wait.",
+  "key": [["3", "aneurysm; scan every 3 years to 3.9"], ["4", "4.0&ndash;5.4: scan every 6&ndash;12 months"], ["4.5", "refer to vascular"],
+          ["5 / 5.5", "repair: women 5.0, men above 5.5"], ["Half in half", "0.5 cm in 6 months: repair"],
+          ["Chest", "under 4.5 every 3&ndash;5 years; 4.5&ndash;5.4 every 6&ndash;12 months; repair ascending above 5.5, descending above 6.0, growth above 0.5 cm a year, or any symptoms"],
+          ["Under 2", "pseudoaneurysm: watch and wait"]],
+  "breaks": "Growth counts per 6 months in the abdomen but per year in the chest."}},
+
+# ---- Lecture 28 (Carter, Cardiomyopathy)
+{"id": "crit-l28-nyha", "label": "New York Heart Association (NYHA) Heart Failure Classes", "color": L28C, "toc": False,
+ "tag": "Criteria &middot; Lecture 28 &middot; slide 14",
+ "cols": ["Class", "Limitation", "Slide 14 wording"], "widths": ["10%", "16%", "74%"], "rows": [
+ ("I", "None", "No limitation of physical activity. Ordinary physical activity does not cause undue fatigue, palpitation or shortness of breath."),
+ ("II", "Slight", "Slight limitation of physical activity. Comfortable at rest. Ordinary physical activity results in fatigue, palpitation, shortness of breath or chest pain."),
+ ("III", "Marked", "Marked limitation of physical activity. Comfortable at rest. Less than ordinary activity causes fatigue, palpitation, shortness of breath or chest pain."),
+ ("IV", "Symptoms at rest", "Symptoms of heart failure at rest. Any physical activity causes further discomfort."),
+ ], "mnemonic": {"hook": "Ask where the symptoms start: never, ordinary activity, less than ordinary, at rest.",
+  "key": [["I", "never (stairs are fine)"], ["II", "ordinary activity (the stairs)"], ["III", "less than ordinary (across the room)"], ["IV", "at rest (in bed)"]],
+  "breaks": "Stairs, room and bed stand in for the slide&rsquo;s &ldquo;ordinary&rdquo; and &ldquo;less than ordinary&rdquo; activity; classes II and III are both comfortable at rest."}},
+
+# ---- Lecture 29 (Elwaya, Arrhythmias I)
+{"id": "crit-l29-af-types", "label": "Atrial Fibrillation: Types by Duration", "color": L29C, "toc": False,
+ "tag": "Criteria &middot; Lecture 29 &middot; slide 46",
+ "cols": ["Type", "Definition (slide 46)"], "widths": ["28%", "72%"], "rows": [
+ ("Paroxysmal", "Less than 1 week; usually ends without treatment"),
+ ("Persistent", "Continuous for more than 7 days but less than 1 year; needs treatment"),
+ ("Long-standing persistent", "Continuous for more than 1 year"),
+ ("Permanent", "Patient and clinician make a joint decision to stop further attempts to restore or maintain sinus rhythm"),
+ ], "mnemonic": {"hook": "A week, a year, a decision.",
+  "key": [["Paroxysmal", "Passes on its own, under a week"], ["Persistent", "Pushed past a week (up to a year): needs treatment"],
+          ["Long-standing", "past a year"], ["Permanent", "a Pact to stop trying for sinus rhythm"]],
+  "breaks": "Permanent is defined by the decision, not by a duration."}},
+{"id": "crit-l29-chads", "label": "CHA2DS2-VASc Score (Stroke Risk in Atrial Fibrillation)", "color": L29C, "toc": False,
+ "tag": "Criteria &middot; Lecture 29 &middot; slides 50&ndash;51",
+ "cols": ["Letter", "Item (slide 51)", "Points"], "widths": ["12%", "72%", "16%"], "rows": [
+ ("C", "Congestive heart failure history", "+1"),
+ ("H", "Hypertension history", "+1"),
+ ("A<sub>2</sub>", "Age 75 or older", "+2"),
+ ("D", "Diabetes history", "+1"),
+ ("S<sub>2</sub>", "Stroke, transient ischemic attack or thromboembolism history", "+2"),
+ ("V", "Vascular disease history (prior myocardial infarction, peripheral artery disease or aortic plaque)", "+1"),
+ ("A", "Age 65&ndash;74 (under 65 scores 0)", "+1"),
+ ("Sc", "Sex category: female (male scores 0)", "+1"),
+ {"note": "Slide 50: a score of 0 in a man or 1 in a woman = low risk, may not require anticoagulation; patients typically require anticoagulation unless bleeding risk is high (slide 49 says &ldquo;anticoagulation for all&rdquo;). In the recording she said the point table need not be memorized; know that this score = stroke risk. The table is here so you can score a vignette."},
+ ], "mnemonic": {"hook": "The subscript 2s are the 2-pointers: A<sub>2</sub> (75 or older) and S<sub>2</sub> (stroke). Everything else is 1; the maximum is 9.",
+  "key": [["C", "congestive heart failure"], ["H", "hypertension"], ["A<sub>2</sub>", "age 75 or older"], ["D", "diabetes"], ["S<sub>2</sub>", "stroke, transient ischemic attack, thromboembolism"],
+          ["V", "vascular disease"], ["A", "age 65&ndash;74"], ["Sc", "sex category: female"]],
+  "breaks": "The slide&rsquo;s picture shows no letters and lists the items in another order (age, sex, heart failure, hypertension, stroke, vascular disease, diabetes). Age is one item with three bands, so a patient scores A<sub>2</sub> or A, never both."}},
+{"id": "crit-l29-hasbled", "label": "HAS-BLED Score (Major Bleeding Risk on Anticoagulation)", "color": L29C, "toc": False,
+ "tag": "Criteria &middot; Lecture 29 &middot; slides 50&ndash;51",
+ "cols": ["Letter", "Item (slide 51)", "Points"], "widths": ["12%", "72%", "16%"], "rows": [
+ ("H", "Hypertension: uncontrolled, systolic more than 160 mmHg", "+1"),
+ ("A", "Abnormal renal function: dialysis, transplant, creatinine more than 2.26 mg/dL (more than 200 &micro;mol/L)", "+1"),
+ ("A", "Abnormal liver function: cirrhosis, or bilirubin more than 2 times normal with aspartate aminotransferase, alanine aminotransferase or alkaline phosphatase more than 3 times normal", "+1"),
+ ("S", "Stroke history", "+1"),
+ ("B", "Bleeding: prior major bleeding or predisposition to bleeding", "+1"),
+ ("L", "Labile international normalized ratio: unstable or high values, time in therapeutic range less than 60%", "+1"),
+ ("E", "Elderly: age more than 65", "+1"),
+ ("D", "Drugs predisposing to bleeding: aspirin, clopidogrel, nonsteroidal anti-inflammatory drugs", "+1"),
+ ("D", "Alcohol use: 8 or more drinks a week", "+1"),
+ {"note": "Slide 50: HAS-BLED 3 and up = no anticoagulation; 1 = low risk, anticoagulation okay (a score of 2 is not addressed). Current guidance treats a high score as bleeding risk to correct, not a reason to withhold; the course tests the slide."},
+ ], "mnemonic": {"hook": "Every item is 1 point; A and D each hold two items (kidney and liver; drugs and drink), so the maximum is 9.",
+  "key": [["H", "hypertension"], ["A", "abnormal kidney, abnormal liver"], ["S", "stroke"], ["B", "bleeding history"], ["L", "labile ratio"], ["E", "elderly"], ["D", "drugs, drink"]],
+  "breaks": "The letters are the standard acronym; the slide&rsquo;s picture lists the nine items in this order without letters. Age cut-offs differ from CHA2DS2-VASc: above 65 here."}},
+
+# ---- Lecture 30 (Elwaya, Arrhythmias II)
+{"id": "crit-l30-av", "label": "Atrioventricular Blocks: Telling the Degrees Apart", "color": L30C, "toc": False,
+ "tag": "Criteria &middot; Lecture 30 &middot; slides 4, 7, 10, 15",
+ "cols": ["Block", "PR interval", "P waves and QRS", "QRS width", "Rhythm and rate"], "widths": ["17%", "22%", "26%", "12%", "23%"], "rows": [
+ ("First degree", "More than 0.20 s, constant", "One P wave for every QRS (all conducted)", "Narrow, under 0.12 s", "Regular, 60&ndash;100"),
+ ("Second degree, Mobitz I (Wenckebach)", "Progressively increases from normal to long until a QRS drops", "Some P waves not conducted: more P waves than QRS complexes", "Narrow, under 0.12 s", "No regular underlying rhythm, a pattern with regularly missing QRS; 60&ndash;100"),
+ ("Second degree, Mobitz II", "Constant, 0.12&ndash;0.20 s", "More P waves than QRS complexes: random dropped QRS", "Narrow, under 0.12 s", "Regular apart from random missing QRS; 60&ndash;100"),
+ ("Third degree (complete)", "Random", "No P wave conducted; P waves have no association with the QRS and may hide in the QRS, ST segment or T wave", "Narrow or wide", "Two separate regular rhythms; ventricular rate usually under 40"),
+ ], "mnemonic": {"hook": "The block poem, one line per degree.",
+  "key": [["First", "&ldquo;If the R is far from P, then you have a first degree&rdquo; (long, constant PR)"],
+          ["Mobitz I", "&ldquo;Longer, longer, longer, drop: then you have a Wenckebach&rdquo;"],
+          ["Mobitz II", "&ldquo;If some P&rsquo;s don&rsquo;t get through, then you have a Mobitz II&rdquo; (PR constant)"],
+          ["Third", "&ldquo;If P&rsquo;s and Q&rsquo;s don&rsquo;t agree, then you have a third degree&rdquo; (two separate rates)"]],
+  "breaks": "&ldquo;Some P&rsquo;s don&rsquo;t get through&rdquo; is also true of Mobitz I; the PR decides: lengthening (I) versus constant (II)."}},
+{"id": "crit-l30-bbb", "label": "Bundle Branch Blocks: Electrocardiogram Criteria", "color": L30C, "toc": False,
+ "tag": "Criteria &middot; Lecture 30 &middot; slides 21, 24, 28&ndash;29",
+ "cols": ["Left bundle branch block (slide 24)", "Right bundle branch block (slide 29)"], "widths": ["50%", "50%"], "rows": [
+ ("QRS more than 0.12 s", "QRS more than 0.12 s"),
+ ("Dominant S wave in V1 (rS pattern)", "rsR&prime; in V1, V2, V3 (&ldquo;bunny ears&rdquo;, slide 28)"),
+ ("Prolonged R wave peak, more than 0.06", "Slurred S wave in I and aVL"),
+ ("Monophasic R in the lateral leads", "&mdash;"),
+ ("Absent Q waves in I, V5, V6", "&mdash;"),
+ {"note": "Slide 21 (intraventricular delays) lists the QRS as &ldquo;wide (&gt; 0.20)&rdquo;; slides 24 and 29 say more than 0.12 s."},
+ ], "mnemonic": {"hook": "Both are wide. Right = Rabbit ears in the Right chest leads; Left = a deep S in V1 and a Lone R laterally.",
+  "key": [["Both", "QRS more than 0.12 s"], ["Rabbit ears", "rsR&prime; in V1&ndash;V3 (right)"], ["Slur", "slurred S in I and aVL (right)"],
+          ["Deep S", "dominant S in V1 (left)"], ["Lone R", "monophasic R in the lateral leads (left)"], ["Late R", "R wave peak more than 0.06 (left)"], ["Lacking Q", "no Q in I, V5, V6 (left)"]],
+  "breaks": "The two columns are separate lists, not pairs, except the shared QRS width."}},
+{"id": "crit-l30-vt", "label": "Ventricular Tachycardia: Definitions", "color": L30C, "toc": False,
+ "tag": "Criteria &middot; Lecture 30 &middot; slides 39&ndash;40",
+ "cols": ["Term", "Definition (slides 39&ndash;40)"], "widths": ["26%", "74%"], "rows": [
+ ("Ventricular tachycardia", "3 or more consecutive premature ventricular contractions; regular, 100&ndash;250, no P waves, QRS more than 0.12 s (wide)"),
+ ("Non-sustained", "Duration less than 30 seconds"),
+ ("Sustained", "Duration 30 seconds or more, or causes hemodynamic collapse in less than 30 seconds"),
+ ("Monomorphic", "QRS complexes have the same morphology"),
+ ("Polymorphic", "QRS morphology varies"),
+ ("Torsades de pointes", "A polymorphic type in which the QRS complexes appear to &ldquo;twist&rdquo; around the baseline; long QT is a risk factor"),
+ ], "mnemonic": {"hook": "3 beats make it; 30 seconds (or a collapse) sustain it.",
+  "key": [["3", "3 or more in a row = ventricular tachycardia"], ["30", "under 30 s = non-sustained; 30 s or more = sustained"],
+          ["Mono / poly", "one shape / many shapes"], ["Twist", "torsades = polymorphic that twists (long QT)"]],
+  "breaks": "A collapse makes it sustained even before 30 seconds."}},
+{"id": "crit-l30-unstable", "label": "Hemodynamic Instability", "color": L30C, "toc": False,
+ "tag": "Criteria &middot; Lecture 30 &middot; slide 45",
+ "cols": ["Letter", "Instability = any ONE of (slide 45)"], "widths": ["14%", "86%"], "rows": [
+ ("C", "Chest pain"),
+ ("A", "Altered mental status"),
+ ("S", "Shortness of breath"),
+ ("H", "Hypotension"),
+ {"note": "Unstable monomorphic ventricular tachycardia: check for a pulse; pulse present &rarr; synchronized cardioversion; pulseless &rarr; defibrillation (slide 45)."},
+ ], "mnemonic": {"hook": "Unstable patients need CASH, fast.",
+  "key": [["C", "chest pain"], ["A", "altered mental status"], ["S", "shortness of breath"], ["H", "hypotension"]],
+  "breaks": "One sign is enough. The letters follow the slide&rsquo;s own order."}},
+
+# ---- Lecture 31 (Reynolds, Pericardial Disease)
+{"id": "crit-l31-time", "label": "Pericarditis: Time-Frame Definitions", "color": L31C, "toc": False,
+ "tag": "Criteria &middot; Lecture 31 &middot; slide 5",
+ "cols": ["Term", "Definition (slide 5)"], "widths": ["22%", "78%"], "rows": [
+ ("Acute", "Inflammation of the pericardial sac lasting less than 4 to 6 weeks"),
+ ("Incessant", "Symptoms persist more than 4 to 6 weeks, up to 3 months, without a sustained remission"),
+ ("Recurrent", "Symptoms of acute pericarditis return after a symptom-free interval of 4 to 6 weeks or longer"),
+ ("Chronic", "Symptoms persist more than 3 months"),
+ ], "mnemonic": {"hook": "Two clocks: 4&ndash;6 weeks and 3 months.",
+  "key": [["Acute", "under 4&ndash;6 weeks"], ["Incessant", "won&rsquo;t quit: past 4&ndash;6 weeks up to 3 months, no remission"],
+          ["Recurrent", "comes back after 4&ndash;6 symptom-free weeks"], ["Chronic", "past 3 months"]],
+  "breaks": "Recurrent needs a symptom-free gap; incessant never has one."}},
+{"id": "crit-l31-dx", "label": "Acute Pericarditis: Diagnostic Criteria (2 of 4)", "color": L31C, "toc": False,
+ "tag": "Criteria &middot; Lecture 31 &middot; slides 13&ndash;14, 17, 19, 24",
+ "cols": ["Criterion (slide 14: two of four)", "What it looks like"], "widths": ["34%", "66%"], "rows": [
+ ("Sharp substernal chest pain", "Pleuritic, worse supine and on inspiration, relieved by leaning forward (slide 13)"),
+ ("Pericardial friction rub", "Highly specific; triphasic, scratchy or squeaking; loudest over the left sternal border; best heard with the diaphragm; louder leaning forward and holding a breath (slide 17)"),
+ ("Suggestive electrocardiogram changes", "Widespread ST elevation (slide 14): concave ST elevation and PR depression, with reciprocal ST depression and PR elevation in aVR (slide 19)"),
+ ("New or worsening pericardial effusion", "The echocardiogram is often normal unless there is an associated pericardial effusion (slide 24)"),
+ {"note": "Diagnosis of idiopathic or viral pericarditis is usually clinical (slide 14)."},
+ ], "mnemonic": {"hook": "Four S&rsquo;s; any two make the diagnosis.",
+  "key": [["Sharp", "sharp substernal chest pain"], ["Scratch", "pericardial friction rub"], ["ST", "widespread ST elevation"], ["Sac fluid", "new or worsening effusion"]],
+  "breaks": "Troponin and fever are not among the four."}},
+{"id": "crit-l31-ecg", "label": "Pericarditis: Electrocardiogram Stages", "color": L31C, "toc": False,
+ "tag": "Criteria &middot; Lecture 31 &middot; slides 22&ndash;23",
+ "cols": ["Stage", "Electrocardiogram (slide 22)", "When (slide 22)"], "widths": ["10%", "60%", "30%"], "rows": [
+ ("1", "Widespread ST elevation and PR depression, with reciprocal changes in aVR", "First two weeks (slide 23: less than 1 week)"),
+ ("2", "ST changes normalize; generalized T-wave flattening", "1 to 3 weeks"),
+ ("3", "Flattened T waves become inverted", "3 to several weeks"),
+ ("4", "Electrocardiogram returns to normal", "Several weeks onward"),
+ {"note": "Stage 1 timing differs: slide 22 says the first two weeks; the slide 23 picture says less than 1 week (and adds ST elevation under 5 mm, with ST depression and PR elevation in aVR)."},
+ ], "mnemonic": {"hook": "Up, flat, flip, fine.",
+  "key": [["1 Up", "ST up (PR down)"], ["2 Flat", "ST back to baseline, T waves flatten"], ["3 Flip", "T waves invert"], ["4 Fine", "normal again"]],
+  "breaks": "A tracing taken weeks in can already sit at stage 3 or 4."}},
+{"id": "crit-l31-highrisk", "label": "Acute Pericarditis: Higher-Risk Features (Consider Hospitalization)", "color": L31C, "toc": False,
+ "tag": "Criteria &middot; Lecture 31 &middot; slide 27",
+ "cols": ["Feature", "Slide 27 wording"], "widths": ["26%", "74%"], "rows": [
+ ("Fever", "Above 38 &deg;C (100.4 &deg;F)"),
+ ("Subacute course", "Over days to weeks, without an acute onset of chest pain"),
+ ("Tamponade", "Evidence suggesting cardiac tamponade"),
+ ("Effusion", "A moderate to large pericardial effusion"),
+ ("Immunosuppressed", "Immunosuppressed patients"),
+ ("Anticoagulated", "Patients on oral anticoagulants"),
+ ("Trauma", "Acute trauma"),
+ ("Not improving", "No clinical improvement after 7 days of appropriately dosed nonsteroidal anti-inflammatory drug and colchicine therapy"),
+ ("Troponin", "Elevated cardiac troponin (suggests myopericarditis or perimyocarditis)"),
+ ], "mnemonic": {"hook": "3 T&rsquo;s, 2 F&rsquo;s, 2 S&rsquo;s and 2 thin shields.",
+  "key": [["3 T&rsquo;s", "Tamponade signs, Trauma, Troponin up"], ["2 F&rsquo;s", "Fever above 38 &deg;C, Fluid: a moderate to large effusion"],
+          ["2 S&rsquo;s", "Subacute start, Stalled: no better after 7 days"], ["2 thin shields", "immunosuppressed, on oral anticoagulants"]],
+  "breaks": "&ldquo;Thin shields&rdquo; is our label for the two patients least able to cope: one with infection, the other with bleeding."}},
+{"id": "crit-l31-failure", "label": "Acute Pericarditis: Treatment Failure", "color": L31C, "toc": False,
+ "tag": "Criteria &middot; Lecture 31 &middot; slide 30",
+ "cols": ["Treatment failure is defined as (slide 30)"], "widths": ["100%"], "rows": [
+ ("Persistence of fever",),
+ ("Pleuritic chest pain",),
+ ("New pericardial effusion",),
+ ("Worsening of general illness",),
+ {"note": "Failure to respond to nonsteroidal anti-inflammatory drug plus colchicine therapy within 1 week suggests a cause other than idiopathic or viral pericarditis (slide 30)."},
+ ], "mnemonic": {"hook": "Still hot, still hurting, newly wet, getting worse after a week: look past the virus.",
+  "key": [["Hot", "fever persists"], ["Hurting", "pleuritic chest pain"], ["Wet", "new pericardial effusion"], ["Worse", "general illness worsening"]]}},
+{"id": "crit-l31-beck", "label": "Beck Triad (Cardiac Tamponade)", "color": L31C, "toc": False,
+ "tag": "Criteria &middot; Lecture 31 &middot; slide 54",
+ "cols": ["Slide 54 wording", "Same thing"], "widths": ["50%", "50%"], "rows": [
+ ("Distant heart sounds", "Muffled heart sounds"),
+ ("Distended jugular veins", "Jugular venous distension"),
+ ("Decreased arterial blood pressure", "Hypotension"),
+ {"note": "In the recording she named a different &ldquo;triad&rdquo; (alternans, pulsus paradoxus, Kussmaul sign); slide 54&rsquo;s three are the Beck triad."},
+ ], "mnemonic": {"hook": "Beck&rsquo;s three D&rsquo;s, in the slide&rsquo;s own words.",
+  "key": [["Distant", "heart sounds"], ["Distended", "jugular veins"], ["Decreased", "arterial blood pressure"]]}},
+
+# ---- Lecture 32 (Reynolds, Infective Endocarditis)
+{"id": "crit-l32-class", "label": "Infective Endocarditis: Classification", "color": L32C, "toc": False,
+ "tag": "Criteria &middot; Lecture 32 &middot; slides 5, 8, 10",
+ "cols": ["Axis (slide 8)", "Categories"], "widths": ["26%", "74%"], "rows": [
+ ("Temporal evolution", "<b>Acute</b>: hectically febrile illness from a virulent, invasive organism; typically 3&ndash;10 days, rapid onset, high fevers, systemic toxicity; seeds extracardiac sites; death within weeks if untreated. <b>Subacute</b>: indolent; lower fevers, malaise, weight loss over weeks or months; rarely metastasizes (slide 10)"),
+ ("Site of infection", "Native valve; prosthetic valve; cardiovascular implantable electronic device (vegetation on pacemakers and implantable cardioverter-defibrillators) (slide 5)"),
+ ("Cause of infection", "The organism, for example methicillin-resistant versus methicillin-susceptible <i>Staphylococcus aureus</i>"),
+ ("Predisposing risk factors", "For example, people who inject drugs"),
+ ], "mnemonic": {"hook": "Classify it like a news story: when, where, what, who.",
+  "key": [["When", "acute or subacute"], ["Where", "native valve, prosthetic valve or device"], ["What", "the organism (resistant or susceptible Staphylococcus aureus)"], ["Who", "the predisposing risk (people who inject drugs)"]]}},
+{"id": "crit-l32-duke", "label": "Modified Duke Criteria (Infective Endocarditis)", "color": L32C, "toc": False,
+ "tag": "Criteria &middot; Lecture 32 &middot; slides 22&ndash;23",
+ "cols": ["Criterion", "What counts (slide 22 table)"], "widths": ["30%", "70%"], "rows": [
+ {"group": "Major criteria"},
+ ("B &middot; Blood cultures positive", "Typical organism from <b>two separate</b> blood cultures (viridans streptococci, <i>Streptococcus gallolyticus</i>, HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella; slide 19) group, <i>Staphylococcus aureus</i>, or community-acquired enterococci without a primary focus); <b>or persistently positive</b> (drawn more than 12 hours apart, or all of 3 or most of 4 or more, first and last at least 1 hour apart); or a single positive culture for <i>Coxiella burnetii</i> or a phase I immunoglobulin G antibody titer above 1:800"),
+ ("E &middot; Endocardial involvement", "Positive echocardiogram: oscillating intracardiac mass (on a valve or supporting structures, in the path of regurgitant jets, or on implanted material, with no other anatomic explanation), abscess, or new partial dehiscence of a prosthetic valve; <b>or new valvular regurgitation</b> (an increase or change in a preexisting murmur is not sufficient)"),
+ {"group": "Minor criteria"},
+ ("T &middot; Temperature", "Fever 38.0 &deg;C (100.4 &deg;F) or higher"),
+ ("I &middot; Immunologic phenomena", "Glomerulonephritis, Osler nodes, Roth spots, rheumatoid factor"),
+ ("M &middot; Microbiologic evidence", "A positive blood culture that does not meet a major criterion, or serologic evidence of active infection with an organism consistent with endocarditis (single positive cultures of coagulase-negative staphylococci or diphtheroids, common contaminants, do not count, nor do single positive cultures of organisms that do not cause endocarditis frequently, such as gram-negative bacilli)"),
+ ("E &middot; Embolic (vascular) phenomena", "Major arterial emboli, septic pulmonary infarcts, mycotic aneurysm, intracranial hemorrhage, conjunctival hemorrhages, Janeway lesions"),
+ ("R &middot; Risk factor (predisposition)", "Predisposing heart condition (valve stenosis or regurgitation, prosthetic valve, congenital heart disease except an isolated atrial septal defect, a repaired ventricular septal defect or a closed patent ductus arteriosus, prior endocarditis, hypertrophic cardiomyopathy) or injection drug use"),
+ {"group": "Verdict"},
+ ("Definite", "<b>2 major</b>, or <b>1 major + 3 minor</b>, or <b>5 minor</b> (slide 22 footnote and the pictures on slides 22&ndash;23)"),
+ ("Possible", "<b>1 major + 1 minor</b>, or <b>3 minor</b> (slide 23 picture)"),
+ {"note": "The slide 23 mnemonic picture writes fever as &ldquo;&gt; 38 &deg;C&rdquo; and the culture criterion as &ldquo;positive &gt; 2 times 12 hrs apart&rdquo;; the slide 22 table says 38.0 &deg;C or higher and gives the fuller rules above. The slides give no &ldquo;rejected&rdquo; rule."},
+ ], "mnemonic": {"hook": "BE TIMER (slide 23&rsquo;s own mnemonic): major = BE, minor = TIMER. Definite = two majors, one major plus three minors, or a full hand of five minors.",
+  "key": [["B", "blood cultures"], ["E", "echocardiogram: endocardial involvement"], ["T", "temperature 38.0 &deg;C or more"],
+          ["I", "immunologic: Osler, Roth, glomerulonephritis, rheumatoid factor"], ["M", "microbiologic: a culture short of major"],
+          ["E", "embolic: Janeway, emboli, infarcts, mycotic aneurysm"], ["R", "risk: heart condition or injection drug use"]],
+  "breaks": "TIMER reorders slide 22&rsquo;s minor list (predisposition, fever, vascular, immunologic, microbiologic). Osler nodes (painful, slide 13) are immunologic; Janeway lesions (nontender, slide 13) are embolic. Possible = 1 major + 1 minor, or 3 minor."}},
+]
 
 topics = [
 # ---- Lecture 26, condensed from guide section 1 (built with the lecture's emphasis) ----
@@ -398,6 +778,10 @@ topics = [
  ["★ Empiric", "Covers <b>staphylococci, streptococci, enterococci</b>. Native valve, subacute, or prosthetic valve &gt; 1 year: <b>vancomycin + ceftriaxone</b>. Prosthetic valve &le; 1 year: <b>vancomycin + gentamicin + cefepime</b>. (1:15:54)"],
  ["★ Staphylococcus aureus", "Methicillin-susceptible: <b>nafcillin or oxacillin</b>; cefazolin. Methicillin-resistant: <b>vancomycin or daptomycin</b>. Prosthetic valve: add <b>rifampin + gentamicin</b>. (1:25:15)"],
  ["Others", "Viridans streptococci: <b>penicillin G or ceftriaxone</b> (&plusmn; gentamicin) or vancomycin; <b>2-week gentamicin regimen only if uncomplicated, rapid response, no chronic kidney disease</b>. Enterococci: <b>ampicillin + gentamicin</b>. HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella): <b>ceftriaxone</b>."],
+ ["Other streptococci", "<i>Streptococcus gallolyticus</i> (<i>bovis</i>): associated with liver disease or cirrhosis and gastrointestinal abnormalities, <b>especially colon cancer</b>. Listed regimens: penicillin; cefazolin; ceftriaxone; <b>vancomycin + ceftriaxone + oral rifampin</b>. (IE Missing Slide and Cases, slide 1)"],
+ ["Enterococci: options", "(Penicillin or ampicillin) + gentamicin; <b>ampicillin + ceftriaxone</b> (good for chronic kidney disease or acute kidney injury with a low creatinine clearance). (IE Missing Slide and Cases, slide 1)"],
+ ["HACEK organisms", "HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella): <b>ceftriaxone or a third-generation cephalosporin</b>; penicillin allergy: could consider <b>fluoroquinolones</b>. (IE Missing Slide and Cases, slide 1)"],
+ ["Culture-negative endocarditis", "May be due to infection from organisms <b>not recovered in routine microbiology testing</b>, or to <b>antimicrobials given before blood cultures were obtained</b>. (IE Missing Slide and Cases, slide 1)"],
  ["★ Consults", "<b>Infectious disease</b>: antibiotics and outpatient monitoring. <b>Cardiothoracic surgery</b>: surgery and anticoagulation needs. <b>Addiction medicine</b>: harm reduction. Rehabilitation? Palliative care? (1:08:22)"],
  ["★ Surgery", "<b>Heart failure from valve dysfunction (most common)</b>; infection not resolving on appropriate antibiotics; <b>abscess</b>; <b>fungal</b> (hard to cure with drugs alone). <b>Anticoagulation: not beneficial for native valves</b>, controversial for prosthetic. (1:27:17, 1:27:52)"],
  ["★ Prognosis", "<b>Staphylococcus aureus = most lethal</b> (prosthetic valve about 50% &gt; non-injecting about 30% &gt; injection drug use about 5%). Viridans streptococci: <b>relatively good if treated before complications</b>. Enterococci: <b>resistance</b>; valve replacement in 30&ndash;40%. Fungi: <b>large peripheral artery emboli</b>. (1:35:37)"],
@@ -415,11 +799,22 @@ topics = [
 ]},
 ]
 
+# Narrow criteria tables (3 columns or fewer) fit a 390 px phone instead of scrolling sideways, so a student
+# scoring a vignette sees the points column; the 5- and 7-column tables keep the default scroll.
+for _t in CRITERIA:
+    if len(_t["cols"]) <= 3:
+        _t.setdefault("min_width", "0")
+
+topics = CRITERIA + topics
+
 html = render(
     title="Cram Sheet — CMS I Exam 5",
     kicker="Clinical Medicine and Surgery I · Exam 5 · Class of 2028",
     h1="CMS I Exam 5 Cram Sheet",
-    sub="Venous disorders, arterial occlusive disease and aortic aneurysm, and cardiomyopathy, condensed "
+    primary="#b8860b",   # the sheet's colour before the criteria tables went on top
+    sub="<b>Criteria, scores and classifications come first</b>: one table per set from the slides (Wells, "
+        "Virchow, Rutherford, ankle-brachial index, CHA2DS2-VASc, HAS-BLED, the Duke criteria and more), each "
+        "with a labeled memory aid. Then venous disorders, arterial occlusive disease and aortic aneurysm, and cardiomyopathy, condensed "
         "from the Exam 5 study guide: the Virchow triad and Wells criteria first, then deep vein thrombosis, "
         "chronic venous insufficiency, claudication and the ankle-brachial index, acute limb ischemia, carotid "
         "and aneurysm thresholds, dissection, and the five cardiomyopathies. Lectures 26 and 28 carry "
@@ -435,4 +830,5 @@ html = render(
 out = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 5", "cms-exam-5-cram-sheet.html")
 open(out, "w", encoding="utf-8").write(html)
 print("wrote", os.path.basename(out), len(html), "bytes,",
-      sum(len(t["rows"]) for t in topics), "rows across", len(topics), "topics")
+      sum(len(t["rows"]) for t in topics), "rows across", len(topics), "topics,",
+      len(CRITERIA), "criteria tables")
