@@ -574,9 +574,9 @@ Q("Escherichia coli", IO1,
     "coli lives in healthy people. The explanation is that not every strain is pathogenic, and the organism has "
     "good traits too.", "Salmonella incubation borrowed"),
    ("It spoils food rather than infecting",
-    "Escherichia coli is not a spoilage organism; fungi are the microbes associated with spoiling bread, cereals "
-    "and acidic juices. As an infectious agent it causes nausea, vomiting and diarrhea, but only its bad strains "
-    "are harmful.", "pathogen mistaken for a spoilage organism")],
+    "Escherichia coli is described as an infectious agent and an indicator of fecal contamination, while spoilage "
+    "of bread, cereals and acidic juices is tied to fungi. As an infectious agent it causes nausea, vomiting and "
+    "diarrhea, but only its bad strains are harmful.", "pathogen mistaken for a spoilage organism")],
   c(15, 17, 25, 31)),
 
 Q("Escherichia coli", IO2,
@@ -760,22 +760,22 @@ Q("Salmonella", IO2,
   ci(20, 17, 23, 29)),
 
 Q("Salmonella", IO2,
-  "What makes typhoid fever the most severe enteric fever?",
+  "Which feature describes typhoid fever, the most severe enteric fever?",
   ("Invasion of the gut wall, then blood and nodes",
-   "Correct. Typhoid fever, caused by Salmonella typhi, is the most severe enteric fever: the bacteria invade "
-   "the intestinal wall and can spread to the blood and lymph nodes. Other forms of salmonellosis include "
+   "Correct. Typhoid fever, caused by Salmonella typhi, is the most severe enteric fever, and it is marked by "
+   "invasion of the intestinal wall, with possible spread to the blood and lymph nodes. Other forms of salmonellosis include "
    "gastroenteritis, septicemia, fever, shock and kidney dysfunction."),
   [("A preformed toxin that paralyzes muscles",
     "A preformed toxin that paralyzes muscles describes botulinum toxin in food intoxication. Typhoid fever is an "
-    "invasive Salmonella infection: the intestinal wall is invaded and bacteria spread to the blood and lymph "
+    "invasive Salmonella infection, marked by invasion of the intestinal wall and spread to the blood and lymph "
     "nodes.", "intoxication mechanism borrowed"),
    ("Growth even at refrigerator temperatures",
     "Growth from 1 to 40 C, including refrigerator temperatures, is the biggest concern with Listeria "
-    "monocytogenes. Typhoid fever is severe because Salmonella typhi invades the intestinal wall and spreads to "
-    "the blood and lymph nodes.", "Listeria growth range borrowed"),
+    "monocytogenes. Typhoid fever is instead marked by Salmonella typhi invading the intestinal wall and "
+    "spreading to the blood and lymph nodes.", "Listeria growth range borrowed"),
    ("A tiny dose of a few particles",
-    "An infectious dose of only a few viral particles describes norovirus, not typhoid fever. Typhoid fever's "
-    "severity comes from invasion of the intestinal wall, with spread to the blood and lymph nodes.",
+    "An infectious dose of only a few viral particles describes norovirus, not typhoid fever. Typhoid fever is "
+    "marked by invasion of the intestinal wall, with spread to the blood and lymph nodes.",
     "norovirus dose borrowed")],
   c(17, 23, 27, 33)),
 
@@ -943,16 +943,16 @@ Q("Campylobacter", IO1,
 Q("Campylobacter", IO1,
   "Besides poultry meat, which routes carry Campylobacter jejuni to people in its transmission cycle?",
   ("Contaminated water and milk from cattle",
-   "Correct. In the Campylobacter jejuni cycle the organism passes from chickens into water; people are reached "
-   "by poultry meat, by that water directly, and by milk from cattle that drink it. Each route begins with "
-   "infected chickens."),
+   "Correct. The Campylobacter jejuni transmission cycle reaches people by three routes: poultry meat, "
+   "contaminated water, and milk from cattle. Poultry still needs particular care, since even one drop of raw "
+   "poultry fluid can cause illness."),
   [("Vomitus and person-to-person contact",
     "Spread person to person through feces and vomitus, as in daycares, nursing homes and cruise ships, describes "
     "norovirus. The Campylobacter jejuni cycle reaches people through poultry meat, water and milk from cattle.",
     "norovirus route borrowed"),
    ("Spores in soil and raw honey",
     "Spores in soil, on plants and in honey belong to the clostridia. Campylobacter jejuni reaches people through "
-    "poultry meat, contaminated water and milk from cattle that drank that water.",
+    "poultry meat, contaminated water and milk from cattle.",
     "Clostridium source borrowed"),
    ("Wounds exposed to seawater",
     "Wound infection from water is a Vibrio route, from salt-tolerant species in ocean and estuarine waters. The "

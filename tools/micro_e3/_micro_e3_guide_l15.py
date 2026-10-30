@@ -504,7 +504,7 @@ BODY = """
   <p>These fungi were once considered <strong>&ldquo;harmless&rdquo; skin or air contaminants</strong>. All have
   predisposing factors, and the host&rsquo;s defenses are compromised: <strong><em>Candida</em> species, the dominant
   opportunistic pathogen</strong>; <strong><em>Aspergillus fumigatus</em>, which accounts for most lung
-  infections</strong>; <em>Cryptococcus neoformans</em>; <em>Fusarium</em> species; and <em>Rhizopus</em> species.</p>
+  infections</strong> (the slide&rsquo;s words; read it as most of the <em>Aspergillus</em> lung infections); <em>Cryptococcus neoformans</em>; <em>Fusarium</em> species; and <em>Rhizopus</em> species.</p>
   """ + fig("l15-s009-opportunists-table.jpg", 747, 600,
       "Table 22.3, Common Opportunistic Fungi and Conditions That Predispose Patients to Them, with four rows: Candida, Aspergillus, Cryptococcus and Zygomycota species.",
       "<b>Table 22.3, the predisposing conditions.</b> <em>Candida</em>: antibiotic therapy, catheters, diabetes, "
@@ -645,7 +645,7 @@ BODY = """
   <table>
     <tr><th>Toxin or mold</th><th>What the slide says</th></tr>
     <tr><td><strong>Aflatoxin</strong></td><td><strong>Hepatotoxic and carcinogenic</strong>; grains, corn, peanuts; lethal to poultry and livestock (especially turkeys, ducklings, pigs and calves); in humans it may be a <strong>co-factor in liver cancer</strong></td></tr>
-    <tr><td><strong>Ergot</strong></td><td>On <strong>rye or other grains contaminated by <em>Claviceps</em></strong> fungi; mind-altering lysergic acid (LSD, lysergic acid diethylamide); cross-reference Salem, Massachusetts</td></tr>
+    <tr><td><strong>Ergot</strong></td><td>On <strong>rye or other grains contaminated by <em>Claviceps</em></strong> fungi; mind-altering lysergic acid (the slide writes LSD; lysergic acid diethylamide is a semi-synthetic derivative of it); cross-reference Salem, Massachusetts</td></tr>
     <tr><td><strong><em>Stachybotrys chartarum</em></strong></td><td><strong>Sick building syndrome</strong> (damp building related illness, the &ldquo;black mold&rdquo;; <strong>very different from mucormycosis</strong>); can cause severe hematologic and neurological damage. <strong>Not all molds in buildings are toxic, and not all illnesses in buildings are due to fungi</strong>; fear of mold has spawned a whole industry of environmental mold control</td></tr>
   </table>
 
@@ -670,6 +670,10 @@ BODY = """
     <li><strong>Amphotericin B routes (slide 20).</strong> The slide calls it versatile, given topically, orally, by
     intramuscular injection or intravenously. In current practice it is given intravenously for systemic infection;
     it is not given by intramuscular injection and is poorly absorbed by mouth. Not asked.</li>
+    <li><strong>Why amphotericin B is toxic (slide 20).</strong> The slide gives the reason as fungi and humans both
+    being eukaryotes, so the drug is not selective enough. Pharmacology references add the mechanism: it binds
+    ergosterol in fungal membranes but also binds some cholesterol in human membranes. One quiz question asks this,
+    keyed as the slide says.</li>
     <li><strong>Aspergillosis treatment (slide 60).</strong> The slide lists amphotericin B and nystatin. Nystatin is
     a topical and oral (non-absorbed) agent and current practice does not use it for invasive aspergillosis (azoles
     such as voriconazole are used). Not asked.</li>

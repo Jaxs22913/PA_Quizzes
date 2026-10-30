@@ -326,7 +326,8 @@ BODY = """
     <li><strong>Most vulnerable foods</strong>: soft cheeses, raw fruit and vegetables, raw or undercooked meats, deli
     meats, seafood, smoked seafood, hot dogs, preserved meats.</li>
     <li><strong>Probably the biggest concern: it grows well from 1 to 40&nbsp;&deg;C</strong>, easily at refrigerator,
-    room or freezer temperatures.</li>
+    room or freezer temperatures (the slide&rsquo;s words; freezer temperatures sit below its own 1&nbsp;&deg;C floor, so
+    see 16.17).</li>
   </ul>
   """ + fig("l16-s024-listeria-spread.jpg", 900, 559,
       "Diagram: contaminated food to the intestine, a lymph node and the bloodstream, which circulates to the liver and spleen, then on to the brain and across the placenta to a fetus.",
@@ -397,7 +398,7 @@ BODY = """
     <tr><td>How common</td><td>A common foodborne agent, upwards of 23 million cases a year</td><td>Hepatitis viruses A&ndash;E exist; <strong>A and E</strong> are the ones typically spread by the fecal-oral route</td></tr>
     <tr><td>Spread</td><td><strong>Person to person</strong>, by <strong>feces and vomitus</strong> (daycares, nursing homes, cruise ships); also <strong>contaminated shellfish</strong> (feces-contaminated water)</td><td><strong>Fecal-oral</strong>; <strong>not by kissing, sneezing, saliva or blood</strong></td></tr>
     <tr><td>Course</td><td><strong>Infectious dose only a few viral particles</strong>; <strong>rapid onset and short duration</strong>: nausea, vomiting, diarrhea, low-grade fever</td><td>A person is <strong>most contagious about two weeks BEFORE symptoms appear</strong></td></tr>
-    <tr><td>Prevention</td><td colspan="2">Good <strong>handwashing and diaper hygiene</strong>; cook food thoroughly; clean drinking water. For hepatitis, <strong>a vaccine in case of suspected exposure</strong></td></tr>
+    <tr><td>Prevention</td><td colspan="2">Good <strong>handwashing and diaper hygiene</strong>; cook food thoroughly; clean drinking water. For hepatitis, <strong>a vaccine in case of suspected exposure</strong> (the slide does not say which; see 16.17)</td></tr>
   </table>
 
   <h3 class="sub" id="food-tracking">16.14 &middot; Objective 4 &mdash; Laboratory methods, tracking and recalls</h3>
@@ -458,6 +459,16 @@ BODY = """
     <li><strong>165&nbsp;&deg;F (slide 36).</strong> Food-safety agencies give 165&nbsp;&deg;F for poultry, leftovers and
     casseroles, and lower internal temperatures for other meats (160&nbsp;&deg;F for ground meat, 145&nbsp;&deg;F for
     whole cuts with a rest). Keyed as the slide says.</li>
+    <li><strong><em>Listeria</em> at freezer temperatures (slide 23).</strong> The slide gives a growth range of
+    1 to 40&nbsp;&deg;C and also says it grows easily at freezer temperatures, which are below that range.
+    References say it survives freezing and grows at refrigerator temperatures. The quizzes ask only the
+    1&ndash;40&nbsp;&deg;C range and refrigerator growth.</li>
+    <li><strong>The hepatitis vaccine (slide 33).</strong> The slide says there is a vaccine in case of suspected
+    exposure without naming the virus. That fits hepatitis A; there is no licensed hepatitis E vaccine in the United
+    States.</li>
+    <li><strong>PulseNet&rsquo;s method (slide 34).</strong> The slide describes PulseNet with pulsed-field gel
+    electrophoresis patterns, which is how it worked for decades; PulseNet has since moved to whole genome
+    sequencing. The quizzes ask what the slide says.</li>
     <li><strong>Names.</strong> The deck&rsquo;s &ldquo;S. enteriditis&rdquo; is <em>S. enteritidis</em>;
     &ldquo;parahemolyticus&rdquo; is <em>parahaemolyticus</em>.</li>
   </ul>
