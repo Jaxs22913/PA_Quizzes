@@ -113,8 +113,11 @@ SLOT_GROUP = {
 
 
 def review_state(rec, q):
-    """'clean' (blind pick = key and a current audit pass), 'flagged' (any review says otherwise) or 'none'."""
-    bq = BR.Q(FOLDER, "pool", 0, q)
+    """'clean' (blind pick = key and a current audit pass), 'flagged' (any review says otherwise) or 'none'.
+    The hashes are taken from the question AS ITS MASTER PAGE WILL READ IT: options without `mis`, then joined
+    to their sources exactly as `blind_review.py check` joins a page (a question no sets file holds gets no
+    `mis`), so a record counts here only if the final page will pass the check too."""
+    bq = BR.attach_sources([BR.Q(FOLDER, "pool", 0, dict(q, opts=[o[:2] for o in q["opts"]]))])[0]
     b = BR.blind_of(rec, bq.h)
     if not b:
         return "none"
