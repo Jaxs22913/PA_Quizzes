@@ -12805,7 +12805,7 @@ var DEMO_DECKS = [
       ["What do Aspergillus spores form in the lungs?", "Fungal balls"],
       ["Which practice drives azole resistance in Aspergillus?", "Agricultural crop spraying"],
       ["Which two genera cause most mucormycosis?", "Rhizopus and Mucor"],
-      ["Which condition drove mucormycosis in India?", "Uncontrolled diabetes and respiratory steroids"],
+      ["Which two factors may have contributed to the rise of mucormycosis in India?", "Uncontrolled diabetes and injudicious use of respiratory steroids"],
       ["Which fungus infects eyes through contaminated contact lenses?", "Fusarium"],
       ["Which mycotoxin is hepatotoxic and carcinogenic?", "Aflatoxin"],
       ["Which fungus causes sick building syndrome?", "Stachybotrys chartarum"],
