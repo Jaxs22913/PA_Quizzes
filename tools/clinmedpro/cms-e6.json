@@ -252,6 +252,460 @@
      }
     }
    ]
+  },
+  {
+   "lecture": 37,
+   "title": "Respiratory Infections and Vaccines",
+   "lecturer": "Robert Bobilin, MS, MPAS, PA-C (guest lecturer)",
+   "deck": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx",
+   "note": "Built from the slides plus the Zoom recording: the recording only chooses which facts to star, it adds no content. The lecturer said vaccines will not be asked in much detail, the example chest films will not be shown as 'what is it', and he promised exam guidance after the lecture. Brand names and dosing are left out.",
+   "conditions": [
+    {
+     "id": "l37-bronchitis",
+     "name": "Acute bronchitis",
+     "prof": true,
+     "prof_note": "His theme: 'diagnostic restraint' - no routine antibiotics, whatever the sputum color or cough duration.",
+     "fields": {
+      "name": "Acute bronchitis",
+      "definition": "A usually self-limited viral infection of the large airways; inflammation and mucus cause cough, sometimes with transient wheeze",
+      "etiology": "Most uncomplicated episodes are viral; bacterial causes are uncommon. Consider pertussis with paroxysmal cough, post-tussive vomiting, whoop or exposure",
+      "epidemiology": "Follows cold-like symptoms; cough commonly lasts 2 to 3 weeks and may persist longer",
+      "risk_factors": "A preceding viral upper respiratory infection; smoke and irritants worsen symptoms",
+      "pathology": "Inflammation and mucus in the large airways; wheeze depends on the severity of airflow limitation",
+      "clinical": "Low-grade fever, chills, aches, then cough with mucus, worst in the morning ([[★ green or yellow mucus does not mean bacteria]]); dyspnea, wheeze, chest tightness, throat tickle. Exam: central (substernal) wheeze, rhonchi that clear with cough, chest-wall tenderness; consolidation means think pneumonia",
+      "diagnosis": "[[★ Clinical diagnosis]]; no routine complete blood count, sputum culture or chest film in uncomplicated cases (a blood count cannot tell viral from bacterial); image when vital signs, focal findings or risk suggest pneumonia; test for pertussis, influenza or COVID-19 when it changes care",
+      "treatment": "[[★ No routine antibiotics]] (amoxicillin/clavulanate, clindamycin and fluoroquinolones are not default treatments); expectation setting, rest, fluids, avoiding smoke, acetaminophen (avoid duplicate acetaminophen in combination products); no routine opioid cough suppressants or corticosteroids; bronchodilator trial for selected wheezing patients; delayed 'pocket' prescription; return for dyspnea, hemoptysis, persistent fever, hypoxemia or worsening",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "14-15",
+      "definition": "15",
+      "etiology": "17-18",
+      "epidemiology": "16-17",
+      "risk_factors": "16, 19",
+      "pathology": "15-16",
+      "clinical": "16-17",
+      "diagnosis": "15, 17",
+      "treatment": "18-22"
+     }
+    },
+    {
+     "id": "l37-cap",
+     "name": "Community-acquired pneumonia (bacterial)",
+     "prof": true,
+     "prof_note": "PSI is the preferred admission tool and CURB-65 is complementary; know the outpatient and inpatient regimens and when to withhold antibiotics.",
+     "fields": {
+      "name": "Community-acquired pneumonia (CAP)",
+      "definition": "Acute infection of the lung parenchyma and alveolar sacs, acquired outside the hospital or present early in admission; prior healthcare contact does not exclude it",
+      "etiology": "[[★ Streptococcus pneumoniae is the most common pathogen]]; Haemophilus influenzae, respiratory viruses; atypicals Mycoplasma pneumoniae, Chlamydophila pneumoniae and Legionella (cruises, hot tubs, fountains); Klebsiella, Moraxella, MRSA (methicillin-resistant Staphylococcus aureus), Pseudomonas",
+      "epidemiology": "About 24.8 cases per 10,000 adults a year; highest incidence over 65; 15 to 20% hospitalized; influenza and pneumonia together are the 8th leading cause of death",
+      "risk_factors": "Age (young children, older adults), immunocompromise, sick contacts, alcohol and smoking, aspiration, chronic obstructive pulmonary disease and heart disease",
+      "pathology": "Stages: congestion, red hepatization, gray hepatization, resolution (not hard rules)",
+      "clinical": "Higher fevers and chills, pleuritic or stabbing chest pain, productive possibly purulent cough, dyspnea and tachypnea; sepsis signs when systemic. Exam: crackles or diminished sounds over one lobe, dullness, egophony (E to A), whispered pectoriloquy, increased tactile fremitus, pleural rub",
+      "diagnosis": "[[★ Chest radiograph]] (lung ultrasound with expertise); oxygen saturation, vital signs, organ function, sepsis risk; [[★ Pneumonia Severity Index plus judgment for admission; CURB-65 complementary]] (0 to 1 home, 2 hospital, 3 to 5 high severity); cultures only for severe disease, resistance risk or failure; computed tomography for uncertainty or cavitation",
+      "treatment": "Outpatient, healthy: amoxicillin or doxycycline (macrolide alone only if pneumococcal resistance below 25%). Outpatient with comorbidities: amoxicillin/clavulanate, cefpodoxime or cefuroxime plus azithromycin or doxycycline, or a respiratory fluoroquinolone. Inpatient nonsevere: beta-lactam plus macrolide, or a fluoroquinolone alone. Severe: beta-lactam plus azithromycin or a fluoroquinolone. Minimum 3 days (nonsevere), at least 5 days (severe). No routine steroids in nonsevere disease",
+      "mortality": "CURB-65 risk of death: under 3% (0 to 1), 9% (2), 15 to 40% (3 to 5). Pneumonia Severity Index class mortality: I 0.1%, II 0.6%, III 0.9%, intravenous 9.3%, V 27.0%"
+     },
+     "slides": {
+      "name": "23, 25",
+      "definition": "25, 27",
+      "etiology": "24, 39-41",
+      "epidemiology": "24",
+      "risk_factors": "28, 41",
+      "pathology": "26",
+      "clinical": "23, 27-28",
+      "diagnosis": "29-31, 33, 37, 45",
+      "treatment": "38, 40, 43-45, 47",
+      "mortality": "30-31"
+     }
+    },
+    {
+     "id": "l37-hapvap",
+     "name": "Hospital-acquired and ventilator-associated pneumonia",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Hospital-acquired pneumonia (HAP) and ventilator-associated pneumonia (VAP)",
+      "definition": "HAP develops 48 hours or more after admission and was not incubating on admission; VAP develops more than 48 hours after endotracheal intubation",
+      "etiology": "Staphylococcus aureus and gram-negative bacilli including Pseudomonas and Enterobacterales; VAP more likely Pseudomonas or multidrug-resistant organisms",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Ventilator circuits contaminated by flora, secretions, hands of healthcare workers, circuit changes, tube biofilm, prior antibiotics",
+      "pathology": "Colonized secretions are inhaled into the lungs through the endotracheal tube",
+      "clinical": "A new pneumonia during admission or ventilation",
+      "diagnosis": "Respiratory cultures; local antibiogram, prior cultures and recent antibiotics; early or late timing alone does not select the regimen",
+      "treatment": "Antipseudomonal beta-lactam with methicillin-sensitive staphylococcal coverage (piperacillin/tazobactam or cefepime); add vancomycin or linezolid for methicillin-resistant S. aureus risk; a second antipseudomonal class for selected high-risk patients; de-escalate; usually 7 days. VAP prevention: early extubation, hand washing, sterile technique, fewer circuit changes, head of bed elevated, secretion drainage and mouth care",
+      "mortality": "VAP: higher mortality and prolonged intensive care stay"
+     },
+     "slides": {
+      "name": "25",
+      "definition": "25",
+      "etiology": "39, 48",
+      "risk_factors": "48",
+      "pathology": "48",
+      "clinical": "25",
+      "diagnosis": "39, 42, 46",
+      "treatment": "42, 46, 49",
+      "mortality": "48"
+     }
+    },
+    {
+     "id": "l37-aspiration",
+     "name": "Aspiration pneumonia (and pneumonitis)",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Aspiration pneumonia versus aspiration pneumonitis",
+      "definition": "Aspiration pneumonia: bacterial infection after aspiration of colonized oropharyngeal material. Pneumonitis: sterile chemical injury, often after gastric aspiration",
+      "etiology": "Anaerobic oral flora and varied organisms; pneumonitis is chemical, not infectious",
+      "epidemiology": "Can occur in community or hospital settings; elderly patients with dysphagia",
+      "risk_factors": "Dysphagia, altered consciousness, impaired airway protection (stroke, seizure)",
+      "pathology": "Gravity-dependent airspace opacity in a lobar or segmental distribution",
+      "clinical": "Pneumonitis: abrupt respiratory decline after a witnessed aspiration, fever or leukocytosis possible without infection. Pneumonia: infectious syndrome with an infiltrate; the event may be unwitnessed",
+      "diagnosis": "Chest film showing a gravity-dependent opacity; reassess persistence for secondary infection or complication",
+      "treatment": "Pneumonitis: support oxygenation and airway, no prophylactic antibiotics. Pneumonia: the community- or hospital-acquired pneumonia regimen by setting and severity; [[★ anaerobic coverage only for abscess or empyema]]; assess swallowing, oral hygiene, positioning",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "50-51",
+      "definition": "50-51",
+      "etiology": "28, 41",
+      "epidemiology": "25, 50",
+      "risk_factors": "50",
+      "pathology": "33",
+      "clinical": "51",
+      "diagnosis": "33, 51",
+      "treatment": "50-51, 126"
+     }
+    },
+    {
+     "id": "l37-abscess",
+     "name": "Lung abscess",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Lung abscess",
+      "definition": "A cavitating lung infection, often after aspiration, that can become chronic",
+      "etiology": "Anaerobic oral flora, Mycobacterium tuberculosis, nontuberculous mycobacteria, Staphylococcus aureus including methicillin-resistant strains",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Aspiration",
+      "pathology": "Infection grows and cavitates, damaging tissue; cavity with an air-fluid level",
+      "clinical": "Insidious, prolonged (weeks): fever, chills, sweats, cough, purulent foul-smelling sputum, hemoptysis, pleuritic pain, dyspnea, malaise; dullness, whispered pectoriloquy, bronchophony, amphoric breath sounds (like breathing across an open jar)",
+      "diagnosis": "[[★ Cavitary lesion with an air-fluid level]] on chest film and computed tomography; bronchoscopy for obstruction, unusual pathogens or failure to improve",
+      "treatment": "Usually begins with antibiotics: intravenous ampicillin/sulbactam then oral amoxicillin/clavulanate, for several weeks; clindamycin reserved (C. difficile risk); pulmonary or infectious disease review for drainage or surgery if large or refractory; chest physiotherapy not essential",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "53",
+      "definition": "53",
+      "etiology": "41",
+      "risk_factors": "53",
+      "pathology": "53-54",
+      "clinical": "53",
+      "diagnosis": "54, 56",
+      "treatment": "38, 56"
+     }
+    },
+    {
+     "id": "l37-pjp",
+     "name": "Pneumocystis jirovecii pneumonia",
+     "prof": true,
+     "prof_note": "Know the presentation in HIV, the workup ladder (induced sputum, then lavage), TMP-SMX, the steroid trigger (arterial oxygen below 70) and the prophylaxis threshold.",
+     "fields": {
+      "name": "Pneumocystis jirovecii pneumonia (PJP), formerly Pneumocystis carinii pneumonia (PCP)",
+      "definition": "A fungal pneumonia, the most common opportunistic infection in people with HIV (human immunodeficiency virus); treated primarily with antibiotics",
+      "etiology": "Pneumocystis jirovecii",
+      "epidemiology": "Falling with prophylaxis and antiretroviral therapy; mortality 10 to 20%; still a major cause of death in acquired immunodeficiency syndrome in the United States",
+      "risk_factors": "HIV (human immunodeficiency virus); chemotherapy, anti-rejection drugs, long-term steroids, organ transplant, blood cancer",
+      "pathology": "Interstitial pneumonia",
+      "clinical": "[[★ Progressive exertional dyspnea (95%) and nonproductive cough (95%)]], fever (over 80%), chest discomfort, weight loss, chills; tachypnea, tachycardia, mild crackles, but up to half have a normal exam",
+      "diagnosis": "Induced sputum or bronchoalveolar lavage microscopy or polymerase chain reaction (a negative induced sputum does not exclude; go to lavage); beta-D-glucan supports but is not specific; lactate dehydrogenase nonspecific; HIV (human immunodeficiency virus) test, CD4 (cluster of differentiation 4) count and viral load; film: diffuse bilateral perihilar infiltrates; start therapy while confirming if suspicion is high",
+      "treatment": "[[★ Trimethoprim-sulfamethoxazole preferred]] (21 days in HIV); alternatives clindamycin plus primaquine, intravenous pentamidine, atovaquone (mild); check G6PD (glucose-6-phosphate dehydrogenase) before primaquine or dapsone; [[★ steroids if room-air arterial oxygen below 70 mm Hg]]; prophylaxis for CD4 below 100 (or 100 to 200 with detectable HIV (human immunodeficiency virus) RNA); antiretroviral therapy within about 2 weeks",
+      "mortality": "10 to 20%"
+     },
+     "slides": {
+      "name": "58",
+      "definition": "58",
+      "etiology": "58",
+      "epidemiology": "59-60",
+      "risk_factors": "61",
+      "pathology": "33, 70",
+      "clinical": "62-63",
+      "diagnosis": "65-70",
+      "treatment": "71-73",
+      "mortality": "60"
+     }
+    },
+    {
+     "id": "l37-histo",
+     "name": "Histoplasmosis",
+     "prof": true,
+     "prof_note": "He said it is 'going to show up on your PANCE'.",
+     "fields": {
+      "name": "Histoplasmosis",
+      "definition": "Infection by the fungus Histoplasma capsulatum",
+      "etiology": "Inhaled from soil and bird or bat droppings (farming, gardening, chicken coops)",
+      "epidemiology": "United States: mainly central and eastern states, especially the Ohio and Mississippi River valleys; rare",
+      "risk_factors": "Soil disruption, bird or bat droppings; late HIV",
+      "pathology": "Granuloma (some patients show only a granuloma on film)",
+      "clinical": "High fever, chills, myalgias, nonproductive cough, chest pain, headache 3 to 17 days after exposure; some asymptomatic",
+      "diagnosis": "Ask about geography, soil and droppings; [[★ urine Histoplasma antigen]], often with serum antigen and antibody; early negative tests do not exclude; cross-reacts with Blastomyces; culture or histopathology for severe or uncertain cases",
+      "treatment": "Mild acute disease in an immunocompetent adult: often observation; itraconazole for prolonged or progressive illness or higher-risk hosts; specialist-led amphotericin induction for severe or disseminated disease; chronic cavitary disease: azole for at least 12 months",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "75",
+      "definition": "75",
+      "etiology": "75",
+      "epidemiology": "75",
+      "risk_factors": "41, 75",
+      "pathology": "76",
+      "clinical": "76",
+      "diagnosis": "77",
+      "treatment": "78"
+     }
+    },
+    {
+     "id": "l37-crypto",
+     "name": "Cryptococcosis",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Cryptococcosis",
+      "definition": "Infection by Cryptococcus neoformans or C. gattii after environmental inhalation",
+      "etiology": "Cryptococcus neoformans, C. gattii",
+      "epidemiology": "Also occurs without immunocompromise",
+      "risk_factors": "HIV, transplant, steroids",
+      "pathology": "Nodules or consolidation",
+      "clinical": "Cough, fever; can mimic community-acquired pneumonia, tuberculosis or cancer; headache or confusion suggests central nervous system involvement",
+      "diagnosis": "Serum cryptococcal antigen, respiratory culture or histology; evaluate for central nervous system or disseminated disease, often with a lumbar puncture",
+      "treatment": "Mild isolated pulmonary: fluconazole, generally 6 to 12 months. Severe, central nervous system or disseminated: liposomal amphotericin B plus flucytosine induction, then fluconazole; infectious disease consultation; monitor toxicity; counsel adherence",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "123",
+      "definition": "123",
+      "etiology": "123",
+      "epidemiology": "123",
+      "risk_factors": "123",
+      "pathology": "123",
+      "clinical": "123",
+      "diagnosis": "123",
+      "treatment": "123"
+     }
+    },
+    {
+     "id": "l37-psittacosis",
+     "name": "Psittacosis",
+     "prof": true,
+     "prof_note": "'A super common medical boards question', though not common enough to deserve a lot of attention.",
+     "fields": {
+      "name": "Psittacosis (parrot fever)",
+      "definition": "Infection by the obligate intracellular bacterium Chlamydia psittaci",
+      "etiology": "Chlamydia psittaci from parrots, parakeets, canaries and other birds",
+      "epidemiology": "Rare, about 200 patients a year; an occupational disease (zoo and pet-shop workers, poultry farmers, ranchers)",
+      "risk_factors": "Handling sick birds, mouth-to-beak resuscitation; human-to-human spread rare",
+      "pathology": "Stages: flulike illness with a normal film, mild to moderate pneumonia, severe pneumonia, respiratory failure and septic shock",
+      "clinical": "Fever and cough (50 to 90%, cough usually dry), chills, malaise, dyspnea, sore throat, epistaxis, severe headache, photophobia; [[★ relative bradycardia]], splenomegaly, Horder spots (rose-spot-like macules on the face), hemolytic anemia",
+      "diagnosis": "Ask about bird exposure; [[★ respiratory nucleic acid amplification test or polymerase chain reaction]]; paired serology cross-reacts; routine culture does not detect it; film: unilateral lower-lobe dense infiltrate, resolving in about 6 weeks",
+      "treatment": "[[★ Doxycycline]], promptly, 10 to 14 days after fever resolves; macrolide with infectious disease input if tetracyclines are unsuitable; standard precautions; report to public health; veterinary assessment of birds",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "80",
+      "definition": "80",
+      "etiology": "80-81",
+      "epidemiology": "80-81",
+      "risk_factors": "81",
+      "pathology": "84",
+      "clinical": "82-83",
+      "diagnosis": "85-86",
+      "treatment": "87-88"
+     }
+    },
+    {
+     "id": "l37-mycoplasma",
+     "name": "Mycoplasma pneumoniae pneumonia",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Mycoplasma pneumoniae pneumonia",
+      "definition": "An atypical pneumonia caused by Mycoplasma pneumoniae, an organism that lacks a cell wall",
+      "etiology": "Mycoplasma pneumoniae",
+      "epidemiology": "School-age children and young adults; household or group outbreaks",
+      "risk_factors": "Outbreak exposure; alcohol and smoking",
+      "pathology": "Not covered in the lecture",
+      "clinical": "Gradual fever, persistent cough, headache, variable chest findings; severe or extrapulmonary illness can occur",
+      "diagnosis": "Respiratory nucleic acid amplification test when results change care",
+      "treatment": "Macrolide or doxycycline (respiratory fluoroquinolone an alternative); [[★ beta-lactams are ineffective: no cell wall]]; doxycycline after macrolide failure; no vaccine",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "89",
+      "definition": "89",
+      "etiology": "89",
+      "epidemiology": "89",
+      "risk_factors": "28",
+      "clinical": "89",
+      "diagnosis": "89",
+      "treatment": "89"
+     }
+    },
+    {
+     "id": "l37-influenza",
+     "name": "Influenza",
+     "prof": true,
+     "prof_note": "Treat high-risk patients promptly, even after 48 hours; know who avoids which antiviral.",
+     "fields": {
+      "name": "Influenza",
+      "definition": "A highly contagious airborne orthomyxovirus infection",
+      "etiology": "Influenza A (more pathogenic, most human infections), B and C; subtypes by hemagglutinin and neuraminidase; antigenic drift and shift",
+      "epidemiology": "Fall and winter epidemics, peaking in mid-February; incubation 1 to 4 days",
+      "risk_factors": "Severe disease: under 5, 65 and older, long-term care, immunocompromise, chronic organ disease, pregnancy and 2 weeks postpartum, severe obesity",
+      "pathology": "Influenza pneumonia: primary viral or secondary bacterial (pneumococcal or staphylococcal)",
+      "clinical": "Sudden onset: fever 100 to 104 F, cough, sore throat, myalgias, frontal or retro-orbital headache, severe fatigue, red watery eyes, diarrhea in children; wheezes or rhonchi, tachycardia, dry skin",
+      "diagnosis": "[[★ Rapid molecular assay or reverse-transcription polymerase chain reaction]]; a negative rapid antigen test does not exclude; do not wait for results in hospitalized or high-risk patients; chest film to rule out pneumonia in the elderly or high-risk",
+      "treatment": "[[★ Oseltamivir preferred]] (hospitalized, severe, high-risk, pregnancy), even after 48 hours; baloxavir single dose within 48 hours but not in pregnancy, breastfeeding, severe immunosuppression or hospitalized patients; avoid inhaled zanamivir in asthma or chronic obstructive pulmonary disease; amantadine and rimantadine not recommended; avoid aspirin under 18 (Reye syndrome); annual vaccination",
+      "mortality": "3 to 5 million cases and 250,000 to 500,000 deaths worldwide a year (context only)"
+     },
+     "slides": {
+      "name": "91",
+      "definition": "91",
+      "etiology": "92-94",
+      "epidemiology": "95-96",
+      "risk_factors": "97-98",
+      "pathology": "106",
+      "clinical": "99-102",
+      "diagnosis": "95, 104-106",
+      "treatment": "4-6, 107-110",
+      "mortality": "96"
+     }
+    },
+    {
+     "id": "l37-covid",
+     "name": "COVID-19",
+     "prof": true,
+     "prof_note": "Stratify severity first; oxygenation decides the pathway.",
+     "fields": {
+      "name": "Coronavirus disease 2019 (COVID-19)",
+      "definition": "Disease caused by SARS-CoV-2 (severe acute respiratory syndrome coronavirus 2), from asymptomatic infection to respiratory failure",
+      "etiology": "The virus, spread mainly by inhaling infectious respiratory particles, especially indoors with poor ventilation",
+      "epidemiology": "Median incubation about 5 days; 18 to 33% asymptomatic",
+      "risk_factors": "Age (risk rises substantially above 65), immunocompromise, multiple chronic conditions, lack of current vaccination",
+      "pathology": "Not covered in the lecture",
+      "clinical": "Cough, shortness of breath, fever, myalgia, headache; less often sore throat, anosmia, dysgeusia, anorexia, nausea or diarrhea",
+      "diagnosis": "[[★ Nucleic acid amplification test (including polymerase chain reaction) most sensitive]]; repeat a negative antigen test after 48 hours (2 tests if symptomatic, 3 if not); imaging for pneumonia and complications; D-dimer alone does not diagnose thrombosis. Severity: mild (no dyspnea, normal film), moderate (abnormal film, saturation 94% or more), severe (below 94%, infiltrates over 50%), critical",
+      "treatment": "High-risk outpatients without hypoxemia: nirmatrelvir/ritonavir within 5 days (check interactions, renal dosing, hepatic contraindications) or 3-day remdesivir within 7 days; molnupiravir only if these are unsuitable, avoid in pregnancy; no steroids without hypoxemia. Hypoxemic inpatients: dexamethasone, consider remdesivir, baricitinib or tocilizumab for rapid progression, thromboprophylaxis",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "111-112",
+      "definition": "112",
+      "etiology": "112",
+      "epidemiology": "114",
+      "risk_factors": "113",
+      "clinical": "114-115",
+      "diagnosis": "117, 119",
+      "treatment": "120-122"
+     }
+    }
+   ]
+  },
+  {
+   "lecture": 38,
+   "title": "Mycobacterial Infections, Including Tuberculosis",
+   "lecturer": "Robert Bobilin, MS, MPAS, PA-C, Emeritus (guest lecturer)",
+   "deck": "38. Mycobacterial Infections including Tuberculosis - Bobilin - 10-29-2025 SV.pptx",
+   "note": "Built from the slides plus the Zoom recording, which only chooses which facts to star. Where the lecturer called fever and night sweats 'pathognomonic', the slide (a list of manifestations) is followed. Epidemiology figures are context only. Dosing is left out.",
+   "conditions": [
+    {
+     "id": "l38-tb",
+     "name": "Tuberculosis (pulmonary and extrapulmonary)",
+     "prof": true,
+     "prof_note": "Infection versus disease decides infectiousness, evaluation and treatment; know the 5, 10 and 15 mm cut-offs, 3 sputum specimens, isolation and notification, and the 2 + 4 month regimen.",
+     "fields": {
+      "name": "Tuberculosis (TB) disease",
+      "definition": "A chronic granulomatous disease caused by Mycobacterium tuberculosis, usually of the lung but able to reach any organ by hematogenous spread",
+      "etiology": "Mycobacterium tuberculosis complex (M. tuberculosis the principal human pathogen; also M. bovis, M. africanum): acid-fast bacilli with lipid-rich, mycolic-acid walls; slow growing",
+      "epidemiology": "Leading cause of death from a single infectious agent worldwide; about a quarter of the world infected; in the United States most cases occur in people born outside the country",
+      "risk_factors": "Exposure: close contact, enclosed poorly ventilated spaces, settings with ongoing transmission, high-incidence areas. [[★ Progression: HIV or major immunosuppression, tumor necrosis factor inhibitors, transplant, prolonged steroids, infection within 2 years, infancy and young childhood]]; also diabetes, chronic kidney disease or dialysis, silicosis, low weight, tobacco and alcohol",
+      "pathology": "Primary infection contained, or progressive primary disease when containment fails; latent foci reactivate with impaired immunity (secondary tuberculosis); caseation, cavities, miliary dissemination",
+      "clinical": "Persistent cough, hemoptysis or pleuritic pain, fever and night sweats, weight loss, fatigue; may be mild or absent; exam has limited sensitivity and a normal exam does not exclude it. Extrapulmonary: painless lymph node enlargement, pleural effusion, central nervous system (headache, altered mental status), spine (back pain, vertebral destruction), disseminated disease",
+      "diagnosis": "Tuberculin skin test or interferon-gamma release assay shows infection only. [[★ 3 sputum specimens 8 to 24 hours apart (one early morning): smear, culture, a rapid molecular test, susceptibility testing]]; HIV test; chest film (upper-lobe cavities after primary, hilar adenopathy in primary, miliary nodules); imaging cannot confirm",
+      "treatment": "[[★ Notify the tuberculosis program; airborne isolation room; N95; source control; end isolation by criteria]]. 2 months of isoniazid, rifampin, pyrazinamide and ethambutol, then 4 months of isoniazid and rifampin (ethambutol stops once susceptibility is known), daily directly observed therapy; 17-week rifapentine-moxifloxacin regimen from age 12; rifampin resistance needs expert management; monthly monitoring for liver injury, interactions, toxicity",
+      "mortality": "Preventable and curable; post-tuberculosis bronchiectasis and scarring possible"
+     },
+     "slides": {
+      "name": "5",
+      "definition": "12",
+      "etiology": "4-5",
+      "epidemiology": "6-7",
+      "risk_factors": "14-15",
+      "pathology": "9-10, 12",
+      "clinical": "8, 16-17",
+      "diagnosis": "19-29",
+      "treatment": "33-36",
+      "mortality": "6, 29"
+     }
+    },
+    {
+     "id": "l38-ltbi",
+     "name": "Latent tuberculosis infection",
+     "prof": true,
+     "prof_note": "Asymptomatic and not infectious; exclude disease before treating; know the 5, 10 and 15 mm skin test cut-offs.",
+     "fields": {
+      "name": "Latent tuberculosis infection (LTBI)",
+      "definition": "Infection with Mycobacterium tuberculosis without disease: asymptomatic, not infectious, no evidence of disease after clinical evaluation",
+      "etiology": "Mycobacterium tuberculosis contained by the immune system",
+      "epidemiology": "About a quarter of the world's population has been infected",
+      "risk_factors": "Exposure risk; reactivation risk with impaired immunity",
+      "pathology": "Foci can harbor viable organisms for years and reactivate when immunity falls",
+      "clinical": "None; chest film usually normal",
+      "diagnosis": "[[★ Tuberculin skin test thresholds: 5 mm (HIV, recent close contact, transplant, major immunosuppression, imaging of prior tuberculosis), 10 mm (exposure or medical risk, congregate settings, children under 5), 15 mm (no risk factors)]]; measure induration, not erythema, at 48 to 72 hours; the interferon-gamma release assay is preferred after BCG (bacille Calmette-Guerin) vaccination; repeat 8 to 10 weeks after exposure if early tests are negative; neither test separates latent infection from disease",
+      "treatment": "Exclude disease first; 3HP (weekly isoniazid plus rifapentine for 3 months), 4R (daily rifampin for 4 months) or 3HR (daily isoniazid plus rifampin for 3 months); 6H or 9H when rifamycins are unsuitable; check interactions, pregnancy and source-case resistance",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "10",
+      "definition": "10",
+      "etiology": "10, 12",
+      "epidemiology": "6",
+      "risk_factors": "14-15",
+      "pathology": "12",
+      "clinical": "10, 29",
+      "diagnosis": "19-25",
+      "treatment": "37"
+     }
+    },
+    {
+     "id": "l38-ntm",
+     "name": "Nontuberculous mycobacterial lung disease",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Nontuberculous mycobacterial (NTM) lung disease (atypical mycobacterial disease)",
+      "definition": "Pulmonary or extrapulmonary disease from environmental mycobacteria; a respiratory isolate alone does not prove disease",
+      "etiology": "Mycobacterium avium complex (MAC, a common cause), M. kansasii, M. abscessus",
+      "epidemiology": "Most infections come from environmental exposure; person-to-person spread uncommon",
+      "risk_factors": "Bronchiectasis, chronic obstructive pulmonary disease, immune dysfunction",
+      "pathology": "Nodular bronchiectasis or fibrocavitary disease",
+      "clinical": "Chronic cough and sputum, fatigue, weight loss, reduced appetite, dyspnea or hemoptysis",
+      "diagnosis": "[[★ All domains: compatible symptoms and imaging, alternatives excluded, usually 2 or more sputum cultures of the same species]] (or one bronchial wash or lavage or a qualifying biopsy); an acid-fast smear cannot tell nontuberculous mycobacteria from tuberculosis",
+      "treatment": "Macrolide-susceptible MAC (specialist-directed): azithromycin, ethambutol and a rifamycin, at least 12 months after culture conversion; cavitary or severe: daily therapy and initial intravenous amikacin; persistent positive cultures after 6 months or more: inhaled liposomal amikacin; other species susceptibility-guided",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "38",
+      "definition": "38",
+      "etiology": "5, 38",
+      "epidemiology": "38",
+      "risk_factors": "38",
+      "pathology": "39",
+      "clinical": "39",
+      "diagnosis": "4, 39",
+      "treatment": "40"
+     }
+    }
+   ]
   }
  ]
 }

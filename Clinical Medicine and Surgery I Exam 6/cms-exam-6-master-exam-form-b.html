@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));window.__paErrQ=[];['error','unhandledrejection'].forEach(function(t){addEventListener(t,function(e){var q=window.__paErrQ;if(q&&!q.done)q.push(e)})});</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #b45357; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMS I Exam 6 Master Exam &mdash; Form B</title>
+<style>
+  :root{
+    --navy:#7a2d30; --indigo:#b45357; --gold:#c08a2e; --ice:#faefee;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#7a2d30;--gold-l:#c08a2e;--indigo-l:#b45357;--navy:#ec9392;--indigo:#d06c6e;--gold:#c08a2e;--ice:#36191a;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#d06c6e;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#7a2d30;--indigo-t:#b45357;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Clinical Medicine and Surgery I &mdash; Comprehensive Master Exam</h1>
+    <div class="sub">Exam 6 &middot; Respiratory block I, Lectures 33&ndash;38 &middot; Form B</div>
+    <span class="pill">60 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Sixty questions drawn from all six lectures of the first respiratory block, <b>weighted by scheduled lecture hours</b>: the three-hour respiratory infections lecture gives sixteen questions per form, the two-hour acid-base, asthma and chronic obstructive pulmonary disease lectures eleven each, and the one-hour oxygen delivery and mycobacterial lectures five or six (that slot alternates from form to form). <b>Forty-eight are patient vignettes</b> and twelve are direct recall, with the lead-in spread across classifying severity and scores, testing, treatment, next step, patient education and what to avoid.<br><br>Some of the questions are not in the topic quizzes, so these forms are worth working even after those. <b>Four options, A&ndash;D</b>, and every wrong choice gets its own explanation saying why it is wrong.<br><br><b>No question appears in more than one form</b>, so working through all five gives you 300 distinct questions. Every question cites the slide it came from.</p>
+    <div class="chips"><span class="chip">Oxygen delivery</span><span class="chip">Acid-base</span><span class="chip">Asthma</span><span class="chip">Chronic obstructive pulmonary disease</span><span class="chip">Respiratory infections and vaccines</span><span class="chip">Tuberculosis and other mycobacteria</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Severity and group assessment", "io": "Describe airflow obstruction in COLD and methods for assessing the severity of the obstruction", "q": "In a patient with a post-bronchodilator ratio below 0.70, a forced expiratory volume in 1 second of 42% predicted corresponds to which airflow grade?", "opts": [["Grade 1 (mild)", "Grade 1, mild, requires 80% predicted or more. At 42% this patient is far below it. Tell: grade 1 is the only grade with near-normal airflow. Mild airflow limitation means near-normal airflow."], ["Grade 2 (moderate)", "Grade 2, moderate, covers 50% up to 80% predicted. At 42% this patient is below the 50% line. Tell: under 50% moves the grade to severe. Grade 2 covers 50% to 79% predicted only."], ["Grade 3 (severe)", "Correct. Grade 3, severe, covers a post-bronchodilator 1-second volume of 30% up to 50% predicted, so 42% falls there. Grade 2 starts at 50% and grade 4 is below 30%."], ["Grade 4 (very severe)", "Grade 4, very severe, is below 30% predicted. At 42% this patient is above that line. Tell: 30% to 49% is grade 3. Very severe means less than a third of predicted airflow."]], "c": 2, "cite": "37. svCOPD 2026.pptx, Slide 34", "qid": "t5eei7"}, {"topic": "Spirometry and lung function tests", "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases", "q": "Which spirometry pattern before a bronchodilator signals airflow limitation in asthma?", "opts": [["Reduced 1-second volume and reduced ratio", "Correct. Before a bronchodilator, airflow limitation shows as a reduced forced expiratory volume in 1 second and a reduced ratio of that volume to forced vital capacity. Improvement after the bronchodilator then supports asthma."], ["Normal ratio, reduced vital capacity", "A normal ratio with a low forced vital capacity suggests restriction, a filling problem. Asthma's obstruction lowers both the 1-second volume and the ratio. Tell: in obstruction the 1-second volume falls more than the vital capacity, so the ratio drops."], ["Increased 1-second volume", "Obstruction lowers, not raises, the forced expiratory volume in 1 second, and the ratio to forced vital capacity falls too. Tell: air leaves the narrowed airway slowly, so less of it gets out in the first second."], ["Normal values, lower after dilator", "Values improve after a bronchodilator in asthma rather than fall, and before it the 1-second volume and the ratio are reduced. Tell: a positive response is a rise of 12% or more in the 1-second volume, not a drop."]], "c": 0, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 53", "qid": "lg2vm1"}, {"topic": "Oxygen safety at home", "io": "Discuss patient education for oxygen delivery", "q": "A 69-year-old woman on home oxygen has dry, cracked lips and uses a petroleum jelly lip balm several times a day. Which teaching applies?", "opts": [["Switch her oxygen to a non-rebreather", "A non-rebreather mask is a high-fraction device for severely hypoxic patients who are still ventilating well. Dry lips are not an indication to switch, and the mask would not address the balm. Tell: her issue is a product, not the delivery device."], ["Stop using petroleum-based products", "Correct. Petroleum-based products such as lip balms, lotions, oils and grease are to be avoided with home oxygen. Her petroleum jelly lip balm, used several times a day, is exactly that, so she should stop it. Her dry lips are not a reason to keep using it."], ["Use more balm to protect the lips", "Using more balm adds more of what home oxygen teaching says to avoid: petroleum-based lip balms, lotions, oils and grease. Dry lips do not change that. Tell: protecting the lips with a petroleum product conflicts with oxygen safety."], ["Stop her home oxygen", "Stopping her oxygen is not called for. The teaching is to avoid petroleum-based products while keeping oxygen use safe, not to discontinue oxygen. Tell: remove the hazard, which is the balm, and keep the oxygen."]], "c": 1, "cite": "35. Oxygen Delivery 2026.pptx, Slides 7, 15", "qid": "1fp1u3f"}, {"topic": "What to avoid", "io": "Identify the indications, benefits, and hazards of oxygen therapy.", "q": "A 67-year-old man has a myocardial infarction and is placed on oxygen in the ambulance although his saturation was 98%. Which effect of oxygen makes this a problem?", "opts": [["Vasoconstriction", "Correct. His saturation was 98%, so he was not hypoxic. Oxygen is not given in a myocardial infarction unless the saturation is below 91%, because oxygen causes vasoconstriction. Giving it to a man with a normal saturation exposes him to that effect without benefit."], ["Carbon dioxide retention", "Carbon dioxide retention is a listed hazard of oxygen, but it is not the reason oxygen is withheld in a myocardial infarction; that reason is vasoconstriction. Tell: the myocardial infarction rule points to vasoconstriction."], ["Mucosal irritation", "Mucosal irritation is the dryness and soreness of the nose from oxygen, especially without humidity at higher flows. It does not explain why oxygen is avoided in a myocardial infarction. Tell: irritation is local; vasoconstriction is the cardiac concern."], ["Fire risk", "Fire risk is real around any oxygen, but it does not explain why oxygen is withheld at a saturation of 98% in a myocardial infarction. Tell: the myocardial infarction caution is about vasoconstriction, not ignition."]], "c": 0, "cite": "35. Oxygen Delivery 2026.pptx, Slides 3, 9", "qid": "z50k95"}, {"topic": "Severity classification", "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.", "q": "A 20-year-old man has daily asthma symptoms and uses albuterol daily, but he wakes at night only once a month and has a forced expiratory volume in 1 second of 85% predicted. He has some limitation playing pickup basketball. Which severity classification fits?", "opts": [["Mild persistent", "Mild persistent asthma allows symptoms and rescue use on more than 2 days a week but not daily. His are daily. Tell: the word daily is the line between mild and moderate persistent asthma."], ["Moderate persistent", "Correct. Daily symptoms, daily short-acting beta-2 agonist use and some limitation of activity are moderate persistent features. Even though his night waking and 85% function are milder, severity is assigned to the most severe category in which any feature occurs."], ["Intermittent", "His night waking and lung function look intermittent, but daily symptoms and daily rescue use far exceed the intermittent limit of 2 or fewer days a week. Tell: severity follows the worst feature, not the best ones."], ["Severe persistent", "Severe persistent asthma requires symptoms throughout the day, rescue use several times a day, extreme limitation or function below 60%. He uses albuterol daily with some limitation and 85% function. Tell: daily rescue use is moderate; several times a day is severe."]], "c": 1, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 62", "qid": "17mehcp"}, {"topic": "Is compensation appropriate?", "io": "Identify compensatory mechanisms for simple acid-base disorders.", "q": "A 44-year-old man who drank methanol has a bicarbonate of 14 mEq/L (normal 22 to 26 mEq/L) and a carbon dioxide of 29 mm Hg (normal 36 to 44 mm Hg). By the Winter formula, what does his carbon dioxide show?", "opts": [["An added respiratory acidosis", "An added respiratory acidosis is shown by a carbon dioxide higher than the Winter prediction, above 31 here. His 29 is inside the range of 27 to 31. Tell: compute 1.5 x 14 + 8 before calling it a second disorder."], ["An added respiratory alkalosis", "A respiratory alkalosis is a primary fall in carbon dioxide, and his fall is fully accounted for by the compensation the Winter formula predicts, 27 to 31. No second disorder is needed to explain a 29. Tell: inside the range means compensation alone explains it."], ["Impending respiratory failure", "Impending respiratory failure is signaled when the carbon dioxide is higher than the Winter prediction, with an added respiratory acidosis. His 29 is within the expected 27 to 31. Tell: the warning is a carbon dioxide above the range."], ["Appropriate compensation", "Correct. Winter formula: 1.5 x 14 + 8 = 29, plus or minus 2, so 27 to 31. His 29 sits inside that range, so the fall in carbon dioxide is the expected respiratory compensation for his elevated-gap metabolic acidosis from methanol, with no second disorder."]], "c": 3, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slides 55, 58, 59", "qid": "21vtuo"}, {"topic": "Influenza", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)", "q": "A 9-year-old boy has influenza with a temperature of 102.8°F and body aches. His parent wants to give him a fever medicine from the cabinet at home. Which medication should be avoided?", "opts": [["Acetaminophen", "Acetaminophen is one of the listed antipyretics for influenza supportive care and is appropriate for a child. Tell: the antipyretic to avoid under 18 is aspirin, because of its association with Reye syndrome."], ["Ibuprofen", "Ibuprofen is one of the listed antipyretics for influenza supportive care. Tell: the age warning applies to aspirin, which is avoided in anyone younger than 18 with influenza because of Reye syndrome."], ["Aspirin", "Correct. Aspirin is avoided in children younger than 18 years with influenza because it is associated with Reye syndrome. Acetaminophen or ibuprofen is used for fever as part of supportive care, along with rest and fluids."], ["Oral fluids and rest", "Rest and hydration are the core of influenza supportive care, especially when fever and poor intake cause mild volume depletion. Tell: the measure to avoid is a drug, aspirin, not fluids."]], "c": 2, "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 110", "qid": "e11kir"}, {"topic": "Pneumonia types and presentation", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)", "q": "A 74-year-old man has 3 days of fever to 102.6°F, shaking chills, a cough with purulent sputum and a stabbing right-sided chest pain on breathing. His respiratory rate is 28/min. Over the right lower lobe there are crackles and dullness to percussion. Which is the most likely diagnosis?", "opts": [["Community-acquired pneumonia", "Correct. High fever, chills, purulent productive cough, pleuritic chest pain and tachypnea are more severe than a cold or bronchitis, and the findings sit over one lobe: crackles and dullness to percussion. Acquired outside the hospital, this is community-acquired pneumonia."], ["Aspiration pneumonitis", "Aspiration pneumonitis is a sterile chemical injury with abrupt respiratory decline after a witnessed aspiration. Nothing in his story describes an aspiration event. Tell: pneumonitis follows abruptly after a witnessed aspiration; his illness is an infectious syndrome over days."], ["Acute bronchitis", "Acute bronchitis may cause a low-grade fever and cough, but consolidation should not be detected; if it is, think pneumonia. His crackles and dullness over one lobe are consolidation. Tell: bronchitis wheeze is central over the bronchial airways, not a focal lobar finding."], ["Lung abscess", "A lung abscess is usually insidious and prolonged, over weeks, with foul-smelling sputum and sometimes hemoptysis, and imaging shows a cavity with an air-fluid level. His illness is 3 days old with lobar consolidation signs. Tell: abscess is slow and foul; this is acute and lobar."]], "c": 0, "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 16, 23, 27, 28, 50, 51, 53", "qid": "1xfzgxv"}, {"topic": "Compensation rules", "io": "Identify compensatory mechanisms for simple acid-base disorders.", "q": "Using about 2 mEq/L per 10 mm Hg acutely and 5 per 10 chronically, which bicarbonate fits acute respiratory alkalosis with a carbon dioxide of 30 mm Hg (normal 36 to 44, midpoint 40) from a baseline bicarbonate of 24?", "opts": [["19 mEq/L", "19 is 24 - 5, which applies the chronic response of 5 per 10 mm Hg. The stem is acute, where the fall is 2 per 10: 24 - 2 = 22. Tell: acute uses 2, chronic uses 5."], ["22 mEq/L", "Correct. The carbon dioxide fell 10 mm Hg (40 to 30), and acute respiratory alkalosis lowers bicarbonate about 2 mEq/L per 10 mm Hg. So 24 - 2 = 22 mEq/L is the expected bicarbonate."], ["24 mEq/L", "24 assumes no compensation at all. Even acutely, bicarbonate falls about 2 mEq/L per 10 mm Hg of carbon dioxide decline: 24 - 2 = 22. Tell: alkalosis lowers bicarbonate from baseline."], ["26 mEq/L", "26 is a rise in bicarbonate, the direction seen with respiratory acidosis. Alkalosis lowers it: 24 - 2 = 22. Tell: for a low carbon dioxide, bicarbonate falls."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 59", "qid": "1aecqyx"}, {"topic": "Psittacosis and Mycoplasma", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)", "q": "A 42-year-old poultry farmer has fever, a nonproductive cough, severe headache and a unilateral lower-lobe infiltrate. Psittacosis is suspected. Which test is most useful for timely confirmation?", "opts": [["Respiratory nucleic acid test", "Correct. A respiratory nucleic acid amplification test, such as polymerase chain reaction, is timely and sensitive for Chlamydia psittaci, coordinated with public health laboratories. His poultry exposure and the lower-lobe infiltrate make that the confirming test."], ["Blood count and liver enzymes", "The complete blood count and liver enzymes assess how ill the patient is, not the cause. They cannot identify Chlamydia psittaci. Tell: severity tests and organism tests answer different questions."], ["A single antibody titer", "Serology often requires paired samples and can cross-react with other Chlamydia species, so one titer is neither timely nor specific. Tell: for a quick, sensitive answer, test respiratory secretions with a nucleic acid test."], ["Routine sputum culture", "Routine bacterial culture does not detect Chlamydia psittaci, an obligate intracellular bacterium. Tell: a culture will come back negative even when psittacosis is present, so it cannot confirm the suspicion."]], "c": 0, "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 85", "qid": "1qvp04y"}, {"topic": "Prognosis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 68-year-old man with chronic obstructive pulmonary disease has a forced expiratory volume in 1 second of 45% predicted, a 6-minute walk distance of 200 meters, a modified Medical Research Council dyspnea grade of 3, and a body mass index of 20. What is his BODE (body mass index, obstruction, dyspnea, exercise) index score?", "opts": [["5", "Five undercounts by 2, as if the walk distance were scored 0 or the dyspnea grade missed. Tell: 200 meters scores 2 and a dyspnea grade of 3 scores 2."], ["6", "Six misses 1 point, most often the body mass index: a value of 21 or less scores 1. Tell: his body mass index of 20 adds the final point to reach 7. A total of 7 predicts about 18% 4-year survival."], ["7", "Correct. 1-second volume 45% (36 to 49) = 2 + walk 200 meters (150 to 249) = 2 + dyspnea grade 3 = 2 + body mass index 20 (21 or less) = 1, for a total of 7. A score of 7 to 10 predicts about 18% 4-year survival."], ["8", "Eight overcounts by 1, as if the 1-second volume of 45% scored 3. Tell: 3 points is for 35% or less; 36% to 49% scores 2. His total stays at 7. Recount: 2 + 2 + 2 + 1."]], "c": 2, "cite": "37. svCOPD 2026.pptx, Slide 52", "qid": "1gmnrcv"}, {"topic": "Group assignment", "io": "Describe airflow obstruction in COLD and methods for assessing the severity of the obstruction", "q": "A 70-year-old man with confirmed chronic obstructive pulmonary disease has a symptom assessment test score of 6 and a modified Medical Research Council dyspnea grade of 1. He had 2 moderate exacerbations treated at home in the past year. Under the current three-group scheme, which group is he in?", "opts": [["Group C", "Few symptoms with high risk would be C in the 2020 four-group scheme. Tell: in the current scheme C and D merged into E, so 2 moderate exacerbations make him E whatever his symptoms."], ["Group B", "Group B is low risk with more symptoms; he has few symptoms and high risk. Tell: 2 moderate exacerbations put him in E. B also requires more symptoms, and his score is 6."], ["Group E", "Correct. Two moderate exacerbations in the past year make him high risk, and any high-risk patient is group E regardless of symptoms. His low symptom score of 6 does not change that; group E starts on a long-acting beta agonist plus a long-acting antimuscarinic."], ["Group A", "His symptoms (score 6, dyspnea grade 1) would fit group A, but 2 moderate exacerbations make him high risk. Tell: exacerbation risk overrides symptoms in the current scheme."]], "c": 2, "cite": "37. svCOPD 2026.pptx, Slides 37, 40, 41", "qid": "1iyjub8"}, {"topic": "Histoplasmosis and cryptococcosis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)", "q": "A 47-year-old man tore down an old barn where bats roosted. Six days later he has high fever, chills, myalgias and a nonproductive cough. An early urine Histoplasma antigen is negative, but suspicion remains high. What is the most appropriate next step?", "opts": [["Amphotericin-based induction", "Amphotericin-based induction is for severe pulmonary or disseminated disease, and he has a mild acute illness that is not yet confirmed. Tell: the open question is the diagnosis, which repeat testing answers."], ["Serum cryptococcal antigen", "Cryptococcus is inhaled from the environment and is a risk mainly with immunocompromise, and nothing in his story points to it. Tell: bat droppings point to Histoplasma, so the next move is to retest for Histoplasma."], ["Repeat antigen testing", "Correct. Early negative tests do not exclude histoplasmosis. When suspicion persists, testing is repeated or respiratory specimens are obtained. His bat exposure and typical illness keep suspicion high, so one early negative result does not end the workup."], ["Histoplasmosis is excluded", "An early negative antigen test does not exclude disease; the antigen may not yet be detectable. Tell: a negative result early in the illness, with a strong exposure history, calls for repeat testing or respiratory specimens."]], "c": 2, "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 77", "qid": "qjgul2"}, {"topic": "Judging the response", "io": "Evaluate the patient’s response to oxygen therapy.", "q": "A 64-year-old man with pneumonia has an arterial blood gas before and after starting oxygen. After oxygen, his arterial oxygen pressure is higher, his carbon dioxide is unchanged, and his pH has returned toward normal. How is this response read?", "opts": [["A response if saturation reaches 100%", "A saturation of 100% is not required. The saturation is judged against a target that varies with the patient, and his gas already shows a good response. Tell: the target varies, so 100% is not the goal."], ["Carbon dioxide retention", "Carbon dioxide retention would show a rising arterial carbon dioxide. His carbon dioxide is unchanged, so there is no sign of retention. Tell: unchanged carbon dioxide is what a good response requires."], ["No response", "His arterial oxygen pressure rose and his pH corrected, which are the objective signs of response. There is a response. Tell: rising oxygen pressure with correcting pH is the pattern of a good response."], ["A good response", "Correct. A good response is an increase in arterial oxygen pressure without an increase in arterial carbon dioxide, plus correction of the pH. His oxygen pressure rose, his carbon dioxide stayed unchanged, and his pH moved back toward normal, which meets all three."]], "c": 3, "cite": "35. Oxygen Delivery 2026.pptx, Slide 25", "qid": "d3izn4"}, {"topic": "Electrolytes and oxygen", "io": "Explain how acid-base disorders affect electrolytes and oxygenation.", "q": "A 50-year-old woman with a metabolic alkalosis from repeated vomiting has generalized weakness and hyporeflexia. Arterial blood gas: pH 7.52 (normal 7.35 to 7.45), partial pressure of carbon dioxide 48 mm Hg (normal 36 to 44 mm Hg), bicarbonate 38 mEq/L (normal 22 to 26 mEq/L). Which laboratory finding best explains her weakness and hyporeflexia?", "opts": [["High carbon dioxide", "Her mildly raised carbon dioxide of 48 is compensation for the alkalosis; severe hypercapnia causes somnolence and confusion, not hyporeflexia. Tell: the weakness of metabolic alkalosis comes from potassium."], ["High potassium", "Hyperkalemia accompanies acidosis, as potassium shifts out of cells. Her pH is 7.52, and alkalosis shifts potassium into cells. Tell: alkalosis means low potassium."], ["Low potassium", "Correct. Metabolic alkalosis brings hypokalemia (potassium shifts into cells, and vomiting adds losses), and the associated hypokalemia causes weakness and hyporeflexia. Her alkalemia at 7.52 fits."], ["Low bicarbonate", "Her bicarbonate is 38, high, which is what defines her metabolic alkalosis. A low bicarbonate belongs to metabolic acidosis. Tell: read her bicarbonate before choosing."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 39", "qid": "17c61tu"}, {"topic": "Reading the workup", "io": "Identify medical care strategies for chronic obstructive lung disease (COLD)/ chronic obstructive lung disease (COLD) for the following populations. 1. adult 2. elderly", "q": "An 84-year-old woman has mild breathlessness she attributes to deconditioning. Post-bronchodilator spirometry shows a ratio of 0.68 with a forced expiratory volume in 1 second of 85% predicted. Which consideration applies before labeling her with chronic obstructive pulmonary disease?", "opts": [["Any ratio below 0.70 settles it", "In older adults the fixed 0.70 ratio may overdiagnose. Tell: her age and borderline value call for clinical context, not an automatic label."], ["She needs triple inhaled therapy", "Triple therapy is considered for high-risk group E patients with eosinophils of 300 or more. Tell: she has not even been confirmed, and her symptoms are mild."], ["She needs alpha-1 antitrypsin testing", "Alpha-1 antitrypsin testing is aimed at young patients or those with few exposures, and mild breathlessness at 84 with a borderline ratio does not point to it. Tell: in an elderly patient the stated caution is overdiagnosis from the fixed ratio."], ["The fixed 0.70 ratio may overdiagnose", "Correct. In adults 65 and older, the fixed 0.70 ratio may overdiagnose, so clinical context is weighed. A borderline ratio with near-normal airflow and mild symptoms in an 84-year-old calls for that judgment."]], "c": 3, "cite": "37. svCOPD 2026.pptx, Slide 53", "qid": "1vik30l"}, {"topic": "Oxygen", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 70-year-old man with chronic obstructive pulmonary disease has a resting oxygen saturation of 85% on room air on 2 visits, with no cor pulmonale (right heart failure). Which treatment is indicated?", "opts": [["A sleep study for apnea", "Evaluation for obstructive sleep apnea is the step when desaturation happens at night only. Tell: his desaturation is at rest while awake, which calls for long-term oxygen."], ["Long-term oxygen for over 15 hours a day", "Correct. Severe resting desaturation, a saturation of 88% or less at rest, qualifies for long-term oxygen therapy for more than 15 hours a day. Oxygen for severe resting hypoxemia decreases the risk of death, prolongs life and improves quality of life."], ["No oxygen until saturation falls below 80%", "The threshold is a resting saturation of 88% or less (or an arterial oxygen pressure under 55 mmHg), not 80%. Tell: 85% at rest already qualifies, and waiting forfeits a survival benefit."], ["Oxygen just during exercise", "Exertion-only oxygen is for patients who desaturate to 88% or less with exertion but not at rest. Tell: his saturation is 85% at rest, which qualifies him for oxygen most of the day."]], "c": 1, "cite": "37. svCOPD 2026.pptx, Slides 63, 64, 66", "qid": "7p6ulb"}, {"topic": "Read the blood gas", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "A 33-year-old woman at 30 weeks of pregnancy has a routine arterial blood gas for mild breathlessness: pH 7.46 (normal 7.35 to 7.45), partial pressure of carbon dioxide 28 mm Hg (normal 36 to 44 mm Hg), bicarbonate 19 mEq/L (normal 22 to 26 mEq/L). Which acid-base disorder is present?", "opts": [["Respiratory acidosis", "Respiratory acidosis is a high carbon dioxide with a low pH. She has a low carbon dioxide of 28 and a high pH of 7.46. Tell: both values point the opposite way."], ["Chronic respiratory alkalosis", "Correct. The pH of 7.46 is alkalemia, and the carbon dioxide of 28 is low and matches it: respiratory alkalosis. Bicarbonate fell about 5 per 10 mm Hg (12 below 40 gives about 18 to 19), a chronic renal response. Pregnancy is a listed endocrine cause."], ["Metabolic acidosis", "Her bicarbonate is low, but her pH of 7.46 is high, so this is not an acidosis. The low bicarbonate is compensation for the respiratory alkalosis. Tell: the pH direction identifies the primary disorder."], ["Acute respiratory alkalosis", "Acute compensation lowers bicarbonate only about 2 per 10 mm Hg, to about 22 (12 below 40). Her 19 shows the fuller chronic response. Tell: pregnancy is a sustained state, so the kidneys have had time."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 34", "qid": "m72e3q"}, {"topic": "Pneumonia workup and severity", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)", "q": "What risk of death does a CURB-65 (confusion, urea, respiratory rate, blood pressure, age 65 or older) total of 2 carry?", "opts": [["Under 3%", "A risk of death under 3% belongs to a total of 0 to 1, low severity, usually treated at home unless there are other reasons for admission. Tell: 2 points is moderate severity, about 9%."], ["About 9%", "Correct. A total of 2 points is moderate severity, with a risk of death of about 9%, and the pathway sends these patients to the hospital. A total of 0 to 1 is low severity (under 3%), and 3 to 5 is high severity (15 to 40%)."], ["15 to 40%", "A 15 to 40% risk belongs to a total of 3 to 5, high severity, with urgent senior review and consideration of critical care. Tell: 2 points is moderate, about 9%."], ["About 27%", "About 27% is the mortality of Pneumonia Severity Index class V, a different score. Tell: the five-item score at 2 points carries about 9%."]], "c": 1, "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 31, 29", "qid": "1or75ig"}, {"topic": "Etiology and risk factors", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "What is the primary risk factor for chronic obstructive pulmonary disease?", "opts": [["Alpha-1 antitrypsin deficiency", "Alpha-1 antitrypsin deficiency is a genetic risk found even in nonsmokers, but it is rare, about 3 or 4 cases per 10,000. Tell: it is evaluated in young or unexposed patients, while tobacco remains the primary cause."], ["Burning biomass for cooking", "Burning wood or coal indoors for cooking and heating is a secondary risk factor, larger in developing countries. Tell: worldwide, the primary risk factor is tobacco smoking or exposure."], ["Sedentary lifestyle", "A sedentary lifestyle with limited activity is listed among risk factors, but it is not the primary one. Tell: the dominant risk is inhaled tobacco smoke, which is why smoking cessation can slow progression."], ["Tobacco smoking or smoke exposure", "Correct. Tobacco smoking or exposure is the primary risk factor, behind about 90% of cases. Secondary risks are biomass burning, occupational dusts and fumes, a sedentary lifestyle and, much more rarely, alpha-1 antitrypsin deficiency."]], "c": 3, "cite": "37. svCOPD 2026.pptx, Slide 12", "qid": "12cbpzn"}, {"topic": "Mycobacterial biology", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following mycobacterial infections: a. Tuberculosis b. Atypical mycobacterial disease", "q": "Why can a mycobacterial culture take weeks to return a result?", "opts": [["The smear must turn negative", "Smear conversion is not a precondition for reading a culture; the smear and the culture are requested together on each specimen. Tell: the delay belongs to the slow-growing organism, not to any other test."], ["Three specimens are pooled first", "The three sputum specimens are collected 8 to 24 hours apart and each is sent for smear and culture; they are not pooled. Tell: the weeks come from slow growth of Mycobacterium tuberculosis."], ["Molecular tests must run first", "Molecular tests run alongside the culture, not before it, and they are the fast part of the workup. The culture is slow because of the organism. Tell: molecular tests are the rapid result, culture is the slow one."], ["The organism grows slowly", "Correct. Mycobacterium tuberculosis grows slowly, so cultures can take weeks. That is why a rapid molecular test is run on at least one respiratory specimen alongside the smear and culture: molecular tests can give results quickly."]], "c": 3, "cite": "38. Mycobacterial Infections including Tuberculosis - Bobilin - 10-29-2025 SV.pptx, Slide 4", "qid": "126s5jr"}, {"topic": "Types of asthma", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.", "q": "A 19-year-old college student has had episodes of wheezing, chest tightness and cough for 2 years, worse at night and after cleaning his dusty dorm room. He has allergic rhinitis and atopic dermatitis (eczema). Between episodes his lung exam is normal. Spirometry shows a reduced forced expiratory volume in 1 second that improves 18% after albuterol. Which diagnosis is most likely?", "opts": [["Intrinsic asthma", "Intrinsic asthma is non-atopic and of later, adult onset, often with nasal polyps and aspirin sensitivity. This 19-year-old has rhinitis, eczema and a dust trigger, an atopic picture. Tell: the atopic triad and an allergen trigger point to extrinsic, not intrinsic, asthma."], ["Vocal fold dysfunction", "Vocal fold dysfunction is an upper airway mimic in the differential, but it would not produce reversible lower airway obstruction on spirometry or travel with eczema and rhinitis. Tell: reversible obstruction plus atopy places the problem in the lower airways, not the larynx."], ["Extrinsic asthma", "Correct. Episodic wheeze, chest tightness and cough worse at night, a dust trigger, allergic rhinitis and eczema (the atopic triad), a normal exam between episodes, and an 18% rise in the 1-second volume after albuterol (12% or more is a positive response) make allergic, extrinsic asthma the diagnosis."], ["Chronic obstructive pulmonary disease", "Chronic obstructive pulmonary disease is a lower airway mimic, but its obstruction is largely irreversible and it follows years of smoke exposure. This student's obstruction reversed by 18% after albuterol. Tell: a large bronchodilator response in a young atopic patient supports asthma."]], "c": 2, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 25, 35, 53", "qid": "frkxfe"}, {"topic": "Drug safety and devices", "io": "Identify medical care strategies for chronic obstructive lung disease (COLD)/ chronic obstructive lung disease (COLD) for the following populations. 1. adult 2. elderly", "q": "A 77-year-old woman with chronic obstructive pulmonary disease and osteoporosis takes triple inhaled therapy. She has had 2 pneumonias this year and a wrist fracture after a fall. Which component of her regimen is linked to both pneumonia and fracture risk?", "opts": [["The inhaled corticosteroid", "Correct. Inhaled corticosteroids increase the risk of pneumonia, and in older adults the concerns include inhaled corticosteroid-related pneumonia and fracture risk. Her repeated pneumonias and fracture make that component the one to reassess."], ["The long-acting beta agonist", "Long-acting beta agonists carry cardiac risk, such as tachycardia, arrhythmias and worsening atrial fibrillation, not pneumonia or fractures. Tell: pneumonia and fracture together point to the steroid component."], ["The long-acting antimuscarinic", "Long-acting antimuscarinics are poorly absorbed, with mainly dry mouth. Tell: in older adults the drug tied to pneumonia and fractures is the inhaled corticosteroid."], ["Her as-needed albuterol", "Excessive albuterol risks cardiac and psychiatric side effects, not pneumonia or fractures. Tell: her 2 pneumonias and fracture fit the inhaled corticosteroid's risks."]], "c": 0, "cite": "37. svCOPD 2026.pptx, Slides 42, 53", "qid": "nc9040"}, {"topic": "Pneumonia workup and severity", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)", "q": "A 46-year-old woman with nonsevere community-acquired pneumonia treated as an outpatient is afebrile, eating and clinically stable on day 3. What is the shortest total antibiotic course that may be appropriate for her?", "opts": [["3 days", "Correct. For clinically stable, nonsevere community-acquired pneumonia, a course shorter than 5 days, with a minimum of 3 days, may be appropriate. She is stable by day 3. Severe pneumonia is different: at least 5 days and until clinical stability."], ["5 days", "Five days is the minimum for severe community-acquired pneumonia, which is treated for at least 5 days and until clinical stability. She has nonsevere disease and is stable. Tell: nonsevere and stable may stop sooner, with 3 days as the floor."], ["7 days", "Seven days is the usual course for hospital-acquired and ventilator-associated pneumonia when the response is adequate. She has outpatient community-acquired pneumonia. Tell: 7 days belongs to the hospital pathway, not to a stable outpatient."], ["10 days", "Ten days goes beyond what the current update requires for her. Long courses are for complications or specific pathogens, while a stable nonsevere pneumonia may stop after as few as 3 days. Tell: the update shortened courses for stable patients."]], "c": 0, "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 45, 47", "qid": "4funp5"}, {"topic": "Find the cause", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "A 55-year-old woman with known hypercalcemia has a metabolic alkalosis, a high urine chloride and a normal blood pressure. Arterial blood gas: pH 7.47 (normal 7.35 to 7.45), partial pressure of carbon dioxide 45 mm Hg (normal 36 to 44 mm Hg), bicarbonate 32 mEq/L (normal 22 to 26 mEq/L). In which group of metabolic alkalosis does she belong?", "opts": [["Saline responsive", "Saline-responsive alkalosis has a low urine chloride (below 25 mEq/L) and volume contraction. Hers is high. Tell: high urine chloride rules out the responsive type."], ["Saline unresponsive, normotensive", "Correct. A high urine chloride (above 40 mEq/L) marks saline-unresponsive alkalosis; with a normal blood pressure it is the normotensive group, which lists hypoparathyroidism and hypercalcemia and severe potassium depletion."], ["Saline unresponsive, hypertensive", "The hypertensive group (primary aldosteronism, mineralocorticoids, licorice) needs a raised blood pressure. Hers is normal, and hypercalcemia sits in the normotensive group. Tell: blood pressure splits the unresponsive causes."], ["Post-hypercapnic", "Post-hypercapnic alkalosis is saline responsive and follows rapid correction of chronic hypercapnia; she has neither a low urine chloride nor that history. Tell: it sits on the saline-responsive list."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slides 28, 41, 42, 43", "qid": "1f43g66"}, {"topic": "COVID-19", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)", "q": "A 48-year-old woman has coronavirus disease 2019 with fever, cough and mild shortness of breath. Her oxygen saturation is 96% on room air and her respiratory rate is 20/min, and a chest radiograph shows a patchy infiltrate. Which severity category fits?", "opts": [["Mild illness", "Mild illness has symptoms without shortness of breath and with a normal chest radiograph. Her radiograph shows an infiltrate and she is mildly short of breath. Tell: a positive radiograph is what separates moderate from mild."], ["Moderate illness", "Correct. Moderate illness has symptoms with a positive chest radiograph and an oxygen saturation of at least 94% on room air. Her patchy infiltrate makes her more than mild, and her saturation of 96% with a normal respiratory rate keeps her below severe."], ["Severe illness", "Severe illness needs an oxygen saturation below 94% on room air, marked tachypnea or infiltrates over more than 50% of the lungs. Her saturation is 96% and her respiratory rate is 20. Tell: severe starts below 94%."], ["Critical illness", "Critical illness means acute respiratory failure, septic shock or multiple organ dysfunction. She has none of these. Tell: a patchy infiltrate with normal oxygenation is moderate, far from critical."]], "c": 1, "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 119", "qid": "sb9j0p"}, {"topic": "Sputum and imaging", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following mycobacterial infections: a. Tuberculosis b. Atypical mycobacterial disease", "q": "A 52-year-old man has 12 mm of induration on a tuberculin skin test. His chest radiograph shows a fibrotic upper-lobe lesion, he does not recall ever being treated for tuberculosis, and he has no symptoms. Which step must come before latent-infection treatment?", "opts": [["An interferon-gamma release assay", "The blood test shows infection, which his skin test already shows, and neither test distinguishes latent infection from disease. Tell: the missing step is excluding active disease."], ["A repeat skin test in 8 to 10 weeks", "Repeat testing 8 to 10 weeks after exposure is for an early negative result after a recent exposure. Tell: his test is already positive, and his lesion raises the question of active disease, which must be excluded."], ["A second chest radiograph in 1 year", "Waiting a year leaves possible active disease unaddressed; fibrotic lesions warrant exclusion of active disease now. Tell: imaging cannot reliably determine activity, so microbiology is needed before treatment."], ["Exclusion of active tuberculosis disease", "Correct. Fibrotic lesions warrant review of prior treatment and exclusion of active disease, and tuberculosis disease must be excluded before latent-infection treatment begins. Imaging cannot reliably determine activity, so microbiologic testing answers that question."]], "c": 3, "cite": "38. Mycobacterial Infections including Tuberculosis - Bobilin - 10-29-2025 SV.pptx, Slides 27, 29, 37", "qid": "hmlrx2"}, {"topic": "Influenza", "io": "Identify medical care strategies for respiratory infections in the lecture topic list for the following populations. 1. adult 2. elderly", "q": "A 71-year-old man with chronic obstructive pulmonary disease and heart failure is hospitalized on day 5 of influenza, confirmed by molecular testing, with hypoxemia. Which antiviral is most appropriate?", "opts": [["Amantadine", "Amantadine and rimantadine are not recommended because of resistance. Tell: the hospital antiviral is oseltamivir, given orally or by enteric tube."], ["Inhaled zanamivir", "Inhaled zanamivir is avoided in chronic obstructive lung disease because of bronchospasm risk, and hospitalized patients generally receive oseltamivir instead. Tell: his lung disease and admission both rule out the inhaled drug."], ["Single-dose baloxavir", "Baloxavir is not recommended for hospitalized influenza and is limited to uncomplicated illness within 48 hours. He is hospitalized on day 5. Tell: admission and timing both rule it out."], ["Oral or enteric oseltamivir", "Correct. Hospitalized patients generally receive oral or enteric oseltamivir, which is preferred for hospitalized, severe and high-risk patients and is started even after 48 hours. His age, lung and heart disease and admission all point to it, with renal dose adjustment."]], "c": 3, "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 97, 98, 108, 109", "qid": "1sr7zaz"}, {"topic": "Pneumonia antibiotics", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)", "q": "A 64-year-old woman with severe community-acquired pneumonia in the intensive care unit had methicillin-resistant Staphylococcus aureus isolated from her sputum last year. She has been started on ceftriaxone plus azithromycin. Which agent should be added?", "opts": [["Moxifloxacin", "Moxifloxacin is a respiratory fluoroquinolone that can partner a beta-lactam in severe pneumonia, but it is not a methicillin-resistant Staphylococcus aureus agent and is not reliable for Pseudomonas. Tell: the agents named for resistant staphylococcus are vancomycin or linezolid."], ["Clindamycin", "Clindamycin is held back even in lung abscess because of Clostridioides difficile risk, and it is not an agent listed for methicillin-resistant Staphylococcus aureus pneumonia. Tell: the listed agents are vancomycin or linezolid."], ["Ertapenem", "Ertapenem is named as not a reliable antipseudomonal option and is not one of the agents listed for methicillin-resistant Staphylococcus aureus. Tell: her validated risk is the resistant staphylococcus, so the add-on is vancomycin or linezolid."], ["Vancomycin", "Correct. Methicillin-resistant Staphylococcus aureus coverage is added only for validated risks, and a prior respiratory isolate is one. The agents named for it are vancomycin or linezolid, added to the beta-lactam combination; cultures are obtained and therapy de-escalated as results return."]], "c": 3, "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 40, 44", "qid": "ws8egf"}, {"topic": "Home oxygen qualification", "io": "Discuss the selection and application of oxygen delivery", "q": "On an arterial blood gas, an arterial oxygen pressure at or below what cutoff qualifies a patient for home oxygen with no comorbidity required?", "opts": [["50 mm Hg", "A cutoff of 50 mm Hg is lower than the stated 55 mm Hg and would exclude patients at 51 to 55 mm Hg, who qualify. The line with no comorbidity required is at or below 55 mm Hg. Tell: remember 55, not a round 50."], ["55 mm Hg", "Correct. An arterial oxygen pressure at or below 55 mm Hg qualifies for home oxygen without any comorbidity (Group I). Readings of 56 to 59 mm Hg qualify only when pulmonary hypertension, cor pulmonale or polycythemia is documented."], ["59 mm Hg", "A value up to 59 mm Hg is not enough by itself. A pressure of 56 to 59 mm Hg is the conditional Group II range and needs pulmonary hypertension, cor pulmonale or polycythemia as well. Tell: with no comorbidity, stop at 55 mm Hg."], ["65 mm Hg", "A cutoff of 65 mm Hg is well above the qualifying range; the highest value that qualifies even with a comorbidity is 59 mm Hg. Tell: Group I is 55 mm Hg or lower, with 56 to 59 mm Hg needing a comorbidity."]], "c": 1, "cite": "35. Oxygen Delivery 2026.pptx, Slide 6", "qid": "1kmvq65"}, {"topic": "Course and prognosis", "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly", "q": "A 35-year-old man with asthma and a body mass index of 36 asks how his weight relates to his asthma. Which statement is accurate?", "opts": [["Obesity makes asthma harder to control", "Correct. Asthma is more frequent in people with a body mass index above 30, and their symptoms are more difficult to control, although the mechanism is unknown. His body mass index of 36 places him in that group."], ["Obesity makes asthma milder", "Obesity makes asthma symptoms more difficult to control, not milder. Tell: a body mass index above 30 is linked to more frequent asthma and harder control."], ["Obesity matters just for exercise-induced symptoms", "The link between obesity and asthma is not limited to exercise; asthma is more frequent and harder to control overall above a body mass index of 30. Tell: the effect covers his asthma as a whole."], ["Obesity has no link to asthma", "Obesity is a listed endogenous factor: asthma is more frequent in people with a body mass index above 30. Tell: weight is linked to both how often asthma occurs and how hard it is to control."]], "c": 0, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 27", "qid": "1lzkwxy"}, {"topic": "Refractory asthma", "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.", "q": "A 45-year-old woman with severe persistent asthma has needed 4 courses of oral corticosteroids this year despite confirmed adherence and good technique with her inhaled corticosteroid and long-acting beta-2 agonist. Which step is most appropriate?", "opts": [["Stop the long-acting beta-2 agonist", "Removing part of a regimen she uses correctly would not explain or fix her exacerbations. Tell: refractory, steroid-dependent asthma despite adherence calls for a specialist, who can offer agents that reduce the need for steroids."], ["Start allergen immunotherapy at home", "Immunotherapy must be done in a controlled environment because it can induce bronchoconstriction, and it targets allergic triggers. Tell: her problem is refractory severe asthma, which calls for specialist care."], ["Refer to a lung or allergy specialist", "Correct. With adherence and technique confirmed, her repeated steroid-requiring exacerbations make her asthma refractory. Monoclonal antibody agents are used by pulmonology and allergy specialists and reduced the need for corticosteroids in trials, so referral to a specialist fits."], ["Add theophylline", "Theophylline gives mild bronchodilation but has a narrow toxic-therapeutic range and is rarely used because of toxicity concerns. Tell: refractory disease needing repeated steroids is a specialist referral, where steroid-sparing antibody therapy is available."]], "c": 2, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 84, 91", "qid": "ulym1q"}, {"topic": "Hospital and ventilator pneumonia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)", "q": "A 66-year-old woman is expected to need mechanical ventilation for several days after a large stroke. Which measure helps prevent ventilator-associated pneumonia?", "opts": [["Keeping her lying flat", "Proper positioning means elevating the head of the bed, the opposite of lying flat, because the pneumonia comes from colonized secretions inhaled through the tube. Tell: head up keeps secretions out of the lungs."], ["Elevating the head of the bed", "Correct. Prevention is the main strategy for ventilator-associated pneumonia: early extubation, hand washing and sterile technique, limiting circuit changes, proper positioning with the head of the bed elevated, and supraglottic secretion drainage with mouth care."], ["Daily ventilator circuit changes", "Changing parts of the circuit is one of the ways contamination enters, so prevention limits circuit changes. Tell: fewer breaks in the circuit, not more, prevent this pneumonia."], ["Prophylactic broad antibiotics", "Prior antibiotic use is listed among the contributors to ventilator pneumonia, and the prevention bundle relies on extubation, hygiene, positioning and secretion care. Tell: prevention here is mechanical and hygienic, not antibiotic."]], "c": 1, "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 48, 49", "qid": "174jvji"}, {"topic": "Acute bronchitis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)", "q": "A 29-year-old woman has had 9 days of coughing fits that end in vomiting, with a whooping sound on inspiration. Her nephew was diagnosed with pertussis last week. Her vital signs and lung examination are normal. What is the most appropriate next step?", "opts": [["Supportive care and reassurance", "Supportive care fits uncomplicated viral bronchitis, but suspected pertussis needs targeted testing and treatment to reduce spread to others. Her exposure and coughing fits make this more than a chest cold. Tell: transmission is the reason not to stop at reassurance."], ["Targeted pertussis testing", "Correct. Paroxysmal cough, post-tussive vomiting, a whoop and a relevant exposure are the pertussis clues, and suspected pertussis needs targeted testing and treatment to reduce transmission. There is no need to wait for 4 weeks of cough before testing."], ["Chest radiograph", "Imaging is obtained when vital signs, focal lung findings or clinical risk raise concern for pneumonia. Her vital signs and examination are normal. Tell: the pertussis clues call for organism-targeted testing, not a film of the lungs."], ["Reassess after 4 weeks of cough", "Waiting is the error the guidance warns against: do not wait for 4 weeks of cough when the pertussis clues are present. Her whoop, post-tussive vomiting and exposure already justify testing. Tell: the clues, not the length of the cough, trigger the workup."]], "c": 1, "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 15, 17, 18", "qid": "13xw16v"}, {"topic": "Treat the disorder", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "A 70-year-old man with hypertension treated with a thiazide diuretic is light-headed on standing. Arterial blood gas: pH 7.49 (normal 7.35 to 7.45), partial pressure of carbon dioxide 46 mm Hg (normal 36 to 44 mm Hg), bicarbonate 34 mEq/L (normal 22 to 26 mEq/L); potassium 3.2 mEq/L (normal 3.5 to 5.0 mEq/L); urine chloride is low. Along with isotonic saline, which medication change is indicated?", "opts": [["Start a mineralocorticoid", "Mineralocorticoids cause a hypertensive, saline-unresponsive metabolic alkalosis, so adding one would worsen his. Tell: mineralocorticoids are on the cause list, not the treatment list."], ["Stop the thiazide diuretic", "Correct. Low urine chloride and orthostatic symptoms mark a saline-responsive metabolic alkalosis, and diuretic therapy is a listed cause. Treatment is isotonic saline for the volume deficit and discontinuing the diuretic."], ["Start a calcium carbonate antacid", "Antacids are a cause of saline-responsive metabolic alkalosis, so starting one adds alkali to an alkalemia. Tell: antacid, diuretic and vomiting sit together on the cause list."], ["Add a second diuretic", "A second diuretic would deepen the volume contraction and the alkalosis; diuretics are discontinued in saline-responsive alkalosis. Tell: the drug causing the alkalosis is stopped, not doubled."]], "c": 1, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 44", "qid": "v7zcby"}, {"topic": "Diagnostic testing", "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases", "q": "A 27-year-old man describes cough and chest tightness with cold air and smoke over several months. His spirometry is normal, with no meaningful change after albuterol. Asthma is still suspected. Which test is most appropriate next?", "opts": [["Chest x-ray", "The chest x-ray in asthma is usually normal or shows hyperinflation, so it adds little after normal spirometry. Tell: when spirometry fails to show asthma, the next step is to provoke airway hyper-responsiveness with methacholine."], ["Repeat spirometry in 1 year", "Annual spirometry is for monitoring the progression of known disease, not for settling a suspected diagnosis today. Tell: when spirometry is not diagnostic, bronchial provocation testing is the next test."], ["Methacholine challenge", "Correct. Bronchial provocation testing with methacholine or histamine is useful when spirometry is not diagnostic, as here, where a typical history meets normal spirometry. His normal lung function also clears the rule that provocation is not done below 65% predicted."], ["Exercise challenge", "An exercise challenge is the provocation test used when exercise-induced bronchospasm is suspected. His triggers are cold air and smoke, not exercise. Tell: for a nondiagnostic spirometry with general triggers, methacholine or histamine challenge is the test."]], "c": 2, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 58", "qid": "wypnm2"}, {"topic": "Presentation and differential", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following mycobacterial infections: a. Tuberculosis b. Atypical mycobacterial disease", "q": "A 47-year-old man moved 1 year ago from an area with high tuberculosis incidence. He has 6 weeks of productive cough, fever, night sweats, weight loss and hemoptysis, and his chest radiograph shows an upper-lobe cavity. His interferon-gamma release assay is positive. What is the most likely diagnosis?", "opts": [["Nontuberculous mycobacterial disease", "Nontuberculous disease is on the differential and causes chronic cough, weight loss and hemoptysis, with risk rising in bronchiectasis, chronic obstructive pulmonary disease and immune dysfunction. Tell: he has none of those, while his positive assay reflects tuberculosis-specific antigens."], ["Lung abscess", "Lung abscess is on the differential for fever, weight loss, hemoptysis and cavitary disease, because these findings have a broad differential. Tell: his origin in a high-incidence area and his positive interferon-gamma release assay make tuberculosis the leading cause, pending sputum testing."], ["Pulmonary tuberculosis", "Correct. Residence in a high-incidence area is an exposure risk, and persistent cough, fever, night sweats, weight loss and hemoptysis are pulmonary manifestations; post-primary disease often involves the upper lobes and may cavitate. Imaging and the blood test support the suspicion; sputum microbiology confirms it."], ["Lung cancer", "Lung cancer is one of the other causes of cavitary disease on the differential. Tell: fever, night sweats, recent arrival from a high-incidence area and a positive interferon-gamma release assay point to tuberculosis, which microbiology then confirms."]], "c": 2, "cite": "38. Mycobacterial Infections including Tuberculosis - Bobilin - 10-29-2025 SV.pptx, Slides 14, 16, 18, 28", "qid": "1o8sdsf"}, {"topic": "Homeostasis and buffering", "io": "Identify mechanisms for maintaining acid-base homeostasis.", "q": "What happens to carbon dioxide when ventilation increases?", "opts": [["It decreases", "Correct. Increased ventilation decreases carbon dioxide, and decreased ventilation increases it. In the steady state, carbon dioxide production matches excretion, so changing ventilation shifts the balance."], ["It stays the same", "Ventilation changes carbon dioxide directly; the steady state, with production matching excretion, holds only while ventilation stays constant. Increasing ventilation raises excretion, so carbon dioxide falls. Tell: when excretion exceeds production, the level cannot stay the same."], ["It turns into bicarbonate", "Carbon dioxide is not converted away here: increased ventilation removes carbon dioxide from the body, lowering it. Tell: ventilation clears carbon dioxide; the kidneys compensate for respiratory disorders by retaining or excreting bicarbonate."], ["It increases", "Carbon dioxide rises with decreased ventilation, not increased. More ventilation blows it off, so it falls. Tell: more breaths mean more carbon dioxide leaves, fewer breaths mean it builds up."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slides 12, 22, 30", "qid": "1snmlpj"}, {"topic": "Smoking cessation and vaccines", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 55-year-old woman with group B chronic obstructive pulmonary disease still smokes a pack a day. She asks what single step would do the most to slow her disease. Which intervention is most appropriate?", "opts": [["Long-term azithromycin", "Long-term azithromycin is not among the measures listed for improving survival. Tell: the intervention with a survival benefit is smoking cessation."], ["Adding an inhaled corticosteroid", "An inhaled corticosteroid adds pneumonia risk and must be combined with a long-acting beta agonist and raises pneumonia risk. Tell: no inhaler is the step that most helps survival; stopping smoking is."], ["Smoking cessation with counseling", "Correct. Smoking cessation is the only treatment that can slow progression, and every attempt should be combined with counseling to increase efficacy; nicotine replacement, bupropion or varenicline can be added. It is essential for every group."], ["A chest computed tomography scan", "Chest computed tomography can categorize emphysema but is generally not needed, and imaging changes nothing about progression. Tell: her most powerful step is quitting smoking with counseling."]], "c": 2, "cite": "37. svCOPD 2026.pptx, Slides 9, 43, 46", "qid": "8m5kfz"}, {"topic": "Education and action plans", "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.", "q": "A 41-year-old man with asthma is reviewing his written action plan with you. Which finding is a danger sign telling him to take his quick-relief medicine and go to the hospital or call an ambulance now?", "opts": [["Mild wheeze with the first signs of a cold", "The first signs of a cold and mild wheeze are caution, or yellow-zone, features. Tell: those call for adding quick-relief medicine, while blue lips or fingernails call for the hospital now."], ["Coughing at night", "Night cough, like waking at night with asthma, is a yellow-zone sign that asthma is getting worse. Tell: yellow means add quick-relief medicine and keep the controller; the danger signs are blue lips or trouble walking and talking."], ["Peak flow at 75% of personal best", "A reading of 75% of personal best falls in the yellow zone, 50% to 79%. Tell: the red zone starts below 50%, and the danger signs are blue lips or fingernails and trouble walking and talking from breathlessness."], ["Blue lips or fingernails", "Correct. The action plan's danger signs are trouble walking and talking because of shortness of breath, and lips or fingernails that are blue. Either one means take the quick-relief medicine and go to the hospital or call an ambulance now, without waiting."]], "c": 3, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 88, 89", "qid": "1ytk6kl"}, {"topic": "Transmission and progression risk", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following mycobacterial infections: a. Tuberculosis b. Atypical mycobacterial disease", "q": "A 44-year-old man is about to start a tumor necrosis factor inhibitor. He has no symptoms of tuberculosis and has never been tested for it. Which step regarding tuberculosis is most appropriate before he starts?", "opts": [["Three sputum specimens for culture", "Sputum specimens are collected when pulmonary tuberculosis disease is suspected from symptoms or suspicious imaging. Tell: he is symptom-free, so the question is infection, answered by a skin test or interferon-gamma release assay."], ["Targeted testing for tuberculosis infection", "Correct. Tumor necrosis factor inhibitors raise the risk of progression after tuberculosis infection, and testing is targeted at people at increased risk. A skin test or interferon-gamma release assay detects the immune response to infection; a positive result then needs clinical evaluation and chest imaging."], ["No testing because he has no symptoms", "Symptoms may be mild or absent, and testing targets people at increased risk, whether or not they have symptoms. Tell: his planned tumor necrosis factor inhibitor is a progression risk, which is the reason to test."], ["Empiric latent-infection treatment", "Latent-infection treatment follows a positive test and exclusion of disease. Tell: the first step is a test for infection; treatment decisions follow its result and a clinical evaluation."]], "c": 1, "cite": "38. Mycobacterial Infections including Tuberculosis - Bobilin - 10-29-2025 SV.pptx, Slides 15, 19", "qid": "187sqzm"}, {"topic": "Complications and education", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 70-year-old woman with frequent exacerbations asks about taking azithromycin every day to prevent them, as a friend does. Which statement about long-term azithromycin is accurate?", "opts": [["It is routine first-line therapy", "Long-term azithromycin is used rarely, not as routine first-line therapy. Tell: first-line maintenance is built from bronchodilators by group, with smoking cessation and rehabilitation."], ["It replaces her inhalers", "No antibiotic replaces long-acting bronchodilators, which treat bronchoconstriction and prevent exacerbations. Tell: azithromycin would be an occasional add-on, not a substitute."], ["It has no side effects", "Long-term use increases side effects as well as resistance. Tell: the risks are why it is used rarely. Resistance can also limit future antibiotic choices."], ["It is rare and raises resistance", "Correct. Some patients are put on long-term azithromycin or erythromycin, but this is rare, and it increases the risk of resistance and side effects. Frequent exacerbations despite optimal therapy are a reason for pulmonology referral."]], "c": 3, "cite": "37. svCOPD 2026.pptx, Slides 54, 59", "qid": "1bc9j"}, {"topic": "Medications", "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly", "q": "A 68-year-old woman taking theophylline for asthma has nausea, vomiting, headache and a rapid irregular heartbeat. Her potassium is low and her glucose high. Which explanation best fits her presentation?", "opts": [["Theophylline toxicity", "Correct. Theophylline has a narrow toxic-therapeutic range, and its toxic effects are nausea, vomiting, tachyarrhythmias, headache, seizure, hyperglycemia and hypokalemia, matching this woman's picture. That toxicity is why it is rarely used and needs close monitoring."], ["Inhaled corticosteroid side effects", "Inhaled corticosteroids cause local effects: hoarseness, cough and oral thrush. Their systemic side effects are minimal, so they do not explain vomiting, arrhythmia and low potassium. Tell: her systemic toxic picture belongs to the drug with a narrow toxic-therapeutic range, theophylline."], ["Aspirin-sensitive reaction", "An aspirin-sensitive reaction brings rhinorrhea, conjunctival irritation, flushing and wheeze after aspirin, and aspirin is not part of her story. Tell: vomiting, arrhythmia, hypokalemia and hyperglycemia in a theophylline user point to toxicity."], ["Albuterol side effects", "Muscle tremor and palpitations are the listed side effects of the short-acting beta-2 agonist class. Vomiting, headache and the arrhythmia with low potassium and high glucose are the listed toxic effects of theophylline, and the stem names theophylline. Tell: the whole cluster matches theophylline toxicity."]], "c": 0, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 71, 75, 81, 82, 92", "qid": "187c3d2"}, {"topic": "Indications and the infarction caution", "io": "Identify the indications, benefits, and hazards of oxygen therapy.", "q": "A 68-year-old woman with diabetes and an acute myocardial infarction has an oxygen saturation of 87% on room air. Which is the right approach to oxygen?", "opts": [["Give oxygen, since saturation is below 91%", "Correct. Her saturation of 87% is below the 91% cutoff. Oxygen is held back in a myocardial infarction because of vasoconstriction, but only while the saturation is 91% or higher. She is hypoxic, so the benefit of correcting hypoxia wins and she should receive oxygen."], ["Withhold oxygen because of her diabetes", "Diabetes is not a listed reason to withhold oxygen. The hazards listed are carbon dioxide retention, fire, mucosal irritation and vasoconstriction, and the myocardial infarction rule turns on a saturation under 91%. Tell: the saturation decides, not her comorbidity."], ["Wait for an arterial blood gas first", "An arterial blood gas is not required before treating. A pulse oximeter reading of 87% already shows she is below 91%, and delaying oxygen leaves hypoxia uncorrected. Tell: the threshold rests on the saturation she already has; no extra test is needed to start."], ["Withhold oxygen because of vasoconstriction", "Vasoconstriction is the reason oxygen is withheld in a myocardial infarction, but that applies unless the saturation is below 91%. At 87% she is below it, so the exception applies. Tell: withhold when the saturation is 91% or higher, give when it is below 91%."]], "c": 0, "cite": "35. Oxygen Delivery 2026.pptx, Slide 3", "qid": "q975ox"}, {"topic": "Metabolic acidosis and the anion gap", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "Sodium 138 mEq/L (normal 135 to 145), chloride 114 mEq/L (normal 98 to 106) and bicarbonate 14 mEq/L (normal 22 to 26). What is the calculated anion gap?", "opts": [["10", "Correct. Anion gap = 138 - (114 + 14) = 138 - 128 = 10, within the normal 9 to 15. With a low bicarbonate and a high chloride, this is a normal-gap (hyperchloremic) metabolic acidosis."], ["14", "14 is the bicarbonate value itself, not the gap. The gap is calculated: 138 - (114 + 14) = 10. Tell: the gap comes from the subtraction, not a single listed value."], ["24", "24 comes from 138 - 114, leaving out the bicarbonate. Subtract both measured anions: 138 - 128 = 10. Tell: the sum of chloride and bicarbonate is 128."], ["38", "38 adds the bicarbonate instead of subtracting it (138 - 114 + 14). The gap is 138 - (114 + 14) = 10. Tell: add the two anions, then subtract the sum from sodium."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 47", "qid": "1hm28pb"}, {"topic": "Vaccines", "io": "Identify and discuss vaccines which prevent respiratory infections.", "q": "For an eligible adult who has never had a pneumococcal conjugate vaccine, which vaccine type completes the series with one dose?", "opts": [["A 15-valent conjugate vaccine", "The 15-valent conjugate vaccine does not finish the series alone: it is usually followed by the 23-valent polysaccharide vaccine, typically at least 1 year later. Tell: the one-and-done options are the 20- and 21-valent vaccines."], ["A 23-valent polysaccharide vaccine", "The 23-valent vaccine is the polysaccharide vaccine, used after the 15-valent conjugate vaccine rather than as a single complete series. Tell: the single dose that completes the series is a 20- or 21-valent conjugate."], ["A 23-valent conjugate vaccine", "There is no 23-valent conjugate vaccine: the 23-valent product is the polysaccharide vaccine, and calling it a conjugate is a known error. Tell: the conjugate vaccines are 15-, 20- and 21-valent."], ["A 20- or 21-valent conjugate vaccine", "Correct. One dose of the 20-valent or 21-valent pneumococcal conjugate vaccine completes the series for a conjugate-naive eligible adult. The 15-valent conjugate vaccine, by contrast, usually needs the 23-valent polysaccharide vaccine afterward."]], "c": 3, "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 8, 9, 124", "qid": "1wneip0"}, {"topic": "Medications", "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.", "q": "A 24-year-old woman started an inhaled corticosteroid for moderate persistent asthma 1 week ago and wants to stop it because she does not feel much different yet. What should she be told?", "opts": [["It is meant to be used during attacks", "Inhaled corticosteroids are long-term controllers, not rescue medicines; attacks are treated with the short-acting rescue inhaler. Tell: a controller is taken every day and works gradually, over months."], ["It should work within minutes", "Relief within minutes describes a short-acting beta-2 agonist, which relaxes smooth muscle and lasts about 3 to 6 hours. Tell: inhaled corticosteroids reduce inflammation slowly, with maximum response taking months."], ["Its full effect can take months", "Correct. Inhaled corticosteroids are the preferred first-line treatment for persistent asthma, and most patients respond to twice-daily dosing, but the maximum response may take months. One week is too early to judge, and stopping would leave her inflammation untreated."], ["Her lack of change means she needs oral steroids", "Long-term systemic steroids are for refractory or poorly controlled cases, and 1 week cannot show failure of an inhaled steroid. Tell: maximum response to inhaled corticosteroids may take months."]], "c": 2, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 74", "qid": "1jseisv"}, {"topic": "History and examination", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.", "q": "Which examination finding correlates with the degree of airway obstruction in asthma?", "opts": [["Inspiratory crackles at the bases", "Basilar inspiratory crackles suggest alveolar fluid or fibrosis, not asthma's airway obstruction. The finding that tracks obstruction is a prolonged expiratory phase. Tell: asthma's findings cluster on expiration, while crackles here are inspiratory."], ["A shortened expiratory phase", "Obstruction lengthens expiration rather than shortening it, because air leaves slowly through narrowed airways. A prolonged expiratory phase correlates with the obstruction. Tell: the more narrowed the airway, the longer it takes to breathe out."], ["A prolonged expiratory phase", "Correct. A prolonged expiratory phase during normal respiration correlates with obstruction, because air takes longer to leave through narrowed airways. In severe exacerbations wheezing may disappear, leaving decreased breath sounds with prolonged expiration."], ["A pericardial friction rub", "A friction rub is a pericarditis sign and says nothing about airway obstruction. A prolonged expiratory phase correlates with obstruction in asthma. Tell: a rub is a heart sound tied to the cardiac cycle, not to breathing out."]], "c": 2, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 51", "qid": "1dycjo1"}, {"topic": "Pneumocystis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)", "q": "A 33-year-old man with human immunodeficiency virus infection has never had Pneumocystis pneumonia. His CD4 (cluster of differentiation 4) count is 160 cells/mm³, and his viral load is detectable. What is the most appropriate next step?", "opts": [["Start primary prophylaxis", "Correct. Primary prophylaxis starts for a CD4 (cluster of differentiation 4) count below 100 cells/mm³, or a count of 100 to 200 with a detectable viral load. His 160 with a detectable viral load meets the second criterion, and trimethoprim-sulfamethoxazole is the preferred drug."], ["Prophylaxis after a first episode", "Secondary prophylaxis follows a completed treatment course, but primary prophylaxis is meant to prevent the first episode in patients who meet the count criteria. Tell: he has never had the infection and already qualifies for primary prophylaxis."], ["Wait until the count is below 100", "Below 100 is one trigger, but a count of 100 to 200 with a detectable viral load is the other, and he meets it. Tell: read both parts of the criterion; his detectable viral load brings the threshold up to 200."], ["No prophylaxis while he feels well", "Prophylaxis is decided by the count and the viral load, not by symptoms; waiting for symptoms means waiting for the infection. Tell: a count of 160 with a detectable viral load qualifies him whether or not he feels well."]], "c": 0, "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 73", "qid": "cubto3"}, {"topic": "How the body compensates", "io": "Identify mechanisms for maintaining acid-base homeostasis.", "q": "A 38-year-old woman develops an acute respiratory acidosis after aspiration pneumonitis two hours ago. When will her kidneys begin to compensate?", "opts": [["In 6 to 12 hours, completing over days", "Correct. In respiratory acidosis the kidneys excrete acid as ammonium chloride and retain bicarbonate; this begins 6 to 12 hours after onset, and complete compensation may take days. At two hours her bicarbonate is near normal."], ["Within minutes, completing in an hour", "Breathing changes carbon dioxide quickly, but renal bicarbonate control works over hours to days. Tell: the kidneys are the slow system."], ["They do not; the lungs compensate instead", "When the cause is respiratory, the compensation is renal: the kidneys retain or excrete bicarbonate. The lungs compensate for metabolic disorders. Tell: respiratory problem, renal fix."], ["After weeks, completing over months", "Renal compensation begins within 6 to 12 hours and may be complete in days, not weeks. Tell: hours to start, days to finish."]], "c": 0, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 22", "qid": "1f2818a"}, {"topic": "Exercise-induced bronchospasm", "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly", "q": "A 17-year-old runner with exercise-induced bronchospasm uses albuterol before every practice, yet still has frequent symptoms during training. Which change is most likely to prevent his episodes?", "opts": [["Regular inhaled corticosteroid use", "Correct. Exercise-induced bronchospasm is treated with a short-acting beta-2 agonist before exercise but is best prevented with regular inhaled corticosteroid use. His frequent symptoms despite pre-exercise albuterol call for the regular controller."], ["Stopping exercise permanently", "Asthma treatment aims for no limitation on physical activity, so giving up running is not the goal. Tell: regular inhaled corticosteroid use best prevents exercise-induced bronchospasm and keeps him training."], ["Saving albuterol for after symptoms start", "Albuterol helps most when used before exercise, and moving it to after symptoms begin gives up that protection. Tell: when pre-exercise albuterol is not enough, prevention comes from a regular inhaled corticosteroid."], ["Cromolyn sodium taken during symptoms", "Cromolyn prevents symptoms but does not relieve them once present, so taking it during an episode does not help. Tell: the agent that best prevents exercise-induced bronchospasm is a regular inhaled corticosteroid."]], "c": 0, "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 66, 96", "qid": "1fq1tm8"}, {"topic": "Choosing a device", "io": "Select the appropriate equipment and supplies necessary for initiating oxygen therapy.", "q": "A 60-year-old man is found unresponsive and is not breathing. He has a pulse. A colleague reaches for a non-rebreather mask. Why does that device not fit his situation?", "opts": [["Its fraction of oxygen is too low", "A non-rebreather delivers a high fraction, 60-100% at 10-15 L/min, so a low fraction is not the problem. Its listed use is a severely hypoxic patient who is still ventilating well, and he is not breathing. Tell: the mask's strength is not in question; his breathing is."], ["Its bag must collapse on each breath", "The dosing rule is the reverse: prevent bag collapse on inspiration, at 10-15 L/min. A bag rule does not explain why the mask fails a man who is not breathing. Tell: the non-rebreather is for patients who are still ventilating well."], ["It is a high flow oxygen device", "The non-rebreather is a low flow device, but with a high fraction; the high flow device on the list is the Venturi mask. Its flow type is not what rules it out here. Tell: he fails the mask's requirement that the patient is still ventilating well."], ["It is for patients ventilating well", "Correct. He is unresponsive and not breathing, though he has a pulse. A non-rebreather mask is used in severely hypoxic patients who are still ventilating well, and he is not breathing at all, so the mask's listed use does not fit him."]], "c": 3, "cite": "35. Oxygen Delivery 2026.pptx, Slides 15, 16, 17, 20", "qid": "1j5rupi"}, {"topic": "Admission and discharge", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 75-year-old woman with chronic obstructive pulmonary disease has a severe exacerbation. She is confused, her blood pressure is falling despite fluids, and she is tiring and may need invasive ventilation. Which level of care is most appropriate?", "opts": [["Outpatient management", "More than 80% of exacerbations are managed outpatient, but only when the patient is stable. Tell: confusion and falling blood pressure place her at the other end, in intensive care."], ["Intensive care admission", "Correct. Intensive care admission is for patients who are hemodynamically unstable, have a major infection or need invasive ventilatory support, and for sepsis, altered mental status, respiratory failure or respiratory acidosis. Her confusion, falling pressure and possible need for intubation meet these."], ["Hospital ward admission", "A ward fits admission criteria such as marked symptoms despite treatment or lack of home support. Tell: hemodynamic instability, altered mental status and possible invasive ventilation call for intensive care."], ["Pulmonary rehabilitation", "Rehabilitation is considered at discharge after an exacerbation, not during a critical one. Tell: her instability and tiring breathing call for intensive care."]], "c": 1, "cite": "37. svCOPD 2026.pptx, Slide 57", "qid": "nftbds"}, {"topic": "Recognizing the disease", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 61-year-old man who smokes has coughed up thick sputum most days for 4 months of each of the last 3 years. He has rhonchi, bluish lips and swelling of both ankles. His blood gas shows low oxygen and raised carbon dioxide, and his diffusing capacity is near normal. Post-bronchodilator spirometry shows a ratio of 0.64. Which subtype best describes his disease?", "opts": [["Emphysema subtype", "Emphysema brings a thin, pursed-lip breather with preserved gas exchange until late and a reduced diffusing capacity. He has early hypoxemia and hypercapnia with a near-normal diffusing capacity. Tell: sputum, cyanosis and edema point to bronchitis."], ["Chronic bronchitis without obstruction", "Chronic bronchitis without airflow obstruction is not this disease, but his ratio of 0.64 confirms obstruction. Tell: once the ratio is below 0.70, his chronic cough places him in the chronic bronchitis subtype."], ["Asthma", "Asthma does not usually bring years of daily sputum, cyanosis, edema and chronic carbon dioxide retention in a smoker. Tell: his cough history meets the chronic bronchitis definition, with persistent obstruction."], ["Chronic bronchitis subtype", "Correct. Productive cough for at least 3 months a year over 2 years, rhonchi, cyanosis, edema, early hypoxemia and hypercapnia, and a near-normal diffusing capacity, with confirmed obstruction (ratio 0.64), are the chronic bronchitis picture (the blue bloater)."]], "c": 3, "cite": "37. svCOPD 2026.pptx, Slides 6, 14, 15", "qid": "1xkymv2"}, {"topic": "Infection versus disease", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following mycobacterial infections: a. Tuberculosis b. Atypical mycobacterial disease", "q": "A 34-year-old woman who works in a setting with ongoing tuberculosis transmission has a positive interferon-gamma release assay on targeted testing. She has no symptoms, her examination is normal and her chest radiograph is normal. Which best describes her tuberculosis status?", "opts": [["Latent tuberculosis infection", "Correct. A positive interferon-gamma release assay shows infection, and her clinical evaluation found no evidence of disease: no symptoms, a normal examination and a normal radiograph, which is usual in latent infection. Latent infection is asymptomatic and not infectious."], ["Pulmonary tuberculosis disease", "Disease needs more than an immune response: symptoms such as persistent cough, fever, night sweats or weight loss, or suspicious imaging, then microbiologic testing. Tell: she has none of these, and the blood test cannot by itself distinguish latent infection from disease."], ["Reactivation (secondary) tuberculosis", "Reactivation is latent infection that has progressed to disease, often with impaired immunity, so it brings symptoms or imaging findings. Tell: nothing here has progressed; she is still at the latent stage."], ["Progressive primary tuberculosis", "Progressive primary tuberculosis is disease that develops soon after initial infection when immune containment fails, so it brings clinical findings. Tell: a symptom-free woman with a normal examination and radiograph has contained infection, not progressive disease."]], "c": 0, "cite": "38. Mycobacterial Infections including Tuberculosis - Bobilin - 10-29-2025 SV.pptx, Slides 10, 19, 29", "qid": "6atcth"}, {"topic": "Read the blood gas", "io": "Identify simple acid-base disorders by interpreting diagnostic test results and patient presentations", "q": "A 45-year-old man has resistant hypertension, muscle weakness and a potassium of 2.8 mEq/L (normal 3.5 to 5.0 mEq/L). Arterial blood gas: pH 7.49 (normal 7.35 to 7.45), partial pressure of carbon dioxide 47 mm Hg (normal 36 to 44 mm Hg), bicarbonate 34 mEq/L (normal 22 to 26 mEq/L). Which acid-base disorder is present?", "opts": [["Respiratory acidosis", "His pH of 7.49 is high, so this cannot be an acidosis. The mildly raised carbon dioxide is compensation for the metabolic alkalosis, from decreased ventilation. Tell: compensation never overcorrects the pH."], ["Metabolic acidosis", "Metabolic acidosis has a low pH and a low bicarbonate. He has a pH of 7.49 and a bicarbonate of 34, the reverse on both. Tell: hypokalemia goes with alkalosis, while acidosis may bring hyperkalemia."], ["Metabolic alkalosis", "Correct. The pH of 7.49 is alkalemia, and the bicarbonate of 34 is high and matches it, so it is metabolic. The carbon dioxide of 47 is slight respiratory compensation. Hypertension with hypokalemia points to a hypertensive saline-unresponsive cause such as primary aldosteronism."], ["Respiratory alkalosis", "Respiratory alkalosis needs a low carbon dioxide, and his is 47. The raised bicarbonate of 34 matches his high pH. Tell: a high pH with a high bicarbonate means metabolic."]], "c": 2, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 43", "qid": "36qs1y"}, {"topic": "Hospital and ventilator pneumonia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)", "q": "A 58-year-old man with ventilator-associated pneumonia has had an adequate response to culture-directed antibiotics. What is the usual total duration of therapy?", "opts": [["3 days", "Three days is the floor for a clinically stable, nonsevere community-acquired pneumonia, not for ventilator-associated pneumonia. Tell: the hospital and ventilator pathway uses about 7 days when the response is adequate."], ["5 days", "At least 5 days is the minimum for severe community-acquired pneumonia. His pneumonia is ventilator associated, where 7 days is usual. Tell: 5 belongs to severe community-acquired disease, 7 to the hospital pathway."], ["7 days", "Correct. For hospital-acquired and ventilator-associated pneumonia, a 7-day course is usual when the response is adequate, adjusted to clinical response, with prompt de-escalation as cultures clarify the diagnosis."], ["14 days", "Fourteen days is longer than needed when the response is adequate; the usual course is 7 days, adjusted to clinical response. Tell: longer courses are for complications or specific pathogens, not an adequately responding ventilator pneumonia."]], "c": 2, "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 46, 49", "qid": "1guallw"}, {"topic": "Aspiration and lung abscess", "io": "Identify medical care strategies for respiratory infections in the lecture topic list for the following populations. 1. adult 2. elderly", "q": "In an older adult, which factor most raises the risk of aspiration pneumonia?", "opts": [["Cruise ship travel", "Hotel or cruise ship travel in the past two weeks points to Legionella pneumonia. Tell: aspiration risk comes from dysphagia, altered consciousness or impaired airway protection."], ["Bat or bird droppings", "Soil with bat or bird droppings is the exposure for histoplasmosis. Tell: aspiration risk is about swallowing and airway protection, such as dysphagia."], ["Pet bird exposure", "Exposure to parrots, parakeets and other birds is the risk for psittacosis. Tell: aspiration pneumonia follows dysphagia or impaired airway protection."], ["Dysphagia", "Correct. Risk factors for aspiration include dysphagia, altered consciousness and impaired airway protection; in the older patient, a swallowed bolus can enter the trachea. Swallowing, oral hygiene, positioning and reversible risks are assessed."]], "c": 3, "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 50", "qid": "qrmmoh"}, {"topic": "Acute bronchitis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)", "q": "A 45-year-old woman without asthma or chronic lung disease has 8 days of cough after a cold, with a mild expiratory wheeze. She is afebrile with a normal oxygen saturation and no focal findings. Which treatment should not be prescribed routinely?", "opts": [["A short bronchodilator trial", "A short bronchodilator trial may help selected patients with wheeze or airflow obstruction, and she has a wheeze; it is reasonable, with reassessment for asthma if it persists. Tell: bronchodilators are allowed for wheeze; the steroid is the routine prescription to avoid."], ["Oral corticosteroids", "Correct. Systemic or inhaled corticosteroids are not routinely prescribed for uncomplicated bronchitis. Her wheeze is the transient wheeze of bronchitis from inflammation and mucus, with no asthma history and no focal findings, so a steroid adds risk without benefit."], ["Acetaminophen as needed", "Acetaminophen is a reasonable option for fever or discomfort, with a check that no combination product duplicates it. Tell: it is a symptom-relief measure, not one of the routine prescriptions the bronchitis guidance warns against."], ["Counseling on cough duration", "Explaining the expected course is part of management: the cough commonly lasts 2 to 3 weeks and may persist longer. Tell: counseling is what replaces unnecessary prescriptions, so it is the step to keep, not the one to withhold."]], "c": 1, "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 15, 17, 19, 20", "qid": "sw7f45"}, {"topic": "Find the cause", "io": "Identify the etiologies, clinical manifestations, and management of simple acid-base disorders, including: a. Respiratory acidosis b. Respiratory alkalosis c. Metabolic acidosis d. Metabolic alkalosis", "q": "A 72-year-old man with severe chronic obstructive pulmonary disease was intubated with a carbon dioxide of 78 mm Hg (normal 36 to 44 mm Hg), and the ventilator brought it to 38 within a few hours. He has had no vomiting, nasogastric suction, diuretics or antacids. The next morning: pH 7.55 (normal 7.35 to 7.45), partial pressure of carbon dioxide 38 mm Hg (normal 36 to 44 mm Hg), bicarbonate 32 mEq/L (normal 22 to 26 mEq/L). What best explains his alkalemia?", "opts": [["Worsening chronic respiratory acidosis", "Respiratory acidosis gives a low pH with a high carbon dioxide. His pH is 7.55 and his carbon dioxide 38, both pointing away from acidosis. Tell: acidosis lies below 7.35, and he is alkalemic."], ["Acute respiratory alkalosis", "Respiratory alkalosis needs a low carbon dioxide, below 36. His is 38, within range; the high bicarbonate is what drives his pH up. Tell: in respiratory alkalosis the carbon dioxide, not the bicarbonate, is the abnormal value."], ["Renal compensation that overshot", "Compensation never corrects the pH beyond normal, so an overshoot cannot explain a pH of 7.55. Here the compensating bicarbonate was stranded when the carbon dioxide it offset was removed. Tell: compensation alone stops short of 7.40."], ["Post-hypercapnic metabolic alkalosis", "Correct. His kidneys had retained bicarbonate for his chronic hypercapnia; when the carbon dioxide was lowered quickly, that bicarbonate of 32 was left unopposed, a post-hypercapnic metabolic alkalosis. This is why rapid, aggressive carbon dioxide reduction is avoided in chronic respiratory acidosis."]], "c": 3, "cite": "PAJ5500 CMSI Acid Base MBF 2026sc.pptx, Slide 28", "qid": "hl9xnt"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll" && window.startExamModeTour) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = true;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

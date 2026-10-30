@@ -7,7 +7,7 @@ plum (292), Exam 5 rose (325), so Exam 6 is crimson (358): the Exam 5 rose
 colors rotated +33 degrees in hue, the gold kept. Four-option sets, per the
 exam standard.
 
-    python3 render_cms_e6.py l33io | l33vig | l34io | l34vig | l35io | l35vig | l36io | l36vig
+    python3 render_cms_e6.py l33io | l33vig | ... | l37io | l37vig | l38io | l38vig
 
 A later lecture adds its two SPEC entries here (see tools/cms_e6_README.md).
 """
@@ -79,6 +79,36 @@ SPEC = {
    sub="Clinical Medicine and Surgery I &middot; Exam 6 &middot; Lecture 36",
    chips=["Smokers with dyspnea", "Symptom and survival scores", "Choosing inhalers", "Comorbidities",
           "Exacerbations", "Older adults"]),
+ "l37io": dict(sets="cms_e6l37_sets.json",
+   files=["respiratory-infections-quiz.html", "respiratory-infections-quiz-version-2.html"],
+   title="Respiratory Infections and Vaccines Quiz %d — CMS I Exam 6",
+   h1="Respiratory Infections and Vaccines &mdash; Quiz %d",
+   sub="Clinical Medicine and Surgery I &middot; Exam 6 &middot; Lecture 37",
+   chips=["Vaccines", "Acute bronchitis", "Pneumonia workup and severity", "Pneumonia antibiotics",
+          "Aspiration and lung abscess", "Fungal and atypical pneumonia", "Influenza", "COVID-19"]),
+ "l37vig": dict(sets="cms_e6l37_vig_sets.json",
+   files=["respiratory-infections-vignettes.html", "respiratory-infections-vignettes-version-2.html"],
+   title="Respiratory Infections and Vaccines Vignettes %d — CMS I Exam 6",
+   h1="Respiratory Infections and Vaccines &mdash; Vignettes %d",
+   sub="Clinical Medicine and Surgery I &middot; Exam 6 &middot; Lecture 37",
+   chips=["Cough without pneumonia", "Scoring severity", "Antibiotics with comorbidities", "Allergies and pregnancy",
+          "Exposures and immune status", "Antivirals", "Who gets which vaccine"]),
+ "l38io": dict(sets="cms_e6l38_sets.json",
+   files=["mycobacterial-infections-quiz.html", "mycobacterial-infections-quiz-version-2.html"],
+   title="Mycobacterial Infections and Tuberculosis Quiz %d — CMS I Exam 6",
+   h1="Mycobacterial Infections and Tuberculosis &mdash; Quiz %d",
+   sub="Clinical Medicine and Surgery I &middot; Exam 6 &middot; Lecture 38",
+   chips=["Infection versus disease", "Risk of progression", "Skin test and blood test", "Sputum and imaging",
+          "Isolation and reporting", "Treatment regimens", "Nontuberculous mycobacteria"]),
+ "l38vig": dict(sets="cms_e6l38_vig_sets.json",
+   files=["mycobacterial-infections-vignettes.html", "mycobacterial-infections-vignettes-version-2.html"],
+   title="Mycobacterial Infections and Tuberculosis Vignettes %d — CMS I Exam 6",
+   h1="Mycobacterial Infections and Tuberculosis &mdash; Vignettes %d",
+   sub="Clinical Medicine and Surgery I &middot; Exam 6 &middot; Lecture 38",
+   chips=["Reading the skin test", "Latent or active", "Who is infectious", "Starting treatment",
+          "Drug interactions", "Nontuberculous mycobacteria"],
+   intro="Every skin test result is given in millimeters of induration. Decide the patient's risk group first, "
+         "then compare the induration with that group's cut-off."),
 }[sys.argv[1] if len(sys.argv) > 1 else "l33io"]
 
 S = json.load(open(os.path.join(HERE, SPEC["sets"]), encoding="utf-8"))
