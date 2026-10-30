@@ -93,8 +93,24 @@
     .logo-mark-ink { stroke: #e5e7eb; }
     .logo-mark-accent { stroke: var(--primary); }
   }
+  /* memory-aid box + footnote rows (render.py emits this block only when a
+     topic uses "mnemonic" or a {"note": ...} row); theme variables only, so
+     the designed dark mode (tools/dark_tokens.py) recolours it for free */
+  .mnem{margin:10px 0 0;padding:11px 15px 12px;background:var(--card);border:1px solid var(--line);
+    border-left:4px solid var(--acc);border-radius:12px;box-shadow:var(--shadow);font-size:13.8px;color:var(--body)}
+  .mnem-k{font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--acc-ink,var(--ink));margin:0 0 4px}
+  .mnem p{margin:0 0 5px}
+  .mnem p:last-child{margin-bottom:0}
+  .mnem-hook{font-weight:700;color:var(--ink)}
+  .mnem-key span{display:inline-block;margin:0 16px 3px 0}
+  .mnem-key b{color:var(--acc-ink,var(--ink))}
+  .mnem-brk{color:var(--muted);font-size:13px}
+  .mnem-brk b{color:var(--body)}
+  td.rnote{font-size:12.8px;font-style:italic;color:var(--muted)}
+  @media print{.mnem{box-shadow:none;break-inside:avoid}}
 </style>
-<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--primary-l:#b8860b;--primary:#af8325;}:root[data-theme="dark"] body[data-dark="tokens"] #l26-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l26-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l26-dvt{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l26-dvt"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #l26-cvi{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l26-cvi"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l26-varicose{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l26-varicose"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #l26-phlebitis{--acc-bg:#0e2919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5c9873!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l26-phlebitis"]{color:#55916c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l26-avf{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l26-avf"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l27-pad{--acc-bg:#321927!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c5719e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l27-pad"]{color:#bd6a97!important}:root[data-theme="dark"] body[data-dark="tokens"] #l27-cli{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l27-cli"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #l27-carotid{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l27-carotid"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l27-aorta{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l27-aorta"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l28-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l28-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l28-dcm{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l28-dcm"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #l28-myo{--acc-bg:#0e2919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5c9873!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l28-myo"]{color:#55916c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l28-hcm{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l28-hcm"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #l28-rcm{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l28-rcm"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l29-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l29-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l29-sinus{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l29-sinus"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l29-svt{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l29-svt"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #l29-reentry{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l29-reentry"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #l29-flutter-af{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l29-flutter-af"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #l29-ectopic{--acc-bg:#0e2919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5c9873!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l29-ectopic"]{color:#55916c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l30-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l30-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l30-av{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l30-av"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #l30-bbb{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l30-bbb"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l30-pvc{--acc-bg:#0e2919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5c9873!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l30-pvc"]{color:#55916c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l30-vt{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l30-vt"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #l30-arrest{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l30-arrest"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #l31-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l31-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l31-overview{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l31-overview"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #l31-acute{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l31-acute"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l31-constrictive{--acc-bg:#0e2919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5c9873!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l31-constrictive"]{color:#55916c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l31-effusion{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l31-effusion"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #l31-tamponade{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l31-tamponade"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #l32-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l32-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l32-basics{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l32-basics"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #l32-signs{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l32-signs"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l32-duke{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l32-duke"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #l32-treat{--acc-bg:#0e2919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5c9873!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l32-treat"]{color:#55916c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l32-proph{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l32-proph"]{color:#ac7a4c!important}:root[data-theme="light"] body[data-dark="tokens"]{--primary-t:#8f6a1d;}:root[data-theme="light"] body[data-dark="tokens"] #l26-emph{--acc-ink:#88661b!important}:root[data-theme="light"] body[data-dark="tokens"] #l28-emph{--acc-ink:#88661b!important}:root[data-theme="light"] body[data-dark="tokens"] #l29-emph{--acc-ink:#88661b!important}:root[data-theme="light"] body[data-dark="tokens"] #l30-emph{--acc-ink:#88661b!important}:root[data-theme="light"] body[data-dark="tokens"] #l31-emph{--acc-ink:#88661b!important}:root[data-theme="light"] body[data-dark="tokens"] #l32-emph{--acc-ink:#88661b!important}</style><!--DARK-TOKENS:END-->
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--primary-l:#b8860b;--primary:#af8325;}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l26-cvi{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l26-cvi"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l26-virchow{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l26-virchow"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l26-wells{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l26-wells"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l26-wells-score{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l26-wells-score"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l26-vte-duration{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l26-vte-duration"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l26-outpatient{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l26-outpatient"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l27-leriche{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l27-leriche"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l27-abi{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l27-abi"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l27-six-p{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l27-six-p"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l27-rutherford{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l27-rutherford"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l27-carotid{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l27-carotid"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l27-aneurysm{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l27-aneurysm"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l28-nyha{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l28-nyha"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l29-af-types{--acc-bg:#0e2919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5c9873!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l29-af-types"]{color:#55916c!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l29-chads{--acc-bg:#0e2919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5c9873!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l29-chads"]{color:#55916c!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l29-hasbled{--acc-bg:#0e2919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5c9873!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l29-hasbled"]{color:#55916c!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l30-av{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l30-av"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l30-bbb{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l30-bbb"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l30-vt{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l30-vt"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l30-unstable{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l30-unstable"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l31-time{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l31-time"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l31-dx{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l31-dx"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l31-ecg{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l31-ecg"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l31-highrisk{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l31-highrisk"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l31-failure{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l31-failure"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l31-beck{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l31-beck"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l32-class{--acc-bg:#321927!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c5719e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l32-class"]{color:#bd6a97!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l32-duke{--acc-bg:#321927!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c5719e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l32-duke"]{color:#bd6a97!important}:root[data-theme="dark"] body[data-dark="tokens"] #l26-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l26-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l26-dvt{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l26-dvt"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #l26-cvi{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l26-cvi"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l26-varicose{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l26-varicose"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #l26-phlebitis{--acc-bg:#0e2919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5c9873!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l26-phlebitis"]{color:#55916c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l26-avf{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l26-avf"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l27-pad{--acc-bg:#321927!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c5719e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l27-pad"]{color:#bd6a97!important}:root[data-theme="dark"] body[data-dark="tokens"] #l27-cli{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l27-cli"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #l27-carotid{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l27-carotid"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l27-aorta{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l27-aorta"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l28-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l28-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l28-dcm{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l28-dcm"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #l28-myo{--acc-bg:#0e2919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5c9873!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l28-myo"]{color:#55916c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l28-hcm{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l28-hcm"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #l28-rcm{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l28-rcm"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l29-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l29-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l29-sinus{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l29-sinus"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l29-svt{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l29-svt"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #l29-reentry{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l29-reentry"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #l29-flutter-af{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l29-flutter-af"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #l29-ectopic{--acc-bg:#0e2919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5c9873!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l29-ectopic"]{color:#55916c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l30-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l30-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l30-av{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l30-av"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #l30-bbb{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l30-bbb"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l30-pvc{--acc-bg:#0e2919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5c9873!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l30-pvc"]{color:#55916c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l30-vt{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l30-vt"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #l30-arrest{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l30-arrest"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #l31-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l31-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l31-overview{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l31-overview"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #l31-acute{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l31-acute"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l31-constrictive{--acc-bg:#0e2919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5c9873!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l31-constrictive"]{color:#55916c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l31-effusion{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l31-effusion"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #l31-tamponade{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l31-tamponade"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #l32-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l32-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l32-basics{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dd6952!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l32-basics"]{color:#d5624b!important}:root[data-theme="dark"] body[data-dark="tokens"] #l32-signs{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l32-signs"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l32-duke{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l32-duke"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #l32-treat{--acc-bg:#0e2919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5c9873!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l32-treat"]{color:#55916c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l32-proph{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l32-proph"]{color:#ac7a4c!important}:root[data-theme="light"] body[data-dark="tokens"]{--primary-t:#8f6a1d;}:root[data-theme="light"] body[data-dark="tokens"] #l26-emph{--acc-ink:#88661b!important}:root[data-theme="light"] body[data-dark="tokens"] #l28-emph{--acc-ink:#88661b!important}:root[data-theme="light"] body[data-dark="tokens"] #l29-emph{--acc-ink:#88661b!important}:root[data-theme="light"] body[data-dark="tokens"] #l30-emph{--acc-ink:#88661b!important}:root[data-theme="light"] body[data-dark="tokens"] #l31-emph{--acc-ink:#88661b!important}:root[data-theme="light"] body[data-dark="tokens"] #l32-emph{--acc-ink:#88661b!important}</style><!--DARK-TOKENS:END-->
   <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="cms-exam-5-cram-sheet.docx" title="Editable Word copy">
 </head>
 <body data-dark="tokens" data-dark-kind="cram">
@@ -122,8 +138,9 @@
   <header class="hero">
     <div class="kicker">Clinical Medicine and Surgery I · Exam 5 · Class of 2028</div>
     <h1>CMS I Exam 5 Cram Sheet</h1>
-    <p class="sub">Venous disorders, arterial occlusive disease and aortic aneurysm, and cardiomyopathy, condensed from the Exam 5 study guide: the Virchow triad and Wells criteria first, then deep vein thrombosis, chronic venous insufficiency, claudication and the ankle-brachial index, acute limb ischemia, carotid and aneurysm thresholds, dissection, and the five cardiomyopathies. Lectures 26 and 28 carry the lecturers&rsquo; emphasis (starred; Lecture 28 gives recording times in parentheses); Lecture 27 is built from the slides only, with its audio emphasis to be added after 10/01. Lectures 29&ndash;32 add the supraventricular and ventricular arrhythmias and blocks, pericardial disease and infective endocarditis (slides, with each lecturer's recording emphasis starred).</p>
+    <p class="sub"><b>Criteria, scores and classifications come first</b>: one table per set from the slides (Wells, Virchow, Rutherford, ankle-brachial index, CHA2DS2-VASc, HAS-BLED, the Duke criteria and more), each with a labeled memory aid. Then venous disorders, arterial occlusive disease and aortic aneurysm, and cardiomyopathy, condensed from the Exam 5 study guide: the Virchow triad and Wells criteria first, then deep vein thrombosis, chronic venous insufficiency, claudication and the ankle-brachial index, acute limb ischemia, carotid and aneurysm thresholds, dissection, and the five cardiomyopathies. Lectures 26 and 28 carry the lecturers&rsquo; emphasis (starred; Lecture 28 gives recording times in parentheses); Lecture 27 is built from the slides only, with its audio emphasis to be added after 10/01. Lectures 29&ndash;32 add the supraventricular and ventricular arrhythmias and blocks, pericardial disease and infective endocarditis (slides, with each lecturer's recording emphasis starred).</p>
     <div class="toc">
+      <a href="#crit-l26-cvi" style="color:#7f2918"><span class="dot" style="background:#a3341f"></span>Criteria &amp; Scores (Lectures 26&ndash;32)</a>
       <a href="#l26-emph" style="color:#906909"><span class="dot" style="background:#b8860b"></span>★ Professor Emphasized — Virchow Triad &amp; Wells Criteria</a>
       <a href="#l26-dvt" style="color:#7f2918"><span class="dot" style="background:#a3341f"></span>Deep Vein Thrombosis</a>
       <a href="#l26-cvi" style="color:#254953"><span class="dot" style="background:#2f5d6b"></span>Chronic Venous Insufficiency</a>
@@ -169,6 +186,506 @@
       the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
       <a href="cms-exam-5-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
   </header>
+
+  <section class="topic" id="crit-l26-cvi" style="--acc:#a3341f;--acc-bg:#f2e3e0;--acc-zebra:#f9f1ef;--acc-ink:#7f2918">
+    <div class="shead"><span class="dot" style="background:#a3341f"></span><h2>Chronic Venous Insufficiency: Classification<span class="tag">Criteria &middot; Lecture 26 &middot; slide 10</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:22%">Type</th><th style="width:78%">Cause (slide 10)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Primary</td><td>Intrinsic structural or functional abnormality of the vein wall or the venous valves, leading to valvular reflux</td></tr>
+          <tr><td class="h">Secondary</td><td>Obstruction and/or valvular incompetence from a prior deep vein thrombosis</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Primary = the Pipe itself; Secondary = Sequel of a clot.</p><p class="mnem-key"><span><b>P</b> Pipe: vein wall or valve abnormality</span><span><b>S</b> Sequel: a prior deep vein thrombosis</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l26-virchow" style="--acc:#a3341f;--acc-bg:#f2e3e0;--acc-zebra:#f9f1ef;--acc-ink:#7f2918">
+    <div class="shead"><span class="dot" style="background:#a3341f"></span><h2>Virchow Triad<span class="tag">Criteria &middot; Lecture 26 &middot; slide 49</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:30%">Arm of the triad</th><th style="width:70%">What slide 49 lists under it</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Venous stasis (alterations in blood flow)</td><td>Immobilization (long flights, prolonged sitting, postoperative inactivity), about <b>20 times</b> the risk &middot; venous insufficiency &middot; heart failure</td></tr>
+          <tr><td class="h">Hypercoagulable state (inherited or acquired)</td><td>Factor V Leiden, prothrombin gene mutation, protein C or S deficiency, antithrombin deficiency &middot; cancer &middot; oral contraceptive pill (especially with smoking or obesity) or postmenopausal estrogen replacement therapy &middot; pregnancy</td></tr>
+          <tr><td class="h">Trauma (vascular endothelial injury)</td><td>Surgery (especially knee or hip replacement, or hip fracture) &middot; intravenous drug use (lower extremity injection) &middot; smoking &middot; hypertension &middot; trauma and burns</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook"><b>SHE</b> makes the clot.</p><p class="mnem-key"><span><b>S</b> Stasis of venous blood flow</span><span><b>H</b> Hypercoagulable state</span><span><b>E</b> Endothelial injury (the slide&rsquo;s &ldquo;trauma&rdquo; arm)</span></p><p class="mnem-brk"><b>Where it breaks:</b> One risk factor can sit in more than one arm, and the slide files smoking and hypertension under the trauma arm.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l26-wells" style="--acc:#a3341f;--acc-bg:#f2e3e0;--acc-zebra:#f9f1ef;--acc-ink:#7f2918">
+    <div class="shead"><span class="dot" style="background:#a3341f"></span><h2>Wells Criteria for Deep Vein Thrombosis: Items<span class="tag">Criteria &middot; Lecture 26 &middot; slides 54&ndash;55</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:84%">Item (slide 55)</th><th style="width:16%">Points</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Active cancer (treatment or palliation within 6 months)</td><td>+1</td></tr>
+          <tr><td class="h">Bedridden recently more than 3 days, or major surgery within 12 weeks</td><td>+1</td></tr>
+          <tr><td class="h">Calf swelling more than 3 cm compared with the other leg (measured 10 cm below the tibial tuberosity)</td><td>+1</td></tr>
+          <tr><td class="h">Collateral (nonvaricose) superficial veins present</td><td>+1</td></tr>
+          <tr><td class="h">Entire leg swollen</td><td>+1</td></tr>
+          <tr><td class="h">Localized tenderness along the deep venous system</td><td>+1</td></tr>
+          <tr><td class="h">Pitting edema, confined to the symptomatic leg</td><td>+1</td></tr>
+          <tr><td class="h">Paralysis, paresis, or recent plaster immobilization of the lower extremity</td><td>+1</td></tr>
+          <tr><td class="h">Previously documented deep vein thrombosis</td><td>+1</td></tr>
+          <tr><td class="h">Alternative diagnosis to deep vein thrombosis as likely or more likely</td><td>&minus;2</td></tr>
+          <tr><td class="rnote" colspan="2">Outpatient and emergency department use only, not inpatients (slide 54). Slide 55 shows two versions: the calculator picture lists all ten items; the table picture beside it has nine (no &ldquo;previously documented deep vein thrombosis&rdquo;). Travel is not an item.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">3 C&rsquo;s and 3 P&rsquo;s ring the BEL; an Alternative takes 2 away.</p><p class="mnem-key"><span><b>C</b> Cancer (active)</span><span><b>C</b> Calf swelling more than 3 cm</span><span><b>C</b> Collateral superficial veins</span><span><b>P</b> Pitting edema in the symptomatic leg</span><span><b>P</b> Paralysis, paresis or plaster</span><span><b>P</b> Previous deep vein thrombosis</span><span><b>B</b> Bedridden more than 3 days or surgery within 12 weeks</span><span><b>E</b> Entire leg swollen</span><span><b>L</b> Localized deep-vein tenderness</span><span><b>A</b> Alternative diagnosis as likely: &minus;2</span></p><p class="mnem-brk"><b>Where it breaks:</b> Every letter is +1 except A (&minus;2). &ldquo;Previous deep vein thrombosis&rdquo; is only in the slide&rsquo;s calculator picture.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l26-wells-score" style="--acc:#a3341f;--acc-bg:#f2e3e0;--acc-zebra:#f9f1ef;--acc-ink:#7f2918">
+    <div class="shead"><span class="dot" style="background:#a3341f"></span><h2>Wells Criteria: Total, Likelihood and Next Test<span class="tag">Criteria &middot; Lecture 26 &middot; slides 55&ndash;56</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:16%">Total</th><th style="width:22%">Likelihood (slide 55)</th><th style="width:62%">What to order (slide 56)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">0 or less</td><td>Low</td><td><b>D-dimer</b>: negative &rarr; stop; positive &rarr; ultrasound of the thigh (negative &rarr; stop)</td></tr>
+          <tr><td class="h">1 to 2</td><td>Moderate</td><td>Not on the slide 56 pathway, which shows only low and high risk</td></tr>
+          <tr><td class="h">3 or more</td><td>High</td><td><b>Ultrasound of the thigh</b> (a D-dimer, &ldquo;if taken&rdquo;, leads to the same ultrasound whatever its result); if negative, either ultrasound of the lower leg, phlebography, or a repeat thigh ultrasound in 1 week</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Low goes to the lab; high goes to the scanner.</p><p class="mnem-key"><span><b>0 or less</b> lab first: the D-dimer rules it out</span><span><b>1 to 2</b> the middle band (no branch on the pathway)</span><span><b>3 or more</b> scan first: ultrasound of the thigh</span></p><p class="mnem-brk"><b>Where it breaks:</b> The pathway picture has no moderate branch; the three cut-offs come from the heading of slide 55&rsquo;s table.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l26-vte-duration" style="--acc:#a3341f;--acc-bg:#f2e3e0;--acc-zebra:#f9f1ef;--acc-ink:#7f2918">
+    <div class="shead"><span class="dot" style="background:#a3341f"></span><h2>Venous Thromboembolism: How Long to Anticoagulate<span class="tag">Criteria &middot; Lecture 26 &middot; slides 63&ndash;64</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:32%">Category</th><th style="width:48%">Examples on slide 64</th><th style="width:20%">Treat for</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Any acute first episode (slide 63)</td><td>Deep vein thrombosis or pulmonary embolism, every patient</td><td>Minimum <b>3 months</b></td></tr>
+          <tr><td class="h">Provoked by a major transient or reversible risk factor</td><td>Surgery under general anesthesia more than 30 minutes &middot; hospitalization or bed rest 3 days or more &middot; major trauma or fracture</td><td><b>3 months</b></td></tr>
+          <tr><td class="h">Provoked by a minor transient risk factor</td><td>Estrogen therapy &middot; pregnancy &middot; minor surgery &middot; prolonged travel &middot; minor leg injury</td><td><b>3&ndash;6 months</b></td></tr>
+          <tr><td class="h">Unprovoked first venous thromboembolism</td><td>No identifiable risk factor</td><td><b>Indefinite</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">The smaller the trigger, the longer the drug.</p><p class="mnem-key"><span><b>Floor</b> every first episode gets at least 3 months</span><span><b>Major trigger</b> 3 months</span><span><b>Minor trigger</b> 3&ndash;6 months</span><span><b>No trigger</b> no end date</span></p><p class="mnem-brk"><b>Where it breaks:</b> Slide 64 itself names three categories; the 3-month floor comes from slide 63. Prolonged travel is a minor trigger here even though it is not a Wells item.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l26-outpatient" style="--acc:#a3341f;--acc-bg:#f2e3e0;--acc-zebra:#f9f1ef;--acc-ink:#7f2918">
+    <div class="shead"><span class="dot" style="background:#a3341f"></span><h2>Deep Vein Thrombosis: Outpatient or Hospital<span class="tag">Criteria &middot; Lecture 26 &middot; slide 65</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:50%">Outpatient therapy appropriate for</th><th style="width:50%">Outpatient therapy NOT appropriate for</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Hemodynamically stable</td><td>Iliofemoral (proximal) deep vein thrombosis</td></tr>
+          <tr><td class="h">Low bleeding risk</td><td>Concurrent symptomatic pulmonary embolism</td></tr>
+          <tr><td class="h">No renal insufficiency</td><td>High bleeding risk</td></tr>
+          <tr><td class="h">Good support and reliable (likely to adhere to the treatment plan and follow-up)</td><td>Other comorbidities that warrant inpatient care</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Home needs four S&rsquo;s; the hospital keeps the high clot, the lung clot, the bleeder and the sick.</p><p class="mnem-key"><span><b>Stable</b> hemodynamically</span><span><b>Safe</b> low bleeding risk</span><span><b>Sound kidneys</b> no renal insufficiency</span><span><b>Supported</b> good support, reliable</span><span><b>High clot</b> iliofemoral (proximal)</span><span><b>Lung clot</b> concurrent symptomatic pulmonary embolism</span><span><b>Bleeder</b> high bleeding risk</span><span><b>Sick</b> other comorbidities needing inpatient care</span></p><p class="mnem-brk"><b>Where it breaks:</b> The two columns are separate lists, not pairs; kidney function appears only on the outpatient side.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l27-leriche" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Leriche Syndrome (Triad)<span class="tag">Criteria &middot; Lecture 27 &middot; slide 14</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:36%">Triad item (slide 14)</th><th style="width:64%">Detail on the slide</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Claudication</td><td>Buttock and hip claudication: aching, may have weakness of the hip or thigh with walking (aortoiliac disease)</td></tr>
+          <tr><td class="h">Absent or diminished femoral pulses</td><td>Unilateral or bilateral</td></tr>
+          <tr><td class="h">Erectile dysfunction</td><td>Caused by severe aortoiliac disease</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Three L&rsquo;s when the aorta clogs at its fork: Limp, Lost pulse, Limp.</p><p class="mnem-key"><span><b>Limp</b> claudication (buttock and hip)</span><span><b>Lost pulse</b> absent or diminished femoral pulses</span><span><b>Limp</b> erectile dysfunction</span></p><p class="mnem-brk"><b>Where it breaks:</b> The two &ldquo;limps&rdquo; are different organs; all three point to aortoiliac disease.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l27-abi" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Ankle-Brachial Index<span class="tag">Criteria &middot; Lecture 27 &middot; slides 42&ndash;43</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:26%">Index</th><th style="width:74%">Interpretation (slide 42)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">More than 1.3</td><td><b>Abnormal</b>: calcified artery walls, non-compressible arteries (for example, a diabetic patient)</td></tr>
+          <tr><td class="h">More than 0.9 to 1.3</td><td><b>Normal</b></td></tr>
+          <tr><td class="h">0.4 to 0.9</td><td><b>Claudication</b></td></tr>
+          <tr><td class="h">0 to 0.4</td><td><b>Rest pain, tissue loss</b> (ulcer, gangrene)</td></tr>
+          <tr><td class="rnote" colspan="2">How to calculate (slide 43): each leg = its higher ankle pressure (posterior tibial or dorsalis pedis) &divide; the higher arm pressure (either arm); the lower of the two legs is the patient&rsquo;s overall index.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Nine is fine, four is the floor, over 1.3 is stone.</p><p class="mnem-key"><span><b>Nine is fine</b> above 0.9 to 1.3 = normal</span><span><b>Between nine and four</b> 0.4&ndash;0.9 = claudication (walking hurts)</span><span><b>Below the floor</b> 0&ndash;0.4 = rest pain, tissue loss</span><span><b>Stone</b> above 1.3 = calcified, non-compressible</span></p><p class="mnem-brk"><b>Where it breaks:</b> The slide&rsquo;s bands share their edges (0.4 and 0.9 each sit in two bands). The calculation note is not part of the rhyme.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l27-six-p" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Acute Limb Ischemia: the Six P&rsquo;s<span class="tag">Criteria &middot; Lecture 27 &middot; slides 59, 61</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:26%">P (slide 61)</th><th style="width:74%">What the slides add</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Pain</td><td>Abrupt onset of severe pain (slide 59)</td></tr>
+          <tr><td class="h">Pallor</td><td>&mdash;</td></tr>
+          <tr><td class="h">Pulselessness</td><td>Absent pulses distal to the occlusion</td></tr>
+          <tr><td class="h">Paresthesia</td><td>Light-touch sensory fibers are highly susceptible to ischemia; a sensory deficit over the <b>dorsum of the foot</b> is often the earliest neurologic sign</td></tr>
+          <tr><td class="h">Paralysis</td><td>Test muscle strength</td></tr>
+          <tr><td class="h">Poikilothermia</td><td>Slide 61 also lists a cold, cyanotic extremity</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Artery, nerve, thermostat: three P&rsquo;s the artery shows you, two the nerve shows you, one the thermostat shows you.</p><p class="mnem-key"><span><b>Artery</b> pain, pallor, pulselessness</span><span><b>Nerve</b> paresthesia, paralysis</span><span><b>Thermostat</b> poikilothermia (the cold limb)</span></p><p class="mnem-brk"><b>Where it breaks:</b> The grouping is ours; the slide simply lists six. The nerve pair is what moves a limb up the Rutherford stages below.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l27-rutherford" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Rutherford Classification of Acute Limb Ischemia<span class="tag">Criteria &middot; Lecture 27 &middot; slides 62&ndash;65</span></h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term" style="width:7%">Stage</th><th style="width:13%">Limb</th><th style="width:17%">Prognosis</th><th style="width:16%">Sensory loss</th><th style="width:13%">Muscle weakness</th><th style="width:15%">Arterial / venous Doppler</th><th style="width:19%">Next step (slides 62&ndash;64)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">I</td><td>Viable</td><td>Not immediately threatened</td><td>None</td><td>None</td><td>Audible / audible</td><td>Time for vascular imaging (for example computed tomography angiography)</td></tr>
+          <tr><td class="h">IIA</td><td>Marginally threatened</td><td>Salvageable if promptly treated</td><td>Minimal (toes) or none</td><td>None</td><td>Often inaudible / audible</td><td>Time for vascular imaging</td></tr>
+          <tr><td class="h">IIB</td><td>Immediately threatened</td><td>Salvageable with immediate revascularization</td><td>More than the toes, pain at rest</td><td>Mild or moderate</td><td>Usually inaudible / audible</td><td>Evaluate and treat in a surgical suite</td></tr>
+          <tr><td class="h">III</td><td>Irreversibly damaged</td><td>Major tissue loss or permanent nerve damage inevitable</td><td>Profound, anesthetic</td><td>Profound, paralysis (rigor)</td><td>Inaudible / inaudible</td><td>Major amputation; vascular imaging generally not needed</td></tr>
+          <tr><td class="rnote" colspan="7">Slides disagree on IIA: the slide 65 table (shown) says arterial Doppler &ldquo;often inaudible&rdquo; and sensory loss &ldquo;minimal (toes) or none&rdquo;; slide 62 says arterial Doppler signals are &ldquo;often audible&rdquo;, with &ldquo;no sensory loss&rdquo; and &ldquo;minimal pain (in the toes)&rdquo;.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">I is Intact, A is A little, B is Both, III is gone.</p><p class="mnem-key"><span><b>I</b> Intact: no sensory loss, no weakness, both signals heard</span><span><b>IIA</b> A little: the toes at most, no weakness; time to image</span><span><b>IIB</b> Both: sensory loss beyond the toes AND weakness; straight to the surgical suite</span><span><b>III</b> gone: profound loss, paralysis, both signals silent; amputate</span></p><p class="mnem-brk"><b>Where it breaks:</b> The venous signal stays audible until stage III; the IIA arterial signal is the cell the slides disagree on.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l27-carotid" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Carotid Stenosis: Who Gets Surgery<span class="tag">Criteria &middot; Lecture 27 &middot; slides 72, 75</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:18%">Patient</th><th style="width:46%">Definition (slide 72)</th><th style="width:36%">Plan (slide 75)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Symptomatic</td><td>Focal neurologic symptoms: transient ischemic attack (focal loss of neurologic function lasting less than 24 hours) or stroke</td><td>Surgery if stenosis is <b>more than 70%</b></td></tr>
+          <tr><td class="h">Asymptomatic</td><td>Narrowing in one or both carotids with no ischemic stroke or transient ischemic attack within the last 6 months; they outnumber symptomatic patients 4:1</td><td>Surgery if stenosis is <b>more than 80%</b> and life expectancy is <b>more than 5 years</b></td></tr>
+          <tr><td class="h">Either, low grade</td><td>Stenosis less than 50%</td><td>Medical management</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Symptoms lower the bar: 70 with symptoms, 80 (plus 5 years) without, under 50 is medicine.</p><p class="mnem-key"><span><b>70</b> symptomatic: operate above 70%</span><span><b>80 + 5</b> asymptomatic: operate above 80% with more than 5 years to live</span><span><b>Under 50</b> medical management for both</span></p><p class="mnem-brk"><b>Where it breaks:</b> The slide gives no plan for stenosis between these cut-offs.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l27-aneurysm" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Aortic Aneurysm and Pseudoaneurysm: Size Thresholds<span class="tag">Criteria &middot; Lecture 27 &middot; slides 82&ndash;83, 95, 99&ndash;101, 108&ndash;109, 113</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:30%">Size or growth</th><th style="width:70%">What it means</th></tr></thead>
+        <tbody>
+          <tr><td class="grp" colspan="2">Abdominal aortic aneurysm</td></tr>
+          <tr><td class="h">More than 3 cm</td><td>Aneurysmal: the average infrarenal aorta is 2 cm (slide 83); an aneurysm is a localized dilation more than 50% of normal diameter (slide 82)</td></tr>
+          <tr><td class="h">3.0&ndash;3.9 cm</td><td>Ultrasound every <b>3 years</b> (slide 95)</td></tr>
+          <tr><td class="h">4.0&ndash;5.4 cm</td><td>Ultrasound or computed tomography every <b>6&ndash;12 months</b> (slide 95)</td></tr>
+          <tr><td class="h">4.5 cm or larger</td><td>Vascular specialist referral for observation and assessment; aneurysmal pain at any size = urgent referral (slide 100)</td></tr>
+          <tr><td class="h">5.0 cm or larger</td><td>Women: elective repair (slide 95). Consider vascular surgery referral (slide 101). Rarely ruptures until it exceeds 5 cm (slide 99).</td></tr>
+          <tr><td class="h">More than 5.5 cm</td><td>Men: elective repair (slide 95 reads &ldquo;&gt;5.5 cm or larger&rdquo;); increased rupture risk (slide 99)</td></tr>
+          <tr><td class="h">Growth of 0.5 cm in 6 months</td><td>Rapid growth: repair (slide 95, &ldquo;0.5 cm/6 months&rdquo;); increased rupture risk (slide 99, &ldquo;&gt; 0.5 cm in six months&rdquo;)</td></tr>
+          <tr><td class="rnote" colspan="2">Slides differ on the growth trigger: slide 95 says rapid growth is 0.5 cm/6 months; slide 99 says more than 0.5 cm in six months. Slide 95 also writes the men&rsquo;s repair size as &ldquo;&gt;5.5 cm or larger&rdquo;.</td></tr>
+          <tr><td class="grp" colspan="2">Thoracic aortic aneurysm (root, ascending or descending)</td></tr>
+          <tr><td class="h">Less than 4.5 cm</td><td>Computed tomography or magnetic resonance imaging every <b>3&ndash;5 years</b> (slide 109)</td></tr>
+          <tr><td class="h">4.5&ndash;5.4 cm</td><td>Computed tomography or magnetic resonance imaging every <b>6&ndash;12 months</b> (slide 109)</td></tr>
+          <tr><td class="h">Ascending more than 5.5 cm</td><td>Surgical repair generally indicated (slide 109)</td></tr>
+          <tr><td class="h">Descending more than 6.0 cm</td><td>Surgical repair generally indicated (slide 109)</td></tr>
+          <tr><td class="h">Growth of more than 0.5 cm per year</td><td>Surgical repair (slide 109)</td></tr>
+          <tr><td class="h">Any size, symptomatic</td><td>Repair all symptomatic thoracic aneurysms; chest or back pain needs urgent imaging (slide 108)</td></tr>
+          <tr><td class="grp" colspan="2">Pseudoaneurysm (false aneurysm)</td></tr>
+          <tr><td class="h">Less than 2 cm</td><td>Watch and wait: may undergo spontaneous thrombosis and regression (slide 113). The slide also lists ultrasound-guided thrombin injection to seal the leak.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Belly: 3 to call it, 4 to scan it, 4.5 to refer it, 5 to fix it (men 5.5). Chest: 5.5 up, 6 down. False: under 2, wait.</p><p class="mnem-key"><span><b>3</b> aneurysm; scan every 3 years to 3.9</span><span><b>4</b> 4.0&ndash;5.4: scan every 6&ndash;12 months</span><span><b>4.5</b> refer to vascular</span><span><b>5 / 5.5</b> repair: women 5.0, men above 5.5</span><span><b>Half in half</b> 0.5 cm in 6 months: repair</span><span><b>Chest</b> under 4.5 every 3&ndash;5 years; 4.5&ndash;5.4 every 6&ndash;12 months; repair ascending above 5.5, descending above 6.0, growth above 0.5 cm a year, or any symptoms</span><span><b>Under 2</b> pseudoaneurysm: watch and wait</span></p><p class="mnem-brk"><b>Where it breaks:</b> Growth counts per 6 months in the abdomen but per year in the chest.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l28-nyha" style="--acc:#5a3d8a;--acc-bg:#e8e4ef;--acc-zebra:#f3f1f7;--acc-ink:#46306c">
+    <div class="shead"><span class="dot" style="background:#5a3d8a"></span><h2>New York Heart Association (NYHA) Heart Failure Classes<span class="tag">Criteria &middot; Lecture 28 &middot; slide 14</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:10%">Class</th><th style="width:16%">Limitation</th><th style="width:74%">Slide 14 wording</th></tr></thead>
+        <tbody>
+          <tr><td class="h">I</td><td>None</td><td>No limitation of physical activity. Ordinary physical activity does not cause undue fatigue, palpitation or shortness of breath.</td></tr>
+          <tr><td class="h">II</td><td>Slight</td><td>Slight limitation of physical activity. Comfortable at rest. Ordinary physical activity results in fatigue, palpitation, shortness of breath or chest pain.</td></tr>
+          <tr><td class="h">III</td><td>Marked</td><td>Marked limitation of physical activity. Comfortable at rest. Less than ordinary activity causes fatigue, palpitation, shortness of breath or chest pain.</td></tr>
+          <tr><td class="h">IV</td><td>Symptoms at rest</td><td>Symptoms of heart failure at rest. Any physical activity causes further discomfort.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Ask where the symptoms start: never, ordinary activity, less than ordinary, at rest.</p><p class="mnem-key"><span><b>I</b> never (stairs are fine)</span><span><b>II</b> ordinary activity (the stairs)</span><span><b>III</b> less than ordinary (across the room)</span><span><b>IV</b> at rest (in bed)</span></p><p class="mnem-brk"><b>Where it breaks:</b> Stairs, room and bed stand in for the slide&rsquo;s &ldquo;ordinary&rdquo; and &ldquo;less than ordinary&rdquo; activity; classes II and III are both comfortable at rest.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l29-af-types" style="--acc:#1f5c3a;--acc-bg:#e0e8e3;--acc-zebra:#eff4f1;--acc-ink:#18482d">
+    <div class="shead"><span class="dot" style="background:#1f5c3a"></span><h2>Atrial Fibrillation: Types by Duration<span class="tag">Criteria &middot; Lecture 29 &middot; slide 46</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:28%">Type</th><th style="width:72%">Definition (slide 46)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Paroxysmal</td><td>Less than 1 week; usually ends without treatment</td></tr>
+          <tr><td class="h">Persistent</td><td>Continuous for more than 7 days but less than 1 year; needs treatment</td></tr>
+          <tr><td class="h">Long-standing persistent</td><td>Continuous for more than 1 year</td></tr>
+          <tr><td class="h">Permanent</td><td>Patient and clinician make a joint decision to stop further attempts to restore or maintain sinus rhythm</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">A week, a year, a decision.</p><p class="mnem-key"><span><b>Paroxysmal</b> Passes on its own, under a week</span><span><b>Persistent</b> Pushed past a week (up to a year): needs treatment</span><span><b>Long-standing</b> past a year</span><span><b>Permanent</b> a Pact to stop trying for sinus rhythm</span></p><p class="mnem-brk"><b>Where it breaks:</b> Permanent is defined by the decision, not by a duration.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l29-chads" style="--acc:#1f5c3a;--acc-bg:#e0e8e3;--acc-zebra:#eff4f1;--acc-ink:#18482d">
+    <div class="shead"><span class="dot" style="background:#1f5c3a"></span><h2>CHA2DS2-VASc Score (Stroke Risk in Atrial Fibrillation)<span class="tag">Criteria &middot; Lecture 29 &middot; slides 50&ndash;51</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:12%">Letter</th><th style="width:72%">Item (slide 51)</th><th style="width:16%">Points</th></tr></thead>
+        <tbody>
+          <tr><td class="h">C</td><td>Congestive heart failure history</td><td>+1</td></tr>
+          <tr><td class="h">H</td><td>Hypertension history</td><td>+1</td></tr>
+          <tr><td class="h">A<sub>2</sub></td><td>Age 75 or older</td><td>+2</td></tr>
+          <tr><td class="h">D</td><td>Diabetes history</td><td>+1</td></tr>
+          <tr><td class="h">S<sub>2</sub></td><td>Stroke, transient ischemic attack or thromboembolism history</td><td>+2</td></tr>
+          <tr><td class="h">V</td><td>Vascular disease history (prior myocardial infarction, peripheral artery disease or aortic plaque)</td><td>+1</td></tr>
+          <tr><td class="h">A</td><td>Age 65&ndash;74 (under 65 scores 0)</td><td>+1</td></tr>
+          <tr><td class="h">Sc</td><td>Sex category: female (male scores 0)</td><td>+1</td></tr>
+          <tr><td class="rnote" colspan="3">Slide 50: a score of 0 in a man or 1 in a woman = low risk, may not require anticoagulation; patients typically require anticoagulation unless bleeding risk is high (slide 49 says &ldquo;anticoagulation for all&rdquo;). In the recording she said the point table need not be memorized; know that this score = stroke risk. The table is here so you can score a vignette.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">The subscript 2s are the 2-pointers: A<sub>2</sub> (75 or older) and S<sub>2</sub> (stroke). Everything else is 1; the maximum is 9.</p><p class="mnem-key"><span><b>C</b> congestive heart failure</span><span><b>H</b> hypertension</span><span><b>A<sub>2</sub></b> age 75 or older</span><span><b>D</b> diabetes</span><span><b>S<sub>2</sub></b> stroke, transient ischemic attack, thromboembolism</span><span><b>V</b> vascular disease</span><span><b>A</b> age 65&ndash;74</span><span><b>Sc</b> sex category: female</span></p><p class="mnem-brk"><b>Where it breaks:</b> The slide&rsquo;s picture shows no letters and lists the items in another order (age, sex, heart failure, hypertension, stroke, vascular disease, diabetes). Age is one item with three bands, so a patient scores A<sub>2</sub> or A, never both.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l29-hasbled" style="--acc:#1f5c3a;--acc-bg:#e0e8e3;--acc-zebra:#eff4f1;--acc-ink:#18482d">
+    <div class="shead"><span class="dot" style="background:#1f5c3a"></span><h2>HAS-BLED Score (Major Bleeding Risk on Anticoagulation)<span class="tag">Criteria &middot; Lecture 29 &middot; slides 50&ndash;51</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:12%">Letter</th><th style="width:72%">Item (slide 51)</th><th style="width:16%">Points</th></tr></thead>
+        <tbody>
+          <tr><td class="h">H</td><td>Hypertension: uncontrolled, systolic more than 160 mmHg</td><td>+1</td></tr>
+          <tr><td class="h">A</td><td>Abnormal renal function: dialysis, transplant, creatinine more than 2.26 mg/dL (more than 200 &micro;mol/L)</td><td>+1</td></tr>
+          <tr><td class="h">A</td><td>Abnormal liver function: cirrhosis, or bilirubin more than 2 times normal with aspartate aminotransferase, alanine aminotransferase or alkaline phosphatase more than 3 times normal</td><td>+1</td></tr>
+          <tr><td class="h">S</td><td>Stroke history</td><td>+1</td></tr>
+          <tr><td class="h">B</td><td>Bleeding: prior major bleeding or predisposition to bleeding</td><td>+1</td></tr>
+          <tr><td class="h">L</td><td>Labile international normalized ratio: unstable or high values, time in therapeutic range less than 60%</td><td>+1</td></tr>
+          <tr><td class="h">E</td><td>Elderly: age more than 65</td><td>+1</td></tr>
+          <tr><td class="h">D</td><td>Drugs predisposing to bleeding: aspirin, clopidogrel, nonsteroidal anti-inflammatory drugs</td><td>+1</td></tr>
+          <tr><td class="h">D</td><td>Alcohol use: 8 or more drinks a week</td><td>+1</td></tr>
+          <tr><td class="rnote" colspan="3">Slide 50: HAS-BLED 3 and up = no anticoagulation; 1 = low risk, anticoagulation okay (a score of 2 is not addressed). Current guidance treats a high score as bleeding risk to correct, not a reason to withhold; the course tests the slide.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Every item is 1 point; A and D each hold two items (kidney and liver; drugs and drink), so the maximum is 9.</p><p class="mnem-key"><span><b>H</b> hypertension</span><span><b>A</b> abnormal kidney, abnormal liver</span><span><b>S</b> stroke</span><span><b>B</b> bleeding history</span><span><b>L</b> labile ratio</span><span><b>E</b> elderly</span><span><b>D</b> drugs, drink</span></p><p class="mnem-brk"><b>Where it breaks:</b> The letters are the standard acronym; the slide&rsquo;s picture lists the nine items in this order without letters. Age cut-offs differ from CHA2DS2-VASc: above 65 here.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l30-av" style="--acc:#7a2d47;--acc-bg:#ece2e5;--acc-zebra:#f6f0f2;--acc-ink:#5f2337">
+    <div class="shead"><span class="dot" style="background:#7a2d47"></span><h2>Atrioventricular Blocks: Telling the Degrees Apart<span class="tag">Criteria &middot; Lecture 30 &middot; slides 4, 7, 10, 15</span></h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term" style="width:17%">Block</th><th style="width:22%">PR interval</th><th style="width:26%">P waves and QRS</th><th style="width:12%">QRS width</th><th style="width:23%">Rhythm and rate</th></tr></thead>
+        <tbody>
+          <tr><td class="h">First degree</td><td>More than 0.20 s, constant</td><td>One P wave for every QRS (all conducted)</td><td>Narrow, under 0.12 s</td><td>Regular, 60&ndash;100</td></tr>
+          <tr><td class="h">Second degree, Mobitz I (Wenckebach)</td><td>Progressively increases from normal to long until a QRS drops</td><td>Some P waves not conducted: more P waves than QRS complexes</td><td>Narrow, under 0.12 s</td><td>No regular underlying rhythm, a pattern with regularly missing QRS; 60&ndash;100</td></tr>
+          <tr><td class="h">Second degree, Mobitz II</td><td>Constant, 0.12&ndash;0.20 s</td><td>More P waves than QRS complexes: random dropped QRS</td><td>Narrow, under 0.12 s</td><td>Regular apart from random missing QRS; 60&ndash;100</td></tr>
+          <tr><td class="h">Third degree (complete)</td><td>Random</td><td>No P wave conducted; P waves have no association with the QRS and may hide in the QRS, ST segment or T wave</td><td>Narrow or wide</td><td>Two separate regular rhythms; ventricular rate usually under 40</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">The block poem, one line per degree.</p><p class="mnem-key"><span><b>First</b> &ldquo;If the R is far from P, then you have a first degree&rdquo; (long, constant PR)</span><span><b>Mobitz I</b> &ldquo;Longer, longer, longer, drop: then you have a Wenckebach&rdquo;</span><span><b>Mobitz II</b> &ldquo;If some P&rsquo;s don&rsquo;t get through, then you have a Mobitz II&rdquo; (PR constant)</span><span><b>Third</b> &ldquo;If P&rsquo;s and Q&rsquo;s don&rsquo;t agree, then you have a third degree&rdquo; (two separate rates)</span></p><p class="mnem-brk"><b>Where it breaks:</b> &ldquo;Some P&rsquo;s don&rsquo;t get through&rdquo; is also true of Mobitz I; the PR decides: lengthening (I) versus constant (II).</p></div>
+  </section>
+
+  <section class="topic" id="crit-l30-bbb" style="--acc:#7a2d47;--acc-bg:#ece2e5;--acc-zebra:#f6f0f2;--acc-ink:#5f2337">
+    <div class="shead"><span class="dot" style="background:#7a2d47"></span><h2>Bundle Branch Blocks: Electrocardiogram Criteria<span class="tag">Criteria &middot; Lecture 30 &middot; slides 21, 24, 28&ndash;29</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:50%">Left bundle branch block (slide 24)</th><th style="width:50%">Right bundle branch block (slide 29)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">QRS more than 0.12 s</td><td>QRS more than 0.12 s</td></tr>
+          <tr><td class="h">Dominant S wave in V1 (rS pattern)</td><td>rsR&prime; in V1, V2, V3 (&ldquo;bunny ears&rdquo;, slide 28)</td></tr>
+          <tr><td class="h">Prolonged R wave peak, more than 0.06</td><td>Slurred S wave in I and aVL</td></tr>
+          <tr><td class="h">Monophasic R in the lateral leads</td><td>&mdash;</td></tr>
+          <tr><td class="h">Absent Q waves in I, V5, V6</td><td>&mdash;</td></tr>
+          <tr><td class="rnote" colspan="2">Slide 21 (intraventricular delays) lists the QRS as &ldquo;wide (&gt; 0.20)&rdquo;; slides 24 and 29 say more than 0.12 s.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Both are wide. Right = Rabbit ears in the Right chest leads; Left = a deep S in V1 and a Lone R laterally.</p><p class="mnem-key"><span><b>Both</b> QRS more than 0.12 s</span><span><b>Rabbit ears</b> rsR&prime; in V1&ndash;V3 (right)</span><span><b>Slur</b> slurred S in I and aVL (right)</span><span><b>Deep S</b> dominant S in V1 (left)</span><span><b>Lone R</b> monophasic R in the lateral leads (left)</span><span><b>Late R</b> R wave peak more than 0.06 (left)</span><span><b>Lacking Q</b> no Q in I, V5, V6 (left)</span></p><p class="mnem-brk"><b>Where it breaks:</b> The two columns are separate lists, not pairs, except the shared QRS width.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l30-vt" style="--acc:#7a2d47;--acc-bg:#ece2e5;--acc-zebra:#f6f0f2;--acc-ink:#5f2337">
+    <div class="shead"><span class="dot" style="background:#7a2d47"></span><h2>Ventricular Tachycardia: Definitions<span class="tag">Criteria &middot; Lecture 30 &middot; slides 39&ndash;40</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:26%">Term</th><th style="width:74%">Definition (slides 39&ndash;40)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Ventricular tachycardia</td><td>3 or more consecutive premature ventricular contractions; regular, 100&ndash;250, no P waves, QRS more than 0.12 s (wide)</td></tr>
+          <tr><td class="h">Non-sustained</td><td>Duration less than 30 seconds</td></tr>
+          <tr><td class="h">Sustained</td><td>Duration 30 seconds or more, or causes hemodynamic collapse in less than 30 seconds</td></tr>
+          <tr><td class="h">Monomorphic</td><td>QRS complexes have the same morphology</td></tr>
+          <tr><td class="h">Polymorphic</td><td>QRS morphology varies</td></tr>
+          <tr><td class="h">Torsades de pointes</td><td>A polymorphic type in which the QRS complexes appear to &ldquo;twist&rdquo; around the baseline; long QT is a risk factor</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">3 beats make it; 30 seconds (or a collapse) sustain it.</p><p class="mnem-key"><span><b>3</b> 3 or more in a row = ventricular tachycardia</span><span><b>30</b> under 30 s = non-sustained; 30 s or more = sustained</span><span><b>Mono / poly</b> one shape / many shapes</span><span><b>Twist</b> torsades = polymorphic that twists (long QT)</span></p><p class="mnem-brk"><b>Where it breaks:</b> A collapse makes it sustained even before 30 seconds.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l30-unstable" style="--acc:#7a2d47;--acc-bg:#ece2e5;--acc-zebra:#f6f0f2;--acc-ink:#5f2337">
+    <div class="shead"><span class="dot" style="background:#7a2d47"></span><h2>Hemodynamic Instability<span class="tag">Criteria &middot; Lecture 30 &middot; slide 45</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:14%">Letter</th><th style="width:86%">Instability = any ONE of (slide 45)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">C</td><td>Chest pain</td></tr>
+          <tr><td class="h">A</td><td>Altered mental status</td></tr>
+          <tr><td class="h">S</td><td>Shortness of breath</td></tr>
+          <tr><td class="h">H</td><td>Hypotension</td></tr>
+          <tr><td class="rnote" colspan="2">Unstable monomorphic ventricular tachycardia: check for a pulse; pulse present &rarr; synchronized cardioversion; pulseless &rarr; defibrillation (slide 45).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Unstable patients need CASH, fast.</p><p class="mnem-key"><span><b>C</b> chest pain</span><span><b>A</b> altered mental status</span><span><b>S</b> shortness of breath</span><span><b>H</b> hypotension</span></p><p class="mnem-brk"><b>Where it breaks:</b> One sign is enough. The letters follow the slide&rsquo;s own order.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l31-time" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>Pericarditis: Time-Frame Definitions<span class="tag">Criteria &middot; Lecture 31 &middot; slide 5</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:22%">Term</th><th style="width:78%">Definition (slide 5)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Acute</td><td>Inflammation of the pericardial sac lasting less than 4 to 6 weeks</td></tr>
+          <tr><td class="h">Incessant</td><td>Symptoms persist more than 4 to 6 weeks, up to 3 months, without a sustained remission</td></tr>
+          <tr><td class="h">Recurrent</td><td>Symptoms of acute pericarditis return after a symptom-free interval of 4 to 6 weeks or longer</td></tr>
+          <tr><td class="h">Chronic</td><td>Symptoms persist more than 3 months</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Two clocks: 4&ndash;6 weeks and 3 months.</p><p class="mnem-key"><span><b>Acute</b> under 4&ndash;6 weeks</span><span><b>Incessant</b> won&rsquo;t quit: past 4&ndash;6 weeks up to 3 months, no remission</span><span><b>Recurrent</b> comes back after 4&ndash;6 symptom-free weeks</span><span><b>Chronic</b> past 3 months</span></p><p class="mnem-brk"><b>Where it breaks:</b> Recurrent needs a symptom-free gap; incessant never has one.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l31-dx" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>Acute Pericarditis: Diagnostic Criteria (2 of 4)<span class="tag">Criteria &middot; Lecture 31 &middot; slides 13&ndash;14, 17, 19, 24</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:34%">Criterion (slide 14: two of four)</th><th style="width:66%">What it looks like</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Sharp substernal chest pain</td><td>Pleuritic, worse supine and on inspiration, relieved by leaning forward (slide 13)</td></tr>
+          <tr><td class="h">Pericardial friction rub</td><td>Highly specific; triphasic, scratchy or squeaking; loudest over the left sternal border; best heard with the diaphragm; louder leaning forward and holding a breath (slide 17)</td></tr>
+          <tr><td class="h">Suggestive electrocardiogram changes</td><td>Widespread ST elevation (slide 14): concave ST elevation and PR depression, with reciprocal ST depression and PR elevation in aVR (slide 19)</td></tr>
+          <tr><td class="h">New or worsening pericardial effusion</td><td>The echocardiogram is often normal unless there is an associated pericardial effusion (slide 24)</td></tr>
+          <tr><td class="rnote" colspan="2">Diagnosis of idiopathic or viral pericarditis is usually clinical (slide 14).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Four S&rsquo;s; any two make the diagnosis.</p><p class="mnem-key"><span><b>Sharp</b> sharp substernal chest pain</span><span><b>Scratch</b> pericardial friction rub</span><span><b>ST</b> widespread ST elevation</span><span><b>Sac fluid</b> new or worsening effusion</span></p><p class="mnem-brk"><b>Where it breaks:</b> Troponin and fever are not among the four.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l31-ecg" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>Pericarditis: Electrocardiogram Stages<span class="tag">Criteria &middot; Lecture 31 &middot; slides 22&ndash;23</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:10%">Stage</th><th style="width:60%">Electrocardiogram (slide 22)</th><th style="width:30%">When (slide 22)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">1</td><td>Widespread ST elevation and PR depression, with reciprocal changes in aVR</td><td>First two weeks (slide 23: less than 1 week)</td></tr>
+          <tr><td class="h">2</td><td>ST changes normalize; generalized T-wave flattening</td><td>1 to 3 weeks</td></tr>
+          <tr><td class="h">3</td><td>Flattened T waves become inverted</td><td>3 to several weeks</td></tr>
+          <tr><td class="h">4</td><td>Electrocardiogram returns to normal</td><td>Several weeks onward</td></tr>
+          <tr><td class="rnote" colspan="3">Stage 1 timing differs: slide 22 says the first two weeks; the slide 23 picture says less than 1 week (and adds ST elevation under 5 mm, with ST depression and PR elevation in aVR).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Up, flat, flip, fine.</p><p class="mnem-key"><span><b>1 Up</b> ST up (PR down)</span><span><b>2 Flat</b> ST back to baseline, T waves flatten</span><span><b>3 Flip</b> T waves invert</span><span><b>4 Fine</b> normal again</span></p><p class="mnem-brk"><b>Where it breaks:</b> A tracing taken weeks in can already sit at stage 3 or 4.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l31-highrisk" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>Acute Pericarditis: Higher-Risk Features (Consider Hospitalization)<span class="tag">Criteria &middot; Lecture 31 &middot; slide 27</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:26%">Feature</th><th style="width:74%">Slide 27 wording</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Fever</td><td>Above 38 &deg;C (100.4 &deg;F)</td></tr>
+          <tr><td class="h">Subacute course</td><td>Over days to weeks, without an acute onset of chest pain</td></tr>
+          <tr><td class="h">Tamponade</td><td>Evidence suggesting cardiac tamponade</td></tr>
+          <tr><td class="h">Effusion</td><td>A moderate to large pericardial effusion</td></tr>
+          <tr><td class="h">Immunosuppressed</td><td>Immunosuppressed patients</td></tr>
+          <tr><td class="h">Anticoagulated</td><td>Patients on oral anticoagulants</td></tr>
+          <tr><td class="h">Trauma</td><td>Acute trauma</td></tr>
+          <tr><td class="h">Not improving</td><td>No clinical improvement after 7 days of appropriately dosed nonsteroidal anti-inflammatory drug and colchicine therapy</td></tr>
+          <tr><td class="h">Troponin</td><td>Elevated cardiac troponin (suggests myopericarditis or perimyocarditis)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">3 T&rsquo;s, 2 F&rsquo;s, 2 S&rsquo;s and 2 thin shields.</p><p class="mnem-key"><span><b>3 T&rsquo;s</b> Tamponade signs, Trauma, Troponin up</span><span><b>2 F&rsquo;s</b> Fever above 38 &deg;C, Fluid: a moderate to large effusion</span><span><b>2 S&rsquo;s</b> Subacute start, Stalled: no better after 7 days</span><span><b>2 thin shields</b> immunosuppressed, on oral anticoagulants</span></p><p class="mnem-brk"><b>Where it breaks:</b> &ldquo;Thin shields&rdquo; is our label for the two patients least able to cope: one with infection, the other with bleeding.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l31-failure" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>Acute Pericarditis: Treatment Failure<span class="tag">Criteria &middot; Lecture 31 &middot; slide 30</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:100%">Treatment failure is defined as (slide 30)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Persistence of fever</td></tr>
+          <tr><td class="h">Pleuritic chest pain</td></tr>
+          <tr><td class="h">New pericardial effusion</td></tr>
+          <tr><td class="h">Worsening of general illness</td></tr>
+          <tr><td class="rnote" colspan="1">Failure to respond to nonsteroidal anti-inflammatory drug plus colchicine therapy within 1 week suggests a cause other than idiopathic or viral pericarditis (slide 30).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Still hot, still hurting, newly wet, getting worse after a week: look past the virus.</p><p class="mnem-key"><span><b>Hot</b> fever persists</span><span><b>Hurting</b> pleuritic chest pain</span><span><b>Wet</b> new pericardial effusion</span><span><b>Worse</b> general illness worsening</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l31-beck" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>Beck Triad (Cardiac Tamponade)<span class="tag">Criteria &middot; Lecture 31 &middot; slide 54</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:50%">Slide 54 wording</th><th style="width:50%">Same thing</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Distant heart sounds</td><td>Muffled heart sounds</td></tr>
+          <tr><td class="h">Distended jugular veins</td><td>Jugular venous distension</td></tr>
+          <tr><td class="h">Decreased arterial blood pressure</td><td>Hypotension</td></tr>
+          <tr><td class="rnote" colspan="2">In the recording she named a different &ldquo;triad&rdquo; (alternans, pulsus paradoxus, Kussmaul sign); slide 54&rsquo;s three are the Beck triad.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Beck&rsquo;s three D&rsquo;s, in the slide&rsquo;s own words.</p><p class="mnem-key"><span><b>Distant</b> heart sounds</span><span><b>Distended</b> jugular veins</span><span><b>Decreased</b> arterial blood pressure</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l32-class" style="--acc:#7a2d5a;--acc-bg:#ece2e8;--acc-zebra:#f6f0f3;--acc-ink:#5f2346">
+    <div class="shead"><span class="dot" style="background:#7a2d5a"></span><h2>Infective Endocarditis: Classification<span class="tag">Criteria &middot; Lecture 32 &middot; slides 5, 8, 10</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:26%">Axis (slide 8)</th><th style="width:74%">Categories</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Temporal evolution</td><td><b>Acute</b>: hectically febrile illness from a virulent, invasive organism; typically 3&ndash;10 days, rapid onset, high fevers, systemic toxicity; seeds extracardiac sites; death within weeks if untreated. <b>Subacute</b>: indolent; lower fevers, malaise, weight loss over weeks or months; rarely metastasizes (slide 10)</td></tr>
+          <tr><td class="h">Site of infection</td><td>Native valve; prosthetic valve; cardiovascular implantable electronic device (vegetation on pacemakers and implantable cardioverter-defibrillators) (slide 5)</td></tr>
+          <tr><td class="h">Cause of infection</td><td>The organism, for example methicillin-resistant versus methicillin-susceptible <i>Staphylococcus aureus</i></td></tr>
+          <tr><td class="h">Predisposing risk factors</td><td>For example, people who inject drugs</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Classify it like a news story: when, where, what, who.</p><p class="mnem-key"><span><b>When</b> acute or subacute</span><span><b>Where</b> native valve, prosthetic valve or device</span><span><b>What</b> the organism (resistant or susceptible Staphylococcus aureus)</span><span><b>Who</b> the predisposing risk (people who inject drugs)</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l32-duke" style="--acc:#7a2d5a;--acc-bg:#ece2e8;--acc-zebra:#f6f0f3;--acc-ink:#5f2346">
+    <div class="shead"><span class="dot" style="background:#7a2d5a"></span><h2>Modified Duke Criteria (Infective Endocarditis)<span class="tag">Criteria &middot; Lecture 32 &middot; slides 22&ndash;23</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:30%">Criterion</th><th style="width:70%">What counts (slide 22 table)</th></tr></thead>
+        <tbody>
+          <tr><td class="grp" colspan="2">Major criteria</td></tr>
+          <tr><td class="h">B &middot; Blood cultures positive</td><td>Typical organism from <b>two separate</b> blood cultures (viridans streptococci, <i>Streptococcus gallolyticus</i>, HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella; slide 19) group, <i>Staphylococcus aureus</i>, or community-acquired enterococci without a primary focus); <b>or persistently positive</b> (drawn more than 12 hours apart, or all of 3 or most of 4 or more, first and last at least 1 hour apart); or a single positive culture for <i>Coxiella burnetii</i> or a phase I immunoglobulin G antibody titer above 1:800</td></tr>
+          <tr><td class="h">E &middot; Endocardial involvement</td><td>Positive echocardiogram: oscillating intracardiac mass (on a valve or supporting structures, in the path of regurgitant jets, or on implanted material, with no other anatomic explanation), abscess, or new partial dehiscence of a prosthetic valve; <b>or new valvular regurgitation</b> (an increase or change in a preexisting murmur is not sufficient)</td></tr>
+          <tr><td class="grp" colspan="2">Minor criteria</td></tr>
+          <tr><td class="h">T &middot; Temperature</td><td>Fever 38.0 &deg;C (100.4 &deg;F) or higher</td></tr>
+          <tr><td class="h">I &middot; Immunologic phenomena</td><td>Glomerulonephritis, Osler nodes, Roth spots, rheumatoid factor</td></tr>
+          <tr><td class="h">M &middot; Microbiologic evidence</td><td>A positive blood culture that does not meet a major criterion, or serologic evidence of active infection with an organism consistent with endocarditis (single positive cultures of coagulase-negative staphylococci or diphtheroids, common contaminants, do not count, nor do single positive cultures of organisms that do not cause endocarditis frequently, such as gram-negative bacilli)</td></tr>
+          <tr><td class="h">E &middot; Embolic (vascular) phenomena</td><td>Major arterial emboli, septic pulmonary infarcts, mycotic aneurysm, intracranial hemorrhage, conjunctival hemorrhages, Janeway lesions</td></tr>
+          <tr><td class="h">R &middot; Risk factor (predisposition)</td><td>Predisposing heart condition (valve stenosis or regurgitation, prosthetic valve, congenital heart disease except an isolated atrial septal defect, a repaired ventricular septal defect or a closed patent ductus arteriosus, prior endocarditis, hypertrophic cardiomyopathy) or injection drug use</td></tr>
+          <tr><td class="grp" colspan="2">Verdict</td></tr>
+          <tr><td class="h">Definite</td><td><b>2 major</b>, or <b>1 major + 3 minor</b>, or <b>5 minor</b> (slide 22 footnote and the pictures on slides 22&ndash;23)</td></tr>
+          <tr><td class="h">Possible</td><td><b>1 major + 1 minor</b>, or <b>3 minor</b> (slide 23 picture)</td></tr>
+          <tr><td class="rnote" colspan="2">The slide 23 mnemonic picture writes fever as &ldquo;&gt; 38 &deg;C&rdquo; and the culture criterion as &ldquo;positive &gt; 2 times 12 hrs apart&rdquo;; the slide 22 table says 38.0 &deg;C or higher and gives the fuller rules above. The slides give no &ldquo;rejected&rdquo; rule.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">BE TIMER (slide 23&rsquo;s own mnemonic): major = BE, minor = TIMER. Definite = two majors, one major plus three minors, or a full hand of five minors.</p><p class="mnem-key"><span><b>B</b> blood cultures</span><span><b>E</b> echocardiogram: endocardial involvement</span><span><b>T</b> temperature 38.0 &deg;C or more</span><span><b>I</b> immunologic: Osler, Roth, glomerulonephritis, rheumatoid factor</span><span><b>M</b> microbiologic: a culture short of major</span><span><b>E</b> embolic: Janeway, emboli, infarcts, mycotic aneurysm</span><span><b>R</b> risk: heart condition or injection drug use</span></p><p class="mnem-brk"><b>Where it breaks:</b> TIMER reorders slide 22&rsquo;s minor list (predisposition, fever, vascular, immunologic, microbiologic). Osler nodes (painful, slide 13) are immunologic; Janeway lesions (nontender, slide 13) are embolic. Possible = 1 major + 1 minor, or 3 minor.</p></div>
+  </section>
 
   <section class="topic" id="l26-emph" style="--acc:#b8860b;--acc-bg:#f5eedd;--acc-zebra:#faf7ee;--acc-ink:#906909">
     <div class="shead"><span class="dot" style="background:#b8860b"></span><h2>★ Professor Emphasized — Virchow Triad &amp; Wells Criteria</h2></div>
@@ -872,6 +1389,10 @@
           <tr><td class="h">★ Empiric</td><td>Covers <b>staphylococci, streptococci, enterococci</b>. Native valve, subacute, or prosthetic valve &gt; 1 year: <b>vancomycin + ceftriaxone</b>. Prosthetic valve &le; 1 year: <b>vancomycin + gentamicin + cefepime</b>. (1:15:54)</td></tr>
           <tr><td class="h">★ Staphylococcus aureus</td><td>Methicillin-susceptible: <b>nafcillin or oxacillin</b>; cefazolin. Methicillin-resistant: <b>vancomycin or daptomycin</b>. Prosthetic valve: add <b>rifampin + gentamicin</b>. (1:25:15)</td></tr>
           <tr><td class="h">Others</td><td>Viridans streptococci: <b>penicillin G or ceftriaxone</b> (&plusmn; gentamicin) or vancomycin; <b>2-week gentamicin regimen only if uncomplicated, rapid response, no chronic kidney disease</b>. Enterococci: <b>ampicillin + gentamicin</b>. HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella): <b>ceftriaxone</b>.</td></tr>
+          <tr><td class="h">Other streptococci</td><td><i>Streptococcus gallolyticus</i> (<i>bovis</i>): associated with liver disease or cirrhosis and gastrointestinal abnormalities, <b>especially colon cancer</b>. Listed regimens: penicillin; cefazolin; ceftriaxone; <b>vancomycin + ceftriaxone + oral rifampin</b>. (IE Missing Slide and Cases, slide 1)</td></tr>
+          <tr><td class="h">Enterococci: options</td><td>(Penicillin or ampicillin) + gentamicin; <b>ampicillin + ceftriaxone</b> (good for chronic kidney disease or acute kidney injury with a low creatinine clearance). (IE Missing Slide and Cases, slide 1)</td></tr>
+          <tr><td class="h">HACEK organisms</td><td>HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella): <b>ceftriaxone or a third-generation cephalosporin</b>; penicillin allergy: could consider <b>fluoroquinolones</b>. (IE Missing Slide and Cases, slide 1)</td></tr>
+          <tr><td class="h">Culture-negative endocarditis</td><td>May be due to infection from organisms <b>not recovered in routine microbiology testing</b>, or to <b>antimicrobials given before blood cultures were obtained</b>. (IE Missing Slide and Cases, slide 1)</td></tr>
           <tr><td class="h">★ Consults</td><td><b>Infectious disease</b>: antibiotics and outpatient monitoring. <b>Cardiothoracic surgery</b>: surgery and anticoagulation needs. <b>Addiction medicine</b>: harm reduction. Rehabilitation? Palliative care? (1:08:22)</td></tr>
           <tr><td class="h">★ Surgery</td><td><b>Heart failure from valve dysfunction (most common)</b>; infection not resolving on appropriate antibiotics; <b>abscess</b>; <b>fungal</b> (hard to cure with drugs alone). <b>Anticoagulation: not beneficial for native valves</b>, controversial for prosthetic. (1:27:17, 1:27:52)</td></tr>
           <tr><td class="h">★ Prognosis</td><td><b>Staphylococcus aureus = most lethal</b> (prosthetic valve about 50% &gt; non-injecting about 30% &gt; injection drug use about 5%). Viridans streptococci: <b>relatively good if treated before complications</b>. Enterococci: <b>resistance</b>; valve replacement in 30&ndash;40%. Fungi: <b>large peripheral artery emboli</b>. (1:35:37)</td></tr>

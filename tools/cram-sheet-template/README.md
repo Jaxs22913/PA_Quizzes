@@ -58,6 +58,43 @@ embedded O/I/A/N table images — see "Sourcing O/I/A/N tables" below). Falls ba
 original 2-column term/fact rendering automatically when `cols` is omitted, so existing
 cram sheets are unaffected.
 
+### Criteria tables: memory aids, note rows, column widths, one TOC chip (2026-10-29)
+
+Standing rule (memory `cram_criteria_tables`): every criteria set, score, classification, staging, named triad
+or threshold table on the slides gets its own `cols` table plus a memory aid. Optional topic fields for that
+(all optional; a sheet that uses none of them renders byte-identically to before, because the CSS block in
+`template.html` between the `CRAM-OPTIONAL-CSS` markers is emitted only when a page uses a memory aid or a
+note row):
+
+```python
+{
+    "id": "crit-l29-chads", "label": "CHA2DS2-VASc Score (Stroke Risk)", "color": "#1f5c3a",
+    "tag": "Criteria &middot; Lecture 29 &middot; slides 50&ndash;51",
+    "cols": ["Letter", "Item (slide 51)", "Points"],
+    "widths": ["12%", "72%", "16%"],          # per-column CSS widths (else the first column is 28%)
+    "rows": [
+        ("C", "Congestive heart failure history", "+1"),
+        ...,
+        {"note": "Slide 50: ... (slide 49 says ...)"},   # full-width italic footnote row, e.g. a slide conflict
+    ],
+    "mnemonic": {                               # "Memory aid" box rendered under the table
+        "hook": "The subscript 2s are the 2-pointers ...",   # one line, shown bold
+        "key": [["C", "congestive heart failure"], ...],     # token -> meaning, one per table item
+        "breaks": "Where the aid stops matching the slide.",  # optional
+        # "label": "Memory aid",                              # optional box label
+    },
+    "min_width": "0",                           # override the 560px table min-width (narrow tables fit a phone)
+    "toc": False,                               # no TOC chip for this topic
+    # "toc_label": "Criteria &amp; Scores",     # chip text override (use on the first of a run)
+}
+```
+
+`mnemonic` may also be a plain HTML string. The box uses theme variables only (`--card`, `--body`, `--ink`,
+`--muted`, `--line`, the topic's `--acc` / `--acc-ink`), so the designed dark mode (`tools/dark_tokens.py`)
+recolours it with no extra rule. The key must map one-to-one onto the table's items; say where it breaks.
+Pass `primary=` to `render()` when criteria tables go first, so the page keeps its colour (it defaults to the
+first topic's). First used on CMS I Exam 5 (`tools/build_cms_e5_cram.py`, the `CRITERIA` list).
+
 ## Usage
 
 ```python
