@@ -242,10 +242,9 @@ BODY = """
 
   <h3 class="sub" id="food-intox">16.4 &middot; Objective 2 &mdash; Food intoxication versus food infection</h3>
   <table>
-    <tr><th></th><th>Food intoxication</th><th>Food infection</th></tr>
-    <tr><td>What is eaten</td><td>A <strong>preformed toxin</strong> made by the bacteria in the food (cells and toxin)</td><td><strong>Live bacterial cells</strong></td></tr>
-    <tr><td>What happens</td><td>The toxin is ingested and reaches its <strong>target organs</strong> (the diagram shows the brain and muscles)</td><td><strong>Improper cooking</strong> lets the <strong>bacteria multiply in the food</strong>; after ingestion they cause an <strong>intestinal infection</strong></td></tr>
-    <tr><td>Examples (slide 12)</td><td><strong>Staphylococcal toxin</strong>, <strong><em>Clostridium botulinum</em> toxin</strong></td><td><strong><em>Salmonella</em></strong>, <strong><em>Listeria</em></strong></td></tr>
+    <tr><th>Kind of illness</th><th>What is eaten</th><th>What happens</th><th>Examples (slide 12)</th></tr>
+    <tr><td><strong>Food intoxication</strong></td><td>A <strong>preformed toxin</strong> made by the bacteria in the food (cells and toxin)</td><td>The toxin is ingested and reaches its <strong>target organs</strong> (the diagram shows the brain and muscles)</td><td><strong>Staphylococcal toxin</strong>, <strong><em>Clostridium botulinum</em> toxin</strong></td></tr>
+    <tr><td><strong>Food infection</strong></td><td><strong>Live bacterial cells</strong></td><td><strong>Improper cooking</strong> lets the <strong>bacteria multiply in the food</strong>; after ingestion they cause an <strong>intestinal infection</strong></td><td><strong><em>Salmonella</em></strong>, <strong><em>Listeria</em></strong></td></tr>
   </table>
   """ + fig("l16-s012-intoxication-infection.jpg", 179, 281,
       "Two-column diagram: left, a can of beans, a circle of rod cells shedding toxin dots, the gut, and toxin reaching a head and an arm; right, a roast chicken, a circle of cells, a frying pan labeled improper cooking technique, bacteria multiplying in food, and an infected intestine.",
@@ -394,12 +393,11 @@ BODY = """
 
   <h3 class="sub" id="food-viruses">16.13 &middot; Objective 2 &mdash; Foodborne viruses</h3>
   <table>
-    <tr><th></th><th>Norovirus (Norwalk-like viruses, family Caliciviridae)</th><th>Hepatitis A and E</th></tr>
-    <tr><td>How common</td><td>A common foodborne agent, upwards of 23 million cases a year</td><td>Hepatitis viruses A&ndash;E exist; <strong>A and E</strong> are the ones typically spread by the fecal-oral route</td></tr>
-    <tr><td>Spread</td><td><strong>Person to person</strong>, by <strong>feces and vomitus</strong> (daycares, nursing homes, cruise ships); also <strong>contaminated shellfish</strong> (feces-contaminated water)</td><td><strong>Fecal-oral</strong>; <strong>not by kissing, sneezing, saliva or blood</strong></td></tr>
-    <tr><td>Course</td><td><strong>Infectious dose only a few viral particles</strong>; <strong>rapid onset and short duration</strong>: nausea, vomiting, diarrhea, low-grade fever</td><td>A person is <strong>most contagious about two weeks BEFORE symptoms appear</strong></td></tr>
-    <tr><td>Prevention</td><td colspan="2">Good <strong>handwashing and diaper hygiene</strong>; cook food thoroughly; clean drinking water. For hepatitis, <strong>a vaccine in case of suspected exposure</strong> (the slide does not say which; see 16.17)</td></tr>
+    <tr><th>Virus</th><th>How common</th><th>Spread</th><th>Course</th></tr>
+    <tr><td><strong>Norovirus (Norwalk-like viruses, family Caliciviridae)</strong></td><td>A common foodborne agent, upwards of 23 million cases a year</td><td><strong>Person to person</strong>, by <strong>feces and vomitus</strong> (daycares, nursing homes, cruise ships); also <strong>contaminated shellfish</strong> (feces-contaminated water)</td><td><strong>Infectious dose only a few viral particles</strong>; <strong>rapid onset and short duration</strong>: nausea, vomiting, diarrhea, low-grade fever</td></tr>
+    <tr><td><strong>Hepatitis A and E</strong></td><td>Hepatitis viruses A&ndash;E exist; <strong>A and E</strong> are the ones typically spread by the fecal-oral route</td><td><strong>Fecal-oral</strong>; <strong>not by kissing, sneezing, saliva or blood</strong></td><td>A person is <strong>most contagious about two weeks BEFORE symptoms appear</strong></td></tr>
   </table>
+  <p><strong>Prevention, for both</strong>: Good <strong>handwashing and diaper hygiene</strong>; cook food thoroughly; clean drinking water. For hepatitis, <strong>a vaccine in case of suspected exposure</strong> (the slide does not say which; see 16.17).</p>
 
   <h3 class="sub" id="food-tracking">16.14 &middot; Objective 4 &mdash; Laboratory methods, tracking and recalls</h3>
   <ul>
