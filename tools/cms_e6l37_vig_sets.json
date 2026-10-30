@@ -1,0 +1,1806 @@
+{
+ "set1": [
+  {
+   "topic": "Pneumonia workup and severity",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 35-year-old man with community-acquired pneumonia confirmed on chest radiograph is stable for outpatient treatment. He has no comorbidities, no severe features and no resistant-organism risk. Which test is low value and should be skipped?",
+   "opts": [
+    [
+     "Pulse oximetry",
+     "Oxygen saturation, with vital signs, organ dysfunction and sepsis risk, decides where a patient with pneumonia is treated: outpatient, ward or intensive care. Tell: oximetry answers a real management question; a routine culture in a stable outpatient does not.",
+     "adjacent fact"
+    ],
+    [
+     "Vital signs and sepsis screen",
+     "Vital signs, organ dysfunction and a sepsis assessment are part of every pneumonia workup, deciding the place of care and the urgency of support. Tell: these change disposition in every patient, unlike a routine culture in a stable outpatient.",
+     "adjacent fact"
+    ],
+    [
+     "Severity index scoring",
+     "The severity index plus clinical judgment is the preferred support for the admission decision, so it directly changes where he is treated. Tell: scoring decides disposition, which makes it useful rather than low value.",
+     "adjacent fact"
+    ],
+    [
+     "Routine sputum culture",
+     "Correct. Cultures are obtained selectively, for severe community-acquired pneumonia, resistant-pathogen risk or treatment failure, and routine cultures do not help every stable outpatient. He has none of those triggers, so a culture would not change any decision."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 29, 125",
+   "slot": "initial test",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Psittacosis and Mycoplasma",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 20-year-old college student has had 10 days of gradual fever, a persistent cough and headache. Several students in her dormitory have the same illness, and a respiratory nucleic acid test is positive for Mycoplasma pneumoniae. She has taken amoxicillin for 3 days without improvement. Which change is most appropriate?",
+   "opts": [
+    [
+     "Add clavulanate",
+     "Adding clavulanate makes amoxicillin-clavulanate, still a beta-lactam. Mycoplasma has no cell wall for any beta-lactam to act on. Tell: the failure is a drug-class mismatch, not resistance that a beta-lactamase inhibitor could fix.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Switch to cefpodoxime",
+     "Cefpodoxime is another beta-lactam, and beta-lactams are ineffective against Mycoplasma because it lacks a cell wall. Tell: change the drug class to a macrolide or doxycycline.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Extend the amoxicillin course",
+     "A longer course of an ineffective drug cannot help: Mycoplasma has no cell wall, so beta-lactams do not work at any duration. Tell: her lack of response is expected, and the fix is a macrolide or doxycycline.",
+     "reversed direction or value"
+    ],
+    [
+     "Switch to azithromycin",
+     "Correct. Beta-lactams are ineffective against Mycoplasma because it lacks a cell wall, so amoxicillin cannot work. Adults with Mycoplasma infection are treated with a macrolide such as azithromycin or with doxycycline, and a respiratory fluoroquinolone is an alternative."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 89",
+   "slot": "escalation",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Vaccines",
+   "io": "Identify and discuss vaccines which prevent respiratory infections.",
+   "q": "A 32-year-old woman who is 30 weeks pregnant received Tdap during her last pregnancy 2 years ago. Which plan for pertussis protection is appropriate?",
+   "opts": [
+    [
+     "Wait 10 years from her last Tdap",
+     "The 10-year Td or Tdap booster interval applies to adults outside pregnancy. Tdap is given during every pregnancy. Tell: pregnancy resets the clock; each pregnancy gets its own dose.",
+     "adjacent fact"
+    ],
+    [
+     "Td instead of Tdap",
+     "Td lacks the pertussis component, and Tdap is what protects against pertussis. The recommendation is Tdap during every pregnancy. Tell: pertussis protection needs the Tdap product.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Tdap after delivery",
+     "The recommendation is Tdap during every pregnancy, not after delivery. Tell: the dose belongs in the pregnancy itself.",
+     "wrong stage or severity"
+    ],
+    [
+     "Tdap during this pregnancy",
+     "Correct. Tdap is given during every pregnancy, regardless of the interval since the last dose. Her dose 2 years ago in an earlier pregnancy does not cover this one, so she receives Tdap now."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 124",
+   "slot": "agent/regimen",
+   "lead": "next step"
+  },
+  {
+   "topic": "Pneumonia workup and severity",
+   "io": "Identify medical care strategies for respiratory infections in the lecture topic list for the following populations. 1. adult 2. elderly",
+   "q": "A 72-year-old woman with community-acquired pneumonia is alert and oriented. Her blood urea nitrogen is 26 mg/dL, respiratory rate 24/min and blood pressure 128/76 mm Hg. What is her CURB-65 (confusion, urea, respiratory rate, blood pressure, age 65 or older) score?",
+   "opts": [
+    [
+     "1",
+     "A total of 1 counts only one item, and she has two: urea above 20 mg/dL and age 65 or older. Tell: age scores a point by itself at 65 or older, so an older patient with any other item already has at least 2.",
+     "wrong stage or severity"
+    ],
+    [
+     "2",
+     "Correct. Confusion 0 (alert and oriented) + urea 1 (26 mg/dL is above 20) + respiratory rate 0 (24 is below 30) + blood pressure 0 (systolic not below 90, diastolic not 60 or lower) + age 1 (72) = 2. A total of 2 is moderate severity, with a risk of death of 9%, and the pathway sends her to the hospital."
+    ],
+    [
+     "3",
+     "A total of 3 adds a point she does not have: her respiratory rate of 24 is below 30, and her blood pressure of 128/76 is not low. Tell: only urea and age score here; 3 or more would be high severity, with a risk of death of 15 to 40%.",
+     "wrong stage or severity"
+    ],
+    [
+     "4",
+     "A total of 4 would need two more items, such as confusion and low blood pressure, and she is alert with a normal blood pressure. Tell: 4 or 5 is the band where transfer to critical care is especially considered, far above her two points.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 29, 31",
+   "slot": "prognosis",
+   "lead": "classify"
+  },
+  {
+   "topic": "Pneumonia workup and severity",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 63-year-old man with community-acquired pneumonia remains hypotensive after intravenous fluids and needs a vasopressor infusion to keep up his blood pressure. He is not intubated. How should the severity of his pneumonia be classified?",
+   "opts": [
+    [
+     "Nonsevere: he is not ventilated",
+     "Mechanical ventilation is one major criterion, not a requirement: vasopressor-dependent shock alone makes the pneumonia severe. Tell: either major criterion is enough by itself, and he has one.",
+     "adjacent fact"
+    ],
+    [
+     "Nonsevere: minor criteria not counted",
+     "Nonsevere means no major criterion and fewer than three minor criteria; the minor criteria matter when no major one is present. He already has a major criterion. Tell: a single major criterion settles severity without counting the minor ones.",
+     "wrong stage or severity"
+    ],
+    [
+     "Moderate: hospital ward care",
+     "Ward care fits nonsevere pneumonia placed with the severity index and clinical judgment. Vasopressor-dependent shock needs urgent intensive care-level assessment and circulatory support. Tell: shock moves the place of care out of the ward.",
+     "wrong stage or severity"
+    ],
+    [
+     "Severe: vasopressor-dependent shock",
+     "Correct. Severe community-acquired pneumonia is vasopressor-dependent shock, mechanical ventilation, or at least three minor criteria. Needing a vasopressor to hold his blood pressure is vasopressor-dependent shock, a major criterion on its own, so he needs urgent intensive care-level assessment and a beta-lactam combination regimen."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 45",
+   "slot": "differential",
+   "lead": "classify"
+  },
+  {
+   "topic": "Pneumocystis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 41-year-old man with human immunodeficiency virus infection is admitted with moderate Pneumocystis pneumonia confirmed on induced sputum. He has no drug allergies and normal kidney function. Which treatment is preferred?",
+   "opts": [
+    [
+     "Intravenous pentamidine",
+     "Intravenous pentamidine is one of the severity-based alternatives, not the preferred treatment. With no allergy and normal kidney function he has no reason to leave the first-choice drug. Tell: pentamidine enters only when trimethoprim-sulfamethoxazole cannot be used.",
+     "adjacent fact"
+    ],
+    [
+     "Atovaquone",
+     "Atovaquone is an alternative for mild disease. He has moderate disease needing admission and has no barrier to the preferred drug. Tell: atovaquone fits a mild case that cannot take the first choice, so his severity and lack of allergy both point away from it.",
+     "wrong stage or severity"
+    ],
+    [
+     "Trimethoprim-sulfamethoxazole",
+     "Correct. Trimethoprim-sulfamethoxazole is the preferred treatment for Pneumocystis pneumonia, given intravenously for moderate-to-severe disease and switched to oral therapy after improvement, for 21 days in disease linked to human immunodeficiency virus. Nothing in his history, no allergy and no kidney problem, moves him to an alternative."
+    ],
+    [
+     "Clindamycin plus primaquine",
+     "Clindamycin plus primaquine is an alternative chosen by severity when the preferred drug cannot be used, and glucose-6-phosphate dehydrogenase is checked before primaquine. He has no allergy or other barrier. Tell: alternatives are for patients who cannot take the preferred drug.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 71",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Hospital and ventilator pneumonia",
+   "io": "Identify medical care strategies for respiratory infections in the lecture topic list for the following populations. 1. adult 2. elderly",
+   "q": "A 70-year-old man hospitalized for 6 days after a stroke develops hospital-acquired pneumonia. He has no methicillin-resistant Staphylococcus aureus risk, no resistance risk and no high mortality risk. Which empiric agent is most appropriate?",
+   "opts": [
+    [
+     "Piperacillin-tazobactam",
+     "Correct. Hospital-acquired pneumonia without major resistance or high mortality risk is treated with an antipseudomonal agent that also covers methicillin-sensitive Staphylococcus aureus, chosen with the local antibiogram, such as piperacillin-tazobactam or cefepime. Respiratory cultures are obtained first."
+    ],
+    [
+     "Ceftriaxone plus azithromycin",
+     "Ceftriaxone plus a macrolide is the inpatient regimen for community-acquired pneumonia. His pneumonia began 6 days into the admission, where Staphylococcus aureus and gram-negative bacilli including Pseudomonas are the concern. Tell: hospital-acquired pneumonia needs antipseudomonal coverage.",
+     "adjacent fact"
+    ],
+    [
+     "Moxifloxacin",
+     "Moxifloxacin does not provide reliable Pseudomonas coverage, and hospital-acquired pneumonia needs an antipseudomonal agent. Tell: the hospital pathway starts from piperacillin-tazobactam or cefepime, not a respiratory fluoroquinolone.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Vancomycin as a single drug",
+     "Vancomycin is added only when methicillin-resistant Staphylococcus aureus risk or local prevalence supports it, and he has no such risk; by itself it would leave Pseudomonas and other gram-negative bacilli uncovered. Tell: the backbone is the antipseudomonal beta-lactam.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 39, 42, 46",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "COVID-19",
+   "io": "Identify medical care strategies for respiratory infections in the lecture topic list for the following populations. 1. adult 2. elderly",
+   "q": "A 70-year-old unvaccinated man with diabetes and heart failure has mild coronavirus disease 2019 that began 6 days ago. His oxygen saturation is 96% on room air. Which treatment is most appropriate?",
+   "opts": [
+    [
+     "Nirmatrelvir-ritonavir",
+     "Nirmatrelvir/ritonavir must start within 5 days of symptom onset, and he is at day 6. Tell: count the days; the 5-day window has closed, while the 7-day remdesivir window has not.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Molnupiravir",
+     "Molnupiravir is an adult alternative only when the preferred options are unsuitable, and remdesivir is still available within its 7-day window. Tell: the preferred option comes first when it is still possible.",
+     "adjacent fact"
+    ],
+    [
+     "Dexamethasone",
+     "Systemic corticosteroids are not used for coronavirus disease 2019 without hypoxemia unless another indication exists. His saturation is 96% on room air. Tell: dexamethasone belongs to the hospital pathway for hypoxemia.",
+     "wrong stage or severity"
+    ],
+    [
+     "A 3-day remdesivir course",
+     "Correct. A high-risk outpatient with mild or moderate disease and no hypoxemia is offered nirmatrelvir/ritonavir within 5 days or a three-day intravenous remdesivir course within 7 days of symptom onset. At day 6 only the remdesivir window is still open, and his age, comorbidities and lack of vaccination make him high risk."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 113, 120, 122",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Pneumonia workup and severity",
+   "io": "Identify medical care strategies for respiratory infections in the lecture topic list for the following populations. 1. adult 2. elderly",
+   "q": "A 77-year-old man with community-acquired pneumonia has a PSI (Pneumonia Severity Index) total of 104 points. Which risk class does that total fall in?",
+   "opts": [
+    [
+     "Class II",
+     "Class II covers 51 to 70 points, with a mortality of 0.6%. His 104 points are far above it. Tell: Class II is the low end of the scored classes, and a total over 100 cannot sit there.",
+     "wrong stage or severity"
+    ],
+    [
+     "Class III",
+     "Class III covers 71 to 90 points, with a mortality of 0.9%. His 104 points are above that band. Tell: once a total passes 90 it moves to Class IV, where mortality jumps about tenfold, to 9.3%.",
+     "wrong stage or severity"
+    ],
+    [
+     "Class IV",
+     "Correct. On the interpretation table, 91 to 130 points is Class IV, with a mortality of 9.3%. The index plus clinical judgment is the preferred support for the admission decision, and a total just over 100 already carries roughly a 1 in 10 risk of death."
+    ],
+    [
+     "Class V",
+     "Class V starts at 131 points, with a mortality of 27.0%. His 104 points fall short of it. Tell: Class IV runs from 91 to 130, so 104 is a Class IV total.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 30, 31",
+   "slot": "prognosis",
+   "lead": "classify"
+  },
+  {
+   "topic": "Pneumonia antibiotics",
+   "io": "Identify medical care strategies for respiratory infections in the lecture topic list for the following populations. 1. adult 2. elderly",
+   "q": "A 72-year-old man is admitted to a general ward with nonsevere community-acquired pneumonia and no resistant-organism risk. He has had a severe reaction to azithromycin and another to levofloxacin. Which regimen is most appropriate?",
+   "opts": [
+    [
+     "Ceftriaxone plus doxycycline",
+     "Correct. Nonsevere inpatient pneumonia is usually treated with a beta-lactam plus a macrolide, or with respiratory fluoroquinolone monotherapy. A beta-lactam plus doxycycline is the alternative when macrolides and fluoroquinolones are unsuitable, as his two reactions make them."
+    ],
+    [
+     "Ceftriaxone plus azithromycin",
+     "This is the usual nonsevere inpatient regimen, but his severe reaction to azithromycin makes the macrolide unsuitable. Tell: when the macrolide is out, doxycycline partners the beta-lactam.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Moxifloxacin monotherapy",
+     "Moxifloxacin is a respiratory fluoroquinolone, the same group as the levofloxacin that caused his severe reaction, so fluoroquinolone monotherapy is unsuitable. Tell: both usual partners are out, which is exactly when doxycycline is used.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Ceftriaxone plus vancomycin",
+     "Vancomycin is methicillin-resistant Staphylococcus aureus coverage, added only for validated risk, and he has none. It also leaves out the atypical coverage a macrolide or doxycycline gives. Tell: his problem is drug reactions, not resistance risk.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 44",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Pneumocystis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 33-year-old man with human immunodeficiency virus infection has never had Pneumocystis pneumonia. His CD4 (cluster of differentiation 4) count is 160 cells/mm³, and his viral load is detectable. What is the most appropriate next step?",
+   "opts": [
+    [
+     "Start primary prophylaxis",
+     "Correct. Primary prophylaxis starts for a CD4 (cluster of differentiation 4) count below 100 cells/mm³, or a count of 100 to 200 with a detectable viral load. His 160 with a detectable viral load meets the second criterion, and trimethoprim-sulfamethoxazole is the preferred drug."
+    ],
+    [
+     "Wait until the count is below 100",
+     "Below 100 is one trigger, but a count of 100 to 200 with a detectable viral load is the other, and he meets it. Tell: read both parts of the criterion; his detectable viral load brings the threshold up to 200.",
+     "reversed direction or value"
+    ],
+    [
+     "Prophylaxis after a first episode",
+     "Secondary prophylaxis follows a completed treatment course, but primary prophylaxis is meant to prevent the first episode in patients who meet the count criteria. Tell: he has never had the infection and already qualifies for primary prophylaxis.",
+     "wrong stage or severity"
+    ],
+    [
+     "No prophylaxis while he feels well",
+     "Prophylaxis is decided by the count and the viral load, not by symptoms; waiting for symptoms means waiting for the infection. Tell: a count of 160 with a detectable viral load qualifies him whether or not he feels well.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 73",
+   "slot": "risk factors",
+   "lead": "next step"
+  },
+  {
+   "topic": "Aspiration and lung abscess",
+   "io": "Identify medical care strategies for respiratory infections in the lecture topic list for the following populations. 1. adult 2. elderly",
+   "q": "An 84-year-old woman with dysphagia after a stroke is recovering from aspiration pneumonia on a general ward. Which measure best addresses her risk of another episode?",
+   "opts": [
+    [
+     "Routine chest physiotherapy",
+     "Routine chest physiotherapy is described as not essential even in lung abscess care, and it does nothing about the swallowing problem that let her aspirate. Tell: prevention targets dysphagia, oral hygiene and positioning.",
+     "adjacent fact"
+    ],
+    [
+     "Lying flat for meals",
+     "Positioning is one of the risks to assess and correct after aspiration, and the proper positioning named for ventilated patients is head of bed elevated, not flat. Tell: the measure should lower the chance of colonized material reaching the lung.",
+     "reversed direction or value"
+    ],
+    [
+     "A swallowing assessment",
+     "Correct. After aspiration pneumonia, assess swallowing, oral hygiene, positioning and reversible risks, and address recurrent aspiration risk. Dysphagia is a listed risk factor, so a swallowing assessment targets the cause of her aspiration."
+    ],
+    [
+     "Long-term prophylactic antibiotics",
+     "Antibiotics treat established infection, and prophylactic antibiotics are avoided when bacterial infection is not suspected. Tell: recurrence is prevented by fixing the aspiration risk (swallowing, oral hygiene, positioning), not by continuous antibiotics.",
+     "common lay belief"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 49, 50, 51",
+   "slot": "education",
+   "lead": "next step"
+  },
+  {
+   "topic": "Pneumonia antibiotics",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 66-year-old man admitted with nonsevere community-acquired pneumonia is improving on ceftriaxone plus azithromycin. On day 3 his blood cultures grow Streptococcus pneumoniae that is susceptible to narrower agents. What is the most appropriate next step?",
+   "opts": [
+    [
+     "Continue both for 14 days",
+     "Duration follows clinical stability: stable nonsevere pneumonia may need fewer than 5 days, with a minimum of 3. A fixed 14 days of both drugs ignores the culture result and the shorter course. Tell: narrow and shorten when the patient improves.",
+     "wrong stage or severity"
+    ],
+    [
+     "Narrow to the culture results",
+     "Correct. Antibiotics are reassessed daily and narrowed when possible, and therapy is narrowed to culture and susceptibility results. He is improving and his organism and its susceptibilities are known, so broad empiric coverage is no longer needed; duration follows clinical stability."
+    ],
+    [
+     "Add vancomycin",
+     "Vancomycin covers methicillin-resistant Staphylococcus aureus and is added only for validated risk. His culture grew a susceptible pneumococcus and he is improving. Tell: a culture result is a reason to narrow, not to broaden.",
+     "reversed direction or value"
+    ],
+    [
+     "Switch to cefepime",
+     "Cefepime is an antipseudomonal beta-lactam for hospital-acquired pneumonia or Pseudomonas risk. He has neither, and his organism is a susceptible pneumococcus. Tell: switching to a broader antipseudomonal agent goes the wrong way.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 38, 40, 45",
+   "slot": "agent/regimen",
+   "lead": "next step"
+  },
+  {
+   "topic": "Histoplasmosis and cryptococcosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 47-year-old man tore down an old barn where bats roosted. Six days later he has high fever, chills, myalgias and a nonproductive cough. An early urine Histoplasma antigen is negative, but suspicion remains high. What is the most appropriate next step?",
+   "opts": [
+    [
+     "Histoplasmosis is excluded",
+     "An early negative antigen test does not exclude disease; the antigen may not yet be detectable. Tell: a negative result early in the illness, with a strong exposure history, calls for repeat testing or respiratory specimens.",
+     "reversed direction or value"
+    ],
+    [
+     "Amphotericin-based induction",
+     "Amphotericin-based induction is for severe pulmonary or disseminated disease, and he has a mild acute illness that is not yet confirmed. Tell: the open question is the diagnosis, which repeat testing answers.",
+     "wrong stage or severity"
+    ],
+    [
+     "Serum cryptococcal antigen",
+     "Cryptococcus is inhaled from the environment and is a risk mainly with immunocompromise, and nothing in his story points to it. Tell: bat droppings point to Histoplasma, so the next move is to retest for Histoplasma.",
+     "competing diagnosis"
+    ],
+    [
+     "Repeat antigen testing",
+     "Correct. Early negative tests do not exclude histoplasmosis. When suspicion persists, testing is repeated or respiratory specimens are obtained. His bat exposure and typical illness keep suspicion high, so one early negative result does not end the workup."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 77",
+   "slot": "test finding",
+   "lead": "next step"
+  },
+  {
+   "topic": "Vaccines",
+   "io": "Identify and discuss vaccines which prevent respiratory infections.",
+   "q": "A 45-year-old man gets hives whenever he eats eggs and asks whether he can receive this season's influenza vaccine. He has never reacted to an influenza vaccine. What is the most appropriate plan?",
+   "opts": [
+    [
+     "Vaccinate under specialist supervision",
+     "Specialist supervision applies to a severe reaction to a prior influenza vaccine, where an alternate vaccine may be possible. He has never reacted to one. Tell: his allergy is to eggs, which needs only routine safety steps.",
+     "competing diagnosis"
+    ],
+    [
+     "Routine vaccination and safety steps",
+     "Correct. Egg allergy does not require an egg-free product or precautions beyond routine vaccine safety measures. He has never reacted to an influenza vaccine, so he receives an age- and health-appropriate vaccine this season like any other adult."
+    ],
+    [
+     "An egg-free product",
+     "An egg-free product is not required for egg allergy; any age- and health-appropriate vaccine may be used with routine safety measures. Tell: egg allergy changes nothing about product choice.",
+     "common lay belief"
+    ],
+    [
+     "Skip influenza vaccination",
+     "Annual influenza vaccination is recommended for everyone aged 6 months or older without a contraindication, and egg allergy is not a contraindication. Tell: skipping leaves him unprotected for no reason.",
+     "common lay belief"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 4, 6",
+   "slot": "education",
+   "lead": "next step"
+  },
+  {
+   "topic": "Influenza",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 29-year-old woman who is 24 weeks pregnant has had 3 days of fever, myalgias and cough, and she is not short of breath. Influenza is strongly suspected, and a molecular test has been sent. What is the most appropriate treatment?",
+   "opts": [
+    [
+     "A single dose of baloxavir",
+     "Baloxavir is not recommended in pregnancy, and its single-dose use is limited to uncomplicated influenza within 48 hours. She is pregnant and at day 3. Tell: both the pregnancy and the timing rule baloxavir out.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "No antiviral after 48 hours",
+     "Risk status supports prompt antiviral treatment even when symptoms began more than 48 hours ago, and pregnancy is a high-risk group. Tell: the 48-hour limit applies to baloxavir in uncomplicated cases, not to oseltamivir in a pregnant patient.",
+     "reversed direction or value"
+    ],
+    [
+     "Await molecular confirmation",
+     "Clinical suspicion can justify treatment, and confirmation is not awaited in hospitalized, high-risk or progressively ill patients. Indicated antivirals are not withheld while results are pending. Tell: her pregnancy makes her high risk.",
+     "wrong stage or severity"
+    ],
+    [
+     "Start oseltamivir now",
+     "Correct. Pregnancy in any trimester is a high-risk group, and oseltamivir is preferred for high-risk patients, including in pregnancy. It is started promptly, even after 48 hours of symptoms, without waiting for confirmation in a high-risk patient."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 98, 108",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Aspiration and lung abscess",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 47-year-old man who aspirated gastric contents during a witnessed seizure was managed with oxygen and airway support and no antibiotic. Three days later he is worse, with a new fever, purulent sputum and a persistent infiltrate. Which complication should be suspected?",
+   "opts": [
+    [
+     "Secondary bacterial infection",
+     "Correct. Pneumonitis is managed with support, and persistence or worsening raises concern for secondary infection, a complication or another diagnosis. New fever, purulent sputum and a persistent infiltrate after 3 days point to a secondary bacterial infection, which now needs the applicable pneumonia regimen."
+    ],
+    [
+     "Resolving chemical injury",
+     "A resolving chemical injury improves with support; worsening 3 days later is the opposite pattern. Tell: persistence or worsening after aspiration pneumonitis is a reason to reassess for infection, not to keep waiting.",
+     "reversed direction or value"
+    ],
+    [
+     "Viral acute bronchitis",
+     "Acute bronchitis is a self-limited viral infection of the large airways without consolidation. His persistent infiltrate after an aspiration does not fit. Tell: a persistent infiltrate is a parenchymal process, not a large-airway one.",
+     "competing diagnosis"
+    ],
+    [
+     "Asthma exacerbation",
+     "Asthma exacerbations are on the cough differential, but he has no asthma history and has a persistent infiltrate with purulent sputum after aspiration. Tell: the infiltrate and the aspiration history point to infection.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 51",
+   "slot": "complication",
+   "lead": "complication"
+  },
+  {
+   "topic": "Pneumonia antibiotics",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 60-year-old woman is admitted to a general ward with nonsevere community-acquired pneumonia. She has never had methicillin-resistant Staphylococcus aureus or Pseudomonas isolated and has had no recent intravenous antibiotics. Which empiric regimen is most appropriate?",
+   "opts": [
+    [
+     "Piperacillin-tazobactam",
+     "Piperacillin-tazobactam is an antipseudomonal backbone for hospital-acquired and ventilator-associated pneumonia. Her pneumonia is community acquired with no Pseudomonas risk. Tell: the hospital pathway's drugs do not move to the community pathway without a validated risk.",
+     "adjacent fact"
+    ],
+    [
+     "Ceftriaxone plus azithromycin",
+     "Correct. Nonsevere inpatient pneumonia without resistant-organism risk is treated with a beta-lactam such as ceftriaxone or ampicillin-sulbactam plus a macrolide, or with respiratory fluoroquinolone monotherapy. She has no resistant-organism history, so no broader coverage is added."
+    ],
+    [
+     "Vancomycin plus cefepime",
+     "Vancomycin covers methicillin-resistant Staphylococcus aureus and cefepime covers Pseudomonas, and such coverage is added only for validated risks. She has none. Tell: admission alone does not mandate broad-spectrum therapy.",
+     "wrong stage or severity"
+    ],
+    [
+     "Amoxicillin as a single drug",
+     "Amoxicillin by itself is an outpatient regimen for patients without comorbidities. She needs a ward bed and an inpatient regimen. Tell: inpatients start with a beta-lactam plus a macrolide or a respiratory fluoroquinolone.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 44",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Acute bronchitis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 29-year-old woman has had 9 days of coughing fits that end in vomiting, with a whooping sound on inspiration. Her nephew was diagnosed with pertussis last week. Her vital signs and lung examination are normal. What is the most appropriate next step?",
+   "opts": [
+    [
+     "Chest radiograph",
+     "Imaging is obtained when vital signs, focal lung findings or clinical risk raise concern for pneumonia. Her vital signs and examination are normal. Tell: the pertussis clues call for organism-targeted testing, not a film of the lungs.",
+     "wrong stage or severity"
+    ],
+    [
+     "Targeted pertussis testing",
+     "Correct. Paroxysmal cough, post-tussive vomiting, a whoop and a relevant exposure are the pertussis clues, and suspected pertussis needs targeted testing and treatment to reduce transmission. There is no need to wait for 4 weeks of cough before testing."
+    ],
+    [
+     "Reassess after 4 weeks of cough",
+     "Waiting is the error the guidance warns against: do not wait for 4 weeks of cough when the pertussis clues are present. Her whoop, post-tussive vomiting and exposure already justify testing. Tell: the clues, not the length of the cough, trigger the workup.",
+     "reversed direction or value"
+    ],
+    [
+     "Supportive care and reassurance",
+     "Supportive care fits uncomplicated viral bronchitis, but suspected pertussis needs targeted testing and treatment to reduce spread to others. Her exposure and coughing fits make this more than a chest cold. Tell: transmission is the reason not to stop at reassurance.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 15, 17, 18",
+   "slot": "differential",
+   "lead": "test"
+  },
+  {
+   "topic": "Influenza",
+   "io": "Identify medical care strategies for respiratory infections in the lecture topic list for the following populations. 1. adult 2. elderly",
+   "q": "An 80-year-old woman from a nursing home is admitted with fever, cough and shortness of breath while both influenza and coronavirus disease 2019 are circulating in the community. Which test should be sent?",
+   "opts": [
+    [
+     "Routine sputum culture",
+     "Cultures are obtained for severe community-acquired pneumonia or validated resistant-pathogen risk, and a bacterial culture detects neither virus. Tell: the co-circulation clue asks which virus she has, which a molecular test answers.",
+     "adjacent fact"
+    ],
+    [
+     "Multiplex molecular test",
+     "Correct. Hospitalized patients are tested with a molecular assay, and a multiplex influenza and coronavirus test is useful during co-circulation. Her age, nursing-home residence and admission make the result important for antivirals and infection prevention."
+    ],
+    [
+     "Rapid influenza antigen test",
+     "Rapid antigen tests have limited sensitivity and do not test for the coronavirus. Hospitalized patients are tested with a molecular assay. Tell: with both viruses circulating, one molecular multiplex test answers both questions.",
+     "adjacent fact"
+    ],
+    [
+     "Viral culture",
+     "Viral culture is mainly for surveillance and does not guide time-sensitive treatment. Tell: an admitted patient needs a fast molecular result that can change antiviral treatment and precautions today.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 104",
+   "slot": "initial test",
+   "lead": "test"
+  },
+  {
+   "topic": "Pneumonia types and presentation",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 66-year-old woman being treated for community-acquired pneumonia becomes newly confused. Her heart rate is 118/min, blood pressure 84/50 mm Hg and oxygen saturation 87% on room air, and her urine output has fallen. Which complication has developed?",
+   "opts": [
+    [
+     "Empyema",
+     "Empyema is suggested by dullness to percussion at the base of the lung, a local pleural complication that is drained when indicated. It does not by itself explain hypotension, confusion and falling urine output. Tell: her findings are systemic, not a local pleural sign.",
+     "adjacent fact"
+    ],
+    [
+     "Pleurisy",
+     "Pleurisy is heard as a pleural rub, a local finding when the infection irritates the pleura. Her problem is circulatory failure with organ dysfunction. Tell: a rub is a chest sound; hypotension with confusion and low urine output is a systemic picture.",
+     "adjacent fact"
+    ],
+    [
+     "Lung abscess",
+     "A lung abscess develops insidiously over weeks with foul sputum, hemoptysis and a cavity with an air-fluid level. Her change is acute, with signs of circulatory collapse. Tell: abscess is slow and local; septicemia is fast and systemic.",
+     "competing diagnosis"
+    ],
+    [
+     "Septicemia",
+     "Correct. When pneumonia becomes systemic it progresses toward bacteremia or septicemia: tachycardia with hypotension, hypoxia, confusion or altered mental status, and decreased urine output or kidney function. She has every one of those signs, which changes her site of care and urgency of support."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 27, 28, 53",
+   "slot": "complication",
+   "lead": "complication"
+  },
+  {
+   "topic": "Acute bronchitis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 45-year-old woman without asthma or chronic lung disease has 8 days of cough after a cold, with a mild expiratory wheeze. She is afebrile with a normal oxygen saturation and no focal findings. Which treatment should not be prescribed routinely?",
+   "opts": [
+    [
+     "Acetaminophen as needed",
+     "Acetaminophen is a reasonable option for fever or discomfort, with a check that no combination product duplicates it. Tell: it is a symptom-relief measure, not one of the routine prescriptions the bronchitis guidance warns against.",
+     "adjacent fact"
+    ],
+    [
+     "Counseling on cough duration",
+     "Explaining the expected course is part of management: the cough commonly lasts 2 to 3 weeks and may persist longer. Tell: counseling is what replaces unnecessary prescriptions, so it is the step to keep, not the one to withhold.",
+     "reversed direction or value"
+    ],
+    [
+     "Oral corticosteroids",
+     "Correct. Systemic or inhaled corticosteroids are not routinely prescribed for uncomplicated bronchitis. Her wheeze is the transient wheeze of bronchitis from inflammation and mucus, with no asthma history and no focal findings, so a steroid adds risk without benefit."
+    ],
+    [
+     "A short bronchodilator trial",
+     "A short bronchodilator trial may help selected patients with wheeze or airflow obstruction, and she has a wheeze; it is reasonable, with reassessment for asthma if it persists. Tell: bronchodilators are allowed for wheeze; the steroid is the routine prescription to avoid.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 15, 17, 19, 20",
+   "slot": "agent/regimen",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Pneumonia antibiotics",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 61-year-old woman is intubated in the intensive care unit for severe community-acquired pneumonia, and molecular testing confirms that it is influenza pneumonia. Which treatment should be avoided?",
+   "opts": [
+    [
+     "Systemic corticosteroids",
+     "Correct. Systemic corticosteroids may be considered for severe community-acquired pneumonia, but influenza pneumonia is the stated exclusion. Her severe pneumonia is influenza pneumonia, so the steroid is the treatment to avoid while antiviral, antibacterial and respiratory support continue."
+    ],
+    [
+     "Oseltamivir",
+     "Oseltamivir is preferred for hospitalized, severe or progressive influenza and is started promptly even after 48 hours of symptoms. She is hospitalized with severe disease. Tell: the antiviral is indicated; the steroid is the exclusion.",
+     "reversed direction or value"
+    ],
+    [
+     "Empiric antibacterial therapy",
+     "Hospitalized community-acquired pneumonia generally still needs empiric antibacterial therapy even with a positive viral test, and severe disease uses a beta-lactam combination. Tell: a positive influenza result does not remove the antibiotic in a ventilated patient.",
+     "adjacent fact"
+    ],
+    [
+     "Ventilatory support",
+     "Oxygenation is assessed and respiratory support escalated when needed, and she is intubated for respiratory failure. Tell: support for failing breathing is kept; the steroid is the one excluded, because her pneumonia is influenza.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 38, 47, 108",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Hospital and ventilator pneumonia",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 66-year-old woman is expected to need mechanical ventilation for several days after a large stroke. Which measure helps prevent ventilator-associated pneumonia?",
+   "opts": [
+    [
+     "Prophylactic broad antibiotics",
+     "Prior antibiotic use is listed among the contributors to ventilator pneumonia, and the prevention bundle relies on extubation, hygiene, positioning and secretion care. Tell: prevention here is mechanical and hygienic, not antibiotic.",
+     "common lay belief"
+    ],
+    [
+     "Elevating the head of the bed",
+     "Correct. Prevention is the main strategy for ventilator-associated pneumonia: early extubation, hand washing and sterile technique, limiting circuit changes, proper positioning with the head of the bed elevated, and supraglottic secretion drainage with mouth care."
+    ],
+    [
+     "Daily ventilator circuit changes",
+     "Changing parts of the circuit is one of the ways contamination enters, so prevention limits circuit changes. Tell: fewer breaks in the circuit, not more, prevent this pneumonia.",
+     "reversed direction or value"
+    ],
+    [
+     "Keeping her lying flat",
+     "Proper positioning means elevating the head of the bed, the opposite of lying flat, because the pneumonia comes from colonized secretions inhaled through the tube. Tell: head up keeps secretions out of the lungs.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 48, 49",
+   "slot": "risk factors",
+   "lead": "next step"
+  },
+  {
+   "topic": "Vaccines",
+   "io": "Identify and discuss vaccines which prevent respiratory infections.",
+   "q": "A 72-year-old man with no immune problems received the updated 2026-2027 coronavirus disease 2019 vaccine in September. He asks whether he needs anything more this season. Which plan is appropriate?",
+   "opts": [
+    [
+     "No further dose this season",
+     "One seasonal dose fits adults younger than 65 without immunocompromise. At 72 he generally needs two seasonal doses about 6 months apart. Tell: age 65 or older adds the second dose.",
+     "wrong stage or severity"
+    ],
+    [
+     "Monthly doses through spring",
+     "Adults 65 or older generally need two seasonal doses about 6 months apart, not monthly doses. Tell: the schedule is two doses per season for his age group.",
+     "reversed direction or value"
+    ],
+    [
+     "A second dose about 6 months later",
+     "Correct. An updated 2026-2027 vaccine is recommended for adults 18 or older, and adults 65 or older generally need two seasonal doses about 6 months apart. At 72 he needs a second dose about 6 months after September."
+    ],
+    [
+     "A second dose in 4 weeks",
+     "The seasonal second dose for adults 65 or older comes about 6 months after the first, not after 4 weeks. Tell: a 4-week interval is the influenza two-dose spacing for young children, not this schedule.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 11",
+   "slot": "agent/regimen",
+   "lead": "next step"
+  },
+  {
+   "topic": "Pneumonia antibiotics",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 28-year-old man with no medical conditions has community-acquired pneumonia and is stable for outpatient treatment. He had anaphylaxis to amoxicillin as a child, and local pneumococcal resistance to macrolides is 35%. Which antibiotic is most appropriate?",
+   "opts": [
+    [
+     "Azithromycin",
+     "Macrolide monotherapy is used only when local pneumococcal resistance is below 25%; his area's 35% rules it out. Tell: two clues in the stem remove two drugs, the allergy and the resistance rate, leaving doxycycline.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Amoxicillin-clavulanate",
+     "Amoxicillin-clavulanate contains the amoxicillin he reacted to, and it is part of the comorbidity regimen, which he does not need. Tell: the allergy rules out every amoxicillin product.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Doxycycline",
+     "Correct. A healthy outpatient without resistant-organism risk takes amoxicillin or doxycycline. His amoxicillin anaphylaxis removes amoxicillin, and macrolide monotherapy needs local pneumococcal resistance below 25%, which 35% fails, so doxycycline is the remaining first-line choice."
+    ],
+    [
+     "Amoxicillin",
+     "Amoxicillin is a first-line outpatient choice, but his anaphylaxis to it removes it, and allergy history is reviewed before any regimen is chosen. Tell: the allergy, not the diagnosis, rules out this drug.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 43",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Histoplasmosis and cryptococcosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 34-year-old man explored a cave with heavy bat droppings 2 weeks ago. He now has high fever, chills, myalgias, a nonproductive cough, chest pain and a headache. Which test should be ordered?",
+   "opts": [
+    [
+     "Chlamydia psittaci nucleic acid test",
+     "Chlamydia psittaci comes from birds such as parrots, parakeets and poultry, and its test is a respiratory nucleic acid test. His exposure was bats in a cave. Tell: match the test to the exposure; bats and soil point to histoplasmosis.",
+     "competing diagnosis"
+    ],
+    [
+     "Urine Histoplasma antigen",
+     "Correct. Exposure to bat droppings followed by fever, chills, myalgias, a dry cough, chest pain and headache within 3 to 17 days fits acute histoplasmosis. Testing uses the urine Histoplasma antigen, often with serum antigen and antibody tests."
+    ],
+    [
+     "Routine sputum bacterial culture",
+     "Routine bacterial sputum culture is obtained selectively in community-acquired pneumonia and does not test for this fungus. Tell: the bat-dropping exposure points to a fungal antigen test, not a bacterial culture.",
+     "adjacent fact"
+    ],
+    [
+     "Serum cryptococcal antigen",
+     "Serum cryptococcal antigen tests for Cryptococcus, which is inhaled from the environment and is a risk mainly with immunocompromise. His story is a bat-dropping exposure with an acute flu-like illness. Tell: bat droppings name Histoplasma.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 75, 76, 77",
+   "slot": "initial test",
+   "lead": "test"
+  },
+  {
+   "topic": "Aspiration and lung abscess",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 54-year-old woman vomits and aspirates during a witnessed seizure. Two hours later she has abrupt shortness of breath and hypoxemia, a temperature of 100.6°F and a white blood cell count of 13,500/µL. Which management is most appropriate?",
+   "opts": [
+    [
+     "Supportive care, no antibiotic",
+     "Correct. A witnessed aspiration of gastric contents followed within hours by abrupt respiratory decline is aspiration pneumonitis, a sterile chemical injury; fever or leukocytosis can occur without bacterial infection. Support oxygenation and the airway, and avoid prophylactic antibiotics when bacterial infection is not suspected."
+    ],
+    [
+     "Ampicillin-sulbactam",
+     "Ampicillin-sulbactam is the usual first choice for lung abscess, and antibiotics are not given prophylactically after aspiration when bacterial infection is not suspected. Tell: chemical injury needs support; established infection needs antibiotics.",
+     "wrong stage or severity"
+    ],
+    [
+     "Ceftriaxone plus azithromycin",
+     "A community-acquired pneumonia regimen treats aspiration pneumonia, an established infection with a compatible infiltrate, not a sterile chemical injury 2 hours after a witnessed event. Tell: her fever and white count can occur without any infection.",
+     "competing diagnosis"
+    ],
+    [
+     "Antibiotic with anaerobic coverage",
+     "Anaerobic coverage is added when an abscess or empyema is suspected, not routinely after aspiration, and she has a sterile chemical injury. Tell: anaerobic coverage is reserved for abscess or empyema.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 50, 51, 126",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Acute bronchitis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 37-year-old man has acute bronchitis and is not given an antibiotic. He asks what to expect from his illness. Which counseling statement is accurate?",
+   "opts": [
+    [
+     "An antibiotic would halve the cough",
+     "Antibiotics do not significantly shorten the illness, and they bring adverse effects and resistance; many patients would need treatment to prevent one case of pneumonia. Tell: the evidence says antibiotics do not shorten this cough.",
+     "common lay belief"
+    ],
+    [
+     "Green sputum means it is bacterial",
+     "Green or yellow mucus does not differentiate viral from bacterial infection, and colored sputum does not justify antibiotics. Tell: sputum color is not a marker of bacteria, so it is not a reason to return for an antibiotic.",
+     "common lay belief"
+    ],
+    [
+     "The cough often lasts 2 to 3 weeks",
+     "Correct. Acute bronchitis is usually a self-limited viral infection, and the cough commonly lasts 2 to 3 weeks and may persist longer. Setting that expectation, and explaining that antibiotics do not significantly shorten the illness, is how unneeded antibiotic requests are reduced."
+    ],
+    [
+     "The cough should clear in 3 days",
+     "Three days badly underestimates the course; the cough commonly lasts 2 to 3 weeks and may persist longer. Promising 3 days invites a return visit and an antibiotic request while the cough is still there. Tell: a bronchitis cough is measured in weeks.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 16, 17, 18, 21",
+   "slot": "prognosis",
+   "lead": "education"
+  },
+  {
+   "topic": "COVID-19",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 30-year-old woman who is 20 weeks pregnant and has diabetes tests positive for both influenza and coronavirus disease 2019 on a multiplex test. She has mild symptoms that began yesterday and a normal oxygen saturation. Which antiviral should be avoided because of her pregnancy?",
+   "opts": [
+    [
+     "Molnupiravir",
+     "Correct. Molnupiravir is an adult alternative used only when the preferred coronavirus treatments are unsuitable, and it is avoided during pregnancy. Her pregnancy makes it the drug to avoid, while the influenza is treated with oseltamivir, which is preferred in pregnancy."
+    ],
+    [
+     "Oseltamivir",
+     "Oseltamivir is the preferred influenza antiviral for high-risk patients, including in pregnancy, and pregnancy in any trimester makes her high risk. Tell: pregnancy is a reason to give oseltamivir, not to avoid it.",
+     "reversed direction or value"
+    ],
+    [
+     "Nirmatrelvir-ritonavir",
+     "Nirmatrelvir/ritonavir is a preferred early treatment for high-risk patients within 5 days of onset, after a review of drug interactions and kidney and liver issues. The pregnancy warning on the list belongs to molnupiravir. Tell: the avoid-in-pregnancy statement names molnupiravir.",
+     "adjacent fact"
+    ],
+    [
+     "Remdesivir",
+     "A three-day intravenous remdesivir course within 7 days of onset is a preferred early option for high-risk patients, and pregnancy is not listed as a reason to avoid it. Tell: the antiviral named for avoidance in pregnancy is molnupiravir.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 104, 108, 120",
+   "slot": "avoid",
+   "lead": "avoid"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Pneumonia workup and severity",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 30-year-old man with no medical conditions has community-acquired pneumonia confirmed on chest radiograph and is stable for outpatient care. Molecular testing is positive for a respiratory virus, and he can be seen again in 2 days. Which management is most appropriate?",
+   "opts": [
+    [
+     "Add azithromycin for atypicals",
+     "Atypical coverage is added when indicated in bacterial community-acquired pneumonia, but a viral-positive healthy outpatient with close follow-up may avoid antibacterial therapy entirely. Tell: adding drugs is the opposite of what his result allows.",
+     "reversed direction or value"
+    ],
+    [
+     "No antibiotic, close follow-up",
+     "Correct. A viral-positive outpatient without comorbidities may avoid empiric antibiotics when close follow-up is reliable. His positive molecular test, absent comorbidities and arranged review in 2 days meet those conditions; antibiotics treat a bacterial syndrome, not a positive viral test."
+    ],
+    [
+     "Amoxicillin despite the result",
+     "Amoxicillin is the outpatient choice when bacterial community-acquired pneumonia is treated in a patient without comorbidities. Here the viral result, absent comorbidities and close follow-up allow the antibiotic to be skipped. Tell: this exception needs all three conditions, and he has them.",
+     "wrong stage or severity"
+    ],
+    [
+     "Admission for ceftriaxone",
+     "Ceftriaxone with a macrolide is an inpatient regimen for nonsevere pneumonia that needs a ward bed. He is stable for outpatient care. Tell: place of care comes from oxygenation, vital signs and severity scoring, and his are reassuring.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 47, 126",
+   "slot": "first-line",
+   "lead": "next step"
+  },
+  {
+   "topic": "Influenza",
+   "io": "Identify medical care strategies for respiratory infections in the lecture topic list for the following populations. 1. adult 2. elderly",
+   "q": "A 71-year-old man with chronic obstructive pulmonary disease and heart failure is hospitalized on day 5 of influenza, confirmed by molecular testing, with hypoxemia. Which antiviral is most appropriate?",
+   "opts": [
+    [
+     "Amantadine",
+     "Amantadine and rimantadine are not recommended because of resistance. Tell: the hospital antiviral is oseltamivir, given orally or by enteric tube.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Oral or enteric oseltamivir",
+     "Correct. Hospitalized patients generally receive oral or enteric oseltamivir, which is preferred for hospitalized, severe and high-risk patients and is started even after 48 hours. His age, lung and heart disease and admission all point to it, with renal dose adjustment."
+    ],
+    [
+     "Inhaled zanamivir",
+     "Inhaled zanamivir is avoided in chronic obstructive lung disease because of bronchospasm risk, and hospitalized patients generally receive oseltamivir instead. Tell: his lung disease and admission both rule out the inhaled drug.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Single-dose baloxavir",
+     "Baloxavir is not recommended for hospitalized influenza and is limited to uncomplicated illness within 48 hours. He is hospitalized on day 5. Tell: admission and timing both rule it out.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 97, 98, 108, 109",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Hospital and ventilator pneumonia",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 58-year-old man with ventilator-associated pneumonia has had an adequate response to culture-directed antibiotics. What is the usual total duration of therapy?",
+   "opts": [
+    [
+     "3 days",
+     "Three days is the floor for a clinically stable, nonsevere community-acquired pneumonia, not for ventilator-associated pneumonia. Tell: the hospital and ventilator pathway uses about 7 days when the response is adequate.",
+     "adjacent fact"
+    ],
+    [
+     "5 days",
+     "At least 5 days is the minimum for severe community-acquired pneumonia. His pneumonia is ventilator associated, where 7 days is usual. Tell: 5 belongs to severe community-acquired disease, 7 to the hospital pathway.",
+     "adjacent fact"
+    ],
+    [
+     "7 days",
+     "Correct. For hospital-acquired and ventilator-associated pneumonia, a 7-day course is usual when the response is adequate, adjusted to clinical response, with prompt de-escalation as cultures clarify the diagnosis."
+    ],
+    [
+     "14 days",
+     "Fourteen days is longer than needed when the response is adequate; the usual course is 7 days, adjusted to clinical response. Tell: longer courses are for complications or specific pathogens, not an adequately responding ventilator pneumonia.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 46, 49",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Pneumonia workup and severity",
+   "io": "Identify medical care strategies for respiratory infections in the lecture topic list for the following populations. 1. adult 2. elderly",
+   "q": "An 81-year-old woman with community-acquired pneumonia is alert and oriented. Her blood urea nitrogen is 17 mg/dL, respiratory rate 34/min and blood pressure 132/56 mm Hg. What is her CURB-65 (confusion, urea, respiratory rate, blood pressure, age 65 or older) score?",
+   "opts": [
+    [
+     "1",
+     "A total of 1 counts age alone. She also has a respiratory rate of 34, which is 30 or more, and a diastolic pressure of 56, which is 60 or lower. Tell: tachypnea of 30 or more and either low pressure reading each add a point.",
+     "wrong stage or severity"
+    ],
+    [
+     "2",
+     "A total of 2 misses the blood pressure point. Low blood pressure scores for a systolic below 90 or a diastolic of 60 or lower, and her diastolic is 56. Tell: a normal systolic pressure does not cancel a low diastolic one.",
+     "wrong stage or severity"
+    ],
+    [
+     "3",
+     "Correct. Confusion 0 + urea 0 (17 is not above 20) + respiratory rate 1 (34 is 30 or more) + blood pressure 1 (a diastolic of 56 is 60 or lower, even with a normal systolic) + age 1 (81) = 3. That is high severity, with a risk of death of 15 to 40%: hospital and urgent senior review."
+    ],
+    [
+     "4",
+     "A total of 4 would add urea, but her blood urea nitrogen of 17 mg/dL is not above 20. Tell: the urea point needs more than 20 mg/dL, so she has three points, not four.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 31",
+   "slot": "prognosis",
+   "lead": "classify"
+  },
+  {
+   "topic": "Aspiration and lung abscess",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 57-year-old man with alcohol use disorder has 4 weeks of fevers, sweats, fatigue and a cough with foul-smelling purulent sputum. A chest radiograph shows a cavity with an air-fluid level. Which initial therapy is most appropriate?",
+   "opts": [
+    [
+     "Immediate surgical resection",
+     "Drainage or surgery is for large or refractory abscesses after pulmonary or infectious disease review, while lung abscess usually begins with antibiotics. Tell: surgery is the escalation, not the starting point.",
+     "wrong stage or severity"
+    ],
+    [
+     "Routine chest physiotherapy",
+     "Routine chest physiotherapy is not essential in lung abscess. Tell: the treatment is antibiotics for several weeks, guided by clinical and radiographic response, with drainage only for large or refractory abscesses.",
+     "common lay belief"
+    ],
+    [
+     "Intravenous ampicillin-sulbactam",
+     "Correct. A cavity with an air-fluid level after weeks of fever and foul sputum is a lung abscess, which usually begins with antibiotics. A beta-lactam/beta-lactamase inhibitor is the usual first choice, such as intravenous ampicillin-sulbactam followed by oral amoxicillin-clavulanate, often for several weeks."
+    ],
+    [
+     "Clindamycin as first choice",
+     "Clindamycin is reserved for selected alternatives because of Clostridioides difficile risk. Tell: the usual first choice for lung abscess is a beta-lactam/beta-lactamase inhibitor such as ampicillin-sulbactam.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 53, 54, 56",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Influenza",
+   "io": "Identify medical care strategies for respiratory infections in the lecture topic list for the following populations. 1. adult 2. elderly",
+   "q": "A 73-year-old man with influenza was improving on day 4, but on day 6 he develops a new fever, a cough productive of purulent sputum and a lobar infiltrate on chest radiograph. Which organisms most likely cause this complication?",
+   "opts": [
+    [
+     "Pneumocystis or cytomegalovirus",
+     "Pneumocystis and cytomegalovirus are opportunistic infections of human immunodeficiency virus infection and other immunocompromise, with diffuse bilateral infiltrates. He has a lobar infiltrate after influenza. Tell: lobar and purulent points to a secondary bacterial pneumonia.",
+     "competing diagnosis"
+    ],
+    [
+     "Pneumococcus or staphylococcus",
+     "Correct. Influenza pneumonia may be primary influenza pneumonia or a secondary bacterial pneumonia, often a pneumococcal or staphylococcal co-infection. Improvement followed by worsening, purulent sputum and a lobar infiltrate point to the secondary bacterial pneumonia, which is treated with antibiotics."
+    ],
+    [
+     "Mycoplasma or Chlamydia psittaci",
+     "Mycoplasma and Chlamydia psittaci are atypical community-acquired pathogens tied to young adult outbreaks or bird exposure, not to bacterial pneumonia after influenza. Tell: worsening after improvement in influenza points to pneumococcus or staphylococcus.",
+     "competing diagnosis"
+    ],
+    [
+     "Histoplasma or Cryptococcus",
+     "Histoplasma and Cryptococcus are inhaled fungi tied to soil, droppings or immunocompromise, not to a relapse after influenza. Tell: the influenza complication is a bacterial co-infection, usually pneumococcal or staphylococcal.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 106",
+   "slot": "complication",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Pneumonia workup and severity",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 66-year-old man with community-acquired pneumonia is alert, with a blood urea nitrogen of 15 mg/dL, a respiratory rate of 22/min and a blood pressure of 134/82 mm Hg. His chronic heart failure has become unstable. Where should he be treated?",
+   "opts": [
+    [
+     "Home with oral antibiotics",
+     "Home with antibiotics is the low-score branch only when no other reason for admission exists. His unstable heart failure is such a reason. Tell: the low-score branch splits on other reasons for admission, and his answer is yes.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Critical care unit",
+     "Transfer to critical care is considered for high severity, especially a total of 4 or 5, or for vasopressor-dependent shock or ventilation. He scores 1 with stable vital signs. Tell: critical care is the top of the pathway, not a low score with an unstable comorbidity.",
+     "wrong stage or severity"
+    ],
+    [
+     "Home without antibiotics",
+     "Withholding antibiotics fits uncomplicated bronchitis or a selected viral-positive outpatient without comorbidities, not a bacterial pneumonia in a man with heart failure. Tell: patients with comorbidities generally still need empiric antibacterial therapy.",
+     "reversed direction or value"
+    ],
+    [
+     "Hospital, despite the low score",
+     "Correct. His severity total is 1: confusion 0 (alert), urea 0 (15 is not above 20), respiratory rate 0 (22), blood pressure 0 and age 1 (66). A total of 0 to 1 is low severity, with a risk of death under 3%, but the pathway still admits for an unstable comorbidity or a social reason, and his heart failure is unstable."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 29, 31, 47",
+   "slot": "referral",
+   "lead": "next step"
+  },
+  {
+   "topic": "COVID-19",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 48-year-old woman has coronavirus disease 2019 with fever, cough and mild shortness of breath. Her oxygen saturation is 96% on room air and her respiratory rate is 20/min, and a chest radiograph shows a patchy infiltrate. Which severity category fits?",
+   "opts": [
+    [
+     "Mild illness",
+     "Mild illness has symptoms without shortness of breath and with a normal chest radiograph. Her radiograph shows an infiltrate and she is mildly short of breath. Tell: a positive radiograph is what separates moderate from mild.",
+     "wrong stage or severity"
+    ],
+    [
+     "Moderate illness",
+     "Correct. Moderate illness has symptoms with a positive chest radiograph and an oxygen saturation of at least 94% on room air. Her patchy infiltrate makes her more than mild, and her saturation of 96% with a normal respiratory rate keeps her below severe."
+    ],
+    [
+     "Severe illness",
+     "Severe illness needs an oxygen saturation below 94% on room air, marked tachypnea or infiltrates over more than 50% of the lungs. Her saturation is 96% and her respiratory rate is 20. Tell: severe starts below 94%.",
+     "wrong stage or severity"
+    ],
+    [
+     "Critical illness",
+     "Critical illness means acute respiratory failure, septic shock or multiple organ dysfunction. She has none of these. Tell: a patchy infiltrate with normal oxygenation is moderate, far from critical.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 119",
+   "slot": "test finding",
+   "lead": "classify"
+  },
+  {
+   "topic": "Psittacosis and Mycoplasma",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 19-year-old woman is starting doxycycline for Mycoplasma pneumoniae infection. She asks what to expect and how to avoid getting it again. Which counseling statement is accurate?",
+   "opts": [
+    [
+     "Return if the cough lasts past day 3",
+     "The cough may persist after treatment, so a lingering cough by itself is expected, not a warning sign. Tell: the return triggers are shortness of breath or deterioration.",
+     "reversed direction or value"
+    ],
+    [
+     "The cough may persist for a while",
+     "Correct. Counseling for Mycoplasma infection explains that the cough may persist, and that she should return for shortness of breath or deterioration. No vaccine is available, so avoiding another episode depends on general measures, not immunization."
+    ],
+    [
+     "A vaccine can prevent another episode",
+     "No vaccine is available for Mycoplasma pneumoniae. Promising one gives false reassurance. Tell: the counseling points are a lingering cough and return precautions for shortness of breath or deterioration.",
+     "common lay belief"
+    ],
+    [
+     "Amoxicillin is a good backup drug",
+     "Beta-lactams such as amoxicillin are ineffective because Mycoplasma lacks a cell wall. Tell: if her drug fails, the alternatives are a macrolide or a respiratory fluoroquinolone, not amoxicillin.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 89",
+   "slot": "prognosis",
+   "lead": "education"
+  },
+  {
+   "topic": "Pneumonia antibiotics",
+   "io": "Identify medical care strategies for respiratory infections in the lecture topic list for the following populations. 1. adult 2. elderly",
+   "q": "A 70-year-old woman with chronic obstructive pulmonary disease and diabetes has community-acquired pneumonia and is stable for outpatient treatment. She had a severe reaction to levofloxacin last year. Which regimen is most appropriate?",
+   "opts": [
+    [
+     "Azithromycin as a single drug",
+     "Macrolide monotherapy is an option only for patients without comorbidities and only where local pneumococcal resistance is below 25%. She has two comorbidities. Tell: azithromycin belongs in her regimen as a partner to the beta-lactam.",
+     "wrong stage or severity"
+    ],
+    [
+     "Cefuroxime plus azithromycin",
+     "Correct. Her lung disease and diabetes are listed comorbidities, calling for amoxicillin-clavulanate, cefpodoxime or cefuroxime plus azithromycin or doxycycline, or a respiratory fluoroquinolone. Her reaction to levofloxacin takes the fluoroquinolone off the table, so the beta-lactam combination is used."
+    ],
+    [
+     "Moxifloxacin, with QT review",
+     "Moxifloxacin is a respiratory fluoroquinolone, the same group as the levofloxacin that caused her severe reaction. Tell: allergy and fluoroquinolone risks are reviewed before choosing, and her history removes the whole fluoroquinolone option.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Doxycycline as a single drug",
+     "Doxycycline by itself is an outpatient choice only for patients without comorbidities. Her chronic lung disease and diabetes call for a combination. Tell: with comorbidities, doxycycline is a partner, not a solo drug.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 43",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Psittacosis and Mycoplasma",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 36-year-old pet-shop employee has had a week of fever, severe headache, photophobia and a nonproductive cough. Several parakeets in the shop were sick last month. His pulse is 72/min with a temperature of 103°F, his spleen is palpable, and macular rashes on his face resemble the rose spots of typhoid fever (Horder spots). Which is the most likely diagnosis?",
+   "opts": [
+    [
+     "Acute histoplasmosis",
+     "Histoplasmosis follows inhaled soil or bird or bat droppings and causes fever, chills, myalgias, dry cough and headache. It does not produce relative bradycardia, splenomegaly or Horder spots. Tell: the facial rash and slow pulse belong to psittacosis.",
+     "competing diagnosis"
+    ],
+    [
+     "Influenza",
+     "Influenza begins suddenly with fever, myalgias, sore throat and a frontal or retro-orbital headache, usually with tachycardia from fever or hypoxia. His pulse is slow for his fever. Tell: relative bradycardia, splenomegaly and Horder spots point away from influenza.",
+     "competing diagnosis"
+    ],
+    [
+     "Psittacosis",
+     "Correct. Psittacosis is an occupational infection of pet-shop and zoo employees and poultry workers, caught from birds such as parakeets. Severe headache, photophobia, a dry cough, relative bradycardia, splenomegaly and Horder spots (facial macular rashes like typhoid rose spots) complete the picture."
+    ],
+    [
+     "Mycoplasma infection",
+     "Mycoplasma causes gradual fever, persistent cough and headache, often in school-age children and young adults in group outbreaks. It has no bird exposure link and no Horder spots. Tell: sick birds plus facial rose-spot rashes point to Chlamydia psittaci.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 81, 82, 83",
+   "slot": "manifestation",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Hospital and ventilator pneumonia",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 63-year-old woman develops ventilator-associated pneumonia on day 5 of mechanical ventilation and is in septic shock, which places her at high mortality risk. Methicillin-resistant Staphylococcus aureus is common in her unit. Which empiric regimen is most appropriate?",
+   "opts": [
+    [
+     "Cefepime plus vancomycin",
+     "Correct. High mortality risk and local methicillin-resistant Staphylococcus aureus prevalence add vancomycin or linezolid to an antipseudomonal beta-lactam such as cefepime; a second antipseudomonal class may be used for selected high-risk patients. Cultures are obtained, therapy reassessed daily and de-escalated."
+    ],
+    [
+     "Cefepime as a single drug",
+     "Cefepime by itself fits hospital or ventilator pneumonia without major resistance or high mortality risk. Her septic shock and the unit's methicillin-resistant Staphylococcus aureus prevalence call for added vancomycin or linezolid. Tell: high risk adds coverage.",
+     "wrong stage or severity"
+    ],
+    [
+     "Ceftriaxone plus azithromycin",
+     "This is a community-acquired pneumonia regimen. Ventilator-associated pneumonia is more likely Pseudomonas or multidrug-resistant organisms. Tell: the ventilator pathway uses an antipseudomonal beta-lactam, not ceftriaxone.",
+     "adjacent fact"
+    ],
+    [
+     "Moxifloxacin plus linezolid",
+     "Linezolid covers methicillin-resistant Staphylococcus aureus, but moxifloxacin is not a reliable antipseudomonal agent, which leaves her most likely organisms uncovered. Tell: pair the staphylococcal agent with cefepime or piperacillin-tazobactam.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 40, 46, 48",
+   "slot": "escalation",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Histoplasmosis and cryptococcosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A healthy 29-year-old woman has acute histoplasmosis confirmed by urine antigen after clearing out a bat-infested attic. Ten days after onset her fever is resolving and her cough is improving, and she is not short of breath. Which management is most appropriate?",
+   "opts": [
+    [
+     "Itraconazole for 12 months",
+     "Prolonged azole therapy, usually at least 12 months, is for chronic cavitary disease, and itraconazole is otherwise considered for prolonged or progressive illness or higher-risk hosts. Tell: she is healthy and improving, which is the observation pathway.",
+     "wrong stage or severity"
+    ],
+    [
+     "Amphotericin-based induction",
+     "Amphotericin-based induction led by a specialist is for severe pulmonary or disseminated disease. She has a mild, improving illness. Tell: amphotericin is the top of the severity ladder, and she is at the bottom.",
+     "wrong stage or severity"
+    ],
+    [
+     "Fluconazole for 6 to 12 months",
+     "Fluconazole for 6 to 12 months is the regimen for mild isolated pulmonary cryptococcosis, a different fungus. Her antigen confirmed histoplasmosis. Tell: the 6 to 12 month fluconazole course belongs to Cryptococcus, not to mild histoplasmosis.",
+     "competing diagnosis"
+    ],
+    [
+     "Observation without an antifungal",
+     "Correct. Severity and host risk guide treatment, and mild acute disease in an immunocompetent adult often needs observation rather than antifungals. She is healthy and already improving, so neither itraconazole nor amphotericin is needed."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 78",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Hospital and ventilator pneumonia",
+   "io": "Identify medical care strategies for respiratory infections in the lecture topic list for the following populations. 1. adult 2. elderly",
+   "q": "A 72-year-old man ventilated for 6 days in the intensive care unit after cardiac surgery develops ventilator-associated pneumonia. Which organisms are most likely responsible?",
+   "opts": [
+    [
+     "Histoplasma or other endemic fungi",
+     "Histoplasma is acquired by inhaling soil or bird or bat droppings in endemic areas, an exposure story rather than an intensive care infection. Tell: the ventilator setting, not geography, decides this pneumonia's organisms.",
+     "competing diagnosis"
+    ],
+    [
+     "Pneumocystis jirovecii",
+     "Pneumocystis is the opportunistic pneumonia of human immunodeficiency virus infection and other immunocompromise, with diffuse bilateral perihilar infiltrates. Nothing in his history suggests that. Tell: ventilator pneumonia is bacterial and often resistant.",
+     "competing diagnosis"
+    ],
+    [
+     "Pseudomonas or multidrug-resistant organisms",
+     "Correct. Ventilator-associated pneumonia is more likely to be Pseudomonas or multidrug-resistant pathogens, and hospital and ventilator pneumonia are driven by Staphylococcus aureus and gram-negative bacilli, including Pseudomonas and Enterobacterales. It carries higher mortality and a longer intensive care stay."
+    ],
+    [
+     "Mycoplasma pneumoniae or Chlamydophila",
+     "Mycoplasma and Chlamydophila are atypical pathogens of community-acquired pneumonia, Mycoplasma most often in school-age children and young adults. Tell: a pneumonia that starts on a ventilator points to resistant gram-negative and staphylococcal organisms.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 39, 48",
+   "slot": "etiology",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "COVID-19",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 35-year-old woman has had fever, sore throat and cough since yesterday. A single home antigen test for coronavirus disease 2019 is negative. What is the most appropriate next step in testing?",
+   "opts": [
+    [
+     "Repeat the antigen test after 48 hours",
+     "Correct. One negative antigen test does not exclude infection. A symptomatic person repeats the test after 48 hours for at least 2 tests, or obtains a nucleic acid amplification test, the most sensitive routine method. Her symptoms make the single negative result unreliable."
+    ],
+    [
+     "Accept that infection is excluded",
+     "A single negative antigen test does not exclude coronavirus infection. Tell: a symptomatic person needs at least 2 antigen tests, 48 hours apart, or a nucleic acid amplification test before infection is called negative.",
+     "reversed direction or value"
+    ],
+    [
+     "Chest imaging to find the virus",
+     "Chest imaging evaluates pneumonia and complications, not the viral cause. She has no sign of pneumonia, and imaging cannot confirm the coronavirus. Tell: identifying the virus takes a repeat antigen test or a nucleic acid test.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "A D-dimer level to confirm it",
+     "D-dimer elevation does not diagnose thrombosis, let alone viral infection, and hospital tests should answer a specific clinical question. Tell: diagnosing coronavirus infection takes a repeat antigen test or a nucleic acid test.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 117",
+   "slot": "initial test",
+   "lead": "test"
+  },
+  {
+   "topic": "Pneumonia types and presentation",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 74-year-old man has 3 days of fever to 102.6°F, shaking chills, a cough with purulent sputum and a stabbing right-sided chest pain on breathing. His respiratory rate is 28/min. Over the right lower lobe there are crackles, dullness to percussion and egophony (E to A). Which is the most likely diagnosis?",
+   "opts": [
+    [
+     "Acute bronchitis",
+     "Acute bronchitis may cause a low-grade fever and cough, but consolidation should not be detected; if it is, think pneumonia. His dullness and egophony over one lobe are consolidation. Tell: bronchitis wheeze is central over the bronchial airways, not a focal lobar finding.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Aspiration pneumonitis",
+     "Aspiration pneumonitis is a sterile chemical injury with abrupt respiratory decline after a witnessed aspiration. Nothing in his story describes an aspiration event. Tell: pneumonitis follows a witnessed event within hours; his illness is an infectious syndrome over days.",
+     "competing diagnosis"
+    ],
+    [
+     "Lung abscess",
+     "A lung abscess is usually insidious and prolonged, over weeks, with foul-smelling sputum and sometimes hemoptysis, and imaging shows a cavity with an air-fluid level. His illness is 3 days old with lobar consolidation signs. Tell: abscess is slow and foul; this is acute and lobar.",
+     "competing diagnosis"
+    ],
+    [
+     "Community-acquired pneumonia",
+     "Correct. High fever, chills, purulent productive cough, pleuritic chest pain and tachypnea are more severe than a cold or bronchitis, and the findings sit over one lobe: crackles, dullness and egophony (E to A), the special findings of lobar consolidation. Acquired outside the hospital, this is community-acquired pneumonia."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 16, 23, 27, 28, 53",
+   "slot": "manifestation",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Aspiration and lung abscess",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 52-year-old woman with a large lung abscess has not improved after several weeks of beta-lactam/beta-lactamase inhibitor therapy, and computed tomography shows no obstructing lesion. Which referral is most appropriate?",
+   "opts": [
+    [
+     "Pulmonary or infectious disease review",
+     "Correct. Large or refractory abscesses need pulmonary or infectious disease review for drainage or surgery. Computed tomography and bronchoscopy are used for obstruction, unusual pathogens or failure to improve, and her abscess is both large and not improving."
+    ],
+    [
+     "Physical therapy for chest physiotherapy",
+     "Routine chest physiotherapy is not essential in lung abscess. Tell: a refractory abscess needs a specialist decision about drainage or surgery, not physiotherapy.",
+     "common lay belief"
+    ],
+    [
+     "Outpatient follow-up in 6 months",
+     "Treatment is guided by clinical and radiographic response, and failure to improve is a trigger for further evaluation now. Tell: a refractory abscess is escalated, not watched for months.",
+     "wrong stage or severity"
+    ],
+    [
+     "Switch to clindamycin, no referral",
+     "Clindamycin is reserved for selected alternatives because of Clostridioides difficile risk, and switching drugs does not address a large abscess that needs drainage or surgery. Tell: the next move is specialist review.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 56",
+   "slot": "referral",
+   "lead": "referral"
+  },
+  {
+   "topic": "Pneumocystis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 49-year-old woman with human immunodeficiency virus infection and chronic kidney disease is being treated with trimethoprim-sulfamethoxazole for Pneumocystis pneumonia. Which tests should be monitored during treatment?",
+   "opts": [
+    [
+     "Blood count, creatinine, potassium",
+     "Correct. During Pneumocystis treatment the complete blood count, creatinine, potassium and drug toxicity are monitored, and trimethoprim-sulfamethoxazole is adjusted for kidney function. Her chronic kidney disease makes the creatinine and potassium checks especially important."
+    ],
+    [
+     "Lactate dehydrogenase trend",
+     "Lactate dehydrogenase is nonspecific and cannot establish treatment failure, so following its trend does not track her safety or response. Tell: drug toxicity is watched with the blood count, creatinine and potassium.",
+     "adjacent fact"
+    ],
+    [
+     "Weekly chest radiographs",
+     "Imaging does not detect the drug toxicities that matter here, and her kidney disease makes laboratory safety monitoring the priority. Tell: with renal dosing, the creatinine and potassium are what to watch.",
+     "wrong stage or severity"
+    ],
+    [
+     "Beta-D-glucan trend",
+     "Beta-D-glucan is a diagnostic marker that is not organism-specific; it is not used to monitor treatment safety. Tell: the monitoring list is the blood count, creatinine, potassium and drug toxicity.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 71",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Pneumonia workup and severity",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 58-year-old man with community-acquired pneumonia is newly disoriented to place and time. His blood urea nitrogen is 31 mg/dL, respiratory rate 32/min and blood pressure 86/52 mm Hg. What is his CURB-65 (confusion, urea, respiratory rate, blood pressure, age 65 or older) score?",
+   "opts": [
+    [
+     "2",
+     "A total of 2 would be moderate severity, but he has four positive items: new confusion, urea above 20 mg/dL, respiratory rate of 30 or more and systolic pressure below 90. Tell: each of those adds 1, so he is well into the high-severity band.",
+     "wrong stage or severity"
+    ],
+    [
+     "3",
+     "A total of 3 misses one item. He scores all four clinical items, confusion, urea, respiratory rate and blood pressure; only age fails, at 58. Tell: count each item separately; a low systolic pressure and new disorientation both score.",
+     "wrong stage or severity"
+    ],
+    [
+     "4",
+     "Correct. Confusion 1 (new disorientation) + urea 1 (31 is above 20) + respiratory rate 1 (32 is 30 or more) + blood pressure 1 (systolic below 90) + age 0 (58) = 4. That is high severity, with a risk of death of 15 to 40%: hospital, urgent senior review and a decision about critical care, especially at 4 or 5."
+    ],
+    [
+     "5",
+     "A total of 5 needs every item, including age 65 or older, and he is 58, so age adds nothing. Tell: the 65 in the name is an age threshold, and he is below it, so his maximum is 4.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 29, 31",
+   "slot": "test finding",
+   "lead": "classify"
+  },
+  {
+   "topic": "Vaccines",
+   "io": "Identify and discuss vaccines which prevent respiratory infections.",
+   "q": "A 78-year-old woman received a respiratory syncytial virus vaccine last year and asks whether she needs another dose this fall. Which counseling statement is accurate?",
+   "opts": [
+    [
+     "Revaccinate every year",
+     "Respiratory syncytial virus vaccine is not currently an annual adult vaccine, unlike influenza, which is given every year. Tell: one dose covers her; the yearly schedule belongs to influenza.",
+     "adjacent fact"
+    ],
+    [
+     "A second dose this fall",
+     "Repeat dosing is not currently recommended after the single adult dose of respiratory syncytial virus vaccine. Tell: the adult recommendation is one dose for those 75 or older and those 50 to 74 at increased risk.",
+     "reversed direction or value"
+    ],
+    [
+     "Revaccinate every 10 years",
+     "Every 10 years is the interval for Td or Tdap boosters, not for respiratory syncytial virus vaccine, which is a single adult dose. Tell: she already had her one dose and needs no more.",
+     "adjacent fact"
+    ],
+    [
+     "No repeat dose is recommended",
+     "Correct. Respiratory syncytial virus vaccination is one dose for all adults aged 75 or older and for adults 50 to 74 at increased risk, and repeat annual dosing is not currently recommended. She already had her one dose."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 7, 124",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Acute bronchitis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 52-year-old woman with acute bronchitis was managed with supportive care 10 days ago and at first improved. She now returns with a new temperature of 102.2°F, shortness of breath and crackles at the left base. What is the most appropriate next step?",
+   "opts": [
+    [
+     "Chest radiograph for pneumonia",
+     "Correct. Worsening after initial improvement, fever and dyspnea are return precautions, and fever or focal findings prompt evaluation for pneumonia rather than empiric bronchitis antibiotics. A worsening cough means reconsidering the diagnosis, and suspected pneumonia is confirmed with chest radiography."
+    ],
+    [
+     "Empiric bronchitis antibiotic",
+     "Fever or focal findings should prompt evaluation for pneumonia rather than empiric bronchitis antibiotics; an antibiotic without a diagnosis skips the step that decides the regimen. Tell: new crackles with fever call for imaging first.",
+     "wrong stage or severity"
+    ],
+    [
+     "Codeine cough syrup",
+     "Codeine combinations are avoided routinely for limited benefit and risks of sedation, respiratory depression and misuse, and they do nothing for a new fever with focal crackles. Tell: her problem is a possible new diagnosis, not cough control.",
+     "adjacent fact"
+    ],
+    [
+     "Reassurance about cough length",
+     "The 2 to 3 week cough applies to an uncomplicated course; improvement followed by worsening, new fever and dyspnea are return precautions that mean the course is no longer uncomplicated. Tell: reassurance fits a steady cough, not a relapse with fever.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 18, 19, 20, 29",
+   "slot": "differential",
+   "lead": "next step"
+  },
+  {
+   "topic": "Pneumonia workup and severity",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 46-year-old woman with nonsevere community-acquired pneumonia treated as an outpatient is afebrile, eating and clinically stable on day 3. What is the shortest total antibiotic course that may be appropriate for her?",
+   "opts": [
+    [
+     "3 days",
+     "Correct. For clinically stable, nonsevere community-acquired pneumonia, a course shorter than 5 days, with a minimum of 3 days, may be appropriate. She is stable by day 3. Severe pneumonia is different: at least 5 days and until clinical stability."
+    ],
+    [
+     "5 days",
+     "Five days is the minimum for severe community-acquired pneumonia, which is treated for at least 5 days and until clinical stability. She has nonsevere disease and is stable. Tell: nonsevere and stable may stop sooner, with 3 days as the floor.",
+     "adjacent fact"
+    ],
+    [
+     "7 days",
+     "Seven days is the usual course for hospital-acquired and ventilator-associated pneumonia when the response is adequate. She has outpatient community-acquired pneumonia. Tell: 7 days belongs to the hospital pathway, not to a stable outpatient.",
+     "adjacent fact"
+    ],
+    [
+     "10 days",
+     "Ten days goes beyond what the current update requires for her. Long courses are for complications or specific pathogens, while a stable nonsevere pneumonia may stop after as few as 3 days. Tell: the update shortened courses for stable patients.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 45, 47",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Influenza",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 9-year-old boy has influenza with a temperature of 102.8°F and body aches. His parent wants to give him a fever medicine from the cabinet at home. Which medication should be avoided?",
+   "opts": [
+    [
+     "Acetaminophen",
+     "Acetaminophen is one of the listed antipyretics for influenza supportive care and is appropriate for a child. Tell: the antipyretic to avoid under 18 is aspirin, because of its association with Reye syndrome.",
+     "reversed direction or value"
+    ],
+    [
+     "Ibuprofen",
+     "Ibuprofen is one of the listed antipyretics for influenza supportive care. Tell: the age warning applies to aspirin, which is avoided in anyone younger than 18 with influenza because of Reye syndrome.",
+     "reversed direction or value"
+    ],
+    [
+     "Oral fluids and rest",
+     "Rest and hydration are the core of influenza supportive care, especially when fever and poor intake cause mild volume depletion. Tell: the measure to avoid is a drug, aspirin, not fluids.",
+     "reversed direction or value"
+    ],
+    [
+     "Aspirin",
+     "Correct. Aspirin is avoided in children younger than 18 years with influenza because it is associated with Reye syndrome. Acetaminophen or ibuprofen is used for fever as part of supportive care, along with rest and fluids."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 110",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Aspiration and lung abscess",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 61-year-old man with alcohol use disorder has had 5 weeks of cough with foul-smelling sputum, intermittent hemoptysis, sweats and fatigue. Over the right upper chest there are amphoric breath sounds (a low-pitched sound with high overtones, like breathing across an open jar). Which chest imaging finding is expected?",
+   "opts": [
+    [
+     "Diffuse bilateral perihilar infiltrates",
+     "Diffuse bilateral infiltrates spreading from the perihilar region are the Pneumocystis pattern, with a nonproductive cough and exertional dyspnea. Tell: foul sputum and amphoric sounds over one area point to a single cavity.",
+     "competing diagnosis"
+    ],
+    [
+     "Homogeneous lobar consolidation",
+     "Homogeneous lobar consolidation with air bronchograms is lobar pneumonia, usually Streptococcus pneumoniae, an acute illness. Tell: amphoric breath sounds mean air moving across an open cavity, not solid consolidation.",
+     "competing diagnosis"
+    ],
+    [
+     "Diffuse fine reticular opacity",
+     "A bilateral, diffuse, fine reticular opacity is the interstitial pneumonia pattern. Tell: his single-area amphoric sounds and foul sputum point to a cavity containing fluid, not a diffuse interstitial process.",
+     "competing diagnosis"
+    ],
+    [
+     "Cavity with an air-fluid level",
+     "Correct. Weeks of fever-type symptoms, foul purulent sputum, hemoptysis as the cavity grows, and amphoric breath sounds over a large open cavity describe a lung abscess. Its chest radiograph and computed tomography show a cavitary lesion with an air-fluid level."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 33, 53, 54",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Pneumonia antibiotics",
+   "io": "Identify medical care strategies for respiratory infections in the lecture topic list for the following populations. 1. adult 2. elderly",
+   "q": "A 68-year-old man with severe chronic obstructive pulmonary disease is admitted to the intensive care unit with severe community-acquired pneumonia. Pseudomonas grew from his sputum during an admission last year. Which agent provides reliable antipseudomonal coverage?",
+   "opts": [
+    [
+     "Ertapenem",
+     "Ertapenem is named, with moxifloxacin, as not a reliable antipseudomonal option. Tell: being a broad agent does not make it antipseudomonal; cefepime or piperacillin-tazobactam is the reliable choice.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Vancomycin",
+     "Vancomycin is the methicillin-resistant Staphylococcus aureus agent, added when that organism is a validated risk. It does not cover Pseudomonas, a gram-negative rod. Tell: match the drug to the organism in the history, and his is Pseudomonas.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Cefepime",
+     "Correct. A prior respiratory isolate of Pseudomonas is a validated risk, so an active antipseudomonal agent is added. An antipseudomonal beta-lactam such as cefepime or piperacillin-tazobactam is used; moxifloxacin and ertapenem are not reliable options for Pseudomonas."
+    ],
+    [
+     "Moxifloxacin",
+     "Moxifloxacin does not provide reliable Pseudomonas coverage, even though it is a respiratory fluoroquinolone used for community-acquired pneumonia. Tell: his Pseudomonas history needs cefepime or piperacillin-tazobactam.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 40, 42",
+   "slot": "escalation",
+   "lead": "treatment"
+  },
+  {
+   "topic": "COVID-19",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 61-year-old woman hospitalized with coronavirus disease 2019 and hypoxemia has an elevated D-dimer. She has no signs of venous thrombosis and no bleeding risk. Which anticoagulation plan is most appropriate?",
+   "opts": [
+    [
+     "Hold anticoagulants until imaging",
+     "An elevated D-dimer does not diagnose thrombosis, and hospital tests should answer a clinical question. She has no signs of thrombosis to image. Tell: give prophylaxis now rather than holding it for a test with no clinical question.",
+     "wrong stage or severity"
+    ],
+    [
+     "Prophylactic-dose anticoagulation",
+     "Correct. Hospitalized patients receive venous thromboembolism prophylaxis unless contraindicated. Therapeutic dosing requires a thrombosis and bleeding assessment, and an elevated D-dimer alone neither diagnoses thrombosis nor sets the dose. She has no thrombosis, so the prophylactic dose fits."
+    ],
+    [
+     "Therapeutic-dose anticoagulation",
+     "Therapeutic dosing requires an assessment of thrombosis and bleeding, not a D-dimer value alone. She has no signs of thrombosis. Tell: D-dimer elevation alone does not decide anticoagulant intensity.",
+     "reversed direction or value"
+    ],
+    [
+     "No anticoagulation for now",
+     "Venous thromboembolism prophylaxis is given to hospitalized patients unless contraindicated, and she has no bleeding risk. Tell: omitting prophylaxis leaves her unprotected; the D-dimer changes nothing about that.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 117, 121",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Pneumonia antibiotics",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 32-year-old woman with no medical conditions has community-acquired pneumonia and is stable for outpatient treatment. She has no risk for resistant organisms, and local pneumococcal resistance to macrolides is 30%. Which antibiotic is most appropriate?",
+   "opts": [
+    [
+     "Azithromycin as a single drug",
+     "Macrolide monotherapy is used only if local pneumococcal resistance is below 25%. At 30% resistance azithromycin by itself is not appropriate. Tell: the resistance figure in the stem is the decisive clue against the macrolide.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Levofloxacin",
+     "A respiratory fluoroquinolone such as levofloxacin is an outpatient option for patients with comorbidities, with its QT, interaction and fluoroquinolone risks reviewed. She has no comorbidities. Tell: healthy outpatients get amoxicillin or doxycycline first.",
+     "wrong stage or severity"
+    ],
+    [
+     "Cefpodoxime plus azithromycin",
+     "A beta-lactam such as cefpodoxime plus azithromycin is the regimen for outpatients with comorbidities such as chronic heart, lung, liver or renal disease, diabetes, alcoholism, malignancy or asplenia. She has none. Tell: combination therapy is for comorbid patients.",
+     "wrong stage or severity"
+    ],
+    [
+     "Amoxicillin",
+     "Correct. With no comorbidities and no resistant-organism risk, the outpatient choices are amoxicillin or doxycycline. Macrolide monotherapy is used only if local pneumococcal resistance is below 25%, and hers is 30%, so amoxicillin fits."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 43",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Histoplasmosis and cryptococcosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 56-year-old man who had a kidney transplant takes prednisone. He has a cough and a new lung nodule, and his serum cryptococcal antigen is positive. Over the past 2 days he has developed a headache and new confusion. What is the most appropriate next step?",
+   "opts": [
+    [
+     "Fluconazole and observe",
+     "Fluconazole by itself is for mild isolated pulmonary disease. His headache and confusion raise concern for central nervous system disease, which needs liposomal amphotericin B plus flucytosine induction. Tell: evaluate the nervous system before settling on the mild regimen.",
+     "wrong stage or severity"
+    ],
+    [
+     "Repeat chest film in 6 weeks",
+     "Delaying for a repeat film ignores new neurologic symptoms in an immunocompromised man with a positive antigen. Tell: headache or confusion in cryptococcosis is a reason for urgent review and a lumbar puncture, not a follow-up film.",
+     "wrong stage or severity"
+    ],
+    [
+     "Urine Histoplasma antigen",
+     "His positive serum cryptococcal antigen has already pointed to the organism. The open question is whether it has reached the central nervous system. Tell: test where the new symptoms are, with a lumbar puncture.",
+     "competing diagnosis"
+    ],
+    [
+     "Lumbar puncture",
+     "Correct. Cryptococcosis is evaluated for central nervous system and disseminated disease, often with lumbar puncture. His transplant and steroid use raise his risk, and a new headache with confusion signals possible central nervous system spread, which changes him to amphotericin-based induction."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 123",
+   "slot": "complication",
+   "lead": "next step"
+  },
+  {
+   "topic": "Influenza",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 52-year-old woman has had a sudden fever, myalgias, a frontal headache and a dry cough for one day, at the peak of a busy influenza season. A rapid influenza antigen test is negative. How should this result be interpreted?",
+   "opts": [
+    [
+     "It does not exclude influenza",
+     "Correct. Rapid antigen tests have limited sensitivity, and a negative result does not exclude influenza, especially during high community activity. Her sudden typical illness at the peak of the season keeps influenza likely; molecular testing confirms it when the result affects management."
+    ],
+    [
+     "It rules out influenza",
+     "Rapid antigen tests have limited sensitivity, so a negative result does not rule out influenza, especially during high community activity. Tell: in peak season with a classic illness, a negative antigen test is an unreliable reassurance.",
+     "reversed direction or value"
+    ],
+    [
+     "It points to a bacterial cause",
+     "A negative influenza antigen test says nothing about bacteria; antibiotics treat a bacterial syndrome, not a negative viral test. Tell: the negative result reflects the test's low sensitivity, not another organism.",
+     "common lay belief"
+    ],
+    [
+     "She is no longer contagious",
+     "The test is a diagnostic screen with limited sensitivity, not a measure of contagiousness, and a negative result does not exclude influenza. Tell: she should be treated as possibly infectious while the diagnosis is confirmed.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 105",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Psittacosis and Mycoplasma",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
+   "q": "A 42-year-old poultry farmer has fever, a nonproductive cough, severe headache and a unilateral lower-lobe infiltrate. Psittacosis is suspected. Which test is most useful for timely confirmation?",
+   "opts": [
+    [
+     "A single antibody titer",
+     "Serology often requires paired samples and can cross-react with other Chlamydia species, so one titer is neither timely nor specific. Tell: for a quick, sensitive answer, test respiratory secretions with a nucleic acid test.",
+     "adjacent fact"
+    ],
+    [
+     "Blood count and liver enzymes",
+     "The complete blood count and liver enzymes assess how ill the patient is, not the cause. They cannot identify Chlamydia psittaci. Tell: severity tests and organism tests answer different questions.",
+     "adjacent fact"
+    ],
+    [
+     "Respiratory nucleic acid test",
+     "Correct. A respiratory nucleic acid amplification test, such as polymerase chain reaction, is timely and sensitive for Chlamydia psittaci, coordinated with public health laboratories. His poultry exposure and the lower-lobe infiltrate make that the confirming test."
+    ],
+    [
+     "Routine sputum culture",
+     "Routine bacterial culture does not detect Chlamydia psittaci, an obligate intracellular bacterium. Tell: a culture will come back negative even when psittacosis is present, so it cannot confirm the suspicion.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 85",
+   "slot": "initial test",
+   "lead": "test"
+  }
+ ]
+}

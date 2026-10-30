@@ -5,7 +5,8 @@
     python3 cms_e6_partition.py l34io | l34vig   # Lecture 34 Acid-Base Part I (Finck)
     python3 cms_e6_partition.py l35io | l35vig   # Lecture 35 Asthma
     python3 cms_e6_partition.py l36io | l36vig   # Lecture 36 COPD
-    (l37 / l38 keys are reserved for Lectures 37 and 38.)
+    python3 cms_e6_partition.py l37io | l37vig   # Lecture 37 Respiratory Infections and Vaccines (Bobilin)
+    python3 cms_e6_partition.py l38io | l38vig   # Lecture 38 Mycobacterial Infections, Including TB (Bobilin)
 
 Copied from cms_e5_partition.py (2026-10-29) with every guard unchanged: schema, slot, io, scope, dosing,
 brand names, mechanism-of-action stems, acronyms, US spelling, no cross-question dependency, and for the
@@ -40,10 +41,10 @@ GUARDED = {
  "l35vig": ("l35", True, 20261029 + 352),
  "l36io": ("l36", False, 20261029 + 361),
  "l36vig": ("l36", True, 20261029 + 362),
- "l37io": ("l37", False, 20261029 + 371),
+ "l37io": ("l37", False, 20261029 + 391),     # +20: of 8 seeds tried, the most even topic split between the two sets (2026-10-30)
  "l37vig": ("l37", True, 20261029 + 372),
  "l38io": ("l38", False, 20261029 + 381),
- "l38vig": ("l38", True, 20261029 + 382),
+ "l38vig": ("l38", True, 20261029 + 412),     # +30: same reason
 }
 if WHICH not in GUARDED:
     sys.exit("unknown set %r -- use one of %s" % (WHICH, ", ".join(GUARDED)))
@@ -78,10 +79,12 @@ DX_CAP = int(30 * 0.20)          # 6 of 30 -- "there might be SOME" diagnosis qu
 # "l34" gets 12 of 30 (the 40% skew cap) and two extra lead-ins, "etiology" (the underlying cause)
 # and "compensation" (is the compensation appropriate). Every other key keeps the values above.
 _LEC = GUARDED[WHICH][0]
-# Lectures 35-36 (2026-10-29): "classify" = which severity class, grade, group or score fits the patient
-# (asthma severity table; GOLD grade and group; CAT, mMRC and BODE). Jaxon: the real Exam 5 asked "what
+# Lectures 35-38 (2026-10-29/30): "classify" = which severity class, grade, group or score fits the patient
+# (asthma severity table; GOLD grade and group; CAT, mMRC and BODE; L37 CURB-65, PSI class, COVID-19
+# severity, pneumonia setting; L38 tuberculin cut-offs, infection versus disease, NTM criteria). Jaxon: the real Exam 5 asked "what
 # is the score from this vignette". The 40% skew cap still applies to it.
-LEADS = LEADS + {"l34": ("etiology", "compensation"), "l35": ("classify",), "l36": ("classify",)}.get(_LEC, ())
+LEADS = LEADS + {"l34": ("etiology", "compensation"), "l35": ("classify",), "l36": ("classify",),
+                 "l37": ("classify",), "l38": ("classify",)}.get(_LEC, ())
 DX_CAP = {"l34": 12}.get(_LEC, DX_CAP)
 SKEW_CAP = 0.40
 

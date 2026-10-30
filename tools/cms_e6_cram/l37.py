@@ -1,0 +1,333 @@
+# -*- coding: utf-8 -*-
+"""Lecture 37 (Respiratory Infections and Vaccines, Bobilin) cram topics, condensed from guide section 5.
+
+CRITERIA: one table per criteria set, score, classification, staging or cut-off table on the slides (Jaxon's
+standing rule, memory cram_criteria_tables), each with a labeled memory aid. Cells are the slide wording; slide
+conflicts are note rows. Doses printed on slide 43 are left out (the quizzes never ask doses).
+"""
+L37C = "#8a5a2b"
+
+CRITERIA = [
+{"id": "crit-l37-vaccines", "label": "Respiratory Vaccines: Who Gets Which", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slides 4&ndash;13, 124",
+ "cols": ["Vaccine", "Who", "When / how often"], "widths": ["22%", "46%", "32%"], "rows": [
+  ("Influenza", "Everyone <b>6 months or older</b> without a contraindication; 65+ preferentially high-dose, adjuvanted or recombinant; pregnancy inactivated or recombinant (<b>no live attenuated</b>)", "<b>Every year</b>; most adults September&ndash;October"),
+  ("COVID-19", "Adults 18+ (updated seasonal vaccine); immunocompromised from 6 months on a modified schedule", "Seasonal; <b>65+ generally two doses about 6 months apart</b>"),
+  ("Tdap (tetanus, diphtheria, acellular pertussis) / Td", "One Tdap if no documented prior dose", "Then Td or Tdap <b>every 10 years</b>; <b>Tdap every pregnancy</b>, early in weeks 27&ndash;36"),
+  ("Pneumococcal", "<b>All adults 50+</b>; ages 19&ndash;49 with a risk condition", "PCV20 or PCV21 (20- or 21-valent conjugate) <b>alone</b>, or PCV15 then PPSV23 (polysaccharide) usually 1 year or more later"),
+  ("RSV (respiratory syncytial virus)", "<b>All 75+</b>; <b>50&ndash;74 at increased risk</b>; pregnancy 32&ndash;36 weeks (maternal vaccine)", "<b>One dose</b>; not annual"),
+  ("Hib (Haemophilus influenzae type b)", "Selected indications: <b>asplenia</b> without prior vaccination; after hematopoietic stem-cell transplant", "One dose, preferably 14+ days before elective splenectomy; 3-dose series after transplant"),
+  {"note": "Egg allergy needs no egg-free product or extra precautions (slide 6). The lecturer: vaccines &ldquo;not a lot of detail on the exam&rdquo;."},
+ ], "mnemonic": {"hook": "Every adult gets the FaCT; age and risk add the PRH.",
+  "key": [["F", "Flu, every year"], ["C", "COVID-19, seasonal (65+ generally twice)"], ["T", "Tdap once, then every 10 years, and every pregnancy"],
+          ["P", "Pneumococcal: 50+, or 19&ndash;49 with risk"], ["R", "RSV: once, 75+ or 50&ndash;74 at risk"], ["H", "Hib: asplenia or stem-cell transplant only"]],
+  "breaks": "Influenza starts at 6 months, not in adulthood; the FaCT is &ldquo;every adult&rdquo; only in the sense of slide 124."}},
+
+{"id": "crit-l37-pneumo-risk", "label": "Pneumococcal Vaccine: Risk Conditions at Ages 19&ndash;49", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slide 10",
+ "cols": ["Group", "Conditions listed on slide 10"], "widths": ["26%", "74%"], "rows": [
+  ("Habits", "Alcoholism &middot; cigarette smoking"),
+  ("Holes and hardware", "Cerebrospinal fluid leak &middot; cochlear implant"),
+  ("Organs failing", "Chronic heart, liver or lung disease &middot; chronic kidney failure &middot; nephrotic syndrome"),
+  ("Immunity broken", "HIV (human immunodeficiency virus) &middot; immunodeficiency &middot; immunosuppression &middot; asplenia (no spleen) &middot; sickle cell disease and other hemoglobinopathies &middot; solid organ transplant &middot; cancer"),
+  ("Sugar", "Diabetes mellitus"),
+ ], "mnemonic": {"hook": "HHOIS: two Habits, two Holes, failing Organs, broken Immunity, and Sugar.",
+  "key": [["H", "Habits: alcoholism, cigarette smoking"], ["H", "Holes and hardware: cerebrospinal fluid leak, cochlear implant"],
+          ["O", "Organs: chronic heart, liver, lung disease; chronic kidney failure; nephrotic syndrome"],
+          ["I", "Immunity: HIV, immunodeficiency, immunosuppression, asplenia, sickle cell and hemoglobinopathies, solid organ transplant, cancer"],
+          ["S", "Sugar: diabetes mellitus"]],
+  "breaks": "The grouping is ours; the slide gives one long list, mostly alphabetical (sickle cell disease appears twice on it)."}},
+
+{"id": "crit-l37-types", "label": "Pneumonia Types by Setting and Timing", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slide 25",
+ "cols": ["Type", "Definition (slide 25)"], "widths": ["34%", "66%"], "rows": [
+  ("Community-acquired (CAP)", "Acquired outside the hospital or present early in admission; prior healthcare contact does not exclude it"),
+  ("Hospital-acquired (HAP)", "Develops <b>48 hours or more after admission</b>; not incubating on admission"),
+  ("Ventilator-associated (VAP)", "Develops <b>more than 48 hours after endotracheal intubation</b>"),
+  ("Aspiration pneumonia", "Infection after aspiration; community or hospital"),
+  {"note": "The healthcare-associated (HCAP) category is retired: nursing-home residence or healthcare exposure alone does not mandate broad-spectrum therapy."},
+ ], "mnemonic": {"hook": "48 is the line: 48 hours or more after the door = HAP, more than 48 after the tube = VAP.",
+  "key": [["Before 48 h / outside", "CAP"], ["48 h after the door (admission)", "HAP"], ["48 h after the tube (intubation)", "VAP"], ["After aspiration, anywhere", "aspiration pneumonia"]]}},
+
+{"id": "crit-l37-curb65", "label": "CURB-65: Items", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slides 29, 31",
+ "cols": ["Letter", "Item and cut-off (slide 31)", "Points"], "widths": ["12%", "72%", "16%"], "rows": [
+  ("C", "<b>Confusion</b>: Abbreviated Mental Test Score 8 or less, or new disorientation to person, place or time", "+1"),
+  ("U", "<b>Urea</b>: blood urea nitrogen <b>above 20 mg/dL</b> (7 mmol/L)", "+1"),
+  ("R", "<b>Respiratory rate 30 or more</b> breaths per minute", "+1"),
+  ("B", "<b>Blood pressure</b>: systolic <b>below 90</b> or diastolic <b>60 or less</b> mmHg", "+1"),
+  ("65", "<b>Age 65 or older</b>", "+1"),
+ ], "mnemonic": {"hook": "The name is the list: C-U-R-B-65, one point each, 0 to 5.",
+  "key": [["C", "Confusion"], ["U", "Urea above 20 mg/dL"], ["R", "Respiratory rate 30 or more"], ["B", "Blood pressure: systolic below 90 or diastolic 60 or less"], ["65", "Age 65 or older"]],
+  "breaks": "Urea above 20 is strictly greater; respiratory rate 30 counts (30 or more)."}},
+
+{"id": "crit-l37-curb65-total", "label": "CURB-65: Total, Severity and Where to Treat", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slides 29, 31",
+ "cols": ["Total", "Severity (risk of death)", "Where (slide 29 algorithm)"], "widths": ["14%", "30%", "56%"], "rows": [
+  ("0&ndash;1", "Low (under 3%)", "<b>Home</b> with antibiotics, unless other reasons to admit (unstable comorbidity, social)"),
+  ("2", "Moderate (9%)", "<b>Hospital</b>: supportive care, microbiology, antibiotics"),
+  ("3&ndash;5", "High (15&ndash;40%)", "<b>Hospital</b>, urgent senior review; consider critical care, <b>especially at 4 or 5</b>"),
+  {"note": "Slide 31: the Pneumonia Severity Index is preferred for admission support; CURB-65 complements, but does not replace, clinical judgment. Aim: diagnosis and antibiotics within 4 hours (slide 29)."},
+ ], "mnemonic": {"hook": "0&ndash;1 go home, 2 come in, 3 or more call for help (4&ndash;5 think intensive care).",
+  "key": [["0&ndash;1", "home"], ["2", "hospital"], ["3&ndash;5", "hospital plus senior review; intensive care at 4&ndash;5"]]}},
+
+{"id": "crit-l37-psi", "label": "Pneumonia Severity Index (PSI): Points and Classes", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slide 30 (pictures)",
+ "cols": ["Finding (slide 30 calculator)", "Points"], "widths": ["80%", "20%"], "rows": [
+  ("Female sex", "&minus;10"), ("Age", "1 per year"), ("Nursing home resident", "+10"),
+  ("Neoplastic disease", "+30"), ("Liver disease", "+20"), ("Congestive heart failure", "+10"), ("Cerebrovascular disease", "+10"), ("Renal disease", "+10"),
+  ("Altered mental status", "+20"), ("Respiratory rate 30/minute or more", "+20"), ("Systolic blood pressure below 90 mmHg", "+20"),
+  ("Temperature below 35 &deg;C or 40 &deg;C or more", "+15"), ("Pulse 125/minute or more", "+10"), ("Arterial pH below 7.35", "+30"),
+  ("<b>Classes</b>: I = 0.1% mortality &middot; II = 51&ndash;70 points, 0.6% &middot; III = 71&ndash;90, 0.9% &middot; IV = 91&ndash;130, 9.3% &middot; V = 131&ndash;395, 27.0%", ""),
+  {"note": "The slide&rsquo;s calculator picture is cropped after arterial pH, and Class I has no point range on the slide; use the class table only with a given total."},
+ ], "mnemonic": {"hook": "Thirties are the killers (cancer, acid); twenties are the brain, lungs, pressure and liver; tens are the heart, stroke, kidney, home and pulse; women start 10 lower.",
+  "key": [["30", "neoplastic disease, arterial pH below 7.35"], ["20", "liver disease, altered mental status, respiratory rate 30+, systolic below 90"],
+          ["15", "temperature below 35 or 40+"], ["10", "heart failure, cerebrovascular disease, renal disease, nursing home, pulse 125+"],
+          ["&minus;10", "female sex"], ["+1/year", "age"], ["Classes", "II 51&ndash;70, III 71&ndash;90, IV 91&ndash;130, V 131+"]],
+  "breaks": "Covers only the items visible on the slide; the full calculator continues past the crop."}},
+
+{"id": "crit-l37-severe", "label": "Nonsevere vs Severe Community-Acquired Pneumonia", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slide 45",
+ "cols": ["", "Nonsevere", "Severe"], "widths": ["20%", "40%", "40%"], "rows": [
+  ("Severity signal", "No major criterion and fewer than three minor criteria", "<b>Vasopressor-dependent shock, mechanical ventilation, or at least three minor criteria</b>"),
+  ("Place of care", "Pneumonia Severity Index plus judgment: outpatient or general ward", "Urgent intensive-care-level assessment and support"),
+  ("Treatment", "Outpatient or nonsevere inpatient regimen; resistant-pathogen coverage only for validated risk", "Beta-lactam combination regimen; cultures; resistant coverage only when risk supports it"),
+  ("Duration", "Fewer than 5 days possible once stable, <b>minimum 3</b>", "<b>At least 5 days</b> and until clinically stable"),
+  {"note": "The minor criteria are not listed anywhere on the slides; only the two major criteria are."},
+ ], "mnemonic": {"hook": "Severe = Squeezers or a Snorkel (or three minors); severe gets 5, nonsevere at least 3.",
+  "key": [["Squeezers", "vasopressor-dependent shock"], ["Snorkel", "mechanical ventilation"], ["Three minors", "at least three minor criteria"], ["3 and 5", "minimum days: nonsevere 3, severe 5"]]}},
+
+{"id": "crit-l37-cap-out", "label": "Outpatient Community-Acquired Pneumonia: Empiric Choice", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slide 43",
+ "cols": ["Adult outpatient", "Empiric treatment"], "widths": ["40%", "60%"], "rows": [
+  ("No comorbidities, no MRSA (methicillin-resistant Staphylococcus aureus) or Pseudomonas risk", "<b>Amoxicillin OR doxycycline</b>; macrolide monotherapy <b>only if local pneumococcal resistance is below 25%</b>"),
+  ("Comorbidities: chronic heart, lung, liver or renal disease, diabetes, alcoholism, malignancy, asplenia (immunocompromised: separate assessment)", "<b>Amoxicillin/clavulanate, cefpodoxime or cefuroxime PLUS azithromycin or doxycycline</b>, OR a <b>respiratory fluoroquinolone</b> (levofloxacin or moxifloxacin); review allergy, QT, interactions, fluoroquinolone risks"),
+  {"note": "Doses on the slide are left out here."},
+ ], "mnemonic": {"hook": "Healthy gets A or D; sick gets a beta-lactam with a Partner, or a Fluoroquinolone Flying solo.",
+  "key": [["A or D", "amoxicillin or doxycycline (macrolide alone only if resistance below 25%)"], ["Beta-lactam + Partner", "amoxicillin/clavulanate, cefpodoxime or cefuroxime plus azithromycin or doxycycline"], ["Flying solo", "levofloxacin or moxifloxacin alone"]]}},
+
+{"id": "crit-l37-cap-in", "label": "Inpatient Community-Acquired Pneumonia: Empiric Choice", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slide 44",
+ "cols": ["Adult inpatient", "Empiric treatment"], "widths": ["36%", "64%"], "rows": [
+  ("Nonsevere, no MRSA (methicillin-resistant Staphylococcus aureus) or Pseudomonas risk", "<b>Beta-lactam (for example ceftriaxone or ampicillin/sulbactam) plus a macrolide</b>, OR <b>respiratory fluoroquinolone monotherapy</b>; beta-lactam plus doxycycline when macrolides and fluoroquinolones are unsuitable"),
+  ("Severe (intensive care evaluation: vasopressor-dependent shock or respiratory failure needing ventilation)", "<b>Beta-lactam PLUS azithromycin or a respiratory fluoroquinolone</b>; add MRSA or Pseudomonas coverage only for validated risks; cultures and de-escalation; <b>severe beta-lactam allergy: review with pharmacy or infectious disease</b>"),
+ ], "mnemonic": {"hook": "Ward: BL + M or F alone (D if neither fits). Intensive care: BL + A or F, the beta-lactam always in.",
+  "key": [["BL + M", "beta-lactam plus macrolide (nonsevere)"], ["F alone", "respiratory fluoroquinolone monotherapy (nonsevere only)"], ["BL + D", "beta-lactam plus doxycycline when macrolide and fluoroquinolone are unsuitable"], ["BL + A or F", "severe: beta-lactam plus azithromycin or a fluoroquinolone"]]}},
+
+{"id": "crit-l37-hapvap", "label": "Hospital-Acquired and Ventilator Pneumonia: Empiric Choice", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slides 40, 42, 46",
+ "cols": ["Clinical situation", "Treatment approach"], "widths": ["36%", "64%"], "rows": [
+  ("No major resistance or high mortality risk", "<b>Antipseudomonal agent with MSSA (methicillin-sensitive S. aureus) coverage</b> by the local antibiogram: <b>piperacillin/tazobactam or cefepime</b>"),
+  ("MRSA (methicillin-resistant S. aureus) risk, resistance risk or high mortality risk", "Add <b>vancomycin or linezolid</b> for it; a <b>second antipseudomonal class</b> for selected high-risk patients; cultures, daily reassessment, de-escalation"),
+  ("Duration", "<b>Usually 7 days</b> if response is adequate"),
+  {"note": "Moxifloxacin and ertapenem are not reliable Pseudomonas options (slide 40). Early or late timing alone does not select the regimen (slide 39)."},
+ ], "mnemonic": {"hook": "Pip or Cef for Pseudomonas; V or L for MRSA; 7 days.",
+  "key": [["Pip or Cef", "piperacillin/tazobactam or cefepime (antipseudomonal backbone)"], ["V or L", "vancomycin or linezolid when methicillin-resistant S. aureus coverage is indicated"], ["Second class", "a second antipseudomonal class for selected high-risk patients"], ["7", "usual duration in days"]]}},
+
+{"id": "crit-l37-cxr", "label": "Pneumonia Patterns on the Chest Film", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slide 33 (picture)",
+ "cols": ["Pattern", "Signs", "Usual cause"], "widths": ["22%", "50%", "28%"], "rows": [
+  ("Lobar", "Homogeneous consolidation, silhouette sign, air bronchogram, sharply marginated fissure", "<i>Streptococcus pneumoniae</i>"),
+  ("Bronchopneumonia", "Poorly defined heterogeneous patchy infiltrates scattered through the lung; air bronchogram", "<i>Staphylococcus aureus</i>: multilobar, cavitation, pneumatoceles, abscess"),
+  ("Interstitial", "Bilateral, diffuse fine reticular opacity", "<i>Pneumocystis jirovecii</i> pneumonia"),
+  ("Aspiration", "Airspace opacity in a lobar or segmental distribution; gravity-dependent predilection", "Stroke, seizure"),
+  {"note": "The lecturer: the example films will not be shown on the exam as &ldquo;what is it.&rdquo;"},
+ ], "mnemonic": {"hook": "Lobar Loves pneumococcus; Broncho Burrows (staph cavities); Interstitial = Immunocompromised (Pneumocystis); Aspiration falls Downhill after a stroke or seizure.",
+  "key": [["Lobar", "Streptococcus pneumoniae"], ["Broncho", "Staphylococcus aureus"], ["Interstitial", "Pneumocystis"], ["Aspiration", "stroke, seizure; gravity-dependent"]]}},
+
+{"id": "crit-l37-stages", "label": "Pneumonia Stages", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slide 26",
+ "cols": ["Stage", "What happens"], "widths": ["30%", "70%"], "rows": [
+  ("1 Congestion", "Exudate congests the alveoli and capillaries; the first 24 hours (later for atypicals)"),
+  ("2 Red hepatization", "Fibrin and red cells fill the area; no airflow; hyperemia"),
+  ("3 Gray hepatization", "Area becomes avascular; leukocytes attack"),
+  ("4 Resolution", "Macrophages clean up; airflow returns"),
+  {"note": "The lecturer: &ldquo;These aren&rsquo;t cold, hard, fast rules.&rdquo; Learn the order; the slide&rsquo;s day ranges are not tested."},
+ ], "mnemonic": {"hook": "Cars Run Gray to Rust: Congestion, Red, Gray, Resolution.",
+  "key": [["C", "congestion"], ["R", "red hepatization"], ["G", "gray hepatization"], ["R", "resolution"]]}},
+
+{"id": "crit-l37-aspiration", "label": "Aspiration Pneumonitis vs Aspiration Pneumonia", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slides 50&ndash;51",
+ "cols": ["", "Pneumonitis", "Pneumonia"], "widths": ["20%", "40%", "40%"], "rows": [
+  ("Core problem", "<b>Sterile chemical injury</b>, often gastric contents", "<b>Bacterial infection</b> from colonized oropharyngeal material"),
+  ("Pattern", "Abrupt decline after a <b>witnessed</b> aspiration; fever or leukocytosis can occur without infection", "Infectious syndrome + infiltrate + aspiration risk; event may be <b>unwitnessed</b>"),
+  ("First step", "Support oxygenation and airway; <b>no prophylactic antibiotics</b> when bacterial infection is not suspected", "Community- or hospital-acquired regimen by setting and severity"),
+  ("Reassess", "Worsening: secondary infection, complication or another diagnosis", "<b>Anaerobic coverage only for abscess or empyema</b>; address recurrent aspiration"),
+ ], "mnemonic": {"hook": "-itis is Irritation (support it); -ia is Infection (antibiotics).",
+  "key": [["-itis", "chemical injury: support, no prophylactic antibiotics unless infection is suspected"], ["-ia", "bacterial infection: the community- or hospital-acquired regimen"], ["Anaerobes", "only for abscess or empyema"]]}},
+
+{"id": "crit-l37-pathogens", "label": "Risk Factors and Pathogens in Community-Acquired Pneumonia", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slide 41 (picture)",
+ "cols": ["Risk factor", "Related pathogens"], "widths": ["38%", "62%"], "rows": [
+  ("Alcoholism", "Anaerobic oral flora, <i>Klebsiella pneumoniae</i>, <i>Mycobacterium tuberculosis</i>, <i>S. pneumoniae</i>"),
+  ("Aspiration", "Anaerobic oral flora"),
+  ("Bioterrorism", "<i>Bacillus anthracis</i> (anthrax), <i>Francisella tularensis</i> (tularemia), <i>Yersinia pestis</i> (plague)"),
+  ("Chronic obstructive pulmonary disease or smoking", "<i>Chlamydophila pneumoniae</i>, <i>Haemophilus influenzae</i>, <i>Legionella</i>, <i>Moraxella catarrhalis</i>, <i>Pseudomonas aeruginosa</i> or other gram-negative rods, <i>S. pneumoniae</i>"),
+  ("Bat or bird droppings", "<i>Histoplasma capsulatum</i>"),
+  ("Farm animals or parturient cats", "<i>Coxiella burnetii</i> (Q fever)"),
+  ("HIV, early", "<i>H. influenzae</i>, <i>M. tuberculosis</i>, <i>S. pneumoniae</i>"),
+  ("HIV, late", "<i>Aspergillus</i>, <i>Cryptococcus</i>, <i>H. capsulatum</i>, <i>H. influenzae</i>, <i>Nocardia</i>, nontuberculous mycobacteria, <i>Pneumocystis jirovecii</i>"),
+  ("Hotel or cruise ship travel in the past two weeks", "<i>Legionella</i>"),
+  ("Influenza active in the community", "<i>H. influenzae</i>, influenza and other respiratory viruses, <i>S. pneumoniae</i>, <i>Staphylococcus aureus</i> (including methicillin-resistant strains)"),
+  ("Injection drug use", "Anaerobes, <i>M. tuberculosis</i>, <i>S. aureus</i> (including methicillin-resistant strains), <i>S. pneumoniae</i>"),
+  ("Lung abscess", "Anaerobic oral flora, <i>M. tuberculosis</i>, nontuberculous mycobacteria, <i>S. aureus</i> (including methicillin-resistant strains)"),
+  ("Middle East", "Middle East respiratory syndrome"),
+  ("Southeast and East Asia", "Avian influenza, severe acute respiratory syndrome"),
+  ("Southeastern and south-central states bordering the Mississippi and Ohio River basins", "<i>Blastomyces dermatitidis</i>"),
+  ("Southwestern United States", "<i>Coccidioides</i>, <i>Hantavirus</i>"),
+  {"note": "Slide 75 places Histoplasma in the Ohio and Mississippi River valleys; this table ties those basins to Blastomyces. Exposure to droppings is the histoplasmosis clue."},
+ ], "mnemonic": {"hook": "Link each exposure to one picture: Booze, Barf, Bombs, Butts, Bats and Birds, Barns, the Body&rsquo;s defenses early and late, Boats, Bugs going round, Needles, Cavities and the map.",
+  "key": [["Booze", "alcoholism: anaerobes, Klebsiella, tuberculosis, pneumococcus"], ["Barf", "aspiration: anaerobic oral flora"], ["Bombs", "bioterrorism: anthrax, tularemia, plague"],
+          ["Butts", "smoking or chronic obstructive pulmonary disease: Chlamydophila, Haemophilus, Legionella, Moraxella, Pseudomonas, pneumococcus"], ["Bats and Birds", "Histoplasma"], ["Barns", "farm animals or parturient cats: Coxiella (Q fever)"],
+          ["Early HIV", "Haemophilus, tuberculosis, pneumococcus"], ["Late HIV", "Aspergillus, Cryptococcus, Histoplasma, Haemophilus, Nocardia, nontuberculous mycobacteria, Pneumocystis"],
+          ["Boats", "hotel or cruise travel: Legionella"], ["Bugs going round", "influenza season: Haemophilus, viruses, pneumococcus, S. aureus incl. methicillin-resistant strains"],
+          ["Needles", "injection drug use: anaerobes, tuberculosis, S. aureus incl. methicillin-resistant strains, pneumococcus"], ["Cavities", "lung abscess: anaerobes, tuberculosis, nontuberculous mycobacteria, S. aureus"],
+          ["Map: Middle East", "Middle East respiratory syndrome"], ["Map: East Asia", "avian influenza, severe acute respiratory syndrome"], ["Map: Mississippi/Ohio basins", "Blastomyces"], ["Map: Southwest", "Coccidioides, Hantavirus"]],
+  "breaks": "A memory scaffold, not a rule: several pathogens repeat across rows, and pneumococcus sits in most of them."}},
+
+{"id": "crit-l37-pjp", "label": "Pneumocystis Pneumonia: Steroid and Prophylaxis Thresholds", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slides 71&ndash;73",
+ "cols": ["Decision", "Threshold (HIV-associated disease)"], "widths": ["34%", "66%"], "rows": [
+  ("Treatment", "<b>Trimethoprim-sulfamethoxazole preferred</b>, 21 days; intravenous for moderate to severe, then oral; check G6PD (glucose-6-phosphate dehydrogenase) before primaquine or dapsone"),
+  ("Add corticosteroids", "<b>Room-air PaO2 (arterial oxygen) below 70 mm Hg</b>, or alveolar-arterial gradient 35 mm Hg or more; start early, ideally within 72 hours"),
+  ("Start primary prophylaxis", "<b>CD4 below 100 cells/mm&sup3;</b>, or <b>CD4 100&ndash;200 with detectable HIV RNA</b>"),
+  ("Antiretroviral therapy", "Start within about 2 weeks of diagnosis when feasible"),
+  {"note": "The lecturer: the alveolar-arterial gradient &ldquo;is not going to show up on a test.&rdquo;"},
+ ], "mnemonic": {"hook": "70 for steroids, 100 for prophylaxis (200 if the virus is still detectable), 2 weeks to antiretrovirals.",
+  "key": [["70", "room-air arterial oxygen below 70: add steroids"], ["100", "CD4 below 100: prophylaxis"], ["100&ndash;200 + virus", "prophylaxis if HIV RNA detectable"], ["2 weeks", "start antiretroviral therapy"]]}},
+
+{"id": "crit-l37-flu-risk", "label": "Influenza: High-Risk Groups (treat promptly, even after 48 hours)", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slides 97&ndash;98",
+ "cols": ["Letter", "High-risk group"], "widths": ["16%", "84%"], "rows": [
+  ("P", "<b>Pregnancy</b> in any trimester and the first 2 weeks postpartum"),
+  ("L", "<b>Long-term care</b> facility residents"),
+  ("I", "<b>Immunocompromise</b> from disease or treatment"),
+  ("C", "<b>Chronic</b> pulmonary, cardiac, renal, hepatic, hematologic, metabolic or neurologic disease"),
+  ("O", "Severe <b>obesity</b> (and other CDC-listed conditions)"),
+  ("5", "Children <b>younger than 5</b>, especially younger than 2"),
+  ("65", "Adults <b>65 or older</b>"),
+  {"note": "Recent travel or animal exposure changes testing and public health needs but is not itself a universal severe-disease risk category (slide 98)."},
+ ], "mnemonic": {"hook": "PLICO, 5 and 65.", "key": [["P", "pregnancy and 2 weeks postpartum"], ["L", "long-term care"], ["I", "immunocompromise"], ["C", "chronic organ disease"], ["O", "severe obesity"], ["5", "under 5"], ["65", "65 or older"]]}},
+
+{"id": "crit-l37-flu-rx", "label": "Influenza Antivirals: Who Gets Which", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slides 108&ndash;110",
+ "cols": ["Agent", "Use", "Avoid / adjust"], "widths": ["20%", "44%", "36%"], "rows": [
+  ("Oseltamivir", "<b>Preferred</b>: hospitalized, severe or progressive, high-risk, <b>pregnancy</b>; start even after 48 hours; usual course 5 days", "Adjust for renal function"),
+  ("Baloxavir", "Single dose for uncomplicated influenza within 48 hours, age 5 or older", "<b>Not in pregnancy, breastfeeding, severe immunosuppression or hospitalized</b>; no polyvalent cations together"),
+  ("Inhaled zanamivir", "Other option", "<b>Avoid in asthma or COPD (chronic obstructive pulmonary disease)</b>: bronchospasm"),
+  ("Intravenous peramivir", "Eligible outpatients, uncomplicated influenza", "Adjust for renal function"),
+  ("Amantadine, rimantadine", "&mdash;", "<b>Not recommended</b> (resistance)"),
+  {"note": "Supportive care: avoid aspirin under 18 (Reye syndrome); antibiotics only for proven or suspected bacterial pneumonia (slide 110)."},
+ ], "mnemonic": {"hook": "O is for Ordinary and the very sick; B is one-and-done but Bars the Bump, Breastfeeding, the Bedbound and the Badly immunosuppressed; Z wheezes; P needs kidneys checked; A and R are Retired.",
+  "key": [["O", "oseltamivir: preferred, pregnancy, hospitalized"], ["B", "baloxavir: single dose; not pregnancy, breastfeeding, hospitalized, severe immunosuppression"], ["Z", "zanamivir: avoid in asthma or COPD"], ["P", "peramivir: renal adjustment"], ["A and R", "amantadine, rimantadine: resistance"]]}},
+
+{"id": "crit-l37-covid-sev", "label": "COVID-19 Severity Classes", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slide 119",
+ "cols": ["Class", "Criteria"], "widths": ["28%", "72%"], "rows": [
+  ("Asymptomatic or presymptomatic", "Infection without symptoms"),
+  ("Mild", "Some symptoms, <b>no dyspnea, normal chest film</b>"),
+  ("Moderate", "Some symptoms, <b>positive film</b>, oxygen saturation <b>at least 94%</b> on room air"),
+  ("Severe", "Saturation <b>below 94%</b> on room air, marked tachypnea, infiltrates <b>over 50%</b> of lung volume"),
+  ("Critical", "Acute respiratory failure, septic shock or multiple organ dysfunction"),
+ ], "mnemonic": {"hook": "Film splits mild from moderate; 94 and 50 split moderate from severe; failure makes it critical.",
+  "key": [["None", "asymptomatic"], ["Normal film", "mild"], ["Abnormal film, 94%+", "moderate"], ["Below 94%, marked tachypnea, over 50% infiltrates", "severe"], ["Failure, shock, organs", "critical"]]}},
+
+{"id": "crit-l37-covid-rx", "label": "COVID-19: Outpatient Antivirals vs Hospital Treatment", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slides 120&ndash;122",
+ "cols": ["", "Early outpatient pathway", "Hospital pathway"], "widths": ["16%", "42%", "42%"], "rows": [
+  ("Who", "High-risk patient, mild or moderate disease, <b>no hypoxemia</b>", "Hypoxemia, severe respiratory disease or critical illness"),
+  ("Treatment", "<b>Nirmatrelvir/ritonavir within 5 days</b> or <b>3-day remdesivir within 7 days</b> of onset; molnupiravir (adults) only if these are unsuitable", "<b>Dexamethasone</b>; consider remdesivir by timing and support; baricitinib or tocilizumab plus steroids for rapid progression"),
+  ("Checks", "Drug interactions, renal dosing, hepatic contraindications before nirmatrelvir/ritonavir; <b>molnupiravir: avoid in pregnancy</b>", "Venous thromboembolism prophylaxis unless contraindicated; therapeutic dosing needs a thrombosis and bleeding assessment, not D-dimer alone"),
+  ("Avoid", "<b>No systemic steroids without hypoxemia</b> unless another indication", "&mdash;"),
+ ], "mnemonic": {"hook": "N in 5, R in 7, M only as Last resort (never the Mother-to-be); Dexamethasone needs Desaturation.",
+  "key": [["N in 5", "nirmatrelvir/ritonavir within 5 days"], ["R in 7", "remdesivir (3 days) within 7 days"], ["M", "molnupiravir: last resort, avoid in pregnancy"], ["D", "dexamethasone only with hypoxemia"]]}},
+
+{"id": "crit-l37-psittacosis", "label": "Psittacosis: Stages of Progression", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slide 84",
+ "cols": ["Stage", "Description"], "widths": ["16%", "84%"], "rows": [
+  ("1", "Flulike syndrome without radiographic abnormalities"), ("2", "Mild-to-moderate pneumonia"),
+  ("3", "Severe pneumonia"), ("4", "Acute respiratory failure, sepsis and septic shock"),
+ ], "mnemonic": {"hook": "Flu, Fair, Fierce, Failure.",
+  "key": [["Flu", "flulike, normal film"], ["Fair", "mild to moderate pneumonia"], ["Fierce", "severe pneumonia"], ["Failure", "respiratory failure, sepsis, septic shock"]]}},
+
+{"id": "crit-l37-fungal-rx", "label": "Histoplasmosis and Cryptococcosis: Treatment by Severity", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slides 78, 123",
+ "cols": ["Disease and severity", "Treatment"], "widths": ["40%", "60%"], "rows": [
+  ("Histoplasmosis, mild acute, immunocompetent adult", "Often <b>observation</b>, not antifungals"),
+  ("Histoplasmosis, prolonged or progressive, or higher-risk host", "Consider <b>itraconazole</b> (monitor interactions and levels)"),
+  ("Histoplasmosis, severe pulmonary or disseminated", "Specialist-led <b>amphotericin-based induction</b>"),
+  ("Histoplasmosis, chronic cavitary", "Prolonged azole, usually <b>at least 12 months</b>"),
+  ("Cryptococcosis, mild isolated pulmonary", "<b>Fluconazole</b>, generally 6&ndash;12 months"),
+  ("Cryptococcosis, severe pulmonary, central nervous system or disseminated", "<b>Liposomal amphotericin B plus flucytosine</b> induction, then fluconazole; infectious disease consultation"),
+  {"note": "Slide 78: the 2025/2026 updates replace a simple &ldquo;4-week symptom&rdquo; treatment rule for histoplasmosis."},
+ ], "mnemonic": {"hook": "Mild histo: Mind it (watch). Lingering: Itra. Life-threatening: Ampho. Crypto mild: Flu-con; crypto bad: Ampho + Flucytosine, then Flu-con.",
+  "key": [["Watch", "mild histoplasmosis"], ["Itra", "prolonged or higher-risk histoplasmosis"], ["Ampho", "severe or disseminated histoplasmosis"], ["12 months", "chronic cavitary histoplasmosis"], ["Flu-con", "mild pulmonary cryptococcosis"], ["Ampho + flucytosine", "severe or central nervous system cryptococcosis"]]}},
+
+{"id": "crit-l37-testing", "label": "Pneumonia Testing: Only When It Changes a Decision", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slide 125",
+ "cols": ["Decision", "Useful test", "What changes"], "widths": ["26%", "38%", "36%"], "rows": [
+  ("Is pneumonia present?", "Chest radiograph; lung ultrasound with expertise", "Confirms a parenchymal process vs bronchitis or another diagnosis"),
+  ("Where to treat?", "Saturation, vital signs, organ dysfunction, sepsis assessment, Pneumonia Severity Index plus judgment", "Outpatient vs ward vs intensive care"),
+  ("Will it change therapy or precautions?", "Molecular viral testing; cultures for severe community-acquired pneumonia or validated resistance risk", "Antivirals, infection prevention, targeted coverage, de-escalation"),
+  ("Atypical or complicated course?", "Computed tomography for uncertainty, cavitation, obstruction, abscess or empyema; targeted tests by exposure or immune status", "Drainage, duration, consultation, organism-specific treatment"),
+ ], "mnemonic": {"hook": "PAWS before you order: Present? Admit where? Would it change therapy? Strange course?",
+  "key": [["P", "is pneumonia present: film"], ["A", "admit where: saturation, vitals, severity index"], ["W", "would it change therapy: viral test, selective cultures"], ["S", "strange course: computed tomography, targeted tests"]]}},
+
+{"id": "crit-l37-withhold", "label": "When to Withhold Antibiotics", "color": L37C,
+ "tag": "Criteria &middot; Lecture 37 &middot; slide 126",
+ "cols": ["Withhold or stop", "Do not withhold"], "widths": ["50%", "50%"], "rows": [
+  ("Uncomplicated acute bronchitis (whatever the sputum color or duration)", "Suspected bacterial pneumonia: community- or hospital-acquired pathway promptly"),
+  ("Chemical aspiration pneumonitis: supportive care", "Severe or unstable patient: specimens without delaying empiric therapy"),
+  ("Influenza or COVID-19 without bacterial complication: antiviral pathway", "Aspiration pneumonia, abscess or empyema (anaerobes for abscess or empyema)"),
+  ("Selected viral-positive outpatient community-acquired pneumonia, no comorbidities, close follow-up", "A worsening course: reassess, do not just add drugs"),
+  {"note": "Antibiotics treat a bacterial syndrome, not cough duration, sputum color, a positive viral test or inflammation alone. Safety net: expected course, return precautions, a reassessment plan."},
+ ], "mnemonic": {"hook": "Hold for the 4 C&rsquo;s that are not bacteria: Chest cold, Chemical burn, Corona or flu, a Clean viral outpatient. Give for the 4 S&rsquo;s: Suspected bacteria, Sick or unstable, Suppuration (abscess, empyema, aspiration pneumonia), Sliding downhill.",
+  "key": [["Chest cold", "acute bronchitis"], ["Chemical burn", "aspiration pneumonitis"], ["Corona or flu", "viral, no bacterial complication"], ["Clean viral outpatient", "viral-positive community-acquired pneumonia, no comorbidities, follow-up"],
+          ["Suspected bacteria", "bacterial pneumonia"], ["Sick", "severe or unstable"], ["Suppuration", "aspiration pneumonia, abscess, empyema"], ["Sliding", "worsening course"]]}},
+]
+
+TOPICS = [
+{"id": "l37-emph", "label": "★ Professor Emphasized — Restraint, Scores, Board Favorites", "color": "#b8860b", "rows": [
+ ["★ Guidance coming", "He writes the exam items and will post <b>guidance for both lectures &ldquo;this weekend&rdquo;</b> at the end of the slides (0:02, 4:00). Check for it."],
+ ["★ Diagnostic restraint", "Bronchitis is &ldquo;our first opportunity to practice diagnostic restraint&rdquo;: <b>no routine antibiotics</b>, whatever the sputum color. He closed on testing only when it changes a decision, and when to withhold antibiotics."],
+ ["★ Scores", "<b>Pneumonia Severity Index preferred</b> for admission; <b>CURB-65 complementary</b> (0:56)."],
+ ["★ Board favorites", "Histoplasmosis (&ldquo;going to show up on your PANCE&rdquo;, the Physician Assistant National Certifying Exam); psittacosis (&ldquo;super common medical boards question&rdquo;)."],
+ ["Not tested", "Example chest films as &ldquo;what is it&rdquo;; the alveolar-arterial gradient; influenza vaccine make-up; vaccine detail beyond who gets which; stage day ranges."],
+]},
+{"id": "l37-bronchitis", "label": "Acute Bronchitis", "color": "#7a2d30", "rows": [
+ ["What it is", "Self-limited <b>viral</b> infection of the large airways; cough (worst in the morning) <b>2&ndash;3 weeks</b>, sometimes wheeze; <b>clinical diagnosis</b>."],
+ ["Exam", "Central wheeze; rhonchi that clear with cough; chest-wall tenderness; <b>no consolidation</b> (if present, think pneumonia)."],
+ ["Tests", "No routine complete blood count, sputum culture or film; <b>image if vital signs, focal findings or risk suggest pneumonia</b>. Pertussis: test with paroxysms, post-tussive vomiting, whoop or exposure; don&rsquo;t wait 4 weeks."],
+ ["Treat", "Expectations, rest, fluids, acetaminophen (check combination products); <b>no routine antibiotics, codeine or steroids</b>; bronchodilator trial if wheezing. Delayed &ldquo;pocket&rdquo; prescription."],
+ ["Return if", "Dyspnea, hemoptysis, persistent fever, hypoxemia, worse after improving."],
+]},
+{"id": "l37-pneumonia", "label": "Pneumonia: Workup &amp; Treatment", "color": "#2f5d6b", "rows": [
+ ["Most common cause", "<i>S. pneumoniae</i>; highest incidence over 65; atypicals <i>Mycoplasma</i>, <i>C. pneumoniae</i>, <i>Legionella</i> (cruises, hot tubs, fountains)."],
+ ["Presentation", "Higher fever, chills, pleuritic pain, productive cough, tachypnea; one lobe of crackles, dullness, egophony (E to A), whispered pectoriloquy, increased fremitus."],
+ ["Confirm", "<b>Chest radiograph</b> (ultrasound with expertise); cultures only for severe disease, resistance risk or failure; computed tomography for uncertainty, cavitation, non-homogeneous opacity, hidden lower lobes."],
+ ["General care", "Oxygen, fluids, sepsis care; narrow daily; <b>no routine steroids in nonsevere pneumonia</b>; steroids considered in severe community-acquired pneumonia <b>except influenza pneumonia</b>; drain complicated effusion or empyema."],
+ ["Viral-positive", "Outpatient without comorbidities: may skip antibiotics with close follow-up; with comorbidities or hospitalized: still treat."],
+ ["Ventilator pneumonia", "Pseudomonas and multidrug-resistant organisms, higher mortality; <b>prevent</b>: early extubation, hand hygiene, sterile technique, fewer circuit changes, <b>head of bed up</b>, mouth care, secretion drainage."],
+ ["Pseudomonas", "Moxifloxacin and ertapenem are not reliable; MRSA: vancomycin or linezolid."],
+]},
+{"id": "l37-abscess", "label": "Aspiration &amp; Lung Abscess", "color": "#5a3d8a", "rows": [
+ ["Risk", "Dysphagia, altered consciousness, impaired airway protection (stroke, seizure); assess swallowing, oral hygiene, positioning."],
+ ["Abscess picture", "Weeks of fever, sweats, <b>foul-smelling purulent sputum</b>, hemoptysis; <b>amphoric breath sounds</b> (like breathing across an open jar); <b>cavity with an air-fluid level</b>."],
+ ["Abscess treatment", "Starts with antibiotics: <b>intravenous ampicillin/sulbactam, then oral amoxicillin/clavulanate</b>, several weeks; <b>clindamycin reserved</b> (C. difficile); computed tomography, bronchoscopy for obstruction or failure; drainage or surgery for large or refractory."],
+]},
+{"id": "l37-fungal", "label": "Fungal &amp; Atypical", "color": "#1f5c3a", "rows": [
+ ["Pneumocystis", "Most common opportunistic infection in HIV; <b>exertional dyspnea and dry cough (95% each)</b>, fever; up to half normal exam; <b>bilateral perihilar infiltrates</b>. Induced sputum or bronchoalveolar lavage microscopy or polymerase chain reaction; negative induced sputum &rarr; lavage; lactate dehydrogenase nonspecific; treat while confirming if suspicion is high."],
+ ["Histoplasmosis", "Soil, <b>bird or bat droppings</b>; Ohio and Mississippi River valleys; fever, dry cough, chest pain, headache 3&ndash;17 days later; <b>urine antigen</b> (cross-reacts with Blastomyces; repeat if early negative)."],
+ ["Cryptococcosis", "Environmental inhalation; HIV, transplant, steroids, but also healthy hosts; mimics CAP, tuberculosis, cancer; <b>serum cryptococcal antigen</b>; <b>lumbar puncture</b> to look for central nervous system spread."],
+ ["Psittacosis", "<i>Chlamydia psittaci</i> from <b>birds</b> (pet shop, zoo, poultry); <b>severe headache, photophobia, epistaxis, relative bradycardia</b>, splenomegaly, Horder spots (rose-spot-like facial macules); nucleic acid amplification test or polymerase chain reaction (routine culture misses it); unilateral lower-lobe infiltrate. <b>Doxycycline</b>, 10&ndash;14 days after fever ends; macrolide with infectious disease if tetracyclines unsuitable; report to public health."],
+ ["Mycoplasma", "Children and young adults, outbreaks; gradual fever, persistent cough, headache. <b>Macrolide or doxycycline</b> (fluoroquinolone alternative); <b>beta-lactams fail: no cell wall</b>. No vaccine."],
+]},
+{"id": "l37-viral", "label": "Influenza &amp; COVID-19", "color": "#a3341f", "rows": [
+ ["Influenza basics", "Orthomyxovirus, droplet nuclei; A most pathogenic; <b>drift</b> = gradual surface changes (yearly vaccine update), <b>shift</b> = reassortment (novel strains). Incubation 1&ndash;4 days; peaks mid-February."],
+ ["Influenza picture", "Sudden onset; fever 100&ndash;104 &deg;F, myalgias, frontal or retro-orbital headache, <b>sore throat (why most seek care)</b>, red watery eyes."],
+ ["Influenza tests", "<b>Molecular</b> preferred; a negative rapid antigen test does not exclude; <b>don&rsquo;t wait</b> for results in hospitalized or high-risk patients; film in elderly or high-risk."],
+ ["Influenza pneumonia", "Rapid cough, dyspnea, cyanosis; primary viral or secondary bacterial (pneumococcal or staphylococcal)."],
+ ["COVID-19 picture", "Inhaled particles indoors; incubation about 5 days; cough, dyspnea, fever, myalgia, headache; anosmia, dysgeusia less common; 18&ndash;33% asymptomatic."],
+ ["COVID-19 tests", "<b>Nucleic acid amplification test (including polymerase chain reaction) most sensitive</b>; negative antigen &rarr; repeat after 48 hours (2 tests if symptomatic, 3 if not) or a nucleic acid test; D-dimer alone does not diagnose thrombosis."],
+]},
+]

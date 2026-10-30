@@ -62,7 +62,7 @@ def header(frags):
   <h1>Clinical Medicine and Surgery I &middot; Exam 6 &mdash; Study Guide</h1>
   <p>PAJ 5500 Clinical Medicine and Surgery I &middot; Class of 2028</p>
   <p>Respiratory Block Exam I (Lectures 33&ndash;38) &middot; Lectures in this guide: %s%s &middot; Instructional Objectives verbatim</p>
-  <p class="hdr-note">&#9733; Starred boxes and highlighted phrases carry each lecturer&rsquo;s emphasis from the lecture recording (our transcript and Notability&rsquo;s, cross-checked); every fact still comes from the slides</p>
+  <p class="hdr-note">&#9733; Starred boxes and highlighted phrases carry each lecturer&rsquo;s emphasis from the lecture recording (our transcript cross-checked against Notability&rsquo;s or Zoom&rsquo;s); every fact still comes from the slides</p>
   <div class="hdr-links"><a href="cms-exam-6-cram-sheet.html">Cram sheet</a><a href="cms-exam-6-clin-med-pro-guide.html">Clin Med Pro guide</a></div>
 </header>
 """ % (have, more))
