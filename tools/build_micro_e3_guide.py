@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build the Microbiology Exam 3 study guide (Lectures 14-19; Lecture 14 so far).
+"""Build the Microbiology Exam 3 study guide (Lectures 14-19; Lectures 14-16 so far).
 
 Skeleton lifted from the Microbiology Exam 1 guide -- head, styles, back bar, pull-to-refresh, footer and
 scripts -- exactly as tools/build_micro_e2_guide.py does, so the class reads as one thing; only the title,
@@ -24,8 +24,10 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, "micro_e3"))
 import _micro_e3_guide_l14 as L14
+import _micro_e3_guide_l15 as L15
+import _micro_e3_guide_l16 as L16
 
-SECTIONS = [L14]
+SECTIONS = [L14, L15, L16]
 DONOR = os.path.join(ROOT, "Microbiology Exam 1", "micro-exam-1-study-guide.html")
 OUTDIR = os.path.join(ROOT, "Microbiology Exam 3")
 OUT = os.path.join(OUTDIR, "micro-exam-3-study-guide.html")
@@ -55,8 +57,8 @@ def main():
     head = re.sub(r"<header class=\"top\">.*?</header>",
         '<header class="top">\n  <h1>Microbiology &middot; Exam 3 &mdash; Study Guide</h1>\n'
         '  <p>PAJ 5200 Microbiology &middot; Class of 2028</p>\n'
-        '  <p>Covers Lecture 14 so far &mdash; Gram-Negative Bacilli of Medical Importance &middot; the Exam 3 '
-        'block is Lectures 14&ndash;19 &middot; Exam 3 is on Wednesday 2 December 2026 &middot; Instructional '
+        '  <p>Covers Lectures 14&ndash;16 so far &mdash; Gram-Negative Bacilli, Fungi of Medical Importance, Food '
+        'Safety &middot; the Exam 3 block is Lectures 14&ndash;19 &middot; Exam 3 is on Wednesday 2 December 2026 &middot; Instructional '
         'Objectives (IOs) taken verbatim from the syllabus</p>\n</header>',
         head, count=1, flags=re.S)
     # the Word-export link is re-added by tools/build_guide_docx.py for THIS page

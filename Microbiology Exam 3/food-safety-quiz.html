@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));window.__paErrQ=[];['error','unhandledrejection'].forEach(function(t){addEventListener(t,function(e){var q=window.__paErrQ;if(q&&!q.done)q.push(e)})});</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #3f8a55; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c2903a; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Safety &mdash; Quiz 1</title>
+<style>
+  :root{
+    --navy:#1f4d2b; --indigo:#3f8a55; --gold:#c2903a; --ice:#e8f4ea;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#1f4d2b;--gold-l:#c2903a;--indigo-l:#1f4d2b;--navy:#89ba92;--indigo:#509b65;--gold:#c2903a;--ice:#112917;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#509b65;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#1f4d2b;--indigo-t:#38844f;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Significant Microorganisms in Food Safety</h1>
+    <div class="sub">Microbiology &middot; Exam 3 &middot; Lecture 16 &middot; Set 1</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Lecture 16 of Microbiology &mdash; Significant Microorganisms in Food Safety. Thirty questions, every one cited to the slide it came from and weighted by slide count until the lecture recording has been read. <b>Microbes in food</b> are good (bread, beer, cheese, yogurt), bad (illness and spoilage) or just there. <b>The first split</b> is intoxication (a preformed toxin) against infection (live cells that multiply). <b>The seven bacteria</b>: <i>Escherichia coli</i>, <i>Salmonella</i>, <i>Campylobacter jejuni</i>, <i>Listeria monocytogenes</i>, <i>Clostridium</i>, <i>Bacillus cereus</i> and <i>Vibrio</i>, each with its source, its food and who is at risk; then protozoa, worms, norovirus and hepatitis A and E. <b>Tracking</b>: pulsed-field gel electrophoresis patterns in PulseNet. Objective 3 (antibiotic resistance in the food supply) has no slide and is not asked. Where a slide and current references differ, the slide is keyed and the study guide says what differs.</p>
+    <div class="chips"><span class="chip">Microbes in food</span><span class="chip">Who watches</span><span class="chip">Intoxication vs infection</span><span class="chip"><i>Escherichia coli</i></span><span class="chip"><i>Salmonella</i></span><span class="chip"><i>Campylobacter</i></span><span class="chip"><i>Listeria</i></span><span class="chip"><i>Clostridium</i></span><span class="chip"><i>Bacillus cereus</i></span><span class="chip"><i>Vibrio</i></span><span class="chip">Protozoa &amp; worms</span><span class="chip">Norovirus &amp; hepatitis</span><span class="chip">PulseNet</span><span class="chip">Prevention</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Salmonella", "io": "1 — Identify sources of microbial contamination in global food supply", "q": "Why is Mary Mallon, known as Typhoid Mary, remembered in food safety?", "opts": [["She kept cooking despite warnings, causing outbreaks", "Correct. Mary Mallon was warned and given an explanation, yet she persisted in preparing food and caused multiple deadly outbreaks. Typhoid fever, caused by Salmonella typhi, is the most severe enteric fever, so a single person handling food could spread it widely."], ["She raised backyard hens that spread Salmonella", "Live poultry such as backyard hens is a Salmonella source, but that is not her story. Typhoid Mary was warned and given an explanation, yet persisted in preparing food and caused multiple deadly outbreaks."], ["She was the first person to die of typhoid", "She is remembered as a source of infection, not as its first victim: despite warnings and an explanation, she persisted and caused multiple deadly outbreaks of typhoid fever, the most severe enteric fever."], ["She traced Salmonella to poultry and reptiles", "Linking Salmonella mainly to poultry and aquatic reptiles is a reservoir fact, not her part in food safety. Typhoid Mary is remembered for persisting despite warnings and causing multiple deadly outbreaks."]], "c": 0, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 17, 18 and 20 and image on Slide 20"}, {"topic": "Kitchen prevention", "io": "1 — Identify sources of microbial contamination in global food supply", "q": "Which approach is advised for sanitizing kitchen surfaces and utensils?", "opts": [["Salt brine with added vinegar", "Salt brine, often with lactic acid, vinegar and spices, is used to pickle and preserve vegetables, not to clean. Kitchen surfaces and utensils are cleaned with mild bleach cleaning solutions."], ["A cold-water rinse of each item", "Hot, soapy water is the handwashing advice, and kitchen surfaces and utensils call for mild bleach cleaning solutions; a cold-water rinse is neither. Cross-contamination of boards and utensils is the risk to avoid."], ["Mild bleach cleaning solutions", "Correct. Kitchen surfaces and utensils should be cleaned with mild bleach cleaning solutions, alongside handwashing with hot, soapy water, washing fruits and vegetables and avoiding cross-contamination of cutting boards and utensils."], ["Undiluted bleach at full strength", "The cleaning solution is a mild bleach, not full-strength bleach. Mild bleach on surfaces and utensils, with hot, soapy handwashing and no cross-contamination of cutting boards, is the kitchen routine."]], "c": 2, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 36 and 6"}, {"topic": "Fungi, protozoa & worms", "io": "1 — Identify sources of microbial contamination in global food supply", "q": "Foodborne protozoan diarrhea is associated with which sources?", "opts": [["Raw honey and the soil around plants", "Soil, plants and honey are where clostridial spores are found. Protozoans such as Giardia and Cyclospora cause mild diarrhea associated with uncooked fruits and vegetables or drinking water."], ["Uncooked produce and drinking water", "Correct. Protozoans such as Cryptosporidium, Cyclospora, Giardia and Entamoeba cause mild diarrhea associated with uncooked fruits and vegetables or drinking water. Ready-to-eat salad bags are a common culprit of foodborne illness."], ["Undercooked pork and wild venison", "Venison and pork carry tapeworm, roundworm and trichinosis when the animal's muscle or organs were contaminated while it was alive. The protozoans are linked to uncooked fruits and vegetables and drinking water."], ["Raw shellfish from salty estuaries", "Raw shellfish and other seafood from ocean and estuarine waters carry salt-tolerant Vibrio species. The foodborne protozoans travel instead in uncooked fruits and vegetables and in drinking water."]], "c": 1, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 32, 29 and 25"}, {"topic": "Foodborne viruses", "io": "1 — Identify sources of microbial contamination in global food supply", "q": "Which two hepatitis viruses are typically spread by the fecal-oral route?", "opts": [["Hepatitis A and hepatitis B", "Hepatitis A is right, but its fecal-oral partner is hepatitis E, not B. With the A and E pair, a person is most contagious about two weeks before symptoms appear."], ["Hepatitis C and hepatitis E", "Hepatitis E is right, but its fecal-oral partner is hepatitis A, not C. The A and E pair is prevented by good handwashing, diaper hygiene, thorough cooking and clean drinking water."], ["Hepatitis A and hepatitis E", "Correct. Of the hepatitis viruses A through E, hepatitis A and hepatitis E are the ones typically spread by the fecal-oral route, which makes them food and water threats. They are not spread by kissing, sneezing, saliva or blood."], ["Hepatitis B and hepatitis C", "Of the hepatitis viruses A through E, the two typically spread by the fecal-oral route are A and E, not B and C. That route is why handwashing, diaper hygiene, thorough cooking and clean drinking water prevent them."]], "c": 2, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 33"}, {"topic": "Escherichia coli", "io": "2 — Correlate associations between contaminated foods with the increasing numbers of diagnosed food-borne illnesses and mortality worldwide", "q": "The O157:H7 serotype, one of the worst culprits in foodborne outbreaks, belongs to which organism?", "opts": [["Listeria monocytogenes", "Listeria monocytogenes is a major foodborne pathogen found in birds and mammals and persisting in soil, but O157:H7 is not one of its designations. That serotype belongs to Escherichia coli."], ["Vibrio vulnificus", "Vibrio vulnificus is a salt-tolerant species of ocean and estuarine waters, acquired through water or from shellfish and raw seafood. The O157:H7 serotype, one of the worst outbreak culprits, is Escherichia coli."], ["Escherichia coli", "Correct. One of the worst Escherichia coli culprits is the O157:H7 serotype. The bad Escherichia coli strains can carry numerous toxins, and outbreaks arise from fecally contaminated meats or vegetables such as hamburgers and bagged spinach."], ["Salmonella enterica", "Salmonella enterica is one of the main Salmonella species; other Salmonella strains are named for the places where they were first found. O157:H7 is not a Salmonella designation but a serotype of Escherichia coli."]], "c": 2, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 15, 16, 17, 23 and 29"}, {"topic": "Foodborne illness burden", "io": "4 — Correlate associations between improved laboratory analytical methods with respect to near-daily announcements of food recalls and food-related illness", "q": "Which food safety responsibility rests with the Food and Drug Administration and the United States Department of Agriculture rather than with local and state health departments?", "opts": [["Hosting the PulseNet database", "PulseNet, the database of pulsed-field gel electrophoresis patterns for microbial isolates, is run through the Centers for Disease Control and Prevention, not these two agencies. The Food and Drug Administration and the United States Department of Agriculture enforce food safety law and enact policy."], ["Enforcing food safety law and policy", "Correct. Local and state health departments, the Centers for Disease Control and Prevention, the Food and Drug Administration and the United States Department of Agriculture all conduct surveillance and investigate outbreaks, but the Food and Drug Administration and the Department of Agriculture are in charge of law enforcement and policy enactment."], ["Conducting food safety surveillance", "Surveillance is shared: local and state health departments, the Centers for Disease Control and Prevention and other agencies are all tasked with it. What the Food and Drug Administration and the United States Department of Agriculture add is enforcing food safety law and enacting policy."], ["Investigating illness outbreaks", "Outbreak investigation is shared with local and state health departments and the Centers for Disease Control and Prevention. What sets the Food and Drug Administration and the United States Department of Agriculture apart is law enforcement and policy enactment."]], "c": 1, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 9, 34 and 35"}, {"topic": "Listeria", "io": "1 — Identify sources of microbial contamination in global food supply", "q": "Why does keeping deli meats chilled fail to protect against Listeria monocytogenes?", "opts": [["Its infectious dose is under 500 cells", "An infectious dose of fewer than 500 cells, so that one drop of raw poultry fluid can cause illness, is the Campylobacter jejuni figure, and it says nothing about cold. Listeria monocytogenes defeats chilling because it grows well from 1 to 40 C."], ["It grows well from 1 to 40 C", "Correct. Probably the biggest concern with Listeria monocytogenes is that it grows well from 1 to 40 C, so it multiplies easily at refrigerator and room temperatures. Deli meats, soft cheeses, hot dogs and smoked seafood are among the foods most vulnerable to it."], ["Its spores survive in the cold", "Spores belong to the clostridia, which are spore-forming strict anaerobes found in soil, on plants and in honey. Listeria monocytogenes is a problem in chilled food because it keeps growing: it grows well from 1 to 40 C."], ["Its toxin forms before chilling", "A toxin made in the food before it is eaten is food intoxication, as with staphylococcal or botulinum toxin. Listeria monocytogenes causes food infection, and its cells keep multiplying in chilled food because it grows well from 1 to 40 C."]], "c": 1, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 23, 25, 12 and 21"}, {"topic": "Intoxication vs infection", "io": "2 — Correlate associations between contaminated foods with the increasing numbers of diagnosed food-borne illnesses and mortality worldwide", "q": "In food intoxication, what does a person swallow that causes the illness?", "opts": [["Live bacteria that then multiply in the gut", "That is food infection: live cells are ingested and cause an intestinal infection, as with Salmonella or Listeria. In intoxication the harm comes from toxin already present in the food when it is eaten."], ["Viral particles shed by a food handler", "Viral particles, as with norovirus spread by feces and vomitus, are a viral foodborne route, not food intoxication. Intoxication means swallowing a microbial toxin already formed in the food, such as staphylococcal toxin."], ["Fungal spores that spoil the food", "Fungi are associated with food spoilage (bread, cereals, acidic juices) and do not commonly cause disease. Food intoxication is caused by a toxin already formed in the food, such as staphylococcal or botulinum toxin."], ["Toxin already formed in the food", "Correct. In food intoxication, bacteria in the food release toxin before it is eaten; the person ingests that preformed toxin, which passes from the gut to its target organs. Staphylococcal toxin and Clostridium botulinum toxin are the examples."]], "c": 3, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 12, 31 and 33 and image on Slide 12"}, {"topic": "Bacillus cereus", "io": "2 — Correlate associations between contaminated foods with the increasing numbers of diagnosed food-borne illnesses and mortality worldwide", "q": "How do the two forms of Bacillus cereus gastroenteritis differ in the heat stability of their toxins?", "opts": [["Both forms from heat-labile toxins", "A heat-labile toxin is given for the emetic, rice-associated form only; the diarrheal, meat-associated form is attributed to a heat-stable toxin. The two forms differ in their toxins."], ["Diarrheal heat-stable; emetic heat-labile", "Correct. The diarrheal form of Bacillus cereus illness is attributed to a heat-stable toxin, usually with meat, and the emetic form to a heat-labile toxin, often with rice. Many references give the reverse pairing; the pairing keyed here is diarrheal heat-stable, emetic heat-labile."], ["Diarrheal heat-labile; emetic heat-stable", "This is the reverse of the pairing keyed here, which puts the heat-stable toxin with the diarrheal, meat-associated form and the heat-labile toxin with the emetic, rice-associated form. Many references do describe it this way round, so know that the two versions exist."], ["Both forms from heat-stable toxins", "The two forms do not share one toxin type: the diarrheal form comes from a heat-stable toxin and the emetic form from a heat-labile toxin. That difference, with meat for the diarrheal form and rice for the emetic form, separates them."]], "c": 1, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 28"}, {"topic": "Microbes in food production", "io": "1 — Identify sources of microbial contamination in global food supply", "q": "When yeast ferments glucose to make beer or wine, which two products form?", "opts": [["Ethanol and carbon dioxide", "Correct. In the fermentation equation for alcoholic beverages, one glucose molecule fermented by yeast gives two ethanol molecules and two carbon dioxide molecules. Ethanol is the alcohol in beer and wine; carbon dioxide is also the main gas that leavens bread dough."], ["Lactic acid and carbon dioxide", "Lactic acid belongs to pickling, where it may be present in the salt brine with vinegar and spices; it is not a product of the brewing equation. Yeast fermentation of glucose yields ethanol and carbon dioxide."], ["Ethanol and oxygen", "Oxygen is not a product of the equation. Yeast turns glucose into ethanol and carbon dioxide, and carbon dioxide is the gas given off, the same gas that does most of the leavening in bread dough."], ["Organic acids and water", "Organic acids, with alcohols, are what microbes add to the flavor and aroma of bread dough, and water does not appear in the brewing equation. Yeast fermentation of glucose gives ethanol and carbon dioxide."]], "c": 0, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 4, 5 and 6"}, {"topic": "Bacillus cereus", "io": "2 — Correlate associations between contaminated foods with the increasing numbers of diagnosed food-borne illnesses and mortality worldwide", "q": "Which course is typical of Bacillus cereus intoxication?", "opts": [["Fever with spread to blood and lymph nodes", "Invasion of the intestinal wall with spread to the blood and lymph nodes is typhoid fever, the most severe enteric fever, from Salmonella typhi. Bacillus cereus causes self-resolving vomiting and abdominal cramps."], ["Self-resolving vomiting and cramps", "Correct. Bacillus cereus intoxication has a rapid onset (6 hours or less) with vomiting and abdominal cramps that resolve on their own. Its gastroenteritis takes a diarrheal form, usually with meat, or an emetic form, often with rice."], ["Fever, dizziness and bloody diarrhea", "Fever, headache, dizziness and bloody diarrhea of rapid onset describe Campylobacter jejuni, often from raw poultry. Bacillus cereus intoxication brings vomiting and abdominal cramps that resolve on their own."], ["Muscle paralysis and respiratory failure", "Paralysis of muscles in the relaxed position leading to respiratory failure is botulism from Clostridium botulinum toxin. Bacillus cereus intoxication is milder: rapid vomiting and abdominal cramps that resolve on their own."]], "c": 1, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 28, 21, 27 and 17"}, {"topic": "Kitchen prevention", "io": "2 — Correlate associations between contaminated foods with the increasing numbers of diagnosed food-borne illnesses and mortality worldwide", "q": "When cooking meat products, what temperature should a meat thermometer confirm instead of guessing?", "opts": [["110 F", "110 F falls well short of the 165 F a meat thermometer should confirm. Improper cooking lets bacteria multiply in the food, the start of a food infection such as salmonellosis or listeriosis."], ["130 F", "130 F is still below the 165 F target for cooked meat products. Raw or undercooked meats are among the foods most vulnerable to Listeria monocytogenes, which is why the thermometer replaces guessing."], ["165 F", "Correct. When cooking meat products, the advice is to use a meat thermometer and confirm 165 F rather than guessing. Proper cooking matters because improper cooking lets bacteria in the food multiply, the route of food infection."], ["190 F", "190 F overshoots the figure given: the meat thermometer target for cooked meat products is 165 F. The point is to measure rather than guess, so the meat reliably reaches 165 F."]], "c": 2, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 36 and 23 and image on Slide 12"}, {"topic": "Fungi, protozoa & worms", "io": "1 — Identify sources of microbial contamination in global food supply", "q": "Which household source can carry tapeworm and roundworm?", "opts": [["Raw honey in the pantry", "Raw honey is a place clostridial spores can be found, along with soil and plants. Tapeworm and roundworm in the home come from domestic pet feces, and in food from meat contaminated while the animal was alive."], ["Live backyard hens", "Live poultry such as backyard hens are a Salmonella source, along with poultry products, eggs and pet food. Tapeworm and roundworm at home come from domestic pet feces."], ["Leftover rice dishes", "Rice is often associated with the emetic form of Bacillus cereus food poisoning, a bacterial intoxication. Tapeworm and roundworm are parasitic worms, and at home they come from domestic pet feces."], ["Domestic pet feces", "Correct. Domestic pet feces can contain tapeworm, roundworm and other parasitic worms. The other route to these worms is meat such as venison or pork contaminated while the animal was alive, and thorough cooking is the best way to kill them."]], "c": 3, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 32, 25, 26, 18 and 28"}, {"topic": "Clostridium", "io": "1 — Identify sources of microbial contamination in global food supply", "q": "Besides soil and plants, in which food can clostridial spores be found?", "opts": [["Oysters", "Oysters, clams and mussels carry salt-tolerant Vibrio species from ocean and estuarine waters, the subject of the old 'R-month' rule. Clostridial spores are found in soil, on plants and even in honey."], ["Eggs", "Eggs are a Salmonella source, along with poultry products, pet food, live backyard poultry, peanut butter and sushi-grade seafood. Clostridial spores are found in soil, on plants and even in honey."], ["Honey", "Correct. Spores of clostridia can be found in soils, associated with plants, or even in honey, including raw honey. When those spores germinate, Clostridium botulinum can start producing its toxin, and even a few bacteria can make plenty of it."], ["Rice", "Rice is often associated with the emetic form of Bacillus cereus illness, a common summertime food poisoning. Clostridial spores are found in soil, on plants and even in honey, the food that carries them."]], "c": 2, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 25, 27, 28, 29 and 18 and image on Slide 26"}, {"topic": "Foodborne illness burden", "io": "1 — Identify sources of microbial contamination in global food supply", "q": "Which type of microbe is the most common among foodborne pathogens?", "opts": [["Bacteria", "Correct. Of the estimated 250 different foodborne pathogens, bacteria are the most common. Viruses, parasites and toxins produced by microorganisms are concerns as well, and fungi, protozoa and parasitic worms are the other organisms involved, but none of these outnumber the bacteria."], ["Viruses", "Viruses such as norovirus are a common foodborne agent, spread person to person and through contaminated shellfish, but they are not the most common type of foodborne pathogen. Bacteria are."], ["Fungi", "Fungi do not commonly cause disease; they matter more in food production and in food spoilage (bread, cereals, acidic juices). Bacteria are the most common foodborne pathogens."], ["Protozoa", "Protozoa such as Giardia and Cryptosporidium cause mild, usually self-limiting diarrhea from uncooked fruits and vegetables or drinking water, but they are not the most common foodborne pathogens. Bacteria hold that place."]], "c": 0, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 9, 30, 31, 32 and 33"}, {"topic": "Campylobacter", "io": "2 — Correlate associations between contaminated foods with the increasing numbers of diagnosed food-borne illnesses and mortality worldwide", "q": "Which foodborne bacterium is a leading cause of bacterial diarrheal disease each year in the United States?", "opts": [["Listeria monocytogenes", "Listeria monocytogenes is singled out as the number one cause of food-related deaths in the United States, not as a leading cause of bacterial diarrheal disease. That description belongs to Campylobacter jejuni."], ["Clostridium botulinum", "Clostridium botulinum causes botulism, in which ingested toxin paralyzes muscles in the relaxed position and can lead to respiratory failure; it is not a leading diarrheal cause. Campylobacter jejuni is."], ["Vibrio vulnificus", "Vibrio vulnificus is a salt-tolerant species acquired from water (ingested or through wounds) or from shellfish and raw seafood; it is not the leading cause of bacterial diarrheal disease. Campylobacter jejuni is."], ["Campylobacter jejuni", "Correct. Campylobacter jejuni is a leading cause of bacterial diarrheal disease each year in the United States, especially in children, and the illness is very much under-reported. Its infectious dose is under 500 bacterial cells."]], "c": 3, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 21, 23, 27 and 29"}, {"topic": "Salmonella", "io": "2 — Correlate associations between contaminated foods with the increasing numbers of diagnosed food-borne illnesses and mortality worldwide", "q": "Which presentation is among the forms salmonellosis can take?", "opts": [["Hepatitis from the fecal-oral route", "Hepatitis A and E viruses are the ones typically spread by the fecal-oral route; hepatitis is not among the forms of salmonellosis, which include gastroenteritis, enteric fever, septicemia and kidney dysfunction."], ["Spread across the placenta", "Spread through the bloodstream to the placenta and fetus is the Listeria monocytogenes pathway, which is why pregnant women are most at risk from it. Salmonellosis forms include gastroenteritis, enteric fever, septicemia and kidney dysfunction."], ["Septicemia, a blood infection", "Correct. Salmonellosis can appear as gastroenteritis, enteric fever, septicemia (blood infection), fever, shock and kidney dysfunction. Its most severe enteric fever is typhoid fever, in which the bacteria invade the intestinal wall and spread to the blood and lymph nodes."], ["Paralysis of relaxed muscles", "Paralysis of the muscles in the relaxed position, leading to respiratory failure, is caused by ingested botulinum toxin, not by Salmonella. Salmonellosis appears as gastroenteritis, enteric fever, septicemia, fever, shock or kidney dysfunction."]], "c": 2, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 17, 23, 27 and 33 and image on Slide 24"}, {"topic": "Tracking food safety", "io": "4 — Correlate associations between improved laboratory analytical methods with respect to near-daily announcements of food recalls and food-related illness", "q": "What effect does PulseNet surveillance have on foodborne outbreaks?", "opts": [["Longer detection time but fewer cases", "Half reversed: the surveillance shortens detection time rather than lengthening it, and it does reduce the number of cases. Finding an outbreak's cause sooner is the point of matching isolate patterns."], ["Shorter detection time but more cases", "Faster detection might seem to add cases, but this surveillance helps reduce both the detection time and the number of cases of illness, by finding an outbreak's cause and processing-plant problems sooner."], ["No change in detection time or in cases", "Matching isolate patterns does change outcomes: PulseNet surveillance helps reduce both the detection time and the number of cases of illness, by revealing the causes of outbreaks and problems at food processing plants."], ["Shorter detection time and fewer cases", "Correct. Adding a pulsed-field gel electrophoresis pattern for each isolate to PulseNet helps determine the causes of outbreaks and detect problems at food processing plants. This surveillance helps reduce both the detection time and the number of cases of illness."]], "c": 3, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 34"}, {"topic": "Listeria", "io": "1 — Identify sources of microbial contamination in global food supply", "q": "Large-scale recalls of ice cream and frozen vegetables have been traced to which bacterium?", "opts": [["Vibrio vulnificus", "The foodborne route of Vibrio species is seafood: shellfish, crabs, raw seafood and oysters from salty ocean and estuarine waters. The ice cream and frozen vegetable recalls were attributed to Listeria monocytogenes."], ["Campylobacter jejuni", "Campylobacter jejuni is a leading cause of bacterial diarrheal disease, spread by raw poultry fluid and poultry leftovers. Large-scale recalls of ice cream and frozen vegetables were attributed to Listeria monocytogenes instead."], ["Bacillus cereus", "Bacillus cereus is a common summertime food poisoning agent tied to meat (diarrheal form) and rice (emetic form). The ice cream and frozen vegetable recalls belong to Listeria monocytogenes, which grows well from 1 to 40 C."], ["Listeria monocytogenes", "Correct. Large-scale food recalls have been attributed to Listeria monocytogenes, including a big ice cream recall, cantaloupes, frozen vegetables and poultry. It grows well from 1 to 40 C, so refrigerator temperatures do not hold it back."]], "c": 3, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 23, 29, 21 and 28 and image on Slide 22"}, {"topic": "Intoxication vs infection", "io": "2 — Correlate associations between contaminated foods with the increasing numbers of diagnosed food-borne illnesses and mortality worldwide", "q": "What must happen for a food infection, as opposed to a food intoxication, to occur?", "opts": [["The toxin must reach target organs", "A toxin traveling from the gut to target organs such as the brain and muscles is the intoxication pathway. Food infection ends in an intestinal infection caused by the live cells that were ingested."], ["Spores must germinate in the soil", "Spores of clostridia sit in soil, on plants and in honey, and germinating Clostridium botulinum spores can start producing toxin, which leads toward intoxication. Food infection requires live cells to be ingested."], ["Live bacterial cells must be ingested", "Correct. Food infection depends on live cells: bacteria in the food, which multiply there after improper cooking technique, are ingested and cause an intestinal infection, as with Salmonella or Listeria. Intoxication needs only the toxin that is already in the food."], ["A toxin must be formed before eating", "A toxin formed in the food before it is eaten defines food intoxication, as with staphylococcal or botulinum toxin. Food infection instead requires live bacterial cells to be ingested."]], "c": 2, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 12, 25 and 27 and image on Slide 12"}, {"topic": "Clostridium", "io": "2 — Correlate associations between contaminated foods with the increasing numbers of diagnosed food-borne illnesses and mortality worldwide", "q": "How does ingested botulinum toxin lead to death?", "opts": [["Rigid muscle spasm, then respiratory failure", "This reverses the paralysis: botulinum toxin paralyzes muscles in the relaxed position, not in a rigid spasm. Respiratory failure and death follow from that relaxed paralysis."], ["Spread through the blood to the brain", "Spread from the intestine through the bloodstream to the brain is the infection route of Listeria monocytogenes. Botulism is an intoxication: the toxin causes paralysis of muscles in the relaxed position, then respiratory failure."], ["Invasion of the gut wall and blood", "Invasion of the intestinal wall, with spread to the blood and lymph nodes, is typhoid fever from Salmonella typhi. Botulinum toxin acts on muscles instead, paralyzing them in the relaxed position until breathing fails."], ["Relaxed paralysis, then respiratory failure", "Correct. Ingesting botulinum toxin leads to paralysis of the muscles in the relaxed position, followed by respiratory failure and death. The toxin is made when spores germinate, and even a few Clostridium botulinum cells can produce plenty of it."]], "c": 3, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 27 and 17 and image on Slide 24"}, {"topic": "Tracking food safety", "io": "4 — Correlate associations between improved laboratory analytical methods with respect to near-daily announcements of food recalls and food-related illness", "q": "Which agency's website posts updated recalls of dietary supplements and pet food?", "opts": [["The Centers for Disease Control and Prevention", "The Centers for Disease Control and Prevention website hosts PulseNet, the database of isolate patterns for tracking outbreaks. Recalls of dietary supplements and pet food are posted by the Food and Drug Administration."], ["Local and state health departments", "Local and state health departments conduct food safety surveillance and investigate outbreaks. Updated recall information for food and dietary supplements, including pet food, is on the Food and Drug Administration website."], ["The ServSafe food safety program", "ServSafe provides food service training and certification, a kitchen prevention measure. Recalls of food and dietary supplements, including pet food, are posted on the Food and Drug Administration website."], ["The Food and Drug Administration", "Correct. The Food and Drug Administration website has updated information about food and dietary supplement recalls, including pet food. The United States Department of Agriculture website also carries food recall information, and PulseNet sits with the Centers for Disease Control and Prevention."]], "c": 3, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 35, 34, 9 and 36"}, {"topic": "Listeria", "io": "2 — Correlate associations between contaminated foods with the increasing numbers of diagnosed food-borne illnesses and mortality worldwide", "q": "Which ranking does Listeria monocytogenes hold among foodborne agents in the United States?", "opts": [["Cause of the most severe enteric fever", "The most severe enteric fever is typhoid fever, caused by Salmonella typhi, which invades the intestinal wall and spreads to the blood and lymph nodes. Listeria monocytogenes holds a different title: number one cause of food-related deaths."], ["Most common foodborne pathogen type", "Bacteria as a group are the most common foodborne pathogens, a ranking for a whole category rather than one species. Listeria monocytogenes is singled out as the number one cause of food-related deaths in the United States."], ["Number one cause of food-related deaths", "Correct. Listeria monocytogenes is the number one cause of food-related deaths in the United States. The groups at greatest risk for listeriosis are pregnant women, unborn children, premature babies, elderly people and immunocompromised people."], ["Leading cause of bacterial diarrheal disease", "Being a leading cause of bacterial diarrheal disease in the United States, especially in children, is the ranking of Campylobacter jejuni. Listeria monocytogenes ranks first for food-related deaths."]], "c": 2, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 23, 21, 17 and 9"}, {"topic": "Vibrio", "io": "1 — Identify sources of microbial contamination in global food supply", "q": "Where are Vibrio species such as Vibrio cholerae and Vibrio vulnificus found?", "opts": [["Poultry and aquatic reptiles", "Salmonella is found mainly with poultry and aquatic reptiles; the reptiles live in water, which makes this tempting. Vibrio species are the salt-tolerant bacteria of ocean and estuarine waters, carried by shellfish, crabs and raw seafood."], ["Ocean and estuarine waters", "Correct. Vibrio species, including Vibrio cholerae and Vibrio vulnificus, are salt-tolerant bacteria found in ocean and estuarine waters. People acquire them from that water, swallowed or through wounds, or from seafood such as shellfish, crabs and oysters."], ["Birds, mammals and soil", "Birds and mammals, with persistence in soil, describe Listeria monocytogenes. Vibrio species are salt-tolerant and live in ocean and estuarine waters, so their sources are seawater and seafood such as shellfish and oysters."], ["Soil, plants and honey", "Soil, plants and honey are where clostridial spores are found. Vibrio species are salt-tolerant bacteria of ocean and estuarine waters, reaching people through water or through seafood such as shellfish and oysters."]], "c": 1, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 29, 23, 25 and 17"}, {"topic": "Foodborne viruses", "io": "2 — Correlate associations between contaminated foods with the increasing numbers of diagnosed food-borne illnesses and mortality worldwide", "q": "When is a person with hepatitis A most contagious?", "opts": [["About two weeks before symptoms", "Correct. With the fecal-oral hepatitis viruses, a person is most contagious about two weeks before symptoms appear. That silent window is why handwashing, diaper hygiene, thorough cooking and clean drinking water matter, and a vaccine exists for suspected exposure."], ["On the very first day of symptoms", "The most contagious time comes earlier, about two weeks before symptoms appear, so a person can spread hepatitis A before feeling ill. Waiting for symptoms misses that window."], ["At the height of the symptoms", "Contagiousness peaks before illness is visible, about two weeks before symptoms appear, not at the worst of the symptoms. That is why handwashing and diaper hygiene matter even around people who seem well."], ["About two weeks after symptoms", "This reverses the timing: a person with hepatitis A is most contagious about two weeks BEFORE symptoms appear, not after. The fecal-oral route spreads it during that earlier window."]], "c": 0, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 33"}, {"topic": "Salmonella", "io": "1 — Identify sources of microbial contamination in global food supply", "q": "Beyond the foods themselves, which household exposure is a known source of Salmonella?", "opts": [["Keeping live backyard hens", "Correct. Live poultry such as backyard hens is a Salmonella source alongside poultry products, eggs and pet food, which fits its association mainly with poultry and aquatic reptiles. Domestic pet feces, by contrast, are a source of tapeworm and roundworm."], ["Pet dog feces in the yard", "Domestic pet feces can contain tapeworm, roundworm and similar parasitic worms; pet feces are not given as a Salmonella source. Live backyard poultry is, along with pet food."], ["Digging in garden soil", "Soil holds clostridial spores, and Listeria monocytogenes can persist in it; garden soil is not a Salmonella exposure here. Keeping live backyard hens is, since Salmonella is associated mainly with poultry."], ["Swimming in estuarine water", "Ocean and estuarine waters are the habitat of salt-tolerant Vibrio species, which can be acquired through water or wounds. The household Salmonella exposure is live backyard poultry."]], "c": 0, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 17, 18, 23, 25, 29 and 32"}, {"topic": "Microbes in food production", "io": "1 — Identify sources of microbial contamination in global food supply", "q": "Spoilage of bread, cereals and acidic juices is associated with which group of microbes?", "opts": [["Cyanobacteria", "The cyanobacterium Spirulina is eaten as food, added to smoothies and vitamin supplement gummies; cyanobacteria are not linked to spoiling bread, cereals or acidic juices. Fungi are the spoilage organisms for those foods."], ["Fungi", "Correct. Fungi do not commonly cause disease, but they are associated with both food production and food spoilage, and the foods they spoil include bread, cereals and acidic juices. The same group gives mushrooms for food, penicillin for medicine and yeasts for fermenting many products."], ["Protozoa", "Protozoa such as Cryptosporidium, Cyclospora, Giardia and Entamoeba cause mild, usually self-limiting diarrhea from uncooked produce or drinking water; they are not the spoilers of bread and cereals. That role belongs to fungi."], ["Clostridia", "Certain Clostridium species take part in bread making, and clostridial spores occur in soil, on plants and in honey; they are not the organisms associated with spoiling bread, cereals and acidic juices. Those are fungi."]], "c": 1, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 4, 8, 25, 31 and 32"}, {"topic": "Escherichia coli", "io": "1 — Identify sources of microbial contamination in global food supply", "q": "Escherichia coli serves as an indicator organism. Contamination with what does its presence in a food or water sample signal?", "opts": [["Human or animal feces", "Correct. Escherichia coli is an indicator organism associated with human and animal feces, so finding it in food or water points to fecal contamination. Its sporadic outbreaks likewise come from fecally contaminated meats or vegetables."], ["Soil and plant material", "Soil and plants are where spores of clostridia are found, along with honey, and Listeria monocytogenes persists in soil. Escherichia coli as an indicator organism points instead to contamination with human or animal feces."], ["Ocean or estuarine water", "Salt-tolerant Vibrio species live in ocean and estuarine waters; that habitat is not what Escherichia coli indicates. As an indicator organism it is associated with human and animal feces."], ["Spoiled bread or cereal", "Bread, cereals and acidic juices are foods that fungi spoil; Escherichia coli is not a spoilage marker. Its presence as an indicator organism signals contamination with human or animal feces."]], "c": 0, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 14, 15, 23, 25, 29 and 31"}, {"topic": "Microbes in food production", "io": "1 — Identify sources of microbial contamination in global food supply", "q": "Which bacteria are involved in turning milk into yogurt?", "opts": [["Lactobacillus and Streptococcus", "Correct. Yogurt is a type of fermented milk made with bacteria such as Lactobacillus and Streptococcus. Cheese-making, by contrast, draws on yeast, bacteria and molds (multicellular fungi), and kefir, koumiss and buttermilk are other fermented milks."], ["Saccharomyces and Clostridium", "Saccharomyces cerevisiae (baker's yeast, a fungus) and certain Clostridium species are microbes of bread making, not of yogurt. Yogurt fermentation involves bacteria such as Lactobacillus and Streptococcus."], ["Spirulina and other cyanobacteria", "Spirulina is a cyanobacterium eaten directly as food, in smoothies and vitamin supplement gummies; it is not used to ferment milk. The bacteria involved in yogurt are Lactobacillus and Streptococcus."], ["Escherichia coli and Salmonella", "These are foodborne pathogens: Escherichia coli is an indicator organism of fecal contamination, and Salmonella is associated mainly with poultry and aquatic reptiles. Yogurt is made with Lactobacillus and Streptococcus."]], "c": 0, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 4, 7, 8, 15, 17 and 31"}, {"topic": "Campylobacter", "io": "2 — Correlate associations between contaminated foods with the increasing numbers of diagnosed food-borne illnesses and mortality worldwide", "q": "Campylobacter jejuni is a leading cause of bacterial diarrheal disease in the United States. Which group does it especially affect?", "opts": [["Children", "Correct. Campylobacter jejuni is a leading cause of bacterial diarrheal disease each year in the United States, especially in children. Its fever, headache, dizziness and bloody diarrhea usually begin rapidly."], ["Pregnant women", "Pregnant women and unborn children are at greatest risk for listeriosis, because Listeria monocytogenes can spread to the placenta and fetus. Campylobacter jejuni is singled out as especially affecting children."], ["Raw oyster eaters", "Raw oysters, shellfish and crabs carry foodborne Vibrio species, salt-tolerant bacteria of ocean and estuarine waters. Campylobacter jejuni diarrheal disease especially affects children."], ["Food handlers and cooks", "Food handlers can spread infection to others, as Typhoid Mary spread typhoid fever, but they are not the group Campylobacter jejuni especially affects. Its diarrheal disease is most notable in children."]], "c": 0, "cite": "PAJ5200.FoodSafety-micro.pptx, Slide 20, 21, 23 and 29 and image on Slide 24"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll" && window.startExamModeTour) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

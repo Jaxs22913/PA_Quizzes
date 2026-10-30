@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));window.__paErrQ=[];['error','unhandledrejection'].forEach(function(t){addEventListener(t,function(e){var q=window.__paErrQ;if(q&&!q.done)q.push(e)})});</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #3f8a55; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c2903a; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fungi of Medical Importance &mdash; Quiz 1</title>
+<style>
+  :root{
+    --navy:#1f4d2b; --indigo:#3f8a55; --gold:#c2903a; --ice:#e8f4ea;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#1f4d2b;--gold-l:#c2903a;--indigo-l:#1f4d2b;--navy:#89ba92;--indigo:#509b65;--gold:#c2903a;--ice:#112917;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#509b65;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#1f4d2b;--indigo-t:#38844f;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Fungi of Medical Importance</h1>
+    <div class="sub">Microbiology &middot; Exam 3 &middot; Lecture 15 &middot; Set 1</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Lecture 15 of Microbiology &mdash; Fungi of Medical Importance. Thirty questions, every one cited to the slide it came from and weighted by slide count until the lecture recording has been read; every set carries the tinea names by body site (the slides say to focus on the Latin names). <b>Start with two questions:</b> can the fungus infect a healthy person (a <b>true pathogen</b>, thermally dimorphic: a mold at 30&nbsp;&deg;C, a yeast at 37&nbsp;&deg;C) or only a compromised one (an <b>opportunist</b>)? And how deep does it go: systemic (inhaled spores), subcutaneous (a puncture wound), cutaneous (keratin only) or superficial? <b>The true pathogens</b>: <i>Histoplasma</i>, <i>Coccidioides</i>, <i>Blastomyces</i> and <i>Paracoccidioides</i>, each with its region and its soil. <b>Skin and below</b>: <i>Sporothrix</i>, the tineas, tinea versicolor and the piedras. <b>The opportunists</b>: <i>Candida</i>, <i>Cryptococcus</i>, <i>Pneumocystis</i>, <i>Aspergillus</i>, the mucormycoses and <i>Fusarium</i>, then fungal allergies and toxins. Know each one's morphology, culture and tests, disease, treatment, prevention and, for objective 2, how people acquire it. No question asks for a percentage, a species count or a dose.</p>
+    <div class="chips"><span class="chip">True vs opportunistic</span><span class="chip">Thermal dimorphism</span><span class="chip">Priority list</span><span class="chip">Portals &amp; levels</span><span class="chip">Diagnosis</span><span class="chip">Amphotericin B</span><span class="chip"><i>Histoplasma</i></span><span class="chip"><i>Coccidioides</i></span><span class="chip"><i>Blastomyces</i></span><span class="chip"><i>Paracoccidioides</i></span><span class="chip"><i>Sporothrix</i></span><span class="chip">Tinea (the Latin names)</span><span class="chip">Superficial mycoses</span><span class="chip"><i>Candida</i></span><span class="chip"><i>Cryptococcus</i></span><span class="chip"><i>Pneumocystis</i></span><span class="chip"><i>Aspergillus</i></span><span class="chip">Mucormycosis</span><span class="chip">Mycotoxins</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Thermal dimorphism", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "At which temperature does a thermally dimorphic fungus grow as unicellular yeast?", "opts": [["20 C", "20 C lies in the natural-habitat range (below 30 C), where the fungus grows as a saprobic, multicellular mold that reproduces by sporulation. The unicellular yeast form needs the warmth of an animal host: 37 C."], ["25 C", "25 C is room temperature, used for selective agar cultures that show the mold phase when the laboratory demonstrates dimorphism. The unicellular yeast form appears at 37 C, human body temperature."], ["30 C", "30 C is the temperature at which dimorphic fungi grow as multicellular molds. They switch to unicellular yeasts at 37 C, human body temperature, inside the 35 to 40 C range of the animal habitat."], ["37 C", "Correct. Thermally dimorphic fungi grow as multicellular molds at 30 C and as unicellular yeasts at 37 C, human body temperature; in the animal habitat (35 to 40 C) they live as parasitic, budding yeasts. Culturing at room temperature and at 37 C demonstrates the switch."]], "c": 3, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 5 and 17 and image on Slide 6"}, {"topic": "Pneumocystis", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "How does Pneumocystis pneumonia become rapidly fatal when it is not controlled?", "opts": [["Spherules with endospores form nodules", "Spherules containing endospores and lung nodules come from inhaled Coccidioides arthrospores, and most such cases need no treatment at all. Pneumocystis pneumonia is deadly because its secretions block breathing."], ["Spread to the meninges and brain", "Dissemination to the meninges and brain is how Cryptococcus neoformans causes severe neurological disturbance and death. Pneumocystis does its damage in the lungs, where secretions block breathing."], ["Secretions in the lungs block breathing", "Correct. Pneumocystis pneumonia forms secretions in the lungs that block breathing; with cough, fever, shallow respiration and cyanosis, it can be rapidly fatal if not controlled with medication."], ["Fungal balls form in the lungs", "Fungal balls form when Aspergillus spores germinate in the lungs, and invasive aspergillosis can add necrotic pneumonia. Pneumocystis kills by filling the lungs with secretions that block breathing."]], "c": 2, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 30, 56, 58 and 60"}, {"topic": "Dermatophytes", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "What is the usual treatment for dermatophytoses?", "opts": [["Removal of tissue and amphotericin B", "Removal of affected tissues plus amphotericin B is the treatment for mucormycosis invading the nose, eyes, heart and brain. Dermatophytoses stay in the keratinized epidermis and respond to topical azoles over several weeks."], ["Immunization against the fungus", "Immunization is typically ineffective against fungal infections because reinfection is exceedingly common. Dermatophytoses are treated, most often with topical azoles for several weeks, rather than prevented by a vaccine."], ["Topical azoles for several weeks", "Correct. Treatment of dermatophytoses most often uses topical antifungal agents, azoles applied for several weeks, sometimes partnered with oral antifungal drugs if needed. Debridement of the skin and ultraviolet light treatments have also been successful."], ["Super-saturated potassium iodide", "Super-saturated potassium iodide, with heat packs, treats sporotrichosis, a subcutaneous mycosis. Ringworm of the keratinized skin, hair and nails is treated mainly with topical azoles for several weeks."]], "c": 2, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 19, 39, 45 and 63"}, {"topic": "Candida", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "Antibiotic therapy and catheters predispose patients to which opportunistic fungus?", "opts": [["Cryptococcus species", "Cryptococcus is associated with diabetes, tuberculosis, cancer, corticosteroids and immunosuppression. Antibiotic therapy and catheters are the predisposing conditions tied to Candida."], ["Fusarium species", "Fusarium is a mainly tropical soil mold that infects eyes through contaminated contact lenses, toenails, feet and burned skin. Antibiotic therapy and catheters are the predisposing conditions tied to Candida."], ["Candida species", "Correct. Among the common opportunistic fungi, Candida is the one associated with antibiotic therapy and catheters, alongside diabetes, corticosteroids and immunosuppression. It is the dominant opportunistic pathogen and its infections are usually endogenous."], ["Aspergillus species", "Aspergillus is associated with leukemia, corticosteroids, tuberculosis, immunosuppression and intravenous drug abuse, not with antibiotic therapy or catheters. Those two predisposing conditions belong to Candida."]], "c": 2, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 51, 52 and 64 and image on Slide 9"}, {"topic": "Antifungal control", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "From what source does the antifungal drug amphotericin B come?", "opts": [["A soil mold of the genus Rhizopus", "Rhizopus, with Mucor, is a Zygomycota mold that causes mucormycosis in people with diabetes, leukemia or malnutrition; amphotericin B is part of that infection's treatment, not a product of it. The drug comes from Streptomyces, a soil bacterium."], ["A soil bacterium of the genus Streptomyces", "Correct. Amphotericin B is produced by a soil bacterium in the genus Streptomyces, yet it attacks fungal cells, which are eukaryotic. It is the highly toxic, often expensive drug of choice for many fungal infections."], ["A grain fungus of the genus Claviceps", "Claviceps fungi contaminate rye and other grains as ergot, the source of mind-altering lysergic acid: a fungal toxin, not a drug. Amphotericin B comes from a soil bacterium, Streptomyces."], ["A soil mold of the genus Aspergillus", "Aspergillus is a very common airborne soil fungus that causes aspergillosis, a disease amphotericin B is used to treat. The drug itself is made by a soil bacterium of the genus Streptomyces."]], "c": 1, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 20, 60, 63 and 65"}, {"topic": "Mucormycosis & other opportunists", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "Which person best fits the risk profile for eumycetoma?", "opts": [["A 45-year-old poorly fed harvester", "A poorly nourished male harvester over 40 fits paracoccidioidomycosis of Central and South America. Eumycetoma's profile is younger: male, 11 to 30 years old, farming and not wearing shoes."], ["A kidney transplant recipient", "Kidney transplant patients are at high risk for Pneumocystis pneumonia, an opportunist of the lungs. Eumycetoma is a deep tissue infection of young male farmers, 11 to 30 years old, who do not wear shoes."], ["A barefoot 20-year-old male farmer", "Correct. Eumycetomas, deep tissue infections, are especially prevalent in poor countries, with risk factors of male sex, age 11 to 30 years, farming and not wearing shoes. Long-term antifungal drug therapy and amputation may be required for full resolution."], ["A 60-year-old road worker in dust", "Increasing age and occupational exposure to dust or soil, as in road construction, are risk factors for Coccidioides immitis in the southwestern United States. Eumycetoma favors young male farmers, 11 to 30 years old, who go without shoes."]], "c": 2, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 30, 37, 58 and 64"}, {"topic": "Aspergillus", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "Which patients are at increased risk of invasive aspergillosis?", "opts": [["Barefoot young male farmers", "Male farmers aged 11 to 30 who do not wear shoes fit the risk profile for eumycetoma, a deep tissue infection of poor countries. Invasive aspergillosis threatens transplant recipients and cystic fibrosis patients."], ["Children lacking dietary protein", "Children with too little protein intake (kwashiorkor) can develop a gastrointestinal form of mucormycosis. Invasive aspergillosis is a risk for organ and bone marrow transplant recipients and cystic fibrosis patients."], ["Obese patients with moist skin folds", "Obese patients develop intertriginous Candida lesions in the armpits, groin and under the breasts, where skin stays moist. Invasive aspergillosis targets transplant recipients and cystic fibrosis patients."], ["Transplant and cystic fibrosis patients", "Correct. Invasive aspergillosis can produce necrotic pneumonia and infection of the brain, heart and other organs, and transplant recipients (organ and bone marrow) are at increased risk, as are patients with cystic fibrosis."]], "c": 3, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 53, 54, 60, 63 and 64"}, {"topic": "Blastomyces", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "Into what form do inhaled Blastomyces conidia convert in the lungs?", "opts": [["Spherules full of endospores", "Spherules filled with endospores are what Coccidioides forms in the lungs after its arthrospores are inhaled. Blastomyces conidia convert to yeasts instead, and the yeasts multiply there."], ["Branched septate hyphae", "Hyphae are the mold form of the natural habitat below 30 C, and branched septate hyphae in sputum are typical of Aspergillus. At body temperature Blastomyces converts to multiplying yeasts."], ["Block-like arthroconidia", "Block-like arthroconidia are the free-living form of Coccidioides, the form inhaled from dust; they are not a lung form of either fungus. Inhaled Blastomyces conidia become yeasts that multiply in the lungs."], ["Multiplying yeast cells", "Correct. Blastomyces is a dimorphic fungus, free-living in soil; its inhaled conidia convert to yeasts that multiply in the lungs, the yeast phase that dimorphic fungi adopt at body temperature in an animal host."]], "c": 3, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 6, 18, 30 and 33 and image on Slide 34"}, {"topic": "Sporothrix", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "Which treatment is used for systemic sporotrichosis?", "opts": [["Amphotericin B and/or itraconazole", "Correct. Systemic sporotrichosis is treated with amphotericin B and/or itraconazole. Heat packs and/or super-saturated potassium iodide are the treatment given for infection of the appendages and lungs; once the disease is systemic, the drug pair is used."], ["Heat packs and/or potassium iodide", "Heat packs and/or super-saturated potassium iodide are the treatment given for sporotrichosis of the appendages and lungs. For the systemic infection asked about here, the choice is amphotericin B and/or itraconazole."], ["Pentamidine and/or co-trimoxazole", "Pentamidine, an antiprotozoal, and co-trimoxazole (trimethoprim-sulfamethoxazole), an antibacterial, treat Pneumocystis pneumonia and are not traditional antifungals. Systemic sporotrichosis is treated with the antifungals amphotericin B and/or itraconazole."], ["Topical azoles and debridement", "Topical azoles for several weeks, sometimes with debridement or ultraviolet light, treat dermatophytoses that stay in keratinized skin. A systemic fungal infection needs systemic drugs: amphotericin B and/or itraconazole for sporotrichosis."]], "c": 0, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 39, 45 and 58"}, {"topic": "Dermatophytes", "io": "2 — Describe the modes of transmission by which humans acquire fungi of medical importance", "q": "In which form of ringworm may nail extensions provide a portal of entry?", "opts": [["Tinea unguium", "Correct. Tinea unguium, ringworm of the nails, is a persistent colonization of the nails of the hands and feet that distorts the nail bed, and nail extensions may provide a portal of entry to the nail bed."], ["Tinea manuum", "Tinea manuum is ringworm of the hand, found between the digits and spread by exposure to public surfaces. The nails, entered by way of nail extensions, belong to tinea unguium."], ["Tinea pedis", "Tinea pedis is ringworm of the foot, between the digits and on the soles, picked up from public surfaces. The nail-bed form that nail extensions can open to the fungus is tinea unguium."], ["Tinea capitis", "Tinea capitis involves the scalp and hair-bearing regions of the head, with possible hair loss, and is common in children. Persistent nail colonization that distorts the nail bed is tinea unguium."]], "c": 0, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 44 and 45"}, {"topic": "Fungal allergies & toxins", "io": "2 — Describe the modes of transmission by which humans acquire fungi of medical importance", "q": "How do mycotoxicoses usually arise?", "opts": [["Ingesting or inhaling fungal toxins", "Correct. Mycotoxicoses are usually caused by ingesting or inhaling fungal toxins. Examples are aflatoxin on grains, corn and peanuts and ergot on rye or other grains contaminated by Claviceps fungi; they are intoxications, not infections."], ["Fungi invading through broken skin", "Fungi entering through traumatized skin cause subcutaneous mycoses such as sporotrichosis, which are infections. Mycotoxicoses are intoxications by fungal toxins that are ingested or inhaled."], ["Spores provoking a hypersensitivity", "Fungal spores provoking hypersensitivity, as in farmer's lung, cause atopic allergies, a separate category. Mycotoxicoses are poisonings by fungal toxins taken in by ingestion or inhalation, such as aflatoxin and ergot."], ["Overgrowth of resident yeast flora", "Overgrowth of resident yeast is the usual, endogenous origin of Candida albicans infection. A mycotoxicosis is an intoxication: the person ingests or inhales a fungal toxin, as with aflatoxin or ergot."]], "c": 0, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 38, 52 and 65"}, {"topic": "Blastomyces", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "A man from the midwestern United States has cough, chest pain and fever; a lung lesion on his chest X-ray is first taken for lung cancer, and his dog is sick with the same symptoms. Which fungus is the likely cause?", "opts": [["Coccidioides immitis", "Coccidioides is a southwestern United States fungus of alkaline, salty, semiarid soil that forms spherules in the lungs. A midwestern patient with a cancer-like lung lesion and a sick dog fits Blastomyces."], ["Paracoccidioides brasiliensis", "Paracoccidioides is endemic in Central and South America and is usually a mild, self-limiting infection of rural farm workers. The midwestern setting, lung cancer mimic and sick dog point to Blastomyces."], ["Aspergillus fumigatus", "Aspergillus fumigatus is an opportunist that threatens patients with human immunodeficiency virus infection, leukemia or transplants, forming fungal balls in the lungs. The midwestern setting, cancer-like lesion and sick dog fit Blastomyces."], ["Blastomyces dermatitidis", "Correct. Blastomyces dermatitidis lives in the soil of the midwestern and southeastern United States; inhaled conidia multiply as yeasts in the lungs, the lesion may be mistaken for lung cancer on chest X-ray, and it causes cough, chest pain and fever in humans, dogs, cats and horses."]], "c": 3, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 30, 33, 37 and 60"}, {"topic": "Histoplasma", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "Which fungus causes the disease nicknamed 'Ohio Valley fever'?", "opts": [["Histoplasma capsulatum", "Correct. Histoplasmosis, 'Ohio Valley fever', is caused by Histoplasma capsulatum, the most common true fungal pathogen. It is known in the eastern and central United States and is now recognized as endemic in parts of Latin America and Africa."], ["Coccidioides immitis", "Coccidioides immitis causes coccidioidomycosis, 'Valley fever' without the Ohio, mainly in the southwestern United States extending to Mexico and Central and South America. 'Ohio Valley fever' is histoplasmosis."], ["Blastomyces dermatitidis", "Blastomyces dermatitidis causes North American blastomycosis, its own name, in the midwestern and southeastern United States and southern Canada. 'Ohio Valley fever' is the nickname of histoplasmosis."], ["Paracoccidioides brasiliensis", "Paracoccidioides brasiliensis is endemic in Central and South America, the rarest of the primary mycoses, with no Ohio connection. 'Ohio Valley fever' is histoplasmosis, from Histoplasma capsulatum."]], "c": 0, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 26, 30, 33 and 37"}, {"topic": "Coccidioides", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "What does Coccidioides form in the lungs after its spores are inhaled?", "opts": [["Spherules that release endospores", "Correct. An inhaled arthrospore develops into a spherule (a giant sporangium) that produces endospores, which are released in the lungs; the free-living stage, by contrast, is block-like arthroconidia. Immunocompetent people usually fight the infection off, while compromised people can develop meningitis, osteomyelitis and skin granulomas."], ["Yeasts that bud inside phagocytes", "Yeasts that are phagocytosed and bud intracellularly are the tissue phase of Histoplasma, which is inhaled as microconidia. Coccidioides, after inhalation, forms spherules filled with endospores."], ["Fungal balls of septate hyphae", "Fungal balls in the lungs and branched septate hyphae belong to Aspergillus, whose spores germinate in the lungs. Coccidioides, after inhalation, becomes spherules that release endospores."], ["Chains of block-like arthroconidia", "Block-like arthroconidia are the free-living stage in soil, the form that is inhaled, not the lung form. Once in the lungs each arthrospore develops into a spherule that releases endospores."]], "c": 0, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 18, 28, 30 and 60 and image on Slide 31"}, {"topic": "Cryptococcus", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "A negative stain of a specimen shows encapsulated budding yeast. Which organism does this demonstrate?", "opts": [["Pneumocystis jirovecii", "Pneumocystis jirovecii is a small, unicellular fungus seen in tissue as cysts containing several bodies. Encapsulated budding yeast on negative stain is Cryptococcus neoformans."], ["Cryptococcus neoformans", "Correct. A negative stain demonstrating encapsulated budding yeast is the picture of Cryptococcus neoformans, the widespread encapsulated yeast of pigeon-roost soil. Biochemical and serological testing are the best diagnostic tools for it."], ["Candida albicans", "Candida albicans also buds, but its presumptive diagnosis rests on budding yeast cells with pseudohyphae, not a capsule. The capsule outlined by a negative stain marks Cryptococcus neoformans."], ["Aspergillus fumigatus", "Aspergillus is seen as branched septate hyphae, for example in a sputum specimen, not as a budding yeast. An encapsulated budding yeast on negative stain is Cryptococcus neoformans."]], "c": 1, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 17, 18, 55, 56, 57 and 58 and image on Slide 59"}, {"topic": "Pneumocystis", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "On what basis do most scientists now classify Pneumocystis as a fungus rather than a protozoan?", "opts": [["Its response to antifungals", "Pneumocystis is treated with pentamidine (antiprotozoal) and co-trimoxazole (antibacterial), which are not traditional antifungal drugs, so drug response cannot be the basis. Genetic analysis is what places it among the fungi."], ["Its growth as hyphae", "Pneumocystis is a small, unicellular fungus, seen in tissue as cysts containing several bodies, not as hyphae. Its fungal classification rests on genetic analysis."], ["Its antibody titers", "Antibody titers show that human contact with Pneumocystis is very widespread and mostly asymptomatic; they do not show whether it is a fungus. The classification rests on genetic analysis."], ["Its genetic analysis", "Correct. The taxonomy of Pneumocystis is still debated, fungus or protozoan, but most scientists lean toward a fungal classification because of genetic analysis. Its usual drugs do not settle the question: one is an antiprotozoal and the other an antibacterial."]], "c": 3, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 58 and image on Slide 59"}, {"topic": "Diagnosis", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "A dye-stained sputum specimen shows a mass of branched septate hyphae and no yeast cells. Which fungus does this fit?", "opts": [["Candida albicans", "Candida albicans appears as budding or germinating yeast cells with young hyphae or pseudohyphae, typically from an oral or vaginal swab. A sputum mass of branched septate hyphae with no yeast cells fits Aspergillus."], ["Cryptococcus neoformans", "Cryptococcus neoformans is an encapsulated budding yeast shown by a negative stain, not a mass of hyphae. Branched septate hyphae without any yeast cells point to Aspergillus, an airborne soil mold."], ["Coccidioides immitis", "In the lungs Coccidioides forms spherules containing endospores, and in soil block-like arthroconidia; neither is a mass of branched septate hyphae in sputum. That pattern is Aspergillus."], ["Aspergillus species", "Correct. Branched septate hyphae in a sputum specimen are the picture of Aspergillus, an airborne soil fungus whose spores germinate in the lungs and can form fungal balls. Dyes amplify these fungal elements in tissue specimens."]], "c": 3, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 30, 55, 57 and 60 and image on Slide 18"}, {"topic": "Candida", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "In which setting does cutaneous candidiasis typically occur?", "opts": [["Skin punctured by thorns or wood", "A thorn or wood puncture introduces Sporothrix schenckii, which forms a nodule and spreads to nearby lymph nodes. Cutaneous candidiasis needs no puncture; it develops in chronically moist skin and in burn patients."], ["Nail beds under nail extensions", "Nail extensions may give a dermatophyte a portal to the nail bed in tinea unguium. Cutaneous candidiasis is a disease of chronically moist skin, such as skin folds in obese patients, and of burns."], ["Chronically moist skin and burns", "Correct. Cutaneous candidiasis occurs in chronically moist areas of skin and in burn patients; intertriginous lesions in the armpits, groin and under the breasts are common in obese patients. The resident yeast takes hold where skin stays damp or damaged."], ["Gritty nodules on scalp hairs", "Gritty, dark nodules on scalp hairs are black piedra, a superficial mycosis caused by Piedraia. Candida infects chronically moist skin, such as skin folds, and burned skin instead."]], "c": 2, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 39, 45, 49, 53 and 54"}, {"topic": "Histoplasma", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "In the tissue phase of histoplasmosis, what happens to the fungus in the lungs?", "opts": [["Its yeasts are killed once phagocytosed", "Phagocytosis does not end the infection here: the yeasts multiply by budding inside the phagocytes, which in some cases enter the blood and cause disseminated disease in many organs."], ["Its yeasts are phagocytosed and bud inside", "Correct. In the tissue phase the yeast form develops, is phagocytosed, and multiplies by budding intracellularly. Most patients recover without complications; in some, phagocytes enter the blood and carry the infection to many organs."], ["It forms spherules that release endospores", "Spherules releasing endospores are the lung form of Coccidioides, which develop from inhaled arthrospores. Histoplasma's tissue phase is a yeast that is phagocytosed and then buds inside the phagocyte."], ["It stays a mold of branched hyphae", "Branched septate hyphae in sputum are Aspergillus. Histoplasma is thermally dimorphic: at 37 C it grows as a yeast, which phagocytes engulf and inside which it multiplies by budding."]], "c": 1, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 18, 26, 27, 30 and 31 and image on Slide 28"}, {"topic": "Superficial mycoses", "io": "2 — Describe the modes of transmission by which humans acquire fungi of medical importance", "q": "Which factor may lead to white or black piedra?", "opts": [["Poor hygiene, such as oily hair products", "Correct. Both piedras are considered non-contagious and may result from poor personal hygiene, such as oily hair products and tight hats or veils. They are superficial mycoses of the hair shaft, and neither is common in the United States."], ["Close contact with an infected person", "Both piedras are considered non-contagious, so close contact with an infected person is not how they arise. Person-to-person spread is a feature of the dermatophytes and Candida, which live on the human body."], ["Handling infected household animals", "Animals are the main source of tinea barbae, a dermatophytosis of the chin and beard. The piedras are non-contagious and are linked to poor hygiene, such as oily hair products and tight hats or veils."], ["Inhaling spores from bird guano", "Spores from soil rich in bird and bat guano are inhaled in histoplasmosis, a lung infection. The piedras sit on the hair shaft and are linked to poor hygiene: oily hair products, tight hats or veils."]], "c": 0, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 12, 26, 44, 49 and 50"}, {"topic": "WHO priority list", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "On the World Health Organization's fungal priority list, which fungus is ranked one tier above Coccidioides?", "opts": [["Histoplasma species", "Correct. Coccidioides is in the medium priority group; Histoplasma species are in the high priority group, one tier above, with other Candida species, Fusarium, the eumycetoma agents and the Mucorales. The critical group sits above both."], ["Paracoccidioides species", "Paracoccidioides species share the medium priority group with Coccidioides, Cryptococcus gattii and Pneumocystis jirovecii, so they sit level with it, not above. Histoplasma species are one tier up, in the high group."], ["Pneumocystis jirovecii", "Pneumocystis jirovecii, the most prominent opportunistic infection in human immunodeficiency virus infection and acquired immunodeficiency syndrome, is nonetheless medium priority, level with Coccidioides. Histoplasma is one tier above."], ["Cryptococcus gattii", "Cryptococcus gattii is medium priority, level with Coccidioides, even though its relative Cryptococcus neoformans tops the critical group. Histoplasma species sit one tier above Coccidioides, in the high group."]], "c": 0, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 11, 56 and 58"}, {"topic": "Sporothrix", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "Why do subcutaneous mycoses rarely spread throughout the body?", "opts": [["Their capsules block entry into blood", "A capsule is one of the fungal virulence factors and the mark of Cryptococcus neoformans, which does spread from the lungs to the meninges and brain. Subcutaneous fungi stay local for a different reason: the warmer blood and viscera inhibit them."], ["They cannot get past keratinized skin", "Being confined to keratinized epidermis describes the dermatophytes of skin, hair and nails. Subcutaneous fungi go deeper, through traumatized skin into the tissue below, yet still rarely disseminate because the warmer blood and viscera inhibit them."], ["Cell-mediated immunity clears them early", "Cell-mediated immunity is the host's most important antifungal defense, but subcutaneous mycoses are progressive and can destroy skin and underlying tissue, so they are not cleared early. Their spread is limited by the higher temperature of the blood and viscera."], ["Warmth of blood and viscera inhibits them", "Correct. Most species that cause subcutaneous mycoses are greatly inhibited by the higher temperatures of the blood and viscera, so they rarely disseminate. They stay near the site where trauma introduced them, where the disease is progressive and can destroy skin and underlying tissue."]], "c": 3, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 14, 15, 38, 42 and 56"}, {"topic": "Epidemiology & portals", "io": "2 — Describe the modes of transmission by which humans acquire fungi of medical importance", "q": "What is the main portal of entry for the primary (systemic) mycoses?", "opts": [["Contamination of skin or hair surfaces", "Surface contamination of skin or hair is the portal of the cutaneous and superficial mycoses, which stay in the outer layers. Primary (systemic) mycoses begin with spores inhaled from the air."], ["Shared exercise equipment", "Fomites such as shared exercise equipment spread dermatophytes and Candida, which live on the body. The primary mycoses are generally not communicable; their portal is the respiratory tract, by inhaled spores."], ["Spores inhaled from the air", "Correct. The primary mycoses enter by the respiratory portal: spores in the air are inhaled when soil or animal waste containing conidia is disturbed, and they germinate in the lungs into yeast or yeast-like cells. From there infection can become systemic in some hosts."], ["Trauma that inoculates skin or nails", "Trauma that inoculates skin or nails is the portal of the subcutaneous mycoses. Spores of true pathogens can occasionally enter broken skin, but the main portal of the primary mycoses is the respiratory tract."]], "c": 2, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 12, 14 and 24"}, {"topic": "Paracoccidioides", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "Which description fits paracoccidioidomycosis?", "opts": [["An opportunist needing impaired defenses", "Paracoccidioides is a primary (true) fungal pathogen of rural farm workers, not an opportunist defined by impaired defenses. It causes the rarest primary mycosis, usually mild and self-limiting."], ["Rarest primary mycosis, usually mild", "Correct. Paracoccidioidomycosis, endemic in Central and South America (mainly the cool, humid soils of Brazil, Colombia, Venezuela, Argentina and Paraguay), is the rarest of the primary mycoses; systemic disease is not common, and infections are usually mild and self-limiting."], ["Commonest primary mycosis, usually mild", "Mildness is right, but rarity is reversed: the most common true fungal pathogen is Histoplasma capsulatum, cause of 'Ohio Valley fever', while Paracoccidioides causes the rarest of the primary mycoses."], ["Rarest primary mycosis, usually systemic", "Rarity is right, but severity is overstated: systemic paracoccidioidomycosis is not common. Lung or skin infections, from inhaled or inoculated spores, are usually mild and self-limiting."]], "c": 1, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 5, 7, 26 and 37 and image on Slide 13"}, {"topic": "Fungal pathogenicity", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "A fungus with few, if any, virulence factors causes a systemic infection in a patient taking long-term corticosteroids. How is this mycosis best classified?", "opts": [["Dermatophytosis", "Dermatophytoses are strictly confined to keratinized epidermis (skin, hair, scalp and nails), so they are not systemic. A low-virulence fungus causing systemic disease in a patient on corticosteroids is an opportunistic mycosis."], ["Opportunistic mycosis", "Correct. Few, if any, virulence factors plus a host weakened by corticosteroids is the picture of an opportunistic mycosis: these fungi usually start infection in immunocompromised hosts, and predisposing factors such as primary illness, corticosteroid use, diabetes and cancer should be considered."], ["True (primary) mycosis", "A true pathogen can invade and grow in a healthy host and does not depend on a weakened one. A fungus with few, if any, virulence factors striking a patient on corticosteroids is an opportunist; the tell is the impaired host."], ["Subcutaneous mycosis", "Subcutaneous mycoses begin when trauma inoculates the fungus into the skin or nails, a level of invasion rather than a degree of pathogenicity. This infection is systemic and arose in a corticosteroid-weakened host from a low-virulence fungus, which marks it as opportunistic."]], "c": 1, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 5, 7, 14, 22 and 42"}, {"topic": "Dermatophytes", "io": "2 — Describe the modes of transmission by which humans acquire fungi of medical importance", "q": "Which conditions promote dermatophyte infection?", "opts": [["Abraded skin and close contact", "Correct. Hardy dermatophyte spores, abraded skin and close person-to-person or person-to-fomite contact promote infection. The natural reservoirs are humans, animals and soil, and shared items such as exercise equipment can carry the fungus from one person to the next."], ["Corticosteroids and diabetes", "Corticosteroids, diabetes and other impaired defenses predispose to the opportunistic mycoses, such as candidiasis and cryptococcosis. Dermatophytes need no such weakness: their hardy spores infect abraded skin through close contact with people or fomites."], ["Inhaling dust from disturbed soil", "Dust from disturbed soil carries the conidia of the true fungal pathogens into the lungs. Dermatophytes are not inhaled; their hardy spores infect abraded skin through close contact with people or fomites."], ["Puncture wounds from plant thorns", "A thorn puncture carries subcutaneous fungi such as Sporothrix schenckii into deeper tissue. Dermatophytes stay in keratinized epidermis and spread by close contact with people or fomites onto abraded skin."]], "c": 0, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 12, 22, 24, 39 and 43"}, {"topic": "Diagnosis", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "In the laboratory workup of hair, skin and nail specimens for fungi, which method is applied directly to the hairs?", "opts": [["Inoculation of animals", "Animal inoculation is reserved for diagnosing systemic mycoses when other methods are unavailable or indeterminate, not for hair, skin or nail specimens. Hairs are examined directly under Wood's light."], ["Examination under Wood's light", "Correct. For hair, skin and nail specimens the identification pathway uses Wood's light on the hairs, alongside a hot potassium hydroxide wet mount, brighteners and periodic acid-Schiff staining, before culture on selective media for 4 weeks and a hair infection test."], ["Negative stain for a capsule", "A negative stain for a capsule is used on sputum to show encapsulated yeasts such as Cryptococcus; it is not the direct examination of hairs. Hairs are examined under Wood's light."], ["Germ tube test in serum", "The germ tube test identifies yeasts that sprout hyphal tubes after 2 to 4 hours in serum, among the tests for blood, cerebrospinal fluid, pus and vaginal secretion isolates. Hairs are examined directly under Wood's light."]], "c": 1, "cite": "PAJ5200.Fungi of Medical importance.pptx, image on Slide 17"}, {"topic": "Antifungal control", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "How does amphotericin B damage fungal cells?", "opts": [["It blocks the mold-to-yeast switch", "Thermal dimorphism, the switch from hyphae to yeasts at 37 C, is a fungal virulence factor, but amphotericin B does not act on it. The drug complexes with membrane lipids so that cytoplasmic ions seep out."], ["It strips away the fungal capsule", "Capsules are a virulence factor of some fungi, shown by a negative stain, not the drug's target. Amphotericin B complexes with membrane lipids, opening the membrane so that cytoplasmic ions leak out."], ["It binds membrane lipids, opening leaks", "Correct. Amphotericin B forms complexes with fungal cell membrane lipids, causing openings through which cytoplasmic ions seep out. The action is not selective enough to spare human cells, since fungi and humans are both eukaryotes, hence its toxicity."], ["It dissolves the thick fungal cell wall", "The thick cell wall is what lets fungi survive potassium hydroxide, which lyses human cells instead; it is not the drug's target. Amphotericin B acts on the cell membrane, complexing with its lipids so ions leak out."]], "c": 2, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 14, 18 and 20"}, {"topic": "Cryptococcus", "io": "2 — Describe the modes of transmission by which humans acquire fungi of medical importance", "q": "Where is Cryptococcus neoformans found in the environment?", "opts": [["Rye and other cereal grains", "Rye and other grains contaminated by Claviceps fungi carry ergot, a cause of mycotoxicosis. Cryptococcus neoformans is an encapsulated yeast of the soil around urban pigeon roosts and decaying wood."], ["Soil near urban pigeon roosts", "Correct. Cryptococcus neoformans is a widespread encapsulated yeast that inhabits soil around pigeon roosts in urban areas, as well as soil containing decaying wood. Healthy humans are strongly resistant, so frank infection occurs in immunocompromised patients."], ["Alkaline, salty semiarid soil", "Alkaline, salty soils in semiarid, hot climates hold Coccidioides immitis, spread by drought, rain and windstorms. Cryptococcus neoformans lives instead in soil around urban pigeon roosts and in soil containing decaying wood."], ["Normal flora of mouth and skin", "Living as normal flora of the mouth and skin describes Candida albicans, whose infections are usually endogenous. Cryptococcus neoformans comes from the environment: soil around urban pigeon roosts and soil with decaying wood."]], "c": 1, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 30, 53, 56 and 65"}, {"topic": "Fungal pathogenicity", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of fungi of medical importance", "q": "Which ability defines a true (primary) fungal pathogen?", "opts": [["Staying a mold at human body temperature", "This reverses thermal dimorphism: these fungi grow as molds at 30 C but switch to yeasts at 37 C, human body temperature. The switch is their adaptation to the host; the defining ability is invading and growing in a healthy host."], ["Invading and growing in a healthy host", "Correct. A true or primary fungal pathogen can invade and grow in a healthy host. Its most striking adaptation is the switch from hyphal cells to yeast cells with the change to host temperature. An opportunist, by contrast, has little or no virulence of its own and needs impaired host defenses."], ["Needing impaired host defenses to infect", "Needing impaired defenses (human immunodeficiency virus infection, cancer, diabetes) describes an opportunistic fungal pathogen, which has little or no virulence of its own. A true pathogen needs no such help: it invades and grows in a healthy host."], ["Spreading readily from person to person", "Most fungal pathogens do not need a host to complete their life cycles, so their infections are generally not communicable; the person-to-person spreaders are the dermatophytes and Candida, which live on the body. A true pathogen is defined by invading a healthy host."]], "c": 1, "cite": "PAJ5200.Fungi of Medical importance.pptx, Slide 5, 7 and 12"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll" && window.startExamModeTour) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

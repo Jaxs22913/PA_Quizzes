@@ -93,9 +93,24 @@
     .logo-mark-ink { stroke: #e5e7eb; }
     .logo-mark-accent { stroke: var(--primary); }
   }
+  /* memory-aid box + footnote rows (render.py emits this block only when a
+     topic uses "mnemonic" or a {"note": ...} row); theme variables only, so
+     the designed dark mode (tools/dark_tokens.py) recolours it for free */
+  .mnem{margin:10px 0 0;padding:11px 15px 12px;background:var(--card);border:1px solid var(--line);
+    border-left:4px solid var(--acc);border-radius:12px;box-shadow:var(--shadow);font-size:13.8px;color:var(--body)}
+  .mnem-k{font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--acc-ink,var(--ink));margin:0 0 4px}
+  .mnem p{margin:0 0 5px}
+  .mnem p:last-child{margin-bottom:0}
+  .mnem-hook{font-weight:700;color:var(--ink)}
+  .mnem-key span{display:inline-block;margin:0 16px 3px 0}
+  .mnem-key b{color:var(--acc-ink,var(--ink))}
+  .mnem-brk{color:var(--muted);font-size:13px}
+  .mnem-brk b{color:var(--body)}
+  td.rnote{font-size:12.8px;font-style:italic;color:var(--muted)}
+  @media print{.mnem{box-shadow:none;break-inside:avoid}}
 </style>
-<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--primary-l:#1f4d2b;--primary:#679771;}:root[data-theme="dark"] body[data-dark="tokens"] #l14-scope{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-scope"]{color:#608f6a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-endotoxin-sorting{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#509b65!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-endotoxin-sorting"]{color:#49945e!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-pseudomonas{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-pseudomonas"]{color:#608f6a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-zoonoses-human{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#509b65!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-zoonoses-human"]{color:#49945e!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-enterics{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-enterics"]{color:#608f6a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-ecoli{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#509b65!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-ecoli"]{color:#49945e!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-coliforms-proteus{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-coliforms-proteus"]{color:#608f6a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-salmonella-shigella{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#509b65!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-salmonella-shigella"]{color:#49945e!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-plague{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-plague"]{color:#608f6a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-pasteurella-haemophilus{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#509b65!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-pasteurella-haemophilus"]{color:#49945e!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-transmission{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-transmission"]{color:#608f6a!important}:root[data-theme="light"] body[data-dark="tokens"]{--primary-t:#1f4d2b;}</style><!--DARK-TOKENS:END-->
-  <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="micro-exam-3-cram-sheet.docx" title="Editable Word copy">
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--primary-l:#1f4d2b;--primary:#679771;}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l15-dimorphism{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l15-dimorphism"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l15-levels{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l15-levels"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l15-who{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l15-who"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l15-true{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l15-true"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l15-tinea{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l15-tinea"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l15-superficial{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l15-superficial"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l15-opportunists{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l15-opportunists"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l15-treatment{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l15-treatment"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l15-toxins{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l15-toxins"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l16-effects{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l16-effects"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l16-bread{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l16-bread"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l16-intox{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l16-intox"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l16-bacteria{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l16-bacteria"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l16-bcereus{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l16-bcereus"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l16-viruses{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l16-viruses"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l16-agencies{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l16-agencies"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l16-numbers{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l16-numbers"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-scope{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-scope"]{color:#608f6a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-endotoxin-sorting{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#509b65!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-endotoxin-sorting"]{color:#49945e!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-pseudomonas{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-pseudomonas"]{color:#608f6a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-zoonoses-human{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#509b65!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-zoonoses-human"]{color:#49945e!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-enterics{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-enterics"]{color:#608f6a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-ecoli{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#509b65!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-ecoli"]{color:#49945e!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-coliforms-proteus{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-coliforms-proteus"]{color:#608f6a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-salmonella-shigella{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#509b65!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-salmonella-shigella"]{color:#49945e!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-plague{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-plague"]{color:#608f6a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-pasteurella-haemophilus{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#509b65!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-pasteurella-haemophilus"]{color:#49945e!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-transmission{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#679771!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-transmission"]{color:#608f6a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l15-pathogens{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l15-pathogens"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l15-dx-control{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l15-dx-control"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #l15-true{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l15-true"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l15-skin{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l15-skin"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #l15-opportunists{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l15-opportunists"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l15-allergy-transmission{--acc-bg:#261e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#997dd0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l15-allergy-transmission"]{color:#9276c9!important}:root[data-theme="dark"] body[data-dark="tokens"] #l16-food-microbes{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l16-food-microbes"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l16-burden{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l16-burden"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #l16-enteric{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l16-enteric"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l16-others{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l16-others"]{color:#bf6b84!important}:root[data-theme="dark"] body[data-dark="tokens"] #l16-nonbacterial{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l16-nonbacterial"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l16-tracking{--acc-bg:#341921!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c7728b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l16-tracking"]{color:#bf6b84!important}:root[data-theme="light"] body[data-dark="tokens"]{--primary-t:#1f4d2b;}</style><!--DARK-TOKENS:END-->
 </head>
 <body data-dark="tokens" data-dark-kind="cram">
 <div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
@@ -122,8 +137,9 @@
   <header class="hero">
     <div class="kicker">Microbiology · Exam 3 · Class of 2028</div>
     <h1>Microbiology Exam 3 Cram Sheet</h1>
-    <p class="sub">Lecture 14 so far — Gram-Negative Bacilli of Medical Importance (the Exam 3 block is Lectures 14–19). ★ = emphasized in the lecture recording or starred on a slide. Exam 3 is Wednesday 2 December 2026.</p>
+    <p class="sub">Lectures 14–16 so far — Gram-Negative Bacilli, Fungi of Medical Importance, Food Safety (the Exam 3 block is Lectures 14–19). <b>Tables and memory aids come first</b>: one per classification, comparison or cut-off set on the Lecture 15 and 16 slides. ★ = emphasized in the lecture recording or flagged on a slide. Exam 3 is Wednesday 2 December 2026.</p>
     <div class="toc">
+      <a href="#crit-l15-dimorphism" style="color:#6c4622"><span class="dot" style="background:#8a5a2b"></span>Tables &amp; Memory Aids (Lectures 15&ndash;16)</a>
       <a href="#l14-scope" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L14 · What the Lecturer Flagged</a>
       <a href="#l14-endotoxin-sorting" style="color:#316c42"><span class="dot" style="background:#3f8a55"></span>L14 · Endotoxin & Sorting</a>
       <a href="#l14-pseudomonas" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L14 · Pseudomonas & Its Relatives</a>
@@ -135,12 +151,306 @@
       <a href="#l14-plague" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L14 · Yersinia pestis & Plague</a>
       <a href="#l14-pasteurella-haemophilus" style="color:#316c42"><span class="dot" style="background:#3f8a55"></span>L14 · Pasteurella & Haemophilus</a>
       <a href="#l14-transmission" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L14 · Objective 2: How We Get Them</a>
+      <a href="#l15-pathogens" style="color:#6c4622"><span class="dot" style="background:#8a5a2b"></span>L15 · Fungi as Pathogens</a>
+      <a href="#l15-dx-control" style="color:#46306c"><span class="dot" style="background:#5a3d8a"></span>L15 · Diagnosis & Control</a>
+      <a href="#l15-true" style="color:#6c4622"><span class="dot" style="background:#8a5a2b"></span>L15 · The True Pathogens (Systemic)</a>
+      <a href="#l15-skin" style="color:#46306c"><span class="dot" style="background:#5a3d8a"></span>L15 · Subcutaneous, Cutaneous, Superficial</a>
+      <a href="#l15-opportunists" style="color:#6c4622"><span class="dot" style="background:#8a5a2b"></span>L15 · The Opportunists</a>
+      <a href="#l15-allergy-transmission" style="color:#46306c"><span class="dot" style="background:#5a3d8a"></span>L15 · Allergies, Toxins & How We Get Them</a>
+      <a href="#l16-food-microbes" style="color:#254953"><span class="dot" style="background:#2f5d6b"></span>L16 · Microbes in Food</a>
+      <a href="#l16-burden" style="color:#5f2337"><span class="dot" style="background:#7a2d47"></span>L16 · The Problem & the First Split</a>
+      <a href="#l16-enteric" style="color:#254953"><span class="dot" style="background:#2f5d6b"></span>L16 · E. coli, Salmonella, Campylobacter</a>
+      <a href="#l16-others" style="color:#5f2337"><span class="dot" style="background:#7a2d47"></span>L16 · Listeria, Clostridium, B. cereus, Vibrio</a>
+      <a href="#l16-nonbacterial" style="color:#254953"><span class="dot" style="background:#2f5d6b"></span>L16 · Protozoa, Worms, Viruses</a>
+      <a href="#l16-tracking" style="color:#5f2337"><span class="dot" style="background:#7a2d47"></span>L16 · Tracking, Objective 3, Prevention</a>
     </div>
     <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
       replacement for the full study guide — it assumes you've already learned the material and just need
       the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
       <a href="micro-exam-3-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
   </header>
+
+  <section class="topic" id="crit-l15-dimorphism" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>Thermal Dimorphism<span class="tag">Table &middot; Lecture 15 &middot; slides 5&ndash;6</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:18%">Form</th><th style="width:26%">Temperature</th><th style="width:56%">Habitat and growth</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Mold (multicellular, hyphae)</td><td>30 °C (slide 6: below 30 °C)</td><td>Natural habitat; saprobic (free-living), mycelial phase; reproduces by sporulation</td></tr>
+          <tr><td class="h">Yeast (unicellular)</td><td>37 °C, body temperature (slide 6: 35–40 °C)</td><td>Animal habitat; parasitic, yeast phase; reproduces by budding or endospores</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Mold in the cold, yeast in the heat.</p><p class="mnem-key"><span><b>Mold in the cold</b> 30 °C, the soil: hyphae and spores</span><span><b>Yeast in the heat</b> 37 °C, the body: budding yeast</span></p><p class="mnem-brk"><b>Where it breaks:</b> The slides name thermal dimorphism as the true pathogens' trait (slides 5, 24); slide 27 grows the Histoplasma mold below 35 °C.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l15-levels" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>Levels of Fungal Infection, Shallow to Deep<span class="tag">Classification &middot; Lecture 15 &middot; slides 14, 22&ndash;23, 38, 42, 49</span></h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term" style="width:17%">Level</th><th style="width:30%">How deep (slide 23)</th><th style="width:25%">Portal of entry (slide 14)</th><th style="width:28%">Examples</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Superficial</td><td>Extremely shallow epidermal colonization</td><td>Contamination of the skin or hair surface</td><td>Tinea versicolor, white and black piedra</td></tr>
+          <tr><td class="h">Cutaneous</td><td>Stratum corneum, occasionally the upper dermis (keratin only)</td><td>Contamination of the skin or hair surface</td><td>The dermatophytes: ringworm, tinea</td></tr>
+          <tr><td class="h">Subcutaneous</td><td>Subcutaneous tissue, after a puncture wound</td><td>Inoculated into skin or nails: trauma</td><td>Sporothrix schenckii</td></tr>
+          <tr><td class="h">Systemic (primary)</td><td>From the lungs into the circulation: brain, kidneys, other organs</td><td>Respiratory: spores inhaled from the air</td><td>Histoplasma, Coccidioides, Blastomyces, Paracoccidioides</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Touched, touched, stabbed, breathed: the deeper it goes, the harder it got in.</p><p class="mnem-key"><span><b>Touched</b> superficial: contamination of hair or the skin surface</span><span><b>Touched</b> cutaneous: contamination, keratin layer</span><span><b>Stabbed</b> subcutaneous: a puncture wound</span><span><b>Breathed</b> systemic: inhaled spores, lungs first</span></p><p class="mnem-brk"><b>Where it breaks:</b> Slide 14 gives cutaneous and superficial one shared portal; true-pathogen spores can also be inoculated into broken skin (slide 24).</p></div>
+  </section>
+
+  <section class="topic" id="crit-l15-who" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>World Health Organization Fungal Priority Pathogens List (2022)<span class="tag">Classification &middot; Lecture 15 &middot; slides 10&ndash;11, 56, 60</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:18%">Priority</th><th style="width:82%">Fungi (slide 11)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Critical</td><td>Cryptococcus neoformans (number one, slide 56) · Aspergillus fumigatus (number three, slide 60) · Candida albicans · Candida auris</td></tr>
+          <tr><td class="h">High</td><td>Other Candida species · Eumycetoma causative agents · Fusarium species · Histoplasma species · Mucorales (mucormycosis opportunists)</td></tr>
+          <tr><td class="h">Medium</td><td>Coccidioides · Cryptococcus gattii · Pneumocystis jirovecii · Paracoccidioides species</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Critical: CACC (Crypto, Aspergillus, and two Candidas). High: Can Every Fungus Hide Mold? Medium: two Cs and two Ps.</p><p class="mnem-key"><span><b>C</b> Cryptococcus neoformans (critical)</span><span><b>A</b> Aspergillus fumigatus (critical)</span><span><b>C</b> Candida albicans (critical)</span><span><b>C</b> Candida auris (critical)</span><span><b>Can</b> other Candida species (high)</span><span><b>Every</b> Eumycetoma agents (high)</span><span><b>Fungus</b> Fusarium (high)</span><span><b>Hide</b> Histoplasma (high)</span><span><b>Mold</b> Mucorales (high)</span><span><b>Two Cs</b> Coccidioides and Cryptococcus gattii (medium)</span><span><b>Two Ps</b> Pneumocystis and Paracoccidioides (medium)</span></p><p class="mnem-brk"><b>Where it breaks:</b> Two Cryptococcus species sit in different tiers: neoformans critical, gattii medium.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l15-true" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>The Four True (Dimorphic) Fungal Pathogens<span class="tag">Comparison &middot; Lecture 15 &middot; slides 13, 26&ndash;37</span></h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term" style="width:22%">Fungus (disease)</th><th style="width:24%">Where</th><th style="width:24%">Source</th><th style="width:30%">Signature</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Histoplasma capsulatum (Ohio Valley fever)</td><td>Eastern and central United States; Latin America, Africa</td><td>Moist, nitrogen-rich soil with bird and bat guano</td><td>Most common true pathogen; NOT person to person; yeast multiplies inside phagocytes</td></tr>
+          <tr><td class="h">Coccidioides immitis (Valley fever)</td><td>Southwestern United States, Mexico, Central and South America</td><td>Alkaline, salty soil of semiarid, hot climates; dust</td><td>Arthroconidia in soil, spherules with endospores in the lungs; most need no treatment</td></tr>
+          <tr><td class="h">Blastomyces dermatitidis (North American blastomycosis)</td><td>Midwestern and southeastern United States, southern Canada; also reported in South and Central America, Africa, the Middle East</td><td>Forest soil, decaying wood, animal manure</td><td>May be mistaken for lung cancer on chest X-ray; skin nodules, later bone and nervous system</td></tr>
+          <tr><td class="h">Paracoccidioides brasiliensis (paracoccidioidomycosis)</td><td>Central and South America (Brazil, Colombia, Venezuela, Argentina, Paraguay)</td><td>Cool, humid soil; inhaled (lung) or inoculated (skin)</td><td>The rarest primary mycosis; rural farm workers, poor nutrition; usually mild, self-limiting</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Hen house, Cactus, Backwoods, Brazil.</p><p class="mnem-key"><span><b>Hen house</b> Histoplasma: bird (and bat) droppings, the Ohio Valley</span><span><b>Cactus</b> Coccidioides: the semiarid, hot Southwest, dust</span><span><b>Backwoods</b> Blastomyces: forest soil and rotting wood of the Midwest and Southeast</span><span><b>Brazil</b> Paracoccidioides: South America, the rarest</span></p><p class="mnem-brk"><b>Where it breaks:</b> Histoplasma also lives in Latin America and Africa; Coccidioides reaches South America too (slide 30); Blastomyces has been reported beyond North America (slide 33).</p></div>
+  </section>
+
+  <section class="topic" id="crit-l15-tinea" style="--acc:#5a3d8a;--acc-bg:#e8e4ef;--acc-zebra:#f3f1f7;--acc-ink:#46306c">
+    <div class="shead"><span class="dot" style="background:#5a3d8a"></span><h2>Tinea by Body Site: the Latin Names<span class="tag">&#9733; Classification &middot; Lecture 15 &middot; slides 43&ndash;45 (&ldquo;Focus on the Latin names&rdquo;)</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:22%">Name</th><th style="width:14%">Site</th><th style="width:64%">Key feature on the slide</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Tinea capitis</td><td>Scalp</td><td>Scalp and hair-bearing head; hair may be lost; common in children</td></tr>
+          <tr><td class="h">Tinea barbae</td><td>Beard</td><td>Chin and beard of adult males; mainly from animals</td></tr>
+          <tr><td class="h">Tinea corporis</td><td>Body</td><td>Inflamed, red ring lesions on smooth skin; contact, clothing, bedding</td></tr>
+          <tr><td class="h">Tinea cruris</td><td>Groin</td><td>'Jock itch': groin and scrotum; athletes, crowded living</td></tr>
+          <tr><td class="h">Tinea pedis</td><td>Foot</td><td>Public surfaces; between the digits and on the soles; rare where people go barefoot</td></tr>
+          <tr><td class="h">Tinea manuum</td><td>Hand</td><td>Paired with tinea pedis: public surfaces, between the digits</td></tr>
+          <tr><td class="h">Tinea unguium</td><td>Nails</td><td>Persistent colonization that distorts the nail bed; nail extensions a portal of entry</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Each Latin name hides an English word you already know.</p><p class="mnem-key"><span><b>Capitis</b> cap (head)</span><span><b>Barbae</b> barber (beard)</span><span><b>Corporis</b> corporal, corpse (body)</span><span><b>Cruris</b> sounds like crotch (groin)</span><span><b>Pedis</b> pedal, pedicure (foot)</span><span><b>Manuum</b> manual, manicure (hand)</span><span><b>Unguium</b> ungulate, hooved (nail)</span></p><p class="mnem-brk"><b>Where it breaks:</b> Cruris is a sound-alike, not the real root. Tinea versicolor is not on this list: it is a superficial yeast infection (Malassezia), not a dermatophyte.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l15-superficial" style="--acc:#5a3d8a;--acc-bg:#e8e4ef;--acc-zebra:#f3f1f7;--acc-ink:#46306c">
+    <div class="shead"><span class="dot" style="background:#5a3d8a"></span><h2>Superficial Mycoses<span class="tag">Classification &middot; Lecture 15 &middot; slides 49&ndash;50</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:22%">Mycosis</th><th style="width:26%">Cause</th><th style="width:52%">What and where</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Tinea versicolor</td><td>Malassezia furfur (a yeast)</td><td>Mild, chronic scaling and mottling of the skin; also folliculitis, psoriasis, seborrheic dermatitis</td></tr>
+          <tr><td class="h">White piedra</td><td>Trichosporon species</td><td>Whitish or colored masses on pubic or axillary hair (also body, beard, mustache, eyebrows)</td></tr>
+          <tr><td class="h">Black piedra</td><td>Piedraia species</td><td>Dark-brown to black gritty nodules, mainly on scalp hairs</td></tr>
+          <tr><td class="rnote" colspan="3">Both piedras (piedra = stone) are non-contagious, linked to poor hygiene (oily hair products, tight hats or veils), and uncommon in the United States.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Versicolor changes color; the stones are white below and black on top.</p><p class="mnem-key"><span><b>Versi-COLOR</b> mottled, scaling skin (Malassezia)</span><span><b>White stones below</b> white piedra on pubic and axillary hair (Trichosporon)</span><span><b>Black stones on top</b> black piedra on scalp hair (Piedraia)</span></p><p class="mnem-brk"><b>Where it breaks:</b> White piedra also occurs on the beard, mustache and eyebrows (slide 49), so "below" is only its main site.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l15-opportunists" style="--acc:#5a3d8a;--acc-bg:#e8e4ef;--acc-zebra:#f3f1f7;--acc-ink:#46306c">
+    <div class="shead"><span class="dot" style="background:#5a3d8a"></span><h2>Opportunists and What Predisposes to Them (Table 22.3)<span class="tag">Table &middot; Lecture 15 &middot; slide 9</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:24%">Fungus</th><th style="width:76%">Predisposing conditions (slide 9)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Candida</td><td>Antibiotic therapy, catheters, diabetes, corticosteroids, immunosuppression</td></tr>
+          <tr><td class="h">Aspergillus</td><td>Leukemia, corticosteroids, tuberculosis, immunosuppression, intravenous drug abuse</td></tr>
+          <tr><td class="h">Cryptococcus</td><td>Diabetes, tuberculosis, cancer, corticosteroids, immunosuppression</td></tr>
+          <tr><td class="h">Zygomycota species</td><td>Diabetes, cancer, corticosteroids, intravenous therapy, third-degree burns</td></tr>
+          <tr><td class="rnote" colspan="2">Footnotes: anti-inflammatory drugs are given for chronic lung disease and to transplant patients; immunosuppression includes acquired immunodeficiency syndrome and genetic conditions.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Steroids open the door for all four; then each has its own key.</p><p class="mnem-key"><span><b>Candida</b> Cleared bacteria and Catheters: antibiotic therapy, catheters</span><span><b>Aspergillus</b> Leukemia and needles: leukemia, intravenous drug abuse</span><span><b>Cryptococcus</b> Cancer and Consumption: cancer, tuberculosis</span><span><b>Zygomycota</b> Zapped skin: third-degree burns, intravenous therapy</span></p><p class="mnem-brk"><b>Where it breaks:</b> Diabetes is on three rows (not Aspergillus); tuberculosis on two (Aspergillus, Cryptococcus); immunosuppression on three (not Zygomycota).</p></div>
+  </section>
+
+  <section class="topic" id="crit-l15-treatment" style="--acc:#5a3d8a;--acc-bg:#e8e4ef;--acc-zebra:#f3f1f7;--acc-ink:#46306c">
+    <div class="shead"><span class="dot" style="background:#5a3d8a"></span><h2>Treatments Named on the Slides<span class="tag">Comparison &middot; Lecture 15 &middot; slides 19&ndash;20, 26&ndash;63</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:30%">Infection</th><th style="width:70%">Treatment on the slide</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Histoplasmosis</td><td>Amphotericin B and azoles</td></tr>
+          <tr><td class="h">Coccidioidomycosis</td><td>Amphotericin B, but most cases need no treatment</td></tr>
+          <tr><td class="h">Blastomycosis</td><td>Amphotericin B</td></tr>
+          <tr><td class="h">Paracoccidioidomycosis</td><td>Ketoconazole, amphotericin B, sulfa drugs</td></tr>
+          <tr><td class="h">Sporotrichosis</td><td>Heat packs, super-saturated potassium iodide; systemic: amphotericin B and/or itraconazole</td></tr>
+          <tr><td class="h">Dermatophytoses (tinea)</td><td>Topical azoles for several weeks, oral antifungals if needed; debridement; ultraviolet light</td></tr>
+          <tr><td class="h">Candidiasis</td><td>Topical antifungals (superficial); amphotericin B and azoles (systemic)</td></tr>
+          <tr><td class="h">Cryptococcosis</td><td>Amphotericin B and fluconazole or another azole</td></tr>
+          <tr><td class="h">Pneumocystis pneumonia</td><td>Pentamidine (anti-protozoan) and co-trimoxazole (antibacterial): NOT traditional antifungals</td></tr>
+          <tr><td class="h">Mucormycosis</td><td>Removal of affected tissue and amphotericin B</td></tr>
+          <tr><td class="h">Eumycetoma</td><td>Long-term antifungal drug therapy and amputation may be required</td></tr>
+          <tr><td class="rnote" colspan="2">Aspergillosis: slide 60 lists amphotericin B and nystatin; current practice does not use nystatin for invasive disease (guide 15.23). No doses are taught.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">When in doubt, ampho B. The exceptions are the skin, the lung of acquired immunodeficiency syndrome, and the knife.</p><p class="mnem-key"><span><b>Ampho B</b> histoplasmosis, coccidioidomycosis, blastomycosis, paracoccidioidomycosis, systemic sporotrichosis, candidiasis, cryptococcosis, mucormycosis</span><span><b>The skin</b> topical azoles for tinea; topical antifungals for superficial candidiasis; potassium iodide and heat for sporotrichosis</span><span><b>The lung of acquired immunodeficiency syndrome</b> Pneumocystis: pentamidine and co-trimoxazole</span><span><b>The knife</b> tissue removal (mucormycosis), amputation (eumycetoma)</span></p><p class="mnem-brk"><b>Where it breaks:</b> Coccidioidomycosis usually needs nothing at all; Paracoccidioides adds ketoconazole and sulfa drugs.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l15-toxins" style="--acc:#5a3d8a;--acc-bg:#e8e4ef;--acc-zebra:#f3f1f7;--acc-ink:#46306c">
+    <div class="shead"><span class="dot" style="background:#5a3d8a"></span><h2>Fungal Toxins (Mycotoxicoses)<span class="tag">Classification &middot; Lecture 15 &middot; slide 65</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:24%">Toxin or mold</th><th style="width:34%">Source</th><th style="width:42%">Effect</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Aflatoxin</td><td>Grains, corn, peanuts</td><td>Hepatotoxic and carcinogenic; lethal to poultry and livestock (turkeys, ducklings, pigs, calves); may be a co-factor in human liver cancer</td></tr>
+          <tr><td class="h">Ergot</td><td>Rye and other grains contaminated by Claviceps</td><td>Mind-altering lysergic acid (cross-reference Salem, Massachusetts)</td></tr>
+          <tr><td class="h">Stachybotrys chartarum</td><td>Damp buildings</td><td>Sick building syndrome ('black mold', not mucormycosis); can cause severe hematologic and neurological damage</td></tr>
+          <tr><td class="rnote" colspan="3">Mycotoxicoses come from INGESTING or INHALING fungal toxins. Not all building molds are toxic, and not all building illness is fungal.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">A-E-S: Aflatoxin Attacks the liver, Ergot Enters the mind, Stachybotrys makes the building Sick.</p><p class="mnem-key"><span><b>A</b> Aflatoxin: liver (peanuts, corn, grains)</span><span><b>E</b> Ergot: mind-altering lysergic acid (rye)</span><span><b>S</b> Stachybotrys: sick building syndrome</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l16-effects" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>What Microbes Do to Food<span class="tag">Classification &middot; Lecture 16 &middot; slide 3</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:20%">Effect</th><th style="width:80%">What it means (slide 3)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Beneficial</td><td>Food fermented or chemically changed by added microbes or microbial products, to alter or improve flavor, taste or texture</td></tr>
+          <tr><td class="h">Detrimental</td><td>Food poisoning, food intoxication, food-borne illness and food spoilage (undesirable flavor, appearance or smell)</td></tr>
+          <tr><td class="h">Neutral</td><td>Microbes present that neither cause disease nor change the food; eaten along with it</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">The good, the bad, and the just-there.</p><p class="mnem-key"><span><b>The good</b> beneficial: fermentation</span><span><b>The bad</b> detrimental: illness and spoilage</span><span><b>The just-there</b> neutral: present, no effect</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l16-bread" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Bread Making: the Three Jobs of Microbes<span class="tag">List &middot; Lecture 16 &middot; slide 4</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:28%">Job</th><th style="width:72%">How</th></tr></thead>
+        <tbody>
+          <tr><td class="h">1. Leavening</td><td>Raises flour-based dough, mainly with carbon dioxide and other gases</td></tr>
+          <tr><td class="h">2. Flavor and aroma</td><td>Organic acids and alcohols</td></tr>
+          <tr><td class="h">3. Conditioning</td><td>Microbial enzymes act on gluten: elastic, pliable, workable dough</td></tr>
+          <tr><td class="rnote" colspan="2">Microbes: Saccharomyces cerevisiae (baker's yeast); certain Clostridium species; certain Lactobacillus species (Lactobacillus sanfrancisco in sourdough).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Rise, relish, roll.</p><p class="mnem-key"><span><b>Rise</b> leavening (gas)</span><span><b>Relish</b> flavor and aroma (acids, alcohols)</span><span><b>Roll</b> conditioning (enzymes on gluten)</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l16-intox" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Food Intoxication versus Food Infection<span class="tag">Classification &middot; Lecture 16 &middot; slide 12</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:22%"></th><th style="width:39%">Intoxication</th><th style="width:39%">Infection</th></tr></thead>
+        <tbody>
+          <tr><td class="h">What is eaten</td><td>A preformed toxin (cells and toxin in the food)</td><td>Live bacterial cells</td></tr>
+          <tr><td class="h">What happens</td><td>The toxin reaches its target organs</td><td>Improper cooking; bacteria multiply in the food, then an intestinal infection</td></tr>
+          <tr><td class="h">Examples</td><td>Staphylococcal toxin; Clostridium botulinum toxin</td><td>Salmonella; Listeria</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Intoxication: you eat the poison. Infection: you eat the poisoner.</p><p class="mnem-key"><span><b>The poison</b> intoxication: preformed toxin (staphylococcal, botulinum)</span><span><b>The poisoner</b> infection: live cells that multiply (Salmonella, Listeria)</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l16-bacteria" style="--acc:#7a2d47;--acc-bg:#ece2e5;--acc-zebra:#f6f0f2;--acc-ink:#5f2337">
+    <div class="shead"><span class="dot" style="background:#7a2d47"></span><h2>The Seven Foodborne Bacteria<span class="tag">Comparison &middot; Lecture 16 &middot; slides 13&ndash;29</span></h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term" style="width:20%">Organism</th><th style="width:38%">Where it comes from / the food</th><th style="width:42%">The fact to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Escherichia coli</td><td>Human and animal feces; contaminated meats and vegetables</td><td>The fecal INDICATOR organism; eosin methylene blue plates confirm it; O157:H7 among the worst</td></tr>
+          <tr><td class="h">Salmonella</td><td>Poultry and aquatic reptiles; eggs, pet food, peanut butter, produce</td><td>Young children and the elderly at greatest risk; typhoid the most severe enteric fever</td></tr>
+          <tr><td class="h">Campylobacter jejuni</td><td>Raw poultry (one drop of its fluid)</td><td>Infectious dose under 500 cells; bloody diarrhea; a leading United States bacterial diarrhea</td></tr>
+          <tr><td class="h">Listeria monocytogenes</td><td>Birds, mammals, soil; soft cheese, deli meats, hot dogs, produce</td><td>Grows from 1 to 40 °C; pregnant women and the fetus; slide: number one cause of food-related deaths in the United States</td></tr>
+          <tr><td class="h">Clostridium (botulinum)</td><td>Spores in soil, on plants, in honey</td><td>Toxin when spores germinate; flaccid ('relaxed') paralysis, respiratory failure</td></tr>
+          <tr><td class="h">Bacillus cereus</td><td>Rice (emetic form), meat (diarrheal form)</td><td>Very common in summer; onset in 6 hours or less, self-resolving</td></tr>
+          <tr><td class="h">Vibrio</td><td>Salt water: ocean and estuaries; shellfish, oysters, crabs</td><td>Water route (including wound infection) or food route</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Every Sick Cook Lets Contaminants Breed Vigorously.</p><p class="mnem-key"><span><b>Every</b> Escherichia coli</span><span><b>Sick</b> Salmonella</span><span><b>Cook</b> Campylobacter jejuni</span><span><b>Lets</b> Listeria monocytogenes</span><span><b>Contaminants</b> Clostridium</span><span><b>Breed</b> Bacillus cereus</span><span><b>Vigorously</b> Vibrio</span></p><p class="mnem-brk"><b>Where it breaks:</b> The order is slide 13's list. Two words start with C: Cook (Campylobacter) comes before Contaminants (Clostridium).</p></div>
+  </section>
+
+  <section class="topic" id="crit-l16-bcereus" style="--acc:#7a2d47;--acc-bg:#ece2e5;--acc-zebra:#f6f0f2;--acc-ink:#5f2337">
+    <div class="shead"><span class="dot" style="background:#7a2d47"></span><h2>Bacillus cereus: Two Forms<span class="tag">Classification &middot; Lecture 16 &middot; slide 28</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:22%">Form</th><th style="width:44%">Toxin (as slide 28 gives it)</th><th style="width:34%">Food</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Diarrheal</td><td>Heat-stable toxin</td><td>Meat</td></tr>
+          <tr><td class="h">Emetic (vomiting)</td><td>Heat-labile toxin</td><td>Rice</td></tr>
+          <tr><td class="rnote" colspan="3">Slide conflict: standard references say the reverse (the emetic toxin, with rice, is heat-stable; the diarrheal toxin is heat-labile). The quizzes key the slide; see guide 16.17. Slide 28 on the intoxication: onset 6 hours or less, self-resolving vomiting and cramps.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Rice makes you retch; meat sends you running.</p><p class="mnem-key"><span><b>Rice → retch</b> emetic form with rice</span><span><b>Meat → running</b> diarrheal form with meat</span></p><p class="mnem-brk"><b>Where it breaks:</b> The aid covers the food link only; for heat stability, learn the slide's pairing and the note.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l16-viruses" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Foodborne Viruses<span class="tag">Comparison &middot; Lecture 16 &middot; slide 33</span></h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term" style="width:20%"></th><th style="width:40%">Norovirus</th><th style="width:40%">Hepatitis A and E</th></tr></thead>
+        <tbody>
+          <tr><td class="h">What it is</td><td>Norwalk-like virus, family Caliciviridae; a common foodborne agent</td><td>The hepatitis viruses typically spread by the fecal-oral route</td></tr>
+          <tr><td class="h">Spread</td><td>Person to person by feces and vomitus (daycares, nursing homes, cruise ships); contaminated shellfish</td><td>Fecal-oral; NOT by kissing, sneezing, saliva or blood</td></tr>
+          <tr><td class="h">Course</td><td>A few viral particles infect; rapid onset and short duration: nausea, vomiting, diarrhea, low-grade fever</td><td>Most contagious about two weeks BEFORE symptoms</td></tr>
+          <tr><td class="rnote" colspan="3">Prevention (one list on slide 33, after the hepatitis lines): good handwashing and diaper hygiene, thorough cooking, clean drinking water, and a vaccine in case of suspected exposure.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Noro sails the cruise ship; A and E travel the same road, mouth after bottom.</p><p class="mnem-key"><span><b>Cruise ship</b> norovirus: crowded places, feces and vomitus, fast in and out</span><span><b>A and E</b> the fecal-oral hepatitis viruses: contagious two weeks before symptoms</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l16-agencies" style="--acc:#7a2d47;--acc-bg:#ece2e5;--acc-zebra:#f6f0f2;--acc-ink:#5f2337">
+    <div class="shead"><span class="dot" style="background:#7a2d47"></span><h2>Who Watches the Food Supply<span class="tag">Classification &middot; Lecture 16 &middot; slides 9, 34&ndash;35</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:34%">Job</th><th style="width:66%">Who (slides)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Surveillance and outbreak investigation</td><td>Local and state health departments, Centers for Disease Control and Prevention, Food and Drug Administration, United States Department of Agriculture</td></tr>
+          <tr><td class="h">Food safety law enforcement and policy</td><td>Food and Drug Administration and United States Department of Agriculture</td></tr>
+          <tr><td class="h">PulseNet (pulsed-field gel electrophoresis patterns)</td><td>Centers for Disease Control and Prevention</td></tr>
+          <tr><td class="h">Recall information</td><td>Food and Drug Administration (food, dietary supplements, pet food); United States Department of Agriculture</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Everyone investigates; only the two with the badges enforce and post the recalls; the Centers keep the fingerprints.</p><p class="mnem-key"><span><b>Everyone investigates</b> local, state, Centers for Disease Control and Prevention, Food and Drug Administration, United States Department of Agriculture</span><span><b>Two with badges</b> Food and Drug Administration, United States Department of Agriculture: law and policy</span><span><b>The Centers keep the fingerprints</b> PulseNet at the Centers for Disease Control and Prevention</span><span><b>The badges post the recalls</b> Food and Drug Administration (food, dietary supplements, pet food) and United States Department of Agriculture: recall information</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l16-numbers" style="--acc:#7a2d47;--acc-bg:#ece2e5;--acc-zebra:#f6f0f2;--acc-ink:#5f2337">
+    <div class="shead"><span class="dot" style="background:#7a2d47"></span><h2>The Numbers on the Slides<span class="tag">Cut-offs &middot; Lecture 16 &middot; slides 21, 23, 28, 33, 36</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:28%">Number</th><th style="width:72%">What it is</th></tr></thead>
+        <tbody>
+          <tr><td class="h">1 to 40 °C</td><td>The range Listeria grows in: refrigerator, room and freezer temperatures (slide 23)</td></tr>
+          <tr><td class="h">Under 500 cells</td><td>The Campylobacter infectious dose: one drop of raw poultry fluid (slide 21)</td></tr>
+          <tr><td class="h">6 hours or less</td><td>Bacillus cereus onset (slide 28)</td></tr>
+          <tr><td class="h">About 2 weeks before symptoms</td><td>When hepatitis A or E is most contagious (slide 33)</td></tr>
+          <tr><td class="h">165 °F</td><td>The meat thermometer reading (slide 36; see guide 16.17)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Fridge to fever, a single drop, a single shift, a fortnight early, and one-six-five.</p><p class="mnem-key"><span><b>Fridge to fever</b> Listeria grows from 1 to 40 °C</span><span><b>A single drop</b> Campylobacter, under 500 cells</span><span><b>A single shift</b> Bacillus cereus, 6 hours or less</span><span><b>A fortnight early</b> hepatitis A and E, contagious 2 weeks before symptoms</span><span><b>One-six-five</b> 165 °F on the meat thermometer</span></p></div>
+  </section>
 
   <section class="topic" id="l14-scope" style="--acc:#1f4d2b;--acc-bg:#e0e6e1;--acc-zebra:#eff3f0;--acc-ink:#183c22">
     <div class="shead"><span class="dot" style="background:#1f4d2b"></span><h2>L14 · What the Lecturer Flagged</h2></div>
@@ -322,6 +632,213 @@
           <tr><td class="h">Air</td><td>Bordetella (carriers, aerosols) · Legionella (water aerosols) · pneumonic plague (aerosol).</td></tr>
           <tr><td class="h">Fecal-oral</td><td>E. coli diarrheal strains, Salmonella typhi (humans only), Shigella.</td></tr>
           <tr><td class="h">Self and partner</td><td>E. coli urinary tract infection (women, catheters) · H. parainfluenzae (own oral flora, dental work) · H. ducreyi (sexual) · H. aegyptius (fingers, insects).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l15-pathogens" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>L15 · Fungi as Pathogens</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">True (primary) pathogen</td><td>Invades and grows in a HEALTHY host. Can cause systemic, subcutaneous, cutaneous and superficial mycoses. The four true pathogens are thermally dimorphic.</td></tr>
+          <tr><td class="h">Opportunist</td><td>Little or no virulence of its own; needs IMPAIRED defenses (human immunodeficiency virus infection, cancer, diabetes, chronic obstructive pulmonary disease, autoimmune disorder, nosocomial). Once 'harmless' skin or air contaminants.</td></tr>
+          <tr><td class="h">Thermal dimorphism</td><td>MOLD (multicellular) at 30 °C in soil → YEAST (unicellular) at 37 °C in the body. The true pathogen's key adaptation.</td></tr>
+          <tr><td class="h">Mostly harmless</td><td>Relatively nonpathogenic: ~300 of ~100,000 species cause disease. But fungi are the most common PLANT pathogens (potato blights, famines).</td></tr>
+          <tr><td class="h">Emerging</td><td>Mycoses ~10% of nosocomial infections and rising; dermatophytes may be becoming true pathogens; invasive fungal disease rising in the immunocompromised.</td></tr>
+          <tr><td class="h">Host defense</td><td>Skin, mucous membranes, cilia; MOST IMPORTANT = cell-mediated immunity (T cells, cytokines), phagocytosis, inflammation. Reinfection highly likely with opportunists.</td></tr>
+          <tr><td class="h">Communicable?</td><td>Most fungal infections are NOT (no host needed for the life cycle). Exceptions: dermatophytes and Candida (person to person, fomites).</td></tr>
+          <tr><td class="h">Most prevalent</td><td>Dermatophytoses: the most common fungal diseases; often undiagnosed or misdiagnosed as allergy or autoimmune disease.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l15-dx-control" style="--acc:#5a3d8a;--acc-bg:#e8e4ef;--acc-zebra:#f3f1f7;--acc-ink:#46306c">
+    <div class="shead"><span class="dot" style="background:#5a3d8a"></span><h2>L15 · Diagnosis & Control</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Diagnosis</td><td>Microscopy of stained specimens + culture on selective and enriched media + biochemical or serological tests.</td></tr>
+          <tr><td class="h">Sabouraud dextrose agar</td><td>Commonly used; its LOW pH inhibits most bacteria but not fungi (chemicals added to block bacteria).</td></tr>
+          <tr><td class="h">Potassium hydroxide</td><td>Lyses human epithelial cells, leaves fungi intact: fungi have a THICKER cell wall.</td></tr>
+          <tr><td class="h">Flowchart clues</td><td>Wood's light on hairs · negative stain for a capsule · GERM TUBE test (yeasts in serum 2–4 h sprout hyphal tubes) · culture at 25–30 °C AND 37 °C to demonstrate dimorphism · long incubations (up to 8 weeks; 4 weeks for hair, skin, nails) · animal inoculation only when other methods fail.</td></tr>
+          <tr><td class="h">Stains (slide 18)</td><td>Aspergillus = BRANCHED SEPTATE hyphae in sputum; germinating Candida albicans = young hypha from a yeast.</td></tr>
+          <tr><td class="h">No vaccines</td><td>Immunization typically ineffective because REINFECTION is exceedingly common.</td></tr>
+          <tr><td class="h">Control</td><td>Drugs: amphotericin B, flucytosine, azoles, nystatin · surgical removal of damaged tissue · prevention = respirator masks, protective clothing, hygiene.</td></tr>
+          <tr><td class="h">Amphotericin B</td><td>Drug of choice for many infections; from Streptomyces (a soil bacterium); complexes with fungal membrane LIPIDS → leakage; TOXIC because fungi and humans are both eukaryotes (fatigue, weakness, fever, arrhythmia): 'ampho-terrible'.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l15-true" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>L15 · The True Pathogens (Systemic)</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Shared pattern</td><td>Endemic regions; soil or animal waste with conidia is DISTURBED → spores INHALED → yeasts in the lungs → may go systemic; can also inoculate broken skin.</td></tr>
+          <tr><td class="h">Histoplasma capsulatum</td><td>OHIO VALLEY FEVER; the MOST COMMON true pathogen; eastern/central United States, Latin America, Africa; moist nitrogen-rich soil with BIRD AND BAT GUANO; inhaled microconidia; NOT person to person; yeast multiplies inside phagocytes; most recover.</td></tr>
+          <tr><td class="h">Coccidioides immitis</td><td>VALLEY FEVER; southwestern United States to Mexico, Central/South America; alkaline, salty soil of semiarid, hot climates; dust (farming, construction, digs, dust storms); drought-rain-wind cycles; ARTHROCONIDIA → SPHERULES with endospores; risk: African descent, age 40–60+, dust exposure; most need no treatment.</td></tr>
+          <tr><td class="h">Blastomyces dermatitidis</td><td>NORTH AMERICAN blastomycosis; forest soil, decaying wood, manure; Midwest/Southeast and southern Canada; inhaled conidia → yeasts; MIMICS LUNG CANCER on chest X-ray; dogs, cats, horses; chronic skin nodules, later bone and nervous system.</td></tr>
+          <tr><td class="h">Paracoccidioides brasiliensis</td><td>Central/South America (Brazil); the RAREST primary mycosis; inhalation (lung) or inoculation (skin); rural farm workers, poor nutrition, male, over 40; usually mild, self-limiting.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l15-skin" style="--acc:#5a3d8a;--acc-bg:#e8e4ef;--acc-zebra:#f3f1f7;--acc-ink:#46306c">
+    <div class="shead"><span class="dot" style="background:#5a3d8a"></span><h2>L15 · Subcutaneous, Cutaneous, Superficial</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Subcutaneous mycoses</td><td>Fungus pushed into TRAUMATIZED skin; inhibited by the warmth of blood and viscera, so rarely disseminate; progressive tissue destruction.</td></tr>
+          <tr><td class="h">Sporothrix schenckii</td><td>ROSE-GARDENER'S disease: thorn, wood, bare roots; saprobe in soil; garden centers, nurseries, pine straw, hay; LYMPHOCUTANEOUS = nodule then spread to nearby lymph nodes; heat packs, super-saturated potassium iodide; systemic: amphotericin B and/or itraconazole.</td></tr>
+          <tr><td class="h">Dermatophytes</td><td>Keratin ONLY (skin, hair, scalp, nails) = ringworm/tinea; Trichophyton, Microsporum, Epidermophyton (39 species); agent varies case to case; reservoirs humans, animals, soil; hardy spores + abraded skin + close contact or fomites; long infection, then inflammation and allergy to fungal proteins.</td></tr>
+          <tr><td class="h">★ Latin names</td><td>The deck: 'Focus on the Latin names for each body part/region' → capitis, barbae, corporis, cruris, pedis, manuum, unguium (table above).</td></tr>
+          <tr><td class="h">Tinea treatment</td><td>Topical AZOLES for several weeks ± oral antifungals; debridement; ultraviolet light.</td></tr>
+          <tr><td class="h">Superficial mycoses</td><td>Tinea VERSICOLOR = Malassezia furfur, a YEAST (scaling, mottling). WHITE piedra = Trichosporon (pubic/axillary hair). BLACK piedra = Piedraia (scalp hairs). Piedras non-contagious, hygiene; rare in the United States.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l15-opportunists" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>L15 · The Opportunists</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Candida albicans</td><td>The DOMINANT opportunist; normal flora (mouth, genitalia, large intestine, skin); ~70% of nosocomial fungal infections; usually endogenous, but spread by surgery, childbirth, breast-feeding, sex; off-white pasty colony smelling of BAKING BREAD.</td></tr>
+          <tr><td class="h">Candida forms</td><td>THRUSH (thick white adherent growth) · vulvovaginal (to unprotected partners, esp. uncircumcised males) · cutaneous in moist skin and burns · intertriginous (obesity). Diagnosis: budding yeast + PSEUDOHYPHAE; species by selective differential media.</td></tr>
+          <tr><td class="h">Candida auris</td><td>Emerging invasive candidiasis; HOSPITAL OUTBREAKS hard to eradicate (drug resistant, thermoresistant, partly disinfectant resistant); first found in an EAR infection, Japan 2009.</td></tr>
+          <tr><td class="h">Cryptococcus neoformans</td><td>#1 CRITICAL on the World Health Organization list; ENCAPSULATED yeast in soil around urban PIGEON roosts; healthy people resist; lungs → MENINGES and brain; NEGATIVE STAIN; serology and biochemistry best; amphotericin B + fluconazole.</td></tr>
+          <tr><td class="h">Pneumocystis jirovecii</td><td>Unicellular fungus; the MOST PROMINENT opportunistic infection in acquired immunodeficiency syndrome; also kidney transplant; widespread silent exposure (antibody titers); secretions block breathing; PENTAMIDINE + CO-TRIMOXAZOLE (not antifungals); a fungus by genetics.</td></tr>
+          <tr><td class="h">Aspergillus fumigatus</td><td>Airborne soil mold; azole resistance from CROP SPRAYING; #3 critical; lungs → FUNGAL BALLS; sinuses, ear canals, eyelids, conjunctiva; invasive necrotic pneumonia, brain, heart; leukemia, transplant, cystic fibrosis.</td></tr>
+          <tr><td class="h">Mucormycosis</td><td>Zygomycota (Rhizopus, Mucor) saprobes; 'black mould' in India (steroids, uncontrolled DIABETES); nose, eyes, heart, brain in diabetes, leukemia, malnutrition; kwashiorkor gut form; cut out tissue + amphotericin B.</td></tr>
+          <tr><td class="h">Fusarium · eumycetoma</td><td>Fusarium: tropical soil mold; contaminated CONTACT LENSES, toenails, burns. Eumycetoma: poor countries; male, 11–30, farmer, no shoes; long-term drugs, amputation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l15-allergy-transmission" style="--acc:#5a3d8a;--acc-bg:#e8e4ef;--acc-zebra:#f3f1f7;--acc-ink:#46306c">
+    <div class="shead"><span class="dot" style="background:#5a3d8a"></span><h2>L15 · Allergies, Toxins & How We Get Them</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Allergies</td><td>Spores → atopic allergy, seasonal allergy, asthma; farmer's lung, teapicker's lung, bark stripper's disease.</td></tr>
+          <tr><td class="h">Mycotoxicoses</td><td>Ingested or inhaled fungal toxins: AFLATOXIN (liver, cancer co-factor; grains, corn, peanuts; kills turkeys) · ERGOT (rye, Claviceps, lysergic acid; Salem) · STACHYBOTRYS (sick building, 'black mold'; not mucormycosis).</td></tr>
+          <tr><td class="h">Objective 2: inhaled</td><td>Systemic true pathogens (disturbed soil, guano, dust); Cryptococcus (pigeon roost soil); Aspergillus and Zygomycota (air).</td></tr>
+          <tr><td class="h">Objective 2: inoculated</td><td>Sporothrix (thorns, wood); Paracoccidioides skin form; nail extensions (tinea unguium).</td></tr>
+          <tr><td class="h">Objective 2: contact</td><td>Dermatophytes (people, animals, fomites, public surfaces; barbae mainly from animals) · Candida (surgery, birth, breast-feeding, sex; usually endogenous).</td></tr>
+          <tr><td class="h">Not communicable</td><td>Most fungi; Histoplasma explicitly NOT person to person; piedras non-contagious.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l16-food-microbes" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>L16 · Microbes in Food</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Three effects</td><td>BENEFICIAL (fermentation improves flavor, taste, texture) · DETRIMENTAL (poisoning, intoxication, illness, spoilage) · NEUTRAL (just there, eaten with the food).</td></tr>
+          <tr><td class="h">Bread</td><td>Leavening (carbon dioxide) · flavor and aroma (organic acids, alcohols) · conditioning (enzymes on gluten). Saccharomyces cerevisiae; some Clostridium; Lactobacillus sanfrancisco (sourdough).</td></tr>
+          <tr><td class="h">Beer and wine</td><td>Glucose + yeast → 2 ethanol + 2 carbon dioxide. Brewing since 6000 BCE; malting, mashing, wort + hops, lagering, filtration. Wine from grapes or other fruit. Yeast source can be human SALIVA (chewed plant material).</td></tr>
+          <tr><td class="h">Pickling, soy</td><td>Salt brine, lactic acid, vinegar, spices; soybeans → tofu, soy sauce; fish sauce, mole, tea, coffee.</td></tr>
+          <tr><td class="h">Milk</td><td>STERILE until it exits the mammal; microbes from the body and milking UTENSILS; nutrient dense. First fermented dairy = accidental skin/nose/mouth microbes. Cheese: yeast, bacteria, molds. Yogurt: Lactobacillus + Streptococcus; kefir, koumiss, buttermilk.</td></tr>
+          <tr><td class="h">Microbes as food</td><td>Spirulina (a cyanobacterium) in smoothies and gummies; single cell protein researched; feed additives already used for animals.</td></tr>
+          <tr><td class="h">Fungi in food</td><td>Rarely cause disease; mushrooms, PENICILLIN, yeast fermentation; spoil bread, cereals, acidic juices.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l16-burden" style="--acc:#7a2d47;--acc-bg:#ece2e5;--acc-zebra:#f6f0f2;--acc-ink:#5f2337">
+    <div class="shead"><span class="dot" style="background:#7a2d47"></span><h2>L16 · The Problem & the First Split</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Scale</td><td>~250 foodborne pathogens; BACTERIA most common; also viruses, parasites, microbial toxins; under-reported (slide figures: 75 million cases, 5000+ deaths).</td></tr>
+          <tr><td class="h">Who watches</td><td>Surveillance + outbreak investigation: local/state health departments, Centers for Disease Control and Prevention, Food and Drug Administration, United States Department of Agriculture. ENFORCEMENT and policy: Food and Drug Administration + United States Department of Agriculture.</td></tr>
+          <tr><td class="h">Symptoms</td><td>Diarrhea, abdominal cramps, nausea, fever, vomiting.</td></tr>
+          <tr><td class="h">Intoxication</td><td>PREFORMED TOXIN eaten → target organs. Staphylococcal toxin, Clostridium botulinum toxin.</td></tr>
+          <tr><td class="h">Infection</td><td>LIVE CELLS eaten; improper cooking lets them MULTIPLY in the food → intestinal infection. Salmonella, Listeria.</td></tr>
+          <tr><td class="h">The seven bacteria</td><td>E. coli, Salmonella, Campylobacter jejuni, Listeria monocytogenes, Clostridium, Bacillus cereus, Vibrio.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l16-enteric" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>L16 · E. coli, Salmonella, Campylobacter</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Escherichia coli</td><td>FECAL INDICATOR organism (human and animal feces); EMB (eosin methylene blue) plates confirm it in food and water; not always pathogenic; toxin strains (enterotoxigenic, enterohemorrhagic); O157:H7 among the worst.</td></tr>
+          <tr><td class="h">E. coli outbreaks</td><td>Fecally contaminated MEATS or VEGETABLES: hamburgers, bagged spinach, romaine lettuce, cookie dough, ground beef, raw milk cheese (western United States, 2026).</td></tr>
+          <tr><td class="h">Salmonella</td><td>Animals, mainly POULTRY and AQUATIC REPTILES; gastroenteritis, enteric fever, septicemia, shock, kidney dysfunction; incubation HOURS to WEEKS; young children and the elderly at greatest risk.</td></tr>
+          <tr><td class="h">Typhoid fever</td><td>Salmonella typhi: the MOST SEVERE enteric fever; invades the intestinal wall → blood and lymph nodes. 'Typhoid Mary' (Mary Mallon), the cook who persisted.</td></tr>
+          <tr><td class="h">Salmonella sources</td><td>Poultry, EGGS, PET FOOD, live backyard poultry, PEANUT BUTTER, sushi-grade seafood; produce recalls (watermelon, onions, cantaloupe, cucumbers, jalapenos).</td></tr>
+          <tr><td class="h">Campylobacter jejuni</td><td>A LEADING cause of bacterial diarrhea in the United States, esp. children; rapid fever, headache, dizziness, BLOODY diarrhea; infectious dose <500 cells (ONE DROP of raw poultry fluid); under-reported.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l16-others" style="--acc:#7a2d47;--acc-bg:#ece2e5;--acc-zebra:#f6f0f2;--acc-ink:#5f2337">
+    <div class="shead"><span class="dot" style="background:#7a2d47"></span><h2>L16 · Listeria, Clostridium, B. cereus, Vibrio</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Listeria monocytogenes</td><td>Birds, mammals, SOIL; big recalls (ice cream, cantaloupe, frozen vegetables); PREGNANT women, unborn and premature babies, elderly, immunocompromised; slide: #1 cause of food-related DEATHS in the United States.</td></tr>
+          <tr><td class="h">Listeria foods</td><td>Soft cheeses, deli meats, hot dogs, raw produce, raw meat, smoked seafood. Grows from 1 to 40 °C: FRIDGE, room and freezer temperatures. Spreads to brain and across the placenta to the fetus.</td></tr>
+          <tr><td class="h">Clostridium</td><td>Gram-positive rods, STRICT ANAEROBES, SPORES (soil, plants, HONEY). Food: botulinum, perfringens. Not food: tetani, difficile.</td></tr>
+          <tr><td class="h">Botulism</td><td>Toxin made when spores GERMINATE; foodborne and wound botulism; paralysis with muscles RELAXED → respiratory failure; a few bacteria make plenty of toxin.</td></tr>
+          <tr><td class="h">Bacillus cereus</td><td>Very common, SUMMER; DIARRHEAL (meat) or EMETIC (rice); onset ≤6 hours; self-resolving vomiting and cramps; hot foods hot, cold foods cold.</td></tr>
+          <tr><td class="h">Vibrio</td><td>cholerae, vulnificus, parahaemolyticus; SALT-tolerant, ocean and estuarine water; WATER (ingested, WOUNDS) or FOOD (shellfish, oysters, crabs, raw seafood); the R-month rule is now uncertain.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l16-nonbacterial" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>L16 · Protozoa, Worms, Viruses</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Protozoa</td><td>Cryptosporidium, Cyclospora, Giardia, Entamoeba: mild, self-limiting diarrhea from uncooked fruit and vegetables or DRINKING WATER; ready-to-eat SALAD BAGS.</td></tr>
+          <tr><td class="h">Worms</td><td>Tapeworm, roundworm, trichinosis: killed by THOROUGH COOKING; venison and pork infected while the animal is ALIVE; pet feces.</td></tr>
+          <tr><td class="h">Norovirus</td><td>Norwalk-like, Caliciviridae; person to person by FECES and VOMITUS (daycares, nursing homes, CRUISE SHIPS); shellfish; a FEW particles infect; rapid onset, short course.</td></tr>
+          <tr><td class="h">Hepatitis A and E</td><td>FECAL-ORAL; most contagious ~2 WEEKS BEFORE symptoms; NOT kissing, sneezing, saliva or blood; vaccine after suspected exposure; handwashing, diaper hygiene.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l16-tracking" style="--acc:#7a2d47;--acc-bg:#ece2e5;--acc-zebra:#f6f0f2;--acc-ink:#5f2337">
+    <div class="shead"><span class="dot" style="background:#7a2d47"></span><h2>L16 · Tracking, Objective 3, Prevention</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">PulseNet</td><td>Each isolate's PULSED-FIELD GEL ELECTROPHORESIS pattern → the Centers for Disease Control and Prevention database. Finds outbreak causes and processing-plant problems; cuts DETECTION TIME and NUMBER OF CASES.</td></tr>
+          <tr><td class="h">Matching patterns</td><td>The slide 34 gel: patient, environmental and animal E. coli O157 isolates share one pattern.</td></tr>
+          <tr><td class="h">Recall sources</td><td>Food and Drug Administration (food, dietary supplements, PET FOOD) · United States Department of Agriculture · Foodsafetynews.com, Foodsafetymagazine.com.</td></tr>
+          <tr><td class="h">Objective 3</td><td>Antibiotic resistance in the food supply: NO SLIDE covers it. Not quizzed; listen for it in the recording.</td></tr>
+          <tr><td class="h">What you can do</td><td>Hot soapy handwashing · wash produce · when in doubt, toss it out · mild bleach on surfaces · meat thermometer 165 °F · no cross-contamination of boards · gloves, hair coverings · ServSafe.</td></tr>
         </tbody>
       </table>
     </div>

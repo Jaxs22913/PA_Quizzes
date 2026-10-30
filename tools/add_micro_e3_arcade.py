@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Add the Microbiology Exam 3 Arcade decks -- Lecture 14 so far (Lectures 14 to 19 as they land).
+"""Add the Microbiology Exam 3 Arcade decks -- Lectures 14-16 so far (Lectures 14 to 19 as they land).
 
 One deck per lecture (arcade_content_policy), authored from the deck's slides by way of the Exam 3 study guide:
 `cards` (Study/Learn/Sprint, one atomic fact each) and `matchCards` (Match: term -> short tag). Which-antibiotic
@@ -19,8 +19,15 @@ from _arcade_add import apply, ARCADE
 GNR_ICON = ('<rect x="3" y="9" width="12" height="6" rx="3"/>'
             '<path d="M15 12c1.5-2 3-2 4 0s2 2 2 0"/>')
 
+# a mushroom (Lecture 15, fungi)
+FUNGI_ICON = ('<path d="M4 12a8 6 0 0 1 16 0z"/>'
+              '<path d="M10 12v7h4v-7"/>')
+# a fork and a plate (Lecture 16, food safety)
+FOOD_ICON = ('<circle cx="14" cy="12" r="6"/>'
+             '<path d="M5 4v16M3 4v4a2 2 0 0 0 4 0V4"/>')
+
 C = {}
-for frag in ("l14_cards.json",):
+for frag in ("l14_cards.json", "l15_cards.json", "l16_cards.json"):
     C.update(json.load(open(os.path.join(HERE, "micro_e3", frag), encoding="utf-8")))
 
 
@@ -31,6 +38,8 @@ def deck(did, name, colour, icon):
 
 DECKS = [
     deck("micro-gram-negative-bacilli", "Gram-Negative Bacilli", "accent3", GNR_ICON),
+    deck("micro-fungi", "Fungi of Medical Importance", "accent2", FUNGI_ICON),
+    deck("micro-food-safety", "Food Safety", "accent4", FOOD_ICON),
 ]
 
 if __name__ == "__main__":
