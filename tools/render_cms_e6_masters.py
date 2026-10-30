@@ -28,7 +28,7 @@ INTRO = (
   "from form to form). <b>Forty-eight are patient vignettes</b> and twelve are direct recall, with the "
   "lead-in spread across classifying severity and scores, testing, treatment, next step, patient "
   "education and what to avoid.<br><br>"
-  "Many of the questions are not in the topic quizzes, so these forms are worth working even after "
+  "Some of the questions are not in the topic quizzes, so these forms are worth working even after "
   "those. <b>Four options, A&ndash;D</b>, and every wrong choice gets its own explanation saying why "
   "it is wrong.<br><br>"
   "<b>No question appears in more than one form</b>, so working through all five gives you 300 "
