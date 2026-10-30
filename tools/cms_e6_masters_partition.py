@@ -127,7 +127,13 @@ def review_state(rec, q):
     return "clean" if a["verdict"] == "pass" else "flagged"
 
 
+BASE_LEADS = P.LEADS                       # imported as l33, which has no extra lead-ins
+EXTRA_LEADS = {"l34": ("etiology", "compensation"), "l35": ("classify",), "l36": ("classify",),
+               "l37": ("classify",), "l38": ("classify",)}       # as cms_e6_partition.py sets per lecture
+
+
 def load_lecture(lec):
+    P.LEADS = BASE_LEADS + EXTRA_LEADS.get(lec, ())     # guard_all reads the module-level vocabulary
     out, required = [], []
     for kind, vig in (("reg", False), ("vig", True)):
         scope, mods, pool, origin, nfix = P.load_guarded(lec, vig)

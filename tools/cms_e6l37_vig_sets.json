@@ -273,25 +273,25 @@
   {
    "topic": "Pneumonia antibiotics",
    "io": "Identify medical care strategies for respiratory infections in the lecture topic list for the following populations. 1. adult 2. elderly",
-   "q": "A 72-year-old man is admitted to a general ward with nonsevere community-acquired pneumonia and no resistant-organism risk. He has had a severe reaction to azithromycin and another to levofloxacin. Which regimen is most appropriate?",
+   "q": "A 72-year-old man is admitted to a general ward with nonsevere community-acquired pneumonia and no resistant-organism risk. Macrolides and fluoroquinolones are unsuitable for him because of severe reactions to each class. Which regimen is most appropriate?",
    "opts": [
     [
      "Ceftriaxone plus doxycycline",
-     "Correct. Nonsevere inpatient pneumonia is usually treated with a beta-lactam plus a macrolide, or with respiratory fluoroquinolone monotherapy. A beta-lactam plus doxycycline is the alternative when macrolides and fluoroquinolones are unsuitable, as his two reactions make them."
+     "Correct. Nonsevere inpatient pneumonia is usually treated with a beta-lactam plus a macrolide, or with respiratory fluoroquinolone monotherapy. A beta-lactam plus doxycycline is the alternative when macrolides and fluoroquinolones are unsuitable, as his reactions make them."
     ],
     [
      "Ceftriaxone plus azithromycin",
-     "This is the usual nonsevere inpatient regimen, but his severe reaction to azithromycin makes the macrolide unsuitable. Tell: when the macrolide is out, doxycycline partners the beta-lactam.",
+     "This is the usual nonsevere inpatient regimen, but macrolides are unsuitable for him. Tell: when the macrolide is out, doxycycline partners the beta-lactam.",
      "ruled out by a stated finding"
     ],
     [
      "Moxifloxacin monotherapy",
-     "Moxifloxacin is a respiratory fluoroquinolone, the same group as the levofloxacin that caused his severe reaction, so fluoroquinolone monotherapy is unsuitable. Tell: both usual partners are out, which is exactly when doxycycline is used.",
+     "Moxifloxacin is a respiratory fluoroquinolone, a class that is unsuitable for him, so fluoroquinolone monotherapy is out. Tell: both usual partners are out, which is exactly when doxycycline is used.",
      "ruled out by a stated finding"
     ],
     [
      "Ceftriaxone plus vancomycin",
-     "Vancomycin is methicillin-resistant Staphylococcus aureus coverage, added only for validated risk, and he has none. It also leaves out the atypical coverage a macrolide or doxycycline gives. Tell: his problem is drug reactions, not resistance risk.",
+     "Vancomycin is methicillin-resistant Staphylococcus aureus coverage, added only for validated risk, and he has none. Tell: his problem is drug reactions, not resistance risk.",
      "wrong stage or severity"
     ]
    ],
@@ -476,7 +476,7 @@
     ]
    ],
    "c": 3,
-   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 98, 108",
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 98, 108, 95, 105",
    "slot": "first-line",
    "lead": "treatment"
   },
@@ -727,7 +727,7 @@
    "opts": [
     [
      "No further dose this season",
-     "One seasonal dose fits adults younger than 65 without immunocompromise. At 72 he generally needs two seasonal doses about 6 months apart. Tell: age 65 or older adds the second dose.",
+     "A single dose is not enough at his age: adults 65 or older generally need two seasonal doses about 6 months apart. Tell: age 65 or older adds the second dose.",
      "wrong stage or severity"
     ],
     [
@@ -741,7 +741,7 @@
     ],
     [
      "A second dose in 4 weeks",
-     "The seasonal second dose for adults 65 or older comes about 6 months after the first, not after 4 weeks. Tell: a 4-week interval is the influenza two-dose spacing for young children, not this schedule.",
+     "The seasonal second dose for adults 65 or older comes about 6 months after the first, not after 4 weeks. Tell: the second dose is timed about 6 months after the first.",
      "adjacent fact"
     ]
    ],
@@ -1103,7 +1103,7 @@
      "reversed direction or value"
     ],
     [
-     "Hospital, despite the low score",
+     "Hospital ward admission",
      "Correct. His severity total is 1: confusion 0 (alert), urea 0 (15 is not above 20), respiratory rate 0 (22), blood pressure 0 and age 1 (66). A total of 0 to 1 is low severity, with a risk of death under 3%, but the pathway still admits for an unstable comorbidity or a social reason, and his heart failure is unstable."
     ]
    ],
@@ -1175,7 +1175,7 @@
   {
    "topic": "Pneumonia antibiotics",
    "io": "Identify medical care strategies for respiratory infections in the lecture topic list for the following populations. 1. adult 2. elderly",
-   "q": "A 70-year-old woman with chronic obstructive pulmonary disease and diabetes has community-acquired pneumonia and is stable for outpatient treatment. She had a severe reaction to levofloxacin last year. Which regimen is most appropriate?",
+   "q": "A 70-year-old woman with chronic obstructive pulmonary disease and diabetes has community-acquired pneumonia and is stable for outpatient treatment. She has had a severe reaction to fluoroquinolone antibiotics as a class. Which regimen is most appropriate?",
    "opts": [
     [
      "Azithromycin as a single drug",
@@ -1184,11 +1184,11 @@
     ],
     [
      "Cefuroxime plus azithromycin",
-     "Correct. Her lung disease and diabetes are listed comorbidities, calling for amoxicillin-clavulanate, cefpodoxime or cefuroxime plus azithromycin or doxycycline, or a respiratory fluoroquinolone. Her reaction to levofloxacin takes the fluoroquinolone off the table, so the beta-lactam combination is used."
+     "Correct. Her lung disease and diabetes are listed comorbidities, calling for amoxicillin-clavulanate, cefpodoxime or cefuroxime plus azithromycin or doxycycline, or a respiratory fluoroquinolone. Her reaction to the fluoroquinolone class takes that option off the table, so the beta-lactam combination is used."
     ],
     [
      "Moxifloxacin, with QT review",
-     "Moxifloxacin is a respiratory fluoroquinolone, the same group as the levofloxacin that caused her severe reaction. Tell: allergy and fluoroquinolone risks are reviewed before choosing, and her history removes the whole fluoroquinolone option.",
+     "Moxifloxacin is a respiratory fluoroquinolone, the class that caused her severe reaction. Tell: allergy and fluoroquinolone risks are reviewed before choosing, and her history removes the whole fluoroquinolone option.",
      "ruled out by a stated finding"
     ],
     [
@@ -1205,16 +1205,16 @@
   {
    "topic": "Psittacosis and Mycoplasma",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
-   "q": "A 36-year-old pet-shop employee has had a week of fever, severe headache, photophobia and a nonproductive cough. Several parakeets in the shop were sick last month. His pulse is 72/min with a temperature of 103°F, his spleen is palpable, and macular rashes on his face resemble the rose spots of typhoid fever (Horder spots). Which is the most likely diagnosis?",
+   "q": "A 36-year-old pet-shop employee has had a week of fever, severe headache, photophobia and a nonproductive cough. His pulse is 72/min with a temperature of 103°F, his spleen is palpable, and macular rashes on his face resemble the rose spots of typhoid fever. Which is the most likely diagnosis?",
    "opts": [
     [
      "Acute histoplasmosis",
-     "Histoplasmosis follows inhaled soil or bird or bat droppings and causes fever, chills, myalgias, dry cough and headache. It does not produce relative bradycardia, splenomegaly or Horder spots. Tell: the facial rash and slow pulse belong to psittacosis.",
+     "Histoplasmosis follows inhaled soil or bird or bat droppings and causes fever, chills, myalgias, dry cough and headache. It is not described with relative bradycardia, splenomegaly or Horder spots. Tell: the facial rash and slow pulse belong to psittacosis.",
      "competing diagnosis"
     ],
     [
      "Influenza",
-     "Influenza begins suddenly with fever, myalgias, sore throat and a frontal or retro-orbital headache, usually with tachycardia from fever or hypoxia. His pulse is slow for his fever. Tell: relative bradycardia, splenomegaly and Horder spots point away from influenza.",
+     "Influenza symptoms can appear suddenly, over as little as a day, but his pulse is slow for his fever and his spleen is enlarged. Tell: relative bradycardia, splenomegaly and Horder spots point away from influenza.",
      "competing diagnosis"
     ],
     [
@@ -1228,22 +1228,22 @@
     ]
    ],
    "c": 2,
-   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 81, 82, 83",
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 81, 82, 83, 75, 76, 89, 99",
    "slot": "manifestation",
    "lead": "diagnosis"
   },
   {
    "topic": "Hospital and ventilator pneumonia",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
-   "q": "A 63-year-old woman develops ventilator-associated pneumonia on day 5 of mechanical ventilation and is in septic shock, which places her at high mortality risk. Methicillin-resistant Staphylococcus aureus is common in her unit. Which empiric regimen is most appropriate?",
+   "q": "A 63-year-old woman develops ventilator-associated pneumonia on day 5 of mechanical ventilation. Methicillin-resistant Staphylococcus aureus is common in her unit. Which empiric regimen is most appropriate?",
    "opts": [
     [
      "Cefepime plus vancomycin",
-     "Correct. High mortality risk and local methicillin-resistant Staphylococcus aureus prevalence add vancomycin or linezolid to an antipseudomonal beta-lactam such as cefepime; a second antipseudomonal class may be used for selected high-risk patients. Cultures are obtained, therapy reassessed daily and de-escalated."
+     "Correct. Local methicillin-resistant Staphylococcus aureus prevalence adds vancomycin or linezolid to an antipseudomonal beta-lactam such as cefepime. Cultures are obtained, and therapy is reassessed daily and de-escalated."
     ],
     [
      "Cefepime as a single drug",
-     "Cefepime by itself fits hospital or ventilator pneumonia without major resistance or high mortality risk. Her septic shock and the unit's methicillin-resistant Staphylococcus aureus prevalence call for added vancomycin or linezolid. Tell: high risk adds coverage.",
+     "Cefepime by itself fits hospital or ventilator pneumonia without methicillin-resistant Staphylococcus aureus risk. The unit's prevalence of that organism calls for added vancomycin or linezolid. Tell: local resistance adds coverage.",
      "wrong stage or severity"
     ],
     [
@@ -1258,7 +1258,7 @@
     ]
    ],
    "c": 0,
-   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 40, 46, 48",
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 46, 42, 48",
    "slot": "escalation",
    "lead": "treatment"
   },
@@ -1355,16 +1355,16 @@
   {
    "topic": "Pneumonia types and presentation",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following respiratory infections: 1. Acute bronchitis 2. Pneumonia: 3. Bacterial 4. Viral 5. Atypical (including but not limited to chlamydia psittacosis and mycoplasma) 6. Fungal (including but not limited to cryptococcosis, histoplasmosis, pneumocystis jiroveccii) 7. Aspiration pneumonia 8. Lung abscess 9. Influenza 10. Coronavirus (COVID-19)",
-   "q": "A 74-year-old man has 3 days of fever to 102.6°F, shaking chills, a cough with purulent sputum and a stabbing right-sided chest pain on breathing. His respiratory rate is 28/min. Over the right lower lobe there are crackles, dullness to percussion and egophony (E to A). Which is the most likely diagnosis?",
+   "q": "A 74-year-old man has 3 days of fever to 102.6°F, shaking chills, a cough with purulent sputum and a stabbing right-sided chest pain on breathing. His respiratory rate is 28/min. Over the right lower lobe there are crackles and dullness to percussion. Which is the most likely diagnosis?",
    "opts": [
     [
      "Acute bronchitis",
-     "Acute bronchitis may cause a low-grade fever and cough, but consolidation should not be detected; if it is, think pneumonia. His dullness and egophony over one lobe are consolidation. Tell: bronchitis wheeze is central over the bronchial airways, not a focal lobar finding.",
+     "Acute bronchitis may cause a low-grade fever and cough, but consolidation should not be detected; if it is, think pneumonia. His crackles and dullness over one lobe are consolidation. Tell: bronchitis wheeze is central over the bronchial airways, not a focal lobar finding.",
      "ruled out by a stated finding"
     ],
     [
      "Aspiration pneumonitis",
-     "Aspiration pneumonitis is a sterile chemical injury with abrupt respiratory decline after a witnessed aspiration. Nothing in his story describes an aspiration event. Tell: pneumonitis follows a witnessed event within hours; his illness is an infectious syndrome over days.",
+     "Aspiration pneumonitis is a sterile chemical injury with abrupt respiratory decline after a witnessed aspiration. Nothing in his story describes an aspiration event. Tell: pneumonitis follows abruptly after a witnessed aspiration; his illness is an infectious syndrome over days.",
      "competing diagnosis"
     ],
     [
@@ -1374,11 +1374,11 @@
     ],
     [
      "Community-acquired pneumonia",
-     "Correct. High fever, chills, purulent productive cough, pleuritic chest pain and tachypnea are more severe than a cold or bronchitis, and the findings sit over one lobe: crackles, dullness and egophony (E to A), the special findings of lobar consolidation. Acquired outside the hospital, this is community-acquired pneumonia."
+     "Correct. High fever, chills, purulent productive cough, pleuritic chest pain and tachypnea are more severe than a cold or bronchitis, and the findings sit over one lobe: crackles and dullness to percussion. Acquired outside the hospital, this is community-acquired pneumonia."
     ]
    ],
    "c": 3,
-   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 16, 23, 27, 28, 53",
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 16, 23, 27, 28, 50, 51, 53",
    "slot": "manifestation",
    "lead": "diagnosis"
   },
@@ -1423,7 +1423,7 @@
     ],
     [
      "Lactate dehydrogenase trend",
-     "Lactate dehydrogenase is nonspecific and cannot establish treatment failure, so following its trend does not track her safety or response. Tell: drug toxicity is watched with the blood count, creatinine and potassium.",
+     "Lactate dehydrogenase is not on the treatment monitoring list, which is the complete blood count, creatinine, potassium and drug toxicity. Tell: drug toxicity is watched with the blood count, creatinine and potassium.",
      "adjacent fact"
     ],
     [
@@ -1433,7 +1433,7 @@
     ],
     [
      "Beta-D-glucan trend",
-     "Beta-D-glucan is a diagnostic marker that is not organism-specific; it is not used to monitor treatment safety. Tell: the monitoring list is the blood count, creatinine, potassium and drug toxicity.",
+     "Beta-D-glucan is not on the treatment monitoring list either; that list is the blood count, creatinine, potassium and drug toxicity. Tell: with her kidney disease, creatinine and potassium matter most.",
      "adjacent fact"
     ]
    ],
@@ -1599,12 +1599,12 @@
    "opts": [
     [
      "Diffuse bilateral perihilar infiltrates",
-     "Diffuse bilateral infiltrates spreading from the perihilar region are the Pneumocystis pattern, with a nonproductive cough and exertional dyspnea. Tell: foul sputum and amphoric sounds over one area point to a single cavity.",
+     "Diffuse bilateral infiltrates spreading from the perihilar region are the Pneumocystis pattern. Tell: foul sputum and amphoric sounds over one area point to a single cavity.",
      "competing diagnosis"
     ],
     [
      "Homogeneous lobar consolidation",
-     "Homogeneous lobar consolidation with air bronchograms is lobar pneumonia, usually Streptococcus pneumoniae, an acute illness. Tell: amphoric breath sounds mean air moving across an open cavity, not solid consolidation.",
+     "Homogeneous lobar consolidation is lobar pneumonia, usually Streptococcus pneumoniae, an acute illness. Tell: amphoric breath sounds mean air moving across an open cavity, not solid consolidation.",
      "competing diagnosis"
     ],
     [
@@ -1634,12 +1634,12 @@
     ],
     [
      "Vancomycin",
-     "Vancomycin is the methicillin-resistant Staphylococcus aureus agent, added when that organism is a validated risk. It does not cover Pseudomonas, a gram-negative rod. Tell: match the drug to the organism in the history, and his is Pseudomonas.",
+     "Vancomycin is the methicillin-resistant Staphylococcus aureus agent, added only when that organism's risk or local prevalence supports it. It does not cover Pseudomonas, a gram-negative rod. Tell: match the drug to the organism in the history, and his is Pseudomonas.",
      "confused mechanism or drug class"
     ],
     [
      "Cefepime",
-     "Correct. A prior respiratory isolate of Pseudomonas is a validated risk, so an active antipseudomonal agent is added. An antipseudomonal beta-lactam such as cefepime or piperacillin-tazobactam is used; moxifloxacin and ertapenem are not reliable options for Pseudomonas."
+     "Correct. Prior respiratory isolation of Pseudomonas is assessed as a resistant-pathogen risk, so an active antipseudomonal agent is added. An antipseudomonal beta-lactam such as cefepime or piperacillin-tazobactam is used; moxifloxacin and ertapenem are not reliable options for Pseudomonas."
     ],
     [
      "Moxifloxacin",
@@ -1648,7 +1648,7 @@
     ]
    ],
    "c": 2,
-   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 40, 42",
+   "cite": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slides 40, 42, 25",
    "slot": "escalation",
    "lead": "treatment"
   },
