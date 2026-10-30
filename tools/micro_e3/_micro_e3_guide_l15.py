@@ -610,7 +610,7 @@ BODY = """
   <ul>
     <li>Members of the <strong>Division Zygomycota</strong> are extremely abundant <strong>saprobic</strong> fungi found
     in <strong>soil, water, organic debris and spoiled food</strong>.</li>
-    <li>Mucormycosis is called <strong>&ldquo;black mold&rdquo;</strong> (the slide spells it mould) and has arisen as a big concern in
+    <li>Mucormycosis is called <strong>&ldquo;black mold&rdquo;</strong> and has arisen as a big concern in
     <strong>India</strong> over the last few years; <strong>injudicious use of respiratory steroids and uncontrolled
     diabetes</strong> may have contributed. Rhino-orbital-oral-cerebral symptoms have been documented.</li>
     <li>The fungi most often involved are <strong><em>Rhizopus</em> and <em>Mucor</em></strong> species.</li>
