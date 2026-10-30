@@ -24,8 +24,11 @@
 #
 # DELIBERATELY NOT ASKED (held), and why:
 #   - every count and percentage as a key: 250 pathogens, 75 million cases, 5000 deaths (slide 9, whose
-#     "worldwide" label is disputed), 7% of spinach (slide 16), the 500-cell figure is used only as "a very low
-#     infectious dose" (slide 21, the blueprint's own fact).
+#     "worldwide" label is disputed), 7% of spinach (slide 16). The Campylobacter infectious dose "under 500 cells"
+#     (slide 21) IS keyed once, as the reason one drop of raw poultry fluid suffices (the blueprint lists it).
+#   - overlap with pool B: B asks "foodborne botulism = food intoxication" and "which tool confirms Escherichia
+#     coli" (eosin methylene blue), so this pool's intoxication scenario uses Salmonella, and its picture item asks
+#     the organism, not the medium.
 #   - outbreak and recall DATES and BRAND or COMPANY names (slides 16, 18, 22): the foods are asked, never the year
 #     or the brand. The beer history (6000 BCE) and the 5000-year cheese history (slides 5, 7) are trivia.
 #   - the Salmonella species list and the city-named strains (slide 17): not keyed. The deck's "S. enteriditis" is
@@ -924,9 +927,9 @@ Q("Campylobacter", IO1,
    "holiday poultry and its leftovers deserve particular care. In its transmission cycle, chickens and poultry "
    "meat lead to people."),
   [("Bagged ready-to-eat salads",
-    "Ready-to-eat salad bags are a common culprit for protozoa such as Cryptosporidium, Cyclospora and Giardia, "
-    "which cause mild, self-limiting diarrhea. The kitchen concern for Campylobacter jejuni is raw poultry and "
-    "its leftovers.", "protozoan vehicle borrowed"),
+    "Ready-to-eat salad bags are a common culprit of foodborne illness, named with the protozoa (Cryptosporidium, "
+    "Cyclospora, Giardia) that come with uncooked produce. The particular care for Campylobacter jejuni is with raw "
+    "poultry and its leftovers.", "produce vehicle borrowed"),
    ("Peanut butter and peanuts",
     "Peanut butter is a Salmonella source, with recalls of peanuts and peanut butter; it is not linked to "
     "Campylobacter jejuni, whose concern is poultry, including holiday birds and their leftovers.",

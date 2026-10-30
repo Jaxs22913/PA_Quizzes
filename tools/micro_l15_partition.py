@@ -28,7 +28,7 @@ from micro_l15_l16_partition_lib import partition
 
 POOL = POOL_A + POOL_B
 FOLDER = "Microbiology Exam 3"
-N_IMG = 4          # picture questions in Set 2 (Set 1 has none)
+N_IMG = 6          # picture questions in Set 2 (Set 1 has none): every extracted picture ships
 MIN_IO2 = 5
 
 TARGET = {
@@ -46,8 +46,29 @@ def stem(p):
     return ids
 
 
-CLUSTERS = []      # filled after reading the pool (near-twins that answer each other)
-MUST_EACH = []
+def S(*prefixes):
+    return [stem(p)[0] for p in prefixes]
+
+
+# Near-twins: one item's stem or key answers the other, so at most N of each group per set.
+CLUSTERS = [
+    (1, S("At which temperature does a thermally dimorphic", "These two colonies are the same fungal")),
+    (1, S("What is the main portal of entry for the primary", "After shoveling soil thick with bird",
+          "Blastomyces dermatitidis lives in forest soil")),
+    (1, S("Why are most fungal infections generally not communicable", "A man is hospitalized with disseminated")),
+    (1, S("A woman has had several episodes of vaginal", "Why is immunization typically ineffective")),
+    (2, S("Which treatment is used for systemic sporotrichosis", "Which treatment is commonly used for systemic candid",
+          "Which regimen does systemic cryptococcal", "Along with amphotericin B, what does treatment")),
+    (1, S("How is sporotrichosis usually acquired", "Contaminated plant material pierces",
+          "A gardener has the forearm lesions shown")),
+    (1, S("Which factor may lead to white or black piedra", "Under the microscope, a hair from a patient")),
+    (1, S("In a patient with leukemia, what do Aspergillus", "Which pair of predisposing conditions is associated")),
+    (1, S("Which patients are at increased risk of invasive", "Which pair of predisposing conditions is associated")),
+]
+# Slide 43, "Focus on the Latin names for each body part/region": an item keyed with a tinea name in every set.
+MUST_EACH = [S("A 9-year-old has the scaly patch shown", "Which form of ringworm is contracted mainly",
+               "A student who shares bedding develops", "A wrestler living in a crowded dormitory",
+               "In which form of ringworm may nail extensions")]
 MUST_ANY = []
 
 if __name__ == "__main__":

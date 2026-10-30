@@ -867,8 +867,9 @@ Q("Pneumocystis", IO2,
   "What does antibody-titer evidence suggest about human contact with Pneumocystis?",
   ("Widespread, mostly without symptoms",
    "Correct. Immunological evidence such as antibody titers suggests that human contact with Pneumocystis is very "
-   "widespread and that most people remain asymptomatic. Disease develops in hosts at high risk, such as patients "
-   "with acquired immunodeficiency syndrome or a kidney transplant."),
+   "widespread and that most people remain asymptomatic. Disease shows up in high-risk hosts: it is the most "
+   "prominent opportunistic infection in acquired immunodeficiency syndrome, and kidney transplant patients are at "
+   "high risk too."),
   [("Rare, mostly via kidney transplants",
     "Kidney transplant patients are at high risk for Pneumocystis pneumonia, which says who becomes ill, not where "
     "contact comes from. Antibody titers show that contact is very widespread and mostly asymptomatic.",

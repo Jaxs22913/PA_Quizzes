@@ -25,7 +25,7 @@ from micro_l15_l16_partition_lib import partition
 
 POOL = POOL_A + POOL_B
 FOLDER = "Microbiology Exam 3"
-N_IMG = 2
+N_IMG = 3          # picture questions in Set 2 (Set 1 has none): every extracted picture ships
 MIN_IO4 = 2
 
 TARGET = {
@@ -42,7 +42,36 @@ def stem(p):
     return ids
 
 
-CLUSTERS = []
+def S(*prefixes):
+    return [stem(p)[0] for p in prefixes]
+
+
+# Near-twins: one item's stem or key answers the other, so at most one of each group per set.
+CLUSTERS = [(1, S(*g)) for g in (
+    ("Which pairing lists a food intoxication agent first", "A chicken dish carrying Salmonella"),
+    ("What must happen for a food infection", "How does Listeria monocytogenes cause illness after"),
+    ("In food intoxication, what does a person swallow", "After a preformed toxin is swallowed"),
+    ("A water sample streaked on this eosin methylene blue", "A laboratory wants to confirm Escherichia coli"),
+    ("Which groups are at greatest risk from salmonellosis", "Campylobacter jejuni is a leading cause of bacterial",
+     "Which group is named among those at greatest risk for both"),
+    ("Which foodborne bacterium is a leading cause of bacterial", "Campylobacter jejuni is a leading cause of bacterial"),
+    ("Why can a single drop of raw poultry fluid", "Which food calls for particular care to prevent Campylobacter"),
+    ("Why does keeping deli meats chilled fail", "Which set of foods is most vulnerable to Listeria"),
+    ("Within a few hours of a summer picnic", "Which food is the diarrheal form of Bacillus cereus",
+     "How soon after eating does Bacillus cereus"),
+    ("A person with an open cut on the leg wades", "What are the two major routes of vibriosis"),
+    ("A person develops foodborne vibriosis", "What is the current standing of the 'R-month' rule",
+     "What are the two major routes of vibriosis"),
+    ("A brief illness of rapid onset", "Why does norovirus spread so readily"),
+    ("A brief illness of rapid onset", "How can shellfish come to carry norovirus"),
+    ("Which two hepatitis viruses are typically spread", "When is a person with hepatitis A most contagious"),
+    ("Which two hepatitis viruses are typically spread", "Which measure helps prevent hepatitis A"),
+    ("These band patterns come from bacterial isolates", "What is collected in PulseNet for each"),
+    ("What is collected in PulseNet for each", "How does comparing isolate patterns in PulseNet"),
+    ("Which food safety responsibility rests with the Food", "Which agency's website posts updated recalls"),
+    ("Spoilage of bread, cereals and acidic juices", "Which statement describes the place of fungi"),
+    ("Which animals are the main reservoirs of Salmonella", "Which household exposure is a known source of Salmonella"),
+)]
 MUST_EACH = []
 MUST_ANY = []
 
