@@ -113,9 +113,30 @@ def rotate(qs, rng):
     return qs
 
 
+KEEP_W = 4.0   # cost of a question that is not where the shipped sets had it (keeps reviewed items, limits churn)
+
+
+def shipped(POOL, out_path):
+    """{pool index: set number} for the sets file already on disk, matched by stem (None if there is none)."""
+    if not os.path.exists(out_path):
+        return None
+    d = json.load(open(out_path))
+    by = {q["q"]: i for i, q in enumerate(POOL)}
+    by_opts = {tuple(sorted(o[0] for o in q["opts"])): i for i, q in enumerate(POOL)}   # a reworded stem
+    keep = {}
+    for n, k in ((1, "set1"), (2, "set2")):
+        for q in d.get(k, []):
+            i = by.get(q["q"], by_opts.get(tuple(sorted(o[0] for o in q["opts"]))))
+            if i is not None:
+                keep[i] = n
+    return keep
+
+
 def partition(POOL, TARGET, CLUSTERS, MUST_EACH, MUST_ANY, io_min, n_img, seed, out_path, root, folder,
-              iters=100000):
-    """io_min: {objective prefix such as "2 ": minimum per set}. Returns (set1, set2)."""
+              iters=100000, keep=None):
+    """io_min: {objective prefix such as "2 ": minimum per set}. keep: {pool index: set number} of the sets
+    already shipped; every selected question that was not in that set costs KEEP_W, so a re-weighting moves
+    only what the new targets need. Returns (set1, set2)."""
     rng = random.Random(seed)
     print("pool:", len(POOL))
     probs = validate(POOL, root, folder)
@@ -162,6 +183,8 @@ def partition(POOL, TARGET, CLUSTERS, MUST_EACH, MUST_ANY, io_min, n_img, seed, 
         for g in MUST_EACH:
             if not ids & set(g):
                 s += 50
+        if keep is not None:
+            s += KEEP_W * sum(1 for i in idx if keep.get(i) != set_no)
         return s
 
     def total(ch):
@@ -198,6 +221,18 @@ def partition(POOL, TARGET, CLUSTERS, MUST_EACH, MUST_ANY, io_min, n_img, seed, 
         assert q["opts"][q["c"]][0] == want, "rotation moved an answer!"
         assert q["opts"][q["c"]][1].startswith("Correct"), "key lost its Correct opener"
     print("rotation check: every correct answer still points at its own text\n")
+    if keep is not None:
+        was = {v: sorted(i for i, n in keep.items() if n == v) for v in (1, 2)}
+        for v, part in ((1, ch[:30]), (2, ch[30:])):
+            ins = [i for i in part if keep.get(i) != v]
+            outs = [i for i in was[v] if i not in part]
+            print("SET %d vs shipped: %d kept, %d in, %d out" % (v, 30 - len(ins), len(ins), len(outs)))
+            for i in outs:
+                print("   - out  [%s] %s" % (POOL[i]["topic"], POOL[i]["q"][:90]))
+            for i in ins:
+                print("   + in   [%s] %s%s" % (POOL[i]["topic"], POOL[i]["q"][:90],
+                                              "  (moved from Set %d)" % keep[i] if i in keep else ""))
+        print()
 
     assert not set(ch[:30]) & set(ch[30:]), "a question landed in both sets"
     assert not any(q.get("img") for q in s1), "a picture question reached Set 1"

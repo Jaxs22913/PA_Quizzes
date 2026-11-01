@@ -254,11 +254,11 @@ Q("Dermatophytes", IO1,
   c(14, 26, 38, 42, 53)),
 
 Q("Dermatophytes", IO1,
-  "Which three genera cause ringworm?",
+  "Ringworm involves about 39 species of dermatophytes. To which three genera do they belong?",
   ("Trichophyton, Microsporum, Epidermophyton",
-   "Correct. The dermatophytes belong to the genera Trichophyton, Microsporum and Epidermophyton. They are closely "
-   "related and morphologically similar to one another, and the actual causative agent of ringworm (tinea) varies "
-   "from case to case."),
+   "Correct. The dermatophytes, 39 species, belong to the genera Trichophyton, Microsporum and Epidermophyton. They "
+   "are closely related and morphologically similar to one another, and the actual causative agent of ringworm "
+   "(tinea) varies from case to case."),
   [("Trichosporon, Piedraia, Malassezia",
     "These are the agents of the superficial mycoses: Trichosporon causes white piedra, Piedraia black piedra, and "
     "the yeast Malassezia furfur tinea versicolor despite its tinea name. Ringworm comes from Trichophyton, "

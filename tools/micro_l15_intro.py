@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 # The intro paragraph shown above both Lecture 15 quizzes (tools/render_micro_l15.py).
 INTRO = ("Lecture 15 of Microbiology &mdash; Fungi of Medical Importance. Thirty questions, every one cited to the "
-         "slide it came from and weighted by slide count until the lecture recording has been read; every set "
-         "carries the tinea names by body site (the slides say to focus on the Latin names). "
+         "slide it came from and weighted by the minutes Dr. Fair spent on each topic. Every set carries an "
+         "amphotericin B treatment question (her one signpost: &ldquo;amphotericin B is the drug of choice. "
+         "That&rsquo;s a great test question&rdquo;) and the tinea names by body site (the slides say to focus on "
+         "the Latin names). "
          "<b>Start with two questions:</b> can the fungus infect a healthy person (a <b>true pathogen</b>, "
          "thermally dimorphic: a mold at 30&nbsp;&deg;C, a yeast at 37&nbsp;&deg;C) or only a compromised one (an "
          "<b>opportunist</b>)? And how deep does it go: systemic (inhaled spores), subcutaneous (a puncture wound), "

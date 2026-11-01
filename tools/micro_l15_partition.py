@@ -11,11 +11,23 @@ TOPIC field, and every set carries objective 2 (how people acquire each fungus) 
 syllabus appendix lists seven organisms for this lecture (Candida, Aspergillus, Cryptococcus, Histoplasma,
 Blastomyces, Coccidioides, Paracoccidioides): each is a topic weighted 2 or more, so each is in every set.
 
-PHASE 1 WEIGHTS ARE SLIDE COUNTS (the recording is not yet transcribed): about 60 questions over 63 content
-slides, the seven appendix organisms nudged up, the joke and picture-repeat slides (1, 2, 8, 21, 46 and the four
-repeats of the map) counted out. The audio pass re-weights by minutes spoken (transcript_emphasis_measurement).
+WEIGHTS ARE MINUTES SPOKEN (recording of 30 October 2026, read 1 November; transcript_emphasis_measurement). The
+recording starts at about 13:14, at the end of slide 9, so slides 1-9 (true and opportunistic pathogens, the thermal
+dimorphism figure) were not heard: those two topics keep their slide-count weights (4 and 3). Everything else is
+scaled from content minutes, stories taken out (the bird quiz, the beagle, Digger, the caduceus, the barber pole,
+football, mold-test plates, about 12 minutes in all), 38.5 minutes over 53 questions: the priority list 2,
+epidemiology, portals and levels 4.4, diagnosis 2.2, control and amphotericin B 2.5, Histoplasma 1.8, Coccidioides
+2.6, Blastomyces 2.2, Paracoccidioides 1.4, Sporothrix 2.4, the dermatophytes 3.2, superficial 1.2, Candida 3.7,
+Cryptococcus 1.5, Pneumocystis 1.5, Aspergillus 1.8, mucormycosis and the other opportunists 2.3, allergies and
+toxins 1.8. Appendix organisms stay at 2 or more.
+HER ONE SIGNPOST: "Once again, amphotericin B is the drug of choice. That's a great test question. That'll be a
+good one." (part 1, 23:33-23:41; she asked the room for the drug for every true pathogen). Four treatment items
+were added for it (pool A, end) and one of them is in EVERY set (MUST_EACH). She called thermal dimorphism "the
+key for these pathogens" (4:05) and said of the dimorphic colonies "don't panic about what the colonies look like.
+We're not studying mycology" (17:00): no item asks colony appearance.
 The deck's own flag, "Focus on the Latin names for each body part/region" (slide 43), puts a tinea-by-site item in
 EVERY set (MUST_EACH).
+Re-weighting keeps the shipped sets where it can (keep=shipped(): every question moved costs the score).
 
 Engine: tools/micro_l15_l16_partition_lib.py (selection, rotation, guards).
 """
@@ -24,7 +36,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from micro_l15_pool_a import POOL_A
 from micro_l15_pool_b import POOL_B
-from micro_l15_l16_partition_lib import partition
+from micro_l15_l16_partition_lib import partition, shipped
 
 POOL = POOL_A + POOL_B
 FOLDER = "Microbiology Exam 3"
@@ -32,11 +44,11 @@ N_IMG = 6          # picture questions in Set 2 (Set 1 has none): every extracte
 MIN_IO2 = 5
 
 TARGET = {
-    "Fungal pathogenicity": 4, "Thermal dimorphism": 3, "WHO priority list": 2, "Epidemiology & portals": 3,
-    "Diagnosis": 4, "Antifungal control": 3, "Histoplasma": 3, "Coccidioides": 3, "Blastomyces": 3,
+    "Fungal pathogenicity": 4, "Thermal dimorphism": 3, "WHO priority list": 3, "Epidemiology & portals": 5,
+    "Diagnosis": 3, "Antifungal control": 4, "Histoplasma": 3, "Coccidioides": 4, "Blastomyces": 3,
     "Paracoccidioides": 2,
-    "Sporothrix": 3, "Dermatophytes": 6, "Superficial mycoses": 2, "Candida": 5, "Cryptococcus": 4,
-    "Pneumocystis": 3, "Aspergillus": 3, "Mucormycosis & other opportunists": 2, "Fungal allergies & toxins": 2,
+    "Sporothrix": 3, "Dermatophytes": 4, "Superficial mycoses": 2, "Candida": 5, "Cryptococcus": 2,
+    "Pneumocystis": 2, "Aspergillus": 3, "Mucormycosis & other opportunists": 3, "Fungal allergies & toxins": 2,
 }
 
 
@@ -65,12 +77,26 @@ CLUSTERS = [
     (1, S("In a patient with leukemia, what do Aspergillus", "Which pair of predisposing conditions is associated")),
     (1, S("Which patients are at increased risk of invasive", "Which pair of predisposing conditions is associated")),
 ]
+# Her test-question signpost: the amphotericin B drug-of-choice items. The four treatment items name amphotericin B
+# in their keys, so with the older treatment items at most two treatment questions sit in one set, and none rides
+# with an item whose stem names amphotericin B (that stem would answer it).
+AMPHO = S("Which antifungal is the highly toxic", "A man has blastomycosis; his lung lesion",
+          "Which statement about treating coccidioidomycosis", "Which drugs are common treatment options for histo")
+CLUSTERS += [
+    (2, AMPHO + S("Which treatment is used for systemic sporotrichosis", "Which treatment is commonly used for systemic candid",
+                  "Which regimen does systemic cryptococcal", "Along with amphotericin B, what does treatment")),
+    (1, S("Which antifungal is the highly toxic", "From what source does the antifungal drug amphotericin B",
+          "How does amphotericin B damage fungal cells", "A patient receiving amphotericin B develops")),
+    (1, S("A man has blastomycosis; his lung lesion", "A man from the midwestern United States has cough")),
+]
 # Slide 43, "Focus on the Latin names for each body part/region": an item keyed with a tinea name in every set.
 MUST_EACH = [S("A 9-year-old has the scaly patch shown", "Which form of ringworm is contracted mainly",
                "A student who shares bedding develops", "A wrestler living in a crowded dormitory",
-               "In which form of ringworm may nail extensions")]
+               "In which form of ringworm may nail extensions"),
+             AMPHO]
 MUST_ANY = []
 
 if __name__ == "__main__":
+    out = os.path.join(HERE, "micro_l15_sets.json")
     partition(POOL, TARGET, CLUSTERS, MUST_EACH, MUST_ANY, {"2 ": MIN_IO2}, N_IMG, 20261030,
-              os.path.join(HERE, "micro_l15_sets.json"), os.path.dirname(HERE), FOLDER)
+              out, os.path.dirname(HERE), FOLDER, keep=shipped(POOL, out))
