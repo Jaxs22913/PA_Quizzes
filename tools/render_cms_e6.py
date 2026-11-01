@@ -120,9 +120,9 @@ SPEC = {
           "Hospital, ventilator and aspiration pneumonia", "Opportunistic and atypical infection",
           "Influenza and COVID-19", "Tuberculosis testing and control", "Mycobacterium avium complex"],
    intro="Built on the study-focus slides posted for Lectures 37 and 38 (Respiratory Infections slide 127, "
-         "Tuberculosis and nontuberculous mycobacteria slide 41). Each set follows the split the lecturer "
-         "described: <b>20 questions on respiratory infections and vaccines, 10 on tuberculosis and "
-         "nontuberculous mycobacteria</b>, every one on a point from those slides, with vignettes and direct "
+         "Tuberculosis and nontuberculous mycobacteria slide 41). Each set has <b>20 questions on respiratory "
+         "infections and vaccines and 10 on tuberculosis and nontuberculous mycobacteria</b>, in line with the "
+         "about 20 and about 10 exam questions expected from these lectures, every one on a point from those slides, with vignettes and direct "
          "recall mixed as on the master exams. The two sets share no questions."),
 }[sys.argv[1] if len(sys.argv) > 1 else "l33io"]
 

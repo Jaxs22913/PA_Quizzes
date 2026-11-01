@@ -312,6 +312,8 @@ window.GROUP_INDEX = {
 "clinical-medicine-and-surgery-i-exam-6-asthma-quiz-version-2":{"title":"Asthma Quiz 2 — CMS I Exam 6","category":"Clinical Medicine and Surgery I","exam":"Exam 6","sem":"fall-2026","n":30},
 "clinical-medicine-and-surgery-i-exam-6-asthma-vignettes":{"title":"Asthma Vignettes 1 — CMS I Exam 6","category":"Clinical Medicine and Surgery I","exam":"Exam 6","sem":"fall-2026","n":30},
 "clinical-medicine-and-surgery-i-exam-6-asthma-vignettes-version-2":{"title":"Asthma Vignettes 2 — CMS I Exam 6","category":"Clinical Medicine and Surgery I","exam":"Exam 6","sem":"fall-2026","n":30},
+"clinical-medicine-and-surgery-i-exam-6-cms-e6-l37-38-study-focus-set-1":{"title":"Lectures 37–38 Study Focus — Set 1 — CMS I Exam 6","category":"Clinical Medicine and Surgery I","exam":"Exam 6","sem":"fall-2026","n":30},
+"clinical-medicine-and-surgery-i-exam-6-cms-e6-l37-38-study-focus-set-2":{"title":"Lectures 37–38 Study Focus — Set 2 — CMS I Exam 6","category":"Clinical Medicine and Surgery I","exam":"Exam 6","sem":"fall-2026","n":30},
 "clinical-medicine-and-surgery-i-exam-6-cms-exam-6-master-exam-form-a":{"title":"CMS I Exam 6 Master Exam — Form A","category":"Clinical Medicine and Surgery I","exam":"Exam 6","sem":"fall-2026","n":60},
 "clinical-medicine-and-surgery-i-exam-6-cms-exam-6-master-exam-form-b":{"title":"CMS I Exam 6 Master Exam — Form B","category":"Clinical Medicine and Surgery I","exam":"Exam 6","sem":"fall-2026","n":60},
 "clinical-medicine-and-surgery-i-exam-6-cms-exam-6-master-exam-form-c":{"title":"CMS I Exam 6 Master Exam — Form C","category":"Clinical Medicine and Surgery I","exam":"Exam 6","sem":"fall-2026","n":60},

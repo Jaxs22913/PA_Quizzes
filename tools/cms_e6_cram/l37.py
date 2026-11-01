@@ -39,7 +39,7 @@ FOCUS = [
   ("Negative rapid influenza test", "<b>Does not exclude influenza</b>, especially with high activity; do not withhold indicated antivirals"),
   ("High-risk influenza", "<b>Oseltamivir promptly, even after 48 hours</b>"),
   ("COVID-19 pathways", "<b>No hypoxemia</b>, high-risk outpatient: nirmatrelvir/ritonavir within 5 days or 3-day remdesivir within 7 days; <b>no systemic steroids</b> unless another indication exists. <b>Hypoxemic inpatient</b>: <b>dexamethasone</b>, consider remdesivir; baricitinib or tocilizumab for rapid progression; venous thromboembolism prophylaxis"),
-  {"note": "His best study method: for each topic practice the same five decisions: diagnosis, severity/site of care, the test that changes management, first-line treatment, and when to withhold or narrow therapy."},
+  ("Best study method", "For each topic, practice the same <b>five decisions</b>: diagnosis, severity/site of care, the test that changes management, first-line treatment, and when to withhold or narrow therapy"),
  ]},
 ]
 
