@@ -718,6 +718,10 @@ BODY = """
     <li><strong>Aspergillosis treatment (slide 60).</strong> The slide lists amphotericin B and nystatin. Nystatin is
     a topical and oral (non-absorbed) agent and current practice does not use it for invasive aspergillosis (azoles
     such as voriconazole are used). In the recording she named only amphotericin B. Not asked.</li>
+    <li><strong>Treating coccidioidomycosis (slide 30).</strong> The slide makes amphotericin B the most common
+    treatment option (most cases need none), and in the recording she called amphotericin B the drug of choice for
+    every true pathogen. Current guidelines favor azoles such as fluconazole for most treated cases and keep
+    amphotericin B for severe disease. Keyed as the slide says.</li>
     <li><strong>Sporotrichosis treatment (slide 39).</strong> The slide gives heat packs and super-saturated
     potassium iodide for infection of the &ldquo;appendages and lungs&rdquo;; in the recording she presented potassium
     iodide as the treatment for animals and amphotericin B for people. Not asked.</li>

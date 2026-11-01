@@ -494,6 +494,10 @@ BODY = """
     recording she said &ldquo;in your freezer Listeria can survive as well&rdquo;: it survives freezing, as references
     say, and grows at refrigerator temperatures. The quizzes ask only the 1&ndash;40&nbsp;&deg;C range and
     refrigerator growth.</li>
+    <li><strong>The R-month rule (slide 29).</strong> The slide answers &ldquo;maybe, maybe not&rdquo;, and in the
+    recording she said it is &ldquo;not so much an issue today because of aquaculture&rdquo;. Public-health advice still
+    warns of a higher <em>Vibrio</em> risk from raw shellfish in the warm months. Keyed as the slide says
+    (uncertain).</li>
     <li><strong>The hepatitis vaccine (slide 33).</strong> The slide says there is a vaccine in case of suspected
     exposure without naming the virus. That fits hepatitis A; there is no licensed hepatitis E vaccine in the United
     States.</li>
