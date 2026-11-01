@@ -1,0 +1,744 @@
+{
+ "mode": "final",
+ "seed": 20261031,
+ "sets": {
+  "set1": {
+   "positions": "7/8/7/8",
+   "gameable": 0,
+   "gameable_pct": 0.0,
+   "vignettes": 24,
+   "per_lecture": {
+    "l37": {
+     "vig": 16,
+     "reg": 4
+    },
+    "l38": {
+     "vig": 8,
+     "reg": 2
+    }
+   },
+   "new_items": 7,
+   "reused_items": 23,
+   "leads": {
+    "treatment": 9,
+    "next step": 6,
+    "test": 3,
+    "classify": 2,
+    "complication": 1,
+    "avoid": 1,
+    "education": 1,
+    "referral": 1
+   },
+   "points_missed": [],
+   "items": [
+    {
+     "lec": "l37",
+     "kind": "reg",
+     "src": "cms_e6l37_focus_pool[6]",
+     "state": "clean",
+     "focus": [
+      "l37-op-nocomorb",
+      "l37-op-comorb"
+     ],
+     "c": "C",
+     "q": "Four adults have community-acquired pneumonia, are stable for outpatient treatment and have no risk for methicillin-resistant Staphylococcus aureus or Pseudomonas. Which one fits amoxicillin as a single drug?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_focus_vig[13]",
+     "state": "clean",
+     "focus": [
+      "l37-rapid-flu",
+      "l37-flu-48h"
+     ],
+     "c": "D",
+     "q": "A 70-year-old woman with chronic obstructive pulmonary disease has had fever, myalgias and cough for 4 days during a week of high influenza activity. She is not hypoxemic and will be treated at home. A rapid influenza antigen test is negative. Which is the most appropriate plan?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_a[42]",
+     "state": "clean",
+     "focus": [
+      "l37-pneumonitis"
+     ],
+     "c": "D",
+     "q": "A 47-year-old man who aspirated gastric contents during a witnessed seizure was managed with oxygen and airway support and no antibiotic. Three days later he is worse, with a new fever, purulent sputum and a persistent infiltrate. Which complication should be suspected?"
+    },
+    {
+     "lec": "l37",
+     "kind": "reg",
+     "src": "cms_e6l37_focus_pool[2]",
+     "state": "clean",
+     "focus": [
+      "l37-pcr-limits"
+     ],
+     "c": "B",
+     "q": "What is the main limitation of a positive Pneumocystis polymerase chain reaction result?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_b[3]",
+     "state": "clean",
+     "focus": [
+      "l37-steroid-threshold"
+     ],
+     "c": "B",
+     "q": "A 36-year-old woman with human immunodeficiency virus infection starts trimethoprim-sulfamethoxazole for Pneumocystis pneumonia. Her arterial oxygen pressure on room air is 61 mm Hg. Which therapy should be added?"
+    },
+    {
+     "lec": "l38",
+     "kind": "vig",
+     "src": "cms_e6l38_vig_a[3]",
+     "state": "clean",
+     "focus": [
+      "l38-rule-out"
+     ],
+     "c": "D",
+     "q": "A 34-year-old woman who works in a setting with ongoing tuberculosis transmission has a positive interferon-gamma release assay on targeted testing. She has no symptoms, her examination is normal and her chest radiograph is normal. Which best describes her tuberculosis status?"
+    },
+    {
+     "lec": "l37",
+     "kind": "reg",
+     "src": "cms_e6l37_pool_a[26]",
+     "state": "clean",
+     "focus": [
+      "l37-psi"
+     ],
+     "c": "B",
+     "q": "Alongside clinical judgment, which tool is preferred to support the admission decision in community-acquired pneumonia?"
+    },
+    {
+     "lec": "l38",
+     "kind": "vig",
+     "src": "cms_e6l38_vig_a[0]",
+     "state": "clean",
+     "focus": [
+      "l38-smear"
+     ],
+     "c": "D",
+     "q": "A 66-year-old woman with bronchiectasis has had a chronic cough with sputum for months. Her sputum acid-fast bacilli smear is positive. What does this smear result establish?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_b[37]",
+     "state": "clean",
+     "focus": [
+      "l37-flu-vax"
+     ],
+     "c": "B",
+     "q": "A 26-year-old woman who is 14 weeks pregnant comes in during October and asks about vaccines. Which vaccine should be avoided during her pregnancy?"
+    },
+    {
+     "lec": "l38",
+     "kind": "vig",
+     "src": "cms_e6l38_vig_a[34]",
+     "state": "clean",
+     "focus": [
+      "l38-igra-bcg"
+     ],
+     "c": "C",
+     "q": "A 32-year-old man who received BCG (bacille Calmette-Guérin) vaccine in infancy needs testing for tuberculosis infection before starting work in a setting with ongoing transmission. He has no symptoms. Which test is preferred?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_focus_vig[8]",
+     "state": "clean",
+     "focus": [
+      "l37-histo-severity"
+     ],
+     "c": "D",
+     "q": "A 44-year-old man with untreated human immunodeficiency virus infection cleaned out a barn full of bird droppings 3 weeks ago. He is admitted to the intensive care unit with high fever, hypoxemia, hypotension and diffuse infiltrates, and his urine Histoplasma antigen is positive. Which treatment is most appropriate?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_focus_vig[0]",
+     "state": "clean",
+     "focus": [
+      "l37-bronch-vs-pna",
+      "l37-sputum-color",
+      "l37-cap-confirm"
+     ],
+     "c": "C",
+     "q": "A 48-year-old man has had a cough for 6 days with yellow sputum. His temperature is 101.8°F and his respiratory rate 24/min, and there are crackles with dullness to percussion over the left lower lobe. He asks for an antibiotic because his sputum is yellow. Which is the most appropriate next step?"
+    },
+    {
+     "lec": "l38",
+     "kind": "reg",
+     "src": "cms_e6l38_pool_a[34]",
+     "state": "clean",
+     "focus": [
+      "l38-retest"
+     ],
+     "c": "C",
+     "q": "After a recent tuberculosis exposure, a first tuberculin skin test is negative. When is the test repeated?"
+    },
+    {
+     "lec": "l38",
+     "kind": "reg",
+     "src": "cms_e6l38_pool_a[29]",
+     "state": "clean",
+     "focus": [
+      "l38-tst5"
+     ],
+     "c": "D",
+     "q": "Which group uses a tuberculin skin test induration cut-off of 5 mm or more?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_a[29]",
+     "state": "clean",
+     "focus": [
+      "l37-severe-cap",
+      "l37-resistant"
+     ],
+     "c": "C",
+     "q": "A 57-year-old man with community-acquired pneumonia is intubated for respiratory failure and admitted to the intensive care unit. He has no validated risk for methicillin-resistant Staphylococcus aureus or Pseudomonas. Which empiric regimen is most appropriate?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_a[38]",
+     "state": "clean",
+     "focus": [
+      "l37-deescalate"
+     ],
+     "c": "C",
+     "q": "A 58-year-old man with ventilator-associated pneumonia has had an adequate response to culture-directed antibiotics. What is the usual total duration of therapy?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_focus_vig[2]",
+     "state": "clean",
+     "focus": [
+      "l37-hap-cultures",
+      "l37-hap-timing"
+     ],
+     "c": "C",
+     "q": "A 64-year-old man has been intubated in the intensive care unit for 4 days after a stroke. He develops a new fever, purulent endotracheal secretions and a new infiltrate, and his blood pressure is falling. Which is the most appropriate next step?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_b[40]",
+     "state": "clean",
+     "focus": [
+      "l37-pneumo-seq"
+     ],
+     "c": "B",
+     "q": "A 55-year-old man with no medical conditions has never received a pneumococcal vaccine. Which pneumococcal vaccination is appropriate for him?"
+    },
+    {
+     "lec": "l38",
+     "kind": "vig",
+     "src": "cms_e6l38_vig_b[18]",
+     "state": "clean",
+     "focus": [
+      "l38-mac-dx"
+     ],
+     "c": "B",
+     "q": "A 70-year-old man with chronic obstructive pulmonary disease has a single sputum culture that grows Mycobacterium avium complex at a routine visit. His symptoms are at baseline and no chest imaging has been done. Which best describes his status?"
+    },
+    {
+     "lec": "l38",
+     "kind": "vig",
+     "src": "cms_e6l38_vig_a[42]",
+     "state": "clean",
+     "focus": [
+      "l38-sputum"
+     ],
+     "c": "A",
+     "q": "A 43-year-old woman with suspected pulmonary tuberculosis has three sputum specimens collected. Which testing should be requested on the specimens?"
+    },
+    {
+     "lec": "l38",
+     "kind": "vig",
+     "src": "cms_e6l38_vig_b[20]",
+     "state": "clean",
+     "focus": [
+      "l38-mac-rx"
+     ],
+     "c": "D",
+     "q": "A 67-year-old woman meets the criteria for macrolide-susceptible Mycobacterium avium complex lung disease, without cavitation or severe disease. Which regimen is most appropriate?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_b[32]",
+     "state": "clean",
+     "focus": [
+      "l37-covid-hypox",
+      "l37-covid-outpt"
+     ],
+     "c": "A",
+     "q": "A 58-year-old man is admitted with coronavirus disease 2019. His oxygen saturation is 90% on room air, and he needs supplemental oxygen. Which medication is the core treatment?"
+    },
+    {
+     "lec": "l38",
+     "kind": "vig",
+     "src": "cms_e6l38_vig_a[35]",
+     "state": "clean",
+     "focus": [
+      "l38-rule-out"
+     ],
+     "c": "B",
+     "q": "A 38-year-old man has a positive interferon-gamma release assay on targeted testing. He has no symptoms. Which next step is most appropriate?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_focus_vig[5]",
+     "state": "clean",
+     "focus": [
+      "l37-anaerobes"
+     ],
+     "c": "A",
+     "q": "A 78-year-old man with dysphagia after a stroke is admitted to a general ward with nonsevere aspiration pneumonia and started on ceftriaxone plus azithromycin. He has never had methicillin-resistant Staphylococcus aureus or Pseudomonas isolated. On day 2, imaging newly shows a pleural empyema. Which change to his antibiotics is appropriate?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_a[33]",
+     "state": "clean",
+     "focus": [
+      "l37-deescalate"
+     ],
+     "c": "B",
+     "q": "A 66-year-old man admitted with nonsevere community-acquired pneumonia is improving on ceftriaxone plus azithromycin. On day 3 his blood cultures grow Streptococcus pneumoniae that is susceptible to narrower agents. What is the most appropriate next step?"
+    },
+    {
+     "lec": "l38",
+     "kind": "vig",
+     "src": "cms_e6l38_vig_b[2]",
+     "state": "clean",
+     "focus": [
+      "l38-isolation"
+     ],
+     "c": "A",
+     "q": "A 62-year-old man's chest radiograph and sputum smear lead his clinician to presume pulmonary tuberculosis; culture results are weeks away. Which reporting step is appropriate now?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_b[39]",
+     "state": "clean",
+     "focus": [
+      "l37-rsv"
+     ],
+     "c": "D",
+     "q": "A 78-year-old woman received a respiratory syncytial virus vaccine last year and asks whether she needs another dose this fall. Which counseling statement is accurate?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_a[37]",
+     "state": "clean",
+     "focus": [
+      "l37-antibiogram"
+     ],
+     "c": "A",
+     "q": "A 63-year-old woman develops ventilator-associated pneumonia on day 5 of mechanical ventilation. Methicillin-resistant Staphylococcus aureus is common in her unit. Which empiric regimen is most appropriate?"
+    },
+    {
+     "lec": "l37",
+     "kind": "reg",
+     "src": "cms_e6l37_pool_b[11]",
+     "state": "clean",
+     "focus": [
+      "l37-pjp-sampling"
+     ],
+     "c": "A",
+     "q": "For suspected Pneumocystis pneumonia with a negative induced sputum and persistent high suspicion, which test comes next?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_b[16]",
+     "state": "clean",
+     "focus": [
+      "l37-psittacosis"
+     ],
+     "c": "A",
+     "q": "A 52-year-old woman who keeps several parakeets at home is diagnosed with psittacosis and started on doxycycline. One of the birds has been sick. Which additional step is appropriate?"
+    }
+   ]
+  },
+  "set2": {
+   "positions": "8/7/7/8",
+   "gameable": 0,
+   "gameable_pct": 0.0,
+   "vignettes": 24,
+   "per_lecture": {
+    "l37": {
+     "vig": 16,
+     "reg": 4
+    },
+    "l38": {
+     "vig": 8,
+     "reg": 2
+    }
+   },
+   "new_items": 12,
+   "reused_items": 18,
+   "leads": {
+    "treatment": 9,
+    "next step": 6,
+    "test": 4,
+    "education": 2,
+    "classify": 2,
+    "referral": 1
+   },
+   "points_missed": [],
+   "items": [
+    {
+     "lec": "l38",
+     "kind": "vig",
+     "src": "cms_e6l38_vig_a[46]",
+     "state": "clean",
+     "focus": [
+      "l38-rule-out"
+     ],
+     "c": "B",
+     "q": "A 52-year-old man has 12 mm of induration on a tuberculin skin test. His chest radiograph shows a fibrotic upper-lobe lesion, he does not recall ever being treated for tuberculosis, and he has no symptoms. Which step must come before latent-infection treatment?"
+    },
+    {
+     "lec": "l38",
+     "kind": "reg",
+     "src": "cms_e6l38_pool_a[36]",
+     "state": "clean",
+     "focus": [
+      "l38-igra-bcg"
+     ],
+     "c": "C",
+     "q": "Why is an interferon-gamma release assay preferred over the tuberculin skin test for most BCG (bacille Calmette-Guérin)-vaccinated patients?"
+    },
+    {
+     "lec": "l38",
+     "kind": "vig",
+     "src": "cms_e6l38_vig_a[39]",
+     "state": "clean",
+     "focus": [
+      "l38-retest"
+     ],
+     "c": "B",
+     "q": "A 28-year-old woman shared an office with a coworker diagnosed with infectious pulmonary tuberculosis 2 weeks ago, and her exposure has now ended. She has no symptoms and no immune problem, and her interferon-gamma release assay today is negative. Which next step is most appropriate?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_a[23]",
+     "state": "clean",
+     "focus": [
+      "l37-op-nocomorb"
+     ],
+     "c": "A",
+     "q": "A 32-year-old woman with no medical conditions has community-acquired pneumonia and is stable for outpatient treatment. She has no risk for resistant organisms, and local pneumococcal resistance to macrolides is 30%. Which antibiotic is most appropriate?"
+    },
+    {
+     "lec": "l38",
+     "kind": "vig",
+     "src": "cms_e6l38_vig_b[0]",
+     "state": "clean",
+     "focus": [
+      "l38-isolation"
+     ],
+     "c": "D",
+     "q": "A 48-year-old man is admitted with cough, night sweats and weight loss, and his sputum smear shows acid-fast bacilli. Infectious pulmonary tuberculosis is presumed. Where should he be placed?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_a[25]",
+     "state": "clean",
+     "focus": [
+      "l37-op-comorb"
+     ],
+     "c": "D",
+     "q": "A 59-year-old man with alcoholism and chronic liver disease has community-acquired pneumonia and is stable for outpatient treatment. He had anaphylaxis to amoxicillin in the past. Which regimen is most appropriate?"
+    },
+    {
+     "lec": "l38",
+     "kind": "vig",
+     "src": "cms_e6l38_vig_b[21]",
+     "state": "clean",
+     "focus": [
+      "l38-mac-rx"
+     ],
+     "c": "B",
+     "q": "A 66-year-old man starts treatment for macrolide-susceptible Mycobacterium avium complex lung disease and asks how long he will need it. Which answer is accurate?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_b[22]",
+     "state": "clean",
+     "focus": [
+      "l37-flu-48h"
+     ],
+     "c": "A",
+     "q": "A 71-year-old man with chronic obstructive pulmonary disease and heart failure is hospitalized on day 5 of influenza, confirmed by molecular testing, with hypoxemia. Which antiviral is most appropriate?"
+    },
+    {
+     "lec": "l38",
+     "kind": "vig",
+     "src": "cms_e6l38_vig_b[19]",
+     "state": "clean",
+     "focus": [
+      "l38-mac-dx"
+     ],
+     "c": "D",
+     "q": "A 64-year-old woman has chronic cough, sputum, fatigue and weight loss. Computed tomography shows fibrocavitary disease, alternative diagnoses have been excluded, and her sputum cultures are negative, but one bronchoalveolar lavage culture grows Mycobacterium avium complex. Which best describes whether she meets the diagnostic criteria?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_focus_vig[7]",
+     "state": "clean",
+     "focus": [
+      "l37-pcr-limits"
+     ],
+     "c": "C",
+     "q": "A 62-year-old woman who takes long-term prednisone has bronchoscopy to evaluate a lung nodule. A Pneumocystis polymerase chain reaction test on the lavage fluid is positive at a low level. She has no dyspnea, fever or cough, her oxygen saturation is normal on room air, and her imaging shows no infiltrates. How should this result be interpreted?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_focus_vig[9]",
+     "state": "clean",
+     "focus": [
+      "l37-histo-severity"
+     ],
+     "c": "D",
+     "q": "A 52-year-old woman with no immune problems developed fever, chills, a nonproductive cough and chest pain after clearing soil under a bird roost, and her urine Histoplasma antigen is positive. Five weeks later she is no better: her cough and fatigue are worsening, but she is not hypoxemic and is managing at home. Which treatment is most appropriate?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_a[6]",
+     "state": "clean",
+     "focus": [
+      "l37-bronch-vs-pna",
+      "l37-cap-confirm"
+     ],
+     "c": "A",
+     "q": "A 52-year-old woman with acute bronchitis was managed with supportive care 10 days ago and at first improved. She now returns with a new temperature of 102.2°F, shortness of breath and crackles at the left base. What is the most appropriate next step?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_b[24]",
+     "state": "clean",
+     "focus": [
+      "l37-rapid-flu"
+     ],
+     "c": "A",
+     "q": "A 52-year-old woman has had a sudden fever, myalgias, a frontal headache and a dry cough for one day, at the peak of a busy influenza season. A rapid influenza antigen test is negative. How should this result be interpreted?"
+    },
+    {
+     "lec": "l38",
+     "kind": "vig",
+     "src": "cms_e6l38_focus_vig[0]",
+     "state": "clean",
+     "focus": [
+      "l38-tst5",
+      "l38-rule-out"
+     ],
+     "c": "D",
+     "q": "A 37-year-old woman with human immunodeficiency virus infection has a tuberculin skin test read at 48 hours, showing 6 mm of transverse induration. She has no cough, fever or weight loss. Which is the most appropriate next step?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_b[30]",
+     "state": "clean",
+     "focus": [
+      "l37-covid-outpt",
+      "l37-covid-hypox"
+     ],
+     "c": "B",
+     "q": "A 70-year-old unvaccinated man with diabetes and heart failure has mild coronavirus disease 2019 that began 6 days ago. His oxygen saturation is 96% on room air. Which treatment is most appropriate?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_vig_b[38]",
+     "state": "clean",
+     "focus": [
+      "l37-flu-vax"
+     ],
+     "c": "D",
+     "q": "A 45-year-old man gets hives whenever he eats eggs and asks whether he can receive this season's influenza vaccine. He has never reacted to an influenza vaccine. What is the most appropriate plan?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_focus_vig[10]",
+     "state": "clean",
+     "focus": [
+      "l37-pneumo-seq"
+     ],
+     "c": "C",
+     "q": "A 58-year-old woman with no chronic conditions received the 15-valent pneumococcal conjugate vaccine 14 months ago at a pharmacy and has had no pneumococcal vaccine since. Which plan completes her pneumococcal vaccination?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_focus_vig[1]",
+     "state": "clean",
+     "focus": [
+      "l37-psi",
+      "l37-severe-cap"
+     ],
+     "c": "A",
+     "q": "A 47-year-old woman with community-acquired pneumonia has a Pneumonia Severity Index total of 82 points. After intravenous fluids she remains hypotensive and needs a vasopressor infusion to maintain her blood pressure. She is breathing on her own. Where should she be treated?"
+    },
+    {
+     "lec": "l38",
+     "kind": "reg",
+     "src": "cms_e6l38_pool_a[0]",
+     "state": "clean",
+     "focus": [
+      "l38-smear"
+     ],
+     "c": "D",
+     "q": "What does a positive acid-fast smear of sputum establish?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_focus_vig[4]",
+     "state": "clean",
+     "focus": [
+      "l37-antibiogram",
+      "l37-hap-timing"
+     ],
+     "c": "A",
+     "q": "A 71-year-old woman admitted 5 days ago for a hip fracture develops fever, purulent sputum and a new infiltrate. She is not intubated and has no risk for methicillin-resistant Staphylococcus aureus, no resistance risk and no high mortality risk. The hospital antibiogram shows most local Pseudomonas isolates are resistant to piperacillin-tazobactam but susceptible to cefepime. Which empiric agent is most appropriate?"
+    },
+    {
+     "lec": "l37",
+     "kind": "reg",
+     "src": "cms_e6l37_focus_pool[3]",
+     "state": "clean",
+     "focus": [
+      "l37-pjp-sampling"
+     ],
+     "c": "C",
+     "q": "For suspected Pneumocystis pneumonia, which respiratory specimen is obtained first when it is feasible?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_focus_vig[3]",
+     "state": "clean",
+     "focus": [
+      "l37-deescalate",
+      "l37-hap-cultures"
+     ],
+     "c": "C",
+     "q": "A 67-year-old woman with ventilator-associated pneumonia was started on cefepime plus vancomycin because methicillin-resistant Staphylococcus aureus is common in her unit. On day 3 her respiratory culture grows Pseudomonas susceptible to cefepime, and no Staphylococcus aureus grows. She is improving. What is the most appropriate change?"
+    },
+    {
+     "lec": "l38",
+     "kind": "vig",
+     "src": "cms_e6l38_focus_vig[1]",
+     "state": "clean",
+     "focus": [
+      "l38-tst5"
+     ],
+     "c": "B",
+     "q": "A 29-year-old woman's roommate was diagnosed with infectious pulmonary tuberculosis 10 weeks ago, and they have lived apart since. She has no symptoms. Her tuberculin skin test, read at 72 hours, shows 7 mm of induration. How should this result be interpreted?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_focus_vig[6]",
+     "state": "clean",
+     "focus": [
+      "l37-anaerobes",
+      "l37-pneumonitis"
+     ],
+     "c": "C",
+     "q": "An 80-year-old woman with dysphagia after a stroke lives at home. She has 3 days of fever, a productive cough and a new right lower lobe infiltrate, and imaging shows no abscess or empyema. She is admitted to a general ward with nonsevere pneumonia. She has never had methicillin-resistant Staphylococcus aureus or Pseudomonas isolated and has had no recent intravenous antibiotics. Which treatment is most appropriate?"
+    },
+    {
+     "lec": "l37",
+     "kind": "reg",
+     "src": "cms_e6l37_pool_b[14]",
+     "state": "clean",
+     "focus": [
+      "l37-steroid-threshold"
+     ],
+     "c": "C",
+     "q": "In Pneumocystis pneumonia associated with human immunodeficiency virus, which room-air arterial oxygen pressure indicates adjunctive corticosteroids?"
+    },
+    {
+     "lec": "l38",
+     "kind": "vig",
+     "src": "cms_e6l38_vig_a[41]",
+     "state": "clean",
+     "focus": [
+      "l38-sputum"
+     ],
+     "c": "A",
+     "q": "A 51-year-old man has 5 weeks of cough, night sweats and weight loss, and pulmonary tuberculosis is suspected. Which sputum collection plan is appropriate?"
+    },
+    {
+     "lec": "l37",
+     "kind": "reg",
+     "src": "cms_e6l37_pool_a[12]",
+     "state": "clean",
+     "focus": [
+      "l37-sputum-color"
+     ],
+     "c": "B",
+     "q": "What is the role of antibiotics in uncomplicated acute bronchitis?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_focus_vig[11]",
+     "state": "clean",
+     "focus": [
+      "l37-rsv"
+     ],
+     "c": "A",
+     "q": "A 66-year-old man with no condition that increases his risk of severe respiratory syncytial virus disease asks whether he should get the respiratory syncytial virus vaccine this fall. Which counseling statement is accurate?"
+    },
+    {
+     "lec": "l37",
+     "kind": "reg",
+     "src": "cms_e6l37_pool_a[38]",
+     "state": "clean",
+     "focus": [
+      "l37-resistant"
+     ],
+     "c": "B",
+     "q": "Which agent provides coverage for methicillin-resistant Staphylococcus aureus in pneumonia?"
+    },
+    {
+     "lec": "l37",
+     "kind": "vig",
+     "src": "cms_e6l37_focus_vig[12]",
+     "state": "clean",
+     "focus": [
+      "l37-psittacosis"
+     ],
+     "c": "D",
+     "q": "A 47-year-old man who races pigeons has 6 days of fever, severe headache and a dry cough, with a lower-lobe infiltrate. A respiratory nucleic acid test detects Chlamydia psittaci. He has no drug allergies. Which treatment is preferred?"
+    }
+   ]
+  }
+ },
+ "mis_written": {
+  "set1": 21,
+  "set2": 28
+ }
+}

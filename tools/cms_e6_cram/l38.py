@@ -7,6 +7,26 @@ standing rule, memory cram_criteria_tables), each with a labeled memory aid. Cel
 """
 L38C = "#1f5c3a"
 
+
+# STUDY FOCUS (slide 41, posted 2026-10-31): the lecturer's own list of what his exam questions test. Goes first on
+# the sheet. Its cut-offs also sit in the criteria tables below, each with its memory aid (crit-l38-cutoffs,
+# -negative, -sputum, -isolation, -ntm).
+FOCUS = [
+{"id": "focus-l38", "label": "Study Focus: Tuberculosis &amp; Nontuberculous Mycobacteria (slide 41)", "color": L38C,
+ "tag": "Study focus &middot; Lecture 38 &middot; slide 41 (about 10 questions)",
+ "cols": ["Focus point", "Know this"], "widths": ["30%", "70%"], "rows": [
+  ("Smear &ne; species", "A positive acid-fast smear <b>cannot tell tuberculosis from nontuberculous mycobacteria</b>; confirm the species with <b>molecular testing and culture</b>"),
+  ("Right infection test", "<b>Prefer the interferon-gamma release assay after BCG</b> (bacille Calmette-Gu&eacute;rin); in <b>human immunodeficiency virus (HIV) infection or a recent close contact</b>, skin test induration <b>5 mm or more is positive</b> and needs evaluation for active disease"),
+  ("Rule out active tuberculosis first", "Skin and blood tests show <b>infection, not latent versus active</b>: clinical evaluation and <b>chest imaging before preventive therapy</b>"),
+  ("Right specimens", "<b>3 sputum specimens, 8&ndash;24 hours apart, 1 early morning</b>; acid-fast smear and culture plus <b>1 rapid molecular test</b>"),
+  ("Exposure and suspicion", "<b>Repeat an early negative test 8&ndash;10 weeks after the last exposure</b>; suspected pulmonary tuberculosis: <b>immediate airborne isolation</b> and <b>tuberculosis-program coordination</b>"),
+  ("<i>Mycobacterium avium</i> complex (MAC)", "<b>One isolate is not enough</b>: symptoms, imaging and usually <b>2 or more same-species sputum cultures</b>; <b>azithromycin + ethambutol + a rifamycin for 12 months or more after culture conversion</b>"),
+ ], "mnemonic": {"hook": "The slide&rsquo;s numbers, in order: 5 &middot; 3 &middot; 8&ndash;24 &middot; 1 &middot; 8&ndash;10 &middot; 2+ &middot; 12+.",
+  "key": [["5", "mm skin test cut-off in HIV or a recent close contact"], ["3", "sputum specimens"], ["8&ndash;24", "hours between specimens"], ["1", "early-morning specimen (and 1 rapid molecular test)"],
+          ["8&ndash;10", "weeks after the last exposure to repeat an early negative test"], ["2+", "usually 2 or more same-species sputum cultures for MAC"], ["12+", "at least 12 months of MAC treatment after culture conversion"]],
+  "breaks": "The 1 stands for two things on the slide: one early-morning sample and one rapid molecular test."}},
+]
+
 CRITERIA = [
 {"id": "crit-l38-stages", "label": "Tuberculosis: Stages", "color": L38C,
  "tag": "Criteria &middot; Lecture 38 &middot; slides 9&ndash;10, 12",
@@ -59,7 +79,7 @@ CRITERIA = [
   "key": [["Point-one", "0.1 mL intradermal, forearm"], ["Two to three days", "read at 48&ndash;72 hours"], ["Bump not blush", "measure induration, not erythema"], ["Risk group", "interpret by category"], ["BCG", "same thresholds; prefer the blood test"]]}},
 
 {"id": "crit-l38-cutoffs", "label": "Tuberculin Skin Test: Positivity Thresholds", "color": L38C,
- "tag": "Criteria &middot; Lecture 38 &middot; slide 22",
+ "tag": "Criteria &middot; Lecture 38 &middot; slide 22 (focus slide 41 repeats the 5 mm line for HIV and recent close contact)",
  "cols": ["Induration", "Positive in"], "widths": ["20%", "80%"], "rows": [
   ("<b>5 mm or more</b>", "HIV, <b>recent close contact</b>, transplant, <b>major immunosuppression</b>, or <b>imaging suggesting prior tuberculosis</b>"),
   ("<b>10 mm or more</b>", "<b>Increased exposure risk</b>, selected medical risks, <b>high-risk congregate settings</b>, <b>children under 5</b> or children exposed to high-risk adults"),
@@ -69,7 +89,7 @@ CRITERIA = [
   "breaks": "&ldquo;Selected medical risks&rdquo; is all the slide says for the 10 mm group; major immunosuppression is a 5 mm group."}},
 
 {"id": "crit-l38-negative", "label": "When a Negative Test Does Not Reassure", "color": L38C,
- "tag": "Criteria &middot; Lecture 38 &middot; slides 19, 23, 25",
+ "tag": "Criteria &middot; Lecture 38 &middot; slides 19, 23, 25 (focus slide 41 repeats the 8&ndash;10 week retest)",
  "cols": ["Situation", "What to do"], "widths": ["44%", "56%"], "rows": [
   ("Recent exposure (early infection)", "<b>Repeat 8&ndash;10 weeks after the last exposure</b> when indicated"),
   ("Immunosuppression or severe tuberculosis", "False negatives possible"),
@@ -92,7 +112,7 @@ CRITERIA = [
   "key": [["Infected only", "neither separates latent from disease"], ["Blood beats BCG", "no false positive after BCG"], ["One visit", "blood test"], ["Stays positive", "do not use either to monitor treatment"]]}},
 
 {"id": "crit-l38-sputum", "label": "Suspected Pulmonary Tuberculosis: Microbiology", "color": L38C,
- "tag": "Criteria &middot; Lecture 38 &middot; slide 26",
+ "tag": "Criteria &middot; Lecture 38 &middot; slide 26 (focus slide 41 repeats the first three rows)",
  "cols": ["Step", "Rule"], "widths": ["28%", "72%"], "rows": [
   ("Collect", "<b>3 sputum specimens, 8&ndash;24 hours apart, at least one early morning</b>"),
   ("Smear and culture", "Acid-fast bacilli smear and mycobacterial culture"),
@@ -116,7 +136,7 @@ CRITERIA = [
   "key": [["Primary", "hilar or mediastinal nodes, infiltrates, effusion"], ["Post-primary", "upper-lobe cavities"], ["Miliary", "diffuse tiny nodules"], ["Immunosuppressed", "atypical"], ["Latent", "normal film"], ["Old", "scar, volume loss, calcified granulomas"]]}},
 
 {"id": "crit-l38-isolation", "label": "Immediate Management of Pulmonary Tuberculosis", "color": L38C,
- "tag": "Criteria &middot; Lecture 38 &middot; slide 33",
+ "tag": "Criteria &middot; Lecture 38 &middot; slide 33 (focus slide 41 repeats the notify and airborne rows)",
  "cols": ["Letter", "Action"], "widths": ["12%", "88%"], "rows": [
   ("N", "<b>Notify</b> the local or state tuberculosis program of presumed or confirmed tuberculosis"),
   ("A", "<b>Airborne</b> infection isolation room when indicated"),
@@ -149,7 +169,7 @@ CRITERIA = [
   "key": [["3HP", "3 months, weekly isoniazid + rifapentine"], ["4R", "4 months, daily rifampin"], ["3HR", "3 months, daily isoniazid + rifampin"], ["6H / 9H", "isoniazid alone, rifamycin unsuitable"]]}},
 
 {"id": "crit-l38-ntm", "label": "Nontuberculous Mycobacterial Lung Disease: Diagnosis and MAC Treatment", "color": L38C,
- "tag": "Criteria &middot; Lecture 38 &middot; slides 38&ndash;40",
+ "tag": "Criteria &middot; Lecture 38 &middot; slides 38&ndash;40 (focus slide 41 repeats the 2-culture rule and the three-drug regimen)",
  "cols": ["Domain", "Requirement"], "widths": ["30%", "70%"], "rows": [
   ("Symptoms and imaging", "Compatible symptoms <b>and</b> imaging (nodular bronchiectasis or fibrocavitary disease)"),
   ("Something else excluded", "Alternative diagnoses excluded"),
@@ -164,7 +184,7 @@ TOPICS = [
 {"id": "l38-emph", "label": "★ Professor Emphasized — Infection vs Disease", "color": "#b8860b", "rows": [
  ["★ Three decisions", "Is disease plausible? Could the patient be infectious? Which diagnostic and treatment pathway, and when to involve the health department or a specialist (3:09)."],
  ["★ The distinction", "Infection versus disease &ldquo;determines infectiousness, evaluation, and treatment&rdquo; (3:07): latent infection is <b>asymptomatic and not infectious</b>."],
- ["★ Guidance coming", "Posted &ldquo;this weekend&rdquo; at the end of the slides for respiratory infections and tuberculosis (4:00)."],
+ ["★ Study focus posted", "His guidance is now <b>slide 41</b> (the Study Focus table at the top of this sheet): about 10 questions on this lecture."],
  ["Watch out", "He called fever and night sweats &ldquo;pathognomonic&rdquo;; the slide lists them as manifestations only, and symptoms may be absent."],
 ]},
 {"id": "l38-basics", "label": "Mycobacteria, Spread &amp; Presentation", "color": "#7a2d30", "rows": [

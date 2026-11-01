@@ -10,7 +10,10 @@ recording (the same file as Lecture 37; Lecture 38 runs 3:07:18 to 4:01:51, with
 video that would not play). calendar-data.js lists "CMS I - LECTURE #38 - Mycobacterial Infections, Including
 Tuberculosis - Professor Bobilin GUEST LECTURER", 4-5 PM (1 hour). No conflict. Deck file "38. Mycobacterial
 Infections including Tuberculosis - Bobilin - 10-29-2025 SV.pptx" (the "2025" in the file name is the file's
-own; the title slide says October 29, 2026), 45 slides.
+own; the title slide says October 29, 2026), 45 slides; REVISED 2026-10-31 to 46 slides (the same file
+name, the old copy in "superseded (10-29 versions)/"): slide 3 gained the title "A Brief History of TB", NEW
+slide 41 "Study Focus for Exam Questions -- Tuberculosis & NTM" ("Covers Questions 1-10"), the old 41
+"Lecture Review" now 42 and the references 43-46. Slides 1-40 otherwise unchanged.
 
 Built from the DECK; the recording only sets emphasis and scope (slides-only grounding).
 
@@ -42,8 +45,12 @@ EXCLUDED_SLIDES (never cited):
   6, 7       epidemiology statistics (context only; no number is keyed)
   11         video title picture (the video did not play)
   30, 31, 32 example films ("imaging alone cannot confirm TB"; the s32 text is a case description)
-  41         lecture review questions (the lecturer's own worked answers)
-  42-45      references
+  42         lecture review questions (the lecturer's own worked answers; slide 41 before 2026-10-31)
+  43-46      references
+
+THE STUDY-FOCUS SLIDE (s41, posted 2026-10-31: the guidance promised at 4:00:15) IS slide content and is
+citable. He told the class he wrote about 10 questions on this lecture. Its footer also reads "Slides 131-140",
+which matches nothing in this 46-slide deck.
 
 CONTESTED or UNSAFE on the slides, so NEVER KEYED that way:
   s36 "Eligible patients may receive 6-month BPaLM or BPaL regimens" -- the drug letters are never expanded
@@ -65,7 +72,7 @@ IO_POP = ("Identify medical care strategies for mycobacterial infections for the
           "3. adult 4. elderly")
 IOS = [IO_A, IO_POP]
 
-EXCLUDED_SLIDES = {1, 2, 3, 6, 7, 11, 30, 31, 32, 41, 42, 43, 44, 45}
+EXCLUDED_SLIDES = {1, 2, 3, 6, 7, 11, 30, 31, 32, 42, 43, 44, 45, 46}
 
 SCOPE_BANNED = [
     r"10\.7 million|1\.23 million|150,000|10,260|3\.0 per 100,000|77%|one quarter of the world",

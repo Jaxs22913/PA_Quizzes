@@ -1,0 +1,1616 @@
+{
+ "built_by": "tools/cms_e6_focus_coverage.py",
+ "slides": {
+  "l37": "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx, Slide 127 (Slide 128 repeats it)",
+  "l38": "38. Mycobacterial Infections including Tuberculosis - Bobilin - 10-29-2025 SV.pptx, Slide 41"
+ },
+ "status_rule": "covered = 2+ cleanly reviewed existing questions; thin = 1, or the clean ones miss the stressed part (note); missing = 0",
+ "points": [
+  {
+   "id": "l37-flu-vax",
+   "lecture": "l37",
+   "group": "Prevention & vaccines",
+   "point": "Influenza vaccine product selection",
+   "slide_words": "Know influenza product selection",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_a[1]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Which influenza vaccine types are preferred for adults aged 65 or older?",
+     "key": "High-dose, adjuvanted or recombinant"
+    },
+    {
+     "src": "cms_e6l37_pool_a[2]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Which influenza vaccine type should be avoided during pregnancy?",
+     "key": "Live attenuated vaccine"
+    },
+    {
+     "src": "cms_e6l37_pool_a[3]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "What does a history of egg allergy require before influenza vaccination?",
+     "key": "Routine vaccine safety measures"
+    },
+    {
+     "src": "cms_e6l37_vig_b[37]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 26-year-old woman who is 14 weeks pregnant comes in during October and asks about vaccines. Which vaccine should be avoided during her pregnancy?",
+     "key": "Live attenuated influenza vaccine"
+    },
+    {
+     "src": "cms_e6l37_vig_b[38]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 45-year-old man gets hives whenever he eats eggs and asks whether he can receive this season's influenza vaccine. He has never reacted to an influenza vaccine",
+     "key": "Routine vaccination and safety steps"
+    }
+   ],
+   "existing_not_clean": [
+    {
+     "src": "cms_e6l37_pool_a[0]",
+     "kind": "reg",
+     "state": "none",
+     "stem": "Which is the broadest group recommended to receive an influenza vaccine every year?",
+     "key": "Everyone aged 6 months or older"
+    }
+   ],
+   "new": []
+  },
+  {
+   "id": "l37-rsv",
+   "lecture": "l37",
+   "group": "Prevention & vaccines",
+   "point": "RSV vaccine age/risk eligibility",
+   "slide_words": "RSV age/risk eligibility",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_a[4]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Which adults should receive a respiratory syncytial virus vaccine?",
+     "key": "75 or older, or 50 to 74 at increased risk"
+    },
+    {
+     "src": "cms_e6l37_vig_b[39]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 78-year-old woman received a respiratory syncytial virus vaccine last year and asks whether she needs another dose this fall. Which counseling statement is ac",
+     "key": "No repeat dose is recommended"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_vig[11]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 66-year-old man with no condition that increases his risk of severe respiratory syncytial virus disease asks whether he should get the respiratory syncytial v",
+     "key": "Not yet; one dose is due at 75"
+    }
+   ]
+  },
+  {
+   "id": "l37-pneumo-seq",
+   "lecture": "l37",
+   "group": "Prevention & vaccines",
+   "point": "Pneumococcal sequencing, incl. when PCV15 requires PPSV23",
+   "slide_words": "pneumococcal sequencing—especially when PCV15 requires PPSV23",
+   "status": "thin",
+   "note": "clean items cover only 'PCV20 or PCV21 completes the series'; none asks when PCV15 needs PPSV23 afterward",
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_a[6]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "For an eligible adult who has never had a pneumococcal conjugate vaccine, which vaccine type completes the series with one dose?",
+     "key": "A 20- or 21-valent conjugate vaccine"
+    },
+    {
+     "src": "cms_e6l37_vig_b[40]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 55-year-old man with no medical conditions has never received a pneumococcal vaccine. Which pneumococcal vaccination is appropriate for him?",
+     "key": "One 20-valent conjugate vaccine dose"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_pool[5]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "In an eligible adult, what usually follows a dose of the 15-valent pneumococcal conjugate vaccine?",
+     "key": "A 23-valent polysaccharide dose"
+    },
+    {
+     "src": "cms_e6l37_focus_vig[10]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 58-year-old woman with no chronic conditions received the 15-valent pneumococcal conjugate vaccine 14 months ago at a pharmacy and has had no pneumococcal vac",
+     "key": "A 23-valent polysaccharide dose now"
+    }
+   ]
+  },
+  {
+   "id": "l37-bronch-vs-pna",
+   "lecture": "l37",
+   "group": "Bronchitis & stewardship",
+   "point": "Uncomplicated viral bronchitis vs pneumonia",
+   "slide_words": "Distinguish uncomplicated viral bronchitis from pneumonia.",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_a[9]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Which test is needed to diagnose uncomplicated acute bronchitis?",
+     "key": "None; it is clinical"
+    },
+    {
+     "src": "cms_e6l37_pool_a[19]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Which presentation separates pneumonia from acute bronchitis?",
+     "key": "Higher fever with tachypnea"
+    },
+    {
+     "src": "cms_e6l37_vig_a[0]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 34-year-old woman has had a cough for 10 days that began with a cold. Her sputum is green, and she asks for an antibiotic. Her temperature, heart rate, respir",
+     "key": "Supportive care, no antibiotic"
+    },
+    {
+     "src": "cms_e6l37_vig_a[6]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 52-year-old woman with acute bronchitis was managed with supportive care 10 days ago and at first improved. She now returns with a new temperature of 102.2°F,",
+     "key": "Chest radiograph for pneumonia"
+    }
+   ],
+   "existing_not_clean": [
+    {
+     "src": "cms_e6l37_pool_a[14]",
+     "kind": "reg",
+     "state": "none",
+     "stem": "In a patient with suspected acute bronchitis, which lung finding should make you think of pneumonia instead?",
+     "key": "Consolidation"
+    },
+    {
+     "src": "cms_e6l37_vig_a[1]",
+     "kind": "vig",
+     "state": "flagged",
+     "stem": "A 41-year-old man has had a cough for 5 days. His temperature is 102.4°F, heart rate 112/min and respiratory rate 26/min, with crackles and dullness to percussi",
+     "key": "Chest radiograph"
+    }
+   ],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_vig[0]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 48-year-old man has had a cough for 6 days with yellow sputum. His temperature is 101.8°F and his respiratory rate 24/min, and there are crackles with dullnes",
+     "key": "A chest radiograph to confirm pneumonia"
+    }
+   ]
+  },
+  {
+   "id": "l37-sputum-color",
+   "lecture": "l37",
+   "group": "Bronchitis & stewardship",
+   "point": "Sputum color alone does not justify antibiotics",
+   "slide_words": "Sputum color alone does not justify antibiotics.",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_a[10]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "In acute bronchitis, what does green or yellow sputum indicate?",
+     "key": "No clue to a viral or bacterial cause"
+    },
+    {
+     "src": "cms_e6l37_pool_a[12]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "What is the role of antibiotics in uncomplicated acute bronchitis?",
+     "key": "Avoided in routine cases"
+    },
+    {
+     "src": "cms_e6l37_vig_a[0]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 34-year-old woman has had a cough for 10 days that began with a cold. Her sputum is green, and she asks for an antibiotic. Her temperature, heart rate, respir",
+     "key": "Supportive care, no antibiotic"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_vig[0]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 48-year-old man has had a cough for 6 days with yellow sputum. His temperature is 101.8°F and his respiratory rate 24/min, and there are crackles with dullnes",
+     "key": "A chest radiograph to confirm pneumonia"
+    }
+   ]
+  },
+  {
+   "id": "l37-cap-confirm",
+   "lecture": "l37",
+   "group": "CAP severity & treatment",
+   "point": "CAP diagnostic confirmation",
+   "slide_words": "Review diagnostic confirmation",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_a[25]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Which test confirms suspected pneumonia?",
+     "key": "Chest radiography"
+    },
+    {
+     "src": "cms_e6l37_vig_a[6]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 52-year-old woman with acute bronchitis was managed with supportive care 10 days ago and at first improved. She now returns with a new temperature of 102.2°F,",
+     "key": "Chest radiograph for pneumonia"
+    }
+   ],
+   "existing_not_clean": [
+    {
+     "src": "cms_e6l37_vig_a[1]",
+     "kind": "vig",
+     "state": "flagged",
+     "stem": "A 41-year-old man has had a cough for 5 days. His temperature is 102.4°F, heart rate 112/min and respiratory rate 26/min, with crackles and dullness to percussi",
+     "key": "Chest radiograph"
+    }
+   ],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_vig[0]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 48-year-old man has had a cough for 6 days with yellow sputum. His temperature is 101.8°F and his respiratory rate 24/min, and there are crackles with dullnes",
+     "key": "A chest radiograph to confirm pneumonia"
+    }
+   ]
+  },
+  {
+   "id": "l37-psi",
+   "lecture": "l37",
+   "group": "CAP severity & treatment",
+   "point": "Pneumonia Severity Index (PSI)",
+   "slide_words": "PSI",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_a[26]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Alongside clinical judgment, which tool is preferred to support the admission decision in community-acquired pneumonia?",
+     "key": "Pneumonia Severity Index"
+    },
+    {
+     "src": "cms_e6l37_pool_a[30]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "A Pneumonia Severity Index total of 95 points falls in which risk class?",
+     "key": "Class IV"
+    },
+    {
+     "src": "cms_e6l37_vig_a[17]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 77-year-old man with community-acquired pneumonia has a PSI (Pneumonia Severity Index) total of 104 points. Which risk class does that total fall in?",
+     "key": "Class IV"
+    }
+   ],
+   "existing_not_clean": [
+    {
+     "src": "cms_e6l37_pool_a[31]",
+     "kind": "reg",
+     "state": "none",
+     "stem": "Which Pneumonia Severity Index finding adds the most points?",
+     "key": "Neoplastic disease"
+    }
+   ],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_vig[1]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 47-year-old woman with community-acquired pneumonia has a Pneumonia Severity Index total of 82 points. After intravenous fluids she remains hypotensive and ne",
+     "key": "Intensive care unit-level care"
+    }
+   ]
+  },
+  {
+   "id": "l37-severe-cap",
+   "lecture": "l37",
+   "group": "CAP severity & treatment",
+   "point": "Severe-CAP criteria",
+   "slide_words": "severe-CAP criteria",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_a[32]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Which finding by itself marks community-acquired pneumonia as severe?",
+     "key": "Vasopressor-dependent shock"
+    },
+    {
+     "src": "cms_e6l37_vig_a[18]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 63-year-old man with community-acquired pneumonia remains hypotensive after intravenous fluids and needs a vasopressor infusion to keep up his blood pressure.",
+     "key": "Severe: vasopressor-dependent shock"
+    },
+    {
+     "src": "cms_e6l37_vig_a[29]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 57-year-old man with community-acquired pneumonia is intubated for respiratory failure and admitted to the intensive care unit. He has no validated risk for m",
+     "key": "Ceftriaxone plus azithromycin"
+    }
+   ],
+   "existing_not_clean": [
+    {
+     "src": "cms_e6l37_pool_a[42]",
+     "kind": "reg",
+     "state": "none",
+     "stem": "What is the minimum antibiotic duration for severe community-acquired pneumonia?",
+     "key": "5 days"
+    }
+   ],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_vig[1]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 47-year-old woman with community-acquired pneumonia has a Pneumonia Severity Index total of 82 points. After intravenous fluids she remains hypotensive and ne",
+     "key": "Intensive care unit-level care"
+    }
+   ]
+  },
+  {
+   "id": "l37-op-nocomorb",
+   "lecture": "l37",
+   "group": "CAP severity & treatment",
+   "point": "Outpatient CAP regimen without comorbidities",
+   "slide_words": "outpatient regimens with and without comorbidities",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_vig_a[21]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 30-year-old man with no medical conditions has community-acquired pneumonia confirmed on chest radiograph and is stable for outpatient care. Molecular testing",
+     "key": "No antibiotic, close follow-up"
+    },
+    {
+     "src": "cms_e6l37_vig_a[23]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 32-year-old woman with no medical conditions has community-acquired pneumonia and is stable for outpatient treatment. She has no risk for resistant organisms,",
+     "key": "Amoxicillin"
+    },
+    {
+     "src": "cms_e6l37_vig_a[24]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 28-year-old man with no medical conditions has community-acquired pneumonia and is stable for outpatient treatment. He had anaphylaxis to amoxicillin as a chi",
+     "key": "Doxycycline"
+    }
+   ],
+   "existing_not_clean": [
+    {
+     "src": "cms_e6l37_pool_a[34]",
+     "kind": "reg",
+     "state": "none",
+     "stem": "Which oral regimen fits an adult outpatient with community-acquired pneumonia and no comorbidities or resistant-pathogen risk?",
+     "key": "Amoxicillin or doxycycline"
+    },
+    {
+     "src": "cms_e6l37_pool_a[35]",
+     "kind": "reg",
+     "state": "none",
+     "stem": "When may a macrolide alone be used for a healthy outpatient with community-acquired pneumonia?",
+     "key": "When local pneumococcal resistance is below 25%"
+    }
+   ],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_pool[6]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Four adults have community-acquired pneumonia, are stable for outpatient treatment and have no risk for methicillin-resistant Staphylococcus aureus or Pseudomon",
+     "key": "The one with no chronic conditions"
+    }
+   ]
+  },
+  {
+   "id": "l37-op-comorb",
+   "lecture": "l37",
+   "group": "CAP severity & treatment",
+   "point": "Outpatient CAP regimen with comorbidities",
+   "slide_words": "outpatient regimens with and without comorbidities",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_vig_a[25]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 59-year-old man with alcoholism and chronic liver disease has community-acquired pneumonia and is stable for outpatient treatment. He had anaphylaxis to amoxi",
+     "key": "Levofloxacin"
+    },
+    {
+     "src": "cms_e6l37_vig_a[26]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 70-year-old woman with chronic obstructive pulmonary disease and diabetes has community-acquired pneumonia and is stable for outpatient treatment. She has had",
+     "key": "Cefuroxime plus azithromycin"
+    }
+   ],
+   "existing_not_clean": [
+    {
+     "src": "cms_e6l37_vig_a[22]",
+     "kind": "vig",
+     "state": "flagged",
+     "stem": "A 64-year-old woman with type 2 diabetes and chronic heart failure has community-acquired pneumonia and is stable for outpatient care. Molecular testing is posi",
+     "key": "Cefpodoxime plus doxycycline"
+    }
+   ],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_pool[6]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Four adults have community-acquired pneumonia, are stable for outpatient treatment and have no risk for methicillin-resistant Staphylococcus aureus or Pseudomon",
+     "key": "The one with no chronic conditions"
+    }
+   ]
+  },
+  {
+   "id": "l37-resistant",
+   "lecture": "l37",
+   "group": "CAP severity & treatment",
+   "point": "Risk-based resistant (MRSA/Pseudomonas) coverage",
+   "slide_words": "risk-based resistant coverage",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_a[38]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Which agent provides coverage for methicillin-resistant Staphylococcus aureus in pneumonia?",
+     "key": "Linezolid"
+    },
+    {
+     "src": "cms_e6l37_vig_a[27]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 60-year-old woman is admitted to a general ward with nonsevere community-acquired pneumonia. She has never had methicillin-resistant Staphylococcus aureus or ",
+     "key": "Ceftriaxone plus azithromycin"
+    },
+    {
+     "src": "cms_e6l37_vig_a[29]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 57-year-old man with community-acquired pneumonia is intubated for respiratory failure and admitted to the intensive care unit. He has no validated risk for m",
+     "key": "Ceftriaxone plus azithromycin"
+    },
+    {
+     "src": "cms_e6l37_vig_a[30]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 64-year-old woman with severe community-acquired pneumonia in the intensive care unit had methicillin-resistant Staphylococcus aureus isolated from her sputum",
+     "key": "Vancomycin"
+    },
+    {
+     "src": "cms_e6l37_vig_a[31]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 68-year-old man with severe chronic obstructive pulmonary disease is admitted to the intensive care unit with severe community-acquired pneumonia. Pseudomonas",
+     "key": "Cefepime"
+    }
+   ],
+   "existing_not_clean": [
+    {
+     "src": "cms_e6l37_pool_a[36]",
+     "kind": "reg",
+     "state": "none",
+     "stem": "Which regimen fits a hospitalized adult with nonsevere community-acquired pneumonia and no risk for methicillin-resistant Staphylococcus aureus or Pseudomonas?",
+     "key": "Ceftriaxone plus a macrolide"
+    }
+   ],
+   "new": []
+  },
+  {
+   "id": "l37-hap-timing",
+   "lecture": "l37",
+   "group": "HAP, VAP & aspiration",
+   "point": "HAP/VAP acquisition timing",
+   "slide_words": "Use acquisition timing",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_a[43]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "How is hospital-acquired pneumonia defined?",
+     "key": "Onset 48 hours or more after admission"
+    },
+    {
+     "src": "cms_e6l37_vig_a[34]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 68-year-old woman is admitted for repair of a hip fracture. On hospital day 4 she develops fever, purulent sputum and a new infiltrate that was not on her adm",
+     "key": "Hospital-acquired pneumonia"
+    },
+    {
+     "src": "cms_e6l37_vig_a[35]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 59-year-old man has been intubated and mechanically ventilated for 3 days after a motor vehicle crash. He develops a new fever, purulent endotracheal secretio",
+     "key": "Ventilator-associated pneumonia"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_vig[2]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 64-year-old man has been intubated in the intensive care unit for 4 days after a stroke. He develops a new fever, purulent endotracheal secretions and a new i",
+     "key": "Cultures, then empiric antibiotics"
+    },
+    {
+     "src": "cms_e6l37_focus_vig[4]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 71-year-old woman admitted 5 days ago for a hip fracture develops fever, purulent sputum and a new infiltrate. She is not intubated and has no risk for methic",
+     "key": "Cefepime"
+    }
+   ]
+  },
+  {
+   "id": "l37-hap-cultures",
+   "lecture": "l37",
+   "group": "HAP, VAP & aspiration",
+   "point": "HAP/VAP cultures",
+   "slide_words": "cultures",
+   "status": "missing",
+   "note": null,
+   "existing_clean": [],
+   "existing_not_clean": [],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_pool[1]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "In hospital-acquired or ventilator-associated pneumonia, when is empiric antibiotic therapy narrowed or stopped?",
+     "key": "As cultures and the course clarify it"
+    },
+    {
+     "src": "cms_e6l37_focus_vig[2]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 64-year-old man has been intubated in the intensive care unit for 4 days after a stroke. He develops a new fever, purulent endotracheal secretions and a new i",
+     "key": "Cultures, then empiric antibiotics"
+    },
+    {
+     "src": "cms_e6l37_focus_vig[3]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 67-year-old woman with ventilator-associated pneumonia was started on cefepime plus vancomycin because methicillin-resistant Staphylococcus aureus is common i",
+     "key": "Stop vancomycin, continue cefepime"
+    }
+   ]
+  },
+  {
+   "id": "l37-antibiogram",
+   "lecture": "l37",
+   "group": "HAP, VAP & aspiration",
+   "point": "Local antibiograms",
+   "slide_words": "local antibiograms",
+   "status": "thin",
+   "note": "the clean HAP/VAP regimen items imply local data (MRSA common in the unit) but none asks what selects the empiric regimen",
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_vig_a[36]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 70-year-old man hospitalized for 6 days after a stroke develops hospital-acquired pneumonia. He has no methicillin-resistant Staphylococcus aureus risk, no re",
+     "key": "Piperacillin-tazobactam"
+    },
+    {
+     "src": "cms_e6l37_vig_a[37]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 63-year-old woman develops ventilator-associated pneumonia on day 5 of mechanical ventilation. Methicillin-resistant Staphylococcus aureus is common in her un",
+     "key": "Cefepime plus vancomycin"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_pool[0]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Which factors select the empiric antibiotic regimen for hospital-acquired pneumonia?",
+     "key": "Local antibiogram and patient resistance risk"
+    },
+    {
+     "src": "cms_e6l37_focus_vig[4]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 71-year-old woman admitted 5 days ago for a hip fracture develops fever, purulent sputum and a new infiltrate. She is not intubated and has no risk for methic",
+     "key": "Cefepime"
+    }
+   ]
+  },
+  {
+   "id": "l37-deescalate",
+   "lecture": "l37",
+   "group": "HAP, VAP & aspiration",
+   "point": "De-escalation",
+   "slide_words": "de-escalation",
+   "status": "thin",
+   "note": "narrowing is practised only for community-acquired pneumonia (blood culture) and VAP duration; none de-escalates HAP/VAP",
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_vig_a[33]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 66-year-old man admitted with nonsevere community-acquired pneumonia is improving on ceftriaxone plus azithromycin. On day 3 his blood cultures grow Streptoco",
+     "key": "Narrow to the culture results"
+    },
+    {
+     "src": "cms_e6l37_vig_a[38]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 58-year-old man with ventilator-associated pneumonia has had an adequate response to culture-directed antibiotics. What is the usual total duration of therapy",
+     "key": "7 days"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_pool[1]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "In hospital-acquired or ventilator-associated pneumonia, when is empiric antibiotic therapy narrowed or stopped?",
+     "key": "As cultures and the course clarify it"
+    },
+    {
+     "src": "cms_e6l37_focus_vig[3]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 67-year-old woman with ventilator-associated pneumonia was started on cefepime plus vancomycin because methicillin-resistant Staphylococcus aureus is common i",
+     "key": "Stop vancomycin, continue cefepime"
+    }
+   ]
+  },
+  {
+   "id": "l37-pneumonitis",
+   "lecture": "l37",
+   "group": "HAP, VAP & aspiration",
+   "point": "Chemical pneumonitis vs aspiration pneumonia",
+   "slide_words": "Separate chemical pneumonitis from aspiration pneumonia",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_b[0]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "What is the core problem in aspiration pneumonitis?",
+     "key": "Sterile chemical injury"
+    },
+    {
+     "src": "cms_e6l37_pool_b[1]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "How is aspiration pneumonitis managed when bacterial infection is not suspected?",
+     "key": "Support of the airway and oxygenation"
+    },
+    {
+     "src": "cms_e6l37_vig_a[41]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 54-year-old woman vomits and aspirates during a witnessed seizure. Two hours later she has abrupt shortness of breath and hypoxemia, a temperature of 100.6°F ",
+     "key": "Supportive care, no antibiotic"
+    },
+    {
+     "src": "cms_e6l37_vig_a[42]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 47-year-old man who aspirated gastric contents during a witnessed seizure was managed with oxygen and airway support and no antibiotic. Three days later he is",
+     "key": "Secondary bacterial infection"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_vig[6]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "An 80-year-old woman with dysphagia after a stroke lives at home. She has 3 days of fever, a productive cough and a new right lower lobe infiltrate, and imaging",
+     "key": "Ceftriaxone plus azithromycin"
+    }
+   ]
+  },
+  {
+   "id": "l37-anaerobes",
+   "lecture": "l37",
+   "group": "HAP, VAP & aspiration",
+   "point": "Anaerobic coverage only for abscess/empyema",
+   "slide_words": "reserve anaerobic coverage for abscess/empyema",
+   "status": "missing",
+   "note": null,
+   "existing_clean": [],
+   "existing_not_clean": [
+    {
+     "src": "cms_e6l37_pool_b[2]",
+     "kind": "reg",
+     "state": "none",
+     "stem": "When is anaerobic coverage added in aspiration pneumonia?",
+     "key": "When abscess or empyema is suspected"
+    },
+    {
+     "src": "cms_e6l37_vig_a[43]",
+     "kind": "vig",
+     "state": "flagged",
+     "stem": "A 79-year-old man with dysphagia after a stroke lives at home. He has 3 days of fever and productive cough, and imaging shows a new right lower lobe infiltrate ",
+     "key": "Ceftriaxone plus azithromycin"
+    }
+   ],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_vig[5]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 78-year-old man with dysphagia after a stroke is admitted to a general ward with nonsevere aspiration pneumonia and started on ceftriaxone plus azithromycin. ",
+     "key": "Add anaerobic coverage"
+    },
+    {
+     "src": "cms_e6l37_focus_vig[6]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "An 80-year-old woman with dysphagia after a stroke lives at home. She has 3 days of fever, a productive cough and a new right lower lobe infiltrate, and imaging",
+     "key": "Ceftriaxone plus azithromycin"
+    }
+   ]
+  },
+  {
+   "id": "l37-pjp-sampling",
+   "lecture": "l37",
+   "group": "Opportunistic & atypical infection",
+   "point": "Pneumocystis (PJP) sampling",
+   "slide_words": "PJP sampling",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_b[11]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "For suspected Pneumocystis pneumonia with a negative induced sputum and persistent high suspicion, which test comes next?",
+     "key": "Bronchoalveolar lavage"
+    },
+    {
+     "src": "cms_e6l37_vig_b[1]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 54-year-old woman who had a kidney transplant takes long-term prednisone and anti-rejection drugs. She has 10 days of progressive shortness of breath and a dr",
+     "key": "Bronchoalveolar lavage"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_pool[3]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "For suspected Pneumocystis pneumonia, which respiratory specimen is obtained first when it is feasible?",
+     "key": "Induced sputum"
+    }
+   ]
+  },
+  {
+   "id": "l37-pcr-limits",
+   "lecture": "l37",
+   "group": "Opportunistic & atypical infection",
+   "point": "PCR limitations",
+   "slide_words": "PCR limitations",
+   "status": "missing",
+   "note": null,
+   "existing_clean": [],
+   "existing_not_clean": [],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_pool[2]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "What is the main limitation of a positive Pneumocystis polymerase chain reaction result?",
+     "key": "It can detect colonization"
+    },
+    {
+     "src": "cms_e6l37_focus_vig[7]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 62-year-old woman who takes long-term prednisone has bronchoscopy to evaluate a lung nodule. A Pneumocystis polymerase chain reaction test on the lavage fluid",
+     "key": "It may reflect colonization, not infection"
+    }
+   ]
+  },
+  {
+   "id": "l37-steroid-threshold",
+   "lecture": "l37",
+   "group": "Opportunistic & atypical infection",
+   "point": "Steroid thresholds (Pneumocystis: room-air PaO2 below 70 mm Hg)",
+   "slide_words": "steroid thresholds",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_b[14]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "In Pneumocystis pneumonia associated with human immunodeficiency virus, which room-air arterial oxygen pressure indicates adjunctive corticosteroids?",
+     "key": "Below 70 mm Hg"
+    },
+    {
+     "src": "cms_e6l37_vig_b[3]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 36-year-old woman with human immunodeficiency virus infection starts trimethoprim-sulfamethoxazole for Pneumocystis pneumonia. Her arterial oxygen pressure on",
+     "key": "A systemic corticosteroid"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": []
+  },
+  {
+   "id": "l37-histo-severity",
+   "lecture": "l37",
+   "group": "Opportunistic & atypical infection",
+   "point": "Histoplasmosis treatment by severity",
+   "slide_words": "histoplasmosis treatment by severity",
+   "status": "thin",
+   "note": "clean items cover mild acute disease (observation) and chronic cavitary duration; none covers itraconazole or severe disease (amphotericin-based induction)",
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_b[19]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "How is mild acute histoplasmosis in an immunocompetent adult usually managed?",
+     "key": "Observation without antifungals"
+    },
+    {
+     "src": "cms_e6l37_pool_b[20]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "For at least how long is chronic cavitary histoplasmosis treated?",
+     "key": "12 months"
+    },
+    {
+     "src": "cms_e6l37_vig_b[8]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A healthy 29-year-old woman has acute histoplasmosis confirmed by urine antigen after clearing out a bat-infested attic. Ten days after onset her fever is resol",
+     "key": "Observation without an antifungal"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_pool[4]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "How is severe pulmonary or disseminated histoplasmosis treated?",
+     "key": "Amphotericin-based induction"
+    },
+    {
+     "src": "cms_e6l37_focus_vig[8]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 44-year-old man with untreated human immunodeficiency virus infection cleaned out a barn full of bird droppings 3 weeks ago. He is admitted to the intensive c",
+     "key": "Amphotericin-based induction"
+    },
+    {
+     "src": "cms_e6l37_focus_vig[9]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 52-year-old woman with no immune problems developed fever, chills, a nonproductive cough and chest pain after clearing soil under a bird roost, and her urine ",
+     "key": "Oral itraconazole"
+    }
+   ]
+  },
+  {
+   "id": "l37-psittacosis",
+   "lecture": "l37",
+   "group": "Opportunistic & atypical infection",
+   "point": "Psittacosis: bird exposure, doxycycline",
+   "slide_words": "bird exposure with doxycycline for psittacosis",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_b[23]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "How is psittacosis primarily acquired?",
+     "key": "Inhaled from sick birds"
+    },
+    {
+     "src": "cms_e6l37_pool_b[27]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "What is the preferred treatment for psittacosis in adults?",
+     "key": "Doxycycline"
+    },
+    {
+     "src": "cms_e6l37_vig_b[13]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 36-year-old pet-shop employee has had a week of fever, severe headache, photophobia and a nonproductive cough. His pulse is 72/min with a temperature of 103°F",
+     "key": "Psittacosis"
+    },
+    {
+     "src": "cms_e6l37_vig_b[16]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 52-year-old woman who keeps several parakeets at home is diagnosed with psittacosis and started on doxycycline. One of the birds has been sick. Which addition",
+     "key": "Veterinary assessment of the birds"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_vig[12]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 47-year-old man who races pigeons has 6 days of fever, severe headache and a dry cough, with a lower-lobe infiltrate. A respiratory nucleic acid test detects ",
+     "key": "Doxycycline"
+    }
+   ]
+  },
+  {
+   "id": "l37-rapid-flu",
+   "lecture": "l37",
+   "group": "Influenza & COVID-19",
+   "point": "Interpreting a negative rapid influenza test",
+   "slide_words": "Interpret negative rapid influenza tests",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_b[32]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "A rapid influenza antigen test is negative during high community activity. What does that result mean?",
+     "key": "Influenza is not excluded"
+    },
+    {
+     "src": "cms_e6l37_vig_b[24]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 52-year-old woman has had a sudden fever, myalgias, a frontal headache and a dry cough for one day, at the peak of a busy influenza season. A rapid influenza ",
+     "key": "It does not exclude influenza"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_vig[13]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 70-year-old woman with chronic obstructive pulmonary disease has had fever, myalgias and cough for 4 days during a week of high influenza activity. She is not",
+     "key": "Start oseltamivir now"
+    }
+   ]
+  },
+  {
+   "id": "l37-flu-48h",
+   "lecture": "l37",
+   "group": "Influenza & COVID-19",
+   "point": "Treat high-risk influenza even after 48 hours",
+   "slide_words": "treat high-risk influenza even after 48 hours",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_b[34]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "For a high-risk patient whose influenza symptoms began more than 48 hours ago, when is antiviral treatment started?",
+     "key": "Promptly, even after 48 hours"
+    },
+    {
+     "src": "cms_e6l37_vig_b[21]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 29-year-old woman who is 24 weeks pregnant has had 3 days of fever, myalgias and cough, and she is not short of breath. Influenza is strongly suspected, and a",
+     "key": "Start oseltamivir now"
+    },
+    {
+     "src": "cms_e6l37_vig_b[22]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 71-year-old man with chronic obstructive pulmonary disease and heart failure is hospitalized on day 5 of influenza, confirmed by molecular testing, with hypox",
+     "key": "Oral or enteric oseltamivir"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": [
+    {
+     "src": "cms_e6l37_focus_vig[13]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 70-year-old woman with chronic obstructive pulmonary disease has had fever, myalgias and cough for 4 days during a week of high influenza activity. She is not",
+     "key": "Start oseltamivir now"
+    }
+   ]
+  },
+  {
+   "id": "l37-covid-outpt",
+   "lecture": "l37",
+   "group": "Influenza & COVID-19",
+   "point": "Early outpatient COVID-19 antivirals",
+   "slide_words": "early outpatient COVID antivirals",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_b[43]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Which treatment fits a high-risk outpatient with mild coronavirus disease 2019, without hypoxemia, on day 3 of symptoms?",
+     "key": "Nirmatrelvir/ritonavir"
+    },
+    {
+     "src": "cms_e6l37_pool_b[44]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Which treatment is avoided in coronavirus disease 2019 without hypoxemia, unless another indication exists?",
+     "key": "Systemic corticosteroids"
+    },
+    {
+     "src": "cms_e6l37_vig_b[30]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 70-year-old unvaccinated man with diabetes and heart failure has mild coronavirus disease 2019 that began 6 days ago. His oxygen saturation is 96% on room air",
+     "key": "A 3-day remdesivir course"
+    },
+    {
+     "src": "cms_e6l37_vig_b[31]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 30-year-old woman who is 20 weeks pregnant and has diabetes tests positive for both influenza and coronavirus disease 2019 on a multiplex test. She has mild s",
+     "key": "Molnupiravir"
+    },
+    {
+     "src": "cms_e6l37_vig_b[32]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 58-year-old man is admitted with coronavirus disease 2019. His oxygen saturation is 90% on room air, and he needs supplemental oxygen. Which medication is the",
+     "key": "Dexamethasone"
+    }
+   ],
+   "existing_not_clean": [
+    {
+     "src": "cms_e6l37_vig_b[35]",
+     "kind": "vig",
+     "state": "flagged",
+     "stem": "A 68-year-old man with diabetes has mild coronavirus disease 2019 that began 2 days ago. His oxygen saturation is 97% on room air. He asks for the steroid his b",
+     "key": "Systemic corticosteroids"
+    }
+   ],
+   "new": []
+  },
+  {
+   "id": "l37-covid-hypox",
+   "lecture": "l37",
+   "group": "Influenza & COVID-19",
+   "point": "Hypoxemic inpatient COVID-19 care",
+   "slide_words": "hypoxemic inpatient care",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l37_pool_b[43]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Which treatment fits a high-risk outpatient with mild coronavirus disease 2019, without hypoxemia, on day 3 of symptoms?",
+     "key": "Nirmatrelvir/ritonavir"
+    },
+    {
+     "src": "cms_e6l37_vig_b[30]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 70-year-old unvaccinated man with diabetes and heart failure has mild coronavirus disease 2019 that began 6 days ago. His oxygen saturation is 96% on room air",
+     "key": "A 3-day remdesivir course"
+    },
+    {
+     "src": "cms_e6l37_vig_b[32]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 58-year-old man is admitted with coronavirus disease 2019. His oxygen saturation is 90% on room air, and he needs supplemental oxygen. Which medication is the",
+     "key": "Dexamethasone"
+    },
+    {
+     "src": "cms_e6l37_vig_b[33]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 61-year-old woman hospitalized with coronavirus disease 2019 and hypoxemia has an elevated D-dimer. She has no signs of venous thrombosis and no bleeding risk",
+     "key": "Prophylactic-dose anticoagulation"
+    },
+    {
+     "src": "cms_e6l37_vig_b[36]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 63-year-old woman hospitalized with coronavirus disease 2019 and hypoxemia is on dexamethasone, but over 24 hours she needs rapidly increasing oxygen. Which t",
+     "key": "Baricitinib or tocilizumab"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": []
+  },
+  {
+   "id": "l38-smear",
+   "lecture": "l38",
+   "group": "Smear ≠ species identification",
+   "point": "An acid-fast smear cannot tell TB from NTM",
+   "slide_words": "An AFB-positive smear supports mycobacteria but cannot distinguish TB from NTM. Confirm species with molecular testing and culture.",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l38_pool_a[0]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "What does a positive acid-fast smear of sputum establish?",
+     "key": "A group of organisms, not the species"
+    },
+    {
+     "src": "cms_e6l38_vig_a[0]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 66-year-old woman with bronchiectasis has had a chronic cough with sputum for months. Her sputum acid-fast bacilli smear is positive. What does this smear res",
+     "key": "Acid-fast organisms, species not yet known"
+    }
+   ],
+   "existing_not_clean": [
+    {
+     "src": "cms_e6l38_pool_a[3]",
+     "kind": "reg",
+     "state": "none",
+     "stem": "Why does identifying the mycobacterial species matter once acid-fast bacilli are found?",
+     "key": "Transmission and treatment differ"
+    }
+   ],
+   "new": [
+    {
+     "src": "cms_e6l38_focus_vig[2]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 71-year-old woman with bronchiectasis has had a chronic productive cough and weight loss. Her sputum acid-fast smear is positive. Which testing will identify ",
+     "key": "Molecular testing and culture"
+    }
+   ]
+  },
+  {
+   "id": "l38-igra-bcg",
+   "lecture": "l38",
+   "group": "Choose the right infection test",
+   "point": "Prefer IGRA after BCG",
+   "slide_words": "Prefer IGRA after BCG.",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l38_pool_a[36]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Why is an interferon-gamma release assay preferred over the tuberculin skin test for most BCG (bacille Calmette-Guérin)-vaccinated patients?",
+     "key": "It is not made positive by the vaccine"
+    },
+    {
+     "src": "cms_e6l38_vig_a[34]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 32-year-old man who received BCG (bacille Calmette-Guérin) vaccine in infancy needs testing for tuberculosis infection before starting work in a setting with ",
+     "key": "Interferon-gamma release assay"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": []
+  },
+  {
+   "id": "l38-tst5",
+   "lecture": "l38",
+   "group": "Choose the right infection test",
+   "point": "TST ≥5 mm positive in HIV or recent close contact",
+   "slide_words": "In HIV or recent close contact, TST induration ≥5 mm is positive and requires evaluation for active disease.",
+   "status": "thin",
+   "note": "the clean 5 mm items are a recall item and transplant/old-film vignettes; the HIV and recent-contact vignettes were flagged in review",
+   "existing_clean": [
+    {
+     "src": "cms_e6l38_pool_a[29]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Which group uses a tuberculin skin test induration cut-off of 5 mm or more?",
+     "key": "Recent close contacts"
+    }
+   ],
+   "existing_not_clean": [
+    {
+     "src": "cms_e6l38_vig_a[22]",
+     "kind": "vig",
+     "state": "flagged",
+     "stem": "A 35-year-old man with human immunodeficiency virus infection has a tuberculin skin test read at 60 hours, showing 6 mm of induration. How should this result be",
+     "key": "Positive; his cut-off is 5 mm"
+    },
+    {
+     "src": "cms_e6l38_vig_a[24]",
+     "kind": "vig",
+     "state": "flagged",
+     "stem": "A 45-year-old man's wife was diagnosed with infectious pulmonary tuberculosis last month. His tuberculin skin test, read at 72 hours, shows 7 mm of induration. ",
+     "key": "Positive; his cut-off is 5 mm"
+    }
+   ],
+   "new": [
+    {
+     "src": "cms_e6l38_focus_vig[0]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 37-year-old woman with human immunodeficiency virus infection has a tuberculin skin test read at 48 hours, showing 6 mm of transverse induration. She has no c",
+     "key": "Evaluate for active tuberculosis disease"
+    },
+    {
+     "src": "cms_e6l38_focus_vig[1]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 29-year-old woman's roommate was diagnosed with infectious pulmonary tuberculosis 10 weeks ago, and they have lived apart since. She has no symptoms. Her tube",
+     "key": "Positive; recent close contacts use 5 mm"
+    }
+   ]
+  },
+  {
+   "id": "l38-rule-out",
+   "lecture": "l38",
+   "group": "Rule out active TB first",
+   "point": "TST/IGRA show infection, not latent vs active; rule out active TB before preventive therapy",
+   "slide_words": "TST and IGRA show infection—not latent versus active TB. Complete clinical evaluation and chest imaging before preventive therapy.",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l38_pool_a[11]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "After a positive tuberculin skin test, what separates latent infection from tuberculosis disease?",
+     "key": "Clinical evaluation and imaging"
+    },
+    {
+     "src": "cms_e6l38_pool_b[16]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "What must be done before starting treatment for latent tuberculosis infection?",
+     "key": "Exclude tuberculosis disease"
+    },
+    {
+     "src": "cms_e6l38_vig_a[3]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 34-year-old woman who works in a setting with ongoing tuberculosis transmission has a positive interferon-gamma release assay on targeted testing. She has no ",
+     "key": "Latent tuberculosis infection"
+    },
+    {
+     "src": "cms_e6l38_vig_a[35]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 38-year-old man has a positive interferon-gamma release assay on targeted testing. He has no symptoms. Which next step is most appropriate?",
+     "key": "Clinical evaluation and chest imaging"
+    },
+    {
+     "src": "cms_e6l38_vig_a[46]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 52-year-old man has 12 mm of induration on a tuberculin skin test. His chest radiograph shows a fibrotic upper-lobe lesion, he does not recall ever being trea",
+     "key": "Exclusion of active tuberculosis disease"
+    },
+    {
+     "src": "cms_e6l38_vig_b[14]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 44-year-old woman has a positive interferon-gamma release assay. She also reports 5 weeks of cough, night sweats and weight loss. Which action should be avoid",
+     "key": "Starting latent-infection treatment now"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": [
+    {
+     "src": "cms_e6l38_focus_vig[0]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 37-year-old woman with human immunodeficiency virus infection has a tuberculin skin test read at 48 hours, showing 6 mm of transverse induration. She has no c",
+     "key": "Evaluate for active tuberculosis disease"
+    }
+   ]
+  },
+  {
+   "id": "l38-sputum",
+   "lecture": "l38",
+   "group": "Collect the right specimens",
+   "point": "Three sputa 8-24 h apart incl. early morning; AFB smear/culture + one rapid molecular test",
+   "slide_words": "Collect three sputum specimens 8–24 hours apart, including one early-morning sample. Send AFB smear/culture and one rapid molecular test.",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l38_pool_a[41]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "How many sputum specimens are collected when pulmonary tuberculosis is suspected?",
+     "key": "Three"
+    },
+    {
+     "src": "cms_e6l38_pool_a[42]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "How far apart are the sputum specimens for suspected pulmonary tuberculosis collected?",
+     "key": "8-24 hours"
+    },
+    {
+     "src": "cms_e6l38_pool_a[43]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Which requirement applies to the sputum specimens collected for suspected pulmonary tuberculosis?",
+     "key": "At least one early-morning specimen"
+    },
+    {
+     "src": "cms_e6l38_pool_a[44]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Which tests are requested on the sputum specimens in suspected pulmonary tuberculosis?",
+     "key": "Acid-fast smear and culture"
+    },
+    {
+     "src": "cms_e6l38_vig_a[41]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 51-year-old man has 5 weeks of cough, night sweats and weight loss, and pulmonary tuberculosis is suspected. Which sputum collection plan is appropriate?",
+     "key": "Three samples 8 to 24 hours apart, 1 early morning"
+    },
+    {
+     "src": "cms_e6l38_vig_a[42]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 43-year-old woman with suspected pulmonary tuberculosis has three sputum specimens collected. Which testing should be requested on the specimens?",
+     "key": "Acid-fast smear, culture and a molecular test"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": []
+  },
+  {
+   "id": "l38-retest",
+   "lecture": "l38",
+   "group": "Act on exposure and suspicion",
+   "point": "Repeat an early negative test 8-10 weeks after last exposure",
+   "slide_words": "Repeat an early negative test 8–10 weeks after the last exposure.",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l38_pool_a[34]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "After a recent tuberculosis exposure, a first tuberculin skin test is negative. When is the test repeated?",
+     "key": "8-10 weeks after the last exposure"
+    },
+    {
+     "src": "cms_e6l38_vig_a[39]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 28-year-old woman shared an office with a coworker diagnosed with infectious pulmonary tuberculosis 2 weeks ago, and her exposure has now ended. She has no sy",
+     "key": "Repeat the test in 8 to 10 weeks"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": []
+  },
+  {
+   "id": "l38-isolation",
+   "lecture": "l38",
+   "group": "Act on exposure and suspicion",
+   "point": "Immediate airborne isolation + TB-program coordination",
+   "slide_words": "Suspected pulmonary TB requires immediate airborne isolation and TB-program coordination.",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l38_pool_b[0]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "When is the local or state tuberculosis program notified?",
+     "key": "For presumed or confirmed disease"
+    },
+    {
+     "src": "cms_e6l38_pool_b[3]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Where is a hospitalized patient with possible infectious pulmonary tuberculosis placed?",
+     "key": "Airborne infection isolation room"
+    },
+    {
+     "src": "cms_e6l38_vig_b[0]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 48-year-old man is admitted with cough, night sweats and weight loss, and his sputum smear shows acid-fast bacilli. Infectious pulmonary tuberculosis is presu",
+     "key": "Airborne infection isolation room"
+    },
+    {
+     "src": "cms_e6l38_vig_b[2]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 62-year-old man's chest radiograph and sputum smear lead his clinician to presume pulmonary tuberculosis; culture results are weeks away. Which reporting step",
+     "key": "Notify the tuberculosis program now"
+    }
+   ],
+   "existing_not_clean": [],
+   "new": []
+  },
+  {
+   "id": "l38-mac-dx",
+   "lecture": "l38",
+   "group": "Diagnose and treat MAC correctly",
+   "point": "MAC diagnosis: symptoms + imaging + usually ≥2 same-species cultures",
+   "slide_words": "One isolate is insufficient: confirm symptoms, imaging, and usually ≥2 same-species sputum cultures.",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l38_pool_b[25]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Besides compatible symptoms, compatible imaging and microbiology, which domain is required to diagnose nontuberculous mycobacterial lung disease?",
+     "key": "Exclusion of alternative diagnoses"
+    },
+    {
+     "src": "cms_e6l38_vig_b[17]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 68-year-old woman with bronchiectasis has a year of chronic cough with sputum, fatigue and weight loss. Computed tomography shows nodular bronchiectasis, alte",
+     "key": "Nontuberculous mycobacterial disease"
+    },
+    {
+     "src": "cms_e6l38_vig_b[18]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 70-year-old man with chronic obstructive pulmonary disease has a single sputum culture that grows Mycobacterium avium complex at a routine visit. His symptoms",
+     "key": "Diagnostic criteria not met"
+    },
+    {
+     "src": "cms_e6l38_vig_b[19]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 64-year-old woman has chronic cough, sputum, fatigue and weight loss. Computed tomography shows fibrocavitary disease, alternative diagnoses have been exclude",
+     "key": "Met; one positive lavage qualifies"
+    }
+   ],
+   "existing_not_clean": [
+    {
+     "src": "cms_e6l38_pool_b[21]",
+     "kind": "reg",
+     "state": "none",
+     "stem": "What does a single respiratory isolate of nontuberculous mycobacteria establish?",
+     "key": "Not disease by itself"
+    },
+    {
+     "src": "cms_e6l38_pool_b[24]",
+     "kind": "reg",
+     "state": "none",
+     "stem": "Which microbiologic result usually meets the criteria for nontuberculous mycobacterial lung disease?",
+     "key": "Two sputum cultures, same species"
+    }
+   ],
+   "new": []
+  },
+  {
+   "id": "l38-mac-rx",
+   "lecture": "l38",
+   "group": "Diagnose and treat MAC correctly",
+   "point": "MAC treatment: azithromycin + ethambutol + rifamycin ≥12 months after culture conversion",
+   "slide_words": "Use azithromycin + ethambutol + rifamycin for ≥12 months after culture conversion.",
+   "status": "covered",
+   "note": null,
+   "existing_clean": [
+    {
+     "src": "cms_e6l38_pool_b[26]",
+     "kind": "reg",
+     "state": "clean",
+     "stem": "Which regimen treats macrolide-susceptible Mycobacterium avium complex lung disease?",
+     "key": "Azithromycin, ethambutol and a rifamycin"
+    },
+    {
+     "src": "cms_e6l38_vig_b[20]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 67-year-old woman meets the criteria for macrolide-susceptible Mycobacterium avium complex lung disease, without cavitation or severe disease. Which regimen i",
+     "key": "Azithromycin, ethambutol and a rifamycin"
+    },
+    {
+     "src": "cms_e6l38_vig_b[21]",
+     "kind": "vig",
+     "state": "clean",
+     "stem": "A 66-year-old man starts treatment for macrolide-susceptible Mycobacterium avium complex lung disease and asks how long he will need it. Which answer is accurat",
+     "key": "12 months past culture conversion"
+    }
+   ],
+   "existing_not_clean": [
+    {
+     "src": "cms_e6l38_pool_b[27]",
+     "kind": "reg",
+     "state": "none",
+     "stem": "When does the minimum 12-month course for Mycobacterium avium complex lung disease start counting?",
+     "key": "After culture conversion"
+    }
+   ],
+   "new": []
+  }
+ ],
+ "summary": {
+  "l37": {
+   "covered": 19,
+   "thin": [
+    "l37-pneumo-seq",
+    "l37-antibiogram",
+    "l37-deescalate",
+    "l37-histo-severity"
+   ],
+   "missing": [
+    "l37-hap-cultures",
+    "l37-anaerobes",
+    "l37-pcr-limits"
+   ],
+   "points": 26,
+   "new_items": 21,
+   "new_clean": 21,
+   "points_without_a_clean_item": []
+  },
+  "l38": {
+   "covered": 8,
+   "thin": [
+    "l38-tst5"
+   ],
+   "points": 9,
+   "missing": [],
+   "new_items": 3,
+   "new_clean": 3,
+   "points_without_a_clean_item": []
+  }
+ }
+}

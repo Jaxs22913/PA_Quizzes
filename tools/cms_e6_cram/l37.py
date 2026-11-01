@@ -7,6 +7,42 @@ conflicts are note rows. Doses printed on slide 43 are left out (the quizzes nev
 """
 L37C = "#8a5a2b"
 
+
+# STUDY FOCUS (slide 127, posted 2026-10-31): the lecturer's own list of what his exam questions test, condensed
+# from guide 5.0 (the starred study-focus box) and the sections it points to. Goes first on the sheet.
+FOCUS = [
+{"id": "focus-l37", "label": "Study Focus: Respiratory Infections (slide 127)", "color": L37C,
+ "tag": "Study focus &middot; Lecture 37 &middot; slide 127 (about 20 questions)",
+ "cols": ["Focus point", "Know this"], "widths": ["30%", "70%"], "rows": [
+  {"group": "PREVENTION &amp; VACCINES"},
+  ("Influenza product selection", "Yearly for everyone <b>6 months or older</b> without a contraindication; <b>65 or older: preferentially high-dose, adjuvanted or recombinant</b>; pregnancy: inactivated or recombinant, <b>avoid live attenuated</b>; egg allergy: routine safety measures only"),
+  ("Respiratory syncytial virus (RSV) eligibility", "<b>One dose</b>: all adults <b>75 or older</b>, and <b>50&ndash;74 at increased risk</b>; not an annual vaccine"),
+  ("Pneumococcal sequencing", "Conjugate-naive eligible adult: <b>PCV20 or PCV21 alone completes</b> the series; <b>PCV15 is followed by PPSV23</b>, usually <b>1 year or more later</b> (PCV = pneumococcal conjugate vaccine, PPSV23 = 23-valent polysaccharide vaccine)"),
+  {"group": "BRONCHITIS &amp; STEWARDSHIP"},
+  ("Bronchitis or pneumonia?", "Uncomplicated bronchitis is clinical and usually viral; abnormal vital signs, hypoxemia, fever or <b>focal consolidation</b> &rarr; chest film for pneumonia"),
+  ("Sputum color", "Green or yellow sputum <b>does not justify antibiotics</b>; no routine antibiotics for uncomplicated bronchitis"),
+  {"group": "COMMUNITY-ACQUIRED PNEUMONIA (CAP)"},
+  ("Confirmation and site of care", "<b>Chest radiograph confirms</b> (lung ultrasound with expertise); <b>Pneumonia Severity Index plus judgment</b> for outpatient versus general ward; severe CAP gets urgent intensive care-level assessment"),
+  ("Severe CAP", "<b>Vasopressor-dependent shock</b>, <b>mechanical ventilation</b>, or 3 or more minor criteria"),
+  ("Outpatient regimens", "<b>No comorbidities</b>: amoxicillin or doxycycline (macrolide alone only if pneumococcal resistance below 25%). <b>Comorbidities</b>: amoxicillin-clavulanate, cefpodoxime or cefuroxime <b>plus</b> azithromycin or doxycycline, or a respiratory fluoroquinolone"),
+  ("Resistant coverage", "Methicillin-resistant <i>Staphylococcus aureus</i> or <i>Pseudomonas</i> coverage <b>only for validated risk</b> (prior respiratory isolation, recent hospitalization with intravenous antibiotics)"),
+  {"group": "HOSPITAL-ACQUIRED (HAP) &amp; VENTILATOR-ASSOCIATED (VAP) PNEUMONIA, ASPIRATION"},
+  ("Timing, cultures, antibiogram", "HAP: <b>48 hours or more after admission</b>; VAP: <b>more than 48 hours after intubation</b>. <b>Respiratory cultures first</b>, then empiric therapy by the <b>local antibiogram</b> (cefepime or piperacillin-tazobactam); do not delay care in unstable patients"),
+  ("De-escalation", "<b>Narrow or stop</b> as cultures and the course clarify; usually <b>7 days</b>"),
+  ("Pneumonitis vs aspiration pneumonia", "Pneumonitis: sterile chemical injury, <b>support, no prophylactic antibiotics</b> when bacterial infection is not suspected. Pneumonia: infection, CAP or HAP regimen by setting. <b>Anaerobic coverage only for abscess or empyema</b>"),
+  {"group": "OPPORTUNISTIC &amp; ATYPICAL"},
+  ("<i>Pneumocystis jirovecii</i> pneumonia (PJP): sampling and PCR", "<b>Induced sputum or bronchoalveolar lavage</b> (expectorated sputum: poor sensitivity); polymerase chain reaction (PCR) is highly sensitive but <b>can detect colonization</b>"),
+  ("Steroid thresholds", "Human immunodeficiency virus (HIV)-associated PJP: adjunctive corticosteroids if <b>room-air arterial oxygen below 70 mm Hg</b> or alveolar-arterial oxygen gradient 35 mm Hg or more"),
+  ("Histoplasmosis by severity", "Mild acute, immunocompetent: <b>often observe</b>, no antifungal; prolonged or progressive, or higher-risk host: <b>consider itraconazole</b>; severe or disseminated: <b>specialist-led amphotericin-based induction</b>; chronic cavitary: azole, <b>usually 12 months or more</b>"),
+  ("Psittacosis", "<b>Bird exposure</b>; respiratory nucleic acid test; <b>doxycycline</b> preferred (macrolide with infectious disease input if tetracyclines are unsuitable)"),
+  {"group": "INFLUENZA &amp; COVID-19"},
+  ("Negative rapid influenza test", "<b>Does not exclude influenza</b>, especially with high activity; do not withhold indicated antivirals"),
+  ("High-risk influenza", "<b>Oseltamivir promptly, even after 48 hours</b>"),
+  ("COVID-19 pathways", "<b>No hypoxemia</b>, high-risk outpatient: nirmatrelvir/ritonavir within 5 days or 3-day remdesivir within 7 days; <b>no systemic steroids</b> unless another indication exists. <b>Hypoxemic inpatient</b>: <b>dexamethasone</b>, consider remdesivir; baricitinib or tocilizumab for rapid progression; venous thromboembolism prophylaxis"),
+  ("Best study method", "For each topic, practice the same <b>five decisions</b>: diagnosis, severity/site of care, the test that changes management, first-line treatment, and when to withhold or narrow therapy"),
+ ]},
+]
+
 CRITERIA = [
 {"id": "crit-l37-vaccines", "label": "Respiratory Vaccines: Who Gets Which", "color": L37C,
  "tag": "Criteria &middot; Lecture 37 &middot; slides 4&ndash;13, 124",
@@ -288,11 +324,11 @@ CRITERIA = [
 
 TOPICS = [
 {"id": "l37-emph", "label": "★ Professor Emphasized — Restraint, Scores, Board Favorites", "color": "#b8860b", "rows": [
- ["★ Guidance coming", "He writes the exam items and will post <b>guidance for both lectures &ldquo;this weekend&rdquo;</b> at the end of the slides (0:02, 4:00). Check for it."],
+ ["★ Study focus posted", "He writes the exam items; his guidance is now <b>slides 127&ndash;128</b> (the Study Focus table at the top of this sheet): about 20 questions on this lecture."],
  ["★ Diagnostic restraint", "Bronchitis is &ldquo;our first opportunity to practice diagnostic restraint&rdquo;: <b>no routine antibiotics</b>, whatever the sputum color. He closed on testing only when it changes a decision, and when to withhold antibiotics."],
  ["★ Scores", "<b>Pneumonia Severity Index preferred</b> for admission; <b>CURB-65 complementary</b> (0:56)."],
  ["★ Board favorites", "Histoplasmosis (&ldquo;going to show up on your PANCE&rdquo;, the Physician Assistant National Certifying Exam); psittacosis (&ldquo;super common medical boards question&rdquo;)."],
- ["Not tested", "Example chest films as &ldquo;what is it&rdquo;; the alveolar-arterial gradient; influenza vaccine make-up; vaccine detail beyond who gets which; stage day ranges."],
+ ["Not tested (his words in the lecture)", "Example chest films as &ldquo;what is it&rdquo;; influenza vaccine make-up; stage day ranges; the alveolar-arterial gradient (but his focus slide now says &ldquo;steroid thresholds&rdquo;: know 35 mm Hg or more too). Vaccine <b>product selection, RSV eligibility and pneumococcal sequencing ARE on his focus slide</b>."],
 ]},
 {"id": "l37-bronchitis", "label": "Acute Bronchitis", "color": "#7a2d30", "rows": [
  ["What it is", "Self-limited <b>viral</b> infection of the large airways; cough (worst in the morning) <b>2&ndash;3 weeks</b>, sometimes wheeze; <b>clinical diagnosis</b>."],

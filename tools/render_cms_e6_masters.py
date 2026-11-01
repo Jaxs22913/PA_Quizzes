@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Render the five CMS I Exam 6 (Respiratory Block Exam I) Master Exams -- 60 questions each,
-cumulative over Lectures 33-38 and weighted by scheduled lecture hours (see
-tools/cms_e6_masters_partition.py).
+cumulative over Lectures 33-38, Lectures 33-36 weighted by scheduled lecture hours and Lectures 37-38
+splitting their share 2:1 (re-weighted 2026-10-31; see tools/cms_e6_masters_partition.py).
 
 Reads Clinical Medicine and Surgery I Exam 6/master-exams.json, written by
 tools/cms_e6_masters_partition.py (which puts the keys on a 15/15/15/15 A-D cycle per form -- never
@@ -21,11 +21,13 @@ PAL = dict(navy="#7a2d30", indigo="#b45357", gold="#c08a2e", ice="#faefee")
 CHIPS = ["Oxygen delivery", "Acid-base", "Asthma", "Chronic obstructive pulmonary disease",
          "Respiratory infections and vaccines", "Tuberculosis and other mycobacteria"]
 INTRO = (
-  "Sixty questions drawn from all six lectures of the first respiratory block, <b>weighted by "
-  "scheduled lecture hours</b>: the three-hour respiratory infections lecture gives sixteen questions "
-  "per form, the two-hour acid-base, asthma and chronic obstructive pulmonary disease lectures eleven "
-  "each, and the one-hour oxygen delivery and mycobacterial lectures five or six (that slot alternates "
-  "from form to form). <b>Forty-eight are patient vignettes</b> and twelve are direct recall, with the "
+  "Sixty questions drawn from all six lectures of the first respiratory block. Acid-base, asthma and "
+  "chronic obstructive pulmonary disease give eleven questions each per form and oxygen delivery five or "
+  "six, <b>weighted by scheduled lecture hours</b>. The two lectures on respiratory infections and "
+  "mycobacterial infections share the slots their hours give (twenty-one or twenty-two) <b>two to one, in line "
+  "with the about 20 and about 10 exam questions expected from these lectures</b>: fourteen or fifteen on respiratory infections and "
+  "seven on tuberculosis and other mycobacteria, chosen first from the points on his study-focus slides. "
+  "<b>Forty-eight are patient vignettes</b> and twelve are direct recall, with the "
   "lead-in spread across classifying severity and scores, testing, treatment, next step, patient "
   "education and what to avoid.<br><br>"
   "Some of the questions are not in the topic quizzes, so these forms are worth working even after "
