@@ -10,9 +10,19 @@ FOUR NUMBERED OBJECTIVES, but objective 3 (public concern and antibiotic-resista
 NO slide in the deck, so no question asks it and the set guard covers objectives 1, 2 and 4 (guide 16.15 says so).
 Objective 4 (laboratory methods and recalls) rests on few slides (14, 34, 35): at least MIN_IO4 per set.
 
-PHASE 1 WEIGHTS ARE SLIDE COUNTS (the recording is not yet transcribed); the audio pass re-weights by minutes
-spoken. Pool guards: no percentage, case count or death toll keyed (slide 9's figures carry a disputed
-"worldwide" label); exactly one Bacillus cereus heat-stability item, keyed as slide 28 says (guide 16.17).
+WEIGHTS ARE MINUTES SPOKEN (recording of 30 October 2026, read 1 November; transcript_emphasis_measurement). One
+clip, about 14:21-15:00, covers the whole deck ("Anyway, that's it."). Content minutes, stories taken out (food
+poisoning tales, cookie dough, Sideways, The Expanse, Pepto's black tongue, the turtle, Typhoid Mary on YouTube,
+bread buns, about 13 minutes): microbes in food production 7.2 (fermentation, bread, beer, brine pickles, dairy,
+microbes as food), the burden and agencies 1.6, intoxication versus infection 0.7, Escherichia coli 2.2,
+Salmonella 3.0, Campylobacter 0.8, Listeria 1.3, Clostridium 1.5, Bacillus cereus 0.9, Vibrio 1.6, fungi,
+protozoa and worms 1.5, viruses 1.5, tracking 1.1, kitchen prevention 0.8. Production is capped at its pool (9);
+the other 51 questions are scaled from the remaining 18.5 minutes (largest remainders), intoxication versus
+infection held at 2 so it stays in both sets. She gave NO test signpost in this lecture, and said nothing on
+objective 3 (antibiotic resistance), heat-stable versus heat-labile toxins, or a cooking temperature. Pool guards:
+no percentage, case count or death toll keyed (slide 9's figures carry a disputed "worldwide" label); exactly one
+Bacillus cereus heat-stability item, keyed as slide 28 says (guide 16.17).
+Re-weighting keeps the shipped sets where it can (keep=shipped(): every question moved costs the score).
 
 Engine: tools/micro_l15_l16_partition_lib.py (selection, rotation, guards).
 """
@@ -21,7 +31,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from micro_l16_pool_a import POOL_A
 from micro_l16_pool_b import POOL_B
-from micro_l15_l16_partition_lib import partition
+from micro_l15_l16_partition_lib import partition, shipped
 
 POOL = POOL_A + POOL_B
 FOLDER = "Microbiology Exam 3"
@@ -29,10 +39,10 @@ N_IMG = 3          # picture questions in Set 2 (Set 1 has none): every extracte
 MIN_IO4 = 2
 
 TARGET = {
-    "Microbes in food production": 5, "Foodborne illness burden": 4, "Intoxication vs infection": 4,
-    "Escherichia coli": 5, "Salmonella": 6, "Campylobacter": 4,
-    "Listeria": 6, "Clostridium": 4, "Bacillus cereus": 4, "Vibrio": 3, "Fungi, protozoa & worms": 4,
-    "Foodborne viruses": 4, "Tracking food safety": 4, "Kitchen prevention": 3,
+    "Microbes in food production": 9, "Foodborne illness burden": 5, "Intoxication vs infection": 2,
+    "Escherichia coli": 6, "Salmonella": 8, "Campylobacter": 2,
+    "Listeria": 4, "Clostridium": 4, "Bacillus cereus": 3, "Vibrio": 4, "Fungi, protozoa & worms": 4,
+    "Foodborne viruses": 4, "Tracking food safety": 3, "Kitchen prevention": 2,
 }
 
 
@@ -84,5 +94,6 @@ HEAT = [q for q in POOL if q["topic"] == "Bacillus cereus" and re.search(r"heat[
 assert len(HEAT) <= 1, "more than one Bacillus cereus heat-stability item (slide 28 conflicts with references)"
 
 if __name__ == "__main__":
+    out = os.path.join(HERE, "micro_l16_sets.json")
     partition(POOL, TARGET, CLUSTERS, MUST_EACH, MUST_ANY, {"4 ": MIN_IO4}, N_IMG, 20261031,
-              os.path.join(HERE, "micro_l16_sets.json"), os.path.dirname(HERE), FOLDER)
+              out, os.path.dirname(HERE), FOLDER, keep=shipped(POOL, out))

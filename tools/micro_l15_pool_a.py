@@ -1176,4 +1176,89 @@ Q("Paracoccidioides", IO1,
     "true pathogen taken for an opportunist")],
   ci(13, 5, 7, 26, 37)),
 
+
+# ---- PHASE 2 (recording of 30 October 2026) -------------------------------------------------------------------
+# Dr. Fair's one explicit signpost: after "Once again, amphotericin B is the drug of choice" for Blastomyces she
+# said "That's a great test question. That'll be a good one." (part 1, 23:33-23:41). She asked the room for the
+# drug for each true pathogen in turn. Four items, keyed from the slides' own treatment lines (19, 20, 26, 30,
+# 33); the partition puts one in every set.
+
+Q("Antifungal control", IO1,
+  "Which antifungal is the highly toxic, often expensive drug of choice for many fungal infections?",
+  ("Amphotericin B",
+   "Correct. Amphotericin B is the highly toxic and often expensive drug of choice for many fungal infections. It "
+   "is the most common treatment option for blastomycosis and coccidioidomycosis, and is used with azoles for "
+   "histoplasmosis."),
+  [("Nystatin",
+    "Nystatin is on the list of antifungal drugs used for control, alongside flucytosine and the azoles, but it is "
+    "not the drug of choice for many fungal infections. That drug is amphotericin B, made by a Streptomyces soil "
+    "bacterium.", "another listed antifungal taken for the drug of choice"),
+   ("Flucytosine",
+    "Flucytosine is another antifungal named among the drugs that control mycotic infections, but it is not "
+    "described as the drug of choice. Amphotericin B is the highly toxic, often expensive drug of choice for many "
+    "fungal infections.", "another listed antifungal taken for the drug of choice"),
+   ("Pentamidine",
+    "Pentamidine is an antiprotozoan drug given with co-trimoxazole for Pneumocystis pneumonia; these are not the "
+    "traditional antifungal drugs. The drug of choice for many fungal infections is amphotericin B.",
+    "Pneumocystis drug taken for an antifungal")],
+  c(20, 19, 30, 33, 58)),
+
+Q("Blastomyces", IO1,
+  "A man has blastomycosis; his lung lesion was first mistaken for lung cancer. What is the most common treatment "
+  "option?",
+  ("Amphotericin B",
+   "Correct. Amphotericin B is the most common treatment option for blastomycosis, the lung infection by "
+   "Blastomyces dermatitidis that may be mistaken for lung cancer on chest X-ray. It is the drug of choice for many "
+   "fungal infections."),
+  [("Topical azoles alone",
+    "Topical azoles applied for several weeks are the usual treatment of the dermatophytoses, infections of "
+    "keratinized skin, hair and nails. Blastomycosis is a lung infection by a true pathogen, and amphotericin B is "
+    "its most common treatment option.", "cutaneous treatment applied to a systemic mycosis"),
+   ("Pentamidine",
+    "Pentamidine, an antiprotozoan given with co-trimoxazole, treats Pneumocystis pneumonia in immunocompromised "
+    "patients. Blastomycosis, caught by inhaling conidia from forest soil, is treated most commonly with "
+    "amphotericin B.", "Pneumocystis treatment borrowed"),
+   ("Nystatin",
+    "Nystatin is listed with amphotericin B as a treatment option for aspergillosis, not blastomycosis. For "
+    "blastomycosis, amphotericin B is the most common treatment option.", "aspergillosis treatment borrowed")],
+  c(33, 20, 45, 58, 60)),
+
+Q("Coccidioides", IO1,
+  "Which statement about treating coccidioidomycosis is accurate?",
+  ("Amphotericin B, though most cases need none",
+   "Correct. Amphotericin B is the most common treatment option for coccidioidomycosis, but most cases do not "
+   "require any treatment at all. Amphotericin B is the drug of choice for many fungal infections."),
+  [("Pentamidine, as all cases need treatment",
+    "Pentamidine with co-trimoxazole treats Pneumocystis pneumonia, and most coccidioidomycosis cases need no "
+    "treatment at all. When treatment is needed, amphotericin B is the most common option.",
+    "Pneumocystis treatment borrowed; overstates the need"),
+   ("Topical azoles, applied for several weeks",
+    "Topical azoles over several weeks are the treatment of the dermatophytoses of skin, hair and nails. "
+    "Coccidioidomycosis is an inhaled lung infection; amphotericin B is its most common treatment, and most cases "
+    "need none.", "cutaneous treatment applied to a systemic mycosis"),
+   ("Removal of affected tissue in every case",
+    "Removal of affected tissues, together with amphotericin B, is the treatment of mucormycosis. Most "
+    "coccidioidomycosis cases need no treatment at all, and amphotericin B is the most common option when they "
+    "do.", "mucormycosis treatment borrowed")],
+  c(30, 45, 58, 63)),
+
+Q("Histoplasma", IO1,
+  "Which drugs are common treatment options for histoplasmosis?",
+  ("Amphotericin B and azoles",
+   "Correct. Amphotericin B and azoles are common treatment options for histoplasmosis, the Ohio Valley fever "
+   "caught by inhaling conidia from soil rich in bird or bat guano. Amphotericin B is the drug of choice for many "
+   "fungal infections."),
+  [("Pentamidine and co-trimoxazole",
+    "Pentamidine, an antiprotozoan, and co-trimoxazole, an antibacterial, treat Pneumocystis pneumonia and are not "
+    "the traditional antifungal drugs. Histoplasmosis is treated with amphotericin B and azoles.",
+    "Pneumocystis treatment borrowed"),
+   ("Topical azoles for several weeks",
+    "Topical azoles applied for several weeks treat the dermatophytoses confined to skin, hair and nails. "
+    "Histoplasmosis infects the lungs and can spread, so amphotericin B and azoles are used.",
+    "cutaneous treatment applied to a systemic mycosis"),
+   ("Heat packs and potassium iodide",
+    "Heat packs and super-saturated potassium iodide are used for sporotrichosis, which in animals is often seen in "
+    "the feet, claws or hooves. Histoplasmosis is treated with amphotericin B and azoles.",
+    "Sporothrix treatment borrowed")],
+  c(26, 39, 45, 58)),
 ]
