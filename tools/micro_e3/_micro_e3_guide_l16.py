@@ -21,7 +21,8 @@ Clostridioides renaming are all notes and are left out). Every picture was viewe
 a turtle, a watermelon recall), 20 (Salmonella, two agar plates, the Mary Mallon poster), 24 (Listeria spread),
 26 (a raw honey label). Slide 12's diagram is small (179 x 281 px) and is shown at that size.
 
-PHASE 1 (30 October 2026): built from the slides while the lecture was being recorded. The MICROL16AUDIO block
+PHASE 1 (30 October 2026): built from the slides while the lecture was being recorded. PHASE 2 (1 November 2026):
+the recording read; the MICROL16AUDIO block now carries it. Originally: the MICROL16AUDIO block
 is the placeholder the audio pass replaces.
 """
 import io, os
@@ -143,13 +144,43 @@ SECTION_HEAD = """
 
 <!--MICROL16AUDIO-->
   <div class="prof-flag" id="food-audio"><span class="prof-flag-label">&#9733; From the lecture recording &mdash; 30 October 2026</span>
-  <p><b>Not read yet.</b> This lecture was recorded on 30 October and the recording is being transcribed (ours,
-  plus Notability&rsquo;s own transcript as a second opinion). Until it has been read, this section is built from
-  the slides alone, and the quizzes are weighted by slide count. When the recording has been read, this box will
-  carry what Dr. Fair stressed, what she said to skip, whether she covered objective 3 (antibiotic resistance, which
-  no slide teaches), and any correction of a slide (16.17 lists the ones worth listening for).</p>
+  <p>About 39 minutes with Dr. Fair, one part (Jaxon&rsquo;s recording), straight after Lecture 15 with no break
+  (&ldquo;Do we break or we go? We go.&rdquo;); it covers the whole deck and ends &ldquo;Anyway, that&rsquo;s
+  it.&rdquo; <b>One transcript only</b>: Notability made no transcript of this lecture, so quotes below are from a
+  single machine transcription. Every claim was checked against the deck; where the two differ, the slide is what this
+  guide teaches.</p>
+  <p><b>No signpost at all</b>: she never said what is or is not on the exam, so the quizzes are weighted by time
+  spent, stories taken out (about 13 minutes: food-poisoning tales, cookie dough, a wine film, Pepto&rsquo;s black
+  tongue, the pet turtle, bread buns). Microbes in food production took the most, about 7 minutes (fermentation,
+  bread, beer, brine pickles, dairy, microbes as food), then <em>Salmonella</em> 3, <em>Escherichia coli</em> 2,
+  the burden and agencies, <em>Vibrio</em>, <em>Clostridium</em>, fungi with protozoa and worms, and the viruses
+  about 1&frac12; each, <em>Listeria</em> and tracking about 1 each, and intoxication versus infection,
+  <em>Campylobacter</em>, <em>Bacillus cereus</em> and kitchen prevention under 1 each.</p>
+  <table>
+    <tr><th>What was said</th><th>What it means for you</th></tr>
+    <tr><td><em>&ldquo;Listeria is the one that scares me&hellip; such a high temperature range of like zero or one
+    degree Celsius all the way out to 40 degrees Celsius, so that&rsquo;s refrigerator, countertop&hellip; in your
+    freezer Listeria can survive as well, and <mark class="prof-highlight">Listeria is the number one cause of food
+    related death</mark>.&rdquo;</em> [26:25]</td>
+    <td>16.8: the 1&ndash;40&nbsp;&deg;C range; in the freezer it <b>survives</b> (her word), which settles the
+    slide&rsquo;s &ldquo;grows easily at freezer temperatures&rdquo;. She repeated the slide&rsquo;s &ldquo;number
+    one cause of food-related deaths&rdquo;, so it stays keyed as the slide says (16.17).</td></tr>
+    <tr><td><em>&ldquo;Keep your hot foods hot and your cold foods cold, and if something is sketchy, leftovers, just
+    toss it. It&rsquo;s not worth the risk.&rdquo;</em> [29:52; again at 36:21]</td>
+    <td>Said twice: 16.10 (<em>Bacillus cereus</em>, rice) and 16.16 (prevention).</td></tr>
+    <tr><td><em>&ldquo;E. coli is known as an indicator organism and what it indicates is the presence of fecal
+    material.&rdquo;</em> [19:10]</td>
+    <td>16.5: the eosin methylene blue plate and the indicator organism.</td></tr>
+    <tr><td><em>&ldquo;That is not so much an issue today because of aquaculture.&rdquo;</em> [31:36]</td>
+    <td>16.11: the R-month rule for shellfish.</td></tr>
+  </table>
+  <p><b>What she did not cover</b>: objective 3 (antibiotic-resistant strains in the food supply) was never mentioned,
+  so it still has no source (16.15); she did not mention heat-stable or heat-labile toxins for <em>Bacillus
+  cereus</em> (slide 28 stands, 16.17); she said &ldquo;use a meat thermometer&rdquo; without a temperature (slide
+  36&rsquo;s 165&nbsp;&deg;F stands); and she said &ldquo;there is a vaccine available&rdquo; for hepatitis without
+  naming which.</p>
   </div>
-<!--/MICROL16AUDIO-->
+<!--/MICROL16AUDIO--><!--/MICROL16AUDIO-->
 """
 
 BODY = """
@@ -325,8 +356,8 @@ BODY = """
     <li><strong>Most vulnerable foods</strong>: soft cheeses, raw fruit and vegetables, raw or undercooked meats, deli
     meats, seafood, smoked seafood, hot dogs, preserved meats.</li>
     <li><strong>Probably the biggest concern: it grows well from 1 to 40&nbsp;&deg;C</strong>, easily at refrigerator,
-    room or freezer temperatures (the slide&rsquo;s words; freezer temperatures sit below its own 1&nbsp;&deg;C floor, so
-    see 16.17).</li>
+    room or freezer temperatures (the slide&rsquo;s words; in the recording, it <b>survives</b> in the freezer: see
+    16.17).</li>
   </ul>
   """ + fig("l16-s024-listeria-spread.jpg", 900, 559,
       "Diagram: contaminated food to the intestine, a lymph node and the bloodstream, which circulates to the liver and spleen, then on to the brain and across the placenta to a fetus.",
@@ -453,14 +484,16 @@ BODY = """
     Organization estimates for the world are far larger. Not asked.</li>
     <li><strong><em>Listeria</em> as the &ldquo;#1 cause of food-related deaths in the US&rdquo; (slide 23).</strong>
     National estimates rank nontyphoidal <em>Salmonella</em> above <em>Listeria</em> for total deaths;
-    <em>Listeria</em> has one of the highest death rates per case. Keyed as the slide says.</li>
+    <em>Listeria</em> has one of the highest death rates per case. She repeated the slide in the recording. Keyed as
+    the slide says.</li>
     <li><strong>165&nbsp;&deg;F (slide 36).</strong> Food-safety agencies give 165&nbsp;&deg;F for poultry, leftovers and
     casseroles, and lower internal temperatures for other meats (160&nbsp;&deg;F for ground meat, 145&nbsp;&deg;F for
     whole cuts with a rest). Keyed as the slide says.</li>
     <li><strong><em>Listeria</em> at freezer temperatures (slide 23).</strong> The slide gives a growth range of
-    1 to 40&nbsp;&deg;C and also says it grows easily at freezer temperatures, which are below that range.
-    References say it survives freezing and grows at refrigerator temperatures. The quizzes ask only the
-    1&ndash;40&nbsp;&deg;C range and refrigerator growth.</li>
+    1 to 40&nbsp;&deg;C and also says it grows easily at freezer temperatures, which are below that range. In the
+    recording she said &ldquo;in your freezer Listeria can survive as well&rdquo;: it survives freezing, as references
+    say, and grows at refrigerator temperatures. The quizzes ask only the 1&ndash;40&nbsp;&deg;C range and
+    refrigerator growth.</li>
     <li><strong>The hepatitis vaccine (slide 33).</strong> The slide says there is a vaccine in case of suspected
     exposure without naming the virus. That fits hepatitis A; there is no licensed hepatitis E vaccine in the United
     States.</li>
@@ -486,7 +519,7 @@ TEST = """
        explain:"Intoxication = a preformed toxin is eaten (Clostridium botulinum toxin, staphylococcal toxin). Salmonella and Listeria are food infections: live cells multiply."},
       {q:"Why is Listeria monocytogenes such a concern in stored food?",
        choices:["It is killed only by freezing","It grows from 1 to 40 C, even in the refrigerator","It needs a living host to grow","It only contaminates canned goods"],correct:1,
-       explain:"Listeria grows well from 1 to 40 C, at refrigerator, room or freezer temperatures."},
+       explain:"Listeria grows well from 1 to 40 C, at refrigerator or room temperature, and survives in the freezer."},
       {q:"Which organism is the 'indicator organism' of fecal contamination?",
        choices:["Escherichia coli","Vibrio vulnificus","Bacillus cereus","Clostridium perfringens"],correct:0,
        explain:"E. coli is associated with human and animal feces; eosin methylene blue plates confirm it in food and water samples."},

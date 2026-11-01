@@ -21,7 +21,8 @@ including the picture-only slides that carry content: 6 (the dimorphism cycle), 
 (the Histoplasma cycle) and 31 (the Coccidioides cycle). Slides 1, 2, 8, 21 and 46 are jokes, a meme, a television
 still and a television commercial: no content.
 
-PHASE 1 (30 October 2026): built from the slides while the lecture was being recorded. The MICROL15AUDIO block
+PHASE 1 (30 October 2026): built from the slides while the lecture was being recorded. PHASE 2 (1 November 2026):
+the recording read; the MICROL15AUDIO block now carries it. Originally: the MICROL15AUDIO block
 is the placeholder the audio pass replaces.
 """
 import io, os
@@ -162,13 +163,53 @@ SECTION_HEAD = """
 
 <!--MICROL15AUDIO-->
   <div class="prof-flag" id="fun-audio"><span class="prof-flag-label">&#9733; From the lecture recording &mdash; 30 October 2026</span>
-  <p><b>Not read yet.</b> This lecture was recorded on 30 October and the recording is being transcribed (ours,
-  plus Notability&rsquo;s own transcript as a second opinion). Until it has been read, this section is built from
-  the slides alone: the quizzes are weighted by slide count, and the only emphasis marked is the slides&rsquo; own
-  (&ldquo;Focus on the Latin names for each body part/region&rdquo; on slide 43, 15.13). When the recording has been
-  read, this box will carry what Dr. Fair stressed, what she said to skip, and any correction of a slide.</p>
+  <p>About 53 minutes with Dr. Fair in two parts (Jaxon&rsquo;s recording): part 1, 36 minutes, from the end of
+  slide 9 to the break; part 2, 17 minutes, from slide 51 to the end. <b>Slides 1&ndash;9 were not recorded</b>
+  (roughly the first 14 minutes: true and opportunistic pathogens and the thermal dimorphism figure), so those topics
+  keep their slide-count weight. <b>One transcript only</b>: Notability made no transcript of this lecture, so
+  quotes below are from a single machine transcription (names it misheard are written correctly here). Every claim
+  was checked against the deck; where the two differ, the slide is what this guide teaches.</p>
+  <p><b>She signposts little, so the quizzes are weighted by time spent</b>, stories taken out (about 12 minutes:
+  the bird quiz, the family beagle, Digger the dermatophyte, the caduceus and barber pole, football, mold-test
+  plates): epidemiology, portals of entry and the levels of invasion about 4&frac12; minutes, <em>Candida</em> 3&frac12;,
+  the dermatophytes 3, <em>Coccidioides</em> 2&frac12;, control and amphotericin B 2&frac12;, <em>Sporothrix</em> 2&frac12;,
+  mucormycosis and the other opportunists 2&frac12;, diagnosis 2, <em>Blastomyces</em> 2, the priority list 2,
+  <em>Histoplasma</em>, <em>Aspergillus</em> and the allergies and toxins about 2 each, <em>Cryptococcus</em>,
+  <em>Pneumocystis</em> and <em>Paracoccidioides</em> 1&frac12; each, the superficial mycoses 1.</p>
+  <table>
+    <tr><th>What was said</th><th>What it means for you</th></tr>
+    <tr><td><em>&ldquo;<mark class="prof-highlight">Once again, amphotericin B is the drug of choice. That&rsquo;s a
+    great test question. That&rsquo;ll be a good one.</mark>&rdquo;</em> [part 1, 23:33]</td>
+    <td>The one plain signpost of the lecture. She asked the room for the drug for every true pathogen and the
+    answer was always amphotericin B (15.6 and the table in 15.7: the most common option for blastomycosis and
+    coccidioidomycosis, with azoles for histoplasmosis, with ketoconazole and sulfa drugs for
+    paracoccidioidomycosis). Every quiz set carries an amphotericin B treatment question.</td></tr>
+    <tr><td><em>&ldquo;<mark class="prof-highlight">The key for these pathogens is gonna be the characteristic of
+    thermal dimorphism.</mark> I think I highlighted it every time it shows up.&rdquo;</em> [part 1, 4:05]</td>
+    <td>15.2: mold at 30&nbsp;&deg;C, yeast at 37&nbsp;&deg;C, and which pathogens show it.</td></tr>
+    <tr><td><em>&ldquo;Don&rsquo;t panic about what the colonies look like. We&rsquo;re not studying mycology. This
+    is sort of a general overview, so zoom out.&rdquo;</em> [part 1, 17:00]</td>
+    <td>Know that the two <em>Histoplasma</em> colonies show thermal dimorphism (15.2); no question asks what a
+    colony looks like.</td></tr>
+    <tr><td><em>&ldquo;One important reagent is potassium hydroxide.&rdquo;</em> [part 1, 6:52]</td>
+    <td>15.5: dilute potassium hydroxide lyses human cells and leaves the thick-walled fungal cells.</td></tr>
+    <tr><td><em>&ldquo;It is possible to develop an immunity against [the true pathogens] because they do stimulate
+    that strong of an immune response&rdquo;</em>; the opportunists bring repeat episodes. [part 1, 4:18; 14:44]</td>
+    <td>She backs slide 24 over slide 15 (15.23). Still not asked as a count.</td></tr>
+    <tr><td><em>&ldquo;For animals, the treatment is really interesting, where you use potassium iodide&hellip; For
+    humans&hellip; amphotericin B is the drug of choice.&rdquo;</em> [part 1, 28:28]</td>
+    <td>Slide 39&rsquo;s heat packs and potassium iodide read as the animal treatment (15.12, 15.23).</td></tr>
+    <tr><td><em>&ldquo;The main fungus is Trichophyton. However, there are about almost 40 different fungal genera
+    that can be associated with these ringworm infections.&rdquo;</em> [part 1, 29:36]</td>
+    <td>The slide says <b>39 species in three genera</b> (<em>Trichophyton</em>, <em>Microsporum</em>,
+    <em>Epidermophyton</em>); &ldquo;genera&rdquo; was a slip for species. Learn the slide.</td></tr>
+  </table>
+  <p>Nothing she said removes a topic from the exam, and she corrected no slide outright. She repeated slide
+  20&rsquo;s routes for amphotericin B (&ldquo;usually administered orally, but it can also be by injection or by
+  IV&rdquo;, 15.23), named only amphotericin B for aspergillosis (nystatin was not mentioned), called mucormycosis
+  in India &ldquo;black mold&rdquo;, and left <em>Stachybotrys</em> unnamed.</p>
   </div>
-<!--/MICROL15AUDIO-->
+<!--/MICROL15AUDIO--><!--/MICROL15AUDIO-->
 """
 
 BODY = """
@@ -193,8 +234,9 @@ BODY = """
   <h3 class="sub" id="fun-dimorphism">15.2 &middot; Objective 1 &mdash; Thermal dimorphism</h3>
   <p>The most striking adaptation of a true pathogen to survival and growth in the human host is the ability to
   switch from hyphal cells to yeast cells, from multicellular to unicellular forms, with the corresponding change in
-  temperature. <strong>Thermal dimorphism: the fungus grows as a mold (multicellular) at 30&nbsp;&deg;C and as a
-  yeast (unicellular) at 37&nbsp;&deg;C, which is human body temperature.</strong></p>
+  temperature. <mark class="prof-highlight"><strong>Thermal dimorphism: the fungus grows as a mold (multicellular) at
+  30&nbsp;&deg;C and as a yeast (unicellular) at 37&nbsp;&deg;C, which is human body temperature.</strong></mark>
+  &#9733; Dr. Fair: &ldquo;the key for these pathogens&rdquo; (the recording box at the top of Lecture 15).</p>
   """ + fig("l15-s006-thermal-dimorphism.jpg", 800, 523,
       "A cycle diagram: on the left, the natural habitat with hyphae and spores and a photograph of fuzzy hyphal colonies; on the right, the animal habitat with spores budding into yeast cells and a photograph of smooth yeast colonies; arrows marked with temperature, oxygen and nutrient changes link the two halves.",
       "<b>Two habitats, two forms.</b> Natural habitat: <b>saprobic (free-living), mycelial phase, below "
@@ -300,7 +342,7 @@ BODY = """
   </ul>
   <table>
     <tr><th>Amphotericin B</th><th>Slide 20</th></tr>
-    <tr><td>Standing</td><td>The <strong>drug of choice for many fungal infections</strong>: highly toxic and often expensive</td></tr>
+    <tr><td>Standing</td><td><mark class="prof-highlight">The <strong>drug of choice for many fungal infections</strong></mark>: highly toxic and often expensive. &#9733; &ldquo;That&rsquo;s a great test question&rdquo; (the recording box at the top of Lecture 15)</td></tr>
     <tr><td>Source</td><td>Produced by a <strong>soil bacterium of the genus <em>Streptomyces</em></strong>; it attacks fungal cells, which are eukaryotic</td></tr>
     <tr><td>Mechanism</td><td><strong>Forms complexes with fungal cell membrane lipids</strong>, causing openings and seepage of cytoplasmic ions</td></tr>
     <tr><td>Why it is toxic</td><td>Not selective enough to attack only fungi: <strong>fungi and humans are both eukaryotes</strong></td></tr>
@@ -432,8 +474,8 @@ BODY = """
     straw or hay bales</strong> may be at risk.</li>
     <li>Infects <strong>appendages and lungs</strong> (humans, horses, dogs, cats and mules; in animals it is often
     seen in the feet, claws or hooves).</li>
-    <li><strong>Treatment</strong>: heat packs and/or <strong>super-saturated potassium iodide</strong>; systemic
-    infections with amphotericin B and/or itraconazole.</li>
+    <li><strong>Treatment</strong>: heat packs and/or <strong>super-saturated potassium iodide</strong> (in the
+    recording, the treatment for animals); systemic infections with amphotericin B and/or itraconazole.</li>
     <li>The <strong>lymphocutaneous</strong> variety: contaminated plant material penetrates the skin, the pathogen
     forms a <strong>nodule, then spreads to nearby lymph nodes</strong>.</li>
   </ul>
@@ -662,18 +704,26 @@ BODY = """
   <ul>
     <li><strong>Immunity after a true fungal pathogen.</strong> Slide 15 says long-term immunity &ldquo;can only
     develop against a few true fungal pathogens&rdquo;; slide 24 says &ldquo;all of the diseases caused by the true
-    fungal pathogens can result in immunity in a competent host&rdquo;. No question asks which, or how many; the
+    fungal pathogens can result in immunity in a competent host&rdquo;. In the recording she sided with slide 24
+    (immunity is possible against the true pathogens, in a competent host). No question asks which, or how many; the
     contrast with the opportunists (reinfection highly likely) is the same on both slides.</li>
     <li><strong>Amphotericin B routes (slide 20).</strong> The slide calls it versatile, given topically, orally, by
-    intramuscular injection or intravenously. In current practice it is given intravenously for systemic infection;
-    it is not given by intramuscular injection and is poorly absorbed by mouth. Not asked.</li>
+    intramuscular injection or intravenously, and in the recording she repeated it (&ldquo;usually administered
+    orally&rdquo;). In current practice it is given intravenously for systemic infection; it is not given by
+    intramuscular injection and is poorly absorbed by mouth. Not asked.</li>
     <li><strong>Why amphotericin B is toxic (slide 20).</strong> The slide gives the reason as fungi and humans both
     being eukaryotes, so the drug is not selective enough. Pharmacology references add the mechanism: it binds
     ergosterol in fungal membranes but also binds some cholesterol in human membranes. One quiz question asks this,
     keyed as the slide says.</li>
     <li><strong>Aspergillosis treatment (slide 60).</strong> The slide lists amphotericin B and nystatin. Nystatin is
     a topical and oral (non-absorbed) agent and current practice does not use it for invasive aspergillosis (azoles
-    such as voriconazole are used). Not asked.</li>
+    such as voriconazole are used). In the recording she named only amphotericin B. Not asked.</li>
+    <li><strong>Sporotrichosis treatment (slide 39).</strong> The slide gives heat packs and super-saturated
+    potassium iodide for infection of the &ldquo;appendages and lungs&rdquo;; in the recording she presented potassium
+    iodide as the treatment for animals and amphotericin B for people. Not asked.</li>
+    <li><strong>How many ringworm fungi (slide 42).</strong> The slide says 39 species in three genera; in the
+    recording she said &ldquo;almost 40 different fungal genera&rdquo;, a slip for species. The quiz keys the three
+    genera.</li>
     <li><strong>Temperatures.</strong> Slide 5 gives mold at 30&nbsp;&deg;C and yeast at 37&nbsp;&deg;C; the slide 6
     figure gives the ranges below 30&nbsp;&deg;C and 35&ndash;40&nbsp;&deg;C, and slide 27 grows the mold below
     35&nbsp;&deg;C. They agree on direction; the quizzes use slide 5&rsquo;s two numbers.</li>
