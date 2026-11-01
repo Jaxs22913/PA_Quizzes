@@ -475,7 +475,7 @@ BODY = """
     <li>Infects <strong>appendages and lungs</strong> (humans, horses, dogs, cats and mules; in animals it is often
     seen in the feet, claws or hooves).</li>
     <li><strong>Treatment</strong>: heat packs and/or <strong>super-saturated potassium iodide</strong> (in the
-    recording, the treatment for animals); systemic infections with amphotericin B and/or itraconazole.</li>
+    recording, potassium iodide is the treatment for animals); systemic infections with amphotericin B and/or itraconazole.</li>
     <li>The <strong>lymphocutaneous</strong> variety: contaminated plant material penetrates the skin, the pathogen
     forms a <strong>nodule, then spreads to nearby lymph nodes</strong>.</li>
   </ul>
