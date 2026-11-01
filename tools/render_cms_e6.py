@@ -7,7 +7,7 @@ plum (292), Exam 5 rose (325), so Exam 6 is crimson (358): the Exam 5 rose
 colors rotated +33 degrees in hue, the gold kept. Four-option sets, per the
 exam standard.
 
-    python3 render_cms_e6.py l33io | l33vig | ... | l37io | l37vig | l38io | l38vig
+    python3 render_cms_e6.py l33io | l33vig | ... | l37io | l37vig | l38io | l38vig | focus
 
 A later lecture adds its two SPEC entries here (see tools/cms_e6_README.md).
 """
@@ -109,6 +109,21 @@ SPEC = {
           "Drug interactions", "Nontuberculous mycobacteria"],
    intro="Every skin test result is given in millimeters of induration. Decide the patient's risk group first, "
          "then compare the induration with that group's cut-off."),
+ # 2026-10-31: the two Study Focus sets (tools/cms_e6_focus_partition.py), 20 Lecture 37 + 10 Lecture 38 each,
+ # every question on a point of the lecturer's study-focus slides (L37 slide 127, L38 slide 41).
+ "focus": dict(sets="cms_e6_focus_sets.json",
+   files=["cms-e6-l37-38-study-focus-set-1.html", "cms-e6-l37-38-study-focus-set-2.html"],
+   title="Lectures 37–38 Study Focus — Set %d — CMS I Exam 6",
+   h1="Lectures 37&ndash;38 Study Focus &mdash; Set %d",
+   sub="Clinical Medicine and Surgery I &middot; Exam 6 &middot; Lectures 37 and 38",
+   chips=["Vaccines", "Bronchitis and stewardship", "Pneumonia severity and treatment",
+          "Hospital, ventilator and aspiration pneumonia", "Opportunistic and atypical infection",
+          "Influenza and COVID-19", "Tuberculosis testing and control", "Mycobacterium avium complex"],
+   intro="Built on the study-focus slides posted for Lectures 37 and 38 (Respiratory Infections slide 127, "
+         "Tuberculosis and nontuberculous mycobacteria slide 41). Each set follows the split the lecturer "
+         "described: <b>20 questions on respiratory infections and vaccines, 10 on tuberculosis and "
+         "nontuberculous mycobacteria</b>, every one on a point from those slides, with vignettes and direct "
+         "recall mixed as on the master exams. The two sets share no questions."),
 }[sys.argv[1] if len(sys.argv) > 1 else "l33io"]
 
 S = json.load(open(os.path.join(HERE, SPEC["sets"]), encoding="utf-8"))

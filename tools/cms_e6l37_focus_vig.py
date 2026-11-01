@@ -32,6 +32,31 @@ FLU = "Influenza"
 
 QUESTIONS = [
 
+# ---------------------------------------------------------------- bronchitis or pneumonia; severity and site of care
+V("Acute bronchitis", IO_B,
+  "A 48-year-old man has had a cough for 6 days with yellow sputum. His temperature is 101.8°F and his respiratory rate 24/min, and there are crackles with dullness to percussion over the left lower lobe. He asks for an antibiotic because his sputum is yellow. Which is the most appropriate next step?",
+  [["A chest radiograph to confirm pneumonia",
+    "Correct. Fever, a raised respiratory rate and focal crackles with dullness are the findings that raise concern for pneumonia rather than uncomplicated bronchitis, and suspected pneumonia is confirmed with a chest radiograph. The yellow sputum is not what changes the plan: the fever and focal findings are."],
+   ["An antibiotic for the yellow sputum",
+    "Purulent or colored sputum does not establish a bacterial infection and does not justify antibiotics. Tell: his fever and focal findings should prompt evaluation for pneumonia rather than empiric bronchitis antibiotics, and that evaluation starts with a chest radiograph, not with an antibiotic chosen for sputum color.", "common lay belief"],
+   ["Supportive care for bronchitis",
+    "Supportive care fits uncomplicated acute bronchitis, where consolidation should not be detected. Tell: focal crackles and dullness with fever are the cue to think pneumonia and image, not to treat as bronchitis.", "competing diagnosis"],
+   ["A sputum culture before deciding",
+    "Routine sputum culture is unnecessary in uncomplicated cases, and in pneumonia cultures are obtained selectively for severe disease, resistant-pathogen risk or treatment failure. Tell: the test that answers his question, is this pneumonia, is the chest radiograph.", "wrong stage or severity"]],
+  CS(15, 16, 18, 29), "initial test", "next step", ["l37-bronch-vs-pna", "l37-sputum-color", "l37-cap-confirm"]),
+
+V("Pneumonia workup and severity", IO_B,
+  "A 47-year-old woman with community-acquired pneumonia has a Pneumonia Severity Index total of 82 points. After intravenous fluids she remains hypotensive and needs a vasopressor infusion to maintain her blood pressure. She is breathing on her own. Where should she be treated?",
+  [["Intensive care unit-level care",
+    "Correct. Vasopressor-dependent shock is one of the severity signals of severe community-acquired pneumonia, with mechanical ventilation or at least three minor criteria, and severe pneumonia needs urgent intensive care-level assessment and circulatory support. The Pneumonia Severity Index guides the outpatient-or-ward choice only in nonsevere pneumonia."],
+   ["A general ward, by her score",
+    "The Pneumonia Severity Index with clinical judgment chooses between outpatient care and a general ward for nonsevere pneumonia. Tell: her need for a vasopressor makes the pneumonia severe whatever her point total, which moves her to intensive care-level care.", "wrong stage or severity"],
+   ["Outpatient care with close follow-up",
+    "Outpatient care is an option only for nonsevere pneumonia chosen with the Pneumonia Severity Index and clinical judgment. Tell: a patient who needs a vasopressor to keep her blood pressure up has severe community-acquired pneumonia.", "wrong stage or severity"],
+   ["An observation unit for a repeat score",
+    "Waiting to repeat a score delays care: severity changes the site of care, and vasopressor-dependent shock already defines severe pneumonia. Tell: severe community-acquired pneumonia calls for urgent intensive care-level assessment, not another total.", "wrong stage or severity"]],
+  CS(30, 45), "referral", "referral", ["l37-psi", "l37-severe-cap"]),
+
 # ---------------------------------------------------------------- hospital and ventilator pneumonia
 V(HAP, IO_B,
   "A 64-year-old man has been intubated in the intensive care unit for 4 days after a stroke. He develops a new fever, purulent endotracheal secretions and a new infiltrate, and his blood pressure is falling. Which is the most appropriate next step?",
@@ -123,9 +148,9 @@ V(FUN, IO_B,
 V(FUN, IO_B,
   "A 52-year-old woman with no immune problems developed fever, chills, a nonproductive cough and chest pain after clearing soil under a bird roost, and her urine Histoplasma antigen is positive. Five weeks later she is no better: her cough and fatigue are worsening, but she is not hypoxemic and is managing at home. Which treatment is most appropriate?",
   [["Oral itraconazole",
-    "Correct. Histoplasmosis is treated by severity and host risk. Her illness is prolonged and progressive but not severe, so itraconazole is considered, with monitoring of interactions and drug levels; observation fits only mild, improving acute disease, and amphotericin is for severe disease."],
+    "Correct. Histoplasmosis is treated by severity and host risk. Her illness is prolonged and progressive but not severe, so itraconazole is considered, with monitoring of interactions and drug levels; observation fits mild acute disease in an immunocompetent adult, and amphotericin is for severe disease."],
    ["Continued observation",
-    "Observation is the usual plan for mild acute disease in an immunocompetent adult who is getting better. Tell: her illness is prolonged and worsening, which is the case for considering itraconazole.", "wrong stage or severity"],
+    "Observation is the usual plan for mild acute disease in an immunocompetent adult. Tell: her illness is prolonged and worsening rather than mild, which is the case for considering itraconazole.", "wrong stage or severity"],
    ["Amphotericin-based induction",
     "Amphotericin-based induction is for severe pulmonary or disseminated disease. Tell: she is not hypoxemic and is managing at home, so her disease is prolonged and progressive but not severe, and an oral azole is considered first.", "wrong stage or severity"],
    ["Fluconazole for 6 to 12 months",

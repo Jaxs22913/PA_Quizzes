@@ -32,6 +32,14 @@ tie between Lectures 33 and 38 (both .45, above Lecture 37's .36), so it ROTATES
 Lecture 38, Forms B and D to Lecture 33. Totals over the five forms: L33 27, L34 55, L35 55, L36 55,
 L37 80, L38 28 (exact 27.3/54.5/54.5/54.5/81.8/27.3).
 
+RE-WEIGHTED 2026-10-31 (coordinator's brief, after Prof. Bobilin's study-focus slides): Lectures 33-36 keep
+the hour-weighted counts above (L33 5/6/5/6/5, L34-L36 11 each); the slots Lectures 37 and 38 had together
+(22 on Forms A, C, E; 21 on B, D) are split 2:1, the split of his own questions (about 20 on Respiratory
+Infections, about 10 on Mycobacterial): 15 + 7 on A, C, E and 14 + 7 on B, D (15:7 is the whole split nearest
+2:1 for 22). Totals over the five forms: L33 27, L34 55, L35 55, L36 55, L37 73, L38 35. For the L37/L38 slots,
+questions that practise a study-focus point (tools/cms_e6_focus_points.py) are preferred, and the cleanly
+reviewed study-focus pool questions (cms_e6l37_focus_*, cms_e6l38_focus_*) join the candidates.
+
 MIX: 48 VIGNETTE + 12 REGULAR per form (80% patient stems), as Exams 4 and 5. Each lecture's regular count
 is the largest remainder of 12 x its slots / 60; ties rotate form by form.
 
@@ -45,6 +53,7 @@ A-D cycle, ordered numeric options kept ascending).
 """
 import sys, os, json, random, re, importlib, copy, math
 from collections import Counter, defaultdict
+import glob
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -55,6 +64,7 @@ sys.argv = [_argv[0], "l33io"]            # cms_e6_partition reads argv[1] at im
 import cms_e6_partition as P
 sys.argv = _argv
 import blind_review as BR
+from cms_e6_focus_points import focus_of
 
 FOLDER = "Clinical Medicine and Surgery I Exam 6"
 FORMS = ["A", "B", "C", "D", "E"]
@@ -67,24 +77,34 @@ PER_FORM = 60
 N_REG = 12
 SKEW_CAP = 0.40
 SEED = int(os.environ.get("CMS_E6_MASTERS_SEED", "20261030"))
+FOCUS_PREF = 25            # per L37/L38 slot held by a question on no study-focus point (2026-10-31)
 DRAFT = "--draft" in sys.argv
 
 
-def allocation():
+def hours_allocation(f):
+    """The original 2026-10-30 hour-weighted slots for form index f (kept for Lectures 33-36)."""
     H = sum(HOURS.values())
+    exact = {l: PER_FORM * HOURS[l] / H for l in LECS}
+    alloc = {l: int(exact[l]) for l in LECS}
+    left = PER_FORM - sum(alloc.values())
+    rem = sorted(LECS, key=lambda l: -round(exact[l] - alloc[l], 9))
+    top = [l for l in rem if round(exact[l] - int(exact[l]), 9) > 0.5]      # Lectures 34-36 (.91)
+    for l in top[:left]:
+        alloc[l] += 1
+    left = PER_FORM - sum(alloc.values())
+    if left:
+        assert left == 1, left
+        alloc[TIE_ROTATION[f % 2]] += 1
+    return alloc
+
+
+def allocation():
     out = []
     for f in range(len(FORMS)):
-        exact = {l: PER_FORM * HOURS[l] / H for l in LECS}
-        alloc = {l: int(exact[l]) for l in LECS}
-        left = PER_FORM - sum(alloc.values())
-        rem = sorted(LECS, key=lambda l: -round(exact[l] - alloc[l], 9))
-        top = [l for l in rem if round(exact[l] - int(exact[l]), 9) > 0.5]      # Lectures 34-36 (.91)
-        for l in top[:left]:
-            alloc[l] += 1
-        left = PER_FORM - sum(alloc.values())
-        if left:
-            assert left == 1, left
-            alloc[TIE_ROTATION[f % 2]] += 1
+        alloc = hours_allocation(f)
+        share = alloc["l37"] + alloc["l38"]                 # 22 (A, C, E) or 21 (B, D)
+        alloc["l38"] = int(round(share / 3.0))              # 2:1 -> 7 and 7
+        alloc["l37"] = share - alloc["l38"]                 # 15 and 14
         ex = {l: N_REG * alloc[l] / PER_FORM for l in LECS}
         reg = {l: int(ex[l]) for l in LECS}
         spare = N_REG - sum(reg.values())
@@ -100,7 +120,7 @@ for f, a in enumerate(PER):
     assert sum(v["reg"] + v["vig"] for v in a.values()) == PER_FORM, a
     assert sum(v["reg"] for v in a.values()) == N_REG, a
 TOTAL = {l: sum(PER[f][l]["reg"] + PER[f][l]["vig"] for f in range(len(FORMS))) for l in LECS}
-assert TOTAL == {"l33": 27, "l34": 55, "l35": 55, "l36": 55, "l37": 80, "l38": 28}, TOTAL
+assert TOTAL == {"l33": 27, "l34": 55, "l35": 55, "l36": 55, "l37": 73, "l38": 35}, TOTAL
 
 SLOT_GROUP = {
     "etiology": "cause/risk", "epidemiology": "cause/risk", "risk factors": "cause/risk",
@@ -135,16 +155,31 @@ EXTRA_LEADS = {"l34": ("etiology", "compensation"), "l35": ("classify",), "l36":
                "l37": ("classify",), "l38": ("classify",)}       # as cms_e6_partition.py sets per lecture
 
 
+def focus_pool(lec, vig):
+    """The study-focus pool questions of a lecture (tools/cms_e6lNN_focus_pool.py / _focus_vig.py), as written."""
+    pool, origin = [], []
+    pat = "cms_e6%s_focus_%s.py" % (lec, "vig" if vig else "pool")
+    for m in sorted(os.path.basename(p)[:-3] for p in glob.glob(os.path.join(HERE, pat))):
+        for i, q in enumerate(importlib.import_module(m).QUESTIONS):
+            q = json.loads(json.dumps(q)); q.setdefault("c", 0)
+            pool.append(q); origin.append((m, i))
+    return pool, origin
+
+
 def load_lecture(lec):
     P.LEADS = BASE_LEADS + EXTRA_LEADS.get(lec, ())     # guard_all reads the module-level vocabulary
     out, required = [], []
     for kind, vig in (("reg", False), ("vig", True)):
         scope, mods, pool, origin, nfix = P.load_guarded(lec, vig)
+        fpool, forig = focus_pool(lec, vig)
+        pool, origin = pool + fpool, origin + forig
         P.guard_all(scope, pool, origin, vig)           # asserts; a failure stops the build
         for q, o in zip(pool, origin):
             q["_src"] = o
             q["_kind"] = kind
             q["_lec"] = lec
+            q["_focus"] = bool(focus_of(q))
+            q.pop("focus", None)
             out.append(q)
         required = [(lab, re.compile(sr, re.I), re.compile(kr, re.I))
                     for lab, sr, kr, n in getattr(scope, "REQUIRED", ())]
@@ -260,6 +295,7 @@ def build(dry_run=False):
         keys = Counter(q["opts"][0][0].strip().lower() for q in qs)
         pen += 40 * sum(c - 1 for c in keys.values() if c > 1)
         pen += 1.0 * sum(1 for q in qs if not q["_fresh"])
+        pen += FOCUS_PREF * sum(1 for q in qs if q["_lec"] in ("l37", "l38") and not q["_focus"])
         for (lec, lab), hit in req_hit.items():
             if not (hit & set(sel)):
                 pen += 500
@@ -427,7 +463,7 @@ def build(dry_run=False):
         assert not any(gameable(q) for q in qs)
         report["forms"][name] = [{
             "lec": q["_lec"], "kind": q["_kind"], "lead": cell_lead(q), "topic": q["topic"],
-            "fresh": q["_fresh"], "src": "%s[%d]" % tuple(q["_src"]), "c": q["c"],
+            "fresh": q["_fresh"], "focus": q["_focus"], "src": "%s[%d]" % tuple(q["_src"]), "c": q["c"],
             "q": q["q"]} for q in qs]
         out[name] = [{k: q[k] for k in ("topic", "io", "q", "opts", "c", "cite")} for q in qs]
 
@@ -438,6 +474,8 @@ def build(dry_run=False):
             "/".join(str(sum(1 for x in r if x["c"] == k)) for k in range(4)),
             "/".join(str(sum(1 for x in r if x["lec"] == l)) for l in LECS),
             dict(Counter(x["lead"] for x in r if x["kind"] == "vig").most_common())))
+        print("          L37/L38 slots on a study-focus point: %d of %d" % (
+            sum(1 for x in r if x["lec"] in ("l37", "l38") and x["focus"]), sum(1 for x in r if x["lec"] in ("l37", "l38"))))
 
     if dry_run:
         print("--dry-run: nothing written")

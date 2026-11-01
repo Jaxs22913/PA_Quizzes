@@ -16,6 +16,9 @@ CRITERIA = [...], one `cols` table per criteria set, score, classification, stag
 slides, each with a labeled memory aid ("mnemonic"), ids "crit-lNN-...". All lectures' CRITERIA go at the TOP
 of the sheet, in lecture order, under one table-of-contents chip (the first carries "toc_label", the rest
 "toc": False), as on the Exam 5 sheet. Cells are the slide wording; slide conflicts are {"note": ...} rows.
+
+2026-10-31: a lecture module may also define FOCUS = [...], ids "focus-lNN": the lecturer's own study-focus slide
+condensed to one `cols` table. All FOCUS tables go above the criteria, under one "Study Focus" chip.
 """
 import importlib.util, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -25,7 +28,7 @@ from render import render
 
 NAMES = {33: "oxygen delivery", 34: "acid-base part I", 35: "asthma", 36: "chronic obstructive pulmonary disease",
          37: "respiratory infections and vaccines", 38: "mycobacterial infections including tuberculosis"}
-topics, criteria, have = [], [], []
+topics, criteria, focus, have = [], [], [], []
 for n in range(33, 39):
     p = os.path.join(HERE, "cms_e6_cram", "l%d.py" % n)
     if not os.path.exists(p):
@@ -37,7 +40,10 @@ for n in range(33, 39):
     for t in getattr(m, "CRITERIA", []):
         assert t["id"].startswith("crit-l%d-" % n), "%s: criteria id %r must start with crit-l%d-" % (p, t["id"], n)
         assert t.get("cols") and t.get("mnemonic"), "%s: criteria table %r needs cols and a mnemonic" % (p, t["id"])
+    for t in getattr(m, "FOCUS", []):
+        assert t["id"].startswith("focus-l%d" % n), "%s: focus id %r must start with focus-l%d" % (p, t["id"], n)
     criteria += list(getattr(m, "CRITERIA", []))
+    focus += list(getattr(m, "FOCUS", []))
     topics += m.TOPICS; have.append(n)
 assert topics, "no lecture modules in tools/cms_e6_cram/"
 # One TOC chip for the whole run of criteria tables; narrow tables (3 columns or fewer) fit a 390 px phone.
@@ -50,7 +56,16 @@ for i, t in enumerate(criteria):
         t.pop("toc_label", None)
     if len(t["cols"]) <= 3:
         t.setdefault("min_width", "0")
-topics = criteria + topics
+# 2026-10-31: the lecturers' study-focus slides (L37 slide 127, L38 slide 41) go above everything, one TOC chip.
+for i, t in enumerate(focus):
+    if i == 0:
+        t.pop("toc", None)
+        t["toc_label"] = "Study Focus (Lectures %s)" % "&ndash;".join(
+            str(int(x["id"][7:9])) for x in (focus[0], focus[-1])) if len(focus) > 1 else "Study Focus"
+    else:
+        t["toc"] = False
+        t.pop("toc_label", None)
+topics = focus + criteria + topics
 ids = [t["id"] for t in topics]
 assert len(ids) == len(set(ids)), "duplicate topic ids"
 
@@ -60,7 +75,8 @@ html = render(
     title="Cram Sheet — CMS I Exam 6",
     kicker="Clinical Medicine and Surgery I · Exam 6 · Class of 2028",
     h1="CMS I Exam 6 Cram Sheet",
-    sub=("<b>Criteria, scores and classifications come first</b>: one table per set from the slides, each with "
+    sub=("<b>The study focus the lecturer posted comes first</b> (Lectures 37&ndash;38), then " if focus else "") +
+        ("<b>criteria, scores and classifications</b>: one table per set from the slides, each with "
          "a labeled memory aid. " if criteria else "") +
         "Respiratory Block Exam I, condensed from the Exam 6 study guide. Lectures covered: %s. "
         "Each lecture opens with a gold card of what its lecturer stressed on the recording (starred); every "
@@ -73,5 +89,5 @@ html = render(
 out = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 6", "cms-exam-6-cram-sheet.html")
 open(out, "w", encoding="utf-8").write(html)
 print("wrote", os.path.basename(out), len(html), "bytes,",
-      sum(len(t["rows"]) for t in topics), "rows across", len(topics), "topics,", len(criteria),
-      "criteria tables, lectures", have)
+      sum(len(t["rows"]) for t in topics), "rows across", len(topics), "topics,", len(focus), "focus tables,",
+      len(criteria), "criteria tables, lectures", have)
