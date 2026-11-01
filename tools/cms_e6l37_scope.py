@@ -9,7 +9,10 @@ LECTURER: Robert Bobilin, MS, MPAS, PA-C, guest lecturer -- title slide, and the
 (one file covering Lectures 37 and 38; Lecture 37 runs 0:00 to the break at 2:53:43). calendar-data.js lists
 "CMS I - LECTURE #37 - Respiratory Infections and Vaccines Preventing Respiration Infections - Professor
 Bobilin GUEST LECTURER", 1-4 PM (3 hours). No conflict. Deck file "37. Respiratory Infections - Bobilin -
-10-29-2026 SV.pptx", 131 slides.
+10-29-2026 SV.pptx", 131 slides; REVISED 2026-10-31 to 133 slides (the same file name, the old copy in
+"superseded (10-29 versions)/"): slides 1-126 unchanged, new slides 127 and 128 "Study Focus for Exam Questions
+-- Respiratory Infections" (128 = the same text plus the footer "Covers Questions 1-25"), the old 127
+"Questions??" now 129, the references now 130-133.
 
 Built from the DECK; the recording only sets emphasis and scope (slides-only grounding).
 
@@ -68,7 +71,15 @@ EXCLUDED_SLIDES (never cited):
   52, 55            example aspiration and abscess films
   57, 74, 79, 90, 111   section title slides
   118               COVID-19 radiograph panel (no text)
-  127-131           questions, references
+  128               the study-focus slide repeated (cite 127)
+  129-133           questions, references
+
+THE STUDY-FOCUS SLIDE (s127, posted 2026-10-31: the guidance promised at 0:02:31 and 4:00:15) IS slide content
+and is citable. It supersedes the vaccine cap above for PRODUCT SELECTION, RSV AGE/RISK ELIGIBILITY and
+PNEUMOCOCCAL SEQUENCING ("especially when PCV15 requires PPSV23"); the influenza vaccine make-up is not on it
+and stays unkeyed, and so do the s9 8-week minimum ("may apply") and PneumoRecs. Its "steroid thresholds"
+point keeps the Pneumocystis room-air arterial oxygen below 70 mm Hg item (the A-a gradient stays unkeyed).
+He told the class he wrote about 20 questions on this lecture; the s128 footer says "Questions 1-25".
 """
 
 DECK = "37. Respiratory Infections - Bobilin - 10-29-2026 SV.pptx"
@@ -87,7 +98,7 @@ IO_POP = ("Identify medical care strategies for respiratory infections in the le
           "populations. 1. adult 2. elderly")
 IOS = [IO_VAX, IO_B, IO_POP]
 
-EXCLUDED_SLIDES = {1, 2, 14, 32, 34, 35, 36, 52, 55, 57, 74, 79, 90, 111, 118, 127, 128, 129, 130, 131}
+EXCLUDED_SLIDES = {1, 2, 14, 32, 34, 35, 36, 52, 55, 57, 74, 79, 90, 111, 118, 128, 129, 130, 131, 132, 133}
 
 SCOPE_BANNED = [
     r"24\.8|250,000|3,000-49,000|3-5 million|88%|70%-80%|70 ?- ?80%|80% of infants|3000 cases|100 outbreaks",
