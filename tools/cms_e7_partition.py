@@ -381,13 +381,26 @@ def guarded_main():
     dxset = set(dx_idx)
     ntop = len(ALL_TOPICS)
     lump_at = max(3, -(-PER_SET // ntop) + 2)
+    # Exam 7 (2026-11-02): a scope may give TOPIC_MINUTES {topic: minutes spoken in the recording}. Each form then
+    # aims for that share of its 30 items (weight by minutes spoken, never by word count; memory
+    # transcript_emphasis_measurement), +-1 free, instead of the flat lump cap. Every pool topic must be named.
+    tmin = dict(getattr(scope, "TOPIC_MINUTES", {}) or {})
+    if tmin:
+        miss = [t for t in ALL_TOPICS if t not in tmin]
+        assert not miss, "TOPIC_MINUTES lacks pool topics: %r" % miss
+        wsum = float(sum(tmin[t] for t in ALL_TOPICS))
+        target = {t: PER_SET * tmin[t] / wsum for t in ALL_TOPICS}
+        print("minutes weighting: target per form", {t: round(v, 1) for t, v in target.items()})
 
     def score(idxs):
         s = [POOL[i] for i in idxs]
         tops = Counter(q["topic"] for q in s)
         slots = Counter(q["slot"] for q in s)
         missing_t = sum(1 for t in ALL_TOPICS if t not in tops) if ntop <= PER_SET else 0
-        lumpy_t = sum(max(0, n - lump_at) for n in tops.values())
+        if tmin:
+            lumpy_t = sum(max(0.0, abs(tops.get(t, 0) - target[t]) - 1.0) for t in ALL_TOPICS)
+        else:
+            lumpy_t = sum(max(0, n - lump_at) for n in tops.values())
         lumpy_s = sum(max(0, n - 6) for n in slots.values())
         thin_s = max(0, 10 - len(slots))
         v = (gameable_pct(s) * 3.0 + missing_t * 6 + lumpy_t * 3 + lumpy_s * 1.5 + thin_s * 3)
