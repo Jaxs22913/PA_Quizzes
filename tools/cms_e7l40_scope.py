@@ -88,3 +88,7 @@ NAMED = {
 REQUIRED = [
     ("STOP-Bang total", r"STOP-Bang", r".", 1),
 ]
+# The objective set has 9 STOP-Bang items; spread them (a first partition put 1 in Set 1 and 6 in Set 2).
+REQUIRED_IO = [
+    ("STOP-Bang item", r"STOP-Bang", r".", 3),
+]

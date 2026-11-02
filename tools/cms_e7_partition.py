@@ -158,7 +158,7 @@ _ACRO_OK = re.compile(r"^(?:I{1,3}|IV|VI{0,3}|IX|X|S[1-4]|mmHg|QRS|ST|aV[FLR]|PR
 # not abbreviations of a phrase.
 
 # US spelling (2026-09-23). Verbatim io/cite fields are exempt.
-_UK = re.compile(r"\b\w*(?:aemi|(?<!angi)oedem|oesoph|oestr|paediat|orthopaed|ischaem|haemo(?!philus)|haema|haemorrh|"
+_UK = re.compile(r"\b\w*(?:aemi|(?<!angi)oedem|(?<!gastr)oesoph|oestr|paediat|orthopaed|ischaem|haemo(?!philus)|haema|haemorrh|"
                  r"anaesth|foet)\w*\b|\b(?:tumour|colour|behaviour|favour|centre|litre|fibre|"
                  r"counsell\w*|labell\w*|modell\w*|travell\w*|ageing|programme|manoeuvres?|grey(?! turner)|"
                  r"whilst|amongst|analy[s]e[ds]?|paraly[s]e[ds]?|licen[c]e|defen[c]e|practi[s]e[ds]?|"
@@ -416,8 +416,10 @@ def guarded_main():
 
     # REQUIRED (optional, scope module): content the lecturer said WILL be on the
     # test, as (label, stem regex, key regex, minimum per form). Scored, then asserted.
+    # REQUIRED_IO / REQUIRED_VIG, when present, replace REQUIRED for that set kind.
     required = [(lab, re.compile(sr, re.I), re.compile(kr, re.I), n)
-                for lab, sr, kr, n in getattr(scope, "REQUIRED", ())]
+                for lab, sr, kr, n in (getattr(scope, "REQUIRED_VIG" if vig else "REQUIRED_IO", None)
+                                       or getattr(scope, "REQUIRED", ()))]
     req_hit = {lab: {i for i, q in enumerate(POOL) if srx.search(q["q"]) and krx.search(q["opts"][0][0])}
                for lab, srx, krx, n in required}
     for lab, srx, krx, n in required:

@@ -3,7 +3,7 @@
 
 CRITERIA: one table per classification, cut-off or staging table on the slides (Jaxon's standing rule, memory
 cram_criteria_tables), each with a labeled memory aid. Cells are the slide wording; slide conflicts are note rows.
-Phase 1 (2026-11-02): slides only; the recording will add the emphasis card's spoken items.
+The 2 November recording sets the emphasis card (facts still from the slides).
 """
 L39C = "#5e4123"
 
@@ -54,7 +54,10 @@ CRITERIA = [
 TOPICS = [
 {"id": "l39-emph", "label": "★ Emphasized: Sleep Physiology", "color": "#b8860b", "rows": [
   ["★ CAN vs CANNOT", "Capitals on the slide: sleep = unconsciousness from which a person <b>CAN</b> be aroused; coma = one from which a person <b>CANNOT</b>."],
-  ["Recording", "Not in yet (Monday 2 November): her spoken emphasis is added when it arrives."],
+  ["★ Two basic types", "Her focus: <b>REM vs non-REM</b>, the &ldquo;two basic overviews&rdquo;; the separate N1&ndash;N3 details and the sleep-wake paragraph are background (know it is <b>positive feedback</b>)."],
+  ["★ Exhausted &rarr; little REM", "Very sleepy: REM episodes <b>short or absent</b>; they lengthen as the person is rested."],
+  ["★ Non-REM", "Deep, restful; <b>increased parasympathetic tone</b>; dreams happen but are <b>not remembered</b> (no memory consolidation)."],
+  ["Stages", "For this course: <b>three</b> non-REM stages (N1&ndash;N3), she said in class; some slides show four."],
 ]},
 {"id": "l39-rem-nrem", "label": "REM vs Non-REM Sleep", "color": L39C, "rows": [
   ["Non-REM (slow-wave)", "Deep, <b>extremely restful</b>; <b>increased parasympathetic tone</b>; blood pressure, heart rate, breathing and metabolic rate <b>10&ndash;30% lower</b>; dreams less vivid and <b>often not remembered</b> (not consolidated). Stages N1, <b>N2 (the majority)</b>, N3."],
