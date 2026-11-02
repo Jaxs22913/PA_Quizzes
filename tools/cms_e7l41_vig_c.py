@@ -304,7 +304,7 @@ V(ARDS, IO_A,
     "Liberal fluids run against the conservative protocol that increases ventilator-free days. Tell: the preferred strategy is restrictive, with a low central venous pressure target, once the patient is hemodynamically stable like him.", "reversed direction or value"],
    ["Inotropes for supranormal oxygen delivery",
     "Inotrope-driven excessive oxygen delivery causes potential harm, so supranormal targets are avoided. Tell: the preferred hemodynamic strategy is restrictive fluids, not pushing oxygen delivery above normal with drugs.", "confused mechanism or drug class"],
-   ["Fluids guided by a routine artery catheter",
+   ["Fluids guided by a routine pulmonary artery catheter",
     "Routine pulmonary artery catheters offer no clinical benefit in acute respiratory distress syndrome. Tell: fluids follow a conservative protocol, and cardiac function is assessed with echocardiography rather than a catheter.", "adjacent fact"]],
   C(74), "first-line", "treatment"),
 
