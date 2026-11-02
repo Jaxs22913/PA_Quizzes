@@ -1,0 +1,394 @@
+{
+ "schema": "clinmedpro/1",
+ "course": "Clinical Medicine and Surgery I",
+ "exam": 7,
+ "block": "Respiratory II",
+ "folder": "Clinical Medicine and Surgery I Exam 7",
+ "page": "cms-exam-7-clin-med-pro-guide.html",
+ "fields": [
+  "name",
+  "definition",
+  "etiology",
+  "epidemiology",
+  "risk_factors",
+  "pathology",
+  "clinical",
+  "diagnosis",
+  "treatment",
+  "mortality"
+ ],
+ "not_covered": "Not covered in the lecture",
+ "lectures": [
+  {
+   "lecture": 40,
+   "title": "Obstructive Sleep Apnea and Obesity Hypoventilation Syndrome",
+   "lecturer": "Chand Shah, MPAS, PA-C",
+   "deck": "CMS I Obstructive Sleep Apnea & Obesity Hypoventilation Syndrome - Shah Fallsv.pptx",
+   "note": "Built from the slides. Lecture 39 (Phases of Sleep) has no disease and so no Clin Med Pro card. The STOP-Bang questionnaire is a picture on slide 17. Where the slides give two neck sizes (17 and 16 inches by sex as a risk factor; 16 inches for anyone on STOP-Bang) each is kept with its own tool. The apnea-hypopnea severity bands are in the speaker notes only and are left out. Dosing is left out.",
+   "conditions": [
+    {
+     "id": "l40-osa",
+     "name": "Obstructive sleep apnea (OSA)",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Obstructive sleep apnea (OSA)",
+      "definition": "Sleep-disordered breathing with no airflow but continued respiratory effort: apneas (airflow down 90% or more for at least 10 seconds) and hypopneas from upper airway narrowing",
+      "etiology": "Narrowing of the upper airway by excessive soft tissue or structural abnormalities",
+      "epidemiology": "The most common form of sleep-disordered breathing; prevalence increases with age; higher after menopause than before",
+      "risk_factors": "Obesity, macroglossia, micrognathia, retrognathia, neck circumference 17 inches or more (men) or 16 (women), enlarged tonsils, increasing age, male sex, family history, alcohol or sedatives, hypothyroidism",
+      "pathology": "Upper airway collapse during sleep while effort continues; untreated: increased sympathetic tone, bradycardia, blood pressure variability, arrhythmias, raised C-reactive protein, cortisol and proinflammatory cytokines",
+      "clinical": "Daytime sleepiness, unrefreshing sleep, witnessed apnea, snorting or gasping awakenings, loud habitual snoring, morning headache, nocturia, poorly controlled hypertension, poor concentration, low libido, night sweats; exam: obesity, large neck, enlarged tonsils, crowded posterior oropharynx",
+      "diagnosis": "Split-night or all-night polysomnogram (gold standard); 5 or more obstructive events per hour plus a symptom, or 15 or more events, not explained by another condition; apnea-hypopnea and respiratory disturbance indices; thyroid-stimulating hormone if hypothyroid; home kits only without cardiopulmonary disease, neuromuscular weakness, awake hypoventilation, stroke, long-term opioids or severe insomnia; STOP-Bang (snoring, tired, observed, pressure, body mass index over 35, age over 50, neck 16 inches, gender male) preoperatively, not for community screening",
+      "treatment": "Continuous positive airway pressure (most effective); autotitrating pressure without significant comorbidities; positional therapy; oral appliance (not severe disease, not without teeth); nasal expiratory device; modafinil or armodafinil for sleepiness (caution with cardiovascular, hepatic, psychiatric disease; lower doses in the elderly); nasal steroids; surgery (tracheostomy is a cure); weight loss; avoid alcohol and sedatives; refer to a sleep physician",
+      "mortality": "Untreated: 2.5 times the driving accidents, 3 to 6 times the risk of sudden cardiac death at night, high heart failure mortality, 3 times the risk of hypertension; pulmonary hypertension, stroke, insulin resistance and diabetes, arrhythmias, ischemic heart disease, fatty liver (2 to 3 times), reflux (75 to 100%); lower mortality in the elderly, who compensate"
+     },
+     "slides": {
+      "name": "4-5",
+      "definition": "3",
+      "etiology": "5",
+      "epidemiology": "5",
+      "risk_factors": "6",
+      "pathology": "21-22",
+      "clinical": "7",
+      "diagnosis": "8-9, 16-17",
+      "treatment": "11-13, 15",
+      "mortality": "18-22"
+     }
+    },
+    {
+     "id": "l40-csa",
+     "name": "Central sleep apnea (CSA)",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Central sleep apnea (CSA)",
+      "definition": "Sleep-disordered breathing in which the brainstem stops sending signals to breathe: no airflow and no respiratory effort",
+      "etiology": "Increased sensitivity to arterial carbon dioxide causing unstable breathing, hyperventilation alternating with apnea; in heart failure, Cheyne-Stokes breathing from a prolonged circulation delay to the carotid chemoreceptors",
+      "epidemiology": "Less common than obstructive sleep apnea",
+      "risk_factors": "Congestive heart failure, stroke, opioid medications, hypoxia, high altitude, use of continuous positive airway pressure",
+      "pathology": "Airflow stops because respiratory effort is absent or decreased (in obstructive apnea the airway collapses while effort continues)",
+      "clinical": "Insomnia, frequent awakenings, nocturnal dyspnea, nonrestorative sleep, daytime sleepiness; snoring less common than in obstructive apnea; sounds very similar to obstructive apnea",
+      "diagnosis": "Polysomnography (home testing not sufficient): repetitive apneas without thoracic-abdominal excursion",
+      "treatment": "Treat the cause (optimize heart failure therapy, reduce opioids, descend from altitude); continuous positive airway pressure first; adaptive servo-ventilation if it fails, avoided especially in heart failure with reduced ejection fraction",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "23",
+      "definition": "3, 24",
+      "etiology": "24",
+      "epidemiology": "24",
+      "risk_factors": "24",
+      "pathology": "3, 24",
+      "clinical": "25",
+      "diagnosis": "26",
+      "treatment": "26"
+     }
+    },
+    {
+     "id": "l40-ohs",
+     "name": "Obesity hypoventilation syndrome (Pickwickian syndrome)",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Obesity hypoventilation syndrome (OHS), Pickwickian syndrome",
+      "definition": "Awake alveolar hypoventilation (raised awake arterial carbon dioxide) in an obese person that cannot be attributed to another condition; a diagnosis of exclusion",
+      "etiology": "Obesity with reduced lung function, reduced inspiratory muscle strength and, often, severe obstructive sleep apnea",
+      "epidemiology": "More likely as body mass index rises; patients may present in their 50s and 60s; male sex is not a risk factor; 90% have coexisting obstructive apnea symptoms (70% severe), 10% coexisting sleep hypoventilation (older women)",
+      "risk_factors": "Central obesity (high waist-to-hip ratio), reduced lung function from obesity, reduced inspiratory muscle strength, severe obstructive sleep apnea",
+      "pathology": "Awake hypoventilation with hypercapnia; late disease: hypoxemic hypercapnic respiratory failure and right-sided heart failure from pulmonary hypertension",
+      "clinical": "Nonspecific: obese (body mass index over 30) and hypersomnolent, loud snoring, choking, fatigue, poor memory, small oropharynx, thick neck, dyspnea on exertion, facial plethora, elevated jugular venous pressure, hepatomegaly, pedal edema",
+      "diagnosis": "Screen when awake saturation is 94% or less or the overnight lowest is below 80%, or with unexplained dyspnea, right heart failure, facial plethora or a raised bicarbonate (over 27: get an arterial blood gas). Diagnose: body mass index over 30, awake arterial carbon dioxide over 45 mm Hg, other causes excluded; labs (metabolic panel, blood count, thyroid, pulmonary function, chest film, toxicology); gold standard polysomnography with continuous nocturnal carbon dioxide monitoring",
+      "treatment": "Multidisciplinary; first line weight loss plus continuous positive airway pressure (with obstructive apnea) or bilevel positive airway pressure (with sleep hypoventilation) and lifestyle change; second line tracheostomy with nocturnal ventilation, bariatric surgery, medications after diet and exercise fail; refer to a sleep specialist",
+      "mortality": "High morbidity and mortality; progresses untreated; cardiovascular disease is the leading cause of death; more hospital and intensive care use; poor prognosis with significant awake hypoxemia at diagnosis"
+     },
+     "slides": {
+      "name": "28",
+      "definition": "28",
+      "etiology": "29",
+      "epidemiology": "29-30",
+      "risk_factors": "29",
+      "pathology": "30",
+      "clinical": "30-31",
+      "diagnosis": "31-32",
+      "treatment": "33-34",
+      "mortality": "35"
+     }
+    }
+   ]
+  },
+  {
+   "lecture": 41,
+   "title": "Inflammatory Lung Diseases",
+   "lecturer": "Rob Gray, DMSc, PA-C (guest lecturer)",
+   "deck": "Inflammatory Lung Disease 2026.pptx",
+   "note": "Built from the slides plus the lecturer's narrated recording, which only chooses which facts to star. Slides 72-74 (acute respiratory distress syndrome) are AI-made pictures with typos; the plateau pressure figure on slide 74 ('under 50 cm H2O') is left out. He said not to memorize the cause and drug charts and that the rare idiopathic subtypes are not test material. Dosing is left out.",
+   "conditions": [
+    {
+     "id": "l41-ipf",
+     "name": "Idiopathic pulmonary fibrosis (IPF)",
+     "prof": true,
+     "prof_note": "He called idiopathic pulmonary fibrosis \"kind of the most common thing\"; the four over-65 criteria allow a diagnosis without a biopsy.",
+     "fields": {
+      "name": "Idiopathic pulmonary fibrosis (IPF), usual interstitial pneumonia",
+      "definition": "The most common idiopathic (fibrosing) interstitial pneumonia: pulmonary fibrosis with no associated cause",
+      "etiology": "Unknown; smoking is the cause in the majority of cases",
+      "epidemiology": "[[★ The most common subtype of idiopathic interstitial pneumonia]], itself the most common diagnosis among patients with interstitial lung disease; 67 to 75% of patients with idiopathic pulmonary fibrosis and familial lung fibrosis have smoked; the no-biopsy criteria apply over 65",
+      "risk_factors": "Smoking; familial lung fibrosis",
+      "pathology": "As in all fibrosis: inflammatory cells gather in the alveolar walls, alveolitis drives fibroblast production and collagen causes the fibrosis; CT shows diffuse, patchy fibrosis with pleural-based honeycombing",
+      "clinical": "Insidious dry cough, exertional dyspnea, fatigue and malaise; clubbing, bibasilar inspiratory crackles, tachypnea, reduced chest expansion",
+      "diagnosis": "Restrictive pattern (normal or increased ratio, decreased lung volumes); chest film with progressive fibrosis (lower lung fields); CT with diffuse patchy fibrosis and pleural-based honeycombing; lavage or biopsy as needed. Over 65 with idiopathic disease and crackles, restrictive physiology, progressive fibrosis over years and honeycombing on high-resolution CT: 90% confidence, no surgical biopsy",
+      "treatment": "Controversial: nothing has improved survival or quality of life compared with no treatment; smoking cessation is critical",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "35",
+      "definition": "31, 35",
+      "etiology": "35, 37",
+      "epidemiology": "31-32",
+      "risk_factors": "31",
+      "pathology": "6, 34",
+      "clinical": "33",
+      "diagnosis": "34-35",
+      "treatment": "37"
+     }
+    },
+    {
+     "id": "l41-iip",
+     "name": "Idiopathic interstitial pneumonias (other subtypes)",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Idiopathic (fibrosing) interstitial pneumonias",
+      "definition": "Interstitial pneumonias of unknown cause defined by histopathologic pattern",
+      "etiology": "Unknown",
+      "epidemiology": "Taken together the most common diagnosis among interstitial lung diseases; idiopathic pulmonary fibrosis is the most common subtype",
+      "risk_factors": "Smoking (67 to 75% of idiopathic and familial fibrosis patients)",
+      "pathology": "Patterns: idiopathic pulmonary fibrosis, desquamative interstitial pneumonitis, nonspecific interstitial pneumonia, cryptogenic organizing pneumonia, respiratory bronchiolitis-associated interstitial lung disease, lymphoid interstitial pneumonia, acute interstitial pneumonitis",
+      "clinical": "Dry cough, exertional dyspnea, constitutional symptoms; symptoms vary by subtype",
+      "diagnosis": "Suspect in unexplained interstitial lung disease; may require biopsy; age, sex, prodrome, imaging and histology together",
+      "treatment": "Depends on the subtype; corticosteroids may be used in cryptogenic organizing pneumonia (bronchiolitis obliterans organizing pneumonia), lymphoid and nonspecific interstitial pneumonia",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "31",
+      "definition": "31",
+      "etiology": "30",
+      "epidemiology": "31-32",
+      "risk_factors": "31",
+      "pathology": "31",
+      "clinical": "33, 38",
+      "diagnosis": "31-32",
+      "treatment": "38"
+     }
+    },
+    {
+     "id": "l41-ctd",
+     "name": "Pulmonary fibrosis with connective tissue disease",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Pulmonary fibrosis associated with connective tissue disorders",
+      "definition": "An inflammatory and fibrotic interstitial response in autoimmune (connective tissue) disease",
+      "etiology": "Systemic lupus erythematosus, rheumatoid arthritis, ankylosing spondylitis, systemic sclerosis, Sjogren syndrome, polymyositis-dermatomyositis, scleroderma; methotrexate used to treat them is itself a cause",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "The underlying autoimmune disease; methotrexate therapy",
+      "pathology": "Inflammatory and fibrotic lung response",
+      "clinical": "Progressive exertional dyspnea, persistent nonproductive cough; crackles, clubbing",
+      "diagnosis": "High antinuclear antibody (collagen vascular disease); restrictive pulmonary function; imaging",
+      "treatment": "Not covered in the lecture",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "18",
+      "definition": "18",
+      "etiology": "18",
+      "risk_factors": "18",
+      "pathology": "18",
+      "clinical": "23-24",
+      "diagnosis": "25-26, 29"
+     }
+    },
+    {
+     "id": "l41-sarcoid",
+     "name": "Sarcoidosis",
+     "prof": true,
+     "prof_note": "\"Sarcoid, you could see questions about\"; lupus pernio with a dry cough is a red flag; know the lab clues and the stages.",
+     "fields": {
+      "name": "Sarcoidosis",
+      "definition": "A multi-organ disease of idiopathic cause with noncaseating granulomatous inflammation, most often of the lungs and lymphatic system",
+      "etiology": "Unknown; environmental triggers (viral, bacterial, mycobacterial, inhaled agents, mold) in a genetically predisposed person",
+      "epidemiology": "Granulomatous lung inflammation in about 90%; higher in North American Black and Northern European white people; more often women; onset in the third and fourth decades",
+      "risk_factors": "Genetic predisposition plus environmental exposure",
+      "pathology": "Noncaseating granulomas (T lymphocytes, macrophages, epithelioid cells) in lungs, nodes, eyes, skin, liver, spleen, salivary glands, heart, nervous system",
+      "clinical": "Cough, insidious dyspnea, chest discomfort, malaise, fever, weakness, weight loss, nontender lymphadenopathy; erythema nodosum, parotid enlargement, hepatosplenomegaly, crackles, [[★ lupus pernio (painful skin sores on the face)]]",
+      "diagnosis": "Chest film: symmetric bilateral hilar and right paratracheal adenopathy, stages I to IV; [[★ elevated sedimentation rate and angiotensin-converting enzyme (40 to 80%)]], hypercalcemia (5%), hypercalciuria, eosinophilia, leukopenia; transbronchial or fine-needle node biopsy with noncaseating granulomas confirms; biopsy whenever lymphoma is possible",
+      "treatment": "About 90% respond to corticosteroids (indications: disabling constitutional symptoms, hypercalcemia, iritis, uveitis, arthritis, central nervous system or cardiac involvement, granulomatous hepatitis, skin lesions other than erythema nodosum, progressive pulmonary lesions); methotrexate, azathioprine or infliximab if intolerant or refractory; yearly exam, pulmonary function, chest film, electrocardiogram, chemistry and eye exam",
+      "mortality": "Best with hilar adenopathy alone; parenchymal involvement is worse; 20% with lung involvement develop irreversible impairment (fibrosis, bronchiectasis, cavitation)"
+     },
+     "slides": {
+      "name": "39",
+      "definition": "39",
+      "etiology": "40",
+      "epidemiology": "39-40",
+      "risk_factors": "40",
+      "pathology": "39-40",
+      "clinical": "42-43",
+      "diagnosis": "25, 44-45",
+      "treatment": "46-47",
+      "mortality": "48"
+     }
+    },
+    {
+     "id": "l41-cwp",
+     "name": "Coal workers' pneumoconiosis",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Coal workers' pneumoconiosis (a pneumoconiosis)",
+      "definition": "Chronic fibrotic lung disease from inhaled coal dust",
+      "etiology": "Inhaled coal dust taken up by alveolar macrophages, forming coal macules",
+      "epidemiology": "Coal workers",
+      "risk_factors": "Coal dust exposure",
+      "pathology": "Coal macules; complicated disease is progressive massive fibrosis (conglomeration of the upper lungs)",
+      "clinical": "Simple disease usually asymptomatic; complicated: progressive dyspnea, inspiratory crackles, clubbing, cyanosis",
+      "diagnosis": "Restrictive pulmonary function with reduced diffusing capacity; chest film with nodular opacities in the upper lung fields (coal macules 2 to 5 mm)",
+      "treatment": "Supportive, no curative treatment: oxygen, pneumococcal and influenza vaccines, rehabilitation, smoking cessation; lung transplant in severe cases",
+      "mortality": "Progressive massive fibrosis: conglomeration and contraction in the upper lung fields"
+     },
+     "slides": {
+      "name": "50-51",
+      "definition": "50",
+      "etiology": "51",
+      "epidemiology": "50",
+      "risk_factors": "50",
+      "pathology": "51, 54",
+      "clinical": "52",
+      "diagnosis": "53",
+      "treatment": "54",
+      "mortality": "51, 54"
+     }
+    },
+    {
+     "id": "l41-asbestosis",
+     "name": "Asbestosis (and mesothelioma)",
+     "prof": true,
+     "prof_note": "Ferruginous bodies point to asbestos; smoking multiplies the cancer risk.",
+     "fields": {
+      "name": "Asbestosis",
+      "definition": "Interstitial fibrosis of the terminal bronchioles, alveoli and interstitium from inhaled asbestos fibers that cannot be removed",
+      "etiology": "Asbestos fibers from insulation, demolition, shipyards and construction",
+      "epidemiology": "Exposure over 10 to 20 years; patients usually seek attention about 15 years after exposure",
+      "risk_factors": "Asbestos exposure; cigarette smoking increases radiographic changes and markedly increases lung carcinoma",
+      "pathology": "Chronic inflammation and macrophage invasion form fibrosis; fibers can reach the pleura and cause mesothelioma; [[★ ferruginous bodies in tissue suggest significant exposure]]",
+      "clinical": "Dyspnea on exertion, rarely cough; fine bibasilar crackles and clubbing with progression",
+      "diagnosis": "Labs not helpful; reduced vital capacity and total lung capacity; imaging often normal early; pleural plaques the most common chest film finding, basal reticulonodular opacities; CT preferred (plaques, alveolitis, fibrosis, honeycombing)",
+      "treatment": "Supportive: oxygen, physiotherapy, medications, vaccinations",
+      "mortality": "Increased lung cancer and mesothelioma, especially in smokers; mesothelioma (pleural, nearly always from asbestos, 10% lifetime risk in asbestos workers) is incurable with poor survival, diagnosed by pleural fluid cytology"
+     },
+     "slides": {
+      "name": "55",
+      "definition": "56",
+      "etiology": "55",
+      "epidemiology": "55",
+      "risk_factors": "55-56",
+      "pathology": "55-56",
+      "clinical": "57",
+      "diagnosis": "57-58",
+      "treatment": "58",
+      "mortality": "56, 59"
+     }
+    },
+    {
+     "id": "l41-silicosis",
+     "name": "Silicosis",
+     "prof": true,
+     "prof_note": "A thick, milky lavage is \"usually confirmatory\"; screen for tuberculosis.",
+     "fields": {
+      "name": "Silicosis",
+      "definition": "Fibrosis and nodular lung lesions from free crystalline silica dust (silicon dioxide)",
+      "etiology": "Silica dust from mining, sandblasting, quarry work and stone work",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Silica exposure",
+      "pathology": "Silica deposits in the alveoli cause chronic inflammation, macrophage invasion, fibrosis and nodules, mostly in the upper lobes (a lighter dust); complicated disease conglomerates the upper lungs",
+      "clinical": "Simple disease usually asymptomatic; dyspnea, cough, weight loss, fatigue; crackles",
+      "diagnosis": "Arterial blood gas; reduced forced vital capacity and forced expiratory volume in 1 second; [[★ bronchoalveolar lavage: thick, milky effluent with foamy, lipoproteinaceous macrophages]]; silicotic nodules 1 to 10 mm and eggshell calcification of the hilar nodes",
+      "treatment": "Largely supportive: oxygen, physiotherapy, medications, vaccinations, smoking cessation; [[★ tuberculosis skin test and a current chest film]]",
+      "mortality": "Increased risk of tuberculosis, progressive massive fibrosis, scleroderma"
+     },
+     "slides": {
+      "name": "60",
+      "definition": "60",
+      "etiology": "60",
+      "risk_factors": "60",
+      "pathology": "60, 63",
+      "clinical": "61",
+      "diagnosis": "62-63",
+      "treatment": "64",
+      "mortality": "64"
+     }
+    },
+    {
+     "id": "l41-hp",
+     "name": "Hypersensitivity pneumonitis",
+     "prof": true,
+     "prof_note": "\"Find the agent, avoid the agent\"; reversible if caught early.",
+     "fields": {
+      "name": "Hypersensitivity pneumonitis (extrinsic allergic alveolitis)",
+      "definition": "A non-atopic, non-asthmatic inflammatory lung disease caused by inhaled organic material",
+      "etiology": "Organic dusts: moldy hay (farmer's lung), bird excreta and feathers (bird fancier's lung), cheese maker's lung, moldy sugarcane pulp, insect-infested grain",
+      "epidemiology": "Acute after exposure; subacute in 15% and chronic in 5%, after multiple exposures",
+      "risk_factors": "Repeated exposure to the organic agent",
+      "pathology": "Interstitial lymphocytes and plasma cells with noncaseating granulomas; fibrosis with continued exposure",
+      "clinical": "Sudden malaise, chills, fever, cough, dyspnea, nausea 4 to 8 hours after exposure (may mimic paroxysmal nocturnal dyspnea); bibasilar crackles, tachypnea, tachycardia, cyanosis; chronic: fatigue, weight loss, fibrosis, clubbing",
+      "diagnosis": "Serum antibodies to the agent (definitive); white count elevated with a left shift; hypoxia; restrictive function; little imaging change acutely, later small nodular densities sparing the apices and bases; biopsy if subacute or chronic",
+      "treatment": "[[★ Identify and avoid the agent]]; corticosteroids in severe cases; other immunosuppressants; oxygen, bronchodilators, pain medication; lung transplant",
+      "mortality": "Reversible if caught early; continued exposure worsens the disease"
+     },
+     "slides": {
+      "name": "65",
+      "definition": "65",
+      "etiology": "65, 67",
+      "epidemiology": "67",
+      "risk_factors": "67",
+      "pathology": "67, 70",
+      "clinical": "66, 68",
+      "diagnosis": "69-70",
+      "treatment": "71",
+      "mortality": "71"
+     }
+    },
+    {
+     "id": "l41-ards",
+     "name": "Acute respiratory distress syndrome (ARDS)",
+     "prof": true,
+     "prof_note": "The most narration time of the lecture: a feared complication of sepsis, trauma, aspiration and more.",
+     "fields": {
+      "name": "Acute respiratory distress syndrome (ARDS)",
+      "definition": "Acute non-cardiogenic lung injury: within 7 days of a known insult, bilateral opacities not explained by effusion, atelectasis or nodules, failure not fully explained by heart failure or fluid overload, arterial oxygen to inspired oxygen ratio under 300 mm Hg",
+      "etiology": "Direct: aspiration of gastric contents, diffuse pneumonia, lung contusion, toxic gas, near-drowning, high altitude, radiation, upper airway obstruction, fat, air, amniotic fluid or thrombus emboli. Systemic: sepsis, severe pancreatitis, shock, nonthoracic trauma, overdoses (opioids, aspirin, phenothiazine, tricyclic antidepressants, cocaine), multiple transfusions, disseminated intravascular coagulation, cardiopulmonary bypass, protamine, chemotherapy, amiodarone, nitrofurantoin",
+      "epidemiology": "About one-third of cases first present with sepsis",
+      "risk_factors": "The direct and systemic insults above",
+      "pathology": "Cytokine damage to capillary endothelium and alveolar epithelium; increased permeability, surfactant loss, alveolar collapse and refractory hypoxemia; hyperinflammatory phenotype (high interleukin-6, soluble tumor necrosis factor receptor) with multiorgan failure",
+      "clinical": "Profound dyspnea 12 to 48 hours after the insult; tachypnea, labored breathing, intercostal retractions, crackles; hypoxemia refractory to supplemental oxygen; multiple organ failure",
+      "diagnosis": "Bilateral infiltrates becoming confluent, air bronchograms in about 80%, normal heart size with few effusions; echocardiography excludes cardiogenic edema; severity by arterial oxygen to inspired oxygen ratio (mild 200 to 300, moderate 100 to 200, severe under 100 mm Hg); differential: cardiogenic edema, diffuse alveolar hemorrhage, severe bilateral pneumonia, autoimmune lung disease",
+      "treatment": "Treat the precipitant; low tidal volume ventilation; titrate positive end-expiratory pressure (arterial oxygen above 60 mm Hg); early prone positioning in moderate to severe disease; conservative fluids; transfuse at hemoglobin 7 g/dL; corticosteroids conditionally within 14 days; sedatives, analgesics, antipyretics; avoid oscillatory ventilation and routine pulmonary artery catheters; neuromuscular blockade controversial; extracorporeal membrane oxygenation as salvage",
+      "mortality": "About 30% mortality with low tidal volume ventilation; 20% after trauma to 80% with end-stage liver disease; lung function improves over 6 to 12 months; residual diffusion deficits, weakness and fatigue"
+     },
+     "slides": {
+      "name": "72",
+      "definition": "73",
+      "etiology": "72",
+      "epidemiology": "72",
+      "risk_factors": "72",
+      "pathology": "72-73",
+      "clinical": "73",
+      "diagnosis": "73",
+      "treatment": "74",
+      "mortality": "74"
+     }
+    }
+   ]
+  }
+ ]
+}
