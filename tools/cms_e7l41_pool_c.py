@@ -31,17 +31,7 @@ ARD = "Acute respiratory distress syndrome"
 QUESTIONS = [
 
 # ---------------------------------------------------------------- silicosis
-S(SIL, IO_A,
-  "Which occupation exposes workers to free crystalline silica dust?",
-  [["Sandblasting",
-    "Correct. Silicosis follows exposure to free crystalline silica dust (silicon dioxide) in mining, sandblasting, quarry work and stone work. The silica deposits in the alveoli, where macrophage invasion causes chronic inflammation, fibrosis and nodular lesions."],
-   ["Demolition",
-    "Demolition appears on the asbestos list, with insulation, shipyard and construction work, the exposures behind asbestosis with pleural plaques and ferruginous bodies; the silica list does not name it. Tell: the jobs listed for silica are mining, sandblasting, quarry work and stone work.", "competing diagnosis"],
-   ["Bird breeding",
-    "Bird excreta and feathers are organic dusts that cause hypersensitivity pneumonitis, bird fancier's lung, not silicosis. Tell: animal and plant material is organic and drives hypersensitivity, while crystalline silica comes from sand and stone work.", "competing diagnosis"],
-   ["Cheese making",
-    "Cheese maker's lung is a hypersensitivity pneumonitis from handling moldy organic products, with symptoms hours after exposure. Tell: moldy organic material means hypersensitivity, while silica dust comes from mining, sandblasting, quarry and stone work.", "competing diagnosis"]],
-  CS(60, 65), "risk factors"),
+# DROPPED 13d3a106baa247de after one repair and a second audit flag (2026-11-02)
 
 S(SIL, IO_A,
   "Why is silica dust usually carried to the upper lobes?",
