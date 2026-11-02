@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinical Medicine and Surgery I &middot; Exam 7 &mdash; Study Guide</title>
+<style>
+  :root{
+    --ink:#251e33;
+    --paper:#faf8f6;
+    --accent:#5e4123;      /* bronze (Exam 7, the quiz palette navy) */
+    --accent2:#c08a2e;      /* warm gold */
+    --accent3:#92693f;      /* light bronze */
+    --line:#e8e3dc;
+    --soft:#665b5c;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;
+  }
+  header.top{
+    background:linear-gradient(120deg,#4a311a,var(--accent) 55%,#d9b293);
+    color:#fff;
+    padding:34px 26px 30px;
+  }
+  header.top h1{
+    margin:0 0 6px;
+    font-size:2rem;
+    letter-spacing:.2px;
+    font-weight:800;
+  }
+  header.top p{margin:2px 0;color:#f7f0e8;font-size:.95rem;}
+  header.top .hdr-note{margin-top:12px;font-size:.86rem;background:rgba(255,255,255,.14);
+    display:inline-block;padding:7px 13px;border-radius:9px;}
+  header.top .hdr-links{margin-top:14px;display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
+  header.top .hdr-links a{font-size:.83rem;font-weight:700;color:#fff;text-decoration:none;
+    border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:6px 14px;}
+  header.top .hdr-links a:hover{background:rgba(255,255,255,.16);}
+  header.top .hdr-save{margin-top:12px;font-size:.8rem;opacity:.85;}
+  @media print{ header.top .hdr-links, header.top .hdr-save{display:none !important;} }
+
+  .layout{display:flex;max-width:1180px;margin:0 auto;}
+  nav.toc{
+    position:sticky;top:38px;align-self:flex-start;
+    width:280px;min-width:280px;max-height:calc(100vh - 38px);max-height:calc(100dvh - 38px);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+    padding:24px 18px;border-right:1px solid var(--line);
+    background:#f3eee9;
+    font-size:.85rem;
+  }
+  nav.toc h2{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin:14px 0 6px;}
+  nav.toc a{display:block;color:var(--soft);text-decoration:none;padding:3px 0;border-bottom:1px solid transparent;}
+  nav.toc a.top-link{font-weight:700;color:var(--accent2);margin-top:10px;}
+  nav.toc a:hover{color:var(--accent);}
+  main{flex:1;padding:30px 40px 90px;min-width:0;}
+  section.deck{margin-bottom:56px;scroll-margin-top:18px;}
+  h2.deck-title{
+    font-size:1.55rem;color:var(--accent);
+    border-bottom:3px solid var(--accent2);
+    padding-bottom:8px;margin:0 0 6px;
+    font-weight:800;
+  }
+  .lecturer{color:var(--soft);font-style:italic;font-size:.9rem;margin-bottom:14px;}
+  .io-box{
+    background:#f5f0e9;border:1px solid var(--line);
+    border-radius:10px;padding:14px 18px;margin:14px 0 20px;
+  }
+  .io-box h3{
+    margin:0 0 8px;font-size:.8rem;text-transform:uppercase;
+    letter-spacing:1px;color:var(--accent3);
+  }
+  .io-box ol{margin:0;padding-left:20px;}
+  .io-box li{margin-bottom:5px;font-size:.92rem;}
+  h3.sub{
+    color:var(--accent3);font-size:1.14rem;margin:26px 0 6px;font-weight:800;
+  }
+  h4.subsub{
+    color:var(--accent2);font-size:.98rem;margin:16px 0 4px;
+    font-weight:700;
+  }
+  ul,ol{margin:6px 0 12px;}
+  li{margin-bottom:3px;}
+  p{margin:8px 0;}
+  .callout{
+    border-left:4px solid var(--accent3);
+    background:#efeaf4;padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0;
+  }
+  .pearl{
+    border-left:4px solid var(--accent2);
+    background:#f8f0e2;padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0;
+  }
+  table{border-collapse:collapse;width:100%;margin:14px 0;font-size:.9rem;}
+  th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  th{background:var(--accent);color:#fff;font-weight:700;}
+  tr:nth-child(even) td{background:#f5f1ed;}
+  code{background:#ece6df;padding:1px 5px;border-radius:4px;font-size:.85rem;}
+  .tag{
+    display:inline-block;background:var(--accent2);color:#fff;
+    font-size:.68rem;
+    padding:2px 8px;border-radius:10px;letter-spacing:.5px;
+    vertical-align:middle;margin-left:8px;
+  }
+  figure.fig{
+    margin:18px 0;padding:12px;background:#f3eee9;border-radius:10px;
+    border:1px solid var(--line);text-align:center;
+  }
+  figure.fig img{
+    max-width:100%;height:auto;border-radius:6px;background:#fff;
+    box-shadow:0 1px 4px rgba(0,0,0,.1);
+  }
+  figure.fig figcaption{
+    margin-top:8px;font-size:13.5px;color:var(--soft);font-style:italic;line-height:1.45;
+  }
+  .test-yourself-btn{
+    display:inline-block;margin-top:18px;padding:10px 18px;border:none;border-radius:999px;
+    background:var(--acc,var(--accent));color:#fff;font-weight:700;font-size:.92rem;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+  }
+  .test-yourself-btn:hover{filter:brightness(1.08);}
+  footer.guide-foot{margin:34px 40px 0;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--soft);}
+  @media(max-width:820px){
+    nav.toc{display:none;}
+    main{padding:22px 18px 60px;}
+    footer.guide-foot{margin:34px 18px 0;}
+  }
+
+  /* header.top sits outside .wrap (full-bleed banner) so it needs its own
+     dark-mode invert -- everything else lives inside .layout.wrap and gets
+     the site-wide body > .wrap invert from theme.css for free. */
+  :root[data-theme="dark"] header.top { filter: invert(1) hue-rotate(180deg); }
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #6a4fa3; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+
+
+  /* Disease photograph strips (added 2026-08-20). Images are shared with the
+     dermatology comparison chart -- same directory, same files, no duplicates.
+     Images here are eager, never lazy: an image that never scrolled into view
+     is absent from Download as PDF, which cost 74 of 84 photographs on the
+     chart before it was caught. */
+  .figgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));
+    gap:12px;margin:16px 0;padding:14px;background:#f2ece9;border-radius:10px;
+    border:1px solid var(--line)}
+  .figgrid figure{margin:0;text-align:center;display:flex;flex-direction:column}
+  .figgrid img{width:100%;height:132px;object-fit:contain;border-radius:6px;
+    background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+  .figgrid .fg-nopic{width:100%;height:132px;border-radius:6px;background:#fff;
+    border:1px dashed var(--line);display:flex;align-items:center;
+    justify-content:center;font-size:11.5px;color:var(--soft);padding:8px;
+    line-height:1.35;box-sizing:border-box}
+  .figgrid figcaption{margin-top:7px;font-size:12px;line-height:1.35;color:var(--soft)}
+  .figgrid .fg-name{display:block;font-weight:700;color:var(--ink);font-size:12.5px;
+    margin-bottom:2px}
+  .figgrid .fg-cite{display:block;font-size:10.5px;margin-top:3px;opacity:1;color:var(--soft)}
+  .figgrid-h{font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--soft);margin:0 0 4px}
+  @media (max-width:520px){.figgrid{grid-template-columns:repeat(auto-fill,minmax(132px,1fr))}
+    .figgrid img,.figgrid .fg-nopic{height:112px}}
+  /* The GRID must be allowed to break -- a ten-condition strip is taller than a
+     page, so `break-inside:avoid` on the grid cannot be honoured and Chrome
+     splits it through the middle of a figure instead, clipping the photograph
+     and orphaning its caption. Let the grid fragment between rows and protect
+     the individual figure, which always fits. */
+  @media print{.figgrid{break-inside:auto;background:#f7f4f2}
+    .figgrid figure{break-inside:avoid;page-break-inside:avoid}
+    .figgrid img,.figgrid .fg-nopic{break-inside:avoid}}
+
+  /* First-line treatment tables (add_guide_ophtho_treatment.py). The condition
+     column is held narrow so the treatment text gets the width; the urgency
+     column is narrower still and never wraps mid-word. */
+  .txnote{font-size:13px;line-height:1.5;color:var(--soft);margin:0 0 10px}
+  table.txtab td.txc{width:200px;font-weight:700;vertical-align:top}
+  table.txtab td{vertical-align:top;font-size:14px;line-height:1.5}
+  table.txtab .txu{width:120px;font-size:12.5px;line-height:1.4}
+  table.txtab td.txu{font-weight:700}
+  @media(max-width:700px){
+    table.txtab td.txc{width:auto;display:block;border-bottom:none;padding-bottom:0}
+    table.txtab td:not(.txc){display:block;border-top:none;padding-top:3px}
+    table.txtab .txu{width:auto}
+  }
+
+  /* Condition blocks (.cond / dl.eight) use --c-* tokens, defined here as in Exam 5. */
+  :root{--c-line:var(--line);--c-ice:#faf6ee;--c-mute:var(--soft);--c-panel:var(--accent);--c-panel-fg:#fff;}
+  .callout.warn{border-left-color:#b4541a;background:#fbeee4;}
+  .callout.audio-note{border-left-color:#c1873a;background:#fff7e6;}
+  .audio-pending{display:inline-block;vertical-align:middle;margin-left:8px;font-size:.62rem;font-weight:700;
+    letter-spacing:.04em;text-transform:uppercase;color:#7a5a08;background:#fff3d4;border:1px solid #e3c46a;
+    border-radius:999px;padding:1px 8px;white-space:nowrap;}
+  .cite{font-style:normal;font-size:.72rem;opacity:.85;}
+</style>
+  <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="cms-exam-6-study-guide.docx" title="Editable Word copy">
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--paper:#0f1115;--line:#2a2e37;--soft:#9aa1ac;--muted:#9aa1ac;--card:#191c22;--soft-bg:#311e09;--accent-l:#5e4123;--accent:#a48464;--accent-soft:#311e09;--accent2-l:#c08a2e;--accent2:#b58125;--accent2-soft:#2f2006;--accent3-l:#92693f;--accent3:#ac8257;--accent3-soft:#311e09;}:root[data-theme="light"] body[data-dark="tokens"]{--accent-t:#5e4123;--accent2-t:#8b621a;--accent3-t:#8a6137;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="guide">
+<style>
+  /* Professor-emphasized content. Star + highlight, per the convention set by
+     the CAM/Nutrition guide. Here the marks come from each lecture recording
+     (minutes spoken, repetition, explicit "know this"). */
+  .prof-flag{
+    border:2px solid #d4a017;border-radius:10px;padding:16px 14px 6px;
+    margin:22px 0 14px;position:relative;background:#fffdf5;
+  }
+  .prof-flag-label{
+    position:absolute;top:-13px;left:14px;background:#fef3d4;color:#8a6205;
+    font-size:.72rem;font-weight:700;padding:2px 10px;border-radius:8px;
+    border:1px solid #d4a017;letter-spacing:.3px;
+  }
+  .prof-flag table{margin:6px 0 8px;}
+  mark.prof-highlight{
+    background:#fef3d4;color:#3a2c05;padding:0 3px;border-radius:3px;
+    box-shadow:inset 0 0 0 1px #e8c766;
+  }
+  :root[data-theme="dark"] .prof-flag{background:#241f10;border-color:#a8801a;}
+  :root[data-theme="dark"] .prof-flag-label{
+    background:#3a2f12;color:#f0d98a;border-color:#a8801a;
+  }
+  :root[data-theme="dark"] mark.prof-highlight{
+    background:#4a3a12;color:#f7ecc8;box-shadow:inset 0 0 0 1px #7a6220;
+  }
+  .footer-mark-ink { stroke: #251e33; }
+  .footer-mark-accent { stroke: #6a4fa3; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #cdbde9; }
+  }
+</style>
+<div id="quiz-footer-logo" style="position:fixed;bottom:14px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:14px;pointer-events:none;z-index:500;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(255,255,255,0.8), rgba(255,255,255,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="pointer-events:auto;cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:100px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(255,255,255,0.8), rgba(255,255,255,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<header class="top">
+  <h1>Clinical Medicine and Surgery I &middot; Exam 7 &mdash; Study Guide</h1>
+  <p>PAJ 5500 Clinical Medicine and Surgery I &middot; Class of 2028</p>
+  <p>Respiratory Block Exam II (Lectures 39&ndash;45) &middot; Monday 16 November 2026 &middot; Lectures in this guide: 39, 40, 41 &middot; Lectures 42, 43, 44, 45 are added as they are built &middot; Instructional Objectives verbatim</p>
+  <p class="hdr-note">&#9733; Starred boxes and highlighted phrases carry each lecturer&rsquo;s emphasis from the lecture recording (our transcript cross-checked against Notability&rsquo;s, or the lecturer&rsquo;s own narration); every fact still comes from the slides</p>
+  <div class="hdr-links"><a href="cms-exam-7-cram-sheet.html">Cram sheet</a><a href="cms-exam-7-clin-med-pro-guide.html">Clin Med Pro guide</a></div>
+</header>
+
+<div class="layout wrap" data-readable>
+<nav class="toc">
+  <a class="top-link" href="#phases-of-sleep">1 &middot; Phases of Sleep (Sleep Physiology)</a>
+  <a class="sub-link" href="#l39-sleep-coma">1.1 Sleep versus coma</a>
+  <a class="sub-link" href="#l39-can-cannot">&nbsp;&nbsp;&#9733; Sleep CAN be aroused; coma CANNOT</a>
+  <a class="sub-link" href="#l39-cycles">1.2 Sleep architecture: cycles and stages</a>
+  <a class="sub-link" href="#l39-rem">1.3 Rapid eye movement sleep</a>
+  <a class="sub-link" href="#l39-nrem">1.4 Slow-wave (non-rapid eye movement) sleep, and the comparison</a>
+  <a class="sub-link" href="#l39-functions">1.5 Why sleep matters: the physiological functions</a>
+  <a class="sub-link" href="#l39-sleep-wake">1.6 The cycle between sleep and wakefulness</a>
+  <a class="sub-link" href="#l39-waves">1.7 The four waveforms of a normal EEG</a>
+  <a class="sub-link" href="#l39-eeg-stages">1.8 EEG changes across wakefulness and sleep</a>
+  <a class="top-link" href="#sleep-apnea-ohs">2 &middot; Obstructive Sleep Apnea and Obesity Hypoventilation Syndrome</a>
+  <a class="sub-link" href="#l40-sdb">2.1 Sleep-disordered breathing: the definitions</a>
+  <a class="sub-link" href="#l40-osa-risk">2.2 Obstructive sleep apnea: who gets it and why</a>
+  <a class="sub-link" href="#l40-osa-present">2.3 Obstructive sleep apnea: presentation</a>
+  <a class="sub-link" href="#l40-osa-dx">2.4 Obstructive sleep apnea: differential and diagnosis</a>
+  <a class="sub-link" href="#l40-psg">&nbsp;&nbsp;&#9733; Sleep studies and the diagnostic criteria</a>
+  <a class="sub-link" href="#l40-stopbang">2.5 Screening: the STOP-Bang questionnaire</a>
+  <a class="sub-link" href="#l40-stopbang-table">&nbsp;&nbsp;&#9733; STOP-Bang items and risk groups</a>
+  <a class="sub-link" href="#l40-osa-rx">2.6 Obstructive sleep apnea: management, education and referral</a>
+  <a class="sub-link" href="#l40-untreated">2.7 What happens if obstructive sleep apnea is left untreated</a>
+  <a class="sub-link" href="#l40-mortality">&nbsp;&nbsp;&#9733; Untreated: 3-6 x sudden death AT NIGHT</a>
+  <a class="sub-link" href="#l40-comorbid">2.8 The syllabus complications and comorbidities, one by one</a>
+  <a class="sub-link" href="#l40-csa">2.9 Central sleep apnea</a>
+  <a class="sub-link" href="#l40-csa-rx">&nbsp;&nbsp;&#9733; Central apnea: treat the cause, CPAP, then ASV</a>
+  <a class="sub-link" href="#l40-ohs">2.10 Obesity hypoventilation syndrome (Pickwickian syndrome)</a>
+  <a class="sub-link" href="#l40-ohs-dx">&nbsp;&nbsp;&#9733; OHS: screen, then diagnose by exclusion</a>
+  <a class="sub-link" href="#l40-populations">2.11 Adults and older adults</a>
+  <a class="top-link" href="#inflammatory-lung-disease">3 &middot; Inflammatory Lung Diseases</a>
+  <a class="sub-link" href="#l41-ild">3.1 Interstitial lung disease: what it is and what causes it</a>
+  <a class="sub-link" href="#l41-present">3.2 Onset, symptoms and examination</a>
+  <a class="sub-link" href="#l41-workup">3.3 Laboratory tests, imaging and pulmonary function</a>
+  <a class="sub-link" href="#l41-iip">3.4 Idiopathic (fibrosing) interstitial pneumonia and idiopathic pulmonary fibrosis</a>
+  <a class="sub-link" href="#l41-ctd">3.5 Connective tissue disease, pulmonary hemorrhage and granulomatous vasculitis</a>
+  <a class="sub-link" href="#l41-sarcoid">3.6 Sarcoidosis</a>
+  <a class="sub-link" href="#l41-cwp">3.7 Pneumoconiosis: coal workers&rsquo; pneumoconiosis</a>
+  <a class="sub-link" href="#l41-asbestos">3.8 Asbestosis and mesothelioma</a>
+  <a class="sub-link" href="#l41-silicosis">3.9 Silicosis</a>
+  <a class="sub-link" href="#l41-hp">3.10 Hypersensitivity pneumonitis (extrinsic allergic alveolitis)</a>
+  <a class="sub-link" href="#l41-ards">3.11 Acute respiratory distress syndrome</a>
+  <a class="sub-link" href="#l41-populations">3.12 Adults and older adults; referral</a>
+</nav>
+<main>
+
+<section class="deck" id="phases-of-sleep">
+  <h2 class="deck-title">1 &middot; Phases of Sleep (Sleep Physiology)</h2>
+  <p class="lecturer">Lecture 39 &middot; Chand Shah, MPAS, PA-C, Assistant Professor &middot; Monday 2 November 2026, 10&ndash;11 AM</p>
+  <div class="io-box">
+    <h3>Instructional Objectives</h3>
+    <p class="tag">PHASES OF SLEEP (SLEEP PHYSIOLOGY) &mdash; Chand Shah, MPAS, PA-C</p>
+    <ol type="a">
+      <li>Compare and contrast sleep and coma</li>
+      <li>Compare and contrast slow-wave sleep and rapid eye movement sleep.</li>
+      <li>Discuss the physiological functions of sleep.</li>
+      <li>Differentiate between the waveforms of a normal EEG: alpha waves, beta waves, theta waves, delta waves.</li>
+      <li>Compare and contrast characteristic changes in the EEG at different stages of wakefulness and sleep.</li>
+    </ol>
+    <p style="font-size:.8rem;margin:6px 0 0;">Quoted as the syllabus prints them (objective a has no final period). Answered in order: a in 1.1; b in 1.2&ndash;1.4; c in 1.5&ndash;1.6; d in 1.7; e in 1.8. EEG is the electroencephalogram. The deck&rsquo;s own objectives slide words objective a as &ldquo;Define sleep and distinguish sleep from coma.&rdquo;</p>
+  </div>
+
+  <div class="callout" id="l39-emphasis">
+    <p><strong>What Prof. Shah stressed:</strong> the recording of Monday 2 November is not in yet. This section is built from the 31 slides; the lecturer&rsquo;s spoken emphasis, and anything she says is or is not tested, will be added when the recording arrives. Until then the only stars below mark what the <em>slides</em> themselves emphasize (capital letters).</p>
+  </div>
+
+  <div class="callout warn">
+    <h4 class="subsub" style="margin-top:0">Where the slides are loose or disagree</h4>
+    <ul>
+      <li><strong>Three or four non-rapid eye movement (NREM) stages.</strong> Slides 13, 15 and the slide 28 table use <strong>three</strong> (N1, N2, N3); the slide 7 sleep graph, the slide 27 list and the slide 29 picture use <strong>four</strong> (stages 1&ndash;4, delta waves in stage 4). This guide uses N1&ndash;N3 and notes the four-stage figures where they appear.</li>
+      <li><strong>Where sleep spindles sit.</strong> Slide 27 puts spindles (&ldquo;short spindle-shaped bursts of alpha waves&rdquo;) in the <em>first</em> stage, and the slide 29 picture labels &ldquo;Stage 1 sleep (low voltage and spindles)&rdquo;; the slide 28 table puts sleep spindles and K complexes in <strong>stage N2</strong>.</li>
+      <li><strong>What &ldquo;slow-wave sleep&rdquo; means.</strong> Slide 6 uses it for <em>all</em> non-REM sleep (&ldquo;Slow-Wave Sleep (aka non-REM sleep &ndash; NREM)&rdquo;); the slide 28 table uses it for <strong>stage N3</strong> only (&ldquo;deep sleep, or slow-wave sleep&rdquo;).</li>
+      <li><strong>Delta frequency.</strong> Slide 26: below 3.5 cycles per second; slide 27: &ldquo;only 1&ndash;3 waves per second in stage 4.&rdquo;</li>
+      <li><strong>Theta.</strong> The slide 28 table gives theta for N1 and N2; the slide 29 picture labels &ldquo;Stages 2 and 3 sleep (theta waves).&rdquo;</li>
+      <li><strong>How hard to wake.</strong> Slide 10: in REM sleep the person is &ldquo;more difficult to arouse by sensory stimuli than during NREM&rdquo;; the slide 28 table calls N3 &ldquo;More difficult to arouse&rdquo; (the deepest NREM stage).</li>
+    </ul>
+  </div>
+
+  <h3 class="sub" id="l39-sleep-coma">1.1 &middot; Sleep versus coma</h3>
+  <div class="prof-flag" id="l39-can-cannot" data-toc="Sleep CAN be aroused; coma CANNOT">
+    <span class="prof-flag-label">&#9733; Capitals on the slide (slide 5)</span>
+    <table>
+      <tr><th>State</th><th>Definition</th></tr>
+      <tr><td><strong>Sleep</strong></td><td>Unconsciousness from which a person <strong>CAN</strong> be aroused by sensory stimuli or other stimuli</td></tr>
+      <tr><td><strong>Coma</strong></td><td>Unconsciousness from which a person <strong>CANNOT</strong> be aroused by stimuli</td></tr>
+    </table>
+  </div>
+  <p>Sleep is one of many states of brain activity (sleep, wakefulness, extreme excitement, different levels of mood such as exhilaration, depression and fear); they arise mostly from activating or inhibiting forces generated within the brain (slide 3). <strong>The decision is arousability:</strong> both states are unconsciousness, but only sleep can be ended by stimuli.</p>
+
+  <h3 class="sub" id="l39-cycles">1.2 &middot; Sleep architecture: cycles and stages</h3>
+  <ul>
+    <li><strong>About 8 hours of sleep on average</strong>, containing <strong>4&ndash;5 separate sleep cycles</strong>, each <strong>90&ndash;120 minutes</strong> (slide 6).</li>
+    <li>Two types of sleep (slide 6): <strong>slow-wave sleep (non-REM sleep)</strong>, deep and restful; and <strong>rapid eye movement (REM) sleep</strong>, not restful or deep.</li>
+    <li>Non-REM is divided into <strong>stage N1, stage N2 (the majority of the sleep cycle) and stage N3</strong>; REM is &ldquo;just REM sleep&rdquo; (slides 13, 15).</li>
+    <li><strong>The night on a graph (slide 7):</strong> sleep descends through the stages to the deepest stage within the first hour; REM periods recur about every 90 minutes; the deepest stage appears in the early cycles and REM periods grow longer toward morning (the graph labels four stages, see the box above).</li>
+  </ul>
+
+  <h3 class="sub" id="l39-rem">1.3 &middot; Rapid eye movement sleep</h3>
+  <ul>
+    <li><strong>Occurs in episodes and occupies about 25% of a young adult&rsquo;s sleep time</strong>; each episode <strong>recurs about every 90 minutes</strong> and lasts <strong>5 to 30 minutes</strong> (slide 9).</li>
+    <li>When a person is <strong>extremely sleepy</strong>, each REM episode is <strong>short or even absent</strong>; as the person becomes more rested, REM episodes lengthen (slide 9).</li>
+    <li><strong>Not the most restful sleep; associated with vivid dreaming</strong>; the brain is very active; the sleeper is not fully aware of surroundings and is asleep (slide 9).</li>
+    <li><strong>Active sleep (slide 10):</strong> dreaming and active bodily muscle movements, including rapid eye movements and irregular muscle movements. The person is <strong>more difficult to arouse by sensory stimuli than during NREM</strong>, yet people can <strong>awaken spontaneously in the morning during REM</strong>.</li>
+    <li><strong>Muscle tone is very depressed</strong> (inhibition of spinal muscle control areas); the slide 28 table: <strong>atonia of voluntary muscles except the eyes and diaphragm</strong>, from inhibited alpha motor neurons (slides 10, 28).</li>
+    <li><strong>Heart rate and respiratory rate become irregular</strong> (characteristic of the dream state); <strong>brain metabolism can rise by as much as 20%</strong> (slide 10).</li>
+    <li><strong>The EEG resembles wakefulness</strong>, so REM is also called <strong>paradoxical sleep</strong> (slide 10) and <strong>desynchronized sleep</strong> (a lack of synchrony in neuron firing; waves irregular and high frequency; often hard to tell from awake and active) (slide 29).</li>
+  </ul>
+
+  <h3 class="sub" id="l39-nrem">1.4 &middot; Slow-wave (non-rapid eye movement) sleep, and the comparison</h3>
+  <ul>
+    <li><strong>Extremely restful.</strong> The deep sleep in the first hour after going to sleep after more than 24 hours awake is this kind of sleep (slide 12).</li>
+    <li><strong>Decreased peripheral vascular tone and other vegetative functions: a 10&ndash;30% decrease in blood pressure, heart rate, respiratory rate and metabolic rate</strong> (slide 12). Physiologic changes: <strong>increased parasympathetic tone</strong>; low blood pressure, slow heart rate, decreased respiratory rate; less vivid dreams (slide 14).</li>
+    <li>Often called the <strong>dreamless state, which is not always accurate</strong>: dreams and nightmares do occur in NREM. REM dreams carry more bodily muscle activity, and <strong>NREM dreams are often not remembered because they are not consolidated in memory</strong> (slide 13).</li>
+  </ul>
+  <table>
+    <tr><th></th><th>Slow-wave (NREM) sleep</th><th>Rapid eye movement (REM) sleep</th></tr>
+    <tr><td>Restfulness</td><td>Deep, extremely restful</td><td>Not restful or deep</td></tr>
+    <tr><td>Dreams</td><td>Less vivid; often not remembered (no consolidation)</td><td>Vivid; with bodily muscle activity</td></tr>
+    <tr><td>Autonomic tone</td><td>Increased parasympathetic tone</td><td>Heart rate and breathing irregular</td></tr>
+    <tr><td>Blood pressure, heart rate, breathing, metabolism</td><td>10&ndash;30% lower</td><td>Brain metabolism up by as much as 20%</td></tr>
+    <tr><td>Muscles</td><td>&mdash;</td><td>Tone very depressed (atonia except eyes and diaphragm); rapid eye movements and irregular movements</td></tr>
+    <tr><td>Arousal</td><td>N3 the hardest NREM stage to arouse</td><td>Harder to arouse by sensory stimuli than NREM; spontaneous morning waking can occur</td></tr>
+    <tr><td>EEG</td><td>Slows progressively to delta waves</td><td>Like wakefulness (paradoxical, desynchronized)</td></tr>
+  </table>
+  <p class="src">Slides 6, 9, 10, 12&ndash;14, 28, 29</p>
+
+  <h3 class="sub" id="l39-functions">1.5 &middot; Why sleep matters: the physiological functions</h3>
+  <ul>
+    <li><strong>Sleep restriction over a few days</strong> can decrease <strong>cognitive and physical performance, overall productivity and health</strong> (slide 16).</li>
+    <li>Researchers have <strong>limited understanding</strong> of why sleep is essential; its specific physiological functions <strong>remain a mystery</strong> and are still researched (slide 16).</li>
+    <li><strong>Two major types of physiological effects:</strong> effects on the <strong>nervous system</strong> and effects on <strong>other functional systems of the body</strong> (slide 17).</li>
+    <li><strong>Other functions (slide 17):</strong> neural maturation; facilitation of learning or memory; <strong>targeted erasure of synapses</strong> to forget unimportant information that might clutter the synaptic network; cognition; <strong>clearance of metabolic waste products</strong> generated by neural activity in the awake brain; <strong>conservation of metabolic energy</strong>.</li>
+  </ul>
+
+  <h3 class="sub" id="l39-sleep-wake">1.6 &middot; The cycle between sleep and wakefulness</h3>
+  <p>There is <strong>no definitive explanation</strong> of the sleep-wakefulness cycle, only proposed theories (slide 18):</p>
+  <ol>
+    <li>Sleep centers are not activated, so the <strong>mesencephalic and upper pontile reticular activating nuclei</strong> are released from inhibition and activate spontaneously.</li>
+    <li>They excite the <strong>cerebral cortex and peripheral nervous system</strong>, which send <strong>positive feedback</strong> signals back to the same reticular nuclei: wakefulness <strong>sustains itself</strong> (slides 18&ndash;19).</li>
+    <li>After many hours of activity the <strong>neurons of the activating system become fatigued</strong>, the positive feedback cycle between the mesencephalic reticular nuclei and the cortex fades, and the <strong>sleep-promoting centers take over</strong>: the transition from wakefulness to sleep (slide 19).</li>
+  </ol>
+
+  <h3 class="sub" id="l39-waves">1.7 &middot; The four waveforms of a normal EEG</h3>
+  <p>The intensity and pattern of electrical activity depend on the level of excitation of parts of the brain in sleep, wakefulness or brain disorders such as epilepsy or psychosis (slide 21).</p>
+  <table>
+    <tr><th>Wave</th><th>Frequency</th><th>Where and when</th></tr>
+    <tr><td><strong>Alpha</strong></td><td><strong>8&ndash;13</strong> cycles/second, rhythmical</td><td>Almost all healthy adults <strong>awake in a quiet, resting state</strong>; most intense in the <strong>occipital</strong> region (also parietal and frontal); <strong>disappear during deep sleep</strong>; on the slide 28 table, awake with <strong>eyes closed</strong></td></tr>
+    <tr><td><strong>Beta</strong></td><td><strong>Greater than 14</strong>, as high as 80 cycles/second</td><td>Mainly <strong>parietal and frontal</strong> regions during specific activation; <strong>asynchronous, low voltage</strong>; the person is <strong>awake, alert and actively processing information</strong></td></tr>
+    <tr><td><strong>Theta</strong></td><td><strong>4&ndash;7</strong> cycles/second</td><td><strong>Parietal and temporal regions in children</strong>; during <strong>emotional stress in some adults</strong> (especially disappointment and frustration); in many <strong>brain disorders</strong>, especially degenerative brain states</td></tr>
+    <tr><td><strong>Delta</strong></td><td><strong>Less than 3.5</strong> cycles/second</td><td>Voltages <strong>2&ndash;4 times greater</strong> than most other brain waves; occur <strong>strictly in the cortex, independent of lower brain regions</strong>; in <strong>very deep sleep, infancy, serious organic brain disease</strong>, and the cortex of animals whose cortex was cut off from the thalamus (subcortical transection)</td></tr>
+  </table>
+  <ul>
+    <li><strong>Alpha to beta (slide 24):</strong> when an awake person&rsquo;s attention is directed to a specific mental activity, <strong>alpha waves stop and are replaced by beta waves</strong>; the slide 24 trace shows alpha disappearing when the eyes open and returning when they close.</li>
+  </ul>
+  <p class="src">Slides 21&ndash;26, 28</p>
+
+  <h3 class="sub" id="l39-eeg-stages">1.8 &middot; EEG changes across wakefulness and sleep</h3>
+  <ul>
+    <li><strong>Alert wakefulness:</strong> high-frequency <strong>beta</strong> waves. <strong>Quiet wakefulness:</strong> <strong>alpha</strong> waves (slide 27).</li>
+    <li><strong>Slow-wave sleep:</strong> the first stage is <strong>light sleep</strong> with <strong>low voltage</strong>, broken by sleep spindles; the <strong>frequency becomes progressively slower</strong> through the stages until delta waves at the deepest stage (slide 27; four stages on that slide).</li>
+  </ul>
+  <table>
+    <tr><th>Stage</th><th>Description</th><th>EEG</th></tr>
+    <tr><td>Awake, eyes open</td><td>Alert and active</td><td><strong>Beta</strong></td></tr>
+    <tr><td>Awake, eyes closed</td><td>Decreased alertness, relaxation</td><td><strong>Alpha</strong></td></tr>
+    <tr><td><strong>N1</strong></td><td>Transition from wakefulness; somnolent or drowsy; light sleep</td><td><strong>Theta</strong></td></tr>
+    <tr><td><strong>N2</strong></td><td>Less responsive, deeper sleep; heart rate and temperature decrease; <strong>longest stage by total duration</strong></td><td>Theta; <strong>sleep spindles</strong> (bursts of monomorphic 12- to 14-Hz waves); <strong>K complexes</strong> (negative sharp waves followed by a positive component)</td></tr>
+    <tr><td><strong>N3</strong> (deep sleep, slow-wave sleep)</td><td>Restful sleep, <strong>deepest NREM stage</strong>; more difficult to arouse; <strong>body and tissue growth and repair</strong>; <strong>decreases with age</strong></td><td><strong>Delta</strong></td></tr>
+    <tr><td><strong>REM</strong> (stage R, the dream state)</td><td>EEG mixed and low voltage with <strong>sawtooth waves</strong>; rapid, irregular, sharply peaked eye movements; <strong>atonia of voluntary muscles except the eyes and diaphragm</strong></td><td><strong>Beta</strong> (like the awake state, but with atonia)</td></tr>
+  </table>
+  <p class="src">Slide 28 (table), with slides 27 and 29</p>
+  <p><strong>Memory aid (made here, not from the slides):</strong> going down into sleep the waves go down the alphabet&rsquo;s speed: <strong>B</strong>usy (beta, eyes open) &rarr; <strong>A</strong>t rest (alpha, eyes closed) &rarr; <strong>T</strong>ired (theta, N1 and N2) &rarr; <strong>D</strong>eep (delta, N3); then REM jumps back to beta.</p>
+</section>
+
+<section class="deck" id="sleep-apnea-ohs">
+  <h2 class="deck-title">2 &middot; Obstructive Sleep Apnea and Obesity Hypoventilation Syndrome</h2>
+  <p class="lecturer">Lecture 40 &middot; Chand Shah, MPAS, PA-C, Assistant Professor &middot; Monday 2 November 2026, 11 AM&ndash;12 PM</p>
+  <div class="io-box">
+    <h3>Instructional Objectives</h3>
+    <p class="tag">OBSTRUCTIVE SLEEP APNEA AND OBESITY HYPOVENTILATION SYNDROME &mdash; Chand Shah, MPAS, PA-C</p>
+    <ol type="a">
+      <li>Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for obstructive sleep apnea and obesity hypoventilation syndrome: a. Obstructive sleep apnea b. Central sleep apnea c. Obesity hypoventilation syndrome (also known as Pickwickian Syndrome)</li>
+      <li>Discuss screening tools for obstructive sleep apnea</li>
+      <li>Discuss the following complications of untreated obstructive sleep apnea and comorbidities of obstructive sleep apnea, including: a. Atrial fibrillation and cardiac arrythmias b. Pulmonary hypertension and right heart failure c. Heart failure d. Systemic hypertension e. Coronary artery disease f. Type 2 diabetes mellitus and metabolic syndrome g. Nonalcoholic fatty liver disease</li>
+      <li>Identify medical care strategies for obstructive sleep apnea and obesity hypoventilation syndrome for the following populations. 1. adult 2. elderly</li>
+    </ol>
+    <p style="font-size:.8rem;margin:6px 0 0;">Quoted as the syllabus prints them (its spelling &ldquo;arrythmias&rdquo; kept; a stray empty &ldquo;a.&rdquo; before the disease list left out). Answered in order: a across 2.1&ndash;2.6 (obstructive sleep apnea), 2.9 (central sleep apnea) and 2.10 (obesity hypoventilation syndrome); b in 2.5; c in 2.8; d in 2.11. The deck&rsquo;s objectives slide adds three of its own, answered in the same places: why obesity hypoventilation syndrome is a diagnosis of exclusion (2.10), central sleep apnea as a differential for obstructive sleep apnea (2.4, 2.9) and the STOP-Bang questionnaire (2.5).</p>
+  </div>
+
+  <div class="callout" id="l40-emphasis">
+    <p><strong>What Prof. Shah stressed:</strong> the recording of Monday 2 November is not in yet. This section is built from the 38 slides; spoken emphasis, and anything she says is or is not tested, will be added from the recording. Until then the stars mark only what the <em>slides</em> emphasize (capitals, asterisks, the &ldquo;gold standard&rdquo; labels) and the STOP-Bang picture.</p>
+  </div>
+
+  <div class="callout warn">
+    <h4 class="subsub" style="margin-top:0">Where the slides are loose or disagree</h4>
+    <ul>
+      <li><strong>Neck size.</strong> As an obstructive sleep apnea risk factor and exam finding (slides 6&ndash;7): <strong>17 inches or more in men, 16 in women</strong> (slide 7 writes &ldquo;&gt;17in&rdquo;). On the STOP-Bang questionnaire (slide 17): <strong>16 inches / 40 cm or larger, for anyone</strong>. Use each number inside its own tool.</li>
+      <li><strong>Body mass index.</strong> STOP-Bang counts <strong>more than 35 kg/m&sup2;</strong>; obesity for obesity hypoventilation syndrome is <strong>more than 30</strong> (slides 30, 32).</li>
+      <li><strong>Sex.</strong> Obstructive sleep apnea: &ldquo;Male &gt; women&rdquo; (slide 6), yet sleep-disordered breathing is more prevalent after menopause than before (slide 5). Obesity hypoventilation syndrome: &ldquo;Male gender is not a risk factor&rdquo; (slide 29), and the sleep-hypoventilation subgroup is &ldquo;older females&rdquo; (slide 30).</li>
+      <li><strong>Two &ldquo;gold standards.&rdquo;</strong> Slide 8 labels both the split-night and the all-night polysomnogram the gold standard for obstructive sleep apnea; slide 32 labels polysomnography with continuous nocturnal carbon dioxide monitoring the gold standard for obesity hypoventilation syndrome.</li>
+      <li><strong>Heart rate.</strong> Slide 21 lists both <strong>increased sympathetic tone</strong> and <strong>bradycardia</strong> among the cardiovascular effects of untreated obstructive sleep apnea.</li>
+      <li><strong>Severity by index.</strong> The mild / moderate / severe cut-offs of the apnea-hypopnea index are in the speaker notes only, not on a slide; this guide does not give them.</li>
+    </ul>
+  </div>
+
+  <h3 class="sub" id="l40-sdb">2.1 &middot; Sleep-disordered breathing: the definitions</h3>
+  <ul>
+    <li><strong>Sleep-disordered breathing</strong> is divided into <strong>obstructive sleep apnea</strong>, <strong>central sleep apnea</strong> and <strong>sleep-related hypoventilation</strong> (slide 3).</li>
+    <li><strong>Apnea:</strong> a decrease in airflow of <strong>90% or more</strong>, measured by thermistor, lasting <strong>at least 10 seconds</strong>; episodes of near or total cessation of breathing.</li>
+    <li><strong>Hypopnea:</strong> slowed, shallow, restricted breathing in episodes of <strong>10 seconds or longer</strong>, repeatedly during sleep.</li>
+  </ul>
+  <table>
+    <tr><th>Apnea type (slide 3)</th><th>Airflow</th><th>Respiratory effort</th></tr>
+    <tr><td><strong>Obstructive</strong></td><td>None</td><td><strong>Continued</strong></td></tr>
+    <tr><td><strong>Central</strong></td><td>None</td><td><strong>None</strong></td></tr>
+    <tr><td><strong>Mixed</strong></td><td>None</td><td>Absent in the first part of the event, <strong>resumes in the latter part</strong></td></tr>
+  </table>
+
+  <h3 class="sub" id="l40-osa-risk">2.2 &middot; Obstructive sleep apnea: who gets it and why</h3>
+  <ul>
+    <li><strong>The most common form of sleep-disordered breathing</strong>; prevalence <strong>increases with age</strong>; more prevalent in <strong>post-menopausal than premenopausal women</strong> (slide 5).</li>
+    <li><strong>Etiology:</strong> narrowing of the upper airway from <strong>excessive soft tissue or structural abnormalities</strong> (slide 5).</li>
+    <li><strong>Risk factors (slide 6):</strong> obesity; macroglossia; micrognathia; retrognathia; <strong>neck circumference 17 inches or more (men) and 16 (women)</strong>; enlarged tonsils; increasing age; male more than female; family history; <strong>use of alcohol or sedatives</strong>; concomitant medical conditions such as <strong>hypothyroidism</strong>.</li>
+  </ul>
+
+  <h3 class="sub" id="l40-osa-present">2.3 &middot; Obstructive sleep apnea: presentation</h3>
+  <table>
+    <tr><th>History (slide 7)</th><th>Physical exam (slide 7)</th></tr>
+    <tr><td>Daytime sleepiness; unrefreshing sleep; <strong>witnessed apnea</strong>; awakening with snorting or gasping; <strong>loud, habitual snoring</strong>; morning headaches; nocturia; <strong>poorly controlled hypertension</strong>; decreased concentration or memory, irritability; decreased libido; nocturnal sweating</td><td>Obesity; macroglossia; micrognathia; retrognathia; neck circumference over 17 inches (men) and 16 (women); enlarged tonsils; <strong>crowded posterior oropharynx</strong></td></tr>
+  </table>
+
+  <h3 class="sub" id="l40-osa-dx">2.4 &middot; Obstructive sleep apnea: differential and diagnosis</h3>
+  <p><strong>Differential (slide 10):</strong> central sleep apnea; nocturnal dyspnea (congestive heart failure); abnormal swallowing disorder; panic attacks; nocturnal asthma; gastroesophageal reflux disease; nocturnal seizures; other causes of daytime sleepiness (narcolepsy, periodic limb movement disorder).</p>
+  <div class="prof-flag" id="l40-psg" data-toc="Sleep studies and the diagnostic criteria">
+    <span class="prof-flag-label">&#9733; &ldquo;Gold standard&rdquo; on the slide (slides 8&ndash;9)</span>
+    <ul>
+      <li><strong>Thyroid-stimulating hormone</strong> if hypothyroidism is suspected.</li>
+      <li><strong>Split-night polysomnogram (gold standard):</strong> the <strong>first 2 hours</strong> of sleep are recorded to determine severity, then <strong>continuous positive airway pressure (CPAP) titration</strong> if the apnea is significant (finding the exact pressure that keeps the airway open).</li>
+      <li><strong>All-night polysomnogram (gold standard):</strong> performed if sleep-disordered breathing is <strong>mild to moderate at baseline</strong>; shows severity in different stages of sleep and sleep positions.</li>
+      <li><strong>Positive airway pressure titration:</strong> used if the diagnosis is <strong>already known</strong>.</li>
+      <li><strong>Home testing kits:</strong> assess <strong>only obstructive sleep apnea</strong>, not other sleep disorders; will not always diagnose <strong>mild</strong> disease (helpful for moderate to severe). <strong>Use a polysomnogram, not a home kit,</strong> with significant <strong>cardiopulmonary disease</strong>, <strong>neuromuscular weakness</strong>, <strong>awake hypoventilation or hypoxemia</strong>, <strong>stroke</strong>, <strong>long-term opioid use</strong>, <strong>severe insomnia</strong>, or concern for a non-obstructive sleep disorder.</li>
+    </ul>
+    <table>
+      <tr><th>Index (slide 9)</th><th>Formula</th></tr>
+      <tr><td><strong>Respiratory disturbance index</strong></td><td>(apneas + hypopneas + respiratory effort-related arousals) &divide; total sleep time in hours</td></tr>
+      <tr><td><strong>Apnea-hypopnea index</strong></td><td>(apneas + hypopneas) &divide; total sleep time in hours</td></tr>
+    </table>
+    <p>A respiratory effort-related arousal is an obstructive reduction of the upper airway that is <strong>not</strong> an apnea or hypopnea. <strong>The diagnosis is confirmed</strong> when either criterion is met <strong>and</strong> the symptoms are not explained by another medical or sleep condition, medication or substance use:</p>
+    <ol>
+      <li><strong>5 or more</strong> predominantly obstructive respiratory events per hour of sleep <strong>plus one symptom</strong>: sleepiness, fatigue, insomnia or other symptoms impairing sleep-related quality of life; waking with breath holding, gasping or choking; or habitual snoring or breathing interruptions noted by a bed partner or other observer; or</li>
+      <li><strong>15 or more</strong> predominantly obstructive respiratory events per hour (no symptom needed).</li>
+    </ol>
+  </div>
+
+  <h3 class="sub" id="l40-stopbang">2.5 &middot; Screening: the STOP-Bang questionnaire</h3>
+  <ul>
+    <li><strong>Screening questionnaires should not be routinely used</strong> to screen for obstructive sleep apnea <strong>in the community</strong>, and STOP-Bang cannot be used as a true, accurate screening tool <strong>in asymptomatic patients</strong> (slide 16).</li>
+    <li>STOP-Bang has been used as a <strong>preoperative evaluation tool</strong> for people without a known diagnosis who may be at risk of perioperative complications; it has the <strong>highest sensitivity of all the questionnaires</strong>; it has some value in <strong>highly symptomatic patients in high-risk settings</strong> such as preoperative evaluation (slide 16).</li>
+  </ul>
+  <div class="prof-flag" id="l40-stopbang-table" data-toc="STOP-Bang items and risk groups">
+    <span class="prof-flag-label">&#9733; The questionnaire (slide 17, a picture): one point per yes</span>
+    <table>
+      <tr><th>Letter</th><th>Question</th></tr>
+      <tr><td><strong>S</strong>noring</td><td>Snore loudly (heard through closed doors, or the bed partner elbows you)?</td></tr>
+      <tr><td><strong>T</strong>ired</td><td>Often tired, fatigued or sleepy in the daytime (such as falling asleep driving or talking)?</td></tr>
+      <tr><td><strong>O</strong>bserved</td><td>Has anyone observed you stop breathing or choking/gasping in your sleep?</td></tr>
+      <tr><td><strong>P</strong>ressure</td><td>Have or being treated for high blood pressure?</td></tr>
+      <tr><td><strong>B</strong>MI</td><td>Body mass index more than 35 kg/m&sup2;?</td></tr>
+      <tr><td><strong>A</strong>ge</td><td>Older than 50?</td></tr>
+      <tr><td><strong>N</strong>eck size</td><td>Neck (shirt collar) 16 inches / 40 cm or larger?</td></tr>
+      <tr><td><strong>G</strong>ender</td><td>Male?</td></tr>
+    </table>
+    <p><strong>General population:</strong> low risk = yes to <strong>0&ndash;2</strong>; intermediate = <strong>3&ndash;4</strong>; high = <strong>5&ndash;8</strong>; <strong>or high risk</strong> with yes to <strong>2 or more of the 4 STOP questions plus</strong> male gender, <strong>or plus</strong> body mass index over 35 kg/m&sup2;, <strong>or plus</strong> neck circumference 16 inches / 40 cm.</p>
+  </div>
+
+  <h3 class="sub" id="l40-osa-rx">2.6 &middot; Obstructive sleep apnea: management, education and referral</h3>
+  <table>
+    <tr><th>Type</th><th>What the slides say</th></tr>
+    <tr><td><strong>Non-pharmacologic (slide 12)</strong></td><td><strong>Continuous positive airway pressure (CPAP): the most effective.</strong> Autotitrating (adjustable) positive airway pressure: for patients <strong>without significant comorbid conditions</strong>. <strong>Positional therapy</strong> if events occur when supine (a sleep belt or shirt keeps the lateral position). <strong>Oral appliance: not effective in severe disease or if the patient has no teeth.</strong> Nasal expiratory resistance device (uses the patient&rsquo;s own breathing to make expiratory positive airway pressure).</td></tr>
+    <tr><td><strong>Pharmacologic (slide 11)</strong></td><td><strong>Stimulants (modafinil or armodafinil):</strong> side effects headache, nervousness or anxiety, dizziness, nausea, dermatologic and systemic hypersensitivity; many drug interactions; <strong>caution with cardiovascular, hepatic and psychiatric conditions</strong>; <strong>lower doses in the elderly</strong>. <strong>Nasal steroids</strong> for nasal congestion or inflammation from allergic rhinitis.</td></tr>
+    <tr><td><strong>Surgical (slide 13)</strong></td><td>Radiofrequency ablation (mild to moderate disease, cannot tolerate CPAP); palatal implants (mild disease, cannot tolerate CPAP); maxillomandibular advancement; <strong>tracheostomy is a cure</strong> (it bypasses the site of upper airway obstruction); bariatric surgery for weight loss may help.</td></tr>
+    <tr><td><strong>Risk modification (slide 15)</strong></td><td>Diet and exercise for weight loss; <strong>avoid alcohol and other sedatives</strong>.</td></tr>
+    <tr><td><strong>Education (slide 15)</strong></td><td><strong>Refer to a sleep physician</strong>; proper counseling.</td></tr>
+  </table>
+
+  <div class="cond"><h4>Obstructive sleep apnea</h4>
+    <p class="give"><b>Defining feature:</b> loud habitual snoring and witnessed apneas with daytime sleepiness in an obese patient with a large neck, from upper airway narrowing while respiratory effort continues</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>Sleep-disordered breathing with no airflow but continued respiratory effort, from narrowing of the upper airway by excess soft tissue or structural abnormality.</dd>
+      <dt>Who gets it</dt><dd>The most common form of sleep-disordered breathing; prevalence rises with age; men more than women; post-menopausal more than premenopausal women.</dd>
+      <dt>Risk factors</dt><dd>Obesity, macroglossia, micrognathia, retrognathia, neck 17 inches or more (men) or 16 (women), enlarged tonsils, age, male sex, family history, alcohol or sedatives, hypothyroidism.</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Daytime sleepiness, unrefreshing sleep, witnessed apnea, snorting or gasping awakenings, loud habitual snoring, morning headache, nocturia, poorly controlled hypertension.</dd>
+      <dt>Physical exam findings</dt><dd>Obesity, large tongue, small or set-back jaw, large neck, enlarged tonsils, crowded posterior oropharynx.</dd>
+      <dt>Diagnostics / tests</dt><dd>Polysomnogram (split-night or all-night): 5 or more obstructive events per hour plus a symptom, or 15 or more; thyroid-stimulating hormone if hypothyroidism suspected; home kits only without the listed comorbidities.</dd>
+      <dt>First-line treatment</dt><dd>Continuous positive airway pressure (most effective), weight loss, avoid alcohol and sedatives; positional therapy, oral appliance, surgery for selected patients; refer to a sleep physician.</dd>
+      <dt>Complications</dt><dd>Hypertension, cardiovascular disease, arrhythmias, sudden cardiac death at night, heart failure, pulmonary hypertension, stroke, insulin resistance and diabetes, fatty liver, reflux, motor vehicle crashes.</dd>
+    </dl><p class="src">Slides 3, 5&ndash;13, 15&ndash;22</p></div>
+
+  <h3 class="sub" id="l40-untreated">2.7 &middot; What happens if obstructive sleep apnea is left untreated</h3>
+  <div class="prof-flag" id="l40-mortality" data-toc="Untreated: 3-6 x sudden death AT NIGHT">
+    <span class="prof-flag-label">&#9733; Capitals on the slide (slide 18)</span>
+    <table>
+      <tr><th>Mortality</th><th>Morbidity</th></tr>
+      <tr><td><strong>2.5 times</strong> the driving accidents<br><strong>3&ndash;6 times</strong> the risk of sudden cardiac death <strong>AT NIGHT</strong><br>High mortality from <strong>heart failure</strong></td><td><strong>3 times</strong> the risk of hypertension<br>Pulmonary hypertension<br>Stroke<br>Insulin resistance<br>Arrhythmias<br>Ischemic heart disease</td></tr>
+    </table>
+  </div>
+  <ul>
+    <li><strong>Reflux (slide 19):</strong> <strong>75&ndash;100%</strong> of patients have gastroesophageal reflux disease or laryngopharyngeal reflux from <strong>decreased intrathoracic pressure</strong>; it <strong>improves with CPAP</strong>.</li>
+    <li><strong>Cardiovascular effects (slide 21):</strong> increased sympathetic tone; bradycardia; increased blood pressure variability; increased arrhythmias; increased risk of <strong>aortic aneurysm and aortic dissection</strong>.</li>
+    <li><strong>Endocrine effects (slide 21):</strong> increased C-reactive protein, cortisol and amyloid; decreased growth hormone and prolactin. <strong>Immunity (slide 22):</strong> increased proinflammatory cytokines, which <strong>improve with CPAP</strong>.</li>
+    <li><strong>Also (slides 15, 20):</strong> increased motor vehicle crashes from daytime sleepiness; <strong>increased risk of gout</strong>.</li>
+  </ul>
+
+  <h3 class="sub" id="l40-comorbid">2.8 &middot; The syllabus complications and comorbidities, one by one</h3>
+  <table>
+    <tr><th>Syllabus item</th><th>What the slides say</th></tr>
+    <tr><td>Atrial fibrillation and cardiac arrhythmias</td><td>Arrhythmias (slide 18); increased arrhythmias, bradycardia, increased sympathetic tone (slide 21); <strong>3&ndash;6 times the risk of sudden cardiac death at night</strong> (slide 18). Atrial fibrillation is not named on the slides.</td></tr>
+    <tr><td>Pulmonary hypertension and right heart failure</td><td>Pulmonary hypertension (slide 18). Obstructive sleep apnea is classified with <strong>group 3 pulmonary hypertension</strong>, especially with obesity hypoventilation syndrome or another cause of daytime hypoxemia (slide 20). Right-sided heart failure from pulmonary hypertension is given for obesity hypoventilation syndrome (slides 30, 34, 35).</td></tr>
+    <tr><td>Heart failure</td><td><strong>High mortality from heart failure</strong> (slide 18); congestive heart failure is a complication of obesity hypoventilation syndrome (slide 34).</td></tr>
+    <tr><td>Systemic hypertension</td><td><strong>3 times the risk</strong> (slide 18); hypertension (slide 15); increased blood pressure variability (slide 21); poorly controlled hypertension in the history (slide 7).</td></tr>
+    <tr><td>Coronary artery disease</td><td>Ischemic heart disease (slide 18); cardiovascular disease (slide 15); markers of inflammation and atherosclerosis (slide 20).</td></tr>
+    <tr><td>Type 2 diabetes mellitus and metabolic syndrome</td><td>Increased insulin resistance, type 2 diabetes and diabetes complications; increased glucose and triglycerides independently associated; <strong>may exacerbate cardiovascular risk in metabolic syndrome</strong> (slide 20); insulin resistance (slides 15, 18).</td></tr>
+    <tr><td>Nonalcoholic fatty liver disease</td><td><strong>2&ndash;3 times the prevalence</strong> (slide 20).</td></tr>
+  </table>
+
+  <h3 class="sub" id="l40-csa">2.9 &middot; Central sleep apnea</h3>
+  <ul>
+    <li><strong>The brainstem stops sending signals to breathe</strong>: increased sensitivity to arterial carbon dioxide gives an unstable pattern of <strong>hyperventilation alternating with apnea</strong>. <strong>In central apnea airflow stops because respiratory effort is absent or decreased; in obstructive apnea the airway collapses while the patient still tries to breathe.</strong> Less common than obstructive sleep apnea (slide 24).</li>
+    <li><strong>Risk factors (slide 24):</strong> <strong>congestive heart failure</strong> (especially from Cheyne-Stokes breathing, caused by a prolonged circulation delay between the pulmonary capillaries and the carotid chemoreceptors); <strong>stroke</strong>; <strong>opioid medications</strong>; hypoxia; <strong>high altitude</strong>; patients using CPAP.</li>
+    <li><strong>Presentation (slide 25):</strong> insomnia, frequent awakenings, nocturnal dyspnea, nonrestorative sleep, daytime sleepiness; <strong>snoring is less common than in obstructive apnea</strong>; it sounds very similar to obstructive sleep apnea.</li>
+    <li><strong>Diagnosis (slide 26):</strong> <strong>polysomnography (home testing is not sufficient)</strong>: repetitive apneas <strong>in the absence of thoracic-abdominal excursion</strong>.</li>
+  </ul>
+  <div class="prof-flag" id="l40-csa-rx" data-toc="Central apnea: treat the cause, CPAP, then ASV">
+    <span class="prof-flag-label">&#9733; Asterisks on the slide (slide 26)</span>
+    <ol>
+      <li><strong>Treat the underlying cause:</strong> heart failure &rarr; <strong>optimize heart failure therapy</strong>; opioids &rarr; <strong>reduce the opioids</strong>; high altitude &rarr; <strong>descend</strong>.</li>
+      <li><strong>Consider CPAP first.</strong></li>
+      <li><strong>If CPAP fails, consider adaptive servo-ventilation</strong>, a positive airway pressure therapy that monitors breathing in real time and adjusts the pressure.</li>
+    </ol>
+    <p><strong>** Adaptive servo-ventilation is not used for all patients</strong>, for safety reasons, <strong>especially in heart failure with reduced ejection fraction</strong>: with poor left ventricular function, reducing preload can decrease cardiac output; Cheyne-Stokes breathing can be a protective mechanism.</p>
+  </div>
+  <div class="cond"><h4>Central sleep apnea</h4>
+    <p class="give"><b>Defining feature:</b> repetitive apneas with no thoracic-abdominal movement on polysomnography, in a patient with heart failure, stroke, opioids or altitude</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>Sleep-disordered breathing in which the brainstem stops signaling breathing: no airflow and no respiratory effort.</dd>
+      <dt>Who gets it</dt><dd>Less common than obstructive sleep apnea; patients with heart failure, stroke, opioid use, hypoxia, high altitude or on CPAP.</dd>
+      <dt>Risk factors</dt><dd>Congestive heart failure (Cheyne-Stokes breathing), stroke, opioid medications, hypoxia, high altitude, CPAP use.</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Insomnia, frequent awakenings, nocturnal dyspnea, nonrestorative sleep, daytime sleepiness; less snoring than obstructive apnea.</dd>
+      <dt>Physical exam findings</dt><dd>Not covered on the slides beyond the underlying cause.</dd>
+      <dt>Diagnostics / tests</dt><dd>Polysomnography (home testing not sufficient): repetitive apneas without thoracic-abdominal excursion.</dd>
+      <dt>First-line treatment</dt><dd>Treat the cause (optimize heart failure therapy, reduce opioids, descend); then CPAP; adaptive servo-ventilation if CPAP fails, avoided especially in heart failure with reduced ejection fraction.</dd>
+      <dt>Complications</dt><dd>Not covered on the slides.</dd>
+    </dl><p class="src">Slides 3, 10, 24&ndash;26</p></div>
+
+  <h3 class="sub" id="l40-ohs">2.10 &middot; Obesity hypoventilation syndrome (Pickwickian syndrome)</h3>
+  <ul>
+    <li><strong>Definition (slide 28):</strong> <strong>awake alveolar hypoventilation</strong> (raised awake arterial carbon dioxide) in an <strong>obese</strong> person that <strong>cannot be attributed to other conditions</strong> associated with alveolar hypoventilation. More likely as body mass index increases; associated with increased cardiovascular morbidity and mortality.</li>
+    <li><strong>Risk factors (slide 29):</strong> central obesity (high waist-to-hip ratio); reduced lung function from obesity; reduced inspiratory muscle strength; <strong>severe obstructive sleep apnea</strong>. <strong>Male gender is not a risk factor.</strong> Patients may present in their <strong>50s and 60s</strong>.</li>
+    <li><strong>Presentation (slide 30):</strong> symptoms are not specific and reflect obesity, coexisting obstructive sleep apnea and complications such as pulmonary hypertension. Obese (body mass index over 30) and hypersomnolent. <strong>90% have coexisting obstructive sleep apnea symptoms (70% severe)</strong>: daytime hypersomnolence, loud snoring, choking during sleep, resuscitative snorting, fatigue, impaired concentration and memory, small oropharynx, thick neck. <strong>10% have coexisting sleep hypoventilation</strong>: fewer witnessed apneas, older females. Many present <strong>late, with end-stage disease</strong>: severe hypoxemic hypercapnic respiratory failure, right-sided heart failure from pulmonary hypertension.</li>
+  </ul>
+  <div class="prof-flag" id="l40-ohs-dx" data-toc="OHS: screen, then diagnose by exclusion">
+    <span class="prof-flag-label">&#9733; Who to screen and how the diagnosis is made (slides 31&ndash;32)</span>
+    <p><strong>Screen</strong> an obese person (with or without obstructive sleep apnea) who has: <strong>unexplained awake room-air oxygen saturation of 94% or less</strong>, or an <strong>overnight lowest saturation below 80%</strong>; unexplained dyspnea on exertion; signs of pulmonary hypertension or right-sided heart failure (<strong>elevated jugular venous pressure, hepatomegaly, pedal edema</strong>); <strong>facial plethora</strong> (facial swelling, puffiness); a <strong>raised bicarbonate</strong> on labs.</p>
+    <table>
+      <tr><th>Diagnosis of exclusion: all three</th></tr>
+      <tr><td><strong>Obesity</strong>: body mass index over 30</td></tr>
+      <tr><td><strong>Awake alveolar hypoventilation</strong>: arterial carbon dioxide pressure <strong>over 45 mm Hg</strong></td></tr>
+      <tr><td><strong>Alternative causes</strong> of hypercapnia and hypoventilation <strong>excluded</strong></td></tr>
+    </table>
+    <p><strong>Labs:</strong> comprehensive metabolic panel, complete blood count, thyroid function tests, pulmonary function tests, chest film, toxicology screen, serum bicarbonate (when suspicion is low to moderate: <strong>over 27 means a higher chance of obesity hypoventilation syndrome and the need for an arterial blood gas</strong>). <strong>Gold standard: polysomnography with continuous nocturnal carbon dioxide monitoring.</strong></p>
+  </div>
+  <table>
+    <tr><th>Management (slide 33)</th><th>What the slide says</th></tr>
+    <tr><td>Approach</td><td>Multidisciplinary</td></tr>
+    <tr><td><strong>First line</strong></td><td><strong>Weight loss program + BiPAP (bilevel positive airway pressure) or CPAP</strong>: with obstructive sleep apnea, <strong>CPAP</strong>; with sleep-related hypoventilation, <strong>BiPAP</strong>. Lifestyle: diet, exercise, behavioral change.</td></tr>
+    <tr><td><strong>Second line</strong> (fail or cannot tolerate first line)</td><td><strong>Tracheostomy with nocturnal ventilation is very effective</strong>; bariatric surgery may help; <strong>medications only for those who fail diet and exercise</strong>.</td></tr>
+  </table>
+  <ul>
+    <li><strong>Complications (slide 34):</strong> pulmonary hypertension, right-sided heart failure, daytime sleepiness, hypertension, congestive heart failure, insulin resistance. <strong>Education:</strong> refer to a sleep specialist; proper counseling.</li>
+    <li><strong>Prognosis (slide 35):</strong> <strong>high mortality and morbidity</strong>; tends to progress untreated, many developing pulmonary hypertension and right-sided heart failure; <strong>leading cause of death: cardiovascular disease</strong>; higher hospitalization rates, more likely to need intensive care, intubation or long-term care at discharge; worse health status and more health care use; <strong>poor prognosis with significant awake hypoxemia at diagnosis and on positive airway pressure therapy</strong> (how therapy affects the cardiovascular complications is unsure).</li>
+  </ul>
+  <div class="cond"><h4>Obesity hypoventilation syndrome</h4>
+    <p class="give"><b>Defining feature:</b> an obese patient (body mass index over 30) with awake arterial carbon dioxide over 45 mm Hg that no other cause explains, usually with severe obstructive sleep apnea</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>Awake alveolar hypoventilation in an obese person not attributable to another cause (Pickwickian syndrome).</dd>
+      <dt>Who gets it</dt><dd>Obese adults, more likely as body mass index rises, often presenting in their 50s and 60s; male sex is not a risk factor.</dd>
+      <dt>Risk factors</dt><dd>Central obesity, reduced lung function from obesity, weak inspiratory muscles, severe obstructive sleep apnea.</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Hypersomnolence and the symptoms of coexisting obstructive sleep apnea (90%); dyspnea on exertion; late presentation with respiratory failure.</dd>
+      <dt>Physical exam findings</dt><dd>Obesity, thick neck, small oropharynx, facial plethora, elevated jugular venous pressure, hepatomegaly, pedal edema.</dd>
+      <dt>Diagnostics / tests</dt><dd>Screen: awake saturation 94% or less, nocturnal nadir below 80%, raised bicarbonate (over 27 calls for a blood gas). Diagnose by exclusion; gold standard polysomnography with continuous carbon dioxide monitoring.</dd>
+      <dt>First-line treatment</dt><dd>Weight loss plus CPAP (with obstructive apnea) or BiPAP (with sleep hypoventilation); second line tracheostomy with nocturnal ventilation or bariatric surgery; refer to a sleep specialist.</dd>
+      <dt>Complications</dt><dd>Pulmonary hypertension, right-sided heart failure, congestive heart failure, hypertension, insulin resistance; cardiovascular death.</dd>
+    </dl><p class="src">Slides 28&ndash;35</p></div>
+
+  <h3 class="sub" id="l40-populations">2.11 &middot; Adults and older adults</h3>
+  <table>
+    <tr><th>Domain</th><th>Adults</th><th>Older adults</th></tr>
+    <tr><td>Who</td><td>Obstructive sleep apnea rises with obesity, male sex, alcohol and sedatives; obesity hypoventilation often presents in the 50s and 60s</td><td>Prevalence of obstructive sleep apnea <strong>increases with age</strong> (slide 5); STOP-Bang counts age over 50 (slide 17)</td></tr>
+    <tr><td>Untreated disease</td><td>Hypertension, cardiovascular disease, crashes, metabolic disease</td><td><strong>Mortality from obstructive sleep apnea is lower in the elderly because they compensate</strong>, but they still have <strong>drowsiness and nocturia, which improve with CPAP</strong> (slide 22)</td></tr>
+    <tr><td>Drugs</td><td>Stimulants for residual sleepiness; caution with cardiovascular, hepatic and psychiatric disease</td><td><strong>Lower stimulant doses in the elderly</strong> (slide 11)</td></tr>
+    <tr><td>Referral</td><td>Sleep physician or sleep specialist; counseling (slides 15, 34)</td><td>The same</td></tr>
+  </table>
+</section>
+
+<section class="deck" id="inflammatory-lung-disease">
+  <h2 class="deck-title">3 &middot; Inflammatory Lung Diseases</h2>
+  <p class="lecturer">Lecture 41 &middot; Rob Gray, DMSc, PA-C, Adjunct Instructor (guest lecturer) &middot; Monday 2 November 2026, 1&ndash;3 PM</p>
+  <div class="io-box">
+    <h3>Instructional Objectives</h3>
+    <p class="tag">INFLAMMATORY LUNG DISEASES &mdash; Rob Gray, DMSc, PA-C</p>
+    <ol>
+      <li>Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following inflammatory lung diseases: 2. Interstitial lung disease of unknown etiology: a. Sarcoidosis b. Idiopathic pulmonary fibrosis (IPF) c. Pulmonary fibrosis associated with connective tissue disorders (CTD) 3. Interstitial lung disease of known etiology: a. Occupational lung diseases 4. Hypersensitivity pneumonitis 5. Pneumoconiosis 6. Asbestosis 7. Silicosis 8. Idiopathic interstitial pneumonia 9. Acute respiratory disease syndrome (ARDS)</li>
+      <li>Identify medical care strategies for inflammatory lung disease in the lecture topic list for the following populations. 11. adult 12. elderly</li>
+    </ol>
+    <p style="font-size:.8rem;margin:6px 0 0;">Quoted as the syllabus prints it, its own numbering kept (it numbers the disease list 2&ndash;9 and the populations 11&ndash;12, and prints &ldquo;Acute respiratory disease syndrome&rdquo; for acute respiratory <em>distress</em> syndrome). Answered in order: 1 across 3.1&ndash;3.11 (the common ground of interstitial lung disease 3.1&ndash;3.3; unknown etiology: idiopathic interstitial pneumonia and idiopathic pulmonary fibrosis 3.4, connective tissue disease 3.5, sarcoidosis 3.6; known etiology, the occupational diseases: pneumoconiosis 3.7, asbestosis 3.8, silicosis 3.9, hypersensitivity pneumonitis 3.10; acute respiratory distress syndrome 3.11); 2 in 3.12.</p>
+  </div>
+
+  <div class="callout" id="l41-emphasis">
+    <p><strong>What Dr. Gray stressed:</strong> he recorded a narrated version of this deck (about 66 minutes). Our transcript of it is still being made; his emphasis, and anything he says is or is not tested, will be starred here when it is in. The narrated deck has one extra slide, a pointer to the StatPearls article on acute respiratory distress syndrome (&ldquo;excellent resource!&rdquo;); slide numbers below are the plain deck&rsquo;s (74 slides).</p>
+  </div>
+
+  <div class="callout warn">
+    <h4 class="subsub" style="margin-top:0">Where the slides are loose or disagree</h4>
+    <ul>
+      <li><strong>Slides 72&ndash;74 are generated pictures</strong> on acute respiratory distress syndrome with typing errors (&ldquo;chuck&rdquo; for shock, &ldquo;protomine&rdquo; for protamine, &ldquo;AROS&rdquo; for ARDS). Read for meaning; the facts below are what they plainly show.</li>
+      <li><strong>Plateau pressure.</strong> Slide 74 says low tidal volumes &ldquo;constrain ventilatory plateau pressures under 50 cm H2O.&rdquo; The usual ceiling is <strong>30 cm H2O</strong>; no question here turns on the number.</li>
+      <li><strong>Connective tissue disease: known or unknown cause?</strong> The slide 12 classification (Harrison&rsquo;s) files it under interstitial lung disease of <em>known</em> cause (systemic disease); slide 18 and the syllabus put pulmonary fibrosis with connective tissue disease under <em>unknown</em> etiology.</li>
+      <li><strong>What is most common.</strong> Slide 3 says interstitial lung disease is &ldquo;largely due to occupational and environmental exposure&rdquo;; slides 15, 31 and 32 make idiopathic interstitial pneumonia, and idiopathic pulmonary fibrosis within it, the most common diagnosis. The slide 15 percentages add up to well over 100%.</li>
+      <li><strong>Silicosis onset.</strong> Slide 60: the simple disease is &ldquo;usually asymptomatic&rdquo;; slide 61: &ldquo;Rapid onset of symptoms.&rdquo;</li>
+      <li><strong>Steroids for silicosis</strong> appear only on the coal workers&rsquo; pneumoconiosis management slide (slide 54: &ldquo;may relieve the chronic alveolitis in silicosis&rdquo;).</li>
+      <li><strong>Angiotensin-converting enzyme.</strong> Slide 25 lists an elevated level for &ldquo;sarcoidosis, hypersensitivity silicosis&rdquo;; slide 44 gives it for sarcoidosis (elevated in 40&ndash;80%).</li>
+      <li><strong>Hypersensitivity pneumonitis timing.</strong> Slide 66: nausea 4&ndash;8 hours after exposure; slide 67: acute disease within 9 hours of exposure.</li>
+    </ul>
+  </div>
+
+  <h3 class="sub" id="l41-ild">3.1 &middot; Interstitial lung disease: what it is and what causes it</h3>
+  <ul>
+    <li><strong>A broad category of more than 200 disorders</strong>, hard to classify, characterized by <strong>scarring (fibrosis) and/or inflammation</strong> of the lungs. It involves the <strong>parenchyma</strong>, the gas-transfer portion (alveoli, alveolar ducts, respiratory bronchioles): <strong>alveolar septal thickening, fibroblast proliferation, collagen deposition</strong> and, if prolonged, pulmonary fibrosis. <strong>Not malignant and not infectious</strong> (slide 3).</li>
+    <li><strong>What it means (slides 4&ndash;5):</strong> injury causes inflammation and fibrosis that impair ventilation and gas exchange; scarring damages the alveoli, <strong>most often permanently</strong>; tissue becomes <strong>stiff and restrictive</strong>, so patients most commonly present with <strong>shortness of breath</strong>. Fibrosis is permanent scar tissue, a response to inflammation.</li>
+    <li><strong>Pathophysiology (slide 6):</strong> macrophages, lymphocytes, monocytes and neutrophils accumulate in alveolar walls &rarr; <strong>alveolitis</strong> &rarr; fibroblast production &rarr; <strong>collagen</strong>, which causes the fibrosis. Slide 7: exogenous and endogenous stimuli (dust, fumes, cigarette smoke, autoimmune conditions; drugs, infections, radiation) cause microscopic lung injury; intact wound healing returns the lung to homeostasis, aberrant healing (genetic predisposition, autoimmune conditions) gives pulmonary fibrosis.</li>
+    <li><strong>Two groups (slide 11):</strong> <strong>inflammation and fibrosis</strong>, and <strong>granulomatous reactions</strong>; each divided into known and unknown causes; most have acute and chronic stages.</li>
+    <li><strong>Most common of KNOWN etiology (slide 13):</strong> occupational or environmental exposures: <strong>inorganic dusts, organic dusts, fumes and gases</strong>. <strong>Most common of UNKNOWN etiology (slide 14):</strong> <strong>sarcoidosis, idiopathic pulmonary fibrosis, pulmonary fibrosis with connective tissue disorders</strong>.</li>
+  </ul>
+  <table>
+    <tr><th>Classification (slide 12)</th><th>Examples</th></tr>
+    <tr><td>Known cause: <strong>occupational</strong> exposure</td><td>Asbestosis, silicosis</td></tr>
+    <tr><td>Known cause: <strong>treatment related</strong></td><td>Radiation, <strong>methotrexate, amiodarone, nitrofurantoin</strong>, chemotherapeutics</td></tr>
+    <tr><td>Systemic disease: <strong>connective tissue disease</strong></td><td>Rheumatoid arthritis, scleroderma, polymyositis/dermatomyositis</td></tr>
+    <tr><td>Unknown cause: <strong>idiopathic interstitial pneumonias</strong></td><td>Idiopathic pulmonary fibrosis; nonspecific interstitial pneumonia, respiratory bronchiolitis-associated interstitial lung disease, desquamative interstitial pneumonia, cryptogenic organizing pneumonia, acute interstitial pneumonia, lymphocytic interstitial pneumonia</td></tr>
+    <tr><td><strong>Granulomatous</strong> lung disease</td><td><strong>Sarcoidosis, hypersensitivity pneumonitis</strong>; with vasculitis: granulomatosis with polyangiitis, Churg-Strauss</td></tr>
+    <tr><td>Other</td><td>Lymphangioleiomyomatosis, pulmonary alveolar proteinosis, Langerhans cell histiocytosis, pleuroparenchymal fibroelastosis</td></tr>
+  </table>
+  <ul>
+    <li><strong>Drug causes (slide 9):</strong> amphotericin B, <strong>bleomycin</strong>, busulfan, carbamazepine, chlorambucil, cocaine, cyclophosphamide, diphenylhydantoin, flecainide, heroin, melphalan, methadone, <strong>methotrexate</strong>, methylphenidate, methysergide, mineral oil (chronic microaspiration), <strong>nitrofurantoin</strong>, nitrosoureas, procarbazine, silicone (subcutaneous injection), tocainide, vinca alkaloids (with mitomycin).</li>
+    <li><strong>Other causes (slides 9&ndash;10):</strong> circulatory (chronic pulmonary edema, pulmonary veno-occlusive disease); connective tissue disorders; inorganic exposures (aluminosis, asbestosis, berylliosis, coal workers&rsquo; pneumoconiosis, hard metals, radiation fibrosis, siderosis, silicosis, talc) and organic ones (bagassosis, <strong>bird fancier&rsquo;s lung, farmer&rsquo;s lung</strong>, hot tub lung, humidifier lung, mushroom worker&rsquo;s lung and others); infections (aspergillosis, histoplasmosis, parasitic, mycobacterial, viral); vasculitis; the idiopathic interstitial pneumonias; miscellaneous (alveolar proteinosis, amyloidosis, chronic microaspiration, eosinophilic pneumonia, lipoid pneumonia, sarcoidosis, tuberous sclerosis and others).</li>
+    <li><strong>Inflammatory/fibrotic response causes (slide 17):</strong> asbestos, fumes and gases, drugs, radiation, aspiration pneumonia, idiopathic interstitial fibrosis/pneumonias, autoimmune diseases (rheumatoid arthritis, lupus, scleroderma).</li>
+  </ul>
+
+  <h3 class="sub" id="l41-present">3.2 &middot; Onset, symptoms and examination</h3>
+  <table>
+    <tr><th>Onset (slide 22)</th><th>Time course</th><th>Typical of</th></tr>
+    <tr><td><strong>Acute</strong></td><td>Days to weeks</td><td><strong>Allergy</strong></td></tr>
+    <tr><td><strong>Subacute</strong></td><td>Weeks to months</td><td>Any, but most common with <strong>sarcoidosis</strong> and <strong>drug-induced</strong> disease</td></tr>
+    <tr><td><strong>Chronic</strong></td><td>Months to years</td><td><strong>Most interstitial lung diseases</strong>: idiopathic pulmonary fibrosis, sarcoidosis, pneumoconiosis, connective tissue disease</td></tr>
+    <tr><td><strong>Episodic</strong></td><td>Less common</td><td><strong>Hypersensitivity pneumonitis</strong></td></tr>
+  </table>
+  <ul>
+    <li><strong>Symptoms (slide 23):</strong> <strong>progressive exertional dyspnea or a persistent nonproductive cough</strong>; hemoptysis; wheezing; chest pain; tachypnea; anorexia; as disease progresses, <strong>dyspnea at rest</strong>.</li>
+    <li><strong>Examination (slide 24):</strong> <strong>small lung volumes, bibasilar dry rales (inspiratory crackles)</strong>; <strong>distal clubbing</strong>; <strong>right heart failure with advanced disease</strong>; <strong>early in the disease the exam may be normal</strong>.</li>
+  </ul>
+
+  <h3 class="sub" id="l41-workup">3.3 &middot; Laboratory tests, imaging and pulmonary function</h3>
+  <table>
+    <tr><th>Laboratory finding (slide 25)</th><th>Points to</th></tr>
+    <tr><td>Erythrocyte sedimentation rate increased</td><td>Active sarcoidosis</td></tr>
+    <tr><td>High antinuclear antibody</td><td>Collagen vascular diseases</td></tr>
+    <tr><td><strong>c-ANCA</strong> (cytoplasmic antineutrophil cytoplasmic antibody)</td><td><strong>Granulomatosis with polyangiitis</strong></td></tr>
+    <tr><td><strong>Anti-glomerular basement membrane</strong> and anti-alveolar basement membrane antibodies</td><td><strong>Goodpasture syndrome</strong> (glomerulonephritis and diffuse pulmonary hemorrhage, mostly in young adults)</td></tr>
+    <tr><td><strong>Elevated angiotensin-converting enzyme</strong></td><td><strong>Sarcoidosis</strong> (the slide also writes &ldquo;hypersensitivity silicosis&rdquo;)</td></tr>
+    <tr><td>Eosinophilia</td><td>Eosinophilic pneumonia, sarcoidosis, drug-induced disease</td></tr>
+    <tr><td>Complete blood count, comprehensive metabolic panel</td><td>Baseline</td></tr>
+  </table>
+  <ul>
+    <li><strong>Chest radiography (slide 26):</strong> <strong>hilar and mediastinal lymphadenopathy: sarcoidosis, silicosis</strong>. Low lung volumes and patchy ground-glass, reticular, nodular, reticulonodular or cystic opacities. <strong>Reticular</strong> (curvilinear) opacities: <strong>fine (ground glass) = early</strong>; <strong>medium (honeycombing) = late</strong>; <strong>coarse = cystic spaces</strong>. Nodular = nodules; reticulonodular = overlap of reticular shadows with nodules (sarcoid). In idiopathic pulmonary fibrosis the brighter interstitial markings are in the <strong>lower lung fields</strong> (slide 27).</li>
+  </ul>
+  <div class="tbl-wrap"><table>
+    <tr><th>Restrictive pattern (slides 26, 29)</th><th>Result</th></tr>
+    <tr><td>Ratio of forced expiratory volume in 1 second to forced vital capacity</td><td><strong>Normal or increased</strong></td></tr>
+    <tr><td>Total lung capacity and forced vital capacity</td><td><strong>Decreased</strong> (reduced lung volumes)</td></tr>
+  </table></div>
+
+  <h3 class="sub" id="l41-iip">3.4 &middot; Idiopathic (fibrosing) interstitial pneumonia and idiopathic pulmonary fibrosis</h3>
+  <ul>
+    <li><strong>Histopathologic patterns (slide 31):</strong> idiopathic pulmonary fibrosis, desquamative interstitial pneumonitis, nonspecific interstitial pneumonia, cryptogenic organizing pneumonia, respiratory bronchiolitis-associated interstitial lung disease, lymphoid interstitial pneumonia, acute interstitial pneumonitis. Suspect it in <strong>unexplained interstitial lung disease</strong>; it is the <strong>most common diagnosis among patients with interstitial lung disease</strong>; <strong>67&ndash;75%</strong> of patients with idiopathic pulmonary fibrosis and familial lung fibrosis have a <strong>history of smoking</strong>.</li>
+    <li><strong>Diagnosis (slide 32):</strong> may require <strong>biopsy</strong>; <strong>idiopathic pulmonary fibrosis is the most common subtype</strong>; age, sex, prodrome, imaging and histology decide; <strong>treatment and prognosis depend on the subtype</strong>.</li>
+    <li><strong>Symptoms (slide 33):</strong> <strong>insidious DRY cough</strong>, exertional dyspnea, constitutional symptoms (fatigue, malaise). <strong>Exam:</strong> clubbing; <strong>bibasilar inspiratory crackles</strong>; tachypnea; reduced chest expansion.</li>
+    <li><strong>Studies (slide 34):</strong> chest film: progressive fibrosis over several areas; <strong>CT: diffuse patchy fibrosis with pleural-based honeycombing</strong>; pulmonary function: <strong>restrictive</strong> (decreased lung volume, normal to increased ratio); bronchoalveolar lavage, transbronchial biopsy, surgical lung biopsy.</li>
+  </ul>
+  <div class="tbl-wrap"><table>
+    <tr><th colspan="2">Idiopathic pulmonary fibrosis / usual interstitial pneumonia diagnosed with 90% confidence, no surgical biopsy needed (slide 35): patients over 65 with all four</th></tr>
+    <tr><td>1</td><td><strong>Idiopathic disease by history</strong>, with <strong>inspiratory crackles</strong> on examination</td></tr>
+    <tr><td>2</td><td><strong>Restrictive physiology</strong> on pulmonary function testing</td></tr>
+    <tr><td>3</td><td>Radiographic evidence of <strong>progressive fibrosis over several years</strong></td></tr>
+    <tr><td>4</td><td><strong>Diffuse, patchy fibrosis with pleural-based honeycombing</strong> on high-resolution CT</td></tr>
+  </table></div>
+  <ul>
+    <li><strong>Management (slide 37): controversial.</strong> Nothing has been shown to improve survival or quality of life compared with no treatment; an accurate diagnosis identifies who may benefit; <strong>smoking is the cause in the majority of cases and cessation is critical to prolong life</strong>.</li>
+    <li><strong>Corticosteroids may be used (slide 38)</strong> in <strong>cryptogenic organizing pneumonia</strong> (bronchiolitis obliterans organizing pneumonia), <strong>lymphoid interstitial pneumonia</strong> and <strong>nonspecific interstitial pneumonia</strong>. Symptoms vary by subtype.</li>
+  </ul>
+  <div class="cond"><h4>Idiopathic pulmonary fibrosis</h4>
+    <p class="give"><b>Defining feature:</b> an older smoker with an insidious dry cough, exertional dyspnea, clubbing and bibasilar inspiratory crackles, a restrictive pattern and pleural-based honeycombing on CT</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>The most common idiopathic (fibrosing) interstitial pneumonia: pulmonary fibrosis with the usual interstitial pneumonia pattern and no associated cause.</dd>
+      <dt>Who gets it</dt><dd>The most common diagnosis among interstitial lung diseases; over 65 in the no-biopsy criteria; 67&ndash;75% have smoked.</dd>
+      <dt>Risk factors</dt><dd>Smoking (the cause in the majority); familial lung fibrosis.</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Insidious dry cough, exertional dyspnea, fatigue and malaise.</dd>
+      <dt>Physical exam findings</dt><dd>Clubbing, bibasilar inspiratory crackles, tachypnea, reduced chest expansion.</dd>
+      <dt>Diagnostics / tests</dt><dd>Restrictive pulmonary function; chest film with progressive fibrosis (lower fields); high-resolution CT with diffuse patchy fibrosis and pleural-based honeycombing; biopsy unless the four over-65 criteria are met.</dd>
+      <dt>First-line treatment</dt><dd>Controversial: nothing has improved survival; smoking cessation is critical.</dd>
+      <dt>Complications</dt><dd>Progressive fibrosis; right heart failure with advanced interstitial disease.</dd>
+    </dl><p class="src">Slides 15, 24, 27, 31&ndash;37</p></div>
+
+  <h3 class="sub" id="l41-ctd">3.5 &middot; Connective tissue disease, pulmonary hemorrhage and granulomatous vasculitis</h3>
+  <ul>
+    <li><strong>Connective tissue diseases (slide 18), &ldquo;think autoimmune&rdquo;:</strong> an inflammatory/fibrotic response in systemic lupus erythematosus, rheumatoid arthritis, ankylosing spondylitis, systemic sclerosis, Sj&ouml;gren syndrome, polymyositis-dermatomyositis and scleroderma. <strong>Methotrexate, used for many autoimmune diseases including lupus and rheumatoid arthritis, is itself a cause of interstitial lung disease.</strong></li>
+    <li><strong>Pulmonary hemorrhage syndromes / alveolar filling disorders (slide 19):</strong> Goodpasture syndrome, idiopathic pulmonary hemosiderosis, isolated pulmonary capillaritis. Goodpasture: anti-glomerular basement membrane antibodies (slide 25).</li>
+    <li><strong>Granulomatous response (slides 20&ndash;21):</strong> still interstitial disease of unknown etiology; T lymphocytes, macrophages and epithelioid cells organized into <strong>granulomas</strong> in the parenchyma. Examples: <strong>sarcoidosis</strong>, the granulomatous vasculitides (<strong>granulomatosis with polyangiitis</strong>, formerly Wegener, c-ANCA positive; allergic granulomatosis of Churg-Strauss).</li>
+  </ul>
+  <div class="cond"><h4>Pulmonary fibrosis with connective tissue disease</h4>
+    <p class="give"><b>Defining feature:</b> a patient with a known autoimmune disease (rheumatoid arthritis, lupus, scleroderma, polymyositis) who develops progressive dyspnea and a restrictive pattern</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>An inflammatory and fibrotic interstitial response in connective tissue (autoimmune) disease.</dd>
+      <dt>Who gets it</dt><dd>Patients with systemic lupus erythematosus, rheumatoid arthritis, ankylosing spondylitis, systemic sclerosis, Sj&ouml;gren syndrome, polymyositis-dermatomyositis, scleroderma.</dd>
+      <dt>Risk factors</dt><dd>The autoimmune disease itself; methotrexate treatment (also a cause of interstitial lung disease).</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Chronic progressive exertional dyspnea and nonproductive cough.</dd>
+      <dt>Physical exam findings</dt><dd>Bibasilar inspiratory crackles, clubbing, small lung volumes.</dd>
+      <dt>Diagnostics / tests</dt><dd>High antinuclear antibody (collagen vascular disease); restrictive pulmonary function; imaging.</dd>
+      <dt>First-line treatment</dt><dd>Not detailed on the slides beyond recognizing the autoimmune cause and the drug cause.</dd>
+      <dt>Complications</dt><dd>Fibrosis; right heart failure with advanced disease.</dd>
+    </dl><p class="src">Slides 12, 17, 18, 22&ndash;25</p></div>
+
+  <h3 class="sub" id="l41-sarcoid">3.6 &middot; Sarcoidosis</h3>
+  <ul>
+    <li><strong>A multi-organ disease of idiopathic cause</strong> with <strong>noncaseating granulomatous inflammation</strong> (lungs, lymph nodes, eyes, skin, liver, spleen, salivary glands, heart, nervous system); <strong>the lungs and lymphatic system are most often affected</strong>; thought to be environmental triggers (viral, bacterial, mycobacterial, inhaled agents, mold and mildew) in a <strong>genetically predisposed</strong> person (slide 39). It may come from a lack of modulation of the immune response after antigen recognition (slide 41).</li>
+    <li><strong>Who (slide 40):</strong> granulomatous lung inflammation in about <strong>90%</strong>; more common in <strong>North American Black people and Northern European white people</strong>; <strong>more often women</strong>; onset in the <strong>third and fourth decades</strong>.</li>
+    <li><strong>Symptoms (slide 42):</strong> cough; <strong>dyspnea of insidious onset</strong>; chest discomfort; malaise, fever; weakness, weight loss; <strong>nontender lymphadenopathy</strong>; other organ systems.</li>
+    <li><strong>Exam (slide 43):</strong> <strong>erythema nodosum</strong> (itchy, painful rashes on the lower legs and ankles) or <strong>parotid enlargement</strong>; lymph node enlargement; liver or spleen enlargement; crackles; skin involvement such as <strong>lupus pernio</strong> (painful skin sores on the face); eye problems and heart and brain complications in the picture.</li>
+    <li><strong>Diagnosis (slide 44):</strong> chest film: <strong>symmetric bilateral hilar and right paratracheal adenopathy</strong> and bilateral reticular infiltrates. Labs: leukopenia, eosinophilia, elevated sedimentation rate, hypercalcemia, hypercalciuria; <strong>angiotensin-converting enzyme elevated in 40&ndash;80%</strong>; <strong>hypercalcemia in 5%</strong>. <strong>Transbronchial lung biopsy or fine-needle node biopsy confirms it, with noncaseating granulomas.</strong></li>
+  </ul>
+  <div class="tbl-wrap"><table>
+    <tr><th>Chest film stage (slide 45)</th><th>Findings</th></tr>
+    <tr><td><strong>I</strong></td><td>Bilateral hilar adenopathy <strong>alone</strong></td></tr>
+    <tr><td><strong>II</strong></td><td>Hilar adenopathy <strong>and</strong> parenchymal involvement</td></tr>
+    <tr><td><strong>III</strong></td><td>Parenchymal involvement <strong>alone</strong> (diffuse reticular infiltrates)</td></tr>
+    <tr><td><strong>IV</strong></td><td><strong>Advanced fibrosis</strong>: honeycombing, hilar retraction, bullae, cysts, emphysema</td></tr>
+  </table></div>
+  <p><strong>Biopsy is essential</strong> whenever the clinical and radiographic findings suggest an alternative diagnosis such as <strong>lymphoma</strong> (slide 45).</p>
+  <ul>
+    <li><strong>Management (slide 46):</strong> about <strong>90% respond to corticosteroids</strong> and can be controlled with moderate maintenance doses. <strong>Immunosuppressants, most commonly methotrexate, azathioprine or infliximab</strong>, for patients <strong>intolerant of corticosteroids or with corticosteroid-refractory disease</strong>.</li>
+  </ul>
+  <div class="tbl-wrap"><table>
+    <tr><th>Indications for oral corticosteroids (slide 47)</th></tr>
+    <tr><td>Disabling constitutional symptoms &middot; <strong>Hypercalcemia</strong> &middot; <strong>Iritis</strong> &middot; <strong>Uveitis</strong> &middot; Arthritis &middot; <strong>Central nervous system involvement</strong> &middot; <strong>Cardiac involvement</strong> &middot; Granulomatous hepatitis &middot; <strong>Cutaneous lesions other than erythema nodosum</strong> &middot; <strong>Progressive pulmonary lesions</strong></td></tr>
+  </table></div>
+  <ul>
+    <li><strong>Prognosis (slide 48):</strong> <strong>best with hilar adenopathy alone</strong>; parenchymal involvement on imaging means a <strong>worse prognosis</strong>; <strong>20% with lung involvement</strong> develop irreversible impairment (progressive fibrosis, bronchiectasis, cavitation). <strong>Every year:</strong> physical exam; pulmonary function tests, chest film, electrocardiogram; chemistry panel; <strong>ophthalmologic evaluation</strong> (to find and manage ocular inflammation).</li>
+  </ul>
+  <div class="cond"><h4>Sarcoidosis</h4>
+    <p class="give"><b>Defining feature:</b> a young adult in the third or fourth decade with symmetric bilateral hilar adenopathy, nontender nodes, erythema nodosum or uveitis, and noncaseating granulomas on biopsy</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>A multi-organ disease of unknown cause with noncaseating granulomatous inflammation, mostly of the lungs and lymphatics.</dd>
+      <dt>Who gets it</dt><dd>North American Black people and Northern European white people; women more often; onset in the third and fourth decades.</dd>
+      <dt>Risk factors</dt><dd>Genetic predisposition plus environmental triggers (viral, bacterial, mycobacterial, inhaled agents, mold).</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Cough, insidious dyspnea, chest discomfort, malaise, fever, weight loss, nontender lymphadenopathy.</dd>
+      <dt>Physical exam findings</dt><dd>Erythema nodosum, parotid enlargement, lymph node, liver and spleen enlargement, crackles, lupus pernio.</dd>
+      <dt>Diagnostics / tests</dt><dd>Chest film (bilateral hilar and right paratracheal adenopathy; stages I&ndash;IV); elevated angiotensin-converting enzyme, sedimentation rate, calcium; transbronchial or node biopsy showing noncaseating granulomas confirms.</dd>
+      <dt>First-line treatment</dt><dd>Oral corticosteroids for the listed indications (about 90% respond); methotrexate, azathioprine or infliximab if intolerant or refractory; yearly exam, pulmonary function, chest film, electrocardiogram, chemistry and eye exam.</dd>
+      <dt>Complications</dt><dd>Irreversible lung impairment in 20% with lung involvement (fibrosis, bronchiectasis, cavitation); hypercalcemia; eye, heart and nervous system disease.</dd>
+    </dl><p class="src">Slides 21, 25, 26, 39&ndash;48</p></div>
+
+  <h3 class="sub" id="l41-cwp">3.7 &middot; Pneumoconiosis: coal workers&rsquo; pneumoconiosis</h3>
+  <ul>
+    <li><strong>Pneumoconiosis (slide 50):</strong> chronic fibrotic lung disease from inhaling <strong>coal dust or various inorganic or silicate dusts</strong>.</li>
+    <li><strong>Coal workers&rsquo; pneumoconiosis (slide 51):</strong> alveolar macrophages take up inhaled coal dust, forming <strong>coal macules</strong>. <strong>Simple disease is usually asymptomatic</strong>, with unimpressive pulmonary function. <strong>Complicated disease is &ldquo;progressive massive fibrosis&rdquo;</strong>: conglomeration in the upper lungs.</li>
+    <li><strong>Symptoms (slide 52):</strong> may be asymptomatic when simple; complicated: dyspnea, progressive dyspnea, inspiratory crackles, finger clubbing, cyanosis.</li>
+    <li><strong>Tests (slide 53):</strong> pulmonary function: <strong>restrictive with reduced diffusing capacity</strong> (diffusing capacity of the lungs for carbon monoxide). Chest film: <strong>nodular opacities in the upper lung fields (coal macules 2&ndash;5 mm)</strong>.</li>
+    <li><strong>Management (slide 54):</strong> supportive; <strong>no effective curative treatment</strong>: oxygen, <strong>vaccinations (pneumococcal, influenza)</strong>, rehabilitation, <strong>smoking cessation</strong>; lung transplant in severe cases. <strong>Complication:</strong> progressive massive fibrosis (conglomeration and contraction in the upper lung fields).</li>
+  </ul>
+  <div class="cond"><h4>Coal workers&rsquo; pneumoconiosis</h4>
+    <p class="give"><b>Defining feature:</b> a coal miner with 2&ndash;5 mm nodular opacities in the upper lung fields</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>A pneumoconiosis: chronic fibrotic lung disease from inhaled coal dust taken up by alveolar macrophages into coal macules.</dd>
+      <dt>Who gets it</dt><dd>Coal workers.</dd>
+      <dt>Risk factors</dt><dd>Inhaled coal dust.</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Simple: often none. Complicated: progressive dyspnea.</dd>
+      <dt>Physical exam findings</dt><dd>Inspiratory crackles, clubbing, cyanosis in complicated disease.</dd>
+      <dt>Diagnostics / tests</dt><dd>Restrictive pulmonary function with reduced diffusing capacity; upper-zone nodular opacities (coal macules 2&ndash;5 mm).</dd>
+      <dt>First-line treatment</dt><dd>Supportive (no cure): oxygen, pneumococcal and influenza vaccines, rehabilitation, smoking cessation; transplant if severe.</dd>
+      <dt>Complications</dt><dd>Progressive massive fibrosis (upper-lobe conglomeration and contraction).</dd>
+    </dl><p class="src">Slides 50&ndash;54</p></div>
+
+  <h3 class="sub" id="l41-asbestos">3.8 &middot; Asbestosis and mesothelioma</h3>
+  <ul>
+    <li><strong>History (slide 55):</strong> asbestos fibers from <strong>insulation, demolition, shipyards, construction</strong>; exposure over <strong>10&ndash;20 years</strong>; patients usually seek attention <strong>about 15 years after exposure</strong>. <strong>Cigarette smoking increases radiographic pleural and parenchymal changes and markedly increases lung carcinoma.</strong> A <strong>ferruginous body</strong> in tissue (a histologic finding resulting from inorganic dust inhalation) suggests significant exposure.</li>
+    <li><strong>Mechanism (slide 56):</strong> asbestos invades lung tissue and <strong>cannot be removed</strong>, so chronic inflammation and macrophage invasion scar the terminal bronchioles, alveoli and interstitium; fibers can penetrate further and cause <strong>mesothelioma</strong> (cancer of the pleural lining).</li>
+    <li><strong>Symptoms and exam (slide 57):</strong> <strong>dyspnea on exertion</strong>, rarely cough; with progression, <strong>fine bibasilar crackles and clubbing</strong>. <strong>Labs not helpful</strong>; pulmonary function: reduced vital capacity and total lung capacity.</li>
+    <li><strong>Imaging (slide 58):</strong> often <strong>normal early</strong>; <strong>pleural plaques are the most common chest film finding</strong> (linear streaking at the bases); reticulonodular opacities at the bases; CT: pleural plaques, alveolitis, fibrosis, honeycombing in advanced disease. <strong>CT is the preferred imaging for asbestosis.</strong></li>
+    <li><strong>Treatment (slide 56):</strong> <strong>supportive</strong>, because the fibers cannot be removed: oxygen, physiotherapy, medications, vaccinations. <strong>Complications:</strong> increased risk of <strong>lung cancer and mesothelioma, especially in smokers</strong>.</li>
+    <li><strong>Mesothelioma (slide 59):</strong> primarily a <strong>pleural cancer</strong>, <strong>nearly always caused by asbestos</strong>; incurable with poor long-term survival, no treatment known to prolong survival, primarily supportive care; frequent <strong>pleural effusions</strong>, diagnosable by <strong>pleural fluid cytology</strong>; <strong>10% lifetime risk for asbestos workers</strong>.</li>
+  </ul>
+  <div class="cond"><h4>Asbestosis</h4>
+    <p class="give"><b>Defining feature:</b> a former shipyard, insulation, demolition or construction worker with exertional dyspnea about 15 years after exposure, pleural plaques and basal crackles</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>Interstitial fibrosis of the terminal bronchioles, alveoli and interstitium from asbestos fibers that cannot be removed.</dd>
+      <dt>Who gets it</dt><dd>Workers in insulation, demolition, shipyards and construction, after 10&ndash;20 years of exposure; presenting about 15 years later.</dd>
+      <dt>Risk factors</dt><dd>Asbestos exposure; smoking worsens radiographic changes and markedly raises lung cancer risk.</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Dyspnea on exertion; cough is rare.</dd>
+      <dt>Physical exam findings</dt><dd>Fine bibasilar crackles and clubbing with progression.</dd>
+      <dt>Diagnostics / tests</dt><dd>Pleural plaques (most common film finding), basal reticulonodular opacities; CT preferred; reduced vital and total lung capacity; ferruginous bodies; labs not helpful.</dd>
+      <dt>First-line treatment</dt><dd>Supportive: oxygen, physiotherapy, medications, vaccinations; smoking cessation.</dd>
+      <dt>Complications</dt><dd>Lung cancer and mesothelioma, especially in smokers (mesothelioma lifetime risk 10% in asbestos workers).</dd>
+    </dl><p class="src">Slides 55&ndash;59</p></div>
+
+  <h3 class="sub" id="l41-silicosis">3.9 &middot; Silicosis</h3>
+  <ul>
+    <li><strong>History (slide 60):</strong> <strong>mining, sandblasting, quarry work, stone work</strong>; free crystalline silica dust (silicon dioxide). Simple disease usually asymptomatic with unimpressive function; complicated disease: conglomeration of the upper lungs. Silica deposits in the alveoli, causing chronic inflammation, macrophage invasion and fibrosis <strong>and also nodular lesions</strong>; it is usually carried to the <strong>upper lobes because it is a lighter dust</strong>.</li>
+    <li><strong>Presentation (slide 61):</strong> rapid onset of symptoms (see the conflict box); dyspnea, cough, weight loss, fatigue; <strong>often crackles</strong>.</li>
+    <li><strong>Studies (slide 62):</strong> labs: arterial blood gas, otherwise not contributory; pulmonary function: <strong>reduced forced vital capacity and forced expiratory volume in 1 second</strong>; <strong>bronchoalveolar lavage: thick, milky effluent with foamy, lipoproteinaceous macrophages</strong>.</li>
+    <li><strong>Imaging (slide 63):</strong> <strong>nodular opacities throughout (silicotic nodules, 1&ndash;10 mm)</strong>: nodular pulmonary fibrosis; <strong>&ldquo;eggshell&rdquo; calcification of the periphery of the hilar lymph nodes</strong>.</li>
+    <li><strong>Treatment (slide 64):</strong> largely <strong>supportive</strong>: oxygen, physiotherapy, medications, vaccinations; <strong>smoking cessation</strong>. <strong>Complications: increased risk of tuberculosis</strong>, progressive massive fibrosis, scleroderma; <strong>patients should have a tuberculosis skin test and a current chest film</strong>.</li>
+  </ul>
+  <div class="cond"><h4>Silicosis</h4>
+    <p class="give"><b>Defining feature:</b> a sandblaster, miner, quarry or stone worker with upper-lobe silicotic nodules and eggshell calcification of the hilar nodes</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>Fibrosis and nodular lesions from free crystalline silica (silicon dioxide) dust deposited in the alveoli.</dd>
+      <dt>Who gets it</dt><dd>Miners, sandblasters, quarry workers and stone workers.</dd>
+      <dt>Risk factors</dt><dd>Inhaled silica dust.</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Dyspnea, cough, weight loss, fatigue (simple disease may be asymptomatic).</dd>
+      <dt>Physical exam findings</dt><dd>Often crackles.</dd>
+      <dt>Diagnostics / tests</dt><dd>Silicotic nodules 1&ndash;10 mm, upper lobes; eggshell calcification of the hilar nodes; reduced vital capacity and forced expiratory volume; milky lavage with foamy macrophages; arterial blood gas.</dd>
+      <dt>First-line treatment</dt><dd>Supportive (oxygen, physiotherapy, medications, vaccinations), smoking cessation; tuberculosis skin test and a current chest film.</dd>
+      <dt>Complications</dt><dd>Tuberculosis, progressive massive fibrosis, scleroderma.</dd>
+    </dl><p class="src">Slides 26, 60&ndash;64</p></div>
+
+  <h3 class="sub" id="l41-hp">3.10 &middot; Hypersensitivity pneumonitis (extrinsic allergic alveolitis)</h3>
+  <ul>
+    <li><strong>What it is (slide 65):</strong> a <strong>non-atopic, non-asthmatic</strong> inflammatory lung disease in which <strong>inhaled organic material</strong> causes acute illness. Sources: <strong>moldy hay, bird excreta, feathers</strong>, moldy sugarcane pulp, moldy products, insect-infested grain: <strong>bird fancier&rsquo;s lung, farmer&rsquo;s lung, cheese maker&rsquo;s lung</strong>. <strong>Prompt diagnosis is key to remove the patient from the environment</strong>; symptoms <strong>can reverse if caught early</strong>; continued exposure worsens the disease.</li>
+    <li><strong>Symptoms (slide 66):</strong> sudden malaise, chills, fever, cough, dyspnea, nausea <strong>4&ndash;8 hours after exposure</strong>; may mimic <strong>paroxysmal nocturnal dyspnea</strong> (after work, once home).</li>
+    <li><strong>Exam (slide 68):</strong> bibasilar crackles, tachypnea, tachycardia, cyanosis.</li>
+  </ul>
+  <div class="tbl-wrap"><table>
+    <tr><th>Type (slide 67)</th><th>Signs and symptoms</th></tr>
+    <tr><td><strong>Acute</strong> (within 9 hours of exposure)</td><td><strong>Flu-like illness</strong> (fever, chills, muscle or joint pain, headache), rales, cough</td></tr>
+    <tr><td><strong>Subacute</strong> (multiple exposures; 15%)</td><td>Rales, cough, chronic bronchitis, shortness of breath, anorexia or weight loss</td></tr>
+    <tr><td><strong>Chronic</strong> (multiple exposures; 5%)</td><td>Cough, chronic bronchitis, shortness of breath, anorexia or weight loss, fatigue, <strong>lung fibrosis</strong>, <strong>clubbing</strong></td></tr>
+  </table></div>
+  <ul>
+    <li><strong>Tests (slides 69&ndash;70):</strong> chest film and CT: <strong>little change acutely</strong>; subacute and chronic fibrotic changes; <strong>small nodular densities sparing the apices and bases</strong>. Blood: <strong>white count elevated with a left shift</strong>; hypoxia; <strong>antibodies to the agent in serum: their presence gives a definitive diagnosis</strong>. Pulmonary function: <strong>restrictive</strong>. Subacute or chronic: lung biopsy may be indicated. Histology: interstitial lymphocytes and plasma cells with <strong>non-caseating granulomas</strong>.</li>
+    <li><strong>Treatment (slide 71):</strong> <strong>identify the agent responsible; avoid the agent</strong>; corticosteroids in <strong>severe</strong> cases; other immunosuppressants; supportive (oxygen, bronchodilators, pain medications); lung transplant.</li>
+  </ul>
+  <div class="cond"><h4>Hypersensitivity pneumonitis</h4>
+    <p class="give"><b>Defining feature:</b> fever, chills, cough and dyspnea hours after exposure to moldy hay, birds or another organic dust, better away from the exposure</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>A non-atopic, non-asthmatic inflammatory lung disease caused by inhaled organic material (extrinsic allergic alveolitis).</dd>
+      <dt>Who gets it</dt><dd>Farmers (moldy hay), bird keepers (excreta, feathers), cheese makers, workers handling moldy products or infested grain.</dd>
+      <dt>Risk factors</dt><dd>Repeated organic dust exposure; continued exposure worsens the disease.</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Acute: flu-like malaise, chills, fever, cough, dyspnea, nausea hours after exposure. Chronic: weight loss, fatigue, fibrosis, clubbing.</dd>
+      <dt>Physical exam findings</dt><dd>Bibasilar crackles, tachypnea, tachycardia, cyanosis.</dd>
+      <dt>Diagnostics / tests</dt><dd>Serum antibodies to the agent (definitive); white count up with a left shift; hypoxia; restrictive function; small nodular densities sparing apices and bases; biopsy if subacute or chronic.</dd>
+      <dt>First-line treatment</dt><dd>Identify and avoid the agent; corticosteroids if severe; supportive care; transplant.</dd>
+      <dt>Complications</dt><dd>Fibrosis with continued exposure (reversible if caught early).</dd>
+    </dl><p class="src">Slides 22, 65&ndash;71</p></div>
+
+  <h3 class="sub" id="l41-ards">3.11 &middot; Acute respiratory distress syndrome</h3>
+  <p style="font-size:.9rem">Slides 72&ndash;74 are pictures; everything in this subsection is read from them.</p>
+  <table>
+    <tr><th>Cause (slide 72)</th><th>Examples</th></tr>
+    <tr><td><strong>Direct pulmonary</strong></td><td><strong>Aspiration of gastric contents, diffuse pneumonia, lung contusion</strong>; toxic gas (chlorine, nitrogen dioxide, sulfur dioxide, ammonia, smoke); near-drowning, high altitude, radiation, upper airway obstruction; fat, air, amniotic fluid or thrombus emboli</td></tr>
+    <tr><td><strong>Systemic</strong></td><td><strong>Sepsis, severe pancreatitis, shock, nonthoracic trauma</strong>; overdoses (opioids, aspirin, phenothiazine, tricyclic antidepressants, cocaine); multiple blood transfusions, disseminated intravascular coagulation, cardiopulmonary bypass, protamine; chemotherapy, amiodarone, nitrofurantoin</td></tr>
+  </table>
+  <ul>
+    <li><strong>Epidemiology and prognosis (slide 72):</strong> <strong>about 30% overall mortality</strong> with low tidal volume ventilation; <strong>etiology drives survival: about 20% mortality after trauma, 80% with end-stage liver disease</strong>; <strong>about one-third of cases first present with sepsis</strong>; lung function generally recovers within <strong>6&ndash;12 months</strong>, though functional deficits often remain.</li>
+    <li><strong>Mechanism (slide 72):</strong> pro-inflammatory cytokines damage the capillary endothelium and alveolar epithelium; <strong>increased vascular permeability</strong> leads to surfactant loss, alveolar collapse and <strong>refractory hypoxemia</strong>; a hyperinflammatory phenotype (high interleukin-6 and soluble tumor necrosis factor receptor) correlates with multiorgan failure and higher mortality.</li>
+  </ul>
+  <div class="tbl-wrap"><table>
+    <tr><th colspan="2">Core diagnostic criteria (slide 73)</th></tr>
+    <tr><td>Timing</td><td>Develops <strong>within 7 days of a known clinical insult</strong></td></tr>
+    <tr><td>Imaging</td><td><strong>Bilateral pulmonary opacities</strong> not explained by effusion, atelectasis or nodules</td></tr>
+    <tr><td>Origin</td><td><strong>Non-cardiogenic</strong>: failure not fully explained by heart failure or fluid overload</td></tr>
+    <tr><td>Oxygenation</td><td>Arterial oxygen pressure to fraction of inspired oxygen ratio <strong>under 300 mm Hg</strong> (or oxygen saturation to inspired fraction under 315)</td></tr>
+  </table></div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Severity (slide 73)</th><th>Arterial oxygen pressure &divide; fraction of inspired oxygen</th></tr>
+    <tr><td><strong>Mild</strong></td><td>200&ndash;300 mm Hg</td></tr>
+    <tr><td><strong>Moderate</strong></td><td>100&ndash;200 mm Hg</td></tr>
+    <tr><td><strong>Severe</strong></td><td>Under 100 mm Hg</td></tr>
+  </table></div>
+  <p style="font-size:.9rem">Worked example: arterial oxygen 60 mm Hg on 50% oxygen (fraction 0.5): 60 &divide; 0.5 = 120, moderate.</p>
+  <ul>
+    <li><strong>Presentation (slide 73):</strong> <strong>profound dyspnea 12&ndash;48 hours after the insult</strong>; tachypnea, labored breathing, intercostal retractions, crackles; <strong>marked hypoxemia refractory to supplemental oxygen</strong>; multiple organ failure (kidneys, liver, gut, central nervous system, cardiovascular).</li>
+    <li><strong>Imaging and tests (slide 73):</strong> bilateral infiltrates rapidly progress to <strong>confluent opacities</strong>; <strong>air bronchograms in about 80%</strong>; <strong>normal heart size with minimal or absent pleural effusions</strong>; <strong>echocardiography assesses cardiac function to exclude hydrostatic (cardiogenic) pulmonary edema</strong>.</li>
+    <li><strong>Differential (slide 73):</strong> <strong>cardiogenic pulmonary edema</strong> (cardiomegaly, vascular engorgement, batwing perihilar opacities); diffuse alveolar hemorrhage; severe bilateral pneumonia; autoimmune lung disease.</li>
+  </ul>
+  <table>
+    <tr><th>Management (slide 74)</th><th>What the picture says</th></tr>
+    <tr><td>Ventilation and position</td><td><strong>Treat the primary precipitant</strong> promptly; <strong>low tidal volumes</strong>; titrate positive end-expiratory pressure to keep arterial oxygen <strong>above 60 mm Hg</strong>; <strong>early prone positioning decreases mortality in moderate to severe disease</strong>; <strong>avoid high-frequency oscillatory ventilation</strong> (no proven benefit)</td></tr>
+    <tr><td>Fluids and blood</td><td><strong>Conservative fluids</strong> (central venous pressure target under 4 mm Hg; restrictive fluids increase ventilator-free days, shorter intensive care stays); <strong>avoid routine pulmonary artery catheters</strong> (no clinical benefit); <strong>transfuse at hemoglobin 7 g/dL</strong> (higher targets do not improve outcomes); avoid supranormal oxygen delivery targets</td></tr>
+    <tr><td>Drugs and salvage</td><td><strong>Corticosteroids conditionally supported within 14 days</strong>; sedatives, analgesics and antipyretics reduce oxygen demand; <strong>neuromuscular blockade is controversial</strong> (conflicting mortality data); <strong>extracorporeal membrane oxygenation for severe, refractory disease</strong></td></tr>
+    <tr><td>Recovery</td><td>Lung function improves over 6&ndash;12 months; <strong>residual diffusion deficits</strong> and obstructive changes often persist; treat post-intensive-care muscle wasting, weakness and fatigue</td></tr>
+  </table>
+  <div class="cond"><h4>Acute respiratory distress syndrome</h4>
+    <p class="give"><b>Defining feature:</b> bilateral opacities and hypoxemia refractory to oxygen within 7 days of sepsis, aspiration, trauma or pancreatitis, with a normal-sized heart</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>Acute non-cardiogenic lung injury: bilateral opacities and an arterial oxygen to inspired oxygen ratio under 300 within 7 days of an insult.</dd>
+      <dt>Who gets it</dt><dd>Patients after sepsis (about a third present this way), aspiration, pneumonia, trauma, pancreatitis, transfusions or overdoses.</dd>
+      <dt>Risk factors</dt><dd>Direct lung insults (aspiration, pneumonia, contusion, toxic gas, near-drowning, emboli) and systemic ones (sepsis, pancreatitis, shock, trauma, overdoses, transfusions, drugs such as amiodarone and nitrofurantoin).</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Profound dyspnea 12&ndash;48 hours after the insult; hypoxemia refractory to supplemental oxygen.</dd>
+      <dt>Physical exam findings</dt><dd>Tachypnea, labored breathing, intercostal retractions, crackles; multiple organ failure.</dd>
+      <dt>Diagnostics / tests</dt><dd>Bilateral infiltrates becoming confluent, air bronchograms, normal heart size; echocardiography to exclude cardiogenic edema; severity by ratio (mild 200&ndash;300, moderate 100&ndash;200, severe under 100).</dd>
+      <dt>First-line treatment</dt><dd>Treat the cause; low tidal volume ventilation; early prone positioning (moderate to severe); conservative fluids; transfuse at 7 g/dL; corticosteroids within 14 days conditionally; extracorporeal membrane oxygenation as salvage.</dd>
+      <dt>Complications</dt><dd>Multiple organ failure; mortality about 30% (20% after trauma to 80% with end-stage liver disease); residual diffusion deficits, weakness and fatigue.</dd>
+    </dl><p class="src">Slides 72&ndash;74</p></div>
+
+  <h3 class="sub" id="l41-populations">3.12 &middot; Adults and older adults; referral</h3>
+  <table>
+    <tr><th>Domain</th><th>Adults</th><th>Older adults</th></tr>
+    <tr><td>Who</td><td>Sarcoidosis begins in the third and fourth decades (slide 40); occupational disease follows years of exposure (asbestosis 10&ndash;20 years, presenting about 15 years later, slide 55)</td><td><strong>Idiopathic pulmonary fibrosis</strong>: the four no-biopsy criteria apply to patients <strong>over 65</strong> (slide 35)</td></tr>
+    <tr><td>History</td><td>The <strong>occupational and environmental history</strong> identifies the known causes (slide 13); drugs such as methotrexate, amiodarone and nitrofurantoin (slides 9, 12, 18)</td><td>The same, across a working lifetime</td></tr>
+    <tr><td>Supportive care</td><td>Oxygen, vaccinations (pneumococcal, influenza), rehabilitation and physiotherapy, <strong>smoking cessation</strong> (slides 54, 56, 64)</td><td>The same; <strong>lung transplant</strong> in severe pneumoconiosis or hypersensitivity pneumonitis (slides 54, 71)</td></tr>
+    <tr><td>Follow-up</td><td>Sarcoidosis: <strong>yearly</strong> exam, pulmonary function tests, chest film, electrocardiogram, chemistry panel and <strong>eye examination</strong> (slide 48); silicosis: tuberculosis skin test and a current chest film (slide 64)</td><td>Acute respiratory distress syndrome survivors: lung function recovers over 6&ndash;12 months, with residual diffusion deficits and post-intensive-care weakness (slide 74)</td></tr>
+  </table>
+</section>
+
+<footer class="guide-foot">
+  <p style="text-align:center;margin:0 0 10px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+  <p style="text-align:center;">Built from your PAJ 5500 lecture decks for personal study &middot; Class of 2028.</p>
+  <p style="text-align:center;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+</footer>
+</main>
+</div>
+
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+
+<style>
+  .cond{border:1px solid var(--c-line);border-radius:10px;padding:12px 15px;margin:12px 0;
+        background:var(--c-ice);}
+  .cond h4{margin:0 0 8px;font-size:1.02rem;display:flex;align-items:baseline;gap:9px;
+           flex-wrap:wrap;}
+  .cond .u{font-size:.66rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+           padding:2px 8px;border-radius:999px;white-space:nowrap;}
+  .cond .u.emerg{background:#8c1d12;color:#fff;} .cond .u.urg{background:#7a5a08;color:#fff;}
+  .cond .u.rout{background:#3f5c46;color:#fff;}
+  .cond .give{margin:0 0 10px;padding:8px 11px;border-radius:8px;background:var(--c-gv-bg,#f7f0dc);
+              color:var(--c-gv-b,#5b4708);font-size:.9rem;}
+  dl.eight{display:grid;grid-template-columns:180px 1fr;gap:6px 14px;margin:0;}
+  dl.eight dt{font-size:.7rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+              color:var(--c-mute);padding-top:3px;}
+  dl.eight dd{margin:0;font-size:.9rem;line-height:1.55;}
+  .cond .src{margin:9px 0 0;font-size:.7rem;color:var(--c-mute);font-variant-numeric:tabular-nums;}
+  .cond figure.fig{float:right;max-width:190px;margin:0 0 10px 14px;}
+  .cond figure.fig img{width:100%;height:auto;border-radius:8px;border:1px solid var(--c-line);}
+  table.wr{width:100%;border-collapse:collapse;font-size:.88rem;}
+  table.wr th{text-align:left;background:var(--c-panel);color:var(--c-panel-fg);padding:8px;}
+  table.wr td{padding:8px;border-top:1px solid var(--c-line);}
+  .tbl-wrap{overflow-x:auto;margin:10px 0;}
+  @media (max-width:640px){dl.eight{grid-template-columns:1fr;gap:2px;}
+    dl.eight dd{margin-bottom:7px;} .cond figure.fig{float:none;max-width:100%;margin:0 0 10px;}}
+</style>
+</body>
+</html>
