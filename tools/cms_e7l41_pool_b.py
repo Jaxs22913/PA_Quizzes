@@ -52,7 +52,7 @@ S(SAR, IO_A,
    ["Chest radiograph staging",
     "The chest radiograph shows symmetric bilateral hilar and right paratracheal adenopathy and stages the disease from I to IV, but imaging does not confirm the diagnosis. Tell: staging describes extent, while a biopsy with noncaseating granulomas confirms.", "adjacent fact"],
    ["Serum calcium level",
-    "Hypercalcemia occurs in about 5% of patients with sarcoidosis and is an indication for corticosteroids, but it is too uncommon and too nonspecific to confirm the disease. Tell: confirmation comes from a biopsy showing noncaseating granulomas.", "adjacent fact"]],
+    "Hypercalcemia occurs in about 5% of patients with sarcoidosis and is an indication for corticosteroids, but it is too uncommon to confirm the disease. Tell: confirmation comes from a biopsy showing noncaseating granulomas.", "adjacent fact"]],
   CS(44, 45, 47), "gold standard"),
 
 S(SAR, IO_A,

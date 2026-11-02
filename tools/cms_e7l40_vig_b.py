@@ -213,7 +213,7 @@ V(MGT, IO_A,
    ["Nasal expiratory resistance device",
     "A nasal expiratory resistance device uses the patient's own breathing to produce expiratory positive airway pressure, and no comorbidity limit is attached to it. Tell: the device kept for patients without significant comorbidities is the autotitrating one.", "adjacent fact"],
    ["Oral appliance worn during sleep",
-    "An oral appliance is not effective in severe obstructive sleep apnea or in patients with no teeth, and neither applies to her. Tell: her heart failure and lung disease restrict the autotitrating device, not the appliance.", "adjacent fact"]],
+    "An oral appliance is not effective in severe obstructive sleep apnea or in patients with no teeth; nothing in her history states either limit, and no comorbidity limit is attached to it. Tell: her heart failure and lung disease restrict the autotitrating device, not the appliance.", "adjacent fact"]],
   C(12), "avoid", "avoid"),
 
 V(MGT, IO_POP,
