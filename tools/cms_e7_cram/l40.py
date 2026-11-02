@@ -32,7 +32,7 @@ CRITERIA = [
   ("Respiratory disturbance index", "(apneas + hypopneas + respiratory effort-related arousals) &divide; total sleep time in hours"),
   {"note": "Mild, moderate and severe index bands appear only in the speaker notes, not on a slide."},
  ], "mnemonic": {"hook": "Five needs a friend; fifteen stands alone.",
-  "key": [["5", "5 or more events per hour needs one symptom"], ["15", "15 or more events per hour is enough on its own"]],
+  "key": [["5", "5 or more events per hour needs one symptom"], ["15", "15 or more events is enough on its own (no time unit on the slide)"]],
   "breaks": "Both still need the symptoms to be unexplained by another condition, drug or substance."}},
 
 {"id": "crit-l40-stopbang", "label": "STOP-Bang Questionnaire", "color": L40C,
