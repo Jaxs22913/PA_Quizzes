@@ -88,6 +88,14 @@ CURATED = {
         "Clinical Medicine and Surgery I Exam 5/cms-e5-images/l27-s006-vulnerable-plaque.jpg",
     "Clinical Medicine and Surgery I Exam 5/cms-exam-5-clin-med-pro-guide.html":
         "Clinical Medicine and Surgery I Exam 5/cms-e5-images/l30-s022-conduction-system.jpg",
+    # Exam 6 (respiratory I): imaging, as Jaxon asked ("lung CTs that show findings we should look for"),
+    # instead of the acid-base flowchart the scorer liked.
+    "Clinical Medicine and Surgery I Exam 6/cms-exam-6-study-guide.html":
+        "Clinical Medicine and Surgery I Exam 6/cms-e6-images/l38-s032-cavitary-cxr-ct.jpg",
+    "Clinical Medicine and Surgery I Exam 6/cms-exam-6-cram-sheet.html":
+        "Clinical Medicine and Surgery I Exam 6/cms-e6-images/l36-s032-cxr-flattened-diaphragm.jpg",
+    "Clinical Medicine and Surgery I Exam 6/cms-exam-6-clin-med-pro-guide.html":
+        "Clinical Medicine and Surgery I Exam 6/cms-e6-images/l37-s054-lung-abscess-cxr-ct.jpg",
 }
 
 # Cards that get NO picture even though their folder has some.
