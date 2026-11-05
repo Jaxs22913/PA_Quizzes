@@ -80,10 +80,23 @@ CURATED = {
     # Was a duplicate of the study guide's picture -- only six images, six cards.
     "Pharmacology I Exam 1/pharm-exam-1-cram-sheet.html":
         "Pharmacology I Exam 1/pharm-exam-1-study-guide-images/004.png",
+    # 2026-11-05 first covers for the cardiology blocks: the scorer picked a troponin TEXT table (E4), a blurry
+    # explanted pacemaker lead (E5) and an ECG with a web address burned along its foot (E5 Clin Med Pro).
+    "Clinical Medicine and Surgery I Exam 4/cms-exam-4-study-guide.html":
+        "Clinical Medicine and Surgery I Exam 4/cms-e4-images/l24-s010-coronary-anatomy.jpg",
+    "Clinical Medicine and Surgery I Exam 5/cms-exam-5-study-guide.html":
+        "Clinical Medicine and Surgery I Exam 5/cms-e5-images/l27-s006-vulnerable-plaque.jpg",
+    "Clinical Medicine and Surgery I Exam 5/cms-exam-5-clin-med-pro-guide.html":
+        "Clinical Medicine and Surgery I Exam 5/cms-e5-images/l30-s022-conduction-system.jpg",
 }
 
 # Cards that get NO picture even though their folder has some.
-SKIP = set()
+SKIP = {
+    # No pictures of their own, and the folder's are the ear (tuning fork) and dermatology lectures: the
+    # automatic pick put an air-versus-bone conduction diagram on the CARDIAC maneuvers card (2026-11-05).
+    "Physical Diagnosis 2 Exam 1/pd2-cardiac-osce-maneuvers.html",
+    "Physical Diagnosis 2 Exam 1/pd2-ent-osce-study-guide.html",
+}
 
 # Never cover art. All of these are perfectly good teaching pictures and stay
 # in the guides and charts -- they are just not what a study-aids index should
@@ -98,6 +111,9 @@ EXCLUDE = {
     "ext-gonococcal-conjunctivitis.jpg",   # neonatal purulent discharge
     "l6_s103_1.jpg",                       # herpes zoster ophthalmicus, crusted
     "l14-s017_pos1.jpg", "l14-s029_pos1.jpg",  # globe rupture, lid laceration
+    "l24-s072a-troponin-supplement.jpg",   # a text table: unreadable as a strip
+    "l32-s005-vegetation.jpg",             # blurry explanted lead with vegetation
+    "l28-s095-low-voltage-ecg.jpg",        # web address burned along the foot
 }
 
 THUMBS = "guide-card-thumbs"
@@ -176,11 +192,22 @@ def shape(p):
     return (w, h, ar) if 0.5 <= ar <= 2.8 else None
 
 
+KEPT = re.compile(r'<a class="guide-card[^"]*"[^>]*href="([^"]+)"[^>]*>\s*'
+                  r'<span class="gc-thumb"><img src="([^"]+)"')
+
+
 def main():
     src = open(GUIDES, encoding="utf-8").read()
+    # A card that already shows a picture KEEPS it (2026-11-05). The scorer's picks depend on page order and on
+    # which cards exist, so a full re-run after adding Exam 4-7 cards reshuffled 20 covers that were live and
+    # already looked at, and 16 live covers were placed by hand outside this script. Only CURATED overrides a
+    # kept cover; to re-pick one on purpose, delete its <span class="gc-thumb"> from guides.html first.
+    kept = {unquote(h): unquote(t) for h, t in KEPT.findall(src)
+            if os.path.exists(os.path.join(ROOT, unquote(t)))}
     src = THUMB.sub("", src)          # idempotent: drop any previous run's thumbs
 
-    cards = [(m.group(1).strip() or "guide", unquote(m.group(3)))
+    # The first class word decides the kind: "ref guide-card--listen" is a reference card too.
+    cards = [((m.group(1).split() or ["guide"])[0], unquote(m.group(3)))
              for m in BLOCK.finditer(src)]
     guide_page = {}
     for cls, path in cards:
@@ -188,6 +215,14 @@ def main():
             guide_page.setdefault(os.path.dirname(path), path)
 
     used, picks, skipped = set(), {}, []
+    prev = {}
+    try:
+        prev = json.load(open(os.path.join(ROOT, "tools", "guide_card_images.json")))
+    except (OSError, ValueError):
+        pass
+    for card in kept:                 # their pictures are taken, so a new card cannot duplicate them
+        if card in prev:
+            used.add(os.path.join(ROOT, prev[card]))
     for cls, path in cards:
         if path in SKIP:
             skipped.append((path, "explicitly skipped"))
@@ -195,6 +230,8 @@ def main():
         if path in CURATED:
             picks[path] = CURATED[path]
             used.add(CURATED[path])
+            continue
+        if path in kept:
             continue
         own = page_images(path)
         # A reference sheet with no pictures of its own gets none: the only
@@ -227,6 +264,10 @@ def main():
     def inject(m):
         path = unquote(m.group(3))
         p = picks.get(path)
+        if not p and path in kept:
+            made.add(kept[path])
+            return (m.group(0) + '<span class="gc-thumb"><img src="%s" alt="" '
+                    'loading="lazy" decoding="async"></span>' % quote(kept[path]))
         if not p:
             return m.group(0)
         rel = quote(thumb(p, path))
@@ -237,7 +278,9 @@ def main():
     out = BLOCK.sub(inject, src)
     open(GUIDES, "w", encoding="utf-8").write(out)
 
-    print("%d of %d cards get a picture" % (len(picks), len(cards)))
+    print("%d of %d cards show a picture (%d kept, %d newly picked or curated)"
+          % (len(picks) + len([c for c in kept if c not in picks]), len(cards),
+             len([c for c in kept if c not in picks]), len(picks)))
     for path, why in skipped:
         print("   no picture: %-52s %s" % (os.path.basename(path)[:52], why))
     for old in glob.glob(os.path.join(ROOT, THUMBS, "*.webp")):
