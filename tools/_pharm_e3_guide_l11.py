@@ -11,7 +11,11 @@ SOURCES
           are embedded Word objects on 59, 61 and 76, 65 the severity table, 69 beta-2 signaling, 90 the stepwise
           asthma chart, 94 the inhaler parts, 101 the lung-function decline in COPD). Slides 33, 69 and 90 are shown
           as cited figures; the slide 21 algorithm and the slide 65 table are reproduced as text. Decorative or
-          non-content pictures (5, 32, 37, 40 and 43 structures, 49, 52, 91, 93, 96) are described, not shown.
+          non-content pictures (32, 37, 40 and 43 structures, 49, 52, 91's photograph) are described, not shown.
+  Figures 2026-11-05: slides 5, 21, 58, 59, 60, 65, 76, 91 (the diagram only), 93, 94, 96 and 101 were added as
+          cited figures (figx, class l11fig, the L10 l10fig pattern), each captioned from its slide's own words.
+          The image files come from tools/extract_pharm_e3_l11_figures.py, which says what was left out and why;
+          59 and 76 are embedded Word drawings drawn with tools/emf_render.py. None of them shows a dose.
   Weight  Dr. Wood's live stream of 2026-10-26 (1:53:07; Whisper transcript only, no caption track exists). Star
           boxes quote it with timestamps; a star sets weight and adds no fact.
 
@@ -53,6 +57,15 @@ def fig(src, alt, cap, slide):
     return ('''
   <figure class="fig l11fig"><img src="pharm-e3-images/%s" loading="lazy" alt="%s"><figcaption>%s <span class="cite">Pulmonology-2.pptx, slide %d</span></figcaption></figure>
 ''' % (src, alt, cap, slide))
+
+
+def figx(src, w, h, alt, cap, cite, maxw=None):
+    """Like fig(), with the picture's size, a free-text cite and an optional cap on the width (so a small original is
+    not stretched far past its own pixels). Pictures made by tools/extract_pharm_e3_l11_figures.py."""
+    style = ' style="max-width:%dpx"' % maxw if maxw else ""
+    return ('''
+  <figure class="fig l11fig"%s><img src="pharm-e3-images/%s" loading="lazy" width="%d" height="%d" alt="%s"><figcaption>%s <span class="cite">Pulmonology-2.pptx, %s</span></figcaption></figure>
+''' % (style, src, w, h, alt, cap, cite))
 
 
 BODY = '''
@@ -112,6 +125,10 @@ BODY += '''
   pneumonia). <strong>Acute</strong> bronchitis affects all ages; <strong>chronic</strong> bronchitis primarily affects patients
   with chronic obstructive pulmonary disease. The slide picture shows a normal bronchial tube beside an inflamed one with
   thick mucus.</p>
+''' + figx("l11-slide-05-bronchitis.jpg", 493, 335,
+           "Front view of a torso showing the lungs and airways, with two magnified bronchial tubes: the upper one labeled Normal bronchial tube, the lower one labeled Inflamed lining of the bronchial tube, with a plug labeled Thick mucus.",
+           "Bronchitis: a <strong>normal bronchial tube</strong> beside one with an <strong>inflamed lining and thick mucus</strong>.",
+           "slide 5", 520) + '''
 
   <p><strong>Causes [slide 6].</strong></p>
   <ul>
@@ -241,6 +258,10 @@ BODY += '''
     <tr><td><strong>No</strong></td><td><strong>Limited-spectrum</strong> initial antibiotic therapy [slide 22]</td></tr>
     <tr><td><strong>Yes</strong></td><td><strong>Broad-spectrum</strong> initial antibiotic therapy for multidrug-resistant pathogens [slide 23]</td></tr>
   </table>
+''' + figx("l11-slide-21-hap-algorithm.jpg", 336, 232,
+           "Flowchart. Top box: HAP, VAP, or HCAP (hospital-acquired, ventilator-associated or health-care associated pneumonia) suspected. Next box: Late onset (5 days or more) or risk factors for MDR (multidrug-resistant) pathogens: prior antibiotics, colonization, hospitalization, or chronic care, immunosuppressive disease or therapy. NO leads to limited-spectrum initial antibiotic therapy; YES leads to broad-spectrum initial antibiotic therapy for MDR pathogens.",
+           "The slide&rsquo;s own flowchart (the table above): in suspected hospital-acquired, ventilator-associated or health-care associated pneumonia (HAP, VAP, HCAP), <strong>late onset (5 days or more) or any risk factor for multidrug-resistant (MDR) pathogens means broad-spectrum</strong> initial therapy; neither means limited-spectrum.",
+           "slide 21", 480) + '''
 
   <table>
     <tr><th>Limited-spectrum empiric coverage: no multidrug-resistance risk factors [slide 22]</th><th>Broad-spectrum empiric coverage: multidrug-resistance risk factors present [slide 23]</th></tr>
@@ -457,6 +478,10 @@ BODY += '''
   <strong>thickening of the bronchial mucosa</strong>. Symptoms: shortness of breath, chest tightness, wheezing and coughing. Genetic factors play an
   important role in most cases (60 to 80 percent). The slide 58 figure puts <strong>inflammation</strong> at the top: it drives both
   <strong>airway hyperresponsiveness</strong> and <strong>airway obstruction</strong>, and those two produce the clinical symptoms.</p>
+''' + figx("l11-slide-58-asthma-inflammation.jpg", 916, 628,
+           "Figure 2-1, the interplay and interaction between airway inflammation and the clinical symptoms and pathophysiology of asthma: a red burst labeled Inflammation with curved arrows to Airway Hyperresponsiveness and Airway Obstruction, a double-headed arrow between those two, and arrows from both to Clinical Symptoms.",
+           "<strong>Inflammation</strong> drives both <strong>airway hyperresponsiveness</strong> and <strong>airway obstruction</strong>, which act on each other, and both produce the <strong>clinical symptoms</strong>.",
+           "slide 58", 560) + '''
 
   <p><strong>The mast cell and its mediators [slides 59 and 60].</strong> Allergen binds immunoglobulin E (IgE) on the mast cell, which releases
   mediators on three timescales:</p>
@@ -466,11 +491,19 @@ BODY += '''
     <tr><td><strong>Membrane-derived lipid mediators, over minutes</strong></td><td>Prostaglandins, <strong>leukotrienes</strong>, platelet-activating factor</td></tr>
     <tr><td><strong>Cytokine production, over hours</strong></td><td>Interleukins 2, 3, 4, 5, 6 and 8; tumor necrosis factor</td></tr>
   </table>
+''' + figx("l11-slide-59-mast-cell-mediators.jpg", 1400, 1015,
+           "A mast cell full of granules. Allergen at the top binds immunoglobulin E (IgE) on the cell surface. Red arrows lead to three groups: Granule Content Release (immediate): histamine, proteases, heparin, tumor necrosis factor (TNF); Membrane derived Lipid Mediators (over minutes): prostaglandins, leukotrienes, platelet activating factor (PAF); Cytokine Production (over hours): interleukins 2, 3, 4, 5, 6 and 8, tumor necrosis factor.",
+           "Allergen binds immunoglobulin E (IgE) on the mast cell, which releases <strong>granule contents at once</strong> (histamine, proteases, heparin, tumor necrosis factor), <strong>membrane-derived lipid mediators over minutes</strong> (prostaglandins, leukotrienes, platelet activating factor) and <strong>cytokines over hours</strong> (interleukins, tumor necrosis factor).",
+           "slide 59 (an embedded drawing, redrawn from its own vector picture)") + '''
   <p>Slide 60 shows the result as two dips in forced expiratory volume in 1 second (FEV1): an <strong>early reaction</strong> within the first hour
   (histamine, tryptase, leukotriene C4 and the other mast cell mediators on airway smooth muscle) and a <strong>late reaction</strong> hours later,
   when eosinophils, neutrophils and T lymphocytes infiltrate the airway wall. The <strong>leukotriene pathway</strong> [slides 61 and 76] runs from
   arachidonic acid through <strong>5-lipoxygenase</strong> to leukotriene A4, then leukotriene B4 and the cysteinyl leukotrienes C4, D4 and E4
   (the cyclooxygenase branch makes the prostaglandins and thromboxane).</p>
+''' + figx("l11-slide-60-early-late-reaction.jpg", 1200, 1129,
+           "Top: a graph of forced expiratory volume in 1 second against time from 0 to 8 hours. It falls from 100 to about 75 within the first hour (labeled Early reaction), recovers, then falls again over the following hours (labeled Late reaction). Bottom: allergen acts on a mast cell carrying immunoglobulin E and on a T lymphocyte. The mast cell releases histamine, tryptase, prostaglandin D2, leukotriene C4 and platelet-activating factor, which act on the smooth muscle of the airway wall. The mast cell and T lymphocyte release cytokines (interleukins 4 and 5, granulocyte-macrophage colony-stimulating factor, tumor necrosis factor, transforming growth factor), which lead to eosinophil products (eosinophil cationic protein, major basic protein) and neutrophil products (proteases, platelet-activating factor) acting on a leaking blood vessel and causing cell infiltration of the airway wall.",
+           "Two dips in forced expiratory volume in 1 second (FEV1) after an allergen: the <strong>early reaction</strong> within the first hour, when mast cell mediators act on airway smooth muscle, and the <strong>late reaction</strong> hours later, when eosinophils and neutrophils bring a leaking blood vessel and <strong>cell infiltration</strong> of the airway wall.",
+           "slide 60", 600) + '''
 
   <p><strong>Other causes of attacks [slides 62 and 63].</strong></p>
   <ul>
@@ -489,6 +522,10 @@ BODY += '''
   </table>
 
   <p><strong>Classifying severity (youths 12 and older and adults) [slide 65].</strong></p>
+''' + figx("l11-slide-65-asthma-severity.jpg", 676, 504,
+           "The Classification of Asthma Severity table for youths 12 years of age and older and adults. Rows: impairment (symptoms, nighttime awakenings, short-acting beta-2 agonist use for symptom control, interference with normal activity, lung function) and risk (exacerbations requiring oral systemic corticosteroids). Columns: intermittent, then persistent mild, moderate and severe. The left column also lists the normal ratio of forced expiratory volume in 1 second to forced vital capacity (FEV1/FVC) by age.",
+           "The slide&rsquo;s table, transcribed below: severity is graded on <strong>impairment</strong> (symptoms, nighttime awakenings, short-acting beta-2 agonist use, interference with normal activity, lung function) and <strong>risk</strong> (exacerbations requiring oral systemic corticosteroids), from intermittent to severe persistent.",
+           "slide 65") + '''
   <table>
     <tr><th>Component</th><th>Intermittent</th><th>Mild persistent</th><th>Moderate persistent</th><th>Severe persistent</th></tr>
     <tr><td><strong>Symptoms</strong></td><td>2 days a week or fewer</td><td>More than 2 days a week, not daily</td><td>Daily</td><td>Throughout the day</td></tr>
@@ -638,6 +675,10 @@ BODY += '''
     <li><strong>Effective in aspirin-induced asthma.</strong></li>
     <li>The slide calls its side effects minimal and well tolerated.</li>
   </ul>
+''' + figx("l11-slide-76-leukotriene-pathway.jpg", 1400, 828,
+           "Pathway diagram. Arachidonic acid branches to 5-lipoxygenase and cyclooxygenase. 5-lipoxygenase leads to 5-HPETE (5-hydroperoxyeicosatetraenoic acid), then leukotriene A4, which splits into leukotriene B4 and leukotriene C4; C4 leads to D4, then E4. Cyclooxygenase leads to prostaglandin G2, which leads to prostaglandin I2, thromboxane A2, prostaglandin F2-alpha and prostaglandin E2.",
+           "The leukotriene pathway: arachidonic acid goes through <strong>5-lipoxygenase</strong> to leukotriene A4, then to leukotriene B4 and the chain <strong>leukotriene C4, D4, E4</strong>; the other branch, <strong>cyclooxygenase</strong>, makes the prostaglandins and thromboxane A2.",
+           "slide 76 (the same drawing is on slide 61; an embedded drawing, redrawn from its own vector picture)") + '''
   <div class="callout"><strong>Current labeling differs:</strong> since 2020 montelukast carries a Food and Drug Administration boxed warning for
   serious neuropsychiatric events (mood and behavior changes, suicidal thinking). Dr. Wood repeated the slide (&ldquo;pretty well tolerated,
   it&rsquo;s pretty minimal side effects,&rdquo; 1:09:59) and added that it is &ldquo;not probably going to be the most effective controller med.&rdquo;
@@ -724,6 +765,16 @@ BODY += '''
     <tr><td><strong>Spacer</strong> [slide 95]</td><td>The generic term for an <strong>open tube that extends the inhaler away from the mouth</strong></td><td rowspan="2">Both <strong>retain the large particles</strong> from the inhaler, leaving a <strong>higher proportion of smaller, respirable particles</strong>.</td></tr>
     <tr><td><strong>Valve holding chamber</strong> [slide 95]</td><td>Has <strong>one-way valves</strong> that do not let the patient <strong>exhale into the device</strong></td></tr>
   </table>
+''' + figx("l11-slide-91-nebulizer.jpg", 245, 198,
+           "Line drawing of a nebulizer: a nebulizer cup with a mouthpiece on top, joined by a length of tubing to a compressor box.",
+           "The nebulizer: <strong>nebulizer cup and mouthpiece</strong>, joined by <strong>tubing</strong> to the <strong>compressor</strong>.",
+           "slide 91", 340) + figx("l11-slide-93-dry-powder-inhalers.jpg", 1400, 557,
+           "Photograph of three dry powder inhalers side by side: a white upright inhaler with a red base, a round brown disk-shaped inhaler, and a flat white inhaler with a lever and a red button.",
+           "Three dry powder inhalers. The medication is a <strong>powder</strong>, and the <strong>patient&rsquo;s own inspiratory force</strong> draws it out of the device, so they are not good for patients with poor inspiratory capacity.",
+           "slide 93") + figx("l11-slide-94-mdi-parts.jpg", 1400, 555,
+           "Left: photograph of the separated parts of a metered dose inhaler on a table, labeled Drug Canister, Plastic Actuator, Cap and Spacer. Right: a drawing of an inhaler, a spacer labeled MDI (metered dose inhaler) spacer and a cap, pulled apart in a line.",
+           "A metered dose inhaler taken apart: the <strong>drug canister</strong> sits in the <strong>plastic actuator</strong>, which has a <strong>cap</strong>; the <strong>spacer</strong> fits on the mouthpiece and holds the medication for patients with poor coordination.",
+           "slide 94") + '''
 
   <p><strong>Metered dose inhaler technique (Objective 10) [slides 96 and 97].</strong></p>
   <ol>
@@ -735,7 +786,10 @@ BODY += '''
     <li><strong>Hold your breath for 10 seconds</strong>, or as long as comfortable.</li>
     <li>For inhaled quick-relief medicines (beta-2 agonists), <strong>wait 15 to 30 seconds between puffs</strong>.</li>
   </ol>
-''' + star("1:34:17", "I use this analogy of the movie Finding Nemo&hellip; the sea turtles&hellip; They don&rsquo;t expend any energy get in places because they&rsquo;re just flowing along the current&hellip; after they breathe out had them start to breathe in&hellip; then you depress the canister that allows the medication to hop a ride down into the lungs.",
+''' + figx("l11-slide-96-inhaler-technique.jpg", 1087, 283,
+           "Three line drawings of a man using an inhaler: first holding it a short distance in front of his open mouth with a puff of mist between, then breathing through a spacer held in his mouth, then with his lips closed around the mouthpiece.",
+           "Three ways to hold the inhaler: <strong>a short distance in front of the open mouth</strong>, <strong>through a spacer</strong>, or <strong>with the lips closed around the mouthpiece</strong>.",
+           "slide 96") + star("1:34:17", "I use this analogy of the movie Finding Nemo&hellip; the sea turtles&hellip; They don&rsquo;t expend any energy get in places because they&rsquo;re just flowing along the current&hellip; after they breathe out had them start to breathe in&hellip; then you depress the canister that allows the medication to hop a ride down into the lungs.",
            "<mark class=\"prof-highlight\">Start the breath, then press: the medicine rides the current</mark> [slide 97]. He waits 15 to 30 seconds between puffs because the first loosens the airway and the second goes deeper (1:35:27), and checks technique by teach-back (1:35:58).") + '''
   <div class="callout"><strong>Current guidelines differ:</strong> many inhaler instructions advise waiting about a minute between puffs; the slide&rsquo;s 15 to 30 seconds is what is tested.</div>
 
@@ -769,6 +823,10 @@ BODY += '''
   parenchyma that is generally not fully reversible</strong> (asthma, by contrast, is reversible [slide 57]), with an <strong>accelerated decline
   in forced expiratory volume in 1 second (FEV1)</strong>. The slide&rsquo;s figure shows that <strong>symptoms generally appear only after a significant decline in forced expiratory volume in 1 second</strong> has
   already happened, and then worsen as lung function falls.</p>
+''' + figx("l11-slide-101-copd-fev1-decline.jpg", 784, 472,
+           "Graph along an axis of progression. A red line for forced expiratory volume in 1 second (percent of predicted) falls from 100 toward 20. A blue symptoms line rises from mild to severe, starting only after the stage labeled Lung function reduced. A box labeled Asymptomatic spans the stages Lung function normal and Lung function reduced.",
+           "As chronic obstructive pulmonary disease progresses, <strong>forced expiratory volume in 1 second (FEV1) falls</strong> while symptoms climb from mild to severe; the patient is <strong>asymptomatic while lung function is normal and while it is first reduced</strong>.",
+           "slide 101", 600) + '''
 
   <p><strong>Drug therapy by group [slide 102].</strong> <strong>Every group</strong>: avoid the risk factors, such as smoking; <strong>annual influenza
   vaccination</strong>; <strong>pneumococcal vaccination</strong>; regular physical activity; <strong>regular review and correction of inhaler technique</strong>;

@@ -9,6 +9,11 @@ SOURCES
           (6, 7, 12, 21, 30, 34, 41, 49, 61, 62, 70, 74) were read by eye and live in
           tools/pharm_e3/ocr.json under "L9". Slide numbers in square brackets in the body are that
           deck's slide numbers.
+  Figures Nine cited slide pictures (slides 6, 7, 12, 21, 30, 41, 49, 62, 70), made by
+          tools/extract_pharm_e3_l9_figures.py, whose docstring lists what was taken and what was left out
+          (chemical structures, duplicates). Slides 49 and 62 are embedded Word drawings that the deck render
+          leaves blank; they are redrawn from their own vector pictures by tools/emf_render.py. The figures are
+          inserted between existing blocks; no keyed sentence was changed for them (2026-11-05).
   Weight  Dr. Wood's live recording of 2026-09-30 (rebased times: 0:00 = start of this lecture). The star
           boxes quote it with their timestamps; stars only set weight, they add no fact. The recording
           has automatic-transcript slips (digoxin heard as "jox", eplerenone as "naporinone", and so on);
@@ -45,7 +50,23 @@ TOC = '''  <a class="top-link" href="#diuretics-hf">1 &middot; Diuretics and Hea
   <a href="#dh-newer">1.13 Objectives 1&ndash;7 &mdash; Newer agents: ivabradine, sacubitril-valsartan, sodium-glucose cotransporter 2 inhibitors</a>
   <a href="#dh-summary">1.14 Objectives 4 and 8&ndash;10 &mdash; Absorption, interactions, monitoring and patient education</a>'''
 
+
+def fig(src, w, h, alt, cap, cite, maxw=None):
+    """One cited slide picture (made by tools/extract_pharm_e3_l9_figures.py). maxw keeps a small original from
+    being stretched far past its own pixels."""
+    style = ' style="max-width:%dpx"' % maxw if maxw else ""
+    return ('''
+  <figure class="fig l9fig"%s><img src="pharm-e3-images/%s" loading="lazy" width="%d" height="%d" alt="%s"><figcaption>%s <span class="cite">Diuretics and Heart Failure Drugs.pptx, %s</span></figcaption></figure>
+''' % (style, src, w, h, alt, cap, cite))
+
+
 BODY = '''
+<style>
+  figure.l9fig{margin:14px 0 16px;max-width:640px}
+  figure.l9fig img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff}
+  figure.l9fig figcaption{font-size:.86rem;line-height:1.45;color:var(--soft);margin-top:6px}
+  figure.l9fig .cite{display:block;font-size:.78rem;opacity:.85;margin-top:2px}
+</style>
 <section class="deck" id="diuretics-hf">
   <h2 class="deck-title">1 &middot; Diuretics and Heart Failure Drugs</h2>
   <p class="lecturer">Adam Wood, Pharm.D., DABAT</p>
@@ -110,6 +131,13 @@ BODY = '''
   artery, renal vein, ureter). Slide 7 pictures the nephron, from Bowman&rsquo;s capsule and the glomerulus through
   the proximal tubule, loop of Henle, distal tubule and collecting tubule, with glucose and amino acids leaving at
   the proximal tubule and aldosterone and antidiuretic hormone acting at the collecting end.</p>
+''' + fig("l09-slide-06-kidney-nephron.jpg", 773, 409,
+          "Left: a kidney cut open, labeled cortex, medulla, nephron, renal artery, renal vein and ureter, with an arrow out to one nephron. Right: the nephron, labeled Bowman&rsquo;s capsule, glomerulus, afferent and efferent arterioles, proximal convoluted tubule, Henle&rsquo;s loop, distal convoluted tubule and collecting tubule.",
+          "The kidney (cortex, medulla, renal artery and vein, ureter) and one nephron drawn out of it: the <strong>glomerulus in Bowman&rsquo;s capsule</strong>, then the <strong>proximal convoluted tubule</strong>, <strong>Henle&rsquo;s loop</strong>, the <strong>distal convoluted tubule</strong> and the <strong>collecting tubule</strong>.",
+          "slide 6") + fig("l09-slide-07-nephron-sites.jpg", 381, 262,
+          "Nephron diagram. Red sodium arrows and blue water arrows leave the proximal tubule, the loop of Henle and the distal tubule, and blue water arrows leave the collecting tubule. A yellow glucose arrow and a purple amino acid arrow leave the proximal tubule. An aldosterone arrow points at the bend where the distal tubule joins the collecting tubule, and an antidiuretic hormone (ADH) arrow points at the collecting tubule.",
+          "Walking down the nephron: <strong>sodium (red) and water (blue)</strong> leave the tubule at the proximal tubule, the loop of Henle and the distal tubule; <strong>glucose and amino acids</strong> leave at the proximal tubule; <strong>aldosterone</strong> points where the distal tubule joins the collecting tubule and <strong>antidiuretic hormone (ADH)</strong> at the collecting tubule. Slides 8 to 11 show this picture again beside each site: loop diuretics at the loop of Henle, thiazides at the distal tubule, potassium-sparing diuretics at the collecting duct.",
+          "slide 7 (repeated on slides 8 to 11)", 470) + '''
   <table>
     <tr><th>Site</th><th>What happens there</th><th>Diuretic that works there</th></tr>
     <tr><td><strong>Glomerulus (filtration)</strong> [slide 7]</td><td>16 to 20 percent of the fluid and its solutes is filtered: glucose; sodium, potassium, chloride and bicarbonate; amino acids. 150 to 180 liters are filtered per day and 1 to 2 liters are excreted; the plasma is filtered about 50 to 60 times a day</td><td>None</td></tr>
@@ -186,6 +214,10 @@ BODY += '''
   potassium and two chlorides in together; blocked, they stay in the lumen and leave in the urine, and water goes
   with them. The slide 12 picture also shows potassium leaking back into the lumen to make the lumen positive,
   which drives magnesium and calcium reabsorption; that is why loops waste calcium and magnesium.</p>
+''' + fig("l09-slide-12-thick-ascending-limb.jpg", 540, 441,
+          "Thick ascending limb cell between the lumen (urine) and the interstitium (blood). On the lumen side one carrier takes in Na+, K+ and 2 Cl-; K+ leaks back into the lumen through a channel, making a positive potential that drives Mg2+ and Ca2+ out of the lumen between the cells. On the blood side a pump marked ATP (adenosine triphosphate) moves Na+ out and K+ in, and K+ and Cl- leave the cell.",
+          "The loop diuretic target: the <strong>sodium-potassium-2 chloride carrier on the lumen (urine) side of the thick ascending limb</strong>. Potassium leaking back into the lumen makes it <strong>positive</strong>, and that positive potential drives <strong>magnesium and calcium</strong> out of the urine between the cells.",
+          "slide 12", 520) + '''
   <p><strong>The four loop diuretics (Objective 1):</strong> <strong>furosemide</strong> (Lasix),
   <strong>bumetanide</strong> (Bumex), <strong>torsemide</strong> (Demadex) and <strong>ethacrynic acid</strong>
   (Edecrin) [slide 12]. Ethacrynic acid is the one that does not follow the &ldquo;-ide&rdquo; naming pattern of the other three.</p>
@@ -252,6 +284,10 @@ BODY += '''
   action); the slide adds some carbonic anhydrase activity and, at high dose, phosphodiesterase inhibition [slide 21].
   Slide 21 pictures the distal convoluted tubule cell: sodium and chloride enter together on the lumen side, calcium
   enters through a channel, and the blood side has the sodium-potassium pump a sodium-calcium exchanger and a parathyroid hormone receptor.</p>
+''' + fig("l09-slide-21-distal-tubule.jpg", 488, 441,
+          "Distal convoluted tubule cell between the lumen (urine) and the interstitium (blood). On the lumen side one transporter takes in Na+ and Cl-, and Ca2+ enters through a channel. On the blood side are a parathyroid hormone (PTH) receptor marked R, a pump marked ATP (adenosine triphosphate) moving Na+ out and K+ in, and an exchanger moving Na+ in and Ca2+ out.",
+          "The thiazide target: the <strong>sodium-chloride transporter on the lumen side of the distal convoluted tubule</strong>. Calcium enters through its own channel and leaves on the blood side through a <strong>sodium-calcium exchanger</strong>, beside the parathyroid hormone (PTH) receptor.",
+          "slide 21", 500) + '''
 
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
     <p style="margin-top:2px">At 12:31 of the recording: <em>&ldquo;So these are actually working to block sodium and chloride transport in that distal tubule. The minor action has this carbonic anhydrase activity&hellip; don&rsquo;t worry so much about that.&rdquo;</em></p>
@@ -320,6 +356,10 @@ BODY += '''
   channels</strong> in the collecting duct [slide 30]. The collecting-tubule picture (slides 30 and 34) shows the principal cell: sodium
   enters and potassium leaves through luminal channels, the sodium-potassium pump works on the blood side, and the aldosterone and
   antidiuretic hormone receptors sit on the blood side.</p>
+''' + fig("l09-slide-30-collecting-tubule.jpg", 520, 686,
+          "Collecting tubule. Principal cell: Na+ enters and K+ leaves through channels on the lumen side; on the blood side sit an aldosterone receptor marked R and a pump marked ATP (adenosine triphosphate) moving Na+ out and K+ in, and an antidiuretic hormone (ADH) receptor marked R sends water channel molecules to the lumen side, where H2O enters. Intercalated cell below: a pump marked ATP moves H+ into the lumen, and HCO3- leaves in exchange for Cl- on the blood side.",
+          "The potassium-sparing diuretic target: the <strong>sodium channel on the lumen side of the principal cell</strong> in the collecting tubule, where sodium comes in and potassium goes out. The <strong>aldosterone</strong> receptor and the <strong>antidiuretic hormone (ADH)</strong> receptor, which works the water channels, sit on the blood side.",
+          "slide 30 (the same picture is on slide 34)", 430) + '''
   <table>
     <tr><th>Topic</th><th>What the slides give for potassium-sparing diuretics</th></tr>
     <tr><td><strong>Actions</strong> [slide 30]</td><td>Inhibit <strong>2 to 3 percent</strong> of sodium chloride reabsorption; <strong>decrease the gradient for potassium secretion</strong> (so potassium is held); modest increase in urine flow; <strong>uric acid:</strong> a modest rise in excretion acutely in the collecting duct, a modest fall chronically (volume contraction and more reabsorption in the proximal tubule)</td></tr>
@@ -387,6 +427,10 @@ BODY += '''
   potassium excretion by about 5 percent; <strong>after 3 to 5 days the effect is reduced to 1 to 3 percent</strong>,
   because the rest of the nephron makes up for it. Slide 41 pictures the proximal tubule cell with the two
   carbonic anhydrase sites (in the lumen and in the cell) and the carbonic anhydrase inhibitors blocking both.</p>
+''' + fig("l09-slide-41-proximal-tubule-ca.jpg", 1400, 652,
+          "Two copies of a proximal tubule cell. On the lumen side Na+ enters in exchange for H+ at exchanger A; filtered HCO3- joins H+ to make H2CO3, which carbonic anhydrase (CA) turns into CO2 and H2O; inside the cell a second CA turns CO2 and H2O back into H2CO3, giving H+ and HCO3-, and HCO3- and Na+ leave on the blood side. In the right copy a cloud labeled CA inhibitors points at both CA enzymes.",
+          "Left, the proximal tubule takes back filtered bicarbonate through <strong>carbonic anhydrase (CA) in the lumen and inside the cell</strong>, with sodium coming in for hydrogen ion at the exchanger (A). Right, the <strong>carbonic anhydrase inhibitors block both enzymes</strong>.",
+          "slide 41") + '''
   <table>
     <tr><th>Topic</th><th>What the slides give for carbonic anhydrase inhibitors</th></tr>
     <tr><td><strong>3 &middot; Other uses</strong> [slide 42]</td><td><strong>Glaucoma</strong> (decreased bicarbonate in the ciliary body; the topical forms are dorzolamide, Trusopt, and brinzolamide, Azopt); <strong>epilepsy</strong> (metabolic acidosis, central nervous system effects); <strong>mountain sickness</strong>; head injury (decreased swelling)</td></tr>
@@ -427,6 +471,10 @@ BODY += '''
   to increased venous volume and pressure (congestion and edema, dyspnea and orthopnea), decreased tissue perfusion (weakness and
   fatigue), and neuroendocrine activation (sympathetic and renin-angiotensin-aldosterone activation) with a faster heart rate, vasoconstriction
   and increased afterload, and sodium and water retention. Each response worsens the failure, so it is a vicious circle. The drugs in this lecture break the circle at different points.</p>
+''' + fig("l09-slide-49-heart-failure-cascade.jpg", 1400, 1016,
+          "Flowchart. Heart failure leads to decreased cardiac output. That leads to increased venous volume and pressure, then congestion and edema, then dyspnea and orthopnea; and to decreased tissue perfusion, which leads to weakness and fatigue and to neuroendocrine activation. Neuroendocrine activation splits into sympathetic nervous system activation and renin-angiotensin-aldosterone system activation. These lead to vasoconstriction, then increased afterload, which loops back to decreased cardiac output, and to sodium and water retention, which loops back to congestion and edema. A separate box reads Heart rate.",
+          "The vicious circle: <strong>decreased cardiac output</strong> raises venous volume and pressure (congestion and edema, then dyspnea and orthopnea) and lowers tissue perfusion (weakness and fatigue); low perfusion sets off <strong>neuroendocrine activation</strong> (sympathetic nervous system and renin-angiotensin-aldosterone system), whose vasoconstriction and <strong>increased afterload</strong> feed back to lower cardiac output and whose <strong>sodium and water retention</strong> feeds back to congestion and edema.",
+          "slide 49 (an embedded drawing, redrawn from its own vector picture)") + '''
 
   <p><strong>Common precipitants of decompensation [slide 50]:</strong> lack of compliance; uncontrolled hypertension; cardiac arrhythmias;
   inadequate therapy; inappropriate medications or fluid overload; and other causes: acute anginal chest pain, pulmonary infection and emotional stress.
@@ -503,6 +551,10 @@ BODY += '''
     <tr><td><strong>Inotropic action (the older mechanism)</strong> [slides 62 and 63]</td><td>It <strong>inhibits the sodium-potassium ATPase</strong> of the heart muscle cell, so intracellular sodium rises; the sodium-calcium exchanger then raises intracellular calcium, and <strong>fiber shortening (the force of contraction) increases</strong></td></tr>
     <tr><td><strong>Neurohormonal actions (the newer mechanism)</strong> [slides 63 to 65]</td><td><strong>Decreases sympathetic and increases parasympathetic activity</strong>; <strong>resensitizes the baroreflex</strong> (blocking the pump helps reset it, so the heart rate falls); more parasympathetic activity in the atrioventricular node and conduction system; less sympathetic activity, so lower blood pressure and heart rate; <strong>decreases renin-angiotensin-aldosterone activity</strong>, with less remodeling and structural change; better tissue perfusion; and <strong>increased cardiac output</strong> from better pumping</td></tr>
   </table>
+''' + fig("l09-slide-62-digoxin-mechanism.jpg", 1400, 1015,
+          "A heart muscle cell. A yellow ATPase in the membrane moves 3 Na+ out and 2 K+ in, beside a box reading Digitalis inhibits Na+K+ ATPase. A thick arrow brings Na+ into the cell, beside a box reading Intracellular Na concentration increases. A red exchanger (Ex) moves 3 Na+ out and Ca++ in, beside a box reading Ca concentration increases. Lines inside the cell stand for the contractile fibers, beside a box reading Fiber shortening increases.",
+          "Digoxin&rsquo;s inotropic action as the slide draws it: <strong>digitalis inhibits the sodium-potassium ATPase</strong> (yellow), so <strong>intracellular sodium concentration increases</strong>; through the sodium-calcium exchanger (Ex, red) the <strong>calcium concentration increases</strong>, and <strong>fiber shortening increases</strong>.",
+          "slide 62 (an embedded drawing, redrawn from its own vector picture)") + '''
   <p><em>Deck versus truth, a detail that is not examined:</em> slide 62 and Dr. Wood (46:31) say the sodium-calcium exchanger &ldquo;brings calcium in&rdquo;. More exactly, the rise in intracellular sodium
   weakens the exchanger&rsquo;s normal removal of calcium from the cell, so calcium builds up and more is released from the sarcoplasmic reticulum. The result, a stronger contraction, is the same.</p>
   <p><strong>Target level (monitoring):</strong> 0.5 to 1 nanogram per milliliter [slide 65]; higher concentrations may be associated with worse outcomes in heart failure patients. <strong>Digoxin is one of the few heart failure drugs for which a blood level is checked</strong> (Dr. Wood, 50:44). <em>Flag: Dr. Wood said the number itself is probably not tested (48:35); know that the level is monitored and the therapeutic index is narrow.</em></p>
@@ -539,6 +591,10 @@ BODY += '''
     <tr><td><strong>Central</strong> [slide 69]</td><td>Delirium, fatigue, confusion, dizziness and abnormal dreams</td></tr>
     <tr><td><strong>Cardiac</strong> [slide 70]</td><td><strong>Nodal slowing</strong> with a longer PR interval (slower conduction from the atria to the ventricles), a shorter QT interval (a shorter ventricular recovery time) and a depressed ST segment; <strong>bradycardia</strong>; digoxin-induced afterdepolarization (the electrocardiogram on slide 70 shows normal sinus beats alternating with premature ventricular beats, and ST depression)</td></tr>
   </table>
+''' + fig("l09-slide-70-digoxin-ecg.jpg", 601, 276,
+          "Electrocardiogram strip, lead V6. Brackets label the beats in turn NSR (normal sinus rhythm), PVB (premature ventricular beat), NSR, PVB, and an arrow labeled ST points at a depressed ST segment after a normal beat.",
+          "Digoxin toxicity in lead V6: <strong>normal sinus rhythm beats (NSR) alternate with premature ventricular beats (PVB)</strong>, and the arrow marks a <strong>depressed ST segment</strong>.",
+          "slide 70") + '''
 
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
     <p style="margin-top:2px">At 50:05 of the recording: <em>&ldquo;These can be clues&hellip; you can start to see things like xanthopsia&hellip; xanth as a prefix means yellow, so they get this kind of yellow greenish sort of color discoloration, and they start to see halos around lights&hellip; that clues me in, that&rsquo;s like pathognomonic for digoxin, like there&rsquo;s nothing else that does that, and so that should really clue you in&hellip; we need to check a level right away.&rdquo;</em> At 51:00 of the recording: <em>&ldquo;The other big toxicity will be cardiac in nature, so bradycardia is most common, but you can see just about any arrhythmia can be caused by too much digoxin&hellip; PVCs kind of give you a clue&hellip; ventricles are a little more sensitive, and they&rsquo;re more twitchy.&rdquo;</em></p>

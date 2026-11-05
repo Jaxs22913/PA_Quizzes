@@ -105,6 +105,8 @@
     background:#f8f0e2;padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0;
   }
   table{border-collapse:collapse;width:100%;margin:14px 0;font-size:.9rem;}
+  /* A wide table scrolls inside its own box on a phone instead of being clipped at the page edge. */
+  .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
   th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
   th{background:var(--accent);color:#fff;font-weight:700;}
   tr:nth-child(even) td{background:#f5eded;}

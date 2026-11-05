@@ -105,6 +105,8 @@
     background:#f8f0e2;padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0;
   }
   table{border-collapse:collapse;width:100%;margin:14px 0;font-size:.9rem;}
+  /* A wide table scrolls inside its own box on a phone instead of being clipped at the page edge. */
+  .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
   th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
   th{background:var(--accent);color:#fff;font-weight:700;}
   tr:nth-child(even) td{background:#f5eded;}
@@ -454,10 +456,10 @@
     fraction of inspired oxygen that <strong>does not fluctuate</strong> with patient demand.</li>
   </ul>
   <h4 class="subsub">Nasal cannula flow and the oxygen it gives</h4>
-  <table>
+  <div class="tbl-wrap"><table>
     <tr><th>Flow</th><th>Room air</th><th>1 L/min</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr>
     <tr><td>Fraction of inspired oxygen</td><td>21%</td><td>24%</td><td>28%</td><td>32%</td><td>36%</td><td>40%</td><td>44%</td></tr>
-  </table>
+  </table></div>
   <ul>
     <li>Each extra liter adds about <strong>4%</strong>. Range 1&ndash;6 L/min, 24&ndash;44%; the knob turns past 6, but the
     fraction <strong>maxes out at 44%</strong>.</li>
@@ -465,6 +467,13 @@
     <li>The nasal cannula delivers oxygen through the nose; the simple, partial rebreather and non-rebreather masks fit over
     the face, covering the nose and mouth.</li>
   </ul>
+  <h4 class="subsub">Simple mask: oxygen setting and fraction of inspired oxygen <span class="cite">Slide 13</span></h4>
+  <table>
+    <tr><th>Oxygen setting</th><th>Fraction of inspired oxygen (FiO2)</th></tr>
+    <tr><td>5&ndash;6 L/min</td><td>35%</td></tr>
+    <tr><td>6&ndash;7 L/min</td><td>40%</td></tr>
+    <tr><td>7&ndash;8 L/min</td><td>50%</td></tr>
+  </table>
   <h4 class="subsub">Setting the masks</h4>
   <ul>
     <li><strong>Non-rebreather</strong>: set the flow (10&ndash;15 L/min) to <strong>prevent the bag from collapsing</strong> on inspiration. A
@@ -481,6 +490,13 @@
     bougie.</li>
     <li><strong>Laryngeal mask airway.</strong></li>
   </ul>
+  <div class="figgrid">
+    <figure><img src="cms-e6-images/l33-s021-oropharyngeal-airways.jpg" loading="lazy" width="782" height="605" alt="A row of seven rigid curved oropharyngeal airways with colored flanges, labeled from size 5 (110 mm) down to size 0.0 (50 mm)."><figcaption><span class="fg-name">Oropharyngeal airways</span>Artificial airway; sizes 5 to 0.0<span class="fg-cite">Slide 21</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l33-s021-nasopharyngeal-airways.jpg" loading="lazy" width="433" height="804" alt="Six soft green flanged nasopharyngeal airways of increasing length, with small packets above them."><figcaption><span class="fg-name">Nasopharyngeal airways</span>Artificial airway<span class="fg-cite">Slide 21</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l33-s021-endotracheal-tubes.jpg" loading="lazy" width="680" height="712" alt="Eight clear cuffed endotracheal tubes of graded sizes, each with its pilot balloon."><figcaption><span class="fg-name">Endotracheal tubes</span>Tracheal airway<span class="fg-cite">Slide 21</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l33-s022-tube-changer-and-bougie.jpg" loading="lazy" width="1400" height="429" alt="Two photographs side by side: a long white catheter with a connector at one end, and a blue bougie with an angled tip lying with an endotracheal tube."><figcaption><span class="fg-name">Tube changer and bougie</span>The two supplies on the slide<span class="fg-cite">Slide 22</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l33-s023-laryngeal-mask-airway.jpg" loading="lazy" width="526" height="935" alt="Black and white photograph of a laryngeal mask airway, an oval inflatable mask on a tube, beside a syringe."><figcaption><span class="fg-name">Laryngeal mask airway</span>Shown beside a syringe<span class="fg-cite">Slide 23</span></figcaption></figure>
+  </div>
 
   <h3 class="sub" id="l33-nebulizer">1.3 &middot; Why give a nebulizer treatment</h3>
   <ul>
@@ -492,6 +508,10 @@
     <li><strong>Severe exacerbations of respiratory illnesses</strong> are a reason to deliver inhaled medication by
     nebulizer.</li>
   </ul>
+  <div class="figgrid">
+    <figure><img src="cms-e6-images/l33-s024-nebulizer-set.jpg" loading="lazy" width="824" height="779" alt="A handheld nebulizer set: a medication cup on a T-piece, a short corrugated tube and clear oxygen tubing."><figcaption><span class="fg-name">Nebulizer set</span>Liquid medication directly to the airways<span class="fg-cite">Slide 24</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l33-s024-nebulizer-compressor.jpg" loading="lazy" width="568" height="340" alt="A tabletop nebulizer machine with a mask, mist rising from the medication cup."><figcaption><span class="fg-name">Tabletop nebulizer</span>With a mask<span class="fg-cite">Slide 24</span></figcaption></figure>
+  </div>
 
   <h3 class="sub" id="l33-compare">1.4 &middot; Comparing the delivery systems</h3>
   <p>In order of how sick the patient is, from mild to severe:</p>
@@ -506,6 +526,24 @@
   </table></div>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-016" data-gen="1"><b>Simple mask when the nose is blocked.</b> With both nostrils packed a nasal cannula would not deliver; a simple mask, a low flow device for mild to moderate distress that covers the nose and mouth, can still deliver oxygen at 5-10 L/min, whichever way she breathes.</p>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-012" data-gen="1"><b>Cannula ceiling and the non-rebreather.</b> The cannula's fraction tops out at 44%, so more flow gains nothing; the non-rebreather mask, used in severely hypoxic patients who are still ventilating well, delivers 60-100% at 10-15 L/min, while for mild hypoxia the nasal cannula is the most commonly used device.</p>
+  <h4 class="subsub">Amount of oxygen delivered <span class="cite">Slide 20</span></h4>
+  <table>
+    <tr><th>Device</th><th>Fraction of inspired oxygen (FiO2)</th><th>Flow range</th></tr>
+    <tr><td>Simple mask</td><td>.35&ndash;.50</td><td>5&ndash;10 L/min</td></tr>
+    <tr><td>Partial rebreather mask</td><td>.40&ndash;.70</td><td>At least 10 L/min</td></tr>
+    <tr><td>Nonrebreather mask</td><td>.60&ndash;1.0</td><td>At least 10 L/min</td></tr>
+    <tr><td>Venturi mask (the slide&rsquo;s &ldquo;Venti-Mask&rdquo;)</td><td>.24&ndash;.50</td><td>Variable</td></tr>
+    <tr><td>Air-entrainment nebulizer (the slide&rsquo;s &ldquo;Air Ent Neb&rdquo;)</td><td>.21&ndash;1.0</td><td>Variable</td></tr>
+  </table>
+  <div class="figgrid">
+    <figure><img src="cms-e6-images/l33-s010-nasal-cannula.jpg" loading="lazy" width="280" height="280" alt="A coiled clear nasal cannula with two short nasal prongs."><figcaption><span class="fg-name">Nasal cannula</span>Low flow, 1&ndash;6 L/min, 24&ndash;44%<span class="fg-cite">Slides 9&ndash;11</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l33-s012-simple-mask.jpg" loading="lazy" width="294" height="336" alt="A clear green-tinted simple face mask with its elastic strap and coiled oxygen tubing."><figcaption><span class="fg-name">Simple mask</span>Low flow, 5&ndash;10 L/min<span class="fg-cite">Slides 12&ndash;13</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l33-s015-non-rebreather-mask.jpg" loading="lazy" width="417" height="374" alt="A face mask attached to a large clear reservoir bag, with coiled oxygen tubing."><figcaption><span class="fg-name">Non-rebreather mask</span>Reservoir bag; 10&ndash;15 L/min = 60&ndash;100%<span class="fg-cite">Slide 15</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l33-s016-venturi-mask.jpg" loading="lazy" width="221" height="193" alt="A Venturi mask kit: a mask, a corrugated tube, tubing and a row of colored ports."><figcaption><span class="fg-name">Venturi mask</span>Different ports change the fraction delivered<span class="fg-cite">Slide 16</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l33-s018-aerosol-mask.jpg" loading="lazy" width="169" height="215" alt="A clear aerosol mask with a wide port at the bottom and a green strap."><figcaption><span class="fg-name">Aerosol mask</span>Air-entrainment nebulizer<span class="fg-cite">Slide 18</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l33-s018-open-face-mask.jpg" loading="lazy" width="400" height="272" alt="A patient lying in a hospital bed wearing a clear open face mask attached to corrugated tubing."><figcaption><span class="fg-name">Open face mask</span>Air-entrainment nebulizer<span class="fg-cite">Slide 18</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l33-s019-trach-collar.jpg" loading="lazy" width="236" height="220" alt="Drawing of a tracheostomy collar: a small mask on a neck strap with an elbow port."><figcaption><span class="fg-name">Tracheostomy collar</span>Air-entrainment nebulizer<span class="fg-cite">Slide 19</span></figcaption></figure>
+  </div>
   <div class="pearl"><strong>The low-flow versus high-flow trap.</strong> The non-rebreather gives the highest fraction but is
   still called a low flow device; the Venturi mask is the high flow device. High fraction and high flow are not the same thing.</div>
 
@@ -543,7 +581,17 @@
       <tr><td><strong>Group II</strong> (conditional)</td><td>Partial pressure of oxygen 56&ndash;59 mm Hg or saturation 89% <strong>plus</strong> pulmonary hypertension, cor pulmonale (right heart failure) or polycythemia (hematocrit above 56%)</td><td><strong>3 months</strong></td></tr>
     </table>
   </div>
+  <h4 class="subsub">Home oxygen qualification, Centers for Medicare &amp; Medicaid Services (CMS)/Medicare <span class="cite">Slide 6</span></h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Situation</th><th>Qualifying criteria (arterial oxygen = partial pressure of oxygen in arterial blood)</th><th>Notes</th></tr>
+    <tr><td>Resting (room air)</td><td>Arterial oxygen <strong>&le; 55 mm Hg</strong> <em>or</em> saturation <strong>&le; 88%</strong></td><td><strong>Group I</strong> qualification</td></tr>
+    <tr><td>Resting (conditional)</td><td>Arterial oxygen <strong>56&ndash;59 mm Hg</strong> <em>or</em> saturation <strong>= 89%</strong> + evidence of pulmonary hypertension, cor pulmonale, or hematocrit &gt; 56%</td><td><strong>Group II</strong> qualification</td></tr>
+    <tr><td>During sleep</td><td>Arterial oxygen &le; 55 mm Hg <em>or</em> saturation &le; 88% with a <strong>&ge; 5% drop</strong> from baseline</td><td>Qualifies for nocturnal oxygen</td></tr>
+    <tr><td>During exertion</td><td>Arterial oxygen &le; 55 mm Hg <em>or</em> saturation &le; 88% during exercise <strong>and improves with oxygen</strong></td><td>Qualifies for ambulatory oxygen</td></tr>
+    <tr><td>Recertification</td><td>Group I: <strong>12 months</strong> &middot; Group II: <strong>3 months</strong></td><td>Repeat testing required</td></tr>
+  </table></div>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-013" data-gen="1"><b>Hematocrit in Group II.</b> A hematocrit above 56%, which indicates polycythemia, supports Group II home oxygen qualification when the oxygen value is borderline (56 to 59 mm Hg or 89% saturation).</p>
+  <figure class="fig"><img src="cms-e6-images/l33-s006-home-oxygen-table.png" loading="lazy" width="748" height="382" alt="The slide's home oxygen qualification table with five rows: resting on room air, resting conditional, during sleep, during exertion, and recertification, each with its qualifying criteria and notes."><figcaption>The table as the slide shows it: the 55 mm Hg or 88% cut-off repeats in the resting, sleep and exertion rows; the Group II row (56&ndash;59 mm Hg or 89%) also needs evidence of pulmonary hypertension, cor pulmonale or a hematocrit above 56%. <span class="cite">Slide 6</span></figcaption></figure>
 
   <h3 class="sub" id="l33-education">1.7 &middot; Patient education</h3>
   <div class="prof-flag" id="l33-fire" data-toc="Fire safety at home">
@@ -677,6 +725,16 @@
     <p style="font-size:.85rem">Venous blood: pH 7.31&ndash;7.41, oxygen 30&ndash;50 mm Hg, carbon dioxide 40&ndash;52 mm Hg,
     saturation 60&ndash;85%, bicarbonate 22&ndash;28 mEq/L.</p>
   </div>
+  <h4 class="subsub">Normal blood gas values <span class="cite">Slide 6</span></h4>
+  <table>
+    <tr><th>Measurement</th><th>Arterial blood</th><th>Venous blood</th></tr>
+    <tr><td>pH (range)</td><td>7.40 (7.35&ndash;7.45)</td><td>7.36 (7.31&ndash;7.41)</td></tr>
+    <tr><td>Partial pressure of oxygen, mm Hg (decreases with age)</td><td>80&ndash;100</td><td>30&ndash;50</td></tr>
+    <tr><td>Partial pressure of carbon dioxide, mm Hg</td><td>36&ndash;44</td><td>40&ndash;52</td></tr>
+    <tr><td>Oxygen saturation, % (decreases with age)</td><td>&gt; 95</td><td>60&ndash;85</td></tr>
+    <tr><td>Bicarbonate, mEq/L</td><td>22&ndash;26</td><td>22&ndash;28</td></tr>
+    <tr><td>Base difference (deficit/excess)</td><td>&minus;2 to +2</td><td>&minus;2 to +2</td></tr>
+  </table>
   <ul>
     <li><strong>Acidemia</strong> is a pH below 7.35; <strong>alkalemia</strong> a pH above 7.45. <strong>Acidosis</strong> and
     <strong>alkalosis</strong> are the pathologic conditions with excessively acidic or alkaline body fluids and tissues.</li>
@@ -707,6 +765,7 @@
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-017" data-gen="1"><b>Acidosis and potassium.</b> In acidosis, hydrogen ions shift from the extracellular fluid into cells and potassium shifts out of cells in exchange, raising the serum potassium, so a marked acidemia makes hyperkalemia expected.</p>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-001" data-gen="1"><b>Alkalosis and hemoglobin.</b> Alkalosis increases hemoglobin's affinity for oxygen, so less oxygen is released and delivery to the tissues decreases: the leftward shift of the oxygen-hemoglobin dissociation curve.</p>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-002" data-gen="1"><b>Acidosis and hemoglobin.</b> Acidosis decreases hemoglobin's affinity for oxygen and shifts the oxygen-hemoglobin dissociation curve to the right, so hemoglobin releases oxygen more readily and delivery to the tissues increases.</p>
+  <figure class="fig"><img src="cms-e6-images/l34-s011-oxyhemoglobin-curve.png" loading="lazy" width="788" height="676" alt="Oxygen-hemoglobin dissociation curve: hemoglobin saturation against the pressure of oxygen in blood, with a solid curve at pH 7.4, a dashed curve to its left at pH 7.6 and a dashed curve to its right at pH 7.2, and a list of what shifts the curve to the right."><figcaption>Acidosis shifts the curve right (the pH 7.2 curve) and alkalosis shifts it left (pH 7.6). The slide lists four causes of a right shift: increased hydrogen ions, carbon dioxide, temperature and BPG (bisphosphoglycerate). <span class="cite">Slide 11</span></figcaption></figure>
   <p><strong>Unsustainable pH: below 6.7 or above 7.6.</strong> It may cause cardiac hypocontractility and irritability, seizures,
   cerebral edema and metabolic disturbances, and may warrant therapy to normalize the serum pH along with treatment of the
   underlying cause.</p>
@@ -855,13 +914,14 @@
   </div>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-010" data-gen="1"><b>Anion gap of 30.</b> Anion gap = sodium - (chloride + bicarbonate) = 140 - (102 + 8) = 30, above the normal 9 to 15: an elevated-gap metabolic acidosis, fitting ethylene glycol, the E of the mnemonic.</p>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-014" data-gen="1"><b>Anion gap of 10.</b> Anion gap = 138 - (114 + 14) = 10, within the normal 9 to 15; with a low bicarbonate and a high chloride, this is a normal-gap (hyperchloremic) metabolic acidosis.</p>
-  <table>
+  <div class="tbl-wrap"><table>
     <tr><th>pH</th><th>Carbon dioxide</th><th>Reading</th><th>Then</th></tr>
     <tr><td>Below 7.4 (acidosis)</td><td>Above 40</td><td>Respiratory acidosis</td><td>Is the lung disorder acute or chronic?</td></tr>
     <tr><td>Below 7.4</td><td>Below 40</td><td>Compensation for metabolic acidosis</td><td>Check for an increased anion gap; history for renal, gastrointestinal and systemic causes</td></tr>
     <tr><td>Above 7.4 (alkalosis)</td><td>Above 40</td><td>Compensation for metabolic alkalosis</td><td>History for gastrointestinal, diuretic and antacid causes</td></tr>
     <tr><td>Above 7.4</td><td>Below 40</td><td>Respiratory alkalosis</td><td>History for hyperventilation syndrome, drug and mechanical ventilator causes</td></tr>
-  </table>
+  </table></div>
+  <figure class="fig"><img src="cms-e6-images/l34-s063-acid-base-algorithm.png" loading="lazy" width="1400" height="871" alt="Flowchart headed acid-base disturbance suspected: arterial pH splits into below 7.4 (acidosis) and above 7.4 (alkalosis); each then splits by arterial carbon dioxide above or below 40 mm Hg into respiratory acidosis, compensation for metabolic acidosis, compensation for metabolic alkalosis and respiratory alkalosis, each with its next step."><figcaption>The algorithm the table above is read from: arterial pH first (below or above 7.4), then arterial carbon dioxide (above or below 40 mm Hg), then the next step for each of the four readings. <span class="cite">Slide 63</span></figcaption></figure>
 
   <h3 class="sub" id="l34-traps">2.8 &middot; Traps</h3>
   <table>
@@ -925,6 +985,8 @@
 
   <h3 class="sub" id="l35-definition">3.1 &middot; Definition and pathophysiology</h3>
   <p><strong>Asthma</strong> is a <strong>chronic inflammatory airway disorder with reversible airflow obstruction</strong> (some long-standing cases become irreversible), with recurrent breathlessness and wheezing and <strong>difficulty getting air out of the lungs</strong> (air trapping, hyperinflation). <strong>Airway hyper-responsiveness</strong> is excessive bronchoconstriction to a trigger that would not affect a normal airway; more hyper-responsiveness means more frequent symptoms. Airflow falls through bronchoconstriction, airway edema, vascular congestion and sometimes mucus plugging, so the forced expiratory volume in 1 second, the ratio of that volume to forced vital capacity, and the peak expiratory flow all fall.</p>
+  <figure class="fig"><img src="cms-e6-images/l35-s007-pathophysiology-flowchart.png" loading="lazy" width="520" height="484" alt="Flowchart: allergens, sensitizers, viruses and air pollutants lead to inflammation (chronic eosinophilic bronchitis), which leads to airway hyperresponsiveness; inflammation leads to symptoms (cough, wheeze, chest tightness, dyspnea), and triggers (allergens, exercise, cold air, sulfur dioxide, particulates) feed into the hyperresponsive airway."><figcaption>Inflammation (chronic eosinophilic bronchitis) makes the airway hyper-responsive; triggers such as allergens, exercise and cold air then act on that airway, and the result is cough, wheeze, chest tightness and dyspnea. <span class="cite">Slide 7</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e6-images/l35-s008-normal-vs-asthmatic-bronchiole.jpg" loading="lazy" width="400" height="320" alt="Drawing of a normal bronchiole with an open lumen beside an asthmatic bronchiole with a thick wall and a narrowed lumen containing mucus."><figcaption>Normal bronchiole beside an asthmatic bronchiole. Slide 9 names what narrows the asthmatic airway: bronchoconstriction, airway edema, vascular congestion and, in some cases, secretions blocking the lumen, so air movement is limited. <span class="cite">Slides 8&ndash;9</span></figcaption></figure>
   <p><strong>Course:</strong> asthma can appear at any age (peak presentation at 3 years), may go quiet in adolescence and return in adulthood. Severity rarely varies for a patient: <strong>mild asthma rarely becomes severe, severe asthma is usually severe at onset</strong>. Risk of death rises with frequent bronchodilator use, no inhaled corticosteroid, poor compliance with it, and previous near-fatal admissions.</p>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-l300" data-gen="1"><b>Asthma deaths.</b> Death from asthma is uncommon and declining in affluent countries, credited to widespread use of inhaled corticosteroids; having no inhaled corticosteroid, or poor compliance with it, raises the risk of death.</p>
   <div class="cond"><h4>Asthma</h4>
@@ -947,6 +1009,7 @@
     <li><strong>Environmental:</strong> inhaled allergens (<strong>dust mites most common</strong>; pet dander, cockroaches, pollens, fungal spores); <strong>occupational sensitizers</strong> (independent of atopy, improves on weekends and vacations); air pollution and passive smoke (controversial); diet (controversial); the hygiene hypothesis. <strong>Allergen avoidance does not reduce the risk of developing asthma</strong>; early exposure may be protective.</li>
     <li id="ga-clinical-medicine-and-surgery-i-exam-6-l324" data-gen="1"><b>Maternal smoking.</b> Under passive cigarette smoke there is evidence that maternal smoking is a risk factor for asthma, although its effect is difficult to separate from the increased risk of respiratory infections in exposed children.</li>
   </ul>
+  <figure class="fig"><img src="cms-e6-images/l35-s026-allergy-ige-cascade.png" loading="lazy" width="300" height="538" alt="Illustrated sequence: ragweed pollen meets a B cell, which becomes a plasma cell making immunoglobulin E; the antibody attaches to mast cells; on the second exposure the mast cells release chemicals that cause symptoms."><figcaption>Atopy step by step: the first time an allergy-prone person meets an allergen such as ragweed, a B cell becomes a plasma cell making large amounts of immunoglobulin E (IgE), which attaches to mast cells; the second time, the primed mast cells release histamine and cytokines, and those mediators cause the symptoms. <span class="cite">Slide 26</span></figcaption></figure>
   <table>
     <tr><th>Type</th><th>Key points</th></tr>
     <tr><td><strong>Extrinsic (allergic)</strong></td><td>Most common; allergen-triggered; atopic; exam may show swollen nasal mucosa, eczema, nasal polyps.</td></tr>
@@ -960,6 +1023,7 @@
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-l318" data-gen="1"><b>Cardiac asthma.</b> Cardiac asthma is wheezing caused by decompensated heart failure rather than by asthma itself.</p>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-l307" data-gen="1"><b>Exercise-induced bronchospasm timing.</b> Exercise-induced bronchospasm is common in children and adolescents, begins during or within 3 minutes after exercise, peaks in 10 to 15 minutes and resolves by 60 minutes.</p>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-l325" data-gen="1"><b>Aspirin-sensitive asthma.</b> About 1 to 5% of asthmatics become worse with aspirin, through a genetic predisposition that increases inflammatory mediators. Symptoms may occur within minutes of aspirin ingestion or may be delayed up to 12 hours, and they include rhinorrhea, conjunctival irritation, facial flushing and wheezing.</p>
+  <figure class="fig"><img src="cms-e6-images/l35-s095-exercise-bronchospasm-cascade.png" loading="lazy" width="420" height="358" alt="Four-step cascade: hyperventilation, increased osmolarity of lower respiratory mucosa, stimulates mast cells and mediator release, bronchoconstriction."><figcaption>Exercise-induced bronchospasm: hyperventilation raises the osmolarity of the lower respiratory mucosa, which stimulates mast cells to release mediators, and the result is bronchoconstriction. <span class="cite">Slide 95</span></figcaption></figure>
   <p><strong>Triggers:</strong> allergens, viral infections, <strong>aspirin and beta blockers (avoid)</strong>, exercise, cold air and weather, pollution, tobacco and combustion products, stress, occupational exposures.</p>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-l312" data-gen="1"><b>Viral triggers.</b> Viral infections trigger exacerbations by a poorly understood mechanism; the list is influenza, rhinovirus, respiratory syncytial virus, coronavirus and other upper respiratory viruses.</p>
 
@@ -975,6 +1039,21 @@
     <li id="ga-clinical-medicine-and-surgery-i-exam-6-l315" data-gen="1"><b>Chest radiograph.</b> The chest radiograph in asthma is usually normal or may show hyperinflation from air trapping, so it supports rather than makes the diagnosis and mainly helps exclude other causes of symptoms.</li>
     <li><strong>Peak flow at home:</strong> sets a baseline; morning before and afternoon after the bronchodilator; <strong>a 20% change between morning and afternoon, or day to day, means poor control</strong>.</li>
   </ul>
+  <h4 class="subsub">Spirometry with obstructive pulmonary disease (slide 55)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th></th><th>FEV<sub>1</sub> (forced expiratory volume in 1 second), L</th><th>FEV<sub>1</sub>/FVC (forced vital capacity), %</th><th>Peak flow, L/min</th></tr>
+    <tr><td>Normal</td><td>4.0&ndash;6.0</td><td>80&ndash;90</td><td>550&ndash;650 (male); 400&ndash;500 (female)</td></tr>
+    <tr><td>Mild obstruction</td><td>3.0</td><td>70</td><td>300&ndash;400</td></tr>
+    <tr><td>Moderate obstruction</td><td>1.6</td><td>50</td><td>200&ndash;300</td></tr>
+    <tr><td>Severe obstruction</td><td>0.6</td><td>40</td><td>100</td></tr>
+  </table></div>
+  <figure class="fig"><img src="cms-e6-images/l35-s055-spirometry-obstruction-table.png" loading="lazy" width="520" height="350" alt="Table of normal, mild, moderate and severe obstruction values for FEV1 in liters, FEV1/FVC percent and peak flow in liters per minute."><figcaption>The slide&rsquo;s own table: from normal to severe obstruction all three numbers fall together, as slide 10 says airflow reduction lowers FEV<sub>1</sub>, the FEV<sub>1</sub>/FVC ratio and peak expiratory flow. <span class="cite">Slides 10, 55</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e6-images/l35-s056-spirometry-normal-vs-asthma.png" loading="lazy" width="760" height="515" alt="Two graphs. Volume-time spirometry: normal dashed blue curve with FEV1 3.5 liters and FVC 4.0 liters; asthma red curve with FEV1 2.2 liters, FVC 3.6 liters, ratio 61 percent. Flow-volume loop: normal dashed curve with a higher peak expiratory flow than the red asthma curve."><figcaption>Normal (blue, dashed) against asthma (red): FEV<sub>1</sub> 3.5 L against 2.2 L and FVC 4.0 L against 3.6 L, so the asthma ratio is 61%; on the flow-volume loop the asthma curve peaks well below normal. <span class="cite">Slide 56</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e6-images/l35-s057-bronchodilator-response.png" loading="lazy" width="620" height="477" alt="Panel A volume-time curves and panel B flow-volume loops before (blue) and after (red) a bronchodilator, with predicted in green; panel C a table of FVC, FEV1 and ratio before and after."><figcaption>Before and after a bronchodilator: FEV<sub>1</sub> rises from 1.80 to 2.76 L (a 53% change) and the ratio from 55 to 70%, far beyond the 12% improvement that supports asthma. <span class="cite">Slides 53, 57</span></figcaption></figure>
+  <div class="figgrid">
+    <figure><img src="cms-e6-images/l35-s061-peak-flow-meter.jpg" loading="lazy" width="223" height="462" alt="Handheld peak flow meter with a scale in liters per minute and colored zone markers."><figcaption><span class="fg-name">Peak flow meter</span>For personal monitoring at home (slide 60)<span class="fg-cite">Slides 60&ndash;61</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l35-s061-peak-flow-use-and-normals.png" loading="lazy" width="771" height="390" alt="Drawing of a man blowing into a peak flow meter, and a graph of normal peak expiratory flow by age, with curves for men and women at different heights."><figcaption><span class="fg-name">In use, and normal readings</span>Normal values by age and height; men read higher than women<span class="fg-cite">Slide 61</span></figcaption></figure>
+  </div>
   <div class="prof-flag" id="l35-severity" data-toc="Severity from a description">
     <span class="prof-flag-label">&#9733; Prof. Finck: &ldquo;decide this patient has moderate persistent asthma, or this patient has intermittent asthma&rdquo;</span>
     <table>
@@ -992,7 +1071,29 @@
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-l302" data-gen="1"><b>Mild persistent asthma.</b> Symptoms and rescue use on more than 2 days a week but not daily, 3 to 4 night awakenings a month, minor limitation, and a 1-second volume above 80% with a normal ratio all fall in the mild persistent column.</p>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-l301" data-gen="1"><b>Moderate persistent asthma.</b> Daily symptoms, daily short-acting beta-2 agonist use, night awakenings more than once a week but not nightly, some limitation, and a forced expiratory volume in 1 second between 60% and 80% predicted define moderate persistent asthma. Severity is assigned to the most severe category in which any feature occurs, so a single moderate persistent feature (daily symptoms, or a 1-second volume between 60% and 80% predicted) makes the class moderate persistent even when the other features are milder.</p>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-l303" data-gen="1"><b>Intermittent asthma.</b> Symptoms and rescue use on 2 or fewer days a week, night awakenings 2 or fewer times a month, no interference with normal activity, a 1-second volume above 80% with a normal ratio (normal lung function between exacerbations), and 0 to 1 steroid-requiring exacerbations a year sit in the intermittent column.</p>
+  <figure class="fig"><img src="cms-e6-images/l35-s062-severity-classification.png" loading="lazy" width="760" height="575" alt="Classification of Asthma Severity chart for 12 years and older: impairment rows (symptoms, nighttime awakenings, short-acting beta-agonist use, interference with activity, lung function), a risk row for exacerbations requiring oral corticosteroids, and a bottom row of recommended treatment steps."><figcaption>The original chart: the impairment rows, the risk row (exacerbations requiring oral systemic corticosteroids), and the bottom row that gives the recommended step for initiating treatment. <span class="cite">Slide 62</span></figcaption></figure>
+  <h4 class="subsub">Classification of asthma severity, 12 years and older: the rows the table above shortens (slide 62)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Component</th><th>Intermittent</th><th>Mild persistent</th><th>Moderate persistent</th><th>Severe persistent</th></tr>
+    <tr><td>Lung function</td><td>Normal FEV<sub>1</sub> (forced expiratory volume in 1 second) between exacerbations; FEV<sub>1</sub> &gt; 80% predicted; FEV<sub>1</sub>/FVC (forced vital capacity) normal</td><td>FEV<sub>1</sub> &gt; 80% predicted; FEV<sub>1</sub>/FVC normal</td><td>FEV<sub>1</sub> &gt; 60% but &lt; 80% predicted; FEV<sub>1</sub>/FVC reduced 5%</td><td>FEV<sub>1</sub> &lt; 60% predicted; FEV<sub>1</sub>/FVC reduced &gt; 5%</td></tr>
+    <tr><td>Recommended step for initiating treatment</td><td>Step 1</td><td>Step 2</td><td>Step 3</td><td>Step 4 or 5</td></tr>
+    <tr><td colspan="5" style="font-size:.85rem">Under Steps 3 and 4 or 5 the slide adds &ldquo;and consider short course of oral systemic corticosteroids&rdquo;; across all columns: &ldquo;In 2&ndash;6 weeks, evaluate level of asthma control that is achieved and adjust therapy accordingly.&rdquo; Risk row: consider severity and interval since last exacerbation; frequency and severity may fluctuate over time for patients in any severity category; relative annual risk of exacerbations may be related to FEV<sub>1</sub>.</td></tr>
+    <tr><td colspan="5" style="font-size:.85rem">The slide&rsquo;s normal FEV<sub>1</sub>/FVC by age (8&ndash;19 years 85%, 20&ndash;39 years 80%, 40&ndash;59 years 75%, 60&ndash;80 years 70%) is left to the picture: the lecturer said she will not ask whether a value is normal for a given age.</td></tr>
+  </table></div>
+  <p id="ga-clinical-medicine-and-surgery-i-exam-6-l310" data-gen="1"><b>Diagnosis.</b> Asthma is diagnosed from the history, the physical examination and an objective measurement of lung function. The examination may be normal between exacerbations, which is why an objective lung function measurement is needed for the diagnosis; extrinsic asthma may still show nasal mucosal swelling, increased secretions, eczema or nasal polyps.</p>
   <p><strong>Action plan zones:</strong> <strong>green</strong> (no symptoms, peak flow 80% or more of personal best): take the daily controller; <strong>yellow</strong> (symptoms, waking at night, 50&ndash;79%): add quick-relief medicine and keep the controller; <strong>red</strong> (very short of breath, quick-relief medicine not helping, under 50%): medical alert. Danger signs: trouble walking or talking from breathlessness, blue lips or fingernails.</p>
+  <h4 class="subsub">Asthma action plan zones (slides 88&ndash;89)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Zone</th><th>Signs</th><th>Peak flow (slide 88)</th><th>Action</th></tr>
+    <tr><td><b>Green</b>: &ldquo;Doing well&rdquo; / Go</td><td><b>Slide 88:</b> no cough, wheeze, chest tightness, or shortness of breath during the day or night; can do usual activities. <b>Slide 89 (all of these):</b> breathing is good; no cough or wheeze; sleep through the night; can work and play</td><td><b>&ge; 80%</b> of my best peak flow</td><td>Take long-term control medicines each day (include an anti-inflammatory); slide 89: use preventive medicine</td></tr>
+    <tr><td><b>Yellow</b>: &ldquo;Asthma is getting worse&rdquo; / Caution</td><td><b>Slide 88:</b> cough, wheeze, chest tightness, or shortness of breath; or waking at night due to asthma; or can do some, but not all, usual activities. <b>Slide 89 (any of these):</b> first signs of a cold; exposure to known trigger; cough; mild wheeze; tight chest; coughing at night</td><td><b>50&ndash;79%</b></td><td>Add quick-relief medicine (short-acting beta-2 agonist) and keep taking green zone medicine; slide 89: call your primary care provider</td></tr>
+    <tr><td><b>Red</b>: &ldquo;Medical alert!&rdquo; / Danger</td><td><b>Slide 88:</b> very short of breath; or quick-relief medicines have not helped; or cannot do usual activities; or symptoms are same or get worse after 24 hours in yellow zone. <b>Slide 89 (getting worse fast):</b> medicine is not helping; breathing is hard and fast; nose opens wide; ribs show; can&rsquo;t talk well</td><td><b>&lt; 50%</b></td><td>Take quick-relief medicine and oral steroid, then call your doctor now; slide 89: get help from a doctor</td></tr>
+    <tr><td><b>Danger signs</b> (slide 88)</td><td>Trouble walking and talking due to shortness of breath; lips or fingernails are blue</td><td>&mdash;</td><td>Take 4 or 6 puffs of quick-relief medicine and go to the hospital or call an ambulance now</td></tr>
+  </table></div>
+  <div class="figgrid">
+    <figure><img src="cms-e6-images/l35-s088-action-plan.png" loading="lazy" width="824" height="631" alt="Asthma action plan form with three zones (doing well, asthma is getting worse, medical alert) and a danger signs line."><figcaption><span class="fg-name">Action plan</span>Doing well, getting worse, medical alert, danger signs<span class="fg-cite">Slide 88</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l35-s089-action-plan-traffic-light.png" loading="lazy" width="534" height="665" alt="Asthma action plan form with a green, yellow and red traffic light: go, caution and danger zones."><figcaption><span class="fg-name">Traffic-light plan</span>Go, caution, danger<span class="fg-cite">Slide 89</span></figcaption></figure>
+  </div>
   <p><strong>Differential:</strong> upper airway (vocal fold paralysis or dysfunction, foreign body, laryngotracheal mass); lower airway (chronic obstructive pulmonary disease, bronchiectasis, cystic fibrosis); psychiatric (conversion, emotional laryngeal wheezing, factitious disorder); <strong>aspergillosis</strong>.</p>
   <div class="cond"><h4>Allergic bronchopulmonary aspergillosis</h4>
     <p class="give"><b>Defining feature:</b> hypersensitivity to <i>Aspergillus fumigatus</i> in a patient with asthma or cystic fibrosis</p>
@@ -1002,8 +1103,7 @@
       <dt>Pathology</dt><dd>Exposure causes a vigorous immunoglobulin E and G response.</dd>
       <dt>Classic presentation</dt><dd>Acute asthma symptoms and exacerbations despite treatment.</dd>
       <dt>Diagnostics</dt><dd>Raised immunoglobulin E and G antibodies to <i>Aspergillus fumigatus</i>.</dd>
-    </dl>
-    <p id="ga-clinical-medicine-and-surgery-i-exam-6-l310" data-gen="1"><b>Diagnosis.</b> Asthma is diagnosed from the history, the physical examination and an objective measurement of lung function. The examination may be normal between exacerbations, which is why an objective lung function measurement is needed for the diagnosis; extrinsic asthma may still show nasal mucosal swelling, increased secretions, eczema or nasal polyps.</p><p class="src">Slide 65</p></div>
+    </dl><p class="src">Slide 65</p></div>
 
   <h3 class="sub" id="l35-treatment">3.4 &middot; Treatment</h3>
   <p><strong>Goals:</strong> minimize symptoms, prevent exacerbations and emergency visits, normal lung function, no activity limits, minimal drug side effects; <strong>compliance is key</strong> (non-compliance is the most common reason for poor control; steroid-resistant asthma is very uncommon). Non-drug: trigger avoidance and environmental control. <strong>Every patient needs a rescue agent.</strong></p>
@@ -1025,6 +1125,10 @@
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-l322" data-gen="1"><b>Exercise-induced bronchospasm.</b> It is treated with an inhaled short-acting beta-2 agonist before exercise and is best prevented with regular inhaled corticosteroid use.</p>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-l329" data-gen="1"><b>Montelukast versus an inhaled steroid.</b> Montelukast is a leukotriene modifier with modest clinical benefit, useful as add-on therapy, and less effective than inhaled corticosteroids as monotherapy; the inhaled steroid is the preferred first-line treatment for persistent asthma.</p>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-l311" data-gen="1"><b>Trigger avoidance.</b> Non-pharmacological asthma treatment is trigger avoidance and environmental control. Dust mites are the most common inhaled allergen trigger, so reducing exposure at home is the added measure for a patient sensitive to them.</p>
+  <div class="figgrid">
+    <figure><img src="cms-e6-images/l35-s072-nebulizer.jpg" loading="lazy" width="250" height="199" alt="A clinician holding a nebulizer mask to a child's face."><figcaption><span class="fg-name">Nebulizer</span>One way to inhale a short-acting bronchodilator (slide 71)<span class="fg-cite">Slides 71&ndash;72</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l35-s072-mdi-with-spacer.jpg" loading="lazy" width="460" height="299" alt="A girl breathing through a spacer attached to an inhaler, with the inhaler and the spacer shown separately and labeled."><figcaption><span class="fg-name">Metered-dose inhaler with spacer</span>Labeled: inhaler, spacer<span class="fg-cite">Slide 72</span></figcaption></figure>
+  </div>
   <div class="pearl"><strong>Aspirin-sensitive asthma:</strong> avoid the non-selective anti-inflammatory drugs (diclofenac, ibuprofen, naproxen, indomethacin); the selective ones (celecoxib, meloxicam) may be used. <strong>Avoid beta blockers</strong> too.</div>
   <p><strong>Refractory asthma</strong> has two forms: persistent symptoms with poor lung function, or normal lung function with severe exacerbations. Check compliance and technique first; refer to a specialist for antibody therapy.</p>
 
@@ -1082,7 +1186,15 @@
     <tr><td>Diffusing capacity</td><td>Normal or near normal</td><td><strong>Reduced</strong></td></tr>
     <tr><td>Imaging</td><td>Bronchial wall thickening</td><td>Hyperinflation, flat diaphragms, bullae</td></tr>
   </table>
+  <div class="figgrid">
+    <figure><img src="cms-e6-images/l36-s007-normal-vs-bronchitis.jpg" loading="lazy" width="500" height="325" alt="Drawing of a normal bronchial tube with an open lumen beside a bronchitis tube with a thick folded wall and mucus in a narrow lumen."><figcaption><span class="fg-name">Normal vs bronchitis</span>Narrowed airway with mucus (slide 14: airway narrowing and mucus plugging)<span class="fg-cite">Slides 7, 14</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l36-s007-alveoli-emphysema.jpg" loading="lazy" width="400" height="320" alt="Drawing of a lung with insets comparing alveoli with emphysema, which are large merged air spaces, to normal alveoli."><figcaption><span class="fg-name">Alveoli with emphysema</span>Pockets of air (pneumatosis: blebs or bullae) that limit the diffusing capacity<span class="fg-cite">Slide 7</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l36-s007-bronchoscopy.jpg" loading="lazy" width="424" height="440" alt="Bronchoscopic photograph looking down an airway."><figcaption><span class="fg-name">Bronchoscopy</span>An airway seen from inside (unlabeled on the slide)<span class="fg-cite">Slide 7</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l36-s007-emphysema-specimen.jpg" loading="lazy" width="1000" height="669" alt="Cut slice of lung tissue with many small dark holes, beside a centimeter ruler."><figcaption><span class="fg-name">Lung specimen</span>Cut lung tissue beside a centimeter ruler (unlabeled on the slide)<span class="fg-cite">Slide 7</span></figcaption></figure>
+  </div>
+  <figure class="fig"><img src="cms-e6-images/l36-s015-pink-puffer-blue-bloater-ct.jpg" loading="lazy" width="900" height="579" alt="Two outline figures, a thin pink one and a heavier blue one, each linked to a coronal chest CT slice: more emphysema on the pink side, less emphysema on the blue side, with lists of features below each."><figcaption>Coronal computed tomography (CT) slices: <b>more emphysema</b> in the pink puffer (lower body mass index, hyperinflation, low diffusion capacity for carbon monoxide, more dyspnea) and <b>less emphysema</b> in the blue bloater (higher body mass index, more chronic bronchitis, increased exacerbations, more normal diffusion capacity). <span class="cite">Slide 15</span></figcaption></figure>
   <p><strong>Chronic bronchitis without airflow obstruction is not chronic obstructive pulmonary disease.</strong> Small airway disease is narrowing of the bronchioles. Underdiagnosis is very common; symptoms start in midlife and the diagnosis may wait until later adulthood. Blebs lie under the visceral pleura; bullae lie deeper, form their own sacs and are much larger.</p>
+  <figure class="fig"><img src="cms-e6-images/l36-s033-bleb-vs-bulla.png" loading="lazy" width="900" height="386" alt="Drawing A: an air-containing bleb between the layers of the visceral pleura, under the parietal pleura. Drawing B: three types of bulla on the surface of a lung with panacinar emphysema."><figcaption>A: a bleb is an air pocket held between the two layers of the visceral pleura. B: bullae (types I, II and III) develop deeper, inside the connective tissue, and form their own sacs, much bigger than blebs. <span class="cite">Slide 33</span></figcaption></figure>
   <div class="cond"><h4>Chronic obstructive pulmonary disease</h4>
     <p class="give"><b>Defining feature:</b> post-bronchodilator ratio of 1-second volume to forced vital capacity below 0.70 with symptoms, after inhaled exposure</p>
     <dl class="eight">
@@ -1103,6 +1215,8 @@
     <li>Secondary: biomass burning (a major risk in low- and middle-income countries, where never-smokers develop it); occupational coal dust, gold mining, welding and fumes (silica and fiberglass lead to other conditions); sedentary lifestyle.</li>
     <li>Pathophysiology: chronic inflammation, oxidative stress, protease-antiprotease imbalance &rarr; lung inflammation, injury, impaired growth and healing with more mucus, accelerated decline.</li>
   </ul>
+  <figure class="fig"><img src="cms-e6-images/l36-s012-smoke-protease-pathway.png" loading="lazy" width="400" height="707" alt="Pathway diagram: cigarette smoke and host factors activate a macrophage, which releases chemoattractants that recruit neutrophils; oxidants and proteases, opposed by antioxidants and antiproteases, cause epithelial cell and matrix injury, with increased mucus leading to chronic bronchitis and proteases leading to emphysema, both ending in COPD."><figcaption>Cigarette smoke plus host factors activate macrophages; chemoattractants (leukotriene B4, interleukin-8) bring in neutrophils; oxidants and proteases (freed because smoke inhibits the antioxidants and antiproteases that hold them back) cause epithelial and matrix injury and more mucus (chronic bronchitis) and, through the proteases, emphysema. Both end in chronic obstructive pulmonary disease. <span class="cite">Slides 11&ndash;12</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e6-images/l36-s013-pathophysiology-hypotheses.png" loading="lazy" width="900" height="856" alt="Flowchart from genetic and environmental risk factors through inflammation to four labeled hypotheses (protease-antiprotease, American, British, Dutch), ending in emphysema on the alveolar side and chronic bronchitis on the airway side."><figcaption>Four hypotheses from the risk factors: <b>protease-antiprotease</b> (neutrophil elastase degrades elastin; alpha-1 antitrypsin normally inhibits it), <b>American</b> (more destruction, less repair of alveoli), <b>British</b> (mucus hypersecretion) and <b>Dutch</b> (airway hyperreactivity, like asthma). Alveolar loss ends in emphysema; small-airway narrowing ends in chronic bronchitis. <span class="cite">Slide 13</span></figcaption></figure>
   <div class="cond"><h4>Alpha-1 antitrypsin deficiency</h4>
     <p class="give"><b>Defining feature:</b> panlobular, lower-lobe emphysema in a young or unexposed patient</p>
     <dl class="eight">
@@ -1113,6 +1227,10 @@
     </dl>
     <p id="ga-clinical-medicine-and-surgery-i-exam-6-l319" data-gen="1"><b>Emphysema patterns.</b> Emphysema from smoking is centrilobular and predominantly in the upper lobes; the panlobular, lower-lobe pattern belongs to alpha-1 antitrypsin deficiency.</p>
     <p id="ga-clinical-medicine-and-surgery-i-exam-6-l320" data-gen="1"><b>Alpha-1 antitrypsin test.</b> An alpha-1 antitrypsin level below 11 micromol/L together with a severely deficient genotype is diagnostic.</p><p class="src">Slides 10&ndash;12, 19, 30</p></div>
+  <div class="figgrid">
+    <figure><img src="cms-e6-images/l36-s019-aat-healthy-vs-deficiency.png" loading="lazy" width="828" height="599" alt="Body outline with lungs and liver: on the healthy side the liver releases alpha-1 antitrypsin that protects the lung from proteases; on the deficiency side the lung is damaged and abnormal protein builds up in the liver."><figcaption><span class="fg-name">Healthy vs deficiency</span>The liver releases it to protect the lung from proteases; deficiency damages the lung, and abnormal protein building up causes cirrhosis<span class="fg-cite">Slide 19</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l36-s019-acinus-centriacinar-panacinar.png" loading="lazy" width="689" height="349" alt="Three drawings of a lung acinus: normal, centriacinar and panacinar emphysema."><figcaption><span class="fg-name">Acinus patterns</span>Normal, centriacinar (smokers), panacinar (alpha-1 antitrypsin deficiency)<span class="fg-cite">Slide 19</span></figcaption></figure>
+  </div>
 
   <h3 class="sub" id="l36-presentation">4.3 &middot; Presentation, exam and differential</h3>
   <ul>
@@ -1122,6 +1240,11 @@
     <li><strong>Screen for comorbidities:</strong> cardiovascular disease, lung cancer, osteoporosis, anxiety and depression, reflux, anemia, skeletal muscle dysfunction.</li>
     <li><strong>Differential:</strong> cough with sputum &mdash; acute bronchitis, upper respiratory infection, pneumonia; dyspnea on exertion &mdash; heart failure, valvular disease, coronary disease, embolism, lung disease (fibrosis, cancer); productive cough plus dyspnea &mdash; this disease, pneumonia, lung cancer.</li>
   </ul>
+  <div class="figgrid">
+    <figure><img src="cms-e6-images/l36-s022-pursed-lip-breathing.jpg" loading="lazy" width="425" height="560" alt="An older man breathing out through pursed lips, an arrow at his mouth; caption Fig. 1: Pursed lip breathing."><figcaption><span class="fg-name">Pursed-lip breathing</span>Raises airway pressure to keep the airways open (slide 20)<span class="fg-cite">Slides 20, 22</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l36-s022-accessory-muscles.jpg" loading="lazy" width="753" height="460" alt="Neck and upper chest of a thin patient with arrows to the trapezius, scalenus and sternomastoid muscles."><figcaption><span class="fg-name">Accessory muscles</span>Labeled: trapezius, scalenus, sternomastoid<span class="fg-cite">Slide 22</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l36-s022-drawing-and-lateral-xray.jpg" loading="lazy" width="585" height="359" alt="Drawing of a man sitting forward with a deep chest, and a lateral chest x-ray."><figcaption><span class="fg-name">Drawing and lateral film</span>Unlabeled on the slide (slide 20 lists barrel chest from hyperinflation)<span class="fg-cite">Slides 20, 22</span></figcaption></figure>
+  </div>
 
   <h3 class="sub" id="l36-diagnosis">4.4 &middot; Diagnosis and pulmonary function tests</h3>
   <ul>
@@ -1131,6 +1254,17 @@
     <li>Lung volumes identify hyperinflation or restriction; <strong>diffusing capacity is reduced in emphysema</strong>, separating it from chronic bronchitis and asthma.</li>
     <li><strong>Other workup:</strong> metabolic panel (raised bicarbonate); blood gas only in deterioration or severe exacerbation (chronic hypercapnia, carbon dioxide above 45 mmHg, with compensatory metabolic alkalosis); blood count (anemia, eosinophils); B-type natriuretic peptide if heart failure is suspected; alpha-1 antitrypsin level; chest film (not diagnostic; rules out heart failure or pneumothorax; hyperlucent overinflated lungs, flat diaphragm, bullae, narrow vertical heart); computed tomography generally not needed.</li>
   </ul>
+  <div class="figgrid">
+    <figure><img src="cms-e6-images/l36-s025-scooped-flow-volume-loop.png" loading="lazy" width="447" height="299" alt="Two flow-volume loops: a normal loop and an obstructive loop whose expiratory limb is labeled scooped out."><figcaption><span class="fg-name">Scooped expiratory limb</span>Normal loop, then the obstructive loop &ldquo;scooped out&rdquo;<span class="fg-cite">Slide 25</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l36-s026-normal-vs-obstructive-loop.png" loading="lazy" width="1200" height="855" alt="Expiratory flow against volume: a tall normal curve and a lower shaded obstructive curve."><figcaption><span class="fg-name">Normal vs obstructive</span>&ldquo;Imagine trying to forcefully push air through a straw&rdquo;<span class="fg-cite">Slide 26</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l36-s027-volume-time-normal-vs-copd.png" loading="lazy" width="766" height="542" alt="Volume-time curves for normal and COPD with a table: normal FEV1 4.150, FVC 5.200, ratio 80 percent; COPD FEV1 2.350, FVC 3.900, ratio 60 percent."><figcaption><span class="fg-name">Volume-time curves</span>1-second volume 2.35 L, forced vital capacity 3.90 L: ratio 60% (normal 80%)<span class="fg-cite">Slide 27</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l36-s028-flow-volume-and-volume-time.png" loading="lazy" width="650" height="377" alt="A labeled flow-volume loop and a volume-time curve with FEV1 2.0 liters, FVC 3.9 liters, ratio 0.51."><figcaption><span class="fg-name">Loop and curve</span>1-second volume 2.0 L over forced vital capacity 3.9 L = 0.51<span class="fg-cite">Slide 28</span></figcaption></figure>
+  </div>
+  <div class="figgrid">
+    <figure><img src="cms-e6-images/l36-s031-cxr-bleb-vertical-heart.jpg" loading="lazy" width="504" height="538" alt="Frontal chest x-ray labeled wall of bleb, vertical heart, low set diaphragms and hyperlucent lung fields."><figcaption><span class="fg-name">Chest x-ray</span>Wall of bleb, vertical heart, low diaphragms, hyperlucent fields<span class="fg-cite">Slide 31</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l36-s031-cxr-saber-sheath-barrow-chest.jpg" loading="lazy" width="520" height="605" alt="Frontal chest x-ray labeled saber sheath trachea, decreased lung markings and lucencies, reticular markings, barrow-shaped chest and diaphragmatic tenting."><figcaption><span class="fg-name">Chest x-ray, annotated</span>Saber-sheath trachea, decreased markings, barrow-shaped chest, diaphragmatic tenting<span class="fg-cite">Slide 31</span></figcaption></figure>
+  </div>
+  <figure class="fig"><img src="cms-e6-images/l36-s032-cxr-flattened-diaphragm.jpg" loading="lazy" width="900" height="493" alt="The same frontal chest x-ray twice; on the right the ribs are numbered 1 to 7 at dashed mid-clavicular lines, a green dashed dome and a red flattened diaphragm line are drawn, and arrows label the flattened diaphragm."><figcaption>Hyperinflation: the same film twice. On the right the ribs are counted 1 to 7 at the mid-clavicular lines and the <b>flattened diaphragm</b> is traced in red. <span class="cite">Slides 31&ndash;32</span></figcaption></figure>
 
   <h3 class="sub" id="l36-severity">4.5 &middot; Airflow severity, symptoms, exacerbation risk and groups</h3>
   <div class="prof-flag" id="l36-grade" data-toc="Grade, groups and scores">
@@ -1148,21 +1282,154 @@
       <li><strong>2020 scheme:</strong> A low symptoms, low risk; B high symptoms, low risk; C low symptoms, high risk; D high symptoms, high risk. <strong>2023/2026 scheme:</strong> low risk is A or B by symptoms; <strong>any high-risk patient is E</strong>.</li>
     </ul>
   </div>
+  <figure class="fig"><img src="cms-e6-images/l36-s034-gold-grades.png" loading="lazy" width="620" height="350" alt="GOLD Table 2.6, grades and severity of airflow obstruction based on post-bronchodilator FEV1, for patients with FEV1/FVC below 0.7: GOLD 1 mild, 2 moderate, 3 severe, 4 very severe."><figcaption>Global Initiative for Chronic Obstructive Lung Disease (GOLD) Table 2.6: the grade comes from the post-bronchodilator FEV<sub>1</sub> and applies only once the ratio is below 0.7. <span class="cite">Slide 34</span></figcaption></figure>
+  <h4 class="subsub">Modified Medical Research Council (mMRC) dyspnea scale (slide 24)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Grade</th><th>Statement (tick one box only)</th></tr>
+    <tr><td>0</td><td>I only get breathless with strenuous exercise</td></tr>
+    <tr><td>1</td><td>I get short of breath when hurrying on the level or walking up a slight hill</td></tr>
+    <tr><td>2</td><td>I walk slower than people of the same age on the level because of breathlessness, or I have to stop for breath when walking on my own pace on the level</td></tr>
+    <tr><td>3</td><td>I stop for breath after walking about 100 meters or after a few minutes on the level</td></tr>
+    <tr><td>4</td><td>I am too breathless to leave the house or I am breathless when dressing or undressing</td></tr>
+    <tr><td colspan="2" style="font-size:.85rem">In the group assessment (slides 35&ndash;37), grade <b>&ge; 2</b> = more symptoms; 0&ndash;1 = fewer.</td></tr>
+  </table></div>
+  <figure class="fig"><img src="cms-e6-images/l36-s024-mmrc-scale.png" loading="lazy" width="700" height="475" alt="GOLD Table 2.7, the modified MRC dyspnea scale: five columns, grades 0 to 4, each with a statement and a tick box."><figcaption>Table 2.7 as the slide shows it: the patient ticks one box only, grades 0 to 4. <span class="cite">Slide 24</span></figcaption></figure>
+  <h4 class="subsub">COPD (chronic obstructive pulmonary disease) Assessment Test (CAT) (slide 23)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Item: 0 end</th><th>Item: 5 end</th></tr>
+    <tr><td>I never cough</td><td>I cough all the time</td></tr>
+    <tr><td>I have no phlegm (mucus) in my chest at all</td><td>My chest is completely full of phlegm (mucus)</td></tr>
+    <tr><td>My chest does not feel tight at all</td><td>My chest feels very tight</td></tr>
+    <tr><td>When I walk up a hill or one flight of stairs I am not breathless</td><td>When I walk up a hill or one flight of stairs I am very breathless</td></tr>
+    <tr><td>I am not limited doing any activities at home</td><td>I am very limited doing activities at home</td></tr>
+    <tr><td>I am confident leaving my home despite my lung condition</td><td>I am not at all confident leaving my home because of my lung condition</td></tr>
+    <tr><td>I sleep soundly</td><td>I don&rsquo;t sleep soundly because of my lung condition</td></tr>
+    <tr><td>I have lots of energy</td><td>I have no energy at all</td></tr>
+    <tr><td colspan="2" style="font-size:.85rem">Each item is scored 0&ndash;5 and summed. In the group assessment, total <b>&ge; 10</b> = more symptoms, &lt; 10 = fewer (slides 35&ndash;37). The slide 29 algorithm writes &ldquo;CAT score &gt;10&rdquo;, and the slide 35 GOLD 2026 picture spells it &ldquo;CAAT&rdquo;.</td></tr>
+  </table></div>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-l330" data-gen="1"><b>Totaling the 8-item symptom assessment test.</b> Add the 8 item scores, each scored 0 to 5 (cough, phlegm, chest tightness, breathlessness on a hill or flight of stairs, limitation of home activities, confidence leaving home, sleep and energy); a total of 10 or more counts as more symptoms when assigning the group.</p>
+  <figure class="fig"><img src="cms-e6-images/l36-s023-cat-form.png" loading="lazy" width="620" height="551" alt="GOLD Figure 2.2, the CAT assessment form: eight paired statements, each marked on a 0 to 5 scale, with a total score box."><figcaption>Figure 2.2: eight items, each marked 0 to 5, added into one total score. <span class="cite">Slide 23</span></figcaption></figure>
+  <h4 class="subsub">GOLD 2020 groups A to D (slides 35&ndash;36, 41)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Group</th><th>Exacerbation risk</th><th>Symptoms</th></tr>
+    <tr><td><b>A</b>: low risk, less symptoms</td><td>0 or 1 exacerbation per year, no hospitalization</td><td>CAT &lt; 10 or mMRC 0&ndash;1</td></tr>
+    <tr><td><b>B</b>: low risk, more symptoms</td><td>0 or 1 exacerbation per year, no hospitalization</td><td>CAT &ge; 10 or mMRC &ge; 2</td></tr>
+    <tr><td><b>C</b>: high risk, less symptoms</td><td><b>&ge; 2</b> exacerbations per year or <b>&ge; 1</b> hospitalization</td><td>CAT &lt; 10 or mMRC 0&ndash;1</td></tr>
+    <tr><td><b>D</b>: high risk, more symptoms</td><td><b>&ge; 2</b> exacerbations per year or <b>&ge; 1</b> hospitalization</td><td>CAT &ge; 10 or mMRC &ge; 2</td></tr>
+    <tr><td colspan="3" style="font-size:.85rem">Slide 36 adds the airflow grade each group &ldquo;typically&rdquo; has; that line is never used to assign a group: groups come from symptoms and exacerbation history. CAT = chronic obstructive pulmonary disease Assessment Test; mMRC = modified Medical Research Council dyspnea grade.</td></tr>
+  </table></div>
+  <h4 class="subsub">GOLD 2023/2026 groups A, B and E, with initial treatment (slides 35, 37, 40&ndash;41)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Group</th><th>Exacerbation history (per year)</th><th>Symptoms</th><th>Initial treatment (slide 37 Figure 4.2, slide 40)</th></tr>
+    <tr><td><b>A</b></td><td>0 or 1 moderate exacerbations (not leading to hospital admission)</td><td>mMRC 0&ndash;1, CAT &lt; 10</td><td><b>A bronchodilator</b> (short- or long-acting)</td></tr>
+    <tr><td><b>B</b></td><td>0 or 1 moderate exacerbations (not leading to hospital admission)</td><td>mMRC &ge; 2, CAT &ge; 10</td><td><b>LABA + LAMA</b> (long-acting beta-2 agonist + long-acting muscarinic antagonist: dual bronchodilators)</td></tr>
+    <tr><td><b>E</b></td><td><b>&ge; 2 moderate exacerbations or &ge; 1 leading to hospitalization</b> (Figure 4.2, slide 40)</td><td>Any</td><td><b>LABA + LAMA</b>; consider LABA + LAMA + ICS (inhaled corticosteroid) if <b>blood eosinophils &ge; 300</b></td></tr>
+    <tr><td colspan="4" style="font-size:.85rem"><b>Slide conflict:</b> the GOLD 2026 picture on slide 35 and the second picture on slide 37 define the high-risk (E) row as &ldquo;One or more (&ge; 1) moderate or severe exacerbations in the previous year&rdquo; and A/B as &ldquo;Zero (0)&rdquo;; slide 36, slide 37&rsquo;s Figure 4.2 and slide 40 say &ge; 2 moderate or &ge; 1 leading to hospitalization. Not resolved here.</td></tr>
+    <tr><td colspan="4" style="font-size:.85rem">Figure 4.2: single inhaler therapy may be more convenient and effective than multiple inhalers; the table is for initial treatment of patients naive to maintenance therapy (slide 37). The slide 35 picture spells the test &ldquo;CAAT&rdquo;.</td></tr>
+  </table></div>
+  <figure class="fig"><img src="cms-e6-images/l36-s035-gold-2020-and-2026-assessment.png" loading="lazy" width="900" height="323" alt="Left: the 2020 GOLD assessment flow from spirometric diagnosis to airflow grade to a symptom and exacerbation grid of groups A, B, C and D. Right: the GOLD 2026 ABE assessment tool with group E above groups A and B."><figcaption>The 2020 assessment (confirm by spirometry, grade the airflow, then symptoms and exacerbation history place the patient in A to D) beside the GOLD 2026 ABE tool; the slide adds that the letter group determines the treatment regimen. The 2026 tool&rsquo;s high-risk row reads one or more moderate or severe exacerbations. <span class="cite">Slide 35</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e6-images/l36-s037-gold-figure-4-2.png" loading="lazy" width="900" height="593" alt="GOLD Figure 4.2, initial pharmacological treatment: group E LABA plus LAMA, considering adding ICS if blood eosinophils are 300 or more; group A a bronchodilator; group B LABA plus LAMA; with an exacerbation history column on the left."><figcaption>Figure 4.2, initial treatment for patients naive to maintenance therapy: group A a bronchodilator; B a long-acting beta-2 agonist plus long-acting muscarinic antagonist (LABA + LAMA); E the same pair, considering an inhaled corticosteroid (ICS) if blood eosinophils are 300 or more. Its two left columns put the high-risk line differently (one or more; or two or more moderate, or one hospitalization). <span class="cite">Slide 37</span></figcaption></figure>
   <p><strong>Initial treatment (2023/2026):</strong> A = one bronchodilator; B = long-acting beta agonist plus long-acting antimuscarinic; E = the same pair, <strong>with an inhaled corticosteroid considered when blood eosinophils are 300 or more</strong>. Single-inhaler therapy may be more convenient.</p>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-l326" data-gen="1"><b>Eosinophils and the inhaled corticosteroid.</b> For group E, a long-acting beta agonist plus antimuscarinic is the start, with an inhaled corticosteroid considered when blood eosinophils are 300 or more; at discharge after an exacerbation, an inhaled corticosteroid is considered if eosinophils are elevated.</p>
+  <h4 class="subsub">Algorithm for evaluation and treatment of chronic obstructive pulmonary disease (slide 29)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Step or finding</th><th>What the algorithm says</th></tr>
+    <tr><td>At risk</td><td>Healthy lifestyle; vaccinations. Avoidance of exposure (smoking, pollution).</td></tr>
+    <tr><td>Spirometry</td><td>FEV<sub>1</sub>:FVC &lt; 0.7</td></tr>
+    <tr><td>FEV<sub>1</sub> &ge; 80% of predicted</td><td>Provide risk counseling; follow over time</td></tr>
+    <tr><td>FEV<sub>1</sub> &lt; 80% of predicted</td><td>Grade the severity (GOLD grade 1 &ge; 80, 2 50&ndash;79, 3 30&ndash;49, 4 &lt; 30 % of predicted); evaluate risk: mMRC or CAT score and exacerbation history; address coexisting conditions</td></tr>
+    <tr><td>mMRC score 0&ndash;1 or CAT score &lt; 10; no exacerbations</td><td>Treat airflow obstruction; monitor treatment adherence; follow over time</td></tr>
+    <tr><td>mMRC score &ge; 2 or CAT score &gt; 10; no exacerbations</td><td>Treat airflow obstruction; monitor treatment adherence; follow over time; consider pulmonary rehabilitation</td></tr>
+    <tr><td>mMRC score 2 or CAT score &gt; 10; exacerbations</td><td>Treat airflow obstruction; monitor treatment adherence; follow over time; implement pulmonary rehabilitation; assess gas exchange</td></tr>
+    <tr><td>Grade 3 or 4, or the exacerbation branch</td><td>Lung volumes (IC:TLC and RV:TLC), DLco, CT scan, body-mass index, 6MWD, BODE index, oxygen saturation &rarr; hyperinflation, inhomogeneous emphysema, low 6MWD &rarr; evaluate for LVR or lung transplantation</td></tr>
+    <tr><td colspan="2" style="font-size:.85rem">Slide 29: green and yellow pathways are considered the usual domain of the primary care provider; brown pathways are for clinicians well-experienced in treating the disease (referral to pulmonology). The exacerbation box prints &ldquo;mMRC score 2&rdquo;, not &ge; 2. Abbreviations: FEV<sub>1</sub> forced expiratory volume in 1 second; FVC forced vital capacity; mMRC modified Medical Research Council; CAT COPD Assessment Test; IC inspiratory capacity; TLC total lung capacity; RV residual volume; DLco diffusing capacity for carbon monoxide; CT computed tomography; 6MWD 6-minute walk distance; BODE body-mass index, obstruction, dyspnea, exercise; LVR lung volume reduction.</td></tr>
+  </table></div>
+  <figure class="fig"><img src="cms-e6-images/l36-s029-evaluation-treatment-algorithm.jpg" loading="lazy" width="700" height="720" alt="Flowchart from at-risk patients through spirometry, airflow grading and risk evaluation to three symptom and exacerbation branches with treatment boxes, and a darker side pathway for lung volumes, imaging and evaluation for lung volume reduction or transplantation."><figcaption>Green and yellow pathways are the usual domain of primary care; brown pathways (lung volumes, imaging, evaluation for lung volume reduction or transplantation) belong to clinicians well-experienced in treating the disease. <span class="cite">Slide 29</span></figcaption></figure>
 
   <h3 class="sub" id="l36-treatment">4.6 &middot; Chronic management</h3>
   <p><strong>Goals:</strong> fewer symptoms and better exercise tolerance, slow progression, prevent exacerbations, reduce mortality. <strong>Non-drug care:</strong> smoking cessation is essential for every group; pulmonary rehabilitation is also essential for B and E; physical activity recommended; vaccines depend on local guidelines.</p>
+  <h4 class="subsub">GOLD Table 4.1: goals for treatment of stable chronic obstructive pulmonary disease (slide 45)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Goals</th><th>Together they</th></tr>
+    <tr><td>Relieve symptoms &middot; improve exercise tolerance &middot; improve health status</td><td><b>Reduce symptoms</b></td></tr>
+    <tr><td>Prevent disease progression &middot; prevent and treat exacerbations &middot; reduce mortality</td><td><b>Reduce risk</b></td></tr>
+    <tr><td colspan="2" style="font-size:.85rem">The table joins the two rows with AND.</td></tr>
+  </table></div>
+  <figure class="fig"><img src="cms-e6-images/l36-s045-goals-table-4-1.png" loading="lazy" width="560" height="288" alt="GOLD Table 4.1, goals for treatment of stable COPD: relieve symptoms, improve exercise tolerance and improve health status reduce symptoms; and prevent disease progression, prevent and treat exacerbations and reduce mortality reduce risk."><figcaption>Table 4.1 as shown: the first three goals reduce symptoms, the last three reduce risk. <span class="cite">Slide 45</span></figcaption></figure>
+  <h4 class="subsub">GOLD Table 4.9: non-pharmacologic management by group (slides 43, 48)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Patient group (Table 4.9)</th><th>Essential</th><th>Recommended</th><th>Depending on local guidelines</th></tr>
+    <tr><td><b>A</b></td><td>Smoking cessation (can include pharmacological treatment)</td><td>Physical activity</td><td>Flu, pneumococcal, pertussis, COVID-19 and shingles vaccinations</td></tr>
+    <tr><td><b>B and E</b></td><td>Smoking cessation (can include pharmacological treatment); <b>pulmonary rehabilitation</b></td><td>Physical activity</td><td>Flu, pneumococcal, pertussis, COVID-19 and shingles vaccinations</td></tr>
+    <tr><td colspan="4" style="font-size:.85rem">Slide 48: every patient should get a <b>yearly influenza</b> shot (reduces hospitalizations and death); pneumococcal vaccine <b>at age 65</b>, earlier with severe disease (<b>FEV1 (forced expiratory volume in 1 second) &lt; 40%</b>) or cardiac comorbidities. Vaccine product names are not used.</td></tr>
+  </table></div>
+  <figure class="fig"><img src="cms-e6-images/l36-s043-nonpharm-table-4-9.png" loading="lazy" width="700" height="486" alt="GOLD Table 4.9, non-pharmacologic management of COPD by patient group A and B and E: essential, recommended, and depending on local guidelines."><figcaption>Table 4.9: smoking cessation is essential in every group; pulmonary rehabilitation is essential in groups B and E. <span class="cite">Slide 43</span></figcaption></figure>
   <ul>
     <li><strong>Smoking cessation</strong> (nicotine replacement, bupropion, varenicline) <strong>always with counseling</strong>. Five A's: Ask, Advise, Assess, Assist, Arrange. FRAMES: Feedback, Responsibility, Advice, Menu of options, Empathy, Self-efficacy.</li>
-    <li id="ga-clinical-medicine-and-surgery-i-exam-6-l323" data-gen="1"><b>Self-efficacy.</b> Self-efficacy focuses on enhancing the person's confidence in their ability to change and reinforcing belief in their own capabilities.</li>
     <li><strong>Vaccines:</strong> yearly influenza (reduces hospitalization and death); pneumococcal at 65 or earlier with severe disease (under 40%) or cardiac comorbidity (reduces pneumonia, not deaths or admissions).</li>
     <li id="ga-clinical-medicine-and-surgery-i-exam-6-l308" data-gen="1"><b>Influenza vaccine.</b> Every patient should get a yearly influenza shot, which is proven to reduce hospitalizations and death. The pneumococcal vaccine reduces community-acquired pneumonia but overall does not reduce deaths or admissions.</li>
     <li><strong>Drugs:</strong> albuterol for every patient (not excessively: cardiac and psychiatric effects). <strong>Long-acting beta agonist</strong>: tachycardia, arrhythmias, can worsen atrial fibrillation. <strong>Long-acting antimuscarinic</strong> (tiotropium): blocks M3 receptors, poorly absorbed, mainly dry mouth. The pair is synergistic at lower doses. <strong>Inhaled corticosteroid</strong>: never alone, must be combined with a long-acting beta agonist, raises pneumonia risk, withdrawal has consequences. <strong>Oral steroids: acute exacerbations only.</strong></li>
     <li><strong>Pulmonary rehabilitation</strong> (next to cessation, the most effective management): secretion clearance, breathing techniques, strengthening, energy conservation, education; fewer hospitalizations; needs a professional team.</li>
     <li><strong>Oxygen:</strong> for severe resting hypoxemia (arterial oxygen under 55 mmHg or saturation below 88%) it decreases the risk of death. Pathway: resting saturation 88% or less = long-term oxygen over 15 hours a day; 89&ndash;93% at rest = no indication; exertional saturation 88% or less = oxygen with exertion; 88% or less at night only = evaluate for obstructive sleep apnea.</li>
   </ul>
+  <figure class="fig"><img src="cms-e6-images/l36-s046-management-cycle-figure-4-1.png" loading="lazy" width="760" height="639" alt="GOLD Figure 4.1, management of COPD: diagnosis leads to initial assessment and initial management, then a repeating cycle of review and adjust."><figcaption>Figure 4.1: diagnosis (symptoms, risk factors, spirometry), initial assessment (FEV<sub>1</sub> grade 1&ndash;4; symptoms and exacerbation history give the ABE group), initial management, then a cycle of review and adjust. <span class="cite">Slide 46</span></figcaption></figure>
+  <h4 class="subsub">The Five A&rsquo;s and FRAMES (slide 47)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Step</th><th>5 A&rsquo;s approach</th><th>5 A&rsquo;s example dialogue</th><th>FRAMES approach</th><th>FRAMES example dialogue</th></tr>
+    <tr><td>1</td><td><b>Ask:</b> Initiates dialogue by nonjudgmentally inquiring about the individual&rsquo;s behavior, opening a discussion on health-related practices.</td><td>&ldquo;Can you tell me about your current exercise routine?&rdquo;</td><td><b>Feedback:</b> Provides specific information about the effects of the individual&rsquo;s behavior on their health, aiming to increase awareness.</td><td>&ldquo;Based on your check-up, your current alcohol consumption is affecting your liver health.&rdquo;</td></tr>
+    <tr><td>2</td><td><b>Advise:</b> Offers clear, specific advice on the benefits of making a health-related change, tailored to the individual&rsquo;s situation.</td><td>&ldquo;Increasing your physical activity can significantly reduce health risks like diabetes and heart disease.&rdquo;</td><td><b>Responsibility:</b> Emphasizes the individual&rsquo;s personal responsibility for their health and the decision to change their behavior.</td><td>&ldquo;It&rsquo;s important to recognize that only you can decide to make this change for your health.&rdquo;</td></tr>
+    <tr><td>3</td><td><b>Assess:</b> Evaluates the individual&rsquo;s readiness and willingness to change their behavior, considering their current stage of change.</td><td>&ldquo;How do you feel about making a change to your exercise habits?&rdquo;</td><td><b>Advice:</b> After establishing a foundation of feedback and responsibility, provides direct, nonjudgmental advice to encourage change.</td><td>&ldquo;Cutting down on your drinking could improve your health and personal relationships.&rdquo;</td></tr>
+    <tr><td>4</td><td><b>Assist:</b> Offers support by helping to identify actionable steps and strategies for overcoming obstacles to change.</td><td>&ldquo;Let&rsquo;s work together to set realistic exercise goals and identify potential challenges.&rdquo;</td><td><b>Menu of options:</b> Presents a range of options for behavior change, allowing the individual to choose strategies that they feel will work best for them.</td><td>&ldquo;There are several strategies we can explore to help you reduce drinking, such as&hellip;&rdquo;</td></tr>
+    <tr><td>5</td><td><b>Arrange:</b> Sets up a system of follow-up support to monitor and discuss progress, ensuring ongoing motivation and accountability.</td><td>&ldquo;I&rsquo;d like to schedule a follow-up visit to discuss your progress. How does that sound?&rdquo;</td><td><b>Empathy:</b> Acknowledges and validates the individual&rsquo;s feelings and challenges, demonstrating understanding and compassion.</td><td>&ldquo;I understand that this change can be challenging, and it&rsquo;s okay to have mixed feelings about it.&rdquo;</td></tr>
+    <tr><td>6</td><td>&mdash;</td><td>&mdash;</td><td><b>Self-efficacy:</b> Focuses on enhancing the individual&rsquo;s confidence in their ability to change, reinforcing their belief in their own capabilities.</td><td>&ldquo;You&rsquo;ve made significant changes before; I believe you have the strength to do this too.&rdquo;</td></tr>
+    <tr><td colspan="5" style="font-size:.85rem">Slide 47: &ldquo;Remember the FRAMES and &lsquo;Five A&rsquo;s&rsquo; frameworks from Bates&rsquo; Chapter 7.&rdquo; The Five A&rsquo;s have no sixth step.</td></tr>
+  </table></div>
+  <p id="ga-clinical-medicine-and-surgery-i-exam-6-l323" data-gen="1"><b>Self-efficacy.</b> Self-efficacy focuses on enhancing the person's confidence in their ability to change and reinforcing belief in their own capabilities.</p>
+  <h4 class="subsub">Transtheoretical model for behavioral change (slide 47)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Stage</th><th>Description</th><th>Statement</th></tr>
+    <tr><td>Precontemplation</td><td>No intention to change behavior in the foreseeable future; often unaware of their problems</td><td>&ldquo;I do not think that I need to change any behaviors.&rdquo;</td></tr>
+    <tr><td>Contemplation</td><td>Aware that a problem exists and seriously thinking about overcoming it; no commitment to take action</td><td>&ldquo;I&rsquo;m concerned about my behavior, but not ready to make any changes now.&rdquo;</td></tr>
+    <tr><td>Preparation</td><td>Expressed intention to take action soon; reporting small behavioral changes</td><td>&ldquo;I&rsquo;m ready to change my behavior now.&rdquo;</td></tr>
+    <tr><td>Action</td><td>Modify their behavior for a period from <b>1 day to 6 months</b></td><td>&ldquo;I&rsquo;m changing my behavior now.&rdquo;</td></tr>
+    <tr><td>Maintenance</td><td>Continue the change (usually <b>&gt; 6 months</b>) and work to prevent relapse</td><td>&ldquo;I&rsquo;ve changed my behavior.&rdquo;</td></tr>
+    <tr><td>Relapse</td><td>Cessation of behavioral changes; revert to old behavior. <b>Not a stage itself</b>: a return from action or maintenance to an earlier stage</td><td>&ldquo;I&rsquo;ve returned to my old behavior.&rdquo;</td></tr>
+  </table></div>
+  <figure class="fig"><img src="cms-e6-images/l36-s047-five-as-frames-stages.png" loading="lazy" width="900" height="439" alt="Slide 47: the Five A's and FRAMES table on the left and Box 7-7, the transtheoretical model for behavioral change, on the right."><figcaption>Both tables as on the slide; the Five A&rsquo;s and FRAMES are laid out step by step, with an example sentence for each. <span class="cite">Slide 47</span></figcaption></figure>
+  <h4 class="subsub">Pneumococcal vaccines in patients with chronic obstructive pulmonary disease (slide 48)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Benefits</th><th>Harms</th></tr>
+    <tr><td>1 in 21 avoided an episode of community-acquired pneumonia</td><td>No harms were reported</td></tr>
+    <tr><td>1 in 8 avoided an acute COPD exacerbation</td><td></td></tr>
+    <tr><td>No deaths were prevented</td><td></td></tr>
+    <tr><td>No hospital admissions were prevented</td><td></td></tr>
+    <tr><td>No cases of pneumococcal pneumonia were prevented</td><td></td></tr>
+    <tr><td>No reduction in all-cause mortality</td><td></td></tr>
+  </table></div>
+  <figure class="fig"><img src="cms-e6-images/l36-s048-pneumococcal-benefits.png" loading="lazy" width="460" height="393" alt="Box titled pneumococcal vaccines in patients with COPD listing benefits and harms."><figcaption>The evidence box beside the vaccine bullets: fewer pneumonias and exacerbations, but no deaths or admissions prevented. <span class="cite">Slide 48</span></figcaption></figure>
+  <h4 class="subsub">COPD (chronic obstructive pulmonary disease) Foundation guide for management (the COPD Pocket Consultant, slide 49)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Symptoms (CAT or mMRC) and exacerbations</th><th>Treatment</th><th>If symptoms (or exacerbations) persist</th></tr>
+    <tr><td>mMRC 0,1; CAT &lt; 10; exacerbations &lt; 2/year</td><td>prn SABD (as-needed short-acting bronchodilator; the picture prints &ldquo;pm&rdquo;)</td><td>LAMA</td></tr>
+    <tr><td>mMRC &ge; 2, CAT &ge; 10, with or without exacerbations</td><td>LAMA or LAMA+LABA plus pulmonary rehabilitation</td><td>LAMA+LABA+ICS</td></tr>
+    <tr><td>mMRC 0,1; CAT &lt; 10; exacerbations &ge; 2/year</td><td>LAMA or LAMA+LABA or LABA+ICS</td><td>Joins the middle branch: LAMA+LABA+ICS</td></tr>
+    <tr><td colspan="3" style="font-size:.85rem">Above the branches: COPD is defined by postbronchodilator FEV<sub>1</sub>/FVC ratio &lt; 0.7 on spirometry; all COPD patients should have smoking cessation if smoking, vaccinations, and be on regular exercise program.</td></tr>
+    <tr><td colspan="3" style="font-size:.85rem">Abbreviations (the figure&rsquo;s own key): CAT, COPD Assessment Test; mMRC, modified Medical Research Council dyspnea scale; SABD, short-acting bronchodilator; LAMA, long-acting muscarinic agent; LABA, long-acting beta-2 agonist; ICS, inhaled corticosteroids. This guide&rsquo;s LABA+ICS option is not in the GOLD 2023/2026 Figure 4.2 on slide 37.</td></tr>
+  </table></div>
+  <figure class="fig"><img src="cms-e6-images/l36-s049-copd-foundation-algorithm.jpg" loading="lazy" width="700" height="660" alt="The COPD Pocket Consultant flowchart: definition by spirometry, smoking cessation, vaccinations and exercise for all, then three symptom and exacerbation branches with treatments and escalation for persistent symptoms."><figcaption>The COPD Foundation pocket guide: assessment boxes in green, treatment boxes in orange; persistent symptoms step each branch up. <span class="cite">Slide 49</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e6-images/l36-s055-pulmonary-rehab-wheel.jpg" loading="lazy" width="620" height="495" alt="Wheel diagram with pulmonary rehabilitation at the hub and spokes to its components."><figcaption>Pulmonary rehabilitation brings together exercise training and maintenance, breathing management, energy conservation, nutritional support, interdisciplinary education, self-management, maintenance strategies, an action plan, pharmacotherapy and oxygen, comorbidity care, and baseline and outcome assessment; next to smoking cessation it tends to be the most effective management. <span class="cite">Slide 55</span></figcaption></figure>
+  <h4 class="subsub">Does this patient need supplemental oxygen? (slides 20, 63&ndash;64)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Situation (slide 64)</th><th>Oxygen saturation</th><th>Decision</th></tr>
+    <tr><td>Severe resting desaturation</td><td><b>&le; 88% at rest</b></td><td>Qualifies for LTOT (long-term oxygen therapy) <b>&gt; 15 h/day</b>; cor pulmonale absent: titrate to goal <b>&gt; 89%</b>; present: <b>&gt; 90%&ndash;92%</b></td></tr>
+    <tr><td>Moderate resting desaturation</td><td>89%&ndash;93% at rest</td><td>No indication for long-term oxygen</td></tr>
+    <tr><td>Severe exertional desaturation (mobile, exertional symptoms: exercise test)</td><td><b>&le; 88% with exertion</b></td><td>Qualifies for long-term oxygen <b>during exertion</b></td></tr>
+    <tr><td>Moderate exertional desaturation</td><td>89%&ndash;93% on exertion</td><td>No indication for long-term oxygen</td></tr>
+    <tr><td>Nocturnal desaturation</td><td>&le; 88% at night only</td><td>Evaluate for OSA (obstructive sleep apnea) and screen for other etiologies</td></tr>
+    <tr><td colspan="3" style="font-size:.85rem">Slide 63: treat if arterial oxygen <b>&lt; 55 mm Hg</b> or saturation <b>&lt; 88%</b>; slide 64 uses <b>&le; 88%</b>. Slide 63 also says societies disagree on the saturation target (88&ndash;92% vs 90% vs at least 90%); no target is tested.</td></tr>
+    <tr><td colspan="3" style="font-size:.85rem">Slide 20: may need oxygen acutely if saturation is below 95% on room air, but a baseline below 88% requires oxygen chronically.</td></tr>
+  </table></div>
+  <figure class="fig"><img src="cms-e6-images/l36-s064-oxygen-algorithm.png" loading="lazy" width="900" height="353" alt="Flowchart titled does this patient need supplemental oxygen, with three branches: resting saturation, exertional symptoms with exercise testing, and nocturnal desaturation."><figcaption>The oxygen flowchart: resting saturation 88% or less qualifies for long-term oxygen more than 15 hours a day; 88% or less with exertion qualifies during exertion; 88% or less at night only means evaluate for obstructive sleep apnea. <span class="cite">Slide 64</span></figcaption></figure>
 
   <h3 class="sub" id="l36-exacerbation">4.7 &middot; Exacerbations, admission and discharge</h3>
   <ul>
@@ -1172,6 +1439,36 @@
     <li><strong>Treatment:</strong> bronchodilators, corticosteroids, oxygen, antibiotics (when dyspnea comes with <strong>more and more purulent sputum</strong>): doxycycline, a macrolide, trimethoprim-sulfamethoxazole or amoxicillin-clavulanate; respiratory fluoroquinolone with resistance; <strong>levofloxacin for pseudomonal concern</strong>. Inpatient: high-flow nasal cannula for hypoxia; <strong>noninvasive ventilation for hypercapnic respiratory failure</strong> (reduces intubation and mortality); venous thromboembolism prophylaxis. Long-term azithromycin is rare (resistance, side effects).</li>
     <li><strong>Discharge:</strong> albuterol no more often than every 4 hours, long-acting bronchodilators, walks across the room, eats and sleeps without waking, stable 12&ndash;24 hours, understands medicines, home arrangements, consider rehabilitation. Bundle: long-acting bronchodilators promptly, inhaled steroid if eosinophils are high, check technique, follow-up; <strong>recovery takes 4 to 6 weeks</strong> and may not return to baseline.</li>
   </ul>
+  <h4 class="subsub">Table 6: pharmacologic treatment for inpatient chronic obstructive pulmonary disease (COPD) exacerbations (slide 59)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Class</th><th>Medication</th><th>Dose and frequency</th></tr>
+    <tr><td>Bronchodilator</td><td>Albuterol</td><td>2.5 mg/3 mL NS (nebulizer solution) nebulized or MDI (metered-dose inhaler) 1 puff every hour &times; 2&ndash;3 doses, then every 2&ndash;4 hours</td></tr>
+    <tr><td></td><td>Ipratropium</td><td>500 mcg nebulized or inhaled every 6&ndash;8 hours or MDI 1 puff every hour &times; 2&ndash;3 doses</td></tr>
+    <tr><td>Glucocorticoids<sup>a</sup></td><td>Methylprednisolone</td><td>60&ndash;125 mg IV (intravenous) daily for no more than 5&ndash;7 days OR 40 mg IV daily &times; 1 day, then prednisone 40 mg PO (by mouth) daily &times; 4 days (total 5 days)</td></tr>
+    <tr><td></td><td>Prednisone</td><td>40 mg PO daily &times; 5 days</td></tr>
+    <tr><td>Antibiotics (nonpseudomonal coverage)</td><td>Ceftriaxone</td><td>1&ndash;2 g IV daily &times; 5&ndash;7 days</td></tr>
+    <tr><td></td><td>Moxifloxacin</td><td>400 mg IV or PO daily &times; 5&ndash;7 days</td></tr>
+    <tr><td>Antibiotics (pseudomonal coverage)</td><td>Cefepime</td><td>1&ndash;2 g IV every 8&ndash;12 hours &times; 5&ndash;7 days</td></tr>
+    <tr><td></td><td>Ceftazidime</td><td>1&ndash;2 g IV every 8 hours &times; 5&ndash;7 days</td></tr>
+    <tr><td></td><td>Piperacillin-tazobactam</td><td>4.5 g IV every 6 hours &times; 5&ndash;7 days</td></tr>
+    <tr><td></td><td>Levofloxacin</td><td>750 mg IV or PO daily &times; 5&ndash;7 days</td></tr>
+    <tr><td colspan="3" style="font-size:.85rem"><sup>a</sup> Might be less efficacious in acute COPD exacerbations in patients with lower levels of blood eosinophils. The table writes &ldquo;q&rdquo; for every. Slide 59 adds: it is rare, but some patients are put on long-term azithromycin or erythromycin, which increases the risk of resistance and side effects.</td></tr>
+  </table></div>
+  <figure class="fig"><img src="cms-e6-images/l36-s059-inpatient-exacerbation-table-6.png" loading="lazy" width="620" height="492" alt="Table 6, pharmacologic treatment for inpatient COPD exacerbations: bronchodilators, glucocorticoids, and antibiotics with and without pseudomonal coverage, with doses and frequencies."><figcaption>Table 6 as printed on the slide. <span class="cite">Slide 59</span></figcaption></figure>
+  <h4 class="subsub">Discharge criteria for chronic obstructive pulmonary disease, Table 1 (slide 60)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Criterion (Table 1)</th></tr>
+    <tr><td>Able to use <b>long-acting bronchodilators</b>, either beta-2 agonists and anticholinergics with or without inhaled corticosteroids</td></tr>
+    <tr><td>Inhaled short-acting beta-2 agonist therapy is required <b>no more frequently than every 4 hours</b></td></tr>
+    <tr><td>Patient, if previously ambulatory, is able to <b>walk across room</b></td></tr>
+    <tr><td>Patient is able to <b>eat and sleep</b> without frequent awakening by dyspnea</td></tr>
+    <tr><td>Patient has been clinically <b>stable for 12&ndash;24 hours</b></td></tr>
+    <tr><td>Patient (or home caregiver) fully <b>understands correct use of medications</b></td></tr>
+    <tr><td><b>Follow-up and home care</b> arrangements have been completed (visiting nurse, oxygen delivery, meal provisions)</td></tr>
+    <tr><td>Patient, family, and physician are <b>confident</b> that the patient can manage successfully at home</td></tr>
+    <tr><td>Consider <b>pulmonary rehabilitation</b></td></tr>
+  </table></div>
+  <figure class="fig"><img src="cms-e6-images/l36-s060-discharge-criteria.png" loading="lazy" width="520" height="584" alt="Table 1, discharge criteria for COPD: nine bulleted criteria, adapted from the GOLD executive summary."><figcaption>Table 1 as printed on the slide. <span class="cite">Slide 60</span></figcaption></figure>
 
   <h3 class="sub" id="l36-populations">4.8 &middot; Adults and older adults; referral; prognosis</h3>
   <table>
@@ -1188,6 +1485,24 @@
   <p><strong>Refer to pulmonology for:</strong> diagnostic uncertainty; early onset or suspected alpha-1 antitrypsin deficiency; frequent exacerbations despite optimal therapy; long-term oxygen; noninvasive ventilation evaluation; possible surgery; symptoms out of proportion to testing.</p>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-l305" data-gen="1"><b>Symptoms out of proportion.</b> Symptoms out of proportion to pulmonary function tests, like diagnostic uncertainty, is a listed reason for pulmonology referral: for example a dyspnea grade of 3 with near-normal airflow (grade 1, 82%).</p>
   <p><strong>Prognosis:</strong> the <strong>BODE index (body mass index, obstruction, dyspnea, exercise)</strong> estimates 4-year survival. Points: 1-second volume 65% or more 0, 50&ndash;64 1, 36&ndash;49 2, 35 or less 3; 6-minute walk 350 meters or more 0, 150&ndash;249 2, 149 or less 3; dyspnea grade 0&ndash;1 0, 2 1, 3 2, 4 3; body mass index above 21 0, 21 or less 1. Total 0&ndash;2 = about 80% survival; 3&ndash;4 = 67%; 5&ndash;6 = 57%; 7&ndash;10 = 18%. Survival benefit comes from smoking cessation, long-term oxygen for severe resting hypoxemia, and noninvasive ventilation for hypercapnic exacerbations.</p>
+  <h4 class="subsub">BODE index (body mass index, obstruction, dyspnea, exercise) points (slide 52)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Variable</th><th>0 points</th><th>1 point</th><th>2 points</th><th>3 points</th></tr>
+    <tr><td>FEV1 (forced expiratory volume in 1 second), % of predicted</td><td>&ge; 65</td><td>50&ndash;64</td><td>36&ndash;49</td><td>&le; 35</td></tr>
+    <tr><td>6-minute walk distance (meters)</td><td>&ge; 350</td><td>&ldquo;250-249&rdquo; (see note)</td><td>150&ndash;249</td><td>&le; 149</td></tr>
+    <tr><td>mMRC (modified Medical Research Council) dyspnea scale</td><td>mMRC 0&ndash;1</td><td>mMRC 2</td><td>mMRC 3</td><td>mMRC 4</td></tr>
+    <tr><td>Body-mass index</td><td>&gt; 21</td><td>&le; 21</td><td>&mdash;</td><td>&mdash;</td></tr>
+    <tr><td colspan="5" style="font-size:.85rem">Slide 52 prints the 1-point walk band as &ldquo;250-249&rdquo;; between its neighbors it can only be 250&ndash;349. Questions avoid that band.</td></tr>
+  </table></div>
+  <h4 class="subsub">BODE score and estimated 4-year survival (slide 52)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>BODE index score (total points)</th><th>Estimated 4-year survival</th></tr>
+    <tr><td>0&ndash;2</td><td>80%</td></tr>
+    <tr><td>3&ndash;4</td><td>67%</td></tr>
+    <tr><td>5&ndash;6</td><td>57%</td></tr>
+    <tr><td>7&ndash;10</td><td><b>18%</b></td></tr>
+  </table></div>
+  <figure class="fig"><img src="cms-e6-images/l36-s052-bode-index.png" loading="lazy" width="360" height="634" alt="BODE index for predicting COPD survival: points for FEV1 percent predicted, 6-minute walk distance, mMRC dyspnea scale and body-mass index, and a table of total points against estimated 4-year survival."><figcaption>The BODE index as printed; note the walk-distance row&rsquo;s 1-point band reads &ldquo;250-249&rdquo;. <span class="cite">Slide 52</span></figcaption></figure>
 </section>
 
 <section class="deck" id="respiratory-infections">
@@ -1270,6 +1585,13 @@
     <li><strong>Pneumococcal risk conditions at ages 19&ndash;49 (slide 10):</strong> alcoholism; cancer; cerebrospinal fluid leak; chronic heart, liver or lung disease; chronic kidney failure; cigarette smoking; cochlear implant; diabetes mellitus; hemoglobinopathies including sickle cell disease; human immunodeficiency virus (HIV); immunodeficiency; immunosuppression; nephrotic syndrome; asplenia; solid organ transplant. PCV21 is an adult vaccine; children under 5 receive a PCV15 or PCV20 series (slide 8).</li>
     <li><strong>COVID-19 and immunocompromise (slide 12):</strong> vaccination from 6 months of age on a modified schedule; <strong>do not delay vaccination solely because the patient receives immunosuppressive therapy</strong>; coordinate timing with the treating specialist.</li>
   </ul>
+  <h4 class="subsub">Pneumococcal vaccination by age (slide 9)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th></th><th>Adults aged 19&ndash;49</th><th>All adults aged 50 or older</th></tr>
+    <tr><td>Who</td><td>With a qualifying risk condition and no prior PCV (pneumococcal conjugate vaccine)</td><td>If PCV-naive or history unknown</td></tr>
+    <tr><td>Give</td><td><strong>One dose PCV20 or PCV21, OR PCV15, then PPSV23 usually 1 year or more later</strong></td><td><strong>One dose PCV20 or PCV21, OR PCV15, then PPSV23 usually 1 year or more later</strong></td></tr>
+    <tr><td>Note</td><td>A minimum 8-week interval may apply with immunocompromise, cerebrospinal fluid leak, or cochlear implant</td><td>For prior PCV13 (13-valent pneumococcal conjugate vaccine) or PPSV23 recipients, use CDC PneumoRecs to determine the next dose and interval</td></tr>
+  </table></div>
 
   <h3 class="sub" id="l37-bronchitis">5.2 &middot; Acute bronchitis</h3>
   <p><strong>Acute bronchitis is usually a self-limited viral infection of the large airways</strong>: inflammation and mucus cause cough, sometimes with transient wheeze. <strong>The diagnosis is clinical</strong>, after considering pneumonia, an asthma or chronic obstructive pulmonary disease exacerbation, influenza, COVID-19 and pertussis (slide 15).</p>
@@ -1289,6 +1611,26 @@
     </ul>
   </div>
   <p id="ga-clinical-medicine-and-surgery-i-exam-6-l339" data-gen="1"><b>Yellow sputum versus findings of pneumonia.</b> Fever, a raised respiratory rate and focal crackles with dullness raise concern for pneumonia rather than uncomplicated bronchitis, and suspected pneumonia is confirmed with a chest radiograph. Yellow sputum is not what changes the plan: the fever and focal findings are.</p>
+  <h4 class="subsub">Acute bronchitis: the two antibiotic-reduction tables (slide 21)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Table 3. Methods for managing patient expectations for medication to treat acute bronchitis symptoms</th></tr>
+    <tr><td>Define the diagnosis as a &ldquo;chest cold&rdquo; or &ldquo;viral upper respiratory infection&rdquo;</td></tr>
+    <tr><td>Set realistic expectations for symptom duration (about three weeks)</td></tr>
+    <tr><td>Explain that antibiotics do not significantly reduce the duration of symptoms, and that they may cause adverse effects and lead to antibiotic resistance</td></tr>
+    <tr><td>Explain that many patients would need to be treated with antibiotics to prevent one case of pneumonia</td></tr>
+    <tr><td>Consider delayed &ldquo;pocket&rdquo; prescription or &ldquo;wait-and-see&rdquo; prescription (prescriptions given to patients with instructions to fill them only if symptoms do not resolve within a specific timeframe)</td></tr>
+    <tr><td>Consider pelargonium to relieve cough in adults</td></tr>
+  </table></div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Table 2. Strategies to reduce antibiotic use for acute bronchitis</th></tr>
+    <tr><td>Use delayed prescription strategies, such as asking patients to call for or pick up an antibiotic or to hold an antibiotic prescription for a set amount of time</td></tr>
+    <tr><td>Address patient concerns in a compassionate manner</td></tr>
+    <tr><td>Discuss the expected course of illness and cough duration (two to three weeks)</td></tr>
+    <tr><td>Explain that antibiotics do not significantly shorten illness duration and are associated with adverse effects and antibiotic resistance</td></tr>
+    <tr><td>Discuss the treatment plan, including the use of nonantibiotic medications to control symptoms</td></tr>
+    <tr><td>Describe the infection as a viral illness or chest cold</td></tr>
+  </table></div>
+  <figure class="fig"><img src="cms-e6-images/l37-s021-bronchitis-aafp-tables.jpg" loading="lazy" width="1400" height="771" alt="Two published tables side by side: Table 3, Methods for Managing Patient Expectations for Medication to Treat Acute Bronchitis Symptoms, on green; Table 2, Strategies to Reduce Antibiotic Use for Acute Bronchitis, on orange."><figcaption>The two tables as the slide shows them: call it a chest cold, set the expected course, and use a delayed prescription rather than an antibiotic now. <span class="cite">Slide 21</span></figcaption></figure>
   <ul>
     <li><strong>Supportive care (slides 19&ndash;20):</strong> explain the course and agree on symptom goals; rest, hydration, avoiding smoke and irritants; acetaminophen for fever or discomfort. Short-term over-the-counter products give limited benefit and do not shorten the illness; <strong>check combination products so acetaminophen is not doubled</strong>, and discuss sedation, interactions and comorbidities first.</li>
     <li><strong>Avoid routine opioid cough suppressants</strong>: codeine combinations give limited benefit with sedation, respiratory depression and misuse risks. <strong>No routine systemic or inhaled corticosteroids.</strong> A short bronchodilator trial may help selected patients with wheeze or airflow obstruction (then reassess for asthma or chronic obstructive pulmonary disease). Persistent or worsening cough means reconsider the diagnosis.</li>
@@ -1324,6 +1666,12 @@
     <li><strong>Risk factors (slide 28):</strong> age (young children and older adults; <em>Streptococcus</em> and RSV); immunocompromise (atypical organisms: insidious onset, then rapid decline); exposure to sick people (<em>Streptococcus</em>); alcohol and smoking (<em>Klebsiella</em> or <em>Mycoplasma</em>); aspiration (varied organisms); chronic disease, especially chronic obstructive pulmonary disease and heart disease (all organisms).</li>
     <li><strong>Exam (slides 23, 28):</strong> looks ill, warm, diaphoretic, increased work of breathing; <strong>crackles and/or diminished sounds usually limited to one lobe</strong>; <strong>dullness to percussion</strong> there (or at the base if an empyema has formed); pleural rub with pleurisy. Lobar consolidation adds <strong>egophony (E to A)</strong>, whispered pectoriloquy and <strong>increased tactile fremitus</strong>, with bronchial breath sounds.</li>
   </ul>
+  <h4 class="subsub">Pneumonia pathogens by type (slide 39)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Type</th><th>Pathogen considerations</th></tr>
+    <tr><td>CAP</td><td><em>S. pneumoniae</em>, <em>H. influenzae</em>, respiratory viruses. Atypical pathogens include: <em>M. pneumoniae</em>, <em>C. pneumoniae</em>, and <em>Legionella</em>. Host factors and exposures guide additional testing.</td></tr>
+    <tr><td>HAP / VAP</td><td><em>S. aureus</em> and gram-negative bacilli, including <em>Pseudomonas</em> and Enterobacterales. Use local resistance data, prior cultures, and recent antibiotics. <strong>Early/late timing alone does not select the regimen.</strong></td></tr>
+  </table></div>
   <table>
     <tr><th>Risk factor (slide 41)</th><th>Related pathogens</th></tr>
     <tr><td>Alcoholism</td><td>Anaerobic oral flora, <em>Klebsiella pneumoniae</em>, <em>Mycobacterium tuberculosis</em>, <em>S. pneumoniae</em></td></tr>
@@ -1340,6 +1688,7 @@
     <tr><td>Southeastern and south-central states bordering the Mississippi and Ohio River basins / southwestern United States</td><td><em>Blastomyces dermatitidis</em> / <em>Coccidioides</em>, <em>Hantavirus</em></td></tr>
     <tr><td>Bioterrorism</td><td><em>Bacillus anthracis</em> (anthrax), <em>Francisella tularensis</em> (tularemia), <em>Yersinia pestis</em> (plague)</td></tr>
   </table>
+  <figure class="fig"><img src="cms-e6-images/l37-s041-cap-risk-pathogen-table.jpg" loading="lazy" width="1400" height="1321" alt="Table 1, Risk Factors and Pathogens in Community-Acquired Pneumonia: a two-column table of risk factors and related pathogens, from alcoholism and aspiration to travel to the southwestern United States."><figcaption>The slide&rsquo;s own table (Table 1, risk factors and pathogens in community-acquired pneumonia): match the exposure to its likely pathogen. <span class="cite">Slide 41</span></figcaption></figure>
 
   <h3 class="sub" id="l37-workup">5.4 &middot; Pneumonia workup, severity scores and where to treat</h3>
   <ul>
@@ -1349,6 +1698,23 @@
     <li><strong>Chest computed tomography (CT) after the film when (slide 37):</strong> the diagnosis is questionable or other pathology is possible (interstitial disease, cancer); the opacity is not homogeneous; atelectasis hides the lower lobes; severe inflammation or edema on the film; a cavitary lesion.</li>
     <li><strong>Film patterns (slide 33):</strong> lobar pneumonia (homogeneous consolidation, silhouette sign, air bronchogram, sharply marginated fissure; usually <em>S. pneumoniae</em>); bronchopneumonia (poorly defined patchy infiltrates throughout, air bronchogram; <em>S. aureus</em>: multilobar, cavitation, pneumatoceles, abscess); interstitial pneumonia (bilateral diffuse fine reticular opacity; <em>Pneumocystis</em>); aspiration (airspace opacity in a lobar or segmental, gravity-dependent distribution; stroke, seizure).</li>
   </ul>
+  <h4 class="subsub">Classification of pneumonia according to the chest X-ray (slide 33)</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>Pattern</th><th>Signs</th><th>Usual cause</th></tr>
+    <tr><td>Lobar pneumonia</td><td>Homogeneous consolidation; silhouette sign; air bronchogram; sharply marginated fissure</td><td><em>Streptococcus pneumoniae</em></td></tr>
+    <tr><td>Bronchopneumonia</td><td>Poorly defined heterogeneous patchy infiltrates scattered throughout the lung; air bronchogram</td><td><em>Staphylococcus aureus</em>: multilobar, cavitation, pneumatoceles, abscess</td></tr>
+    <tr><td>Interstitial pneumonia</td><td>Bilateral, diffuse fine reticular opacity</td><td><em>Pneumocystis jirovecii</em> pneumonia</td></tr>
+    <tr><td>Aspiration</td><td>Airspace opacification in a lobar or segmental distribution; gravity-dependent predilection</td><td>Stroke, seizure</td></tr>
+  </table></div>
+  <figure class="fig"><img src="cms-e6-images/l37-s033-cxr-classification.jpg" loading="lazy" width="1200" height="729" alt="Table titled Classification of pneumonia according to CXR, with four columns (lobar pneumonia, bronchopneumonia, interstitial pneumonia, aspiration), each with an example chest X-ray, its signs and its usual cause."><figcaption>The slide&rsquo;s classification table with one example chest X-ray per pattern: lobar, bronchopneumonia, interstitial and aspiration. <span class="cite">Slide 33</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e6-images/l37-s035-klebsiella-bulging-fissure.jpg" loading="lazy" width="960" height="720" alt="Two frontal chest X-rays with a dense white opacity in the upper lung on the left side of the image; on the second film a red curved line runs along the lower edge of the opacity. The slide caption text is printed below the films."><figcaption><strong>Right upper lobe consolidation in <em>Klebsiella</em> pneumonia:</strong> a bulging fissure sign (red line on the second film) with homogeneous opacity of the right upper lobe, and no deviation of the trachea. <span class="cite">Slide 35</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e6-images/l37-s034-frontal-lateral-cxr.jpg" loading="lazy" width="866" height="426" alt="Frontal chest X-ray with a black box drawn over the lower half of the lung on the right side of the image, beside a lateral chest X-ray with three white arrows labeled major fissure."><figcaption>Frontal and lateral chest X-rays: a box on the frontal film, and on the lateral film the arrows mark the major fissure. <span class="cite">Slide 34</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e6-images/l37-s037-cavities.jpg" loading="lazy" width="560" height="517" alt="Frontal chest image with the heart labeled and two red arrows labeled Cavities pointing at lucent areas in the lung beside the heart."><figcaption>Cavities (red arrows) beside the heart. A cavitary lesion is one of the reasons the slide gives for following the chest X-ray with chest computed tomography (CT). <span class="cite">Slide 37</span></figcaption></figure>
+  <div class="figgrid">
+    <figure><img src="cms-e6-images/l37-s032-pneumonia-cxr.jpg" loading="lazy" width="700" height="498" alt="Frontal chest X-ray with a white opacity in the lower lung on the right side of the image."><figcaption><span class="fg-name">Pneumonia chest X-ray</span>The slide names no finding<span class="fg-cite">Slide 32</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l37-s036-pneumonia-cxr-a.jpg" loading="lazy" width="712" height="626" alt="Frontal chest X-ray with an opacity along the outer edge of the lung on the left side of the image."><figcaption><span class="fg-name">Pneumonia chest X-ray</span>The slide names no finding<span class="fg-cite">Slide 36</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l37-s036-pneumonia-cxr-b.jpg" loading="lazy" width="700" height="562" alt="Frontal chest X-ray with patchy white opacities in the upper and middle lung on the left side of the image."><figcaption><span class="fg-name">Pneumonia chest X-ray</span>The slide names no finding<span class="fg-cite">Slide 36</span></figcaption></figure>
+  </div>
   <div class="prof-flag" id="l37-curb65" data-toc="CURB-65 and the PSI classes">
     <span class="prof-flag-label">&#9733; Severity scores (slides 29&ndash;31)</span>
     <table>
@@ -1365,8 +1731,37 @@
       <tr><td>2</td><td>Moderate (9%)</td><td>Hospital: supportive care, microbiology, antibiotics</td></tr>
       <tr><td>3&ndash;5</td><td>High (15&ndash;40%)</td><td>Hospital with urgent senior review; consider critical care, especially at 4 or 5</td></tr>
     </table>
+    <figure class="fig"><img src="cms-e6-images/l37-s031-curb65-calculator.png" loading="lazy" width="560" height="617" alt="CURB-65 calculator: five checkboxes, one point each (confusion, urea above 20 mg/dL, respiratory rate 30 or more, low systolic or diastolic blood pressure, age 65 or older), and the score table: 0 to 1 low, 2 moderate, 3 to 5 high severity."><figcaption>The CURB-65 calculator on the slide: one point per item; 0&ndash;1 low, 2 moderate, 3&ndash;5 high severity. <span class="cite">Slide 31</span></figcaption></figure>
+    <figure class="fig"><img src="cms-e6-images/l37-s029-curb65-algorithm.jpg" loading="lazy" width="560" height="710" alt="Flowchart: triage suggestive of community-acquired pneumonia, chest X-ray reviewed; consolidation and criteria for pneumonia lead to the CURB-65 score; 0 to 1 home with antibiotics unless other reasons for admission, 2 hospital, 3 to 5 hospital with urgent senior review and a decision on transfer to critical care."><figcaption>The slide&rsquo;s admission algorithm: the film first, then the CURB-65 score sends 0&ndash;1 home (unless there are other reasons for admission, such as an unstable comorbidity or social reasons), 2 to hospital and 3&ndash;5 to hospital with urgent senior review (critical care especially at 4 or 5). Aim by 4 hours: diagnosis made and antibiotics started. <span class="cite">Slide 29</span></figcaption></figure>
     <p><strong>Scoring CURB-65 in one line:</strong> give 1 point each for confusion (new disorientation, or an Abbreviated Mental Test Score of 8 or less), blood urea nitrogen above 20 mg/dL, respiratory rate 30 or more, systolic pressure below 90 or diastolic 60 or less mmHg, and age 65 or older; a total of 0&ndash;1 is low severity (under 3%), 2 is moderate (9%) and 3&ndash;5 is high (15&ndash;40%).</p>
     <p><strong>Pneumonia Severity Index:</strong> points for sex (male 0, female &minus;10), age (1 point per year), nursing-home residence (10), comorbidities (neoplastic disease 30, liver disease 20, congestive heart failure 10, cerebrovascular disease 10, renal disease 10), exam (altered mental status 20, respiratory rate 30 or more 20, systolic pressure below 90 mmHg 20, temperature below 35 or 40 &deg;C or more 15, pulse 125 or more 10) and tests (arterial pH below 7.35, 30; the picture stops there). <strong>Classes:</strong> I 0.1% mortality; II 51&ndash;70 points, 0.6%; III 71&ndash;90, 0.9%; IV 91&ndash;130, 9.3%; V 131&ndash;395, 27.0%.</p>
+    <h4 class="subsub">Pneumonia Severity Index points (slide 30)</h4>
+    <div class="tbl-wrap"><table>
+      <tr><th>Group</th><th>Finding</th><th>Points</th></tr>
+      <tr><td>Sex</td><td>Male / female</td><td>0 / &minus;10</td></tr>
+      <tr><td rowspan="2">Demographic factors</td><td>Age</td><td>1 per year</td></tr>
+      <tr><td>Nursing home resident</td><td>10</td></tr>
+      <tr><td rowspan="5">Comorbid illnesses</td><td>Neoplastic disease</td><td>30</td></tr>
+      <tr><td>Liver disease</td><td>20</td></tr>
+      <tr><td>Congestive heart failure</td><td>10</td></tr>
+      <tr><td>Cerebrovascular disease</td><td>10</td></tr>
+      <tr><td>Renal disease</td><td>10</td></tr>
+      <tr><td rowspan="5">Physical examination findings</td><td>Altered mental status</td><td>20</td></tr>
+      <tr><td>Respiratory rate 30/minute or more</td><td>20</td></tr>
+      <tr><td>Systolic blood pressure below 90 mmHg</td><td>20</td></tr>
+      <tr><td>Temperature below 35 &deg;C or 40 &deg;C or more</td><td>15</td></tr>
+      <tr><td>Pulse 125/minute or more</td><td>10</td></tr>
+      <tr><td>Laboratory and radiographic findings</td><td>Arterial pH below 7.35 (the slide&rsquo;s list stops here)</td><td>30</td></tr>
+    </table></div>
+    <div class="tbl-wrap"><table>
+      <tr><th>Total points</th><th>Class</th><th>Mortality</th></tr>
+      <tr><td>(no range on the slide)</td><td>I</td><td>0.1%</td></tr>
+      <tr><td>51&ndash;70</td><td>II</td><td>0.6%</td></tr>
+      <tr><td>71&ndash;90</td><td>III</td><td>0.9%</td></tr>
+      <tr><td>91&ndash;130</td><td>IV</td><td>9.3%</td></tr>
+      <tr><td>131&ndash;395</td><td>V</td><td>27.0%</td></tr>
+    </table></div>
+    <figure class="fig"><img src="cms-e6-images/l37-s030-psi-calculator.png" loading="lazy" width="1400" height="744" alt="Pneumonia Severity Index calculator: a checklist of sex, demographic factors, comorbid illnesses, physical examination findings and arterial pH with their points, beside the class table from Class I 0.1% to Class V 27.0% mortality."><figcaption>The Pneumonia Severity Index calculator on the slide: add the points, then read the class and mortality from the table on the right. <span class="cite">Slide 30</span></figcaption></figure>
   </div>
   <table>
     <tr><th></th><th>Nonsevere CAP</th><th>Severe CAP</th></tr>
@@ -1404,6 +1799,7 @@
   <ul>
     <li><strong>Ventilator-associated pneumonia (slides 48&ndash;49):</strong> the circuit is closed but contaminated by flora, secretions, hands of healthcare workers, circuit changes, tube biofilm and prior antibiotics; <strong>higher mortality and longer ICU stays; more likely <em>Pseudomonas</em> or multidrug-resistant organisms</strong>. <strong>Prevention is the main thing:</strong> early extubation; hand washing and sterile technique; limit circuit changes; <strong>elevate the head of the bed</strong>; supraglottic secretion drainage and mouth care. Treatment: collect respiratory specimens, then start empiric antibiotics without delaying care in unstable patients; antibiogram and resistance risks; narrow or stop as results clarify; 7 days usual.</li>
   </ul>
+  <figure class="fig"><img src="cms-e6-images/l37-s048-vap-sources.jpg" loading="lazy" width="1280" height="965" alt="Diagram of an intubated patient: a gloved hand, the ventilator circuit and the endotracheal tube with biofilm, each labeled as a source of organisms, and colonized secretions reaching both lungs, labeled Pneumonia."><figcaption>Exogenous sources of organisms in a ventilated patient: (1) hands of the health-care worker, (2) the ventilator circuit, (3) biofilm of the endotracheal tube. Pneumonia occurs when colonized secretions are inhaled into the lungs through the endotracheal tube. <span class="cite">Slide 48</span></figcaption></figure>
   <div class="cond"><h4>Community-acquired pneumonia (bacterial)</h4>
     <p class="give"><b>Defining feature:</b> fever, productive cough and a focal lobe of crackles, dullness and egophony, with an infiltrate on the film</p>
     <dl class="eight">
@@ -1441,11 +1837,22 @@
     <tr><td>Reassess</td><td>Persistence or worsening suggests secondary infection, a complication or another diagnosis</td><td><strong>Anaerobic coverage only for abscess or empyema</strong>, not routinely; address recurrent aspiration risk</td></tr>
   </table>
   <p><strong>Risk factors:</strong> dysphagia, altered consciousness and impaired airway protection (stroke, seizure). Assess swallowing, oral hygiene, positioning and reversible risks. &ldquo;Treat the clinical syndrome: chemical injury needs support; established infection needs antibiotics&rdquo; (slide 51).</p>
+  <figure class="fig"><img src="cms-e6-images/l37-s051-pneumonitis-vs-pneumonia.jpg" loading="lazy" width="750" height="500" alt="Illustration titled Pneumonitis vs. Pneumonia: a woman with her lungs drawn in, a magnified view of healthy and inflamed alveoli for pneumonitis, and a magnified view of an inflamed alveolar wall with air space filled with fluid for pneumonia."><figcaption>Pneumonitis is lung inflammation (causes include inhaling acidic stomach contents); in pneumonia the air spaces fill with fluid, and aspiration pneumonia is one of its causes. <span class="cite">Slide 51</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e6-images/l37-s050-aspiration-elderly.jpg" loading="lazy" width="420" height="553" alt="Illustration titled Aspiration pneumonia in the elderly patient: a swallowed bolus with fluid entering the trachea, gram-negative bacteria and sputum in the airway, inflamed alveoli, and cavities in the left upper lobe."><figcaption>Aspiration pneumonia in the elderly patient: with dysphagia, fluid enters the trachea; gram-negative bacteria and sputum sit in the airway, the alveoli show infection and inflammation, and a left upper lobe lung abscess with exudate forms. <span class="cite">Slide 50</span></figcaption></figure>
+  <div class="figgrid">
+    <figure><img src="cms-e6-images/l37-s052-aspiration-cxr-a.jpg" loading="lazy" width="700" height="698" alt="Frontal chest X-ray with an opacity in the middle of the lung on the left side of the image."><figcaption><span class="fg-name">Aspiration pneumonia</span>Chest X-ray; the slide names no finding<span class="fg-cite">Slide 52</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l37-s052-aspiration-cxr-b.jpg" loading="lazy" width="700" height="566" alt="Frontal chest X-ray with a rounded opacity at the lung base beside the heart, on the left side of the image."><figcaption><span class="fg-name">Aspiration pneumonia</span>Chest X-ray; the slide names no finding<span class="fg-cite">Slide 52</span></figcaption></figure>
+  </div>
   <ul>
     <li><strong>Lung abscess presentation (slide 53):</strong> can be insidious and prolonged (weeks; may become chronic); fever, chills, sweats, cough; <strong>purulent, foul-smelling sputum</strong> (aspiration is a likely cause), progressing to hemoptysis as the cavity grows; pleuritic pain, dyspnea, malaise, tachycardia, tachypnea; dullness, whispered pectoriloquy, bronchophony; <strong>amphoric breath sounds</strong> (low-pitched with high overtones, like breathing across an open jar).</li>
     <li><strong>Imaging (slide 54):</strong> a <strong>cavitary lesion with an air-fluid level</strong> on film and CT.</li>
     <li><strong>Management (slide 56):</strong> usually begins with antibiotics (slide 38). First choice a <strong>beta-lactam/beta-lactamase inhibitor</strong>, such as intravenous <strong>ampicillin/sulbactam then oral amoxicillin/clavulanate</strong>. <strong>Reserve clindamycin</strong> for selected alternatives because of <em>C. difficile</em> risk. CT, and consider bronchoscopy for obstruction, unusual pathogens or failure to improve. Treatment commonly lasts <strong>several weeks</strong>, guided by clinical and radiographic response. Large or refractory abscesses: pulmonary or infectious disease review for drainage or surgery. Routine chest physiotherapy is not essential.</li>
   </ul>
+  <figure class="fig"><img src="cms-e6-images/l37-s054-lung-abscess-cxr-ct.jpg" loading="lazy" width="1400" height="512" alt="Frontal chest X-ray and an axial chest CT side by side; on each, white, red and black arrows point at a cavity that holds air above a flat fluid level."><figcaption><strong>Lung abscess on chest X-ray and CT:</strong> a cavitary lesion with an air-fluid level (arrows). <span class="cite">Slide 54</span></figcaption></figure>
+  <div class="figgrid">
+    <figure><img src="cms-e6-images/l37-s055-lung-abscess-cxr-ct.jpg" loading="lazy" width="834" height="369" alt="Frontal chest X-ray and axial chest CT side by side; the CT shows an air-filled cavity in one lung."><figcaption><span class="fg-name">Lung abscess</span>Chest X-ray and CT<span class="fg-cite">Slide 55</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l37-s056-lung-abscess-ct-panels.jpg" loading="lazy" width="1400" height="1066" alt="Four axial chest CT images labeled a to d; panel a has an asterisk on a rounded lesion and panel d an arrowhead."><figcaption><span class="fg-name">Lung abscess</span>CT, panels a to d (management slide)<span class="fg-cite">Slide 56</span></figcaption></figure>
+  </div>
   <div class="cond"><h4>Aspiration pneumonia</h4>
     <p class="give"><b>Defining feature:</b> an infectious syndrome with a gravity-dependent infiltrate in a patient who cannot protect the airway</p>
     <dl class="eight">
@@ -1481,6 +1888,11 @@
     <li><strong>Workup (slides 65&ndash;70):</strong> microbiologic confirmation with <strong>induced sputum or bronchoalveolar lavage (BAL)</strong> for microscopy and/or <em>Pneumocystis</em> polymerase chain reaction (PCR); PCR is highly sensitive but can detect colonization. <strong>Lactate dehydrogenase is nonspecific</strong> and cannot confirm the infection or treatment failure. <strong>If suspicion is high, start therapy while pursuing the diagnosis.</strong> Serum beta-D-glucan: a low result makes it less likely (especially with HIV), but it is not organism-specific and a negative alone cannot exclude it when suspicion is high. <strong>A negative induced sputum does not exclude it: proceed to BAL</strong>; spontaneously expectorated sputum has poor sensitivity. Pulse oximetry and an arterial blood gas when hypoxemia or severity warrants; offer HIV testing when status is unknown, and with HIV get the CD4 (cluster of differentiation 4) count and viral load. Pulmonary function tests are not a routine acute test. Lung biopsy is rarely needed. <strong>Chest film: diffuse bilateral infiltrates extending from the perihilar region.</strong></li>
     <li id="ga-clinical-medicine-and-surgery-i-exam-6-l340" data-gen="1"><b>A low-level positive Pneumocystis polymerase chain reaction.</b> The Pneumocystis polymerase chain reaction is highly sensitive but can detect colonization, so it is interpreted with the symptoms, the imaging and the organism burden. A low-level positive with no symptoms, a normal oxygen saturation and no infiltrates may reflect colonization, not infection, and does not establish pneumonia.</li>
   </ul>
+  <figure class="fig"><img src="cms-e6-images/l37-s070-pneumocystis-cxr.jpg" loading="lazy" width="560" height="498" alt="Frontal chest X-ray with hazy infiltrates through both lungs, densest around the hila."><figcaption><strong><em>Pneumocystis</em> pneumonia:</strong> diffuse bilateral infiltrates extending from the perihilar region, the film seen in most patients. <span class="cite">Slide 70</span></figcaption></figure>
+  <div class="figgrid">
+    <figure><img src="cms-e6-images/l37-s069-bronchoalveolar-lavage.jpg" loading="lazy" width="700" height="444" alt="Drawing of bronchoalveolar lavage: a flexible bronchoscope passed through the mouth into the lung, a syringe of saline, and a trap collecting the returned fluid."><figcaption><span class="fg-name">Bronchoalveolar lavage</span>When induced sputum is negative or unavailable and suspicion remains high<span class="fg-cite">Slide 69</span></figcaption></figure>
+    <figure><img src="cms-e6-images/l37-s069-lung-biopsy.jpg" loading="lazy" width="700" height="661" alt="Drawing of a needle passed through the chest wall into the lung."><figcaption><span class="fg-name">Lung biopsy</span>Rarely needed, when less invasive studies are nondiagnostic<span class="fg-cite">Slide 69</span></figcaption></figure>
+  </div>
   <div class="prof-flag" id="l37-pjp-rx" data-toc="Pneumocystis treatment and prophylaxis">
     <span class="prof-flag-label">&#9733; Pneumocystis treatment, steroids and prophylaxis (slides 71&ndash;73)</span>
     <ul>
@@ -1489,6 +1901,7 @@
       <li><strong>Prophylaxis with HIV:</strong> primary prophylaxis for <strong>CD4 below 100 cells/mm&sup3;, or 100&ndash;200 with detectable HIV RNA</strong>; TMP-SMX preferred; secondary prophylaxis after treatment; start antiretroviral therapy within about 2 weeks of diagnosis when feasible; stop prophylaxis only after guideline-defined immune recovery; avoid room-sharing with other immunocompromised patients.</li>
     </ul>
   </div>
+  <figure class="fig"><img src="cms-e6-images/l37-s075-histoplasmosis-map.png" loading="lazy" width="560" height="362" alt="Map of the contiguous United States with the central and eastern states shaded solid purple and the western states hatched."><figcaption>The slide&rsquo;s map beside its text: in the United States, <em>Histoplasma</em> is mainly found in central and eastern states, especially the Ohio and Mississippi River valleys. <span class="cite">Slide 75</span></figcaption></figure>
   <ul>
     <li><strong>Histoplasmosis (slides 75&ndash;78):</strong> <em>Histoplasma capsulatum</em> from <strong>soil and bird or bat droppings</strong> (farming, gardening, chicken coops); in the United States mainly central and eastern states, <strong>especially the Ohio and Mississippi River valleys</strong>; rare. High fever, chills, myalgias, nonproductive cough, chest pain, headache, <strong>3&ndash;17 days after inhaling the fungus</strong>; some are asymptomatic with only a granuloma on film. <strong>Test:</strong> ask about geography, soil disruption and bird or bat exposure; <strong>urine <em>Histoplasma</em> antigen</strong>, often with serum antigen and antibody; early negative tests do not exclude it (repeat or get respiratory specimens); the antigen can cross-react with <em>Blastomyces</em>; culture or histopathology for severe, persistent or uncertain cases. <strong>Treat by severity and host:</strong> mild acute disease in an immunocompetent adult often needs <strong>observation, not antifungals</strong>; itraconazole for prolonged or progressive illness or higher-risk hosts (monitor interactions and levels); severe pulmonary or disseminated disease needs specialist-led amphotericin-based induction; chronic cavitary disease needs azole therapy for usually at least 12 months.</li>
     <li><strong>Cryptococcosis (slide 123):</strong> <em>C. neoformans</em> and <em>C. gattii</em> by environmental inhalation; risk rises with HIV, transplant or steroids, but disease also occurs without immunocompromise. Cough, fever, nodules or consolidation can mimic CAP, tuberculosis or cancer. <strong>Serum cryptococcal antigen</strong> and respiratory culture or histology; <strong>evaluate for central nervous system or disseminated disease, often with a lumbar puncture</strong>. Mild isolated pulmonary disease: <strong>fluconazole, generally 6&ndash;12 months</strong>. Severe pulmonary, central nervous system or disseminated disease: <strong>liposomal amphotericin B plus flucytosine induction, then fluconazole</strong>. Infectious disease consultation; counsel adherence and urgent review for headache, confusion or worsening breathing.</li>
@@ -1573,6 +1986,7 @@
     <li><strong>Testing (slides 95, 104&ndash;106):</strong> <strong>clinical suspicion can justify treatment; do not wait for confirmation in hospitalized, high-risk or progressively ill patients</strong>. <strong>Rapid molecular assays or reverse-transcription PCR are preferred</strong> over low-sensitivity rapid antigen tests; hospitalized patients get a molecular test (multiplex influenza/SARS-CoV-2 during co-circulation). <strong>A negative rapid antigen test does not exclude influenza</strong>; confirm with molecular testing when it matters, and do not withhold antivirals while waiting. Severe lower-respiratory illness with a negative upper-airway test: consider a lower-respiratory specimen. Viral culture is for surveillance. Vaccination does not exclude influenza in a symptomatic patient. <strong>Chest film</strong> to rule out pneumonia, especially in the elderly or high-risk.</li>
     <li><strong>Influenza pneumonia (slide 106):</strong> rapidly progressive cough, dyspnea and cyanosis; <strong>primary viral or secondary bacterial (often pneumococcal or staphylococcal)</strong>; peribronchial and patchy interstitial infiltrates in several lobes with atelectasis, possibly diffuse interstitial pneumonitis.</li>
   </ul>
+  <figure class="fig"><img src="cms-e6-images/l37-s106-influenza-pneumonia-cxr.jpg" loading="lazy" width="480" height="416" alt="Portable frontal chest X-ray with patchy white opacities through both lungs."><figcaption><strong>Influenza pneumonia:</strong> the slide describes peribronchial and patchy interstitial infiltrates in multiple lobes; this film shows patchy opacities through both lungs. <span class="cite">Slide 106</span></figcaption></figure>
   <div class="prof-flag" id="l37-flu-rx" data-toc="Influenza antivirals">
     <span class="prof-flag-label">&#9733; Influenza treatment (slides 107&ndash;110)</span>
     <table>
@@ -1607,6 +2021,8 @@
     <li><strong>Differential (slide 116):</strong> CAP, other viral pneumonia, influenza, aspiration pneumonia, Pneumocystis pneumonia, pulmonary tuberculosis.</li>
     <li><strong>Workup (slide 117):</strong> <strong>NAAT, including PCR, is the most sensitive routine test</strong>. <strong>One negative antigen test does not exclude infection: repeat after 48 hours (at least 2 tests if symptomatic, 3 if asymptomatic) or obtain NAAT.</strong> Imaging evaluates pneumonia and complications, not the virus itself. Hospital tests should answer a clinical question (organ function, oxygenation, coinfection, thrombosis). <strong>D-dimer elevation alone does not diagnose thrombosis</strong> or set anticoagulant intensity.</li>
   </ul>
+  <figure class="fig"><img src="cms-e6-images/l37-s118-covid-cxr-panels.jpg" loading="lazy" width="700" height="619" alt="Four frontal chest X-rays labeled A to D, three posteroanterior and one anteroposterior, each with white or black arrows or arrowheads pointing into the lungs."><figcaption>Chest X-rays of patients with COVID-19, panels A to D, with the arrows the picture carries; the slide adds no description. <span class="cite">Slide 118</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e6-images/l37-s115-covid-presentation.jpg" loading="lazy" width="420" height="371" alt="Body outline titled Clinical presentation of patients with CoVID-19, with labels for fever or headache, hemoptysis, cough, shortness of breath, pneumonia, septic shock, renal failure, diarrhea and myalgia."><figcaption>Clinical presentation of COVID-19 as the slide&rsquo;s diagram labels it: fever or headache, hemoptysis, cough, shortness of breath, pneumonia, myalgia, septic shock, renal failure and diarrhea. <span class="cite">Slide 115</span></figcaption></figure>
   <div class="prof-flag" id="l37-covid-rx" data-toc="COVID-19 severity and treatment">
     <span class="prof-flag-label">&#9733; Stratify severity first, then choose the pathway (slides 119&ndash;122)</span>
     <table>
@@ -1622,6 +2038,14 @@
       <li><strong>Hospitalized adults with hypoxemia:</strong> <strong>dexamethasone</strong> (up to 10 days or discharge); consider remdesivir by timing and respiratory support; rapid progression may warrant <strong>baricitinib or tocilizumab plus corticosteroids</strong>; venous thromboembolism prophylaxis unless contraindicated (therapeutic dosing needs a thrombosis and bleeding assessment, not D-dimer alone); oxygen or ventilatory support.</li>
       <li><strong>Decision point:</strong> oxygenation and severity, not a positive test or elapsed time alone, decide the pathway.</li>
     </ul>
+    <h4 class="subsub">Early outpatient antivirals vs hospital treatment (slide 122)</h4>
+    <div class="tbl-wrap"><table>
+      <tr><th>Early outpatient antiviral pathway</th><th>Hospital pathway for hypoxemia</th></tr>
+      <tr><td><strong>Who:</strong> High-risk patient with mild or moderate COVID-19 and no hypoxemia.</td><td><strong>Who:</strong> Patient with hypoxemia, severe respiratory disease, or critical illness requiring hospital-level monitoring and support.</td></tr>
+      <tr><td><strong>When:</strong> Start nirmatrelvir/ritonavir within five days or a three-day remdesivir course within seven days of symptom onset.</td><td><strong>Core treatment:</strong> Use dexamethasone; consider remdesivir according to illness timing and respiratory support.</td></tr>
+      <tr><td><strong>Checks:</strong> Review drug interactions, renal dosing, and hepatic contraindications; molnupiravir is an adult alternative when preferred options cannot be used.</td><td><strong>Escalation:</strong> Rapid progression may warrant baricitinib or tocilizumab in addition to corticosteroids.</td></tr>
+      <tr><td><strong>Avoid:</strong> Do not use systemic corticosteroids for COVID-19 without hypoxemia unless another indication exists.</td><td><strong>Support:</strong> Provide appropriate oxygen or ventilatory support and venous thromboembolism prophylaxis unless contraindicated.</td></tr>
+    </table></div>
   </div>
   <div class="cond"><h4>COVID-19</h4>
     <p class="give"><b>Defining feature:</b> cough, dyspnea, fever and myalgia (sometimes loss of smell or taste) with a positive nucleic acid test</p>
@@ -1738,6 +2162,7 @@
     </table>
     <p>Tuberculosis is a <strong>chronic granulomatous disease</strong>, usually of the lung but able to reach any organ by hematogenous spread. The first exposure usually triggers an immune reaction that quells the infection and confers resistance, but <strong>foci can harbor viable organisms for years and reactivate when immunity falls</strong>; primary or reactivated disease in the immunocompromised can become massive, life-threatening systemic (miliary) infection (slide 12: healed lesions, latent lesions, caseation, cavities, massive hematogenous dissemination to liver and spleen).</p>
   </div>
+  <figure class="fig"><img src="cms-e6-images/l38-s012-tb-natural-history.jpg" loading="lazy" width="1400" height="1050" alt="Robbins diagram of the course of tuberculosis over weeks to years: primary infection forms a primary complex that heals, becomes latent lesions or becomes progressive primary tuberculosis; latent lesions reactivate, or reinfection occurs, into secondary tuberculosis with cavitation and caseation; progressive disease spreads by massive hematogenous dissemination to miliary tuberculosis of the liver and spleen."><figcaption>Follow the arrows: the primary complex heals, turns into latent lesions (organisms dormant), or becomes progressive primary tuberculosis; latent lesions reactivate (or reinfection occurs) into secondary tuberculosis with cavitation; progressive disease of either kind spreads by massive hematogenous dissemination to miliary tuberculosis. <span class="cite">Slide 12</span></figcaption></figure>
 
   <h3 class="sub" id="l38-transmission">6.3 &middot; Transmission, exposure and risk of progression</h3>
   <ul>
@@ -1764,6 +2189,7 @@
     <li><strong>BCG and the skin test (slide 21):</strong> BCG and some NTM exposures can cause a <strong>false-positive TST</strong>; still interpret with the standard risk-based thresholds regardless of BCG history; <strong>IGRA is preferred for most BCG-vaccinated patients</strong>; a positive result still needs evaluation for disease before preventive treatment.</li>
     <li id="ga-clinical-medicine-and-surgery-i-exam-6-l333" data-gen="1"><b>A 6 mm skin test in human immunodeficiency virus infection.</b> In human immunodeficiency virus infection the skin test cut-off is 5 mm, so 6 mm is positive. A positive test shows infection, not whether it is latent or active, so the next step is clinical evaluation and chest imaging to evaluate for active tuberculosis disease before any preventive therapy.</li>
   </ul>
+  <figure class="fig"><img src="cms-e6-images/l38-s020-tst-reading.jpg" loading="lazy" width="252" height="298" alt="A forearm with a faint raised skin-test reaction and a millimeter ruler card held below it, printed Tuberculin S..., 1. Inspect, 2. Palpate."><figcaption>Reading the Mantoux test on the forearm with a millimeter ruler: measure the transverse induration, not the erythema. <span class="cite">Slide 20</span></figcaption></figure>
   <div class="prof-flag" id="l38-tst-cutoffs" data-toc="Skin test cut-offs: 5, 10, 15 mm">
     <span class="prof-flag-label">&#9733; Tuberculin skin test positivity thresholds (slide 22)</span>
     <table>
@@ -1796,6 +2222,10 @@
     <li><strong>Chest imaging (slides 27&ndash;29):</strong> chest radiography is part of the initial evaluation: infiltrates, cavities, nodules, adenopathy or effusion; <strong>miliary disease can produce diffuse tiny nodules</strong>; CT clarifies findings or complications. <strong>Imaging supports suspicion but cannot confirm tuberculosis or reliably determine activity.</strong> Primary disease may show <strong>hilar or mediastinal adenopathy</strong>, infiltrates or effusion; <strong>post-primary (reactivation) disease often involves the upper lobes and may cavitate</strong>; HIV and other immunosuppression give atypical patterns; films cannot tell recent infection, reactivation or reinfection apart.</li>
     <li><strong>Prior tuberculosis (slide 29):</strong> scarring, volume loss or calcified granulomas may reflect prior infection; <strong>latent infection usually has a normal film</strong>; fibrotic lesions warrant review of prior treatment and exclusion of active disease; persistent dyspnea after tuberculosis may reflect <strong>bronchiectasis</strong> or other lung injury; new symptoms need reassessment for recurrence and alternatives.</li>
   </ul>
+  <figure class="fig"><img src="cms-e6-images/l38-s030-cxr-example.jpg" loading="lazy" width="432" height="324" alt="Frontal chest X-ray with abnormal areas in the upper part of one lung and a separate dense spot in the other lung."><figcaption>The slide&rsquo;s radiographic example: abnormalities raise suspicion but require microbiologic evaluation. <span class="cite">Slide 30</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e6-images/l38-s031-cxr-bilateral-arrows.jpg" loading="lazy" width="520" height="507" alt="Frontal chest X-ray with two black arrows pointing at patchy opacities in the upper zones of both lungs."><figcaption>The two arrows mark bilateral abnormalities with possible cavitation. Imaging alone cannot confirm tuberculosis. <span class="cite">Slide 31</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e6-images/l38-s032-cavitary-cxr-ct.jpg" loading="lazy" width="800" height="416" alt="Left, a posteroanterior chest X-ray with arrows on upper-lung abnormalities; right, a coronal CT showing large dark air-filled cavities in the upper lungs, with arrows."><figcaption>Cavitary lung disease on a posteroanterior chest X-ray and a CT. The original case described cough and hemoptysis with left upper-lobe cavitation; tuberculosis remains one of several possible causes. <span class="cite">Slide 32</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e6-images/l38-s032-latent-cavitary-miliary.jpg" loading="lazy" width="520" height="445" alt="Illustration of three lungs: latent infection with one small pale focus, cavitary tuberculosis with a hollow cavity ringed by small nodules, and miliary tuberculosis with tiny nodules scattered through the whole lung."><figcaption>Latent infection (one small focus), cavitary tuberculosis (a cavity) and miliary tuberculosis (tiny nodules throughout the lung). <span class="cite">Slide 32</span></figcaption></figure>
 
   <h3 class="sub" id="l38-management">6.7 &middot; Isolation, reporting and treatment</h3>
   <div class="prof-flag" id="l38-isolation" data-toc="Immediate management">
