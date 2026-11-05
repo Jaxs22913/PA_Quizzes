@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — CMS I Exam 7</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#b8860b;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+  /* memory-aid box + footnote rows (render.py emits this block only when a
+     topic uses "mnemonic" or a {"note": ...} row); theme variables only, so
+     the designed dark mode (tools/dark_tokens.py) recolours it for free */
+  .mnem{margin:10px 0 0;padding:11px 15px 12px;background:var(--card);border:1px solid var(--line);
+    border-left:4px solid var(--acc);border-radius:12px;box-shadow:var(--shadow);font-size:13.8px;color:var(--body)}
+  .mnem-k{font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--acc-ink,var(--ink));margin:0 0 4px}
+  .mnem p{margin:0 0 5px}
+  .mnem p:last-child{margin-bottom:0}
+  .mnem-hook{font-weight:700;color:var(--ink)}
+  .mnem-key span{display:inline-block;margin:0 16px 3px 0}
+  .mnem-key b{color:var(--acc-ink,var(--ink))}
+  .mnem-brk{color:var(--muted);font-size:13px}
+  .mnem-brk b{color:var(--body)}
+  td.rnote{font-size:12.8px;font-style:italic;color:var(--muted)}
+  @media print{.mnem{box-shadow:none;break-inside:avoid}}
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--primary-l:#b8860b;--primary:#af8325;}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l39-waves{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l39-waves"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l39-stages{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l39-stages"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l39-numbers{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l39-numbers"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l40-apnea{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l40-apnea"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l40-osa-dx{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l40-osa-dx"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l40-stopbang{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l40-stopbang"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l40-home-test{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l40-home-test"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l40-ohs{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l40-ohs"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l40-untreated{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l40-untreated"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l41-onset{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l41-onset"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l41-imaging-pft{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l41-imaging-pft"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l41-labs{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l41-labs"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l41-ipf{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l41-ipf"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l41-sarcoid-stage{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l41-sarcoid-stage"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l41-sarcoid-steroids{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l41-sarcoid-steroids"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l41-dusts{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l41-dusts"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l41-hp{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l41-hp"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l41-ards{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l41-ards"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #l39-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l39-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l39-rem-nrem{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l39-rem-nrem"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #l39-functions{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l39-functions"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l40-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l40-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l40-osa{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l40-osa"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #l40-osa-rx{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l40-osa-rx"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l40-complications{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c07a6b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l40-complications"]{color:#b87364!important}:root[data-theme="dark"] body[data-dark="tokens"] #l40-csa{--acc-bg:#1e260d!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#809260!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l40-csa"]{color:#798b59!important}:root[data-theme="dark"] body[data-dark="tokens"] #l40-ohs{--acc-bg:#2d1b2f!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a480a8!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l40-ohs"]{color:#9c79a0!important}:root[data-theme="dark"] body[data-dark="tokens"] #l41-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l41-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l41-ild{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l41-ild"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #l41-iip{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l41-iip"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l41-ctd{--acc-bg:#1e260d!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#809260!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l41-ctd"]{color:#798b59!important}:root[data-theme="dark"] body[data-dark="tokens"] #l41-sarcoid{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c07a6b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l41-sarcoid"]{color:#b87364!important}:root[data-theme="dark"] body[data-dark="tokens"] #l41-hp{--acc-bg:#2d1b2f!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a480a8!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l41-hp"]{color:#9c79a0!important}:root[data-theme="dark"] body[data-dark="tokens"] #l41-ards{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c07a6b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l41-ards"]{color:#b87364!important}:root[data-theme="light"] body[data-dark="tokens"]{--primary-t:#8f6a1d;}:root[data-theme="light"] body[data-dark="tokens"] #l39-emph{--acc-ink:#88661b!important}:root[data-theme="light"] body[data-dark="tokens"] #l40-emph{--acc-ink:#88661b!important}:root[data-theme="light"] body[data-dark="tokens"] #l41-emph{--acc-ink:#88661b!important}</style><!--DARK-TOKENS:END-->
+  <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="cms-exam-7-cram-sheet.docx" title="Editable Word copy">
+</head>
+<body data-dark="tokens" data-dark-kind="cram">
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Clinical Medicine and Surgery I · Exam 7 · Class of 2028</div>
+    <h1>CMS I Exam 7 Cram Sheet</h1>
+    <p class="sub"><b>Criteria, scores and classifications first</b>: one table per set from the slides, each with a labeled memory aid. Respiratory Block Exam II, condensed from the Exam 7 study guide. Lectures covered: 39 (phases of sleep), 40 (obstructive sleep apnea and obesity hypoventilation syndrome), 41 (inflammatory lung diseases). Each lecture opens with a gold card of what its lecturer stressed (starred; from the recording once it is in); every fact still comes from the slides.</p>
+    <div class="toc">
+      <a href="#crit-l39-waves" style="color:#49331b"><span class="dot" style="background:#5e4123"></span>Criteria &amp; Scores (Lectures 39&ndash;41)</a>
+      <a href="#l39-emph" style="color:#906909"><span class="dot" style="background:#b8860b"></span>★ Emphasized: Sleep Physiology</a>
+      <a href="#l39-rem-nrem" style="color:#49331b"><span class="dot" style="background:#5e4123"></span>REM vs Non-REM Sleep</a>
+      <a href="#l39-functions" style="color:#254953"><span class="dot" style="background:#2f5d6b"></span>Why We Sleep &amp; the Sleep-Wake Cycle</a>
+      <a href="#l40-emph" style="color:#906909"><span class="dot" style="background:#b8860b"></span>★ Emphasized: Sleep Apnea</a>
+      <a href="#l40-osa" style="color:#49331b"><span class="dot" style="background:#5e4123"></span>Obstructive Sleep Apnea</a>
+      <a href="#l40-osa-rx" style="color:#254953"><span class="dot" style="background:#2f5d6b"></span>Treating Obstructive Sleep Apnea</a>
+      <a href="#l40-complications" style="color:#5f2e24"><span class="dot" style="background:#7a3b2e"></span>Untreated: Complications &amp; Comorbidities</a>
+      <a href="#l40-csa" style="color:#3a4621"><span class="dot" style="background:#4a5a2a"></span>Central Sleep Apnea</a>
+      <a href="#l40-ohs" style="color:#462d49"><span class="dot" style="background:#5a3a5e"></span>Obesity Hypoventilation Syndrome</a>
+      <a href="#l41-emph" style="color:#906909"><span class="dot" style="background:#b8860b"></span>★ Professor Emphasized — Inflammatory Lung Disease</a>
+      <a href="#l41-ild" style="color:#49331b"><span class="dot" style="background:#5e4123"></span>Interstitial Lung Disease: the Common Ground</a>
+      <a href="#l41-iip" style="color:#254953"><span class="dot" style="background:#2f5d6b"></span>Idiopathic Interstitial Pneumonia &amp; Pulmonary Fibrosis</a>
+      <a href="#l41-ctd" style="color:#3a4621"><span class="dot" style="background:#4a5a2a"></span>Connective Tissue &amp; Granulomatous Disease</a>
+      <a href="#l41-sarcoid" style="color:#5f2e24"><span class="dot" style="background:#7a3b2e"></span>Sarcoidosis</a>
+      <a href="#l41-hp" style="color:#462d49"><span class="dot" style="background:#5a3a5e"></span>Hypersensitivity Pneumonitis</a>
+      <a href="#l41-ards" style="color:#5f2e24"><span class="dot" style="background:#7a3b2e"></span>Acute Respiratory Distress Syndrome</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="cms-exam-7-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="crit-l39-waves" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>The Four EEG Waveforms<span class="tag">Classification &middot; Lecture 39 &middot; slides 21&ndash;26</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:14%">Wave</th><th style="width:24%">Frequency (cycles/second)</th><th style="width:62%">Where and when</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><b>Beta</b></td><td><b>Greater than 14</b> (as high as 80)</td><td>Parietal and frontal regions; <b>asynchronous, low voltage</b>; <b>awake, alert, actively processing</b> information</td></tr>
+          <tr><td class="h"><b>Alpha</b></td><td><b>8&ndash;13</b>, rhythmical</td><td>Healthy adults <b>awake, quiet and resting</b>; most intense <b>occipital</b>; <b>disappear in deep sleep</b>; replaced by beta when attention is directed to a task</td></tr>
+          <tr><td class="h"><b>Theta</b></td><td><b>4&ndash;7</b></td><td>Parietal and temporal regions <b>in children</b>; <b>emotional stress</b> in some adults (disappointment, frustration); <b>degenerative brain disorders</b></td></tr>
+          <tr><td class="h"><b>Delta</b></td><td><b>Less than 3.5</b></td><td>Voltage <b>2&ndash;4 times</b> other waves; strictly cortical; <b>very deep sleep, infancy, serious organic brain disease</b>, cortex cut off from the thalamus</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Fastest to slowest the waves spell BAT-D: Busy, At rest, Tired, Deep.</p><p class="mnem-key"><span><b>B</b> Beta: busy, alert, actively processing (&gt;14)</span><span><b>A</b> Alpha: awake but at rest, quiet (8&ndash;13)</span><span><b>T</b> Theta: tired (light sleep), children, stress, brain disorders (4&ndash;7)</span><span><b>D</b> Delta: deep sleep, infancy, organic brain disease (&lt;3.5)</span></p><p class="mnem-brk"><b>Where it breaks:</b> &ldquo;Tired&rdquo; covers only theta&rsquo;s sleep use; its children, stress and brain-disorder settings must be learned separately.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l39-stages" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>EEG by Stage of Wakefulness and Sleep<span class="tag">Staging &middot; Lecture 39 &middot; slide 28 (with 27, 29)</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:20%">Stage</th><th style="width:52%">What happens</th><th style="width:28%">EEG</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Awake, eyes open</td><td>Alert and active</td><td><b>Beta</b></td></tr>
+          <tr><td class="h">Awake, eyes closed</td><td>Decreased alertness, relaxation</td><td><b>Alpha</b></td></tr>
+          <tr><td class="h"><b>N1</b></td><td>Transition from wakefulness; drowsy; light sleep</td><td><b>Theta</b></td></tr>
+          <tr><td class="h"><b>N2</b></td><td>Deeper sleep; heart rate and temperature fall; <b>longest stage by total duration</b></td><td>Theta; <b>sleep spindles</b> (12&ndash;14 Hz bursts); <b>K complexes</b> (negative sharp wave then positive component)</td></tr>
+          <tr><td class="h"><b>N3</b> (deep, slow-wave)</td><td>Deepest non-REM stage; harder to arouse; <b>growth and repair</b>; <b>decreases with age</b></td><td><b>Delta</b></td></tr>
+          <tr><td class="h"><b>REM</b> (stage R)</td><td>Dream state; rapid, irregular eye movements; <b>atonia except eyes and diaphragm</b>; sawtooth waves</td><td><b>Beta</b> (like awake, with atonia)</td></tr>
+          <tr><td class="rnote" colspan="3">Slide 27 and the slide 29 picture use FOUR non-REM stages and put spindles in stage 1; the slide 28 table (above) uses three and puts spindles in N2.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">BATTeD, then Back: down the night the waves go Beta, Alpha, Theta, Theta, Delta, and REM goes Back to beta.</p><p class="mnem-key"><span><b>B</b> Eyes open: beta</span><span><b>A</b> Eyes closed: alpha</span><span><b>T</b> N1: theta</span><span><b>T</b> N2: theta (+ spindles, K complexes)</span><span><b>D</b> N3: delta</span><span><b>Back</b> REM: back to beta, with atonia</span></p><p class="mnem-brk"><b>Where it breaks:</b> The vowel &ldquo;e&rdquo; in BATTeD stands for nothing.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l39-numbers" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Sleep by the Numbers<span class="tag">Cut-offs &middot; Lecture 39 &middot; slides 6, 9, 10, 12</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:58%">Measure</th><th style="width:42%">Value</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Average sleep</td><td><b>8 hours</b></td></tr>
+          <tr><td class="h">Cycles per night</td><td><b>4&ndash;5</b></td></tr>
+          <tr><td class="h">Length of one cycle</td><td><b>90&ndash;120 minutes</b></td></tr>
+          <tr><td class="h">REM share of a young adult&rsquo;s sleep</td><td><b>About 25%</b></td></tr>
+          <tr><td class="h">REM episodes</td><td>Recur about <b>every 90 minutes</b>; each lasts <b>5&ndash;30 minutes</b></td></tr>
+          <tr><td class="h">Non-REM fall in blood pressure, heart rate, breathing, metabolic rate</td><td><b>10&ndash;30%</b></td></tr>
+          <tr><td class="h">REM rise in brain metabolism</td><td>Up to <b>20%</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">8 hours, 4&ndash;5 laps of 90: a quarter of it dreaming.</p><p class="mnem-key"><span><b>8</b> hours of sleep on average</span><span><b>4&ndash;5</b> cycles</span><span><b>90</b> minutes: cycle length starts at 90 (to 120) and REM recurs every 90</span><span><b>A quarter</b> REM is about 25% of a young adult&rsquo;s sleep</span></p><p class="mnem-brk"><b>Where it breaks:</b> Leaves out the 5&ndash;30 minute REM episode, the 10&ndash;30% non-REM fall and the 20% REM rise: learn those from the table.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l40-apnea" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Apnea, Hypopnea and the Three Apnea Types<span class="tag">Definitions &middot; Lecture 40 &middot; slide 3</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:24%">Term</th><th style="width:38%">Airflow</th><th style="width:38%">Respiratory effort</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><b>Apnea</b></td><td>Decrease of <b>90% or more</b> (thermistor), lasting <b>at least 10 seconds</b></td><td>&mdash;</td></tr>
+          <tr><td class="h"><b>Hypopnea</b></td><td>Slowed, shallow, restricted breathing in episodes of <b>10 seconds or longer</b></td><td>&mdash;</td></tr>
+          <tr><td class="h"><b>Obstructive</b> apnea</td><td>None</td><td><b>Continued</b></td></tr>
+          <tr><td class="h"><b>Central</b> apnea</td><td>None</td><td><b>None</b></td></tr>
+          <tr><td class="h"><b>Mixed</b> apnea</td><td>None</td><td>Absent early in the event, <b>resumes later</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Ninety for Ten; then ask the chest: Obstructive keeps On trying, Central has Ceased, Mixed Makes up its mind late.</p><p class="mnem-key"><span><b>90 / 10</b> apnea: airflow down 90% or more for 10 seconds or more</span><span><b>O</b> Obstructive: effort ongoing</span><span><b>C</b> Central: effort ceased</span><span><b>M</b> Mixed: effort missing, then made</span></p><p class="mnem-brk"><b>Where it breaks:</b> Hypopnea has no percentage on the slide, only the 10-second episodes.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l40-osa-dx" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Obstructive Sleep Apnea: Diagnostic Criteria and Indices<span class="tag">Criteria &middot; Lecture 40 &middot; slide 9</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:30%">Item</th><th style="width:70%">What the slide says</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Criterion 1</td><td><b>5 or more</b> predominantly obstructive respiratory events per hour of sleep <b>plus one symptom</b>: sleepiness, fatigue, insomnia or impaired sleep-related quality of life; waking with breath holding, gasping or choking; habitual snoring or breathing interruptions seen by a bed partner</td></tr>
+          <tr><td class="h">Criterion 2</td><td><b>15 or more</b> predominantly obstructive respiratory events (no symptom needed; the slide gives no time unit here)</td></tr>
+          <tr><td class="h">And</td><td>Symptoms <b>not explained</b> by another medical or sleep condition, medications or substance use</td></tr>
+          <tr><td class="h">Apnea-hypopnea index</td><td>(apneas + hypopneas) &divide; total sleep time in hours</td></tr>
+          <tr><td class="h">Respiratory disturbance index</td><td>(apneas + hypopneas + respiratory effort-related arousals) &divide; total sleep time in hours</td></tr>
+          <tr><td class="rnote" colspan="2">Mild, moderate and severe index bands appear only in the speaker notes, not on a slide.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Five needs a friend; fifteen stands alone.</p><p class="mnem-key"><span><b>5</b> 5 or more events per hour needs one symptom</span><span><b>15</b> 15 or more events is enough on its own (no time unit on the slide)</span></p><p class="mnem-brk"><b>Where it breaks:</b> Both still need the symptoms to be unexplained by another condition, drug or substance.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l40-stopbang" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>STOP-Bang Questionnaire<span class="tag">Score &middot; Lecture 40 &middot; slides 16&ndash;17</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:20%">Letter</th><th style="width:80%">Yes if (1 point each)</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><b>S</b>noring</td><td>Snores loudly (through closed doors, or the bed partner elbows you)</td></tr>
+          <tr><td class="h"><b>T</b>ired</td><td>Often tired, fatigued or sleepy in the daytime</td></tr>
+          <tr><td class="h"><b>O</b>bserved</td><td>Someone observed you stop breathing, or choking or gasping, during sleep</td></tr>
+          <tr><td class="h"><b>P</b>ressure</td><td>Have, or being treated for, high blood pressure</td></tr>
+          <tr><td class="h"><b>B</b>MI</td><td>Body mass index <b>more than 35</b> kg/m&sup2;</td></tr>
+          <tr><td class="h"><b>A</b>ge</td><td><b>Older than 50</b></td></tr>
+          <tr><td class="h"><b>N</b>eck</td><td>Neck (shirt collar) <b>16 inches / 40 cm or larger</b></td></tr>
+          <tr><td class="h"><b>G</b>ender</td><td><b>Male</b></td></tr>
+          <tr><td class="grp" colspan="2">RISK (general population)</td></tr>
+          <tr><td class="h">Low</td><td>Yes to <b>0&ndash;2</b></td></tr>
+          <tr><td class="h">Intermediate</td><td>Yes to <b>3&ndash;4</b></td></tr>
+          <tr><td class="h">High</td><td>Yes to <b>5&ndash;8</b>, <b>or</b> 2 or more of the 4 STOP questions <b>plus</b> male gender, <b>or plus</b> body mass index over 35, <b>or plus</b> neck 16 inches / 40 cm</td></tr>
+          <tr><td class="rnote" colspan="2">Not for routine community screening or asymptomatic patients; used preoperatively; the highest sensitivity of the questionnaires (slide 16). The risk-factor neck size on slides 6&ndash;7 is 17 inches (men) / 16 (women).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">The name is the mnemonic: STOP (four symptoms) and Bang (four facts).</p><p class="mnem-key"><span><b>S</b> Snoring loudly</span><span><b>T</b> Tired in the daytime</span><span><b>O</b> Observed apneas, choking or gasping</span><span><b>P</b> Pressure: high blood pressure</span><span><b>B</b> BMI over 35</span><span><b>A</b> Age over 50</span><span><b>N</b> Neck 16 inches / 40 cm or more</span><span><b>G</b> Gender male</span></p><p class="mnem-brk"><b>Where it breaks:</b> Risk bands 0&ndash;2 / 3&ndash;4 / 5&ndash;8 and the 2-STOP-plus rules are not in the name: learn them from the table.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l40-home-test" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Home Sleep Test or In-Lab Polysomnogram?<span class="tag">Criteria &middot; Lecture 40 &middot; slide 8</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term">Use a polysomnogram, NOT a home kit, with:</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><b>S</b>troke</td></tr>
+          <tr><td class="h"><b>N</b>euromuscular weakness</td></tr>
+          <tr><td class="h">Long-term <b>o</b>pioid use</td></tr>
+          <tr><td class="h">Significant <b>c</b>ardiopulmonary disease</td></tr>
+          <tr><td class="h">Awake <b>h</b>ypoventilation or hypoxemia</td></tr>
+          <tr><td class="h">Severe <b>i</b>nsomnia</td></tr>
+          <tr><td class="h">Concern for a <b>n</b>on-obstructive sleep disorder</td></tr>
+          <tr><td class="rnote" colspan="1">Home kits assess only obstructive sleep apnea and will not always diagnose mild disease (helpful for moderate to severe). Central sleep apnea: home testing is not sufficient (slide 26).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">A SNOCHIN (a snoring chin) with any of these sleeps in the lab.</p><p class="mnem-key"><span><b>S</b> Stroke</span><span><b>N</b> Neuromuscular weakness</span><span><b>O</b> Opioids, long term</span><span><b>C</b> Cardiopulmonary disease</span><span><b>H</b> Hypoventilation or hypoxemia while awake</span><span><b>I</b> Insomnia, severe</span><span><b>N</b> Non-obstructive sleep disorder suspected</span></p><p class="mnem-brk"><b>Where it breaks:</b> Made up here; the slide lists them in a different order.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l40-ohs" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Obesity Hypoventilation Syndrome: Screen, Diagnose, Treat<span class="tag">Criteria &middot; Lecture 40 &middot; slides 31&ndash;33</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:26%">Step</th><th style="width:74%">What the slides say</th></tr></thead>
+        <tbody>
+          <tr><td class="grp" colspan="2">SCREEN an obese patient (with or without obstructive sleep apnea) who has</td></tr>
+          <tr><td class="h">Oxygen saturation</td><td>Unexplained awake room-air saturation <b>94% or less</b>, or overnight lowest <b>below 80%</b></td></tr>
+          <tr><td class="h">Symptoms and signs</td><td>Unexplained dyspnea on exertion; pulmonary hypertension or right-sided heart failure (elevated jugular venous pressure, hepatomegaly, pedal edema); <b>facial plethora</b> (facial swelling, puffiness)</td></tr>
+          <tr><td class="h">Labs</td><td>Raised bicarbonate; when suspicion is low to moderate, serum bicarbonate <b>over 27</b> &rarr; arterial blood gas</td></tr>
+          <tr><td class="grp" colspan="2">DIAGNOSE by exclusion: all three</td></tr>
+          <tr><td class="h">1</td><td>Obesity: body mass index <b>over 30</b></td></tr>
+          <tr><td class="h">2</td><td>Awake alveolar hypoventilation: arterial carbon dioxide pressure <b>over 45 mm Hg</b></td></tr>
+          <tr><td class="h">3</td><td>Alternative causes of hypercapnia and hypoventilation <b>excluded</b></td></tr>
+          <tr><td class="h">Gold standard</td><td>Polysomnography with <b>continuous nocturnal carbon dioxide monitoring</b></td></tr>
+          <tr><td class="grp" colspan="2">TREAT</td></tr>
+          <tr><td class="h">Approach</td><td><b>Multidisciplinary</b></td></tr>
+          <tr><td class="h">First line</td><td>Weight loss program <b>+</b> positive airway pressure: with obstructive sleep apnea &rarr; <b>CPAP</b>; with sleep-related hypoventilation &rarr; <b>BiPAP</b></td></tr>
+          <tr><td class="h">Lifestyle</td><td>Diet changes, exercise, behavioral modifications</td></tr>
+          <tr><td class="h">Second line</td><td><b>Tracheostomy with nocturnal ventilation</b> (very effective); bariatric surgery; medications only after diet and exercise fail</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Screen at 94-80-27; diagnose at 30-45-zero.</p><p class="mnem-key"><span><b>94</b> awake saturation 94% or less</span><span><b>80</b> overnight nadir below 80%</span><span><b>27</b> bicarbonate over 27 means get a blood gas</span><span><b>30</b> body mass index over 30</span><span><b>45</b> arterial carbon dioxide over 45 mm Hg</span><span><b>zero</b> zero other causes (diagnosis of exclusion)</span></p><p class="mnem-brk"><b>Where it breaks:</b> The screening signs without numbers (dyspnea, right heart failure, facial plethora) and the treatment rows (multidisciplinary, first line, lifestyle, second line) are not in the numbers.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l40-untreated" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Untreated Obstructive Sleep Apnea: the Numbers<span class="tag">Cut-offs &middot; Lecture 40 &middot; slides 18&ndash;20</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:62%">Outcome</th><th style="width:38%">Risk</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Driving accidents</td><td><b>2.5 times</b></td></tr>
+          <tr><td class="h">Sudden cardiac death <b>AT NIGHT</b></td><td><b>3&ndash;6 times</b></td></tr>
+          <tr><td class="h">Hypertension</td><td><b>3 times</b></td></tr>
+          <tr><td class="h">Nonalcoholic fatty liver disease (prevalence)</td><td><b>2&ndash;3 times</b></td></tr>
+          <tr><td class="h">Gastroesophageal or laryngopharyngeal reflux</td><td><b>75&ndash;100%</b> of patients; improves with CPAP</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Count up the night: 2.5 crashes, 2 to 3 livers, 3 pressures, 3 to 6 hearts stop, and nearly all reflux.</p><p class="mnem-key"><span><b>2.5</b> driving accidents</span><span><b>2&ndash;3</b> fatty liver</span><span><b>3</b> hypertension</span><span><b>3&ndash;6</b> sudden cardiac death at night</span><span><b>75&ndash;100%</b> reflux</span></p><p class="mnem-brk"><b>Where it breaks:</b> Heart failure mortality, pulmonary hypertension, stroke, arrhythmias and ischemic heart disease carry no number on the slides.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l41-onset" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Interstitial Lung Disease: Onset Patterns<span class="tag">Classification &middot; Lecture 41 &middot; slide 22</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:20%">Onset</th><th style="width:26%">Time course</th><th style="width:54%">Typical of</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><b>Acute</b></td><td>Days to weeks</td><td><b>Allergy</b></td></tr>
+          <tr><td class="h"><b>Subacute</b></td><td>Weeks to months</td><td>Any, but most common with <b>sarcoidosis</b> and <b>drug-induced</b> disease</td></tr>
+          <tr><td class="h"><b>Chronic</b></td><td>Months to years</td><td><b>Most</b> interstitial lung diseases: idiopathic pulmonary fibrosis, sarcoidosis, pneumoconiosis, connective tissue disease</td></tr>
+          <tr><td class="h"><b>Episodic</b></td><td>Less common</td><td><b>Hypersensitivity pneumonitis</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">All Sorts Come Eventually: Allergy fast, Sarcoid and drugs Sub, Chronic for most, hypersensitivity comes and goes (Episodic).</p><p class="mnem-key"><span><b>A</b> Acute (days to weeks): allergy</span><span><b>S</b> Subacute (weeks to months): sarcoidosis, drug-induced</span><span><b>C</b> Chronic (months to years): most, including idiopathic pulmonary fibrosis, sarcoidosis, pneumoconiosis, connective tissue disease</span><span><b>E</b> Episodic: hypersensitivity pneumonitis</span></p><p class="mnem-brk"><b>Where it breaks:</b> Sarcoidosis sits in both the subacute and the chronic rows on the slide.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l41-imaging-pft" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Reading the Film and the Pulmonary Function Tests<span class="tag">Classification &middot; Lecture 41 &middot; slides 26, 29</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:42%">Finding</th><th style="width:58%">Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="grp" colspan="2">RETICULAR (curvilinear) OPACITIES</td></tr>
+          <tr><td class="h"><b>Fine</b> (ground glass)</td><td><b>Early</b> finding</td></tr>
+          <tr><td class="h"><b>Medium</b> (honeycombing)</td><td><b>Late</b> finding</td></tr>
+          <tr><td class="h"><b>Coarse</b></td><td><b>Cystic spaces</b></td></tr>
+          <tr><td class="grp" colspan="2">OTHER PATTERNS</td></tr>
+          <tr><td class="h">Nodular</td><td>Nodules</td></tr>
+          <tr><td class="h">Reticulonodular</td><td>Reticular shadows overlapping, or with nodules (sarcoid)</td></tr>
+          <tr><td class="h">Hilar and mediastinal lymphadenopathy</td><td><b>Sarcoidosis, silicosis</b></td></tr>
+          <tr><td class="grp" colspan="2">RESTRICTIVE PATTERN</td></tr>
+          <tr><td class="h">Forced expiratory volume in 1 second &divide; forced vital capacity</td><td><b>Normal or increased</b></td></tr>
+          <tr><td class="h">Total lung capacity and forced vital capacity</td><td><b>Decreased</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Ground glass Goes first, Honeycomb Hangs on late; in restriction the Ratio is Retained while the volumes are Reduced.</p><p class="mnem-key"><span><b>G</b> ground glass = fine, early</span><span><b>H</b> honeycombing = medium, late</span><span><b>Coarse</b> cystic spaces</span><span><b>Ratio retained</b> normal or increased ratio</span><span><b>Volumes reduced</b> total lung capacity and forced vital capacity decreased</span></p><p class="mnem-brk"><b>Where it breaks:</b> The other patterns (nodular, reticulonodular, hilar adenopathy in sarcoidosis and silicosis) have no letter.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l41-labs" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Laboratory Clues in Interstitial Lung Disease<span class="tag">Classification &middot; Lecture 41 &middot; slide 25</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:50%">Test</th><th style="width:50%">Points to</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Sedimentation rate increased</td><td><b>Active sarcoidosis</b></td></tr>
+          <tr><td class="h">High antinuclear antibody</td><td><b>Collagen vascular disease</b></td></tr>
+          <tr><td class="h"><b>c-ANCA</b> (cytoplasmic antineutrophil cytoplasmic antibody)</td><td><b>Granulomatosis with polyangiitis</b></td></tr>
+          <tr><td class="h">Anti-glomerular and anti-alveolar basement membrane antibodies</td><td><b>Goodpasture syndrome</b> (glomerulonephritis + diffuse pulmonary hemorrhage, young adults)</td></tr>
+          <tr><td class="h">Elevated angiotensin-converting enzyme</td><td><b>Sarcoidosis</b>; the slide also writes &ldquo;hypersensitivity silicosis&rdquo;</td></tr>
+          <tr><td class="h">Eosinophilia</td><td>Eosinophilic pneumonia, sarcoidosis, drug-induced</td></tr>
+          <tr><td class="rnote" colspan="2">Slide 44: the angiotensin-converting enzyme is elevated in 40&ndash;80% of sarcoidosis patients.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Sarcoid has the ACE (angiotensin-converting enzyme) and the Sed rate; GPA (granulomatosis with polyangiitis) is C-ANCA; Goodpasture hits the Basement (lung and kidney); ANA means Autoimmune.</p><p class="mnem-key"><span><b>ACE + Sed</b> sarcoidosis (active)</span><span><b>C-ANCA</b> granulomatosis with polyangiitis</span><span><b>Basement</b> anti-basement membrane: Goodpasture</span><span><b>ANA</b> collagen vascular (autoimmune) disease</span></p><p class="mnem-brk"><b>Where it breaks:</b> Eosinophilia (three causes) and the slide&rsquo;s &ldquo;hypersensitivity silicosis&rdquo; beside the enzyme are not in the hook.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l41-ipf" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Idiopathic Pulmonary Fibrosis Without a Biopsy<span class="tag">Criteria &middot; Lecture 41 &middot; slide 35</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:10%">#</th><th style="width:90%">In a patient over 65 (all four = 90% confidence, no surgical lung biopsy)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">1</td><td><b>Idiopathic</b> disease by history, with <b>inspiratory crackles</b> on examination</td></tr>
+          <tr><td class="h">2</td><td><b>Restrictive</b> physiology on pulmonary function testing</td></tr>
+          <tr><td class="h">3</td><td>Radiographic evidence of <b>progressive fibrosis over several years</b></td></tr>
+          <tr><td class="h">4</td><td><b>Diffuse, patchy fibrosis with pleural-based honeycombing</b> on high-resolution CT</td></tr>
+          <tr><td class="rnote" colspan="2">Corticosteroids may be used in cryptogenic organizing pneumonia, lymphoid interstitial pneumonia and nonspecific interstitial pneumonia (slide 38); for idiopathic pulmonary fibrosis nothing has improved survival and smoking cessation is critical (slide 37).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Over 65 and CRPH (crackles, restriction, progression, honeycomb): skip the biopsy.</p><p class="mnem-key"><span><b>C</b> Crackles (inspiratory) in idiopathic disease</span><span><b>R</b> Restrictive physiology</span><span><b>P</b> Progressive fibrosis over years on films</span><span><b>H</b> Honeycombing, pleural-based, on high-resolution CT</span></p><p class="mnem-brk"><b>Where it breaks:</b> The age (over 65) is outside the four letters.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l41-sarcoid-stage" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Sarcoidosis: Chest Film Stages<span class="tag">Staging &middot; Lecture 41 &middot; slides 45, 48</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:16%">Stage</th><th style="width:84%">Chest film</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><b>I</b></td><td>Bilateral hilar adenopathy <b>alone</b></td></tr>
+          <tr><td class="h"><b>II</b></td><td>Hilar adenopathy <b>and</b> parenchymal involvement</td></tr>
+          <tr><td class="h"><b>III</b></td><td>Parenchymal involvement <b>alone</b> (diffuse reticular infiltrates)</td></tr>
+          <tr><td class="h"><b>IV</b></td><td><b>Advanced fibrosis</b>: honeycombing, hilar retraction, bullae, cysts, emphysema</td></tr>
+          <tr><td class="rnote" colspan="2">Best prognosis with hilar adenopathy alone; parenchymal involvement is worse; 20% with lung involvement get irreversible impairment (slide 48). Biopsy whenever lymphoma or another diagnosis is possible (slide 45).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Nodes, Nodes + lung, Lung, Scar.</p><p class="mnem-key"><span><b>I</b> nodes (hilar adenopathy) alone</span><span><b>II</b> nodes + lung</span><span><b>III</b> lung alone</span><span><b>IV</b> scar (fibrosis, honeycombing)</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l41-sarcoid-steroids" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Sarcoidosis: When to Give Oral Corticosteroids<span class="tag">Criteria &middot; Lecture 41 &middot; slides 46&ndash;47</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:64%">Indication (slide 47)</th><th style="width:36%">Organ</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><b>Hypercalcemia</b></td><td>Calcium</td></tr>
+          <tr><td class="h"><b>Cardiac</b> involvement</td><td>Heart</td></tr>
+          <tr><td class="h"><b>Iritis</b>, <b>uveitis</b></td><td>Eyes</td></tr>
+          <tr><td class="h">Granulomatous hepatitis</td><td>Liver</td></tr>
+          <tr><td class="h"><b>Progressive pulmonary lesions</b></td><td>Lungs (progressive)</td></tr>
+          <tr><td class="h">Cutaneous lesions <b>other than erythema nodosum</b></td><td>Skin</td></tr>
+          <tr><td class="h">Arthritis</td><td>Joints</td></tr>
+          <tr><td class="h"><b>Central nervous system</b> involvement</td><td>Brain</td></tr>
+          <tr><td class="h">Disabling constitutional symptoms</td><td>Constitution</td></tr>
+          <tr><td class="rnote" colspan="2">About 90% respond to corticosteroids. Intolerant or refractory: methotrexate, azathioprine or infliximab (slide 46).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Calcium HELPS JB&rsquo;s Constitution.</p><p class="mnem-key"><span><b>C</b> Calcium: hypercalcemia</span><span><b>H</b> Heart: cardiac involvement</span><span><b>E</b> Eyes: iritis, uveitis</span><span><b>L</b> Liver: granulomatous hepatitis</span><span><b>P</b> Progressive pulmonary lesions</span><span><b>S</b> Skin lesions other than erythema nodosum</span><span><b>J</b> Joints: arthritis</span><span><b>B</b> Brain: central nervous system involvement</span><span><b>Constitution</b> disabling constitutional symptoms</span></p><p class="mnem-brk"><b>Where it breaks:</b> Erythema nodosum alone is the skin exception: it is NOT an indication.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l41-dusts" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>The Dust Diseases Side by Side<span class="tag">Classification &middot; Lecture 41 &middot; slides 50&ndash;64</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:560px">
+        <thead><tr><th class="term" style="width:16%"></th><th style="width:28%">Coal workers&rsquo; pneumoconiosis</th><th style="width:28%">Asbestosis</th><th style="width:28%">Silicosis</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Exposure</td><td>Coal dust</td><td><b>Insulation, demolition, shipyards, construction</b> (10&ndash;20 years; seen about 15 years later)</td><td><b>Mining, sandblasting, quarry, stone work</b> (crystalline silica)</td></tr>
+          <tr><td class="h">Where</td><td><b>Upper</b> lung fields</td><td><b>Bases</b></td><td><b>Upper</b> lobes (lighter dust)</td></tr>
+          <tr><td class="h">Hallmark</td><td><b>Coal macules 2&ndash;5 mm</b></td><td><b>Pleural plaques</b> (most common film finding); ferruginous bodies; <b>CT preferred</b></td><td><b>Silicotic nodules 1&ndash;10 mm</b>; <b>eggshell</b> calcification of hilar nodes; milky lavage</td></tr>
+          <tr><td class="h">Function</td><td>Restrictive, reduced diffusing capacity</td><td>Reduced vital capacity and total lung capacity</td><td>Reduced forced vital capacity and forced expiratory volume</td></tr>
+          <tr><td class="h">Watch for</td><td><b>Progressive massive fibrosis</b></td><td><b>Lung cancer</b> (smokers) and <b>mesothelioma</b> (10% lifetime)</td><td><b>Tuberculosis</b> (skin test + current chest film), progressive massive fibrosis, scleroderma</td></tr>
+          <tr><td class="h">Treatment</td><td>Supportive: oxygen, vaccines, rehabilitation, stop smoking; transplant</td><td>Supportive: fibers cannot be removed</td><td>Supportive; stop smoking</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Coal and silica float UP, asbestos sinks DOWN; asbestos Plants Plaques and Mesothelioma, silica brings Tuberculosis and Eggshells.</p><p class="mnem-key"><span><b>Up</b> coal (upper fields) and silica (upper lobes)</span><span><b>Down</b> asbestos (bases)</span><span><b>Plaques + mesothelioma</b> asbestos</span><span><b>Tuberculosis + eggshells</b> silica</span></p><p class="mnem-brk"><b>Where it breaks:</b> The hook leaves out the coal macules (2&ndash;5 mm), the silicotic nodules, progressive massive fibrosis (coal and silica), lung cancer, scleroderma, and the function and treatment rows.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l41-hp" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Hypersensitivity Pneumonitis: Acute, Subacute, Chronic<span class="tag">Classification &middot; Lecture 41 &middot; slides 66&ndash;67</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:16%">Type</th><th style="width:28%">Timing</th><th style="width:56%">Signs and symptoms</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><b>Acute</b></td><td>Within 9 hours of exposure</td><td><b>Flu-like illness</b> (fever, chills, muscle or joint pain, headache), rales, cough</td></tr>
+          <tr><td class="h"><b>Subacute</b></td><td>Multiple exposures (15%)</td><td>Rales, cough, chronic bronchitis, shortness of breath, anorexia or weight loss</td></tr>
+          <tr><td class="h"><b>Chronic</b></td><td>Multiple exposures (5%)</td><td>Cough, chronic bronchitis, shortness of breath, anorexia or weight loss, <b>fatigue, lung fibrosis, clubbing</b></td></tr>
+          <tr><td class="rnote" colspan="3">Slide 66: symptoms, with nausea 4&ndash;8 hours after exposure; slide 67: acute disease within 9 hours of exposure.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Acute is the Flu; chronic adds the three Fs: Fatigue, Fibrosis, Fingers (clubbing).</p><p class="mnem-key"><span><b>Flu</b> acute: flu-like illness, rales, cough</span><span><b>Fatigue</b> chronic only</span><span><b>Fibrosis</b> chronic only</span><span><b>Fingers</b> clubbing, chronic only</span></p><p class="mnem-brk"><b>Where it breaks:</b> Subacute has no letter: it sits between (rales, cough, bronchitis, dyspnea, weight loss).</p></div>
+  </section>
+
+  <section class="topic" id="crit-l41-ards" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Acute Respiratory Distress Syndrome: Criteria and Severity<span class="tag">Criteria &middot; Lecture 41 &middot; slide 73 (picture)</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:30%">Item</th><th style="width:70%">What the picture says</th></tr></thead>
+        <tbody>
+          <tr><td class="grp" colspan="2">CORE DIAGNOSTIC CRITERIA</td></tr>
+          <tr><td class="h">Acute onset</td><td>Develops <b>within 7 days</b> of a known clinical insult</td></tr>
+          <tr><td class="h">Bilateral opacities</td><td>New opacities <b>not explained</b> by effusion, atelectasis or nodules</td></tr>
+          <tr><td class="h">Non-cardiogenic</td><td>Failure <b>not fully explained</b> by heart failure or fluid overload</td></tr>
+          <tr><td class="h">Oxygenation</td><td>Arterial oxygen pressure &divide; fraction of inspired oxygen <b>under 300 mm Hg</b> (or saturation &divide; fraction under 315)</td></tr>
+          <tr><td class="grp" colspan="2">SEVERITY (arterial oxygen pressure &divide; fraction of inspired oxygen)</td></tr>
+          <tr><td class="h"><b>Mild</b></td><td>200&ndash;300 mm Hg</td></tr>
+          <tr><td class="h"><b>Moderate</b></td><td>100&ndash;200 mm Hg</td></tr>
+          <tr><td class="h"><b>Severe</b></td><td>Under 100 mm Hg</td></tr>
+          <tr><td class="rnote" colspan="2">Example: arterial oxygen 60 mm Hg on 50% oxygen (0.5) = 120, moderate. The management picture (slide 74) gives plateau pressure &ldquo;under 50 cm H2O&rdquo;, which differs from current guidelines (see the guide note); no question keys the number.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">A-R-D-S: Acute, Radiograph, Doesn&rsquo;t come from the heart, Short of oxygen; then grade by 3-2-1 hundred.</p><p class="mnem-key"><span><b>A</b> Acute: within 7 days of an insult</span><span><b>R</b> Radiograph: bilateral opacities not from effusion, atelectasis, nodules</span><span><b>D</b> Doesn&rsquo;t come from the heart: not fully explained by heart failure or fluid overload</span><span><b>S</b> Short of oxygen: ratio under 300</span><span><b>3-2-1</b> mild 200&ndash;300, moderate 100&ndash;200, severe under 100</span></p></div>
+  </section>
+
+  <section class="topic" id="l39-emph" style="--acc:#b8860b;--acc-bg:#f5eedd;--acc-zebra:#faf7ee;--acc-ink:#906909">
+    <div class="shead"><span class="dot" style="background:#b8860b"></span><h2>★ Emphasized: Sleep Physiology</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ CAN vs CANNOT</td><td>Capitals on the slide: sleep = unconsciousness from which a person <b>CAN</b> be aroused; coma = one from which a person <b>CANNOT</b>.</td></tr>
+          <tr><td class="h">★ Two basic types</td><td>Her focus: <b>REM vs non-REM</b>, the &ldquo;two basic overviews&rdquo;; the separate N1&ndash;N3 details and the sleep-wake paragraph are background (know it is <b>positive feedback</b>).</td></tr>
+          <tr><td class="h">★ Exhausted &rarr; little REM</td><td>Very sleepy: REM episodes <b>short or absent</b>; they lengthen as the person is rested.</td></tr>
+          <tr><td class="h">★ Non-REM</td><td>Deep, restful; <b>increased parasympathetic tone</b>; dreams happen but are <b>not remembered</b> (no memory consolidation).</td></tr>
+          <tr><td class="h">Stages</td><td>For this course: <b>three</b> non-REM stages (N1&ndash;N3), she said in class; some slides show four.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l39-rem-nrem" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>REM vs Non-REM Sleep</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Non-REM (slow-wave)</td><td>Deep, <b>extremely restful</b>; <b>increased parasympathetic tone</b>; blood pressure, heart rate, breathing and metabolic rate <b>10&ndash;30% lower</b>; dreams less vivid and <b>often not remembered</b> (not consolidated). Stages N1, <b>N2 (the majority)</b>, N3.</td></tr>
+          <tr><td class="h">REM</td><td>Not restful; <b>vivid dreams</b> with muscle activity; <b>muscle tone very depressed</b> (atonia except eyes and diaphragm); heart rate and breathing <b>irregular</b>; brain metabolism up to <b>20%</b> higher; <b>harder to arouse than non-REM</b>, yet spontaneous morning waking happens in REM.</td></tr>
+          <tr><td class="h">Paradoxical / desynchronized</td><td>REM&rsquo;s EEG looks like wakefulness (<b>paradoxical sleep</b>); neurons fire without synchrony (<b>desynchronized sleep</b>).</td></tr>
+          <tr><td class="h">Very sleepy</td><td>REM episodes are <b>short or absent</b>; they lengthen as the person becomes rested.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l39-functions" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Why We Sleep &amp; the Sleep-Wake Cycle</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Sleep restriction</td><td>Over a few days: worse <b>cognitive and physical performance</b>, productivity and health.</td></tr>
+          <tr><td class="h">Two effect types</td><td>On the <b>nervous system</b> and on <b>other body systems</b>; the exact functions remain a mystery.</td></tr>
+          <tr><td class="h">Functions</td><td>Neural maturation; learning and memory; <b>targeted erasure of synapses</b>; cognition; <b>clearing metabolic waste</b> of the awake brain; <b>conserving metabolic energy</b>.</td></tr>
+          <tr><td class="h">Waking up</td><td>Sleep centers off &rarr; <b>mesencephalic and upper pontile reticular activating nuclei</b> released &rarr; cortex excited &rarr; <b>positive feedback</b> keeps wakefulness going.</td></tr>
+          <tr><td class="h">Falling asleep</td><td>Hours later the activating neurons <b>fatigue</b>, the feedback loop fades and <b>sleep-promoting centers take over</b>. No definitive explanation exists.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l40-emph" style="--acc:#b8860b;--acc-bg:#f5eedd;--acc-zebra:#faf7ee;--acc-ink:#906909">
+    <div class="shead"><span class="dot" style="background:#b8860b"></span><h2>★ Emphasized: Sleep Apnea</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ AT NIGHT</td><td>Capitals on the slide: untreated obstructive sleep apnea carries <b>3&ndash;6 times the risk of sudden cardiac death AT NIGHT</b>.</td></tr>
+          <tr><td class="h">★ ** ASV</td><td>Asterisks on the slide: <b>adaptive servo-ventilation is not used for all patients</b>, especially in <b>heart failure with reduced ejection fraction</b>.</td></tr>
+          <tr><td class="h">★ Gold standards</td><td>Split-night and all-night polysomnogram (obstructive apnea); polysomnography with continuous carbon dioxide monitoring (obesity hypoventilation).</td></tr>
+          <tr><td class="h">Recording</td><td>Not in yet (Monday 2 November): her spoken emphasis is added when it arrives.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l40-osa" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Obstructive Sleep Apnea</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Who and why</td><td>Most common sleep-disordered breathing; rises with age; men &gt; women; post- &gt; premenopausal; <b>upper airway narrowing</b> by soft tissue or structure.</td></tr>
+          <tr><td class="h">Risk factors</td><td>Obesity; big tongue, small or set-back jaw; neck <b>17 in (men) / 16 in (women)</b>; big tonsils; age; male; family history; <b>alcohol or sedatives</b>; <b>hypothyroidism</b>.</td></tr>
+          <tr><td class="h">History</td><td>Daytime sleepiness, unrefreshing sleep, <b>witnessed apnea</b>, snorting or gasping, <b>loud habitual snoring</b>, morning headache, nocturia, <b>poorly controlled hypertension</b>, poor memory, low libido, night sweats.</td></tr>
+          <tr><td class="h">Exam</td><td>Obesity, macroglossia, micrognathia, retrognathia, large neck, enlarged tonsils, <b>crowded posterior oropharynx</b>.</td></tr>
+          <tr><td class="h">Tests</td><td>Thyroid-stimulating hormone if hypothyroid; <b>split-night</b> (2 hours, then CPAP titration) or <b>all-night</b> polysomnogram (mild to moderate at baseline); titration study if the diagnosis is known.</td></tr>
+          <tr><td class="h">Differential</td><td>Central sleep apnea, nocturnal dyspnea (heart failure), swallowing disorder, panic attacks, nocturnal asthma, reflux, nocturnal seizures, narcolepsy, periodic limb movements.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l40-osa-rx" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Treating Obstructive Sleep Apnea</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Most effective</td><td><b>Continuous positive airway pressure (CPAP)</b>.</td></tr>
+          <tr><td class="h">Other devices</td><td>Autotitrating PAP <b>only without significant comorbidities</b>; positional therapy if supine-only; <b>oral appliance not for severe disease or no teeth</b>; nasal expiratory resistance device.</td></tr>
+          <tr><td class="h">Drugs</td><td><b>Modafinil or armodafinil</b>: headache, anxiety, dizziness, nausea, hypersensitivity, many interactions; <b>caution with cardiovascular, hepatic, psychiatric disease</b>; <b>lower doses in the elderly</b>. Nasal steroids for allergic congestion.</td></tr>
+          <tr><td class="h">Surgery</td><td>Radiofrequency ablation (mild to moderate, CPAP-intolerant); palatal implants (mild); maxillomandibular advancement; <b>tracheostomy is a cure</b>; bariatric surgery may help.</td></tr>
+          <tr><td class="h">Lifestyle and referral</td><td>Diet and exercise for weight loss; <b>avoid alcohol and sedatives</b>; <b>refer to a sleep physician</b>; counseling.</td></tr>
+          <tr><td class="h">Older adults</td><td>Lower mortality (they compensate) but <b>drowsiness and nocturia</b>, which improve with CPAP.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l40-complications" style="--acc:#7a3b2e;--acc-bg:#ece4e2;--acc-zebra:#f6f1f0;--acc-ink:#5f2e24">
+    <div class="shead"><span class="dot" style="background:#7a3b2e"></span><h2>Untreated: Complications &amp; Comorbidities</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Heart</td><td>Arrhythmias, bradycardia, sympathetic tone up, blood pressure variability; ischemic heart disease; <b>heart failure mortality</b>; aortic aneurysm and dissection.</td></tr>
+          <tr><td class="h">Lungs</td><td><b>Group 3 pulmonary hypertension</b> (especially with obesity hypoventilation or daytime hypoxemia).</td></tr>
+          <tr><td class="h">Metabolic</td><td><b>Insulin resistance, type 2 diabetes</b> and its complications; glucose and triglycerides up; worse cardiovascular risk in <b>metabolic syndrome</b>; fatty liver 2&ndash;3 times; gout.</td></tr>
+          <tr><td class="h">Other</td><td>Stroke; reflux 75&ndash;100%; C-reactive protein, cortisol, amyloid up; growth hormone, prolactin down; cytokines up (improve with CPAP).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l40-csa" style="--acc:#4a5a2a;--acc-bg:#e6e8e1;--acc-zebra:#f2f3f0;--acc-ink:#3a4621">
+    <div class="shead"><span class="dot" style="background:#4a5a2a"></span><h2>Central Sleep Apnea</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Mechanism</td><td>Brainstem stops signaling: high carbon dioxide sensitivity &rarr; <b>hyperventilation alternating with apnea</b>; <b>no effort</b> (obstructive: effort against a collapsed airway).</td></tr>
+          <tr><td class="h">Risk factors</td><td><b>Heart failure</b> (Cheyne-Stokes; circulation delay to the carotid chemoreceptors), <b>stroke</b>, <b>opioids</b>, hypoxia, <b>high altitude</b>, CPAP use.</td></tr>
+          <tr><td class="h">Presentation</td><td>Insomnia, awakenings, nocturnal dyspnea, nonrestorative sleep, sleepiness; <b>less snoring</b>.</td></tr>
+          <tr><td class="h">Diagnosis</td><td><b>Polysomnography (home not sufficient)</b>: repetitive apneas <b>without thoracic-abdominal excursion</b>.</td></tr>
+          <tr><td class="h">Treatment</td><td><b>Treat the cause</b> (optimize heart failure therapy, reduce opioids, descend) &rarr; <b>CPAP</b> &rarr; adaptive servo-ventilation if CPAP fails, <b>not in reduced ejection fraction</b>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l40-ohs" style="--acc:#5a3a5e;--acc-bg:#e8e3e8;--acc-zebra:#f3f1f4;--acc-ink:#462d49">
+    <div class="shead"><span class="dot" style="background:#5a3a5e"></span><h2>Obesity Hypoventilation Syndrome</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Definition</td><td><b>Awake</b> alveolar hypoventilation (raised awake carbon dioxide) in an obese person, <b>not explained by anything else</b> (Pickwickian syndrome).</td></tr>
+          <tr><td class="h">Risk factors</td><td>Central obesity, reduced lung function, weak inspiratory muscles, <b>severe obstructive sleep apnea</b>; <b>male sex is NOT a risk factor</b>; 50s and 60s.</td></tr>
+          <tr><td class="h">Presentation</td><td><b>90% have obstructive apnea symptoms (70% severe)</b>; 10% sleep hypoventilation (older women, fewer witnessed apneas); many present late with hypercapnic respiratory failure or right heart failure.</td></tr>
+          <tr><td class="h">Complications</td><td>Pulmonary hypertension, right-sided heart failure, sleepiness, hypertension, heart failure, insulin resistance; <b>refer to a sleep specialist</b>.</td></tr>
+          <tr><td class="h">Prognosis</td><td><b>High mortality</b>; <b>cardiovascular disease is the leading cause of death</b>; more hospital and intensive care use; worse with significant awake hypoxemia at diagnosis.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l41-emph" style="--acc:#b8860b;--acc-bg:#f5eedd;--acc-zebra:#faf7ee;--acc-ink:#906909">
+    <div class="shead"><span class="dot" style="background:#b8860b"></span><h2>★ Professor Emphasized — Inflammatory Lung Disease</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ History is the clue</td><td>&ldquo;A person showing up at a place with a thing&rdquo;: <b>occupation, hobbies, exposure, timing</b>. The presentations look alike (exertional dyspnea, dry cough, crackles); the history separates them.</td></tr>
+          <tr><td class="h">★ Pay attention</td><td>The <b>laboratory clue table</b> (sedimentation rate and angiotensin-converting enzyme = sarcoid, c-ANCA = granulomatosis with polyangiitis, anti-basement membrane = Goodpasture, antinuclear antibody = collagen vascular).</td></tr>
+          <tr><td class="h">★ Board pointers</td><td>Lupus pernio + dry cough &rarr; sarcoid; <b>ferruginous bodies &rarr; asbestos</b>; <b>milky lavage &rarr; silicosis</b>; hypersensitivity pneumonitis: <b>find the agent, avoid the agent</b>; idiopathic pulmonary fibrosis is the most common.</td></tr>
+          <tr><td class="h">Not tested</td><td>Don&rsquo;t memorize the cause/drug charts; rare subtypes (&ldquo;desquamative interstitial pneumonia on a test? No&rdquo;); few Churg-Strauss / Wegener questions; sarcoid immunology slide.</td></tr>
+          <tr><td class="h">Most time</td><td><b>Acute respiratory distress syndrome</b> (11 of 66 minutes): a feared complication of sepsis, trauma, aspiration and more; the pictures carry AI typos (&ldquo;Chuck&rdquo; = shock).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l41-ild" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Interstitial Lung Disease: the Common Ground</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">What it is</td><td>200+ disorders of <b>scarring and/or inflammation of the parenchyma</b> (alveoli, ducts, respiratory bronchioles); <b>not malignant, not infectious</b>; stiff, restrictive lungs &rarr; <b>shortness of breath</b>.</td></tr>
+          <tr><td class="h">How</td><td>Inflammatory cells in alveolar walls &rarr; <b>alveolitis</b> &rarr; fibroblasts &rarr; <b>collagen</b> = fibrosis (permanent).</td></tr>
+          <tr><td class="h">Two groups</td><td><b>Inflammation and fibrosis</b> vs <b>granulomatous</b>; each known or unknown cause. Known: inorganic and organic dusts, fumes, gases. Unknown: sarcoidosis, idiopathic pulmonary fibrosis, connective tissue disease.</td></tr>
+          <tr><td class="h">Drug causes</td><td><b>Methotrexate, amiodarone, nitrofurantoin, bleomycin</b>, chemotherapy, radiation (and the long slide 9 list).</td></tr>
+          <tr><td class="h">Symptoms</td><td><b>Progressive exertional dyspnea</b> or <b>persistent nonproductive cough</b>; hemoptysis, wheeze, chest pain, tachypnea, anorexia; later dyspnea at rest.</td></tr>
+          <tr><td class="h">Exam</td><td>Small lung volumes, <b>bibasilar dry rales (inspiratory crackles)</b>, <b>clubbing</b>, right heart failure late; <b>may be normal early</b>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l41-iip" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Idiopathic Interstitial Pneumonia &amp; Pulmonary Fibrosis</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Subtypes</td><td>Idiopathic pulmonary fibrosis (<b>most common</b>), desquamative, nonspecific, cryptogenic organizing, respiratory bronchiolitis-associated, lymphoid, acute interstitial.</td></tr>
+          <tr><td class="h">Smoking</td><td><b>67&ndash;75%</b> of idiopathic and familial fibrosis patients have smoked; smoking is the cause in the majority; <b>cessation is critical</b>.</td></tr>
+          <tr><td class="h">Picture</td><td><b>Insidious dry cough</b>, exertional dyspnea, fatigue; clubbing, <b>bibasilar inspiratory crackles</b>, reduced chest expansion.</td></tr>
+          <tr><td class="h">Tests</td><td>Restrictive pattern; CT <b>diffuse patchy fibrosis with pleural-based honeycombing</b>; lower-field markings; biopsy may be needed (lavage, transbronchial, surgical).</td></tr>
+          <tr><td class="h">Treatment</td><td><b>Controversial</b>: nothing improves survival vs no treatment; steroids only for cryptogenic organizing, lymphoid and nonspecific subtypes.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l41-ctd" style="--acc:#4a5a2a;--acc-bg:#e6e8e1;--acc-zebra:#f2f3f0;--acc-ink:#3a4621">
+    <div class="shead"><span class="dot" style="background:#4a5a2a"></span><h2>Connective Tissue &amp; Granulomatous Disease</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Connective tissue</td><td>Lupus, rheumatoid arthritis, ankylosing spondylitis, systemic sclerosis, Sj&ouml;gren, polymyositis-dermatomyositis, scleroderma. <b>Methotrexate treats them and also causes interstitial lung disease.</b></td></tr>
+          <tr><td class="h">Hemorrhage syndromes</td><td>Goodpasture (anti-basement membrane), idiopathic pulmonary hemosiderosis, isolated pulmonary capillaritis.</td></tr>
+          <tr><td class="h">Granulomatous</td><td>Sarcoidosis; granulomatosis with polyangiitis (c-ANCA); Churg-Strauss; hypersensitivity pneumonitis.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l41-sarcoid" style="--acc:#7a3b2e;--acc-bg:#ece4e2;--acc-zebra:#f6f1f0;--acc-ink:#5f2e24">
+    <div class="shead"><span class="dot" style="background:#7a3b2e"></span><h2>Sarcoidosis</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Who</td><td>Multi-organ, <b>noncaseating granulomas</b>, lungs and lymphatics most; <b>North American Black and Northern European white</b> people; <b>women</b>; <b>third and fourth decades</b>.</td></tr>
+          <tr><td class="h">Picture</td><td>Cough, insidious dyspnea, chest discomfort, malaise, fever, weight loss, <b>nontender lymphadenopathy</b>; <b>erythema nodosum</b> (painful rashes, lower legs), parotid enlargement, <b>lupus pernio</b> (painful skin sores, face), hepatosplenomegaly.</td></tr>
+          <tr><td class="h">Tests</td><td>Film: <b>symmetric bilateral hilar and right paratracheal adenopathy</b>; angiotensin-converting enzyme up in 40&ndash;80%, hypercalcemia (5%), hypercalciuria, eosinophilia, high sedimentation rate; <b>biopsy confirms</b> (transbronchial or fine-needle node).</td></tr>
+          <tr><td class="h">Treatment</td><td>Corticosteroids (90% respond) for the listed indications; <b>methotrexate, azathioprine, infliximab</b> if intolerant or refractory.</td></tr>
+          <tr><td class="h">Follow-up</td><td><b>Yearly</b>: exam, pulmonary function, chest film, electrocardiogram, chemistry, <b>eye exam</b>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l41-hp" style="--acc:#5a3a5e;--acc-bg:#e8e3e8;--acc-zebra:#f3f1f4;--acc-ink:#462d49">
+    <div class="shead"><span class="dot" style="background:#5a3a5e"></span><h2>Hypersensitivity Pneumonitis</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">What</td><td><b>Non-atopic, non-asthmatic</b>; inhaled <b>organic</b> dust: moldy hay (farmer&rsquo;s lung), bird excreta and feathers (bird fancier&rsquo;s), cheese maker&rsquo;s lung, moldy sugarcane, infested grain.</td></tr>
+          <tr><td class="h">Picture</td><td>Malaise, chills, fever, cough, dyspnea, nausea <b>hours after exposure</b>; may mimic paroxysmal nocturnal dyspnea (worse after work at home); crackles, tachypnea, tachycardia, cyanosis.</td></tr>
+          <tr><td class="h">Tests</td><td><b>Serum antibodies to the agent = definitive</b>; white count up with left shift; hypoxia; restrictive; small nodules <b>sparing apices and bases</b>; biopsy if subacute or chronic; noncaseating granulomas.</td></tr>
+          <tr><td class="h">Treatment</td><td><b>Identify and avoid the agent</b>; steroids if severe; supportive; transplant. <b>Reversible if caught early.</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l41-ards" style="--acc:#7a3b2e;--acc-bg:#ece4e2;--acc-zebra:#f6f1f0;--acc-ink:#5f2e24">
+    <div class="shead"><span class="dot" style="background:#7a3b2e"></span><h2>Acute Respiratory Distress Syndrome</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Causes</td><td>Direct: <b>aspiration</b>, diffuse pneumonia, contusion, toxic gas, near-drowning, emboli. Systemic: <b>sepsis</b> (about a third of cases), pancreatitis, shock, trauma, overdoses, <b>transfusions</b>, amiodarone, nitrofurantoin.</td></tr>
+          <tr><td class="h">Picture</td><td><b>Dyspnea 12&ndash;48 hours</b> after the insult; <b>hypoxemia refractory to oxygen</b>; tachypnea, retractions, crackles; multiorgan failure.</td></tr>
+          <tr><td class="h">Imaging</td><td>Bilateral infiltrates becoming confluent; <b>air bronchograms (about 80%)</b>; <b>normal heart size</b>, few effusions; <b>echocardiogram excludes cardiogenic edema</b> (cardiomegaly, batwing opacities).</td></tr>
+          <tr><td class="h">Management</td><td>Treat the cause; <b>low tidal volume</b>; positive end-expiratory pressure for arterial oxygen above 60; <b>early prone positioning (moderate to severe)</b>; <b>conservative fluids</b>; <b>transfuse at 7 g/dL</b>; steroids within 14 days (conditional); avoid oscillatory ventilation and routine pulmonary artery catheters; neuromuscular blockade controversial; ECMO (extracorporeal membrane oxygenation) salvage.</td></tr>
+          <tr><td class="h">Prognosis</td><td>Mortality about <b>30%</b> (20% trauma to 80% end-stage liver disease); lung function recovers over <b>6&ndash;12 months</b>; residual diffusion deficits, weakness, fatigue.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the CMS I Exam 7 Study Guide (Class of 2028). For the full explanation behind any of these, see the full guide.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
