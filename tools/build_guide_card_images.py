@@ -99,6 +99,13 @@ CURATED = {
     # Pharm Exam 3: the kidney-and-nephron diagram reads at strip height; the asthma step chart it replaced did not.
     "Pharmacology I Exam 3/pharm-exam-3-study-guide.html":
         "Pharmacology I Exam 3/pharm-e3-images/l09-slide-06-kidney-nephron.jpg",
+    # Exam 7 (respiratory II): imaging and the sleep hypnogram instead of the three ARDS infographics.
+    "Clinical Medicine and Surgery I Exam 7/cms-exam-7-study-guide.html":
+        "Clinical Medicine and Surgery I Exam 7/cms-e7-images/l41-s036-hrct-ipf-honeycombing.jpg",
+    "Clinical Medicine and Surgery I Exam 7/cms-exam-7-cram-sheet.html":
+        "Clinical Medicine and Surgery I Exam 7/cms-e7-images/l39-s007-hypnogram.png",
+    "Clinical Medicine and Surgery I Exam 7/cms-exam-7-clin-med-pro-guide.html":
+        "Clinical Medicine and Surgery I Exam 7/cms-e7-images/l41-s028-cxr-sarcoid-hilar.jpg",
 }
 
 # Cards that get NO picture even though their folder has some.
