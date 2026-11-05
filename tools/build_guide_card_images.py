@@ -96,6 +96,9 @@ CURATED = {
         "Clinical Medicine and Surgery I Exam 6/cms-e6-images/l36-s032-cxr-flattened-diaphragm.jpg",
     "Clinical Medicine and Surgery I Exam 6/cms-exam-6-clin-med-pro-guide.html":
         "Clinical Medicine and Surgery I Exam 6/cms-e6-images/l37-s054-lung-abscess-cxr-ct.jpg",
+    # Pharm Exam 3: the kidney-and-nephron diagram reads at strip height; the asthma step chart it replaced did not.
+    "Pharmacology I Exam 3/pharm-exam-3-study-guide.html":
+        "Pharmacology I Exam 3/pharm-e3-images/l09-slide-06-kidney-nephron.jpg",
 }
 
 # Cards that get NO picture even though their folder has some.
