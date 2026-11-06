@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build the Microbiology Exam 3 cram sheet (Lectures 14-19; Lectures 14-16 so far).
+"""Build the Microbiology Exam 3 cram sheet (Lectures 14-19; Lectures 14-17 so far).
 
 Condensed ONLY from the Exam 3 study guide (tools/micro_e3/_micro_e3_guide_lN.py), which is itself built from the
 decks, in the shape of tools/build_micro_e2_cram.py. Each lecture is a JSON fragment, tools/micro_e3/lN_cram.json
@@ -14,6 +14,9 @@ maps one-to-one onto the table's rows (Jaxon's standing rule, memory cram_criter
 (the first carries "toc_label"). Every cell and every memory-aid key was checked against the slides by an
 independent reader. Lecture 14's sheet predates the rule and has no criteria tables yet.
 
+2026-11-06 (Lecture 17, Parasites of Medical Importance, Dr. Webster): l17_criteria.json (14 comparison tables) and
+l17_cram.json; stars are the slides' own (14, 48, 79, 94) plus what the recording stressed.
+
     python3 tools/build_micro_e3_cram.py
 """
 import io, json, os, sys
@@ -23,8 +26,8 @@ sys.path.insert(0, os.path.join(HERE, "cram-sheet-template"))
 from render import render
 
 OUT = os.path.join(ROOT, "Microbiology Exam 3", "micro-exam-3-cram-sheet.html")
-CRITERIA = ["l15_criteria.json", "l16_criteria.json"]
-FRAGMENTS = ["l14_cram.json", "l15_cram.json", "l16_cram.json"]
+CRITERIA = ["l15_criteria.json", "l16_criteria.json", "l17_criteria.json"]
+FRAGMENTS = ["l14_cram.json", "l15_cram.json", "l16_cram.json", "l17_cram.json"]
 
 topics = []
 for frag in CRITERIA + FRAGMENTS:
@@ -37,7 +40,7 @@ html = render(
     kicker="Microbiology · Exam 3 · Class of 2028",
     h1="Microbiology Exam 3 Cram Sheet",
     primary="#1f4d2b",   # the sheet's colour before the criteria tables went on top
-    sub="Lectures 14–16 so far — Gram-Negative Bacilli, Fungi of Medical Importance, Food Safety (the Exam 3 block is Lectures 14–19). <b>Tables and memory aids come first</b>: one per classification, comparison or cut-off set on the Lecture 15 and 16 slides. ★ = emphasized in the lecture recording or flagged on a slide. Exam 3 is Wednesday 2 December 2026.",
+    sub="Lectures 14–17 so far — Gram-Negative Bacilli, Fungi of Medical Importance, Food Safety, Parasites of Medical Importance (the Exam 3 block is Lectures 14–19). <b>Tables and memory aids come first</b>: one per classification, comparison or cut-off set on the Lecture 15, 16 and 17 slides. ★ = emphasized in the lecture recording or flagged on a slide. Exam 3 is Wednesday 2 December 2026.",
     topics=topics,
     guide_href="micro-exam-3-study-guide.html",
     footer_note="Condensed from the Microbiology Exam 3 Study Guide (Class of 2028). For the full explanation and figures behind any of these, see the full guide.",

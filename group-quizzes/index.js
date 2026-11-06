@@ -454,6 +454,7 @@ window.GROUP_INDEX = {
 "microbiology-exam-3-food-safety-quiz":{"title":"Food Safety — Quiz 1","category":"Microbiology","exam":"Exam 3","sem":"fall-2026","n":30},
 "microbiology-exam-3-fungi-of-medical-importance-quiz":{"title":"Fungi of Medical Importance — Quiz 1","category":"Microbiology","exam":"Exam 3","sem":"fall-2026","n":30},
 "microbiology-exam-3-gram-negative-bacilli-quiz":{"title":"Gram-Negative Bacilli — Quiz 1","category":"Microbiology","exam":"Exam 3","sem":"fall-2026","n":30},
+"microbiology-exam-3-parasites-of-medical-importance-quiz":{"title":"Parasites of Medical Importance — Quiz 1","category":"Microbiology","exam":"Exam 3","sem":"fall-2026","n":30},
 "nutrition-class-nutrition-ppt-1-2-review-qs":{"title":"Nutrition PPT 1-2 Review Qs","category":"Nutrition","exam":"General","sem":"summer-1-2026","n":25},
 "pharmacodynamics-exam-2-antimicrobials-quiz-1":{"title":"Antimicrobials Quiz — Set 1","category":"Pharmacodynamics","exam":"Exam 2","sem":"summer-1-2026","n":30},
 "pharmacodynamics-exam-2-antimicrobials-quiz-2":{"title":"Antimicrobials Quiz — Set 2","category":"Pharmacodynamics","exam":"Exam 2","sem":"summer-1-2026","n":30},
