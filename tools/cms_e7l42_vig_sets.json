@@ -1,0 +1,1806 @@
+{
+ "set1": [
+  {
+   "topic": "Pulmonary embolism: diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 34-year-old woman who takes an estrogen-containing oral contraceptive has had 1 day of pleuritic chest pain and has coughed up a small amount of blood once. Her heart rate is 106/min and oxygen saturation 98%. Her legs show no swelling or tenderness, she has had no surgery or immobilization, she has had no previous clots and has no cancer, and the clinician judges viral pleurisy more likely than pulmonary embolism. What is her Wells score?",
+   "opts": [
+    [
+     "Score of 1.5",
+     "A score of 1.5 forgets her hemoptysis, worth 1 point. Tell: coughing up blood counts even when the amount is small; her total is 2.5.",
+     "adjacent fact"
+    ],
+    [
+     "Score of 2.5",
+     "Correct. Heart rate above 100 (106/min) 1.5 + hemoptysis 1 + signs of deep vein thrombosis 0 + embolism more likely than alternatives 0 + surgery or immobilization 0 + previous clot 0 + malignancy 0 = 2.5. Estrogen use is a risk factor and a PERC (Pulmonary Embolism Rule-out Criteria) item, but it is not on the Wells list. A score of 4 or less means embolism is unlikely."
+    ],
+    [
+     "Score of 3.5",
+     "A score of 3.5 adds a point for her oral contraceptive. Tell: estrogen is a PERC (Pulmonary Embolism Rule-out Criteria) item and a hypercoagulable risk factor, but the Wells score gives it no points.",
+     "adjacent fact"
+    ],
+    [
+     "Score of 5.5",
+     "A score of 5.5 adds 3 points for embolism as the leading diagnosis. Tell: the clinician judged viral pleurisy more likely, so that item scores 0.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 49, 53",
+   "slot": "test finding",
+   "lead": "classify"
+  },
+  {
+   "topic": "Pulmonary embolism: risk factors and presentation",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 70-year-old woman has received parenteral nutrition through a central venous catheter for 5 weeks and now has a pulmonary embolism. Which part of Virchow's triad does the catheter contribute?",
+   "opts": [
+    [
+     "Endothelial injury",
+     "Correct. Central venous catheters, like pacemaker wires, recent surgery and pelvic or lower-limb trauma, contribute endothelial injury in Virchow's triad. The catheter damages the wall of the vein it sits in, giving clot a place to start."
+    ],
+    [
+     "Venous stasis",
+     "Venous stasis comes from prolonged immobilization, flights over 8 hours, bed rest, paralysis or advanced heart failure. Tell: a catheter is a foreign body in the vein, which is injury, not slowed flow.",
+     "adjacent fact"
+    ],
+    [
+     "Hypercoagulability",
+     "Hypercoagulability comes from malignancy, estrogen therapy, pregnancy, genetic thrombophilias and sepsis. Tell: a catheter changes the vessel wall, not the blood itself.",
+     "adjacent fact"
+    ],
+    [
+     "Arterial occlusion",
+     "Arterial occlusion is not part of Virchow's triad, which describes venous thrombosis: stasis, hypercoagulability and endothelial injury. Tell: the catheter sits in a vein and injures its wall.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slide 49",
+   "slot": "risk factors",
+   "lead": "classify"
+  },
+  {
+   "topic": "Cor pulmonale: diagnosis and management",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 69-year-old man with chronic obstructive pulmonary disease and cor pulmonale uses continuous home oxygen. He has had three exacerbations this year, each set off by a respiratory infection. Besides the oxygen, which plan addresses the root of his cor pulmonale?",
+   "opts": [
+    [
+     "Thrombolysis and anticoagulation",
+     "Thrombolysis and anticoagulation are the cause-directed treatment when acute embolism is the lung problem behind cor pulmonale. Tell: his cor pulmonale comes from chronic obstructive pulmonary disease, not clot, so the cause-directed therapy is for his airways.",
+     "adjacent fact"
+    ],
+    [
+     "Strict fluid restriction alone",
+     "Fluid balance matters, but cor pulmonale is not fixed by managing volume, and the damaged right ventricle relies on adequate filling pressure. Tell: the root problem is his lung disease, which bronchodilators and infection treatment address.",
+     "adjacent fact"
+    ],
+    [
+     "Phosphodiesterase-5 inhibitor therapy",
+     "Phosphodiesterase-5 inhibitors are one of the Group 1 classes, with endothelin receptor antagonists and prostacyclins. Tell: his cor pulmonale comes from chronic obstructive pulmonary disease, so the plan targets the lungs: bronchodilators and infection control.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Bronchodilators and prompt infection care",
+     "Correct. The prime directive in cor pulmonale is to treat the underlying lung disease, because the right ventricle cannot recover while the lungs keep loading it. For chronic obstructive pulmonary disease that means bronchodilators and aggressive treatment of respiratory infections, the triggers of his exacerbations, alongside continuous oxygen."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slide 15",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Pulmonary embolism: risk stratification and treatment",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 62-year-old woman with a confirmed pulmonary embolism becomes confused and clammy. Her blood pressure has been 76/48 mmHg for 40 minutes despite fluids. She has had no recent surgery, no bleeding and no stroke. How is her embolism risk-stratified, and what follows for treatment?",
+   "opts": [
+    [
+     "Submassive; anticoagulation alone",
+     "Submassive embolism is normotensive with right ventricular dysfunction or raised biomarkers. Tell: her blood pressure is 76/48 mmHg and has stayed low for 40 minutes, which is massive.",
+     "wrong stage or severity"
+    ],
+    [
+     "Massive; anticoagulation alone",
+     "The category is right, but anticoagulation alone does not meet the need for immediate advanced intervention in massive embolism. Tell: hemodynamic collapse with no contraindication calls for thrombolysis.",
+     "adjacent fact"
+    ],
+    [
+     "Low risk; outpatient anticoagulation",
+     "Low-risk embolism is normotensive with no right ventricular dysfunction and negative biomarkers. Tell: she is hypotensive and confused, the opposite end of the scale.",
+     "wrong stage or severity"
+    ],
+    [
+     "Massive; systemic thrombolysis",
+     "Correct. Sustained hypotension (here 76/48 mmHg for 40 minutes) defines massive, high-risk embolism, a circulatory collapse with high mortality that requires immediate advanced intervention. Thrombolysis is the standard for massive, hemodynamically unstable embolism, and she has no stated contraindication."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 58, 60",
+   "slot": "escalation",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Pulmonary hypertension: treatment",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 33-year-old woman has idiopathic pulmonary arterial hypertension, functional class II. During right heart catheterization her pulmonary pressures fall markedly on vasoreactivity testing, so she is vasoreactive. Which therapy fits her?",
+   "opts": [
+    [
+     "High-dose oral calcium channel blocker",
+     "Correct. Vasoreactivity testing splits the treatment path: patients who respond are treated with high-dose oral calcium channel blockers. Patients who are not vasoreactive are the ones who move on to risk stratification and the targeted pulmonary arterial hypertension classes."
+    ],
+    [
+     "Continuous intravenous prostanoid",
+     "Continuous intravenous or subcutaneous prostanoids are for high-risk patients who are not vasoreactive: class IV or rapid clinical decline. Tell: she is vasoreactive and class II, so the first branch already gives her answer.",
+     "wrong stage or severity"
+    ],
+    [
+     "Early oral combination therapy",
+     "Early oral combination therapy, an endothelin receptor antagonist with a phosphodiesterase-5 inhibitor, is for low- or intermediate-risk patients who are not vasoreactive. Tell: her positive vasoreactivity test sends her down the calcium channel blocker branch.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Lung transplantation referral",
+     "Lung transplantation is the definitive option for disease refractory to maximal medical therapy. Tell: she is class II and has not yet been treated, so transplant is far from her next step.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slide 28",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Pulmonary hypertension: diagnosis and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 50-year-old woman has progressive exertional dyspnea. Echocardiography estimates a high pulmonary artery systolic pressure with an enlarged right ventricle, and her chest film, pulmonary function tests and ventilation-perfusion scan are normal. Which test is required to confirm pre-capillary pulmonary hypertension?",
+   "opts": [
+    [
+     "Computed tomographic angiography",
+     "Computed tomographic angiography images the pulmonary arteries for clot but measures no pressures. Tell: her normal perfusion scan has already excluded the clot group, and the pressures still need direct measurement.",
+     "adjacent fact"
+    ],
+    [
+     "B-type natriuretic peptide level",
+     "B-type natriuretic peptide reflects ventricular stretch and helps separate cardiogenic dyspnea from pulmonary mimics. Tell: it cannot measure the pulmonary pressures or the wedge pressure that confirm pre-capillary pulmonary hypertension.",
+     "adjacent fact"
+    ],
+    [
+     "Right heart catheterization",
+     "Correct. Right heart catheterization is the mandatory confirmation: it measures the mean pulmonary artery pressure, the pulmonary capillary wedge pressure and pulmonary vascular resistance. A high mean pressure with a normal wedge pressure confirms pre-capillary pulmonary hypertension."
+    ],
+    [
+     "Repeat echocardiography",
+     "Echocardiography is the screening test, the most useful initial study, and it estimates pressures rather than measuring them. Tell: confirmation needs direct measurement of the mean pressure and wedge pressure, which catheterization provides.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 24, 36",
+   "slot": "gold standard",
+   "lead": "test"
+  },
+  {
+   "topic": "Cor pulmonale: pathophysiology and hemodynamics",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 64-year-old man with chronic obstructive pulmonary disease and chronic hypoxemia has a hematocrit of 58% (normal 41-50%). Echocardiography shows right ventricular hypertrophy. How does his blood count add to the load on his right ventricle?",
+   "opts": [
+    [
+     "It lowers oxygen content",
+     "Polycythemia is the body's answer to low oxygen and raises the oxygen the blood can carry. Tell: its cost is thicker blood and more cardiac work, which is how it compounds his right ventricular load.",
+     "reversed direction or value"
+    ],
+    [
+     "It raises blood viscosity",
+     "Correct. Chronic hypoxia drives polycythemia, and the extra red cells raise blood viscosity and the workload of the heart. That compounds the structural and hypoxic rise in pulmonary resistance his right ventricle already pumps against."
+    ],
+    [
+     "It lowers blood viscosity",
+     "More red cells make blood thicker, not thinner; viscosity rises with the hematocrit. Tell: his hematocrit is above the normal range, the polycythemia of chronic hypoxia, which raises resistance to flow.",
+     "reversed direction or value"
+    ],
+    [
+     "It dilates pulmonary arteries",
+     "Extra red cells do not dilate the pulmonary arteries; in chronic lung disease the vessels are constricted by hypoxia and lost to structural damage. Tell: polycythemia adds to his load by thickening the blood, on top of the narrowed vascular bed.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slide 7",
+   "slot": "complication",
+   "lead": "complication"
+  },
+  {
+   "topic": "Pulmonary embolism: risk stratification and treatment",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 60-year-old man had a pulmonary embolism 4 months ago and still has exertional dyspnea despite anticoagulation. A ventilation-perfusion scan shows persistent mismatched perfusion defects. Which step fits next?",
+   "opts": [
+    [
+     "Repeat the scan in a year",
+     "Waiting a year leaves possible chronic thromboembolic pulmonary hypertension unaddressed, and its optimal treatment is surgery. Tell: abnormal perfusion after 3 months triggers referral to an expert center now.",
+     "wrong stage or severity"
+    ],
+    [
+     "Systemic thrombolysis now",
+     "Thrombolysis treats acute, massive embolism with hemodynamic instability. Tell: his problem is chronic, unresolved clot burden after months of anticoagulation, and its treatment is surgical thromboendarterectomy.",
+     "adjacent fact"
+    ],
+    [
+     "Refer to an expert center",
+     "Correct. Abnormal perfusion after 3 months of anticoagulation leads to transthoracic echocardiography, right heart catheterization and pulmonary angiography, then referral to an expert center to evaluate chronic thromboembolic disease. Anticoagulation continues during the workup, and the optimal treatment for chronic thromboembolic pulmonary hypertension is surgical: pulmonary thromboendarterectomy."
+    ],
+    [
+     "Stop anticoagulation and reassess",
+     "Anticoagulation continues during the workup for chronic thromboembolic disease. Tell: his persistent defects are the reason to keep protecting him while he is referred.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slide 61",
+   "slot": "referral",
+   "lead": "referral"
+  },
+  {
+   "topic": "Cor pulmonale: pathophysiology and hemodynamics",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 69-year-old woman has had chronic obstructive pulmonary disease for 15 years, with slowly progressive exertional dyspnea and a chronic unproductive cough. Echocardiography shows a thick-walled right ventricle with preserved function. Which right ventricular response does this reflect?",
+   "opts": [
+    [
+     "Acute dilation and stretch",
+     "Acute dilation and stretch happen when pressure outpaces adaptation, as in a massive embolism over minutes to hours. Tell: her load has risen slowly for 15 years, and her echocardiogram shows a thick wall, not a stretched thin one.",
+     "wrong stage or severity"
+    ],
+    [
+     "Microinfarction from wall tension",
+     "Microinfarction comes with the instant rise in wall tension of an acute crash, such as a massive embolism. Tell: her right ventricle has adapted to a slow load and still works normally, so there has been no acute crash.",
+     "wrong stage or severity"
+    ],
+    [
+     "Left ventricular hypertrophy",
+     "Left ventricular hypertrophy is a response to a left-sided load, which her lung disease does not create. Tell: chronic obstructive pulmonary disease raises pulmonary resistance, so the chamber that thickens is the right ventricle, the one her echocardiogram describes.",
+     "adjacent fact"
+    ],
+    [
+     "Concentric hypertrophy",
+     "Correct. Lung disease raises pulmonary pressure gradually over months to years, which gives the right ventricle time to adapt: it thickens with concentric hypertrophy and holds its function until eventual exhaustion and late dilation. Her thick wall with preserved function after 15 years fits that compensated stage."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 8, 9",
+   "slot": "manifestation",
+   "lead": "classify"
+  },
+  {
+   "topic": "Pulmonary edema: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 70-year-old man has acute cardiogenic pulmonary edema. He is sitting upright on high-flow oxygen and has received an intravenous loop diuretic, but he remains tachypneic with an oxygen saturation of 87%. He is alert and able to protect his airway. Which step comes next?",
+   "opts": [
+    [
+     "Intravenous fluid bolus",
+     "A fluid bolus raises preload and capillary hydrostatic pressure, the engine of cardiogenic edema. Tell: his lungs are flooded, so more fluid would worsen them.",
+     "reversed direction or value"
+    ],
+    [
+     "Lying flat to rest",
+     "Upright positioning is part of treatment, because gravity reduces venous return; lying flat increases it. Tell: lying him flat would push more blood toward his congested lungs.",
+     "reversed direction or value"
+    ],
+    [
+     "Routine intravenous morphine",
+     "Morphine is a use-with-caution agent that risks respiratory depression, and it does nothing for failing oxygenation. Tell: his hypoxemia needs positive pressure to stent his alveoli open.",
+     "adjacent fact"
+    ],
+    [
+     "Noninvasive ventilation",
+     "Correct. Noninvasive positive pressure ventilation is the P in the toolbox: it mechanically stents flooded alveoli open, pushes fluid back across the membrane and lowers intrathoracic preload and afterload. He is alert and can protect his airway, and oxygen with diuresis has not been enough."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 32, 39, 40",
+   "slot": "escalation",
+   "lead": "next step"
+  },
+  {
+   "topic": "Pulmonary hypertension: presentation and examination",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 36-year-old woman has had exertional dyspnea and fatigue for 10 months. Two clinicians told her she was out of shape, but echocardiography now shows a high estimated pulmonary artery systolic pressure and an enlarged right ventricle, and catheterization confirms pulmonary arterial hypertension. She asks why it was missed. Which response is accurate?",
+   "opts": [
+    [
+     "Early disease causes syncope first",
+     "Syncope or presyncope is an ominous later sign, a fixed low output that cannot rise with exertion. Tell: early disease brings dyspnea and fatigue, which is why it is easy to dismiss.",
+     "wrong stage or severity"
+    ],
+    [
+     "Echocardiography misses early disease",
+     "Echocardiography is the most useful initial test for pulmonary hypertension, and here it found her disease. Tell: the delay came from her mild early symptoms being blamed on fitness, not from a blind spot of the test.",
+     "reversed direction or value"
+    ],
+    [
+     "Early symptoms mimic deconditioning",
+     "Correct. Exertional dyspnea and fatigue are often the only early symptoms of pulmonary hypertension, and they are frequently misattributed to deconditioning. That is why the disease is often found late, after months of being told to get fitter."
+    ],
+    [
+     "The disease starts with chest pain",
+     "Chest pain is not the opening symptom; early disease announces itself with exertional dyspnea and fatigue. Tell: her 10 months of breathlessness and tiredness were the typical early picture.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 21, 24",
+   "slot": "manifestation",
+   "lead": "education"
+  },
+  {
+   "topic": "Pulmonary hypertension: presentation and examination",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 58-year-old woman with pulmonary arterial hypertension has ankle edema. When the examiner applies sustained, moderate pressure over her liver, her jugular venous pressure rises by 3 cm and stays up. What does this hepatojugular reflux indicate?",
+   "opts": [
+    [
+     "Low right-sided filling pressure",
+     "A low right-sided pressure would let the neck veins absorb the extra return without a sustained rise. Tell: a sustained rise of more than 1 cm means the right-sided filling pressure is high.",
+     "reversed direction or value"
+    ],
+    [
+     "Low systemic vascular resistance",
+     "Systemic resistance is not what the maneuver tests, and low output in pulmonary hypertension brings peripheral vasoconstriction with cool extremities. Tell: the sustained rise in neck vein pressure reflects high right-sided filling pressure.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Elevated right-sided filling pressure",
+     "Correct. Hepatojugular reflux is a rise in jugular venous pressure of more than 1 cm with sustained, moderate pressure on the liver, and it correlates with elevated right-sided filling pressures. In pulmonary hypertension it marks a right ventricle that cannot take the extra venous return."
+    ],
+    [
+     "Elevated left atrial filling pressure",
+     "Left atrial pressure is what the pulmonary capillary wedge pressure measures, and it shows up as lung congestion. Tell: pressing on the liver tests the right side of the heart, whose filling pressure shows in the neck veins.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slide 22",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Cor pulmonale: pathophysiology and hemodynamics",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 47-year-old man becomes suddenly short of breath, sweaty and pale and faints in the airport after a 14-hour flight. Echocardiography shows a dilated right ventricle with a thin wall, and computed tomographic pulmonary angiography shows a massive pulmonary embolism. He has no lung disease. Which right ventricular response does this presentation reflect?",
+   "opts": [
+    [
+     "Concentric hypertrophy, then dilation",
+     "Concentric hypertrophy followed by late dilation is the chronic course over months to years, seen with chronic obstructive pulmonary disease, interstitial lung disease or pulmonary arterial hypertension. Tell: he had no lung disease and collapsed hours after a flight, with a thin-walled ventricle.",
+     "wrong stage or severity"
+    ],
+    [
+     "Compensatory hypertrophy",
+     "Compensatory hypertrophy develops when pressure rises gradually, as in chronic lung disease, and it holds until the ventricle eventually exhausts. Tell: his pressure rose in an instant, and a ventricle cannot thicken in hours.",
+     "wrong stage or severity"
+    ],
+    [
+     "Gradual exhaustion of reserve",
+     "Gradual exhaustion is the end of the chronic burden, when a hypertrophied right ventricle finally fails after years of load. Tell: he never had a chronic load; his ventricle was normal until a massive clot reached the lungs.",
+     "wrong stage or severity"
+    ],
+    [
+     "Acute dilation and dysfunction",
+     "Correct. A massive embolism raises pressure faster than the right ventricle can adapt: wall tension rises instantly and the chamber dilates and fails within minutes to hours. Severe sudden dyspnea, sweating, pallor and syncope are the acute pattern, and the thin wall shows there was no time for hypertrophy."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 8, 9",
+   "slot": "manifestation",
+   "lead": "classify"
+  },
+  {
+   "topic": "Cor pulmonale: pathophysiology and hemodynamics",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 72-year-old man has had interstitial lung disease for 8 years, and his right ventricle has been known to be hypertrophied. Over the past month his exertional dyspnea has worsened. Which new finding shows that his right ventricle has decompensated?",
+   "opts": [
+    [
+     "Flattened diaphragms on the film",
+     "Flattened diaphragms mark hyperinflation from chronic obstructive pulmonary disease on the chest film. Tell: he has interstitial lung disease, which restricts rather than hyperinflates, and a lung film finding says nothing about right ventricular decompensation.",
+     "adjacent fact"
+    ],
+    [
+     "Pink frothy sputum",
+     "Pink frothy sputum signals alveolar flooding in cardiogenic pulmonary edema, from high left-sided pressure. Tell: right ventricular decompensation congests the systemic veins and organs, not the alveoli.",
+     "competing diagnosis"
+    ],
+    [
+     "Tender hepatomegaly with ascites",
+     "Correct. When a chronically hypertrophied right ventricle decompensates, its elevated diastolic pressure transmits backward: the liver congests and becomes tender, ascites forms and pitting edema spreads in dependent areas. A right ventricular heave, an intensified P2 and a tricuspid regurgitation murmur go with it."
+    ],
+    [
+     "Orthopnea with bibasilar crackles",
+     "Orthopnea with bibasilar crackles is left-sided failure, fluid backing into the lungs from a failing left heart. Tell: his load is on the right ventricle from lung disease, and its failure shows in the liver, abdomen and legs.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 11, 13, 23, 35",
+   "slot": "manifestation",
+   "lead": "test"
+  },
+  {
+   "topic": "Pulmonary edema: management and prognosis",
+   "io": "Identify medical care strategies for pulmonary vascular disease in the lecture topic list for the following populations. 7. adult 8. elderly",
+   "q": "A 52-year-old man with ischemic heart failure with reduced ejection fraction (ejection fraction 25%) is admitted with acute pulmonary edema after gaining 6 kg of fluid. His blood pressure is 138/84 mmHg and his creatinine is 1.0 mg/dL (normal 0.7-1.3). Which diuresis strategy fits him?",
+   "opts": [
+    [
+     "Aggressive diuresis",
+     "Correct. Adults with heart failure with reduced ejection fraction, usually ischemia-driven, have more physiological reserve, and aggressive diuresis is generally well tolerated. With a large fluid gain, a stable blood pressure and normal kidney function, he can have fluid removed briskly."
+    ],
+    [
+     "Gentle, minimal diuresis",
+     "Gentle, precise diuresis is the rule for elderly patients with preserved ejection fraction and a narrow therapeutic margin. Tell: he is 52 with reduced ejection fraction and more reserve.",
+     "wrong stage or severity"
+    ],
+    [
+     "Withholding diuretics for now",
+     "Withholding diuretics leaves him flooded; intravenous loop diuretics are the first tool for rapid volume reduction. Tell: a 6 kg fluid gain with pulmonary edema needs fluid removed.",
+     "reversed direction or value"
+    ],
+    [
+     "Fluid challenge first",
+     "A fluid challenge adds volume to a patient already overloaded with it. Tell: his lungs are flooded from volume overload, so the answer is diuresis, not more fluid.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 39, 42",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Cor pulmonale: diagnosis and management",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 58-year-old man has exertional dyspnea and signs of right ventricular failure. His chest film and pulmonary function tests are normal, a ventilation-perfusion scan shows several mismatched segmental perfusion defects, and he had a pulmonary embolism 2 years ago. Which World Health Organization pulmonary hypertension group fits?",
+   "opts": [
+    [
+     "Group 1",
+     "Group 1 is pulmonary arterial hypertension from obliterative remodeling of the small arteries, reached only after lung disease and thromboembolism are excluded. Tell: his scan shows segmental defects, so the thromboembolic group is not excluded; it is confirmed.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Group 2",
+     "Group 2 is post-capillary pulmonary hypertension from left heart disease, such as heart failure or mitral stenosis. Tell: nothing in his history points to the left heart, and his perfusion defects explain the pressure.",
+     "competing diagnosis"
+    ],
+    [
+     "Group 3",
+     "Group 3 comes from lung disease or hypoxia, found at step 1 with a chest film and pulmonary function tests. Tell: both of those are normal in him, so the lung group is excluded and the clot group remains.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Group 4",
+     "Correct. Normal lung studies rule out lung disease (Group 3), and segmental perfusion defects after a past embolism point to unresolved clot burden. That is chronic thromboembolic pulmonary hypertension, the obstructive pre-capillary Group 4."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 12, 19",
+   "slot": "differential",
+   "lead": "classify"
+  },
+  {
+   "topic": "Pulmonary hypertension: classification and pathophysiology",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 49-year-old woman with idiopathic pulmonary arterial hypertension faints while climbing two flights of stairs. Echocardiography shows a dilated right ventricle, a septum bowing into the left ventricle and normal left ventricular contractility. What explains her exertional syncope?",
+   "opts": [
+    [
+     "Right ventricular hypertrophy alone",
+     "Hypertrophy is the early compensation that keeps output up; syncope comes later, when the ventricle dilates and fails and the septum shifts. Tell: her right ventricle is already dilated, the stage of ventricular interdependence.",
+     "wrong stage or severity"
+    ],
+    [
+     "A drop in pulmonary resistance",
+     "Pulmonary resistance is high in pulmonary arterial hypertension, not falling. Tell: her output is fixed and low because the right ventricle pumps against that resistance and the bowed septum limits left ventricular filling.",
+     "reversed direction or value"
+    ],
+    [
+     "Impaired left ventricular filling",
+     "Correct. In advanced pulmonary hypertension the dilated right ventricle pushes the septum into the left ventricle, so the left ventricle fills poorly in diastole and output falls, even though its contractility is normal. Syncope on exertion is ominous: it signals a fixed low output that cannot rise with effort."
+    ],
+    [
+     "Weak left ventricular contraction",
+     "Her left ventricular contractility is normal on echocardiography. Tell: the left ventricle fails to fill because the septum bows into it; its squeeze is not the problem.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 20, 21",
+   "slot": "complication",
+   "lead": "complication"
+  },
+  {
+   "topic": "Pulmonary hypertension: diagnosis and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 58-year-old man with pulmonary arterial hypertension has no signs of right ventricular failure. His symptoms have progressed moderately over the past year, he has fainted once, he is in World Health Organization functional class III, and his six-minute walk distance is 310 m. Which prognostic risk band fits him?",
+   "opts": [
+    [
+     "Low risk, under 5% at 1 year",
+     "Low risk needs slow progression, no syncope, class I or II and a walk above 440 m. Tell: his single faint, class III and 310 m walk all sit in the intermediate row.",
+     "wrong stage or severity"
+    ],
+    [
+     "Intermediate risk, 5-10% at 1 year",
+     "Correct. Each feature sits in the middle row: no right ventricular failure signs, moderate progression, occasional syncope, functional class III and a six-minute walk distance between 165 and 440 m. Intermediate risk carries an estimated 1-year mortality of 5-10%."
+    ],
+    [
+     "Intermediate risk, over 10% at 1 year",
+     "Intermediate is the right band, but over 10% is the estimated 1-year mortality of the high-risk group. Tell: the intermediate band carries an estimated 5-10%.",
+     "reversed direction or value"
+    ],
+    [
+     "High risk, over 10% at 1 year",
+     "High risk needs right ventricular failure signs, rapid progression, repeated syncope, class IV or a walk under 165 m. Tell: he has no failure signs, one faint and a 310 m walk, so he falls short of the top row.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slide 25",
+   "slot": "prognosis",
+   "lead": "classify"
+  },
+  {
+   "topic": "Pulmonary embolism: diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 45-year-old man has 2 days of cough with small streaks of blood and mild dyspnea. He had a deep vein thrombosis 3 years ago. His heart rate is 108/min and oxygen saturation 96%, and his legs show no swelling or tenderness. He has had no recent surgery or immobilization and has no cancer. Because he has a fever and a focal infiltrate, the clinician judges pneumonia more likely than pulmonary embolism. What is his Wells score?",
+   "opts": [
+    [
+     "Score of 2.5",
+     "A score of 2.5 drops one of his 1.5-point items, the previous clot or the heart rate of 108/min. Tell: both count, and with hemoptysis worth 1 the total is 4.",
+     "adjacent fact"
+    ],
+    [
+     "Score of 4",
+     "Correct. Previous deep vein thrombosis 1.5 + heart rate above 100 (108/min) 1.5 + hemoptysis 1 + signs of deep vein thrombosis 0 + embolism more likely than alternatives 0 (pneumonia is judged more likely) + surgery or immobilization 0 + malignancy 0 = 4. A score of 4 or less means embolism is unlikely."
+    ],
+    [
+     "Score of 5.5",
+     "A score of 5.5 adds a 1.5-point item he lacks, such as immobilization or recent surgery. Tell: he has neither, so his total stays at 4 and embolism is unlikely.",
+     "reversed direction or value"
+    ],
+    [
+     "Score of 7",
+     "A score of 7 gives 3 points for embolism as the leading diagnosis. Tell: the clinician judged pneumonia more likely, so that item scores 0 and his total is 4.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slide 53",
+   "slot": "test finding",
+   "lead": "classify"
+  },
+  {
+   "topic": "Pulmonary edema: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 72-year-old woman with chronic obstructive pulmonary disease and heart failure has cardiogenic pulmonary edema. She is drowsy, and her arterial carbon dioxide is 66 mmHg (normal 35-45). Which agent from the acute toolbox carries the greatest risk for her?",
+   "opts": [
+    [
+     "Noninvasive ventilation",
+     "Noninvasive positive pressure ventilation stents flooded alveoli open and reduces preload. Tell: it supports her breathing rather than suppressing it, so it is part of the answer, not the danger.",
+     "reversed direction or value"
+    ],
+    [
+     "Morphine",
+     "Correct. Morphine is a use-with-caution agent: it offers venodilation and eases anxiety, but it risks respiratory depression and severe reduction of ventilatory drive. In a drowsy patient already retaining carbon dioxide, that risk outweighs the benefit."
+    ],
+    [
+     "Intravenous nitrate",
+     "Intravenous nitrates give immediate preload and afterload reduction without suppressing breathing. Tell: the agent that threatens a hypercapnic patient is the one that blunts ventilatory drive.",
+     "adjacent fact"
+    ],
+    [
+     "Intravenous loop diuretic",
+     "Intravenous loop diuretics provide rapid volume reduction and are a core first tool. Tell: they do not depress respiration, so they are not the risk in her case.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 39, 40, 46",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Pulmonary embolism: diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 28-year-old man has had mild left-sided chest wall pain for a day, reproduced by pressing on a rib cartilage. His Wells score is 0, and the clinician's gestalt for pulmonary embolism is very low (under 15%). His heart rate is 78/min and oxygen saturation 99%. He has no hemoptysis, takes no estrogen, has never had a clot, has had no recent surgery or trauma and has no leg swelling. Applying the PERC (Pulmonary Embolism Rule-out Criteria), which step fits?",
+   "opts": [
+    [
+     "Ventilation-perfusion scan",
+     "A ventilation-perfusion scan is imaging for patients who need imaging but cannot have contrast. Tell: he needs no imaging at all, because the rule-out criteria are fully met.",
+     "wrong stage or severity"
+    ],
+    [
+     "Stop: no further testing",
+     "Correct. He meets all eight criteria: age under 50, heart rate under 100, saturation above 94%, no hemoptysis, no estrogen, no prior venous thromboembolism, no surgery or trauma and no unilateral leg swelling. With very low gestalt and every criterion met, the workup stops."
+    ],
+    [
+     "Order a D-dimer to be safe",
+     "The D-dimer is for low- or intermediate-probability patients who fail the rule-out criteria, and its low specificity invites false positives. Tell: he passes all eight criteria, so no D-dimer is needed.",
+     "wrong stage or severity"
+    ],
+    [
+     "Computed tomographic angiography",
+     "Computed tomographic angiography follows a positive D-dimer or a Wells score above 4. Tell: he has neither; he passes every rule-out criterion.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 54, 57",
+   "slot": "initial test",
+   "lead": "next step"
+  },
+  {
+   "topic": "Pulmonary embolism: diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 51-year-old woman has sudden dyspnea and a swollen, tender left leg, and her Wells score is 6. She had anaphylaxis to iodinated contrast during a previous scan. Her creatinine is 0.7 mg/dL (normal 0.6-1.1), and she has no chronic lung disease. Which test should confirm or exclude pulmonary embolism?",
+   "opts": [
+    [
+     "Ventilation-perfusion scan",
+     "Correct. Severe contrast allergy is one of the reasons to choose the ventilation-perfusion scan over computed tomographic pulmonary angiography. With no chronic lung disease the scan is less likely to be nondiagnostic, and a completely negative scan excludes embolism with the same certainty as a negative pulmonary angiogram."
+    ],
+    [
+     "Computed tomographic pulmonary angiography",
+     "Computed tomographic pulmonary angiography is the modern first-line test, but it depends on intravenous iodinated contrast. Tell: her anaphylaxis to that contrast is a severe allergy, so the perfusion scan is the choice.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Bedside echocardiography",
+     "Echocardiography has poor sensitivity (about 50%) for acute embolism and is used for risk stratification, not diagnosis. Tell: it can show right ventricular strain but cannot exclude embolism.",
+     "adjacent fact"
+    ],
+    [
+     "A high-sensitivity D-dimer",
+     "A D-dimer is bypassed when the Wells score is above 4, because a likely embolism needs imaging. Tell: at 6 she goes straight to imaging, and her allergy decides which kind.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 55, 56, 57",
+   "slot": "initial test",
+   "lead": "test"
+  },
+  {
+   "topic": "Pulmonary edema: presentation and diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 68-year-old man who has smoked for 50 years has 3 days of worsening dyspnea and wheezing. His chest film shows hyperinflation without vascular congestion, his arterial carbon dioxide is 61 mmHg (normal 35-45), and his B-type natriuretic peptide is 70 pg/mL (normal under 100). What is the most likely diagnosis?",
+   "opts": [
+    [
+     "Heart failure exacerbation",
+     "A heart failure exacerbation gives a highly elevated natriuretic peptide, echocardiographic abnormalities and Kerley B lines (fluid in the interlobular septa). Tell: his natriuretic peptide is under 100 pg/mL.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Obstructive lung disease flare",
+     "Correct. Wheezing, hyperinflation on the chest film and hypercapnia point to an exacerbation of chronic obstructive pulmonary disease, and the natriuretic peptide is usually normal in that setting, as his is. Dyspnea, hypoxemia and tachycardia are shared with heart failure and embolism, so these features decide."
+    ],
+    [
+     "Acute cardiogenic pulmonary edema",
+     "Cardiogenic pulmonary edema raises the natriuretic peptide sharply and shows congestion on the film. Tell: his natriuretic peptide is normal and his film shows hyperinflation without congestion.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Acute pulmonary embolism",
+     "Embolism shows clear lungs and a normal natriuretic peptide early on, often with right ventricular strain on the electrocardiogram. Tell: his wheezing, hyperinflation and high carbon dioxide point to his airways instead.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slide 43",
+   "slot": "differential",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Pulmonary hypertension: treatment",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 41-year-old woman has idiopathic pulmonary arterial hypertension and is not vasoreactive on testing. She is in functional class II with stable symptoms and no signs of right ventricular failure. Which treatment approach fits her?",
+   "opts": [
+    [
+     "Early oral combination therapy",
+     "Correct. Patients who are not vasoreactive are stratified by risk, and low or intermediate risk (class II or III) calls for oral combination therapy: an endothelin receptor antagonist with a phosphodiesterase-5 inhibitor. Starting the combination early is superior to sequential monotherapy."
+    ],
+    [
+     "Oral monotherapy, adding drugs later",
+     "Sequential monotherapy, starting one drug and adding another later, is the approach early combination has outperformed. Tell: low- or intermediate-risk patients start with both oral classes together.",
+     "adjacent fact"
+    ],
+    [
+     "High-dose oral calcium channel blocker",
+     "Calcium channel blockers belong to vasoreactive patients. Tell: her vasoreactivity test was negative, which sends her to risk stratification and the targeted oral classes.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Continuous intravenous prostanoid",
+     "Parenteral prostanoids are for high-risk patients: class IV or rapid clinical decline. Tell: she is class II and stable, so oral combination therapy is the right step.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 26, 28",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Pulmonary embolism: risk factors and presentation",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 42-year-old man with no medical history, no medicines, no recent travel, surgery or immobilization and no family history of clots presents with sudden dyspnea and pleuritic chest pain. His heart rate is 116/min and oxygen saturation 90% on room air, and his chest film is clear. Which approach fits?",
+   "opts": [
+    [
+     "Defer testing until a risk factor appears",
+     "Waiting for a risk factor to appear delays the diagnosis of a disease that can progress to collapse and death. Tell: the presentation itself triggers the workup.",
+     "reversed direction or value"
+    ],
+    [
+     "Evaluate objectively for embolism",
+     "Correct. Failing to identify a known predisposition should never dissuade an objective evaluation when the presentation is consistent with embolism. Sudden dyspnea, pleuritic pain, tachycardia, hypoxemia and a clear film fit embolism, risk factors or not."
+    ],
+    [
+     "Exclude embolism: he has no risk factors",
+     "A lack of risk factors does not exclude embolism; the absence of a predisposition should never stop an objective evaluation. Tell: his presentation, not his history, decides whether to test.",
+     "reversed direction or value"
+    ],
+    [
+     "Treat for anxiety and reassess",
+     "Anxiety does not cause an oxygen saturation of 90%. Tell: sudden dyspnea, pleuritic pain, tachycardia and hypoxemia call for an objective evaluation for embolism.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 48, 49, 50",
+   "slot": "risk factors",
+   "lead": "next step"
+  },
+  {
+   "topic": "Pulmonary embolism: risk stratification and treatment",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 71-year-old man with a massive pulmonary embolism has had a blood pressure of 70/40 mmHg for 25 minutes. He also has active bleeding from a duodenal ulcer, with black stools and a hemoglobin of 7.8 g/dL (normal 13.5-17.5 g/dL). Which intervention fits?",
+   "opts": [
+    [
+     "Thrombectomy or embolectomy",
+     "Correct. Massive embolism with sustained hypotension needs immediate advanced intervention, but active bleeding is an absolute contraindication to thrombolytics. Mechanical thrombectomy or surgical embolectomy physically removes the clot without a drug that would worsen his bleeding."
+    ],
+    [
+     "Thrombolysis after transfusion",
+     "Transfusion replaces lost blood but does not remove the contraindication: his ulcer is still actively bleeding. Tell: thrombolysis would turn an active bleed into a catastrophic one, so the clot must be removed physically.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Catheter-directed thrombolysis",
+     "Catheter-directed thrombolysis delivers the same clot-dissolving drug class closer to the clot, and it still carries major bleeding risk. Tell: active bleeding contraindicates thrombolytics by any route.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Anticoagulation and observation",
+     "Anticoagulation alone is too slow for massive embolism with 25 minutes of hypotension. Tell: massive embolism needs immediate advanced intervention, and for him that means removing the clot physically.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 58, 60",
+   "slot": "escalation",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Pulmonary embolism: risk factors and presentation",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 66-year-old man with a pulmonary embolism has pleuritic chest pain and hemoptysis. His chest film shows a wedge-shaped, pleural-based opacity in the right lower zone. Which sign is this, and what does it indicate?",
+   "opts": [
+    [
+     "Hampton's hump, an infarction",
+     "Correct. Hampton's hump is a wedge-shaped, pleural-based opacity that indicates pulmonary infarction, matching his pleuritic pain and hemoptysis from distal, pleural-based clot. Classic signs like this are highly suggestive of embolism but infrequent."
+    ],
+    [
+     "Westermark sign, an infarction",
+     "Westermark sign is focal peripheral oligemia, an area of decreased vascularity, not an opacity. Tell: a wedge-shaped, pleural-based density is Hampton's hump.",
+     "adjacent fact"
+    ],
+    [
+     "Palla sign, an infarction",
+     "Palla sign is an enlarged right descending pulmonary artery, a central finding. Tell: his finding is a peripheral, wedge-shaped density at the pleura, which is Hampton's hump.",
+     "adjacent fact"
+    ],
+    [
+     "Hampton's hump, a pneumonia",
+     "The name is right, but the meaning is not: Hampton's hump marks infarcted lung beyond an embolus, not infection. Tell: in a patient with embolism, pleuritic pain and hemoptysis, the wedge is infarction.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 50, 51",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Pulmonary edema: mechanism and causes",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 34-year-old man inhaled chlorine gas in an industrial accident. Six hours later he has severe dyspnea and bilateral infiltrates. Echocardiography is normal, and his pulmonary capillary wedge pressure is 8 mmHg. Which mechanism best explains his pulmonary edema?",
+   "opts": [
+    [
+     "Diastolic stiffening of the ventricle",
+     "Diastolic stiffening is a cardiogenic cause seen with aging and preserved ejection fraction. Tell: he is 34 with a normal echocardiogram, and his edema followed a toxic inhalation.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Regurgitant flow across a heart valve",
+     "Valve lesions, such as chronic aortic or mitral regurgitation, cause cardiogenic edema with high filling pressure. Tell: his echocardiogram is normal and his wedge pressure low.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Toxic injury to the capillary membrane",
+     "Correct. Inhaled toxins cause chemical injury to the alveolar-capillary membrane, so the barrier shatters and protein-rich fluid leaks into the alveoli: noncardiogenic, permeability edema. His normal echocardiogram and wedge pressure of 8 mmHg exclude a pressure problem."
+    ],
+    [
+     "Hydrostatic backup from the left heart",
+     "Hydrostatic backup from a failing left heart is cardiogenic edema, with a wedge pressure above 18-20 mmHg. Tell: his wedge pressure is 8 mmHg and his heart is normal on echocardiography.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 33, 34",
+   "slot": "etiology",
+   "lead": "classify"
+  },
+  {
+   "topic": "Cor pulmonale: definition and causes",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 59-year-old man with interstitial lung disease, long-standing high blood pressure and type 2 diabetes develops ankle edema and a parasternal heave (lift along the left sternal border). Echocardiography shows an enlarged right ventricle. Before his right ventricular failure can be attributed to cor pulmonale, which finding must be excluded?",
+   "opts": [
+    [
+     "A restrictive pulmonary function pattern",
+     "A restrictive pattern is what his interstitial lung disease is expected to show, and it supports a lung cause rather than arguing against one. Tell: the definition asks you to exclude a left-sided cause, not the lung disease that would explain cor pulmonale.",
+     "reversed direction or value"
+    ],
+    [
+     "Low oxygen saturation during exercise",
+     "Exertional desaturation fits interstitial lung disease, and hypoxia is a potent pulmonary vasoconstrictor that loads the right ventricle. Tell: hypoxemia supports a lung cause; the exclusion the definition demands is high left-sided filling pressure.",
+     "adjacent fact"
+    ],
+    [
+     "Enlarged central pulmonary arteries",
+     "Enlarged central pulmonary arteries on the chest film reflect high pulmonary pressure, which is part of cor pulmonale. Tell: a sign of high pulmonary pressure does not separate a lung cause from a left heart cause; the wedge pressure does.",
+     "adjacent fact"
+    ],
+    [
+     "Elevated left-sided filling pressure",
+     "Correct. Cor pulmonale means right ventricular change caused exclusively by a lung or pulmonary vascular disorder, with a normal wedge pressure. His high blood pressure and diabetes raise the chance of left heart disease, so elevated left-sided filling pressure (Group 2, left heart failure) must be excluded first."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 4, 13, 23, 27",
+   "slot": "differential",
+   "lead": "test"
+  },
+  {
+   "topic": "Pulmonary edema: presentation and diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 63-year-old man with heart failure with reduced ejection fraction develops pneumonia with sepsis, then bilateral alveolar infiltrates and severe hypoxemia. His echocardiogram is technically limited, and his B-type natriuretic peptide is moderately raised. The team cannot tell whether his edema is cardiogenic or from a leaking barrier. Which test settles the question?",
+   "opts": [
+    [
+     "A repeat chest film in 6 hours",
+     "A repeat film shows how much fluid there is, but both cardiogenic and permeability edema fill the alveoli. Tell: the question is pressure versus leak, and a direct measure of left-sided filling pressure answers it.",
+     "adjacent fact"
+    ],
+    [
+     "Serial natriuretic peptide levels",
+     "The natriuretic peptide reflects ventricular stretch, but his known heart failure muddies its meaning. Tell: when the cause remains uncertain, the wedge pressure measures left-sided filling pressure directly.",
+     "adjacent fact"
+    ],
+    [
+     "Computed tomographic pulmonary angiography",
+     "Computed tomographic pulmonary angiography looks for embolism in the pulmonary arteries. Tell: it does not measure filling pressure, which is what separates cardiogenic edema from a leak.",
+     "adjacent fact"
+    ],
+    [
+     "Pulmonary artery catheter wedge pressure",
+     "Correct. A pulmonary artery catheter (right heart catheterization) is the ultimate hemodynamic arbiter: it directly measures left-sided filling pressure when the cause remains uncertain. The wedge looks forward to the left atrium; above 18-20 mmHg confirms cardiogenic failure, while a normal value points to a permeability leak."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 33, 36, 38",
+   "slot": "gold standard",
+   "lead": "test"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Pulmonary edema: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 67-year-old man with heart failure takes metoprolol succinate at home. He develops flash pulmonary edema after a hypertensive surge (blood pressure 196/108 mmHg), with severe dyspnea and diffuse crackles, but he is warm, well perfused and not in shock. Which step should be avoided?",
+   "opts": [
+    [
+     "Sitting him upright, legs dangling",
+     "Upright positioning with the legs dangling is a first measure: gravity reduces venous return and improves ventilation-perfusion matching. Tell: it helps him and is recommended, not avoided.",
+     "reversed direction or value"
+    ],
+    [
+     "Starting an intravenous nitrate",
+     "Intravenous nitrates give immediate preload and afterload reduction through potent venodilation, and his blood pressure is high. Tell: a nitrate suits his hypertensive flash edema.",
+     "reversed direction or value"
+    ],
+    [
+     "Giving intravenous furosemide",
+     "Intravenous furosemide gives immediate venodilation and then diuresis in flash pulmonary edema. Tell: it is a core intervention for him, not one to avoid.",
+     "reversed direction or value"
+    ],
+    [
+     "Stopping his oral beta-blocker",
+     "Correct. In flash pulmonary edema, oral beta-blockers are continued unless the patient is in shock. He is hypertensive, warm and well perfused, so stopping his metoprolol is the step to avoid while the acute measures work."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 39, 46",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Pulmonary embolism: diagnosis",
+   "io": "Identify medical care strategies for pulmonary vascular disease in the lecture topic list for the following populations. 7. adult 8. elderly",
+   "q": "A 56-year-old woman has 2 days of mild pleuritic chest pain. Her Wells score is 0, and the clinician's gestalt for pulmonary embolism is very low. Her heart rate is 84/min and oxygen saturation 98%. She has no hemoptysis, takes no estrogen, has no prior clots, has had no surgery or trauma and has no leg swelling. Applying the PERC (Pulmonary Embolism Rule-out Criteria), which step fits?",
+   "opts": [
+    [
+     "Ventilation-perfusion scan",
+     "A ventilation-perfusion scan is imaging for patients who need imaging but cannot have contrast. Tell: she needs a D-dimer first; imaging follows only if it is positive.",
+     "wrong stage or severity"
+    ],
+    [
+     "Order a D-dimer",
+     "Correct. She fails one criterion, age under 50. A patient with a Wells score of 4 or less who fails any rule-out criterion goes to a D-dimer: a negative result rules embolism out, and a positive one leads to imaging. She passes every other item."
+    ],
+    [
+     "Stop: no further testing",
+     "Stopping requires all eight criteria to be true, and the first is age under 50. Tell: at 56 she cannot pass, however well she looks.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Computed tomographic angiography",
+     "Computed tomographic angiography follows a positive D-dimer or a Wells score above 4. Tell: her Wells score is 0, so the D-dimer comes before any imaging.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 54, 57",
+   "slot": "initial test",
+   "lead": "next step"
+  },
+  {
+   "topic": "Cor pulmonale: pathophysiology and hemodynamics",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 54-year-old woman collapses 6 days after a cesarean delivery. She is pale and sweating, her heart rate is 128/min, her blood pressure is 78/48 mmHg and her neck veins are distended. Computed tomographic pulmonary angiography shows a large central pulmonary embolism, and echocardiography shows an acutely dilated right ventricle with the septum bowing toward the left ventricle. What best explains her hypotension?",
+   "opts": [
+    [
+     "Left ventricular contractile failure",
+     "Her left ventricle is squeezed from outside, not weakened: the problem is filling, because the bowed septum leaves the left ventricle less room in diastole. Tell: the echocardiogram shows the septum shifting toward the left ventricle, which limits filling rather than contraction.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Right ventricular wall hypertrophy",
+     "Hypertrophy is the slow, compensatory response to chronic pressure from lung disease over months to years. Tell: her failure came within hours of a massive embolism, and acute pressure gives sudden dilation, not a thickened wall.",
+     "wrong stage or severity"
+    ],
+    [
+     "Widespread systemic vasodilation",
+     "Systemic vasodilation with an endothelial leak is the picture of sepsis, without right ventricular strain. Tell: she has distended neck veins, an acutely dilated right ventricle and a large central embolism, an obstructive cause of shock.",
+     "competing diagnosis"
+    ],
+    [
+     "Reduced left ventricular filling",
+     "Correct. A massive embolism spikes right ventricular wall tension, and the right ventricle dilates acutely. The septum bows leftward into the left ventricle, so left ventricular diastolic filling falls, output plummets and systemic hypotension follows. Her distended neck veins and septal shift trace that chain."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 9, 10, 34, 50",
+   "slot": "complication",
+   "lead": "complication"
+  },
+  {
+   "topic": "Pulmonary embolism: diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 38-year-old woman has been bedbound at home for 7 days with severe influenza and now has sudden dyspnea. The clinician judges pulmonary embolism more likely than any alternative diagnosis, giving a Wells score of 4.5. Her heart rate is 92/min and oxygen saturation 97%, and she has no hemoptysis, no estrogen use, no prior clots, no surgery or trauma and no leg swelling, so she would meet every PERC (Pulmonary Embolism Rule-out Criteria) item. Her kidney function is normal and she has no contrast allergy. Which step fits?",
+   "opts": [
+    [
+     "Ventilation-perfusion scan first",
+     "The ventilation-perfusion scan replaces computed tomographic angiography when contrast is contraindicated. Tell: her kidneys are normal and she has no allergy, so the first-line test fits.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Computed tomographic pulmonary angiography",
+     "Correct. The rule-out criteria come after the Wells score and are used when it is 4 or less. Her score of 4.5 (embolism more likely than alternatives 3 + immobilization for more than 3 days 1.5) makes embolism likely, so the D-dimer and the rule-out criteria are bypassed and she goes directly to computed tomographic pulmonary angiography."
+    ],
+    [
+     "Stop: she meets every rule-out item",
+     "Meeting all eight criteria stops the workup for a patient with very low gestalt and a Wells score of 4 or less. Tell: her Wells score is above 4, so the rule-out step is skipped.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "A D-dimer, then imaging if positive",
+     "The D-dimer is for patients with a Wells score of 4 or less who fail the rule-out criteria. Tell: a score above 4 bypasses it and goes straight to imaging.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 53, 54, 57",
+   "slot": "initial test",
+   "lead": "next step"
+  },
+  {
+   "topic": "Cor pulmonale: pathophysiology and hemodynamics",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 66-year-old man with severe chronic obstructive pulmonary disease is cyanotic and edematous, and his arterial blood gas shows hypoxemia with hypercapnia (carbon dioxide 58 mmHg, normal 35-45), the 'blue bloater' picture. He has a chronic unproductive cough and progressive exertional dyspnea. Examination shows a parasternal heave, an intensified P2, tender hepatomegaly, ascites and dependent pitting edema. What is the most likely diagnosis?",
+   "opts": [
+    [
+     "Left ventricular failure",
+     "Left ventricular failure backs fluid into the lungs, with orthopnea, bibasilar crackles and a high wedge pressure. Tell: his signs are all right-sided (heave, loud P2, liver congestion, ascites) and his cause is lung disease, the definition of cor pulmonale.",
+     "competing diagnosis"
+    ],
+    [
+     "Cardiogenic pulmonary edema",
+     "Cardiogenic pulmonary edema floods the alveoli, with pink frothy sputum, bilateral crackles and an S3 from an overloaded left ventricle. Tell: his fluid has collected in the liver, abdomen and legs, behind a failing right ventricle.",
+     "competing diagnosis"
+    ],
+    [
+     "Chronic cor pulmonale",
+     "Correct. Years of global alveolar hypoxia and hypercapnia in chronic obstructive pulmonary disease raise pulmonary resistance and right ventricular afterload. The hypertrophied right ventricle eventually decompensates: a parasternal heave, an intensified P2, tender hepatomegaly, ascites and dependent pitting edema are the signs of that chronic failure."
+    ],
+    [
+     "Acute cor pulmonale",
+     "Acute cor pulmonale follows a massive embolism, with sudden dyspnea, syncope and collapse over minutes to hours. Tell: his findings built up over years of lung disease, and a heave with hepatomegaly and ascites reflects a long-loaded, hypertrophied ventricle.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 6, 9, 11, 23, 35",
+   "slot": "manifestation",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Cor pulmonale: diagnosis and management",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 67-year-old man with chronic obstructive pulmonary disease has chronic cor pulmonale. His electrocardiogram shows peaked P waves, severe right axis deviation and a tall R wave in lead V1. Which chamber change does the tall R wave in V1 indicate?",
+   "opts": [
+    [
+     "Left ventricular hypertrophy",
+     "Left ventricular hypertrophy is not a result of lung disease, and his tracing shows severe right axis deviation, a right-sided pattern. Tell: chronic obstructive pulmonary disease loads the right ventricle, and the tall R wave in V1 reflects that right-sided thickening.",
+     "reversed direction or value"
+    ],
+    [
+     "Left atrial enlargement",
+     "Left atrial enlargement comes from left-sided pressure and shows in the P wave, not the R wave. Tell: his peaked P waves and right axis deviation are right-sided, and the tall R in V1 is right ventricular hypertrophy.",
+     "adjacent fact"
+    ],
+    [
+     "Right ventricular hypertrophy",
+     "Correct. A tall R wave in V1 is the electrocardiogram sign of right ventricular hypertrophy, the thickened chamber of chronic cor pulmonale. His peaked P waves point to right atrial enlargement, and severe right axis deviation goes with the chronic disease."
+    ],
+    [
+     "Right atrial enlargement",
+     "Right atrial enlargement is real in him, but its electrocardiogram sign is the peaked P wave. Tell: the question asks about the tall R wave in V1, which belongs to the ventricle, not the atrium.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slide 14",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Pulmonary hypertension: classification and pathophysiology",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 57-year-old man has severe obstructive sleep apnea and chronic obstructive pulmonary disease, with nocturnal hypoxemia. Echocardiography shows a normal left ventricle and an enlarged right ventricle, and his ventilation-perfusion scan is normal. Which World Health Organization pulmonary hypertension group fits?",
+   "opts": [
+    [
+     "Group 1",
+     "Group 1, pulmonary arterial hypertension, is the diagnosis reached after lung disease and clot are excluded. Tell: he has two Group 3 causes, so his pressure is explained by lung disease and hypoxia.",
+     "competing diagnosis"
+    ],
+    [
+     "Group 2",
+     "Group 2 is pulmonary hypertension from left heart disease, with a high wedge pressure and abnormal left-sided findings. Tell: his left ventricle is normal on echocardiography.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Group 3",
+     "Correct. Lung disease and hypoxia make up Group 3, and both of his conditions are on that list: chronic obstructive pulmonary disease and sleep apnea, with its chronic nocturnal alveolar hypoventilation. Alveolar hypoxia constricts the pulmonary vessels and loads his right ventricle."
+    ],
+    [
+     "Group 4",
+     "Group 4 is chronic thromboembolic disease, shown by segmental defects on a ventilation-perfusion scan. Tell: his scan is normal, which excludes the clot group.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 5, 6, 19",
+   "slot": "etiology",
+   "lead": "classify"
+  },
+  {
+   "topic": "Pulmonary embolism: risk stratification and treatment",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 64-year-old woman is 5 days out from recent spine surgery when she collapses with a massive pulmonary embolism. Her blood pressure has been 72/44 mmHg for 30 minutes. Which intervention fits?",
+   "opts": [
+    [
+     "Catheter-directed thrombolysis",
+     "Catheter-directed thrombolysis is still pharmacological clot dissolution and shares the bleeding risk of systemic therapy. Tell: the contraindication from her recent surgery applies to any thrombolytic route.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Anticoagulation alone, then reassess",
+     "Anticoagulation halts propagation but does not remove clot, and massive embolism needs immediate advanced intervention. Tell: 30 minutes of hypotension means she cannot wait for her own fibrinolysis.",
+     "wrong stage or severity"
+    ],
+    [
+     "Mechanical thrombectomy or embolectomy",
+     "Correct. Thrombolysis is the standard for massive, hemodynamically unstable embolism, but recent surgery is an absolute contraindication to it. Mechanical thrombectomy or surgical embolectomy, which physically extracts or macerates the clot, is reserved for exactly this patient: massive embolism with a contraindication to thrombolytics."
+    ],
+    [
+     "Full-dose systemic thrombolysis",
+     "Systemic thrombolysis dissolves clot with drugs, and recent surgery is an absolute contraindication because of the bleeding risk. Tell: her operation 5 days ago closes the drug route, so the clot must be removed physically.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 58, 60",
+   "slot": "escalation",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Pulmonary hypertension: diagnosis and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 63-year-old woman with pulmonary arterial hypertension has ankle edema, ascites and a right ventricular S3 gallop. Her symptoms have worsened rapidly over 3 months, she has fainted several times, she is short of breath at rest (World Health Organization functional class IV), and her six-minute walk distance is 140 m. Which prognostic risk band fits her?",
+   "opts": [
+    [
+     "Low risk, under 5% at 1 year",
+     "Low risk needs no failure signs, slow progression, no syncope, class I or II and a walk above 440 m. Tell: she has every high-risk feature, starting with signs of right ventricular failure.",
+     "wrong stage or severity"
+    ],
+    [
+     "Intermediate risk, 5-10% at 1 year",
+     "Intermediate risk has no right ventricular failure signs, occasional syncope, class III and a walk of 165-440 m. Tell: she has failure signs, repeated faints, class IV symptoms and a 140 m walk.",
+     "wrong stage or severity"
+    ],
+    [
+     "High risk, 5-10% at 1 year",
+     "High is the right band, but 5-10% is the estimated 1-year mortality of the intermediate group. Tell: the high-risk group carries more than 10%.",
+     "reversed direction or value"
+    ],
+    [
+     "High risk, over 10% at 1 year",
+     "Correct. Signs of right ventricular failure (edema, ascites, a right ventricular S3) place her in the high-risk row, and every other feature agrees: rapid progression, repeated syncope, class IV and a walk under 165 m. High risk carries an estimated 1-year mortality above 10%."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 22, 25",
+   "slot": "prognosis",
+   "lead": "classify"
+  },
+  {
+   "topic": "Cor pulmonale: diagnosis and management",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 71-year-old woman with cor pulmonale from interstitial lung disease has ankle edema and mild ascites. Her blood pressure is 112/70 mmHg and her potassium is 4.1 mEq/L (normal 3.5-5.0). A loop diuretic is started. Which approach to her diuresis should be avoided?",
+   "opts": [
+    [
+     "Checking potassium during diuresis",
+     "Monitoring potassium is wise, because hypokalemia on loop diuretics can trigger lethal arrhythmias. Tell: checking potassium is a safety step to keep, not one to avoid.",
+     "reversed direction or value"
+    ],
+    [
+     "Aggressive, rapid volume removal",
+     "Correct. The damaged right ventricle relies on elevated filling pressure (preload) to keep output up. Removing volume too aggressively drops that preload and starves the left ventricle, and output can fall catastrophically. Careful, monitored diuresis treats her edema without crashing her output."
+    ],
+    [
+     "Careful, monitored diuresis",
+     "Careful diuresis is the recommended approach: it treats the fluid retention of right ventricular failure while protecting preload. Tell: the error to avoid is the aggressive version, not diuresis itself.",
+     "reversed direction or value"
+    ],
+    [
+     "Adding spironolactone to the loop",
+     "Spironolactone is one of the diuretics used for the fluid retention of cor pulmonale, alongside loop diuretics. Tell: the danger is the pace of volume removal, not which diuretic is chosen.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 16, 27",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Pulmonary hypertension: diagnosis and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 46-year-old woman with pulmonary arterial hypertension has no signs of right ventricular failure and no syncope, and her symptoms have progressed slowly over 2 years. She is in World Health Organization functional class II, and her six-minute walk distance is 470 m. Which prognostic risk band fits her?",
+   "opts": [
+    [
+     "Low risk, under 5% at 1 year",
+     "Correct. Every feature sits in the low-risk row: no right ventricular failure signs, slow progression, no syncope, functional class II and a six-minute walk distance above 440 m. Low risk carries an estimated 1-year mortality under 5%."
+    ],
+    [
+     "Low risk, 5-10% at 1 year",
+     "The band is right, but 5-10% is the estimated 1-year mortality of the intermediate group. Tell: low risk means under 5%, and her walk distance above 440 m with slow progression keeps her there.",
+     "reversed direction or value"
+    ],
+    [
+     "Intermediate risk, 5-10% at 1 year",
+     "Intermediate risk fits class III, occasional syncope, moderate progression and a walk distance of 165-440 m. Tell: she walks 470 m, has no syncope and is class II, all low-risk features.",
+     "wrong stage or severity"
+    ],
+    [
+     "High risk, over 10% at 1 year",
+     "High risk needs right ventricular failure signs, rapid progression, repeated syncope, class IV or a walk under 165 m. Tell: she has none of these; her 470 m walk alone sits in the low band.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slide 25",
+   "slot": "prognosis",
+   "lead": "classify"
+  },
+  {
+   "topic": "Pulmonary embolism: risk factors and presentation",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 48-year-old man collapses in his kitchen 9 days after knee arthroscopy. His blood pressure is 74/46 mmHg, he is cold and clammy, and his neck veins are distended. Which embolism syndrome does this presentation represent?",
+   "opts": [
+    [
+     "Pleuritic pain from distal infarction",
+     "Pleuritic pain and hemoptysis come from distal, pleural-based infarction, often with a friction rub. Tell: he has shock, not pleuritic pain, which means a large proximal clot.",
+     "wrong stage or severity"
+    ],
+    [
+     "Isolated dyspnea syndrome",
+     "Isolated dyspnea is sudden breathlessness over minutes to hours, at rest or with exertion, without shock. Tell: his blood pressure of 74/46 mmHg and collapse place him in the circulatory collapse syndrome.",
+     "wrong stage or severity"
+    ],
+    [
+     "Silent, asymptomatic embolism",
+     "Embolism spans a continuum from asymptomatic disease to hemodynamic collapse and death, and silent clots sit at the mild end. Tell: he is in shock, the far end of that continuum.",
+     "wrong stage or severity"
+    ],
+    [
+     "Collapse from massive proximal clot",
+     "Correct. Syncope, severe hypotension and obstructive shock form the circulatory collapse syndrome, which reflects massive, proximal occlusion of the pulmonary arteries. His distended neck veins show the acutely failing right ventricle behind the clot."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 48, 50",
+   "slot": "manifestation",
+   "lead": "classify"
+  },
+  {
+   "topic": "Pulmonary embolism: risk stratification and treatment",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 38-year-old man had a pulmonary embolism 10 weeks ago, 2 weeks after knee ligament surgery. He has no cancer, no known clotting disorder and no other risk factors, and he is doing well on anticoagulation. He asks how long he will need it. Which response fits?",
+   "opts": [
+    [
+     "Consider stopping at 3 months",
+     "Correct. His embolism was provoked by a transient risk factor, recent surgery, so stopping anticoagulation can be considered at the 3-month decision point. Persistent or unprovoked causes, such as active malignancy or a hypercoagulable state, are the ones that favor indefinite therapy."
+    ],
+    [
+     "Indefinite anticoagulation",
+     "Indefinite anticoagulation is favored for persistent or unprovoked embolism: active malignancy, hypercoagulable states or no identifiable risk factor. Tell: his clot followed surgery, a transient cause.",
+     "wrong stage or severity"
+    ],
+    [
+     "Stop it now, at 10 weeks",
+     "The decision point comes at 3 months, not before. Tell: at 10 weeks he has not reached it; the second phase of treatment is the 3-month decision.",
+     "reversed direction or value"
+    ],
+    [
+     "Continue for at least 5 years",
+     "A multi-year course is not one of the two paths: provoked clots point toward stopping after 3 months, and unprovoked ones toward indefinite therapy. Tell: his surgery was a transient cause.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slide 59",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Pulmonary edema: mechanism and causes",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 58-year-old man with pneumonia develops septic shock. Over 24 hours he becomes severely hypoxemic with bilateral alveolar infiltrates. Echocardiography shows normal ventricular function, and a pulmonary artery catheter shows a wedge pressure of 10 mmHg. How is his pulmonary edema classified?",
+   "opts": [
+    [
+     "Cardiogenic, a pressure problem",
+     "Cardiogenic edema is a pressure problem, with intact capillaries under hydrostatic backup and a wedge pressure above 18-20 mmHg. Tell: his wedge pressure is 10 mmHg and his heart works normally.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Noncardiogenic, from high wedge pressure",
+     "Noncardiogenic edema has a normal or low wedge pressure, not a high one. Tell: a high wedge pressure means hydrostatic, cardiogenic edema; his low wedge pressure points to a leak.",
+     "reversed direction or value"
+    ],
+    [
+     "Cardiogenic, from diastolic stiffening",
+     "Diastolic stiffening is a cardiogenic cause, a stiff aging ventricle with preserved ejection fraction and high filling pressure. Tell: his echocardiogram is normal and his wedge pressure low, so the heart is not the source.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Noncardiogenic, a permeability leak",
+     "Correct. Sepsis causes systemic vasodilation and an endothelial leak, so protein-rich fluid crosses a shattered barrier: a permeability problem, the pipe is leaking. His normal wedge pressure and normal ventricular function rule out a hydrostatic, cardiogenic cause."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 33, 34, 46",
+   "slot": "etiology",
+   "lead": "classify"
+  },
+  {
+   "topic": "Pulmonary embolism: diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 64-year-old woman in the intensive care unit has septic acute kidney injury (creatinine 3.1 mg/dL, normal 0.6-1.1). She develops sudden hypoxemia and a swollen right leg, pulmonary embolism is judged likely, and she is too unstable to leave the unit. Which imaging fits her?",
+   "opts": [
+    [
+     "Transthoracic echocardiography alone",
+     "Echocardiography has poor sensitivity for acute embolism and is a risk stratification tool. Tell: it can show strain but cannot confirm or exclude clot, so it does not replace a perfusion scan.",
+     "adjacent fact"
+    ],
+    [
+     "Portable bedside perfusion scan",
+     "Correct. The ventilation-perfusion approach is best for renal dysfunction, severe contrast allergy and critically ill patients, who can have a portable bedside perfusion scan. Her kidney injury argues against contrast, and her instability argues against travel to a scanner."
+    ],
+    [
+     "Computed tomographic pulmonary angiography",
+     "Computed tomographic pulmonary angiography needs intravenous iodinated contrast and a trip to the scanner. Tell: her acute kidney injury and instability are the setting for a bedside perfusion scan.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "A D-dimer to decide on imaging",
+     "D-dimer has limited use in inpatients, where false-positive rates are universally high, and a likely embolism bypasses it anyway. Tell: she needs imaging, chosen to spare her kidneys.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 54, 55, 56",
+   "slot": "initial test",
+   "lead": "next step"
+  },
+  {
+   "topic": "Cor pulmonale: pathophysiology and hemodynamics",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 70-year-old woman with chronic obstructive pulmonary disease and cor pulmonale has an arterial oxygen tension of 52 mmHg (normal 80-100) on room air. Her cough and wheeze are at baseline, and her wedge pressure is normal. Which therapy targets the main driver of her pulmonary hypertension?",
+   "opts": [
+    [
+     "Continuous supplemental oxygen",
+     "Correct. Alveolar hypoxia is the single most important driver of pulmonary hypertension in chronic obstructive pulmonary disease: global hypoxia causes diffuse pulmonary vasoconstriction and a relentless rise in right ventricular afterload. For Group 3 disease, continuous supplemental oxygen is paramount because it reverses that hypoxic vasoconstriction."
+    ],
+    [
+     "Aggressive loop diuresis",
+     "Diuretics treat fluid retention, but the damaged right ventricle relies on elevated filling pressure, and over-diuresis starves the left ventricle. Tell: diuresis does nothing for the hypoxic vasoconstriction that drives her pressure; oxygen does.",
+     "adjacent fact"
+    ],
+    [
+     "Oral calcium channel blocker",
+     "High-dose oral calcium channel blockers are reserved for pulmonary arterial hypertension that proves vasoreactive on testing. Tell: her pulmonary hypertension comes from lung disease and hypoxia (Group 3), so the fix is oxygen, not a vasodilator chosen for Group 1.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Oral endothelin antagonist",
+     "Endothelin receptor antagonists are drugs for pulmonary arterial hypertension (Group 1). Tell: her disease is Group 3, driven by alveolar hypoxia from chronic obstructive pulmonary disease, and the therapy that targets it is continuous oxygen with treatment of the lung disease.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 6, 15, 16, 28",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Pulmonary edema: management and prognosis",
+   "io": "Identify medical care strategies for pulmonary vascular disease in the lecture topic list for the following populations. 7. adult 8. elderly",
+   "q": "An 84-year-old woman with heart failure with preserved ejection fraction is admitted with acute pulmonary edema. Her blood pressure is 148/82 mmHg and her creatinine is 1.1 mg/dL (normal 0.6-1.1). Echocardiography shows a stiff, thick left ventricle with a high end-diastolic pressure. Which diuresis strategy fits her?",
+   "opts": [
+    [
+     "Withholding diuretics entirely",
+     "Under-diuresis leaves the lungs flooded and brings recurrent pulmonary edema. Tell: she needs fluid removed, just carefully; her margin is narrow on both sides.",
+     "reversed direction or value"
+    ],
+    [
+     "Morphine before any diuretic",
+     "Morphine is a use-with-caution agent in the toolbox, because it risks respiratory depression, and it does not replace diuresis. Tell: her problem is the pace of fluid removal in a preload-sensitive heart.",
+     "adjacent fact"
+    ],
+    [
+     "Gentle, precise diuresis",
+     "Correct. Elderly patients usually have heart failure with preserved ejection fraction from age-related myocardial stiffening, with a high end-diastolic pressure and extreme sensitivity to preload. Their therapeutic margin is narrow, so diuresis must be gentle and precise."
+    ],
+    [
+     "Aggressive, rapid diuresis",
+     "Aggressive diuresis is generally well tolerated by younger adults with reduced ejection fraction and more physiological reserve. Tell: in her stiff, preload-dependent ventricle, over-diuresis causes precipitous hypotension.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 39, 42",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Pulmonary embolism: diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 58-year-old man has 3 days of mild pleuritic chest pain. His Wells score is 1.5 (heart rate 104/min). His oxygen saturation is 97%, and he has no hemoptysis, no estrogen use, no prior clots, no recent surgery or trauma and no leg swelling. Because he fails the PERC (Pulmonary Embolism Rule-out Criteria), a D-dimer is sent, and it is 310 ng/mL (normal under 500 ng/mL). Which step fits?",
+   "opts": [
+    [
+     "Repeat the D-dimer in 1 week",
+     "Repeating a negative D-dimer adds nothing: its high sensitivity is what makes a negative result safe to act on. Tell: the algorithm ends at a negative D-dimer.",
+     "adjacent fact"
+    ],
+    [
+     "No imaging; embolism is excluded",
+     "Correct. He fails two criteria (age 58 and heart rate 104/min), so a D-dimer was right with a Wells score of 4 or less. The D-dimer has high sensitivity, and a negative result safely excludes embolism in this low-probability outpatient, so no imaging is needed."
+    ],
+    [
+     "Computed tomographic angiography",
+     "Computed tomographic angiography follows a positive D-dimer or a Wells score above 4. Tell: his D-dimer is below the cut-off and his Wells score is 1.5.",
+     "wrong stage or severity"
+    ],
+    [
+     "Ventilation-perfusion scan",
+     "A ventilation-perfusion scan is imaging for patients who need it but cannot have contrast. Tell: a negative D-dimer in a low-probability patient means he needs no imaging at all.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 53, 54, 57",
+   "slot": "initial test",
+   "lead": "next step"
+  },
+  {
+   "topic": "Pulmonary hypertension: treatment",
+   "io": "Identify medical care strategies for pulmonary vascular disease in the lecture topic list for the following populations. 7. adult 8. elderly",
+   "q": "A 62-year-old man with pulmonary arterial hypertension, functional class II, asks how to protect his health between visits. His resting oxygen saturation is 96%, and it falls to 87% when he walks briskly. Which recommendation should be avoided?",
+   "opts": [
+    [
+     "Supervised aerobic rehabilitation",
+     "Supervised aerobic rehabilitation is safe in pulmonary hypertension and improves fatigue. Tell: it is recommended for him, not avoided; bed rest is the error.",
+     "reversed direction or value"
+    ],
+    [
+     "Oxygen during exertion and sleep",
+     "Oxygen is recommended, especially during sleep or exertion, because hypoxia is a potent pulmonary vasoconstrictor; the goal is an arterial oxygen tension above 60 mmHg. Tell: his saturation falls to 87% on exertion, so oxygen with activity helps.",
+     "reversed direction or value"
+    ],
+    [
+     "Annual influenza immunization",
+     "Annual influenza and pneumococcal immunizations are mandatory in pulmonary hypertension, to prevent acute respiratory decompensations. Tell: vaccination is protective and recommended, not something to avoid.",
+     "reversed direction or value"
+    ],
+    [
+     "Strict bed rest to save energy",
+     "Correct. Strict bed rest should be avoided in pulmonary hypertension: supervised, steady aerobic rehabilitation is safe, prevents muscle deconditioning and improves fatigue. Resting to spare the heart only adds deconditioning to his disease."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slide 27",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Pulmonary edema: mechanism and causes",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 66-year-old woman has an acute anterior myocardial infarction and develops severe dyspnea with bilateral crackles. A pulmonary artery catheter shows a wedge pressure of 26 mmHg. Which force is driving fluid into her alveoli?",
+   "opts": [
+    [
+     "Low plasma oncotic pressure",
+     "Plasma oncotic pressure is the inward, counterbalancing force, and here it is overwhelmed rather than the primary fault. Tell: her edema began with a failing pump and a wedge pressure of 26 mmHg, a rise in the outward pressure.",
+     "adjacent fact"
+    ],
+    [
+     "A shattered capillary barrier",
+     "A shattered barrier is the permeability problem of noncardiogenic edema, as in acute respiratory distress syndrome or sepsis. Tell: her capillaries are intact; fluid is crossing them because of high pressure from a failing heart.",
+     "competing diagnosis"
+    ],
+    [
+     "High plasma oncotic pressure",
+     "High oncotic pressure would pull fluid back into the capillaries and protect the alveoli. Tell: edema forms when outward hydrostatic pressure beats inward oncotic pressure, and hers is driven by the hydrostatic side.",
+     "reversed direction or value"
+    ],
+    [
+     "High hydrostatic pressure",
+     "Correct. Her infarcted left ventricle fails, and pressure backs up into the pulmonary capillaries: elevated capillary hydrostatic pressure is the outward force and the engine of cardiogenic edema. The capillary membrane is intact but overwhelmed, and her wedge pressure of 26 mmHg confirms a pressure problem."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 32, 33, 38",
+   "slot": "etiology",
+   "lead": "classify"
+  },
+  {
+   "topic": "Pulmonary embolism: risk factors and presentation",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 55-year-old woman with a confirmed large pulmonary embolism has an electrocardiogram showing a deep S wave in lead I and a Q wave with an inverted T wave in lead III (S1Q3T3). What does this pattern indicate?",
+   "opts": [
+    [
+     "Severe right ventricular strain",
+     "Correct. S1Q3T3 suggests severe right ventricular strain rather than embolism as such: it is highly specific but has low sensitivity. In a patient with a large embolism, it reflects the acutely loaded right ventricle."
+    ],
+    [
+     "A sensitive screen for embolism",
+     "S1Q3T3 has low sensitivity, so most patients with embolism do not show it, and its absence rules nothing out. Tell: it is highly specific, a sign of severe right ventricular strain, not a screen.",
+     "reversed direction or value"
+    ],
+    [
+     "An inferior myocardial infarction",
+     "An inferior infarction gives Q waves across the inferior leads with ST change, not a deep S wave in lead I. Tell: the S1Q3T3 pattern in a patient with a large embolism points to right ventricular strain.",
+     "competing diagnosis"
+    ],
+    [
+     "Left ventricular hypertrophy",
+     "Left ventricular hypertrophy does not produce a deep S in lead I with Q and T changes in lead III. Tell: a large embolism loads the right ventricle, and S1Q3T3 is its strain pattern.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slide 51",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Pulmonary edema: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 58-year-old man with heart failure with reduced ejection fraction takes all four classes of quadruple therapy at maximal tolerated levels. He is breathless at rest and has been hospitalized four times in 6 months. Which step fits now?",
+   "opts": [
+    [
+     "Stage C maintenance unchanged",
+     "Stage C is clinical heart failure managed with quadruple therapy, and he has moved beyond it. Tell: symptoms at rest and frequent hospitalizations despite maximal therapy place him in stage D.",
+     "wrong stage or severity"
+    ],
+    [
+     "Evaluation for advanced therapies",
+     "Correct. Marked symptoms at rest despite maximal therapy, with frequent hospitalizations, define stage D heart failure. Stage D calls for immediate evaluation for advanced therapies: heart transplantation, mechanical circulatory support such as a left ventricular assist device, or palliative and hospice care."
+    ],
+    [
+     "Add a fifth oral drug class",
+     "Quadruple therapy is the top of medical therapy, giving the greatest mortality reduction in reduced ejection fraction, and stage D is defined by failure despite it. Tell: his next step is advanced therapies, not more pills.",
+     "adjacent fact"
+    ],
+    [
+     "Continue and recheck in a year",
+     "Waiting a year ignores stage D, where symptoms at rest and repeated admissions call for action now. Tell: the stage D response is immediate evaluation for advanced therapies.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 41, 44",
+   "slot": "referral",
+   "lead": "referral"
+  },
+  {
+   "topic": "Cor pulmonale: pathophysiology and hemodynamics",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 41-year-old woman develops sudden severe dyspnea 8 days after a hip fracture repair, and computed tomographic pulmonary angiography shows a massive pulmonary embolism. Her blood pressure is 84/52 mmHg and her heart rate 132/min. Which bedside finding is expected from her acutely dilated right ventricle?",
+   "opts": [
+    [
+     "Bibasilar crackles",
+     "Bibasilar crackles come from left-sided failure, when fluid backs up into the lungs. Tell: her lungs are not the congested side; her problem is a blocked pulmonary circulation and a failing right ventricle.",
+     "competing diagnosis"
+    ],
+    [
+     "Slow, bounding pulse",
+     "A massive embolism brings a rapid pulse, as her rate of 132/min shows, with pallor from falling output. Tell: a slow, bounding pulse is the opposite of the acute right heart picture of tachycardia, pallor and distended neck veins.",
+     "reversed direction or value"
+    ],
+    [
+     "Distended neck veins",
+     "Correct. When the right ventricle dilates acutely, blood backs up behind it and the neck veins distend; a stretched tricuspid annulus adds a regurgitant murmur. Tachycardia and pallor complete the acute picture, which is what her massive embolism and low blood pressure predict."
+    ],
+    [
+     "Tender hepatomegaly",
+     "Tender hepatomegaly, ascites and dependent edema belong to decompensated chronic cor pulmonale, when elevated diastolic pressure transmits backward over time. Tell: her failure is acute, and the acute backup shows first in the neck veins.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 10, 11, 23",
+   "slot": "manifestation",
+   "lead": "test"
+  },
+  {
+   "topic": "Pulmonary edema: presentation and diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 69-year-old woman with heart failure has acute dyspnea. Her chest film shows central perihilar opacities, thickened, blurred bronchiole walls and short horizontal lines at the lung periphery that reach the pleura. What are the short horizontal peripheral lines called?",
+   "opts": [
+    [
+     "Peribronchial cuffing",
+     "Peribronchial cuffing is edema thickening the bronchiole walls, the blurred walls on her film. Tell: the question asks about the horizontal lines at the periphery, which are the fluid-filled septa.",
+     "adjacent fact"
+    ],
+    [
+     "Westermark sign",
+     "Westermark sign is focal peripheral oligemia, an area of decreased vascularity beyond an embolus. Tell: her film shows extra fluid, not missing vessels, and her setting is heart failure.",
+     "competing diagnosis"
+    ],
+    [
+     "Hampton's hump",
+     "Hampton's hump is a wedge-shaped, pleural-based opacity marking pulmonary infarction from an embolus. Tell: her peripheral findings are thin horizontal lines from fluid in the septa, not a wedge-shaped density.",
+     "competing diagnosis"
+    ],
+    [
+     "Kerley B lines",
+     "Correct. Kerley B lines are short horizontal lines at the lung periphery, made by fluid engorging the interlobular septa. With central perihilar (batwing) opacities and peribronchial cuffing, they complete the chest film of cardiogenic pulmonary edema."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 37, 51",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Cor pulmonale: diagnosis and management",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 61-year-old woman has exertional dyspnea, ankle edema and a loud P2, and echocardiography shows an enlarged right ventricle with a normal left ventricle. She has smoked for 30 years. Which step comes first in finding the cause of her cor pulmonale?",
+   "opts": [
+    [
+     "Ventilation-perfusion scan first",
+     "A ventilation-perfusion scan is step 2, used to find segmental defects from chronic clot (Group 4) after the film and lung function tests are normal. Tell: her smoking history makes lung disease the first thing to look for.",
+     "wrong stage or severity"
+    ],
+    [
+     "Pulmonary artery angiography",
+     "Angiography is not the opening move; after the film and lung function tests, clot is looked for with a ventilation-perfusion scan or computed tomographic pulmonary angiography. Tell: step 1 is aimed at the most common, parenchymal causes.",
+     "adjacent fact"
+    ],
+    [
+     "Chest x-ray and lung function tests",
+     "Correct. The workup runs from common to rare: step 1 is a chest film and pulmonary function tests to look for parenchymal lung disease (Group 3), such as hyperinflation or an obstructive pattern from chronic obstructive pulmonary disease. Only if those are normal does the workup move on to a scan for clot and then to catheterization."
+    ],
+    [
+     "Right heart catheterization first",
+     "Right heart catheterization is step 3, used with echocardiography to measure pressures once lung disease and clot are excluded. Tell: with a 30-year smoking history, the common parenchymal causes come first, and they are found with a film and lung function tests.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 12, 13",
+   "slot": "initial test",
+   "lead": "next step"
+  },
+  {
+   "topic": "Pulmonary hypertension: treatment",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 45-year-old woman with idiopathic pulmonary arterial hypertension remains in functional class IV despite maximal medical therapy, including a continuous intravenous prostanoid. Which referral offers the only definitive option?",
+   "opts": [
+    [
+     "Lung transplantation evaluation",
+     "Correct. For pulmonary arterial hypertension refractory to maximal medical therapy (or pulmonary veno-occlusive disease), lung transplantation is the only definitive option, with continuous intravenous support as a bridge. Early palliative care discussions belong alongside the referral."
+    ],
+    [
+     "Pulmonary thromboendarterectomy",
+     "Pulmonary thromboendarterectomy is the surgical treatment for chronic thromboembolic pulmonary hypertension (Group 4). Tell: her disease is idiopathic (Group 1), with no clot to remove.",
+     "competing diagnosis"
+    ],
+    [
+     "Mitral valve replacement",
+     "Valve surgery is aimed at Group 2 pulmonary hypertension from left heart disease such as mitral stenosis. Tell: her disease is idiopathic pulmonary arterial hypertension, a pre-capillary disease with no valve lesion.",
+     "competing diagnosis"
+    ],
+    [
+     "Left ventricular assist device",
+     "Mechanical circulatory support such as a left ventricular assist device is an advanced therapy for stage D left heart failure. Tell: her failing chamber is the right ventricle, loaded by diseased pulmonary arteries, and the definitive fix is new lungs.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 19, 29, 44",
+   "slot": "referral",
+   "lead": "referral"
+  },
+  {
+   "topic": "Cor pulmonale: definition and causes",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 68-year-old man had a large anterior myocardial infarction 3 years ago and has heart failure with an ejection fraction of 25%. He now has ankle edema and distended neck veins, and echocardiography shows a dilated right ventricle. Right heart catheterization shows an elevated mean pulmonary artery pressure with a pulmonary capillary wedge pressure of 27 mmHg. How is his right-sided failure classified?",
+   "opts": [
+    [
+     "Group 2 pulmonary hypertension",
+     "Correct. A wedge pressure of 27 mmHg shows high left-sided filling pressure, and his failing left ventricle (ejection fraction 25%) is pushing pressure back into the lungs. Left heart disease, including heart failure with reduced ejection fraction, is World Health Organization Group 2, the passive post-capillary group, and Group 2 is not cor pulmonale."
+    ],
+    [
+     "Cor pulmonale from lung disease",
+     "Cor pulmonale is right ventricular change caused exclusively by a primary lung or pulmonary vascular disorder, with a normal wedge pressure. Tell: his wedge pressure is high and his cause is a failing left ventricle, which is exactly what must be excluded before calling it cor pulmonale.",
+     "competing diagnosis"
+    ],
+    [
+     "Group 1 arterial hypertension",
+     "Group 1 is pulmonary arterial hypertension from obliterative remodeling of the small arteries (idiopathic, connective tissue disease, schistosomiasis), a pre-capillary group with a normal wedge pressure. Tell: his wedge pressure of 27 mmHg places the problem after the capillaries, in the left heart.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Group 4 thromboembolic disease",
+     "Group 4 is chronic thromboembolic pulmonary hypertension, an obstructive pre-capillary group from unresolved clot. Tell: he has no clot history, and his high wedge pressure points to the left heart, not to blocked pulmonary arteries.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 4, 19",
+   "slot": "differential",
+   "lead": "classify"
+  },
+  {
+   "topic": "Pulmonary hypertension: treatment",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 50-year-old man with idiopathic pulmonary arterial hypertension is not vasoreactive. Over 2 months he has declined rapidly and is now breathless at rest with edema, functional class IV. Which therapy fits him?",
+   "opts": [
+    [
+     "Continuous intravenous prostanoid",
+     "Correct. A patient who is not vasoreactive and is high risk (class IV or rapid clinical decline) needs continuous intravenous or subcutaneous parenteral prostanoids such as epoprostenol. Prostacyclins are the most potent class for vasodilation and are essential for severe disease."
+    ],
+    [
+     "High-dose oral calcium channel blocker",
+     "Calcium channel blockers are kept for patients who prove vasoreactive. Tell: he is not vasoreactive, so this branch is closed to him whatever his class.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Oral phosphodiesterase-5 inhibitor alone",
+     "Oral therapy fits low- or intermediate-risk patients (class II or III), and even then early combination beats sequential monotherapy. Tell: he is class IV with rapid decline, which calls for a parenteral prostanoid.",
+     "wrong stage or severity"
+    ],
+    [
+     "Strict bed rest until stable",
+     "Strict bed rest is to be avoided in pulmonary hypertension; supervised aerobic rehabilitation is safe and prevents deconditioning. Tell: his rapid decline needs escalation to the most potent drug class, not rest.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 26, 28",
+   "slot": "escalation",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Pulmonary embolism: risk stratification and treatment",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 44-year-old man has a small pulmonary embolism on computed tomographic pulmonary angiography, with a normal right ventricle. His blood pressure is 132/84 mmHg, his troponin I is under 0.01 ng/mL (normal under 0.04), and his B-type natriuretic peptide is 40 pg/mL (normal under 100). How is his embolism risk-stratified, and what follows for treatment?",
+   "opts": [
+    [
+     "Massive; systemic thrombolysis",
+     "Massive embolism means sustained hypotension, pulselessness or profound bradycardia. Tell: his blood pressure is 132/84 mmHg, and thrombolysis would add bleeding risk for no gain.",
+     "wrong stage or severity"
+    ],
+    [
+     "Low risk; no treatment needed",
+     "Every confirmed embolism is anticoagulated at once, low risk included. Tell: the goal is to halt clot propagation and allow endogenous fibrinolysis, which needs treatment.",
+     "reversed direction or value"
+    ],
+    [
+     "Low risk; standard anticoagulation",
+     "Correct. Normotension, no right ventricular dysfunction and negative cardiac biomarkers define low-risk embolism. It carries an excellent prognosis and is treated with standard anticoagulation, which halts clot propagation while the body's own fibrinolysis works."
+    ],
+    [
+     "Submassive; anticoagulate, monitor",
+     "Submassive embolism needs right ventricular dysfunction on echocardiography or computed tomography, or a raised troponin or natriuretic peptide. Tell: his right ventricle and both biomarkers are normal.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 58, 59",
+   "slot": "prognosis",
+   "lead": "classify"
+  },
+  {
+   "topic": "Pulmonary hypertension: presentation and examination",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary vascular diseases: 2. Cor pulmonale 3. Pulmonary embolism 4. Pulmonary hypertension 5. Pulmonary edema",
+   "q": "A 61-year-old man has abdominal bloating, early satiety, profound fatigue and an episode of syncope while climbing stairs. His lungs are clear on auscultation. His chest film shows enlarged central pulmonary arteries with peripheral pruning, and right heart catheterization shows an elevated mean pulmonary artery pressure with a wedge pressure of 10 mmHg. What is the most likely diagnosis?",
+   "opts": [
+    [
+     "Acute pulmonary embolism",
+     "An acute embolism strikes suddenly, over minutes to hours, with dyspnea, pleuritic pain or collapse. Tell: his bloating, early satiety and enlarged central arteries with pruning describe a chronic right-sided process.",
+     "competing diagnosis"
+    ],
+    [
+     "Right heart failure",
+     "Correct. Bloating, early satiety, profound fatigue and exertional syncope with clear lungs are right heart failure. Enlarged central pulmonary arteries with peripheral pruning, and a normal wedge pressure with a high mean pulmonary artery pressure, confirm a pre-capillary, right-sided process."
+    ],
+    [
+     "Left heart failure",
+     "Left heart failure brings orthopnea, paroxysmal nocturnal dyspnea, bibasilar crackles, Kerley B lines and a high wedge pressure. Tell: his lungs are clear and his wedge pressure is 10 mmHg.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Cardiogenic pulmonary edema",
+     "Cardiogenic pulmonary edema floods the alveoli, with crackles, pink frothy sputum and a high wedge pressure. Tell: his lungs are clear and his wedge pressure is normal, so fluid is not backing up from the left heart.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonary Vascular Disorders 2026 - Gray.pptx, Slides 23, 35, 50",
+   "slot": "differential",
+   "lead": "diagnosis"
+  }
+ ]
+}

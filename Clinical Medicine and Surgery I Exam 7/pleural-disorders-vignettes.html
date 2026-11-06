@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));window.__paErrQ=[];['error','unhandledrejection'].forEach(function(t){addEventListener(t,function(e){var q=window.__paErrQ;if(q&&!q.done)q.push(e)})});</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #92693f; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pleural Disorders Vignettes 1 — CMS I Exam 7</title>
+<style>
+  :root{
+    --navy:#5e4123; --indigo:#92693f; --gold:#c08a2e; --ice:#faf6ee;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#5e4123;--gold-l:#c08a2e;--indigo-l:#92693f;--navy:#c8a685;--indigo:#ac8257;--gold:#c08a2e;--ice:#311e09;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#ac8257;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#5e4123;--indigo-t:#92693f;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Pleural Disorders &mdash; Vignettes 1</h1>
+    <div class="sub">Clinical Medicine and Surgery I &middot; Exam 7 &middot; Lecture 44</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Decide first whether the patient is stable, then what the film shows and how big the air or fluid is. Pleural fluid results come with the serum values you need for Light's criteria.</p>
+    <div class="chips"><span class="chip">Stable or unstable</span><span class="chip">How big is it</span><span class="chip">Needle or tube</span><span class="chip">Light's criteria</span><span class="chip">What to avoid</span><span class="chip">Patient education</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Aspiration, chest tube, pleurodesis and surgery", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 66-year-old man with chronic obstructive pulmonary disease has a symptomatic right pneumothorax on his upright chest radiograph. He is otherwise stable. Which intervention is contraindicated for him?", "opts": [["Hospital admission", "Hospitalization for monitoring and supportive care is part of managing a secondary spontaneous pneumothorax, which is more life-threatening because of lost pulmonary reserve. Tell: admission is expected for him, not contraindicated."], ["Thoracoscopic surgery", "Video-assisted thoracoscopic surgery is indicated for secondary pneumothorax because recurrence rates are high and recurrence carries greater consequences. Tell: his lung disease is an indication for surgery, while it is a contraindication to aspiration."], ["Catheter aspiration", "Correct. Underlying pulmonary disease contraindicates catheter aspiration, along with traumatic or tension pneumothorax, hemodynamic instability, recurrence, bilateral pneumothoraces and bleeding disorders. His chronic obstructive pulmonary disease makes this a secondary spontaneous pneumothorax, and most of those get a chest tube instead."], ["Chest tube insertion", "Most secondary spontaneous pneumothoraces are treated with chest tube insertion, which is indicated for symptoms or a persistent air leak. Tell: the tube is what replaces aspiration for him, not a procedure to avoid."]], "c": 2, "cite": "Pleural Disorders 2026.pptx, Slides 39, 49, 56, 57", "slot": "avoid", "lead": "avoid", "qid": "16nhj70"}, {"topic": "Pleural effusion: causes and examination", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 74-year-old woman has a very large left pleural effusion, estimated at more than 1,000 mL on imaging, with marked dyspnea. Which inspection finding is expected?", "opts": [["Trachea pulled to the left", "A large effusion pushes the trachea away from the involved side, not toward it; that shift appears once the fluid passes 1,000 mL. Tell: her fluid is on the left, so the shift is to the right."], ["Symmetric chest expansion", "Inspection over a pleural effusion shows asymmetrical thoracic expansion, the affected side moving less. Tell: a left effusion over 1,000 mL limits expansion on that side."], ["No findings at this size", "Small effusions, under 300 mL, produce no physical examination findings. Tell: hers is more than 1,000 mL, large enough to shift the trachea away from the effusion."], ["Trachea shifted to the right", "Correct. With an effusion over 1,000 mL, the trachea shifts away from the involved side, so a left effusion pushes it to the right; inspection also shows asymmetrical thoracic expansion. Small effusions under 300 mL produce no examination findings, but hers is large."]], "c": 3, "cite": "Pleural Disorders 2026.pptx, Slide 87", "slot": "test finding", "lead": "test", "qid": "e9lf0l"}, {"topic": "Traumatic and tension pneumothorax", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 34-year-old man is brought in after a high-speed motor vehicle crash. He is in severe respiratory distress, with blood pressure 78/50 mm Hg and heart rate 136 beats per minute. His trachea is deviated to the left, his neck veins are distended, his right chest is hyperresonant and breath sounds are absent on the right. What is the most likely diagnosis?", "opts": [["Tension pneumothorax", "Correct. Air enters the pleural space but cannot escape, a one-way valve, causing severe ventilatory compromise and a mediastinal shift to the contralateral side. Decreased venous return and cardiac output follow, with hypotension, tracheal deviation, neck vein distention and absent breath sounds, his exact picture."], ["Hemothorax", "Hemothorax is blood in the pleural space, and fluid is dull to percussion. Tell: his right chest is hyperresonant, the note of air, and his trachea is pushed away from it under pressure."], ["Pneumomediastinum", "Pneumomediastinum is air in the mediastinal tissues, found as subcutaneous emphysema in the neck and a crunch with each heartbeat. Tell: his findings are a hyperresonant, silent hemithorax with shock and tracheal shift."], ["Open pneumothorax", "An open pneumothorax needs a direct wound in the chest wall that lets air in during inhalation. Tell: no chest wall wound is described, and his shock with tracheal shift marks trapped air under tension."]], "c": 0, "cite": "Pleural Disorders 2026.pptx, Slides 62, 63, 64, 66, 77, 88", "slot": "manifestation", "lead": "diagnosis", "qid": "1wfmved"}, {"topic": "Spontaneous pneumothorax: treatment and education", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 25-year-old man presents with his second primary spontaneous pneumothorax on the right; the first was treated 18 months ago. He is stable. Which management best prevents further recurrence?", "opts": [["Chest tube, then discharge", "A chest tube evacuates the space in a large symptomatic episode but leaves the pleural space open to recur. Tell: for a recurrent primary pneumothorax the plan is surgery with pleurodesis."], ["Thoracoscopic surgery with pleurodesis", "Correct. A recurrent primary spontaneous pneumothorax calls for surgical therapy, video-assisted thoracoscopic surgery with pleurodesis, which is the best preventive procedure. Recurrence is common, approaching 50% within three years after a first episode, and his second episode proves the risk."], ["Catheter aspiration, then discharge", "Recurrent pneumothorax is on the list of contraindications to catheter aspiration. Tell: his is a second episode, and aspiration does nothing to prevent a third."], ["Observation with 100% oxygen", "Observation with oxygen fits a small first primary pneumothorax with minimal symptoms. Tell: a recurrence calls for definitive prevention, which observation does not provide."]], "c": 1, "cite": "Pleural Disorders 2026.pptx, Slides 39, 53, 55, 59", "slot": "escalation", "lead": "treatment", "qid": "3qui6x"}, {"topic": "Pleurodynia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 15-year-old girl has pleurodynia diagnosed during a summer outbreak at her camp, with fever, knife-like pleuritic pain and tender intercostal muscles. Her chest radiograph is normal. Which treatment is most appropriate?", "opts": [["Therapeutic thoracentesis", "Therapeutic thoracentesis removes pleural fluid to relieve dyspnea. Tell: she has no effusion to remove; pleurodynia is treated with anti-inflammatory drugs and heat."], ["Anti-inflammatory drug and heat", "Correct. Treatment of pleurodynia is supportive: nonsteroidal anti-inflammatory drugs and application of heat to the affected muscles. The course is typically benign, though symptoms may recur a few days later, and hand hygiene limits fecal-oral spread."], ["Chest tube drainage", "A chest tube drains air or fluid from the pleural space in pneumothorax or effusion. Tell: her film is normal, and the problem is inflamed intercostal muscle, not the pleural space."], ["Oxygen by non-rebreather", "Oxygen at 100% by non-rebreather mask speeds resorption of air in a small pneumothorax. Tell: there is no pleural air on her normal film; her viral myalgia gets supportive care."]], "c": 1, "cite": "Pleural Disorders 2026.pptx, Slides 53, 96, 118, 119", "slot": "first-line", "lead": "treatment", "qid": "1jr3t5g"}, {"topic": "Pneumothorax: imaging and size", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 30-year-old woman with cystic fibrosis has had two pneumothoraces in a year. She is stable, and surgery is being planned, so her team wants the most complete picture of the size and location of the pleural air and of any blebs or bullae in the underlying lung. Which imaging test is best?", "opts": [["Upright chest radiograph", "The standard upright chest radiograph is the initial test, showing the visceral pleural line. Tell: it starts the workup but does not map blebs and bullae or underlying disease, which her surgical planning needs."], ["Bedside lung ultrasound", "Lung ultrasound is a rapid bedside tool that helps in the unstable patient, with absent lung sliding marking a pneumothorax. Tell: it does not assess pneumothorax size, and she is stable enough for the more detailed test."], ["Lateral decubitus film", "A lateral decubitus film shows small amounts of fluid layering against the dependent parietal pleura in a pleural effusion. Tell: it is an effusion study, and ultrasound has largely replaced even that use."], ["Chest computed tomography", "Correct. Thoracic computed tomography is the best modality for determining the presence, size and location of a pneumothorax, detects blebs and bullae and assesses underlying disease; it is the diagnostic gold standard. It is impractical only when time is critical, and she is stable."]], "c": 3, "cite": "Pleural Disorders 2026.pptx, Slides 26, 30, 33, 34, 91", "slot": "gold standard", "lead": "test", "qid": "1rz8qqr"}, {"topic": "Pneumothorax: types and presentation", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 58-year-old woman in the intensive care unit has a subclavian vein catheter placed for venous access. An hour later she reports new right-sided pleuritic chest pain and dyspnea, and a chest radiograph shows a visceral pleural line on the right. She has no history of lung disease or chest trauma. How is her pneumothorax classified?", "opts": [["Secondary spontaneous", "Secondary spontaneous pneumothorax needs an underlying lung abnormality, most commonly chronic obstructive pulmonary disease. Tell: she has no lung disease, and the timing ties the event to the catheter placement."], ["Iatrogenic", "Correct. Iatrogenic pneumothorax is injury to the pleura secondary to a medical intervention, and subclavian vein catheter placement is one of the listed examples, with thoracentesis, bronchoscopy and mechanical ventilation. Her symptoms began an hour after the catheter, with no lung disease or trauma."], ["Traumatic", "Traumatic pneumothorax follows blunt or penetrating trauma to the thorax, such as a gunshot or stab wound. Tell: a needle placed during a procedure makes this iatrogenic, the category for pleural injury caused by a medical intervention."], ["Primary spontaneous", "Primary spontaneous pneumothorax arises with no thoracic trauma and no underlying lung abnormality, classically in tall, thin young males. Tell: hers followed a procedure, so it is not spontaneous at all."]], "c": 1, "cite": "Pleural Disorders 2026.pptx, Slide 17", "slot": "etiology", "lead": "classify", "qid": "12r5uux"}, {"topic": "Pneumothorax: imaging and size", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 68-year-old man on a ventilator after a car crash cannot sit up, so a supine portable chest radiograph is taken. It shows a deep sulcus sign (a dark, deep costophrenic angle) on the left. What does this finding indicate?", "opts": [["Pleural air collecting laterally", "Correct. The deep sulcus sign is seen on a supine film: a dark and deep costophrenic angle caused by a lateral collection of pleural air. In this patient lying flat, it is how a pneumothorax shows itself."], ["Pleural fluid at the angle", "Fluid blunts the costophrenic angle on an upright film, 75 mL the posterior angle and 175 mL the lateral angle. Tell: blunting fills the angle in, while the deep sulcus sign is a darkened, deepened angle, the look of air."], ["Air within the mediastinum", "Air in the mediastinal tissues is pneumomediastinum, found as subcutaneous emphysema in the neck and a crunch heard with each heartbeat. Tell: the dark area here lies at the costophrenic angle of the pleural space."], ["Infiltrate in the lower lobe", "An infiltrate is fluid within the lung itself, as in pneumonia, distinct from fluid in the pleural space. Tell: a darkened, deepened angle means air in the pleural space, not fluid-filled lung."]], "c": 0, "cite": "Pleural Disorders 2026.pptx, Slides 29, 75, 77, 89, 90", "slot": "differential", "lead": "test", "qid": "1i7ez6w"}, {"topic": "Transudates and effusion treatment", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 58-year-old man with alcohol-related cirrhosis has tense ascites and a new right pleural effusion. He has no orthopnea, leg edema or known heart disease, and no fever or cough. Pleural fluid protein is 1.2 g/dL with serum protein 5.8 g/dL (normal 6.0-8.3 g/dL). Pleural fluid lactate dehydrogenase is 70 units/L with serum lactate dehydrogenase 180 units/L (normal 140-280 units/L). Which is the most likely cause of the effusion?", "opts": [["Tuberculosis", "Tuberculosis is the leading cause of exudative effusion worldwide, with fever, night sweats, hemoptysis and weight loss. Tell: his fluid is a transudate with every criterion absent, and he has no infectious symptoms."], ["Cirrhosis", "Correct. Protein ratio 1.2 / 5.8 = 0.21, lactate dehydrogenase ratio 70 / 180 = 0.39, and fluid lactate dehydrogenase 70 is under two-thirds of 280, about 187: all of Light's criteria are absent, a transudate. Cirrhosis with ascites sends peritoneal fluid across the diaphragm and lowers oncotic pressure."], ["Heart failure", "Heart failure causes more than 90% of transudates, through increased capillary hydrostatic pressure. Tell: he has no orthopnea, leg edema or heart disease, and his ascites with cirrhosis explains the transudate."], ["Pneumonia", "Pneumonia is the most common cause of exudative effusion, with fever, purulent sputum and pleuritic pain. Tell: he has no fever or cough, and his fluid meets none of Light's criteria."]], "c": 1, "cite": "Pleural Disorders 2026.pptx, Slides 81, 82, 101, 103, 110, 111", "slot": "etiology", "lead": "diagnosis", "qid": "cq2e5f"}, {"topic": "Hemothorax", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 36-year-old woman with a hemothorax after a stab wound has a chest tube placed. Over the next 2 hours it drains blood at about 300 mL per hour, and her blood pressure is falling. Which is the most appropriate next step?", "opts": [["Chemical pleurodesis", "Chemical pleurodesis makes the pleural layers adhere to prevent recurrent pneumothorax or a recurring effusion. Tell: it does nothing to stop active bleeding into the chest."], ["Needle decompression", "Needle decompression relieves a tension pneumothorax when no chest tube is at hand. Tell: she already has a chest tube, and her problem is blood loss, not trapped air."], ["Thoracotomy", "Correct. The chest tube evacuates and quantifies the bleeding, and blood loss over 200 mL per hour calls for thoracotomy, an open approach to the intrathoracic space. Persistent hemorrhage or shock is the indication for surgery, and she has both."], ["Continued tube drainage", "Continued drainage alone fits bleeding that slows below the surgical threshold. Tell: her output of about 300 mL per hour exceeds 200 mL per hour and her pressure is falling, so the tube has done its job of measuring and surgery follows."]], "c": 2, "cite": "Pleural Disorders 2026.pptx, Slides 45, 66, 69, 74", "slot": "referral", "lead": "referral", "qid": "1b4bofc"}, {"topic": "Pneumothorax: imaging and size", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 25-year-old woman has sudden left-sided pleuritic chest pain and dyspnea at rest. Her upright chest radiograph is reviewed for a pneumothorax. Which radiographic finding establishes the diagnosis?", "opts": [["Blunted costophrenic angle", "Blunting of the costophrenic angle is the upright-film sign of pleural fluid, 75 mL posteriorly and 175 mL laterally. Tell: a pneumothorax is air, shown by the visceral pleural line, not by a fluid-filled angle."], ["Straight air-fluid line", "A straight line with no meniscus marks a hemopneumothorax, where air sits above fluid in the pleural space. Tell: she has no reason for blood in the chest, and the diagnostic sign of pleural air alone is the visceral pleural line."], ["Markings beyond the pleural edge", "Bronchovascular markings are not typically visible beyond the visceral pleural edge, because only air lies there. Tell: markings past the line argue against a pneumothorax; their absence beyond a thin line supports it."], ["Visceral pleural line", "Correct. The diagnosis is established by demonstrating a visceral pleural line, the interface of lung and pleural air. It is a thin, sharp line convex outward toward the chest wall, with no bronchovascular markings visible beyond it."]], "c": 3, "cite": "Pleural Disorders 2026.pptx, Slides 26, 71, 90", "slot": "initial test", "lead": "test", "qid": "1w3et7f"}, {"topic": "Traumatic and tension pneumothorax", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 25-year-old man has a stab wound to the right chest wall. Air can be heard moving through the wound, which draws air into the pleural space with each inhalation, and breath sounds are diminished on the right. How is his pneumothorax classified?", "opts": [["Primary spontaneous", "Spontaneous pneumothorax means no thoracic trauma; primary adds no underlying lung abnormality. Tell: he has a penetrating stab wound, which makes his pneumothorax traumatic."], ["Iatrogenic", "Iatrogenic pneumothorax is pleural injury from a medical intervention, such as thoracentesis or a subclavian vein catheter. Tell: his wound came from a stabbing, not a procedure."], ["Open pneumothorax", "Correct. An open pneumothorax has a direct wound in the chest wall that allows air to enter the pleural space during inhalation, and it can lead to a sucking chest wound. A penetrating stab wound is a traumatic cause."], ["Closed pneumothorax", "A closed pneumothorax has no external wound; air enters the pleural space from the lung because of broken ribs or internal injuries. Tell: his chest wall is open, and air enters through the wound itself."]], "c": 2, "cite": "Pleural Disorders 2026.pptx, Slides 17, 61, 62", "slot": "etiology", "lead": "classify", "qid": "1x9rff1"}, {"topic": "Spontaneous pneumothorax: treatment and education", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 23-year-old man has a first primary spontaneous pneumothorax with an apex-to-cupola distance of 2 cm on his upright chest radiograph. He has mild pleuritic pain, no significant dyspnea and stable vital signs. Which is the most appropriate management?", "opts": [["Observation with 100% oxygen", "Correct. A small primary spontaneous pneumothorax, under 3 cm at the apex, with minimal symptoms is observed with adequate analgesia and oxygen at 100% by non-rebreather mask, which accelerates resorption of air. A repeat film confirms it has not expanded, and he is discharged if it is stable and he is asymptomatic."], ["Chest tube insertion", "A chest tube treats a moderate or large primary pneumothorax, over 3 cm at the apex, with moderate or severe symptoms, or a failed observation or aspiration. Tell: his is 2 cm with mild pain and no failed treatment."], ["Catheter aspiration", "Catheter aspiration treats a small primary pneumothorax when significant dyspnea persists after analgesia. Tell: he has mild pain without significant dyspnea, so observation fits first."], ["Thoracoscopic pleurodesis", "Video-assisted thoracoscopic surgery with pleurodesis is the treatment for a recurrent primary pneumothorax and the best preventive procedure. Tell: this is his first episode, small and minimally symptomatic."]], "c": 0, "cite": "Pleural Disorders 2026.pptx, Slides 53, 54, 55", "slot": "first-line", "lead": "next step", "qid": "37lgfv"}, {"topic": "Exudates: chylothorax and empyema", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 57-year-old man has 5 days of fever, cough with purulent sputum and right pleuritic chest pain, and a right pleural effusion is tapped. Pleural fluid protein is 4.4 g/dL with serum protein 7.2 g/dL (normal 6.0-8.3 g/dL). Pleural fluid lactate dehydrogenase is 240 units/L with serum lactate dehydrogenase 210 units/L (normal 140-280 units/L). Which is the most likely cause of the effusion?", "opts": [["Nephrotic syndrome", "Nephrotic syndrome causes a transudate by lowering oncotic pressure as albumin is lost. Tell: his protein ratio of 0.61 and lactate dehydrogenase values mark an exudate, which fits his pneumonia."], ["Pneumonia", "Correct. Protein ratio 4.4 / 7.2 = 0.61, above 0.5; lactate dehydrogenase ratio 240 / 210 = 1.14, above 0.6; fluid lactate dehydrogenase 240 exceeds two-thirds of 280, about 187. The fluid is an exudate, pneumonia is the most common cause of exudative effusion, and fever with purulent sputum and pleuritic pain is its clue set."], ["Heart failure", "Heart failure causes more than 90% of transudates, with edema, orthopnea and paroxysmal nocturnal dyspnea. Tell: his fluid meets all three of Light's criteria, an exudate, and his story is an infection."], ["Cirrhosis with ascites", "Cirrhosis with ascites causes a transudate, through peritoneal fluid crossing the diaphragm and low oncotic pressure. Tell: his fluid is exudative by every criterion, and he has fever with purulent sputum."]], "c": 1, "cite": "Pleural Disorders 2026.pptx, Slides 86, 101, 102, 110, 111, 112", "slot": "epidemiology", "lead": "diagnosis", "qid": "1ds7ipx"}, {"topic": "Spontaneous pneumothorax: treatment and education", "io": "Identify medical care strategies for pleural disorders in the lecture topic list for the following populations. 2. adult 3. elderly", "q": "A 71-year-old man with severe chronic obstructive pulmonary disease uses noninvasive positive-pressure ventilation at home every night. He is admitted with a secondary spontaneous pneumothorax, and air is still bubbling through his chest tube, showing an active air leak. Which of his therapies should be held for now?", "opts": [["Chest tube drainage", "Most secondary spontaneous pneumothoraces are treated with chest tube insertion. Tell: the tube is draining his leak and stays; the positive pressure from his home ventilator is what pauses."], ["Noninvasive ventilation", "Correct. Positive-pressure therapies are held during an active air leak. His nightly noninvasive ventilation is positive pressure, and air still bubbling through his tube shows the leak is active, so it is paused until the leak has closed."], ["Supplemental oxygen", "Oxygen accelerates resorption of pleural air and is part of observing a small pneumothorax. Tell: oxygen is not a positive-pressure therapy; the device to hold is the one that pushes air under pressure."], ["Analgesic medication", "Adequate analgesia is part of pneumothorax care. Tell: pain control does nothing to an air leak; the therapy to hold during an active leak is positive pressure."]], "c": 1, "cite": "Pleural Disorders 2026.pptx, Slides 53, 57, 60", "slot": "avoid", "lead": "avoid", "qid": "1kfob18"}, {"topic": "Aspiration, chest tube, pleurodesis and surgery", "io": "Identify medical care strategies for pleural disorders in the lecture topic list for the following populations. 2. adult 3. elderly", "q": "A 78-year-old man with severe chronic obstructive pulmonary disease has a second secondary spontaneous pneumothorax, now drained by a chest tube. His team judges that he cannot tolerate general anesthesia, so surgery is not an option. Which procedure best lowers his risk of another recurrence?", "opts": [["Video-assisted thoracoscopic surgery", "Thoracoscopic surgery is indicated for secondary pneumothorax and recurrence, but its risks include those of general anesthesia. Tell: his team has ruled out anesthesia, so surgery is off the table."], ["Repeated catheter aspiration", "Underlying pulmonary disease and recurrent pneumothorax are both contraindications to catheter aspiration. Tell: he has both, and aspiration would not prevent recurrence anyway."], ["Chemical pleurodesis via chest tube", "Correct. Most secondary spontaneous pneumothoraces are treated with a chest tube and may go on to thoracoscopic surgery or thoracotomy with bleb stapling and pleural abrasion. If surgery is not an option, chemical pleurodesis via the chest tube is used: a sclerosant such as talc makes the pleural layers adhere."], ["Mechanical pleurodesis", "Mechanical pleurodesis is manual abrasion of the pleura performed through a surgical intervention. Tell: it needs the operation he cannot have; the chemical route goes through the tube he already has."]], "c": 2, "cite": "Pleural Disorders 2026.pptx, Slides 39, 46, 49, 57", "slot": "escalation", "lead": "treatment", "qid": "1qs21wz"}, {"topic": "Pleural effusion: causes and examination", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 63-year-old man on peritoneal dialysis develops a right pleural effusion. He has no heart failure, and his serum albumin is normal at 4.0 g/dL (normal 3.5-5.0 g/dL). He asks how the dialysis fluid in his abdomen could reach his chest. Which explanation is accurate?", "opts": [["It lowers oncotic pressure", "Reduced intravascular oncotic pressure from hypoalbuminemia drives the effusions of nephrotic syndrome and cirrhosis. Tell: his albumin is normal at 4.0 g/dL, so oncotic pressure is not the problem."], ["It blocks lymph drainage", "Decreased or blocked lymphatic drainage is the mechanism in malignancy and trauma. Tell: dialysis fluid reaches the chest by crossing the diaphragm through microperforations, not by blocking lymphatics."], ["It crosses the diaphragm", "Correct. In cirrhosis and peritoneal dialysis, increased peritoneal fluid leaks, or extravasates, across the diaphragm through microperforations into the pleural space. Peritoneal dialysis is listed among the conditions associated with transudates."], ["It raises capillary pressure", "Increased capillary hydrostatic pressure is how heart failure causes effusion. Tell: he has no heart failure; his fluid comes from the peritoneal cavity itself."]], "c": 2, "cite": "Pleural Disorders 2026.pptx, Slides 81, 82, 111", "slot": "etiology", "lead": "education", "qid": "119kgu2"}, {"topic": "Pneumothorax: imaging and size", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 23-year-old tall, thin man has acute dyspnea and sharp right-sided pleuritic chest pain that began at rest. His respiratory rate is 20 breaths per minute, heart rate 98 beats per minute, blood pressure 122/76 mm Hg and oxygen saturation 96% on room air, and he speaks in whole sentences. Which is the initial test?", "opts": [["Upright chest radiograph", "Correct. The initial test for pneumothorax is a standard upright chest radiograph. The diagnosis is established by showing the visceral pleural line, a thin, sharp line convex toward the chest wall with no bronchovascular markings beyond it, and his stable vital signs leave time for the film."], ["Chest computed tomography", "Thoracic computed tomography is the best modality for the presence, size and location of a pneumothorax, the diagnostic gold standard, but it is not where the workup starts. Tell: gold standard and best initial test are different questions; the upright film comes first."], ["Arterial blood gas", "An arterial blood gas is often unnecessary; it is indicated for severe underlying lung disease or persistent distress with saturation under 92% despite treatment. Tell: he is healthy and saturating 96%, and a blood gas cannot show pleural air."], ["Supine chest radiograph", "A supine film is where pleural air collects laterally and shows as the deep sulcus sign, a picture used when the patient cannot sit up. Tell: he can sit up, and the standard initial test is the upright chest radiograph."]], "c": 0, "cite": "Pleural Disorders 2026.pptx, Slides 26, 29, 33, 34, 35", "slot": "initial test", "lead": "test", "qid": "bdfskg"}, {"topic": "Pneumothorax: types and presentation", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 21-year-old tall, thin man is recovering from his first primary spontaneous pneumothorax. He smokes a pack of cigarettes a day, and his father had the same condition. Before discharge, the clinician counsels him on the risk factor he can change. Which risk factor should the counseling address?", "opts": [["Cigarette smoking", "Correct. Smoking is a significant risk factor for primary spontaneous pneumothorax and the one he can change. Recurrence approaches 50% within three years of a first episode, so education includes the importance of smoking cessation and help to quit if he is willing."], ["Family history", "Family history is listed as a risk factor, an inherited association, but it cannot be changed. Tell: counseling targets what he can modify; his family history instead prompts a genetics referral."], ["Tall, thin build", "Being a tall, thin young male is the classic profile for primary spontaneous pneumothorax, but body build is not something he can change. Tell: the modifiable, significant risk factor in his history is the pack a day."], ["Strenuous exercise", "Primary spontaneous pneumothorax often occurs at rest and may occur during strenuous exercise; exercise is not one of its listed risk factors. Tell: the risk factors are build, age 20-40, male sex, smoking and family history, and only smoking can change."]], "c": 0, "cite": "Pleural Disorders 2026.pptx, Slides 19, 21, 59, 60", "slot": "risk factors", "lead": "education", "qid": "lzg85y"}, {"topic": "Pneumomediastinum", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 27-year-old man with pneumomediastinum after forceful breath-holding while inhaling an illicit drug develops worsening dyspnea, subcutaneous emphysema spreading up his neck and a falling oxygen saturation despite oxygen. His airway is being supported. Which referral is most appropriate?", "opts": [["Cardiothoracic surgery", "Correct. Pneumomediastinum is usually managed conservatively, but if it is severe, cardiothoracic surgery is consulted emergently, after the airway is assessed and maintained. His worsening dyspnea, spreading emphysema and falling saturation despite oxygen mark severe disease."], ["Outpatient pulmonology", "An outpatient visit fits a stable patient whose air is expected to absorb with conservative care. Tell: his disease is worsening despite oxygen, which calls for an emergent consult."], ["Genetics referral", "Genetics referral is recommended after spontaneous pneumothorax when the family history shows the same condition. Tell: his problem is severe mediastinal air after drug inhalation, which needs surgery now."], ["Gastroenterology clinic", "Esophageal perforation is one cause of pneumomediastinum, and an identified cause is treated. Tell: his history points to a pressure rise from breath-holding, and his worsening state needs an emergent surgical consult, not a clinic visit."]], "c": 0, "cite": "Pleural Disorders 2026.pptx, Slides 60, 75, 76, 79", "slot": "referral", "lead": "referral", "qid": "8o84ne"}, {"topic": "Pleura and pleurisy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 31-year-old man has had sharp, well-localized left chest pain for 3 days after a viral upper respiratory infection. The pain worsens with deep breathing and coughing, and a pleural friction rub (a scratching, creaking sound) disappears when he holds his breath. Myocardial infarction, pneumothorax and pneumonia have been excluded, and his chest radiograph is normal. Which is the most appropriate treatment?", "opts": [["Chest tube insertion", "A chest tube drains fluid or air from the pleural space in pneumothorax or pleural effusion. Tell: his chest radiograph is normal, so there is no air or fluid to drain; inflamed pleura is treated medically."], ["Chemical pleurodesis", "Pleurodesis instills a sclerosant so that the two pleural layers adhere, to prevent recurrent pneumothorax or a recurring effusion. Tell: obliterating the pleural space is a procedure for recurrent air or fluid, not for a first episode of pleural inflammation."], ["Non-rebreather oxygen", "Oxygen at 100% by non-rebreather mask accelerates resorption of air in a small primary spontaneous pneumothorax. Tell: his film shows no pleural air to resorb; his pleuritic pain calls for anti-inflammatory treatment."], ["Anti-inflammatory drug", "Correct. Pleurisy is treated by treating the underlying condition and giving nonsteroidal anti-inflammatory drugs. His viral infection is an infectious cause, the dangerous causes are excluded, and the anti-inflammatory drug addresses the parietal pleural inflammation behind his pain."]], "c": 3, "cite": "Pleural Disorders 2026.pptx, Slides 10, 13, 14, 41, 45, 53", "slot": "first-line", "lead": "treatment", "qid": "6d9ij7"}, {"topic": "Traumatic and tension pneumothorax", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 33-year-old man with a tension pneumothorax after a gunshot wound has hypotension, tracheal deviation to the right, distended neck veins and absent left breath sounds. His family asks why his blood pressure has fallen. Which mechanism explains his hypotension?", "opts": [["Blood loss into the chest", "Bleeding into the pleural space is hemothorax, and trauma is its most common cause. Tell: his distended neck veins and tracheal shift fit trapped air impeding venous return, the tension mechanism."], ["Increased cardiac output", "Tension pneumothorax lowers cardiac output, it does not raise it. Tell: the mediastinal shift decreases venous return to the heart, so output and blood pressure both fall."], ["Slowed heart rate", "The listed consequences of tension pneumothorax are decreased venous return and cardiac output, with hypotension, tracheal deviation and neck vein distention. Tell: his pressure falls because filling falls, not because the heart slows."], ["Less venous return to the heart", "Correct. In tension pneumothorax, air trapped by a one-way valve shifts the mediastinum to the contralateral side. Venous return to the heart decreases, cardiac output falls, and hypotension follows, along with tracheal deviation and neck vein distention."]], "c": 3, "cite": "Pleural Disorders 2026.pptx, Slides 63, 64, 69", "slot": "complication", "lead": "complication", "qid": "40m1l"}, {"topic": "Pleural effusion: imaging and fluid analysis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 71-year-old woman has a new left pleural effusion with no clear clinical cause, and diagnostic thoracentesis is performed. Pleural fluid protein is 2.1 g/dL with serum protein 7.0 g/dL (normal 6.0-8.3 g/dL). Pleural fluid lactate dehydrogenase is 210 units/L with serum lactate dehydrogenase 450 units/L (normal 140-280 units/L). How is the effusion classified by Light's criteria?", "opts": [["Exudate, by lactate dehydrogenase level", "Correct. Protein ratio 2.1 / 7.0 = 0.30, not above 0.5. Lactate dehydrogenase ratio 210 / 450 = 0.47, not above 0.6. But fluid lactate dehydrogenase 210 exceeds two-thirds of the 280 upper limit of normal serum lactate dehydrogenase, about 187: met, so the fluid is an exudate."], ["Exudate, by protein ratio", "The protein ratio is 2.1 / 7.0 = 0.30, below the 0.5 cutoff. Tell: her exudate criterion is the fluid lactate dehydrogenase of 210, above two-thirds of the 280 upper limit, about 187."], ["Exudate, by lactate dehydrogenase ratio", "The ratio is 210 / 450 = 0.47, under 0.6, because her serum lactate dehydrogenase is itself high. Tell: the third criterion compares the fluid value with the normal upper limit, and 210 is above two-thirds of 280, about 187."], ["Transudate, no criterion met", "A transudate needs all three criteria absent. Tell: both ratios miss, but her fluid lactate dehydrogenase of 210 is above two-thirds of the 280 upper limit, about 187, so one criterion is met."]], "c": 0, "cite": "Pleural Disorders 2026.pptx, Slides 96, 101, 110, 112", "slot": "test finding", "lead": "classify", "qid": "zaaba0"}, {"topic": "Pleura and pleurisy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 61-year-old man with hypertension and a 40-pack-year smoking history has sudden sharp left chest pain that worsens with deep breathing. Before the pain is attributed to pleurisy, which condition belongs among those that must be considered immediately?", "opts": [["Aortic dissection", "Correct. Pleuritic pain demands immediate consideration of the dangerous causes: myocardial infarction, pericarditis, aortic dissection, pneumonia, pneumothorax and pulmonary embolism. Only after those are weighed are the other causes, such as rib fracture, costochondritis, vertebral fracture or zoster nerve pain, considered."], ["Costochondritis", "Costochondritis, inflammation of the costal cartilage, belongs to the second group, the other causes to consider. Tell: it is not one of the dangerous conditions weighed first, which are myocardial infarction, pericarditis, aortic dissection, pneumonia, pneumothorax and pulmonary embolism."], ["Rib fracture", "Rib fracture is listed with the other causes of chest pain, after the dangerous ones. Tell: the conditions that must be considered immediately are the dangerous ones, and aortic dissection is on that list."], ["Herpes zoster nerve pain", "Nerve root pain from herpes zoster is another of the other causes to consider once the dangerous ones are excluded. Tell: the immediate list is myocardial infarction, pericarditis, aortic dissection, pneumonia, pneumothorax and pulmonary embolism."]], "c": 0, "cite": "Pleural Disorders 2026.pptx, Slide 13", "slot": "differential", "lead": "diagnosis", "qid": "qng1fr"}, {"topic": "Hemothorax", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 58-year-old man has a bloody-appearing pleural effusion after a fall. The pleural fluid hematocrit is 30%, and his blood hematocrit is 40% (normal 41-53%). How is the effusion classified?", "opts": [["Empyema", "Empyema is purulent fluid in the pleural space, usually after bacterial pneumonia with a parapneumonic effusion. Tell: his fluid is bloody after a fall, not purulent after an infection."], ["Hemothorax", "Correct. A pleural fluid hematocrit over 50% of the peripheral blood hematocrit defines a hemothorax, while under 50% marks a hemorrhagic effusion. His fluid hematocrit of 30% is 75% of his blood value of 40%, well over half, and trauma causes most hemothoraces."], ["Hemorrhagic effusion", "A hemorrhagic effusion is bloody fluid whose hematocrit is under 50% of the blood hematocrit. Tell: 30 divided by 40 is 75%, above the 50% cutoff, so this is a hemothorax."], ["Chylothorax", "Chylothorax is lipid from chyle in the pleural space, with milky fluid and elevated triglycerides. Tell: his fluid is bloody, and its hematocrit is the deciding measurement."]], "c": 1, "cite": "Pleural Disorders 2026.pptx, Slides 74, 98, 105, 108", "slot": "test finding", "lead": "classify", "qid": "cv654k"}, {"topic": "Spontaneous pneumothorax: treatment and education", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 30-year-old man has a primary spontaneous pneumothorax. His respiratory rate is 18 breaths per minute, heart rate 128 beats per minute, blood pressure 116/72 mm Hg and oxygen saturation 97% on room air, and he speaks in whole sentences. How is he classified by the American College of Chest Physicians stability definition?", "opts": [["Unstable: respiratory rate", "The respiratory-rate criterion is under 24 breaths per minute. Tell: his rate of 18 meets it easily; his failed criterion is the heart rate of 128, over the upper bound of 120 beats per minute."], ["Unstable: oxygen saturation", "The saturation criterion is a room-air oxygen saturation over 90%. Tell: his 97% on room air passes; the fast heart rate of 128 is what fails the definition."], ["Unstable: heart rate", "Correct. The heart-rate criterion has two bounds: over 60 and under 120 beats per minute. His rate of 128 is above 120, so he fails it even though his respiratory rate of 18, normal pressure, saturation of 97% and full sentences pass; anyone who misses a criterion is unstable."], ["Stable", "Stability needs every criterion, including a heart rate under 120. Tell: his rate of 128 is above that upper bound, so he cannot be classed as stable despite his other values."]], "c": 2, "cite": "Pleural Disorders 2026.pptx, Slide 51", "slot": "differential", "lead": "classify", "qid": "1xkel9p"}, {"topic": "Pneumothorax: types and presentation", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 22-year-old man with Marfan syndrome, who is tall and thin, develops sudden left-sided pleuritic chest pain and dyspnea while playing video games. He has never smoked. His upright chest radiograph shows a visceral pleural line on the left. How is his pneumothorax classified?", "opts": [["Primary spontaneous", "Primary spontaneous pneumothorax is classically seen in tall, thin young males aged 20-40 with no underlying lung abnormality. Tell: his Marfan syndrome is a connective tissue disease that moves the episode into the secondary group."], ["Traumatic", "Traumatic pneumothorax needs a history of blunt or penetrating thoracic trauma, such as a stab wound or a rib fracture that tears the lung. Tell: his pain began while he sat playing video games, with no injury."], ["Iatrogenic", "Iatrogenic pneumothorax follows a medical intervention such as thoracentesis, subclavian vein catheter placement, bronchoscopy or mechanical ventilation. Tell: no procedure preceded his symptoms."], ["Secondary spontaneous", "Correct. Spontaneous means no thoracic trauma, and secondary means an underlying abnormality. Connective tissue disease such as Marfan syndrome is listed among the risk factors for secondary spontaneous pneumothorax, so his tall, thin build does not make this primary."]], "c": 3, "cite": "Pleural Disorders 2026.pptx, Slides 17, 19, 20", "slot": "risk factors", "lead": "classify", "qid": "fg53se"}, {"topic": "Exudates: chylothorax and empyema", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 61-year-old woman being treated with antibiotics for bacterial pneumonia still has fever and pleuritic pain after several days, and her parapneumonic effusion has grown. Thoracentesis returns thick purulent fluid. Which is the most appropriate treatment?", "opts": [["A longer antibiotic course", "Antibiotics are half of empyema treatment, but pus in the pleural space also has to be drained. Tell: her pneumonia did not resolve on antibiotics, and the treatment pairs drainage with antibiotics."], ["Chemical pleurodesis", "Chemical pleurodesis obliterates the pleural space, mainly for recurrent malignant effusions or recurrent pneumothorax. Tell: an infected pleural space needs drainage and antibiotics, not obliteration."], ["Diuretic therapy", "Diuretics are the initial treatment for transudates secondary to heart failure. Tell: her fluid is pus from an infection, an exudative process that diuretics do not address."], ["Drainage plus antibiotics", "Correct. Empyema is purulent fluid in the pleural space, and bacterial pneumonia with a parapneumonic effusion is its most common precursor. It is suspected when pneumonia does not resolve with therapy and diagnosed by purulent material on thoracentesis; treatment is drainage and antibiotics, treating the underlying disease and analgesia, and prompt therapy is critical."]], "c": 3, "cite": "Pleural Disorders 2026.pptx, Slides 97, 107, 108", "slot": "first-line", "lead": "treatment", "qid": "1ad8an7"}, {"topic": "Pleural effusion: imaging and fluid analysis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 55-year-old man has a new moderate left pleural effusion on chest radiograph. He has no heart, liver or kidney disease, no fever or cough, and no history of cancer or trauma, so no clinical cause is apparent. Which is the most appropriate next step?", "opts": [["Diuretic therapy", "Diuretics are the initial treatment for transudates secondary to heart failure. Tell: he has no heart disease and no known cause, so the fluid is sampled before any treatment is chosen."], ["Diagnostic thoracentesis", "Correct. Diagnostic thoracentesis is performed when there is a new pleural effusion with no clinical cause. It removes 50-100 mL for visualization and analysis, sent for protein, lactate dehydrogenase, cell count, Gram stain, cytology and culture, and ultrasound is used to guide it."], ["Chemical pleurodesis", "Chemical pleurodesis obliterates the pleural space, often for recurrent malignant effusions in an expandable lung. Tell: his effusion is new and has no diagnosis yet, so the fluid must be analyzed first."], ["Indwelling pleural catheter", "An indwelling tunneled pleural catheter is drained at home for rapidly recurring fluid or a short prognosis, as palliative care. Tell: he has a first, undiagnosed effusion, not a recurring one."]], "c": 1, "cite": "Pleural Disorders 2026.pptx, Slides 95, 96, 97, 99, 113", "slot": "initial test", "lead": "next step", "qid": "cjpgg1"}, {"topic": "Aspiration, chest tube, pleurodesis and surgery", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Pneumothorax 3. Spontaneous 4. Traumatic 5. Hemothorax 6. Chylothorax 7. Pleural effusion 8. Pneumomediastinum 9. Pleurodynia 10. Pleurisy 11. Empyema", "q": "A 24-year-old woman with an inherited bleeding disorder has a first primary spontaneous pneumothorax with an apex-to-cupola distance of 2 cm. She still has significant dyspnea after adequate analgesia, a situation in which catheter aspiration is usually offered. Which feature of her history contraindicates catheter aspiration?", "opts": [["Her pneumothorax size", "Small means under 3 cm at the apex, and a small primary pneumothorax with significant dyspnea after analgesia is the presentation that catheter aspiration treats. Tell: her 2 cm size points toward aspiration, not away from it."], ["Her ongoing dyspnea", "Significant dyspnea after analgesia is the indication for catheter aspiration in a small primary pneumothorax. Tell: the dyspnea is why aspiration was considered; her bleeding disorder is the listed contraindication."], ["Her bleeding disorder", "Correct. A small primary spontaneous pneumothorax, under 3 cm at the apex, with significant dyspnea after analgesia is treated with catheter aspiration. Bleeding disorders are on the list of contraindications to aspiration, so her inherited bleeding disorder removes the option."], ["Her first-episode status", "A recurrent pneumothorax contraindicates catheter aspiration; a first episode does not. Tell: her first episode is exactly where aspiration usually fits, and the bleeding disorder is what rules it out."]], "c": 2, "cite": "Pleural Disorders 2026.pptx, Slides 39, 53, 54", "slot": "avoid", "lead": "avoid", "qid": "1g0a70v"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll" && window.startExamModeTour) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

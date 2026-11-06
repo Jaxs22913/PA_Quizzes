@@ -6,7 +6,8 @@ Exam 2 indigo (226), Exam 3 violet (259), Exam 4 plum (292), Exam 5 rose (325), 
 Exam 7 is bronze (31): the Exam 6 crimson rotated +33 degrees in hue and re-solved to Exam 6's contrast against
 white (navy 9.35:1, indigo 4.87:1), the gold kept. Four-option sets, per the exam standard.
 
-    python3 render_cms_e7.py l39io | l39vig | l40io | l40vig | l41io | l41vig
+    python3 render_cms_e7.py l39io | l39vig | l40io | l40vig | l41io | l41vig | l42io | l42vig | l43io | l43vig
+                             | l44io | l44vig
 
 A later lecture (42-45) adds its two SPEC entries here (see tools/cms_e7_README.md).
 """
@@ -69,6 +70,57 @@ SPEC = {
           "Drug-induced disease", "Grading oxygenation", "Older adults"],
    intro="Take the occupational and exposure history first: the job, the dust and the years since exposure "
          "point to the disease before the imaging does. Every laboratory value comes with its normal range."),
+ "l42io": dict(sets="cms_e7l42_sets.json",
+   files=["pulmonary-vascular-disorders-quiz.html", "pulmonary-vascular-disorders-quiz-version-2.html"],
+   title="Pulmonary Vascular Disorders Quiz %d — CMS I Exam 7",
+   h1="Pulmonary Vascular Disorders &mdash; Quiz %d",
+   sub=SUB % 42,
+   chips=["Cor pulmonale", "Right ventricle under pressure", "Pulmonary hypertension groups", "Signs and workup",
+          "Pulmonary hypertension treatment", "Pulmonary edema", "Pulmonary embolism", "Wells and PERC",
+          "Risk and treatment"]),
+ "l42vig": dict(sets="cms_e7l42_vig_sets.json",
+   files=["pulmonary-vascular-disorders-vignettes.html", "pulmonary-vascular-disorders-vignettes-version-2.html"],
+   title="Pulmonary Vascular Disorders Vignettes %d — CMS I Exam 7",
+   h1="Pulmonary Vascular Disorders &mdash; Vignettes %d",
+   sub=SUB % 42,
+   chips=["Score the Wells", "Apply PERC", "Which test", "Contraindications", "Risk category",
+          "Cardiogenic or not", "Older adults"],
+   intro="Count every Wells and PERC (Pulmonary Embolism Rule-out Criteria) item the case gives you before "
+         "choosing a test, and check for anything that rules out contrast or clot-busting drugs. Every laboratory "
+         "value comes with its normal range."),
+ "l43io": dict(sets="cms_e7l43_sets.json",
+   files=["pulmonary-nodules-neoplasms-quiz.html", "pulmonary-nodules-neoplasms-quiz-version-2.html"],
+   title="Pulmonary Nodules and Neoplasms Quiz %d — CMS I Exam 7",
+   h1="Pulmonary Nodules &amp; Neoplasms &mdash; Quiz %d",
+   sub=SUB % 43,
+   chips=["Epidemiology and risk", "Incidental nodules", "Workup and biopsy", "Benign or concerning", "Screening",
+          "Staging", "Central or peripheral", "Cell types", "Paraneoplastic syndromes"]),
+ "l43vig": dict(sets="cms_e7l43_vig_sets.json",
+   files=["pulmonary-nodules-neoplasms-vignettes.html", "pulmonary-nodules-neoplasms-vignettes-version-2.html"],
+   title="Pulmonary Nodules and Neoplasms Vignettes %d — CMS I Exam 7",
+   h1="Pulmonary Nodules &amp; Neoplasms &mdash; Vignettes %d",
+   sub=SUB % 43,
+   chips=["Who gets screened", "Benign or concerning", "Stage from the findings", "Treatment by stage",
+          "Which cell type", "Paraneoplastic signs"],
+   intro="Read the nodule first (its size, edge, calcification and growth), then the patient (smoking history, "
+         "symptoms, where the mass sits). Every laboratory value comes with its normal range."),
+ "l44io": dict(sets="cms_e7l44_sets.json",
+   files=["pleural-disorders-quiz.html", "pleural-disorders-quiz-version-2.html"],
+   title="Pleural Disorders Quiz %d — CMS I Exam 7",
+   h1="Pleural Disorders &mdash; Quiz %d",
+   sub=SUB % 44,
+   chips=["Pleura and pleurisy", "Pneumothorax types", "Imaging and size", "Procedures", "Spontaneous pneumothorax",
+          "Tension pneumothorax", "Hemothorax", "Pneumomediastinum", "Pleural effusion", "Light's criteria",
+          "Pleurodynia"]),
+ "l44vig": dict(sets="cms_e7l44_vig_sets.json",
+   files=["pleural-disorders-vignettes.html", "pleural-disorders-vignettes-version-2.html"],
+   title="Pleural Disorders Vignettes %d — CMS I Exam 7",
+   h1="Pleural Disorders &mdash; Vignettes %d",
+   sub=SUB % 44,
+   chips=["Stable or unstable", "How big is it", "Needle or tube", "Light's criteria", "What to avoid",
+          "Patient education"],
+   intro="Decide first whether the patient is stable, then what the film shows and how big the air or fluid is. "
+         "Pleural fluid results come with the serum values you need for Light's criteria."),
 }[sys.argv[1] if len(sys.argv) > 1 else "l39io"]
 
 S = json.load(open(os.path.join(HERE, SPEC["sets"]), encoding="utf-8"))

@@ -1,0 +1,275 @@
+# -*- coding: utf-8 -*-
+"""Lecture 43 (Pulmonary Nodules and Neoplasms, Gray) cram topics, condensed from guide section 5.
+
+FOCUS: Gray's own "Things to Know" slide (49), his exam list, condensed to one table (the Exam 6 L38 precedent).
+CRITERIA: one table per criteria set, algorithm, classification, staging or cut-off on the slides (memory
+cram_criteria_tables), each with a labeled memory aid of our own making. Cells are the slide wording (the guide's
+table wording reused); slide conflicts are note rows. The algorithms (slides 11, 15, 43), the Fleischner tables
+(19-20), the TNM table (22), the stage pictures (23-29), the location table (30) and the stage-treatment table (35)
+are pictures on the slides; their tables are read from the images.
+"""
+L43C = "#5e4123"
+
+FOCUS = [
+{"id": "focus-l43", "label": "Study Focus: Pulmonary Nodules &amp; Neoplasms (slide 49, &ldquo;Things to Know&rdquo;)", "color": L43C,
+ "tag": "Study focus &middot; Lecture 43 &middot; slide 49 (his own exam list)",
+ "cols": ["Things to Know (slide 49)", "The answer, from the slides"], "widths": ["38%", "62%"], "rows": [
+  ("The criteria for screening an asymptomatic and at-risk patient", "<b>No symptoms, no known nodule; 55&ndash;80; at least 30 pack-years; smokes now or quit within 15 years &rarr; annual low-dose chest CT</b> (computed tomography)"),
+  ("A benign nodule&rsquo;s appearance", "<b>Well-defined borders, fat (hamartoma), calcification</b> (diffuse, central, <b>popcorn = hamartoma</b>, concentric), next to a <b>fissure</b>; under 6 mm and not high risk"),
+  ("What makes you concerned for a malignant nodule", "<b>Over 6 mm</b>; upper lobe or hilar; <b>spiculated</b> (spiky border); more than 3; enlarging; contrast-enhancing; cavitated or nonsolid; high-risk patient; ground-glass or eccentric calcification"),
+  ("Staging by size, nodes and metastasis (TNM), and how it changes treatment", "<b>N2 or N3 = stage 3; M1 = stage 4</b>. Non-small cell: <b>stages 1&ndash;2 surgical resection</b>, <b>stage 4 chemotherapy</b>; chemotherapy and radiation are adjuncts (non-small cell responds poorly)"),
+  ("Which cancers are peripheral or central", "<b>Central: small cell and squamous cell. Peripheral: adenocarcinoma and large cell</b>"),
+  ("Recognize squamous cell among the non-small cell cancers", "<b>Strongest smoking link</b>; central, from a bronchus; cough, wheezing, hemoptysis; <b>cavitation</b>; caught by <b>sputum cytology</b>; <b>hypercalcemia</b>"),
+  ("Recognize small cell lung carcinoma (SCLC)", "Oat cell; central; <b>over 70% metastatic before detection</b>; neuroendocrine paraneoplastic syndromes (SIADH, syndrome of inappropriate antidiuretic hormone); no nucleoli, high nuclear-to-cytoplasm ratio, crushed at biopsy"),
+  ("Which cancer benefits most from radiotherapy", "<b>Small cell</b>: responds better to chemotherapy and radiation than the non-small cell types; best in <b>limited stage</b>; prophylactic cranial irradiation"),
+  ("Paraneoplastic signs (&ldquo;i.e. small cell&rdquo;)", "<b>SIADH</b>: low sodium and osmolality &rarr; <b>confusion, seizures, ataxia, no edema</b>; hypercalcemia (squamous); Lambert-Eaton leg weakness; carcinoid syndrome (bronchial carcinoid)"),
+ ], "mnemonic": {"hook": "Screen, Smooth, Spiky, Stage, Site, Squamous, Small, Shoot (radiation), Syndromes: nine S&rsquo;s for nine bullets.",
+  "key": [["Screen", "screening criteria"], ["Smooth", "benign appearance"], ["Spiky", "concerning nodule (spiculated)"], ["Stage", "TNM and its treatment"],
+          ["Site", "central or peripheral"], ["Squamous", "recognize squamous cell"], ["Small", "recognize small cell"], ["Shoot", "radiotherapy benefits small cell most"],
+          ["Syndromes", "paraneoplastic signs"]],
+  "breaks": "&ldquo;Smooth&rdquo; stands for all the benign signs (fat, calcification, fissure), not only smooth borders."}},
+]
+
+CRITERIA = [
+{"id": "crit-l43-concern", "label": "Concerning vs Benign Nodule", "color": L43C,
+ "tag": "Classification &middot; Lecture 43 &middot; slides 12, 16, 21",
+ "cols": ["Concerning nodules are", "Benign nodules tend to"], "widths": ["50%", "50%"], "rows": [
+  ("<b>Greater than 6 mm</b>", "<b>Smaller than 6 mm</b> (not concerning unless the patient is high risk)"),
+  ("Located in the <b>upper lobes or hilar structures</b>", "Sit <b>close to a fissure</b> (usually benign)"),
+  ("<b>Spiculated</b> (spikes or deviations or lobulations in the border)", "Have <b>well-defined borders</b> (smoothly marginated)"),
+  ("<b>More than 3 nodules</b>; <b>enlarging</b> over time", "Have <b>fatty tissue</b> (hamartoma)"),
+  ("<b>Contrast enhanced</b> on CT; <b>cavitated or nonsolid</b>", "Have <b>calcifications</b> (popcorn = hamartoma; central = healed granuloma)"),
+  ("Patient at <b>high risk</b> of lung cancer", "Most nodules are benign: granuloma (inflammatory), hamartoma (connective tissue growth)"),
+  {"note": "Slide 16 also says &ldquo;close to &hellip; the pleura&rdquo; is usually benign, but slide 32&rsquo;s nodule that involved the pleura was an invasive adenocarcinoma: only the fissure is keyed. Positron emission tomography: low or normal uptake is a good sign (slide 17)."},
+ ], "mnemonic": {"hook": "&ldquo;Magic number is 6&rdquo;, then BUSTED: Big (over 6 mm), Upper lobe or hilar, Spiculated, Three-plus nodules, Enlarging or Enhancing, Dug-out (cavitated) or nonsolid, plus a high-risk patient.",
+  "key": [["Big", "greater than 6 mm"], ["Upper", "upper lobes or hilar structures"], ["Spiculated", "spiky border"], ["Three-plus", "more than 3 nodules"],
+          ["Enlarging / Enhancing", "growing over time; contrast enhanced on CT"], ["Dug-out", "cavitated or nonsolid"]],
+  "breaks": "The high-risk patient has no letter in BUSTED. The benign column has no letters: smooth, fat, calcium (popcorn), fissure."}},
+
+{"id": "crit-l43-calcification", "label": "Nodule Calcification Patterns", "color": L43C,
+ "tag": "Classification &middot; Lecture 43 &middot; slide 16 (picture)",
+ "cols": ["Pattern", "Benign or malignant"], "widths": ["50%", "50%"], "rows": [
+  ("<b>Diffuse</b>", "Benign"),
+  ("<b>Central</b>", "Benign"),
+  ("<b>Popcorn</b>", "Benign (hamartoma)"),
+  ("<b>Concentric</b>", "Benign"),
+  ("<b>Ground-glass</b> (stippled)", "<b>Malignant</b>"),
+  ("<b>Eccentric</b>", "<b>Malignant</b>"),
+ ], "mnemonic": {"hook": "Benign calcium is Dense, Centered, Popped or in Circles (DCPC); malignant calcium is Grainy or Off-center.",
+  "key": [["D", "diffuse"], ["C", "central"], ["P", "popcorn (hamartoma)"], ["C", "concentric (circles)"], ["Grainy", "ground-glass, stippled: malignant"], ["Off-center", "eccentric: malignant"]]}},
+
+{"id": "crit-l43-algorithm", "label": "New Solid Nodule 8&ndash;30 mm: the Algorithm", "color": L43C,
+ "tag": "Algorithm &middot; Lecture 43 &middot; slide 11 (picture)",
+ "cols": ["Clinical probability of malignancy", "Next step"], "widths": ["34%", "66%"], "rows": [
+  ("<b>Very low</b> (&lt; 5%)", "<b>CT surveillance at 3&ndash;6, 9&ndash;12, 18&ndash;24 months</b> (low-dose, thin sections, noncontrast CT)"),
+  ("<b>Low/moderate</b> (5% to 65%)", "<b>FDG-PET</b> (fludeoxyglucose positron emission tomography): negative or mild uptake &rarr; the same CT surveillance; <b>moderate or intense uptake&dagger;</b> &rarr; <b>nonsurgical biopsy</b> (transthoracic needle, endoscopic) or <b>video-assisted thoracoscopic surgery with resection</b>"),
+  ("<b>High&dagger;</b> (&gt; 65%)", "<b>Standard stage evaluation</b> (with or without FDG-PET) &rarr; no metastases &rarr; <b>video-assisted thoracoscopic surgery with resection</b>"),
+  {"note": "Probability by clinical judgment and/or a validated model. &dagger; Referral to a pulmonologist, thoracic surgeon, interventional radiologist or oncologist is recommended. He: &ldquo;Don&rsquo;t lose sleep over [the probability tables], just know you&rsquo;re gonna work it up.&rdquo;"},
+ ], "mnemonic": {"hook": "Low &rarr; Look (CT surveillance); Middle &rarr; Measure the sugar (PET); High &rarr; Hand it to surgery (stage, then resection).",
+  "key": [["Look", "very low: CT at 3&ndash;6, 9&ndash;12, 18&ndash;24 months"], ["Measure", "low/moderate: FDG-PET, then surveillance or biopsy/resection"], ["Hand", "high: staging, then video-assisted thoracoscopic resection"]],
+  "breaks": "Referral (the dagger) applies to both the high branch and the moderate/intense uptake branch."}},
+
+{"id": "crit-l43-screening", "label": "Lung Cancer Screening (as Slide 18 Gives It)", "color": L43C,
+ "tag": "Criteria &middot; Lecture 43 &middot; slide 18 (bold; &ldquo;30 pack-year&rdquo; underlined in class)",
+ "cols": ["Criterion", "Slide 18"], "widths": ["30%", "70%"], "rows": [
+  ("Who", "High-risk adults <b>without symptoms or a known nodule</b>"),
+  ("Age", "<b>55 to 80</b>"),
+  ("Smoking", "<b>At least 30 pack-years</b>"),
+  ("Status", "<b>Smokes now</b>, or <b>quit within the last 15 years</b>"),
+  ("Test", "<b>Low-dose chest CT every year</b> (less radiation than a standard chest CT)"),
+  ("Upside / downside", "Early detection, better prognosis / <b>false positives</b> &rarr; unnecessary workup with complications (such as a biopsy)"),
+  {"note": "Medicare only covers 55 to age 77 (slide 18). Current guidelines differ: the 2021 update is 50&ndash;80 with 20 pack-years; the slide&rsquo;s numbers are what is tested. Symptoms mean a diagnostic workup, not screening."},
+ ], "mnemonic": {"hook": "55, 30, 15, 1: age 55 (to 80), 30 pack-years, quit within 15 years, 1 low-dose CT a year.",
+  "key": [["55", "age 55 to 80"], ["30", "at least 30 pack-years"], ["15", "smoking now or quit within 15 years"], ["1", "one low-dose chest CT every year"]],
+  "breaks": "The upper age (80) and the no-symptoms rule are outside the numbers."}},
+
+{"id": "crit-l43-fleischner-solid", "label": "Fleischner (2017) A: Solid Nodules", "color": L43C,
+ "tag": "Guideline &middot; Lecture 43 &middot; slide 19 (picture)",
+ "cols": ["Nodule type", "&lt;6 mm", "6&ndash;8 mm", "&gt;8 mm"], "widths": ["19%", "21%", "30%", "30%"], "min_width": "560px", "rows": [
+  ("<b>Single, low risk</b>", "No routine follow-up", "CT at 6&ndash;12 months, then consider CT at 18&ndash;24 months", "Consider CT at 3 months, PET/CT, or tissue sampling"),
+  ("<b>Single, high risk</b>", "Optional CT at 12 months", "CT at 6&ndash;12 months, then CT at 18&ndash;24 months", "Consider CT at 3 months, PET/CT, or tissue sampling"),
+  ("<b>Multiple, low risk</b>", "No routine follow-up", "CT at 3&ndash;6 months, then consider CT at 18&ndash;24 months", "CT at 3&ndash;6 months, then consider CT at 18&ndash;24 months"),
+  ("<b>Multiple, high risk</b>", "Optional CT at 12 months", "<b>CT at 3&ndash;6 months, then at 18&ndash;24 months</b> (underlined in class)", "CT at 3&ndash;6 months, then at 18&ndash;24 months"),
+  {"note": "He said not to memorize it (&ldquo;they literally will publish the Fleischner table in those reports&rdquo;), then read these rows aloud. Comments: low-risk nodules &lt;6 mm need no routine follow-up; high-risk patients with suspicious morphology or an upper lobe location may warrant 12-month follow-up; with multiple nodules, use the most suspicious as the guide."},
+ ], "mnemonic": {"hook": "Under 6: low risk Leave it, high risk an Optional look at a year. Over 8: 3 months, PET or tissue. In between: single starts at 6&ndash;12, multiple at 3&ndash;6, and everyone ends at 18&ndash;24.",
+  "key": [["Leave it", "&lt;6 mm, low risk: no routine follow-up"], ["Optional", "&lt;6 mm, high risk: optional CT at 12 months"],
+          ["Over 8", "single: CT at 3 months, PET/CT or tissue sampling"], ["6&ndash;12 / 3&ndash;6", "first CT for single / multiple 6&ndash;8 mm"], ["18&ndash;24", "the second CT"]],
+  "breaks": "Multiple nodules over 8 mm follow the 3&ndash;6 then 18&ndash;24 month rule, not the single-nodule &ldquo;3 months, PET or tissue&rdquo;; low-risk rows say &ldquo;consider&rdquo; for the second CT."}},
+
+{"id": "crit-l43-fleischner-subsolid", "label": "Fleischner (2017) B: Subsolid Nodules", "color": L43C,
+ "tag": "Guideline &middot; Lecture 43 &middot; slide 20 (picture)",
+ "cols": ["Nodule type", "&lt;6 mm", "&ge;6 mm"], "widths": ["24%", "30%", "46%"], "rows": [
+  ("<b>Single, ground glass</b>", "No routine follow-up", "CT at 6&ndash;12 months to confirm persistence, then CT every 2 years until 5 years"),
+  ("<b>Single, part solid</b>", "No routine follow-up", "CT at 3&ndash;6 months to confirm persistence; if unchanged and the solid part stays &lt;6 mm, annual CT for 5 years"),
+  ("<b>Multiple</b>", "CT at 3&ndash;6 months; if stable, consider CT at 2 and 4 years", "CT at 3&ndash;6 months; then manage by the most suspicious nodule(s)"),
+  {"note": "<b>Persistent part-solid nodules with a solid component &ge;6 mm are highly suspicious.</b> Multiple pure ground-glass nodules &lt;6 mm are usually benign. He: &ldquo;there&rsquo;s rules, you&rsquo;re fine&rdquo;; not on his slide 49 list."},
+ ], "mnemonic": {"hook": "Glass is slow (6&ndash;12 months, then every 2 years to 5); a Solid part speeds it up (3&ndash;6 months, then yearly to 5); a solid part of 6 mm or more that persists = Suspicious.",
+  "key": [["Glass", "ground glass &ge;6 mm: CT 6&ndash;12 months, then every 2 years until 5 years"], ["Solid part", "part solid &ge;6 mm: CT 3&ndash;6 months, then annual CT for 5 years"], ["Suspicious", "persistent solid component &ge;6 mm"]],
+  "breaks": "Single nodules under 6 mm need no routine follow-up; the multiple row has its own schedule."}},
+
+{"id": "crit-l43-biopsy", "label": "Biopsy and Treatment: Fit for Surgery?", "color": L43C,
+ "tag": "Algorithm &middot; Lecture 43 &middot; slide 15 (picture)",
+ "cols": ["Fit for surgery?", "Path", "End point"], "widths": ["20%", "38%", "42%"], "rows": [
+  {"group": "First: PET-CT for staging (if not already performed)"},
+  ("<b>Yes</b>", "Wedge resection with on-table frozen section", "Completion lobectomy under the same anesthetic"),
+  ("<b>Yes</b>", "Image-guided biopsy &rarr; malignancy confirmed", "<b>Lobectomy</b>, or <b>anatomical segmentectomy if unfit for lobectomy</b>"),
+  ("<b>No</b>", "Image-guided biopsy if possible and safe &rarr; malignancy confirmed", "<b>SABR</b> (stereotactic ablative radiotherapy), <b>RFA</b> (radiofrequency ablation) or conventional radical radiotherapy"),
+  ("<b>No</b>", "Biopsy not possible or not safe", "Straight to SABR, RFA or radical radiotherapy"),
+  {"note": "A negative biopsy: consider repeat biopsy, or proceed if a false negative is feared. The fit path may also go straight to anatomical segmentectomy if unfit for lobectomy."},
+ ], "mnemonic": {"hook": "Fit = Cut (wedge, lobe, or segment if the lobe is too much); Unfit = Zap (ablate or radiate), biopsy first only if Safe.",
+  "key": [["Cut", "resection: wedge then completion lobectomy, lobectomy, or segmentectomy if unfit for lobectomy"], ["Zap", "SABR, RFA or conventional radical radiotherapy"], ["Safe", "image-guided biopsy only if possible and safe"]]}},
+
+{"id": "crit-l43-tnm", "label": "TNM 8th Edition", "color": L43C,
+ "tag": "Staging &middot; Lecture 43 &middot; slide 22 (picture)",
+ "cols": ["Category", "Slide 22"], "widths": ["16%", "84%"], "rows": [
+  {"group": "PRIMARY TUMOR"},
+  ("<b>T1</b>", "<b>&le; 3 cm</b>, not involving the main bronchus (1a &le; 1, 1b &gt;1&ndash;2, 1c &gt;2&ndash;3 cm)"),
+  ("<b>T2</b>", "<b>&gt;3 to &le;5 cm</b>, or main bronchus (not carina), visceral pleura, or atelectasis/post-obstructive pneumonitis to the hilum (2a &gt;3&ndash;4, 2b &gt;4&ndash;5 cm)"),
+  ("<b>T3</b>", "<b>&gt;5 to &le;7 cm</b>, or chest wall, pericardium, phrenic nerve, or satellite nodules in the <b>same lobe</b>"),
+  ("<b>T4</b>", "<b>&gt;7 cm</b>, or mediastinum, diaphragm, heart, great vessels, recurrent laryngeal nerve, carina, trachea, esophagus, spine, or a tumor in a <b>different lobe of the same lung</b>"),
+  {"group": "LYMPH NODES"},
+  ("<b>N1</b>", "Ipsilateral peribronchial and/or hilar and intrapulmonary nodes"),
+  ("<b>N2</b>", "Ipsilateral mediastinal and/or subcarinal nodes"),
+  ("<b>N3</b>", "<b>Contralateral</b> mediastinal or hilar; ipsilateral/contralateral <b>scalene/supraclavicular</b>"),
+  {"group": "METASTASIS"},
+  ("<b>M1a</b>", "Contralateral lung, or pleural/pericardial nodule or malignant effusion"),
+  ("<b>M1b</b>", "Single extrathoracic metastasis (including a single non-regional node)"),
+  ("<b>M1c</b>", "Multiple extrathoracic metastases"),
+  {"note": "N2 or N3 automatically moves it to stage 3; all stage 1&ndash;3 tumors are M0 (slide 25). Slide 31&rsquo;s &ldquo;M1 or 2&rdquo;: there is no M2."},
+ ], "mnemonic": {"hook": "T climbs 3-5-7 (cm); N climbs Near-Middle-Far (hilar, mediastinal, other side or neck); M is a = still in the chest, b = one outside, c = many outside.",
+  "key": [["3-5-7", "T1 &le;3, T2 &gt;3&ndash;5, T3 &gt;5&ndash;7, T4 &gt;7 cm"], ["Near", "N1 same-side hilar/peribronchial"], ["Middle", "N2 same-side mediastinal/subcarinal"],
+          ["Far", "N3 other side, or scalene/supraclavicular"], ["a / b / c", "M1a chest (other lung, pleura, pericardium, effusion), M1b single extrathoracic, M1c multiple"]],
+  "breaks": "Invasion of structures (chest wall for T3; mediastinum, heart, carina and others for T4) raises T regardless of size."}},
+
+{"id": "crit-l43-stages", "label": "Lung Cancer Stages (the Stage Pictures)", "color": L43C,
+ "tag": "Staging &middot; Lecture 43 &middot; slides 23&ndash;29 (pictures)",
+ "cols": ["Stage", "Tumor and nodes, as the pictures state them"], "widths": ["14%", "86%"], "rows": [
+  ("<b>1A</b>", "&le; 3 cm, no nodes"),
+  ("<b>1B</b>", "&gt;3 to 4 cm, no nodes"),
+  ("<b>2A</b>", "&gt;4 to 5 cm, no nodes"),
+  ("<b>2B</b>", "&gt;5 to 7 cm, no nodes (or chest wall, phrenic nerve, heart lining, same-lobe tumor); <b>or</b> &le;5 cm with peribronchial or hilar nodes"),
+  ("<b>3A</b>", "&gt;7 cm or diaphragm/mediastinal invasion or other-lobe tumor, no nodes; <b>or</b> &gt;5 cm with same-side peribronchial/hilar nodes; <b>or</b> &le;5 cm with <b>mediastinal (subcarinal) nodes</b>"),
+  ("<b>3B</b>", "&gt;5 cm with same-side <b>mediastinal</b> nodes; <b>or</b> &le;5 cm with <b>other-side</b> nodes or <b>any supraclavicular or scalene</b> node"),
+  ("<b>3C</b>", "&gt;5 cm with other-side nodes or any supraclavicular or scalene node"),
+  ("<b>4A</b>", "Any size: the <b>other lung</b>, the pleura or pericardium (nodules or fluid), or <b>one site outside the chest</b> (adrenal)"),
+  ("<b>4B</b>", "Any size: <b>multiple sites outside the chest</b> (adrenal and bone)"),
+  {"note": "He: &ldquo;Size of the tumor is badness. Lymph node involvement, badness. Metastasis, worse badness&rdquo;; crossing to the other lung is badness. Big picture, not every circumstance."},
+ ], "mnemonic": {"hook": "Stage 1 = small, no nodes; 2 = bigger or the first (hilar) nodes; 3 = middle (mediastinal) or far (other side, neck) nodes; 4 = it left: the other lung, the pleura, or outside the chest (A = one site, B = many).",
+  "key": [["1", "&le;4 cm, no nodes (1A &le;3, 1B &gt;3&ndash;4)"], ["2", "&gt;4&ndash;7 cm, no nodes, or small with hilar/peribronchial nodes"], ["3", "N2 or N3 nodes, &gt;5 cm with hilar/peribronchial nodes, or &gt;7 cm / invasion"], ["4", "M1: 4A one site outside the chest or within the chest; 4B multiple sites"]],
+  "breaks": "Stage 3A also holds a tumor over 7 cm (or invading the diaphragm or mediastinum) with no nodes at all."}},
+
+{"id": "crit-l43-location", "label": "Central vs Peripheral Lung Cancers", "color": L43C,
+ "tag": "Classification &middot; Lecture 43 &middot; slide 30 (picture; board pointer, said three times)",
+ "cols": ["Cancer type", "Most common location"], "widths": ["36%", "64%"], "rows": [
+  ("<b>Small cell</b>", "<b>Central</b>, but usually metastatic by the time of diagnosis"),
+  ("<b>Squamous cell carcinoma</b>", "<b>Central bronchi</b>; can diagnose via <b>sputum cytology</b>"),
+  ("<b>Adenocarcinoma</b>", "<b>Periphery</b> (not amenable to early detection)"),
+  ("<b>Large cell carcinoma</b>", "<b>Periphery</b> (not amenable to early detection)"),
+  {"note": "Mixed types exist (adenosquamous, combined small cell). Slide 9: most masses form in or near the hilum, some in the periphery (hard to diagnose)."},
+ ], "mnemonic": {"hook": "His own: &ldquo;Small and squamous are central&rdquo;: the two S&rsquo;s Sit in the center; the other two go to the edges.",
+  "key": [["S", "Small cell: central"], ["S", "Squamous cell: central"], ["Edges", "adenocarcinoma and large cell: periphery"]]}},
+
+{"id": "crit-l43-stage-tx", "label": "Non-Small Cell Treatment by Stage", "color": L43C,
+ "tag": "Treatment steps &middot; Lecture 43 &middot; slide 35 (picture)",
+ "cols": ["Stage", "Standard management"], "widths": ["20%", "80%"], "rows": [
+  ("<b>1A and B</b>", "<b>Surgical resection</b>"),
+  ("<b>2A and B</b>", "<b>Surgical resection</b>"),
+  ("<b>3A</b>", "Chemoradiotherapy, surgical resection in selected patients"),
+  ("<b>3B</b>", "Chemoradiotherapy"),
+  ("<b>4</b>", "<b>Cisplatin-based chemotherapy</b> (slide: &ldquo;Ciplatin&rdquo;); surgical resection <b>only if a solitary metastatic lesion with a resectable primary tumor</b>"),
+  {"note": "Slide 35 text: resection (wedge/segment, lobectomy, pneumonectomy) by size and nodes, &ldquo;(I&ndash;IIIB)&rdquo;, if the patient can tolerate it; chemotherapy and radiation only as adjuncts or for stage 4, as non-small cell cancers respond poorly. Text and table differ for stage 3: never asked."},
+ ], "mnemonic": {"hook": "1 and 2: Cut. 4: Chemo. 3: the slide argues with itself.",
+  "key": [["Cut", "stages 1&ndash;2: surgical resection"], ["Chemo", "stage 4: chemotherapy (surgery only for a solitary metastasis with a resectable primary)"], ["3", "text says resection to 3B; table says chemoradiotherapy (3A, selected surgery)"]]}},
+
+{"id": "crit-l43-sclc", "label": "Small Cell: Stages and Response After Initial Therapy", "color": L43C,
+ "tag": "Classification &amp; algorithm &middot; Lecture 43 &middot; slides 41, 43 (picture)",
+ "cols": ["Item", "What the slides say"], "widths": ["32%", "68%"], "rows": [
+  {"group": "CATEGORIES (slide 41)"},
+  ("<b>Limited stage</b>", "Confined to one area with only local lymph nodes"),
+  ("<b>Extensive stage</b>", "Spread away from the local area"),
+  ("<b>Combined</b>", "Different histological types, mixed with non-small cell"),
+  {"group": "COMPLETE OR PARTIAL RESPONSE (slide 43)"},
+  ("Limited stage", "<b>Prophylactic cranial irradiation (PCI)</b> (category 1)"),
+  ("Extensive stage", "<b>Consider PCI &plusmn; thoracic radiotherapy</b>"),
+  {"note": "Brain MRI (magnetic resonance imaging) is preferred over CT; PCI is <b>not recommended with poor performance status or impaired neurocognitive function</b>. Radiation works best in limited stage (slide 41). Follow-up visit schedule: &ldquo;don&rsquo;t memorize that.&rdquo;"},
+ ], "mnemonic": {"hook": "Limited gets the Lid (PCI, a cap of radiation on the brain); Extensive only Entertains it (consider PCI &plusmn; chest radiation).",
+  "key": [["Lid", "limited stage: PCI after a complete or partial response"], ["Entertains", "extensive stage: consider PCI &plusmn; thoracic radiotherapy"]],
+  "breaks": "Combined (mixed histology) has no letter; the hook covers the response branch only."}},
+
+{"id": "crit-l43-para", "label": "Paraneoplastic Syndromes by System", "color": L43C,
+ "tag": "Classification &middot; Lecture 43 &middot; slides 46&ndash;48",
+ "cols": ["System", "Syndrome", "Linked type"], "widths": ["20%", "50%", "30%"], "rows": [
+  ("<b>Endocrine</b>", "<b>SIADH</b> (syndrome of inappropriate antidiuretic hormone): low sodium and osmolality &rarr; confusion, seizures, ataxia, <b>no edema</b>", "<b>Small cell</b> (slide 48)"),
+  ("<b>Endocrine</b>", "<b>Hypercalcemia</b>", "<b>Squamous cell</b> (&ldquo;particularly&rdquo;)"),
+  ("<b>Neurological</b>", "<b>Lambert-Eaton myasthenic syndrome</b> (autoimmune; calcium channels at the nerve ending, no acetylcholine release &rarr; <b>leg weakness</b>); cerebellar degeneration or encephalitis", "Not tied to one type"),
+  ("<b>Dermatological</b>", "Acanthosis nigricans or dermatomyositis", "Not tied to one type"),
+  ("<b>Hematological</b>", "Listed; no example given", "&mdash;"),
+  ("Carcinoid syndrome", "Serotonin: flushing, pulmonic and tricuspid valve thickening, wheeze, diarrhea", "<b>Bronchial carcinoid</b>"),
+  {"note": "Slide 46 tags Lambert-Eaton &ldquo;central&rdquo; and cerebellar degeneration &ldquo;peripheral&rdquo;; slide 47 places Lambert-Eaton at the neuromuscular junction: the tags are never keyed."},
+ ], "mnemonic": {"hook": "Small cell Secretes Sodium-lowering hormone; Squamous Spikes calcium; Carcinoid Causes flushing.",
+  "key": [["Small &rarr; Sodium", "small cell &rarr; SIADH (hyponatremia)"], ["Squamous &rarr; Spikes calcium", "squamous &rarr; hypercalcemia"], ["Carcinoid &rarr; flushing", "bronchial carcinoid &rarr; serotonin (carcinoid syndrome)"]],
+  "breaks": "The neurologic and skin syndromes are not tied to a cell type on the slides."}},
+]
+
+TOPICS = [
+{"id": "l43-emph", "label": "★ Professor Emphasized — Pulmonary Nodules &amp; Neoplasms", "color": "#b8860b", "rows": [
+  ["★ His exam list", "Slide 49 &ldquo;Things to Know&rdquo;: screening, benign vs worrying nodule, staging and its treatment, central vs peripheral, recognize squamous and small cell, radiotherapy, paraneoplastic signs. &ldquo;Big picture, guys.&rdquo;"],
+  ["★ Board pointer (3x)", "<b>&ldquo;Small and squamous are central&rdquo;</b>; adenocarcinoma and large cell peripheral."],
+  ["★ Magic number 6", "<b>Over 6 mm</b> = suspicious, especially upper lobe or hilar and <b>spiculated</b> (&ldquo;spiky&rdquo;; &ldquo;you don&rsquo;t usually see a lot of benign stuff that&rsquo;s described as spiculated&rdquo;)."],
+  ["★ Test-question pointer", "<b>Large cell metastasizes to the small intestine and bowel</b>: &ldquo;unique to a thing makes a great test question.&rdquo;"],
+  ["★ Squamous", "Strongest smoking link, central from a bronchus, cavitation, cough/wheeze/hemoptysis like a COPD (chronic obstructive pulmonary disease) flare that never settles; <b>sputum can catch it</b>; <b>hypercalcemia</b>."],
+  ["★ Small cell", "Does better with chemotherapy and radiation (best in limited stage); <b>prophylactic cranial irradiation</b>; <b>SIADH</b>: confusion and seizures in the emergency department &rarr; &ldquo;oh, that&rsquo;s lung cancer.&rdquo;"],
+  ["Not to memorize", "Fleischner tables (reports print them), probability tables, staging charts in detail, node stations, genes, marker-to-drug choices, small cell follow-up schedule. Primary care: <b>screen, figure out risk, refer</b>."],
+  ["Most time", "Epidemiology and spread 7.5 min; incidental nodules and symptoms 7.1; staging 5.25 (of about 55 minutes taught)."],
+]},
+{"id": "l43-nodule", "label": "Pulmonary Nodule: Finding and Working It Up", "color": L43C, "rows": [
+  ["Found how", "<b>Incidentally</b> on a chest X-ray or CT done for another reason; size first: <b>under 6 mm not concerning unless high risk</b>; a solitary nodule on chest X-ray = <b>coin lesion</b>."],
+  ["Usually", "<b>Benign</b>: granuloma (inflammatory) or hamartoma (connective tissue growth); high-risk patients are worked up to exclude malignancy."],
+  ["Workup", "Chest X-ray &ldquo;not a good tool&rdquo;; <b>CT with contrast of chest and upper abdomen</b>, then <b>biopsy</b> (bronchoscopy, transthoracic, thoracoscopy by location; can be CT guided); PET; genetic testing."],
+  ["Labs", "Complete blood count with differential, metabolic panel <b>with calcium</b>, <b>alkaline phosphatase</b>, pulmonary function tests; sputum cytology (<b>not sensitive</b>)."],
+  ["PET", "Radioactive sugar (fludeoxyglucose): high uptake suggests malignancy; <b>low or normal uptake is a good sign</b>; <b>inflammation can also take it up</b>."],
+  ["Benign CT", "Smooth nodule with fat and calcification = <b>hamartoma</b>; central calcification = <b>healed granuloma</b>; next to the minor fissure = scar or lymphoid tissue."],
+]},
+{"id": "l43-epi", "label": "Lung Cancer: Who, Why, How It Spreads", "color": "#2f5d6b", "rows": [
+  ["Deaths", "<b>&gt;30% of cancer deaths in men (highest of all cancers in men)</b>, &gt;25% in women; five-year survival <b>17&ndash;18%</b>."],
+  ["Smoking", "<b>85&ndash;90%</b> of cases (second-hand smoke 20%); packs per day &times; years compound it (5x, 10x, 20x)."],
+  ["Other risks", "Radiation and radon, air pollution, chemical toxins, tuberculosis or HIV (human immunodeficiency virus) infection, genetics, diet, alcohol."],
+  ["Age", "<b>Most over 50</b>; about <b>4% under 40</b> (keep it on the differential)."],
+  ["Types", "<b>Small cell</b> (oat cell, 15&ndash;20%) and <b>non-small cell</b>: adenocarcinoma (most common), squamous (20&ndash;30%), large cell (9&ndash;10%); rare: carcinoid, bronchial gland, sarcomatoid, Pancoast."],
+  ["Spread", "Oncogenes on, tumor suppressors off; most masses in or near the <b>hilum</b>, some peripheral (hard to find); to regional nodes, then <b>liver, brain, bone</b>; hyperplasia &rarr; dysplasia &rarr; in situ &rarr; invasive &rarr; metastases."],
+]},
+{"id": "l43-present", "label": "Presentation and Metastatic Signs", "color": "#4a5a2a", "rows": [
+  ["Work up if", "Persistent cough, <b>hemoptysis</b>, dysphagia, wheeze or shortness of breath, weight loss, fever or fatigue, bone or chest pain, endocrine disorders."],
+  ["Why deadly", "<b>No symptoms until advanced or metastatic</b>; in COPD it can pass for an exacerbation."],
+  ["Brain", "Headache, vision change, nausea, vomiting, syncope, <b>seizures</b>; papilledema (raised intracranial pressure); cranial nerve signs (midbrain/pons)."],
+  ["Liver", "Dull right upper quadrant ache, <b>firm hepatomegaly</b>, poor appetite, jaundice, hepatic failure."],
+  ["Bone", "Pain; <b>fractures without falls</b> (a cough can fracture the spine); spinal cord compression."],
+  ["Adrenal", "Adrenal insufficiency (slide heading &ldquo;Kidneys&rdquo;): fatigue, weight loss, dizziness, <b>hypotension, low sodium with high potassium</b> (not SIADH)."],
+]},
+{"id": "l43-types", "label": "Adenocarcinoma, Large Cell, Squamous Cell", "color": "#7a3b2e", "rows": [
+  ["Adenocarcinoma", "<b>Most common</b>; <b>periphery</b>, mid-lung; <b>peripheral scars</b>; smoking not always; from <b>type II pneumocytes</b> (atypical adenomatous hyperplasia, in situ, lepidic, invasive); <b>mucicarmine stain = mucin</b>; spiculated peripheral nodule; 2/3 present advanced."],
+  ["Large cell", "Diagnosis of <b>exclusion</b>; anaplastic, pleomorphic, cells 3x larger; <b>periphery</b>; necrosis and hemorrhage; <b>large cavitated peripheral mass</b>; mets to <b>small intestine and bowel</b>; no standard treatment; mucicarmine negative."],
+  ["Squamous cell", "2nd most common (20&ndash;30%); <b>strongest smoking link</b>; <b>central, from a bronchus</b>; obstruction &rarr; cough, wheeze, hemoptysis, atelectasis, pneumonia; local invasion &rarr; dysphagia, voice change; <b>sputum cytology</b>; <b>hypercalcemia</b>; cavitated spiculated lesion."],
+  ["Non-small cell treatment", "Resection (wedge, segment, lobectomy, pneumonectomy) if the patient can <b>tolerate</b> it; chemotherapy/radiation as adjuncts or stage 4; markers (TP53, EGFR, KRAS, ALK) let the oncologist tailor therapy; checkpoint inhibitors (&ldquo;-mab&rdquo;, PD-1 pathway) keep T cells on."],
+]},
+{"id": "l43-small", "label": "Small Cell Carcinoma &amp; Radiotherapy", "color": "#5a3a5e", "rows": [
+  ["Picture", "Oat cell; <b>central</b>, infiltrates the mucosa; insidious: <b>&gt;70% metastatic</b> (liver, bone, brain) before detection; high cavitation once large; chromosome 3 short-arm lesion."],
+  ["Paraneoplastic", "Neuroendocrine (APUD, amine precursor uptake and decarboxylation) cells secreting polypeptide hormones &rarr; <b>SIADH</b>."],
+  ["Histology", "Fragile, <b>crushed at biopsy</b>; small cells, <b>no nucleoli</b>, high nuclear-to-cytoplasm ratio."],
+  ["Treatment", "<b>Responds better to chemotherapy and radiation</b> than non-small cell; radiation best in <b>limited stage</b>; <b>prophylactic cranial irradiation</b>; adjunct immunotherapy (nivolumab, atezolizumab)."],
+  ["Radiation effects", "Acute: skin erythema and hyperpigmentation (ulceration risk), inflammation, hair loss, little nausea. Chronic: <b>pulmonary fibrosis</b>, coronary and valve disease, cardiomyopathy, <b>lymphedema</b> (think axillary), neuropathy."],
+]},
+{"id": "l43-para", "label": "Paraneoplastic Syndromes &amp; Carcinoid", "color": "#7a3b2e", "rows": [
+  ["What", "Hormonal or cytokine effects of tumor tissue (primary or metastasis): endocrine, neurological, dermatological, hematological."],
+  ["SIADH (small cell)", "Excess antidiuretic hormone (vasopressin) &rarr; water retention &rarr; <b>low sodium, low osmolality</b> &rarr; <b>confusion, seizures, ataxia</b>; <b>no edema</b> (insidious)."],
+  ["Hypercalcemia", "<b>Particularly squamous cell</b>; calcium is in the lab workup."],
+  ["Lambert-Eaton", "Autoimmune attack on <b>calcium channels at nerve endings</b> &rarr; less acetylcholine &rarr; <b>progressive leg weakness</b>; neuromuscular junction; rare (3000 a year)."],
+  ["Carcinoid syndrome", "Mainly from a <b>bronchial carcinoid</b>; serotonin: <b>flushing</b>, apparent cyanosis, <b>pulmonic and tricuspid valve thickening</b>, wheeze, hepatomegaly, <b>diarrhea</b>, cramps, retroperitoneal and pelvic fibrosis."],
+]},
+{"id": "l43-pop", "label": "Adults, Older Adults &amp; Referral", "color": "#2f5d6b", "rows": [
+  ["Older adults", "Screen 55&ndash;80 (30 pack-years, smoking or quit within 15 years); most cancers over 50; unfit for lobectomy &rarr; <b>segmentectomy</b>; unfit for surgery &rarr; <b>radiotherapy or ablation</b>."],
+  ["Brain radiation", "Prophylactic cranial irradiation <b>not recommended with poor performance status or impaired neurocognitive function</b>."],
+  ["Referral", "High probability or moderate/intense PET uptake &rarr; <b>pulmonologist, thoracic surgeon, interventional radiologist or oncologist</b>; primary care screens, judges risk and refers."],
+  ["Education", "Smoking cessation (risk compounds with dose); screening false positives; symptoms come late."],
+]},
+]

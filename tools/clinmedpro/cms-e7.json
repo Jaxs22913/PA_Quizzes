@@ -24,13 +24,13 @@
    "title": "Obstructive Sleep Apnea and Obesity Hypoventilation Syndrome",
    "lecturer": "Chand Shah, MPAS, PA-C",
    "deck": "CMS I Obstructive Sleep Apnea & Obesity Hypoventilation Syndrome - Shah Fallsv.pptx",
-   "note": "Built from the slides. Lecture 39 (Phases of Sleep) has no disease and so no Clin Med Pro card. The STOP-Bang questionnaire is a picture on slide 17. Where the slides give two neck sizes (17 and 16 inches by sex as a risk factor; 16 inches for anyone on STOP-Bang) each is kept with its own tool. The apnea-hypopnea severity bands are in the speaker notes only and are left out. Dosing is left out.",
+   "note": "Built from the slides; the stars are what she stressed in the 2 November recording. Lecture 39 (Phases of Sleep) has no disease and so no Clin Med Pro card. The STOP-Bang questionnaire is a picture on slide 17. Where the slides give two neck sizes (17 and 16 inches by sex as a risk factor; 16 inches for anyone on STOP-Bang) each is kept with its own tool. The apnea-hypopnea severity bands are in the speaker notes only and are left out. Dosing is left out.",
    "conditions": [
     {
      "id": "l40-osa",
      "name": "Obstructive sleep apnea (OSA)",
-     "prof": false,
-     "prof_note": "",
+     "prof": true,
+     "prof_note": "Diagnosis “as simple as possible, five or more plus a symptom or 15 or more”; the sleep study is the gold standard and the home kit checks only obstructive apnea; “patient education is like the most important thing that we can do” (CPAP works but patients dislike it); severe disease needs CPAP, not an oral appliance; postmenopausal women carry more risk, “an important thing.”",
      "fields": {
       "name": "Obstructive sleep apnea (OSA)",
       "definition": "Sleep-disordered breathing from upper airway narrowing: obstructive apneas (no airflow despite continued respiratory effort; airflow down 90% or more for at least 10 seconds) and hypopneas (slowed, shallow breathing in episodes of 10 seconds or longer)",
@@ -59,8 +59,8 @@
     {
      "id": "l40-csa",
      "name": "Central sleep apnea (CSA)",
-     "prof": false,
-     "prof_note": "",
+     "prof": true,
+     "prof_note": "“I really want everyone to understand these risk factors are very different” (heart failure, stroke, opioids, high altitude, CPAP use), “because the treatment for central sleep apnea is really taking care of their risk factors”; CPAP first, then ASV, never with poor left ventricular function; home testing is not effective here.",
      "fields": {
       "name": "Central sleep apnea (CSA)",
       "definition": "Sleep-disordered breathing in which the brainstem stops sending signals to breathe: no airflow and no respiratory effort",
@@ -88,8 +88,8 @@
     {
      "id": "l40-ohs",
      "name": "Obesity hypoventilation syndrome (Pickwickian syndrome)",
-     "prof": false,
-     "prof_note": "",
+     "prof": true,
+     "prof_note": "“Diagnosis of exclusion is kind of the big thing”; “the gender does not matter here”; weight loss plus BiPAP or CPAP, “first line, first line, first line”; cardiovascular disease is the leading cause of death.",
      "fields": {
       "name": "Obesity hypoventilation syndrome (OHS), Pickwickian syndrome",
       "definition": "Awake alveolar hypoventilation (raised awake arterial carbon dioxide) in an obese person that cannot be attributed to another condition; a diagnosis of exclusion",
@@ -386,6 +386,834 @@
       "diagnosis": "73",
       "treatment": "74",
       "mortality": "72, 74"
+     }
+    }
+   ]
+  },
+  {
+   "lecture": 42,
+   "title": "Pulmonary Vascular Disorders",
+   "lecturer": "Rob Gray, DMSc, PA-C (guest lecturer)",
+   "deck": "Pulmonary Vascular Disorders 2026 - Gray.pptx",
+   "note": "Built from the slides plus the Zoom recording of the live lecture (he taught remotely), which only chooses which facts to star. Slides 3–62 are AI-made pictures with typing errors, read for meaning; the vital-sign monitors, graph numbers and gauge drawn on them are decoration, and the slide 3 admissions figure is left out. He said not to read the slide 20 stage charts, not to worry about the slide 24 wedge-pressure detail or the slide 28 critical rule (“this is ICU [intensive care unit] stuff”), that the endothelin receptor antagonists and prostacyclins are “for completeness” (known here by class), that slide 41 is a refresher, and not to memorize whole flowcharts (slides 57 and 61: the decision points are kept). No pressure threshold for pulmonary hypertension is on the slides and none is given. Points the slides state two ways are given both ways or not stated: “gold standard” (echo on slides 14 and 36, right heart catheterization on slide 24, computed tomography pulmonary angiography on slides 55 and 62; echo is given only as the initial or structural test), the wedge-pressure cut-off (15 mmHg for cor pulmonale against left heart failure on slides 4, 12 and 23; 18 to 20 for cardiogenic edema on slides 33, 38 and 45; each kept with its own question), nitrates (preload and afterload on slide 39, afterload on slide 46; slide 39 is kept), the slide 53 box label for a previous clot (only its points are given) and the slide 19 mechanism word for Group 3 (left out). Where he and a slide differ (what counts as malignancy in Wells; whether the Pulmonary Embolism Rule-out Criteria or Wells come first), the slide is kept. Said aloud but on no slide, and left out: sinus tachycardia as the usual electrocardiogram finding, the nitrate interaction with phosphodiesterase-5 inhibitors, calcium channel blocker names and the causes of a false-positive D-dimer; the slides name no anticoagulant or thrombolytic drug. Current guidelines differ on the jugular venous pressure reference (no number is given), the pneumococcal vaccines (valencies left out), routine morphine, mineralocorticoid receptor antagonists in preserved ejection fraction, the middle pulmonary embolism risk tier, the Wells and rule-out boundary wording and the non-surgical options for chronic thromboembolic disease; the slides are kept. Dosing is left out.",
+   "conditions": [
+    {
+     "id": "l42-cor-pulmonale",
+     "name": "Cor pulmonale (acute and chronic)",
+     "prof": true,
+     "prof_note": "“COPD [chronic obstructive pulmonary disease] is the absolute leading cause”; “that alveolar hypoxia is the most important driver of that pulmonary hypertension when we get into our COPD patients”; “the visual hallmark of bad right heart pressure overload is that septal flattening … kind of turns the left ventricle into a D shape.”",
+     "fields": {
+      "name": "Cor pulmonale, acute and chronic",
+      "definition": "Alteration in the structure and function of the right ventricle (enlargement, hypertrophy or dilation) caused exclusively by a primary disorder of the respiratory system or pulmonary vasculature: an elevated mean pulmonary artery pressure with a normal pulmonary capillary wedge pressure. Right ventricular failure from left heart failure (Group 2 pulmonary hypertension) is NOT cor pulmonale. Acute: sudden right ventricular dilation and dysfunction over minutes to hours; chronic: concentric hypertrophy, then late dilation, over months to years",
+      "etiology": "Parenchymal (primarily chronic): [[★ chronic obstructive pulmonary disease, the absolute leading cause]]; interstitial lung disease (fibrotic destruction of lung architecture); sleep-disordered breathing (chronic nocturnal alveolar hypoventilation). Vascular (acute and chronic): acute pulmonary thromboembolism (sudden macroscopic occlusion); primary pulmonary arterial hypertension (idiopathic vascular remodeling, Group 1); chronic thromboembolic pulmonary hypertension (unresolved clot burden, Group 4). Acute cor pulmonale: massive pulmonary embolism. Chronic: chronic obstructive pulmonary disease, interstitial lung disease, pulmonary arterial hypertension",
+      "epidemiology": "Present in more than 50% of patients with chronic obstructive pulmonary disease; left ventricular failure is still the most common cause of right ventricular failure overall",
+      "risk_factors": "The underlying lung or pulmonary vascular disease; global alveolar hypoxia and hypercapnia (the chronic obstructive pulmonary disease “Blue Bloater”); loss of the vascular bed (emphysema, fibrosis, embolism); polycythemia from chronic hypoxia, which raises blood viscosity",
+      "pathology": "[[★ Alveolar hypoxia is the single most important driver of pulmonary hypertension in chronic obstructive pulmonary disease]]: global alveolar hypoxia and hypercapnia trigger diffuse, system-wide vasoconstriction (unlike the targeted reflex that shunts blood away from one hypoxic area), a massive rise in pulmonary vascular resistance and a relentless rise in right ventricular afterload. Vascular bed obliteration (emphysema, fibrosis, embolism) makes the resistance anatomical, not just functional, and polycythemia adds viscosity. The right ventricle is a thin-walled, high-compliance, low-pressure chamber, highly sensitive to sudden afterload changes. Acute: wall tension rises instantly (dilation, stretch, microinfarction), the septum bows leftward into the left ventricle, and left ventricular filling and output fall (hypotension, collapse). Chronic: compensatory hypertrophy until exhaustion, then decompensation, with raised diastolic pressures transmitted back into the systemic veins",
+      "clinical": "Acute: severe sudden dyspnea, sweating, rapid pulse, pallor, syncope; distended neck veins, tricuspid regurgitation murmur (stretched annulus), tachycardia. Chronic: unproductive cough, progressive exertional dyspnea, the “Blue Bloater” phenotype; right ventricular heave (parasternal lift along the left sternal border), intensified P2, systolic murmur of tricuspid regurgitation; tender hepatomegaly, ascites, dependent peripheral pitting edema",
+      "diagnosis": "Exclude elevated left-sided filling pressures first. A stepwise funnel: chest X-ray (interstitial markings or hyperinflation) and pulmonary function tests (obstructive: reduced forced expiratory volume in 1 second over forced vital capacity, the most common; restrictive: reduced total lung capacity) find lung disease (Group 3); a ventilation/perfusion scan or computed tomography pulmonary angiography excludes segmental defects (Group 4); right heart catheterization and echo showing a raised mean pulmonary artery pressure with a wedge pressure ≤15 mmHg leave primary vascular disease (Group 1). Chest film: flattened diaphragms (hyperinflation), enlarged central pulmonary arteries; the fields may look deceptively clear in pulmonary arterial hypertension or embolism. Electrocardiogram: peaked P waves (right atrial enlargement), tall R wave in V1 (right ventricular hypertrophy), severe right axis deviation in chronic disease; abnormal in 70% of acute pulmonary embolism. Echocardiography: right ventricular enlargement, estimated pulmonary artery systolic pressure and [[★ systolic septal flattening, the D-shaped left ventricle]]",
+      "treatment": "The prime directive: treat the underlying lung disease. Continuous supplemental oxygen in Group 3 (chronic obstructive pulmonary disease, interstitial lung disease): “oxygen is a drug” that reverses alveolar hypoxic vasoconstriction. Chronic obstructive pulmonary disease: bronchodilators and aggressive treatment of respiratory infections. Acute embolism: thrombolytics and anticoagulation (expand blood volume if hypotensive). Pulmonary arterial hypertension: targeted therapy (phosphodiesterase-5 inhibitors, endothelin receptor antagonists, prostacyclins). Fluids: careful diuresis (loop diuretics, spironolactone) for retention, never aggressive: the damaged right ventricle relies on elevated preload, and over-diuresis starves the left ventricle",
+      "mortality": "Acute: decreased left ventricular filling and immediate cardiovascular collapse (shock). Chronic: progressive volume overload, hypoxemia and right heart failure. Over-diuresis causes a disastrous drop in cardiac output; hypokalemia can trigger lethal arrhythmias"
+     },
+     "slides": {
+      "name": "4, 9",
+      "definition": "4, 9, 18",
+      "etiology": "5, 9",
+      "epidemiology": "5, 18",
+      "risk_factors": "6-7",
+      "pathology": "6-8, 10-11",
+      "clinical": "9-11",
+      "diagnosis": "4, 12-14",
+      "treatment": "15-16",
+      "mortality": "9, 16"
+     }
+    },
+    {
+     "id": "l42-ph",
+     "name": "Pulmonary hypertension",
+     "prof": true,
+     "prof_note": "“Right heart is gonna be your gold standard”; on the risk table, “When I start having signs of RV [right ventricular] failure, I’m automatically at high risk. I got higher than 10% chance of dying in the next year,” and for any three-column table, “remember the one in the middle”; “PDE5 [phosphodiesterase-5] inhibitors, you should know. That’s your AFILs” (sildenafil, tadalafil). The other two drug classes are “specialty sorcery … for completeness.”",
+     "fields": {
+      "name": "Pulmonary hypertension (World Health Organization Groups 1 to 5)",
+      "definition": "Raised pressure in the pulmonary circulation that loads the right ventricle, classified by the World Health Organization by mechanism: pre-capillary Group 1 (pulmonary arterial hypertension; obliterative/proliferative), Group 3 (lung disease/hypoxia) and Group 4 (chronic thromboembolic; obstructive); post-capillary Group 2 (left heart disease; passive); Group 5 (unclear/multifactorial; complex)",
+      "etiology": "Group 1: idiopathic, connective tissue disease, human immunodeficiency virus, schistosomiasis. Group 2: obstruction to pulmonary venous outflow (heart failure with reduced or preserved ejection fraction, mitral stenosis). Group 3: chronic obstructive pulmonary disease, interstitial lung disease, sleep apnea. Group 4: chronic thromboembolic occlusion. Group 5: hematologic, systemic and metabolic disorders (for example, sarcoidosis)",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Chronic hypoxia (a potent pulmonary vasoconstrictor); chronic lung disease; previous pulmonary embolism (chronic thromboembolic disease); left heart disease",
+      "pathology": "Pressure destroys the pump in three stages: compensatory right ventricular hypertrophy against rising pulmonary vascular resistance; dilation and failure (the Starling mechanism fails, end-diastolic volume rises); ventricular interdependence (the dilated right ventricle bows the septum into the left ventricle), which impairs left ventricular diastolic filling and output and causes exertional syncope despite normal left ventricular contractility",
+      "clinical": "Exertional dyspnea and fatigue, often the only early symptom and frequently misattributed to deconditioning (World Health Organization class I to II); dizziness, lightheadedness and marked limitation of activity (class III); syncope or presyncope, an ominous sign of a fixed low cardiac output (class IV); end-stage abdominal bloating, early satiety and edema, present even at rest. Exam: elevated jugular venous pressure with large a waves (early) or regurgitant v waves (tricuspid insufficiency); parasternal lift (right ventricular heave); accentuated P2; right ventricular S3 gallop; hepatojugular reflux (sustained pressure on the liver raises the venous pressure by more than 1 cm); pitting edema to the hips and sacrum when severe; cool extremities; lungs typically clear, unlike the orthopnea, paroxysmal nocturnal dyspnea and crackles of left heart failure",
+      "diagnosis": "Echocardiography is the most useful initial (screening) test: right ventricular size and function, pulmonary pressures and left-sided valvular or myocardial mimics. A ventilation/perfusion scan is essential to exclude chronic thromboembolic pulmonary hypertension (do not rely on computed tomography angiography alone). [[★ Right heart catheterization is the mandatory confirmatory test]]: it directly measures mean pulmonary artery pressure, wedge pressure and pulmonary vascular resistance to confirm pre-capillary pulmonary hypertension (a normal or low wedge ≤15 mmHg with a raised mean pulmonary artery pressure; above 15 mmHg points to left heart failure). Chest film: enlarged central pulmonary arteries with peripheral pruning",
+      "treatment": "Careful diuresis (intravenous loop diuretics venodilate before they diurese; avoid aggressive over-diuresis, which drops preload and crashes output); oxygen to keep PaO2 (arterial oxygen pressure) above 60 mmHg, especially during sleep or exertion; avoid strict bedrest: supervised, steady aerobic rehabilitation; annual influenza and pneumococcal immunizations. Drug classes: endothelin receptor antagonists (ambrisentan, bosentan, macitentan), [[★ phosphodiesterase-5 inhibitors (sildenafil, tadalafil)]], prostacyclins (epoprostenol, treprostinil, iloprost, selexipag; the most potent vasodilators, essential for severe disease). Vasoreactive: high-dose oral calcium channel blockers. Not vasoreactive: low or intermediate risk (class II/III) = oral combination therapy (endothelin receptor antagonist plus phosphodiesterase-5 inhibitor; early combination beats sequential monotherapy); high risk (class IV or rapid decline) = continuous intravenous or subcutaneous prostanoids (epoprostenol). Refractory disease (or pulmonary veno-occlusive disease): lung transplantation, the only definitive option, with intravenous support as a bridge. Early palliative care discussions and advance directives",
+      "mortality": "Estimated 1-year mortality by risk: low (<5%: no right ventricular failure signs, slow progression, no syncope, class I or II, 6-minute walk >440 m); intermediate (5 to 10%: no right ventricular failure signs, moderate progression, occasional syncope, class III, 165 to 440 m); high (>10%: [[★ clinical signs of right ventricular failure present]], rapid progression, repeated syncope, class IV, <165 m). Sudden death or lethal syncope can be the first sign of progression; 6% survival at 90 days after cardiopulmonary resuscitation in pulmonary arterial hypertension"
+     },
+     "slides": {
+      "name": "19",
+      "definition": "19",
+      "etiology": "19",
+      "risk_factors": "19, 27",
+      "pathology": "20",
+      "clinical": "21-23",
+      "diagnosis": "23-24",
+      "treatment": "26-29",
+      "mortality": "25, 29"
+     }
+    },
+    {
+     "id": "l42-edema",
+     "name": "Pulmonary edema (cardiogenic)",
+     "prof": true,
+     "prof_note": "“Over 18 to 20 is cardiogenic type failure” (the wedge pressure). His first question in any edema: “pipes, pumps, or filter? … your differentials all spring from the answer to that question.” Pink frothy sputum is “a big sign, but it’s late in the game”; LMNOP is “like my toolbox, not a checklist.”",
+     "fields": {
+      "name": "Cardiogenic pulmonary edema (the pressure problem)",
+      "definition": "Fluid flooding the alveolar airspace when the outward capillary hydrostatic pressure exceeds the inward plasma oncotic pressure across an intact but overwhelmed capillary membrane: the pressure problem, “the pump is failing,” with [[★ a wedge pressure above 18 to 20 mmHg]]",
+      "etiology": "Systolic dysfunction (ischemic loss of functioning myocardium; heart failure with reduced ejection fraction); diastolic dysfunction (myocardial stiffening and aging; heart failure with preserved ejection fraction); valvular lesions (chronic aortic or mitral regurgitation, severe stenosis)",
+      "epidemiology": "Adults: usually ischemia-driven loss of pump function (reduced ejection fraction). The elderly: age-related myocardial stiffening (preserved ejection fraction)",
+      "risk_factors": "Heart failure (reduced or preserved ejection fraction), myocardial ischemia, valvular disease; flash edema triggers: acute myocardial infarction, severe ischemia, severe hypertension, and in chronic heart failure nonadherence, excess salt or rapid arrhythmias",
+      "pathology": "Elevated capillary hydrostatic pressure is the engine; plasma oncotic pressure is the failing counterbalance; the semipermeable membrane stays intact but is overwhelmed, so fluid floods the alveoli. The balloon-wedged catheter “looks forward” through the capillary bed to the left atrial pressure. The elderly heart (preserved ejection fraction) has an elevated end-diastolic pressure, extreme sensitivity to preload and a narrow therapeutic margin",
+      "clinical": "Acute dyspnea, diaphoresis and tripoding (catecholamine surge, extreme work of breathing); bilateral rales/crackles and wheezing (fluid-filled airways, peribronchial cuffing); S3 gallop (an overloaded, failing ventricle); pink, frothy sputum (alveolar fluid shift with microvascular hemorrhage)",
+      "diagnosis": "B-type natriuretic peptide (or N-terminal pro-B-type natriuretic peptide) proves ventricular stretch and volume overload; substantial elevation separates cardiogenic dyspnea from pulmonary mimics. Transthoracic echo: the best test for structure (ventricular size, ejection fraction, valves). Pulmonary artery catheter/right heart catheterization: the ultimate hemodynamic arbiter when the cause is uncertain ([[★ wedge above 18 to 20 mmHg confirms cardiogenic hydrostatic failure]]). Chest X-ray: batwing (central perihilar) opacities, peribronchial cuffing, Kerley B lines (fluid in the interlobular septa), bilateral pleural effusions. Mimics share dyspnea, hypoxemia and tachycardia: heart failure has a highly elevated natriuretic peptide, echo abnormalities and Kerley B lines; pulmonary embolism has clear lungs, a normal natriuretic peptide initially and S1Q3T3 or right ventricular strain; a chronic obstructive pulmonary disease exacerbation has wheezing or hyperinflation, hypercapnia and a usually normal natriuretic peptide",
+      "treatment": "LMNOP: Loop diuretics intravenously (furosemide, bumetanide, torsemide) for rapid volume reduction; Morphine only with caution (venodilation and anxiolysis against respiratory depression); Nitrates intravenously (immediate preload and afterload reduction by venodilation, lowering capillary hydrostatic pressure); Oxygen and upright positioning (gravity drops venous return); Positive airway pressure (noninvasive ventilation stents alveoli, pushes fluid back and lowers preload and afterload). Long term: quadruple therapy (angiotensin receptor-neprilysin inhibitor such as sacubitril-valsartan, beta-blockers, mineralocorticoid receptor antagonists, sodium-glucose cotransporter-2 inhibitors). Adults (reduced ejection fraction) generally tolerate aggressive diuresis; the elderly (preserved ejection fraction) need gentle, precise diuresis. Stage D: immediate evaluation for heart transplant, mechanical circulatory support (left ventricular assist device) or palliative hospice care",
+      "mortality": "Quadruple therapy gives the greatest mortality reduction in reduced ejection fraction. Elderly: over-diuresis causes precipitous hypotension, under-diuresis recurrent drowning. Stage D (marked symptoms at rest despite maximal medical therapy, frequent hospitalizations) is the break point that triggers referral for advanced therapies"
+     },
+     "slides": {
+      "name": "33",
+      "definition": "32-33, 38",
+      "etiology": "34",
+      "epidemiology": "42",
+      "risk_factors": "34, 46",
+      "pathology": "32, 38, 42",
+      "clinical": "35",
+      "diagnosis": "36-38, 43",
+      "treatment": "39-42, 44",
+      "mortality": "41-42, 44"
+     }
+    },
+    {
+     "id": "l42-edema-noncardiogenic",
+     "name": "Noncardiogenic pulmonary edema",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Noncardiogenic pulmonary edema (the permeability problem)",
+      "definition": "Pulmonary edema from a shattered capillary endothelium leaking protein-rich fluid: the permeability problem, “the pipe is leaking,” with a wedge pressure ≤18 mmHg (normal or low)",
+      "etiology": "Acute respiratory distress syndrome (severe inflammatory capillary destruction); sepsis (systemic vasodilation and endothelial leak); toxins (inhaled chemical injury to the alveolar-capillary membrane); high altitude",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Not covered in the lecture",
+      "pathology": "The barrier itself shatters: protein-rich fluid floods the alveolar airspace without a hydrostatic backup; underlying cardiac function is typically normal",
+      "clinical": "Not covered in the lecture",
+      "diagnosis": "A normal or low wedge pressure (≤18 mmHg) separates it from cardiogenic edema, in which cardiac enlargement or dysfunction is common. A pulmonary artery catheter/right heart catheterization measures the left-sided filling pressures when the cause is uncertain",
+      "treatment": "Not covered in the lecture",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "33",
+      "definition": "33, 46",
+      "etiology": "34, 46",
+      "pathology": "32-33, 46",
+      "diagnosis": "33, 36, 46"
+     }
+    },
+    {
+     "id": "l42-flash-edema",
+     "name": "Flash pulmonary edema",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Flash pulmonary edema",
+      "definition": "Pulmonary edema presenting as an acute emergency (severe dyspnea, pink frothy sputum); cardiogenic forms have an elevated wedge pressure, noncardiac forms a normal or low one",
+      "etiology": "Underlying cardiac causes: acute myocardial infarction, severe ischemia or severe hypertension. Chronic heart failure exacerbations: nonadherence, excess salt or rapid arrhythmias. Noncardiac causes (acute respiratory distress syndrome, high altitude, sepsis, toxins) are told apart by a normal wedge pressure",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Chronic heart failure with nonadherence, excess salt or rapid arrhythmias; acute myocardial infarction, severe ischemia, severe hypertension",
+      "pathology": "Cardiogenic: elevated wedge pressure, cardiac enlargement or dysfunction common. Noncardiac: normal or low wedge pressure, underlying cardiac function typically normal",
+      "clinical": "Severe dyspnea, cyanosis, diaphoresis and pink frothy sputum; diffuse bilateral rales, rhonchi and expiratory wheezing",
+      "diagnosis": "Chest X-ray: butterfly pattern edema and vascular blurring. Elevated B-type natriuretic peptide, elevated wedge pressure, hypoxemia; a normal or low wedge pressure points to a noncardiac cause",
+      "treatment": "Sit the patient upright with legs dangling over the bed; oxygen or noninvasive ventilation; intravenous furosemide (immediate venodilation and diuresis); intravenous nitrates. Temporarily hold outpatient therapy during acute kidney injury; continue oral beta-blockers unless the patient presents in shock; morphine only cautiously (it eases anxiety but risks severe ventilatory drive reduction)",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "46",
+      "definition": "46",
+      "etiology": "46",
+      "risk_factors": "46",
+      "pathology": "46",
+      "clinical": "46",
+      "diagnosis": "46",
+      "treatment": "46"
+     }
+    },
+    {
+     "id": "l42-pe",
+     "name": "Pulmonary embolism (PE)",
+     "prof": true,
+     "prof_note": "His top point: “Don’t rely on shortness of breath … about a quarter of people with, like, giant PEs [pulmonary embolisms] don’t have dyspnea … If you walk away with nothing else from this lecture today, y’all, walk away with that.” S1Q3T3 is “a board question” and the chest-film signs are “great for board questions”; Wells and PERC [Pulmonary Embolism Rule-out Criteria] are his “big two tools” (Wells first; in Lecture 44: “that’s fair game”); on the risk tiers, “know the one in the middle, and you’re good”; computed tomography pulmonary angiography is “your gold standard,” with a ventilation/perfusion scan when it cannot be used; echo “is not for diagnosis, it’s for stratification”; thrombolysis: “We don’t really like doing it for submassive.”",
+     "fields": {
+      "name": "Pulmonary embolism (PE), part of venous thromboembolism",
+      "definition": "Sudden macroscopic occlusion of the pulmonary vasculature by thromboembolism. Deep venous thrombosis and pulmonary embolism are one continuum of the same disease (venous thromboembolism), ranging from asymptomatic disease to hemodynamic collapse and death; massive embolism causes acute cor pulmonale",
+      "etiology": "Thrombosis driven by Virchow’s triad (hypercoagulability, venous stasis, endothelial injury); the clot of deep venous thrombosis and of pulmonary embolism is one process",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Hypercoagulability: malignancy, estrogen therapy, pregnancy, genetic thrombophilias, sepsis. Venous stasis: prolonged immobilization (flights over 8 hours), bed rest, paralysis, heart failure (New York Heart Association class III/IV). Endothelial injury: recent surgery, central venous catheters, pacemaker wires, pelvic or lower limb trauma. Not finding a known predisposition should never stop an objective evaluation when the presentation fits",
+      "pathology": "Massive embolism causes acute right ventricular pressure overload; the septum bows into the left ventricle, left ventricular end-diastolic volume and filling fall, and cardiac output crashes (circulatory collapse). Distal, pleural-based occlusion causes pulmonary infarction",
+      "clinical": "Three syndromes: isolated dyspnea (sudden, over minutes to hours, at rest or only with exertion); pleuritic pain and hemoptysis (distal pleural-based infarction, often a localized friction rub); circulatory collapse (syncope, severe hypotension, obstructive shock = massive proximal occlusion). [[★ The dyspnea trap: about 25% of patients with proven pulmonary embolism completely lack dyspnea]]. Massive embolism (acute cor pulmonale): distended neck veins, tricuspid regurgitation murmur, tachycardia, pallor",
+      "diagnosis": "Bayesian: the pre-test probability, set independently of any test, chooses the test and how to read it. [[★ Wells score]]: +3 signs and symptoms of deep venous thrombosis; +3 pulmonary embolism the leading diagnosis; +1.5 heart rate >100; +1.5 immobilization >3 days or surgery in the previous 4 weeks; +1.5 previous deep venous thrombosis or pulmonary embolism; +1 hemoptysis; +1 malignancy (on treatment, treated in the last 6 months, or palliative); ≤4 = unlikely, >4 = likely. Unlikely: [[★ the Pulmonary Embolism Rule-out Criteria]] (very low gestalt, <15%): age <50, heart rate <100, oxygen saturation >94%, no hemoptysis, no exogenous estrogen, no prior venous thromboembolism, no surgery or trauma, no unilateral leg swelling; all true = stop the workup; any failed = a highly sensitive D-dimer (a negative enzyme-linked immunosorbent assay D-dimer safely excludes; positive = computed tomography pulmonary angiography). Both are outpatient rule-out tools; the D-dimer is of limited use in inpatients (universally high false positives). Likely: skip the D-dimer and go straight to [[★ computed tomography pulmonary angiography, the gold standard]] (first-line for almost all; contrast, radiation, overdiagnosis of subsegmental emboli), or a ventilation/perfusion scan if contrast is contraindicated (renal dysfunction, severe contrast allergy, critically ill; often nondiagnostic with chronic obstructive pulmonary disease or severe heart failure; a completely negative scan excludes embolism as surely as a negative pulmonary angiogram). Electrocardiogram: [[★ S1Q3T3]] (deep S wave in lead I, Q wave and inverted T wave in lead III) suggests severe right ventricular strain, not purely embolism; highly specific, low sensitivity. Chest film: usually abnormal but nonspecific (atelectasis, effusion); [[★ classic signs]] Westermark (focal peripheral oligemia), Hampton’s hump (wedge-shaped pleural-based opacity, infarction) and Palla (enlarged right descending pulmonary artery) are highly suggestive but infrequent. [[★ Transthoracic echo has poor sensitivity (about 50%) but very high specificity for right ventricular strain (the D-shaped septum): risk stratification, not diagnosis]]",
+      "treatment": "Stratify: low risk (normotensive, no right ventricular dysfunction, negative biomarkers) = standard anticoagulation; [[★ submassive/intermediate risk]] (normotensive, systolic >90, but right ventricular dysfunction on echo or computed tomography pulmonary angiography, or myocardial necrosis with raised troponin or B-type natriuretic peptide) = high risk of sudden deterioration; massive/high risk (sustained hypotension with systolic <90 for more than 15 minutes, pulselessness or profound bradycardia) = immediate advanced intervention. Anticoagulate all, immediately on diagnosis or on high suspicion while awaiting imaging (halts propagation, allows endogenous fibrinolysis; the same principles as deep venous thrombosis); provoked (recent surgery, trauma, hospitalization, estrogen therapy) = consider stopping after 3 months; unprovoked or persistent (active malignancy, hypercoagulable states, no identifiable risk factor) = indefinite. Massive (unstable): systemic or catheter-directed thrombolysis; with absolute contraindications to thrombolytics (recent surgery, active bleeding) or a right heart clot in transit: mechanical thrombectomy or surgical embolectomy. Submassive: thrombolysis highly controversial (major bleeding, intracranial hemorrhage). Screen for chronic thromboembolic pulmonary hypertension if dyspnea persists at 3 months",
+      "mortality": "Massive: high mortality; submassive: high risk of sudden deterioration; low risk: excellent prognosis. The long tail is chronic thromboembolic pulmonary hypertension"
+     },
+     "slides": {
+      "name": "48",
+      "definition": "5, 9, 48",
+      "etiology": "48-49",
+      "risk_factors": "49",
+      "pathology": "50, 56",
+      "clinical": "10, 50, 62",
+      "diagnosis": "51-57",
+      "treatment": "58-62",
+      "mortality": "58, 61"
+     }
+    },
+    {
+     "id": "l42-cteph",
+     "name": "Chronic thromboembolic pulmonary hypertension (CTEPH)",
+     "prof": true,
+     "prof_note": "“The optimal management for CTEPH is surgical. They’re gonna go in … and, like, pull out the clots.” On the ventilation/perfusion pearl: “CTA [computed tomography angiography] is great, but sometimes CTA is gonna miss some really subtle findings … this patient may end up being, like, a surgical candidate.”",
+     "fields": {
+      "name": "Chronic thromboembolic pulmonary hypertension (CTEPH), World Health Organization Group 4",
+      "definition": "Pulmonary hypertension from unresolved clot burden (chronic thromboembolic occlusion): a pre-capillary, obstructive mechanism, Group 4; the long tail of pulmonary embolism",
+      "etiology": "Unresolved clot burden after pulmonary embolism (chronic thromboembolic occlusion)",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Unprovoked pulmonary embolism; delay in diagnosis of more than 2 weeks; right ventricular dysfunction on the initial computed tomography pulmonary angiogram; recurrent pulmonary embolism",
+      "pathology": "Pre-capillary, obstructive: chronic thromboembolic occlusion of the pulmonary vascular bed",
+      "clinical": "Persistent or worsening dyspnea after 3 months of anticoagulation for pulmonary embolism",
+      "diagnosis": "Screen for persistent or worsening dyspnea after 3 months of anticoagulation. No dyspnea: decide the length of anticoagulation by the risk of recurrent venous thromboembolism. Persistent dyspnea: ventilation/perfusion scan (normal perfusion: back to the length decision; abnormal perfusion: transthoracic echo, right heart catheterization and pulmonary angiogram, then referral to an expert center for chronic thromboembolic disease). [[★ The ventilation/perfusion scan is the essential test to exclude it: do not rely on computed tomography angiography alone, because a high-probability mismatch leads to a surgical pathway]]. In the cor pulmonale funnel, segmental defects on a ventilation/perfusion scan or computed tomography pulmonary angiography mark thromboembolic disease (Group 4)",
+      "treatment": "Continue anticoagulation during the workup; refer to an expert center; [[★ the optimal management is surgical: pulmonary thromboendarterectomy]]",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "61",
+      "definition": "5, 19, 61",
+      "etiology": "5, 19",
+      "risk_factors": "61",
+      "pathology": "19",
+      "clinical": "61",
+      "diagnosis": "12, 24, 61",
+      "treatment": "24, 61"
+     }
+    }
+   ]
+  },
+  {
+   "lecture": 43,
+   "title": "Pulmonary Nodules and Neoplasms",
+   "lecturer": "Rob Gray, DMSc, PA-C (guest lecturer)",
+   "deck": "Pulmonary Nodules and Neoplasms 2026.pptx",
+   "note": "Built from the slides plus the Zoom recording of the live lecture, which only chooses which facts to star; slide 49 (“Things to Know”) is his own exam list. He said not to memorize the Fleischner tables, the probability-of-malignancy tables, the staging charts in detail, the genes, drugs by marker or the small cell follow-up schedule, so those are summarized or left out. Points the slides state two ways are given both ways or not stated: adenocarcinoma’s share (slides 4 and 31 give different percentages; it is kept as the most common type), stage 3 treatment (slide 35’s text against its table), immunotherapy for squamous cell (slides 37 and 38 against slide 40), the slide 46 “central” and “peripheral” tags on the neurologic syndromes (slide 47 places Lambert-Eaton at the neuromuscular junction), pleural contact as a benign sign (slide 16 against slide 32) and where most lung cancers form (slide 9 against slide 30). The slide 35 survival-by-stage column (never narrated) and dosing are left out. Current guidelines screen younger patients with fewer pack-years than slide 18; the slide’s criteria are kept. The slides give carcinoid tumors, the syndrome of inappropriate antidiuretic hormone and hypercalcemia no workup or treatment, and none is added.",
+   "conditions": [
+    {
+     "id": "l43-nodule",
+     "name": "Pulmonary nodule",
+     "prof": true,
+     "prof_note": "“Magic number is 6. Greater than 6 millimeters, I’m suspicious … Especially if I’ve got a spiculated appearance”; a benign nodule’s look, what makes a nodule worrying and the screening criteria are on his slide 49 exam list.",
+     "fields": {
+      "name": "Pulmonary nodule (a solitary nodule on a chest X-ray is a coin lesion)",
+      "definition": "A nodule seen on a chest X-ray or chest computed tomography; a solitary nodule on a chest X-ray is sometimes called a coin lesion. Most are benign, but some are the start of a cancer",
+      "etiology": "Most are benign: a granuloma (inflammatory) or a hamartoma (connective tissue growth); some are the start of lung cancer",
+      "epidemiology": "Found incidentally when a chest X-ray or chest computed tomography is done for another reason; most are benign",
+      "risk_factors": "For malignancy: a patient at high risk of lung cancer (smoking is implicated in 85 to 90% of lung cancers), whose nodule is worked up to exclude malignancy",
+      "pathology": "Concerning: [[★ greater than 6 mm]], upper lobes or hilar structures, [[★ spiculated (spikes, deviations or lobulations in the border)]], more than 3 nodules, enlarging over time, contrast enhancing on computed tomography, cavitated or nonsolid, a patient at high risk; ground-glass (stippled) or eccentric calcification. Benign: well-defined borders, fat (hamartoma), diffuse, central, popcorn (hamartoma) or concentric calcification, close to a fissure. On computed tomography: a smooth nodule with fat and calcification (hamartoma), a smooth nodule with central calcification (healed granuloma), an opacity beside the minor fissure (linear scar or lymphoid tissue)",
+      "clinical": "Usually none: an incidental finding. Persistent cough, hemoptysis, dysphagia, wheezing or shortness of breath, or systemic symptoms (weight loss, fever or fatigue, bone or chest pain, endocrine disorders) call for a lung cancer workup instead",
+      "diagnosis": "First estimate the size (under 6 mm is generally not concerning unless the patient is high risk). Chest X-ray is not a good tool beyond first spotting it; computed tomography with contrast of the chest and upper abdomen, then biopsy (bronchoscopy, transthoracic or thoracoscopic, by location; can be guided by computed tomography); positron emission tomography (high uptake suggests malignancy, low or normal uptake is a good sign, inflammation can also take it up). A new solid nodule of 8 to 30 mm: assess the clinical probability of malignancy. Screening, for high-risk people without symptoms or a known nodule: [[★ ages 55 to 80, at least a 30 pack-year history, smoking now or quit within the last 15 years]], with a low-dose chest computed tomography every year. The Fleischner Society tables (2017) guide follow-up of incidental nodules (he said not to memorize them)",
+      "treatment": "By the probability of malignancy (new solid nodule of 8 to 30 mm): very low, computed tomography surveillance at 3 to 6, 9 to 12 and 18 to 24 months; low to moderate, positron emission tomography (negative or mild uptake: the same surveillance; moderate or intense uptake: nonsurgical biopsy or video-assisted thoracoscopic surgery with resection); high, staging, then video-assisted thoracoscopic surgery with resection if no metastases are found. Refer (pulmonologist, thoracic surgeon, interventional radiologist or oncologist) for a high probability or moderate to intense uptake. A single solid nodule under 6 mm in a low-risk patient needs no routine follow-up",
+      "mortality": "Most nodules are benign. Screening finds cancer early (rapid intervention, better prognosis) but has many false positives that lead to unnecessary workups with complications such as a biopsy"
+     },
+     "slides": {
+      "name": "12",
+      "definition": "4, 12",
+      "etiology": "4, 12",
+      "epidemiology": "12",
+      "risk_factors": "3, 12, 16",
+      "pathology": "16, 21",
+      "clinical": "12",
+      "diagnosis": "11-12, 14, 16-19",
+      "treatment": "11, 19",
+      "mortality": "12, 18"
+     }
+    },
+    {
+     "id": "l43-lung-cancer",
+     "name": "Lung cancer (bronchogenic carcinoma)",
+     "prof": true,
+     "prof_note": "His slide 49 list covers screening, staging and how it changes treatment, central versus peripheral types and the paraneoplastic signs. “By the time you get symptoms, we’re way late in the game”: in a patient with chronic obstructive pulmonary disease the symptoms can pass for an exacerbation.",
+     "fields": {
+      "name": "Lung cancer (bronchogenic carcinoma): small cell and non-small cell lung carcinoma",
+      "definition": "Malignancies arising from the lung’s epithelial cells. Two main types: small cell lung carcinoma (oat cell) and non-small cell lung carcinoma (adenocarcinoma, squamous cell carcinoma, large cell carcinoma); mixed and rare types include carcinoid tumors, bronchial gland carcinoma, sarcomatoid carcinoma and Pancoast tumors",
+      "etiology": "Carcinogens (or other causes of genetic mutation) activate oncogenes, and further mutations or loss of regulatory control inactivate tumor-suppressing genes; smoking is implicated in 85 to 90% of cases (second-hand smoke 20%)",
+      "epidemiology": "More than 200,000 new cases a year in the United States and 2 million worldwide; most occur over 50 years old, but [[★ about 4% under 40, so it stays on the differential]]. Small cell is 15 to 20% of lung cancers; adenocarcinoma is the most common type, squamous cell 20 to 30%, large cell 9 to 10%",
+      "risk_factors": "Smoking (85 to 90% of cases; second-hand smoke 20%), the risk compounding with packs per day and years (5x to 10x to 20x); radiation and radon; air pollution; environmental and chemical toxins; tuberculosis or human immunodeficiency virus infection; genetics; diet; alcohol intake",
+      "pathology": "Atypical epithelial cells proliferate and grow into the bronchial lumen, along the mucosa or into the bronchial wall and parenchyma: hyperplasia, dysplasia, in situ cancer, invasive malignancy entering blood and lymph, then metastases. Spread is to regional lymph nodes and distant organs (liver, brain, bone) through angiogenesis and loss of differentiation. [[★ Small cell and squamous cell are central; adenocarcinoma and large cell are peripheral]]. Neuroendocrine cells lining the bronchioles are where the paraneoplastic syndromes start",
+      "clinical": "[[★ Often no symptoms until the disease is advanced or metastatic]]. Persistent cough, hemoptysis, dysphagia, wheezing or shortness of breath; weight loss, fever or fatigue, bone or chest pain, endocrine disorders. Metastases with no respiratory symptoms: brain (headaches, vision changes, nausea, vomiting, syncope, seizures; papilledema with raised intracranial pressure; cranial nerve findings near the midbrain or pons), liver (dull right upper quadrant ache, firm hepatomegaly, poor appetite, jaundice, hepatic failure), bone (pain, fractures without falls, even from a cough; spinal cord compression), adrenal insufficiency (fatigue, weight loss, dizziness, hypotension, hyponatremia with hyperkalemia). Paraneoplastic: endocrine (syndrome of inappropriate antidiuretic hormone, hypercalcemia), neurologic (Lambert-Eaton myasthenic syndrome, with progressive weakness particularly in the legs; cerebellar degeneration or encephalitis), dermatologic (acanthosis nigricans, dermatomyositis), hematologic",
+      "diagnosis": "Screening (no symptoms, no known nodule): [[★ ages 55 to 80, at least a 30 pack-year history, smoking now or quit within the last 15 years: a low-dose chest computed tomography every year]]. Workup: chest X-ray is not a good tool; computed tomography with contrast of the chest and upper abdomen, then biopsy (bronchoscopy, transthoracic or thoracoscopic); positron emission tomography; genetic testing; complete blood count with differential, comprehensive metabolic panel including calcium, alkaline phosphatase, pulmonary function tests; sputum cytology (not sensitive). Staged once computed tomography (location and size), positron emission tomography (lymph involvement) and biopsy (tumor type) are back, by tumor, node and metastasis: [[★ a bigger tumor, nodes further away and metastasis are each worse]]; mediastinal or contralateral nodes (N2 or N3) make it stage 3; spread to the other lung, the pleura or pericardium, or outside the chest makes it stage 4 (4A one site outside the chest, 4B several)",
+      "treatment": "Non-small cell: [[★ stages 1 to 2 surgical resection if the patient can tolerate it; stage 4 chemotherapy]]. Small cell: [[★ chemotherapy and radiation, to which it responds better than the non-small cell types]], with prophylactic cranial irradiation. Unfit for surgery: radiotherapy or ablation. Referral to a pulmonologist, thoracic surgeon, interventional radiologist or oncologist",
+      "mortality": "The highest cancer mortality in men (more than 30% of male cancer deaths) and more than 25% of female cancer deaths; one of the lowest five-year survivals, 17 to 18% in the United States (worse in the rest of the world), because symptoms come only once it is advanced or metastatic"
+     },
+     "slides": {
+      "name": "4",
+      "definition": "4",
+      "etiology": "3, 9",
+      "epidemiology": "3-4, 31",
+      "risk_factors": "3",
+      "pathology": "6, 9-10, 30",
+      "clinical": "12-13, 46-47",
+      "diagnosis": "14, 18, 22-29",
+      "treatment": "11, 15, 35, 41, 43",
+      "mortality": "3, 12"
+     }
+    },
+    {
+     "id": "l43-nsclc",
+     "name": "Non-small cell lung cancer (NSCLC)",
+     "prof": true,
+     "prof_note": "On his slide 49 list: how staging changes treatment, big picture only (“do we do surgery? Do we do chemo? … Do you need to know every circumstance? No. Like, big picture, guys”). He said not to learn specific drugs by marker: “Your job as a primary care PA … is be able to screen and figure out risk for that patient, and then refer.”",
+     "fields": {
+      "name": "Non-small cell lung cancer (NSCLC): adenocarcinoma, squamous cell carcinoma, large cell carcinoma",
+      "definition": "The non-small cell lung carcinomas, divided by histology into adenocarcinoma, squamous cell carcinoma and large cell carcinoma",
+      "etiology": "As for lung cancer: oncogenes activated and tumor-suppressing genes inactivated; molecular and genomic testing of the tumor looks for specific mutations and proteins (for example TP53, tumor protein 53, a tumor-suppressor gene that lets cancer grow when damaged)",
+      "epidemiology": "Adenocarcinoma is the most common lung cancer, squamous cell 20 to 30% and large cell 9 to 10%; usually over 50 with a smoking history",
+      "risk_factors": "Smoking (the strongest association is squamous cell; adenocarcinoma occurs without it too); the general lung cancer risk factors",
+      "pathology": "[[★ Adenocarcinoma and large cell carcinoma are peripheral; squamous cell carcinoma is central]], often arising in a bronchus; mixed types exist (adenosquamous)",
+      "clinical": "Respiratory symptoms first (cough, shortness of breath, chest tightness or pain, hemoptysis, fatigue); later bone pain, weight loss and paraneoplastic issues",
+      "diagnosis": "Computed tomography, positron emission tomography and biopsy with histology, then tumor, node and metastasis staging; a mucicarmine stain shows mucin in adenocarcinoma (negative may point to large cell); sputum cytology can catch squamous cell; tumor genetic testing helps the oncologist tailor therapy",
+      "treatment": "Surgical resection by size and lymph involvement (wedge or segment resection, lobectomy, pneumonectomy; open or thoracoscopic) if the patient can tolerate it (survive and recover). [[★ Stages 1 to 2: surgical resection; stage 4: chemotherapy]], with surgery only for a solitary metastasis with a resectable primary (for stage 3 the slide’s text and its table differ). Chemotherapy and radiation are adjuncts, or for stage 4, because non-small cell cancers respond poorly to them; chemotherapy and immunotherapy can be targeted to genetic and protein markers (gene-marker targeted therapy is for non-squamous disease); checkpoint-inhibitor monoclonal antibodies (the “-mab” drugs) for some patients by marker, by response to standard treatment, or when not a surgical candidate. Unfit for lobectomy: anatomical segmentectomy; unfit for surgery: stereotactic ablative radiotherapy, radiofrequency ablation or conventional radical radiotherapy",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "4",
+      "definition": "4",
+      "etiology": "9, 36",
+      "epidemiology": "4, 31, 39",
+      "risk_factors": "3, 31, 39",
+      "pathology": "30",
+      "clinical": "31, 39",
+      "diagnosis": "22, 30, 32, 36",
+      "treatment": "15, 35, 37-38"
+     }
+    },
+    {
+     "id": "l43-adeno",
+     "name": "Adenocarcinoma of the lung",
+     "prof": true,
+     "prof_note": "His board pointer, said three times: “Adenocarcinoma, large cell, usually periphery”; he circled the peripheral spiculated nodule on slide 32.",
+     "fields": {
+      "name": "Adenocarcinoma of the lung (a non-small cell lung cancer)",
+      "definition": "A non-small cell carcinoma usually arising from type II pneumocytes by way of atypical adenomatous hyperplasia; described as noninvasive, minimally invasive or invasive",
+      "etiology": "Type II pneumocytes (the cuboidal cells that secrete surfactant) are usually the origin, starting as atypical adenomatous hyperplasia",
+      "epidemiology": "The most common lung cancer; usually over 50 with a smoking history, but smoking is not always associated",
+      "risk_factors": "Smoking (not always present); frequently associated with peripheral scars",
+      "pathology": "[[★ Mid-lung and periphery]]. Grows in situ first, then by lepidic growth along the alveolar lining or by invading the stroma (minimally invasive); later it may invade the pleura and vessels or form its own vasculature (invasive). Initial metastases are to the lymphatics before it leaves the lungs; a mucicarmine stain shows its mucin",
+      "clinical": "Mostly asymptomatic early; persistent cough and shortness of breath without signs of infection; respiratory symptoms first (cough, shortness of breath, chest tightness or pain, hemoptysis, fatigue); later bone pain, weight loss and systemic (paraneoplastic) issues",
+      "diagnosis": "Computed tomography: a peripheral spiculated nodule (on slide 32 it involved the pleura and proved an invasive adenocarcinoma); histology with a positive mucicarmine stain (mucin)",
+      "treatment": "As for non-small cell lung cancer: surgical resection for stages 1 to 2, chemotherapy for stage 4; targeted therapy and immunotherapy by genetic and protein markers",
+      "mortality": "Two-thirds present only with advanced disease (T2 or higher with N1 to N3 nodes) or metastatic disease"
+     },
+     "slides": {
+      "name": "31",
+      "definition": "31-32",
+      "etiology": "8, 32",
+      "epidemiology": "4, 31",
+      "risk_factors": "31",
+      "pathology": "30-32",
+      "clinical": "31",
+      "diagnosis": "32",
+      "treatment": "35, 37",
+      "mortality": "31"
+     }
+    },
+    {
+     "id": "l43-large",
+     "name": "Large cell carcinoma",
+     "prof": true,
+     "prof_note": "“Large cell tends to met to the gut. Small intestine, bowel … that’s specific to large cell, so I would say stuff that, like, is unique to a thing makes a great test question.”",
+     "fields": {
+      "name": "Large cell carcinoma of the lung (a non-small cell lung cancer)",
+      "definition": "A non-small cell carcinoma of exclusion: no specific genetic or histology markers; anaplastic, undifferentiated and pleomorphic, with cells about 3 times larger than baseline",
+      "etiology": "Not covered in the lecture",
+      "epidemiology": "9 to 10% of lung cancers",
+      "risk_factors": "Not covered in the lecture",
+      "pathology": "Anaplastic, undifferentiated, pleomorphic cells about 3 times larger than baseline (kept apart from small cell because their treatments differ); subtypes giant-cell (sarcomatoid), basaloid, rhabdoid and neuroendocrine; [[★ forms in the periphery]]; necrosis and hemorrhage more readily than other non-small cell types; angiogenesis (its own blood supply)",
+      "clinical": "Metastasis to rare sites such as [[★ the small intestine and bowel]]",
+      "diagnosis": "Computed tomography: a large, cavitated mass, typically peripheral (unlike the central squamous cell carcinoma), with angiogenesis; biopsy with histology must still confirm it (a large amount of anaplastic tissue); a negative mucicarmine stain may point to it",
+      "treatment": "No standardized treatment, because of its variety and rarity",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "33",
+      "definition": "33",
+      "epidemiology": "4",
+      "pathology": "30, 33-34",
+      "clinical": "33",
+      "diagnosis": "32-34",
+      "treatment": "33"
+     }
+    },
+    {
+     "id": "l43-squamous",
+     "name": "Squamous cell carcinoma of the lung",
+     "prof": true,
+     "prof_note": "On his slide 49 list (“how to recognize squamous cell from the others”): “Cavitation is big with that one. Strongest association with smoking … Cough, wheezing, hemoptysis are huge”; it can look like a chronic obstructive pulmonary disease patient “constantly in exacerbation”; “your squamous cell will make your calcium, a big deal.”",
+     "fields": {
+      "name": "Squamous cell carcinoma of the lung (a non-small cell lung cancer)",
+      "definition": "A non-small cell carcinoma in a central location, often originating in the bronchus, with frequent cavitation and obstructive phenomena",
+      "etiology": "Smoking: its association is the strongest of any lung cancer type",
+      "epidemiology": "The second most common lung cancer (20 to 30%)",
+      "risk_factors": "[[★ Smoking, the strongest association of any type]]",
+      "pathology": "[[★ Central, often arising in a bronchus]]; frequent cavitation and obstruction; spreads by local invasion and by lymphangitic spread into the regional (hilar) lymph nodes",
+      "clinical": "Silent until it obstructs the bronchus, then [[★ cough, wheezing and hemoptysis]]; a large obstruction brings atelectasis and pneumonia; local invasion brings dysphagia and voice changes (laryngeal nerves); [[★ hypercalcemia]] is its paraneoplastic syndrome",
+      "diagnosis": "Computed tomography: a large, cavitated lesion with a spiculated outline, nodular inner margins and lymphangitic spread; [[★ unlike the other types, it can be caught by sputum cytology]]; calcium on the metabolic panel",
+      "treatment": "A combination of surgery, chemotherapy, immunotherapy and radiation (slide 40); slides 37 and 38 title gene-marker targeted therapy and immunotherapy “excluding squamous cell”",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "39",
+      "definition": "39",
+      "etiology": "39",
+      "epidemiology": "4, 39",
+      "risk_factors": "39",
+      "pathology": "30, 39-40",
+      "clinical": "39, 46",
+      "diagnosis": "14, 30, 40",
+      "treatment": "37-38, 40"
+     }
+    },
+    {
+     "id": "l43-sclc",
+     "name": "Small cell lung cancer (SCLC)",
+     "prof": true,
+     "prof_note": "On his slide 49 list twice: how to recognize small cell, and the cancer that benefits most from radiotherapy (“If the cancer’s pretty limited, you can radiate it really effectively”). Prophylactic cranial irradiation: “We’re literally gonna radiate the brain just in case there’s metastasis.”",
+     "fields": {
+      "name": "Small cell lung cancer (SCLC), oat cell carcinoma",
+      "definition": "A central lung carcinoma that infiltrates the mucosa; limited stage (one area, only local lymph nodes), extensive stage (spread beyond the local area) or combined (mixed with non-small cell types)",
+      "etiology": "Associated with a lesion of the short arm of chromosome 3; can develop from APUD (amine precursor uptake and decarboxylation) cells that secrete polypeptide hormones",
+      "epidemiology": "15 to 20% of lung cancers; the type that typically causes the paraneoplastic syndromes",
+      "risk_factors": "A genetic lesion of the short arm of chromosome 3; the general lung cancer risk factors, smoking above all",
+      "pathology": "[[★ Central]]; infiltrates the mucosa; a high cavitation rate once large enough for symptoms; histology: a fragile tumor, often crushed at biopsy, with small cells, no nucleoli and a high nuclear-to-cytoplasm ratio",
+      "clinical": "Insidious: [[★ over 70% are metastatic (liver, bone, brain) before detection]]; neuroendocrine paraneoplastic symptoms such as [[★ the syndrome of inappropriate antidiuretic hormone (confusion, seizures, ataxia from a low sodium)]]",
+      "diagnosis": "Biopsy: crushed small cells with no nucleoli and a high nuclear-to-cytoplasm ratio; staged limited or extensive; brain magnetic resonance imaging (preferred over computed tomography) if prophylactic cranial irradiation is planned",
+      "treatment": "[[★ Responds better to chemotherapy and radiation than the three non-small cell types; radiation works best in limited stage]]. After a complete or partial response, [[★ prophylactic cranial irradiation]] in limited stage, considered (with or without thoracic radiotherapy) in extensive stage; not recommended with poor performance status or impaired neurocognitive function. Immunotherapy is less effective (genetic variability) but becoming an option; two adjunct immunotherapies are approved. Radiotherapy effects: acute skin, mucosa and tissue changes (erythema, hyperpigmentation, ulceration risk), inflammation, hair loss, little nausea; chronic pulmonary fibrosis, cardiovascular damage (coronary artery disease, valvular disease, cardiomyopathy), lymphedema, neuropathy",
+      "mortality": "Usually metastatic by the time of diagnosis (over 70% before detection); brain metastasis is likely enough that the brain is irradiated prophylactically"
+     },
+     "slides": {
+      "name": "4",
+      "definition": "41",
+      "etiology": "41",
+      "epidemiology": "4",
+      "risk_factors": "3, 41",
+      "pathology": "30, 41-42",
+      "clinical": "41, 48",
+      "diagnosis": "41-43",
+      "treatment": "41, 43, 45",
+      "mortality": "30, 41, 43"
+     }
+    },
+    {
+     "id": "l43-carcinoid",
+     "name": "Lung neuroendocrine (carcinoid) tumor",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Lung neuroendocrine (carcinoid) tumor; bronchial carcinoid",
+      "definition": "One of the mixed and rare lung cancers; for lung causes, carcinoid syndrome comes mainly only from a bronchial carcinoid",
+      "etiology": "Not covered in the lecture",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Not covered in the lecture",
+      "pathology": "Release of serotonin from the cancer cells causes the carcinoid syndrome",
+      "clinical": "Carcinoid syndrome: cutaneous flushes and apparent cyanosis; cough, wheezing, dyspnea; diarrhea, cramps, nausea, vomiting; hepatomegaly; pulmonic and tricuspid valve thickening and stenosis, endocardial fibrosis; retroperitoneal and pelvic fibrosis",
+      "diagnosis": "Not covered in the lecture",
+      "treatment": "Not covered in the lecture",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "4, 48",
+      "definition": "4, 48",
+      "pathology": "48",
+      "clinical": "48"
+     }
+    },
+    {
+     "id": "l43-siadh",
+     "name": "Syndrome of inappropriate antidiuretic hormone (SIADH), paraneoplastic",
+     "prof": true,
+     "prof_note": "“Small cell lung cancer, you can get SIADH, because that’s real … that patient may show up in the [emergency department] because of the confusion and seizures, and you work it up, and you’re like, oh, that’s lung cancer.”",
+     "fields": {
+      "name": "Syndrome of inappropriate antidiuretic hormone (SIADH), a paraneoplastic syndrome of small cell lung cancer",
+      "definition": "An endocrine paraneoplastic syndrome: excessive antidiuretic hormone (vasopressin) makes the body retain too much water",
+      "etiology": "[[★ Small cell lung cancer]]: the carcinoma cells develop from neuroendocrine cells in the tumor and produce excess antidiuretic hormone",
+      "epidemiology": "Patients with small cell lung cancer, the type that typically causes paraneoplastic syndromes",
+      "risk_factors": "Small cell lung cancer",
+      "pathology": "Excess antidiuretic hormone (vasopressin) causes water retention, hyponatremia and decreased serum osmolality",
+      "clinical": "[[★ Confusion, seizures, ataxia]] and other neurologic dysfunction, but no signs of peripheral or pulmonary edema, because it develops insidiously",
+      "diagnosis": "Hyponatremia and decreased serum osmolality (the slides give no diagnostic criteria). A low sodium with high potassium, hypotension, fatigue and dizziness points instead to adrenal insufficiency from a metastasis",
+      "treatment": "Not covered in the lecture",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "46, 48",
+      "definition": "46, 48",
+      "etiology": "6, 48",
+      "epidemiology": "4, 48",
+      "risk_factors": "48",
+      "pathology": "48",
+      "clinical": "48",
+      "diagnosis": "13, 48"
+     }
+    },
+    {
+     "id": "l43-hypercalcemia",
+     "name": "Hypercalcemia, paraneoplastic",
+     "prof": true,
+     "prof_note": "“A lot of times, your squamous cell will make your calcium, a big deal.”",
+     "fields": {
+      "name": "Hypercalcemia, a paraneoplastic syndrome of lung cancer",
+      "definition": "An endocrine paraneoplastic syndrome: a raised calcium from the hormonal or cytokine effects of tumor tissue (the primary or a metastasis)",
+      "etiology": "[[★ Particularly squamous cell carcinoma]]",
+      "epidemiology": "Particularly patients with squamous cell lung cancer",
+      "risk_factors": "Squamous cell lung cancer",
+      "pathology": "Secreted hormonal or cytokine effects of the tumor tissue (the slides give no more specific mechanism)",
+      "clinical": "Not covered in the lecture",
+      "diagnosis": "Calcium on the comprehensive metabolic panel in the lung cancer lab workup",
+      "treatment": "Not covered in the lecture",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "46",
+      "definition": "46",
+      "etiology": "46",
+      "epidemiology": "46",
+      "risk_factors": "46",
+      "pathology": "46",
+      "diagnosis": "14"
+     }
+    }
+   ]
+  },
+  {
+   "lecture": 44,
+   "title": "Pleural Disorders",
+   "lecturer": "Rob Gray, DMSc, PA-C (guest lecturer)",
+   "deck": "Pleural Disorders 2026.pptx",
+   "note": "Built from the slides plus the Zoom recording of the live lecture, which only chooses which facts to star. Slides 34, 58, 60, 74, 83, 97 and 119 are generated pictures with typing errors, read for meaning. He called the procedures a drive-by before the procedures course and said not to memorize the slide 97 laboratory thresholds, chest tube sizes or the flow charts; those are left out. Points the slides state two ways are given both ways or not stated: exactly 3 cm (slides 28, 55, 56), chest tube against aspiration for a large symptomatic primary pneumothorax (slides 55 and 58), tube or needle first in tension (slides 66 and 58), observation and air-leak timings (slides 53, 58, 60), mechanical ventilation as traumatic or iatrogenic (slides 61 and 17), the class of a pulmonary embolism, malignant or chylous effusion (slides 81, 83, 103, 111, 112), the first imaging test for an effusion (slides 90, 95, 97) and how long pleurodynia lasts (slides 118, 119). Current guidelines differ on the needle decompression site, pneumothorax sizing and the hemothorax threshold for thoracotomy; the slides are kept. Where he and a slide differ (pleurodesis, fremitus, the hemothorax film), the slide is kept. Dosing is left out.",
+   "conditions": [
+    {
+     "id": "l44-pleurisy",
+     "name": "Pleurisy",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Pleurisy",
+      "definition": "Inflammation of the parietal pleura causing pleuritic pain; not a diagnosis but a symptom",
+      "etiology": "Idiopathic; trauma; infection (bacterial, viral); inflammatory disorders (systemic lupus erythematosus, rheumatoid arthritis); pneumothorax; pulmonary embolism; malignancy; drug reactions (methotrexate, amiodarone, hydralazine)",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "The underlying conditions; drugs: methotrexate (chemotherapy), amiodarone (antiarrhythmic), hydralazine (antihypertensive)",
+      "pathology": "The pleural layers rub together and stimulate pain fibers in the parietal pleura, which has sensory innervation (intercostal and phrenic nerves; the visceral pleura has none); inflammation on the central diaphragm (phrenic nerve) refers pain to the shoulder or neck",
+      "clinical": "Well-localized sharp or stabbing chest wall pain worse with deep breathing, coughing, movement or sneezing; same-side shoulder or neck pain from the central diaphragm; tachypnea with limited chest wall expansion on the affected side; a pleural friction rub (grating, scratching, creaking; heard in both phases of respiration) that [[★ disappears when the patient holds the breath, unlike a pericardial friction rub]]",
+      "diagnosis": "Testing depends on the underlying condition. First consider myocardial infarction, pericarditis, aortic dissection, pneumonia, pneumothorax and pulmonary embolism; then rib fracture, costochondritis, vertebral fracture and nerve root pain from herpes zoster",
+      "treatment": "Treat the underlying condition; nonsteroidal anti-inflammatory drugs",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "9",
+      "definition": "9",
+      "etiology": "10",
+      "risk_factors": "10",
+      "pathology": "3, 9, 11",
+      "clinical": "11-12",
+      "diagnosis": "13-14",
+      "treatment": "14"
+     }
+    },
+    {
+     "id": "l44-psp",
+     "name": "Primary spontaneous pneumothorax",
+     "prof": true,
+     "prof_note": "“I like having a nice, easy number”: the 3 cm apex-to-cupola size; the stability list (“So don’t overthink it”); “don’t confuse gold standard with best initial test”; patient education “may be a question you get.”",
+     "fields": {
+      "name": "Primary spontaneous pneumothorax",
+      "definition": "Air in the pleural space causing partial or complete lung collapse, with no thoracic trauma and no underlying lung abnormality",
+      "etiology": "Rupture of apical blebs (under 1 cm, within the visceral pleura) or bullae (over 1 cm, under the visceral pleura), usually at the lung apex; air enters from the lung through the visceral pleura",
+      "epidemiology": "Classically tall, thin young males, 20 to 40 years of age; male more than female; often at rest, sometimes during strenuous exercise; recurrence is common",
+      "risk_factors": "Tall, thin young male; smoking (a significant risk factor); family history (inherited association?)",
+      "pathology": "Pleural pressure is normally negative (about 4 mm Hg below atmospheric), keeping the lung inflated against its tendency to collapse; air from a ruptured bleb or bulla lets the lung collapse. Patients typically have good pulmonary reserve, so severe distress is uncommon",
+      "clinical": "Acute onset dyspnea and same-side acute pleuritic chest pain (severe, stabbing, worse with deep breathing); may be asymptomatic or only fatigued if small; cough is less common. Exam: tachypnea, tachycardia, decreased chest excursion, decreased or absent tactile fremitus, hyperresonance, diminished or absent breath and voice sounds on the affected side. Differential: myocardial infarction, pulmonary embolism, dissecting aortic aneurysm, pericarditis, pleurisy, muscle strain, costochondritis",
+      "diagnosis": "[[★ Initial test: a standard upright chest radiograph]], showing the thin, sharp visceral pleural line, convex toward the chest wall, with no markings beyond it; on a supine film, the deep sulcus sign. [[★ Size by the apex-to-cupola distance: under 3 cm is small]] (American College of Chest Physicians). Point-of-care ultrasound at the bedside (absent lung sliding; it does not size it). [[★ Computed tomography is the gold standard]] for presence, size and location (and finds blebs and bullae) but impractical when time is critical. Arterial blood gas often unnecessary (usually hypoxemia and respiratory alkalosis). [[★ Stable only with all of: respiratory rate under 24, heart rate over 60 and under 120, normal blood pressure, room-air oxygen saturation over 90%, speaking in whole sentences]]",
+      "treatment": "Goals: evacuate the air, close the leak, prevent recurrence. Small (under 3 cm) with minimal symptoms: observation, analgesia, 100% oxygen by non-rebreather mask (speeds resorption), a repeat film at 6 to 12 hours, discharge if stable, a film at 24 to 48 hours. Small with significant dyspnea after analgesia: catheter aspiration (2nd intercostal space over the 3rd rib, midclavicular line), Heimlich valve or chest tube; a chest tube for failed observation (enlarging, respiratory rate over 30, saturation under 90%) or failed aspiration. Large (over 3 cm) with moderate or severe symptoms: chest tube (slide 55; the slide 58 picture gives simple aspiration or a small-bore catheter). Recurrent: video-assisted thoracoscopic surgery with pleurodesis. [[★ Education: recurrence approaches 50% within three years; the best prevention is video-assisted thoracoscopic surgery with pleurodesis; stop smoking]]; delay air travel 7 to 14 days after resolution, confirmed by chest X-ray; avoid scuba diving; early surgical evaluation for pilots and divers; genetics referral for a family history",
+      "mortality": "Good pulmonary reserve, so severe respiratory distress is uncommon. Recurrence approaches 50% within three years (one-third of primary cases within one to two years; over 60% after a second episode; over 75% of recurrences on the original side)"
+     },
+     "slides": {
+      "name": "19",
+      "definition": "16-17",
+      "etiology": "16, 18",
+      "epidemiology": "19, 21",
+      "risk_factors": "19",
+      "pathology": "7-8, 18-19",
+      "clinical": "21-23, 25",
+      "diagnosis": "26, 28-30, 33-35, 51",
+      "treatment": "36, 38, 52-55, 58-60",
+      "mortality": "19, 59-60"
+     }
+    },
+    {
+     "id": "l44-ssp",
+     "name": "Secondary spontaneous pneumothorax",
+     "prof": true,
+     "prof_note": "“Your classic board question for … a secondary spontaneous pneumothorax is like … tall, skinny, Marfan … 22-year-old”: Marfan syndrome is a connective tissue disease, so the pneumothorax is secondary.",
+     "fields": {
+      "name": "Secondary spontaneous pneumothorax",
+      "definition": "Air in the pleural space with no thoracic trauma but with an underlying lung abnormality; a complication of underlying lung disease",
+      "etiology": "The underlying disease: chronic obstructive pulmonary disease (the most common; rupture of apical blebs), lung malignancy, mesothelioma, cystic fibrosis, pneumonia or tuberculosis, sarcoidosis (interstitial lung disease), [[★ connective tissue disease such as Marfan syndrome]]",
+      "epidemiology": "Patients with underlying lung disease, chronic obstructive pulmonary disease most often; in lung malignancy it may be the initial symptom",
+      "risk_factors": "The underlying lung disease; [[★ Marfan syndrome makes even a tall, thin young man’s pneumothorax secondary]]",
+      "pathology": "Diminished pulmonary reserve from the underlying disease makes it a more serious event",
+      "clinical": "The same symptoms as primary, generally greater because of less reserve; an infectious cause adds cough, fever, chills or fatigue; the same physical examination as primary (tachypnea, decreased excursion and fremitus, hyperresonance, diminished breath sounds)",
+      "diagnosis": "The same imaging (upright chest radiograph first, computed tomography the gold standard, bedside ultrasound); arterial blood gas for severe underlying lung disease or persistent distress (oxygen saturation under 92%) despite treatment",
+      "treatment": "Most: chest tube insertion. Small (3 cm or less) and asymptomatic: observation, a chest tube for symptoms or a persistent air leak, hospitalization for monitoring. Video-assisted thoracoscopic surgery or thoracotomy with bleb stapling and pleural abrasion; chemical pleurodesis via chest tube if surgery is not an option. Catheter aspiration is contraindicated with underlying pulmonary disease. Hold positive-pressure therapy during an active air leak",
+      "mortality": "More life-threatening than primary: diminished reserve requires more immediate intervention; high recurrence rates with greater consequences of recurrence (an indication for video-assisted thoracoscopic surgery)"
+     },
+     "slides": {
+      "name": "20",
+      "definition": "17, 24",
+      "etiology": "17, 20",
+      "epidemiology": "20",
+      "risk_factors": "20",
+      "pathology": "20, 24",
+      "clinical": "22-24",
+      "diagnosis": "26, 33, 35",
+      "treatment": "39, 56-57, 60",
+      "mortality": "20, 49, 57"
+     }
+    },
+    {
+     "id": "l44-traumatic",
+     "name": "Traumatic pneumothorax (and iatrogenic)",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Traumatic pneumothorax, closed or open (with iatrogenic pneumothorax)",
+      "definition": "Pneumothorax with a history of thoracic trauma, blunt or penetrating: closed (no external wound) or open (a wound in the chest wall). Iatrogenic: injury to the pleura from a medical intervention",
+      "etiology": "Penetrating (gunshot or stab) wound or blunt chest trauma (a rib fracture tears the lung); cardiopulmonary resuscitation; mechanical ventilation (traumatic on slide 61, iatrogenic on slide 17). Iatrogenic: thoracentesis, subclavian vein catheter placement, bronchoscopy",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Chest trauma; medical interventions near the pleura",
+      "pathology": "Closed: air enters the pleural space from the lung through broken ribs or internal injuries. Open: a direct chest-wall wound lets air in during inhalation and can become a sucking chest wound",
+      "clinical": "A history of trauma (“Have you had any trauma?”); the presentation depends on the degree of lung collapse; a tension pneumothorax can follow",
+      "diagnosis": "Bedside point-of-care ultrasound for unstable trauma; computed tomography (the gold standard) for trauma when time allows; upright chest radiograph",
+      "treatment": "Chest tube (thoracostomy tube; most commonly the 4th or 5th intercostal space, midaxillary line) to drain air or fluid; catheter aspiration is contraindicated in traumatic pneumothorax",
+      "mortality": "Tension pneumothorax is its life-threatening complication"
+     },
+     "slides": {
+      "name": "61-62",
+      "definition": "17, 62",
+      "etiology": "17, 61",
+      "risk_factors": "17, 61",
+      "pathology": "62",
+      "clinical": "16, 61, 63",
+      "diagnosis": "26, 30, 34",
+      "treatment": "39, 41",
+      "mortality": "63"
+     }
+    },
+    {
+     "id": "l44-tension",
+     "name": "Tension pneumothorax",
+     "prof": true,
+     "prof_note": "Recognize it and act: “At that point, I don’t have to prove it … It is reasonable to act”; his class poll answer was tracheal deviation away from the collapsed lung; the needle site: “For test purposes for now, that would be the right answer.”",
+     "fields": {
+      "name": "Tension pneumothorax",
+      "definition": "A life-threatening complication of pneumothorax in which air enters the pleural space but cannot escape",
+      "etiology": "A one-way valve traps air in the pleural space; taught as a complication of traumatic pneumothorax",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Traumatic pneumothorax (penetrating or blunt trauma, cardiopulmonary resuscitation, mechanical ventilation)",
+      "pathology": "Trapped air builds pressure: severe ventilatory compromise, [[★ mediastinal shift to the contralateral side]], decreased venous return to the heart and decreased cardiac output",
+      "clinical": "[[★ Hypotension, tracheal deviation (away from the collapsed lung) and neck vein distention]]; decreased or absent breath sounds; severe ventilatory compromise",
+      "diagnosis": "[[★ A clinical diagnosis: time is critical, there is no time for the X-ray]]; the radiographic tension signs (mediastinal shift, diaphragmatic depression) should never be seen before it is recognized",
+      "treatment": "A medical emergency. Immediate chest tube placement is ideal; if a chest tube is not readily available, immediate needle decompression (needle thoracostomy: [[★ the side of the pneumothorax, 2nd intercostal space, over the 3rd rib, midclavicular line]]; consider body habitus), followed by a moderate or large chest tube (4th or 5th intercostal space, midaxillary line); admission. The slide 58 picture puts urgent needle decompression first, then the chest tube. Catheter aspiration is contraindicated",
+      "mortality": "Life-threatening: severe ventilatory compromise with falling cardiac output and hypotension"
+     },
+     "slides": {
+      "name": "63",
+      "definition": "63",
+      "etiology": "61, 63",
+      "risk_factors": "61, 63",
+      "pathology": "63-64",
+      "clinical": "64",
+      "diagnosis": "34, 65-66",
+      "treatment": "39, 58, 66-68",
+      "mortality": "63-64"
+     }
+    },
+    {
+     "id": "l44-hemothorax",
+     "name": "Hemothorax",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Hemothorax (and hemopneumothorax)",
+      "definition": "Blood in the pleural space: a pleural fluid hematocrit over 50% of the peripheral blood hematocrit (bloody fluid under 50% is a hemorrhagic effusion); strictly an exudative effusion",
+      "etiology": "Trauma, the most common cause (injury to the heart or vasculature, lung parenchyma, or the intercostal, pulmonary or internal thoracic arteries); neoplasms; iatrogenic (thoracic surgery, invasive procedures); spontaneous vascular disruption; systemic causes (aneurysms, coagulopathies, arteriovenous malformations, endometriosis, neurofibromatosis)",
+      "epidemiology": "Blunt or penetrating trauma causes the majority; hemopneumothorax occurs in 2 to 3% of spontaneous pneumothoraces",
+      "risk_factors": "Chest trauma; thoracic surgery or invasive procedures; anticoagulation; coagulopathies",
+      "pathology": "Blood collects at the base of the pleural space; with air above it (hemopneumothorax) the fluid level is a straight line with no meniscus",
+      "clinical": "Not covered in the lecture",
+      "diagnosis": "Bedside ultrasound detects pleural fluid rapidly; hemopneumothorax: a straight air-fluid line, no meniscus; an effusion that enlarges during anticoagulation needs thoracentesis to rule out hemothorax; pleural fluid hematocrit over 50% of the blood hematocrit",
+      "treatment": "Chest tube (typically the 4th or 5th intercostal space, midaxillary line) to evacuate and quantify the bleeding, the essential first step; blood loss over 200 mL per hour: thoracotomy (an open approach); surgery for persistent hemorrhage or hemodynamic shock",
+      "mortality": "Undrained blood is a nidus for infection; a retained hemothorax leads to empyema, fibrothorax and trapped lung"
+     },
+     "slides": {
+      "name": "69",
+      "definition": "74",
+      "etiology": "69, 74",
+      "epidemiology": "74",
+      "risk_factors": "69, 74",
+      "pathology": "70-71",
+      "diagnosis": "71, 74",
+      "treatment": "69, 73-74",
+      "mortality": "74"
+     }
+    },
+    {
+     "id": "l44-pneumomediastinum",
+     "name": "Pneumomediastinum",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Pneumomediastinum",
+      "definition": "Air collected in the mediastinal tissues, occurring spontaneously or after procedures or trauma",
+      "etiology": "Excessive intra-alveolar pressure rupturing alveoli that border the mediastinum; esophageal perforation; esophageal or bowel rupture with air dissecting from the neck or abdomen into the mediastinum",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "A sudden rise in intrathoracic pressure: violent coughing, vomiting, inhalation drug abuse (Valsalva); procedures or trauma",
+      "pathology": "Air tracks through the mediastinal tissues; the heart beats against air-filled tissue (the Hamman crunch)",
+      "clinical": "Nonspecific pleuritic chest or neck pain, sore throat, dyspnea, cough; palpable subcutaneous emphysema in the neck; Hamman crunch: substernal crackling or crepitance synchronous with the heartbeat",
+      "diagnosis": "Not covered in the lecture",
+      "treatment": "Assess and maintain the airway; treat the underlying cause if identified; conservative care (air is gradually absorbed, oxygen may speed absorption, avoid physical activity, analgesics); if severe, an emergent cardiothoracic surgery consult",
+      "mortality": "Air is often gradually absorbed with conservative care; severe cases need an emergent cardiothoracic surgery consult"
+     },
+     "slides": {
+      "name": "75",
+      "definition": "75",
+      "etiology": "75",
+      "risk_factors": "75-76",
+      "pathology": "75, 77",
+      "clinical": "76-77",
+      "treatment": "79",
+      "mortality": "79"
+     }
+    },
+    {
+     "id": "l44-effusion",
+     "name": "Pleural effusion",
+     "prof": true,
+     "prof_note": "Light’s criteria: “that makes great test questions” (the slide carries a lightbulb icon); “malignancy and CHF [congestive heart failure] are gonna be your frequent flyers”; of transudates, “Most of it’s gonna be CHF … Like, 90%.”",
+     "fields": {
+      "name": "Pleural effusion (transudate or exudate)",
+      "definition": "Fluid accumulating in the pleural space: an exudate (high protein, from increased vascular permeability) if at least one of Light’s criteria is met, a transudate (low protein, from increased hydrostatic or reduced oncotic pressure) if all are absent",
+      "etiology": "Altered membrane permeability (inflammation, malignancy); reduced oncotic pressure (hypoalbuminemia: nephrotic syndrome, cirrhosis); increased capillary permeability (trauma, malignancy, inflammation, infection); increased hydrostatic pressure (heart failure); decreased or blocked lymphatic drainage (malignancy, trauma); peritoneal fluid crossing the diaphragm (cirrhosis, peritoneal dialysis). Exudates: pneumonia the most common cause, malignancy second (75% breast, lung, lymphoma), tuberculosis the leading cause worldwide. Transudates: [[★ congestive heart failure in over 90%]], cirrhosis with ascites, nephrotic syndrome, peritoneal dialysis",
+      "epidemiology": "Over 1.5 million patients a year in the United States; up to 62% of critically ill patients in intensive care; up to 30% have several causes at once; [[★ congestive heart failure is the leading cause]]",
+      "risk_factors": "Heart failure; cancer (malignant effusions can occur years after the diagnosis); hepatic disease; trauma; asbestos exposure; infection risk factors (diabetes, alcoholism, immunosuppression, poor dental hygiene); drugs (amiodarone, methotrexate, beta blockers)",
+      "pathology": "Normally about 10 mL of fluid enters from parietal pleura capillaries and leaves by parietal pleura lymphatics, inflow equal to reabsorption; an effusion forms when that balance fails. Adhesions between the visceral and parietal pleurae form loculations (inflammatory causes such as empyema)",
+      "clinical": "Asymptomatic if small; dyspnea, dry cough and pleuritic chest pain (sharp, worse on deep inspiration, referred to the same-side shoulder or upper abdomen). Clues: edema, orthopnea, paroxysmal nocturnal dyspnea (heart failure); fever, purulent sputum (pneumonia); hemoptysis (malignancy); fever, night sweats, hemoptysis, weight loss (tuberculosis). Exam: no findings under 300 mL; asymmetrical expansion; trachea shifted away over 1000 mL; decreased tactile fremitus; dullness; diminished or absent breath sounds, bronchial toward the top; friction rub",
+      "diagnosis": "Upright chest radiograph: 75 mL blunts the posterior and 175 mL the lateral costophrenic angle; the lateral decubitus film (effusion side down) has been replaced by ultrasound, which also guides thoracentesis; contrast chest computed tomography finds as little as 10 mL. Diagnostic thoracentesis (50 to 100 mL) for a new effusion with no clinical cause: protein, lactate dehydrogenase, white cell count with differential, Gram stain, cytology, culture; appearance alone is not diagnostic. [[★ Light’s criteria: an exudate if at least one of pleural to serum protein over 0.5, pleural to serum lactate dehydrogenase over 0.6, or pleural lactate dehydrogenase over two-thirds of the upper limit of normal serum lactate dehydrogenase]]",
+      "treatment": "Treat the underlying disorder (diuretics first for heart-failure transudates); diagnostic or therapeutic thoracentesis (relieves dyspnea and tests whether the lung expands); chest tube; pleurodesis for recurrent malignant effusions (lung, breast, ovarian) as palliative care, for an expandable lung; an indwelling tunneled pleural catheter, placed as an outpatient and drained at home, for short prognoses, a non-expandable lung or rapidly recurring fluid",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "81",
+      "definition": "101, 110",
+      "etiology": "81-82, 102-103, 111",
+      "epidemiology": "83",
+      "risk_factors": "83-84",
+      "pathology": "4-5, 81, 94",
+      "clinical": "85-88",
+      "diagnosis": "90-91, 93, 95-96, 98-99, 101",
+      "treatment": "97, 113-114"
+     }
+    },
+    {
+     "id": "l44-chylothorax",
+     "name": "Chylothorax",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Chylothorax",
+      "definition": "Accumulation of lipid from chyle (lymph fluid) in the pleural space from thoracic duct disruption",
+      "etiology": "Trauma, most commonly thoracic surgery; tumors in the mediastinum",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Thoracic surgery or other chest trauma; mediastinal tumors",
+      "pathology": "Disruption of the thoracic duct, which carries chyle up from the cisterna chyli, lets chyle collect in the pleural space",
+      "clinical": "Not covered in the lecture",
+      "diagnosis": "Thoracentesis: milky white fluid with elevated triglycerides; with no obvious trauma, a lymphangiogram and computed tomography to assess the mediastinum",
+      "treatment": "Chest tube or intermittent thoracentesis, avoiding excessive drainage; octreotide (mimics somatostatin, slows gastrointestinal secretions) decreases chyle drainage; fewer long-chain triglycerides in the diet decrease chyle drainage (they are absorbed through the lymphatic system)",
+      "mortality": "Excessive chyle loss can impair nutritional status"
+     },
+     "slides": {
+      "name": "104",
+      "definition": "104",
+      "etiology": "105",
+      "risk_factors": "105",
+      "pathology": "104",
+      "diagnosis": "98, 105",
+      "treatment": "106",
+      "mortality": "106"
+     }
+    },
+    {
+     "id": "l44-empyema",
+     "name": "Empyema",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Empyema",
+      "definition": "Purulent fluid in the pleural space",
+      "etiology": "Bacterial pneumonia with a parapneumonic effusion, the most common precursor: microorganisms infect the pleural space, causing a complicated parapneumonic effusion or empyema; a retained hemothorax can also lead to empyema",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Pneumonia with a parapneumonic effusion; the infection risk factors for effusion (diabetes, alcoholism, immunosuppression, poor dental hygiene); a retained hemothorax",
+      "pathology": "Pleural inflammation causes adhesions between the visceral and parietal pleurae, forming loculations; fibrin membranes on ultrasound and at thoracoscopy",
+      "clinical": "Suspect it when pneumonia symptoms do not resolve with therapy; pleuritic pain",
+      "diagnosis": "Purulent material on thoracentesis",
+      "treatment": "Prompt therapy is critical: drainage and antibiotics; treat the underlying disease; analgesia for pleuritic pain",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "107",
+      "definition": "107",
+      "etiology": "74, 107",
+      "risk_factors": "74, 83, 107",
+      "pathology": "94, 109",
+      "clinical": "108",
+      "diagnosis": "98, 108",
+      "treatment": "107-108"
+     }
+    },
+    {
+     "id": "l44-pleurodynia",
+     "name": "Pleurodynia",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Pleurodynia (Bornholm disease)",
+      "definition": "A viral myalgia of the striated intercostal muscles",
+      "etiology": "Often coxsackie B virus (an RNA (ribonucleic acid) enterovirus), also echoviruses, typically after an upper respiratory or gastrointestinal infection",
+      "epidemiology": "Adults (pleuritic pain) and children (abdominal pain); a summer peak; spread by fecal-oral contamination and contaminated water",
+      "risk_factors": "Exposure to coxsackievirus or echovirus by the fecal-oral route or contaminated water",
+      "pathology": "The virus targets the striated intercostal muscles, causing inflammation or necrosis and frequent elevations of serum creatine kinase",
+      "clinical": "Acute onset of fever and pleuritic pain (adults) or abdominal pain (children); paroxysms of severe, knife-like pain lasting 15 to 30 minutes with diaphoresis and tachypnea; splinting of the chest during attacks; tender involved muscles",
+      "diagnosis": "Elevated serum creatine kinase; a chest radiograph, usually normal, rules out other causes of chest pain",
+      "treatment": "Supportive: nonsteroidal anti-inflammatory drugs and heat to the affected muscles; prevention by hand hygiene and pool chlorination",
+      "mortality": "Symptoms resolve but may recur a few days later; a self-limited, benign course without long-term sequelae; orchitis and aseptic meningitis in under 10%"
+     },
+     "slides": {
+      "name": "116, 119",
+      "definition": "116",
+      "etiology": "116, 119",
+      "epidemiology": "117, 119",
+      "risk_factors": "119",
+      "pathology": "116",
+      "clinical": "117",
+      "diagnosis": "116, 118",
+      "treatment": "118-119",
+      "mortality": "118-119"
      }
     }
    ]
