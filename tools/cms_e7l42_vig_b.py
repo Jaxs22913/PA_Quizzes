@@ -1,0 +1,342 @@
+# -*- coding: utf-8 -*-
+"""Lecture 42 vignette pool B -- Pulmonary Vascular Disorders: pulmonary hypertension diagnosis, prognostic risk
+and treatment, and pulmonary edema mechanism, presentation, diagnosis and management (slides 24-29, 32-46).
+
+KEYS ARE WRITTEN SHORT ON PURPOSE -- detail lives in the explanation.
+EXPLANATIONS follow tools/question_writing/EXPLAIN_DEEP.md: the key names the decisive clue and the slide fact;
+each wrong choice says why it fails for THIS patient, the replacing fact, and a "Tell:".
+
+Held per cms_e7l42_scope.py: the prognostic risk items give every feature from one row of the risk table (no
+mixed rows, so no tie); the treatment algorithm is keyed at its top level only (vasoreactive -> high-dose oral
+calcium channel blocker; low or intermediate -> early oral combination; high -> continuous parenteral
+prostanoid), with no calcium channel blocker names and no cardiac index; nitrates are never keyed as
+"afterload only"; echocardiography is never called the gold standard; wedge pressures in stems are 10 mmHg or
+less or 26 mmHg or more; "hold outpatient therapy during acute kidney injury" is not asked, because the same table
+continues the beta-blocker, so the flash-edema item asks only about the beta-blocker.
+"""
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _cmse3_q import Q
+from cms_e7l42_scope import *
+
+
+def S(topic, io, q, opts, cite, slot):
+    d = Q(topic, io, q, opts, cite); d["slot"] = slot; return d
+
+
+def V(topic, io, q, opts, cite, slot, lead):
+    d = S(topic, io, q, opts, cite, slot); d["lead"] = lead; return d
+
+
+def ORD(d, asc):
+    d["ordered"] = True; d["asc"] = asc; return d
+
+
+QUESTIONS = [
+
+# ---------------------------------------------------------------- pulmonary hypertension: diagnosis and prognosis
+ORD(V(T_PH_DX, IO_A,
+  "A 46-year-old woman with pulmonary arterial hypertension has no signs of right ventricular failure and no syncope, and her symptoms have progressed slowly over 2 years. She is in World Health Organization functional class II, and her six-minute walk distance is 470 m. Which prognostic risk band fits her?",
+  [["Low risk, under 5% at 1 year",
+    "Correct. Every feature sits in the low-risk row: no right ventricular failure signs, slow progression, no syncope, functional class II and a six-minute walk distance above 440 m. Low risk carries an estimated 1-year mortality under 5%."],
+   ["Low risk, 5-10% at 1 year",
+    "The band is right, but 5-10% is the estimated 1-year mortality of the intermediate group. Tell: low risk means under 5%, and her walk distance above 440 m with slow progression keeps her there.", "reversed direction or value"],
+   ["Intermediate risk, 5-10% at 1 year",
+    "Intermediate risk fits class III, occasional syncope, moderate progression and a walk distance of 165-440 m. Tell: she walks 470 m, has no syncope and is class II, all low-risk features.", "wrong stage or severity"],
+   ["High risk, over 10% at 1 year",
+    "High risk needs right ventricular failure signs, rapid progression, repeated syncope, class IV or a walk under 165 m. Tell: she has none of these; her 470 m walk alone sits in the low band.", "wrong stage or severity"]],
+  C(25), "prognosis", "classify"), [0, 1, 2, 3]),
+
+ORD(V(T_PH_DX, IO_A,
+  "A 58-year-old man with pulmonary arterial hypertension has no signs of right ventricular failure. His symptoms have progressed moderately over the past year, he has fainted once, he is in World Health Organization functional class III, and his six-minute walk distance is 310 m. Which prognostic risk band fits him?",
+  [["Intermediate risk, 5-10% at 1 year",
+    "Correct. Each feature sits in the middle row: no right ventricular failure signs, moderate progression, occasional syncope, functional class III and a six-minute walk distance between 165 and 440 m. Intermediate risk carries an estimated 1-year mortality of 5-10%."],
+   ["Low risk, under 5% at 1 year",
+    "Low risk needs slow progression, no syncope, class I or II and a walk above 440 m. Tell: his single faint, class III and 310 m walk all sit in the intermediate row.", "wrong stage or severity"],
+   ["High risk, over 10% at 1 year",
+    "High risk needs right ventricular failure signs, rapid progression, repeated syncope, class IV or a walk under 165 m. Tell: he has no failure signs, one faint and a 310 m walk, so he falls short of the top row.", "wrong stage or severity"],
+   ["Intermediate risk, over 10% at 1 year",
+    "Intermediate is the right band, but over 10% is the estimated 1-year mortality of the high-risk group. Tell: the intermediate band carries an estimated 5-10%.", "reversed direction or value"]],
+  C(25), "prognosis", "classify"), [1, 0, 3, 2]),
+
+ORD(V(T_PH_DX, IO_A,
+  "A 63-year-old woman with pulmonary arterial hypertension has ankle edema, ascites and a right ventricular S3 gallop. Her symptoms have worsened rapidly over 3 months, she has fainted several times, she is short of breath at rest (World Health Organization functional class IV), and her six-minute walk distance is 140 m. Which prognostic risk band fits her?",
+  [["High risk, over 10% at 1 year",
+    "Correct. Signs of right ventricular failure (edema, ascites, a right ventricular S3) place her in the high-risk row, and every other feature agrees: rapid progression, repeated syncope, class IV and a walk under 165 m. High risk carries an estimated 1-year mortality above 10%."],
+   ["Intermediate risk, 5-10% at 1 year",
+    "Intermediate risk has no right ventricular failure signs, occasional syncope, class III and a walk of 165-440 m. Tell: she has failure signs, repeated faints, class IV symptoms and a 140 m walk.", "wrong stage or severity"],
+   ["Low risk, under 5% at 1 year",
+    "Low risk needs no failure signs, slow progression, no syncope, class I or II and a walk above 440 m. Tell: she has every high-risk feature, starting with signs of right ventricular failure.", "wrong stage or severity"],
+   ["High risk, 5-10% at 1 year",
+    "High is the right band, but 5-10% is the estimated 1-year mortality of the intermediate group. Tell: the high-risk group carries more than 10%.", "reversed direction or value"]],
+  CS(22, 25), "prognosis", "classify"), [2, 1, 3, 0]),
+
+V(T_PH_DX, IO_A,
+  "A 55-year-old man has exertional dyspnea, and echocardiography suggests pulmonary hypertension with a normal left ventricle and normal valves. His chest film and pulmonary function tests are normal, and a computed tomographic angiogram read as negative for clot was done in the emergency department. Which test is essential to exclude chronic thromboembolic pulmonary hypertension?",
+  [["Ventilation-perfusion scan",
+    "Correct. A ventilation-perfusion scan is the essential test to exclude chronic thromboembolic pulmonary hypertension. Do not rely solely on computed tomographic angiography: a high-probability mismatch on the scan sends the patient down a surgical pathway, pulmonary thromboendarterectomy."],
+   ["Repeat computed tomographic angiography",
+    "Computed tomographic angiography can miss chronic thromboembolic disease, and repeating it adds little. Tell: the rule is not to rely on it alone; the ventilation-perfusion scan is the test that excludes the chronic clot group.", "adjacent fact"],
+   ["Six-minute walk test",
+    "The six-minute walk distance grades prognostic risk once pulmonary hypertension is established. Tell: it cannot show whether chronic clot is the cause; a perfusion scan can.", "adjacent fact"],
+   ["Transthoracic echocardiography",
+    "Echocardiography is the most useful initial test, the screen that estimates pressures and right ventricular size, and he has already had it. Tell: it cannot exclude chronic clot in the pulmonary arteries; a ventilation-perfusion scan is the essential test for that.", "adjacent fact"]],
+  C(24), "test finding", "test"),
+
+V(T_PH_DX, IO_A,
+  "A 50-year-old woman has progressive exertional dyspnea. Echocardiography estimates a high pulmonary artery systolic pressure with an enlarged right ventricle, and her chest film, pulmonary function tests and ventilation-perfusion scan are normal. Which test is required to confirm pre-capillary pulmonary hypertension?",
+  [["Right heart catheterization",
+    "Correct. Right heart catheterization is the mandatory confirmation: it measures the mean pulmonary artery pressure, the pulmonary capillary wedge pressure and pulmonary vascular resistance. A high mean pressure with a normal wedge pressure confirms pre-capillary pulmonary hypertension."],
+   ["Repeat echocardiography",
+    "Echocardiography is the screening test, the most useful initial study, and it estimates pressures rather than measuring them. Tell: confirmation needs direct measurement of the mean pressure and wedge pressure, which catheterization provides.", "adjacent fact"],
+   ["Computed tomographic angiography",
+    "Computed tomographic angiography images the pulmonary arteries for clot but measures no pressures. Tell: her normal perfusion scan has already excluded the clot group, and the pressures still need direct measurement.", "adjacent fact"],
+   ["B-type natriuretic peptide level",
+    "B-type natriuretic peptide reflects ventricular stretch and helps separate cardiogenic dyspnea from pulmonary mimics. Tell: it cannot measure the pulmonary pressures or the wedge pressure that confirm pre-capillary pulmonary hypertension.", "adjacent fact"]],
+  CS(24, 36), "gold standard", "test"),
+
+# ---------------------------------------------------------------- pulmonary hypertension: treatment
+V(T_PH_TX, IO_A,
+  "A 33-year-old woman has idiopathic pulmonary arterial hypertension, functional class II. During right heart catheterization her pulmonary pressures fall markedly on vasoreactivity testing, so she is vasoreactive. Which therapy fits her?",
+  [["High-dose oral calcium channel blocker",
+    "Correct. Vasoreactivity testing splits the treatment path: patients who respond are treated with high-dose oral calcium channel blockers. Patients who are not vasoreactive are the ones who move on to risk stratification and the targeted pulmonary arterial hypertension classes."],
+   ["Continuous intravenous prostanoid",
+    "Continuous intravenous or subcutaneous prostanoids are for high-risk patients who are not vasoreactive: class IV or rapid clinical decline. Tell: she is vasoreactive and class II, so the first branch already gives her answer.", "wrong stage or severity"],
+   ["Early oral combination therapy",
+    "Early oral combination therapy, an endothelin receptor antagonist with a phosphodiesterase-5 inhibitor, is for low- or intermediate-risk patients who are not vasoreactive. Tell: her positive vasoreactivity test sends her down the calcium channel blocker branch.", "ruled out by a stated finding"],
+   ["Lung transplantation referral",
+    "Lung transplantation is the definitive option for disease refractory to maximal medical therapy. Tell: she is class II and has not yet been treated, so transplant is far from her next step.", "wrong stage or severity"]],
+  C(28), "first-line", "treatment"),
+
+V(T_PH_TX, IO_A,
+  "A 50-year-old man with idiopathic pulmonary arterial hypertension is not vasoreactive. Over 2 months he has declined rapidly and is now breathless at rest with edema, functional class IV. Which therapy fits him?",
+  [["Continuous intravenous prostanoid",
+    "Correct. A patient who is not vasoreactive and is high risk (class IV or rapid clinical decline) needs continuous intravenous or subcutaneous parenteral prostanoids such as epoprostenol. Prostacyclins are the most potent class for vasodilation and are essential for severe disease."],
+   ["High-dose oral calcium channel blocker",
+    "Calcium channel blockers are kept for patients who prove vasoreactive. Tell: he is not vasoreactive, so this branch is closed to him whatever his class.", "ruled out by a stated finding"],
+   ["Oral phosphodiesterase-5 inhibitor alone",
+    "Oral therapy fits low- or intermediate-risk patients (class II or III), and even then early combination beats sequential monotherapy. Tell: he is class IV with rapid decline, which calls for a parenteral prostanoid.", "wrong stage or severity"],
+   ["Strict bed rest until stable",
+    "Strict bed rest is to be avoided in pulmonary hypertension; supervised aerobic rehabilitation is safe and prevents deconditioning. Tell: his rapid decline needs escalation to the most potent drug class, not rest.", "reversed direction or value"]],
+  CS(26, 28), "escalation", "treatment"),
+
+V(T_PH_TX, IO_A,
+  "A 41-year-old woman has idiopathic pulmonary arterial hypertension and is not vasoreactive on testing. She is in functional class II with stable symptoms and no signs of right ventricular failure. Which treatment approach fits her?",
+  [["Early oral combination therapy",
+    "Correct. Patients who are not vasoreactive are stratified by risk, and low or intermediate risk (class II or III) calls for oral combination therapy: an endothelin receptor antagonist with a phosphodiesterase-5 inhibitor. Starting the combination early is superior to sequential monotherapy."],
+   ["Oral monotherapy, adding drugs later",
+    "Sequential monotherapy, starting one drug and adding another later, is the approach early combination has outperformed. Tell: low- or intermediate-risk patients start with both oral classes together.", "adjacent fact"],
+   ["High-dose oral calcium channel blocker",
+    "Calcium channel blockers belong to vasoreactive patients. Tell: her vasoreactivity test was negative, which sends her to risk stratification and the targeted oral classes.", "ruled out by a stated finding"],
+   ["Continuous intravenous prostanoid",
+    "Parenteral prostanoids are for high-risk patients: class IV or rapid clinical decline. Tell: she is class II and stable, so oral combination therapy is the right step.", "wrong stage or severity"]],
+  CS(26, 28), "first-line", "treatment"),
+
+V(T_PH_TX, IO_POP,
+  "A 62-year-old man with pulmonary arterial hypertension, functional class II, asks how to protect his health between visits. His resting oxygen saturation is 96%, and it falls to 87% when he walks briskly. Which recommendation should be avoided?",
+  [["Strict bed rest to save energy",
+    "Correct. Strict bed rest should be avoided in pulmonary hypertension: supervised, steady aerobic rehabilitation is safe, prevents muscle deconditioning and improves fatigue. Resting to spare the heart only adds deconditioning to his disease."],
+   ["Supervised aerobic rehabilitation",
+    "Supervised aerobic rehabilitation is safe in pulmonary hypertension and improves fatigue. Tell: it is recommended for him, not avoided; bed rest is the error.", "reversed direction or value"],
+   ["Oxygen during exertion and sleep",
+    "Oxygen is recommended, especially during sleep or exertion, because hypoxia is a potent pulmonary vasoconstrictor; the goal is an arterial oxygen tension above 60 mmHg. Tell: his saturation falls to 87% on exertion, so oxygen with activity helps.", "reversed direction or value"],
+   ["Annual influenza immunization",
+    "Annual influenza and pneumococcal immunizations are mandatory in pulmonary hypertension, to prevent acute respiratory decompensations. Tell: vaccination is protective and recommended, not something to avoid.", "reversed direction or value"]],
+  C(27), "avoid", "avoid"),
+
+V(T_PH_TX, IO_A,
+  "A 45-year-old woman with idiopathic pulmonary arterial hypertension remains in functional class IV despite maximal medical therapy, including a continuous intravenous prostanoid. Which referral offers the only definitive option?",
+  [["Lung transplantation evaluation",
+    "Correct. For pulmonary arterial hypertension refractory to maximal medical therapy (or pulmonary veno-occlusive disease), lung transplantation is the only definitive option, with continuous intravenous support as a bridge. Early palliative care discussions belong alongside the referral."],
+   ["Pulmonary thromboendarterectomy",
+    "Pulmonary thromboendarterectomy is the surgical treatment for chronic thromboembolic pulmonary hypertension (Group 4). Tell: her disease is idiopathic (Group 1), with no clot to remove.", "competing diagnosis"],
+   ["Mitral valve replacement",
+    "Valve surgery is aimed at Group 2 pulmonary hypertension from left heart disease such as mitral stenosis. Tell: her disease is idiopathic pulmonary arterial hypertension, a pre-capillary disease with no valve lesion.", "competing diagnosis"],
+   ["Left ventricular assist device",
+    "Mechanical circulatory support such as a left ventricular assist device is an advanced therapy for stage D left heart failure. Tell: her failing chamber is the right ventricle, loaded by diseased pulmonary arteries, and the definitive fix is new lungs.", "adjacent fact"]],
+  CS(19, 29, 44), "referral", "referral"),
+
+# ---------------------------------------------------------------- pulmonary edema: mechanism and causes
+V(T_EDEMA_MECH, IO_A,
+  "A 58-year-old man with pneumonia develops septic shock. Over 24 hours he becomes severely hypoxemic with bilateral alveolar infiltrates. Echocardiography shows normal ventricular function, and a pulmonary artery catheter shows a wedge pressure of 10 mmHg. How is his pulmonary edema classified?",
+  [["Noncardiogenic, a permeability leak",
+    "Correct. Sepsis causes systemic vasodilation and an endothelial leak, so protein-rich fluid crosses a shattered barrier: a permeability problem, the pipe is leaking. His normal wedge pressure and normal ventricular function rule out a hydrostatic, cardiogenic cause."],
+   ["Cardiogenic, a pressure problem",
+    "Cardiogenic edema is a pressure problem, with intact capillaries under hydrostatic backup and a wedge pressure above 18-20 mmHg. Tell: his wedge pressure is 10 mmHg and his heart works normally.", "ruled out by a stated finding"],
+   ["Noncardiogenic, from high wedge pressure",
+    "Noncardiogenic edema has a normal or low wedge pressure, not a high one. Tell: a high wedge pressure means hydrostatic, cardiogenic edema; his low wedge pressure points to a leak.", "reversed direction or value"],
+   ["Cardiogenic, from diastolic stiffening",
+    "Diastolic stiffening is a cardiogenic cause, a stiff aging ventricle with preserved ejection fraction and high filling pressure. Tell: his echocardiogram is normal and his wedge pressure low, so the heart is not the source.", "ruled out by a stated finding"]],
+  CS(33, 34, 46), "etiology", "classify"),
+
+V(T_EDEMA_MECH, IO_A,
+  "A 66-year-old woman has an acute anterior myocardial infarction and develops severe dyspnea with bilateral crackles. A pulmonary artery catheter shows a wedge pressure of 26 mmHg. Which force is driving fluid into her alveoli?",
+  [["High hydrostatic pressure",
+    "Correct. Her infarcted left ventricle fails, and pressure backs up into the pulmonary capillaries: elevated capillary hydrostatic pressure is the outward force and the engine of cardiogenic edema. The capillary membrane is intact but overwhelmed, and her wedge pressure of 26 mmHg confirms a pressure problem."],
+   ["Low plasma oncotic pressure",
+    "Plasma oncotic pressure is the inward, counterbalancing force, and here it is overwhelmed rather than the primary fault. Tell: her edema began with a failing pump and a wedge pressure of 26 mmHg, a rise in the outward pressure.", "adjacent fact"],
+   ["A shattered capillary barrier",
+    "A shattered barrier is the permeability problem of noncardiogenic edema, as in acute respiratory distress syndrome or sepsis. Tell: her capillaries are intact; fluid is crossing them because of high pressure from a failing heart.", "competing diagnosis"],
+   ["High plasma oncotic pressure",
+    "High oncotic pressure would pull fluid back into the capillaries and protect the alveoli. Tell: edema forms when outward hydrostatic pressure beats inward oncotic pressure, and hers is driven by the hydrostatic side.", "reversed direction or value"]],
+  CS(32, 33, 38), "etiology", "classify"),
+
+V(T_EDEMA_MECH, IO_A,
+  "An 81-year-old woman with 30 years of high blood pressure develops acute pulmonary edema. Echocardiography shows a thick, stiff left ventricle with an ejection fraction of 62% and no valve disease, and she has no history of myocardial infarction. What is the most likely cause of her pulmonary edema?",
+  [["Diastolic dysfunction",
+    "Correct. Myocardial stiffening with aging is the diastolic cause of cardiogenic pulmonary edema, heart failure with preserved ejection fraction. Her ejection fraction of 62% is preserved, her ventricle is stiff and thick, and she has no infarction or valve disease to suggest another cause."],
+   ["Systolic dysfunction",
+    "Systolic dysfunction is ischemic loss of myocardium with a reduced ejection fraction. Tell: her ejection fraction is 62% and she has never had an infarction.", "ruled out by a stated finding"],
+   ["Valvular regurgitation",
+    "Valvular causes are chronic aortic or mitral regurgitation or severe stenosis. Tell: her echocardiogram shows no valve disease, but it does show a thick, stiff ventricle.", "ruled out by a stated finding"],
+   ["Noncardiogenic leak",
+    "Noncardiogenic edema comes from a leaking barrier, as in acute respiratory distress syndrome, sepsis or inhaled toxins. Tell: she has no such insult, and her stiff ventricle gives a cardiac cause.", "competing diagnosis"]],
+  CS(34, 42), "etiology", "diagnosis"),
+
+V(T_EDEMA_MECH, IO_A,
+  "A 34-year-old man inhaled chlorine gas in an industrial accident. Six hours later he has severe dyspnea and bilateral infiltrates. Echocardiography is normal, and his pulmonary capillary wedge pressure is 8 mmHg. Which mechanism best explains his pulmonary edema?",
+  [["Toxic injury to the capillary membrane",
+    "Correct. Inhaled toxins cause chemical injury to the alveolar-capillary membrane, so the barrier shatters and protein-rich fluid leaks into the alveoli: noncardiogenic, permeability edema. His normal echocardiogram and wedge pressure of 8 mmHg exclude a pressure problem."],
+   ["Hydrostatic backup from the left heart",
+    "Hydrostatic backup from a failing left heart is cardiogenic edema, with a wedge pressure above 18-20 mmHg. Tell: his wedge pressure is 8 mmHg and his heart is normal on echocardiography.", "ruled out by a stated finding"],
+   ["Diastolic stiffening of the ventricle",
+    "Diastolic stiffening is a cardiogenic cause seen with aging and preserved ejection fraction. Tell: he is 34 with a normal echocardiogram, and his edema followed a toxic inhalation.", "ruled out by a stated finding"],
+   ["Regurgitant flow across a heart valve",
+    "Valve lesions, such as chronic aortic or mitral regurgitation, cause cardiogenic edema with high filling pressure. Tell: his echocardiogram is normal and his wedge pressure low.", "ruled out by a stated finding"]],
+  CS(33, 34), "etiology", "classify"),
+
+# ---------------------------------------------------------------- pulmonary edema: presentation and diagnosis
+V(T_EDEMA_DX, IO_A,
+  "A 71-year-old man with both chronic obstructive pulmonary disease and heart failure with reduced ejection fraction presents with 2 days of worsening dyspnea, hypoxemia and tachycardia. Which blood test best separates a cardiogenic cause from a pulmonary one?",
+  [["B-type natriuretic peptide",
+    "Correct. B-type natriuretic peptide proves ventricular stretch and volume overload, and a substantial elevation separates cardiogenic dyspnea from pulmonary mimics. In an exacerbation of chronic obstructive pulmonary disease the level is usually normal, while heart failure gives a highly elevated level."],
+   ["Arterial carbon dioxide tension",
+    "Hypercapnia points toward an exacerbation of chronic obstructive pulmonary disease, but it does not prove or exclude ventricular stretch. Tell: the test that shows ventricular stretch, and so a cardiac cause, is the natriuretic peptide.", "adjacent fact"],
+   ["D-dimer concentration",
+    "D-dimer is a rule-out test for embolism in low- or intermediate-probability outpatients, with high sensitivity and low specificity. Tell: it says nothing about ventricular stretch, the question in his case.", "adjacent fact"],
+   ["Serum troponin level",
+    "Troponin reflects myocardial necrosis, as in an infarction or right ventricular strain from embolism. Tell: it does not measure volume overload; the natriuretic peptide does.", "adjacent fact"]],
+  CS(36, 43), "initial test", "test"),
+
+V(T_EDEMA_DX, IO_A,
+  "A 57-year-old woman has sudden dyspnea, hypoxemia and tachycardia. Her lungs are clear on the chest film, her B-type natriuretic peptide is 60 pg/mL (normal under 100), and her electrocardiogram shows a deep S wave in lead I with a Q wave and inverted T wave in lead III (S1Q3T3). What is the most likely diagnosis?",
+  [["Pulmonary embolism",
+    "Correct. Pulmonary embolism shares dyspnea, hypoxemia and tachycardia with its mimics but shows clear lungs on the chest film and a normal natriuretic peptide early on. S1Q3T3 is a pattern of right ventricular strain, highly specific though of low sensitivity, and it fits."],
+   ["Heart failure exacerbation",
+    "Heart failure gives a highly elevated natriuretic peptide, echocardiographic abnormalities and Kerley B lines (fluid in the interlobular septa). Tell: her natriuretic peptide is normal and her film is clear.", "ruled out by a stated finding"],
+   ["Obstructive lung disease flare",
+    "An exacerbation of chronic obstructive pulmonary disease brings wheezing, hyperinflation on the film and hypercapnia. Tell: her film is clear without hyperinflation, and her electrocardiogram shows right ventricular strain.", "competing diagnosis"],
+   ["Cardiogenic pulmonary edema",
+    "Cardiogenic pulmonary edema fills the film with central perihilar opacities and raises the natriuretic peptide. Tell: her film is clear and her natriuretic peptide is under 100 pg/mL.", "ruled out by a stated finding"]],
+  CS(43, 51), "differential", "diagnosis"),
+
+V(T_EDEMA_DX, IO_A,
+  "A 68-year-old man who has smoked for 50 years has 3 days of worsening dyspnea and wheezing. His chest film shows hyperinflation without vascular congestion, his arterial carbon dioxide is 61 mmHg (normal 35-45), and his B-type natriuretic peptide is 70 pg/mL (normal under 100). What is the most likely diagnosis?",
+  [["Obstructive lung disease flare",
+    "Correct. Wheezing, hyperinflation on the chest film and hypercapnia point to an exacerbation of chronic obstructive pulmonary disease, and the natriuretic peptide is usually normal in that setting, as his is. Dyspnea, hypoxemia and tachycardia are shared with heart failure and embolism, so these features decide."],
+   ["Acute cardiogenic pulmonary edema",
+    "Cardiogenic pulmonary edema raises the natriuretic peptide sharply and shows congestion on the film. Tell: his natriuretic peptide is normal and his film shows hyperinflation without congestion.", "ruled out by a stated finding"],
+   ["Acute pulmonary embolism",
+    "Embolism shows clear lungs and a normal natriuretic peptide early on, often with right ventricular strain on the electrocardiogram. Tell: his wheezing, hyperinflation and high carbon dioxide point to his airways instead.", "competing diagnosis"],
+   ["Heart failure exacerbation",
+    "A heart failure exacerbation gives a highly elevated natriuretic peptide, echocardiographic abnormalities and Kerley B lines (fluid in the interlobular septa). Tell: his natriuretic peptide is under 100 pg/mL.", "ruled out by a stated finding"]],
+  C(43), "differential", "diagnosis"),
+
+V(T_EDEMA_DX, IO_A,
+  "A 69-year-old woman with heart failure has acute dyspnea. Her chest film shows central perihilar opacities, thickened, blurred bronchiole walls and short horizontal lines at the lung periphery that reach the pleura. What are the short horizontal peripheral lines called?",
+  [["Kerley B lines",
+    "Correct. Kerley B lines are short horizontal lines at the lung periphery, made by fluid engorging the interlobular septa. With central perihilar (batwing) opacities and peribronchial cuffing, they complete the chest film of cardiogenic pulmonary edema."],
+   ["Peribronchial cuffing",
+    "Peribronchial cuffing is edema thickening the bronchiole walls, the blurred walls on her film. Tell: the question asks about the horizontal lines at the periphery, which are the fluid-filled septa.", "adjacent fact"],
+   ["Westermark sign",
+    "Westermark sign is focal peripheral oligemia, an area of decreased vascularity beyond an embolus. Tell: her film shows extra fluid, not missing vessels, and her setting is heart failure.", "competing diagnosis"],
+   ["Hampton's hump",
+    "Hampton's hump is a wedge-shaped, pleural-based opacity marking pulmonary infarction from an embolus. Tell: her peripheral findings are thin horizontal lines from fluid in the septa, not a wedge-shaped density.", "competing diagnosis"]],
+  CS(37, 51), "test finding", "test"),
+
+V(T_EDEMA_DX, IO_A,
+  "A 63-year-old man with heart failure with reduced ejection fraction develops pneumonia with sepsis, then bilateral alveolar infiltrates and severe hypoxemia. His echocardiogram is technically limited, and his B-type natriuretic peptide is moderately raised. The team cannot tell whether his edema is cardiogenic or from a leaking barrier. Which test settles the question?",
+  [["Pulmonary artery catheter wedge pressure",
+    "Correct. A pulmonary artery catheter (right heart catheterization) is the ultimate hemodynamic arbiter: it directly measures left-sided filling pressure when the cause remains uncertain. The wedge looks forward to the left atrium; above 18-20 mmHg confirms cardiogenic failure, while a normal value points to a permeability leak."],
+   ["A repeat chest film in 6 hours",
+    "A repeat film shows how much fluid there is, but both cardiogenic and permeability edema fill the alveoli. Tell: the question is pressure versus leak, and a direct measure of left-sided filling pressure answers it.", "adjacent fact"],
+   ["Serial natriuretic peptide levels",
+    "The natriuretic peptide reflects ventricular stretch, but his known heart failure muddies its meaning. Tell: when the cause remains uncertain, the wedge pressure measures left-sided filling pressure directly.", "adjacent fact"],
+   ["Computed tomographic pulmonary angiography",
+    "Computed tomographic pulmonary angiography looks for embolism in the pulmonary arteries. Tell: it does not measure filling pressure, which is what separates cardiogenic edema from a leak.", "adjacent fact"]],
+  CS(33, 36, 38), "gold standard", "test"),
+
+# ---------------------------------------------------------------- pulmonary edema: management and prognosis
+V(T_EDEMA_TX, IO_POP,
+  "An 84-year-old woman with heart failure with preserved ejection fraction is admitted with acute pulmonary edema. Her blood pressure is 148/82 mmHg and her creatinine is 1.1 mg/dL (normal 0.6-1.1). Echocardiography shows a stiff, thick left ventricle with a high end-diastolic pressure. Which diuresis strategy fits her?",
+  [["Gentle, precise diuresis",
+    "Correct. Elderly patients usually have heart failure with preserved ejection fraction from age-related myocardial stiffening, with a high end-diastolic pressure and extreme sensitivity to preload. Their therapeutic margin is narrow, so diuresis must be gentle and precise."],
+   ["Aggressive, rapid diuresis",
+    "Aggressive diuresis is generally well tolerated by younger adults with reduced ejection fraction and more physiological reserve. Tell: in her stiff, preload-dependent ventricle, over-diuresis causes precipitous hypotension.", "wrong stage or severity"],
+   ["Withholding diuretics entirely",
+    "Under-diuresis leaves the lungs flooded and brings recurrent pulmonary edema. Tell: she needs fluid removed, just carefully; her margin is narrow on both sides.", "reversed direction or value"],
+   ["Morphine before any diuretic",
+    "Morphine is a use-with-caution agent in the toolbox, because it risks respiratory depression, and it does not replace diuresis. Tell: her problem is the pace of fluid removal in a preload-sensitive heart.", "adjacent fact"]],
+  CS(39, 42), "first-line", "treatment"),
+
+V(T_EDEMA_TX, IO_POP,
+  "A 52-year-old man with ischemic heart failure with reduced ejection fraction (ejection fraction 25%) is admitted with acute pulmonary edema after gaining 6 kg of fluid. His blood pressure is 138/84 mmHg and his creatinine is 1.0 mg/dL (normal 0.7-1.3). Which diuresis strategy fits him?",
+  [["Aggressive diuresis",
+    "Correct. Adults with heart failure with reduced ejection fraction, usually ischemia-driven, have more physiological reserve, and aggressive diuresis is generally well tolerated. With a large fluid gain, a stable blood pressure and normal kidney function, he can have fluid removed briskly."],
+   ["Gentle, minimal diuresis",
+    "Gentle, precise diuresis is the rule for elderly patients with preserved ejection fraction and a narrow therapeutic margin. Tell: he is 52 with reduced ejection fraction and more reserve.", "wrong stage or severity"],
+   ["Withholding diuretics for now",
+    "Withholding diuretics leaves him flooded; intravenous loop diuretics are the first tool for rapid volume reduction. Tell: a 6 kg fluid gain with pulmonary edema needs fluid removed.", "reversed direction or value"],
+   ["Fluid challenge first",
+    "A fluid challenge adds volume to a patient already overloaded with it. Tell: his lungs are flooded from volume overload, so the answer is diuresis, not more fluid.", "reversed direction or value"]],
+  CS(39, 42), "first-line", "treatment"),
+
+V(T_EDEMA_TX, IO_A,
+  "A 67-year-old man with heart failure takes metoprolol succinate at home. He develops flash pulmonary edema after a hypertensive surge (blood pressure 196/108 mmHg), with severe dyspnea and diffuse crackles, but he is warm, well perfused and not in shock. Which step should be avoided?",
+  [["Stopping his oral beta-blocker",
+    "Correct. In flash pulmonary edema, oral beta-blockers are continued unless the patient is in shock. He is hypertensive, warm and well perfused, so stopping his metoprolol is the step to avoid while the acute measures work."],
+   ["Sitting him upright, legs dangling",
+    "Upright positioning with the legs dangling is a first measure: gravity reduces venous return and improves ventilation-perfusion matching. Tell: it helps him and is recommended, not avoided.", "reversed direction or value"],
+   ["Starting an intravenous nitrate",
+    "Intravenous nitrates give immediate preload and afterload reduction through potent venodilation, and his blood pressure is high. Tell: a nitrate suits his hypertensive flash edema.", "reversed direction or value"],
+   ["Giving intravenous furosemide",
+    "Intravenous furosemide gives immediate venodilation and then diuresis in flash pulmonary edema. Tell: it is a core intervention for him, not one to avoid.", "reversed direction or value"]],
+  CS(39, 46), "avoid", "avoid"),
+
+V(T_EDEMA_TX, IO_A,
+  "A 72-year-old woman with chronic obstructive pulmonary disease and heart failure has cardiogenic pulmonary edema. She is drowsy, and her arterial carbon dioxide is 66 mmHg (normal 35-45). Which agent from the acute toolbox carries the greatest risk for her?",
+  [["Morphine",
+    "Correct. Morphine is a use-with-caution agent: it offers venodilation and eases anxiety, but it risks respiratory depression and severe reduction of ventilatory drive. In a drowsy patient already retaining carbon dioxide, that risk outweighs the benefit."],
+   ["Intravenous nitrate",
+    "Intravenous nitrates give immediate preload and afterload reduction without suppressing breathing. Tell: the agent that threatens a hypercapnic patient is the one that blunts ventilatory drive.", "adjacent fact"],
+   ["Intravenous loop diuretic",
+    "Intravenous loop diuretics provide rapid volume reduction and are a core first tool. Tell: they do not depress respiration, so they are not the risk in her case.", "adjacent fact"],
+   ["Noninvasive ventilation",
+    "Noninvasive positive pressure ventilation stents flooded alveoli open and reduces preload. Tell: it supports her breathing rather than suppressing it, so it is part of the answer, not the danger.", "reversed direction or value"]],
+  CS(39, 40, 46), "avoid", "avoid"),
+
+V(T_EDEMA_TX, IO_A,
+  "A 58-year-old man with heart failure with reduced ejection fraction takes all four classes of quadruple therapy at maximal tolerated levels. He is breathless at rest and has been hospitalized four times in 6 months. Which step fits now?",
+  [["Evaluation for advanced therapies",
+    "Correct. Marked symptoms at rest despite maximal therapy, with frequent hospitalizations, define stage D heart failure. Stage D calls for immediate evaluation for advanced therapies: heart transplantation, mechanical circulatory support such as a left ventricular assist device, or palliative and hospice care."],
+   ["Add a fifth oral drug class",
+    "Quadruple therapy is the top of medical therapy, giving the greatest mortality reduction in reduced ejection fraction, and stage D is defined by failure despite it. Tell: his next step is advanced therapies, not more pills.", "adjacent fact"],
+   ["Continue and recheck in a year",
+    "Waiting a year ignores stage D, where symptoms at rest and repeated admissions call for action now. Tell: the stage D response is immediate evaluation for advanced therapies.", "wrong stage or severity"],
+   ["Stage C maintenance unchanged",
+    "Stage C is clinical heart failure managed with quadruple therapy, and he has moved beyond it. Tell: symptoms at rest and frequent hospitalizations despite maximal therapy place him in stage D.", "wrong stage or severity"]],
+  CS(41, 44), "referral", "referral"),
+
+V(T_EDEMA_TX, IO_A,
+  "A 70-year-old man has acute cardiogenic pulmonary edema. He is sitting upright on high-flow oxygen and has received an intravenous loop diuretic, but he remains tachypneic with an oxygen saturation of 87%. He is alert and able to protect his airway. Which step comes next?",
+  [["Noninvasive ventilation",
+    "Correct. Noninvasive positive pressure ventilation is the P in the toolbox: it mechanically stents flooded alveoli open, pushes fluid back across the membrane and lowers intrathoracic preload and afterload. He is alert and can protect his airway, and oxygen with diuresis has not been enough."],
+   ["Intravenous fluid bolus",
+    "A fluid bolus raises preload and capillary hydrostatic pressure, the engine of cardiogenic edema. Tell: his lungs are flooded, so more fluid would worsen them.", "reversed direction or value"],
+   ["Lying flat to rest",
+    "Upright positioning is part of treatment, because gravity reduces venous return; lying flat increases it. Tell: lying him flat would push more blood toward his congested lungs.", "reversed direction or value"],
+   ["Routine intravenous morphine",
+    "Morphine is a use-with-caution agent that risks respiratory depression, and it does nothing for failing oxygenation. Tell: his hypoxemia needs positive pressure to stent his alveoli open.", "adjacent fact"]],
+  CS(32, 39, 40), "escalation", "next step"),
+
+]
