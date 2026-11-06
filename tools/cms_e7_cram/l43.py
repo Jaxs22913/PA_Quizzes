@@ -155,7 +155,7 @@ CRITERIA = [
   ("<b>4B</b>", "Any size: <b>multiple sites outside the chest</b> (adrenal and bone)"),
   {"note": "He: &ldquo;Size of the tumor is badness. Lymph node involvement, badness. Metastasis, worse badness&rdquo;; crossing to the other lung is badness. Big picture, not every circumstance."},
  ], "mnemonic": {"hook": "Stage 1 = small, no nodes; 2 = bigger or the first (hilar) nodes; 3 = middle (mediastinal) or far (other side, neck) nodes; 4 = it left: the other lung, the pleura, or outside the chest (A = one site, B = many).",
-  "key": [["1", "&le;4 cm, no nodes (1A &le;3, 1B &gt;3&ndash;4)"], ["2", "&gt;4&ndash;7 cm, no nodes, or small with hilar/peribronchial nodes"], ["3", "N2 or N3 nodes, or &gt;7 cm / invasion"], ["4", "M1: 4A one site outside the chest or within the chest; 4B multiple sites"]],
+  "key": [["1", "&le;4 cm, no nodes (1A &le;3, 1B &gt;3&ndash;4)"], ["2", "&gt;4&ndash;7 cm, no nodes, or small with hilar/peribronchial nodes"], ["3", "N2 or N3 nodes, &gt;5 cm with hilar/peribronchial nodes, or &gt;7 cm / invasion"], ["4", "M1: 4A one site outside the chest or within the chest; 4B multiple sites"]],
   "breaks": "Stage 3A also holds a tumor over 7 cm (or invading the diaphragm or mediastinum) with no nodes at all."}},
 
 {"id": "crit-l43-location", "label": "Central vs Peripheral Lung Cancers", "color": L43C,
