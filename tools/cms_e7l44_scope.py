@@ -11,8 +11,8 @@ Pleural Disorders - Dr. Gray GUEST LECTURER", Wednesday 2026-11-04, 1-3 PM (2 ho
 "Pleural Disorders 2026.pptx", 120 slides. Same guest lecturer and same day as Lectures 42 and 43.
 
 RECORDING: the live Zoom class, recordings/cms-l44-pleural-disorders-gray-2026-11-04.m4a (1:38:33), with Zoom's own
-speaker-labeled transcript (.zoom-transcript.txt). Zoom transcript only; the faster-whisper cross-examination is
-pending (Zoom's ASR garbles terms: "Hammond Crunch", "Kyle", "In Paima", "Transgenate", "Pleurovia"). Pre-class chat
+speaker-labeled transcript (.zoom-transcript.txt), cross-examined 2026-11-06 against our faster-whisper transcript:
+all 54 flagged quotes confirmed, none changes meaning; no new scope cut (Zoom's ASR garbles terms: "Hammond Crunch", "Kyle", "In Paima", "Transgenate", "Pleurovia"). Pre-class chat
 5:33-11:13; screen sharing 6:33-1:35:25; content [11:39]-[1:35:22]; break [57:27]-[58:02] (recording paused);
 wrap-up with no slide [1:35:27]-[1:38:17]. Timestamps below are recording time [m:ss]. Slide on screen comes from
 E/timeline_l44.txt (Zoom frames matched to the deck, 15 s steps) with three fixes: slide 81 was on screen
