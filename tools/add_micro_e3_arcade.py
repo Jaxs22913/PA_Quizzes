@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Add the Microbiology Exam 3 Arcade decks -- Lectures 14-16 so far (Lectures 14 to 19 as they land).
+"""Add the Microbiology Exam 3 Arcade decks -- Lectures 14-17 so far (Lectures 14 to 19 as they land).
 
 One deck per lecture (arcade_content_policy), authored from the deck's slides by way of the Exam 3 study guide:
 `cards` (Study/Learn/Sprint, one atomic fact each) and `matchCards` (Match: term -> short tag). Which-antibiotic
@@ -25,9 +25,12 @@ FUNGI_ICON = ('<path d="M4 12a8 6 0 0 1 16 0z"/>'
 # a fork and a plate (Lecture 16, food safety)
 FOOD_ICON = ('<circle cx="14" cy="12" r="6"/>'
              '<path d="M5 4v16M3 4v4a2 2 0 0 0 4 0V4"/>')
+# a worm (Lecture 17, parasites)
+PARASITE_ICON = ('<path d="M4 16c2-4 4-4 6 0s4 4 6 0 3-6 4-8"/>'
+                 '<circle cx="20" cy="7" r="1.2"/>')
 
 C = {}
-for frag in ("l14_cards.json", "l15_cards.json", "l16_cards.json"):
+for frag in ("l14_cards.json", "l15_cards.json", "l16_cards.json", "l17_cards.json"):
     C.update(json.load(open(os.path.join(HERE, "micro_e3", frag), encoding="utf-8")))
 
 
@@ -40,6 +43,7 @@ DECKS = [
     deck("micro-gram-negative-bacilli", "Gram-Negative Bacilli", "accent3", GNR_ICON),
     deck("micro-fungi", "Fungi of Medical Importance", "accent2", FUNGI_ICON),
     deck("micro-food-safety", "Food Safety", "accent4", FOOD_ICON),
+    deck("micro-parasites", "Parasites of Medical Importance", "accent1", PARASITE_ICON),
 ]
 
 if __name__ == "__main__":
