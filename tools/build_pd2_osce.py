@@ -551,7 +551,7 @@ PULM_EXAM = dict(id="s5", title="Focused Physical Examination &mdash; Thorax &am
       do("Percusses the <b>lateral</b> chest wall, alternating sides"),
       do("Percusses the upper lobes, <b>anterior</b> chest wall, alternating sides"),
       do("Measures diaphragmatic excursion in centimeters",
-         hint="Four to six centimeters is normal &mdash; the distance between the level of dullness on full expiration and on full inspiration."),
+         hint="Three to five and a half centimeters is normal &mdash; the distance between the level of dullness on full expiration and on full inspiration."),
       say("States what dullness and hyperresonance would each suggest"),
     ]),
     ("h4", "Auscultation"),
