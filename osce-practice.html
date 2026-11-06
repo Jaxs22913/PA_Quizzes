@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OSCE Practice — PA Quizzes</title>
-<meta name="description" content="Practice a cardiac OSCE station out loud: a talking standardized patient, the real one-minute door form and twenty-minute room, and a grade against the run-sheet.">
+<meta name="description" content="Practice a cardiac or pulmonary OSCE station out loud: a talking standardized patient, the real one-minute door form and twenty-minute room, and a grade against the run-sheet.">
 <link rel="stylesheet" href="theme.css">
 <script src="theme.js" defer></script>
 <script src="pip/pip-superbrain.js" defer></script>
@@ -206,7 +206,7 @@
     <h1>OSCE Practice</h1>
     <p class="sub">A practice OSCE (objective structured clinical examination) station you run out loud. Read the door
       form for one minute, then walk in: talk to the patient and narrate your exam, and each finding (and any test you
-      order) shows on the screen. After twenty minutes, give your one-minute presentation and get graded on the Cardiac OSCE run-sheet.</p>
+      order) shows on the screen. After twenty minutes, give your one-minute presentation and get graded on that station's OSCE run-sheet.</p>
 
     <div class="card" id="access">
       <div id="access-msg" class="muted">Checking your sign-in…</div>
@@ -217,6 +217,7 @@
       <h2>Station</h2>
       <div class="choices">
         <label class="choice on"><input type="radio" name="station" value="cardiac" checked><b>Cardiac</b><span>Cardiovascular and peripheral vascular. Run-sheet from Physical Diagnosis II.</span></label>
+        <label class="choice"><input type="radio" name="station" value="pulmonary"><b>Pulmonary</b><span>Thorax and lungs. Run-sheet from Physical Diagnosis II.</span></label>
       </div>
 
       <h3>Case</h3>
@@ -362,11 +363,17 @@
 <script>
 (function () {
   "use strict";
+  // The stations and their files (the helper's own list in superbrain/src/osce.ts names the same paths). Each keeps its
+  // own history on this device; the cardiac one keeps the key it had before there were two.
+  var STATIONS = {
+    cardiac: "Physical Diagnosis 2 Exam 1/pd2-cardiac-osce-practice.json",
+    pulmonary: "Physical Diagnosis 2 Exam 2/pd2-pulm-osce-practice.json"
+  };
   var STATION = "cardiac";
-  var STATION_FILE = "Physical Diagnosis 2 Exam 1/pd2-cardiac-osce-practice.json";
-  var STATION_DIR = STATION_FILE.replace(/[^\/]+$/, "");
+  function stationDir(k) { return STATIONS[k].replace(/[^\/]+$/, ""); }
   var DOOR_S = 60, ROOM_S = 20 * 60;
-  var K_HIST = "local:osce:history", K_PREFS = "local:osce:prefs";   // device-only ("local:" never syncs)
+  var K_PREFS = "local:osce:prefs";   // device-only ("local:" never syncs)
+  function histKey(k) { return k === "cardiac" ? "local:osce:history" : "local:osce:history:" + k; }
   var KOKORO_WORKER = "osce-voice-worker.js";   // the free voice runs there, off this page's main thread
   // Any device whose browser can use the graphics chip runs the voice there (fast, a 330 MB download), unless it
   // reports under 4 GB of memory. Jaxon: iPads "are more powerful usually", "most phones have alot of memory too".
@@ -395,14 +402,25 @@
   var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 
   // ---------------------------------------------------------------- state
-  var station = null, status = null;
+  var station = null, status = null, loaded = {};
   var S = null;   // the running station: {c, session, rules, voice, talk, turns: [{r,t,at}], log: [...], doorS, roomStart, ...}
 
   // ---------------------------------------------------------------- station file + access
+  // the chosen station's file (fetched once per page); the case list and history follow the choice
   function loadStation() {
-    return fetch(encodeURI(STATION_FILE), { cache: "no-cache" }).then(function (r) { if (!r.ok) throw 0; return r.json(); })
-      .then(function (j) { station = j; renderCases(); renderHistory(); return j; })
-      .catch(function () { $("access-msg").textContent = "The station couldn't be loaded. Check your connection and reload the page."; });
+    var k = STATION;
+    station = null; updateStart();
+    $("case-list").innerHTML = ""; $("history").textContent = "";
+    var p = loaded[k] || (loaded[k] = fetch(encodeURI(STATIONS[k]), { cache: "no-cache" })
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (j) { if (!j || !Array.isArray(j.cases)) throw 0; return j; }));
+    return p.then(function (j) {
+      if (k !== STATION) return;
+      station = j; renderCases(); renderHistory(); updateStart(); return j;
+    }).catch(function () {
+      delete loaded[k];
+      if (k === STATION) $("access-msg").textContent = "The station couldn't be loaded. Check your connection and reload the page.";
+    });
   }
 
   function authReady() {
@@ -480,19 +498,20 @@
     });
   }
   function renderHistory() {
-    var h = load(K_HIST, []);
+    if (!station) return;
+    var h = load(histKey(STATION), []);
     if (!h.length) { $("history").textContent = ""; return; }
     var last = h.slice(-5).reverse().map(function (x) {
       var c = station && station.cases.filter(function (k) { return k.id === x.c; })[0];
       var d = new Date(x.d);
       return esc(c ? c.condition : x.c) + " " + x.s + "% (" + d.toLocaleDateString(undefined, { month: "short", day: "numeric" }) + ")";
     });
-    $("history").innerHTML = "Your recent stations on this device: " + last.join(" · ");
+    $("history").innerHTML = "Your recent " + esc(station.title || "") + " stations on this device: " + last.join(" · ");
   }
   function pickCase() {
     var v = radio("casemode");
     if (v && v !== "random") return station.cases.filter(function (c) { return c.id === v; })[0];
-    var h = load(K_HIST, []), recent = h.slice(-Math.max(0, station.cases.length - 1)).map(function (x) { return x.c; });
+    var h = load(histKey(STATION), []), recent = h.slice(-Math.max(0, station.cases.length - 1)).map(function (x) { return x.c; });
     var pool = station.cases.filter(function (c) { return recent.indexOf(c.id) < 0; });
     if (!pool.length) pool = station.cases;
     return pool[Math.floor(Math.random() * pool.length)];
@@ -509,15 +528,19 @@
     if (want === "kokoro") loadKokoro();
   }
   function updateStart() {
-    var ready = !!(station && status && status.invited && status.enabled && status.stationsLeft > 0);
+    var ready = !!(station && station.cases.length && status && status.invited && status.enabled && status.stationsLeft > 0);
     $("start").disabled = !ready;
     $("start-note").textContent = status && status.invited && status.enabled && !status.stationsLeft ? "No stations left today." : "";
   }
   function savePrefs() {
-    save(K_PREFS, { voice: radio("voice"), rules: radio("rules"), talk: radio("talk"), pause: $("pause-len").value });
+    save(K_PREFS, { station: STATION, voice: radio("voice"), rules: radio("rules"), talk: radio("talk"), pause: $("pause-len").value });
   }
   (function restorePrefs() {
     var p = load(K_PREFS, {});
+    // a link can name the station (guides.html: osce-practice.html?station=pulmonary); else the last one chosen here
+    var asked = (/[?&]station=([a-z]+)/.exec(location.search) || [])[1];
+    var want = STATIONS[asked] ? asked : p.station;
+    if (want && STATIONS[want]) { STATION = want; setRadio("station", want); }
     if (p.rules) setRadio("rules", p.rules);
     if (p.talk) setRadio("talk", p.talk);
     if (p.pause) $("pause-len").value = p.pause;
@@ -530,6 +553,11 @@
   document.addEventListener("change", function (e) {
     if (!e.target.closest("#setup-card")) return;
     if (e.target.name === "voice" && e.target.value === "kokoro") loadKokoro();
+    if (e.target.name === "station" && STATIONS[e.target.value] && e.target.value !== STATION) {
+      STATION = e.target.value;
+      setRadio("casemode", "random"); $("case-pick").open = false;
+      loadStation();
+    }
     savePrefs();
   });
 
@@ -831,14 +859,19 @@
     var typed = typeInstead || !SR; typeInstead = false;   // "Type instead" holds for this one station
     var c = pickCase();
     var btn = $("start"); btn.disabled = true; $("start-note").textContent = "Starting…";
-    SB().osce("start", { station: STATION, case: c.id }).then(function (r) {
+    var stKey = STATION, stFile = station;
+    SB().osce("start", { station: stKey, case: c.id }).then(function (r) {
       btn.disabled = false; $("start-note").textContent = "";
-      if (!r || !r.ok) { $("start-note").textContent = (r && r.message) || "The station couldn't start. Try again in a minute."; return; }
+      if (!r || !r.ok) {
+        // a station the practice helper does not have yet (the page can go live before the helper is updated)
+        if (r && r.code === "bad_station") { $("start-note").textContent = "This station switches on as soon as the practice helper is updated. Check back soon."; return; }
+        $("start-note").textContent = (r && r.message) || "The station couldn't start. Try again in a minute."; return;
+      }
       status.stationsLeft = r.stationsLeft;
       var v = radio("voice") || "device";
       engine = v === "google" && !status.tts ? "device" : v;
       sexNow = c.door.sex;
-      S = { c: c, session: r.session, rules: radio("rules") || "patient", talk: typed ? "typed" : radio("talk") || "free",
+      S = { st: stKey, dir: stationDir(stKey), file: stFile, c: c, session: r.session, rules: radio("rules") || "patient", talk: typed ? "typed" : radio("talk") || "free",
             pause: Number($("pause-len").value) || 1900, turns: [], log: [], doorStart: Date.now(), doorS: 0, roomStart: 0,
             roomS: 0, timedOut: false, presentation: "", presentS: 0, busy: false, pending: "", over: false, warned5: false, warned1: false };
       startDoor();
@@ -913,7 +946,7 @@
     if (!l.here || !t || !t.img || !IMG_OK.test(t.img)) return h;
     var cr = t.credit || {}, link = /^https:\/\/commons\.wikimedia\.org\//.test(cr.page || "");
     return h + '<figure class="tfig"><button type="button" class="tzoom" aria-label="Enlarge the picture">' +
-      '<img src="' + esc(STATION_DIR + t.img) + '" alt="' + esc(t.name + ". " + (t.cap || "")) + '"></button>' +
+      '<img src="' + esc(S.dir + t.img) + '" alt="' + esc(t.name + ". " + (t.cap || "")) + '"></button>' +
       "<figcaption>" + esc(t.cap || "") + (cr.text ? '<span class="credit">' + (link ? '<a href="' + esc(cr.page) + '" target="_blank" rel="noopener">' + esc(cr.text) + "</a>" : esc(cr.text)) + "</span>" : "") +
       "</figcaption></figure>";
   }
@@ -958,7 +991,7 @@
   function heardNow() { return (heardFinal + " " + heardInterim).replace(/\s+/g, " ").trim(); }
   function askHelper(turns) {
     lastAsk = Date.now(); S.asks = (S.asks || 0) + 1;
-    return SB().osce("turn", { station: STATION, case: S.c.id, session: S.session, rules: S.rules, turns: turns });
+    return SB().osce("turn", { station: S.st, case: S.c.id, session: S.session, rules: S.rules, turns: turns });
   }
   function askEarly() {
     if (!S || S.over || S.busy || S.phase === "present" || S.talk === "typed") return;
@@ -1282,7 +1315,7 @@
       $("grading-note").textContent = "There was nothing to grade: the station had no words from you.";
       return;
     }
-    SB().osce("grade", { station: STATION, case: S.c.id, session: S.session, rules: S.rules, turns: turns,
+    SB().osce("grade", { station: S.st, case: S.c.id, session: S.session, rules: S.rules, turns: turns,
       doorSeconds: S.doorS, roomSeconds: S.roomS, timedOut: S.timedOut }, function (ev, d) {
       if (ev === "progress" && d && d.chars) $("grade-bar").style.width = Math.min(95, 4 + d.chars / 45) + "%";
     }).then(function (r) {
@@ -1326,7 +1359,7 @@
     return done;
   }
   function maneuverName(id) {
-    var m = station.catalog[id]; if (m) return m.name;
+    var m = S.file.catalog[id]; if (m) return m.name;
     var sp = (S.c.special || []).filter(function (x) { return x[0] === id; })[0];
     return sp ? sp[1] : id;
   }
@@ -1341,7 +1374,7 @@
   }
   function tally() {
     var t = { met: 0, partial: 0, missed: 0, n: 0, pts: 0 };
-    station.rubric.forEach(function (sec) {
+    S.file.rubric.forEach(function (sec) {
       sec.items.forEach(function (i) { t[statusOf(i).status]++; t.n++; });
       t.pts += sectionScore(sec).pts;
     });
@@ -1384,9 +1417,9 @@
 
   function report() {
     var g = S.grade, t = tally();
-    var h = load(K_HIST, []); h.push({ c: S.c.id, d: new Date().toISOString(), s: t.pct, r: S.rules }); save(K_HIST, h.slice(-50));
+    var h = load(histKey(S.st), []); h.push({ c: S.c.id, d: new Date().toISOString(), s: t.pct, r: S.rules }); save(histKey(S.st), h.slice(-50));
     var mark = { met: "✓", partial: "◐", missed: "✗" };
-    var secs = station.rubric.map(function (sec) {
+    var secs = S.file.rubric.map(function (sec) {
       var sc = sectionScore(sec), n = sc.n, group = null, body = "";
       if (isExamSection(sec)) {
         var half = Math.floor(n / 2) + 1, did = Math.round(sc.raw * 2) / 2;
@@ -1451,7 +1484,7 @@
       item.className = "item " + st; item.querySelector(".ic").textContent = mark[st];
       var t2 = tally();
       $("score-pct").textContent = t2.pct + "%"; $("c-met").textContent = t2.met + " met"; $("c-part").textContent = t2.partial + " partly"; $("c-miss").textContent = t2.missed + " missed";
-      var hh = load(K_HIST, []); if (hh.length) { hh[hh.length - 1].s = t2.pct; save(K_HIST, hh); }
+      var hh = load(histKey(S.st), []); if (hh.length) { hh[hh.length - 1].s = t2.pct; save(histKey(S.st), hh); }
     };
     $("copy-tx").onclick = function () {
       var text = S.log.map(function (l) { return mmss(l.at) + " " + (l.r === "s" ? "You" : l.r === "P" ? patientName() : l.r === "X" ? "Finding" : l.r === "T" ? "Test" : "Note") + ": " + (l.name ? l.name + ": " : "") + l.t; }).join("\n") +
