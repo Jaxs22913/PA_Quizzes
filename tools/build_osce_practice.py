@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the OSCE practice station file (2026-10-26).
+"""Build the OSCE practice station files (cardiac 2026-10-26, pulmonary 2026-11-06).
 
 Jaxon: "talk out loud back and forth with the site like it was a patient, using the info from our ppts ... and you
 know all we have to do and ask so it can grade us."
@@ -7,21 +7,23 @@ know all we have to do and ask so it can grade us."
 One JSON per station, read by BOTH the practice page (osce-practice.html: the case list, the door form, the report)
 and the private helper (the patient model plays the case, the grader grades against the rubric and the key):
 
-  Physical Diagnosis 2 Exam 1/pd2-cardiac-osce-practice.json
-    rubric   the Cardiac OSCE run-sheet (tools/build_pd2_osce.py CARDIAC), every item with an id ("s5.12"), its kind
-             (say = graded on what is said, do = performed, credited when narrated), its group heading, and "auto"
-             for the items only the page can judge (time at the door, the presentation's length) or the student
-             (reading from notes)
-    catalog  the maneuvers and their normal findings (tools/_osce_cardiac_catalog.py)
-    cases    the cases (tools/_osce_cardiac_cases.py): door form, persona, facts, exam overrides, answer key, and
-             the tests a student can order for that case (results shown on screen; a test the setting can't do says
-             so; anything not listed gets "unlisted", Jaxon: "they will say oh that machine is down but only with
-             stuff that isnt relevant or isnt in where we are")
+  Physical Diagnosis 2 Exam 1/pd2-cardiac-osce-practice.json     (station "cardiac")
+  Physical Diagnosis 2 Exam 2/pd2-pulm-osce-practice.json        (station "pulmonary")
+    rubric   the station's OSCE run-sheet (tools/build_pd2_osce.py CARDIAC or PULMONARY), every item with an id
+             ("s5.12"), its kind (say = graded on what is said, do = performed, credited when narrated), its group
+             heading, and "auto" for the items only the page can judge (time at the door, the presentation's
+             length) or the student (reading from notes)
+    catalog  the maneuvers and their normal findings (tools/_osce_cardiac_catalog.py, tools/_osce_pulm_catalog.py)
+    cases    the cases (tools/_osce_cardiac_cases.py, tools/_osce_pulm_cases.py): door form, persona, facts, exam
+             overrides, answer key, and the tests a student can order for that case (results shown on screen; a
+             test the setting can't do says so; anything not listed gets "unlisted", Jaxon: "they will say oh that
+             machine is down but only with stuff that isnt relevant or isnt in where we are")
 
-The helper's station list (superbrain/src/osce.ts STATIONS) names this path; renaming the file means changing both.
+The helper's station list (superbrain/src/osce.ts STATIONS) names these paths; renaming a file means changing both.
 
-    python3 tools/build_osce_practice.py          # write the file
-    python3 tools/build_osce_practice.py --check  # exit 1 if the file on disk is not what this would write
+    python3 tools/build_osce_practice.py                       # write both files
+    python3 tools/build_osce_practice.py --station pulmonary   # just one (cardiac | pulmonary)
+    python3 tools/build_osce_practice.py --check               # exit 1 if a file on disk is not what this would write
 """
 import html
 import json
@@ -33,14 +35,14 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
-import build_pd2_osce as runsheet            # noqa: E402
-from _osce_cardiac_catalog import CATALOG    # noqa: E402
-from _osce_cardiac_cases import CASES        # noqa: E402
-from _pd2_cardiac_osce_ecgs import IMAGES as ECG_IMAGES   # noqa: E402
+import build_pd2_osce as runsheet                                   # noqa: E402
+from _osce_cardiac_catalog import CATALOG as CARDIAC_CATALOG        # noqa: E402
+from _osce_cardiac_cases import CASES as CARDIAC_CASES              # noqa: E402
+from _osce_pulm_catalog import CATALOG as PULM_CATALOG              # noqa: E402
+from _osce_pulm_cases import CASES as PULM_CASES, check as pulm_selfcheck   # noqa: E402
+from _pd2_cardiac_osce_ecgs import IMAGES as ECG_IMAGES             # noqa: E402
+import _pd2_pulm_osce_images as PULM_IM                             # noqa: E402
 
-OUT = os.path.join(ROOT, "Physical Diagnosis 2 Exam 1", "pd2-cardiac-osce-practice.json")
-# test pictures: only the Cardiac OSCE chart's vetted 12-leads (sources and licences in _pd2_cardiac_osce_ecgs.py)
-IMG_DIR = "pd2-cardiac-osce-chart-images"
 UNLISTED = "That machine is down today."
 
 # Items the transcript cannot show. "door" and "length" the page measures; "self" the student ticks in the report.
@@ -60,9 +62,9 @@ def plain(s):
     return re.sub(r"\s+", " ", s).strip()
 
 
-def rubric():
+def rubric(spec):
     out = []
-    for sec in runsheet.CARDIAC["sections"]:
+    for sec in spec["sections"]:
         items, group, k = [], None, 0
         for kind, payload in sec["blocks"]:
             if kind == "h4":
@@ -83,7 +85,7 @@ def rubric():
     return out
 
 
-def check_case(c, catalog_ids):
+def check_case(c, catalog_ids, st):
     cid = c["id"]
     assert re.match(r"^[a-z0-9][a-z0-9-]{2,80}$", cid), cid
     assert c["door"]["sex"] in ("male", "female"), (cid, c["door"]["sex"])
@@ -109,14 +111,14 @@ def check_case(c, catalog_ids):
         assert isinstance(t["here"], bool), (cid, t["id"], "here must be true or false")
         if t.get("img"):
             assert t["here"], (cid, t["id"], "a picture for a test the setting can't do")
-            assert t["img"] in ECG_IMAGES, (cid, t["id"], "picture not in the chart's vetted set", t["img"])
-            assert os.path.exists(os.path.join(os.path.dirname(OUT), IMG_DIR, t["img"])), (cid, t["id"], "missing picture")
+            assert t["img"] in st["images"], (cid, t["id"], "picture not in the chart's vetted set", t["img"])
+            assert os.path.exists(os.path.join(ROOT, st["folder"], st["img_dir"], t["img"])), (cid, t["id"], "missing picture")
             assert 10 <= len(t.get("cap") or "") <= 300, (cid, t["id"], "a picture needs a caption")
         else:
             assert not t.get("cap"), (cid, t["id"], "a caption with no picture")
 
 
-def credit(fn):
+def ecg_credit(fn):
     """The picture's credit, worded as on the Cardiac OSCE chart."""
     src, boxes = ECG_IMAGES[fn]
     if src["kind"] == "deck":
@@ -127,18 +129,66 @@ def credit(fn):
             "page": src["page"]}
 
 
-def test_out(t):
+# The deck each Pulmonary chart picture comes from, named as the Pulmonary OSCE Disease Chart's credit line names it
+# (tools/build_pd2_pulm_osce_chart.py DECK_LABEL).
+PULM_DECK_LABEL = {
+    PULM_IM.L35: "Clinical Medicine Lecture 35", PULM_IM.L36: "Clinical Medicine Lecture 36",
+    PULM_IM.L37: "Clinical Medicine Lecture 37", PULM_IM.L38: "Clinical Medicine Lecture 38",
+    PULM_IM.L40: "Clinical Medicine Lecture 40", PULM_IM.L41: "Clinical Medicine Lecture 41",
+    PULM_IM.L43: "Clinical Medicine Lecture 43", PULM_IM.L44: "Clinical Medicine Lecture 44",
+    PULM_IM.PDM14: "Principles of Diagnostic Medicine Lecture 14",
+    PULM_IM.PDM16: "Principles of Diagnostic Medicine Lecture 16",
+    PULM_IM.PDM17: "Principles of Diagnostic Medicine Lecture 17",
+}
+
+
+def pulm_credit(fn):
+    """The picture's credit, worded as on the Pulmonary OSCE chart (plain text: the page escapes it)."""
+    src, boxes = PULM_IM.IMAGES[fn]
+    if src["kind"] == "deck":
+        bits = ["Source: %s, slide %d (%s)" % (PULM_DECK_LABEL[src["deck"]], src["slide"], src["deck"])]
+        bits += [src["changed"]] if src["changed"] else []
+        bits += ["yellow boxes added"] if boxes else []
+        return {"text": "; ".join(bits), "page": ""}
+    assert src["lic"] and src["author"] and src["page"], fn
+    changed = ", ".join(x for x in (src["changed"], "yellow boxes added" if boxes else "") if x)
+    return {"text": "Image: %s, Wikimedia Commons, %s%s" % (src["author"], src["lic"], "; " + changed if changed else ""),
+            "page": src["page"]}
+
+
+# The stations. Test pictures come only from each station's OSCE Disease Chart, already vetted there: the Cardiac
+# chart's 12-leads (sources and licences in _pd2_cardiac_osce_ecgs.py) and the Pulmonary chart's films, scans,
+# tracings and graphs (tools/_pd2_pulm_osce_images.py).
+STATIONS = {
+    "cardiac": dict(folder="Physical Diagnosis 2 Exam 1", file="pd2-cardiac-osce-practice.json", title="Cardiac OSCE",
+                    runsheet=runsheet.CARDIAC, catalog=CARDIAC_CATALOG, cases=CARDIAC_CASES,
+                    img_dir="pd2-cardiac-osce-chart-images", images=ECG_IMAGES, credit=ecg_credit, selfcheck=None),
+    "pulmonary": dict(folder="Physical Diagnosis 2 Exam 2", file="pd2-pulm-osce-practice.json", title="Pulmonary OSCE",
+                      runsheet=runsheet.PULMONARY, catalog=PULM_CATALOG, cases=PULM_CASES,
+                      img_dir="pd2-pulm-osce-images", images=PULM_IM.IMAGES, credit=pulm_credit,
+                      selfcheck=pulm_selfcheck),
+}
+
+
+def out_path(st):
+    return os.path.join(ROOT, st["folder"], st["file"])
+
+
+def test_out(t, st):
     o = {"id": t["id"], "name": t["name"], "aka": list(t.get("aka", [])), "result": t["result"], "here": t["here"]}
     if t.get("img"):
-        o.update(img=IMG_DIR + "/" + t["img"], cap=t["cap"], credit=credit(t["img"]))
+        o.update(img=st["img_dir"] + "/" + t["img"], cap=t["cap"], credit=st["credit"](t["img"]))
     return o
 
 
-def build():
-    catalog = {k: {"name": v[0], "does": v[1], "normal": v[2]} for k, v in CATALOG.items()}
+def build(key):
+    st = STATIONS[key]
+    if st["selfcheck"]:
+        st["selfcheck"](st["cases"])   # the case module's own rules (the cardiac one runs as its own script)
+    catalog = {k: {"name": v[0], "does": v[1], "normal": v[2]} for k, v in st["catalog"].items()}
     cases = []
-    for c in CASES:
-        check_case(c, catalog)
+    for c in st["cases"]:
+        check_case(c, catalog, st)
         cases.append({
             "id": c["id"],
             "condition": c["condition"],
@@ -153,17 +203,17 @@ def build():
             "special": [list(m) for m in c["special"]],
             # the examinations specific to this condition: each one never performed costs a point (the page docks it)
             "must_exam": list(c["must_exam"]),
-            "tests": [test_out(t) for t in c["tests"]],
+            "tests": [test_out(t, st) for t in c["tests"]],
             "key": c["key"],
         })
     ids = [c["id"] for c in cases]
     assert len(ids) == len(set(ids)), "duplicate case id"
     return {
         "v": 1,
-        "station": "cardiac",
-        "title": "Cardiac OSCE",
+        "station": key,
+        "title": st["title"],
         "minutes": {"door": 1, "room": 20},
-        "rubric": rubric(),
+        "rubric": rubric(st["runsheet"]),
         "catalog": catalog,
         "unlisted": UNLISTED,
         "cases": cases,
@@ -171,17 +221,31 @@ def build():
 
 
 def main():
-    text = json.dumps(build(), ensure_ascii=False, separators=(",", ":")) + "\n"
-    if "--check" in sys.argv:
-        same = os.path.exists(OUT) and open(OUT, encoding="utf-8").read() == text
-        print("station file up to date" if same else "station file is STALE: run tools/build_osce_practice.py")
-        sys.exit(0 if same else 1)
-    with open(OUT, "w", encoding="utf-8") as f:
-        f.write(text)
-    st = json.loads(text)
-    n = sum(len(s["items"]) for s in st["rubric"])
-    print("wrote %s: %d rubric items in %d sections, %d maneuvers, %d cases (%d bytes)" % (
-        os.path.relpath(OUT, ROOT), n, len(st["rubric"]), len(st["catalog"]), len(st["cases"]), len(text.encode())))
+    args = sys.argv[1:]
+    keys = list(STATIONS)
+    if "--station" in args:
+        i = args.index("--station")
+        want = args[i + 1] if i + 1 < len(args) else ""
+        if want not in STATIONS:
+            sys.exit("--station must be one of: " + ", ".join(STATIONS))
+        keys = [want]
+    stale = 0
+    for key in keys:
+        out = out_path(STATIONS[key])
+        text = json.dumps(build(key), ensure_ascii=False, separators=(",", ":")) + "\n"
+        if "--check" in args:
+            same = os.path.exists(out) and open(out, encoding="utf-8").read() == text
+            print("%s station file up to date" % key if same else
+                  "%s station file is STALE: run tools/build_osce_practice.py --station %s" % (key, key))
+            stale += not same
+            continue
+        with open(out, "w", encoding="utf-8") as f:
+            f.write(text)
+        j = json.loads(text)
+        n = sum(len(s["items"]) for s in j["rubric"])
+        print("wrote %s: %d rubric items in %d sections, %d maneuvers, %d cases (%d bytes)" % (
+            os.path.relpath(out, ROOT), n, len(j["rubric"]), len(j["catalog"]), len(j["cases"]), len(text.encode())))
+    sys.exit(1 if stale else 0)
 
 
 if __name__ == "__main__":
