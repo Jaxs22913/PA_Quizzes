@@ -89,6 +89,16 @@ WHERE HE AND THE SLIDES DIFFER (no out-loud correction of any slide; every slide
   Dose [18:55] "600 ibuprofen": never keyed (s14 NSAIDs).
 
 SLIDE CONFLICTS (slide vs slide; never keyed one way or the other; the guide notes each):
+  Found by the objective-pool writer (2026-11-06), none keyed either way: mechanical ventilation is IATROGENIC on s17
+      but TRAUMATIC on s61 (with CPR [cardiopulmonary resuscitation]); s102 pneumonia is the "most common cause of
+      exudative effusion" while s103 tuberculosis is the "leading cause worldwide" (never offer tuberculosis against
+      pneumonia for "most common"); s49 lists secondary pneumothorax as an indication for thoracoscopic surgery while s56
+      observes a small asymptomatic secondary one (never set the two against each other).
+  Found by the vignette writer: persistent air leak / failed chest tube -> thoracoscopic surgery on s49, but s58
+      "Surgical Referral (VATS) or Heimlich Valve" / "Heimlich valves for leaks" and s50 thoracotomy "allows
+      examination of lung for site of air leak" (never offer Heimlich or thoracotomy against thoracoscopic surgery);
+      recurrent malignant effusion: pleurodesis as palliation on s113, indwelling catheter for rapidly recurring fluid
+      on s97 (split by expandable lung vs short prognosis + rapid recurrence; never both in one item).
   The 3 cm boundary: s28 "<3 cm small; >=3 cm large"; s55 moderate/large ">3 cm"; s56 small secondary "<=3 cm".
       No stem puts a pneumothorax at exactly 3 cm (SCOPE_BANNED catches "measures 3 cm").
   Large symptomatic primary pneumothorax: s55 "Moderate or large PSP: >3 cm ... Treatment: Chest tube insertion";
@@ -461,7 +471,7 @@ TOPIC_MINUTES = {
 # (label, stem regex, key regex, minimum per form). The pool must hold at least twice the minimum of each.
 REQUIRED_IO = [
     # "that makes great test questions" [1:27:52]
-    ("Light's criteria", r"light'?s|ratio|serum", r"0\.5|0\.6|two-thirds|2/3|exudat|transudat|at least one|all three", 1),
+    ("Light's criteria", r"light'?s|ratio|serum", r"0\.5|0\.6|two-thirds|2/3|exudat|transudat|at least one|all three", 2),
     # the s80 poll, "For test purposes" [1:04:11], "don't have time for that x-ray" [1:01:58]
     ("Tension pneumothorax sign, step or needle site", r"tension",
      r"trache|neck vein|jugular|hypotens|contralateral|needle|second intercostal|2nd intercostal|chest tube|clinical", 1),

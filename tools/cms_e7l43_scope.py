@@ -139,6 +139,8 @@ SLIDE CONFLICTS (never keyed one way or the other; the guide notes each):
       pleural contact as reassuring.
   Cavitation: concerning feature (s16) and seen in large cell (s33, s34), squamous (s39 "frequent cavitation") and small
       cell (s41 "high cavitation rate" once large). Never make cavitation the sole clue to one cell type.
+  Hilum: s9 "Most of them form a mass in or near the hilum"; s30 puts adenocarcinoma (the most common type) and
+      large cell in the periphery. Never ask where most lung cancers form (found by the objective-pool writer).
   Small cell and immunotherapy: s41 "Immunotherapy is less effective on small cell ... but is becoming an option" vs
       s43 "Two adjunct immunotherapies are also approved for SCLC". Not a contradiction; never key "no role".
   s31 "metastatic (T4M1 or 2)": there is no M2 on s22's table (banned).
@@ -523,7 +525,7 @@ _BENIGN = (r"benign|reassur|hamartoma|granuloma|calcif|smooth|well[- ]defined|fi
 _STAGE = (r"\bstag(?:e|ing)\b", r"^(?:stage|T[0-4]|N[0-3]|M[01])\b")
 _STAGE_TX = (r"\bstage|lymph|\bnod(?:e|es|al)\b|metasta",
              r"resection|lobectomy|wedge|segmentectomy|pneumonectomy|surg|chemo|radiation|radiotherapy")
-_LOCATION = (r"\bcentral|peripher", r"squamous|small[- ]cell|oat cell|adenocarcinoma|large[- ]cell|central|peripher")
+_LOCATION = (r"\bcentral|peripher", r"squamous|(?<!non-)(?<!non )\bsmall[- ]cell|oat cell|adenocarcinoma|large[- ]cell|central|peripher")
 _RADIO = (r"radiat|radiotherapy|irradiat", _SCLC_KEY + r"|limited|prophylactic cranial")
 _PARA = (r"paraneoplastic|hyponatremi|sodium|antidiuretic|osmolal|hypercalc|Lambert|myasthenic|cerebellar|encephalitis"
          r"|acanthosis|dermatomyositis|carcinoid|serotonin|flush", r".")

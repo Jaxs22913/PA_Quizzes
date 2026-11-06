@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));window.__paErrQ=[];['error','unhandledrejection'].forEach(function(t){addEventListener(t,function(e){var q=window.__paErrQ;if(q&&!q.done)q.push(e)})});</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #92693f; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulmonary Nodules and Neoplasms Vignettes 2 — CMS I Exam 7</title>
+<style>
+  :root{
+    --navy:#5e4123; --indigo:#92693f; --gold:#c08a2e; --ice:#faf6ee;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#5e4123;--gold-l:#c08a2e;--indigo-l:#92693f;--navy:#c8a685;--indigo:#ac8257;--gold:#c08a2e;--ice:#311e09;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#ac8257;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#5e4123;--indigo-t:#92693f;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Pulmonary Nodules &amp; Neoplasms &mdash; Vignettes 2</h1>
+    <div class="sub">Clinical Medicine and Surgery I &middot; Exam 7 &middot; Lecture 43</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Read the nodule first (its size, edge, calcification and growth), then the patient (smoking history, symptoms, where the mass sits). Every laboratory value comes with its normal range.</p>
+    <div class="chips"><span class="chip">Who gets screened</span><span class="chip">Benign or concerning</span><span class="chip">Stage from the findings</span><span class="chip">Treatment by stage</span><span class="chip">Which cell type</span><span class="chip">Paraneoplastic signs</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Screening and nodule follow-up", "io": "Identify medical care strategies for pulmonary nodules and neoplasms in the lecture topic list for the following populations. 7. adult 8. elderly", "q": "A 72-year-old man smoked 1.5 packs a day for 30 years and quit 22 years ago. He has no symptoms and no known lung nodule, and he asks about lung cancer screening scans. Which describes his eligibility for screening?", "opts": [["Eligible for yearly screening", "His age and 45 pack-years fit, but the criteria also require current smoking or quitting within the last 15 years. Tell: he quit 22 years ago, which places him outside the screening window."], ["Eligible on pack-years alone", "Pack-years are one criterion; age 55 to 80 and smoking now or within the last 15 years must also be met. Tell: his 45 pack-years pass, but quitting 22 years ago fails the timing rule."], ["Not eligible: too old", "His age is not the problem: the screening range runs from 55 to 80 years, and he is 72. Tell: the criterion he fails is time since quitting, 22 years against a limit of 15."], ["Not eligible: quit too long ago", "Correct. Screening covers adults 55 to 80 with at least a 30 pack-year history who smoke now or quit within the last 15 years. He is 72 with 1.5 packs a day x 30 years = 45 pack-years, but he quit 22 years ago, beyond the 15-year window, so he does not qualify."]], "c": 3, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 3, 18", "slot": "risk factors", "lead": "classify"}, {"topic": "Large cell carcinoma", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 70-year-old man has a peripheral cavitating lung mass. Histology shows anaplastic, undifferentiated, pleomorphic cells, with no features of adenocarcinoma or squamous cell carcinoma and no specific marker. He asks how his cancer type was decided. Which response is accurate?", "opts": [["A specific marker confirmed it", "Large cell carcinoma has no specific genetic or histologic marker, which is exactly why it is diagnosed by exclusion. Tell: his report states no specific marker was found, yet the cell type was still named."], ["Cavitation on imaging proved it", "Cavitation is seen in several lung cancers, including squamous cell and small cell carcinoma, and a cavitated mass still needs biopsy with histology. Tell: imaging suggests the type, but tissue that excludes the other types decides it."], ["Sputum cytology identified it", "Sputum testing can catch squamous cell carcinoma, a central bronchial tumor, unlike the other lung cancers. Tell: his mass is peripheral and was typed from histology by excluding adenocarcinoma and squamous features."], ["It is a diagnosis of exclusion", "Correct. Large cell carcinoma lacks specific genetic or histologic markers and is a diagnosis of exclusion among the non-small cell cancers. Its cells are anaplastic, undifferentiated and pleomorphic, which separates it from adenocarcinoma and squamous cell carcinoma, and histology must confirm the anaplastic tissue even when computed tomography suggests it."]], "c": 3, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 33, 34, 39, 40, 41", "slot": "test finding", "lead": "test"}, {"topic": "Epidemiology, risk factors and spread", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 58-year-old man has smoked 1 pack of cigarettes a day for 25 years. He plans to keep smoking but cut down to half a pack a day, and he asks whether the amount he smokes each day makes any difference to his lung cancer risk. Which response is accurate?", "opts": [["Cutting back removes his risk", "Halving his packs per day lowers his ongoing exposure, but the 25 years already smoked still count toward a risk that compounds with packs and years. Tell: smoking less is not the same as never having smoked; smoking is implicated in 85 to 90% of lung cancers."], ["Packs and years compound the risk", "Correct. Smoking is implicated in 85 to 90% of lung cancers, and both the packs smoked per day and the years of smoking compound the risk, raising it 5 times, then 10 times, then 20 times as exposure grows. His daily amount therefore matters, not just how long he has smoked."], ["Years count, packs per day do not", "Duration is only half of his exposure: packs smoked per day and years of smoking compound each other, multiplying the risk from 5 times to 10 times to 20 times. Tell: his daily amount is one of the two factors that multiply his risk, so it does make a difference."], ["His risk is already fixed", "Lung cancer risk keeps rising with exposure rather than locking in: the packs per day and the years of smoking compound the risk as they add up. Tell: each further year of smoking adds to the compounded risk, so how much he smokes from now on still matters."]], "c": 1, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slide 3", "slot": "risk factors", "lead": "education"}, {"topic": "Screening and nodule follow-up", "io": "Identify medical care strategies for pulmonary nodules and neoplasms in the lecture topic list for the following populations. 7. adult 8. elderly", "q": "A 67-year-old woman smoked 2 packs a day for 20 years and quit 8 years ago. She has no cough, hemoptysis or weight loss, and no lung nodule has ever been found. She asks about lung cancer screening. Which is the most appropriate recommendation?", "opts": [["Annual low-dose computed tomography", "Correct. Screening is recommended for high-risk adults without symptoms or a known nodule who are 55 to 80 years old, with at least a 30 pack-year history, who smoke now or quit within the last 15 years. She is 67, has 2 packs a day x 20 years = 40 pack-years, and quit 8 years ago, so she qualifies for an annual low-dose chest scan."], ["No screening, since she quit", "Quitting does not disqualify her: people who quit within the last 15 years still qualify. Tell: she quit 8 years ago, at 67 years old with 40 pack-years, so she meets every screening criterion."], ["Yearly sputum cytology", "Sputum cytology is not sensitive and is not the screening test. Tell: eligible patients are screened annually with low-dose chest computed tomography, which works because air and nodules contrast sharply."], ["Yearly standard-dose computed tomography", "Screening uses a lower radiation dose than a standard chest scan to reduce radiation exposure, which works because lung tissue gives high contrast between air and nodules. Tell: the screening study is the low-dose scan, not a standard-dose one."]], "c": 0, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 3, 14, 18", "slot": "initial test", "lead": "next step"}, {"topic": "Central versus peripheral cancers", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 71-year-old man with a 60 pack-year history has 2 months of cough, wheezing and blood-streaked sputum. Computed tomography shows a central mass arising in the right main bronchus, and sputum cytology shows malignant cells. Which lung cancer type is most likely?", "opts": [["Small cell carcinoma", "Small cell carcinoma is also central, but it infiltrates the mucosa and is usually metastatic by the time of diagnosis. Tell: catching the tumor on sputum cytology is the feature of squamous cell carcinoma, the central bronchial tumor diagnosable from sputum."], ["Adenocarcinoma", "Adenocarcinoma usually forms in the mid-lung and periphery, often near peripheral scars, and is not amenable to early detection. Tell: his mass is central in a main bronchus and shed malignant cells into his sputum."], ["Large cell carcinoma", "Large cell carcinoma forms in the periphery as a large cavitated mass and spreads to unusual sites such as the bowel. Tell: a central bronchial mass caught on sputum cytology points to squamous cell carcinoma instead."], ["Squamous cell carcinoma", "Correct. Squamous cell carcinoma sits centrally and often originates in a bronchus, has the strongest association with smoking, and causes cough, wheezing and hemoptysis once it obstructs the bronchus. Unlike the other lung cancers it can be caught with sputum testing, so malignant cells in his sputum from a central bronchial mass point to it."]], "c": 3, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 30, 33, 39, 40", "slot": "manifestation", "lead": "diagnosis"}, {"topic": "Lung cancer staging", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 67-year-old man has a biopsy-proven 2.5-cm non-small cell carcinoma in the left upper lobe. Positron emission tomography shows uptake in mediastinal and subcarinal lymph nodes on the same side as the tumor, and there is no distant metastasis. Which stage is his cancer?", "opts": [["Stage 2B", "Stage 2B with a small tumor allows spread only to peribronchial, hilar or intrapulmonary nodes. Tell: his nodes are mediastinal and subcarinal, N2, which pushes any cancer into stage 3."], ["Stage 3A", "Correct. Mediastinal or subcarinal node involvement (N2) automatically moves a cancer to stage 3, and a tumor no more than 5 cm that has spread to the mediastinal and subcarinal nodes is stage 3A. His tumor is only 2.5 cm, but the same-side mediastinal nodes set the stage."], ["Stage 3B", "Stage 3B with a tumor of 5 cm or less needs mediastinal or hilar nodes on the side without the tumor, or supraclavicular or scalene nodes. Tell: his nodes are on the same side as a 2.5-cm tumor, which is stage 3A."], ["Stage 4A", "Stage 4A needs spread to the other lung, the pleura or pericardium, the fluid around the lungs or heart, or one site outside the chest. Tell: he has no distant metastasis, and every stage 1 to 3 cancer is M0."]], "c": 1, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 22, 25, 26, 27, 29", "slot": "test finding", "lead": "classify"}, {"topic": "Paraneoplastic syndromes", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 47-year-old woman has months of episodes of skin flushing, watery diarrhea with cramps, and wheezing. Exam shows an enlarged liver and a heart murmur, and echocardiography shows thickening of the tricuspid and pulmonic valves. Computed tomography shows a mass in a bronchus. Which tumor is most likely?", "opts": [["Squamous cell carcinoma", "Squamous cell carcinoma is a central bronchial tumor whose particular paraneoplastic finding is hypercalcemia. Tell: flushing with diarrhea and tricuspid and pulmonic valve thickening is carcinoid syndrome from serotonin."], ["Adenocarcinoma", "Adenocarcinoma is usually peripheral, with cough and shortness of breath early and bone pain and weight loss later. Tell: episodic flushing, diarrhea and right-sided valve disease are the serotonin picture of a bronchial carcinoid."], ["Bronchial carcinoid", "Correct. Carcinoid syndrome, which in the lung arises mainly from a bronchial carcinoid, comes from release of serotonin by the tumor cells. Its features include cutaneous flushes, diarrhea, cramps, nausea and vomiting, cough, wheezing and dyspnea, hepatomegaly, and pulmonic and tricuspid valve thickening and stenosis, matching her picture."], ["Small cell carcinoma", "Small cell carcinoma has neuroendocrine paraneoplastic effects, but its classic syndrome is inappropriate antidiuretic hormone with low sodium and confusion. Tell: flushing, diarrhea and right-sided valve thickening are serotonin effects of carcinoid syndrome."]], "c": 2, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 4, 31, 46, 48", "slot": "manifestation", "lead": "diagnosis"}, {"topic": "Adenocarcinoma", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 58-year-old woman has a peripheral lung adenocarcinoma resected. The pathology report describes lepidic growth (tumor cells spreading along the alveolar lining). She asks which lung cells this cancer usually starts from. Which response is accurate?", "opts": [["Type I pneumocytes", "Type I pneumocytes are thin, squamous cells covering about 95% of the alveolar surface and carrying out gas exchange. Tell: adenocarcinoma arises from the other alveolar cell, the surfactant-secreting type II pneumocyte."], ["Neuroendocrine cells", "Neuroendocrine cells line the bronchioles and are tied to small cell carcinoma and its paraneoplastic syndromes. Tell: lepidic growth along the alveolar lining traces back to type II pneumocytes, the usual origin of adenocarcinoma."], ["Cells lining the bronchus", "Squamous cell carcinoma is the type that often originates in the bronchus, centrally. Tell: her tumor is peripheral with lepidic growth along the alveolar lining, which points to type II pneumocytes, the usual origin of adenocarcinoma."], ["Type II pneumocytes", "Correct. Type II pneumocytes are usually the origin of adenocarcinomas, starting with atypical adenomatous hyperplasia and growing first in situ, then enlarging by lepidic growth across the alveolar lining or invading the stroma. Type II pneumocytes are cuboidal, secrete surfactant and make up 60% of alveolar epithelial cells but only 3 to 5% of the surface."]], "c": 3, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 6, 8, 32, 39, 41", "slot": "etiology", "lead": "education"}, {"topic": "Squamous cell carcinoma", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 73-year-old man with chronic obstructive pulmonary disease and a 65 pack-year history has worsening cough, wheezing and hemoptysis. Computed tomography shows a central mass in a main bronchus with cavitation and a spiculated (spiky) border. Which noninvasive test can sometimes catch this tumor type, unlike the other lung cancers?", "opts": [["Sputum cytology", "Correct. A central, cavitating bronchial mass in a heavy smoker with cough, wheezing and hemoptysis is the picture of squamous cell carcinoma, which unlike the other lung cancers can be caught with sputum testing. Sputum cytology is not sensitive in general, so tissue biopsy is still the standard."], ["Serum calcium level", "A serum calcium can show hypercalcemia, a paraneoplastic finding seen particularly with squamous cell carcinoma, but it does not identify the tumor. Tell: the noninvasive test that can catch the tumor cells themselves is sputum cytology."], ["Mucicarmine stain", "A mucicarmine stain is done on biopsy tissue and shows mucin production, which relates to adenocarcinoma. Tell: it needs tissue, so it is not noninvasive, and mucin points to a peripheral tumor rather than a central bronchial one."], ["Chest radiograph", "A chest film is not a good tool for working up a suspicious nodule or symptoms. Tell: computed tomography has already shown the mass, and of the lung cancers it is squamous cell carcinoma that can be caught with sputum."]], "c": 0, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 14, 30, 32, 39, 40, 46", "slot": "initial test", "lead": "test"}, {"topic": "Small cell carcinoma and radiotherapy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 66-year-old woman with a newly diagnosed lung cancer is meeting a radiation oncologist. Her son has read that some lung cancers respond far better to radiotherapy than others, and he asks which type benefits most. Which response is accurate?", "opts": [["Small cell carcinoma", "Correct. Small cell carcinoma responds better to chemotherapy and radiation than the three non-small cell cancers, and radiation works best when it is in limited stage. Non-small cell cancers do not respond well to chemotherapy or radiation, which serve as adjuncts to surgery or for stage 4."], ["Adenocarcinoma", "Adenocarcinoma is a non-small cell cancer, and these respond poorly to chemotherapy and radiation, which are adjuncts to surgical resection. Tell: the cancer that responds better to radiation is small cell carcinoma."], ["Large cell carcinoma", "Large cell carcinoma has no standardized treatment because of its variety and rarity, and as a non-small cell type it responds poorly to radiation. Tell: radiotherapy benefits small cell carcinoma most, especially in limited stage."], ["Squamous cell carcinoma", "Squamous cell carcinoma is a non-small cell cancer, and these do not respond well to chemotherapy or radiation, which serve as adjuncts to surgery or for stage 4. Tell: the type singled out for a better response is small cell carcinoma."]], "c": 0, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 33, 35, 41", "slot": "first-line", "lead": "education"}, {"topic": "Screening and nodule follow-up", "io": "Identify medical care strategies for pulmonary nodules and neoplasms in the lecture topic list for the following populations. 7. adult 8. elderly", "q": "An 83-year-old woman who still smokes has a 60 pack-year history. She has no symptoms and no known lung nodule. Her daughter asks whether she should start yearly lung cancer screening scans. Which describes her eligibility?", "opts": [["Eligible every 5 years", "There is no 5-year screening interval: eligible people are screened annually with low-dose chest computed tomography. Tell: she is not eligible at all, because the age range stops at 80."], ["Not eligible because of age", "Correct. Screening is recommended for adults 55 to 80 with at least a 30 pack-year history who smoke now or quit within the last 15 years. Her 60 pack-years and current smoking would qualify, but at 83 she is beyond the upper age limit of 80."], ["Eligible as a current smoker", "Current smoking and 60 pack-years meet two criteria, but the age range ends at 80. Tell: at 83 she falls outside the screening window despite her heavy smoking."], ["Not eligible while she smokes", "Smoking now does not disqualify anyone: the criteria include current smokers and those who quit within the last 15 years. Tell: her age, 83, is what places her outside the range."]], "c": 1, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slide 18", "slot": "risk factors", "lead": "classify"}, {"topic": "Incidental nodules and presenting symptoms", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 62-year-old man with a 50 pack-year history and no cough or shortness of breath comes to the emergency department after a first seizure. He reports 3 weeks of morning headaches, vomiting and blurred vision, and fundoscopic exam shows papilledema. Chest computed tomography shows a 4-cm lung mass. Which site of spread is most likely?", "opts": [["Brain", "Correct. Patients may have no respiratory symptoms and present instead with complaints from metastasis. Brain metastasis causes headaches, vision changes, nausea, vomiting, syncope and seizures, and raised intracranial pressure shows as papilledema on fundoscopic exam, which is his exact picture beside a lung mass."], ["Liver", "Liver metastasis causes a dull right upper quadrant ache, firm hepatomegaly, poor appetite, jaundice and hepatic failure. Tell: seizures, headaches, blurred vision and papilledema are neurologic findings from raised intracranial pressure, not hepatic ones."], ["Bone", "Bone metastasis causes bone pain, fractures without falls and spinal cord compression. Tell: his findings center on raised intracranial pressure, with papilledema, headache and vomiting, which places the spread inside the skull."], ["Adrenal gland", "Adrenal spread causes adrenal insufficiency, with fatigue, dizziness, hypotension, hyponatremia and hyperkalemia. Tell: a seizure with papilledema and morning headaches signals a brain lesion, not hormone loss."]], "c": 0, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slide 13", "slot": "manifestation", "lead": "diagnosis"}, {"topic": "Incidental nodules and presenting symptoms", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 45-year-old woman who has never smoked and has no family history of lung cancer has a solitary 4-mm solid nodule found on computed tomography done for abdominal pain. She asks whether she should be worried about it. Which response is accurate?", "opts": [["It needs a biopsy now", "A biopsy is not the step for a nodule this small in a low-risk patient: anything smaller than 6 mm is generally not concerning unless the patient is at high risk. Tell: biopsy belongs to concerning nodules, such as those with intense uptake or a high probability of malignancy."], ["Size does not change concern", "Size is the first thing assessed, and 6 mm is the threshold: smaller nodules are generally not concerning, while nodules greater than 6 mm raise concern. Tell: her 4-mm nodule sits below that line in a patient without risk factors."], ["Its small size is reassuring", "Correct. The first evaluation of a nodule is its size, and anything smaller than 6 mm is generally not concerning unless the patient is at high risk. Most nodules are benign, mainly granulomas or hamartomas. She has no smoking or family history, so her 4-mm nodule falls in the low-concern group."], ["Most nodules are cancerous", "Most lung nodules are benign, mainly granulomas (inflammatory) or hamartomas (connective tissue growth). Tell: concern rises with size above 6 mm, upper lobe or hilar location, a spiky border or a high-risk patient, and her nodule has none of these."]], "c": 2, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 12, 16", "slot": "education", "lead": "education"}, {"topic": "Epidemiology, risk factors and spread", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 67-year-old man with a 50 pack-year smoking history has a mass arising in a bronchus, and the biopsy shows squamous cell carcinoma. His oncologist explains that lung carcinomas are sorted into two main groups that are treated differently. Into which group does his cancer fall?", "opts": [["Non-small cell lung carcinoma", "Correct. Lung carcinomas fall into two main types: small cell lung carcinoma (oat cell) and non-small cell lung carcinoma, which is subdivided by histology into adenocarcinoma, squamous cell carcinoma and large cell carcinoma. His squamous cell carcinoma therefore belongs to the non-small cell group."], ["Small cell lung carcinoma", "Small cell lung carcinoma, also called oat cell carcinoma, is the other main group, with small, fragile cells that lack nucleoli. Tell: squamous cell carcinoma is one of the three histologic subtypes of the non-small cell group, not part of small cell disease."], ["Carcinoid tumor", "Carcinoid tumors are listed among the mixed and rare types, apart from the two main groups, and in the lung they cause carcinoid syndrome from a bronchial carcinoid. Tell: his biopsy shows squamous cell carcinoma, a main non-small cell subtype."], ["Mixed adenosquamous type", "Adenosquamous carcinoma is a mixed type that combines two histologies. Tell: his biopsy shows squamous cell carcinoma alone, with no glandular component described, so it is classed simply as non-small cell lung carcinoma."]], "c": 0, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 4, 30", "slot": "differential", "lead": "classify"}, {"topic": "Incidental nodules and presenting symptoms", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 68-year-old man with known metastatic non-small cell lung carcinoma has 3 weeks of fatigue, weight loss and dizziness. His blood pressure is 88/56 mm Hg, serum sodium 128 mEq/L (normal 135-145) and serum potassium 5.9 mEq/L (normal 3.5-5.0). Which complication best explains these findings?", "opts": [["Brain metastasis", "Brain metastasis presents with headaches, vision changes, nausea, vomiting, syncope or seizures, and papilledema when intracranial pressure rises. Tell: none of those are described, and brain spread would not produce his hyperkalemia and low blood pressure."], ["Liver metastasis", "Liver metastasis causes a dull right upper quadrant ache, firm hepatomegaly, poor appetite, jaundice and eventually hepatic failure. Tell: his picture is hypotension with low sodium and high potassium, the electrolyte pattern of adrenal insufficiency."], ["Adrenal metastasis", "Correct. Metastatic spread can cause adrenal insufficiency, with fatigue, weight loss, dizziness, hypotension and electrolyte imbalances: hyponatremia together with hyperkalemia. His low blood pressure, sodium of 128 against a floor of 135, and potassium of 5.9 against a ceiling of 5.0 complete that picture."], ["Inappropriate antidiuretic hormone", "The syndrome of inappropriate antidiuretic hormone, typically from small cell carcinoma, retains water and lowers sodium and serum osmolality, causing confusion, seizures and ataxia. Tell: it does not explain his high potassium and hypotension, which point to adrenal insufficiency."]], "c": 2, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 13, 48", "slot": "complication", "lead": "complication"}, {"topic": "Lung cancer staging", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 70-year-old man has a biopsy-proven 3-cm adenocarcinoma in the left lower lobe and a new left pleural effusion. Analysis of the fluid shows malignant cells. There is no spread outside the chest. Which stage is his cancer?", "opts": [["Stage 2B", "Stage 2B covers tumors of more than 5 cm up to 7 cm without nodes, or smaller tumors with hilar node spread, all without metastasis. Tell: malignant cells in his pleural fluid are distant metastasis, and every stage 1 to 3 cancer is M0."], ["Stage 3B", "Stage 3B rests on node spread, to supraclavicular or scalene nodes or the far side's mediastinal or hilar nodes, or same-side mediastinal nodes with a larger tumor, and has no metastasis. Tell: a malignant effusion is M1a, which leaves stage 3 behind."], ["Stage 4A", "Correct. A malignant pleural effusion is scored M1a, distant metastasis, along with a tumor in the other lung or a pleural or pericardial nodule. Stage 4A covers spread into the other lung, the lung's lining, the heart's lining or the fluid around the lungs or heart, or a single site outside the chest. His malignant effusion makes him stage 4A whatever the tumor size."], ["Stage 4B", "Stage 4B is spread to multiple sites outside the chest, such as the adrenal gland and bones. Tell: his spread is into the pleural fluid within the chest, with nothing outside it, which is stage 4A."]], "c": 2, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 22, 25, 29", "slot": "test finding", "lead": "classify"}, {"topic": "Diagnostic workup and biopsy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 60-year-old man with a 40 pack-year history has a concerning 2-cm peripheral nodule on computed tomography. He is afraid of needles and asks whether a sputum test could rule out cancer instead of a biopsy. Which response is accurate?", "opts": [["A negative result rules it out", "A negative sputum test cannot rule out cancer, because sputum cytology is not sensitive. Tell: the reliable answer comes from tissue, obtained by bronchoscopy, a transthoracic approach or thoracoscopy depending on the nodule's location."], ["It works best for peripheral tumors", "Sputum testing catches central bronchial tumors, mainly squamous cell carcinoma, not peripheral ones. Tell: adenocarcinoma and large cell carcinoma sit in the periphery and are not amenable to early detection, so a peripheral nodule is the worst case for sputum."], ["It can stage the cancer", "Staging uses computed tomography for location and size, positron emission tomography for lymph involvement and biopsy for tumor type. Tell: sputum cytology plays no part in staging, and it is not sensitive enough even for diagnosis."], ["Sputum cytology is not sensitive", "Correct. Sputum cytology is listed in the workup but is not sensitive, so a negative result cannot rule out cancer. It is mainly useful for squamous cell carcinoma, a central bronchial tumor that can be caught with sputum testing, while peripheral tumors such as adenocarcinoma and large cell carcinoma are not. Biopsy classes the tumor type."]], "c": 3, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 14, 22, 30, 40", "slot": "initial test", "lead": "test"}, {"topic": "Incidental nodules and presenting symptoms", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 65-year-old woman with lung adenocarcinoma diagnosed 6 months ago has sudden, severe mid-back pain that began during a coughing fit. She has not fallen. Imaging shows a fresh vertebral fracture. Which complication best explains the fracture?", "opts": [["Liver metastasis", "Liver metastasis brings a dull right upper quadrant ache, firm hepatomegaly, poor appetite and jaundice. Tell: a spinal fracture after a cough with no fall points to bone weakened by metastasis, not liver involvement."], ["Adrenal metastasis", "Adrenal involvement causes adrenal insufficiency: fatigue, weight loss, dizziness, hypotension, hyponatremia and hyperkalemia. Tell: none of that explains a vertebral fracture from coughing, which reflects bone metastasis."], ["Bone metastasis", "Correct. Lung cancer spreads to bone, which can be anywhere, including the spine. Bone metastasis causes bone pain, fractures without a fall, even a spinal fracture from coughing, and spinal cord compression with neurologic dysfunction. A vertebral fracture from a cough in a patient with lung adenocarcinoma fits exactly."], ["Brain metastasis", "Brain metastasis presents with headaches, vision changes, nausea, vomiting, syncope or seizures. Tell: her complaint is back pain and a vertebral fracture from coughing, which is the bone picture, not a brain one."]], "c": 2, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slide 13", "slot": "complication", "lead": "complication"}, {"topic": "Squamous cell carcinoma", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 68-year-old man who still smokes and has a 70 pack-year history has 2 months of cough, wheezing and hemoptysis. Computed tomography shows a large, cavitated central mass arising from a bronchus. A metabolic panel shows a serum calcium of 12.8 mg/dL (normal 8.5-10.5). Which lung cancer type is most likely?", "opts": [["Adenocarcinoma", "Adenocarcinoma usually forms in the mid-lung and periphery, often near scars. Tell: his tumor is central and bronchial, with hypercalcemia, the pattern of squamous cell carcinoma."], ["Squamous cell carcinoma", "Correct. Squamous cell carcinoma has the strongest association with smoking, sits centrally and often originates in a bronchus, cavitates frequently, and causes cough, wheezing and hemoptysis once it obstructs the airway. Hypercalcemia is a paraneoplastic finding seen particularly with squamous cell carcinoma, and his calcium of 12.8 exceeds the 10.5 ceiling."], ["Small cell carcinoma", "Small cell carcinoma is also central and can cavitate once large, but its classic paraneoplastic picture is low sodium from inappropriate antidiuretic hormone, not high calcium. Tell: hypercalcemia with a central cavitated bronchial mass points to squamous cell carcinoma."], ["Large cell carcinoma", "Large cell carcinoma also forms a large cavitated mass, but in the periphery, not arising from a bronchus. Tell: cavitation alone does not decide the type; the central bronchial origin and hypercalcemia point to squamous cell carcinoma."]], "c": 1, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 14, 30, 31, 33, 39, 41, 46, 48", "slot": "manifestation", "lead": "diagnosis"}, {"topic": "Diagnostic workup and biopsy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 68-year-old man who is fit for surgery has an image-guided biopsy of a 22-mm spiculated (spiky) upper-lobe nodule that shows no malignancy. The nodule has enlarged on serial scans, and his team is concerned the biopsy missed the tumor. Which is the most appropriate next step?", "opts": [["Reassure and discharge", "Discharge treats one negative biopsy as proof, but a biopsy can miss the tumor. Tell: his nodule is spiky, in the upper lobe and enlarging, all concerning features, and a feared false negative leads to repeat biopsy or excision."], ["Annual screening scans", "Screening is for high-risk people without symptoms or a known nodule. Tell: he already has an enlarging, spiky nodule with a possibly false-negative biopsy, so the next move is repeat biopsy or excision."], ["Chemotherapy now", "Chemotherapy without a confirmed cancer or a stage skips the diagnosis entirely, and for non-small cell cancer it is an adjunct or stage 4 therapy. Tell: no malignancy has been proven yet, so tissue must come first, by repeat biopsy or excision."], ["Repeat biopsy or excision", "Correct. When an image-guided biopsy does not confirm malignancy, the pathway is to consider a repeat biopsy or to proceed to excision if there is concern about a false-negative biopsy. His spiky border, upper-lobe location and growth over time are all concerning features, so a negative result does not end the workup."]], "c": 3, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 15, 16, 35", "slot": "escalation", "lead": "next step"}, {"topic": "Small cell carcinoma and radiotherapy", "io": "Identify medical care strategies for pulmonary nodules and neoplasms in the lecture topic list for the following populations. 7. adult 8. elderly", "q": "A 70-year-old man had chest radiotherapy for small cell lung carcinoma 4 years ago and remains free of cancer. He now has progressive exertional dyspnea, and computed tomography shows scarring confined to the treated area of lung. Which late effect of radiotherapy explains his symptoms?", "opts": [["Lymphedema", "Lymphedema and fluid retention follow damage to the lymphatic system, classically in the axilla. Tell: they cause limb swelling, not scarring of the treated lung with exertional dyspnea."], ["Neuropathy", "Neuropathy is a chronic effect of radiotherapy on nerves. Tell: nerve damage would not show as scarring on lung imaging; his findings point to pulmonary fibrosis in the radiation field."], ["Pulmonary fibrosis", "Correct. Chronic effects of lung radiotherapy include pulmonary fibrosis and scarring of the affected tissues, as well as cardiovascular fibrosis, lymphedema and neuropathy. Scarring limited to the treated area years after radiation, with progressive exertional dyspnea, is radiation pulmonary fibrosis."], ["Skin erythema", "Erythema and hyperpigmentation of the skin are acute, localized effects during treatment. Tell: his problem began years later and lies in the lung, with scarring in the treated area, a chronic effect."]], "c": 2, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slide 45", "slot": "complication", "lead": "complication"}, {"topic": "Benign versus concerning nodules", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 63-year-old woman with a 35 pack-year history has a 9-mm solid nodule in the right upper lobe found on computed tomography for abdominal pain. Which additional feature of the nodule would most raise concern for malignancy?", "opts": [["Popcorn calcification", "Popcorn-looking calcification points to a hamartoma, a benign connective tissue growth. Tell: it is a benign pattern, so it would lower concern; the concerning border is spiky or lobulated."], ["Internal fat", "Fatty tissue inside a nodule points to a hamartoma and is a benign feature. Tell: fat reassures rather than alarms, while a spiculated border is a classic sign of a concerning nodule."], ["Central calcification", "Central calcification is a benign pattern, typical of a healed granuloma. Tell: malignant calcification patterns are eccentric or stippled ground-glass, and a spiky border is the feature that raises concern most here."], ["Spiculated border", "Correct. Concerning nodules are greater than 6 mm, sit in the upper lobes or hilar structures, have a spiculated appearance (spikes, deviations or lobulations in the border), number more than 3, enlarge over time, enhance with contrast, appear cavitated or nonsolid, or occur in high-risk patients. A spiky border would add to her size, location and smoking."]], "c": 3, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 16, 21", "slot": "test finding", "lead": "test"}, {"topic": "Paraneoplastic syndromes", "io": "Discuss relationship between small cell lung cancer and paraneoplastic syndromes.", "q": "A 70-year-old woman with known small cell lung carcinoma has a serum sodium of 124 mEq/L (normal 135-145) and low serum osmolality from the syndrome of inappropriate antidiuretic hormone. Her family asks why her legs and lungs show no swelling if her body is holding on to too much water. Which response is accurate?", "opts": [["Her sodium is actually high", "Her sodium is 124, well below the normal floor of 135, and her osmolality is low. Tell: water retention dilutes the sodium; the lack of edema comes from the insidious course, not from a high sodium."], ["It develops slowly and insidiously", "Correct. In small cell lung cancer, neuroendocrine tumor cells produce excess antidiuretic hormone (vasopressin), and the body retains too much water, lowering serum sodium and osmolality. The result is confusion, seizures, ataxia and other neurologic dysfunction, but no signs of peripheral or pulmonary edema, because the process is insidious over time."], ["She must be dehydrated instead", "Her low sodium and low osmolality come from retaining too much water under excess antidiuretic hormone, the opposite of dehydration. Tell: the absence of edema reflects the slow, insidious course, not a fluid deficit."], ["Swelling will appear within days", "Edema is not part of this picture: the syndrome produces neurologic dysfunction without peripheral or pulmonary edema, because it develops insidiously. Tell: watch instead for confusion, seizures and ataxia as the sodium falls."]], "c": 1, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slide 48", "slot": "manifestation", "lead": "education"}, {"topic": "Epidemiology, risk factors and spread", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 66-year-old man with a 45 pack-year smoking history has a newly diagnosed squamous cell carcinoma forming a mass near the right hilum, with spread to the regional lymph nodes. He asks where the cancer is expected to spread outside the chest. Which sites are expected?", "opts": [["Liver, brain and bone", "Correct. Lung cancer proliferates locally, spreads to regional lymph nodes and then to distant organs, named as the liver, brain and bone, as angiogenesis lets it exceed its boundaries. Each site can announce itself without a respiratory symptom: a right upper quadrant ache, headaches or seizures, bone pain or fractures."], ["Small intestine and bowel", "The small intestine and bowel are unusual metastatic sites characteristic of large cell carcinoma, a peripheral tumor. Tell: his tumor is a hilar squamous cell carcinoma, so its expected distant sites are the usual ones for lung cancer: liver, brain and bone."], ["Heart and great vessels", "Invasion of the heart or great vessels is local growth that classes the primary tumor as T4, not distant metastasis to another organ. Tell: the question asks about spread outside the chest, and distant lung cancer metastases go to the liver, brain and bone."], ["Scalene and supraclavicular nodes", "Scalene and supraclavicular nodes are lymph node involvement, scored N3, which moves the cancer to stage 3 but is not organ metastasis. Tell: after the regional nodes, lung cancer seeds distant organs, named as the liver, brain and bone."]], "c": 0, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 9, 13, 22, 25, 33", "slot": "complication", "lead": "complication"}, {"topic": "Epidemiology, risk factors and spread", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 61-year-old woman who has never smoked is diagnosed with lung cancer. For 30 years she has lived in a house whose basement tested high for radon, and she has no other known exposures. She asks how she could develop lung cancer without smoking. Which response is accurate?", "opts": [["Genetics is the sole cause", "Genetics is one listed risk factor among several, beside radiation and radon, air pollution, toxins, infections, diet and alcohol. Tell: nothing in her history points to an inherited cause, while 30 years of radon exposure is documented."], ["Radon exposure is a risk factor", "Correct. Smoking is implicated in 85 to 90% of lung cancers, not all of them, and radiation and radon exposure are listed among the other risk factors, beside air pollution, environmental and chemical toxins, tuberculosis or human immunodeficiency virus infection, genetics, diet and alcohol. Her 30 years of radon exposure is a recognized cause."], ["Lung cancer requires smoking", "Smoking is implicated in 85 to 90% of cases, which leaves a share of lung cancers in people who never smoked. Tell: radon, radiation, air pollution, chemical toxins and genetics are all listed risk factors beyond tobacco, and she has a long radon exposure."], ["Second-hand smoke explains it", "Second-hand smoke is a recognized contributor, but she reports no exposure to other people's smoke or any other exposure besides radon. Tell: the exposure actually documented in her history is radon in her home, a listed risk factor in its own right."]], "c": 1, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slide 3", "slot": "risk factors", "lead": "education"}, {"topic": "Incidental nodules and presenting symptoms", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 34-year-old woman who has never smoked and has no other lung cancer risk factors has a new, solid 9-mm nodule seen on computed tomography done after a car crash. Her clinician judges the probability of malignancy to be very low. Which is the most appropriate next step?", "opts": [["Standard staging evaluation", "Standard stage evaluation, with or without fludeoxyglucose positron emission tomography, is the branch for a high probability of malignancy. Tell: her probability was judged very low, so she enters surveillance rather than staging."], ["Thoracoscopic resection", "Video-assisted thoracoscopic surgery with resection is reserved for a high probability without metastases, or for moderate or intense uptake on positron emission tomography. Tell: a very low probability nodule is watched with serial scans, not removed."], ["Surveillance computed tomography", "Correct. For a new solid nodule of 8 to 30 mm, the first move is to judge the clinical probability of malignancy. A very low probability leads to computed tomography surveillance at 3 to 6, 9 to 12 and 18 to 24 months, using low-dose, thin-section, noncontrast scans, rather than staging, biopsy or resection."], ["No further imaging", "Dropping follow-up does not fit a solid nodule of 8 to 30 mm, even at very low probability: the pathway still tracks it with surveillance scans out to 18 to 24 months. Tell: a nodule of this size is followed with serial low-dose computed tomography, not dismissed."]], "c": 2, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slide 11", "slot": "first-line", "lead": "next step"}, {"topic": "Benign versus concerning nodules", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 46-year-old woman who has never smoked has a small, flat nodular opacity lying along the minor fissure on computed tomography done after chest trauma. She asks whether it could be cancer. Which response is accurate?", "opts": [["Fissure location signals cancer", "This reverses the rule: a nodule close to a fissure usually indicates something benign. Tell: concerning locations are the upper lobes or hilar structures, and an opacity along the minor fissure is typical of a linear scar or lymphoid tissue."], ["It needs removal now", "Resection is reserved for nodules with a high probability of malignancy or intense uptake on positron emission tomography. Tell: an opacity hugging the minor fissure in a never-smoker is a typical benign finding."], ["It is a hamartoma", "A hamartoma is a smoothly marginated solid nodule with internal fat and popcorn calcification. Tell: a flat opacity lying along the minor fissure, with no fat or calcification described, is typical of a linear scar or lymphoid tissue."], ["Likely scar or lymphoid tissue", "Correct. A nodule close to a fissure usually indicates something benign, and a nodular opacity adjacent to the minor fissure is typical of a linear scar or lymphoid tissue. She is a never-smoker without other risk factors, which also lowers concern."]], "c": 3, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 16, 21", "slot": "test finding", "lead": "education"}, {"topic": "Diagnostic workup and biopsy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 64-year-old woman with a 35 pack-year history has 2 months of persistent cough and hemoptysis. A chest film shows a 2-cm opacity in the right upper lobe. Which next study is least useful in her workup?", "opts": [["Metabolic panel with calcium", "A comprehensive metabolic panel including calcium belongs to the laboratory workup, along with a complete blood count with differential and alkaline phosphatase. Tell: calcium matters because hypercalcemia occurs particularly with squamous cell carcinoma, so this test is useful."], ["Repeat chest radiograph", "Correct. A chest film is not a good tool for working up a suspicious nodule or symptoms: it may be the first image to show a nodule, but otherwise it serves to rule out other pathology. Her symptoms and opacity call for computed tomography with contrast of the chest and upper abdomen, then biopsy, with laboratory studies."], ["Contrast chest computed tomography", "Computed tomography with contrast of the chest and upper abdomen is the standard study for a suspicious nodule or symptoms, followed by biopsy or intervention. Tell: this is the scan her workup needs most, the opposite of the least useful study."], ["Biopsy guided by nodule location", "Tissue is obtained by bronchoscopy, a transthoracic approach or thoracoscopy depending on the nodule's location, and it can be guided by computed tomography. Tell: biopsy classes the tumor type and is a core part of her workup, not something to skip."]], "c": 1, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 14, 46", "slot": "avoid", "lead": "avoid"}, {"topic": "Lung cancer staging", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 63-year-old woman has a biopsy-proven 2-cm non-small cell carcinoma in the right upper lobe. On exam a firm right supraclavicular lymph node is palpable, and its biopsy shows the same cancer. Imaging shows no metastasis to other organs. Which stage is her cancer?", "opts": [["Stage 2B", "Stage 2B with a small tumor allows spread only to peribronchial, hilar or intrapulmonary nodes on the same side. Tell: a supraclavicular node is N3, and N2 or N3 involvement automatically moves a cancer to stage 3."], ["Stage 3A", "Stage 3A with a small tumor means spread to the same-side mediastinal or subcarinal nodes. Tell: a supraclavicular node reaches farther, N3, which places a tumor of 5 cm or less in stage 3B."], ["Stage 3B", "Correct. Spread to any supraclavicular or scalene node is N3, which moves a cancer to stage 3. With a tumor no more than 5 cm, spread to supraclavicular or scalene nodes, or to mediastinal or hilar nodes on the side without the tumor, is stage 3B. Her 2-cm tumor with a positive supraclavicular node fits."], ["Stage 4A", "Stage 4A is spread to the other lung, the pleura or pericardium, the fluid around the lungs or heart, or one site outside the chest. Tell: a supraclavicular node counts as lymph node involvement, not distant metastasis, and no other organ is involved."]], "c": 2, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 22, 25, 27, 29", "slot": "test finding", "lead": "classify"}, {"topic": "Non-small cell treatment and targeted therapy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary neoplasms: 2. Pulmonary nodule 3. Lung cancer (bronchogenic carcinoma) a. Non-small-cell lung cancer (NSCLC) b. Small-cell lung cancer (SCLC) c. Lung neuroendocrine (carcinoid) tumors 4. Paraneoplastic Neoplasm Associated Syndromes a. SIADH b. Hypercalcemia", "q": "A 66-year-old man with a 3.5-cm non-small cell lung carcinoma, no lymph node involvement and no metastasis (stage 1B) is fit for surgery. He would prefer to avoid an operation and asks for chemotherapy and radiation instead. Which plan should be avoided as his primary treatment?", "opts": [["Chemoradiation without surgery", "Correct. Stage 1 non-small cell lung cancer is treated with surgical resection when the patient can tolerate it, and chemotherapy and radiation serve only as adjuncts to surgery or for stage 4, because non-small cell cancers respond poorly to them. For a fit patient with stage 1B disease, replacing surgery with chemoradiation gives up the standard treatment."], ["Lobectomy", "Lobectomy, removing the entire lobe, is one of the standard resections for stage 1 disease in a patient who can tolerate surgery. Tell: he is fit, so this is the treatment to pursue, not to avoid."], ["Wedge or segment resection", "Wedge or segment resection, removing a smaller or larger portion of the lobe, is a standard resection chosen by size and lymph involvement. Tell: resection is the recommended treatment for his stage, so it is appropriate."], ["Preoperative lung function tests", "Pulmonary function tests are part of the workup, and a patient must be able to tolerate surgery, surviving and recovering from it. Tell: checking his lung function before resection supports the standard plan rather than conflicting with it."]], "c": 0, "cite": "Pulmonary Nodules and Neoplasms 2026.pptx, Slides 14, 35", "slot": "avoid", "lead": "avoid"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll" && window.startExamModeTour) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

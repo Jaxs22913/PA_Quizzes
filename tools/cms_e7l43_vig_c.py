@@ -1,0 +1,412 @@
+# -*- coding: utf-8 -*-
+"""Lecture 43 vignette pool C -- Pulmonary Nodules and Neoplasms (Gray): central versus peripheral cancers
+(slide 30), adenocarcinoma (31-32), large cell carcinoma (33-34), non-small cell treatment (35-38), squamous cell
+carcinoma (39-40), small cell carcinoma and radiotherapy (41-45), and paraneoplastic syndromes (46-48).
+
+KEYS ARE WRITTEN SHORT ON PURPOSE -- detail lives in the explanation.
+EXPLANATIONS follow tools/question_writing/EXPLAIN_DEEP.md: the key names the decisive clue and the slide fact;
+each wrong choice says why it fails for THIS patient, the replacing fact, and a "Tell:".
+
+Narration scope (cms_e7l43_scope.py):
+  Location: small cell and squamous central, adenocarcinoma and large cell peripheral (slide 30). Cavitation is
+  never the only clue to a cell type (slides 16, 33, 39 and 41 all show it): every cell-type stem adds location,
+  histology, a stain, a paraneoplastic laboratory value or the metastatic pattern.
+  Treatment by stage: stage 1-2 = surgical resection (slide 35 text and table agree); stage 4 = chemotherapy with
+  resection only for a solitary metastasis (table). Stage 3A/3B treatment is never asked (text against table).
+  Targeted therapy is asked only as "tailor therapy to the tumor"; no marker, gene percentage, drug or brand.
+  Whether squamous cell carcinoma receives immunotherapy is never asked (slides 37-38 against 40), and small cell
+  immunotherapy is never keyed as having no role (slide 41 against 43).
+  Prophylactic cranial irradiation (slide 43): one "what instead" item with impaired neurocognitive function and
+  poor performance status (the flowchart footnote); the surveillance schedule is never used.
+  Paraneoplastic attribution: hypercalcemia -> squamous; inappropriate antidiuretic hormone -> small cell;
+  carcinoid syndrome -> bronchial carcinoid. Lambert-Eaton is keyed by its slide 47 mechanism only; the slide 46
+  central/peripheral labels are never used. The hyponatremia-with-hyperkalemia trap (adrenal metastasis) lives in
+  pool A.
+"""
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _cmse3_q import Q
+from cms_e7l43_scope import *
+
+
+def S(topic, io, q, opts, cite, slot):
+    d = Q(topic, io, q, opts, cite); d["slot"] = slot; return d
+
+
+def V(topic, io, q, opts, cite, slot, lead):
+    d = S(topic, io, q, opts, cite, slot); d["lead"] = lead; return d
+
+
+def ORD(d, asc):
+    d["ordered"] = True; d["asc"] = asc; return d
+
+
+QUESTIONS = [
+
+# ---------------------------------------------------------------- central versus peripheral (slide 30)
+V(T_LOCATION, IO_A,
+  "A 71-year-old man with a 60 pack-year history has 2 months of cough, wheezing and blood-streaked sputum. Computed tomography shows a central mass arising in the right main bronchus, and sputum cytology shows malignant cells. Which lung cancer type is most likely?",
+  [["Squamous cell carcinoma",
+    "Correct. Squamous cell carcinoma sits centrally and often originates in a bronchus, has the strongest association with smoking, and causes cough, wheezing and hemoptysis once it obstructs the bronchus. Unlike the other lung cancers it can be caught with sputum testing, so malignant cells in his sputum from a central bronchial mass point to it."],
+   ["Small cell carcinoma",
+    "Small cell carcinoma is also central, but it infiltrates the mucosa and is usually metastatic by the time of diagnosis. Tell: catching the tumor on sputum cytology is the feature of squamous cell carcinoma, the central bronchial tumor diagnosable from sputum.", "competing diagnosis"],
+   ["Adenocarcinoma",
+    "Adenocarcinoma usually forms in the mid-lung and periphery, often near peripheral scars, and is not amenable to early detection. Tell: his mass is central in a main bronchus and shed malignant cells into his sputum.", "competing diagnosis"],
+   ["Large cell carcinoma",
+    "Large cell carcinoma forms in the periphery as a large cavitated mass and spreads to unusual sites such as the bowel. Tell: a central bronchial mass caught on sputum cytology points to squamous cell carcinoma instead.", "competing diagnosis"]],
+  CS(30, 33, 39, 40), "manifestation", "diagnosis"),
+
+V(T_LOCATION, IO_A,
+  "A 49-year-old woman who has never smoked has a persistent dry cough and mild shortness of breath without fever or other signs of infection. Computed tomography shows a peripheral nodule beside an old scar in the right upper lobe, and the biopsy tissue stains positive for mucin. Which lung cancer type is most likely?",
+  [["Adenocarcinoma",
+    "Correct. Adenocarcinoma is the most common lung cancer, forms in the mid-lung and periphery, and is frequently associated with peripheral scars; smoking is not always present. A mucicarmine stain showing mucin production is related to adenocarcinoma, and persistent cough and shortness of breath without infection are common presenting complaints."],
+   ["Large cell carcinoma",
+    "Large cell carcinoma is also peripheral, but it lacks specific markers and negative mucin staining points to it. Tell: her tissue stained positive for mucin and the nodule sits beside a peripheral scar, both adenocarcinoma features.", "competing diagnosis"],
+   ["Squamous cell carcinoma",
+    "Squamous cell carcinoma is central, often arising in a bronchus, with the strongest association with smoking. Tell: she has never smoked and her nodule is peripheral, beside a scar, with mucin on staining.", "competing diagnosis"],
+   ["Small cell carcinoma",
+    "Small cell carcinoma is central, infiltrates the mucosa and is usually metastatic by diagnosis, with small, fragile cells. Tell: a peripheral nodule in a never-smoker with mucin-positive tissue does not fit it.", "competing diagnosis"]],
+  CS(30, 31, 32, 33, 39, 41), "manifestation", "diagnosis"),
+
+V(T_LOCATION, IO_A,
+  "A 64-year-old man with a 50 pack-year history is diagnosed with small cell lung carcinoma after presenting with bone pain. Computed tomography shows a mass beside the left hilum. His wife asks where this cancer usually arises and why it was not caught earlier. Which response is accurate?",
+  [["Central; often spread at diagnosis",
+    "Correct. Small cell carcinoma has a central location and infiltrates the mucosa, so it develops insidiously, and over 70% of patients are metastatic, to the liver, bone or brain, before detection. His hilar mass and bone pain fit that pattern: central, and already spread when found."],
+   ["Peripheral; easy to find early",
+    "Peripheral location belongs to adenocarcinoma and large cell carcinoma, and even those are not amenable to early detection. Tell: small cell carcinoma is central, beside the hilum as in his scan, and is usually metastatic when found.", "reversed direction or value"],
+   ["Central; rarely spreads early",
+    "The location is right but the behavior is reversed: small cell carcinoma develops insidiously, and over 70% of patients are metastatic before detection. Tell: his presenting complaint was bone pain, a sign that spread had already happened.", "reversed direction or value"],
+   ["Peripheral; caught by sputum",
+    "Sputum testing catches squamous cell carcinoma, a central bronchial tumor, while peripheral tumors are the hardest to detect early. Tell: small cell carcinoma is central, and its problem is early, silent metastasis.", "adjacent fact"]],
+  CS(30, 40, 41), "prognosis", "education"),
+
+# ---------------------------------------------------------------- adenocarcinoma (slides 31-32)
+V(T_ADENO, IO_A,
+  "A 62-year-old woman who quit smoking 30 years ago has a 2.4-cm spiculated (spiky) nodule in the periphery of the left upper lobe that involves the pleura. Biopsy shows a non-small cell carcinoma. Which stain result would support adenocarcinoma?",
+  [["Mucin on mucicarmine stain",
+    "Correct. Histology may include a mucicarmine stain: mucin production is related to adenocarcinoma, while negative staining may point to large cell carcinoma. A suspicious solid spiculated nodule in the periphery that involves the pleura is the picture of an invasive adenocarcinoma, which grows from type II pneumocytes."],
+   ["No mucin on mucicarmine stain",
+    "A negative mucicarmine stain may point to large cell carcinoma, the non-small cell type with no specific markers. Tell: adenocarcinoma is the mucin producer, so a positive stain, not a negative one, supports it.", "reversed direction or value"],
+   ["Small cells without nucleoli",
+    "Small cells that lack nucleoli, with a high nuclear-to-cytoplasm ratio in crushed, fragile tissue, describe small cell carcinoma. Tell: her biopsy already shows a non-small cell carcinoma, and adenocarcinoma is supported by mucin.", "competing diagnosis"],
+   ["Large anaplastic cells",
+    "Large, anaplastic, undifferentiated cells about three times normal size describe large cell carcinoma, a diagnosis of exclusion. Tell: adenocarcinoma is identified by mucin production on a mucicarmine stain, not by anaplastic cells.", "competing diagnosis"]],
+  CS(32, 33, 34, 42), "test finding", "test"),
+
+V(T_ADENO, IO_A,
+  "A 58-year-old woman has a peripheral lung adenocarcinoma resected. The pathology report describes lepidic growth (tumor cells spreading along the alveolar lining). She asks which lung cells this cancer usually starts from. Which response is accurate?",
+  [["Type II pneumocytes",
+    "Correct. Type II pneumocytes are usually the origin of adenocarcinomas, starting with atypical adenomatous hyperplasia and growing first in situ, then enlarging by lepidic growth across the alveolar lining or invading the stroma. Type II pneumocytes are cuboidal, secrete surfactant and make up 60% of alveolar epithelial cells but only 3 to 5% of the surface."],
+   ["Type I pneumocytes",
+    "Type I pneumocytes are thin, squamous cells covering about 95% of the alveolar surface and carrying out gas exchange. Tell: adenocarcinoma arises from the other alveolar cell, the surfactant-secreting type II pneumocyte.", "adjacent fact"],
+   ["Neuroendocrine cells",
+    "Neuroendocrine cells line the bronchioles and are tied to small cell carcinoma and its paraneoplastic syndromes. Tell: lepidic growth along the alveolar lining traces back to type II pneumocytes, the usual origin of adenocarcinoma.", "adjacent fact"],
+   ["Cells lining the bronchus",
+    "Squamous cell carcinoma is the type that often originates in the bronchus, centrally. Tell: her tumor is peripheral with lepidic growth along the alveolar lining, which points to type II pneumocytes, the usual origin of adenocarcinoma.", "adjacent fact"]],
+  CS(6, 8, 32, 39, 41), "etiology", "education"),
+
+V(T_ADENO, IO_A,
+  "A 61-year-old man with a 40 pack-year history was diagnosed with peripheral lung adenocarcinoma after months of cough and chest tightness. He asks which new symptoms would suggest the cancer has advanced. Which findings would signal later disease?",
+  [["Bone pain and weight loss",
+    "Correct. Adenocarcinoma is mostly asymptomatic early and usually presents first with respiratory symptoms: cough, shortness of breath, chest tightness or pain, hemoptysis and fatigue. Later signs are bone pain, weight loss and other systemic, paraneoplastic issues, and two thirds of patients present only once the disease is advanced or metastatic."],
+   ["Cough and chest tightness",
+    "Cough and chest tightness are the early respiratory symptoms that usually come first. Tell: these brought him to diagnosis; later disease shows itself with bone pain, weight loss and other systemic issues.", "wrong stage or severity"],
+   ["Hemoptysis and fatigue",
+    "Hemoptysis and fatigue are listed among the early respiratory presentations of adenocarcinoma. Tell: the later signs are systemic, bone pain and weight loss, as the cancer spreads.", "wrong stage or severity"],
+   ["Small bowel metastases",
+    "Metastasis to the small intestine and bowel is the unusual pattern of large cell carcinoma. Tell: his tumor is adenocarcinoma, whose later signs are bone pain, weight loss and other systemic issues.", "adjacent fact"]],
+  CS(31, 33), "complication", "complication"),
+
+V(T_ADENO, IO_A,
+  "A 64-year-old woman has a resected peripheral spiculated (spiky) adenocarcinoma. Pathology shows the tumor has grown beyond the stroma into the pleura and nearby blood vessels and has formed its own blood supply. How is this adenocarcinoma classified?",
+  [["Invasive adenocarcinoma",
+    "Correct. Adenocarcinomas start as atypical adenomatous hyperplasia and grow in situ, then enlarge by lepidic growth or invade the stroma as minimally invasive adenocarcinoma. As they continue to grow, invading the pleura and then the vasculature or forming their own vasculature, they become invasive adenocarcinomas, as hers is."],
+   ["Minimally invasive adenocarcinoma",
+    "Minimally invasive adenocarcinoma has begun to invade the stroma but has not reached the pleura or vessels. Tell: her tumor has invaded the pleura and blood vessels and made its own blood supply, the definition of invasive adenocarcinoma.", "wrong stage or severity"],
+   ["Adenocarcinoma in situ",
+    "In situ disease is the early phase, when the tumor grows in place before invading the stroma. Tell: invasion into the pleura and vessels places her tumor two steps beyond in situ disease.", "wrong stage or severity"],
+   ["Atypical adenomatous hyperplasia",
+    "Atypical adenomatous hyperplasia is the starting lesion from type II pneumocytes, before in situ growth. Tell: a tumor invading pleura and vessels sits at the far end of the sequence, invasive adenocarcinoma.", "wrong stage or severity"]],
+  C(32), "test finding", "classify"),
+
+# ---------------------------------------------------------------- large cell carcinoma (slides 33-34)
+V(T_LARGE, IO_A,
+  "A 68-year-old man with a 50 pack-year history has a large, cavitated mass in the periphery of the left upper lobe. Weeks later he develops crampy abdominal pain, and imaging shows a metastasis in the small intestine. Biopsy of the lung mass shows undifferentiated cells about three times normal size that do not stain for mucin. Which lung cancer type is most likely?",
+  [["Large cell carcinoma",
+    "Correct. Large cell carcinoma forms in the periphery, shows a large cavitated mass on computed tomography, and has anaplastic, undifferentiated cells about 3 times larger than baseline that lack specific markers. Negative mucicarmine staining may point to it, and its spread to unusual sites such as the small intestine and bowel is characteristic."],
+   ["Adenocarcinoma",
+    "Adenocarcinoma is also peripheral, but it produces mucin, shown on a mucicarmine stain. Tell: his tumor cells are mucin-negative, very large and undifferentiated, and the cancer has reached the small intestine, an unusual site typical of large cell carcinoma.", "competing diagnosis"],
+   ["Squamous cell carcinoma",
+    "Squamous cell carcinoma cavitates too, but it sits centrally and often arises in a bronchus. Tell: his mass is peripheral and has spread to the small intestine, a pattern specific to large cell carcinoma.", "competing diagnosis"],
+   ["Small cell carcinoma",
+    "Small cell carcinoma is central, with small cells that lack nucleoli. Tell: his cells are about three times normal size and the mass is peripheral, the reverse of small cell features.", "competing diagnosis"]],
+  CS(32, 33, 34, 39, 42), "manifestation", "diagnosis"),
+
+V(T_LARGE, IO_A,
+  "A 66-year-old woman has a biopsy-proven large cell carcinoma in the periphery of the right lung. Her oncologist warns that this tumor type can spread to a site that is unusual for lung cancers. Which site is it?",
+  [["Small bowel",
+    "Correct. Large cell carcinoma metastasizes to rare areas such as the small intestine and bowel, a pattern specific to this tumor type. Lung cancers in general spread to regional lymph nodes and then to the liver, brain and bone, so those sites are expected rather than unusual."],
+   ["Liver",
+    "The liver is one of the usual distant sites for lung cancer, beside the brain and bone. Tell: the question asks for the unusual site tied to large cell carcinoma, the small intestine and bowel.", "adjacent fact"],
+   ["Brain",
+    "The brain is a common metastatic site for lung cancers, causing headaches, vision changes and seizures. Tell: it is expected rather than unusual; large cell carcinoma's unusual site is the small intestine and bowel.", "adjacent fact"],
+   ["Spine",
+    "Bone, including the spine, is a usual metastatic site for lung cancer, causing pain, fractures and cord compression. Tell: large cell carcinoma stands out for spreading to the small intestine and bowel.", "adjacent fact"]],
+  CS(9, 13, 33), "complication", "complication"),
+
+V(T_LARGE, IO_A,
+  "A 70-year-old man has a peripheral cavitating lung mass. Histology shows anaplastic, undifferentiated, pleomorphic cells, with no features of adenocarcinoma or squamous cell carcinoma and no specific marker. He asks how his cancer type was decided. Which response is accurate?",
+  [["It is a diagnosis of exclusion",
+    "Correct. Large cell carcinoma lacks specific genetic or histologic markers and is a diagnosis of exclusion among the non-small cell cancers. Its cells are anaplastic, undifferentiated and pleomorphic, which separates it from adenocarcinoma and squamous cell carcinoma, and histology must confirm the anaplastic tissue even when computed tomography suggests it."],
+   ["A specific marker confirmed it",
+    "Large cell carcinoma has no specific genetic or histologic marker, which is exactly why it is diagnosed by exclusion. Tell: his report states no specific marker was found, yet the cell type was still named.", "reversed direction or value"],
+   ["Cavitation on imaging proved it",
+    "Cavitation is seen in several lung cancers, including squamous cell and small cell carcinoma, and a cavitated mass still needs biopsy with histology. Tell: imaging suggests the type, but tissue that excludes the other types decides it.", "common lay belief"],
+   ["Sputum cytology identified it",
+    "Sputum testing can catch squamous cell carcinoma, a central bronchial tumor, unlike the other lung cancers. Tell: his mass is peripheral and was typed from histology by excluding adenocarcinoma and squamous features.", "adjacent fact"]],
+  CS(33, 34, 39, 40, 41), "test finding", "test"),
+
+# ---------------------------------------------------------------- non-small cell treatment (slides 35-38)
+V(T_NSCLC_TX, IO_A,
+  "A 64-year-old woman with a 2-cm peripheral adenocarcinoma has no lymph node involvement and no metastasis on staging, which places her at stage 1A. Her pulmonary function is normal and she is fit for surgery. Which treatment is most appropriate?",
+  [["Surgical resection",
+    "Correct. For non-small cell lung cancer, stages 1A and 1B and stages 2A and 2B are treated with surgical resection, chosen by size and lymph involvement as a wedge or segment resection, lobectomy or pneumonectomy, provided the patient can tolerate surgery. Chemotherapy and radiation are adjuncts, because non-small cell cancers respond poorly to them."],
+   ["Chemotherapy alone",
+    "Chemotherapy for non-small cell lung cancer is an adjunct to surgery or the approach in stage 4, because these tumors respond poorly to it. Tell: she is stage 1A and fit, so surgical resection is the standard.", "wrong stage or severity"],
+   ["Radiation alone",
+    "Radiation is an adjunct for non-small cell cancer, or a route for patients unfit for surgery. Tell: she is fit with normal lung function, so the standard for stage 1A is resection.", "wrong stage or severity"],
+   ["Prophylactic cranial irradiation",
+    "Prophylactic cranial irradiation is given in small cell lung cancer after a response to initial therapy, because brain metastasis is so likely. Tell: she has a stage 1A adenocarcinoma, a non-small cell cancer treated with resection.", "adjacent fact"]],
+  CS(15, 35, 43), "first-line", "treatment"),
+
+V(T_NSCLC_TX, IO_A,
+  "A 67-year-old man with lung adenocarcinoma has metastases in the liver, an adrenal gland and several bones, placing him at stage 4B. Which treatment is standard for his cancer?",
+  [["Chemotherapy",
+    "Correct. For non-small cell lung cancer, stage 4 is treated with chemotherapy, with surgical resection considered only for a solitary metastatic lesion with a resectable primary tumor. Chemotherapy and radiation are used as adjuncts to surgery or when the patient is stage 4. He has metastases at several sites, so resection is not the plan."],
+   ["Lobectomy",
+    "Lobectomy belongs to earlier stages, where surgical resection is the standard for stage 1 and 2 disease. Tell: with metastases in the liver, adrenal gland and bones, removing the primary lobe cannot treat his disease.", "wrong stage or severity"],
+   ["Pneumonectomy",
+    "Pneumonectomy, removal of the entire lung, is a resection chosen by size and lymph involvement in operable disease. Tell: in stage 4, resection is considered only for a single metastatic lesion with a resectable primary, and he has several.", "wrong stage or severity"],
+   ["Observation",
+    "Observation leaves treatable disease untreated: stage 4 non-small cell lung cancer still has a standard therapy. Tell: standard management for stage 4 is chemotherapy, not watchful waiting.", "common lay belief"]],
+  CS(29, 35), "first-line", "treatment"),
+
+V(T_NSCLC_TX, IO_A,
+  "A 59-year-old woman who has never smoked has metastatic lung adenocarcinoma. Her oncologist sends the tumor tissue for molecular analysis and genomic testing. She asks why. Which response is accurate?",
+  [["To tailor therapy to her tumor",
+    "Correct. Molecular analysis and genomic testing of the tumor look for specific mutations and proteins that help the oncologist tailor therapy to the patient. Chemotherapy and immunotherapy can now be targeted to specific markers based on genetics and proteins, and for non-squamous non-small cell cancer the markers guide the choice of drug."],
+   ["To set her cancer stage",
+    "Staging uses computed tomography for location and size, positron emission tomography for lymph involvement and biopsy for tumor type. Tell: molecular testing does not stage her disease; it guides the choice of targeted therapy.", "adjacent fact"],
+   ["To confirm the cell type",
+    "Biopsy with histology classes the tumor type, and hers is already known to be adenocarcinoma. Tell: the genomic testing goes a step further, looking for mutations and proteins that steer treatment.", "adjacent fact"],
+   ["To test her family's risk",
+    "The testing is done on the tumor tissue, looking for mutations and proteins in the cancer itself. Tell: its purpose is to tailor her own therapy, not to screen her relatives.", "confused mechanism or drug class"]],
+  CS(22, 35, 36, 37), "agent/regimen", "test"),
+
+V(T_NSCLC_TX, IO_A,
+  "A 66-year-old man with a 3.5-cm non-small cell lung carcinoma, no lymph node involvement and no metastasis (stage 1B) is fit for surgery. He would prefer to avoid an operation and asks for chemotherapy and radiation instead. Which plan should be avoided as his primary treatment?",
+  [["Chemoradiation without surgery",
+    "Correct. Stage 1 non-small cell lung cancer is treated with surgical resection when the patient can tolerate it, and chemotherapy and radiation serve only as adjuncts to surgery or for stage 4, because non-small cell cancers respond poorly to them. For a fit patient with stage 1B disease, replacing surgery with chemoradiation gives up the standard treatment."],
+   ["Lobectomy",
+    "Lobectomy, removing the entire lobe, is one of the standard resections for stage 1 disease in a patient who can tolerate surgery. Tell: he is fit, so this is the treatment to pursue, not to avoid.", "reversed direction or value"],
+   ["Wedge or segment resection",
+    "Wedge or segment resection, removing a smaller or larger portion of the lobe, is a standard resection chosen by size and lymph involvement. Tell: resection is the recommended treatment for his stage, so it is appropriate.", "reversed direction or value"],
+   ["Preoperative lung function tests",
+    "Pulmonary function tests are part of the workup, and a patient must be able to tolerate surgery, surviving and recovering from it. Tell: checking his lung function before resection supports the standard plan rather than conflicting with it.", "reversed direction or value"]],
+  CS(14, 35), "avoid", "avoid"),
+
+# ---------------------------------------------------------------- squamous cell carcinoma (slides 39-40)
+V(T_SQUAMOUS, IO_A,
+  "A 68-year-old man who still smokes and has a 70 pack-year history has 2 months of cough, wheezing and hemoptysis. Computed tomography shows a large, cavitated central mass arising from a bronchus. A metabolic panel shows a serum calcium of 12.8 mg/dL (normal 8.5-10.5). Which lung cancer type is most likely?",
+  [["Squamous cell carcinoma",
+    "Correct. Squamous cell carcinoma has the strongest association with smoking, sits centrally and often originates in a bronchus, cavitates frequently, and causes cough, wheezing and hemoptysis once it obstructs the airway. Hypercalcemia is a paraneoplastic finding seen particularly with squamous cell carcinoma, and his calcium of 12.8 exceeds the 10.5 ceiling."],
+   ["Small cell carcinoma",
+    "Small cell carcinoma is also central and can cavitate once large, but its classic paraneoplastic picture is low sodium from inappropriate antidiuretic hormone, not high calcium. Tell: hypercalcemia with a central cavitated bronchial mass points to squamous cell carcinoma.", "competing diagnosis"],
+   ["Large cell carcinoma",
+    "Large cell carcinoma also forms a large cavitated mass, but in the periphery, not arising from a bronchus. Tell: cavitation alone does not decide the type; the central bronchial origin and hypercalcemia point to squamous cell carcinoma.", "competing diagnosis"],
+   ["Adenocarcinoma",
+    "Adenocarcinoma usually forms in the mid-lung and periphery, often near scars. Tell: his tumor is central and bronchial, with hypercalcemia, the pattern of squamous cell carcinoma.", "competing diagnosis"]],
+  CS(14, 30, 31, 33, 39, 41, 46, 48), "manifestation", "diagnosis"),
+
+V(T_SQUAMOUS, IO_A,
+  "A 70-year-old woman with a known central squamous cell carcinoma near the left main bronchus develops a hoarse voice and difficulty swallowing over several weeks. Which process best explains these new symptoms?",
+  [["Local tumor invasion",
+    "Correct. Squamous cell carcinoma spreads by local invasion, which produces later signs such as dysphagia and voice changes, because the tumor can spread to the laryngeal nerves. Her new hoarseness and trouble swallowing are those later signs of a central tumor."],
+   ["Brain metastasis",
+    "Brain metastasis causes headaches, vision changes, nausea, vomiting, syncope and seizures. Tell: hoarseness with dysphagia in a central squamous tumor reflects local invasion toward the laryngeal nerves, not spread to the brain.", "competing diagnosis"],
+   ["Post-obstructive pneumonia",
+    "Obstruction of the bronchus leads to atelectasis and an increased risk of pneumonia, with cough and infection. Tell: voice change and trouble swallowing are the later signs of local invasion, not of an obstructed airway.", "adjacent fact"],
+   ["Paraneoplastic hypercalcemia",
+    "Hypercalcemia is a paraneoplastic finding particularly tied to squamous cell carcinoma, detected on a metabolic panel. Tell: it does not explain a hoarse voice and dysphagia, which come from the tumor invading nearby nerves.", "adjacent fact"]],
+  CS(13, 39, 46), "complication", "complication"),
+
+V(T_SQUAMOUS, IO_A,
+  "A 73-year-old man with chronic obstructive pulmonary disease and a 65 pack-year history has worsening cough, wheezing and hemoptysis. Computed tomography shows a central mass in a main bronchus with cavitation and a spiculated (spiky) border. Which noninvasive test can sometimes catch this tumor type, unlike the other lung cancers?",
+  [["Sputum cytology",
+    "Correct. A central, cavitating bronchial mass in a heavy smoker with cough, wheezing and hemoptysis is the picture of squamous cell carcinoma, which unlike the other lung cancers can be caught with sputum testing. Sputum cytology is not sensitive in general, so tissue biopsy is still the standard."],
+   ["Serum calcium level",
+    "A serum calcium can show hypercalcemia, a paraneoplastic finding seen particularly with squamous cell carcinoma, but it does not identify the tumor. Tell: the noninvasive test that can catch the tumor cells themselves is sputum cytology.", "adjacent fact"],
+   ["Mucicarmine stain",
+    "A mucicarmine stain is done on biopsy tissue and shows mucin production, which relates to adenocarcinoma. Tell: it needs tissue, so it is not noninvasive, and mucin points to a peripheral tumor rather than a central bronchial one.", "competing diagnosis"],
+   ["Chest radiograph",
+    "A chest film is not a good tool for working up a suspicious nodule or symptoms. Tell: computed tomography has already shown the mass, and of the lung cancers it is squamous cell carcinoma that can be caught with sputum.", "adjacent fact"]],
+  CS(14, 30, 32, 39, 40, 46), "initial test", "test"),
+
+V(T_SQUAMOUS, IO_A,
+  "A 58-year-old man who smokes 2 packs a day is worried after his brother was diagnosed with lung cancer. He asks which type of lung cancer is most strongly associated with smoking. Which response is accurate?",
+  [["Squamous cell carcinoma",
+    "Correct. Squamous cell carcinoma, the second most common lung cancer, has the strongest association with smoking. Smoking is implicated in 85 to 90% of all lung cancers and compounds with packs per day and years, but among the cell types it is squamous cell carcinoma that is singled out as most strongly tied to smoking."],
+   ["Adenocarcinoma",
+    "Adenocarcinoma is the most common lung cancer, and smoking is not always associated with it; it also occurs in people who never smoked. Tell: the strongest smoking link belongs to squamous cell carcinoma.", "adjacent fact"],
+   ["Large cell carcinoma",
+    "Large cell carcinoma is a peripheral non-small cell cancer known for unusual metastases to the small intestine and bowel. Tell: it is not the type singled out for the strongest smoking association; squamous cell carcinoma is.", "adjacent fact"],
+   ["Bronchial carcinoid",
+    "A bronchial carcinoid is a rare type, known for carcinoid syndrome from serotonin release. Tell: the cancer singled out for the strongest association with smoking is squamous cell carcinoma.", "adjacent fact"]],
+  CS(3, 4, 31, 33, 39, 48), "risk factors", "education"),
+
+# ---------------------------------------------------------------- small cell carcinoma and radiotherapy (slides 41-45)
+V(T_SMALL, IO_A,
+  "A 63-year-old woman with a 55 pack-year history has a central hilar mass. The bronchoscopic biopsy is fragmented and crushed, and the tumor cells are small, lack nucleoli and have a high nuclear-to-cytoplasm ratio. Which lung cancer type is most likely?",
+  [["Small cell carcinoma",
+    "Correct. Small cell lung carcinoma is a fragile tumor that is often crushed during biopsy, yet the small size of its cells, the lack of nucleoli and the high nuclear-to-cytoplasm ratio can still be seen. It sits centrally and infiltrates the mucosa, matching her hilar mass."],
+   ["Large cell carcinoma",
+    "Large cell carcinoma has cells about three times larger than baseline and forms in the periphery. Tell: her cells are small with a high nuclear-to-cytoplasm ratio, the opposite of large cell features.", "competing diagnosis"],
+   ["Squamous cell carcinoma",
+    "Squamous cell carcinoma is also central and often arises in a bronchus, but it is recognized by its smoking link, cavitation and sputum detection. Tell: crushed, small cells without nucleoli are the histologic signature of small cell carcinoma.", "competing diagnosis"],
+   ["Adenocarcinoma",
+    "Adenocarcinoma forms in the mid-lung and periphery and produces mucin on a mucicarmine stain. Tell: her mass is central and hilar, with small crushed cells, which describes small cell carcinoma.", "competing diagnosis"]],
+  CS(30, 32, 33, 39, 41, 42), "test finding", "diagnosis"),
+
+V(T_SMALL, IO_A,
+  "A 62-year-old man with a 50 pack-year history has newly diagnosed small cell lung carcinoma. His oncologist explains that this cancer is grouped as limited, extensive or combined. He asks in which situation radiation works best for this cancer. Which response is accurate?",
+  [["When it is limited stage",
+    "Correct. Small cell carcinoma responds better to chemotherapy and radiation than the three non-small cell cancers, and radiation works best when the cancer is in limited stage, confined to one area with only local lymph nodes involved. Extensive stage has spread away from the local area."],
+   ["When it is extensive stage",
+    "Extensive stage means spread away from the local area. Tell: radiation is described as working best in limited stage, confined to one area with only local lymph nodes involved, not after spread.", "reversed direction or value"],
+   ["It works poorly for small cell",
+    "This reverses the pattern: small cell carcinoma responds better to chemotherapy and radiation than the non-small cell cancers. Tell: it is the non-small cell types that respond poorly to radiation, which is why surgery leads their treatment.", "reversed direction or value"],
+   ["Once brain metastases appear",
+    "Brain radiation in small cell cancer is given prophylactically, before metastasis is found, after a response to initial therapy, because brain spread is so likely. Tell: radiation as a whole works best in limited-stage disease.", "wrong stage or severity"]],
+  CS(35, 41, 43), "first-line", "treatment"),
+
+V(T_SMALL, IO_A,
+  "A 59-year-old woman with limited-stage small cell lung carcinoma has a complete response to initial chemotherapy and thoracic radiation. Her cognition is normal and she is active and independent. Which is the most appropriate next step?",
+  [["Prophylactic cranial irradiation",
+    "Correct. After initial therapy, limited-stage small cell carcinoma with a complete or partial response goes on to prophylactic cranial irradiation, radiating the brain to prevent metastasis because brain spread is so likely. Her normal cognition and good function leave no reason to withhold it."],
+   ["Observation alone",
+    "Observation alone skips the adjuvant step recommended for limited-stage disease after a complete or partial response. Tell: brain metastasis is so likely in small cell carcinoma that the brain is radiated prophylactically.", "wrong stage or severity"],
+   ["Lobectomy",
+    "Lobectomy is a resection used for non-small cell cancer, which responds poorly to chemotherapy and radiation. Tell: her small cell cancer has already responded completely to chemotherapy and radiation, and the next step is prophylactic cranial irradiation.", "adjacent fact"],
+   ["Routine positron emission tomography",
+    "Positron emission tomography is not recommended for routine follow-up after small cell treatment. Tell: after a complete response in limited stage, the adjuvant step is prophylactic cranial irradiation.", "adjacent fact"]],
+  CS(35, 41, 43), "escalation", "next step"),
+
+V(T_SMALL, IO_POP,
+  "A 78-year-old man with moderate dementia and limited-stage small cell lung carcinoma had a partial response to initial chemotherapy and radiation. He now needs help with most daily activities. His family asks about radiating his brain to prevent metastases. Which therapy should be avoided?",
+  [["Prophylactic cranial irradiation",
+    "Correct. Prophylactic cranial irradiation is the usual adjuvant step for limited-stage disease after a complete or partial response, but it is not recommended in patients with poor performance status or impaired neurocognitive function. His dementia and dependence in daily activities are both reasons to avoid it."],
+   ["Chest and abdomen computed tomography",
+    "Computed tomography of the chest and abdomen is part of routine surveillance after small cell treatment. Tell: monitoring scans carry no neurocognitive risk and remain appropriate; it is brain irradiation that is not recommended for him.", "reversed direction or value"],
+   ["Smoking cessation support",
+    "Smoking cessation intervention is part of follow-up after small cell treatment. Tell: it is appropriate for anyone, while prophylactic cranial irradiation is the step his impaired cognition argues against.", "reversed direction or value"],
+   ["Brain magnetic resonance imaging",
+    "Brain magnetic resonance imaging is more sensitive than computed tomography for brain metastases and is the preferred brain study. Tell: imaging the brain is reasonable; radiating it prophylactically is not recommended with impaired neurocognitive function.", "reversed direction or value"]],
+  C(43), "avoid", "avoid"),
+
+V(T_SMALL, IO_POP,
+  "A 64-year-old woman is starting thoracic radiotherapy for limited-stage small cell lung carcinoma after a course of chemotherapy. She asks what to expect during radiotherapy compared with her chemotherapy. Which response is accurate?",
+  [["Skin redness, little nausea",
+    "Correct. Acute effects of lung radiotherapy are localized skin, mucosa and tissue changes, with erythema and hyperpigmentation of the skin and a risk of ulceration, plus inflammation and hair loss. Because radiotherapy has fewer systemic effects than chemotherapy, nausea and vomiting are typically limited."],
+   ["Severe nausea and vomiting",
+    "This reverses the comparison: radiotherapy has fewer systemic effects than chemotherapy, so nausea and vomiting are typically limited. Tell: its acute effects are local, in the skin, mucosa and tissue of the treated area.", "reversed direction or value"],
+   ["Hair loss over her whole body",
+    "Hair loss from radiotherapy is localized to the targeted area and less systemic than with chemotherapy. Tell: whole-body hair loss belongs to chemotherapy's systemic effects, not to chest radiation.", "reversed direction or value"],
+   ["Pulmonary fibrosis right away",
+    "Pulmonary fibrosis and scarring are chronic effects of radiotherapy, developing later rather than during treatment. Tell: during treatment she should expect local skin changes, inflammation and limited nausea.", "wrong stage or severity"]],
+  C(45), "complication", "complication"),
+
+V(T_SMALL, IO_POP,
+  "A 70-year-old man had chest radiotherapy for small cell lung carcinoma 4 years ago and remains free of cancer. He now has progressive exertional dyspnea, and computed tomography shows scarring confined to the treated area of lung. Which late effect of radiotherapy explains his symptoms?",
+  [["Pulmonary fibrosis",
+    "Correct. Chronic effects of lung radiotherapy include pulmonary fibrosis and scarring of the affected tissues, as well as cardiovascular fibrosis, lymphedema and neuropathy. Scarring limited to the treated area years after radiation, with progressive exertional dyspnea, is radiation pulmonary fibrosis."],
+   ["Skin erythema",
+    "Erythema and hyperpigmentation of the skin are acute, localized effects during treatment. Tell: his problem began years later and lies in the lung, with scarring in the treated area, a chronic effect.", "wrong stage or severity"],
+   ["Lymphedema",
+    "Lymphedema and fluid retention follow damage to the lymphatic system, classically in the axilla. Tell: they cause limb swelling, not scarring of the treated lung with exertional dyspnea.", "adjacent fact"],
+   ["Neuropathy",
+    "Neuropathy is a chronic effect of radiotherapy on nerves. Tell: nerve damage would not show as scarring on lung imaging; his findings point to pulmonary fibrosis in the radiation field.", "adjacent fact"]],
+  C(45), "complication", "complication"),
+
+V(T_SMALL, IO_A,
+  "A 66-year-old woman with a newly diagnosed lung cancer is meeting a radiation oncologist. Her son has read that some lung cancers respond far better to radiotherapy than others, and he asks which type benefits most. Which response is accurate?",
+  [["Small cell carcinoma",
+    "Correct. Small cell carcinoma responds better to chemotherapy and radiation than the three non-small cell cancers, and radiation works best when it is in limited stage. Non-small cell cancers do not respond well to chemotherapy or radiation, which serve as adjuncts to surgery or for stage 4."],
+   ["Adenocarcinoma",
+    "Adenocarcinoma is a non-small cell cancer, and these respond poorly to chemotherapy and radiation, which are adjuncts to surgical resection. Tell: the cancer that responds better to radiation is small cell carcinoma.", "adjacent fact"],
+   ["Large cell carcinoma",
+    "Large cell carcinoma has no standardized treatment because of its variety and rarity, and as a non-small cell type it responds poorly to radiation. Tell: radiotherapy benefits small cell carcinoma most, especially in limited stage.", "adjacent fact"],
+   ["Squamous cell carcinoma",
+    "Squamous cell carcinoma is a non-small cell cancer, and these do not respond well to chemotherapy or radiation, which serve as adjuncts to surgery or for stage 4. Tell: the type singled out for a better response is small cell carcinoma.", "adjacent fact"]],
+  CS(33, 35, 41), "first-line", "education"),
+
+# ---------------------------------------------------------------- paraneoplastic syndromes (slides 46-48)
+V(T_PARA, IO_SCLC,
+  "A 66-year-old man with a 60 pack-year history is brought to the emergency department with new confusion, an unsteady gait and a seizure. Serum sodium is 118 mEq/L (normal 135-145) and serum osmolality is 250 mOsm/kg (normal 275-295). He has no peripheral edema and no signs of pulmonary edema. Computed tomography shows a central hilar mass. Which lung cancer type is most likely?",
+  [["Small cell carcinoma",
+    "Correct. Small cell lung cancer can produce the syndrome of inappropriate antidiuretic hormone through its neuroendocrine cells, causing excess vasopressin and water retention. The result is hyponatremia and low serum osmolality, here 118 and 250, with confusion, seizures and ataxia but no peripheral or pulmonary edema, because the process is insidious. The central mass fits too."],
+   ["Squamous cell carcinoma",
+    "Squamous cell carcinoma is also central, but its particular paraneoplastic finding is hypercalcemia. Tell: very low sodium and osmolality with neurologic symptoms and no edema is inappropriate antidiuretic hormone, the small cell syndrome.", "competing diagnosis"],
+   ["Adenocarcinoma",
+    "Adenocarcinoma usually forms in the mid-lung and periphery, and its later signs are bone pain, weight loss and other systemic issues. Tell: a central hilar mass with inappropriate antidiuretic hormone points to small cell carcinoma.", "competing diagnosis"],
+   ["Bronchial carcinoid",
+    "A bronchial carcinoid causes carcinoid syndrome from serotonin release: flushing, diarrhea, wheezing and right-sided valve thickening. Tell: his problem is water retention with low sodium and osmolality, the antidiuretic hormone syndrome of small cell carcinoma.", "competing diagnosis"]],
+  CS(30, 31, 41, 46, 48), "manifestation", "diagnosis"),
+
+V(T_PARA, IO_A,
+  "A 47-year-old woman has months of episodes of skin flushing, watery diarrhea with cramps, and wheezing. Exam shows an enlarged liver and a heart murmur, and echocardiography shows thickening of the tricuspid and pulmonic valves. Computed tomography shows a mass in a bronchus. Which tumor is most likely?",
+  [["Bronchial carcinoid",
+    "Correct. Carcinoid syndrome, which in the lung arises mainly from a bronchial carcinoid, comes from release of serotonin by the tumor cells. Its features include cutaneous flushes, diarrhea, cramps, nausea and vomiting, cough, wheezing and dyspnea, hepatomegaly, and pulmonic and tricuspid valve thickening and stenosis, matching her picture."],
+   ["Small cell carcinoma",
+    "Small cell carcinoma has neuroendocrine paraneoplastic effects, but its classic syndrome is inappropriate antidiuretic hormone with low sodium and confusion. Tell: flushing, diarrhea and right-sided valve thickening are serotonin effects of carcinoid syndrome.", "competing diagnosis"],
+   ["Squamous cell carcinoma",
+    "Squamous cell carcinoma is a central bronchial tumor whose particular paraneoplastic finding is hypercalcemia. Tell: flushing with diarrhea and tricuspid and pulmonic valve thickening is carcinoid syndrome from serotonin.", "competing diagnosis"],
+   ["Adenocarcinoma",
+    "Adenocarcinoma is usually peripheral, with cough and shortness of breath early and bone pain and weight loss later. Tell: episodic flushing, diarrhea and right-sided valve disease are the serotonin picture of a bronchial carcinoid.", "competing diagnosis"]],
+  CS(4, 31, 46, 48), "manifestation", "diagnosis"),
+
+V(T_PARA, IO_SCLC,
+  "A 64-year-old man with a 50 pack-year history has a central lung mass, and biopsy shows small cell carcinoma. Over 2 months he has developed progressive muscle weakness, worst in his legs. Testing confirms Lambert-Eaton myasthenic syndrome (autoimmune muscle weakness, particularly in the legs). He asks what causes the weakness. Which explanation is accurate?",
+  [["Nerve calcium channels are attacked",
+    "Correct. Lambert-Eaton myasthenic syndrome is a rare autoimmune disorder in which the immune system attacks calcium channels on nerve endings at the neuromuscular junction. The non-functioning channels prevent release of acetylcholine, so the muscles cannot contract properly, producing progressive weakness, particularly in the legs."],
+   ["Tumor compresses the spinal cord",
+    "Spinal cord compression comes from bone metastasis to the spine. Tell: his weakness has an autoimmune cause at the neuromuscular junction, where antibodies disable calcium channels on nerve endings and too little acetylcholine is released.", "competing diagnosis"],
+   ["Low sodium weakens the muscles",
+    "Low sodium from inappropriate antidiuretic hormone causes confusion, seizures and ataxia. Tell: his diagnosis is an antibody attack on calcium channels at nerve endings, not an electrolyte effect.", "adjacent fact"],
+   ["Antibodies destroy muscle fibers",
+    "The antibodies target the nerve side of the neuromuscular junction, not the muscle fibers themselves. Tell: calcium channels on the nerve endings stop working, too little acetylcholine is released, and the muscles cannot contract properly.", "confused mechanism or drug class"]],
+  CS(13, 41, 46, 47, 48), "etiology", "education"),
+
+V(T_PARA, IO_SCLC,
+  "A 70-year-old woman with known small cell lung carcinoma has a serum sodium of 124 mEq/L (normal 135-145) and low serum osmolality from the syndrome of inappropriate antidiuretic hormone. Her family asks why her legs and lungs show no swelling if her body is holding on to too much water. Which response is accurate?",
+  [["It develops slowly and insidiously",
+    "Correct. In small cell lung cancer, neuroendocrine tumor cells produce excess antidiuretic hormone (vasopressin), and the body retains too much water, lowering serum sodium and osmolality. The result is confusion, seizures, ataxia and other neurologic dysfunction, but no signs of peripheral or pulmonary edema, because the process is insidious over time."],
+   ["She must be dehydrated instead",
+    "Her low sodium and low osmolality come from retaining too much water under excess antidiuretic hormone, the opposite of dehydration. Tell: the absence of edema reflects the slow, insidious course, not a fluid deficit.", "reversed direction or value"],
+   ["Swelling will appear within days",
+    "Edema is not part of this picture: the syndrome produces neurologic dysfunction without peripheral or pulmonary edema, because it develops insidiously. Tell: watch instead for confusion, seizures and ataxia as the sodium falls.", "reversed direction or value"],
+   ["Her sodium is actually high",
+    "Her sodium is 124, well below the normal floor of 135, and her osmolality is low. Tell: water retention dilutes the sodium; the lack of edema comes from the insidious course, not from a high sodium.", "ruled out by a stated finding"]],
+  C(48), "manifestation", "education"),
+
+V(T_PARA, IO_A,
+  "A 67-year-old man with a 60 pack-year history has a central bronchial mass, and biopsy confirms squamous cell carcinoma. Which paraneoplastic laboratory abnormality is this tumor particularly associated with?",
+  [["High serum calcium",
+    "Correct. Paraneoplastic syndromes come from hormonal or cytokine effects of tumor tissue, and among the endocrine ones, hypercalcemia occurs particularly with squamous cell carcinoma. The laboratory workup for a suspicious nodule includes a comprehensive metabolic panel with calcium."],
+   ["Low serum sodium",
+    "Low sodium with low serum osmolality is the syndrome of inappropriate antidiuretic hormone, produced by small cell lung cancer through its neuroendocrine cells. Tell: the abnormality tied particularly to squamous cell carcinoma is high calcium.", "adjacent fact"],
+   ["High serum potassium",
+    "High potassium with low sodium and hypotension points to adrenal insufficiency from metastatic spread. Tell: that is a metastatic effect, not the paraneoplastic finding linked to squamous cell carcinoma, which is hypercalcemia.", "adjacent fact"],
+   ["High serotonin release",
+    "Serotonin release from tumor cells drives carcinoid syndrome, which in the lung comes mainly from a bronchial carcinoid. Tell: squamous cell carcinoma's particular paraneoplastic abnormality is hypercalcemia.", "adjacent fact"]],
+  CS(13, 14, 46, 48), "test finding", "test"),
+]
