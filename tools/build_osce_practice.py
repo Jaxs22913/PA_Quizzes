@@ -41,6 +41,7 @@ from _osce_cardiac_cases import CASES as CARDIAC_CASES              # noqa: E402
 from _osce_pulm_catalog import CATALOG as PULM_CATALOG              # noqa: E402
 from _osce_pulm_cases import CASES as PULM_CASES, check as pulm_selfcheck   # noqa: E402
 from _pd2_cardiac_osce_ecgs import IMAGES as ECG_IMAGES             # noqa: E402
+import _pd2_pulm_osce_images as PULM_IM                             # noqa: E402
 
 UNLISTED = "That machine is down today."
 
@@ -128,16 +129,44 @@ def ecg_credit(fn):
             "page": src["page"]}
 
 
+# The deck each Pulmonary chart picture comes from, named as the Pulmonary OSCE Disease Chart's credit line names it
+# (tools/build_pd2_pulm_osce_chart.py DECK_LABEL).
+PULM_DECK_LABEL = {
+    PULM_IM.L35: "Clinical Medicine Lecture 35", PULM_IM.L36: "Clinical Medicine Lecture 36",
+    PULM_IM.L37: "Clinical Medicine Lecture 37", PULM_IM.L38: "Clinical Medicine Lecture 38",
+    PULM_IM.L40: "Clinical Medicine Lecture 40", PULM_IM.L41: "Clinical Medicine Lecture 41",
+    PULM_IM.L43: "Clinical Medicine Lecture 43", PULM_IM.L44: "Clinical Medicine Lecture 44",
+    PULM_IM.PDM14: "Principles of Diagnostic Medicine Lecture 14",
+    PULM_IM.PDM16: "Principles of Diagnostic Medicine Lecture 16",
+    PULM_IM.PDM17: "Principles of Diagnostic Medicine Lecture 17",
+}
+
+
+def pulm_credit(fn):
+    """The picture's credit, worded as on the Pulmonary OSCE chart (plain text: the page escapes it)."""
+    src, boxes = PULM_IM.IMAGES[fn]
+    if src["kind"] == "deck":
+        bits = ["Source: %s, slide %d (%s)" % (PULM_DECK_LABEL[src["deck"]], src["slide"], src["deck"])]
+        bits += [src["changed"]] if src["changed"] else []
+        bits += ["yellow boxes added"] if boxes else []
+        return {"text": "; ".join(bits), "page": ""}
+    assert src["lic"] and src["author"] and src["page"], fn
+    changed = ", ".join(x for x in (src["changed"], "yellow boxes added" if boxes else "") if x)
+    return {"text": "Image: %s, Wikimedia Commons, %s%s" % (src["author"], src["lic"], "; " + changed if changed else ""),
+            "page": src["page"]}
+
+
 # The stations. Test pictures come only from each station's OSCE Disease Chart, already vetted there: the Cardiac
-# chart's 12-leads (sources and licences in _pd2_cardiac_osce_ecgs.py); the Pulmonary chart's pictures are not
-# wired in yet, so no pulmonary test carries one.
+# chart's 12-leads (sources and licences in _pd2_cardiac_osce_ecgs.py) and the Pulmonary chart's films, scans,
+# tracings and graphs (tools/_pd2_pulm_osce_images.py).
 STATIONS = {
     "cardiac": dict(folder="Physical Diagnosis 2 Exam 1", file="pd2-cardiac-osce-practice.json", title="Cardiac OSCE",
                     runsheet=runsheet.CARDIAC, catalog=CARDIAC_CATALOG, cases=CARDIAC_CASES,
                     img_dir="pd2-cardiac-osce-chart-images", images=ECG_IMAGES, credit=ecg_credit, selfcheck=None),
     "pulmonary": dict(folder="Physical Diagnosis 2 Exam 2", file="pd2-pulm-osce-practice.json", title="Pulmonary OSCE",
                       runsheet=runsheet.PULMONARY, catalog=PULM_CATALOG, cases=PULM_CASES,
-                      img_dir="pd2-pulm-osce-images", images={}, credit=None, selfcheck=pulm_selfcheck),
+                      img_dir="pd2-pulm-osce-images", images=PULM_IM.IMAGES, credit=pulm_credit,
+                      selfcheck=pulm_selfcheck),
 }
 
 

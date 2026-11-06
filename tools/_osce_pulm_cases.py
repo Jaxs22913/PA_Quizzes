@@ -27,7 +27,7 @@ dict(
   id="pulmonary-chronic-obstructive-pulmonary-disease",
   condition="Chronic obstructive pulmonary disease",
   cites=("CMS L36 Chronic Obstructive Pulmonary Disease, slides 9, 12, 14, 16, 18, 20-21, 24, 26-28, 30-32, 34, "
-         "37-38, 40, 43-44, 46, 48-50, 53-61, 63-64; CMS L33 Oxygen Delivery slides 16, 25; CMS L34 Acid-Base slides 5, "
+         "37-38, 40, 43-44, 46, 48-49, 53-64, 66; CMS L33 Oxygen Delivery slides 16, 25; CMS L34 Acid-Base slides 5, "
          "19, 21-23, 25, 27-28, 59; CMS L42 Pulmonary Vascular Disorders slides 53-54; PD2 Thorax slides 16-17, "
          "22, 32-35, 40, 42-44, 47-48, 56"),
   door=dict(
@@ -48,7 +48,7 @@ dict(
   opening="Can't get my breath. This cold went to my chest, and my inhaler isn't touching it.",
   facts=[
     ("Full name", "Walter Abernathy."),
-    ("Date of birth", "February 19, 1955."),
+    ("Date of birth", "February 19, 1965."),
     ("Onset", "My grandson gave me a cold last Friday. By Monday it went to my chest. Harder to breathe every day "
               "since."),
     ("Location", "My whole chest. Both sides."),
@@ -139,7 +139,7 @@ dict(
   exam={
     "position": ("He sits bolt upright on the edge of the stretcher, leaning forward with his hands braced on his "
                  "knees (tripod position), and cannot lie back."),
-    "general-survey": ("Thin, elderly man in moderate respiratory distress. Alert and oriented and answering "
+    "general-survey": ("Tall, thin man in moderate respiratory distress. Alert and oriented and answering "
                        "appropriately, but speaking only in short phrases of four or five words. Breathing out "
                        "through pursed lips, with an audible expiratory wheeze. A faint bluish tinge to the lips. No "
                        "sweating."),
@@ -189,12 +189,15 @@ dict(
   # CMS L36 slide 56: evaluation of an exacerbation is saturation, blood gas, chest X-ray, electrocardiogram,
   # natriuretic peptide and troponin
   tests=[
-    # CMS L36 slide 30 (chronic hypercapnia above 45 with raised bicarbonate); CMS L34 slide 59 (chronic compensation
-    # 3.5 mEq/L per 10 mmHg): 24 + 3.5 x 1.6 = 29.6, so a bicarbonate of 29 is the chronic pattern
+    # CMS L36 slide 30 (chronic hypercapnia above 45 with raised bicarbonate); CMS L34 slide 59: for a carbon dioxide
+    # of 58 an acute rise predicts a bicarbonate of about 26 (1 per 10) and a chronic one about 30 (3.5 per 10), so 29
+    # is acute on chronic; slide 19: compensation never brings the pH back to normal. 6.1 + log(29 / 1.74) = 7.32.
+    # L36 slide 57: respiratory acidosis is an intensive care criterion.
     dict(id="abg", name="Arterial blood gas",
-         aka=["ABG", "arterial blood gas", "blood gas", "VBG", "venous blood gas"],
-         result=("Drawn on room air: pH 7.34, partial pressure of carbon dioxide 56 mmHg, partial pressure of "
-                 "oxygen 52 mmHg, bicarbonate 29 mEq/L, oxygen saturation 86%."),
+         aka=["ABG", "arterial blood gas", "blood gas", "VBG", "venous blood gas", "bicarbonate"],
+         result=("Drawn on room air: pH 7.32 (low), partial pressure of carbon dioxide 58 mmHg, partial pressure of "
+                 "oxygen 52 mmHg, bicarbonate 29 mEq/L (high), oxygen saturation 86%. After the first nebulized "
+                 "albuterol and oxygen, he still breathes about 28 times a minute with accessory muscle use."),
          here=True),
     # CMS L36 slides 31-32
     dict(id="cxr", name="Chest X-ray",
@@ -210,6 +213,10 @@ dict(
          aka=["BNP", "B-type natriuretic peptide", "brain natriuretic peptide", "natriuretic peptide",
               "NT-proBNP"],
          result="Normal: 62 picograms per milliliter.",
+         here=True),
+    dict(id="troponin", name="Troponin",
+         aka=["troponin", "trop", "TnI", "cardiac enzymes", "cardiac markers", "high-sensitivity troponin"],
+         result="Normal: no rise.",
          here=True),
     # CMS L36 slides 26-28 and 34: post-bronchodilator ratio below 0.70 confirms it; under 12% improvement means
     # irreversible obstruction; 47% of predicted (NHANES III, 61-year-old man, 6 feet 3 inches) is grade 3, severe
@@ -227,12 +234,6 @@ dict(
          result=("White blood cell count normal at 9,800. Hemoglobin normal at 15.4 grams per deciliter, no anemia. "
                  "Eosinophils 150 per microliter."),
          here=True),
-    dict(id="bmp", name="Basic metabolic panel",
-         aka=["BMP", "CMP", "basic metabolic panel", "metabolic panel", "chem panel", "chemistry", "electrolytes",
-              "bicarbonate", "kidney function"],
-         result=("Bicarbonate high at 29 mEq/L. Sodium, potassium, chloride, glucose and kidney function "
-                 "normal."),
-         here=True),
     # CMS L42 slides 53-54: Wells 1.5 (heart rate only), so unlikely; he does not pass the rule-out criteria, so a
     # D-dimer, which is negative
     dict(id="d-dimer", name="D-dimer",
@@ -242,15 +243,18 @@ dict(
   ],
   key=dict(
     diagnosis=("Acute exacerbation of chronic obstructive pulmonary disease (known severe airflow obstruction: "
-               "ratio 0.51, forced expiratory volume in 1 second 47% of predicted, grade 3), "
-               "triggered by a viral cold, with more breathlessness and more, purulent sputum; resting hypoxemia "
-               "(saturation 86%, arterial oxygen 52 mmHg) on compensated chronic carbon dioxide retention: admit "
-               "to the hospital"),
-    must_not_miss=["Hypercapnic respiratory failure: drowsiness, confusion, asterixis, a falling pH or a rising "
-                   "carbon dioxide means noninvasive ventilation and the intensive care unit",
+               "ratio 0.51, forced expiratory volume in 1 second 47% of predicted, grade 3), triggered by a viral "
+               "cold, with more breathlessness and more, purulent sputum; acute-on-chronic hypercapnic respiratory "
+               "acidosis (pH 7.32, carbon dioxide 58, bicarbonate 29) with resting hypoxemia (saturation 86%, "
+               "arterial oxygen 52 mmHg), in moderate respiratory distress and still about 28 breaths a minute with "
+               "accessory muscle use after the first treatments: intensive care admission with noninvasive "
+               "ventilation"),
+    must_not_miss=["Worsening hypercapnic respiratory failure: drowsiness, confusion, asterixis, hemodynamic "
+                   "instability, or a falling pH or rising carbon dioxide despite noninvasive ventilation means "
+                   "intubation and invasive ventilation",
                    "A second cause hiding behind the exacerbation: pneumonia, pulmonary embolism, acute heart "
-                   "failure or a pneumothorax (the chest X-ray, electrocardiogram, natriuretic peptide and D-dimer "
-                   "look for them)"],
+                   "failure or a pneumothorax (the chest X-ray, electrocardiogram, natriuretic peptide, troponin "
+                   "and D-dimer look for them)"],
     ddx=[
       dict(name="Chronic obstructive pulmonary disease, acute exacerbation",
            support=("Known severe disease (ratio 0.51, 47% of predicted), about 44 pack-years and still smoking, "
@@ -258,8 +262,8 @@ dict(
                     "cold, then four days of worsening breathlessness (now at rest) with more sputum that turned "
                     "yellow-green, and albuterol no longer helping. Tripod position, pursed lips, accessory muscle "
                     "use, barrel chest, central cyanosis, hyperresonance, diminished fremitus and distant breath "
-                    "sounds with wheezes and coarse crackles; saturation 86%, a blood gas with chronic carbon "
-                    "dioxide retention, and a hyperinflated chest X-ray."),
+                    "sounds with wheezes and coarse crackles; saturation 86%, a blood gas with acute-on-chronic "
+                    "respiratory acidosis, and a hyperinflated chest X-ray."),
            against=("Little against it: the low-grade temperature and basal crackles raise pneumonia, which the "
                     "clear chest X-ray answers.")),
       dict(name="Pneumonia",
@@ -270,8 +274,8 @@ dict(
            support=("Breathlessness, sleeping in a recliner, basal crackles, high blood pressure and a fast heart "
                     "rate."),
            against=("He sits up to breathe and cough, not because he wakes gasping; no leg edema; no third heart "
-                    "sound; neck veins fill only on forced expiration; a normal natriuretic peptide, no ischemic "
-                    "change on the electrocardiogram, and no edema on the chest X-ray.")),
+                    "sound; neck veins fill only on forced expiration; a normal natriuretic peptide and troponin, "
+                    "and no edema on the chest X-ray.")),
       dict(name="Pulmonary embolism",
            support="Tachycardia and hypoxemia; he does not pass the pulmonary embolism rule-out criteria.",
            against=("A gradual start after a cold, with purulent sputum; no pleuritic pain, coughing up blood, "
@@ -280,11 +284,13 @@ dict(
     ],
     studies=[
       dict(test="Arterial blood gas",
-           why=("Done in a severe exacerbation: measures oxygenation and carbon dioxide retention, and is repeated "
-                "after oxygen is started to confirm the oxygen rises without the carbon dioxide rising."),
-           expect=("pH 7.34, carbon dioxide 56 mmHg, bicarbonate 29, arterial oxygen 52 mmHg: respiratory acidosis "
-                   "with kidney compensation (bicarbonate up about 3.5 for each 10 mmHg of carbon dioxide, the "
-                   "chronic pattern), so the retention is long-standing; an arterial oxygen under 55 mmHg needs "
+           why=("Usually done only in a deteriorating or severe exacerbation: measures oxygenation and carbon "
+                "dioxide retention, and is repeated after oxygen is started to confirm the oxygen rises without the "
+                "carbon dioxide rising."),
+           expect=("pH 7.32, carbon dioxide 58 mmHg, bicarbonate 29, arterial oxygen 52 mmHg: respiratory "
+                   "acidosis, acute on chronic (for this carbon dioxide the bicarbonate would be about 26 if acute and "
+                   "about 30 if chronic; 29 lies between, and compensation never brings the pH back to normal). "
+                   "Respiratory acidosis is an intensive care criterion, and an arterial oxygen under 55 mmHg needs "
                    "oxygen.")),
       dict(test="Chest X-ray",
            why=("Not diagnostic of the disease, but rules out pneumonia, heart failure and pneumothorax as the "
@@ -295,9 +301,10 @@ dict(
            why=("Looks for an arrhythmia (a reason to admit) or ischemia behind the breathlessness; long-acting "
                 "beta agonists can worsen atrial fibrillation."),
            expect="Sinus tachycardia at 108; no arrhythmia or ischemic change."),
-      dict(test="B-type natriuretic peptide",
-           why="Tests for heart failure as the cause of, or a partner in, the breathlessness.",
-           expect="Normal (62 picograms per milliliter)."),
+      dict(test="B-type natriuretic peptide and troponin",
+           why=("Part of the evaluation of every exacerbation: heart failure or a heart attack as the cause of, or a "
+                "partner in, the breathlessness."),
+           expect="Both normal: natriuretic peptide 62 picograms per milliliter, no troponin rise."),
       dict(test="Complete blood count with differential",
            why=("Checks for anemia and measures the blood eosinophils, which decide whether an inhaled "
                 "corticosteroid is added (300 or more)."),
@@ -305,16 +312,20 @@ dict(
     ],
     plan=[
       ("Oxygen by Venturi mask, which delivers a precise concentration, titrated carefully to a saturation of "
-       "about 88 to 92% (arterial oxygen under 55 mmHg and saturation under 88% both call for it); repeat the "
-       "blood gas to confirm the oxygen rises without the carbon dioxide rising."),
-      "Short-acting bronchodilators by nebulizer: albuterol with ipratropium, repeated.",
-      ("A systemic corticosteroid (oral prednisone) and an oral antibiotic, because the breathlessness came with "
-       "more sputum that turned purulent: doxycycline, a macrolide, trimethoprim-sulfamethoxazole or "
-       "amoxicillin-clavulanate."),
-      ("Admit to the hospital ward (marked symptoms after the first treatments, new resting hypoxemia needing "
-       "oxygen, carbon dioxide retention) with prophylaxis against venous clots; noninvasive ventilation if hypercapnic "
-       "respiratory failure develops, and the intensive care unit for confusion, worsening respiratory acidosis, "
-       "instability or an arterial oxygen under 40 mmHg."),
+       "about 88 to 92% (societies differ; some say at least 90%), since his arterial oxygen is under 55 mmHg and "
+       "his saturation under 88%; repeat the blood gas to confirm the oxygen rises without the carbon dioxide "
+       "rising."),
+      "Short-acting bronchodilator by nebulizer: albuterol, repeated; continue his tiotropium.",
+      ("A systemic corticosteroid (oral, or injectable while he is on the mask) and an antibiotic, because the "
+       "breathlessness came with more sputum that turned purulent. Intravenous, because he needs ventilatory "
+       "support, even though there is no systemic infection (temperature 99.8, normal white count, clear chest "
+       "X-ray): doxycycline or a macrolide such as azithromycin, both given intravenously."),
+      ("Admit to the intensive care unit: respiratory acidosis is an intensive care criterion, and he also meets "
+       "the admission criteria (marked symptoms despite acute management, still about 28 breaths a minute with "
+       "accessory muscle use, and a need for noninvasive ventilatory support). Start noninvasive ventilation "
+       "(bilevel positive airway pressure), which reduces intubation rates and mortality in hypercapnic "
+       "respiratory failure; he is alert with no asterixis and hemodynamically stable. Repeat the blood gas, "
+       "intubate only if he worsens, and give prophylaxis against venous clots."),
       "Smoking cessation now: counseling with nicotine replacement, bupropion or varenicline.",
       ("Before discharge: add a long-acting beta agonist to his tiotropium (group E after a hospitalized "
        "exacerbation), check his inhaler technique, refer to pulmonary rehabilitation, give the yearly influenza "
@@ -323,7 +334,9 @@ dict(
     ],
     education=[
       ("This is a flare-up of your emphysema. The cold inflamed your already damaged airways, so they are narrower "
-       "and full of mucus, and your oxygen is low."),
+       "and full of mucus; your oxygen is low and carbon dioxide is building up. A breathing machine with a snug "
+       "mask will help you blow it off and lowers the chance you need a breathing tube, so you'll stay in "
+       "intensive care while you're on it."),
       ("Stopping smoking, and keeping the welding fumes away from your lungs, are the only things that slow the "
        "damage. We will help you quit with counseling and a patch, gum or a medicine."),
       ("You will go home on a daily inhaler with two long-acting medicines, plus albuterol for rescue, and we will "
@@ -333,26 +346,27 @@ dict(
       ("Get a flu shot every year. Call 911 for breathlessness at rest that your inhaler doesn't help, blue lips, "
        "confusion or sleepiness, or chest pain."),
     ],
-    red_flags=["Breathlessness at rest despite the rescue inhaler",
-               "Drowsiness or confusion",
-               "Blue lips or fingertips",
-               "New leg swelling, chest pain or an irregular heartbeat"],
-    follow_up=("Hospital admission now; after discharge, follow-up arranged before he leaves, with pulmonology "
-               "(frequent exacerbations) and pulmonary rehabilitation, aiming to keep him working; recovery takes "
-               "4 to 6 weeks, so no welding until he is back near his baseline."),
+    red_flags=["Drowsiness, confusion or asterixis (carbon dioxide climbing)",
+               "A falling pH or rising carbon dioxide on the repeat gas despite noninvasive ventilation",
+               "Hemodynamic instability or a new arrhythmia",
+               "After discharge: breathlessness at rest despite the rescue inhaler, blue lips, chest pain or new leg "
+               "swelling"],
+    follow_up=("Intensive care now, stepping down to the ward once he is off the mask and stable; after discharge, "
+               "follow-up with his lung specialist and pulmonary rehabilitation, including a talk about limiting his "
+               "welding-fume exposure and returning to work; recovery can take 4 to 6 weeks."),
     presentation=(
-      "Mr. Abernathy is a 61-year-old welder with severe chronic obstructive pulmonary disease (47% of "
-      "predicted), hypertension and about 44 pack-years, still smoking, presenting with four days of worsening "
-      "breathlessness after a cold, now at rest. His sputum has increased and turned yellow-green, and albuterol "
-      "every two hours no longer helps. He denies coughing up blood, chest pain, leg swelling, weight loss and "
-      "confusion. Heart rate 108, respiratory rate 28, temperature 99.8, room-air saturation 86%. He sits in "
-      "the tripod position with pursed lips and accessory muscle use, speaking in short phrases. He has a barrel "
-      "chest, central cyanosis, diffuse hyperresonance, diminished fremitus, and distant breath sounds with "
-      "wheezes and basal coarse crackles; he is alert, without asterixis or edema. My differential is an "
-      "exacerbation, pneumonia, heart failure and pulmonary embolism. The blood gas shows chronic carbon dioxide "
-      "retention with an arterial oxygen of 52; the X-ray shows hyperinflation only. My working diagnosis is an "
-      "acute exacerbation with hypoxemia. Plan: controlled oxygen, nebulized bronchodilators, prednisone, an "
-      "antibiotic and admission."),
+      "Mr. Abernathy is a 61-year-old welder with severe chronic obstructive pulmonary disease, hypertension "
+      "and about 44 pack-years, still smoking, presenting with four days of worsening breathlessness after a "
+      "cold, now at rest. His sputum has increased and turned yellow-green, and albuterol every two hours no "
+      "longer helps. He denies coughing up blood, chest pain, leg swelling and confusion. Heart rate 108, "
+      "respiratory rate 28, temperature 99.8, room-air saturation 86%. He sits in the tripod position with "
+      "pursed lips and accessory muscle use. He has a barrel chest, central cyanosis, diffuse hyperresonance, "
+      "diminished fremitus, and distant breath sounds with wheezes and basal coarse crackles; he is alert, "
+      "without asterixis or edema. My differential is an exacerbation, pneumonia, heart failure and pulmonary "
+      "embolism. The blood gas shows acute-on-chronic respiratory acidosis, pH 7.32 with carbon dioxide 58, and "
+      "an arterial oxygen of 52; the X-ray shows hyperinflation only. My working diagnosis is an exacerbation "
+      "with hypercapnic respiratory failure. Plan: intensive care, noninvasive ventilation, controlled oxygen, "
+      "albuterol, steroids and an antibiotic."),
     high_yield=[
       dict(item="Ask how the sputum has changed: amount and color",
            why=("More breathlessness with more sputum that has turned purulent is the indication for an "
@@ -363,21 +377,25 @@ dict(
            why=("One flare this year treated at home; this admission makes him high risk (group E), which sets "
                 "the inhalers he goes home on.")),
       dict(item="Inspect posture, pursed lips, accessory muscles, the anterior-posterior diameter and the lips",
-           why=("Tripod position, pursed-lip breathing, accessory muscle use, a barrel chest above 0.9 and central "
-                "cyanosis mark a severe exacerbation in hyperinflated lungs.")),
+           why=("Tripod position, pursed-lip breathing, accessory muscle use and cyanosis show how hard he is "
+                "working (seen in more severe exacerbations or late-stage disease); the barrel chest above 0.9 is "
+                "the chronic hyperinflation.")),
       dict(item="Percuss, palpate fremitus and listen side to side",
            why=("Diffuse hyperresonance, diminished fremitus and distant breath sounds with wheezes and coarse "
                 "crackles fit hyperinflation; focal dullness with increased fremitus and bronchial breath sounds "
                 "would mean pneumonia.")),
       dict(item="Check alertness and look for asterixis",
-           why=("Drowsiness, confusion or a flapping tremor means carbon dioxide retention is getting worse and "
-                "moves him to ventilatory support and intensive care.")),
+           why=("He is alert with no asterixis, so there is no altered mental status; drowsiness, confusion or a "
+                "flapping tremor would mean the carbon dioxide is climbing despite the mask and he may need "
+                "intubation.")),
       dict(item="Look at the neck veins and legs, and listen to the heart",
            why=("No leg edema and a normal natriuretic peptide argue against heart failure; distant heart sounds "
                 "heard at the epigastrium are the hyperinflated chest.")),
       dict(item="Interpret the saturation and the blood gas out loud, then titrate oxygen",
-           why=("Saturation 86% and arterial oxygen 52 mmHg need oxygen; a bicarbonate of 29 shows chronic "
-                "retention, so the oxygen is titrated carefully by Venturi mask with a repeat gas.")),
+           why=("Saturation 86% and arterial oxygen 52 mmHg need oxygen; pH 7.32 with carbon dioxide 58 and "
+                "bicarbonate 29 is acute-on-chronic respiratory acidosis, which means intensive care and "
+                "noninvasive ventilation, with oxygen titrated carefully by Venturi mask and a repeat "
+                "gas.")),
     ],
   ),
 ),
@@ -410,7 +428,7 @@ dict(
     ("Date of birth", "March 14, 1985."),
     # CMS L37 slide 16: starts with cold symptoms (low-grade fever, chills, aches, fatigue, postnasal drip)
     ("Onset", "About ten days ago, the Tuesday before last. It started as a cold: runny nose, scratchy throat, "
-              "achy all over. The cough kicked in a couple of days later."),
+              "achy all over, and the cough came with it right from the start."),
     # slide 16: chest tightness or substernal discomfort; chest-wall pain from frequent coughing
     ("Location", "In my chest, right in the middle behind my breastbone. And my ribs are sore from all the "
                  "coughing."),
@@ -477,7 +495,7 @@ dict(
     # slide 13: Tdap during every pregnancy, then Td or Tdap every 10 years; slides 4, 11: influenza and COVID-19
     ("Immunizations", "I had the tetanus and whooping cough shot when I was pregnant with Owen. I usually get my "
                       "flu shot at school, but I missed the clinic day this year. I had the COVID shots when they "
-                      "first came out."),
+                      "first came out. I've never had a pneumonia shot."),
     ("Tuberculosis exposure or testing", "They did a skin test when I started teaching. It was negative. Nobody I "
                                          "know has had tuberculosis."),
     ("Family history, mother", "My mom is 68. High blood pressure and an underactive thyroid like me."),
@@ -601,8 +619,9 @@ dict(
                     "pregnancy.")),
       dict(name="Asthma",
            support="Wheeze and chest tightness, worse lying down at night.",
-           against=("No episodes before this cold, never an inhaler, and the wheeze is central and came with the "
-                    "infection; reassess for asthma only if the wheeze persists after the illness.")),
+           against=("No asthma diagnosis and never an inhaler; her earlier winter chest colds cleared without any "
+                    "wheeze treatment; this wheeze is central and came with the infection. Reassess for asthma only "
+                    "if it persists after the illness.")),
     ],
     studies=[
       dict(test="Chest X-ray",
@@ -695,9 +714,9 @@ dict(
 dict(
   id="pulmonary-pulmonary-embolism",
   condition="Pulmonary embolism",
-  cites=("CMS L42 Pulmonary Vascular Disorders, slides 9, 14, 43, 48-62; CMS L26 Venous Disorders slides 51, "
-         "57, 61-63, 66, 68; CMS L44 Pleural Disorders slides 12-13, 25; PD2 Thorax slides 10, 14, 17, 24, "
-         "50, 61"),
+  cites=("CMS L42 Pulmonary Vascular Disorders, slides 9, 14, 43, 48-62; CMS L26 Venous Disorders slides 47, "
+         "51, 57, 61, 63-65, 68; CMS L44 Pleural Disorders slides 12-13, 25; CMS L33 Oxygen Delivery slide 3; "
+         "PD2 Thorax slides 10, 14, 17, 24, 35, 40, 50, 61"),
   door=dict(
     name="Daniela Castillo", sex="female", age=34, dob="January 30, 1992",
     setting="Emergency department",
@@ -711,7 +730,7 @@ dict(
             ("Height and weight", "5 feet 5 inches, 164 pounds (body mass index 27.3)")],
   ),
   persona=("A 34-year-old middle school Spanish teacher, organized and articulate, frightened but trying to stay "
-           "composed. She takes small breaths, pauses mid-sentence when the pain catches, and keeps one hand "
+           "composed. She takes small breaths, pauses between sentences when the pain catches, and keeps one hand "
            "pressed to her right side. She plays down her sore calf until asked, because she was sure it was a "
            "pulled muscle. Her six-year-old son is her first worry."),
   opening=("This morning I got a sharp pain on the right side of my chest every time I breathe in, and I can't "
@@ -821,7 +840,10 @@ dict(
                        "stridor. Normal color, no sweating."),
     "breathing-pattern": ("Fast at 22 breaths per minute, regular and shallow, with a normal expiratory phase; "
                           "she splints, taking small breaths because a deep one hurts on the right."),
-    "expansion": "Symmetric, though she stops short of a full breath because of right-sided pain.",
+    "thorax-inspect": ("No deformity, wound or bruising. The right lower chest moves a little less than the left "
+                       "because she splints against the pain. No retractions."),
+    "expansion": ("Decreased on the right: the right thumb moves less than the left with a deep breath, because a "
+                  "deep breath hurts on that side."),
     "chest-wall-palp": ("No tenderness, deformity or crepitus over the posterior, lateral or anterior chest wall. "
                         "Pressing over the right lower ribs where she points does not reproduce the pain."),
     "ausc-lateral": ("Lateral chest: vesicular breath sounds, equal on both sides. Over the right lower lateral "
@@ -867,11 +889,11 @@ dict(
          result=("Sinus tachycardia at 110 with the S1Q3T3 pattern: a deep S wave in lead I, and a Q wave and an "
                  "inverted T wave in lead III. No ST elevation."),
          here=True),
-    # CMS L42 slides 43, 51: often clear; classic signs infrequent
+    # CMS L42 slide 51: most have an abnormal but nonspecific film (atelectasis, effusion); classic signs infrequent
     dict(id="cxr", name="Chest X-ray",
          aka=["CXR", "chest film", "chest radiograph", "chest x ray", "chest x-ray", "chest imaging", "portable chest"],
-         result=("Lungs clear. No pneumothorax, consolidation, effusion or wedge-shaped opacity; heart size and "
-                 "pulmonary vessels normal."),
+         result=("Mild atelectasis at the right base. Otherwise clear: no pneumothorax, consolidation, effusion "
+                 "or wedge-shaped opacity; heart size and pulmonary vessels normal."),
          here=True),
     # CMS L42 slide 58: elevated troponin (myocardial necrosis) is a submassive criterion
     dict(id="troponin", name="Troponin (high-sensitivity)",
@@ -892,16 +914,20 @@ dict(
                  "ventricular strain); the left ventricle is small but squeezes normally. Pulmonary artery "
                  "systolic pressure estimated as raised. No clot in the right heart."),
          here=True),
-    dict(id="pregnancy-test", name="Urine pregnancy test",
-         aka=["pregnancy test", "urine pregnancy", "hCG", "urine hCG", "beta hCG", "UPT", "serum hCG"],
-         result="Negative.",
+    # CMS L26 slide 57: venous duplex ultrasound has replaced venography; slide 47: begins in the calf and moves
+    # proximally to the popliteal and femoral veins
+    dict(id="leg-ultrasound", name="Venous duplex ultrasound of the legs",
+         aka=["leg ultrasound", "venous duplex", "duplex", "duplex ultrasound", "lower extremity doppler", "doppler",
+              "DVT scan", "DVT ultrasound", "venous ultrasound", "compression ultrasound", "leg doppler"],
+         result=("Left leg: the femoral and popliteal veins do not compress and contain thrombus: acute deep vein "
+                 "thrombosis. Right leg veins compress normally."),
          here=True),
   ],
   key=dict(
     diagnosis=("Acute submassive (intermediate-risk) pulmonary embolism: a clot in the right main pulmonary artery "
                "extending into the right lower lobe, with right ventricular strain and a raised troponin but a "
-               "normal blood pressure; from a left leg deep vein thrombosis, provoked by an estrogen pill and a "
-               "long flight"),
+               "normal blood pressure; from a left femoral and popliteal deep vein thrombosis, provoked by an "
+               "estrogen pill and a long flight"),
     must_not_miss=["Deterioration to massive (high-risk) embolism: fainting, a systolic pressure under 90 for more "
                    "than 15 minutes or circulatory collapse needs immediate thrombolysis, or thrombectomy if "
                    "thrombolysis is contraindicated",
@@ -912,19 +938,20 @@ dict(
       dict(name="Pulmonary embolism (acute, submassive, right main pulmonary artery) from a left leg deep vein thrombosis",
            support=("Sudden pleuritic right-sided pain with breathlessness and blood-streaked sputum, five days of "
                     "left calf pain and ankle swelling, an estrogen pill and a ten-hour flight nine days ago. "
-                    "Heart rate 110, saturation 93%, a localized right lower pleural rub that stops on "
-                    "breath-holding, and a swollen, warm, tender left calf. Wells score 8.5. The electrocardiogram "
-                    "shows the S1Q3T3 pattern, and the scan a clot in the right main pulmonary artery with a "
-                    "strained right ventricle."),
-           against=("Nothing against it; a clear chest X-ray and a normal natriuretic peptide are typical early "
-                    "in embolism.")),
+                    "Heart rate 110, saturation 93%, splinting on the right, a localized right lower pleural rub "
+                    "that stops on breath-holding, and a swollen, warm, tender left calf. Wells score 8.5. The "
+                    "electrocardiogram shows the S1Q3T3 pattern, the scan a clot in the right main pulmonary "
+                    "artery with a strained right ventricle, and the ultrasound a left femoral and popliteal "
+                    "clot."),
+           against=("Nothing against it; a nonspecific chest X-ray (mild atelectasis only) and a normal "
+                    "natriuretic peptide are typical early in embolism.")),
       dict(name="Pneumonia",
            support="Pleuritic pain, a cough, a temperature of 99.0 and blood-streaked sputum.",
            against=("Onset over minutes, no fever or purulent sputum, no crackles, bronchial breath sounds or "
-                    "egophony, and a clear chest X-ray.")),
+                    "egophony, and no consolidation on the chest X-ray.")),
       dict(name="Pneumothorax",
            support="Sudden pleuritic pain and breathlessness.",
-           against=("Equal breath sounds, resonant percussion and symmetric fremitus, and no pleural line on the "
+           against=("Resonant percussion, preserved fremitus and equal breath sounds, and no pleural line on the "
                     "X-ray.")),
       dict(name="Pericarditis",
            support="Sharp chest pain that is worse on inspiration, with a fast heart rate.",
@@ -934,8 +961,8 @@ dict(
     studies=[
       dict(test="Computed tomographic pulmonary angiography",
            why=("Wells score above 4 (8.5): skip the D-dimer and go straight to imaging. First-line and the gold "
-                "standard, and it shows the right ventricle. A ventilation-perfusion scan is for kidney failure "
-                "or a severe contrast allergy; a pregnancy test comes first."),
+                "standard, and it shows the right ventricle; a ventilation-perfusion scan is for kidney failure "
+                "or a severe contrast allergy."),
            expect=("A filling defect in the right main pulmonary artery extending into the right lower lobe, a "
                    "small pleural-based infarction, and a right ventricle larger than the left with septal "
                    "bowing.")),
@@ -944,9 +971,10 @@ dict(
                 "strain (highly specific, low sensitivity). It also looks for a heart attack."),
            expect="Sinus tachycardia at 110 with the S1Q3T3 pattern; no ST elevation."),
       dict(test="Chest X-ray",
-           why=("Often clear in embolism, and the classic signs (focal oligemia, a wedge-shaped opacity, an "
-                "enlarged descending pulmonary artery) are infrequent; it rules out pneumothorax and pneumonia."),
-           expect="Clear lungs; no pneumothorax, consolidation or effusion."),
+           why=("Most patients with embolism have an abnormal but nonspecific film (atelectasis, effusion), and "
+                "the classic signs (focal oligemia, a wedge-shaped opacity, an enlarged descending pulmonary "
+                "artery) are infrequent; it rules out pneumothorax and pneumonia."),
+           expect="Mild atelectasis at the right base only; no pneumothorax, consolidation or effusion."),
       dict(test="Troponin and B-type natriuretic peptide",
            why=("Risk stratification: a raised troponin or natriuretic peptide in a patient with a normal blood "
                 "pressure makes it submassive."),
@@ -954,43 +982,49 @@ dict(
       dict(test="Echocardiogram",
            why=("Poor for diagnosing embolism but highly specific for right ventricular strain: a tool for risk "
                 "stratification. It looks for the D-shaped septum and a clot in the right heart."),
-           expect=("Dilated, poorly moving right ventricle with a D-shaped septum; no clot in the right heart.")),
+           expect="Dilated, poorly moving right ventricle with a D-shaped septum; no clot in the right heart."),
     ],
     plan=[
       ("Start anticoagulation now, on high clinical suspicion while the scan is arranged, unless she is "
-       "bleeding; confirm with computed tomographic pulmonary angiography after a negative pregnancy test."),
+       "bleeding; confirm with computed tomographic pulmonary angiography (a ventilation-perfusion scan only for "
+       "kidney failure or a severe contrast allergy)."),
       ("Risk-stratify: a normal blood pressure, but right ventricular strain on the scan and echocardiogram and a "
        "raised troponin make it submassive (intermediate risk). Admit her to a monitored bed: she is at high "
-       "risk of sudden deterioration."),
-      ("Anticoagulation with heparin first, then an oral agent (apixaban or rivaroxaban) once she is stable, for "
-       "a minimum of 3 months; provoked, so consider stopping at the 3-month decision point."),
-      ("No routine thrombolysis: in submassive embolism it is controversial, weighing faster right ventricular "
-       "recovery against major and intracranial bleeding. It becomes the treatment if she turns massive "
-       "(systolic pressure under 90 for more than 15 minutes), with thrombectomy if it is contraindicated."),
-      "Stop the estrogen-containing pill today and switch to birth control without estrogen.",
-      "Supplemental oxygen for her saturation of 93%, and pain control.",
+       "risk of sudden deterioration, and outpatient treatment is not appropriate with a symptomatic "
+       "embolism."),
+      ("Anticoagulation by one of the standard strategies: heparin first (unfractionated by continuous infusion, "
+       "or low molecular weight heparin), switched after 5 days to dabigatran or edoxaban, or overlapped with "
+       "warfarin; or rivaroxaban or apixaban alone, starting with a loading dose. Provoked by minor transient "
+       "risks (estrogen, prolonged travel): 3 to 6 months, with the decision point at 3 months."),
+      ("Thrombolysis is not routine: in submassive embolism it is controversial, weighing faster right "
+       "ventricular recovery against major and intracranial bleeding, so a student who weighs it that way is "
+       "reasoning correctly. It becomes the treatment if she turns massive (systolic pressure under 90 for more "
+       "than 15 minutes), with thrombectomy if thrombolysis is contraindicated."),
+      "Stop the estrogen-containing pill.",
+      ("Oxygen for her air hunger and mild hypoxemia (saturation 93%), adjusted to her saturation, and pain "
+       "control."),
     ],
     education=[
-      ("A blood clot formed in your left calf after the long flight, and a large piece of it broke off and "
+      ("A blood clot formed in your left leg after the long flight, and a large piece of it broke off and "
        "lodged in the main artery to your right lung. The estrogen in your pill and sitting still on the plane "
        "both made a clot more likely."),
       ("The clot is straining the right side of your heart, so you will stay in the hospital on a heart monitor "
        "while the blood thinner starts working. Your blood pressure is holding well, and we will watch it "
        "closely."),
-      ("The blood thinner stops the clot from growing and lets your body dissolve it. You will take it for at "
-       "least 3 months; because this clot had clear triggers, we will talk about stopping it then. Stop your "
-       "birth control pill today and use a method without estrogen."),
+      ("The blood thinner stops the clot from growing and lets your body dissolve it. Because this clot had "
+       "clear triggers, you will take it for 3 to 6 months, and we will decide at 3 months. Stop your birth "
+       "control pill: its estrogen raises your risk of another clot."),
       ("If you are still short of breath 3 months from now, tell us: the strain on your heart today makes "
        "lasting damage to the lung arteries more likely, and we will check for it."),
-      ("Tell the nurse at once, or later come straight back, for feeling faint, worse breathlessness, more than "
+      ("Tell the nurse at once, and later come straight back, for feeling faint, worse breathlessness, more than "
        "streaks of blood when you cough, or serious bleeding such as black stools, vomiting blood or a sudden "
        "severe headache."),
     ],
     red_flags=["Fainting, lightheadedness or a falling blood pressure (circulatory collapse)",
                "Worsening breathlessness or a falling oxygen level",
                "Coughing up more than streaks of blood, or serious bleeding on the blood thinner"],
-    follow_up=("Admission to a monitored bed now; after discharge, a recheck within a week, then the 3-month "
-               "decision point (provoked: consider stopping), with screening for chronic thromboembolic "
+    follow_up=("Admission to a monitored bed now; then the 3-month decision point on anticoagulation (provoked by "
+               "minor transient risks: 3 to 6 months in all), with screening for chronic thromboembolic "
                "pulmonary hypertension if she is still breathless at 3 months, since right ventricular strain on "
                "her first scan is a risk factor for it."),
     presentation=(
@@ -998,13 +1032,13 @@ dict(
       "days ago, presenting with sudden sharp right-sided chest pain with every breath and breathlessness since "
       "this morning. She has coughed up blood-streaked sputum twice and has had five days of left calf pain and "
       "ankle swelling. She denies fainting, fever, wheeze, prior clots, cancer and surgery. Heart rate 110, "
-      "respiratory rate 22, saturation 93% on room air, blood pressure 128/78. She is splinting, with a right "
-      "lower lateral pleural rub that stops on breath-holding and a swollen, warm, tender left calf. My "
-      "differential is pulmonary embolism, pneumonia, pneumothorax and pericarditis. Her Wells score is 8.5, so "
-      "I would go straight to computed tomographic pulmonary angiography, with an electrocardiogram, chest "
-      "X-ray, troponin, natriuretic peptide and echocardiogram. Diagnosis: submassive pulmonary embolism in the "
-      "right main pulmonary artery, with right ventricular strain. Plan: heparin, a monitored bed, and stop the "
-      "estrogen."),
+      "respiratory rate 22, saturation 93% on room air, blood pressure 128/78. She is splinting on the right, "
+      "with a right lower lateral pleural rub that stops on breath-holding and a swollen, warm, tender left "
+      "calf. My differential is pulmonary embolism, pneumonia, pneumothorax and pericarditis. Her Wells score is "
+      "8.5, so I would go straight to computed tomographic pulmonary angiography, with an electrocardiogram, "
+      "chest X-ray, troponin, natriuretic peptide and echocardiogram. Diagnosis: submassive pulmonary embolism "
+      "in the right main pulmonary artery, with right ventricular strain. Plan: heparin, a monitored bed, and "
+      "stop the estrogen."),
     high_yield=[
       dict(item="Ask about leg swelling or calf pain, out loud",
            why=("It is the pulmonary embolism question: one-sided leg symptoms. Signs of a deep vein thrombosis "
@@ -1026,10 +1060,10 @@ dict(
                 "criteria and the D-dimer are for scores of 4 or less.")),
       dict(item="Risk-stratify before choosing treatment",
            why=("Normal blood pressure with right ventricular strain or a raised troponin or natriuretic peptide "
-                "is submassive, at high risk of sudden deterioration; a systolic pressure under 90 for more than "
-                "15 minutes is massive and needs thrombolysis; neither is low risk.")),
+                "is submassive, at high risk of sudden deterioration, where thrombolysis is controversial; a "
+                "systolic pressure under 90 for more than 15 minutes is massive and needs thrombolysis.")),
       dict(item="Stop the estrogen and set the length of anticoagulation",
-           why="Provoked by estrogen and a long flight: at least 3 months, then consider stopping."),
+           why="Provoked by minor transient risks (estrogen, a long flight): 3 to 6 months, decided at 3 months."),
     ],
   ),
 ),
@@ -1041,7 +1075,7 @@ dict(
   id="pulmonary-lung-cancer",
   condition="Lung cancer",
   cites=("CMS L43 Pulmonary Nodules and Neoplasms, slides 3-4, 9, 12-14, 16-18, 22, 24, 31-35, 46, 48; CMS L38 "
-         "Mycobacterial Infections including Tuberculosis slides 18-19, 26, 28; CMS L36 Chronic Obstructive "
+         "Mycobacterial Infections including Tuberculosis slides 18-19, 26, 28, 33, 41; CMS L36 Chronic Obstructive "
          "Pulmonary Disease slides 21, 46; PD2 Thorax slides 17, 20-24, 26, 33, 40-42, 54, 60"),
   door=dict(
     name="Raymond Dunmore", sex="male", age=66, dob="August 23, 1960",
@@ -1174,7 +1208,8 @@ dict(
   # CMS L43 slide 14: chest X-ray may first show the mass; the standard is computed tomography of the chest and upper
   # abdomen with contrast, then biopsy (bronchoscopic, transthoracic or thoracoscopic by location, can be guided by
   # computed tomography), positron emission tomography and genetic testing; laboratory work is a blood count with
-  # differential and a metabolic panel with calcium and alkaline phosphatase; sputum cytology is not sensitive.
+  # differential, a metabolic panel with calcium and alkaline phosphatase, and pulmonary function tests (slide 35:
+  # he must be able to tolerate surgery).
   # Slides 16 (concerning nodules), 17 (uptake), 33-34 (large cell: peripheral, cavitated), 24 (stage IIA: more than
   # 4 and no more than 5 centimeters, no lymph nodes).
   tests=[
@@ -1211,10 +1246,11 @@ dict(
          result=("Calcium normal at 9.4 milligrams per deciliter. Sodium normal at 139 mEq/L. Alkaline phosphatase, "
                  "liver tests, potassium, glucose and kidney function normal."),
          here=True),
-    dict(id="sputum-cytology", name="Sputum cytology",
-         aka=["sputum cytology", "sputum for cytology", "cytology", "sputum for cancer cells"],
-         result="No malignant cells seen.",
-         here=True),
+    dict(id="pft", name="Pulmonary function tests",
+         aka=["PFT", "PFTs", "pulmonary function tests", "spirometry", "lung function test", "breathing test",
+              "DLCO", "diffusing capacity"],
+         result="Not available in this clinic: it is done in a pulmonary function laboratory.",
+         here=False),
     # CMS L38 slides 19 and 26: symptoms or suspicious imaging need microbiologic testing; three sputum specimens
     # 8-24 hours apart for smear and culture, with a rapid molecular test
     dict(id="sputum-afb", name="Sputum acid-fast bacilli smears, mycobacterial culture and rapid molecular test",
@@ -1242,8 +1278,7 @@ dict(
                     "weight loss, fatigue and new breathlessness on stairs. Clubbing; dullness, decreased fremitus "
                     "and decreased breath sounds over the left upper lobe. A spiculated, cavitating upper lobe mass "
                     "over 6 millimeters with high uptake on positron emission tomography."),
-           against=("Not proven until the biopsy: inflammation can also take up the tracer, and the negative sputum "
-                    "cytology does not count against it because the test is not sensitive.")),
+           against=("Not proven until the biopsy: inflammation can also take up the tracer.")),
       dict(name="Tuberculosis",
            support=("A cough over 8 weeks, coughing up blood, weight loss, fatigue, and a cavity in an upper lobe, "
                     "where reactivated tuberculosis tends to cavitate."),
@@ -1251,8 +1286,8 @@ dict(
                     "and rapid molecular test (cultures pending).")),
       dict(name="Lung abscess",
            support="A cavitating lesion with cough and coughing up blood.",
-           against=("No fever, and the sputum is scant, white and not foul smelling; months of weight loss, "
-                    "clubbing and a spiculated mass point to a tumor.")),
+           against=("No fever, and the sputum is scant, white and not foul smelling; months of weight loss and a "
+                    "spiculated mass point to a tumor.")),
       dict(name="Pulmonary embolism",
            support="Coughing up blood with some breathlessness.",
            against=("Months of gradual symptoms, no sudden breathlessness, pleuritic pain or leg swelling, a heart "
@@ -1287,8 +1322,11 @@ dict(
     plan=[
       ("Urgent referral for a biopsy of the peripheral mass with a needle guided by computed tomography, with "
        "molecular testing of the tissue."),
-      ("Pulmonary function tests to judge whether he can tolerate surgery; a complete blood count with differential "
-       "and a metabolic panel with calcium and alkaline phosphatase."),
+      ("Pulmonary function tests to judge whether he can tolerate surgery. His blood count with differential and "
+       "metabolic panel with calcium and alkaline phosphatase are already done and normal."),
+      ("Until tuberculosis is excluded (a cavitating upper-lobe lesion with coughing up blood and weight loss): a "
+       "mask on him, airborne precautions with N95 respirators for staff, and isolation ended only on clinical and "
+       "laboratory criteria; his sputum smears and rapid molecular test are negative, with cultures pending."),
       ("Refer to thoracic surgery and oncology: a non-small cell cancer of more than 4 and no more than 5 "
        "centimeters without lymph node spread is stage IIA, and stages I to IIIB are resected (lobectomy, or a "
        "wedge or segment) if he can tolerate surgery, with chemotherapy, targeted therapy or immunotherapy as "
@@ -1314,8 +1352,8 @@ dict(
                "Breathlessness at rest or chest pain",
                "Confusion, seizures or unsteadiness",
                "New bone pain, headache or vision change"],
-    follow_up=("Within a week: confirm the biopsy appointment and review the pulmonary function tests; then shared "
-               "care with thoracic surgery and oncology once the biopsy is back."),
+    follow_up=("Promptly, with the biopsy arranged as soon as possible and the pulmonary function tests reviewed; "
+               "then shared care with thoracic surgery and oncology once the biopsy is back."),
     presentation=(
       "Mr. Dunmore is a 66-year-old retired truck driver with hypertension and 48 pack-years, still smoking, "
       "presenting with three to four months of a changed, persistent cough and a month of blood-streaked sputum, "
@@ -1400,7 +1438,7 @@ dict(
     ("Severity", "A seven out of ten. A ten was the attack when I was sixteen, when the ambulance took me in."),
     ("Temporal pattern", "Worst at night and early in the morning. I've woken up around three in the morning the "
                          "last two nights."),
-    ("Prior episodes", "I've had attacks like this, but not this bad since I was a teenager. Last October I had "
+    ("Prior episodes", "I've had attacks like this, but not this bad since I was a teenager. Last February I had "
                        "one with a cold, and urgent care gave me prednisone."),
     ("Cough", "Yes, since Wednesday. Mostly dry and tight, and worse at night."),
     ("Sputum", "A little clear or white stuff in the morning. Not yellow or green."),
@@ -1412,8 +1450,7 @@ dict(
     ("Wheezing", "Yes, I can hear it myself, a whistle when I breathe out. My roommate heard it from the other "
                  "room last night."),
     ("Chest pain with breathing", "No sharp pain when I breathe in. Just the tightness."),
-    ("Fever, chills or night sweats", "I felt a little warm on Monday, but I never measured a fever. No chills or "
-                                      "sweats."),
+    ("Fever, chills or night sweats", "No real fevers, just felt a little warm once. No chills or sweats."),
     ("Weight loss", "No, my weight's the same."),
     ("Orthopnea and waking up short of breath", "I can lie flat. But the last two nights I woke up around three, "
                                                 "coughing and wheezing, and had to sit up and use my inhaler."),
@@ -1430,7 +1467,8 @@ dict(
     ("Anything else", "No, I think that's it. I just want to be able to breathe."),
     ("Chronic conditions", "Just the asthma and my allergies. I had eczema as a kid, and I still get it in my "
                            "elbows."),
-    ("Known lung disease", "Asthma since I was four. It mostly went away in high school, then came back when I "
+    ("Known lung disease", "Asthma since I was four. It mostly went away after I finished high school, then came "
+                           "back when I "
                            "was about twenty-four after a bad cold. Last year they did the breathing test where I "
                            "blew into a tube before and after the inhaler, and it got a lot better with the "
                            "inhaler."),
@@ -1438,8 +1476,8 @@ dict(
     ("Hospitalizations", "One night at sixteen for an asthma attack. They gave me breathing treatments and "
                          "steroids. I never needed the intensive care unit or a breathing tube."),
     ("Prescription medications", "Albuterol, two puffs when I need it. Fluticasone, the orange inhaler, two puffs "
-                                 "twice a day, but I stopped it in August. And my birth control pill, for about "
-                                 "five years."),
+                                 "twice a day, but I stopped it in August. And my birth control pill, the "
+                                 "combined kind with estrogen, for about five years."),
     ("Taking them as prescribed", "Honestly, no. I stopped the fluticasone in August when it ran out. I felt fine, "
                                   "and it's fifty dollars a month."),
     ("Over-the-counter medicines and supplements", "A daytime cold medicine and some acetaminophen this week. "
@@ -1472,7 +1510,7 @@ dict(
                           "honestly."),
     ("Waking at night before this cold", "Three or four times a month since I stopped the fluticasone."),
     ("Inhaler technique", "I just spray it in my mouth and breathe in. I lost the spacer a while ago."),
-    ("Steroid courses in the past year", "Just the one last October, five days of prednisone."),
+    ("Steroid courses in the past year", "Just the one last February, five days of prednisone."),
     ("Usual triggers", "Colds are the worst. Dust, cold air and running in the winter, too. Cats make me itchy and "
                        "wheezy."),
     ("Aspirin and ibuprofen", "I take ibuprofen for cramps sometimes. It's never made my breathing worse."),
@@ -1518,7 +1556,7 @@ dict(
      "Dry, slightly thickened patches of eczema in both elbow creases. No rash elsewhere."),
   ],
   must_exam=['general-survey', 'accessory-muscles', 'breathing-pattern', 'percuss-posterior', 'ausc-posterior',
-             'ausc-anterior'],
+             'legs'],
   # CMS L35 slide 101: initial assessment is peak flow or forced expiratory volume in 1 second plus saturation;
   # 40-69% moderate, under 40% severe; a good response is 70% or more sustained 60 minutes after the last treatment.
   tests=[
@@ -1526,22 +1564,24 @@ dict(
          aka=["peak flow", "PEF", "PEFR", "peak expiratory flow", "peak flow meter", "peak flow rate"],
          result=("Before treatment: 240 liters per minute, 55% of her personal best of 440. After three albuterol "
                  "and ipratropium nebulizer treatments in the first hour: 330 liters per minute (75%), still 75% "
-                 "an hour after the last treatment."),
+                 "an hour after the last treatment. At that recheck she is breathing comfortably and speaking in "
+                 "full sentences, and her lungs are clear with no wheeze."),
          here=True),
     # CMS L35 slide 59: usually normal or may show hyperinflation
     dict(id="cxr", name="Chest X-ray",
          aka=["CXR", "chest film", "chest radiograph", "chest x ray", "chest x-ray", "chest imaging"],
          result="Hyperinflated lungs. No infiltrate, no pneumothorax and no effusion. Normal heart size.",
          here=True),
-    # CMS L35 slides 52-54: before and after a short-acting bronchodilator, effort dependent; reduced forced expiratory
-    # volume in 1 second and ratio, improvement of 12% or more. Values from the slide 56 graph (2.2 L, 3.6 L, 61%).
+    # CMS L35 slides 52-54: before and after a short-acting bronchodilator; reduced forced expiratory volume in 1
+    # second and ratio, improvement of 12% or more. Values from the slide 56 graph: 2.2 L against a normal 3.5 L (63%),
+    # forced vital capacity 3.6 L, ratio 61%.
     dict(id="spirometry", name="Spirometry before and after a bronchodilator",
          aka=["spirometry", "PFT", "PFTs", "pulmonary function tests", "lung function test", "FEV1",
               "breathing test", "pre and post bronchodilator spirometry"],
-         result=("Done before discharge, once she had improved enough to give a good effort. Before the "
-                 "bronchodilator: forced expiratory volume in 1 second (FEV1) 2.2 L (66% of predicted), forced "
-                 "vital capacity (FVC) 3.6 L, ratio 0.61 (reduced). Fifteen minutes after albuterol: forced "
-                 "expiratory volume in 1 second 2.5 L, a 14% improvement."),
+         result=("On file from last year, when her asthma was confirmed as an adult; not repeated during the "
+                 "attack. Before the bronchodilator: forced expiratory volume in 1 second (FEV1) 2.2 L (63% of "
+                 "predicted), forced vital capacity (FVC) 3.6 L, ratio 0.61 (reduced). After albuterol: forced "
+                 "expiratory volume in 1 second 2.5 L, a 14% improvement (reversible)."),
          here=True),
     dict(id="abg", name="Arterial blood gas",
          aka=["ABG", "arterial blood gas", "blood gas", "VBG", "venous blood gas"],
@@ -1585,9 +1625,9 @@ dict(
                     "expiratory phase, diffuse expiratory wheezes, diffuse hyperresonance, diminished fremitus and "
                     "reduced diaphragmatic excursion; swollen nasal mucosa and elbow eczema mark allergic asthma. "
                     "Peak flow 55% of her best."),
-           against=("Nothing against asthma. Against a severe grade: she finishes short sentences, has no "
-                    "accessory muscle use or retraction, still moves air everywhere, and her peak flow is above "
-                    "40%.")),
+           against=("Nothing against asthma. Against a severe grade: no accessory muscle use or chest "
+                    "retraction, symptoms only mild at rest, and a peak flow of 55% (the 40 to 69% band), so "
+                    "moderate.")),
       dict(name="Vocal fold dysfunction",
            support="Episodes of noisy, breathless breathing in a young woman.",
            against=("The noise is an expiratory wheeze over the chest, not an inspiratory stridor over the neck; "
@@ -1615,11 +1655,11 @@ dict(
                 "breathlessness, such as pneumonia or a pneumothorax."),
            expect="Hyperinflation; no infiltrate, pneumothorax or effusion."),
       dict(test="Spirometry before and after a bronchodilator",
-           why=("The objective measure of airflow, done once she has improved enough to give a good effort: "
+           why=("The objective measure of airflow, read from her chart rather than repeated during the attack: "
                 "reversible obstruction (an improvement of 12% or more in the forced expiratory volume in 1 second "
                 "after albuterol) strongly supports asthma; repeated yearly to monitor."),
-           expect=("Forced expiratory volume in 1 second 2.2 L (66% of predicted) with a reduced ratio of 0.61, "
-                   "rising 14% to 2.5 L after albuterol: reversible obstruction.")),
+           expect=("On file: forced expiratory volume in 1 second 2.2 L (63% of predicted) with a reduced ratio of "
+                   "0.61, rising 14% to 2.5 L after albuterol: reversible obstruction.")),
     ],
     plan=[
       ("Albuterol by nebulizer, or by metered-dose inhaler with a valved holding chamber, up to three doses in the "
@@ -1633,8 +1673,8 @@ dict(
       ("Discharge on albuterol as needed and the rest of the prednisone course; restart the daily inhaled "
        "corticosteroid (fluticasone) with a spacer, check her inhaler technique, and give a written asthma action "
        "plan."),
-      ("Once she has recovered, the yearly influenza vaccine (not the nasal spray) and the pneumococcal vaccine; "
-       "follow-up with primary care or an asthma specialist in 1 to 4 weeks."),
+      ("The yearly influenza vaccine (caution with the nasal spray in younger patients) and the pneumococcal "
+       "vaccine; follow-up with primary care or an asthma specialist in 1 to 4 weeks."),
     ],
     education=[
       ("Your airways are swollen and squeezed tight, and the cold set it off. Stopping the orange inhaler left the "
@@ -1655,8 +1695,7 @@ dict(
                "Rescue inhaler not helping, or peak flow under 50% of her best",
                "Drowsiness or confusion"],
     follow_up=("Primary care or an asthma specialist in 1 to 4 weeks to review control, inhaler technique and the "
-               "action plan; control is reassessed 2 to 6 weeks after restarting the controller and treatment "
-               "adjusted; spirometry repeated yearly."),
+               "action plan; spirometry repeated yearly."),
     presentation=(
       "Ms. Kowalski is a 27-year-old teacher with asthma since childhood, presenting with two days of worsening "
       "breathlessness, wheeze and chest tightness after a cold. She stopped her daily fluticasone in August and "
@@ -1676,13 +1715,14 @@ dict(
                 "commonest reason for poor control.")),
       dict(item="Ask about past attacks: hospital stays, intensive care, a breathing tube, steroid courses",
            why=("A previous near-fatal attack marks the highest risk; hers is one overnight stay at 16 and one "
-                "prednisone course last year.")),
+                "prednisone course in February.")),
       dict(item="Measure the peak flow and compare it with her personal best",
            why=("55% of her best grades a moderate exacerbation (40 to 69%); 70% or more after treatment, "
                 "sustained for an hour, allows discharge.")),
-      dict(item="Comment on her speech, posture and accessory muscle use",
-           why=("Short sentences and leaning forward with no accessory muscle use or retraction place her in the "
-                "moderate grade, not the severe one.")),
+      dict(item="Look for accessory muscle use and chest retraction, and say how breathless she is at rest",
+           why=("No accessory muscle use or chest retraction, symptoms only mild at rest and a peak flow of 55% "
+                "(the 40 to 69% band) make this moderate; severe is symptoms at rest with accessory muscle use, "
+                "retraction and a peak flow under 40%.")),
       dict(item="Listen front and back, side to side, and say what a quiet chest would mean",
            why=("Diffuse expiratory wheezes with a prolonged expiratory phase; wheezing fades as the airways close, "
                 "so a quiet chest in a breathless patient signals a severe exacerbation.")),
@@ -1692,27 +1732,29 @@ dict(
       dict(item="Ask about triggers and allergies, and look in the nose and at the skin",
            why=("A cold, dust mites, cold air and cats; swollen nasal mucosa and elbow eczema mark allergic "
                 "(extrinsic) asthma.")),
-      dict(item="Ask about leg swelling, travel, surgery and estrogen",
+      dict(item="Ask about leg swelling, travel, surgery and estrogen, and examine both legs",
            why=("Keeps pulmonary embolism on the differential: she takes an estrogen pill and is tachycardic, so it "
-                "is weighed and set aside with the history and a negative D-dimer.")),
+                "is weighed and set aside with the history, soft, equal calves with no swelling, and a negative "
+                "D-dimer.")),
     ],
   ),
 ),
 
 # =====================================================================================================
-# PLEURAL EFFUSION (transudate from heart failure with reduced ejection fraction, outpatient)
+# PLEURAL EFFUSION (transudate from newly diagnosed heart failure with reduced ejection fraction)
 # =====================================================================================================
 dict(
   id="pulmonary-pleural-effusion",
   condition="Pleural effusion",
-  cites=("CMS L44 Pleural Disorders, slides 5, 17, 82, 84-91, 93, 95-99, 101-102, 107-108, 110-113; CMS L42 "
-         "Pulmonary Vascular Disorders slides 23, 35, 43; PD2 Thorax slides 10, 15-17, 20, 34-35, 40, 42-44, "
-         "47, 53, 62"),
+  cites=("CMS L44 Pleural Disorders, slides 5, 17, 82, 84-91, 93, 95-99, 101-102, 107-108, 110-113; CMS L25 "
+         "Heart Failure slides 8, 16, 32, 38-40, 53, 56-57; CMS L42 Pulmonary Vascular Disorders slides 23, 35, "
+         "43; CMS L33 Oxygen Delivery slide 3; PD2 Thorax slides 10, 15-17, 20, 34-35, 40, 42-44, 47, 53-55, 62"),
   door=dict(
     name="Erik Lindqvist", sex="male", age=67, dob="February 11, 1959",
-    setting="Outpatient primary care clinic",
+    setting="Emergency department",
     cc="\"I've been getting more and more winded.\"",
-    vitals=[("Blood pressure", "148/86 mmHg"),
+    # CMS L25 slide 39: systolic heart failure with a normal or low blood pressure (his hypertension is treated)
+    vitals=[("Blood pressure", "132/80 mmHg"),
             ("Heart rate", "96 beats per minute, regular"),
             ("Respiratory rate", "22 breaths per minute"),
             ("Temperature", "98.2 °F (36.8 °C)"),
@@ -1720,11 +1762,11 @@ dict(
             ("Height and weight", "5 feet 11 inches, 198 pounds (body mass index 27.6)")],
   ),
   persona=("A 67-year-old retired mail carrier, gruff, matter-of-fact and slow to complain, who calls himself "
-           "'just out of shape'. He sits upright, pauses for breath in long answers, and his wife, who made the "
-           "appointment, is in the waiting room. Anything about his heart makes him go quiet: the heart attack "
-           "scared him more than he admits."),
-  opening=("I've been getting more and more winded over the last few weeks. Now I can't get up my front steps "
-           "without stopping."),
+           "'just out of shape'. He sits upright, pauses for breath in long answers, and his wife, who drove him "
+           "in after a bad night, is in the waiting room. Anything about his heart makes him go quiet: the heart "
+           "attack scared him more than he admits."),
+  opening=("I've been getting more winded for a few weeks, and last night I woke up gasping and couldn't catch "
+           "my breath for a long time."),
   facts=[
     ("Full name", "Erik Lindqvist."),
     ("Date of birth", "February 11, 1959."),
@@ -1732,19 +1774,20 @@ dict(
               "since."),
     ("Location", "It's my breathing mostly, but there's a heaviness low on the right side of my chest. (He "
                  "rests a hand on his right lower ribs.)"),
-    ("Duration", "It's there all the time now, a little, and a lot worse when I move around."),
+    ("Duration", "It's there all the time now, a little, and a lot worse when I move around or lie down."),
     ("Character", "Like I can't get a full breath, like the bottom of my right lung is full of something."),
     ("Alleviating factors", "Sitting up and resting. Propping myself up at night."),
     ("Aggravating factors", "Walking, the steps, carrying the groceries, and lying flat."),
     ("Radiation", "No, it doesn't go anywhere."),
-    ("Severity", "A five out of ten. A ten was my heart attack."),
-    ("Temporal pattern", "Worse at night when I lie down, and worse each week than the week before."),
+    ("Severity", "A five out of ten sitting here. Last night it was an eight. A ten was my heart attack."),
+    ("Temporal pattern", "Worse at night when I lie down, and worse each week than the week before. Last night "
+                         "was the worst yet."),
     ("Prior episodes", "Never had this before."),
     # CMS L44 slide 85: dyspnea, dry cough, chest pain are the commonest symptoms
     ("Cough", "A dry cough, mostly at night, for about two weeks."),
     ("Sputum", "Nothing comes up."),
     ("Coughing up blood", "No, never."),
-    ("Shortness of breath", "Only when I'm moving. Sitting here I'm all right, mostly."),
+    ("Shortness of breath", "When I move and when I lie flat. Sitting up here I'm all right, mostly."),
     ("How far they can walk", "Half a block, then I have to stop. Last summer I walked two miles a day with the "
                               "dog."),
     ("Wheezing", "No."),
@@ -1754,8 +1797,9 @@ dict(
     ("Weight loss", "No, the opposite. I'm up about nine pounds in three weeks, and I'm not eating any more than "
                     "usual."),
     # CMS L44 slide 86 and CMS L42 slide 23: orthopnea and paroxysmal nocturnal dyspnea point to heart failure
-    ("Orthopnea and waking up short of breath", "I'm up to three pillows; I used to sleep on one. Twice this week "
-                                                "I woke up gasping and had to sit on the edge of the bed."),
+    ("Orthopnea and waking up short of breath", "I'm up to three pillows; I used to sleep on one. I've woken up "
+                                                "gasping three times this week, and last night it took a good half "
+                                                "hour sitting on the edge of the bed to settle."),
     ("Leg swelling or calf pain", "Both ankles swell by evening, and my socks leave deep marks. No calf pain; "
                                   "both legs are the same."),
     ("Recent travel, immobility or surgery", "No. No trips, no surgery."),
@@ -1786,7 +1830,7 @@ dict(
     ("Occupation and exposures", "Retired mail carrier, thirty-five years walking a route. No asbestos, dust or "
                                  "chemicals that I know of."),
     ("Home and environment", "A house we've had for thirty years. No mold, no birds."),
-    ("Living situation", "With my wife, Karin. She's in the waiting room; she made me come."),
+    ("Living situation", "With my wife, Karin. She drove me here this morning; she's in the waiting room."),
     ("Immunizations", "A flu shot last month, and the pneumonia shot when I turned sixty-five."),
     ("Tuberculosis exposure or testing", "Not that I know of. They tested my skin when I started at the post "
                                          "office, and it was negative."),
@@ -1795,6 +1839,9 @@ dict(
     ("Family history, siblings", "A brother, sixty-four, with diabetes, and a sister, seventy, who's healthy."),
     ("What they think it is", "Karin thinks it's pneumonia. I figured I was just getting old and out of shape."),
     ("Concerns", "That it's my heart again. I don't want to go through that again."),
+    ("Why he came in today", "Last night was the worst. I woke up gasping and couldn't settle for half an hour, "
+                             "and Karin said that was enough and drove me in this morning."),
+    # CMS L25 slides 8, 16: ischemic cardiomyopathy after a myocardial infarction
     ("Heart attack and stent", "Eight years ago, crushing pain in the middle of my chest. They put a stent in the "
                                "front artery. They said the heart muscle took a hit."),
     ("Heart follow-up since then", "I saw the heart doctor for a few years, then he retired, and I never found a "
@@ -1805,21 +1852,21 @@ dict(
     ("Cancer history", "No cancer. My last colonoscopy was fine."),
     # CMS L44 slide 84: trauma
     ("Injury to the chest", "No falls, no injuries."),
-    ("Salt and diet", "A lot of canned soup and deli meat since I retired. I like my salt."),
+    ("Diet", "A lot of canned soup and deli meat since I retired. I like my salt."),
   ],
   questions=["Is this my heart again?",
              "Is it cancer? I smoked for forty years.",
              "Will that fluid come back?"],
   # PD2 Thorax slide 62 and CMS L44 slides 87-88: asymmetric expansion, decreased fremitus (increased toward the
-  # top), dullness, high diaphragm, absent breath sounds with bronchial sounds and voice sounds near the top;
-  # slide 87: effusions under 300 mL give no findings (the small left one), trachea shifts above 1,000 mL;
-  # CMS L42 slides 23, 35: bibasilar crackles and a third heart sound in left heart failure
+  # top), dullness, high diaphragm, absent breath sounds with bronchial sounds near the top, transmitted voice
+  # sounds decreased to absent over the fluid and increased toward its top; slide 87: effusions under 300 mL give
+  # no findings (the small left one), the trachea shifts above 1,000 mL; CMS L42 slide 23 and CMS L25 slide 39:
+  # bibasilar crackles and a third heart sound in left systolic heart failure
   exam={
-    "position": ("He sits up on the edge of the exam table with the gown open at the back, and says he could not "
+    "position": ("He sits up on the edge of the stretcher with the gown open at the back, and says he could not "
                  "lie flat."),
-    "general-survey": ("Alert and oriented, sitting upright, a little short of breath after walking in from the "
-                       "waiting room but speaking in full sentences. No audible wheeze. Normal color, no "
-                       "sweating."),
+    "general-survey": ("Alert and oriented, sitting upright, a little short of breath after moving onto the "
+                       "stretcher but speaking in full sentences. No audible wheeze. Normal color, no sweating."),
     "breathing-pattern": ("Slightly fast at 22 breaths per minute, regular and a little shallow, with a normal "
                           "expiratory phase."),
     "thorax-inspect": ("Symmetric shape with no deformity, lesions or bruising. The right lower chest moves a "
@@ -1842,6 +1889,11 @@ dict(
                      "and on the left. No wheezes or rub."),
     "egophony": ("Over the right back just above the fluid level, \"ee\" sounds like \"ay\" (egophony). Over the "
                  "fluid itself the voice is faint or absent. No egophony on the left."),
+    "bronchophony": ("Over the fluid at the right base, \"ninety-nine\" is faint or absent; just above the fluid "
+                     "level it is louder and clearer (bronchophony). Muffled and indistinct over the left."),
+    "whispered-pectoriloquy": ("Over the fluid at the right base the whisper is not heard; just above the fluid "
+                               "level it is louder and clearer (whispered pectoriloquy). Faint and indistinct "
+                               "over the left."),
     "heart-ausc": ("Regular rhythm at about 96. Normal first and second heart sounds followed by a soft, "
                    "low-pitched third heart sound at the apex. No murmur or rub."),
     "legs": ("2+ pitting edema over both ankles and up both shins to mid-shin, symmetric, with deep sock marks. "
@@ -1870,32 +1922,34 @@ dict(
     dict(id="thoracentesis", name="Thoracentesis with pleural fluid analysis (ultrasound-guided)",
          aka=["thoracentesis", "tap", "pleural tap", "pleural fluid", "pleural fluid analysis", "Light's criteria",
               "diagnostic thoracentesis", "therapeutic thoracentesis", "fluid analysis"],
-         result=("Right side, 800 milliliters of clear, straw-colored fluid removed, with easier breathing "
-                 "afterward. Protein 1.8 g/dL against a serum protein of 6.8 (ratio 0.26). Lactate dehydrogenase "
-                 "72 U/L against a serum value of 190 (ratio 0.38); two-thirds of the upper limit of normal "
-                 "serum value is 148. None of Light's criteria met: a transudate. White cells 420 per "
-                 "microliter, mostly macrophages and lymphocytes. Gram stain: no organisms. Culture: no growth. "
-                 "Cytology: no malignant cells. Chest X-ray afterward: no pneumothorax."),
+         result=("Right side, 800 milliliters of clear, straw-colored fluid removed; breathing easier afterward. "
+                 "Protein 1.8 g/dL, serum 6.8 (ratio 0.26). Lactate dehydrogenase 72 U/L, serum 190 (ratio "
+                 "0.38); two-thirds of the upper limit of normal serum value is 148. No Light's criterion met: a "
+                 "transudate. White cells 420 per microliter, mostly macrophages and lymphocytes. Gram stain: no "
+                 "organisms. Culture: no growth. Cytology: no malignant cells. Chest X-ray afterward: no "
+                 "pneumothorax."),
          here=True),
+    # CMS L25 slide 32: metabolic panel (potassium, kidney function) in the heart failure workup
     dict(id="cmp", name="Comprehensive metabolic panel with serum protein and lactate dehydrogenase",
          aka=["CMP", "BMP", "metabolic panel", "chem panel", "chemistry", "electrolytes", "kidney function",
               "liver function", "LFTs", "albumin", "serum protein", "serum LDH", "LDH", "lactate dehydrogenase"],
-         result=("Drawn the same day as the tap: total protein 6.8 g/dL, lactate dehydrogenase 190 U/L (upper "
-                 "limit of normal 222). Albumin 3.9 g/dL, normal. Sodium 136, potassium 4.2, creatinine 1.1 "
-                 "mg/dL; liver tests normal."),
+         result=("Drawn with the tap: total protein 6.8 g/dL, lactate dehydrogenase 190 U/L (upper limit of "
+                 "normal 222). Albumin 3.9 g/dL, normal. Sodium 136, potassium 4.2, creatinine 1.1 mg/dL; liver "
+                 "tests normal."),
          here=True),
-    # CMS L42 slide 43: heart failure is distinguished by a highly elevated B-type natriuretic peptide
+    # CMS L25 slide 38: above 900 likely acute heart failure; CMS L42 slide 43: highly elevated in heart failure
     dict(id="bnp", name="B-type natriuretic peptide (BNP)",
          aka=["BNP", "B-type natriuretic peptide", "brain natriuretic peptide", "natriuretic peptide", "NT-proBNP"],
          result="Highly elevated: about 1,100 picograms per milliliter.",
          here=True),
-    # CMS L42 slide 43: echocardiogram abnormalities in heart failure
+    # CMS L25 slides 32, 39: the echocardiogram sets the ejection fraction (systolic failure below 40%)
     dict(id="echo", name="Echocardiogram (transthoracic)",
          aka=["echo", "echocardiogram", "TTE", "transthoracic echo", "heart ultrasound", "cardiac ultrasound"],
          result=("Dilated left ventricle with an akinetic anterior wall and apex; ejection fraction about 30%. "
                  "Normal right ventricle; no significant valve disease. Moderate right and small left pleural "
                  "effusions."),
          here=True),
+    # CMS L25 slide 32: ischemic changes on the electrocardiogram
     dict(id="ecg", name="Electrocardiogram (12-lead)",
          aka=["EKG", "ECG", "12-lead", "12 lead", "electrocardiogram", "heart tracing"],
          result=("Sinus rhythm at 96. Q waves in V1 to V4 from an old anterior infarction; no acute ST elevation "
@@ -1908,7 +1962,8 @@ dict(
   ],
   key=dict(
     diagnosis=("Moderate right pleural effusion with a small left effusion, a transudate by Light's criteria, from "
-               "previously undiagnosed heart failure with a reduced ejection fraction after his old heart attack"),
+               "newly diagnosed, decompensated heart failure with a reduced ejection fraction (ischemic "
+               "cardiomyopathy after his old heart attack)"),
     must_not_miss=["Infected fluid (a complicated parapneumonic effusion or empyema): fever, sharp pleuritic pain "
                    "or cloudy, purulent fluid needs prompt drainage and antibiotics",
                    "Malignant pleural effusion in a 41 pack-year former smoker: the cytology is checked, and an "
@@ -1919,10 +1974,10 @@ dict(
                     "orthopnea, waking up gasping, a nine-pound weight gain and symmetric ankle edema after a "
                     "heart attack eight years ago. A third heart sound and left basal crackles. The right base "
                     "lags, with absent fremitus, dullness, a high, barely moving diaphragm, absent breath sounds "
-                    "and egophony at the top of the fluid. Kerley B lines, a transudate by Light's criteria, a "
-                    "highly elevated natriuretic peptide and an ejection fraction of 30%."),
-           against=("Heart failure effusions are usually on both sides; his is mostly on the right with only a "
-                    "small left one, which is why the fluid was tapped rather than assumed.")),
+                    "and voice sounds that return just above the fluid. Kerley B lines, a transudate by Light's "
+                    "criteria, a natriuretic peptide above 900 and an ejection fraction of 30%."),
+           against=("Nothing on the examination or in the fluid. His effusion is mostly on the right with a small "
+                    "left one, which is why the fluid was tapped rather than assumed.")),
       dict(name="Malignant pleural effusion",
            support="A 41 pack-year smoking history with a new effusion and a cough.",
            against=("No weight loss, coughing up blood or night sweats; no mass on the X-ray; the fluid is a "
@@ -1947,34 +2002,41 @@ dict(
                 "and guides the thoracentesis."),
            expect="Free-flowing right effusion about 6 centimeters deep, no loculations; small left effusion."),
       dict(test="Thoracentesis with fluid analysis, plus serum protein and lactate dehydrogenase the same day",
-           why=("A new effusion: protein, lactate dehydrogenase, white count with differential, Gram stain, "
-                "cytology and culture. Light's criteria: exudate if any one of fluid-to-serum protein above 0.5, "
-                "fluid-to-serum lactate dehydrogenase above 0.6, or fluid lactate dehydrogenase above two-thirds "
-                "of the upper limit of normal serum; transudate if none."),
+           why=("Tapped because the effusion is new and lopsided and he has no known heart failure, so there is "
+                "no established cause yet; it also relieves his breathing. Send protein, lactate dehydrogenase, "
+                "white count with differential, Gram stain, cytology and culture. Light's criteria: exudate if "
+                "any one of fluid-to-serum protein above 0.5, fluid-to-serum lactate dehydrogenase above 0.6, or "
+                "fluid lactate dehydrogenase above two-thirds of the upper limit of normal serum; transudate if "
+                "none."),
            expect=("Clear, straw-colored fluid; protein ratio 0.26, lactate dehydrogenase ratio 0.38, fluid "
                    "lactate dehydrogenase 72 (below 148): a transudate. Gram stain, culture and cytology "
                    "negative.")),
       dict(test="B-type natriuretic peptide",
-           why="Heart failure is distinguished from the other causes of breathlessness by a highly elevated level.",
-           expect="Highly elevated, about 1,100."),
+           why=("Below 100 rules out acute heart failure; above 400 makes heart failure likely, and above 900 "
+                "acute heart failure."),
+           expect="About 1,100: acute heart failure likely."),
       dict(test="Echocardiogram",
-           why="Shows how well the heart pumps and why: the cause of the transudate.",
+           why="Sets the ejection fraction (below 40% is systolic, reduced-ejection-fraction failure) and the cause.",
            expect=("Dilated left ventricle with an akinetic anterior wall; ejection fraction about 30%; normal "
                    "right ventricle and valves.")),
     ],
     plan=[
-      ("Ultrasound-guided right thoracentesis, diagnostic and therapeutic: drain enough to ease his breathing and "
-       "send protein, lactate dehydrogenase, white count with differential, Gram stain, cytology and culture, "
-       "with serum protein and lactate dehydrogenase the same day; chest X-ray afterward for a pneumothorax."),
-      ("A transudate (no Light's criterion met) is managed by treating the underlying disorder: a diuretic is "
-       "the initial treatment for a heart failure transudate (a loop diuretic such as furosemide), with salt "
-       "restriction and daily weights."),
-      ("Cardiology co-management to start long-term medicines for the reduced ejection fraction; recheck "
-       "potassium and kidney function on the diuretic."),
-      ("Repeat chest X-ray once the diuretic has worked: an effusion that stays or grows despite treatment of "
-       "the heart failure needs another look for another cause."),
-      ("Same-day review for rising weight or breathlessness; emergency department for breathlessness at rest, "
-       "chest pain or fainting, and for fever with sharp pleuritic pain (possible infected fluid)."),
+      ("Ultrasound-guided right thoracentesis, diagnostic and therapeutic: drain enough to ease his breathing, "
+       "send the fluid tests with serum protein and lactate dehydrogenase the same day, and take a chest X-ray "
+       "afterward for a pneumothorax."),
+      ("A transudate is managed by treating the underlying disorder. Admit him: new reduced-ejection-fraction "
+       "failure, decompensated (natriuretic peptide above 900, saturation 93%, waking up gasping). Give a loop "
+       "diuretic (furosemide or bumetanide) through a vein, and oxygen for his hypoxemia."),
+      ("Optimize his reduced-ejection-fraction medicines as he is hemodynamically stable: keep the beta blocker "
+       "(metoprolol succinate); replace lisinopril with an angiotensin receptor-neprilysin inhibitor "
+       "(sacubitril-valsartan), which is prioritized; add a mineralocorticoid receptor antagonist "
+       "(spironolactone or eplerenone) and a sodium-glucose cotransporter 2 inhibitor (dapagliflozin or "
+       "empagliflozin)."),
+      "Follow potassium and kidney function daily on the diuretic and the new medicines.",
+      ("Cardiology: cardiac rehabilitation, and a repeat echocardiogram once his medicines are optimized; an "
+       "implantable defibrillator if the ejection fraction stays at 35% or less."),
+      ("Repeat chest X-ray once he is diuresed: an effusion that stays or grows despite treatment of the heart "
+       "failure needs another look for another cause."),
     ],
     education=[
       ("Your heart muscle is pumping weakly, most likely from the damage your heart attack left, so fluid backs "
@@ -1982,31 +2044,32 @@ dict(
        "which is why you get winded and cannot lie flat."),
       ("The fluid we drained was the thin, watery kind that comes from pressure. The tests on it found no "
        "infection and no cancer cells."),
-      ("A water pill is the first treatment to clear the fluid; take it every day. Weigh yourself every morning "
-       "and call us for a gain of more than 2 to 3 pounds in a day or 5 in a week."),
-      ("Cut back on salt, especially the canned soups and deli meat, and see the heart doctor, who will add "
-       "medicines that help a weak heart work better and help you live longer."),
-      ("Call the same day for more pillows, swelling climbing your legs or rising weight; call 911 for "
-       "breathlessness at rest, chest pain like your heart attack, fainting, or a fever with sharp chest pain."),
+      ("You will stay in the hospital for a few days while medicine through a vein pulls the extra fluid off, "
+       "and we start the heart medicines that help a weak heart work better and help you live longer."),
+      ("Once you are home, take every heart medicine every day, weigh yourself every morning, go easy on salt, "
+       "and call us if your weight climbs or your ankles swell again."),
+      ("Come back at once for breathlessness at rest, waking up gasping again, chest pain like your heart "
+       "attack, fainting, or a fever with sharp chest pain."),
     ],
     red_flags=["Breathlessness at rest, or at night that does not settle on sitting up",
                "Fever, chills or sharp chest pain with breathing (possible infected fluid)",
                "Chest pain like his heart attack, or fainting"],
-    follow_up=("Close: clinic recheck in about a week with his weight, potassium, kidney function and a repeat "
-               "chest X-ray once the diuretic is working; cardiology co-management; same-day review if his "
-               "weight or breathlessness climbs."),
+    follow_up=("Admission now for diuresis through a vein and medicine optimization; after discharge, cardiology "
+               "follow-up with cardiac rehabilitation, a repeat echocardiogram once his medicines are optimized "
+               "(a defibrillator if the ejection fraction stays at 35% or less), and a repeat chest X-ray to "
+               "confirm the effusions have cleared."),
     presentation=(
       "Mr. Lindqvist is a 67-year-old man with hypertension, a heart attack with a stent eight years ago and a "
       "41 pack-year former smoking history, presenting with three weeks of worsening exertional breathlessness, "
-      "now after half a block. He sleeps on three pillows, wakes up gasping, and has a dry night cough, ankle "
-      "swelling and a nine-pound weight gain. He denies fever, sputum, coughing up blood, night sweats, liver "
-      "disease and cancer. Saturation is 93%, respiratory rate 22. The right base lags, with absent fremitus, "
-      "dullness, a high, barely moving diaphragm, absent breath sounds and egophony above the fluid; the "
-      "trachea is midline. He has a third heart sound and 2+ ankle edema. My differential is a heart failure "
-      "effusion, malignant and parapneumonic effusions, and a low-albumin transudate. X-ray, ultrasound, "
-      "thoracentesis, natriuretic peptide and echocardiogram show a transudate by Light's criteria and an "
-      "ejection fraction of 30%. Diagnosis: transudative effusion from heart failure. Plan: thoracentesis, a "
-      "diuretic and cardiology."),
+      "now after half a block. He sleeps on three pillows, woke up gasping last night, and has a dry night "
+      "cough, ankle swelling and a nine-pound weight gain. He denies fever, sputum, coughing up blood, night "
+      "sweats, liver disease and cancer. Saturation is 93%, respiratory rate 22, blood pressure 132/80. The "
+      "right base lags, with absent fremitus, dullness, a high, barely moving diaphragm, absent breath sounds "
+      "and egophony above the fluid; the trachea is midline. He has a third heart sound and 2+ ankle edema. My "
+      "differential is a heart failure effusion, malignant and parapneumonic effusions, and a low-albumin "
+      "transudate. X-ray, ultrasound, thoracentesis, natriuretic peptide and echocardiogram show a transudate "
+      "and an ejection fraction of 30%. Diagnosis: transudative effusion from heart failure. Plan: admit, loop "
+      "diuretic, optimize heart failure medicines."),
     high_yield=[
       dict(item="Ask about orthopnea, waking up short of breath, leg swelling and weight gain",
            why="Leg swelling, orthopnea and waking up short of breath point to heart failure as the cause of an effusion."),
@@ -2018,10 +2081,10 @@ dict(
       dict(item="Percuss the back side to side, then measure diaphragmatic excursion",
            why=("Dullness over the fluid and a high level that barely moves (normal excursion is about 3 to 5.5 "
                 "centimeters) mark the effusion and its top.")),
-      dict(item="Palpate fremitus and listen over and just above the fluid, with egophony",
+      dict(item="Palpate fremitus and listen over and just above the fluid, with the voice sounds",
            why=("Over fluid, fremitus, breath sounds and voice sounds are decreased or absent; at the top, "
-                "bronchial breath sounds and egophony may appear. Effusions under 300 milliliters give no "
-                "findings, which is why the small left one is silent.")),
+                "bronchial breath sounds and louder voice sounds may appear. Effusions under 300 milliliters "
+                "give no findings, which is why the small left one is silent.")),
       dict(item="Check the trachea",
            why="A shift away from the effusion means a large one, over 1,000 milliliters; his is midline."),
       dict(item="Apply Light's criteria out loud",
@@ -2029,7 +2092,8 @@ dict(
                 "dehydrogenase above 0.6, or fluid lactate dehydrogenase above two-thirds of the upper limit of "
                 "normal serum; transudate if none. Heart failure causes more than 90% of transudates.")),
       dict(item="Listen to the heart and check the legs",
-           why="A third heart sound and symmetric pitting edema keep the heart on a respiratory differential."),
+           why=("A third heart sound with a normal or low blood pressure fits systolic failure, and symmetric "
+                "pitting edema keeps the heart on a respiratory differential.")),
     ],
   ),
 ),
@@ -2156,15 +2220,16 @@ dict(
     ("Help at home", "My wife is retired and home with me. She drove me here."),
   ],
   questions=["Do I have to go to the hospital?",
-             "When can I go back to work?",
-             "Can my grandson catch this from me?"],
+             "Is this the flu, or do I need antibiotics?",
+             "How long will I have to take the antibiotics?"],
   exam={
     "position": ("He sits on the edge of the exam table with the gown open at the back, leaning a little to the "
                  "right and pressing a hand to his right upper chest when he coughs."),
     # CMS L37 slide 28: appears ill, warm, diaphoretic, increased work of breathing
     "general-survey": ("Ill-appearing man, flushed, warm to the touch and slightly sweaty. Alert and oriented, "
                        "answering clearly. Breathing fast and shallow, holding his right chest when he coughs; "
-                       "speaks in full sentences. No audible wheeze or stridor. No cyanosis."),
+                       "speaks in short sentences, pausing to breathe and cough. No audible wheeze or stridor. No "
+                       "cyanosis."),
     # PD2 slide 35: unilateral lag in movement
     "thorax-inspect": ("The chest is symmetric, with no deformities, lesions or bruising, but the right upper "
                        "chest moves less than the left with each breath. No retractions."),
@@ -2177,17 +2242,18 @@ dict(
     "fremitus": ("Increased tactile fremitus over the right upper chest, below the clavicle in front and over the "
                  "upper right back. Normal and symmetric over the rest of the chest, including both bases."),
     # PD2 slides 42, 60: dullness over the airless area
-    # PD2 slide 8: the right horizontal fissure follows the 4th rib, the lower edge of the upper lobe in front
+    # PD2 slide 8: the right horizontal fissure follows the 4th rib, the lower edge of the upper lobe in front;
+    # the oblique fissure starts at about T3 posteriorly
     "percuss-anterior": ("Dull over the right upper anterior chest, from the clavicle down to about the 4th rib. "
                          "Resonant below that and over the whole left side."),
-    "percuss-posterior": ("Dull over the upper right back, above and beside the upper part of the scapula. Resonant "
+    "percuss-posterior": ("Dull over the upper right back, above the level of the spine of the scapula. Resonant "
                           "below that, at both bases and over the whole left side."),
     # PD2 slide 60: bronchial breath sounds and late inspiratory crackles over the involved area; slide 45: bronchial
     # sounds, expiration as long as or longer than inspiration, loud and high-pitched
     "ausc-anterior": ("Right upper anterior chest, below the clavicle down to about the 4th rib: bronchial breath "
                       "sounds (loud, high-pitched, with expiration longer than inspiration) and late inspiratory "
-                      "crackles that do not clear with coughing. Vesicular and clear below that and over the left "
-                      "upper lobe. No wheeze, no pleural rub."),
+                      "crackles. Vesicular and clear below that and over the left upper lobe. No wheeze, no pleural "
+                      "rub."),
     "ausc-posterior": ("Upper right back: bronchial breath sounds with late inspiratory crackles. Vesicular and "
                        "clear at both bases and over the whole left side. No wheeze, no pleural rub."),
     # PD2 slides 53-56, 60: egophony, bronchophony and whispered pectoriloquy over the involved area
@@ -2249,7 +2315,8 @@ dict(
   ],
   key=dict(
     diagnosis=("Community-acquired pneumonia of the right upper lobe, nonsevere (Pneumonia Severity Index 58 "
-               "points, class II; CURB-65 score 0), most likely Streptococcus pneumoniae, in a man with diabetes: "
+               "points, class II; CURB-65 (confusion, urea, respiratory rate, blood pressure, age 65 or older) "
+               "score 0), most likely Streptococcus pneumoniae, in a man with diabetes: "
                "outpatient treatment at home"),
     must_not_miss=["Severe pneumonia or sepsis: low blood pressure, low oxygen, confusion or less urine means the "
                    "emergency department now",
@@ -2282,8 +2349,9 @@ dict(
            expect=("Right upper lobe consolidation with air bronchograms, bounded by the horizontal fissure; "
                    "trachea midline; no effusion or cavity.")),
       dict(test="Basic metabolic panel",
-           why=("Looks for organ dysfunction: a blood urea nitrogen above 20 mg/dL is a CURB-65 point; also his "
-                "kidney function and glucose."),
+           why=("Looks for organ dysfunction: a blood urea nitrogen above 20 mg/dL is a point on the CURB-65 "
+                "(confusion, urea, respiratory rate, blood pressure, age 65 or older) score; also his kidney "
+                "function and glucose."),
            expect="Blood urea nitrogen 15, creatinine 0.9, glucose 188."),
       dict(test="Influenza and COVID-19 molecular test",
            why="Molecular viral testing guides antiviral and antibiotic decisions.",
@@ -2295,7 +2363,8 @@ dict(
     plan=[
       ("Severity: no major criterion for severe pneumonia (no shock needing vasopressors, no need for "
        "ventilation). Pneumonia Severity Index 58 points (male, age 58, nothing else), class II with 0.6% "
-       "mortality; CURB-65 0, low severity. With clinical judgment (saturation 95%, alert, drinking, his wife at "
+       "mortality; CURB-65 (confusion, urea, respiratory rate, blood pressure, age 65 or older) 0, low "
+       "severity. With clinical judgment (saturation 95%, alert, drinking, his wife at "
        "home), treat as an outpatient."),
       ("Outpatient regimen for a patient with a comorbidity (diabetes): amoxicillin/clavulanate, cefpodoxime or "
        "cefuroxime plus azithromycin or doxycycline, or a respiratory fluoroquinolone (levofloxacin or "
@@ -2304,40 +2373,43 @@ dict(
        "pneumonia. No routine corticosteroids and no routine cultures."),
       ("Supportive care: fluids, acetaminophen for fever and pain, rest, and closer blood sugar checks while he is "
        "sick."),
-      ("Vaccines: one dose of 20- or 21-valent pneumococcal conjugate vaccine (all adults 50 or older who never had "
-       "one), the annual influenza vaccine and the updated COVID-19 vaccine."),
-      ("Recheck in 2 to 3 days; emergency department for breathlessness at rest, confusion, fainting, less urine "
-       "or not keeping fluids or pills down."),
+      ("Vaccines once he has recovered from this illness: one dose of 20- or 21-valent pneumococcal conjugate "
+       "vaccine (all adults 50 or older who never had one), the annual influenza vaccine and the updated COVID-19 "
+       "vaccine."),
+      ("Close follow-up (for example a recheck in 2 to 3 days) with return precautions: emergency department for "
+       "breathlessness at rest, confusion, fainting, less urine or not keeping fluids or pills down."),
     ],
     education=[
-      ("You have pneumonia, an infection in the lower part of your right lung. The X-ray shows it, and it matches "
+      ("You have pneumonia, an infection in the upper part of your right lung. The X-ray shows it, and it matches "
        "what I hear with the stethoscope."),
       ("Your severity scores are low, so you can be treated at home with antibiotic pills. Take every dose, even "
        "once you feel better."),
       ("Drink plenty, rest, use acetaminophen for the fever and the side pain, and check your sugar more often "
        "while you're sick, because infection pushes it up."),
-      ("Get the pneumonia shot and this year's flu and COVID shots: they protect you, and your grandson."),
-      ("Come back or go to the emergency department if your breathing gets harder, you get confused, you can't "
-       "keep fluids or pills down, or you are not better in 2 to 3 days or get better and then worse."),
+      ("Once you're over this, get the pneumonia shot and this year's flu and COVID shots: they protect against "
+       "severe illness."),
+      ("We'll check on you closely, for example in 2 to 3 days. Come back sooner or go to the emergency "
+       "department if your breathing gets harder, you get confused, you can't keep fluids or pills down, or you "
+       "are not improving or get better and then worse."),
     ],
     red_flags=["Breathlessness at rest or a falling oxygen level", "Confusion, fainting or less urine",
                "Unable to keep fluids or the antibiotic down",
-               "No better in 2 to 3 days, or better and then worse"],
-    follow_up=("Close: recheck in 2 to 3 days, by phone or in clinic, to confirm he is improving and taking the "
-               "antibiotics; if he worsens, reassess the diagnosis, adherence and resistance and look for an "
-               "effusion, empyema or abscess."),
+               "Not improving, or better and then worse"],
+    follow_up=("Close follow-up with return precautions, for example a recheck in 2 to 3 days by phone or in "
+               "clinic, to confirm he is improving and taking the antibiotics; if he worsens, reassess the "
+               "diagnosis, adherence and resistance and look for an effusion, empyema or abscess."),
     presentation=(
       "Mr. Mensah is a 58-year-old letter carrier with type 2 diabetes, hypertension and a 20 pack-year former "
       "smoking history, presenting with three days of fever to 102.6, shaking chills, a cough with yellow-green "
-      "sputum and sharp right-sided pain on deep breaths, after a cold from his grandson. He is winded halfway up "
-      "a flight of stairs. He denies coughing up blood, leg swelling, travel, orthopnea and confusion. "
+      "sputum and sharp right-sided pain on deep breaths, after a cold from his grandson. He is winded on stairs. "
+      "He denies coughing up blood, leg swelling, travel, orthopnea and confusion. "
       "Temperature 102.2, heart rate 104, respiratory rate 24, blood pressure 134/82, saturation 95% on room air. "
       "He looks ill and splints his right side. Over the right upper lobe, front and back, fremitus is increased "
       "and percussion is dull, with bronchial breath sounds, late inspiratory crackles and egophony. My "
       "differential is community-acquired pneumonia, bronchitis, influenza and pulmonary embolism. I would order a "
-      "chest X-ray, metabolic panel and influenza and COVID-19 test. Pneumonia Severity Index 58, class II; CURB-65 "
-      "zero. Working diagnosis: nonsevere right upper lobe pneumonia, treated at home with amoxicillin/clavulanate "
-      "plus azithromycin."),
+      "chest X-ray, metabolic panel and influenza and COVID-19 test. Pneumonia Severity Index 58, class II; "
+      "CURB-65 (confusion, urea, respiratory rate, blood pressure, age 65 or older) zero. Working diagnosis: "
+      "nonsevere right upper lobe pneumonia, treated at home with amoxicillin/clavulanate plus azithromycin."),
     high_yield=[
       dict(item="Ask whether the chest pain is worse with a deep breath or a cough",
            why=("Sharp pain on breathing in points to pneumonia, embolism, pneumothorax or pleuritis rather than "
@@ -2357,7 +2429,8 @@ dict(
                 "lobe; with fever and cough, bronchial breath sounds and egophony more than triple the likelihood "
                 "of pneumonia.")),
       dict(item="Interpret the vital signs and score the severity out loud",
-           why=("Pneumonia Severity Index 58 (class II, 0.6% mortality), CURB-65 0, saturation 95%: nonsevere, "
+           why=("Pneumonia Severity Index 58 (class II, 0.6% mortality), CURB-65 (confusion, urea, respiratory "
+                "rate, blood pressure, age 65 or older) 0, saturation 95%: nonsevere, "
                 "suitable for treatment at home with clinical judgment.")),
       dict(item="Choose the outpatient regimen for a patient with comorbidities",
            why=("Diabetes calls for a beta-lactam plus azithromycin or doxycycline, or a respiratory "
@@ -2459,10 +2532,11 @@ dict(
                       "never had that tuberculosis vaccine they give in other countries; I was born here in Ohio."),
     # slides 14-15, 23: close contact; recent infection within 2 years; early infection can give a negative skin
     # test, repeat 8-10 weeks after the last exposure
-    ("Tuberculosis exposure or testing", "Yes. Last August an inmate on my unit coughed for weeks before they took "
-                                         "him to the hospital, and it turned out he had tuberculosis. Employee "
-                                         "health skin-tested all of us, and mine was negative. They told me to come "
-                                         "back in two months for a second one, and I never went."),
+    ("Tuberculosis exposure or testing", "Yes. In August of last year an inmate on my unit coughed for weeks "
+                                         "before they took him to the hospital, and it turned out he had "
+                                         "tuberculosis. Employee health skin-tested all of us, and mine was "
+                                         "negative. They told me to come back in two months for a second one, and "
+                                         "I never went."),
     ("Family history, mother", "My mother is 78. She had breast cancer at 65 and did fine."),
     ("Family history, father", "My father had a heart attack and died at 66. He smoked."),
     ("Family history, siblings", "My sister is 49 and has diabetes like me."),
@@ -2486,7 +2560,7 @@ dict(
   ],
   questions=["Is this tuberculosis? Did I catch it at work?",
              "Could I have given it to my grandkids?",
-             "Am I going to lose my job over this?"],
+             "How long do I have to stay away from everyone?"],
   exam={
     # CMS L38 slide 17: fever and wasting may provide clues
     "general-survey": ("Thin, tired-looking woman whose clothes hang loosely. Alert, in no respiratory distress, "
@@ -2502,7 +2576,7 @@ dict(
                  "apex behind. Normal and symmetric elsewhere."),
     # CMS L38 slide 17: crackles or bronchial breath sounds; PD2 slide 44: bronchial sounds in unexpected places
     "ausc-anterior": ("Below the right clavicle: bronchial breath sounds with scattered crackles. Below the left "
-                      "clavicle: vesicular breath sounds with a few fine crackles. Bronchovesicular near the "
+                      "clavicle: vesicular breath sounds with a few crackles. Bronchovesicular near the "
                       "sternum; clear lower down. No wheeze, no pleural rub."),
     "ausc-posterior": ("Right apex, above the scapula: bronchial breath sounds with a few crackles. Left apex: a few "
                        "crackles over vesicular breath sounds. Vesicular and clear below the apices on both sides."),
@@ -2542,18 +2616,21 @@ dict(
     dict(id="sputum-naat", name="Nucleic acid amplification test on sputum (NAAT)",
          aka=["NAAT", "PCR", "TB PCR", "GeneXpert", "Xpert", "molecular test", "rapid molecular test",
               "nucleic acid amplification test", "MTB/RIF"],
-         result="Mycobacterium tuberculosis complex detected. No rifampin resistance detected.", here=True),
+         result=("Mycobacterium tuberculosis complex detected. Molecular drug-susceptibility testing: no rifampin "
+                 "resistance detected."),
+         here=True),
     # slides 24-25: a positive result indicates infection and requires evaluation for disease
     dict(id="igra", name="Interferon-gamma release assay (IGRA)",
          aka=["IGRA", "QuantiFERON", "QuantiFERON-TB Gold Plus", "Quantiferon", "T-SPOT", "T-SPOT.TB",
               "interferon gamma release assay", "TB blood test", "gold test"],
          result="Positive.", here=True),
-    # slides 20, 22: transverse induration in millimeters read at 48-72 hours; 10 mm or more is positive for
-    # high-risk congregate settings (her workplace)
+    # slides 20, 22, 41: transverse induration in millimeters read at 48-72 hours; 5 mm or more is positive for a
+    # recent close contact; 10 mm for high-risk congregate settings or selected medical risks
     dict(id="tst", name="Tuberculin skin test (TST)",
          aka=["TST", "PPD", "Mantoux", "tuberculin skin test", "TB skin test", "skin test"],
-         result=("17 millimeters of transverse induration, read at 48 hours: positive, above her cut-off of 10 "
-                 "millimeters for a high-risk congregate workplace."),
+         result=("17 millimeters of transverse induration, read at 48 hours: positive. Her cut-off is 5 "
+                 "millimeters as a recent close contact (10 for her congregate workplace or diabetes); 17 exceeds "
+                 "both."),
          here=True),
     # slide 26: offer human immunodeficiency virus testing when the status is unknown
     dict(id="hiv", name="Human immunodeficiency virus (HIV) test",
@@ -2583,10 +2660,10 @@ dict(
                    "Lung cancer: a cavity with weight loss and blood-streaked sputum in a 30 pack-year smoker stays "
                    "on the list until tuberculosis is confirmed"],
     ddx=[
-      dict(name="Pulmonary tuberculosis (active, right upper lobe, cavitary)",
+      dict(name="Pulmonary tuberculosis (active, both upper lobes, cavitary)",
            support=("Two months of daily cough, now with blood streaks; evening fevers, drenching night sweats, "
                     "fatigue and a 14-pound weight loss; a close contact with an inmate with infectious "
-                    "tuberculosis 14 months ago, a negative first skin test and a missed repeat; years in a "
+                    "tuberculosis about 15 months ago, a negative first skin test and a missed repeat; years in a "
                     "crowded, poorly ventilated jail; diabetes and smoking raise the risk of progression; dullness, "
                     "increased fremitus, bronchial breath sounds and crackles over the right upper lobe and crackles "
                     "at the left apex; a painless cervical node; infiltrates in both upper lobes with a possible "
@@ -2601,8 +2678,8 @@ dict(
       dict(name="Nontuberculous mycobacterial lung disease",
            support=("Chronic cough, sputum, weight loss and a cavity; an acid-fast smear cannot tell tuberculosis "
                     "from nontuberculous species."),
-           against=("No bronchiectasis or chronic obstructive pulmonary disease, a known tuberculosis contact, and "
-                    "the rapid molecular test detects the Mycobacterium tuberculosis complex.")),
+           against=("No known bronchiectasis or chronic obstructive pulmonary disease, a known tuberculosis "
+                    "contact, and the rapid molecular test detects the Mycobacterium tuberculosis complex.")),
       dict(name="Lung abscess",
            support="Fever, a productive cough and a cavity.",
            against=("Two months of gradual illness, no foul-smelling sputum, no aspiration risk, and no air-fluid "
@@ -2626,8 +2703,8 @@ dict(
       dict(test="Interferon-gamma release assay (or tuberculin skin test)",
            why=("Shows infection but not latent versus active disease; a negative result would not have excluded "
                 "disease in a patient with these symptoms."),
-           expect=("Positive; a skin test reads 17 millimeters, positive at her 10-millimeter cut-off (a "
-                   "high-risk congregate workplace).")),
+           expect=("Positive; a skin test reads 17 millimeters, positive at her 5-millimeter cut-off as a recent "
+                   "close contact.")),
       dict(test="Human immunodeficiency virus test",
            why="Offered whenever the status is unknown in suspected tuberculosis.",
            expect="Negative."),
@@ -2640,7 +2717,8 @@ dict(
        "close contacts need prompt public-health assessment."),
       ("Microbiology: three sputum specimens 8 to 24 hours apart (one early-morning) for acid-fast smear and "
        "mycobacterial culture, a rapid molecular test on at least one, molecular and culture-based "
-       "drug-susceptibility testing, and a human immunodeficiency virus test."),
+       "drug-susceptibility testing, and a human immunodeficiency virus test; the persistent, painless cervical "
+       "node can be extrapulmonary tuberculosis and may need its own specimen."),
       ("Treatment with the program: 2 months of isoniazid, rifampin, pyrazinamide and ethambutol, then 4 months of "
        "isoniazid and rifampin; ethambutol stops once susceptibility to isoniazid and rifampin is established; "
        "daily directly observed therapy, in person or by video."),
@@ -2667,8 +2745,8 @@ dict(
                "2 months; isolation ends only when the program clears her."),
     presentation=(
       "Ms. Novak is a 52-year-old corrections officer with type 2 diabetes and a 30 pack-year current smoking "
-      "history, presenting with two months of daily cough, now with blood streaks twice this week, evening fevers, "
-      "drenching night sweats, fatigue and a 14-pound weight loss. Fourteen months ago an inmate on her unit had "
+      "history, presenting with two months of daily cough, blood-streaked twice this week, evening fevers, "
+      "drenching night sweats and a 14-pound weight loss. About 15 months ago an inmate on her unit had "
       "tuberculosis; her skin test then was negative and she missed the repeat. She denies travel and "
       "immunosuppressing medicines. Temperature 100.4, heart rate 96, respiratory rate 18, saturation 96% on room "
       "air; she looks thin. Over the right upper lobe, front and back, percussion is dull and fremitus increased, "
@@ -2693,7 +2771,8 @@ dict(
            why="Infectious pulmonary tuberculosis needs immediate airborne precautions."),
       dict(item="Percuss and listen over the upper lobes front and back, and feel for lymph nodes",
            why=("Post-primary disease favors the upper lobes; crackles, bronchial breath sounds and "
-                "lymphadenopathy are clues, though a normal examination does not exclude tuberculosis.")),
+                "lymphadenopathy are clues, though a normal examination does not exclude tuberculosis. A "
+                "persistent, painless node can be extrapulmonary tuberculosis and may need its own specimen.")),
       dict(item="Order three sputum specimens, not only a skin or blood test",
            why=("The skin and blood tests show infection, not disease; the sputum smears, culture and rapid "
                 "molecular test make the diagnosis.")),
@@ -2709,7 +2788,7 @@ dict(
 dict(
   id="pulmonary-pneumothorax",
   condition="Pneumothorax",
-  cites=("CMS L44 Pleural Disorders, slides 9-13, 16-19, 21-23, 25-28, 33, 35, 41, 49, 51, 53-55, 58-60, 63-68, 77; "
+  cites=("CMS L44 Pleural Disorders, slides 9-13, 16-19, 21-23, 25-28, 33, 35, 38-39, 41, 49, 51, 53-55, 58-60, 63-68, 77; "
          "PD2 Thorax slides 14, 17, 22, 34, 40, 42, 44, 50-51, 61"),
   door=dict(
     name="Tyler Whitfield", sex="male", age=27, dob="March 14, 1999",
@@ -2726,7 +2805,7 @@ dict(
   ),
   persona=("A 27-year-old computer support worker, tall and lanky, polite and a little embarrassed to be here, "
            "who keeps saying he 'probably just pulled something'. He sits very still, takes small breaths, keeps "
-           "his left arm close to his side, and stops mid-sentence when a breath catches. His father's old story "
+           "his left arm close to his side, and pauses briefly between sentences when a breath catches. His father's old story "
            "has him quietly worried, and he keeps coming back to a wedding trip he has planned."),
   opening=("I got this sharp pain in the left side of my chest last night, and I still can't take a full "
            "breath."),
@@ -2834,8 +2913,8 @@ dict(
     "expansion": "Asymmetric: the left thumb moves less than the right with a deep breath.",
     "fremitus": ("Decreased to absent over the left chest posteriorly, laterally and anteriorly, most of all over "
                  "the upper left chest. Normal on the right."),
-    "percuss-posterior": ("Posterior chest: hyperresonant over the upper and middle left back; resonant at the "
-                          "left base and over the right back."),
+    "percuss-posterior": ("Posterior chest: hyperresonant over the whole left back, most over the upper and "
+                          "middle part; resonant over the right back."),
     "percuss-lateral": "Lateral chest: hyperresonant on the left; resonant on the right.",
     "percuss-anterior": ("Anterior chest: hyperresonant, almost drum-like (tympanic), over the left upper chest; "
                          "resonant over the right upper lobe."),
@@ -2892,8 +2971,8 @@ dict(
          here=False),
     dict(id="d-dimer", name="D-dimer",
          aka=["D-dimer", "d dimer", "dimer", "clot test"],
-         result="Not available in this urgent care: it is sent to a hospital laboratory.",
-         here=False),
+         result="Normal: below 500 nanograms per milliliter.",
+         here=True),
   ],
   key=dict(
     diagnosis=("Large left primary spontaneous pneumothorax (apex-to-cupola distance 4 centimeters), clinically "
@@ -2943,7 +3022,9 @@ dict(
     plan=[
       ("Stable by the stability definition (respiratory rate under 24, heart rate between 60 and 120, normal blood "
        "pressure, room-air saturation above 90%, whole sentences), but large (4 centimeters at the apex) with "
-       "significant pain and breathlessness: it needs chest tube insertion, which this urgent care cannot do."),
+       "significant pain and breathlessness: it needs chest tube insertion. Catheter aspiration or a small-bore "
+       "catheter is also accepted for a symptomatic primary spontaneous pneumothorax with no contraindication. "
+       "This urgent care can do none of them."),
       ("Transfer to the emergency department now by ambulance; until it arrives, oxygen at 100% by non-rebreather "
        "mask (it speeds resorption of the air), pain control, and repeated checks of his vital signs and "
        "trachea."),
@@ -2973,9 +3054,9 @@ dict(
     red_flags=["Breathing that suddenly gets worse",
                "Feeling faint or a falling blood pressure",
                "The trachea shifting to the right or the neck veins swelling (tension pneumothorax)"],
-    follow_up=("Emergency: ambulance to the emergency department now for a chest tube; after discharge, follow-up "
-               "chest X-rays until the lung is fully re-expanded, a recheck within a few days, and a surgical "
-               "referral if the leak persists or it ever recurs."),
+    follow_up=("Emergency: ambulance to the emergency department now for a chest tube; then follow-up chest "
+               "X-rays to confirm the lung has fully re-expanded, a surgical evaluation if the air leak lasts more "
+               "than 4 days, and surgery to prevent recurrence if it ever comes back."),
     presentation=(
       "Mr. Whitfield is a 27-year-old man who smokes half a pack a day, whose father had a collapsed lung, "
       "presenting with sudden sharp left-sided chest pain and breathlessness that began at rest last night. The "
@@ -3021,6 +3102,97 @@ dict(
 ]
 
 
+# =========================================================================================== test pictures
+# Only the Pulmonary OSCE Disease Chart's vetted pictures (tools/_pd2_pulm_osce_images.py; files in
+# Physical Diagnosis 2 Exam 2/pd2-pulm-osce-images/, yellow boxes drawn in), each on a test the case's setting can do.
+# A picture that is not the patient's own says so. Credits come from the chart's sources (build_osce_practice.py).
+# case id -> test id -> (picture, caption)
+TEST_PICTURES = {
+    "pulmonary-chronic-obstructive-pulmonary-disease": {
+        "spirometry": ("spirometry-obstructive-copd.png",
+                       "An example graph, not his own tracing, with the same numbers as his chart: forced expiratory volume in 1"
+                       " second (FEV1) 2.0 L of a forced vital capacity (FVC) of 3.9 L, a ratio of 0.51, below 0.70: "
+                       "obstruction. Yellow box: the volume-time curve and its ratio."),
+        "cxr": ("cxr-copd-hyperinflation.jpg",
+                "An example of his pattern, not his own film: overinflated, dark lungs with fewer markings, a saber-"
+                "sheath trachea and a flattened, tented diaphragm (yellow boxes; the labels are the film's own). His film"
+                " also shows no infiltrate and no pneumothorax."),
+    },
+    "pulmonary-acute-bronchitis": {
+        "cxr": ("cxr-normal.jpg",
+                "A normal chest X-ray like hers, not her own film: clear lungs and sharp costophrenic angles. In "
+                "uncomplicated bronchitis the film is normal; a consolidation would mean pneumonia instead."),
+        "peak-flow": ("peak-flow-meter-and-normal-values.png",
+                      "A: the hand-held peak flow meter. B: normal readings by age and height, men above, women below. Her best"
+                      " of 430 liters per minute is about 95% of predicted for her age, sex and height: no airflow obstruction."),
+    },
+    "pulmonary-pulmonary-embolism": {
+        "ecg": ("ecg-pulmonary-embolism.jpg",
+                "An example, not her own tracing, from a source titled Pulmonary Embolism that lists tachycardia and the "
+                "S1Q3T3 pattern but points to no lead. Hers: sinus tachycardia at 110, a deep S wave in lead I, a Q wave "
+                "and inverted T wave in lead III. It suggests right ventricular strain, not a proven clot."),
+        "ctpa": ("vq-scan-and-ct-angiogram.jpg",
+                 "An example, not her own scan. C (boxed): contrast computed tomography with the clot at the arrow in the "
+                 "right main pulmonary artery, where hers is. B (boxed): a perfusion scan with less flow to the right "
+                 "lung. A: a normal ventilation scan."),
+    },
+    "pulmonary-lung-cancer": {
+        "ct-chest": ("ct-lung-tumor.jpg",
+                     "An example, not his own scan: a large cell carcinoma, a thick-walled cavitating mass in the periphery of"
+                     " the left lung (yellow box). His is also a thick-walled, cavitating mass with spiculated borders, 4.6 "
+                     "centimeters, in the left upper lobe."),
+        "pet-ct": ("pet-ct-nodule.jpg",
+                   "An example, not his own scan. The four panels are unlabeled, but a round opacity (top right, boxed) sits"
+                   " where a bright focus shows in the two lower panels (boxed). High uptake suggests cancer; inflammation "
+                   "can take it up too. This one is in the right lung; his mass is in the left upper lobe."),
+    },
+    "pulmonary-asthma": {
+        "spirometry": ("spirometry-normal-vs-asthma.png",
+                       "An example graph, not her own tracing: normal (blue, dashed) against asthma (red), with the same numbers"
+                       " as her test on file: forced expiratory volume in 1 second (FEV1) 2.2 L against a normal 3.5 L, forced "
+                       "vital capacity 3.6 L, ratio 61%. The asthma loop falls away early (yellow boxes)."),
+        "peak-flow": ("peak-flow-meter-and-normal-values.png",
+                      "A: the hand-held peak flow meter. B: normal readings by age and height, men above, women below. Her own "
+                      "best (440 liters per minute) is the number to compare with: 240 before treatment is 55% of it, 330 after"
+                      " treatment is 75%."),
+    },
+    "pulmonary-pleural-effusion": {
+        "cxr": ("cxr-pleural-effusion.jpg",
+                "An example, not his own film: both costophrenic angles blunted (arrows, yellow boxes), the sign of fluid"
+                " in the pleural space on an upright film. His shows a moderate right effusion with a meniscus and a "
+                "small left one."),
+    },
+    "pulmonary-community-acquired-pneumonia": {
+        "cxr": ("cxr-right-upper-lobe-consolidation.jpg",
+                "An example of right upper lobe consolidation, not his own film: the right upper lobe is uniformly white "
+                "and the trachea is not shifted. This film is labeled Klebsiella pneumonia with a bulging fissure (red "
+                "line). His consolidation is sharply bounded below by the horizontal fissure."),
+    },
+    "pulmonary-pulmonary-tuberculosis": {
+        "tst": ("tuberculin-skin-test-reading.jpg",
+                "An example, not her own arm. A tuberculin skin test is read 48 to 72 hours after the injection: measure "
+                "the firm, raised swelling (induration) across the forearm in millimeters, never the redness (ruler "
+                "boxed). Hers measured 17 millimeters at 48 hours: positive."),
+        "cxr": ("cxr-tuberculosis-bilateral.jpg",
+                "An example, not her own film: abnormalities in both upper lungs (arrows, yellow boxes) with possible "
+                "cavitation; hers has the same upper-lobe pattern, worse on the right. A film cannot confirm "
+                "tuberculosis: the sputum tests do."),
+    },
+    "pulmonary-pneumothorax": {
+        "cxr": ("cxr-pneumothorax.jpg",
+                "An example, not his own film. The yellow box holds three small arrows at the left apex, which its source"
+                " labels apical subpleural blebs. A pneumothorax shows as a thin visceral pleural line with no lung "
+                "markings beyond it; his left one is 4 centimeters from the apex to the top of the chest cavity."),
+    },
+}
+for _c in CASES:
+    for _t in _c["tests"]:
+        _pic = TEST_PICTURES.get(_c["id"], {}).get(_t["id"])
+        if _pic:
+            _t["img"], _t["cap"] = _pic
+
+
+
 # =========================================================================================== self-check
 # Every case answers the same history: the run-sheet's questions (tools/build_pd2_osce.py PULMONARY), in this
 # order, then any facts of its own.
@@ -3053,6 +3225,7 @@ def check(cases, whole=True):
     import datetime
     import re
     from _osce_pulm_catalog import CATALOG
+    from _pd2_pulm_osce_images import IMAGES as PULM_IMAGES
 
     abbrev = re.compile(
         r"\b(COPD|COLD|CAP|PE|TB|AFB|IGRA|TST|PPD|CXR|CTA|CTPA|CT|ABG|VBG|PEFR?|FEV1|FVC|SABA|LABA|LAMA|ICS|DVT|"
@@ -3084,6 +3257,10 @@ def check(cases, whole=True):
         sexes = [c["door"]["sex"] for c in cases]
         assert sexes.count("female") >= 3 and sexes.count("male") >= 3, sexes
     rows = []
+    if whole:
+        known = {(c["id"], t["id"]) for c in cases for t in c["tests"]}
+        missing = [(cid, tid) for cid, m in TEST_PICTURES.items() for tid in m if (cid, tid) not in known]
+        assert not missing, ("a picture for a test no case has", missing)
     for c in cases:
         cond, d, k = c["condition"], c["door"], c["key"]
         where = c["id"]
@@ -3136,6 +3313,11 @@ def check(cases, whole=True):
             if not t["here"]:
                 assert t["result"].startswith("Not available") and t["result"].count(".") == 1, (where, t["id"], "one short sentence")
                 assert not t.get("img"), (where, t["id"], "a picture for a test the setting can't do")
+        pics = [t for t in tests if t.get("img")]
+        assert len(pics) <= 2 and all(t["here"] for t in pics), (where, "at most two pictures, on tests done here")
+        for t in pics:
+            assert t["img"] in PULM_IMAGES, (where, t["id"], "not one of the chart's vetted pictures", t["img"])
+            assert 10 <= len(t["cap"]) <= 300, (where, t["id"], "caption 10-300 characters", len(t["cap"]))
         assert 1 <= len(k["must_not_miss"]) <= 2, where
         assert len(k["ddx"]) == 4, where
         assert cond.lower() in k["ddx"][0]["name"].lower(), (where, "own condition not first")
@@ -3158,9 +3340,9 @@ def check(cases, whole=True):
                 assert bad not in low, (where, bad, s[:80])
             m = abbrev.search(re.sub(r"\([A-Za-z0-9-]+\)", "", s))   # "Full term (ABBREV)" is the policy's own form
             assert not m, (where, "abbreviation", m.group(0) if m else "", s[:80])
-        rows.append("%-50s %-6s %3d  %-30s facts %2d  exam %2d  special %d  tests %d  presentation %3d words  cc %s"
+        rows.append("%-50s %-6s %3d  %-30s facts %2d  exam %2d  special %d  tests %d  pictures %d  presentation %3d words"
                     % (c["id"], d["sex"], d["age"], d["setting"], len(c["facts"]), len(c["exam"]),
-                       len(c["special"]), len(tests), words, d["cc"]))
+                       len(c["special"]), len(tests), len(pics), words))
     return rows
 
 
