@@ -112,7 +112,11 @@ TOPICS = [
   ["★ AT NIGHT", "Capitals on the slide: untreated obstructive sleep apnea carries <b>3&ndash;6 times the risk of sudden cardiac death AT NIGHT</b>."],
   ["★ ** ASV", "Asterisks on the slide: <b>adaptive servo-ventilation is not used for all patients</b>, especially in <b>heart failure with reduced ejection fraction</b>."],
   ["★ Gold standards", "Split-night and all-night polysomnogram (obstructive apnea); polysomnography with continuous carbon dioxide monitoring (obesity hypoventilation)."],
-  ["Recording", "Not in yet (Monday 2 November): her spoken emphasis is added when it arrives."],
+  ["★ Diagnosis, simply", "&ldquo;As simple as possible&rdquo;: <b>5 or more</b> obstructive events per hour <b>plus a symptom</b>, or <b>15 or more</b>. Home kit = obstructive apnea only; not with cardiopulmonary or neuromuscular disease, and not for central apnea."],
+  ["★ Education", "&ldquo;Patient education is like the <b>most important thing</b>&rdquo;: CPAP is the most effective but disliked, so counsel. Severe obstructive apnea: <b>oral appliance not effective</b>, use CPAP."],
+  ["★ Central apnea risk factors", "&ldquo;I really want everyone to understand&rdquo;: <b>heart failure, stroke, opioids, hypoxia, high altitude, CPAP use</b>. Treat the cause first, then CPAP, then ASV (not with poor left ventricular function)."],
+  ["★ OHS", "<b>Diagnosis of exclusion</b>; male gender is not a risk factor; first line <b>weight loss + BiPAP or CPAP</b> (&ldquo;first line, first line, first line&rdquo;)."],
+  ["★ Women", "After menopause more than before: &ldquo;the age will help you a lot.&rdquo;"],
 ]},
 {"id": "l40-osa", "label": "Obstructive Sleep Apnea", "color": L40C, "rows": [
   ["Who and why", "Most common sleep-disordered breathing; rises with age; men &gt; women; post- &gt; premenopausal; <b>upper airway narrowing</b> by soft tissue or structure."],
