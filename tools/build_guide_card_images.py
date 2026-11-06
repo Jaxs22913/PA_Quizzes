@@ -106,6 +106,10 @@ CURATED = {
         "Clinical Medicine and Surgery I Exam 7/cms-e7-images/l39-s007-hypnogram.png",
     "Clinical Medicine and Surgery I Exam 7/cms-exam-7-clin-med-pro-guide.html":
         "Clinical Medicine and Surgery I Exam 7/cms-e7-images/l41-s028-cxr-sarcoid-hilar.jpg",
+    # Pulmonary OSCE chart: the plain normal chest film, clean at strip height (graphs, tracings and the
+    # labeled films read poorly as a strip).
+    "Physical Diagnosis 2 Exam 2/pd2-pulm-osce-chart.html":
+        "Physical Diagnosis 2 Exam 2/pd2-pulm-osce-images/cxr-normal.jpg",
 }
 
 # Cards that get NO picture even though their folder has some.
