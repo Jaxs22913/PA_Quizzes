@@ -13,6 +13,10 @@ Taken:
             list), a mechanism diagram that answers objective 2
   slide 63  the "acid-base disturbance suspected" algorithm (Pocket Guide to Diagnostic Tests), a flowchart that
             exists only as a picture; the guide already holds it as an HTML table in 2.7
+  slide 54  added 2026-11-06 at Jaxon's request ("include the mnemonic she gave in her ppt"): the whole slide,
+            MUDPILES beside a pile of mud and USEDCAR beside a rusted truck, is her memory aid. Cropped from the
+            1920 px Keynote render (Keynote export to PDF, PyMuPDF at 1920 px), box (110, 95, 1560, 940), 1100 px
+            wide, JPEG 85 -> l34-s054-mudpiles-usedcar.jpg. Not re-made by this script (the render is not kept).
 
 Not pictures, so held as HTML tables instead: slide 6 (normal blood gas values, added to 2.1 slide-exact) and
 slide 59 (the simple acid-base disorder summary, already in 2.6).
@@ -21,7 +25,7 @@ Left out:
   slides 12, 15, 16, 17, 18  clip art (lungs, kidney, laboratory flasks)
   slide 35  a paper bag in a "no" circle (decoration; the point is text in 2.5)
   slide 43  stock photograph of licorice
-  slides 54, 55, 56  a pile of mud and a rusted truck (visual puns on MUDPILES and USEDCAR)
+  slides 55, 56  the same mud pile and truck again (slide 54 already carries them)
   slide 62  a warning-triangle icon; slide 63 McGraw-Hill/AccessMedicine logo strip; slide 4 a tiny icon
   slides 1, 2, 64-67  title, objectives, case-study and reference slides (no pictures)
 """
