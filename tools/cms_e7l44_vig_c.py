@@ -67,7 +67,7 @@ V(T_EFF, IO_A,
    ["Heart failure",
     "Heart failure is suggested by lower extremity edema, orthopnea and paroxysmal nocturnal dyspnea, and it is the leading cause of effusion overall. Tell: he has none of those, and fevers with night sweats point to an infection.", "ruled out by a stated finding"],
    ["Pneumonia",
-    "Pneumonia is suggested by fever, purulent sputum and pleuritic chest pain, usually over days. Tell: he has no purulent sputum, and two months of night sweats and weight loss fit tuberculosis.", "ruled out by a stated finding"]],
+    "Pneumonia is suggested by fever, purulent sputum and pleuritic chest pain. Tell: he has no purulent sputum, and two months of night sweats and weight loss fit tuberculosis.", "ruled out by a stated finding"]],
   CS(83, 86, 103), "etiology", "diagnosis"),
 
 V(T_EFF, IO_A,
