@@ -57,7 +57,8 @@ def header(frags):
     nums = [n for n, _ in frags]
     have = ", ".join(str(n) for n in nums)
     todo = [n for n in range(FIRST, LAST + 1) if n not in nums]
-    more = (" &middot; Lectures %s are added as they are built" % ", ".join(str(n) for n in todo)) if todo else " &middot; <b>All seven lectures</b>"
+    more = ((" &middot; Lecture %d is added when it is built" % todo[0]) if len(todo) == 1 else
+            (" &middot; Lectures %s are added as they are built" % ", ".join(str(n) for n in todo))) if todo else " &middot; <b>All seven lectures</b>"
     return ("""<header class="top">
   <h1>Clinical Medicine and Surgery I &middot; Exam 7 &mdash; Study Guide</h1>
   <p>PAJ 5500 Clinical Medicine and Surgery I &middot; Class of 2028</p>

@@ -13,8 +13,10 @@ hours). No conflict (the deck says "Disorders", the calendar "Disease"). Deck fi
 positive for flu" [8:37]).
 
 RECORDING: the live Zoom class, recordings/cms-l42-pulmonary-vascular-gray-2026-11-04.m4a (1:46:17), with Zoom's own
-speaker-labeled transcript (.zoom-transcript.txt). Zoom transcript only; the faster-whisper cross-examination is
-pending (Zoom's ASR garbles terms: "core pulmonary" = cor pulmonale, "wealth score"/"welt" = Wells, "perk" = PERC,
+speaker-labeled transcript (.zoom-transcript.txt), cross-examined 2026-11-06 against our faster-whisper transcript:
+56 of 60 flagged quotes agree; in the other 4 ours is garbled and Zoom is right ([1:21:18] drops "don't", [1:24:38]
+drops the "4", [1:32:48] "sleep", [12:11] "free points"); every number agrees; no slide corrected aloud; no new
+emphasis that changes scope (details in the flags file). (Zoom's ASR garbles terms: "core pulmonary" = cor pulmonale, "wealth score"/"welt" = Wells, "perk" = PERC,
 "Tedalafil", "Vapamil", "Arnies", "cigarettes" = SGLT2 inhibitors, "Curly B lines", "Palisine" = Palla, "Eloquus").
 Host chat 4:14-8:37; screen sharing 5:41-1:12:21 and 1:12:25-1:38:45; the title slide sat on screen 6:15-12:30 while
 students were admitted; content 12:30 (slide 2) to 1:38:45 (slide 62); break [1:12:02]-[1:12:29] (recording
