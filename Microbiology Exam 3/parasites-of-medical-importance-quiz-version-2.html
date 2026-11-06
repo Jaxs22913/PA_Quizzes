@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));window.__paErrQ=[];['error','unhandledrejection'].forEach(function(t){addEventListener(t,function(e){var q=window.__paErrQ;if(q&&!q.done)q.push(e)})});</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #3f8a55; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c2903a; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parasites of Medical Importance &mdash; Quiz 2</title>
+<style>
+  :root{
+    --navy:#1f4d2b; --indigo:#3f8a55; --gold:#c2903a; --ice:#e8f4ea;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#1f4d2b;--gold-l:#c2903a;--indigo-l:#1f4d2b;--navy:#89ba92;--indigo:#509b65;--gold:#c2903a;--ice:#112917;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#509b65;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#1f4d2b;--indigo-t:#38844f;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Parasites of Medical Importance</h1>
+    <div class="sub">Microbiology &middot; Exam 3 &middot; Lecture 17 &middot; Set 2</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Lecture 17 of Microbiology &mdash; Parasites of Medical Importance. Thirty questions, every one cited to the slide it came from and weighted by the minutes Dr. Webster spent on each organism (most on malaria, the helminth life cycles, <i>Entamoeba</i>, <i>Toxoplasma</i> and the trypanosomes). Thirty-three organisms do not fit in thirty questions, so the two sets split the smaller ones between them; take both. <b>Protozoa</b> are sorted by how they move: the amebas (<i>Entamoeba</i>, <i>Naegleria</i>, <i>Acanthamoeba</i>), the ciliate <i>Balantidium</i>, the flagellates (<i>Trichomonas</i>, <i>Giardia</i>, and the blood-borne trypanosomes and <i>Leishmania</i>) and the apicomplexans (<i>Plasmodium</i>, <i>Toxoplasma</i>, <i>Cryptosporidium</i> and the other coccidians, <i>Babesia</i>). <b>Helminths</b> are the roundworms, flukes and tapeworms, each following one of four life-cycle patterns; know the definitive, intermediate and transport hosts. For every organism, know how people acquire it (objective 2), what it does, and how it is found and prevented. Every set asks what she stressed: antiprotozoan drugs are few and toxic, helminth pathology (&ldquo;something you should know&rdquo;), pregnant women and the cat litter box, and Chagas disease moving north with its vector. No question asks which drug treats what, a number, a hemoflagellate stage name, or the summary charts she said not to memorize.</p>
+    <div class="chips"><span class="chip">Protozoa &amp; their drugs</span><span class="chip"><i>Entamoeba</i></span><span class="chip"><i>Naegleria</i> &amp; <i>Acanthamoeba</i></span><span class="chip"><i>Balantidium</i></span><span class="chip"><i>Trichomonas</i></span><span class="chip"><i>Giardia</i></span><span class="chip">Trypanosomes</span><span class="chip"><i>Leishmania</i></span><span class="chip"><i>Plasmodium</i></span><span class="chip"><i>Toxoplasma</i></span><span class="chip"><i>Cryptosporidium</i>, <i>Isospora</i>, <i>Cyclospora</i></span><span class="chip">Helminth life cycles</span><span class="chip">Intestinal roundworms</span><span class="chip">Tissue roundworms</span><span class="chip">Flukes</span><span class="chip">Tapeworms</span><span class="chip">Arthropod vectors</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Hookworms", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "The pictured mouth is at the head end of a small intestinal worm. How do humans acquire this worm?", "opts": [["Eating meat with larvae encysted in it", "Meat holding encysted larvae transmits Trichinella spiralis, from undercooked pork or bear meat. The hookworm shown, with its hooked mouth, lives in the small intestine and is acquired when soil larvae burrow into bare skin."], ["The bite of a mosquito carrying larvae", "Mosquito bites deposit the larvae of Wuchereria bancrofti, a tissue nematode that develops in the lymphatics. The hooked-mouth worm pictured is an intestinal hookworm, transmitted through the skin on the soles of the feet."], ["Larvae burrowing in through bare feet", "Correct. This head end with a hooked mouth is a hookworm's, such as Necator americanus. Humans shed eggs in feces, which hatch into filariform larvae that burrow into the skin of bare feet, travel by blood to the lungs, are swallowed, and mature and reproduce in the small intestine."], ["Swallowing eggs in food or water", "Swallowing mature eggs in contaminated food or water is how Ascaris and the whipworm infect people. The worm with this hooked mouth, a hookworm, is infective in the larval stage: its filariform larvae burrow into the skin, on the soles of the feet."]], "c": 2, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 6, 80, 84, 96, 101 and 104 and image on Slide 97", "img": "micro-exam-3-quiz-images/l17-fig-15.jpg", "alt": "Close-up micrograph of the head end of a worm: a round, open mouth lined with several curved, tooth-like points.", "slide": "Slide 97", "qid": "r921uk"}, {"topic": "Loa loa", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "The worm pictured is being removed from a patient's eye. How do people acquire this worm?", "opts": [["Eating undercooked fish", "Inadequately cooked fish containing cercariae carry Opisthorchis sinensis, the Chinese liver fluke, whose larvae crawl into the bile duct. The worm drawn from the eye is Loa loa, the African eye worm, spread by the bite of small flies."], ["Larvae entering bare feet", "Larvae burrowing into the skin of bare feet is how the hookworms infect, before they travel to the lungs, are swallowed and mature in the small intestine. The worm drawn from the eye is Loa loa, spread by the bite of small flies."], ["Eating raw aquatic plants", "Raw aquatic plants carry Fasciola hepatica, a liver fluke that cycles between herbivores, snails and aquatic plants and lodges in the liver. The worm being pulled from the eye is Loa loa, the African eye worm, which reaches people through the bite of small flies."], ["The bite of small flies", "Correct. A worm pulled from the eye is Loa loa, the African eye worm, spread by the bite of small flies. This temperature-sensitive worm migrates around and under the skin and may enter the eye, and treatment can be pulling the worm from a small hole in the conjunctiva."]], "c": 3, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 8, 96, 116 and 117 and image on Slide 107", "img": "micro-exam-3-quiz-images/l17-fig-19.jpg", "alt": "Close-up of an eye with a reddened conjunctiva; forceps hold a thin, white, coiled worm being drawn out from the surface of the eye.", "slide": "Slide 107", "qid": "1bmdvon"}, {"topic": "Balantidium coli", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "Balantidium coli normally lives in the intestines of which animals?", "opts": [["Domestic dogs", "Dogs are the alternate hosts of Leishmania in equatorial regions, a blood and tissue parasite spread by female sand flies. Balantidium coli lives in the intestines of pigs and cattle and reaches humans in cyst-containing food or water."], ["House cats", "Cats matter for Toxoplasma gondii (pregnant women should not clean the cat box) and are among the reservoirs of Giardia lamblia. Balantidium coli is the intestinal ciliate of domestic animals such as pigs and cattle."], ["Pigs and cattle", "Correct. Balantidium coli, the intestinal ciliate, occupies the intestines of domestic animals such as pigs and cattle, its alternate hosts. Humans acquire it by ingesting cyst-containing food or water; the trophozoite erodes the intestine, but healthy humans are resistant."], ["Beavers and coyotes", "Beavers and coyotes, with cattle, cats and humans, are reservoirs of Giardia lamblia, the heart-shaped flagellate swallowed with water and food. Balantidium coli is the intestinal ciliate of domestic animals, chiefly pigs and cattle."]], "c": 2, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 4, 5, 33, 39 and 52", "qid": "nub07v"}, {"topic": "Echinococcus", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "Which animal is the definitive host of the parasite that formed the cyst shown?", "opts": [["Pigs", "Pigs are intermediate hosts here, as swine are for the pork tapeworm, Taenia solium, whose definitive host is the human. Adulthood and mating occur in the definitive host, and for Echinococcus that host is the dog."], ["Dogs", "Correct. The large cyst exposed at surgery is a hydatid cyst of Echinococcus, a tiny tapeworm whose definitive host is the dog, while sheep, cattle, goats and pigs are its intermediate hosts. Treatment often involves surgical removal of these parasitic masses."], ["Sheep", "Sheep are intermediate hosts of Echinococcus, alongside cattle, goats and pigs. Adulthood and mating occur in the definitive host, and for this tiny tapeworm that host is the dog, which is also how people typically acquire it."], ["Cattle", "Cattle are intermediate hosts of Echinococcus, and of the beef tapeworm, Taenia saginata, for which humans are the definitive host. The definitive host of Echinococcus, where adulthood and mating occur, is the dog."]], "c": 1, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 8, 79, 84, 118 and 124 and image on Slide 125", "img": "micro-exam-3-quiz-images/l17-fig-24.jpg", "alt": "Operative photograph of an opened abdomen showing a large, smooth, white cyst laced with red vessels, lying against a dark red organ.", "slide": "Slide 125", "qid": "1wqk4bn"}, {"topic": "Cyclospora cayetanensis", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "An acid-fast stained fecal smear from a patient with watery diarrhea, bloating and stomach cramps shows the round red-staining bodies seen here. Which parasite is it?", "opts": [["Giardia lamblia", "Giardia lamblia is recognized by its trophozoite's symmetrical heart shape, with a concave ventral surface that acts like a suction cup, and microscopy is difficult because it is shed intermittently. Round acid-fast-staining oocysts point to Cyclospora."], ["Entamoeba histolytica", "Entamoeba histolytica is also sought in a fecal smear, but it shows a large trophozoite moving by pseudopods or a smaller nonmotile cyst, and it causes dysentery. Round oocysts staining with the acid-fast method are Cyclospora cayetanensis."], ["Balantidium coli", "Balantidium coli is a ciliate from the intestines of pigs and cattle that causes persistent diarrhea and occasionally dysentery. The bodies in this acid-fast fecal smear are oocysts, the form of Cyclospora cayetanensis that invades the small intestinal mucosa."], ["Cyclospora cayetanensis", "Correct. Round oocysts that take up the acid-fast stain in a fecal smear are Cyclospora cayetanensis, the cause of cyclosporiasis, with watery diarrhea, stomach cramps, bloating, fever and muscle aches. Diagnosis can be complicated, so multiple stool samples must be tested."]], "c": 3, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 75, 39, 41, 16, 23 and 33 and image on Slide 76", "img": "micro-exam-3-quiz-images/l17-fig-10.jpg", "alt": "Fecal smear stained blue with scattered round bodies stained pink to deep red, a 20 micrometer scale bar, and unlabeled pointer lines", "slide": "Slide 76", "qid": "1qihyza"}, {"topic": "Wuchereria bancrofti", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "What causes the massive swelling pictured, the result of a chronic tropical worm infection?", "opts": [["Worms migrating under the skin", "Migration around and under the skin, sometimes into the eye, is the behavior of Loa loa, the African eye worm. The massive limb swelling shown is elephantiasis, from adult filarial worms blocking lymphatic circulation."], ["Blocked lymphatic circulation", "Correct. This is elephantiasis, massive swelling in the extremities from Bancroftian filariasis. Wuchereria bancrofti is spread by mosquitoes; the larvae they deposit move into the lymphatics and develop into adults, and chronic infection blocks lymphatic circulation."], ["Larvae encysted in the leg muscles", "Larvae encysted in skeletal muscle are trichinellosis, from undercooked pork or bear meat, causing muscle and joint pain. Elephantiasis comes from filarial worms in the lymphatics blocking lymphatic circulation."], ["Inflammation from bacterial coinfection", "Inflammation against antigens of the Wolbachia endosymbiont is how Onchocerca volvulus causes river blindness, damaging the cornea, retina and optic nerve. The swollen limbs of elephantiasis come from blocked lymphatic circulation."]], "c": 1, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 8, 101, 103, 104, 106 and 107 and image on Slide 105", "img": "micro-exam-3-quiz-images/l17-fig-18.jpg", "alt": "A person's lower legs and feet, both massively swollen with thickened, folded skin, standing on grass.", "slide": "Slide 105", "qid": "1p4ib6w"}, {"topic": "Helminth pathology & diagnosis", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "Which list gives the effects of helminth pathology on the human host?", "opts": [["Organ swelling, hemorrhage, weight loss, anemia", "Correct. Worms feeding on and migrating through tissues, worms accumulating in organs and causing blockages, and toxic worm secretions produce enlargement and swelling of organs, hemorrhage, weight loss and anemia."], ["Specialized mouthparts, enzymes and a cuticle", "Specialized mouthparts for attachment, enzymes to hydrolyze tissue and a cuticle for protection against immune defense are the worms' adaptations to parasitism, not effects on the host. The effects are enlargement and swelling of organs, hemorrhage, weight loss and anemia."], ["Eosinophilia, positive serology and eggs in feces", "A raised eosinophil count, serological tests and eggs, larvae or adult worms in feces, sputum, urine, blood or tissue biopsies are the basis of diagnosis. The effects of helminth pathology are enlargement and swelling of organs, hemorrhage, weight loss and anemia."], ["Halted movement, lost grip and local gut action", "Inhibiting the worm's movement, preventing it from holding its position and acting locally in the intestine describe what antihelminthic drugs do to the worm. Helminth pathology in the host shows as enlargement and swelling of organs, hemorrhage, weight loss and anemia."]], "c": 0, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 85 and 86", "qid": "op021s"}, {"topic": "Enterobius vermicularis", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "Eggs like those pictured are identified in a specimen from a child. How is this worm typically spread?", "opts": [["By close contact and fomites", "Correct. These elongated eggs, flattened on one side, belong to the pinworm, Enterobius vermicularis. It is very common in daycare, with transmission by direct contact and fomites: eggs are picked up from the surroundings and swallowed, and self-inoculation is common. The tape test diagnoses it."], ["By fecal pollution of soil", "Fecal pollution of soil with eggs spreads the whipworm and Ascaris, whose eggs are barrel-shaped with end plugs or broad ovals with a thick, rough shell. These flattened, elongated eggs are pinworm eggs, spread by close contact and fomites instead."], ["By larvae penetrating the feet", "Larvae penetrating bare feet is the hookworm route, and hookworm eggs hatch in soil first. Pinworm eggs like these are infective as eggs, picked up from the surroundings or by self-inoculation and swallowed."], ["By eating undercooked pork", "Undercooked pork or bear meat transmits Trichinella spiralis, whose larvae are encysted in the animal's muscle. The pinworm needs only humans; its eggs pass between people by close contact and fomites, and self-inoculation is common."]], "c": 0, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 6, 84, 93, 94, 96 and 101 and image on Slide 95", "img": "micro-exam-3-quiz-images/l17-fig-14.jpg", "alt": "Three elongated, oval, thin-shelled eggs side by side under the microscope, each slightly flattened along one side, on a pale purple background.", "slide": "Slide 95", "qid": "1r4emo1"}, {"topic": "Toxocara", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "What does visceral toxocariasis cause?", "opts": [["Blocked lymphatic circulation", "Blocked lymphatic circulation, leading to elephantiasis, is the work of Wuchereria bancrofti in the lymphatics. Visceral toxocariasis is migrating dog and cat roundworm larvae inflaming and severely damaging the liver."], ["Inflammation and severe liver damage", "Correct. In toxocariasis, larvae of the dog and cat roundworms migrate through human tissues. Visceral toxocariasis brings inflammation and severe damage to the liver, while ocular toxocariasis, migration to the eye, may lead to visual impairment and total blindness."], ["Visual impairment and total blindness", "Visual impairment and total blindness come from ocular toxocariasis, when larvae migrate to the eye. The visceral form is the one in the organs, with inflammation and severe damage to the liver."], ["Eosinophilic meningitis", "Eosinophilic meningitis is caused by Angiostrongylus cantonensis, the rat lungworm, caught from snails, water or vegetables. Visceral toxocariasis, from dog and cat roundworm larvae, inflames and severely damages the liver."]], "c": 1, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 98, 99, 104 and 108", "qid": "6jr1ue"}, {"topic": "Trypanosoma brucei", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "Which genus of protozoa is shown in this stained blood smear?", "opts": [["Trichomonas", "Trichomonas is a small, pear-shaped flagellate of the urogenital tract, found on a vaginal smear, and it cannot survive long outside the host. Elongate flagellates among red blood cells in a blood smear are trypanosomes."], ["Trypanosoma", "Correct. Elongate, spindle-shaped flagellates with tapered ends swimming between red blood cells are trypanosomes, readily demonstrated in blood, spinal fluid or lymph nodes. Trypanosoma brucei causes African sleeping sickness and Trypanosoma cruzi Chagas disease; both are hemoflagellates."], ["Plasmodium", "Plasmodium is seen as small ring forms inside the red blood cells, not as long flagellates swimming between them. The thin, wavy cells lying outside the red cells in this smear are trypanosomes."], ["Leishmania", "Leishmania multiplies inside human macrophages, which keep the infection localized or carry it systemically when they migrate. Free, spindle-shaped flagellates swimming between red blood cells, as here, are trypanosomes."]], "c": 1, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 5, 36, 37, 38, 44, 47 and 52 and image on Slide 46", "img": "micro-exam-3-quiz-images/l17-fig-05.jpg", "alt": "Stained blood smear of round pink red blood cells with several thin, wavy, purple-stained elongated cells lying between them.", "slide": "Slide 46", "qid": "cobse"}, {"topic": "Trichinella spiralis", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "What can treatment achieve once Trichinella spiralis larvae have encysted in muscle?", "opts": [["It clears because larvae die quickly", "Recovery because the parasite does not survive long in the human body is described for the rat lungworm, and only some of those patients recover. Trichinella cysts can remain in skeletal muscle for years, and there is no cure once larvae have encysted."], ["There is no cure at that point", "Correct. Trichinellosis has no cure after the larvae have encysted. The larvae form cysts in muscle, heart and brain, and cysts in skeletal muscle can remain for years, after first symptoms of flulike illness and diarrhea and second symptoms of muscle and joint pain, shortness of breath and pronounced eosinophilia."], ["Surgical removal of the cysts cures it", "Surgical removal of parasitic masses is used for Echinococcus, whose hydatid cysts may need to be surgically removed. Trichinella cysts form in muscle, heart and brain, and there is no cure once the larvae have encysted."], ["The worm can be pulled out intact", "Pulling the worm out through a small hole in the conjunctiva treats Loa loa, the African eye worm, which migrates under the skin. Trichinella larvae lie encysted in muscle, heart and brain, and there is no cure once they have encysted."]], "c": 1, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 8, 99, 101, 102, 107 and 125", "qid": "1mgxi6w"}, {"topic": "Helminth biology & life cycles", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "In the helminth life-cycle pattern whose intermediate host can be a biting insect, which stage infects the new human host?", "opts": [["The second-stage larva", "Correct. In this pattern the first larval stage infects the intermediate host, which then releases second-stage larvae. These are the infective form: they reach people from water or, when the intermediate host is a biting insect, through its bite, as with the filarial worms."], ["The first-stage larva", "The first larval stage is the one that infects the intermediate host, after eggs are released into water with feces. It is the intermediate host's later product, the second-stage larva, that is infective for the next human."], ["The mature egg", "Swallowing a mature egg in contaminated food or water is how the pattern without any intermediate host begins, as with Ascaris. When an intermediate host is involved, the human is infected by the second-stage larva it releases."], ["The larva encysted in muscle", "Larvae encysted in muscle are what a person eats in undercooked meat, the pattern followed by Trichinella spiralis. In the pattern with an intermediate host, the infective form is the second-stage larva released into water or through a bite."]], "c": 0, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 80, 82, 83, 91, 101 and 103", "qid": "1lfvqrl"}, {"topic": "Hemoflagellates", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "How are the hemoflagellates spread to humans?", "opts": [["By sexual contact with carriers", "Sexual contact spreads Trichomonas vaginalis, a flagellate of the urogenital tract rather than the blood. The hemoflagellates are vector-borne: blood-sucking insects serve as their intermediate hosts."], ["By blood-sucking insects", "Correct. Hemoflagellates are obligate parasites of human blood and tissues, spread in specific tropical regions by blood-sucking insects that serve as intermediate hosts: the tsetse fly for Trypanosoma brucei, the reduviid bug for Trypanosoma cruzi and the female sand fly for Leishmania."], ["By swallowed cysts in water", "Swallowed cysts are the fecal-oral route of the intestinal protozoa: Entamoeba histolytica, Giardia lamblia and Balantidium coli. Hemoflagellates live in blood and tissues and are zoonoses spread by blood-sucking insects that serve as intermediate hosts."], ["By nasal contact with water", "Nasal contact with water is how the free-living ameba Naegleria fowleri reaches the brain along the olfactory nerve. Hemoflagellates are vector-borne blood parasites, carried by blood-sucking insects that act as intermediate hosts."]], "c": 1, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 16, 28, 33, 37, 39, 42, 45, 49 and 52", "qid": "1vu1l82"}, {"topic": "Trichomonas vaginalis", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "Which life-cycle forms does Trichomonas have?", "opts": [["Cyst only", "Trichomonas never forms a cyst; it exists only as the trophozoite, the active feeding cell by whose simple asexual division most protozoa propagate. Cysts belong to the cycles of Entamoeba, Giardia and Balantidium."], ["Trophozoite and cyst", "Alternating between a motile trophozoite and a cyst is the cycle of Entamoeba histolytica (large trophozoite, smaller nonmotile cyst) and of Giardia lamblia. Trichomonas exists only in trophozoite form, with no cyst."], ["Sexual and asexual stages", "Alternating between sexual and asexual phases is the complex life cycle of the apicomplexan parasites, such as Plasmodium and Toxoplasma. Trichomonas propagates as the trophozoite alone and never forms a cyst."], ["Trophozoite only", "Correct. Trichomonads are small, pear-shaped flagellates with anterior flagella and an undulating membrane that exist only in trophozoite form; there is no cyst. Trichomonas vaginalis is also a strict parasite that cannot survive long outside the host."]], "c": 3, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 12, 16, 33, 36, 37, 39 and 55", "qid": "1c0puml"}, {"topic": "Trypanosoma cruzi", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "Why is Chagas disease becoming more of an issue in the southern United States?", "opts": [["Imported produce is contaminated", "Water and fresh produce are the sources of Cyclospora cayetanensis, an intestinal protozoan. Trypanosoma cruzi reaches people through the feces of the reduviid bug, and its rise in the southern United States comes from vector migration."], ["Sexual spread is increasing", "Sexual spread belongs to Trichomonas vaginalis, whose trichomoniasis is a sexually transmitted disease. Chagas disease is vector-borne; it is becoming an issue in the southern United States because the reduviid bug vector is expanding its range."], ["Its vector is migrating there", "Correct. Chagas disease (American trypanosomiasis) has millions of cases in Latin America but is becoming more of an issue in the southern United States through vector migration: the reduviid (kissing) bug is expanding its range. Many now consider it endemic in the United States, and control is through control of the vector."], ["Freshwater lakes are warming", "Lakes, streams and hot springs are the home of the free-living ameba Naegleria fowleri, acquired through the nose. Chagas disease is insect-borne, and it is rising in the southern United States because its vector, the reduviid bug, is migrating there."]], "c": 2, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 5, 24, 37, 48, 49, 51 and 75", "qid": "w0v9lo"}, {"topic": "Other coccidia", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "Which vector carries Babesia microti, the cause of human babesiosis?", "opts": [["Female Anopheles mosquito", "The female Anopheles mosquito carries Plasmodium, which also invades red blood cells and causes anemia, so the two are easy to confuse. Babesia microti is carried by the blacklegged deer tick, and Babesia was the first protozoan linked to a vector at all."], ["Reduviid (kissing) bug", "The reduviid or kissing bug is the vector of Trypanosoma cruzi and Chagas disease, which is becoming more of an issue in the southern United States as the vector migrates. Babesia microti reaches people through the blacklegged deer tick."], ["Female sand fly", "Female sand flies, which need a blood meal to make eggs, transmit Leishmania among mammals, with dogs as alternate hosts. Babesiosis is a tick-borne zoonosis: Babesia microti is carried by the blacklegged deer tick and attacks red blood cells."], ["Blacklegged deer tick", "Correct. Human babesiosis is caused by Babesia microti carried by the blacklegged deer tick; Babesia was the first protozoan found to be associated with a vector, the tick. The parasite attacks red blood cells and can cause hemolytic anemia; babesiosis is serious for people without a spleen."]], "c": 3, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 77, 56, 60, 48, 49 and 52", "qid": "1imwis5"}, {"topic": "Cryptosporidium", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "What can Cryptosporidium cause in a patient with acquired immunodeficiency syndrome?", "opts": [["Severe hemolytic anemia", "Hemolytic anemia results when Babesia microti, carried by the blacklegged deer tick, attacks red blood cells, and babesiosis is serious in the immunocompromised. Cryptosporidium invades intestinal cells instead, causing chronic persistent diarrhea in these patients."], ["Cyclic chills, fever and sweating", "Regular episodes of chills, fever and sweating come from Plasmodium as red blood cells rupture in malaria. Cryptosporidium is an intestinal pathogen; in acquired immunodeficiency syndrome it may cause chronic persistent diarrhea."], ["Chronic persistent diarrhea", "Correct. Cryptosporidium is an intestinal pathogen: swallowed oocysts release sporozoites that penetrate intestinal cells and cause gastroenteritis. Patients with acquired immunodeficiency syndrome and other immunocompromised hosts may suffer chronic persistent diarrhea, and few drugs are effective against it."], ["Encephalitis with brain damage", "Brain and heart damage, Toxoplasma encephalitis, is the serious complication of toxoplasmosis in immunocompromised individuals. Cryptosporidium is an intestinal pathogen, and in acquired immunodeficiency syndrome its danger is chronic persistent diarrhea."]], "c": 2, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 72, 73, 64, 77 and 60", "qid": "iyizg4"}, {"topic": "Schistosoma", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "Where do adult schistosomes live and feed on blood?", "opts": [["Bile ducts draining the liver", "The bile duct is where the larvae of the Chinese liver fluke, Opisthorchis sinensis, mature and shed eggs into the feces. Young schistosomes do mature in the liver, but the adults then move on to the veins of the bowel or bladder to feed on blood."], ["The lungs, causing an abscess", "Migration to the lungs, with cough, pleural pain and abscess, marks the lung fluke, Paragonimus westermani. Schistosomiasis can bring a cough, yet its adults live in the veins of the bowel or bladder and shed eggs into urine and feces."], ["Cysts in heart muscle or eye", "Cysts in heart muscle, eye or brain are the encysted larvae of the pork tapeworm in cysticercosis. Adult schistosomes are not encysted: they are paired blood flukes feeding on blood in the veins of the bowel or bladder."], ["Veins of the bowel or bladder", "Correct. Schistosomes are blood flukes: after maturing in the liver, the adults migrate to the intestine or bladder, feed on blood and shed eggs into urine and feces. The paired adults sit in the mesenteric venules of the bowel or rectum, or in the venous plexus of the bladder."]], "c": 3, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 112, 114, 116 and 121", "qid": "1y2arpw"}, {"topic": "Fasciola hepatica", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "How do humans acquire Fasciola hepatica?", "opts": [["Eating raw aquatic plants", "Correct. Fasciola hepatica, the sheep liver fluke, cycles between herbivores such as sheep and cattle, snails, and aquatic plants. Humans are infected by eating raw aquatic plants (water plants), after which the fluke lodges in the liver."], ["Eating undercooked fish", "Inadequately cooked freshwater fish transmit the Chinese liver fluke, Opisthorchis sinensis, the reason for the warning against freshwater sushi. Fasciola hepatica reaches humans on raw aquatic plants, the third host in its cycle with herbivores and snails."], ["Eating undercooked crabs", "Undercooked crabs and other crustaceans transmit the lung fluke, Paragonimus westermani. Fasciola hepatica cycles between herbivores, snails and aquatic plants, so humans catch it by eating the plants raw."], ["Eating raw or undercooked beef", "Raw beef in which the larval form has encysted transmits the beef tapeworm, Taenia saginata. Cattle are herbivore hosts of Fasciola hepatica too, but humans acquire this fluke by eating raw aquatic plants, not beef."]], "c": 0, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 8, 84, 116, 117 and 119", "qid": "p6s1x8"}, {"topic": "Ascaris lumbricoides", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "How do humans acquire Ascaris lumbricoides?", "opts": [["Eating undercooked pork holding larval cysts", "Undercooked pork or bear meat carries Trichinella spiralis larvae encysted in muscle. Ascaris is indigenous to humans, with no food animal in its cycle; its eggs pass in feces and are swallowed in food, drink or on contaminated objects."], ["Eating raw snails or contaminated produce", "Raw snails and contaminated water or vegetables transmit Angiostrongylus cantonensis, the rat lungworm, whose intermediate hosts are snails. Ascaris needs no intermediate host: its eggs pass from one person's feces to another person in food, drink or on objects."], ["Swallowing eggs in food, drink or on objects", "Correct. Ascaris spends its larval and adult stages in humans and releases embryonic eggs in feces; they spread to other people in food, drink or on contaminated objects. Swallowed eggs hatch, and the larvae travel through the circulation to the lungs and pharynx and are swallowed to mature in the intestine."], ["Larvae burrowing into the skin of bare feet", "Larvae that burrow into the skin of bare feet are how hookworms infect people; their eggs hatch in soil into filariform larvae. Ascaris is infective in the egg stage instead, so it is swallowed rather than entering through the skin."]], "c": 2, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 84, 91, 96, 98, 99 and 101", "qid": "38iu2p"}, {"topic": "Parasitology overview", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "How does the number of antiprotozoan drugs compare with the number of antibacterial agents?", "opts": [["Relatively few", "Correct. Antiprotozoan drugs are relatively few in comparison with antibacterial agents. Protozoa are single-celled, animal-like eukaryotic parasites, so these drugs must work against eukaryotic cells, and they bring toxicity problems and severe side effects as well."], ["About as many", "The two groups are not matched in size: antiprotozoan drugs are relatively few in comparison with antibacterial agents. What sets them apart is that they work against eukaryotic cells, the cell type of protozoa, and carry toxicity problems and severe side effects."], ["Somewhat more", "Antiprotozoan drugs do not outnumber antibacterial agents at all; they are relatively few by comparison. Their other defining features are that they work against eukaryotic cells and have toxicity problems with severe side effects."], ["Many more", "This reverses the comparison: antibacterial agents are the larger group, and antiprotozoan drugs are relatively few beside them. Antiprotozoan drugs also work against eukaryotic cells and carry toxicity problems and severe side effects."]], "c": 0, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 9, 12 and 14", "qid": "1cnp864"}, {"topic": "Entamoeba histolytica", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "Amebiasis epidemics sometimes occur in prisons, hospitals and juvenile care institutions. Which shared condition explains these outbreaks?", "opts": [["Insects biting the residents", "Biting insects spread the hemoflagellates (Trypanosoma and Leishmania), blood parasites with insect intermediate hosts. Entamoeba histolytica is intestinal and fecal-oral, so outbreaks in crowded institutions come from polluted water supplies."], ["Polluted water supplies", "Correct. Epidemics of amebiasis sometimes occur in concentrated populations where water supplies are polluted, such as prisons, hospitals and juvenile care institutions. The cysts are swallowed with contaminated water or food (the fecal-oral route), and prevention rests on water treatment."], ["Unchlorinated swimming pools", "Unchlorinated swimming pools, hot springs, lakes and streams hold the free-living amebas Naegleria and Acanthamoeba, which enter through the nose, eye or broken skin. Institutional outbreaks of amebiasis come from polluted water supplies that people swallow."], ["Contact with pigs and cattle", "Pigs and cattle are the hosts of Balantidium coli, the intestinal ciliate. Entamoeba histolytica has humans as its primary hosts, and its institutional outbreaks trace to polluted water supplies in crowded populations."]], "c": 1, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 4, 16, 17, 23, 24, 31, 32, 33 and 42", "qid": "1r6aqs"}, {"topic": "Toxoplasma gondii", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "A woman acquires toxoplasmosis during pregnancy, and the parasite crosses the placenta. Which findings may her newborn show?", "opts": [["Eyelid swelling with conjunctivitis and fever", "A swelling of the eyelid with conjunctivitis (Romana's sign), with fever, marks Chagas disease from Trypanosoma cruzi, which can also be transmitted congenitally. Congenital toxoplasmosis brings hydrocephalus, intracranial calcifications and chorioretinitis."], ["Anemia with an enlarged spleen and liver", "Anemia and enlargement of the spleen, liver and kidneys are complications of malaria, and Plasmodium can also pass from mother to fetus. The newborn findings of toxoplasmosis acquired across the placenta are hydrocephalus, intracranial calcifications and chorioretinitis."], ["Personality changes and sleep disturbances", "Personality and behavioral changes progressing to sleep disturbances belong to African sleeping sickness, once Trypanosoma brucei reaches the central nervous system after a tsetse fly bite. Toxoplasmosis passed across the placenta gives hydrocephalus and intracranial calcifications."], ["Hydrocephalus and intracranial calcifications", "Correct. Transplacental transmission from a pregnant woman with toxoplasmosis can cause spontaneous abortion, stillbirth, or severe neurological and ocular manifestations in the newborn, including hydrocephalus, intracranial calcifications and chorioretinitis. Hence pregnant women should not clean the cat box."]], "c": 3, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 65, 5, 49, 56, 60, 46 and 47", "qid": "16rcrvm"}, {"topic": "Plasmodium", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "Which Plasmodium species causes the most malignant malaria, with the highest death rate in children?", "opts": [["Plasmodium vivax", "Plasmodium vivax is another malaria species spread by the female Anopheles mosquito, but it is not the one singled out as the most malignant. That is Plasmodium falciparum, which also carries the highest death rate in children."], ["Plasmodium malariae", "Plasmodium malariae causes malaria with the same chills-fever-sweating episodes as red blood cells rupture, but it is not named the most malignant type. Plasmodium falciparum holds that place, with the highest death rate in children."], ["Plasmodium ovale", "Plasmodium ovale is named among the species that cause malaria, but it is not the malignant one. The most malignant type, with the highest death rate in children, is Plasmodium falciparum; the other species differ in the interval between episodes."], ["Plasmodium falciparum", "Correct. Plasmodium falciparum is the most malignant type of malaria and has the highest death rate in children. The malaria species share the regular episodes of chills, fever and sweating as red blood cells rupture, though the interval between episodes depends on the species."]], "c": 3, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 56 and 60", "qid": "1ok6ckt"}, {"topic": "Trypanosoma brucei", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "Which insect spreads Trypanosoma brucei, the cause of African sleeping sickness?", "opts": [["The tsetse fly", "Correct. African sleeping sickness is spread by tsetse flies and harbored by reservoir mammals. The fly's bite inoculates the skin, where a primary chancre develops, and the parasite spreads through the lymphatics and blood; control involves eliminating the tsetse fly."], ["The female sand fly", "Female sand flies, which need a blood meal to produce eggs, transmit Leishmania with their bite. Trypanosoma brucei uses a different insect, the tsetse fly of West and East Africa."], ["The reduviid bug", "The reduviid (kissing) bug is the vector of Trypanosoma cruzi, which causes Chagas disease (American trypanosomiasis) through infected bug feces. The African trypanosome, Trypanosoma brucei, is spread by the tsetse fly."], ["The Anopheles mosquito", "The Anopheles mosquito is the vector of Plasmodium, the cause of malaria, seen as ring forms inside red blood cells. Trypanosoma brucei is spread by tsetse flies, and control involves eliminating them."]], "c": 0, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 5, 45, 46, 47, 49 and 52", "qid": "1i2moft"}, {"topic": "Plasmodium", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "After Plasmodium sporozoites enter a capillary with the vector's saliva, where do they localize first?", "opts": [["The liver", "Correct. The injected sporozoite localizes in the liver, invades liver cells and undergoes schizogony, generating numerous merozoites; this is the exoerythrocytic phase. Only afterward do the merozoites enter the circulation and invade red blood cells (the erythrocytic phase)."], ["Red blood cells", "Red blood cells are the second stop, not the first: merozoites released from the liver attach to and enter them, become ring trophozoites and multiply in the erythrocytic phase. The sporozoite itself goes first to the liver for schizogony."], ["The intestinal lining", "Penetrating intestinal cells is what Cryptosporidium sporozoites do after swallowed oocysts release them. Plasmodium sporozoites arrive in the blood, not the gut, and localize first in the liver, where schizogony produces merozoites."], ["The spleen", "Enlargement of the spleen, liver and kidneys is a complication of malaria, not the sporozoite's first stop. The sporozoite invades liver cells and divides there, releasing large numbers of merozoites into the circulation."]], "c": 0, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 58, 59, 60 and 73", "qid": "1d0umjv"}, {"topic": "Helminth biology & life cycles", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "Which event defines a helminth's definitive host?", "opts": [["Development of the larval stages", "Larval development is what defines the intermediate host, not the definitive host. In the pattern that involves an intermediate host, the first larval stage infects it, and it later releases the infective second-stage larvae. Adulthood and mating define the definitive host."], ["Carrying the worm without development", "A host in which the worm experiences no parasitic development is a transport host, such as the waterfowl whose undercooked meat can pass Toxocara on. The definitive host is the opposite case: there the worms grow to adults and mate."], ["Release of second-stage larvae into water", "Releasing infective second-stage larvae into water, or passing them on through a bite, is the job of the intermediate host in the pattern that needs one. The definitive host is where the worms end up as adults that mate and make eggs."], ["Adulthood and mating of the worms", "Correct. Adulthood and mating occur in the definitive host. There the adult worms mate and produce fertilized eggs that hatch, and the larvae then mature in several stages. For Toxocara canis and cati, for example, the adults live in the small intestine of the dog or cat, the definitive host."]], "c": 3, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 79, 83, 108 and 109", "qid": "v7a3oo"}, {"topic": "Naegleria fowleri", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "Which group accounts for most cases of Naegleria fowleri meningoencephalitis?", "opts": [["Children and young adults", "Correct. Most cases of Naegleria meningoencephalitis occur in children and young adults, through exposure to freshwater lakes and streams while diving, waterskiing or jet skiing. Water reaching the nose carries the trophozoites, which travel to the brain through the olfactory nerve."], ["Contact lens wearers", "Contact lens wearers are the risk group for amebic keratitis caused by Acanthamoeba, with eye pain, redness and irritation. Naegleria meningoencephalitis strikes mostly children and young adults exposed to freshwater lakes and streams."], ["Immunocompromised adults", "Compromised immune systems set the stage for Acanthamoeba's granulomatous amebic encephalitis and disseminated disease. Naegleria fowleri mainly affects children and young adults who are exposed to fresh water."], ["Young, sexually active women", "Young, sexually active women are the group in which trichomoniasis is the most common curable sexually transmitted disease. Naegleria is acquired from water, and most cases are children and young adults exposed to freshwater lakes and streams."]], "c": 0, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 28, 29, 31, 32 and 37", "qid": "k14lre"}, {"topic": "Acanthamoeba", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "Amebic keratitis caused by Acanthamoeba occurs mainly in which group?", "opts": [["Young, sexually active women", "Young, sexually active women are the group in which trichomoniasis is the most common curable sexually transmitted disease. Amebic keratitis is an eye infection from Acanthamoeba that occurs in contact lens wearers."], ["Campers", "Campers are the group in whom giardiasis is common, from Giardia lamblia cysts swallowed with water or food (its reservoirs include beavers and coyotes). Acanthamoeba keratitis, with eye pain, redness and irritation, occurs in contact lens wearers."], ["Contact lens wearers", "Correct. Acanthamoeba, distributed worldwide in freshwater lakes, hot tubs and swimming pools, causes amebic keratitis in contact lens wearers, with eye pain, redness and irritation. The eye infection does not typically disseminate, unlike its granulomatous amebic encephalitis."], ["Children and young adults", "Children and young adults exposed to freshwater lakes and streams make up most cases of Naegleria meningoencephalitis, a brain infection. Acanthamoeba keratitis, an eye infection with pain, redness and irritation, is linked to contact lens wearers."]], "c": 2, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 4, 28, 31, 37 and 39", "qid": "hy8mzr"}, {"topic": "Taenia solium", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "Which disease does this brain scan show?", "opts": [["Taeniasis", "Taeniasis is the intestinal form: cysts eaten in meat release larvae that develop into tapeworms attached to the intestine. Tissue cysts such as these in the brain mean the eggs were swallowed, and that causes cysticercosis instead."], ["Schistosomiasis", "Schistosomiasis is a blood fluke disease that enlarges and inflames the liver, spleen and bladder. Many small cysts throughout the brain point instead to cysticercosis, the encysted larvae of the pork tapeworm."], ["Cysticercosis", "Correct. Countless small cysts scattered through the brain are neurocysticercosis: swallowed pork tapeworm eggs hatch and release larvae that migrate to all tissues and encyst. Cysts in the brain are among the most damaging and may cause seizures and psychiatric disturbances."], ["Hydatid disease", "Hydatid disease (cystic echinococcosis) forms slowly enlarging cysts in the liver and lungs, from a tiny tapeworm found in dogs. The scan instead shows many small cysts spread through the brain, the picture of cysticercosis from the pork tapeworm."]], "c": 2, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slide 113, 121 and 124 and image on Slide 123", "img": "micro-exam-3-quiz-images/l17-fig-22.jpg", "alt": "Axial brain scan in which numerous small bright spots are scattered evenly throughout the brain tissue.", "slide": "Slide 123", "qid": "ak64pi"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll" && window.startExamModeTour) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
