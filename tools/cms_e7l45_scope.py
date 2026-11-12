@@ -211,4 +211,9 @@ REQUIRED_IO = [
     # albumin correction, s8 ("add two and a half ... below 4.5" [P1 7:55])
     ("Albumin-corrected anion gap", r"albumin", r".", 1),
 ]
-REQUIRED_VIG = []
+REQUIRED_VIG = [
+    # a low albumin hides a raised gap until corrected, s8 / s48 ("nine times out of ten" [P2 10:29])
+    ("Albumin-corrected anion gap from the stem", r"albumin", r".", 1),
+    # a normal pH can hide a mixed disorder, s23 / s58 ("tattoo on the inside of your eyeballs" [P1 24:37])
+    ("Mixed disorder behind a normal pH", r"pH 7\.(?:3[5-9]|4[0-5]) \(normal", r"\band\b|\bwith\b|\bplus\b|concurrent", 1),
+]
