@@ -198,10 +198,10 @@ Q("Causes of anemia", IO_A, "etiology",
 Q("Symptoms and severity", IO_D, "manifestation",
   "What is the most common symptom of anemia?",
   ("Fatigue",
-   "Correct. Fatigue is the most common symptom of anemia, followed by weakness and reduced exercise "
-   "tolerance. Being common, it is also present with mild anemia and is nonspecific."),
+   "Correct. Fatigue is the most common symptom of anemia; weakness and reduced exercise tolerance "
+   "are listed beside it. Being common, it is also present with mild anemia and is nonspecific."),
   [("Syncope",
-    "Syncope is uncommon and signals severity: symptoms at rest, chest pain and syncope point to "
+    "Syncope signals severity: symptoms at rest, chest pain and syncope point to "
     "severe anemia or another problem. Fatigue is the most common symptom.",
     "wrong stage or severity"),
    ("Chest pain",
@@ -224,7 +224,7 @@ Q("Symptoms and severity", IO_D, "manifestation",
     "severity. Syncope, chest pain and symptoms at rest do.",
     "wrong stage or severity"),
    ("Weakness",
-    "Weakness and reduced exercise tolerance are common, early symptoms. The ones that mark severe "
+    "Weakness and reduced exercise tolerance are common symptoms, listed with fatigue. The ones that mark severe "
     "anemia are syncope, chest pain and symptoms at rest.",
     "wrong stage or severity"),
    ("Hair shedding",
@@ -250,25 +250,6 @@ Q("Symptoms and severity", IO_D, "prognosis",
     "Pallor and nail changes are signs, and pallor is an unreliable estimate of hemoglobin. Symptom "
     "severity depends on the rate of onset and cardiopulmonary disease.",
     "confused mechanism or drug class")],
-  c(8)),
-
-Q("Symptoms and severity", IO_D, "prognosis",
-  "Two patients reach the same hemoglobin, one over a few days and one over many months. Who is likely to have MORE symptoms?",
-  ("The one whose anemia developed over days",
-   "Correct. Severity depends on the rate of onset: a rapid fall gives the body no time to adapt, "
-   "so the same hemoglobin causes more symptoms than one reached slowly."),
-  [("The one whose anemia developed over months",
-    "Slow onset gives time to adapt, so symptoms are usually fewer at the same hemoglobin. Rapid "
-    "onset is the one that produces more symptoms.",
-    "reversed direction or value"),
-   ("Both equally, since the hemoglobin is the same",
-    "The hemoglobin alone does not set symptoms: the rate of onset and any cardiopulmonary disease "
-    "do. The rapid-onset patient is likely to have more.",
-    "common lay belief"),
-   ("The one who is younger",
-    "Age is not what separates these two patients; severity follows the rate of onset and any "
-    "cardiopulmonary disease. The rapid-onset patient is likely to have more symptoms.",
-    "common lay belief")],
   c(8)),
 
 Q("Symptoms and severity", IO_A, "manifestation",
@@ -304,8 +285,8 @@ Q("Symptoms and severity", IO_A, "manifestation",
     "baseline function, their onset and progression.",
     "confused mechanism or drug class"),
    ("Their oxygen saturation",
-    "Pulse oximetry is often normal in anemia despite reduced oxygen content, so it is no yardstick. "
-    "Symptoms are compared with baseline function.",
+    "Oxygen saturation is not what the history compares with the symptoms; they are compared with "
+    "the patient's own baseline function, onset and progression.",
     "confused mechanism or drug class")],
   c(8)),
 
@@ -405,7 +386,7 @@ Q("Associated symptoms", IO_A, "risk factors",
   "Which group of clues points to IRON deficiency?",
   ("Pica, spoon-shaped nails and hair shedding",
    "Correct. Iron deficiency clues are pica, brittle or spoon-shaped nails and possible hair "
-   "shedding. Patients rarely connect these to anemia, so they must be asked about."),
+   "shedding."),
   [("Paresthesias, poor balance and lost vibration",
     "These are the B12 deficiency clues: paresthesias, impaired balance, reduced vibration or "
     "position sense. Iron deficiency gives pica, spoon nails and hair shedding.",
@@ -424,7 +405,7 @@ Q("Associated symptoms", IO_A, "risk factors",
   "Which group of clues points to B12 deficiency?",
   ("Paresthesias, poor balance, lost vibration",
    "Correct. The B12 clues are paresthesias, impaired balance and reduced vibration or position "
-   "sense. Patients often fail to link these neurologic symptoms to anemia."),
+   "sense."),
   [("Pica, brittle nails and hair shedding",
     "Pica, brittle or spoon-shaped nails and hair shedding are the IRON deficiency clues. B12 "
     "deficiency is neurologic: paresthesias, balance, vibration and position sense.",
@@ -554,45 +535,6 @@ Q("Diet and travel", IO_A, "risk factors",
     "adjacent fact")],
   c(11)),
 
-Q("Diet and travel", IO_A, "risk factors",
-  "Which set of symptoms in an anemic patient raises concern for an underlying malignancy?",
-  ("Fever, night sweats, weight loss",
-   "Correct. Fever, night sweats and unintentional weight loss are asked about with recent illness; "
-   "with fatigue they broaden the concern to neoplasm or metastatic disease."),
-  [("Pica, brittle nails and hair shedding",
-    "These are iron deficiency clues. Fever, night sweats and unintentional weight loss are the "
-    "symptoms that raise concern for malignancy.",
-    "competing diagnosis"),
-   ("Paresthesias and poor balance in the dark",
-    "These point to B12 deficiency. Concern for malignancy comes from fever, night sweats and "
-    "unintentional weight loss.",
-    "competing diagnosis"),
-   ("Glossitis and angular cheilitis",
-    "These suggest iron, B12 or folate deficiency. Fever, night sweats and unintentional weight loss "
-    "are the malignancy clues.",
-    "competing diagnosis")],
-  c(11, 6)),
-
-# ======================================================== medications and menstrual history (slide 12)
-Q("Medication history", IO_A, "risk factors",
-  "In an anemic patient's medication history, which drug most suggests a source of BLOOD LOSS?",
-  ("Daily ibuprofen",
-   "Correct. Nonsteroidal anti-inflammatory drugs such as ibuprofen, aspirin and "
-   "anticoagulants are named in the medication history; they promote bleeding."),
-  [("Metformin",
-    "Metformin is on the medication list, but for B12 deficiency, not bleeding. Ibuprofen, aspirin "
-    "and anticoagulants are the bleeding risks.",
-    "confused mechanism or drug class"),
-   ("An acid-suppressing medication",
-    "Acid suppression is listed for its effect on absorption, not bleeding. Ibuprofen, aspirin and "
-    "anticoagulants point toward blood loss.",
-    "confused mechanism or drug class"),
-   ("A daily multivitamin",
-    "Supplements are recorded, but a multivitamin is not a bleeding risk. Nonsteroidal "
-    "anti-inflammatory drugs such as ibuprofen are.",
-    "common lay belief")],
-  c(12)),
-
 Q("Medication history", IO_A, "risk factors",
   "Which exposure is linked with possible B12 deficiency?",
   ("Nitrous oxide",
@@ -607,8 +549,8 @@ Q("Medication history", IO_A, "risk factors",
     "tied to B12 deficiency.",
     "adjacent fact"),
    ("Aspirin",
-    "Aspirin is asked about as a bleeding risk with other anti-inflammatories and anticoagulants. "
-    "Nitrous oxide is the B12 link.",
+    "Aspirin is asked about in the medication history beside anti-inflammatories and anticoagulants, "
+    "but nitrous oxide is the exposure listed with possible B12 deficiency.",
     "confused mechanism or drug class")],
   c(12)),
 
@@ -704,6 +646,26 @@ Q("Family and social history", IO_A, "risk factors",
    ("Highest level of education",
     "Education is not on the list. Alcohol intake, nutritional adequacy and occupational exposures "
     "are.",
+    "common lay belief")],
+  c(13)),
+
+Q("Family and social history", IO_A, "risk factors",
+  "Besides known diagnoses, which family-history element should be asked about?",
+  ("Previous hemoglobinopathy testing",
+   "Correct. The family history covers anemia, hemoglobinopathy, abnormal bleeding, unexplained "
+   "jaundice, relatives requiring transfusions or splenectomy, and known diagnoses with previous "
+   "genetic or hemoglobinopathy testing."),
+  [("Relatives' blood types",
+    "Blood type is not on the family history. It asks about known diagnoses and previous genetic or "
+    "hemoglobinopathy testing, with anemia, bleeding and jaundice in relatives.",
+    "common lay belief"),
+   ("Relatives' cholesterol levels",
+    "Cholesterol is a cardiovascular question. The hematologic family history asks about previous "
+    "genetic or hemoglobinopathy testing and relatives' transfusions or splenectomy.",
+    "adjacent fact"),
+   ("Relatives' eye color",
+    "Eye color carries no hematologic information. Ask about previous genetic or hemoglobinopathy "
+    "testing, anemia, bleeding and unexplained jaundice in relatives.",
     "common lay belief")],
   c(13)),
 
@@ -939,7 +901,7 @@ Q("Jaundice", IO_B, "manifestation",
    "Correct. The sclerae are yellow: scleral icterus. With anemia it points to hemolytic anemia, "
    "including sickle cell disease (disorders of bilirubin metabolism are the other cause)."),
   [("Iron deficiency anemia",
-    "Iron deficiency gives pica, spoon nails and hair shedding, not yellow sclerae. Scleral icterus "
+    "Iron deficiency is linked to spoon nails and hair shedding, not yellow sclerae. Scleral icterus "
     "points to hemolysis.",
     "competing diagnosis"),
    ("Vitamin B12 deficiency anemia",
@@ -994,7 +956,7 @@ Q("Nail changes", IO_B, "manifestation",
 Q("Nail changes", IO_B, "manifestation",
   "Which deficiency is associated with the nail shown?",
   ("Iron deficiency",
-   "Correct. The nail is thin and dished upward like a spoon: koilonychia, associated with iron "
+   "Correct. This is koilonychia, the thin, concave, spoon-shaped nail, associated with iron "
    "deficiency. It supports, but cannot establish, the cause or severity."),
   [("Vitamin B12 deficiency",
     "B12 deficiency is recognized by paresthesias, balance problems and lost vibration sense, not "
@@ -1038,8 +1000,8 @@ Q("Nail changes", IO_D, "differential",
     "Even koilonychia only supports iron deficiency. Nail findings cannot reliably establish the cause.",
     "reversed direction or value"),
    ("They grade how severe the anemia is",
-    "Nails are unreliable for severity. Severity is judged by symptoms at rest, chest pain, syncope "
-    "and the vital signs.",
+    "Nails are unreliable for assessing severity as well as cause; they are supporting clues only, "
+    "never a grade of the anemia.",
     "wrong stage or severity"),
    ("Little, so the nails are skipped",
     "The nails ARE examined, with the skin, conjunctivae and mouth. They give supporting clues.",
@@ -1164,7 +1126,7 @@ Q("HEENT", IO_B, "manifestation",
     "Iris color says nothing about anemia. Pallor is sought in the palpebral conjunctiva.",
     "common lay belief"),
    ("The retina",
-    "Fundoscopy is not part of this examination. Pull the lower lid and look at the palpebral "
+    "The retina is not where pallor is looked for. Pull the lower lid down and look at the palpebral "
     "conjunctiva.",
     "adjacent fact")],
   c(29, 30)),
@@ -1172,7 +1134,7 @@ Q("HEENT", IO_B, "manifestation",
 Q("HEENT", IO_B, "manifestation",
   "What does the pulled-down lower eyelid in this picture show?",
   ("Conjunctival pallor",
-   "Correct. The inner lining of the lower lid, the palpebral conjunctiva, is pale, almost white: "
+   "Correct. The inner lining of the lower lid, the palpebral conjunctiva, is pale: "
    "conjunctival pallor, one of the sites where the pallor of anemia is looked for."),
   [("Scleral icterus",
     "Icterus is yellowing of the sclera, the white of the eye. Here the lid's lining is pale: pallor.",
@@ -1181,7 +1143,8 @@ Q("HEENT", IO_B, "manifestation",
     "Palatal petechiae are red dots on the roof of the mouth. This is a pale eyelid lining.",
     "adjacent fact"),
    ("Normal conjunctiva",
-    "A normal palpebral conjunctiva is pink-red. This one is pale: conjunctival pallor.",
+    "This lining is not a normal finding here: it is pale, which is conjunctival pallor, one of the "
+    "listed sites for the pallor of anemia.",
     "reversed direction or value")],
   c(30, 29), img="l7-fig-08.jpg",
   alt="A lower eyelid pulled down to show a pale, almost white inner lining."),
@@ -1242,8 +1205,8 @@ Q("Lymph nodes", IO_B, "manifestation",
 Q("Lymph nodes", IO_B, "manifestation",
   "Besides location and size, which features of an enlarged lymph node should be recorded?",
   ("Tenderness, consistency and mobility",
-   "Correct. An enlarged node is described by location, size, tenderness, consistency and mobility; "
-   "lymphadenopathy is one of the clues to the cause of an anemia."),
+   "Correct. An enlarged node is described by location, size, tenderness, consistency and mobility, "
+   "the five features to record for any enlarged node."),
   [("Color, temperature and odor",
     "These are not lymph node descriptors. After location and size, record tenderness, consistency "
     "and mobility.",
@@ -1283,13 +1246,13 @@ Q("Glossitis and cheilitis", IO_D, "differential",
    "particular deficiency; angular cheilitis is the same."),
   [("Iron deficiency specifically",
     "Iron is possible, but so are B12 and folate. Glossitis is nonspecific for a particular deficiency.",
-    "wrong stage or severity"),
+    "competing diagnosis"),
    ("B12 deficiency specifically",
     "B12 is one of three possibilities. Glossitis does not point to one deficiency in particular.",
-    "wrong stage or severity"),
+    "competing diagnosis"),
    ("Folate deficiency specifically",
     "Folate is one possibility, with iron and B12. Glossitis is nonspecific among them.",
-    "wrong stage or severity")],
+    "competing diagnosis")],
   c(33, 10)),
 
 Q("Glossitis and cheilitis", IO_B, "manifestation",
@@ -1337,12 +1300,16 @@ Q("Glossitis and cheilitis", IO_D, "differential",
     "irritation as well as deficiency.",
     "competing diagnosis"),
    ("Nitrous oxide exposure",
-    "Nitrous oxide is tied to B12 deficiency through the exposure history, not named as a cheilitis "
-    "cause. Candida is.",
+    "Nitrous oxide is not among the listed causes of angular cheilitis: nutritional deficiency, "
+    "Candida, bacteria and local irritation.",
     "adjacent fact"),
    ("Lead exposure",
-    "Lead is an exposure-history question. The listed cheilitis causes are deficiency, Candida, "
-    "bacteria and local irritation.",
+    "Lead is not among the listed causes of angular cheilitis. Those are nutritional deficiency, "
+    "Candida, bacteria and local irritation.",
     "adjacent fact")],
   c(33)),
 ]
+
+# blind_review.py reads `mis` from a pool module through QUESTIONS, so a held item carries its
+# misconception notes on every page (a sets-only lookup made audits go stale on each repartition).
+QUESTIONS = POOL_A

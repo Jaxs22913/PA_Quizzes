@@ -104,11 +104,11 @@ Q("Cardiovascular findings", IO_D, "differential",
 Q("Bone tenderness", IO_C, "differential",
   "What may sternal or other bone tenderness suggest in an anemic patient?",
   ("Possible marrow disease",
-   "Correct. Sternal or other bone tenderness suggests possible marrow disease but is nonspecific; "
-   "hematologic neoplasm or metastatic disease is a cause of impaired production."),
+   "Correct. Sternal or other bone tenderness suggests possible marrow disease but is "
+   "nonspecific, so other causes must be considered."),
   [("Iron deficiency, specifically",
-    "Iron deficiency's clues are pica, spoon nails and hair shedding. Bone tenderness points to "
-    "possible marrow disease.",
+    "Iron deficiency's clues are spoon nails and hair shedding, not bone tenderness. Bone tenderness "
+    "points to possible marrow disease.",
     "competing diagnosis"),
    ("Hemolysis, specifically",
     "Hemolysis is suggested by jaundice and icterus. Bone tenderness suggests possible marrow disease.",
@@ -127,7 +127,7 @@ Q("Clubbing", IO_C, "differential",
     "Clubbing is atypical for uncomplicated anemia. Its presence points to another disorder.",
     "reversed direction or value"),
    ("Uncomplicated B12 deficiency anemia",
-    "B12 deficiency shows in the nervous system, and uncomplicated anemia does not cause clubbing. "
+    "B12 deficiency shows in the nervous system, and clubbing is atypical for uncomplicated anemia. "
     "Look for an underlying disorder.",
     "competing diagnosis"),
    ("Severe anemia that needs transfusion",
@@ -263,7 +263,7 @@ Q("Gastrointestinal examination", IO_C, "differential",
    "Correct. Splenomegaly may come from hemolysis, infection, portal hypertension or hematologic "
    "malignancy."),
   [("Iron deficiency",
-    "Iron deficiency's clues are pica, spoon nails and hair shedding, not an enlarged spleen. "
+    "Iron deficiency's clues are spoon nails and hair shedding, not an enlarged spleen. "
     "Hemolysis is a listed cause.",
     "competing diagnosis"),
    ("Heavy menstrual bleeding",
@@ -365,10 +365,10 @@ Q("Internal bleeding signs", IO_C, "manifestation",
 Q("Internal bleeding signs", IO_C, "manifestation",
   "Which sign is shown on this patient's abdomen?",
   ("Cullen sign",
-   "Correct. The bruise surrounds the umbilicus: periumbilical ecchymosis, Cullen sign, from internal "
+   "Correct. The bruise lies beside the umbilicus: periumbilical ecchymosis, Cullen sign, from internal "
    "bleeding."),
   [("Grey Turner sign",
-    "Grey Turner sign is ecchymosis of the FLANK. This bruise is around the umbilicus.",
+    "Grey Turner sign is ecchymosis of the FLANK. This bruise is at the umbilicus.",
     "competing diagnosis"),
    ("Purpura",
     "Purpura are nonblanching skin lesions, often many. This is a single periumbilical ecchymosis.",
@@ -428,6 +428,43 @@ Q("Internal bleeding signs", IO_C, "differential",
     "competing diagnosis")],
   c(47)),
 
+Q("Emergency", IO_D, "escalation",
+  "In an anemia or bleeding emergency, how are oxygen and transfusion given?",
+  ("According to the clinical situation",
+   "Correct. Oxygen and transfusion are given according to the clinical situation, alongside "
+   "immediate escalation: stabilization, bleeding control and resuscitation."),
+  [("To every anemic patient at arrival",
+    "They are not given to everyone; oxygen and transfusion follow the clinical situation, after "
+    "vital signs, mental status, perfusion and ongoing loss are assessed.",
+    "wrong stage or severity"),
+   ("Once the hemoglobin has fallen",
+    "Waiting for the hemoglobin is unsafe, since instability can precede its fall. Oxygen and "
+    "transfusion follow the clinical situation.",
+    "reversed direction or value"),
+   ("After the history is complete",
+    "The emergency calls for immediate escalation, not a finished history first. Oxygen and "
+    "transfusion are given according to the clinical situation.",
+    "wrong stage or severity")],
+  c(54)),
+
+Q("Internal bleeding signs", IO_C, "prognosis",
+  "How do Cullen and Grey Turner signs typically behave?",
+  ("Uncommon, and may appear late",
+   "Correct. Both signs are uncommon findings with a possible delayed appearance, so their absence "
+   "does not exclude significant bleeding."),
+  [("Common, and appear within minutes",
+    "They are uncommon and may be delayed, not common and immediate. Absent signs do not exclude "
+    "significant bleeding.",
+    "reversed direction or value"),
+   ("Present in every internal bleed",
+    "They are uncommon findings: significant bleeding is still possible without them.",
+    "reversed direction or value"),
+   ("Seen only with minor bleeding",
+    "They are signs of internal bleeding (or severe pancreatitis), not of minor bleeding; they are "
+    "uncommon and may appear late.",
+    "reversed direction or value")],
+  c(47)),
+
 # ======================================================== B12 neurologic findings (slides 50-53)
 Q("B12 neurologic findings", IO_C, "manifestation",
   "A patient has difficulty walking in the dark and reduced vibration sense in the feet. Which deficiency is suggested?",
@@ -435,7 +472,7 @@ Q("B12 neurologic findings", IO_C, "manifestation",
    "Correct. Sensory ataxia, impaired balance, difficulty walking in the dark and reduced vibration "
    "and joint-position sense are the neurologic findings of B12 deficiency."),
   [("Iron deficiency",
-    "Iron deficiency gives pica, spoon nails and hair shedding, not sensory ataxia. These are B12 "
+    "Iron deficiency is linked to spoon nails and hair shedding, not sensory ataxia. These are B12 "
     "findings.",
     "competing diagnosis"),
    ("Folate deficiency",
@@ -443,7 +480,8 @@ Q("B12 neurologic findings", IO_C, "manifestation",
     "B12 deficiency.",
     "competing diagnosis"),
    ("Lead poisoning",
-    "Lead is asked about in the exposure history; these neurologic findings are the B12 ones.",
+    "Lead is not listed with these findings; difficulty walking in the dark and reduced vibration "
+    "sense are the B12 ones.",
     "competing diagnosis")],
   c(50)),
 
@@ -565,10 +603,11 @@ Q("Neurologic examination", IO_B, "test finding",
     "proprioception.",
     "reversed direction or value"),
    ("Iron deficiency",
-    "Romberg tests proprioception; iron deficiency's clues are pica, spoon nails and hair shedding.",
+    "Romberg tests proprioception, not a blood-cell cause: greater instability with eye closure "
+    "suggests impaired proprioception, not iron deficiency.",
     "competing diagnosis"),
    ("Hemolysis",
-    "Hemolysis shows as jaundice and icterus. Instability with eye closure suggests impaired "
+    "Romberg does not test for hemolysis. Greater instability with eye closure suggests impaired "
     "proprioception.",
     "competing diagnosis")],
   c(52)),
@@ -596,8 +635,8 @@ Q("Neurologic examination", IO_B, "manifestation",
    "Correct. The patient stands upright, feet together, eyes closed, while the examiner guards against "
    "a fall: Romberg testing for impaired proprioception."),
   [("Schamroth's window test",
-    "Schamroth's test holds the backs of matching fingers together to look for clubbing. This is a "
-    "standing balance test with eyes closed.",
+    "Schamroth's window is a finger test, not a standing test. This is a standing balance test with "
+    "eyes closed and the examiner guarding: Romberg.",
     "adjacent fact"),
    ("Vibration sense testing",
     "Vibration is tested with the patient still, applying a stimulus distally. This is standing "
@@ -620,10 +659,12 @@ Q("Emergency", IO_D, "escalation",
     "Exertional dyspnea is a general symptom. Dyspnea at REST is the urgent one.",
     "wrong stage or severity"),
    ("Fatigue",
-    "Fatigue is the most common, nonspecific symptom. Dyspnea at rest is urgent.",
+    "Fatigue is a general symptom, not one of the urgent findings. Dyspnea at rest is among those that "
+    "call for urgent assessment.",
     "wrong stage or severity"),
    ("Brittle nails",
-    "Nail findings are nonspecific supporting clues. Dyspnea at rest calls for urgent assessment.",
+    "Brittle nails are not among the listed urgent findings. Dyspnea at rest calls for urgent "
+    "assessment.",
     "adjacent fact")],
   c(54, 55)),
 
@@ -654,7 +695,8 @@ Q("Emergency", IO_D, "escalation",
     "first.",
     "wrong stage or severity"),
    ("Outpatient stool blood testing",
-    "Stool testing is part of the elective work-up. Unstable bleeding needs immediate escalation.",
+    "Stool testing is not the immediate step: active major bleeding with hypotension needs immediate "
+    "escalation.",
     "wrong stage or severity"),
    ("Repeat hemoglobin in a week",
     "Waiting is unsafe; instability may precede the hemoglobin fall. Escalate immediately.",
@@ -667,12 +709,12 @@ Q("Emergency", IO_D, "escalation",
    "Correct. In the emergency assess vital signs, mental status, skin perfusion and ongoing blood "
    "loss, then escalate."),
   [("Nail shape, hair shedding and diet",
-    "Those are supporting clues to cause, not urgency. Assess vital signs, mental status, perfusion "
-    "and ongoing loss.",
+    "These are not what the emergency assessment checks. Assess vital signs, mental status, skin "
+    "perfusion and ongoing blood loss.",
     "wrong stage or severity"),
    ("Family history and ancestry",
-    "Family history helps with inherited causes later. In an emergency assess vital signs, mental "
-    "status, perfusion and ongoing loss.",
+    "Family history is not what the emergency assessment checks. Assess vital signs, mental status, "
+    "skin perfusion and ongoing blood loss.",
     "wrong stage or severity"),
    ("Romberg test and gait",
     "The neurologic examination belongs to the B12 work-up. The emergency calls for vital signs, "
@@ -724,11 +766,11 @@ Q("Interpreting the findings", IO_C, "manifestation",
    "suggests posterior column loss: test distal vibration and joint-position sense, gait and balance, "
    "and Romberg."),
   [("Schamroth's window and nail-fold angle",
-    "Those assess clubbing. Her symptoms are neurologic: test vibration, position sense, gait and "
+    "Those assess clubbing. The patient's symptoms are neurologic: test vibration, position sense, gait and "
     "Romberg.",
     "adjacent fact"),
    ("Cullen and Grey Turner signs",
-    "Those look for internal bleeding. Her history points to B12 deficiency; test the neurologic "
+    "Those look for internal bleeding. The patient's history points to B12 deficiency; test the neurologic "
     "findings.",
     "competing diagnosis"),
    ("Scleral icterus and splenomegaly",
@@ -736,3 +778,8 @@ Q("Interpreting the findings", IO_C, "manifestation",
     "competing diagnosis")],
   c(56, 52, 10)),
 ]
+
+# See pd2_l7_pool_a.py: QUESTIONS lets blind_review.py attach `mis` to held items too.
+# Every item carries a "mis" dict (built by Q in pd2_l7_pool_a); the quoted word lets
+# tools/blind_review.py source_index() load this module, so held items get their `mis` too.
+QUESTIONS = POOL_B

@@ -30,6 +30,11 @@ from pd2_l7_pool_b import POOL_B
 from _option_order import option_values
 
 POOL = POOL_A + POOL_B
+# Ship only items holding a current blind + audit PASS (tools/blind_review.json). Items still at
+# "revise" after their one Opus repair are dropped here rather than shipped (CLAUDE.md section 5.6).
+from _pd2_e2_review_status import status as _review_status
+_DROPPED = [q["q"][:70] for q in POOL if _review_status(q) != "pass"]
+POOL = [q for q in POOL if _review_status(q) == "pass"]
 EXAM_DIR = os.path.join(ROOT, "Physical Diagnosis 2 Exam 2")
 
 # ---- Guard 1: nothing may depend on having the deck open -------------------
@@ -168,7 +173,6 @@ CONFLICTS = [
     ("A patient has difficulty walking in the dark", "A patient with a previous gastric bypass reports"),
     ("Which group of clues points to IRON", "A patient admits to craving and chewing ice"),
     ("Which symptom in an anemic patient most strongly", "Which finding in an anemic patient calls for urgent"),
-    ("Which two factors shape how severe", "Two patients reach the same hemoglobin"),
     ("How reliable is pallor", "A patient's skin, conjunctivae and nail beds look"),
     ("Jaundice and scleral icterus in an anemic patient", "In an anemic patient, which condition does the finding"),
     ("Which cardiovascular finding is expected", "Which murmur may be heard"),
@@ -184,6 +188,8 @@ CONFLICTS = [
     ("What is melena?", "A patient reports red or maroon blood"),
     ("What is Cullen sign?", "What is Grey Turner sign"),
     ("A patient with acute hemorrhage has a normal", "What is the immediate response to an anemic patient"),
+    ("How do Cullen and Grey Turner signs typically behave?", "A patient with suspected internal bleeding has no Cullen"),
+    ("In an anemia or bleeding emergency, how are oxygen", "What is the immediate response to an anemic patient"),
     ("Below which hemoglobin is a woman", "Below which hematocrit is a man"),
     ("Which three mechanisms account for anemia?", "Which cause of anemia works by IMPAIRED"),
 ]
@@ -193,11 +199,15 @@ def _find(key):
     stem, _, img = key.partition("#")
     hits = [i for i, q in enumerate(POOL) if q["q"].startswith(stem)
             and (not img or img in q.get("img", ""))]
-    assert len(hits) == 1, "conflict key %r matches %d questions" % (key, len(hits))
+    assert len(hits) <= 1, "conflict key %r matches %d questions" % (key, len(hits))
+    if not hits:  # the item was dropped at review; it must at least exist in the full pool
+        assert any(q["q"].startswith(stem) for q in POOL_A + POOL_B), "conflict key %r matches nothing" % key
+        return None
     return hits[0]
 
 
-CONFLICT_IDX = [(_find(a), _find(b)) for a, b in CONFLICTS]
+CONFLICT_IDX = [(a, b) for a, b in ((_find(a), _find(b)) for a, b in CONFLICTS)
+                if a is not None and b is not None]
 
 random.seed(20261112 + 7)
 MARGIN_CHARS, MARGIN_FRAC = 8, 0.18
