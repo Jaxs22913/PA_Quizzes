@@ -30,23 +30,23 @@
    "topic": "Lipoproteins",
    "io": "Review the different lipoproteins",
    "slot": "mechanism",
-   "q": "Which lipoprotein carries the highest risk, and why?",
+   "q": "Which lipoprotein carries the highest risk of atherosclerosis?",
    "opts": [
     [
-     "High density lipoprotein, because it is high in cholesterol",
-     "High density lipoprotein decreases risk; it carries cholesterol back to the liver."
+     "High density lipoprotein, rich in cholesterol",
+     "High density lipoprotein decreases risk rather than carrying the highest: it transports cholesterol back to the liver, helping clear plaque away."
     ],
     [
-     "Low density lipoprotein, because it is high in cholesterol",
-     "Correct. The composition is what determines the risk, which is why the lipoproteins are not interchangeable even though all of them carry lipid."
+     "Low density lipoprotein, rich in cholesterol",
+     "Correct. Low density lipoprotein is high in cholesterol and carries the highest risk of atherosclerosis. Very low density lipoprotein, high in triglycerides, also increases risk, while high density lipoprotein decreases it."
     ],
     [
-     "Very low density lipoprotein, because it is high in cholesterol",
-     "Very low density lipoprotein increases risk, but it is high in triglycerides rather than cholesterol."
+     "Very low density lipoprotein, high in cholesterol",
+     "Very low density lipoprotein does increase risk, but it is high in triglycerides rather than cholesterol; the cholesterol-rich low density lipoprotein carries the highest risk."
     ],
     [
-     "All lipoproteins carry equal risk",
-     "They differ by composition, and their effect on risk differs with it."
+     "Lipoproteins carry equal risk whatever their content",
+     "The lipoproteins differ by composition and their risk differs with it: cholesterol-rich low density lipoprotein is highest, while high density lipoprotein lowers risk."
     ]
    ],
    "c": 1,
@@ -134,15 +134,15 @@
    "topic": "Rheumatic heart disease",
    "io": "Compare and contrast the etiologies and pathophysiological processes of valvular stenosis, regurgitation, and prolapse",
    "slot": "mechanism",
-   "q": "What happens to the valves as rheumatic endocardial inflammation progresses?",
+   "q": "What are the early valve changes of rheumatic endocardial inflammation?",
    "opts": [
     [
      "Immediate calcification of the leaflets",
      "Calcification is an age-related process rather than the rheumatic sequence."
     ],
     [
-     "Swelling and erosion first",
-     "Correct. The scarring is what remains decades later, and it is why rheumatic fever appears as a cause of stenosis. Then scarring and shortening of the valvular structures."
+     "Valvular swelling and erosions",
+     "Correct. Endocardial inflammation causes valvular swelling and erosions, with platelet aggregation and fibrin on the leaflets. Scarring and shortening of the valvular structures appear only with progression, which is why rheumatic fever is a cause of stenosis."
     ],
     [
      "Ballooning of the leaflets into the atrium",
@@ -394,7 +394,7 @@
    "topic": "Foam cells",
    "io": "Describe the pathological processes and risk factors for the formation of coronary atherosclerosis and plaque",
    "slot": "mechanism",
-   "q": "What do the macrophages within a plaque release, and with what effect?",
+   "q": "What do the macrophages within a plaque release?",
    "opts": [
     [
      "Collagen and fibrin, which stabilize the plaque",
@@ -406,7 +406,7 @@
     ],
     [
      "Inflammatory mediators and growth factor",
-     "Correct. This is the step that makes the lesion self-sustaining: the cells that arrived to deal with the lipid recruit more cells and more wall growth. Attracting more leukocytes and stimulating smooth muscle proliferation."
+     "Correct. Both types of macrophage, including the lipid-filled foam cells, release inflammatory mediators and growth factor. These attract more leukocytes and stimulate smooth muscle proliferation, so the lesion keeps recruiting cells and wall growth."
     ],
     [
      "Vasodilators that increase flow through the vessel",
@@ -550,11 +550,11 @@
    "topic": "Valvular disease",
    "io": "Compare and contrast the etiologies and pathophysiological processes of valvular stenosis, regurgitation, and prolapse",
    "slot": "etiology",
-   "q": "What are the primary causes of valvular stenosis?",
+   "q": "What is a primary cause of valvular stenosis?",
    "opts": [
     [
      "Post-inflammatory scarring from rheumatic fever",
-     "Correct. One is an immune injury from decades earlier and the other is simple wear, which is why the two produce stenosis in very different age groups. Valvular calcification with aging."
+     "Correct. Post-inflammatory scarring from rheumatic fever is one of the two primary causes of stenosis; the other is valvular calcification with aging. The narrowed opening forces the heart to do extra pressure work."
     ],
     [
      "Infective endocarditis and papillary muscle rupture",
@@ -614,7 +614,7 @@
     ],
     [
      "It inhibits smooth muscle proliferation",
-     "Smooth muscle hypertrophy is among the injuries it causes, so it does not inhibit that process."
+     "Smooth muscle hypertrophy is listed among the vascular injuries homocysteine causes, with intimal thickening and elastic lamina disruption; nothing describes it inhibiting smooth muscle growth."
     ],
     [
      "It is atherogenic and prothrombotic",
@@ -812,7 +812,7 @@
    "topic": "Mitral stenosis",
    "io": "Compare and contrast the etiologies and pathophysiological processes of valvular stenosis, regurgitation, and prolapse",
    "slot": "mechanism",
-   "q": "What sequence follows the raised left atrial pressure of mitral stenosis?",
+   "q": "What does the raised left atrial pressure of mitral stenosis first lead to?",
    "opts": [
     [
      "Left ventricular hypertrophy, then left sided failure",
@@ -824,7 +824,7 @@
     ],
     [
      "Atrial enlargement and hypertrophy",
-     "Correct. A valve on the left side of the heart ends by failing the right side, because the pressure has nowhere to go but backwards through the lungs. Raised pulmonary pressures, then right sided hypertrophy and failure."
+     "Correct. The increased pressure load on the left atrium leads to atrial chamber enlargement and hypertrophy. Only later may pulmonary vascular pressures rise, progressing to chronic pulmonary hypertension and right sided hypertrophy and failure."
     ],
     [
      "Pericardial effusion and tamponade",
@@ -842,7 +842,7 @@
    "opts": [
     [
      "Left ventricular dysfunction, sometimes with chamber dilation",
-     "Correct. The dysfunction is focused on the left ventricle, and the chambers may dilate, although acute disease often leaves a normal-sized or only mildly dilated heart."
+     "Correct. Myocarditis is characterized by left ventricular dysfunction with general dilation of all four chambers, as the inflamed, edematous myocardium develops patchy or diffuse necrotic lesions and leukocyte infiltrates."
     ],
     [
      "Isolated right ventricular hypertrophy",
@@ -897,16 +897,16 @@
      "It is rarely primary; it is usually secondary to another cause, so the underlying condition drives the fluid in the sac and any inflammation of the pericardial structures."
     ],
     [
-     "Only as a consequence of myocardial infarction",
-     "Infarction is one possible primary cause among many rather than the only route."
+     "Mainly as a consequence of myocardial infarction",
+     "Infarction is one possible primary cause among many rather than the main route; pericardial disease is usually secondary to any of various primary causes."
     ],
     [
      "Secondary to another primary cause",
-     "Correct. It is usually a manifestation of something else; whatever the cause, fluid accumulates in the sac, and when the cause is inflammatory the pericardial structures can become painfully inflamed. Rarely as a primary condition."
+     "Correct. Pericardial disease is rarely a primary condition and is usually secondary to another primary cause. Whatever the cause, fluid accumulates in the pericardial sac and painful inflammation of the pericardial structures occurs."
     ],
     [
-     "Only from direct infection of the pericardium",
-     "Causes are various rather than confined to infection, and pericardial disease is usually secondary to another primary cause."
+     "Mainly from direct infection of the pericardium",
+     "Causes are various rather than mainly infection, and pericardial disease is usually secondary to another primary cause, with fluid in the sac and painful inflammation whatever the cause."
     ]
    ],
    "c": 2,
@@ -923,8 +923,8 @@
      "Muscle is not regenerated. Necrotic tissue is removed by one to two weeks and replaced by tough fibrous scar by six."
     ],
     [
-     "Pale within a day",
-     "Correct. The sequence runs from removal of dead muscle to replacement by scar, and the scar does not contract. Then yellowish and soft with a red border, necrotic tissue removed by one to two weeks, tough fibrous scar by six."
+     "It pales, softens, then scars by six weeks",
+     "Correct. The area becomes paler within 18 to 24 hours, then turns yellowish and soft with a border of red vascular connective tissue. Necrotic tissue is taken away by one to two weeks, and tough fibrous scar has formed by six weeks."
     ],
     [
      "It calcifies within forty-eight hours",
@@ -1057,8 +1057,8 @@
      "That describes the adhesive form. In the constrictive form the sac becomes dense and fibrous, encasing the heart like a stiff cage."
     ],
     [
-     "The sac becomes dense",
-     "Correct, and the result resembles restrictive cardiomyopathy in that filling is what fails -- but the stiffness here is outside the muscle rather than within it. Non-elastic and scarred, encasing the heart and impairing diastolic filling."
+     "A dense, scarred sac encases the heart, impairing filling",
+     "Correct. The pericardial sac becomes dense, nonelastic, fibrous and scarred, encasing the heart like a stiff cage that impairs diastolic filling. The stiffness lies outside the muscle, unlike the fibrotic myocardium of restrictive cardiomyopathy."
     ],
     [
      "The myocardium becomes fibrotic and non-compliant",
@@ -1314,14 +1314,14 @@
     ],
     [
      "About fifty percent",
-     "Correct. It is a lower threshold than the seventy-five percent that compromises coronary flow, and the two figures are easy to swap."
+     "Correct. Hemodynamics are affected once the valve is about fifty percent closed. The narrowing creates a pressure gradient across the valve and extra pressure work, because blood must be forced through a smaller opening."
     ],
     [
      "About seventy-five percent",
-     "Seventy-five percent is the coronary occlusion figure rather than the valvular one."
+     "Seventy-five percent overshoots the threshold. Stenosis already affects hemodynamics at about fifty percent closure, where a pressure gradient across the valve begins to add pressure work for the heart."
     ],
     [
-     "Only at complete closure",
+     "At complete closure",
      "Effects appear well before complete closure, from about fifty percent."
     ]
    ],
@@ -1339,8 +1339,8 @@
      "Age is not given as the determinant; composition and mechanical stress are."
     ],
     [
-     "Its composition",
-     "Correct. Two factors, one internal and one external, which is why an identical plaque may be stable in one vessel and not in another. The mechanical stresses acting on it."
+     "Its composition and mechanical stress",
+     "Correct. Rupture risk depends on the composition of the plaque and on the mechanical stresses that act on it. A vulnerable plaque has a large necrotic core covered by a thin fibrous cap."
     ],
     [
      "The degree of luminal narrowing alone",
@@ -1418,7 +1418,7 @@
     ],
     [
      "Age and family history",
-     "Both are major risk factors, and they are the two that cannot be altered. The probable list is male sex, homocysteine and C reactive protein."
+     "Both are major risk factors, listed alongside abnormal lipids, smoking, hypertension, diabetes and obesity. The probable list is male sex, homocysteine and high sensitivity C reactive protein."
     ],
     [
      "Abnormal lipids and cigarette smoking",
@@ -1426,7 +1426,7 @@
     ],
     [
      "Male sex, homocysteine and high sensitivity C reactive protein",
-     "Correct. Two of the three are laboratory measurements rather than clinical facts, which is part of why they sit in the weaker category."
+     "Correct. Male sex, homocysteine and high sensitivity C reactive protein are the probable risk factors, a separate category from the major ones: age, family history, abnormal lipids, cigarette smoking, hypertension, diabetes mellitus and obesity."
     ]
    ],
    "c": 3,
@@ -1496,7 +1496,7 @@
     ],
     [
      "A specific clinical condition",
-     "Correct. It is usually secondary to something identifiable, unlike the other two patterns which are more often idiopathic. Such as amyloidosis."
+     "Correct. Restrictive cardiomyopathy is most often related to a specific clinical condition such as amyloidosis. Whatever the cause, the myocardium becomes fibrotic, rigid and noncompliant, restricting diastolic filling."
     ],
     [
      "Coxsackievirus infection",

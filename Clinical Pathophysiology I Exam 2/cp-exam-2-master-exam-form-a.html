@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));window.__paErrQ=[];['error','unhandledrejection'].forEach(function(t){addEventListener(t,function(e){var q=window.__paErrQ;if(q&&!q.done)q.push(e)})});</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #6a4fa3; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clin Path I Exam 2 Master Exam &mdash; Form A</title>
+<style>
+  :root{
+    --navy:#3b2a5e; --indigo:#6a4fa3; --gold:#c08a2e; --ice:#efeaf8;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#3b2a5e;--gold-l:#c08a2e;--indigo-l:#6a4fa3;--navy:#b3a3e1;--indigo:#957bd3;--gold:#c08a2e;--ice:#251e36;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#957bd3;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#3b2a5e;--indigo-t:#6a4fa3;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Clinical Pathophysiology I &mdash; Comprehensive Master Exam</h1>
+    <div class="sub">Exam 2 &middot; Lectures 6&ndash;10 &middot; Form A</div>
+    <span class="pill">60 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Sixty questions drawn from every lecture in the Exam 2 block &mdash; <b>each of the five lectures contributes twelve questions to every form</b>, spread across its objectives, so this is a cumulative rehearsal and not a sample of whichever topic had the most questions. Questions are reused verbatim from the topic quizzes, each one independently reviewed against the slides. <b>No question appears in more than one form</b>, so the five forms give you 300 distinct questions. <b>Mechanism only, no vignettes.</b> This course draws its line against Clinical Medicine and Surgery at pathophysiology against management. Every question cites its slide.</p>
+    <div class="chips"><span class="chip">Cardiac</span><span class="chip">Vascular</span><span class="chip">Immunity</span><span class="chip">Pulmonary</span><span class="chip">Blood disorders</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Deep vein thrombosis", "io": "Describe the molecular mechanisms of vascular pathologies", "q": "Where does deep vein thrombosis rank among cardiovascular causes of death?", "opts": [["Third most common", "Correct. Deep vein thrombosis, a clot in a deep vein typically in the legs, is the third most common cause of death from cardiovascular diseases, so the venous side is not the minor partner it might appear."], ["First most common", "It ranks third among cardiovascular causes of death rather than first."], ["Tenth most common", "Its rank is considerably higher than tenth, at third among cardiovascular causes of death."], ["It is not a significant cause of death", "It is the third most common cause of death from cardiovascular disease."]], "c": 0, "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 37", "qid": "t454c"}, {"topic": "Pleural effusion", "io": "Compare and contrast the etiologies and pathophysiological processes of different pulmonary diseases, including: Restrictive pulmonary diseases", "q": "How does nephrotic syndrome cause a pleural effusion?", "opts": [["It raises vascular hydrostatic pressure", "Raised hydrostatic pressure is the heart failure and portal hypertension route."], ["It lowers pleural space pressure", "Decreased pleural space pressure follows lung collapse; nephrotic syndrome acts through oncotic pressure."], ["It inflames the pleural membrane", "Inflamed, permeable pleura produces an exudate; nephrotic syndrome produces a transudate."], ["It lowers plasma oncotic pressure", "Correct. Decreased plasma oncotic pressure, from severe hypoalbuminemia, nephrotic syndrome (protein loss) or cirrhosis (less albumin synthesis), lets fluid collect in the pleural space."]], "c": 3, "cite": "9. Pulmonary Pathophysiology - Ward 2026 (rebuilt from recording).pptx, Slides 93, 94", "qid": "bthq5e"}, {"topic": "Coagulation disorders", "io": "Describe the etiologies and pathophysiological processes of coagulation disorders", "q": "What does von Willebrand factor do?", "opts": [["Activates factor X together with factor IXa", "Activating factor X is the job of IXa with its cofactor VIIIa. Von Willebrand factor supports platelet adhesion and carries and stabilizes factor VIII."], ["Degrades fibrin once a clot has formed", "Degrading fibrin is plasmin's job in fibrinolysis. Von Willebrand factor supports platelet adhesion and carries and stabilizes factor VIII."], ["Supports platelet adhesion and stabilizes factor VIII", "Correct. Von Willebrand factor supports platelet adhesion and carries and stabilizes factor VIII, which is why von Willebrand disease is listed with the hemophilias as a bleeding disorder."], ["Limits coagulation together with protein S", "Activated protein C with protein S (and antithrombin) limits coagulation. Von Willebrand factor supports platelet adhesion and stabilizes factor VIII."]], "c": 2, "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 46", "qid": "xvmxce"}, {"topic": "Vasculitis", "io": "Describe the molecular mechanisms of vascular pathologies", "q": "What are the two main pathogenic mechanisms of vasculitis?", "opts": [["Immune-mediated inflammation, and pathogen invasion", "Correct, and the distinction matters because the wall is being destroyed in one case by the host's own response and in the other by the organism itself."], ["Lipid accumulation and calcification", "Those are steps in atherosclerosis rather than vasculitis mechanisms."], ["Mechanical stress and loss of elastic tissue", "Those underlie hypertensive vessel change and aneurysm formation."], ["Valve insufficiency and venous stasis", "Those belong to the venous side, producing varicosities and thrombosis."]], "c": 0, "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 32", "qid": "170xvny"}, {"topic": "Infective endocarditis", "io": "Compare and contrast the etiologies and pathophysiological processes of valvular stenosis, regurgitation, and prolapse", "q": "What is a vegetation?", "opts": [["A calcified nodule on the valve annulus", "Vegetations are organisms within fibrin rather than calcific nodules."], ["Microorganisms enmeshed in fibrin deposits", "Correct. As they enlarge they interfere with valve function and predispose to embolism, so the lesion does harm in two distinct ways."], ["A ballooned segment of valve leaflet", "That describes prolapse. A vegetation is microorganisms enmeshed in fibrin deposits on the valve."], ["A thrombus within the left atrial appendage", "Atrial clot relates to atrial fibrillation in mitral stenosis."]], "c": 1, "cite": "6. Cardiac Pathophysiology for posting.pptx, Slide 56", "qid": "1i6502v"}, {"topic": "Pulmonary malignancies", "io": "Compare and contrast the etiologies and pathophysiological processes of different pulmonary diseases, including: Pulmonary malignancies", "q": "Why is squamous cell carcinoma of the lung often detected earlier than other lung cancers?", "opts": [["Sputum cytology can show it", "Correct. Two-thirds arise in the central bronchi near the hilus as intraluminal growth, so sputum cytology shows the cancer and detection comes earlier."], ["It doubles in about 33 days", "Rapid doubling in about 33 days is small cell carcinoma, and speed does not make detection earlier."], ["It arises in the lung periphery", "Peripheral growth is adenocarcinoma, which is NOT as amenable to early detection."], ["Its large cells form visible nests", "Large cells in nests or clusters describe large cell carcinoma, which also develops peripherally."]], "c": 0, "cite": "9. Pulmonary Pathophysiology - Ward 2026 (rebuilt from recording).pptx, Slides 25, 26, 27", "qid": "1sbs9zp"}, {"topic": "Coagulation disorders", "io": "Describe the molecular mechanisms of blood disorders", "q": "What is the cause of factor V Leiden thrombophilia?", "opts": [["An autoimmune response", "An autoimmune response causes antiphospholipid syndrome, the other thrombophilia. Factor V Leiden is a genetic mutation."], ["A factor V deficiency", "Factor V Leiden causes excessive clotting, not the bleeding a deficiency would; the bleeding deficiencies listed are factor VIII and IX (hemophilia A and B). Its cause is a genetic mutation."], ["An immune reaction to heparin", "An immune reaction to heparin is heparin-induced thrombocytopenia, a platelet disorder. Factor V Leiden is a genetic mutation."], ["A genetic mutation", "Correct. Factor V Leiden is a thrombophilia (excessive clotting) caused by a genetic mutation; antiphospholipid syndrome, the other thrombophilia listed, is an autoimmune response."]], "c": 3, "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 46", "qid": "1eta54v"}, {"topic": "Coagulation reactions", "io": "Describe the etiologies and pathophysiological processes of coagulation disorders", "q": "Which pair converts prothrombin to thrombin?", "opts": [["Factor IXa with factor VIIIa", "IXa with VIIIa is the step BEFORE: it activates factor X. Prothrombin is converted to thrombin by Xa with Va."], ["Tissue factor with factor VIIa", "Tissue factor-VIIa starts the sequence by activating IX and X. Prothrombin is converted to thrombin by Xa with Va."], ["Factor Xa with factor Va", "Correct. In thrombin generation, Xa with its cofactor Va converts prothrombin (II) to thrombin (IIa); thrombin then turns fibrinogen (I) into fibrin."], ["Factor XIIIa with fibrin", "XIIIa acts on fibrin at the very end, producing crosslinked fibrin. Prothrombin is converted to thrombin by Xa with Va."]], "c": 2, "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 43, 44", "qid": "1iqmeun"}, {"topic": "Lymphatic system", "io": "Describe the molecular mechanisms involved in immune processes", "q": "How does interstitial fluid enter a lymphatic capillary?", "opts": [["Through smooth muscle pores in the wall", "Fluid does not pass through pores in a muscle layer; it enters between overlapping endothelial cells, whose edges open like one-way valves."], ["By active pumping across a basement membrane", "No pump moves fluid in. Interstitial fluid flows in passively where the overlapping endothelial edges part, which work like one-way valves."], ["Between overlapping endothelial cells", "Correct. The capillary wall is built of overlapping endothelial cells whose edges act as valves: they open to let interstitial fluid in and close behind it, so flow runs one way."], ["Driven in by the heart's systolic pressure", "The heart does not drive lymph. Fluid enters between overlapping endothelial cells, and outside forces such as muscle movement keep lymph moving."]], "c": 2, "cite": "Immunity_Lecture_Recorded.pptx, Slide 7", "qid": "1oclp5u"}, {"topic": "Complement", "io": "Describe the function of the complement system", "q": "Which components assemble the membrane attack complex?", "opts": [["C1 with C4 and C2", "C1, C4 and C2 begin the classical pathway, far upstream of the attack complex."], ["C3a and C5a", "C3a and C5a are released fragments that promote inflammation."], ["Factor B and factor D", "Factor B and factor D act in the alternative pathway to form a C3 convertase."], ["C5b with C6–C9", "Correct. C5b initiates assembly of the terminal components C6–C9, and the assembled complex forms pores in a susceptible target membrane."]], "c": 3, "cite": "Immunity_Lecture_Recorded.pptx, Slides 68, 71", "qid": "7bzph3"}, {"topic": "Anemia definition and blood loss", "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders", "q": "What does anemia reduce?", "opts": [["The blood's plasma volume", "Anemia is a fall in hemoglobin, not in plasma; a reduced plasma volume with normal red-cell mass is relative erythrocytosis. Anemia reduces oxygen-carrying capacity."], ["The blood's clotting factor supply", "Clotting factors belong to the plasma and the coagulation reactions. Anemia reduces the blood's oxygen-carrying capacity."], ["The marrow's white-cell output", "Suppressed white-cell production is part of leukemic cytopenias, not the meaning of anemia. Anemia reduces the blood's oxygen-carrying capacity."], ["The blood's oxygen-carrying capacity", "Correct. Anemia reduces the blood's oxygen-carrying capacity, which is why it is defined by hemoglobin below the cutoff for age, sex and pregnancy status."]], "c": 3, "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 35", "qid": "nfu6n0"}, {"topic": "Antibody classes", "io": "Compare and contrast the functions of the various types of antibodies and the various mechanisms by which antibodies destroy antigens", "q": "Which immunoglobulin crosses the placenta?", "opts": [["IgM", "IgM is usually secreted as a pentamer and is often the first class in a new response; it does not cross the placenta."], ["IgG", "Correct. IgG crosses the placenta and provides maternal protection; it is also the most abundant serum class."], ["IgA", "IgA protects mucosal surfaces and reaches the infant in breast milk, not across the placenta."], ["IgE", "IgE binds mast cells and basophils in allergy and parasite defense."]], "c": 1, "cite": "Immunity_Lecture_Recorded.pptx, Slides 44, 46", "qid": "ravhjb"}, {"topic": "Ischemia", "io": "Explain the pathophysiology of cardiac ischemia", "q": "Which determinants of workload increase myocardial oxygen demand?", "opts": [["Coronary perfusion pressure and collateral circulation", "These are supply-side factors rather than determinants of demand."], ["Heart rate, preload, afterload and contractility", "Correct. Raising any one of the four raises demand, which is why ischemia can appear with the coronary anatomy entirely unchanged."], ["Plaque size and composition", "These affect supply rather than the work the heart is doing."], ["Serum lipoprotein concentration", "Lipoproteins relate to plaque formation rather than to moment-to-moment oxygen demand."]], "c": 1, "cite": "6. Cardiac Pathophysiology for posting.pptx, Slide 31", "qid": "1xq0gp7"}, {"topic": "Emphysema and the obstructive pattern", "io": "Describe the molecular mechanisms of pulmonary pathologies", "q": "What does alpha-1 antitrypsin normally do in the lung?", "opts": [["Secretes surfactant into the alveoli", "Surfactant is secreted by type II pneumocytes; alpha-1 antitrypsin is a protective antiprotease enzyme."], ["Releases proteases from neutrophils", "Proteases from neutrophils and macrophages DESTROY alveoli; alpha-1 antitrypsin opposes them."], ["Inhibits breakdown of alveolar tissue", "Correct. Alpha-1 antitrypsin is a protective enzyme that inhibits proteolytic breakdown of alveolar tissue; its hereditary deficiency causes about 1% of emphysema."], ["Clears mucus from the bronchi", "Mucus clearance is the work of the ciliated epithelium (mucociliary clearance)."]], "c": 2, "cite": "9. Pulmonary Pathophysiology - Ward 2026 (rebuilt from recording).pptx, Slides 53, 54", "qid": "apixqd"}, {"topic": "Cerebral aneurysm", "io": "Describe the molecular mechanisms of vascular pathologies", "q": "What characterizes a saccular cerebral aneurysm?", "opts": [["Uniform dilation of the entire vessel circumference", "That is a fusiform aneurysm, in which atherosclerosis may be a factor."], ["A lesion arising from infected emboli", "That is a mycotic aneurysm, usually in the setting of infective endocarditis."], ["A blood-filled channel within the wall layers", "A blood-filled channel within the wall layers is a dissection rather than a localized dilation."], ["A thin-walled protrusion lacking elastic lamina", "Correct, with very thin or absent tunica media. The lack of elastic lamina is named as the MAIN feature, and these are typically acquired rather than congenital. The tunica media is very thin or absent."]], "c": 3, "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 30", "qid": "16e1rax"}, {"topic": "Antibody classes", "io": "Compare and contrast the morphology of the various types of antibodies", "q": "Approximately what share of serum immunoglobulin is IgG?", "opts": [["Less than 1%", "Less than 1% is the share of IgD and of IgE; IgG is the most abundant class, at 75–80%."], ["5–10%", "5–10% is the approximate share of IgM; IgG makes up about 75–80% of serum immunoglobulin."], ["10–15%", "10–15% is the approximate share of IgA; IgG makes up about 75–80% of serum immunoglobulin."], ["75–80%", "Correct. IgG is the most abundant class, approximately 75–80% of serum immunoglobulin (700–1700 mg/dL); reference intervals vary by laboratory."]], "c": 3, "cite": "Immunity_Lecture_Recorded.pptx, Slide 46", "qid": "xlm5s5"}, {"topic": "Lymphoid neoplasms", "io": "Review the anatomy of the blood cells", "q": "Where do T-cell precursors develop?", "opts": [["Bone marrow", "The bone marrow is where the B-cell precursor develops. T-cell precursors develop in the thymus."], ["Germinal centers", "Germinal centers are where activated B cells undergo somatic hypermutation and affinity maturation. T-cell precursors develop in the thymus."], ["Thymus", "Correct. The lymphoid progenitor branches into the B-cell precursor in the bone marrow and the T-cell precursor in the thymus, the origin of T-cell acute lymphoblastic leukemia/lymphoma."], ["Spleen", "The spleen is not where T-cell precursors develop. The lymphoid progenitor branches into the B-cell precursor in the bone marrow and the T-cell precursor in the thymus."]], "c": 2, "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 24", "qid": "1y9fd2e"}, {"topic": "Hemolytic anemia", "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders", "q": "Which condition can blunt the reticulocyte response to hemolysis?", "opts": [["Renal disease", "Correct. With hemolysis, erythropoietin and reticulocyte production usually rise when the marrow can compensate, but the response may be inadequate with marrow disease, nutrient deficiency, renal disease or infection."], ["Rising erythropoietin", "Erythropoietin usually INCREASES when the marrow can compensate for hemolysis, and it drives reticulocyte production up rather than blunting it. Renal disease is one of the conditions that can make the response inadequate."], ["Recovery from anemia", "Recovery from anemia is not among the conditions that blunt the response to hemolysis. Marrow disease, nutrient deficiency, renal disease or infection can make the reticulocyte response inadequate."], ["Dehydration", "Dehydration reduces plasma volume and raises the hematocrit (relative erythrocytosis); it is not listed as blunting the marrow. Renal disease is."]], "c": 0, "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 37", "qid": "18yub5b"}, {"topic": "Acute respiratory failure", "io": "Compare and contrast the etiologies and pathophysiological processes of different pulmonary diseases, including: Acute respiratory failure", "q": "Myasthenia gravis causes acute respiratory failure through which category of cause?", "opts": [["Central nervous system", "Central nervous system causes are sedatives, stroke and brain trauma or tumor."], ["Chest skeletal system", "Chest skeletal causes are kyphoscoliosis, chest trauma, pleural effusion and massive ascites."], ["Neuromuscular disease", "Correct. Neuromuscular causes are multiple sclerosis, myasthenia gravis, polio, Guillain-Barré syndrome and quadriplegia."], ["Pulmonary parenchyma", "Parenchymal causes are shock, pulmonary embolism, pulmonary edema, advanced emphysema, pneumonia and acute respiratory distress syndrome."]], "c": 2, "cite": "9. Pulmonary Pathophysiology - Ward 2026 (rebuilt from recording).pptx, Slide 14", "qid": "litt3x"}, {"topic": "Atherosclerosis", "io": "Describe the molecular mechanisms of vascular pathologies", "q": "What are the final two steps of the atherosclerotic sequence?", "opts": [["Monocyte adhesion, then platelet adhesion", "Monocyte and platelet adhesion are early steps, following lipoprotein accumulation rather than closing the sequence."], ["Lipid accumulation, then calcification", "Correct. After smooth muscle proliferation, matrix production and T cell recruitment, the sequence closes with lipid accumulation and then calcification of the extracellular matrix and necrotic debris."], ["Endothelial injury, then lipoprotein accumulation", "Endothelial injury and lipoprotein accumulation are the first two steps rather than the last two."], ["T cell recruitment, then smooth muscle migration", "Smooth muscle recruitment precedes T cell involvement, and both come before lipid accumulation and calcification."]], "c": 1, "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 25", "qid": "18k3kew"}, {"topic": "Bone marrow neoplasms", "io": "Describe the etiologies and pathophysiological processes of myeloproliferative syndromes", "q": "Which disorder is one of the myeloproliferative neoplasms?", "opts": [["Immune thrombocytopenia", "Immune thrombocytopenia is not among the myeloproliferative neoplasms, which are chronic myeloid leukemia, polycythemia vera, essential thrombocythemia and primary myelofibrosis. Watch the ending: thrombocythemia, not thrombocytopenia."], ["Essential thrombocythemia", "Correct. The myeloproliferative neoplasms are chronic myeloid leukemia, polycythemia vera, essential thrombocythemia and primary myelofibrosis: clonal proliferations of myeloid cells."], ["Chronic lymphocytic leukemia", "Chronic lymphocytic leukemia is a mature B-cell neoplasm, a lymphoid disease. The myeloproliferative neoplasms are myeloid: chronic myeloid leukemia, polycythemia vera, essential thrombocythemia, primary myelofibrosis."], ["Hereditary spherocytosis", "Hereditary spherocytosis is not among the myeloproliferative neoplasms (chronic myeloid leukemia, polycythemia vera, essential thrombocythemia, primary myelofibrosis). Essential thrombocythemia is the one listed here."]], "c": 1, "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 18", "qid": "1rya8nd"}, {"topic": "Antibody functions", "io": "Compare and contrast the functions of the various types of antibodies and the various mechanisms by which antibodies destroy antigens", "q": "What is opsonization?", "opts": [["Coating that eases ingestion by phagocytes", "Correct. In opsonization antibody joins antigen on the cell's surface, and this coating facilitates ingestion of the antigen by a phagocyte."], ["Clumping of particles into a lattice", "Clumping particles together is agglutination; opsonization coats a target so a phagocyte ingests it."], ["Pore formation in a target membrane", "Pore formation is the complement membrane attack complex leading to lysis."], ["Blocking a toxin from its target", "Blocking a toxin's action is neutralization; opsonization is a coating that eases phagocyte ingestion."]], "c": 0, "cite": "Immunity_Lecture_Recorded.pptx, Slide 55", "qid": "135d79t"}, {"topic": "Monocytes, eosinophils and basophils", "io": "Compare and contrast the etiologies and pathophysiological processes of white blood cell disorders", "q": "Which three causes should a raised eosinophil count bring to mind first?", "opts": [["Chronic infections such as tuberculosis", "Chronic infections such as cytomegalovirus and tuberculosis are listed for a raised MONOCYTE count. For eosinophils the three first thoughts are allergy, parasites and drug effects."], ["Acute bacterial inflammation and sepsis", "Acute bacterial inflammation goes with neutrophilia, and a band rise with infection. A raised eosinophil count points first to allergy, parasites or a drug effect."], ["Allergy, parasites and drug effects", "Correct. Think of three things with increased eosinophils: allergy (especially asthma), a parasite, or a drug effect. Eosinophilia can rarely be neoplastic or autoimmune."], ["Marrow malignancy before anything else", "Eosinophilia can be neoplastic, but only rarely; malignancy is a consideration if BASOPHILS are elevated. For eosinophils, think first of allergy, parasites and drug effects."]], "c": 2, "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 12, 13", "qid": "vjf903"}, {"topic": "Leukemia", "io": "Describe the process of bone marrow neoplasia", "q": "In leukemia, what can the peripheral white blood cell count be?", "opts": [["High, because blasts spill into the blood", "Some leukemias do show a high count, even hyperleukocytosis, but a high count is not required. Marrow involvement can suppress normal production, so the count may be low, normal or high."], ["Low, because blasts stay in the marrow", "Marrow suppression can lower the count, but it is not the only pattern: the peripheral count in leukemia may be low, normal or high."], ["Normal until leukostasis develops", "Leukostasis is impaired microcirculation with organ injury, and a high count alone does not establish it. The peripheral count in leukemia may be low, normal or high from the start."], ["Low, normal or high", "Correct. The peripheral white blood cell count in leukemia may be low, normal or high, because marrow involvement can suppress normal blood-cell production while malignant cells may or may not spill into the blood."]], "c": 3, "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 21, 22", "qid": "1p4o5ng"}, {"topic": "Active, passive and innate immunity", "io": "Compare and contrast acquired and innate immunity", "q": "Which defenses belong to innate immunity?", "opts": [["Complement and interferons", "Correct. Innate immunity acts without prior sensitization and includes skin and mucosal barriers, phagocytes, complement and interferons, with natural killer cells as its cytotoxic defense."], ["Memory B cells from a past exposure", "Memory cells are adaptive: they exist only because of an earlier exposure, the opposite of innate defense."], ["Antibodies left by a past vaccine", "Antibodies made after a vaccine are artificial active immunity, which is adaptive and needs sensitization."], ["Cytotoxic T cells with specific receptors", "Antigen-specific T-cell receptors are adaptive. The innate cytotoxic defense is the natural killer cell."]], "c": 0, "cite": "Immunity_Lecture_Recorded.pptx, Slide 13", "qid": "1s6lxmz"}, {"topic": "Acute coronary syndromes", "io": "Compare and contrast the etiologies and pathophysiological processes of acute coronary syndrome", "q": "What is the initiating feature of myocardial infarction?", "opts": [["Gradual narrowing of the lumen over years", "Gradual narrowing produces stable angina and allows collaterals to develop."], ["Vasospasm of an angiographically normal artery", "Vasospasm is the mechanism of variant angina rather than the initiating feature of infarction."], ["Inflammation of the pericardium", "Pericardial inflammation is a separate disease process. Infarction begins with thrombosis on a cracked plaque."], ["Thrombosis on an ulcerated or cracked atherosclerotic plaque", "Correct. The plaque has to fail before the thrombus forms, which is why plaque stability matters more than plaque size."]], "c": 3, "cite": "6. Cardiac Pathophysiology for posting.pptx, Slide 38", "qid": "mybnyu"}, {"topic": "Raynaud phenomenon", "io": "Describe the molecular mechanisms of vascular pathologies", "q": "What produces the color sequence in Raynaud phenomenon?", "opts": [["Hemorrhage into the skin followed by resorption", "The color change is due to changing perfusion and oxygenation rather than extravasated blood."], ["Deposition of immune complexes in dermal vessels", "That would describe a vasculitic process rather than this vasospastic one."], ["Progressive thrombosis of digital arteries", "The phenomenon is a reversible vasoconstrictive response rather than a thrombotic occlusion."], ["Vasoconstriction, anoxia, then reperfusion", "Correct, and the sequence maps onto the colors in order: white to blue to red."]], "c": 3, "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 33", "qid": "1d18cxy"}, {"topic": "Anemia by cell size and marrow response", "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders", "q": "Which deficiency causes megaloblastic anemia?", "opts": [["Iron deficiency", "Iron deficiency is a disorder of hemoglobin synthesis and sits in the MICROCYTIC group (early on, normocytic). The megaloblastic causes are vitamin B12 or folate deficiency."], ["Liver disease or alcohol", "Liver disease and alcohol do cause macrocytosis, but they are listed as NONmegaloblastic causes. Megaloblastic anemia comes from vitamin B12 or folate deficiency."], ["Thalassemia", "Thalassemia is a microcytic anemia, a disorder of hemoglobin synthesis. Megaloblastic (macrocytic) anemia comes from vitamin B12 or folate deficiency."], ["Vitamin B12 or folate deficiency", "Correct. In the macrocytic group (mean cell volume above 100 fL, femtoliters), the megaloblastic causes are vitamin B12 or folate deficiency; liver disease, alcohol, drugs and reticulocytosis are the nonmegaloblastic causes."]], "c": 3, "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 33", "qid": "nwh9cm"}, {"topic": "Acute respiratory failure", "io": "Compare and contrast the etiologies and pathophysiological processes of different pulmonary diseases, including: Acute respiratory failure", "q": "How do fever, infection and burns contribute to hypercapnic ventilatory failure?", "opts": [["They increase dead space", "Increased dead space comes from hypovolemia, low cardiac output or pulmonary embolism."], ["They raise carbon dioxide production", "Correct. Hypercapnic failure is alveolar ventilation inadequate for the carbon dioxide produced, and fever, infection and trauma or burns increase that production."], ["They block sensing of carbon dioxide", "Blocked sensing of raised carbon dioxide is caused by drugs or alkalosis."], ["They cut the respiratory rate", "A decreased respiratory rate reduces ventilation; fever, infection and burns act by raising carbon dioxide production."]], "c": 1, "cite": "9. Pulmonary Pathophysiology - Ward 2026 (rebuilt from recording).pptx, Slide 10", "qid": "5jv8k2"}, {"topic": "Sarcoidosis, hypersensitivity and occupational disease", "io": "Compare and contrast the etiologies and pathophysiological processes of different pulmonary diseases, including: Restrictive pulmonary diseases", "q": "What is a pneumoconiosis?", "opts": [["Lung disease from inhaled organic agents", "Inhaled ORGANIC agents (wheat weevil, fungi, birds) cause hypersensitivity pneumonitis."], ["Granulomas from an unknown trigger", "Granulomas to an unknown trigger describe sarcoidosis; pneumoconiosis is caused by inorganic dust."], ["Infection from aspirated flora", "Aspirated oropharyngeal flora cause pneumonia and abscess; pneumoconiosis comes from inorganic dust."], ["Lung disease from inhaled inorganic dust", "Correct. Pneumoconiosis is parenchymal lung disease caused by inhalation of inorganic dust particles such as coal, silica and asbestos."]], "c": 3, "cite": "9. Pulmonary Pathophysiology - Ward 2026 (rebuilt from recording).pptx, Slide 80", "qid": "gafbfc"}, {"topic": "T cells and cellular immunity", "io": "Compare and contrast the various subtypes and various functions of T lymphocytes", "q": "What is the main role of CD4 helper T cells?", "opts": [["Killing infected cells with perforin", "Perforin killing is the work of CD8 cytotoxic T cells; helpers coordinate rather than kill."], ["Coordinating humoral and cellular responses", "Correct. CD4 helper T cells coordinate cell-mediated and humoral responses, using cytokines and cell contact to regulate other immune populations."], ["Secreting antibodies into plasma", "Plasma cells secrete antibodies; helper signals support their differentiation."], ["Limiting activation to keep self-tolerance", "Limiting immune activation and maintaining self-tolerance is the role of regulatory T cells."]], "c": 1, "cite": "Immunity_Lecture_Recorded.pptx, Slides 24, 30", "qid": "js3ged"}, {"topic": "Foam cells", "io": "Describe the pathological processes and risk factors for the formation of coronary atherosclerosis and plaque", "q": "What do the macrophages within a plaque release?", "opts": [["Collagen and fibrin, which stabilize the plaque", "Collagen and fibrin form the stabilizing cap later, and are not what the macrophages release here."], ["Inflammatory mediators and growth factor", "Correct. Both types of macrophage, including the lipid-filled foam cells, release inflammatory mediators and growth factor. These attract more leukocytes and stimulate smooth muscle proliferation, so the lesion keeps recruiting cells and wall growth."], ["Enzymes that clear the lipid core entirely", "The lipid accumulates rather than being cleared; the macrophages release inflammatory mediators and growth factor instead."], ["Vasodilators that increase flow through the vessel", "Vasodilation is not the described consequence. The mediators recruit more leukocytes and stimulate smooth muscle proliferation."]], "c": 1, "cite": "6. Cardiac Pathophysiology for posting.pptx, Slide 15", "qid": "1mpvnvj"}, {"topic": "Plaque hemorrhage", "io": "Describe the pathological processes and risk factors for the formation of coronary atherosclerosis and plaque", "q": "How do the capillaries within the atherosclerotic arterial wall contribute to disruption?", "opts": [["They deliver macrophages that dissolve the fibrous cap", "Bleeding and pressure build-up is the described mechanism rather than cap dissolution."], ["They drain lipid out of the core, collapsing the plaque", "The described consequence is deposition and pressure rather than drainage."], ["Their thin walls bleed", "Correct. The plaque can be disrupted from the inside as well as from the lumen, which is a route easy to overlook. Depositing blood products and raising pressure within the plaque."], ["They constrict, producing local ischemia within the wall", "Constriction of these capillaries is not the described mechanism."]], "c": 2, "cite": "6. Cardiac Pathophysiology for posting.pptx, Slide 28", "qid": "10l3yd9"}, {"topic": "Interstitial lung disease", "io": "Compare and contrast the etiologies and pathophysiological processes of different pulmonary diseases, including: Restrictive pulmonary diseases", "q": "What characterizes the end-stage (destruction) pattern of diffuse interstitial lung disease?", "opts": [["Lost alveolar walls and stiff, noncompliant lungs", "Correct. The destruction stage is end-stage disease: alveolar walls are lost and the scarred lungs become stiff and noncompliant."], ["Hyperinflated lungs with air trapped in the sacs", "Air trapped behind airways that lost their radial traction is emphysema, which hyperinflates the lungs rather than stiffening them."], ["Dilated bronchi that act as pockets of infection", "Destroyed, dilated bronchi that hold infection are bronchiectasis, an airway disease rather than end-stage interstitial scarring."], ["Reversible inflammation filling the alveoli", "Inflammation is the early, reversible pattern; the end stage is irreversible loss of alveolar walls."]], "c": 0, "cite": "9. Pulmonary Pathophysiology - Ward 2026 (rebuilt from recording).pptx, Slide 74", "qid": "1kl40kj"}, {"topic": "Obstructive diseases overview", "io": "Compare and contrast the etiologies and pathophysiological processes of different pulmonary diseases, including: Obstructive pulmonary diseases", "q": "What feature defines the obstructive pulmonary diseases?", "opts": [["Increased airflow resistance", "Correct. Obstructive pulmonary diseases are manifested by increased airflow resistance, whether from the airway wall, loss of parenchyma or material in the lumen."], ["Decreased expansion of the lungs", "Decreased expansion defines the RESTRICTIVE lung diseases; obstruction raises airflow resistance."], ["Thickening of the alveolar interstitium", "Interstitial thickening is diffuse interstitial lung disease, a restrictive disorder."], ["Air in the pleural space", "Air in the pleural space is pneumothorax, a pleural space disorder classed with the restrictive diseases."]], "c": 0, "cite": "9. Pulmonary Pathophysiology - Ward 2026 (rebuilt from recording).pptx, Slide 33", "qid": "b7wrop"}, {"topic": "Aneurysm and dissection", "io": "Describe the molecular mechanisms of vascular pathologies", "q": "What is an aneurysm?", "opts": [["Localized abnormal dilation of a blood vessel", "Correct. It may be congenital or acquired, and it is classified by shape."], ["Blood tunneling through the medial planes of the wall", "That is a dissection, where blood enters a defect in the arterial wall."], ["An intimal lesion projecting into the lumen", "An intimal lesion projecting into the lumen is an atheroma, which narrows rather than dilating the vessel."], ["An irregular direct connection between artery and vein", "That is an arteriovenous fistula, which bypasses the capillaries."]], "c": 0, "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 27", "qid": "2trckd"}, {"topic": "Aneurysm and dissection", "io": "Describe the molecular mechanisms of vascular pathologies", "q": "Which condition is linked to abnormal transforming growth factor signaling and defective collagen synthesis?", "opts": [["Kawasaki disease", "Kawasaki disease is a medium-vessel vasculitis rather than a connective tissue disorder."], ["Marfan syndrome", "Correct, listed under poor connective tissue quality producing weak vessel walls &mdash; a genetic route to the same wall failure that hypertension reaches mechanically."], ["Systemic lupus erythematosus", "Systemic lupus erythematosus appears under the immune complex small-vessel vasculitis subgroup instead."], ["Tertiary syphilis", "Syphilis is listed under wall weakening through smooth muscle loss rather than under collagen synthesis defects."]], "c": 1, "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 28", "qid": "c7jtk9"}, {"topic": "Unstable angina", "io": "Compare and contrast the etiologies and pathophysiological processes of coronary syndromes", "q": "Why is unstable angina included among the acute coronary syndromes?", "opts": [["It always involves complete vessel occlusion", "Complete occlusion is not what defines it. It is grouped with the acute syndromes because it may progress to acute ischemia."], ["It is caused by vasospasm rather than plaque", "Vasospasm is the mechanism of Prinzmetal angina. Unstable angina is grouped as acute because it may progress."], ["It occurs only in patients with prior infarction", "Prior infarction does not define it; it is included among the acute syndromes because it may progress to acute ischemia."], ["It may progress to acute ischemia", "Correct. It is grouped by where it is heading rather than by where it currently is, which is the point of treating it as acute."]], "c": 3, "cite": "6. Cardiac Pathophysiology for posting.pptx, Slide 36", "qid": "tr1ypm"}, {"topic": "Blood cells in immunity", "io": "Compare and contrast the various types of blood cells and their roles in immunity", "q": "Which leukocyte is the most numerous first responder, acting by phagocytosis?", "opts": [["Eosinophil", "Eosinophils are linked with allergic reactions and parasitic invasion, not the first-responder role."], ["Basophil", "Basophils are similar to tissue mast cells and much less numerous than neutrophils."], ["Neutrophil", "Correct. Neutrophils, the “poly” or PMN (polymorphonuclear leukocyte), are the most numerous first responders and act by phagocytosis."], ["Monocyte", "Monocytes are agranulocytes that enter tissue and become macrophages; the most numerous first responder is the neutrophil."]], "c": 2, "cite": "Immunity_Lecture_Recorded.pptx, Slide 15", "qid": "6r7rd8"}, {"topic": "Atherosclerosis", "io": "Describe the molecular mechanisms of vascular pathologies", "q": "What follows injury to the vessel at the start of the atherosclerotic sequence?", "opts": [["Accumulation of low-density lipoprotein in the vessel wall", "Correct, and monocyte adhesion to the endothelium and platelet adhesion follow it before any smooth muscle is recruited."], ["Calcification of the extracellular matrix", "Calcification comes at the END of the sequence, along with necrotic debris."], ["Smooth muscle proliferation with matrix production", "That comes later, after smooth muscle has been recruited by factors from activated platelets and macrophages."], ["Formation of a fibrous cap over a lipid core", "The mature plaque structure is the end product rather than the first step."]], "c": 0, "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 25", "qid": "yo49in"}, {"topic": "Veins", "io": "Review the anatomy of the vascular system", "q": "Which are named as superficial veins?", "opts": [["The femoral and popliteal veins", "Those are deep veins, where stasis in a dilated vein can produce thrombosis."], ["The portal and hepatic veins", "Those are not among the superficial or deep veins named in this scheme."], ["The great and small saphenous veins", "Correct, and the deep veins named are the femoral, popliteal and tibial. The anatomic location determines which pathology follows."], ["The jugular and subclavian veins", "The jugular and subclavian veins are not the examples given for the superficial group in this scheme."]], "c": 2, "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 35", "qid": "1g70gl4"}, {"topic": "Red-cell indices and morphology", "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders", "q": "What does hypochromia of red cells reflect?", "opts": [["Reduced hemoglobinization", "Correct. The degree of hemoglobinization is reflected in the color of red cells: normochromic or hypochromic. Hypochromic cells carry less hemoglobin, as in the microcytic hypochromic anemias of impaired hemoglobin synthesis."], ["Reduced cell size", "Reduced size is microcytosis, described by the size terms (normocytic, microcytic, macrocytic). Hypochromia is about color, the degree of hemoglobinization."], ["Abnormal cell shape", "Shape is the third morphologic clue, separate from color. Hypochromia describes reduced hemoglobinization seen as paler red cells."], ["Increased cell volume", "Increased volume is macrocytosis, a size term. Hypochromia is a color term: reduced hemoglobinization of the red cell."]], "c": 0, "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 31, 32", "qid": "1j213po"}, {"topic": "Hypertension consequences", "io": "Describe the molecular mechanisms of vascular pathologies", "q": "Raised blood pressure is a risk factor for which of these?", "opts": [["Atherosclerosis, heart failure and renal failure", "Correct. Raised blood pressure is a risk factor for atherosclerosis, congestive heart failure and renal failure, and also for cerebral hemorrhage and aortic dissection."], ["Varicose veins and hemorrhoids", "Those follow chronic high INTRALUMINAL venous pressure with weakened wall support rather than systemic arterial hypertension."], ["Deep vein thrombosis", "Deep vein thrombosis follows the Virchow triad rather than arterial hypertension."], ["Arteriovenous fistula", "A fistula is a direct artery-to-vein connection arising from developmental defect, rupture, injury or inflammation."]], "c": 0, "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 20", "qid": "12dimjo"}, {"topic": "Hypersensitivity", "io": "Compare and contrast the types of hypersensitivity reactions", "q": "The Arthus reaction and serum sickness are examples of which hypersensitivity type?", "opts": [["Type I", "Type I is IgE-mediated immediate hypersensitivity, as in anaphylaxis."], ["Type II", "Type II is antibody bound to fixed cell or tissue antigens, as in ABO incompatibility."], ["Type III", "Correct. Both are type III immune-complex reactions: the Arthus reaction is a local response in a previously sensitized person, and serum sickness is a systemic reaction to circulating immune complexes."], ["Type IV", "Type IV is T-cell-mediated, as in contact dermatitis; the Arthus reaction and serum sickness are type III."]], "c": 2, "cite": "Immunity_Lecture_Recorded.pptx, Slide 64", "qid": "1ej3wdd"}, {"topic": "Restrictive cardiomyopathy", "io": "Compare and contrast the etiologies and pathophysiological processes of myopathies", "q": "What is restrictive cardiomyopathy most often related to?", "opts": [["A specific clinical condition", "Correct. Restrictive cardiomyopathy is most often related to a specific clinical condition such as amyloidosis. Whatever the cause, the myocardium becomes fibrotic, rigid and noncompliant, restricting diastolic filling."], ["Alcohol and pregnancy", "These are factors in dilated cardiomyopathy. The restrictive form is usually related to a specific condition such as amyloidosis."], ["Coxsackievirus infection", "Coxsackievirus relates to myocarditis. Restrictive cardiomyopathy is most often secondary to a condition such as amyloidosis."], ["Aging valvular calcification", "Calcification produces valvular stenosis rather than restrictive cardiomyopathy."]], "c": 0, "cite": "6. Cardiac Pathophysiology for posting.pptx, Slide 65", "qid": "9t3pju"}, {"topic": "Pneumothorax", "io": "Compare and contrast the etiologies and pathophysiological processes of different pulmonary diseases, including: Restrictive pulmonary diseases", "q": "Why does tension pneumothorax reduce cardiac output?", "opts": [["Air enters the coronary arteries", "The air stays in the pleural space; the problem is pressure pushing the mediastinum across."], ["The shifted mediastinum cuts venous return", "Correct. Air enters but cannot escape on expiration and builds up under pressure; the ipsilateral lung collapses and the mediastinum is forced to the contralateral side, decreasing venous return and cardiac output."], ["The lung re-expands too quickly", "The lung collapses, and air under pressure shifts the mediastinum."], ["Fluid tamponades the heart", "Pleural air, not pericardial fluid, is the problem; mediastinal shift reduces venous return."]], "c": 1, "cite": "9. Pulmonary Pathophysiology - Ward 2026 (rebuilt from recording).pptx, Slides 90, 91", "qid": "1ddffd5"}, {"topic": "Smooth muscle cells", "io": "Describe the molecular mechanisms of vascular pathologies", "q": "What do vascular smooth muscle cells synthesize?", "opts": [["Immunoglobulins", "Antibody production belongs to plasma cells rather than to vascular smooth muscle."], ["Clotting factors for the plasma", "Most clotting factors are hepatic in origin rather than being synthesized by vascular smooth muscle."], ["Surfactant", "Surfactant is produced by type II pneumocytes in the lung and has no vascular smooth muscle origin."], ["Collagen, elastin, proteoglycans and cytokines", "Correct, which is why they are central to both repair and disease: the same synthetic capacity that rebuilds a wall also builds an atherosclerotic plaque. Growth factors too."]], "c": 3, "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 12", "qid": "27c0hc"}, {"topic": "Rheumatic heart disease", "io": "Compare and contrast the etiologies and pathophysiological processes of valvular stenosis, regurgitation, and prolapse", "q": "By what mechanism does rheumatic fever damage the heart?", "opts": [["Direct invasion of the valve leaflets by the organism", "Direct invasion describes infective endocarditis rather than rheumatic disease."], ["An immune attack arising from cross-reactivity after streptococcal infection", "Correct. The organism is long gone; what damages the heart is the immune response aimed at something that resembles it."], ["Calcium deposition on the leaflets", "Calcification is an age-related process rather than the rheumatic mechanism."], ["Ischemic necrosis of the papillary muscles", "Papillary necrosis is a consequence of infarction rather than of rheumatic fever."]], "c": 1, "cite": "6. Cardiac Pathophysiology for posting.pptx, Slide 54", "qid": "wu2o3r"}, {"topic": "Chronic bronchitis", "io": "Compare and contrast the etiologies and pathophysiological processes of different pulmonary diseases, including: Cor pulmonale", "q": "Through which chain does chronic bronchitis lead to cor pulmonale?", "opts": [["Left ventricular failure, pulmonary edema, right ventricular atrophy", "Left ventricular failure raises left atrial pressure, but cor pulmonale is right ventricular DILATION driven by hypoxic pulmonary hypertension."], ["Embolism, dead space, hypercapnia, left atrial enlargement", "Dead space and hypercapnia describe ventilatory failure; cor pulmonale is a right-heart consequence of pulmonary hypertension."], ["Hypoxic vasoconstriction, pulmonary hypertension, right ventricular dilation", "Correct. Pulmonary artery vasoconstriction from hypoxia results in pulmonary hypertension, then right ventricular dilation (cor pulmonale) and right-sided heart failure."], ["Plaque rupture, coronary thrombosis, right ventricular infarction", "That is a coronary story; cor pulmonale starts in the lung with hypoxic vasoconstriction."]], "c": 2, "cite": "9. Pulmonary Pathophysiology - Ward 2026 (rebuilt from recording).pptx, Slide 50", "qid": "ylvlk9"}, {"topic": "Primary and secondary response", "io": "Compare and contrast primary and secondary immune response by the body", "q": "After a FIRST exposure to an antigen, which antibody class rises first?", "opts": [["IgG", "IgG starts rising later than IgM in the primary response; it dominates the secondary response."], ["IgM", "Correct. On the primary response time course IgM rises and peaks first, and IgG starts later; on second exposure IgG dominates."], ["IgA", "IgA is the mucosal class; the first class to rise after a first exposure is IgM."], ["IgE", "IgE binds mast cells and basophils in allergy; it is not the early class of the primary response."]], "c": 1, "cite": "Immunity_Lecture_Recorded.pptx, Slides 37, 46", "qid": "1xa2uul"}, {"topic": "T cells and cellular immunity", "io": "Describe T-lymphocytes", "q": "Which surface marker is found on T cells as a group?", "opts": [["CD3", "Correct. T cells carry CD3, with CD4 or CD8 on the major subsets."], ["CD4", "CD4 marks helper T cells and many regulatory T cells, not all T cells; CD3 is the marker across T cells."], ["CD8", "CD8 marks only the cytotoxic subset; CD3 is the marker across T cells."], ["CD19", "CD19 and CD20 are found on many B cells, so this marker points to a B lymphocyte rather than the cell asked about."]], "c": 0, "cite": "Immunity_Lecture_Recorded.pptx, Slide 34", "qid": "1s3kn64"}, {"topic": "Valvular disease", "io": "Compare and contrast the etiologies and pathophysiological processes of valvular stenosis, regurgitation, and prolapse", "q": "At what degree of closure does stenosis begin to affect hemodynamics?", "opts": [["About ten percent", "Hemodynamic effect is described from about fifty percent closure onwards."], ["About seventy-five percent", "Seventy-five percent overshoots the threshold. Stenosis already affects hemodynamics at about fifty percent closure, where a pressure gradient across the valve begins to add pressure work for the heart."], ["About fifty percent", "Correct. Hemodynamics are affected once the valve is about fifty percent closed. The narrowing creates a pressure gradient across the valve and extra pressure work, because blood must be forced through a smaller opening."], ["At complete closure", "Effects appear well before complete closure, from about fifty percent."]], "c": 2, "cite": "6. Cardiac Pathophysiology for posting.pptx, Slide 43", "qid": "14waea2"}, {"topic": "Pericardial disease", "io": "Compare and contrast the etiologies and pathophysiological processes of pericarditidies", "q": "How does pericardial disease usually arise?", "opts": [["As a primary condition in most cases", "It is rarely primary; it is usually secondary to another cause, so the underlying condition drives the fluid in the sac and any inflammation of the pericardial structures."], ["Mainly as a consequence of myocardial infarction", "Infarction is one possible primary cause among many rather than the main route; pericardial disease is usually secondary to any of various primary causes."], ["Secondary to another primary cause", "Correct. Pericardial disease is rarely a primary condition and is usually secondary to another primary cause. Whatever the cause, fluid accumulates in the pericardial sac and painful inflammation of the pericardial structures occurs."], ["Mainly from direct infection of the pericardium", "Causes are various rather than mainly infection, and pericardial disease is usually secondary to another primary cause, with fluid in the sac and painful inflammation whatever the cause."]], "c": 2, "cite": "6. Cardiac Pathophysiology for posting.pptx, Slide 67", "qid": "s3xy2m"}, {"topic": "Leukocytes and their counts", "io": "Compare and contrast the etiologies and pathophysiological processes of white blood cell disorders", "q": "Why must both the relative and the absolute white cell counts be read?", "opts": [["A fall in one type can falsely raise another's percentage", "Correct. Percentages are shares of one total, so an absolute decrease in one cell type can show an artificially increased relative count in another. Reading the absolute count shows whether that cell really rose."], ["The relative count gives the number of cells per microliter", "That describes the absolute count. The relative count is a percentage of the white cells; the absolute count, total white count times that fraction, is the number per microliter."], ["Each cell's percentage is measured apart from the others", "The percentages are not independent: they are shares of one total, so when one cell type falls in absolute terms another's percentage can rise artificially. That is why both counts must be read."], ["The absolute count ignores the total white blood cell count", "The absolute count is built from the total: white blood cell count times the cell's fraction. It is the relative percentage alone that can mislead when another cell type falls."]], "c": 0, "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 7", "qid": "1x6sm0w"}, {"topic": "Coronary heart disease", "io": "Compare and contrast the various etiologies and risk factors for coronary heart disease", "q": "What are the consequences of myocardial ischemia?", "opts": [["Abnormal rhythm only, with function preserved throughout", "Function is affected as well; the ischemic myocardium cannot contract normally."], ["Abnormal heart function and abnormal rhythm", "Correct. Two immediate consequences and one that depends on duration, which is why time is the variable that decides how much muscle is lost. With irreversible damage if prolonged."], ["Immediate irreversible damage in every case", "Damage becomes irreversible only if the ischemia is prolonged; brief ischemia does not kill the cell."], ["Valvular incompetence as the first consequence", "Valve function is not the described consequence of myocardial ischemia."]], "c": 1, "cite": "6. Cardiac Pathophysiology for posting.pptx, Slide 4", "qid": "ocsfne"}, {"topic": "Mitral regurgitation", "io": "Compare and contrast the etiologies and pathophysiological processes of valvular stenosis, regurgitation, and prolapse", "q": "What happens in mitral regurgitation?", "opts": [["Blood flows from atrium to ventricle during systole", "That is the normal direction of flow, and it occurs during diastole."], ["Blood leaks from the aorta into the ventricle during diastole", "That describes aortic regurgitation. Mitral regurgitation sends blood back into the atrium during systole."], ["Flow across the valve is obstructed during diastole", "Obstruction during diastole describes mitral stenosis. Regurgitation is backflow into the atrium during systole."], ["Blood flows back from ventricle to atrium during systole", "Correct, and because the leak occurs during systole, part of every beat is wasted going the wrong way. Raising left atrial volume and pressure."]], "c": 3, "cite": "6. Cardiac Pathophysiology for posting.pptx, Slide 48", "qid": "44ta3n"}, {"topic": "Blood vessel layers", "io": "Review the anatomy of the vascular system", "q": "What does the adventitia contain?", "opts": [["A single layer of endothelium on a basement membrane", "A single endothelial layer on a basement membrane is the intima, the innermost of the three layers."], ["Lamellar units of elastin and smooth muscle", "Lamellar units of elastin and smooth muscle describe the media of an elastic artery rather than the adventitia."], ["Nothing &mdash; it is a potential space", "It is a real layer of loose connective tissue providing structural support."], ["Loose connective tissue, sometimes with nerve fibers", "Correct, and in large vessels it carries its own small arterioles, which perfuse the adventitia and part of the media &mdash; the wall is too thick to be fed from the lumen alone."]], "c": 3, "cite": "SV Vascular Pathophys I Fall 2026.pptx, Slide 10", "qid": "1qvduyx"}, {"topic": "Chronic bronchitis", "io": "Compare and contrast the etiologies and pathophysiological processes of different pulmonary diseases, including: Obstructive pulmonary diseases", "q": "Which cough pattern defines chronic bronchitis?", "opts": [["Productive cough over 3 weeks after a viral illness", "A cough outlasting a viral illness by weeks fits acute bronchitis, which can leave lasting hyperirritability."], ["Productive cough over 3 months a year for 2 years", "Correct. Chronic bronchitis is hypersecretion of bronchial mucus with a chronic or recurrent productive cough of more than 3 months each year for 2 or more successive years."], ["Dry nighttime cough for 2 months", "The defining cough is productive and recurs for more than 3 months a year over 2 or more years."], ["Purulent sputum from infected bronchial pockets", "Purulent, foul-smelling sputum from dilated infected pockets is bronchiectasis."]], "c": 1, "cite": "9. Pulmonary Pathophysiology - Ward 2026 (rebuilt from recording).pptx, Slide 48", "qid": "yo4zn8"}, {"topic": "Acute respiratory failure", "io": "Compare and contrast the etiologies and pathophysiological processes of different pulmonary diseases, including: Pulmonary embolism", "q": "How does pulmonary embolism push toward hypercapnic ventilatory failure?", "opts": [["It increases carbon dioxide production", "Raised carbon dioxide production comes from fever, infection, trauma or burns, not from embolism."], ["It increases dead space", "Correct. Increased dead space (wasted ventilation), from hypovolemia, low cardiac output or pulmonary embolism, leaves ventilation inadequate for the carbon dioxide produced."], ["It blunts sensing of carbon dioxide", "Blunted sensing of raised carbon dioxide comes from drugs or alkalosis."], ["It blocks nerve signals to the muscles", "Failure to signal the effectors is the Guillain-Barré syndrome and spinal cord injury route."]], "c": 1, "cite": "9. Pulmonary Pathophysiology - Ward 2026 (rebuilt from recording).pptx, Slides 10, 14", "qid": "1nbwugc"}, {"topic": "T cells and cellular immunity", "io": "Define autoimmunity", "q": "Which T cells limit immune activation and maintain self-tolerance?", "opts": [["Cytotoxic T cells", "Cytotoxic T cells kill infected or malignant host cells; they do not restrain the response."], ["Helper T cells", "Helper T cells coordinate and support responses; the restraining population is the regulatory T cell."], ["Regulatory T cells", "Correct. Regulatory T cells limit immune activation and maintain self-tolerance; many are CD4 cells expressing FOXP3."], ["Memory T cells", "Memory T cells carry forward a faster response on re-exposure; they do not maintain self-tolerance."]], "c": 2, "cite": "Immunity_Lecture_Recorded.pptx, Slide 32", "qid": "1fik1xy"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll" && window.startExamModeTour) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

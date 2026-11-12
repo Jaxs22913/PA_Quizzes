@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Add the Clinical Pathophysiology I Exam 2 Arcade decks -- Lectures 6 to 9.
+"""Add the Clinical Pathophysiology I Exam 2 Arcade decks -- Lectures 6 to 10.
 
 MECHANISM ONLY, matching the pools these are derived from: this course draws
 its line against Clinical Medicine and Surgery at pathophysiology versus
@@ -19,6 +19,8 @@ SHIELD_ICON = ('<path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d=
 LUNG_ICON = ('<path d="M12 4v8"/><path d="M12 12c-1.5 0-3-1-4-3-2 2-4 6-4 9 0 1.5 1 2 2.5 1.5L12 17z"/>'
              '<path d="M12 12c1.5 0 3-1 4-3 2 2 4 6 4 9 0 1.5-1 2-2.5 1.5L12 17z"/>')
 
+DROP_ICON = '<path d="M12 3c-3 5-6 8-6 11a6 6 0 0 0 12 0c0-3-3-6-6-11z"/>'
+
 C = json.load(open(os.path.join(HERE, "cp_e2_cards.json"), encoding="utf-8"))
 DECKS = [
  ("cp-cardiac-pathophys", "Cardiac Pathophysiology", "accent1", HEART_ICON,
@@ -29,6 +31,8 @@ DECKS = [
   [tuple(x) for x in C["cp-immunity"]]),
  ("cp-pulmonary-pathophys", "Pulmonary Pathophysiology", "accent4", LUNG_ICON,
   [tuple(x) for x in C["cp-pulmonary-pathophys"]]),
+ ("cp-blood-disorders", "Blood Disorders", "accent1", DROP_ICON,
+  [tuple(x) for x in C["cp-blood-disorders"]]),
 ]
 if __name__ == "__main__":
     apply("CPE2", DECKS, "clin-path-1", "Clinical Pathophysiology I", "exam2", "Exam 2")

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build the Clinical Pathophysiology I Exam 2 cram sheet (Lectures 6 to 9 so far).
+"""Build the Clinical Pathophysiology I Exam 2 cram sheet (Lectures 6 to 10).
 
 Condensed ONLY from cp-exam-2-study-guide.html (cram_sheets_feature): nothing
 here that the guide does not say, numbers kept verbatim. Rendered with the
@@ -236,6 +236,99 @@ T = [
   ("Community vs hospital", "Community: at home, or hospitalized < 48 h. Hospital: early (≤ 4 days) susceptible bacteria; LATE = MULTIDRUG-RESISTANT."),
   ("Pulmonary embolism (gathered)", "Raises DEAD SPACE (hypercapnia) · causes pulmonary hypertension by OBSTRUCTION · causes ARDS and acute respiratory failure · EXUDATIVE effusion."),
  ]},
+
+ # ---------------- Lecture 10 -- Blood Disorders (guide section 10). Criteria and classification
+ # tables first (cram_criteria_tables), each with a memory aid that maps one-to-one onto the slide.
+ {"id": "crit-l10-neutropenia", "label": "L10 · ★ Neutropenia grades (slide 9)", "color": "#8a1c2b",
+  "toc_label": "L10 · Criteria tables", "cols": ["Grade", "Absolute neutrophil count"], "min_width": "0",
+  "rows": [("Mild", "1,000–1,500 cells/µL"), ("Moderate", "500–1,000 cells/µL"),
+           ("Severe", "< 500 cells/µL"), ("Agranulocytosis", "< 200 cells/µL"),
+           {"note": "★ The only lab values the lecturer said to memorize."}],
+  "mnemonic": {"hook": "“Fifteen, ten, five, two” — hundreds per microliter, counting down.",
+               "key": [["15", "below 1,500 = mild"], ["10", "below 1,000 = moderate"], ["5", "below 500 = severe"],
+                       ["2", "below 200 = agranulocytosis"]]}},
+ {"id": "crit-l10-marrow", "label": "L10 · ★ Bone marrow neoplasms (slide 18)", "color": "#8a1c2b", "toc": False,
+  "cols": ["Group", "Process", "Members / note"], "min_width": "0",
+  "rows": [("Myelodysplastic (MDS)", "Ineffective hematopoiesis with cytopenias and DYSPLASIA", "Can progress to AML"),
+           ("Acute myeloid leukemia (AML)", "Impaired DIFFERENTIATION + abnormal BLAST proliferation", "Distinct from MDS"),
+           ("Myeloproliferative (MPN)", "CLONAL PROLIFERATION of myeloid cells", "CML · polycythemia vera · essential thrombocythemia · primary myelofibrosis (can cause cytopenias)")],
+  "mnemonic": {"hook": "Dys-, blasts, pro-: made badly, never grow up, made too many.",
+               "key": [["Dys", "myelodysplastic"], ["Blasts", "acute myeloid leukemia"], ["Pro", "myeloproliferative"]],
+               "breaks": "MPN members by first letters: “Can People Eat Pie?” = CML, Polycythemia vera, Essential thrombocythemia, Primary myelofibrosis."}},
+ {"id": "crit-l10-lymphoid", "label": "L10 · ★ Lymphoid neoplasms (slides 23, 28)", "color": "#8a1c2b", "toc": False,
+  "cols": ["Cell of origin", "Neoplasm", "Word"], "min_width": "0",
+  "rows": [("Precursor B or T cells", "Acute lymphoblastic leukemia/lymphoma", "PRECURSOR"),
+           ("Mature B cells", "Chronic lymphocytic leukemia / small lymphocytic lymphoma and other B-cell lymphomas", "MATURE"),
+           ("Mature T and NK cells", "Distinct T-cell and NK-cell neoplasms", "MATURE"),
+           ("Germinal-center B cells", "Classic Hodgkin lymphoma", "—"),
+           ("Differentiated antibody-producing B-lineage cells", "Plasma-cell myeloma", "DIFFERENTIATED")],
+  "mnemonic": {"hook": "A-C-M runs young to old: Acute (precursor) → Chronic (mature) → Myeloma (differentiated).",
+               "key": [["A", "acute lymphoblastic — precursor"], ["C", "chronic lymphocytic — mature"], ["M", "myeloma — differentiated"]],
+               "breaks": "Hodgkin lymphoma (germinal-center B cells) and the mature T/NK neoplasms sit outside the chain."}},
+ {"id": "crit-l10-mcv", "label": "L10 · Anemia by mean cell volume (slide 33)", "color": "#8a1c2b", "toc": False,
+  "cols": ["Group", "MCV", "Causes on the slide"], "min_width": "0",
+  "rows": [("Microcytic", "< 80 fL", "Iron deficiency · thalassemia · inflammation (some cases) · sideroblastic anemia"),
+           ("Normocytic", "80–100 fL", "Blood loss or hemolysis · inflammation or renal disease · marrow failure or infiltration · EARLY iron deficiency"),
+           ("Macrocytic", "> 100 fL", "Megaloblastic: B12 or folate deficiency · Nonmegaloblastic: liver disease, alcohol, drugs, reticulocytosis"),
+           {"note": "Marrow response (reticulocytes / RPI): LOW = reduced production, or an early/blunted response to loss or destruction · INCREASED = blood loss, hemolysis or recovery; a rise usually takes several days."}],
+  "mnemonic": {"hook": "Micro “TICS”: Thalassemia, Iron deficiency, Chronic inflammation, Sideroblastic.",
+               "key": [["T", "thalassemia"], ["I", "iron deficiency"], ["C", "inflammation (some cases)"], ["S", "sideroblastic"]],
+               "breaks": "The C is a memory addition (“chronic”); the slide says inflammation (some cases)."}},
+ {"id": "crit-l10-erythrocytosis", "label": "L10 · Erythrocytosis (slide 41)", "color": "#8a1c2b", "toc": False,
+  "cols": ["Type", "Red-cell mass", "Mechanism"], "min_width": "0",
+  "rows": [("Relative", "Not increased", "Reduced PLASMA volume (dehydration)"),
+           ("Absolute — polycythemia vera", "Increased", "Clonal myeloproliferative neoplasm"),
+           ("Absolute — secondary", "Increased", "Erythropoietic response to hypoxia, increased erythropoietin or other stimuli")],
+  "mnemonic": {"hook": "Water, clone, or air: plasma lost, a clone, or hypoxia.",
+               "key": [["Water", "relative"], ["Clone", "polycythemia vera"], ["Air", "secondary (hypoxia)"]],
+               "breaks": "Secondary also includes increased erythropoietin and other stimuli."}},
+ {"id": "crit-l10-coag", "label": "L10 · ★ Coagulation tests and disorders (slides 43–46)", "color": "#8a1c2b", "toc": False,
+  "cols": ["Item", "Factors / cause"], "min_width": "0",
+  "rows": [("PT (prothrombin time)", "Extrinsic VII + common"),
+           ("aPTT (activated partial thromboplastin time)", "Intrinsic XII, XI, IX, VIII + common"),
+           ("Common pathway", "X, V, II, I"),
+           ("Hemophilia A", "Factor VIII deficiency"), ("Hemophilia B", "Factor IX deficiency"),
+           ("Von Willebrand disease", "VWF supports platelet adhesion and carries/stabilizes factor VIII"),
+           ("Factor V Leiden (thrombophilia)", "Genetic mutation"),
+           ("Antiphospholipid syndrome (thrombophilia)", "Autoimmune response")],
+  "mnemonic": {"hook": "Common pathway = “10, 5, 2, 1” — like a countdown to the clot. PT has the one short factor (VII); PTT the long list (12, 11, 9, 8).",
+               "key": [["A→8", "hemophilia A = VIII"], ["B→9", "hemophilia B = IX"]],
+               "breaks": "Covers the common pathway, the two tests and the hemophilias only; von Willebrand disease, factor V Leiden and antiphospholipid syndrome are not in the aid."}},
+ {"id": "l10-wbc", "label": "L10 · Blood, White Cells & Neoplasia", "color": "#9e3b2c", "rows": [
+  ("Blood", "55% PLASMA, 45% formed elements; plasma 90–92% water; SERUM = fluid left after clotting. Adult hematopoiesis: AXIAL skeleton + PROXIMAL humerus and femur."),
+  ("Lineage", "MYELOID progenitor → erythroid precursors, MEGAKARYOCYTES (platelets), granulocytes, monocytes (→ MACROPHAGES). LYMPHOID → B, T, NK cells."),
+  ("Normal differential", "Neutrophils 40–60% · lymphocytes 20–40% · monocytes 2–8% · eosinophils 1–4% · basophils 0.5–1%."),
+  ("Relative vs absolute", "Absolute = WBC count × relative fraction. A fall in one type can ARTIFICIALLY raise another's percentage."),
+  ("Neutrophils", "First responders; with macrophages, the PHAGOCYTIC leukocytes. Neutrophilia → acute BACTERIAL inflammation. Severe neutropenia → serious infection risk."),
+  ("Bands", "BANDEMIA = more immature neutrophils (LEFT SHIFT). Historical SIRS: > 10% bands. SEPSIS-3 = infection-associated, life-threatening ORGAN DYSFUNCTION."),
+  ("Monocytes ↑", "Chronic myelomonocytic leukemia · autoimmune (sometimes) · chronic infection (CMV, tuberculosis)."),
+  ("Eosinophils ↑", "ALLERGY (esp. asthma) · PARASITE · DRUG effect; rarely neoplastic/autoimmune."),
+  ("Basophils ↑", "Bind IgE; parasites and allergy; few on a CBC → consider MALIGNANCY."),
+  ("V(D)J", "B cells rearrange immunoglobulin genes in the MARROW: heavy chains V, D, J; LIGHT chains V and J. Germinal centers: SOMATIC HYPERMUTATION → affinity maturation."),
+  ("Clonality", "Clone = descended from ONE progenitor. PCR finds a dominant receptor-gene rearrangement, but REACTIVE or premalignant cells can be clonal too → not proof of malignancy."),
+  ("Acute leukemia", "★ MATURATION ARREST (transcription-factor mutations) + growth factor–independent proliferation → LYMPHOBLASTS / MYELOBLASTS."),
+  ("Leukemia counts", "Peripheral WBC LOW, NORMAL or HIGH; marrow involvement suppresses normal production → CYTOPENIAS. Hyperleukocytosis = very high count; LEUKOSTASIS = impaired microcirculation + organ injury (LUNGS, BRAIN)."),
+  ("Risk factors", "Chemical, viral, radiation MUTAGENS (effects of chemotherapy or immunodeficiency disorders). Result: too few normal WBC, RBC, platelets."),
+  ("Lineage figure", "Red-cell line → POLYCYTHEMIA VERA / erythroid leukemia; megakaryocyte → ESSENTIAL THROMBOCYTHEMIA / megakaryocytic leukemia."),
+  ("Multiple myeloma", "CLONAL PLASMA CELLS in marrow. Proteins + infiltration → RENAL injury, ANEMIA, impaired IMMUNITY; altered bone remodeling → OSTEOLYTIC lesions + HYPERCALCEMIA. Active = plasma-cell neoplasm + a MYELOMA-DEFINING EVENT (bone lesions not required)."),
+ ]},
+ {"id": "l10-rbc", "label": "L10 · Red Cells, Coagulation & Platelets", "color": "#7a2e4a", "rows": [
+  ("Indices", "MCV = average VOLUME · MCH = average hemoglobin MASS per cell · MCHC = hemoglobin CONCENTRATION in packed cells."),
+  ("Morphology clues", "SIZE · HEMOGLOBINIZATION (color: normo-/HYPOCHROMIC) · SHAPE."),
+  ("Small vs big", "Microcytic hypochromic = HEMOGLOBIN SYNTHESIS disorder. Macrocytic = impaired ERYTHROID PRECURSOR MATURATION. Normocytic: SHAPE is the clue."),
+  ("Anemia", "Reduces OXYGEN-CARRYING capacity; defined by HEMOGLOBIN below the cutoff for age, sex, pregnancy. WHO 2024 (15–65): < 13 g/dL men, < 12 g/dL nonpregnant women. Read Hb/Hct against PLASMA volume."),
+  ("Hemolysis", "Survival < ~120 DAYS; breakdown products ↑; EPO and reticulocytes ↑ if marrow compensates; blunted by marrow disease, nutrient deficiency, RENAL disease, infection."),
+  ("Extravascular", "Old red cells die in MACROPHAGES (spleen, liver, marrow) — age-dependent SURFACE PROTEIN changes. Most hemolytic anemias: premature destruction in PHAGOCYTES = EXTRAVASCULAR."),
+  ("Hereditary spherocytosis", "Lose lipid MEMBRANE → RIGID spherocytes → TRAPPED in spleen → eaten by splenic macrophages."),
+  ("Diminished erythropoiesis", "Megaloblastic · vitamin B12 deficiency · IRON deficiency · APLASTIC anemia."),
+  ("Initiation", "★ TISSUE FACTOR–VIIa activates IX and X; external bleeding NOT required."),
+  ("Key reactions", "★ IXa + VIIIa → Xa · Xa + Va → THROMBIN (from prothrombin) · thrombin: fibrinogen → fibrin · XIIIa crosslinks. COFACTORS = VIIIa and Va; Ca²⁺ + phospholipid assemble complexes."),
+  ("Regulation vs fibrinolysis", "LIMIT coagulation: ANTITHROMBIN + activated PROTEIN C with PROTEIN S. Fibrinolysis (separate): plasminogen → PLASMIN degrades fibrin."),
+  ("Thrombocytopenia", "Reduced marrow production · IMMUNE destruction (ITP) · drug reactions (immune HIT)."),
+  ("Thrombocytosis", "REACTIVE: inflammation, infection, IRON deficiency · PRIMARY: clonal marrow disorder."),
+  ("Qualitative platelet", "Inherited: ADHESION, AGGREGATION, SECRETION · Acquired: external factors, systemic disease."),
+  ("HIT", "Immune heparin-induced thrombocytopenia: platelet ACTIVATION → THROMBOSIS despite a falling count."),
+ ]},
 ]
 
 BANNED = ["first-line", "drug of choice", "treatment of choice", "next step", "surgically repaired"]
@@ -244,16 +337,19 @@ BANNED = ["first-line", "drug of choice", "treatment of choice", "next step", "s
 def main():
     for t in T:
         rows = []
-        for term, fact in t["rows"]:
+        for r in t["rows"]:
+            if isinstance(r, dict):
+                rows.append({k: html.escape(v, quote=False) for k, v in r.items()})
+                continue
             for w in BANNED:
-                assert w not in (term + fact).lower(), (t["id"], w)
-            rows.append((html.escape(term, quote=False), html.escape(fact, quote=False)))
+                assert w not in " ".join(r).lower(), (t["id"], w)
+            rows.append(tuple(html.escape(x, quote=False) for x in r))
         t["rows"] = rows
     page = render(
         title="Cram Sheet — Clinical Pathophysiology I Exam 2",
         kicker="Clinical Pathophysiology I · Exam 2 · Class of 2028",
         h1="Clinical Pathophysiology I Exam 2 Cram Sheet",
-        sub="Lectures 6 Cardiac, 7 Vascular, 8 Immunity and 9 Pulmonary, condensed. Lecture 10 is added when it is posted. Mechanism only, never management.",
+        sub="Lectures 6 Cardiac, 7 Vascular, 8 Immunity, 9 Pulmonary and 10 Blood Disorders, condensed. ★ = the lecturer said to know it. Mechanism only, never management.",
         topics=T,
         guide_href="cp-exam-2-study-guide.html",
         footer_note="Condensed from the Clinical Pathophysiology I Exam 2 Study Guide (Class of 2028). For the full explanation and figures behind any of these, see the full guide.",

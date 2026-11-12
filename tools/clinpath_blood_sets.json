@@ -1,0 +1,1751 @@
+{
+ "set1": [
+  {
+   "topic": "Leukemia",
+   "io": "Describe the molecular mechanisms of blood disorders",
+   "slot": "pathogenesis",
+   "q": "In acute leukemia, acquired mutations in which genes block the differentiation of immature cells?",
+   "opts": [
+    [
+     "Immunoglobulin genes",
+     "Rearranging immunoglobulin genes is NORMAL B-cell development (V(D)J recombination in the marrow). Maturation arrest comes from acquired mutations in transcription factors.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Coagulation factor genes",
+     "Coagulation-factor genes are not tied to leukemic maturation arrest. In acute leukemia, the block in differentiation comes from acquired mutations in transcription factors.",
+     "adjacent fact"
+    ],
+    [
+     "Red-cell membrane genes",
+     "Red-cell membrane genes are not tied to leukemic maturation arrest. The block in differentiation of immature lymphoid or myeloid cells comes from acquired mutations in transcription factors.",
+     "adjacent fact"
+    ],
+    [
+     "Transcription factor genes",
+     "Correct. Acquired mutations in transcription factors, which regulate the differentiation of immature lymphoid or myeloid cells, produce the maturation arrest of acute leukemia."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 20"
+  },
+  {
+   "topic": "B cells and clonality",
+   "io": "Review the functions of blood cells",
+   "slot": "B cells",
+   "q": "Into which cells do activated, selected B cells differentiate?",
+   "opts": [
+    [
+     "T cells or natural killer cells",
+     "T cells and natural killer cells are separate lymphoid lines from the lymphoid progenitor, not products of B-cell activation. Selected B cells become plasma cells or memory B cells.",
+     "adjacent fact"
+    ],
+    [
+     "Plasma cells or memory B cells",
+     "Correct. After antigen activation and selection, B cells differentiate into plasma cells (which produce antibody) or memory B cells."
+    ],
+    [
+     "Lymphoblasts or myeloblasts",
+     "Lymphoblasts and myeloblasts are the immature malignant cells of acute leukemia. Normal activated, selected B cells differentiate into plasma cells or memory B cells.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Monocytes or macrophages",
+     "Monocytes and their macrophages are myeloid cells. Activated, selected B cells differentiate into plasma cells or memory B cells.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 15, 24"
+  },
+  {
+   "topic": "Coagulation disorders",
+   "io": "Describe the etiologies and pathophysiological processes of coagulation disorders",
+   "slot": "von Willebrand",
+   "q": "What does von Willebrand factor do?",
+   "opts": [
+    [
+     "Activates factor X together with factor IXa",
+     "Activating factor X is the job of IXa with its cofactor VIIIa. Von Willebrand factor supports platelet adhesion and carries and stabilizes factor VIII.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Degrades fibrin once a clot has formed",
+     "Degrading fibrin is plasmin's job in fibrinolysis. Von Willebrand factor supports platelet adhesion and carries and stabilizes factor VIII.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Supports platelet adhesion and stabilizes factor VIII",
+     "Correct. Von Willebrand factor supports platelet adhesion and carries and stabilizes factor VIII, which is why von Willebrand disease is listed with the hemophilias as a bleeding disorder."
+    ],
+    [
+     "Limits coagulation together with protein S",
+     "Activated protein C with protein S (and antithrombin) limits coagulation. Von Willebrand factor supports platelet adhesion and stabilizes factor VIII.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 46"
+  },
+  {
+   "topic": "Multiple myeloma",
+   "io": "Describe the process of bone marrow neoplasia",
+   "slot": "myeloma",
+   "q": "Which consequences do monoclonal proteins and marrow infiltration cause in myeloma?",
+   "opts": [
+    [
+     "Leukostasis in the lungs and brain",
+     "Leukostasis is impaired microcirculation from a high white-cell burden, often in the lungs or brain. Myeloma's monoclonal proteins and marrow infiltration cause renal injury, anemia and impaired immunity.",
+     "competing diagnosis"
+    ],
+    [
+     "Thrombosis with a falling platelet count",
+     "Thrombosis despite a falling platelet count is immune heparin-induced thrombocytopenia. Myeloma's proteins and marrow infiltration cause renal injury, anemia and impaired immunity.",
+     "competing diagnosis"
+    ],
+    [
+     "Renal injury, anemia and impaired immunity",
+     "Correct. In multiple myeloma, monoclonal proteins and marrow infiltration can cause renal injury, anemia and impaired immunity; altered bone remodeling adds osteolytic lesions and hypercalcemia."
+    ],
+    [
+     "Raised hematocrit from plasma loss",
+     "A hematocrit raised by reduced plasma volume is relative erythrocytosis. Myeloma's marrow infiltration causes anemia, along with renal injury and impaired immunity.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 27"
+  },
+  {
+   "topic": "Red-cell indices and morphology",
+   "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders",
+   "slot": "morphology",
+   "q": "Microcytic hypochromic anemias are caused by disorders of what?",
+   "opts": [
+    [
+     "Hemoglobin synthesis",
+     "Correct. Microcytic hypochromic anemias are caused by disorders of hemoglobin synthesis, which is why iron deficiency, thalassemia and sideroblastic anemia sit in the microcytic group."
+    ],
+    [
+     "Erythroid precursor maturation",
+     "Impaired maturation of erythroid precursors in the marrow is the usual story of the MACROCYTIC anemias. Small, pale cells point to a disorder of hemoglobin synthesis.",
+     "competing diagnosis"
+    ],
+    [
+     "Red-cell membrane structure",
+     "A membrane defect makes rigid spherocytes that the spleen destroys: hemolysis, not microcytic hypochromia. Small pale cells come from disordered hemoglobin synthesis.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Red-cell survival in the blood",
+     "Shortened survival is hemolysis, a destruction mechanism. Microcytic hypochromic anemias are a production problem: disorders of hemoglobin synthesis.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 32, 33"
+  },
+  {
+   "topic": "Coagulation reactions",
+   "io": "Describe the etiologies and pathophysiological processes of coagulation disorders",
+   "slot": "laboratory pathways",
+   "q": "What does the PT (prothrombin time) assess?",
+   "opts": [
+    [
+     "Intrinsic factors XII, XI, IX and VIII",
+     "The intrinsic factors are assessed by the aPTT (activated partial thromboplastin time), not the PT. The PT assesses extrinsic factor VII and the common factors.",
+     "competing diagnosis"
+    ],
+    [
+     "Extrinsic factor VII and the common factors",
+     "Correct. The PT (prothrombin time) assesses the extrinsic factor (VII) and the common factors (X, V, II and I); the aPTT (activated partial thromboplastin time) assesses the intrinsic factors XII, XI, IX and VIII plus the common ones."
+    ],
+    [
+     "Plasmin's breakdown of fibrin",
+     "Plasminogen becoming plasmin to degrade fibrin is fibrinolysis, a separate process. The PT assesses extrinsic factor VII and the common factors.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Platelet adhesion via von Willebrand factor",
+     "Platelet adhesion is a platelet function that von Willebrand factor supports. The PT assesses the coagulation factors: extrinsic VII and the common factors.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 44"
+  },
+  {
+   "topic": "Neutrophils and bands",
+   "io": "Review the anatomy of the blood cells",
+   "slot": "bands",
+   "q": "Which appearance identifies a band neutrophil on a smear?",
+   "opts": [
+    [
+     "Two-lobed nucleus with large red secondary granules",
+     "A nucleus with two lobes and red secondary granules is the eosinophil. The band neutrophil has a single kidney-bean nucleus indented more than half its width.",
+     "competing diagnosis"
+    ],
+    [
+     "Round nucleus with scant pale cytoplasm, no granules",
+     "A round mature nucleus with clumped chromatin and scant light blue cytoplasm without granules is the lymphocyte. The band has a kidney-bean nucleus indented more than half its width.",
+     "competing diagnosis"
+    ],
+    [
+     "Two to three lobes hidden by dark granules",
+     "A mature nucleus of two to three lobes obscured by numerous basophilic granules is the basophil. The band neutrophil has one kidney-bean nucleus indented more than half its width.",
+     "competing diagnosis"
+    ],
+    [
+     "Kidney-bean nucleus indented over half its width",
+     "Correct. A band neutrophil has a kidney-bean nucleus with mature chromatin and no nucleoli, an indentation greater than half the diameter, and secondary granules only."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 10, 12, 13, 14"
+  },
+  {
+   "topic": "Leukocytes and their counts",
+   "io": "Compare and contrast the etiologies and pathophysiological processes of white blood cell disorders",
+   "slot": "counts",
+   "q": "Why must both the relative and the absolute white cell counts be read?",
+   "opts": [
+    [
+     "A fall in one type can falsely raise another's percentage",
+     "Correct. Percentages are shares of one total, so an absolute decrease in one cell type can show an artificially increased relative count in another. Reading the absolute count shows whether that cell really rose."
+    ],
+    [
+     "The relative count gives the number of cells per microliter",
+     "That describes the absolute count. The relative count is a percentage of the white cells; the absolute count, total white count times that fraction, is the number per microliter.",
+     "reversed direction or value"
+    ],
+    [
+     "Each cell's percentage is measured apart from the others",
+     "The percentages are not independent: they are shares of one total, so when one cell type falls in absolute terms another's percentage can rise artificially. That is why both counts must be read.",
+     "reversed direction or value"
+    ],
+    [
+     "The absolute count ignores the total white blood cell count",
+     "The absolute count is built from the total: white blood cell count times the cell's fraction. It is the relative percentage alone that can mislead when another cell type falls.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 7"
+  },
+  {
+   "topic": "Lymphoid neoplasms",
+   "io": "Compare and contrast the etiologies and pathophysiological processes of white blood cell disorders",
+   "slot": "classification",
+   "q": "Acute lymphoblastic leukemia is a malignancy of which cells?",
+   "opts": [
+    [
+     "Mature B cells",
+     "A neoplasm of mature B cells is chronic lymphocytic leukemia/small lymphocytic lymphoma. Acute lymphoblastic leukemia is a malignancy of PRECURSOR B or T cells.",
+     "competing diagnosis"
+    ],
+    [
+     "Germinal-center B cells",
+     "Germinal-center B cells give rise to classic Hodgkin lymphoma. Acute lymphoblastic leukemia arises from precursor B or T cells.",
+     "competing diagnosis"
+    ],
+    [
+     "Differentiated plasma cells",
+     "Differentiated antibody-producing B-lineage cells give plasma-cell myeloma. Acute lymphoblastic leukemia arises from precursor B or T cells.",
+     "competing diagnosis"
+    ],
+    [
+     "Precursor B or T cells",
+     "Correct. Acute lymphoblastic leukemia/lymphoma is a malignancy of precursor B or T cells (lymphoblasts): B-ALL/LBL from the B-cell precursor in the marrow, T-ALL/LBL from the T-cell precursor in the thymus."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 23, 28"
+  },
+  {
+   "topic": "Anemia by cell size and marrow response",
+   "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders",
+   "slot": "size groups",
+   "q": "Which anemia is listed in the microcytic group?",
+   "opts": [
+    [
+     "Megaloblastic anemia",
+     "Megaloblastic anemia, from vitamin B12 or folate deficiency, is MACROCYTIC (above 100 fL). Sideroblastic anemia is the microcytic one here.",
+     "reversed direction or value"
+    ],
+    [
+     "Sideroblastic anemia",
+     "Correct. The microcytic group (mean cell volume below 80 fL, femtoliters) lists iron deficiency, thalassemia, inflammation in some cases, and sideroblastic anemia."
+    ],
+    [
+     "Anemia of marrow failure",
+     "Marrow failure or infiltration is listed under the NORMOCYTIC anemias (80 to 100 fL). Sideroblastic anemia is the microcytic one here.",
+     "competing diagnosis"
+    ],
+    [
+     "Anemia of renal disease",
+     "Inflammation or renal disease is listed under the normocytic anemias. Sideroblastic anemia belongs to the microcytic group with iron deficiency and thalassemia.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 33"
+  },
+  {
+   "topic": "Leukemia",
+   "io": "Describe the process of bone marrow neoplasia",
+   "slot": "pathogenesis",
+   "q": "What is the primary pathogenic defect in acute leukemia?",
+   "opts": [
+    [
+     "Maturation arrest",
+     "Correct. The primary pathogenic defect in acute leukemia is maturation arrest: acquired mutations in transcription factors block differentiation, and other mutations let the cells proliferate independently of growth factors."
+    ],
+    [
+     "Ineffective hematopoiesis",
+     "Ineffective hematopoiesis with dysplasia defines the myelodysplastic neoplasms, which can progress to acute myeloid leukemia. The primary defect in acute leukemia is maturation arrest.",
+     "competing diagnosis"
+    ],
+    [
+     "Premature red-cell destruction",
+     "Shortened red-cell survival is hemolysis, a red-cell disorder. The primary pathogenic defect in acute leukemia is maturation arrest of immature lymphoid or myeloid cells.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Reactive bone marrow stimulation",
+     "A reactive rise is a normal marrow answering a signal, not a malignant defect. Acute leukemia's primary pathogenic defect is maturation arrest from acquired mutations.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 20"
+  },
+  {
+   "topic": "Polycythemia",
+   "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders",
+   "slot": "erythrocytosis",
+   "q": "What is relative erythrocytosis?",
+   "opts": [
+    [
+     "An increase in red-cell mass",
+     "An increased red-cell mass is ABSOLUTE erythrocytosis. Relative erythrocytosis has no extra red cells: the plasma volume is reduced.",
+     "competing diagnosis"
+    ],
+    [
+     "A clonal myeloproliferative neoplasm",
+     "A clonal myeloproliferative neoplasm raising red-cell mass is polycythemia vera, an absolute erythrocytosis. Relative erythrocytosis is reduced plasma volume.",
+     "competing diagnosis"
+    ],
+    [
+     "Less plasma without more red-cell mass",
+     "Correct. Relative erythrocytosis is reduced plasma volume without increased red-cell mass, such as dehydration; hemoglobin and hematocrit rise only because the plasma has shrunk."
+    ],
+    [
+     "A marrow response to hypoxia",
+     "An erythropoietic response to hypoxia or increased erythropoietin is secondary erythrocytosis, which raises red-cell mass. Relative erythrocytosis is reduced plasma volume.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 41"
+  },
+  {
+   "topic": "Anemia definition and blood loss",
+   "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders",
+   "slot": "definition",
+   "q": "Under the World Health Organization 2024 cutoffs (ages 15 to 65), below what hemoglobin is a nonpregnant woman anemic?",
+   "opts": [
+    [
+     "10 g/dL",
+     "Too low. The World Health Organization 2024 cutoff for nonpregnant women aged 15 to 65 is a hemoglobin below 12 g/dL.",
+     "reversed direction or value"
+    ],
+    [
+     "11 g/dL",
+     "Too low. The World Health Organization 2024 cutoff for nonpregnant women aged 15 to 65 is below 12 g/dL.",
+     "reversed direction or value"
+    ],
+    [
+     "12 g/dL",
+     "Correct. The World Health Organization 2024 cutoffs for ages 15 to 65 are a hemoglobin below 13 g/dL in men and below 12 g/dL in nonpregnant women."
+    ],
+    [
+     "13 g/dL",
+     "Below 13 g/dL is the World Health Organization 2024 cutoff for MEN aged 15 to 65. For nonpregnant women it is below 12 g/dL.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 35",
+   "ordered": true
+  },
+  {
+   "topic": "Monocytes, eosinophils and basophils",
+   "io": "Compare and contrast the etiologies and pathophysiological processes of white blood cell disorders",
+   "slot": "eosinophils",
+   "q": "Which three causes should a raised eosinophil count bring to mind first?",
+   "opts": [
+    [
+     "Chronic infections such as tuberculosis",
+     "Chronic infections such as cytomegalovirus and tuberculosis are listed for a raised MONOCYTE count. For eosinophils the three first thoughts are allergy, parasites and drug effects.",
+     "competing diagnosis"
+    ],
+    [
+     "Allergy, parasites and drug effects",
+     "Correct. Think of three things with increased eosinophils: allergy (especially asthma), a parasite, or a drug effect. Eosinophilia can rarely be neoplastic or autoimmune."
+    ],
+    [
+     "Acute bacterial inflammation and sepsis",
+     "Acute bacterial inflammation goes with neutrophilia, and a band rise with infection. A raised eosinophil count points first to allergy, parasites or a drug effect.",
+     "competing diagnosis"
+    ],
+    [
+     "Marrow malignancy before anything else",
+     "Eosinophilia can be neoplastic, but only rarely; malignancy is a consideration if BASOPHILS are elevated. For eosinophils, think first of allergy, parasites and drug effects.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 12, 13"
+  },
+  {
+   "topic": "Blood composition and hematopoiesis",
+   "io": "Review the anatomy of the blood cells",
+   "slot": "anatomy",
+   "q": "In the healthy adult, where does almost all hematopoiesis occur?",
+   "opts": [
+    [
+     "Distal radius, tibia and the small hand bones",
+     "Wrong end of the limbs. Adult hematopoiesis occurs almost entirely in the axial skeleton and the PROXIMAL humerus and femur; the distal long bones and hand bones are not named as sites of adult blood production.",
+     "reversed direction or value"
+    ],
+    [
+     "The thymus and the peripheral lymph nodes",
+     "The thymus is where T-cell precursors develop after leaving the marrow, not where blood cells are produced. Adult hematopoiesis takes place in the marrow of the axial skeleton and proximal humerus and femur.",
+     "adjacent fact"
+    ],
+    [
+     "The spleen and the liver sinusoids",
+     "Neither the spleen nor the liver is given as a site of adult blood production. Most hematopoiesis occurs in the bone marrow, almost all of it in the axial skeleton and proximal humerus and femur.",
+     "adjacent fact"
+    ],
+    [
+     "Axial skeleton, proximal humerus and femur",
+     "Correct. Most hematopoiesis occurs in the bone marrow, and in the healthy adult almost all of it is in the axial skeleton plus the proximal humerus and femur."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 4"
+  },
+  {
+   "topic": "Anemia by cell size and marrow response",
+   "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders",
+   "slot": "size groups",
+   "q": "Which deficiency causes megaloblastic anemia?",
+   "opts": [
+    [
+     "Vitamin B12 or folate deficiency",
+     "Correct. In the macrocytic group (mean cell volume above 100 fL, femtoliters), the megaloblastic causes are vitamin B12 or folate deficiency; liver disease, alcohol, drugs and reticulocytosis are the nonmegaloblastic causes."
+    ],
+    [
+     "Iron deficiency",
+     "Iron deficiency is a disorder of hemoglobin synthesis and sits in the MICROCYTIC group (early on, normocytic). The megaloblastic causes are vitamin B12 or folate deficiency.",
+     "competing diagnosis"
+    ],
+    [
+     "Liver disease or alcohol",
+     "Liver disease and alcohol do cause macrocytosis, but they are listed as NONmegaloblastic causes. Megaloblastic anemia comes from vitamin B12 or folate deficiency.",
+     "competing diagnosis"
+    ],
+    [
+     "Thalassemia",
+     "Thalassemia is a microcytic anemia, a disorder of hemoglobin synthesis. Megaloblastic (macrocytic) anemia comes from vitamin B12 or folate deficiency.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 33"
+  },
+  {
+   "topic": "Coagulation reactions",
+   "io": "Describe the etiologies and pathophysiological processes of coagulation disorders",
+   "slot": "fibrinolysis",
+   "q": "What does plasmin do?",
+   "opts": [
+    [
+     "Activates factor X",
+     "Factor X is activated by tissue factor-VIIa at initiation and by IXa with VIIIa. Plasmin degrades fibrin.",
+     "adjacent fact"
+    ],
+    [
+     "Degrades fibrin",
+     "Correct. In fibrinolysis, plasminogen becomes plasmin, which degrades fibrin; this is separate from the regulation of coagulation by antithrombin and activated protein C."
+    ],
+    [
+     "Crosslinks fibrin",
+     "Crosslinking fibrin is the work of factor XIIIa, which stabilizes the clot. Plasmin does the opposite: it degrades fibrin.",
+     "reversed direction or value"
+    ],
+    [
+     "Converts fibrinogen to fibrin",
+     "Thrombin (IIa) converts fibrinogen (I) to fibrin. Plasmin, formed from plasminogen, degrades fibrin.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 43, 44"
+  },
+  {
+   "topic": "Neutrophils and bands",
+   "io": "Compare and contrast the etiologies and pathophysiological processes of white blood cell disorders",
+   "slot": "neutropenia",
+   "q": "How is an absolute neutrophil count of 750 cells/µL graded?",
+   "opts": [
+    [
+     "Agranulocytosis",
+     "Agranulocytosis needs a count below 200 cells/µL. At 750 the count sits in the moderate band, 500 to 1,000 cells/µL.",
+     "wrong stage or severity"
+    ],
+    [
+     "Severe neutropenia",
+     "Severe neutropenia is below 500 cells/µL. A count of 750 is above that line, in the moderate band of 500 to 1,000.",
+     "wrong stage or severity"
+    ],
+    [
+     "Moderate neutropenia",
+     "Correct. An absolute neutrophil count of 750 cells/µL falls in the moderate band, 500 to 1,000 cells/µL; severe is below 500 and mild is 1,000 to 1,500."
+    ],
+    [
+     "Mild neutropenia",
+     "Mild neutropenia is 1,000 to 1,500 cells/µL. A count of 750 is below that band, in moderate neutropenia (500 to 1,000).",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 9",
+   "ordered": true
+  },
+  {
+   "topic": "B cells and clonality",
+   "io": "Describe the molecular mechanisms of blood disorders",
+   "slot": "B cells",
+   "q": "In V(D)J recombination, which gene segments do light chains use?",
+   "opts": [
+    [
+     "V and J",
+     "Correct. Developing B cells rearrange their immunoglobulin genes in the marrow: heavy chains use V, D and J segments, while light chains use only V and J."
+    ],
+    [
+     "V, D and J",
+     "All three segments are used by HEAVY chains. Light chains have no D segment in their rearrangement; they use V and J only.",
+     "adjacent fact"
+    ],
+    [
+     "V and D",
+     "Light chains do not use a D segment at all; D belongs only to the heavy-chain rearrangement (V, D and J). Light chains join V to J.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "D and J",
+     "D and J both appear in the heavy-chain rearrangement, but light chains lack D. Light chains rearrange V with J.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 15"
+  },
+  {
+   "topic": "Neutrophils and bands",
+   "io": "Compare and contrast the etiologies and pathophysiological processes of white blood cell disorders",
+   "slot": "bands",
+   "q": "What is bandemia?",
+   "opts": [
+    [
+     "More mature neutrophils in the blood",
+     "A rise in mature neutrophils is neutrophilia. Bandemia specifically means more IMMATURE neutrophils, the band forms, in the circulation: a left shift.",
+     "wrong stage or severity"
+    ],
+    [
+     "Fewer than 200 neutrophils/µL",
+     "That is agranulocytosis, profound neutropenia. Bandemia is an increase, not a loss: more immature band neutrophils in the blood.",
+     "reversed direction or value"
+    ],
+    [
+     "More eosinophils from a drug effect",
+     "A drug effect is one of the three things to think of with eosinophilia. Bandemia concerns neutrophils: an increase in their immature band forms.",
+     "adjacent fact"
+    ],
+    [
+     "More immature neutrophils in the blood",
+     "Correct. Bandemia is an increase in immature (band) neutrophils, a left shift, which may accompany infection or other inflammatory stress."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 10"
+  },
+  {
+   "topic": "Lymphoid neoplasms",
+   "io": "Compare and contrast the etiologies and pathophysiological processes of white blood cell disorders",
+   "slot": "classification",
+   "q": "Which two features classify the lymphoid neoplasms?",
+   "opts": [
+    [
+     "Blood count and marrow cellularity",
+     "The peripheral count can be low, normal or high in the same disease, so it cannot classify. Lymphoid neoplasms are classified by lineage and stage of maturation.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Clonality and the white count",
+     "Clonality alone does not establish malignancy, and the count varies. Classification uses the cell's lineage and its stage of maturation.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Patient age and cell size",
+     "Neither age nor cell size is the classifier. Lymphoid neoplasms are classified by cell lineage (B, T or natural killer) and stage of maturation (precursor or mature).",
+     "common lay belief"
+    ],
+    [
+     "Cell lineage and stage of maturation",
+     "Correct. Lymphoid neoplasms are classified by cell lineage and stage of maturation: precursor B or T cells, mature B cells, mature T and natural killer cells, and germinal-center B cells for classic Hodgkin lymphoma."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 23"
+  },
+  {
+   "topic": "Coagulation reactions",
+   "io": "Describe the etiologies and pathophysiological processes of coagulation disorders",
+   "slot": "factor X",
+   "q": "After initiation, which enzyme-cofactor pair activates factor X?",
+   "opts": [
+    [
+     "Factor Xa with factor Va",
+     "Xa with its cofactor Va acts one step later: it converts prothrombin (II) to thrombin (IIa). Factor X is activated by IXa with VIIIa.",
+     "wrong stage or severity"
+    ],
+    [
+     "Thrombin with factor XIIIa",
+     "Thrombin and XIIIa act at the end: thrombin turns fibrinogen into fibrin and XIIIa crosslinks it. Factor X is activated by IXa with VIIIa.",
+     "wrong stage or severity"
+    ],
+    [
+     "Factor IXa with factor VIIIa",
+     "Correct. In the factor X activation step, IXa with its cofactor VIIIa activates X to Xa; Xa with Va then generates thrombin."
+    ],
+    [
+     "Plasmin with protein S",
+     "Plasmin degrades fibrin in fibrinolysis, and protein S helps activated protein C limit coagulation. Factor X is activated by IXa with VIIIa.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 43, 44"
+  },
+  {
+   "topic": "Bone marrow neoplasms",
+   "io": "Describe the etiologies and pathophysiological processes of myeloproliferative syndromes",
+   "slot": "MPN",
+   "q": "Which disorder is one of the myeloproliferative neoplasms?",
+   "opts": [
+    [
+     "Immune thrombocytopenia",
+     "Immune thrombocytopenia is not among the myeloproliferative neoplasms, which are chronic myeloid leukemia, polycythemia vera, essential thrombocythemia and primary myelofibrosis. Watch the ending: thrombocythemia, not thrombocytopenia.",
+     "reversed direction or value"
+    ],
+    [
+     "Chronic lymphocytic leukemia",
+     "Chronic lymphocytic leukemia is a mature B-cell neoplasm, a lymphoid disease. The myeloproliferative neoplasms are myeloid: chronic myeloid leukemia, polycythemia vera, essential thrombocythemia, primary myelofibrosis.",
+     "competing diagnosis"
+    ],
+    [
+     "Hereditary spherocytosis",
+     "Hereditary spherocytosis is not among the myeloproliferative neoplasms (chronic myeloid leukemia, polycythemia vera, essential thrombocythemia, primary myelofibrosis). Essential thrombocythemia is the one listed here.",
+     "competing diagnosis"
+    ],
+    [
+     "Essential thrombocythemia",
+     "Correct. The myeloproliferative neoplasms are chronic myeloid leukemia, polycythemia vera, essential thrombocythemia and primary myelofibrosis: clonal proliferations of myeloid cells."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 18"
+  },
+  {
+   "topic": "Coagulation disorders",
+   "io": "Describe the molecular mechanisms of blood disorders",
+   "slot": "thrombophilia",
+   "q": "What is the cause of factor V Leiden thrombophilia?",
+   "opts": [
+    [
+     "A genetic mutation",
+     "Correct. Factor V Leiden is a thrombophilia (excessive clotting) caused by a genetic mutation; antiphospholipid syndrome, the other thrombophilia listed, is an autoimmune response."
+    ],
+    [
+     "An autoimmune response",
+     "An autoimmune response causes antiphospholipid syndrome, the other thrombophilia. Factor V Leiden is a genetic mutation.",
+     "competing diagnosis"
+    ],
+    [
+     "A factor V deficiency",
+     "Factor V Leiden causes excessive clotting, not the bleeding a deficiency would; the bleeding deficiencies listed are factor VIII and IX (hemophilia A and B). Its cause is a genetic mutation.",
+     "common lay belief"
+    ],
+    [
+     "An immune reaction to heparin",
+     "An immune reaction to heparin is heparin-induced thrombocytopenia, a platelet disorder. Factor V Leiden is a genetic mutation.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 46"
+  },
+  {
+   "topic": "Hemolytic anemia",
+   "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders",
+   "slot": "spherocytosis",
+   "q": "In hereditary spherocytosis, why are the red cells destroyed early?",
+   "opts": [
+    [
+     "Antibodies lyse the cells within the circulation",
+     "The sequence shows no antibody and no lysis in the blood: spherocytes are trapped in the spleen and destroyed by splenic macrophages.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Their hemoglobin synthesis fails in the marrow",
+     "Failed hemoglobin synthesis makes small, pale (microcytic hypochromic) cells, a production problem. Spherocytes are destroyed because they are rigid and get trapped in the spleen.",
+     "competing diagnosis"
+    ],
+    [
+     "Rigid spherocytes are trapped and eaten in the spleen",
+     "Correct. Biconcave young cells lose lipid membrane on repeated passage through the spleen and circulation, become rigid, inflexible spherocytes, are trapped in the spleen and destroyed prematurely by splenic macrophages: extravascular hemolysis."
+    ],
+    [
+     "The marrow releases them before they mature",
+     "Early release of immature cells describes a left shift of neutrophils, not spherocytosis. Spherocytes are released as normal biconcave cells and become rigid as they lose membrane.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 39"
+  },
+  {
+   "topic": "Hemolytic anemia",
+   "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders",
+   "slot": "hemolysis",
+   "q": "What is the usual red-cell lifespan that hemolysis shortens?",
+   "opts": [
+    [
+     "About 30 days",
+     "Far too short for a normal red cell. Red-cell survival is usually about 120 days; hemolytic anemia shortens it below that.",
+     "reversed direction or value"
+    ],
+    [
+     "About 60 days",
+     "Too short. The usual red-cell lifespan is about 120 days, and hemolysis is defined by survival shortened below it.",
+     "reversed direction or value"
+    ],
+    [
+     "About 120 days",
+     "Correct. In hemolytic anemia red-cell survival is shortened below the usual lifespan of about 120 days, hemoglobin breakdown products increase, and a compensating marrow raises reticulocyte production."
+    ],
+    [
+     "About 180 days",
+     "Too long. The usual red-cell lifespan is about 120 days; hemolysis shortens survival below that.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 37",
+   "ordered": true
+  },
+  {
+   "topic": "Bone marrow neoplasms",
+   "io": "Describe the etiologies and pathophysiological processes of myeloproliferative syndromes",
+   "slot": "MPN",
+   "q": "Which process defines the myeloproliferative neoplasms?",
+   "opts": [
+    [
+     "Clonal proliferation of myeloid cells",
+     "Correct. Myeloproliferative neoplasms are a clonal proliferation of myeloid cells: chronic myeloid leukemia, polycythemia vera, essential thrombocythemia and primary myelofibrosis."
+    ],
+    [
+     "Ineffective hematopoiesis with dysplasia",
+     "Ineffective hematopoiesis with cytopenias and dysplasia defines the myelodysplastic neoplasms. The myeloproliferative neoplasms are a clonal proliferation of myeloid cells.",
+     "competing diagnosis"
+    ],
+    [
+     "Impaired differentiation with blast growth",
+     "Impaired differentiation with abnormal blast proliferation is acute myeloid leukemia. The myeloproliferative neoplasms are a clonal proliferation of myeloid cells.",
+     "competing diagnosis"
+    ],
+    [
+     "Clonal growth of antibody-making B cells",
+     "A clonal malignancy of differentiated antibody-producing B-lineage cells is plasma-cell myeloma, a lymphoid neoplasm. The myeloproliferative neoplasms are clonal proliferations of MYELOID cells.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 18"
+  },
+  {
+   "topic": "Red-cell indices and morphology",
+   "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders",
+   "slot": "morphology",
+   "q": "What does hypochromia of red cells reflect?",
+   "opts": [
+    [
+     "Reduced cell size",
+     "Reduced size is microcytosis, described by the size terms (normocytic, microcytic, macrocytic). Hypochromia is about color, the degree of hemoglobinization.",
+     "adjacent fact"
+    ],
+    [
+     "Reduced hemoglobinization",
+     "Correct. The degree of hemoglobinization is reflected in the color of red cells: normochromic or hypochromic. Hypochromic cells carry less hemoglobin, as in the microcytic hypochromic anemias of impaired hemoglobin synthesis."
+    ],
+    [
+     "Abnormal cell shape",
+     "Shape is the third morphologic clue, separate from color. Hypochromia describes reduced hemoglobinization seen as paler red cells.",
+     "adjacent fact"
+    ],
+    [
+     "Increased cell volume",
+     "Increased volume is macrocytosis, a size term. Hypochromia is a color term: reduced hemoglobinization of the red cell.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 31, 32"
+  },
+  {
+   "topic": "Diminished erythropoiesis",
+   "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders",
+   "slot": "production",
+   "q": "Which anemia results from diminished erythropoiesis?",
+   "opts": [
+    [
+     "Aplastic anemia",
+     "Correct. The anemias of diminished erythropoiesis are megaloblastic anemia, vitamin B12 deficiency anemia, iron deficiency anemia and aplastic anemia: too little production rather than loss or destruction."
+    ],
+    [
+     "Hereditary spherocytosis",
+     "Hereditary spherocytosis is a hemolytic anemia: rigid spherocytes are destroyed in the spleen. Aplastic anemia is the anemia of diminished erythropoiesis here.",
+     "competing diagnosis"
+    ],
+    [
+     "Anemia of acute blood loss",
+     "Blood-loss anemia is loss of formed cells, and the marrow answers with an increased reticulocyte response. Aplastic anemia is a failure of production.",
+     "competing diagnosis"
+    ],
+    [
+     "Extravascular hemolytic anemia",
+     "Extravascular hemolysis is premature destruction within phagocytes. Aplastic anemia is the anemia of diminished erythropoiesis.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 40"
+  },
+  {
+   "topic": "Blood composition and hematopoiesis",
+   "io": "Review the anatomy of the blood cells",
+   "slot": "anatomy",
+   "q": "Which progenitor gives rise to megakaryocytes?",
+   "opts": [
+    [
+     "Lymphoid progenitor",
+     "The lymphoid progenitor gives B cells, T cells and natural killer cells, none of which make platelets. Megakaryocytes sit on the myeloid branch with erythroid precursors, granulocytes and monocytes.",
+     "adjacent fact"
+    ],
+    [
+     "Myeloid progenitor",
+     "Correct. In the simplified lineage model the multipotent stem cell gives myeloid and lymphoid progenitors, and the myeloid progenitor gives erythroid precursors, megakaryocytes (which make platelets), granulocytes and monocytes."
+    ],
+    [
+     "Erythroid precursor",
+     "The erythroid precursor is a sister product of the myeloid progenitor, and it matures into erythrocytes. Megakaryocytes come from the myeloid progenitor directly and make platelets.",
+     "adjacent fact"
+    ],
+    [
+     "Granulocyte precursor",
+     "The granulocyte line gives neutrophils, eosinophils and basophils. Megakaryocytes are a separate product of the myeloid progenitor, and they make platelets rather than granulocytes.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 5"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Hemolytic anemia",
+   "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders",
+   "slot": "hemolysis",
+   "q": "What is extravascular hemolysis?",
+   "opts": [
+    [
+     "Premature red-cell destruction within phagocytes",
+     "Correct. In the majority of hemolytic anemias the premature destruction of red cells occurs within phagocytes, the same cells that normally remove old red cells; this is called extravascular hemolysis."
+    ],
+    [
+     "Red-cell rupture within the circulation",
+     "Destruction within the circulation is the other route, intravascular hemolysis. Extravascular hemolysis is premature destruction inside phagocytes.",
+     "competing diagnosis"
+    ],
+    [
+     "Red-cell loss from bleeding vessels",
+     "Losing red cells from the vessels is blood-loss anemia, not hemolysis. Extravascular hemolysis is premature destruction of red cells within phagocytes.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Failure of red-cell production in marrow",
+     "Failed production is anemia of diminished erythropoiesis, such as aplastic anemia. Extravascular hemolysis is a destruction mechanism: premature removal within phagocytes.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 38, 39"
+  },
+  {
+   "topic": "Coagulation reactions",
+   "io": "Describe the etiologies and pathophysiological processes of coagulation disorders",
+   "slot": "laboratory pathways",
+   "q": "Which factors make up the common pathway?",
+   "opts": [
+    [
+     "XII, XI, IX and VIII",
+     "XII, XI, IX and VIII are the INTRINSIC factors the aPTT (activated partial thromboplastin time) assesses. The common pathway is X, V, II and I.",
+     "adjacent fact"
+    ],
+    [
+     "VII and tissue factor",
+     "Tissue factor with VII is the extrinsic start, assessed by the PT (prothrombin time). The common pathway is X, V, II and I.",
+     "adjacent fact"
+    ],
+    [
+     "VIII, IX and XIII",
+     "VIII and IX are intrinsic factors, and XIII crosslinks fibrin. The common pathway is X, V, II and I.",
+     "adjacent fact"
+    ],
+    [
+     "X, V, II and I",
+     "Correct. The common pathway is factors X, V, II and I, which generate thrombin and fibrin; both the PT (prothrombin time) and the aPTT (activated partial thromboplastin time) assess it."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 44"
+  },
+  {
+   "topic": "Anemia by cell size and marrow response",
+   "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders",
+   "slot": "size groups",
+   "q": "Early iron deficiency usually falls in which mean cell volume group?",
+   "opts": [
+    [
+     "Normocytic",
+     "Correct. Established iron deficiency is microcytic, but EARLY iron deficiency is listed with the normocytic anemias (mean cell volume 80 to 100 fL, femtoliters), before the cells have shrunk."
+    ],
+    [
+     "Microcytic",
+     "Iron deficiency becomes microcytic once established, but the early stage is listed in the normocytic group (80 to 100 fL, femtoliters).",
+     "wrong stage or severity"
+    ],
+    [
+     "Macrocytic",
+     "Macrocytic anemias come from vitamin B12 or folate deficiency or from liver disease, alcohol, drugs or reticulocytosis. Early iron deficiency is normocytic.",
+     "reversed direction or value"
+    ],
+    [
+     "Megaloblastic",
+     "Megaloblastic anemia is the vitamin B12 or folate subset of the macrocytic group. Early iron deficiency is normocytic, later microcytic.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 33"
+  },
+  {
+   "topic": "Bone marrow neoplasms",
+   "io": "Describe the etiologies and pathophysiological processes of myelodysplastic syndromes",
+   "slot": "MDS",
+   "q": "Which bone marrow neoplasm is defined by ineffective hematopoiesis with cytopenias and dysplasia?",
+   "opts": [
+    [
+     "Myelodysplastic neoplasm",
+     "Correct. Myelodysplastic neoplasms (the World Health Organization's term; myelodysplastic syndromes remains in use elsewhere) show ineffective hematopoiesis with cytopenias and dysplasia, and they can progress to acute myeloid leukemia."
+    ],
+    [
+     "Myeloproliferative neoplasm",
+     "Myeloproliferative neoplasms are clonal PROLIFERATION of myeloid cells: chronic myeloid leukemia, polycythemia vera, essential thrombocythemia and primary myelofibrosis. Ineffective hematopoiesis with dysplasia defines the myelodysplastic neoplasms.",
+     "competing diagnosis"
+    ],
+    [
+     "Acute myeloid leukemia",
+     "Acute myeloid leukemia is a myeloid malignancy with impaired differentiation and abnormal blast proliferation, distinct from the dysplastic process. Ineffective hematopoiesis with cytopenias and dysplasia is the myelodysplastic neoplasm.",
+     "competing diagnosis"
+    ],
+    [
+     "Plasma-cell myeloma",
+     "Myeloma is a clonal plasma-cell malignancy of the B lineage, not a myeloid neoplasm. Ineffective hematopoiesis with cytopenias and dysplasia defines the myelodysplastic neoplasms.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 18"
+  },
+  {
+   "topic": "Risk factors and neoplasm lineages",
+   "io": "Describe the etiologies and pathophysiological processes of myeloproliferative syndromes",
+   "slot": "lineages",
+   "q": "On the myeloid branch, which neoplasm arises from the red-cell line?",
+   "opts": [
+    [
+     "Essential thrombocythemia",
+     "Essential thrombocythemia (and megakaryocytic leukemia) arises from the megakaryocyte line. Polycythemia vera arises from the red-cell line.",
+     "adjacent fact"
+    ],
+    [
+     "Polycythemia vera",
+     "Correct. In the division of hematologic neoplasms by lineage, the red-cell line of the myeloid stem cell gives polycythemia vera and erythroid leukemia."
+    ],
+    [
+     "Chronic lymphocytic leukemia",
+     "Chronic lymphocytic leukemia is on the lymphoid branch, a mature B-cell neoplasm. On the myeloid branch, the red-cell line gives polycythemia vera.",
+     "competing diagnosis"
+    ],
+    [
+     "Monocytic leukemia",
+     "Monocytic leukemia arises from the monocyte line of the myeloid branch. The red-cell line gives polycythemia vera and erythroid leukemia.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 26"
+  },
+  {
+   "topic": "Platelet disorders",
+   "io": "Discuss the etiologies and pathophysiological processes of platelet disorders",
+   "slot": "HIT",
+   "q": "What happens in immune heparin-induced thrombocytopenia?",
+   "opts": [
+    [
+     "Bleeding from the falling platelet count",
+     "A falling count would be expected to bleed, but in immune heparin-induced thrombocytopenia platelet activation causes thrombosis despite the falling count.",
+     "common lay belief"
+    ],
+    [
+     "Reduced marrow production of platelets",
+     "Reduced marrow production is a separate cause of thrombocytopenia. Heparin-induced thrombocytopenia is an immune drug reaction in which platelet activation causes thrombosis.",
+     "competing diagnosis"
+    ],
+    [
+     "A clonal rise in the platelet count",
+     "A clonal marrow disorder causes PRIMARY thrombocytosis, a rising count. Heparin-induced thrombocytopenia lowers the count while activated platelets cause thrombosis.",
+     "reversed direction or value"
+    ],
+    [
+     "Thrombosis despite a falling platelet count",
+     "Correct. In immune heparin-induced thrombocytopenia, platelet activation causes thrombosis despite a falling count, so a low count does not mean a bleeding tendency here."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 50"
+  },
+  {
+   "topic": "Lymphoid neoplasms",
+   "io": "Review the anatomy of the blood cells",
+   "slot": "development",
+   "q": "Where do T-cell precursors develop?",
+   "opts": [
+    [
+     "Bone marrow",
+     "The bone marrow is where the B-cell precursor develops. T-cell precursors develop in the thymus.",
+     "adjacent fact"
+    ],
+    [
+     "Thymus",
+     "Correct. The lymphoid progenitor branches into the B-cell precursor in the bone marrow and the T-cell precursor in the thymus, the origin of T-cell acute lymphoblastic leukemia/lymphoma."
+    ],
+    [
+     "Germinal centers",
+     "Germinal centers are where activated B cells undergo somatic hypermutation and affinity maturation. T-cell precursors develop in the thymus.",
+     "adjacent fact"
+    ],
+    [
+     "Spleen",
+     "The spleen is not where T-cell precursors develop. The lymphoid progenitor branches into the B-cell precursor in the bone marrow and the T-cell precursor in the thymus.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 24"
+  },
+  {
+   "topic": "Neutrophils and bands",
+   "io": "Compare and contrast the etiologies and pathophysiological processes of white blood cell disorders",
+   "slot": "neutropenia",
+   "q": "Which absolute neutrophil count defines severe neutropenia?",
+   "opts": [
+    [
+     "Below 200 cells/µL",
+     "That cut-off is agranulocytosis, deeper than severe neutropenia. Severe neutropenia is an absolute neutrophil count below 500 cells/µL.",
+     "wrong stage or severity"
+    ],
+    [
+     "Below 500 cells/µL",
+     "Correct. Neutropenia is graded by absolute neutrophil count: mild 1,000 to 1,500, moderate 500 to 1,000, severe below 500 cells/µL, and agranulocytosis below 200. Severe neutropenia increases the risk of serious infection."
+    ],
+    [
+     "500 to 1,000 cells/µL",
+     "This range is moderate neutropenia. Severe neutropenia begins below 500 cells/µL.",
+     "wrong stage or severity"
+    ],
+    [
+     "1,000 to 1,500 cells/µL",
+     "This range is mild neutropenia. Severe neutropenia is an absolute neutrophil count below 500 cells/µL.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 9",
+   "ordered": true
+  },
+  {
+   "topic": "Leukocytes and their counts",
+   "io": "Compare and contrast the etiologies and pathophysiological processes of white blood cell disorders",
+   "slot": "counts",
+   "q": "How is a relative white cell count converted to an absolute count?",
+   "opts": [
+    [
+     "Multiply the total white count by the cell's fraction",
+     "Correct. The absolute count is the white blood cell count times the relative count expressed as a fraction: a total of 8,000 cells/µL with 25 percent neutrophils gives 2,000 neutrophils/µL."
+    ],
+    [
+     "Divide the cell's percentage by the total white count",
+     "Dividing gives a meaningless small number. The conversion multiplies: total white blood cell count times the relative count as a fraction gives cells per microliter.",
+     "reversed direction or value"
+    ],
+    [
+     "Subtract the lymphocyte count from the total white count",
+     "Subtraction would lump every non-lymphocyte together. Each cell's absolute count is found by multiplying the total white blood cell count by that cell's relative fraction.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Read the cell's percentage straight off the differential",
+     "The percentage is the relative count itself, not the absolute one. To get cells per microliter, multiply the total white blood cell count by that percentage as a fraction.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 7"
+  },
+  {
+   "topic": "Red-cell indices and morphology",
+   "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders",
+   "slot": "morphology",
+   "q": "Which three morphologic features give etiologic clues in anemia?",
+   "opts": [
+    [
+     "Size, shape and nuclear lobes",
+     "Nuclear lobes describe white cells (eosinophils, basophils, neutrophils); mature red cells are judged by size, hemoglobinization (color) and shape.",
+     "adjacent fact"
+    ],
+    [
+     "Size, hemoglobinization and shape",
+     "Correct. The morphologic characteristics that provide etiologic clues are red-cell size (normocytic, microcytic or macrocytic), degree of hemoglobinization seen as color (normochromic or hypochromic), and shape."
+    ],
+    [
+     "Color, count and granules",
+     "A count says how many cells there are, not what they look like, and granules are not among the listed red-cell clues. The morphologic clues are size, hemoglobinization (color) and shape.",
+     "adjacent fact"
+    ],
+    [
+     "Volume, lifespan and removal site",
+     "Lifespan and where cells are removed concern hemolysis, not what the smear shows. The morphologic clues are size, hemoglobinization (color) and shape.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 31"
+  },
+  {
+   "topic": "Leukocytes and their counts",
+   "io": "Review the anatomy of the blood cells",
+   "slot": "distribution",
+   "q": "Which leukocyte normally makes up the largest share of the total white cell count?",
+   "opts": [
+    [
+     "Lymphocytes",
+     "Lymphocytes are the second-largest group, at 20 to 40 percent of the total leukocyte count. Neutrophils, at 40 to 60 percent, make up the largest share.",
+     "adjacent fact"
+    ],
+    [
+     "Monocytes",
+     "Monocytes are a small group, 2 to 8 percent of the total leukocyte count. Neutrophils, at 40 to 60 percent, make up the largest share.",
+     "reversed direction or value"
+    ],
+    [
+     "Neutrophils",
+     "Correct. Neutrophils are normally 40 to 60 percent of the total leukocyte count, the largest share, ahead of lymphocytes at 20 to 40 percent."
+    ],
+    [
+     "Eosinophils",
+     "Eosinophils are only 1 to 4 percent of the total leukocyte count. Neutrophils, at 40 to 60 percent, make up the largest share; basophils are the smallest at 0.5 to 1 percent.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 6"
+  },
+  {
+   "topic": "Anemia definition and blood loss",
+   "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders",
+   "slot": "definition",
+   "q": "What is anemia primarily defined by?",
+   "opts": [
+    [
+     "Hematocrit below the laboratory's interval",
+     "Hematocrit, the share of blood volume occupied by red cells, provides supporting information only. Anemia is defined primarily by hemoglobin below the cutoff for age, sex and pregnancy status.",
+     "wrong stage or severity"
+    ],
+    [
+     "A red-cell count below the reference range",
+     "The red-cell count appears among the reference intervals, but it is not the defining measure. Anemia is defined primarily by hemoglobin below the cutoff for age, sex and pregnancy status.",
+     "adjacent fact"
+    ],
+    [
+     "Hemoglobin below the cutoff for the person",
+     "Correct. Anemia reduces the blood's oxygen-carrying capacity, and it is defined primarily by hemoglobin below the cutoff for age, sex and pregnancy status; hematocrit only supports."
+    ],
+    [
+     "A mean cell volume outside 80 to 100 fL",
+     "Mean cell volume classifies an anemia that already exists (microcytic, normocytic, macrocytic); it does not define anemia. Hemoglobin below the cutoff does.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 35"
+  },
+  {
+   "topic": "Coagulation reactions",
+   "io": "Describe the etiologies and pathophysiological processes of coagulation disorders",
+   "slot": "thrombin",
+   "q": "Which pair converts prothrombin to thrombin?",
+   "opts": [
+    [
+     "Factor IXa with factor VIIIa",
+     "IXa with VIIIa is the step BEFORE: it activates factor X. Prothrombin is converted to thrombin by Xa with Va.",
+     "wrong stage or severity"
+    ],
+    [
+     "Factor Xa with factor Va",
+     "Correct. In thrombin generation, Xa with its cofactor Va converts prothrombin (II) to thrombin (IIa); thrombin then turns fibrinogen (I) into fibrin."
+    ],
+    [
+     "Tissue factor with factor VIIa",
+     "Tissue factor-VIIa starts the sequence by activating IX and X. Prothrombin is converted to thrombin by Xa with Va.",
+     "wrong stage or severity"
+    ],
+    [
+     "Factor XIIIa with fibrin",
+     "XIIIa acts on fibrin at the very end, producing crosslinked fibrin. Prothrombin is converted to thrombin by Xa with Va.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 43, 44"
+  },
+  {
+   "topic": "Multiple myeloma",
+   "io": "Describe the process of bone marrow neoplasia",
+   "slot": "myeloma",
+   "q": "How does multiple myeloma produce hypercalcemia?",
+   "opts": [
+    [
+     "Altered bone remodeling",
+     "Correct. In myeloma, altered bone remodeling can produce osteolytic lesions and hypercalcemia; the monoclonal proteins and marrow infiltration separately cause renal injury, anemia and impaired immunity."
+    ],
+    [
+     "Renal injury from monoclonal proteins",
+     "Monoclonal proteins injure the kidneys, but that is the renal consequence. Hypercalcemia comes from altered bone remodeling, the same process that makes osteolytic lesions.",
+     "adjacent fact"
+    ],
+    [
+     "Marrow infiltration crowding red cells",
+     "Marrow infiltration explains the anemia of myeloma. Hypercalcemia comes from altered bone remodeling with osteolytic lesions.",
+     "adjacent fact"
+    ],
+    [
+     "Impaired immunity from abnormal antibodies",
+     "Impaired immunity is another consequence of the monoclonal proteins and marrow infiltration. Hypercalcemia arises from altered bone remodeling.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 27"
+  },
+  {
+   "topic": "Lymphoid neoplasms",
+   "io": "Compare and contrast the etiologies and pathophysiological processes of white blood cell disorders",
+   "slot": "classification",
+   "q": "Chronic lymphocytic leukemia is a neoplasm of which cells?",
+   "opts": [
+    [
+     "Precursor B cells",
+     "Precursor B cells (lymphoblasts) give B-cell acute lymphoblastic leukemia/lymphoma. Chronic lymphocytic leukemia is a neoplasm of MATURE B cells.",
+     "wrong stage or severity"
+    ],
+    [
+     "Mature T cells",
+     "Mature T and natural killer cells give their own distinct neoplasms. Chronic lymphocytic leukemia is a neoplasm of mature B cells.",
+     "competing diagnosis"
+    ],
+    [
+     "Mature B cells",
+     "Correct. Chronic lymphocytic leukemia is a mature B-cell neoplasm, related to small lymphocytic lymphoma (CLL/SLL)."
+    ],
+    [
+     "Plasma cells",
+     "A malignancy of differentiated plasma cells is myeloma. Chronic lymphocytic leukemia arises from mature B cells and is related to small lymphocytic lymphoma.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 23, 28"
+  },
+  {
+   "topic": "Red-cell indices and morphology",
+   "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders",
+   "slot": "morphology",
+   "q": "Macrocytic anemias often stem from abnormalities that impair what?",
+   "opts": [
+    [
+     "Hemoglobin synthesis",
+     "Disorders of hemoglobin synthesis give the MICROCYTIC hypochromic anemias. Large cells point instead to impaired maturation of erythroid precursors in the marrow.",
+     "competing diagnosis"
+    ],
+    [
+     "Red-cell survival in the blood",
+     "Shortened survival defines hemolytic anemia, a destruction mechanism. Macrocytic anemias usually reflect impaired maturation of erythroid precursors in the marrow.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Plasma volume regulation",
+     "Plasma volume changes shift concentrations (as in relative erythrocytosis) without changing cell size. Macrocytosis reflects impaired maturation of erythroid precursors.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Erythroid precursor maturation",
+     "Correct. Macrocytic anemias often stem from abnormalities that impair the maturation of erythroid precursors in the bone marrow, as in the megaloblastic anemias of vitamin B12 or folate deficiency."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 32, 33"
+  },
+  {
+   "topic": "Monocytes, eosinophils and basophils",
+   "io": "Review the functions of blood cells",
+   "slot": "basophils",
+   "q": "Which leukocyte binds IgE (immunoglobulin E)?",
+   "opts": [
+    [
+     "Basophil",
+     "Correct. Basophils bind IgE (immunoglobulin E) and take part in the parasite response and allergy; few should be seen on a normal complete blood count, so a rise should prompt thought of malignancy."
+    ],
+    [
+     "Neutrophil",
+     "Neutrophils are phagocytic first responders to infection, not the IgE-binding cell. The leukocyte that binds IgE (immunoglobulin E) is the basophil.",
+     "adjacent fact"
+    ],
+    [
+     "Monocyte",
+     "Monocytes are precursors to macrophages, raised in chronic infection or chronic myelomonocytic leukemia. The IgE (immunoglobulin E)-binding leukocyte is the basophil.",
+     "adjacent fact"
+    ],
+    [
+     "Natural killer cell",
+     "Natural killer cells are lymphocytes from the lymphoid progenitor. The leukocyte that binds IgE (immunoglobulin E) in allergy and the parasite response is the basophil.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 13"
+  },
+  {
+   "topic": "Polycythemia",
+   "io": "Describe the etiologies and pathophysiological processes of myeloproliferative syndromes",
+   "slot": "erythrocytosis",
+   "q": "What kind of disorder is polycythemia vera?",
+   "opts": [
+    [
+     "An erythropoietic response to hypoxia",
+     "A marrow response to hypoxia or raised erythropoietin is SECONDARY erythrocytosis, a reaction to a stimulus. Polycythemia vera is a clonal myeloproliferative neoplasm.",
+     "competing diagnosis"
+    ],
+    [
+     "A fall in plasma from dehydration",
+     "Reduced plasma volume with normal red-cell mass is relative erythrocytosis. Polycythemia vera is an absolute increase from a clonal myeloproliferative neoplasm.",
+     "competing diagnosis"
+    ],
+    [
+     "A myelodysplastic marrow neoplasm",
+     "Myelodysplastic neoplasms show ineffective hematopoiesis with cytopenias, the opposite of an excess. Polycythemia vera is a clonal myeloproliferative neoplasm.",
+     "competing diagnosis"
+    ],
+    [
+     "A clonal myeloproliferative neoplasm",
+     "Correct. Polycythemia vera is a clonal myeloproliferative neoplasm: an absolute erythrocytosis from clonal proliferation of myeloid cells, listed with chronic myeloid leukemia, essential thrombocythemia and primary myelofibrosis."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 41, 18"
+  },
+  {
+   "topic": "Coagulation reactions",
+   "io": "Describe the etiologies and pathophysiological processes of coagulation disorders",
+   "slot": "initiation",
+   "q": "What initiates physiologic coagulation?",
+   "opts": [
+    [
+     "Factor XII on contact",
+     "Factor XII belongs to the intrinsic factors the aPTT (activated partial thromboplastin time) assesses in the laboratory. Physiologic initiation is tissue factor-VIIa activating IX and X.",
+     "adjacent fact"
+    ],
+    [
+     "Tissue factor with factor VIIa",
+     "Correct. Physiologic initiation is tissue factor-VIIa activating factors IX and X; external bleeding is not required."
+    ],
+    [
+     "External bleeding",
+     "External bleeding is not required. Physiologic coagulation is initiated when tissue factor-VIIa activates factors IX and X.",
+     "common lay belief"
+    ],
+    [
+     "Thrombin on fibrinogen",
+     "Thrombin acting on fibrinogen is the fibrin-formation step at the END of the reactions. Initiation is tissue factor-VIIa activating IX and X.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 43, 44"
+  },
+  {
+   "topic": "Neutrophils and bands",
+   "io": "Compare and contrast the etiologies and pathophysiological processes of white blood cell disorders",
+   "slot": "bands",
+   "q": "How does the Sepsis-3 definition describe sepsis?",
+   "opts": [
+    [
+     "Immature bands above 10 percent of white cells",
+     "A band count above 10 percent was a HISTORICAL criterion of systemic inflammatory response syndrome. Sepsis-3 defines sepsis by infection-associated, life-threatening organ dysfunction.",
+     "wrong stage or severity"
+    ],
+    [
+     "Neutrophilia during acute bacterial inflammation",
+     "Neutrophilia often accompanies acute bacterial inflammation, but a raised count is not the definition. Sepsis-3 defines sepsis as infection-associated, life-threatening organ dysfunction.",
+     "adjacent fact"
+    ],
+    [
+     "Neutropenia below 500 cells/µL with infection",
+     "Severe neutropenia increases the risk of serious infection, but it does not define sepsis. Sepsis-3 defines sepsis as infection-associated, life-threatening organ dysfunction.",
+     "adjacent fact"
+    ],
+    [
+     "Life-threatening organ dysfunction from infection",
+     "Correct. Sepsis-3 defines sepsis as infection-associated, life-threatening organ dysfunction; the band count above 10 percent was a historical criterion of the older systemic inflammatory response syndrome definition."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 10"
+  },
+  {
+   "topic": "Leukemia",
+   "io": "Describe the process of bone marrow neoplasia",
+   "slot": "counts",
+   "q": "In leukemia, what can the peripheral white blood cell count be?",
+   "opts": [
+    [
+     "Low, normal or high",
+     "Correct. The peripheral white blood cell count in leukemia may be low, normal or high, because marrow involvement can suppress normal blood-cell production while malignant cells may or may not spill into the blood."
+    ],
+    [
+     "High, because blasts spill into the blood",
+     "Some leukemias do show a high count, even hyperleukocytosis, but a high count is not required. Marrow involvement can suppress normal production, so the count may be low, normal or high.",
+     "common lay belief"
+    ],
+    [
+     "Low, because blasts stay in the marrow",
+     "Marrow suppression can lower the count, but it is not the only pattern: the peripheral count in leukemia may be low, normal or high.",
+     "wrong stage or severity"
+    ],
+    [
+     "Normal until leukostasis develops",
+     "Leukostasis is impaired microcirculation with organ injury, and a high count alone does not establish it. The peripheral count in leukemia may be low, normal or high from the start.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 21, 22"
+  },
+  {
+   "topic": "Blood composition and hematopoiesis",
+   "io": "Review the anatomy of the blood cells",
+   "slot": "anatomy",
+   "q": "Approximately what share of whole blood is plasma?",
+   "opts": [
+    [
+     "35 percent",
+     "Too low. Whole blood is about 55 percent plasma and 45 percent formed elements, so 35 percent understates the fluid fraction by roughly 20 points.",
+     "reversed direction or value"
+    ],
+    [
+     "45 percent",
+     "This is the share of the formed elements (red cells, white cells and platelets), not of plasma. Whole blood is about 55 percent plasma and 45 percent formed elements; the two figures are easy to swap.",
+     "adjacent fact"
+    ],
+    [
+     "55 percent",
+     "Correct. Whole blood is approximately 55 percent plasma and 45 percent formed elements, and plasma itself is about 90 to 92 percent water carrying electrolytes, nutrients, wastes and proteins."
+    ],
+    [
+     "65 percent",
+     "Too high. Plasma is about 55 percent of whole blood, with the formed elements making up the remaining 45 percent. A 65 percent plasma share would leave the cells at only about a third.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 3",
+   "ordered": true
+  },
+  {
+   "topic": "Anemia definition and blood loss",
+   "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders",
+   "slot": "definition",
+   "q": "What does anemia reduce?",
+   "opts": [
+    [
+     "The blood's plasma volume",
+     "Anemia is a fall in hemoglobin, not in plasma; a reduced plasma volume with normal red-cell mass is relative erythrocytosis. Anemia reduces oxygen-carrying capacity.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "The blood's clotting factor supply",
+     "Clotting factors belong to the plasma and the coagulation reactions. Anemia reduces the blood's oxygen-carrying capacity.",
+     "adjacent fact"
+    ],
+    [
+     "The blood's oxygen-carrying capacity",
+     "Correct. Anemia reduces the blood's oxygen-carrying capacity, which is why it is defined by hemoglobin below the cutoff for age, sex and pregnancy status."
+    ],
+    [
+     "The marrow's white-cell output",
+     "Suppressed white-cell production is part of leukemic cytopenias, not the meaning of anemia. Anemia reduces the blood's oxygen-carrying capacity.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 35"
+  },
+  {
+   "topic": "Coagulation disorders",
+   "io": "Describe the etiologies and pathophysiological processes of coagulation disorders",
+   "slot": "hemophilia",
+   "q": "Hemophilia A is a deficiency of which factor?",
+   "opts": [
+    [
+     "Factor IX",
+     "Factor IX deficiency is hemophilia B. Hemophilia A is factor VIII deficiency.",
+     "adjacent fact"
+    ],
+    [
+     "Factor V",
+     "Factor V is the factor altered in factor V Leiden, a genetic thrombophilia, not a bleeding deficiency. Hemophilia A is factor VIII deficiency.",
+     "adjacent fact"
+    ],
+    [
+     "Factor VIII",
+     "Correct. Hemophilia A is factor VIII deficiency; hemophilia B is factor IX deficiency. Both factors work together, IXa with its cofactor VIIIa activating factor X."
+    ],
+    [
+     "Factor VII",
+     "Factor VII is the extrinsic factor the PT (prothrombin time) assesses. Hemophilia A is factor VIII deficiency.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 46"
+  },
+  {
+   "topic": "Leukemia",
+   "io": "Describe the process of bone marrow neoplasia",
+   "slot": "leukostasis",
+   "q": "Which organs does leukostasis often involve?",
+   "opts": [
+    [
+     "Lungs and brain",
+     "Correct. Leukostasis is impaired microcirculation with organ injury, often involving the lungs or the brain."
+    ],
+    [
+     "Liver and spleen",
+     "The liver and spleen are not the organs named for leukostasis. Its impaired microcirculation with organ injury often involves the lungs or the brain.",
+     "adjacent fact"
+    ],
+    [
+     "Kidneys and bones",
+     "Kidney injury and osteolytic bone lesions are consequences of multiple myeloma. Leukostasis often involves the lungs or the brain.",
+     "adjacent fact"
+    ],
+    [
+     "Marrow and thymus",
+     "The marrow and thymus are where blood cells and T-cell precursors develop. The microcirculatory organ injury of leukostasis often involves the lungs or the brain.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 22"
+  },
+  {
+   "topic": "Multiple myeloma",
+   "io": "Describe the process of bone marrow neoplasia",
+   "slot": "myeloma",
+   "q": "Multiple myeloma is a malignancy of which cells?",
+   "opts": [
+    [
+     "Precursor B cells",
+     "Precursor B cells (lymphoblasts) give B-cell acute lymphoblastic leukemia. Myeloma arises far later in the B pathway, from differentiated plasma cells.",
+     "wrong stage or severity"
+    ],
+    [
+     "Mature B cells",
+     "Mature B cells give chronic lymphocytic leukemia/small lymphocytic lymphoma. Myeloma is a malignancy of the differentiated end of the line, the plasma cell.",
+     "wrong stage or severity"
+    ],
+    [
+     "Myeloid progenitors",
+     "Despite the similar name, myeloma is not a myeloid neoplasm. It is a clonal plasma-cell malignancy of the B lineage.",
+     "common lay belief"
+    ],
+    [
+     "Clonal plasma cells",
+     "Correct. Multiple myeloma is a clonal plasma-cell malignancy involving the bone marrow: a malignancy of differentiated, antibody-producing B-lineage cells."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 27, 28"
+  },
+  {
+   "topic": "B cells and clonality",
+   "io": "Describe the molecular mechanisms of blood disorders",
+   "slot": "B cells",
+   "q": "What does somatic hypermutation in germinal centers produce after antigen activation?",
+   "opts": [
+    [
+     "Immunoglobulin gene rearrangement",
+     "Rearrangement (V(D)J recombination) happens earlier, as B cells develop in the bone marrow, before antigen. Somatic hypermutation after activation produces affinity maturation.",
+     "wrong stage or severity"
+    ],
+    [
+     "Affinity maturation",
+     "Correct. After antigen activation, B cells in germinal centers can undergo somatic hypermutation, and selection of the better-binding cells produces affinity maturation."
+    ],
+    [
+     "Maturation arrest",
+     "Maturation arrest is the primary defect of acute leukemia, a block in differentiation from acquired mutations. Somatic hypermutation in germinal centers produces affinity maturation.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Proof of a malignant clone",
+     "A clonal population is not proof of malignancy, and somatic hypermutation is a normal step of the response. Its product in germinal centers is affinity maturation.",
+     "common lay belief"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 15"
+  },
+  {
+   "topic": "Hemolytic anemia",
+   "io": "Discuss the etiologies and pathophysiological processes of red blood cell disorders",
+   "slot": "hemolysis",
+   "q": "Which condition can blunt the reticulocyte response to hemolysis?",
+   "opts": [
+    [
+     "Rising erythropoietin",
+     "Erythropoietin usually INCREASES when the marrow can compensate for hemolysis, and it drives reticulocyte production up rather than blunting it. Renal disease is one of the conditions that can make the response inadequate.",
+     "reversed direction or value"
+    ],
+    [
+     "Recovery from anemia",
+     "Recovery from anemia is not among the conditions that blunt the response to hemolysis. Marrow disease, nutrient deficiency, renal disease or infection can make the reticulocyte response inadequate.",
+     "reversed direction or value"
+    ],
+    [
+     "Dehydration",
+     "Dehydration reduces plasma volume and raises the hematocrit (relative erythrocytosis); it is not listed as blunting the marrow. Renal disease is.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Renal disease",
+     "Correct. With hemolysis, erythropoietin and reticulocyte production usually rise when the marrow can compensate, but the response may be inadequate with marrow disease, nutrient deficiency, renal disease or infection."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slide 37"
+  },
+  {
+   "topic": "B cells and clonality",
+   "io": "Describe the process of bone marrow neoplasia",
+   "slot": "clonality",
+   "q": "Why does a clonal result alone not establish malignancy?",
+   "opts": [
+    [
+     "Clonal cells carry many different rearrangements",
+     "A clonal lymphoid population shares ONE dominant receptor-gene rearrangement; that is what the test detects. The limit is that reactive or premalignant populations can be clonal too.",
+     "reversed direction or value"
+    ],
+    [
+     "Reactive or premalignant cells can also be clonal",
+     "Correct. A clone is a population descended from a common progenitor, and reactive or premalignant populations can also be clonal. The result must be interpreted with morphology, immunophenotype and clinical findings."
+    ],
+    [
+     "PCR cannot detect receptor-gene rearrangements",
+     "PCR (polymerase chain reaction) CAN determine whether a dominant receptor-gene rearrangement is present. The limit is that reactive or premalignant populations can also be clonal.",
+     "reversed direction or value"
+    ],
+    [
+     "Malignant lymphoid cells are usually polyclonal",
+     "Lymphoid malignancies often share a dominant receptor-gene rearrangement, so they are clonal, not polyclonal. The limit is that reactive or premalignant populations can be clonal as well.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 16, 17"
+  },
+  {
+   "topic": "Red-cell indices and morphology",
+   "io": "Review the anatomy of the blood cells",
+   "slot": "indices",
+   "q": "What does the mean cell volume measure?",
+   "opts": [
+    [
+     "The average hemoglobin mass per red cell",
+     "Average hemoglobin content (mass) per red cell is the mean cell hemoglobin. Mean cell volume measures the cell's size: the average volume of a red cell.",
+     "adjacent fact"
+    ],
+    [
+     "The hemoglobin concentration in packed cells",
+     "The average concentration of hemoglobin in a given volume of packed red cells is the mean cell hemoglobin concentration. Mean cell volume is the average volume of one red cell.",
+     "adjacent fact"
+    ],
+    [
+     "The average volume of a red cell",
+     "Correct. Mean cell volume is the average volume of a red cell; it sorts anemias into microcytic (below 80 fL, femtoliters), normocytic (80 to 100 fL) and macrocytic (above 100 fL)."
+    ],
+    [
+     "The share of blood volume that is red cells",
+     "The proportion of blood volume occupied by red cells is the hematocrit, a whole-blood measure. Mean cell volume is the average volume of a single red cell.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pathophysiology of Blood Disorders SV Fall 2026.pptx, Slides 30, 33"
+  }
+ ]
+}

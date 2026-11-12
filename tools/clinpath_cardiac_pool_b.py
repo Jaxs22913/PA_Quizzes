@@ -266,8 +266,8 @@ QUESTIONS = [
 {"topic": "Infarct timeline", "io": IO_ACS, "slot": "mechanism",
  "q": "How does an infarcted area change over the weeks that follow?",
  "opts": [
-  ["Pale within a day",
-   "Correct. The sequence runs from removal of dead muscle to replacement by scar, and the scar does not contract. Then yellowish and soft with a red border, necrotic tissue removed by one to two weeks, tough fibrous scar by six."],
+  ["It pales, softens, then scars by six weeks",
+   "Correct. The area becomes paler within 18 to 24 hours, then turns yellowish and soft with a border of red vascular connective tissue. Necrotic tissue is taken away by one to two weeks, and tough fibrous scar has formed by six weeks."],
   ["It is replaced by functioning muscle within two weeks",
    "Muscle is not regenerated. Necrotic tissue is removed by one to two weeks and replaced by tough fibrous scar by six."],
   ["It calcifies within forty-eight hours",
@@ -306,12 +306,12 @@ QUESTIONS = [
  "q": "At what degree of closure does stenosis begin to affect hemodynamics?",
  "opts": [
   ["About fifty percent",
-   "Correct. It is a lower threshold than the seventy-five percent that compromises coronary flow, and the two figures are easy to swap."],
+   "Correct. Hemodynamics are affected once the valve is about fifty percent closed. The narrowing creates a pressure gradient across the valve and extra pressure work, because blood must be forced through a smaller opening."],
   ["About ten percent",
    "Hemodynamic effect is described from about fifty percent closure onwards."],
   ["About seventy-five percent",
-   "Seventy-five percent is the coronary occlusion figure rather than the valvular one."],
-  ["Only at complete closure",
+   "Seventy-five percent overshoots the threshold. Stenosis already affects hemodynamics at about fifty percent closure, where a pressure gradient across the valve begins to add pressure work for the heart."],
+  ["At complete closure",
    "Effects appear well before complete closure, from about fifty percent."]],
  "c": 0, "cite": D + ", Slide 43"},
 
@@ -329,10 +329,10 @@ QUESTIONS = [
  "c": 0, "cite": D + ", Slide 43"},
 
 {"topic": "Valvular disease", "io": IO_VALVE, "slot": "etiology",
- "q": "What are the primary causes of valvular stenosis?",
+ "q": "What is a primary cause of valvular stenosis?",
  "opts": [
   ["Post-inflammatory scarring from rheumatic fever",
-   "Correct. One is an immune injury from decades earlier and the other is simple wear, which is why the two produce stenosis in very different age groups. Valvular calcification with aging."],
+   "Correct. Post-inflammatory scarring from rheumatic fever is one of the two primary causes of stenosis; the other is valvular calcification with aging. The narrowed opening forces the heart to do extra pressure work."],
   ["Infective endocarditis and papillary muscle rupture",
    "These cause regurgitation rather than stenosis. Stenosis follows rheumatic scarring or valvular calcification with aging."],
   ["Homocysteine-induced vascular injury",
@@ -368,10 +368,10 @@ QUESTIONS = [
  "c": 0, "cite": D + ", Slide 45"},
 
 {"topic": "Mitral stenosis", "io": IO_VALVE, "slot": "mechanism",
- "q": "What sequence follows the raised left atrial pressure of mitral stenosis?",
+ "q": "What does the raised left atrial pressure of mitral stenosis first lead to?",
  "opts": [
   ["Atrial enlargement and hypertrophy",
-   "Correct. A valve on the left side of the heart ends by failing the right side, because the pressure has nowhere to go but backwards through the lungs. Raised pulmonary pressures, then right sided hypertrophy and failure."],
+   "Correct. The increased pressure load on the left atrium leads to atrial chamber enlargement and hypertrophy. Only later may pulmonary vascular pressures rise, progressing to chronic pulmonary hypertension and right sided hypertrophy and failure."],
   ["Left ventricular hypertrophy, then left sided failure",
    "The obstruction is upstream of the left ventricle, which is underfilled rather than overloaded."],
   ["Aortic root dilation",
@@ -550,10 +550,10 @@ QUESTIONS = [
  "c": 0, "cite": D + ", Slide 54"},
 
 {"topic": "Rheumatic heart disease", "io": IO_VALVE, "slot": "mechanism",
- "q": "What happens to the valves as rheumatic endocardial inflammation progresses?",
+ "q": "What are the early valve changes of rheumatic endocardial inflammation?",
  "opts": [
-  ["Swelling and erosion first",
-   "Correct. The scarring is what remains decades later, and it is why rheumatic fever appears as a cause of stenosis. Then scarring and shortening of the valvular structures."],
+  ["Valvular swelling and erosions",
+   "Correct. Endocardial inflammation causes valvular swelling and erosions, with platelet aggregation and fibrin on the leaflets. Scarring and shortening of the valvular structures appear only with progression, which is why rheumatic fever is a cause of stenosis."],
   ["Immediate calcification of the leaflets",
    "Calcification is an age-related process rather than the rheumatic sequence."],
   ["Ballooning of the leaflets into the atrium",
@@ -644,7 +644,7 @@ QUESTIONS = [
  "q": "What pattern of chamber involvement can occur in myocarditis?",
  "opts": [
   ["Left ventricular dysfunction, sometimes with chamber dilation",
-   "Correct. The dysfunction is focused on the left ventricle, and the chambers may dilate, although acute disease often leaves a normal-sized or only mildly dilated heart."],
+   "Correct. Myocarditis is characterized by left ventricular dysfunction with general dilation of all four chambers, as the inflamed, edematous myocardium develops patchy or diffuse necrotic lesions and leukocyte infiltrates."],
   ["Isolated right ventricular hypertrophy",
    "That pattern follows chronic pulmonary hypertension in mitral stenosis. Myocarditis impairs left ventricular function, sometimes with chamber dilation."],
   ["Left atrial enlargement alone",
@@ -735,7 +735,7 @@ QUESTIONS = [
  "q": "What is restrictive cardiomyopathy most often related to?",
  "opts": [
   ["A specific clinical condition",
-   "Correct. It is usually secondary to something identifiable, unlike the other two patterns which are more often idiopathic. Such as amyloidosis."],
+   "Correct. Restrictive cardiomyopathy is most often related to a specific clinical condition such as amyloidosis. Whatever the cause, the myocardium becomes fibrotic, rigid and noncompliant, restricting diastolic filling."],
   ["Alcohol and pregnancy",
    "These are factors in dilated cardiomyopathy. The restrictive form is usually related to a specific condition such as amyloidosis."],
   ["Coxsackievirus infection",
@@ -748,13 +748,13 @@ QUESTIONS = [
  "q": "How does pericardial disease usually arise?",
  "opts": [
   ["Secondary to another primary cause",
-   "Correct. It is usually a manifestation of something else; whatever the cause, fluid accumulates in the sac, and when the cause is inflammatory the pericardial structures can become painfully inflamed. Rarely as a primary condition."],
+   "Correct. Pericardial disease is rarely a primary condition and is usually secondary to another primary cause. Whatever the cause, fluid accumulates in the pericardial sac and painful inflammation of the pericardial structures occurs."],
   ["As a primary condition in most cases",
    "It is rarely primary; it is usually secondary to another cause, so the underlying condition drives the fluid in the sac and any inflammation of the pericardial structures."],
-  ["Only as a consequence of myocardial infarction",
-   "Infarction is one possible primary cause among many rather than the only route."],
-  ["Only from direct infection of the pericardium",
-   "Causes are various rather than confined to infection, and pericardial disease is usually secondary to another primary cause."]],
+  ["Mainly as a consequence of myocardial infarction",
+   "Infarction is one possible primary cause among many rather than the main route; pericardial disease is usually secondary to any of various primary causes."],
+  ["Mainly from direct infection of the pericardium",
+   "Causes are various rather than mainly infection, and pericardial disease is usually secondary to another primary cause, with fluid in the sac and painful inflammation whatever the cause."]],
  "c": 0, "cite": D + ", Slide 67"},
 
 {"topic": "Pericardial effusion", "io": IO_PERI, "slot": "classification",
@@ -838,8 +838,8 @@ QUESTIONS = [
 {"topic": "Constrictive pericarditis", "io": IO_PERI, "slot": "mechanism",
  "q": "How does constrictive pericarditis impair the heart?",
  "opts": [
-  ["The sac becomes dense",
-   "Correct, and the result resembles restrictive cardiomyopathy in that filling is what fails -- but the stiffness here is outside the muscle rather than within it. Non-elastic and scarred, encasing the heart and impairing diastolic filling."],
+  ["A dense, scarred sac encases the heart, impairing filling",
+   "Correct. The pericardial sac becomes dense, nonelastic, fibrous and scarred, encasing the heart like a stiff cage that impairs diastolic filling. The stiffness lies outside the muscle, unlike the fibrotic myocardium of restrictive cardiomyopathy."],
   ["The sac fills rapidly with fluid, compressing the chambers",
    "Rapid fluid accumulation describes tamponade. In the constrictive form a scarred, non-elastic sac encases the heart."],
   ["The heart adheres to surrounding mediastinal structures",
