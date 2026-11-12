@@ -44,6 +44,11 @@ CHIPS = ["Cardiovascular &amp; peripheral vascular", "Thorax &amp; lungs", "Hema
 WORDS = {17: "seventeen", 20: "twenty", 23: "twenty-three"}
 
 
+# Passed items left out on purpose: check_item_quality.py hard-flags "option contains another"
+# ("Upper, middle and lower lobes" contains "Upper and lower lobes" word for word).
+EXCLUDE = {"Which lobes make up the left lung?"}
+
+
 def clean(q):
     q = {k: v for k, v in q.items() if k not in ("mis",)}
     return json.loads(json.dumps(q))
@@ -52,7 +57,7 @@ def clean(q):
 def main():
     rng = random.Random(20261120)
     P = pools()
-    passed = {lec: [q for q in qs if status(q) == "pass"] for lec, qs in P.items()}
+    passed = {lec: [q for q in qs if status(q) == "pass" and q["q"] not in EXCLUDE] for lec, qs in P.items()}
     for lec, qs in passed.items():
         need = QUOTA[lec] * len(FORMS)
         print("%s  pool %3d  passed %3d  per form %2d  needed %3d" % (lec, len(P[lec]), len(qs), QUOTA[lec], need))
