@@ -1217,6 +1217,150 @@
      }
     }
    ]
+  },
+  {
+   "lecture": 45,
+   "title": "Acid-Base Disorders II",
+   "lecturer": "Megan B. Finck, MMS, PA-C",
+   "deck": "PAJ5510 Acid Base Disorders II MBF2026sc.pptx",
+   "note": "Built from the slides plus the lecture recording, which only chooses which facts to star; it adds no content. The four simple disorders are the conditions, plus the mixed disorders (slides 26-30, 49-50). This deck repeats Lecture 34's foundations with its own numbers: anion gap normal 6 to 12 here (9 to 15 in Lecture 34). Points the slides state two ways are given both ways or not keyed: the carbon dioxide range (36 to 44 on slide 6, 35 to 45 on slide 10), the anion gap cut-offs (above 12 on slide 44, above 20 suggesting a primary metabolic disorder on slide 26), the 1.3 ratio (slide 24) against the Winter formula (slide 49), the group of alkaline drugs and exogenous alkali (slide 53), pulmonary embolism under respiratory acidosis (slide 32) against lung disease under respiratory alkalosis (slide 39), and diabetic ketoacidosis (raised gap) against its recovery (normal gap, slide 47). The slides write the change in bicarbonate as the lab result minus normal; the size of the fall from 25 is used. Her worked cases that are not on the slides, and her rounding shortcuts, are not used. The slides give no incidence or mortality figures.",
+   "conditions": [
+    {
+     "id": "l45-resp-acid",
+     "name": "Respiratory acidosis",
+     "prof": true,
+     "prof_note": "Acute versus chronic is read from how far the bicarbonate has risen (1 versus 3.5 per 10 mm Hg); stop respiratory depressants such as narcotics; give oxygen carefully to chronic retainers.",
+     "fields": {
+      "name": "Respiratory acidosis (acute or chronic)",
+      "definition": "Decreased pH with increased carbon dioxide, from decreased alveolar ventilation, never increased carbon dioxide production; may be acute or chronic",
+      "etiology": "Central nervous system depression (sedatives, central nervous system event); neuromuscular disorders (myopathies, neuropathies); kyphoscoliosis, Guillain-Barré syndrome, myasthenia gravis, botulism, polymyositis; impaired lung motion (hemothorax, pneumothorax); thoracic cage injury (flail chest); acute airway obstruction (upper airway, laryngospasm, bronchospasm); severe pneumonia or pulmonary edema; ventilator dysfunction; obesity-hypoventilation syndrome; pleural effusion; lung disease (chronic obstructive pulmonary disease, acute respiratory distress syndrome)",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Not covered in the lecture",
+      "pathology": "The body raises bicarbonate by cell buffering and increased acid secretion, two mechanisms over different time periods. Compensation is renal. [[★ Acute: bicarbonate rises 1 mEq/L for every 10 mm Hg rise in carbon dioxide; chronic (after 24 to 48 hours): 3.5 mEq/L per 10 mm Hg]], through urinary excretion of titratable acid and ammonium. [[★ Compensation will not fully correct the pH]]",
+      "clinical": "Not covered in the lecture",
+      "diagnosis": "Arterial blood gas and electrolytes: low pH, high carbon dioxide. To tell acute from chronic, compare the measured bicarbonate with the expected bicarbonate at each rate (slide 35 example: carbon dioxide 80 mm Hg)",
+      "treatment": "Treat the underlying condition; look at medications and [[★ stop respiratory depressants (narcotics, benzodiazepines)]]. Acute or severe impairment (carbon dioxide above 80 mm Hg with life-threatening hypoxia, oxygen below 40 mm Hg): adequate ventilation (emergency airway, mechanical ventilator), clear secretions and assure airway patency, give oxygen. Chronic: similar but with [[★ careful oxygen administration]]; a rapidly falling carbon dioxide may trigger alkalosis complications (cardiac arrhythmias, reduced cerebral perfusion, seizures)",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "11, 31",
+      "definition": "10-11, 31",
+      "etiology": "32",
+      "pathology": "23-24, 31, 33-34",
+      "diagnosis": "10, 35, 56",
+      "treatment": "36-37"
+     }
+    },
+    {
+     "id": "l45-resp-alk",
+     "name": "Respiratory alkalosis",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Respiratory alkalosis (acute or chronic)",
+      "definition": "Increased pH (above 7.45) with decreased carbon dioxide",
+      "etiology": "Anxiety; hypoxia; high altitude (physiologic respiratory alkalosis); lung disease with or without hypoxia; decreased lung compliance (interstitial fibrosis); central nervous system disease; catastrophic central nervous system event (intracerebral hemorrhage)",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Not covered in the lecture",
+      "pathology": "Increased ventilation lowers carbon dioxide. Compensation is renal: bicarbonate falls 2 mEq/L per 10 mm Hg fall in carbon dioxide acutely and 5 mEq/L chronically; alkalosis shifts potassium into cells (hypokalemia) and increases hemoglobin's oxygen affinity (less oxygen delivered to tissues)",
+      "clinical": "Not covered in the lecture",
+      "diagnosis": "High pH with low carbon dioxide on the arterial blood gas",
+      "treatment": "Mild (pH below 7.50): treatment usually not required. Treat pain, anxiety, fever, infection or salicylate overdose; mindful breathing to help control hyperventilation. On mechanical ventilation: decrease minute volume (fewer breaths per minute or a smaller tidal volume)",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "11, 38",
+      "definition": "11, 38",
+      "etiology": "39",
+      "pathology": "5, 22, 24",
+      "diagnosis": "10-11",
+      "treatment": "40"
+     }
+    },
+    {
+     "id": "l45-met-acid",
+     "name": "Metabolic acidosis",
+     "prof": true,
+     "prof_note": "A big anion gap is always metabolic; correct the gap for albumin; use the Winter formula to find a respiratory partner and the change in gap against the change in bicarbonate to find a metabolic one.",
+     "fields": {
+      "name": "Metabolic acidosis (increased, normal or decreased anion gap)",
+      "definition": "Decreased pH with decreased bicarbonate: an excess of acid to buffer or a net loss of bicarbonate from extracellular fluid",
+      "etiology": "Increased anion gap (MUDPILES): methanol, metformin; uremia; diabetic, alcoholic or starvation ketoacidosis; paraldehyde, propylene glycol; isoniazid, iron; lactic acidosis; ethylene glycol; salicylates, starvation; also renal failure, rhabdomyolysis. The Big 4: ketoacidosis, lactic acidosis (poor tissue perfusion, tissue necrosis, severe anemia, trauma), renal failure (acute or chronic), toxins (salicylates, alcohols, 5-oxoproline from acetaminophen). Normal anion gap (USEDCAR): ureteral diversion, saline infusion, exogenous acid, diarrhea, carbonic anhydrase inhibitors, adrenal insufficiency, renal tubular acidosis; also chlorine gas exposure, hyperalimentation (total parenteral nutrition)",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Not covered in the lecture",
+      "pathology": "Compensation is respiratory: carbon dioxide is lowered by increasing respiration. Normal-gap acidosis is loss of bicarbonate (diarrhea, recovery from diabetic ketoacidosis, pancreatic fluid loss, unadapted ileostomy, carbonic anhydrase inhibitors), chloride retention (renal tubular acidosis, ileal loop bladder) or acid given (hydrochloric acid equivalent, ammonium chloride, arginine and lysine in parenteral nutrition). Acidosis shifts potassium out of cells (hyperkalemia) and lowers hemoglobin's oxygen affinity",
+      "clinical": "Mainly the underlying disorder; compensatory hyperventilation; [[★ Kussmaul breathing (deep, regular, sighing breaths) in severe acidosis]]",
+      "diagnosis": "[[★ Anion gap = sodium - (bicarbonate + chloride), normal 6 to 12 (average about 10)]]; the gap can be abnormal with normal electrolytes. [[★ Correct for albumin: add 2.5 for each 1 g/dL below 4.5]] (albumin 3.5 to 5.5 g/dL). Increased gap: think above 12, metabolic anions, renal failure, toxins; [[★ a large gap is never compensation for a respiratory disorder alone]]. Decreased gap (below 6): hypoalbuminemia, plasma cell dyscrasias, bromide. [[★ Winter formula: expected carbon dioxide = 1.5 x bicarbonate + 8, plus or minus 2]]",
+      "treatment": "Treat the underlying condition; therapy to normalize the pH may be warranted when the pH is below 6.7 (unsustainable), along with treatment of the cause",
+      "mortality": "A pH below 6.7 or above 7.6 is unsustainable: it may cause cardiac hypocontractility or irritability, seizures, cerebral edema and metabolic disturbances"
+     },
+     "slides": {
+      "name": "11, 41",
+      "definition": "11, 41",
+      "etiology": "43-46",
+      "pathology": "5, 24, 41, 47",
+      "clinical": "42",
+      "diagnosis": "7-8, 26, 44, 48-49",
+      "treatment": "12",
+      "mortality": "12"
+     }
+    },
+    {
+     "id": "l45-met-alk",
+     "name": "Metabolic alkalosis",
+     "prof": true,
+     "prof_note": "Urine chloride splits saline-responsive from saline-unresponsive; the hypokalemia of alkalosis is a shift, so do not overcorrect.",
+     "fields": {
+      "name": "Metabolic alkalosis (saline-responsive or saline-unresponsive)",
+      "definition": "Increased pH (above 7.45) with decreased hydrogen ions and increased bicarbonate",
+      "etiology": "Saline-responsive: volume contraction; diuretics (sodium reabsorption, hydrogen ion secretion); vomiting or gastric suction (loss of gastric hydrochloric acid); ingestion of alkaline drugs (sodium bicarbonate); post-hypercapnia. Saline-unresponsive, normotensive: severe potassium depletion; hypoparathyroidism and hypercalcemia. Saline-unresponsive, hypertensive: primary aldosteronism; exogenous alkali; mineralocorticoids; licorice",
+      "epidemiology": "Not as common as metabolic acidosis",
+      "risk_factors": "Not covered in the lecture",
+      "pathology": "Compensation is respiratory: carbon dioxide rises 0.75 mm Hg per 1 mEq/L rise in bicarbonate; alkalosis shifts potassium into cells (hypokalemia)",
+      "clinical": "Mainly the underlying disorder; hypokalemia may cause weakness and hyporeflexia; rarely tetany and neuromuscular irritability",
+      "diagnosis": "High pH with high bicarbonate. [[★ Urine chloride differentiates the types: lower in saline-responsive (below 25 mEq/L), higher in saline-unresponsive (above 40 mEq/L)]]",
+      "treatment": "Treat the underlying condition; if the cause is unclear, measure urinary chloride to narrow the differential; discontinue possible contributors (diuretics, nasogastric suction, corticosteroids); treat fluid and potassium deficits if needed; [[★ don't overcorrect]]. If corticosteroids are needed: decrease the dose or change to one with less mineralocorticoid activity (prednisone or methylprednisolone rather than cortisone or hydrocortisone). Consider excess alkali intake, glucose ingestion after starvation, high-dose penicillin, profound potassium depletion, endogenous mineralocorticoid excess",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "11, 51",
+      "definition": "11, 51",
+      "etiology": "53",
+      "epidemiology": "51",
+      "pathology": "5, 24",
+      "clinical": "52",
+      "diagnosis": "10-11, 51",
+      "treatment": "54-55"
+     }
+    },
+    {
+     "id": "l45-mixed",
+     "name": "Mixed acid-base disorders",
+     "prof": true,
+     "prof_note": "Compensation never fully corrects the pH, so a normal pH with abnormal values points to a mixed disorder; only one respiratory disorder at a time; circle back to the patient.",
+     "fields": {
+      "name": "Mixed acid-base disorders",
+      "definition": "More than one primary disturbance at the same time (a simple disorder is one primary disturbance and its compensation). [[★ Cannot have more than one primary respiratory disorder]]",
+      "etiology": "Slide examples: metabolic acidosis with respiratory alkalosis (lactic acidosis, sepsis in the intensive care unit); metabolic acidosis with respiratory acidosis (severe pneumonia, pulmonary edema); metabolic alkalosis with respiratory alkalosis (liver disease and diuretics); metabolic alkalosis with respiratory acidosis (chronic obstructive pulmonary disease on diuretics); metabolic acidosis with metabolic alkalosis (uremia with vomiting); high-gap with normal-gap metabolic acidosis (diarrhea and lactic acidosis, toluene toxicity, treatment of diabetic ketoacidosis)",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Not covered in the lecture",
+      "pathology": "[[★ Compensation will not fully correct the pH]]; inadequate or excessive compensation points to a mixed disorder",
+      "clinical": "Most important when the patient is critically ill and the cause is not yet clear; determining the disorder narrows the differential",
+      "diagnosis": "[[★ A normal pH can mean no abnormality or a mixed acid-base disorder]]. [[★ Winter formula]]: carbon dioxide above expected = concurrent respiratory acidosis; below = concurrent respiratory alkalosis. [[★ Change in anion gap (from 10) against change in bicarbonate (from 25)]]: equal = metabolic acidosis only; gap change larger = concurrent metabolic alkalosis (only detectable if the gap is high); bicarbonate change larger = check the change in chloride; bicarbonate change equal to gap change plus chloride change = concurrent increased-gap and normal-gap metabolic acidosis. Metabolic alkalosis with respiratory alkalosis: carbon dioxide does not rise as predicted, pH higher than expected; with respiratory acidosis: carbon dioxide higher than predicted, pH normal. Examine the patient again: do the clinical findings support the analysis?",
+      "treatment": "Identify the underlying causes and treat both diagnoses",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "4",
+      "definition": "4, 23",
+      "etiology": "28-30",
+      "pathology": "23, 26",
+      "clinical": "9",
+      "diagnosis": "27-30, 49-50, 57-58",
+      "treatment": "63"
+     }
+    }
+   ]
   }
  ]
 }
