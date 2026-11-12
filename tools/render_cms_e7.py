@@ -7,7 +7,7 @@ Exam 7 is bronze (31): the Exam 6 crimson rotated +33 degrees in hue and re-solv
 white (navy 9.35:1, indigo 4.87:1), the gold kept. Four-option sets, per the exam standard.
 
     python3 render_cms_e7.py l39io | l39vig | l40io | l40vig | l41io | l41vig | l42io | l42vig | l43io | l43vig
-                             | l44io | l44vig
+                             | l44io | l44vig | l45io | l45vig
 
 A later lecture (42-45) adds its two SPEC entries here (see tools/cms_e7_README.md).
 """
@@ -121,6 +121,24 @@ SPEC = {
           "Patient education"],
    intro="Decide first whether the patient is stable, then what the film shows and how big the air or fluid is. "
          "Pleural fluid results come with the serum values you need for Light's criteria."),
+ "l45io": dict(sets="cms_e7l45_sets.json",
+   files=["acid-base-disorders-ii-quiz.html", "acid-base-disorders-ii-quiz-version-2.html"],
+   title="Acid-Base Disorders II Quiz %d — CMS I Exam 7",
+   h1="Acid-Base Disorders II &mdash; Quiz %d",
+   sub=SUB % 45,
+   chips=["Potassium and oxygen", "Anion gap", "Buffers", "Compensation", "Mixed disorders",
+          "Respiratory acidosis", "Respiratory alkalosis", "Metabolic acidosis", "Winter formula",
+          "Metabolic alkalosis", "Step by step"]),
+ "l45vig": dict(sets="cms_e7l45_vig_sets.json",
+   files=["acid-base-disorders-ii-vignettes.html", "acid-base-disorders-ii-vignettes-version-2.html"],
+   title="Acid-Base Disorders II Vignettes %d — CMS I Exam 7",
+   h1="Acid-Base Disorders II &mdash; Vignettes %d",
+   sub=SUB % 45,
+   chips=["Read the gas", "Anion gap", "Is compensation right?", "Mixed disorders", "Cause", "Treatment",
+          "What to avoid"],
+   intro="Work every gas in order: the pH, then which value matches it, then the anion gap (corrected for a low "
+         "albumin), then whether compensation fits. Every value comes with its normal range; the compensation "
+         "ratios are given where you need them, the anion gap and Winter formulas are not."),
 }[sys.argv[1] if len(sys.argv) > 1 else "l39io"]
 
 S = json.load(open(os.path.join(HERE, SPEC["sets"]), encoding="utf-8"))
