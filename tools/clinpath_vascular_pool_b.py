@@ -265,7 +265,7 @@ QUESTIONS = [
  "q": "What is the structure of an atheroma?",
  "opts": [
   ["A soft lipid core with a fibrous cap",
-   "Correct, and these intimal lesions project out into the lumen of the vessel, which is how the plaque converts a wall abnormality into a flow abnormality."],
+   "Correct. An atheroma is an intimal lesion with a soft lipid core under a fibrous cap, projecting into the lumen of the vessel."],
   ["A calcified nodule within the media",
    "A calcified nodule in the media is not an atheroma. Atheromas are intimal lesions with a soft lipid core and a fibrous cap that project out into the lumen."],
   ["A blood-filled channel within the wall",

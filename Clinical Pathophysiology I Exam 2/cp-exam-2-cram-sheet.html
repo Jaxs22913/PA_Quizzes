@@ -93,9 +93,24 @@
     .logo-mark-ink { stroke: #e5e7eb; }
     .logo-mark-accent { stroke: var(--primary); }
   }
+  /* memory-aid box + footnote rows (render.py emits this block only when a
+     topic uses "mnemonic" or a {"note": ...} row); theme variables only, so
+     the designed dark mode (tools/dark_tokens.py) recolours it for free */
+  .mnem{margin:10px 0 0;padding:11px 15px 12px;background:var(--card);border:1px solid var(--line);
+    border-left:4px solid var(--acc);border-radius:12px;box-shadow:var(--shadow);font-size:13.8px;color:var(--body)}
+  .mnem-k{font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--acc-ink,var(--ink));margin:0 0 4px}
+  .mnem p{margin:0 0 5px}
+  .mnem p:last-child{margin-bottom:0}
+  .mnem-hook{font-weight:700;color:var(--ink)}
+  .mnem-key span{display:inline-block;margin:0 16px 3px 0}
+  .mnem-key b{color:var(--acc-ink,var(--ink))}
+  .mnem-brk{color:var(--muted);font-size:13px}
+  .mnem-brk b{color:var(--body)}
+  td.rnote{font-size:12.8px;font-style:italic;color:var(--muted)}
+  @media print{.mnem{box-shadow:none;break-inside:avoid}}
 </style>
-<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--primary-l:#6e1f2f;--primary:#c76f7b;}:root[data-theme="dark"] body[data-dark="tokens"] #l6-chd{--acc-bg:#35191d!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#ca727d!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-chd"]{color:#c26b76!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-plaque{--acc-bg:#301f07!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48242!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-plaque"]{color:#ad7b3b!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-acs{--acc-bg:#35191c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#d76a78!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-acs"]{color:#cf6372!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-valves{--acc-bg:#05282f!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6393a0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-valves"]{color:#5c8c99!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-myo{--acc-bg:#2a1c33!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a17eb8!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-myo"]{color:#9a78b0!important}:root[data-theme="dark"] body[data-dark="tokens"] #l7-structure{--acc-bg:#062734!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5a93ae!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l7-structure"]{color:#538ca7!important}:root[data-theme="dark"] body[data-dark="tokens"] #l7-wall{--acc-bg:#0b291c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5b987a!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l7-wall"]{color:#549173!important}:root[data-theme="dark"] body[data-dark="tokens"] #l7-athero{--acc-bg:#331d0a!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b58156!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l7-athero"]{color:#ad7a4f!important}:root[data-theme="dark"] body[data-dark="tokens"] #l7-aneurysm{--acc-bg:#311a2a!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#ba75a7!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l7-aneurysm"]{color:#b36ea0!important}:root[data-theme="dark"] body[data-dark="tokens"] #l7-other{--acc-bg:#192239!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#778bbb!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l7-other"]{color:#7084b3!important}:root[data-theme="dark"] body[data-dark="tokens"] #l8-basics{--acc-bg:#271d35!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#9a7fc5!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l8-basics"]{color:#9378be!important}:root[data-theme="dark"] body[data-dark="tokens"] #l8-antibodies{--acc-bg:#251e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#977dd5!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l8-antibodies"]{color:#9076ce!important}:root[data-theme="dark"] body[data-dark="tokens"] #l8-tcells{--acc-bg:#321927!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c4729d!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l8-tcells"]{color:#bc6b96!important}:root[data-theme="dark"] body[data-dark="tokens"] #l8-complement{--acc-bg:#102437!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6d8fb1!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l8-complement"]{color:#6688aa!important}:root[data-theme="dark"] body[data-dark="tokens"] #l9-arf{--acc-bg:#062734!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5a93ae!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l9-arf"]{color:#538ca7!important}:root[data-theme="dark"] body[data-dark="tokens"] #l9-obstructive{--acc-bg:#0b291c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5b987a!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l9-obstructive"]{color:#549173!important}:root[data-theme="dark"] body[data-dark="tokens"] #l9-restrictive{--acc-bg:#331d0a!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b58156!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l9-restrictive"]{color:#ad7a4f!important}:root[data-theme="dark"] body[data-dark="tokens"] #l9-pleura{--acc-bg:#192239!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#778bbb!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l9-pleura"]{color:#7084b3!important}:root[data-theme="light"] body[data-dark="tokens"]{--primary-t:#6e1f2f;}</style><!--DARK-TOKENS:END-->
-  <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="cp-exam-2-cram-sheet.docx" title="Editable Word copy">
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--primary-l:#6e1f2f;--primary:#c76f7b;}:root[data-theme="dark"] body[data-dark="tokens"] #l6-chd{--acc-bg:#35191d!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#ca727d!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-chd"]{color:#c26b76!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-plaque{--acc-bg:#301f07!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48242!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-plaque"]{color:#ad7b3b!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-acs{--acc-bg:#35191c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#d76a78!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-acs"]{color:#cf6372!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-valves{--acc-bg:#05282f!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6393a0!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-valves"]{color:#5c8c99!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-myo{--acc-bg:#2a1c33!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a17eb8!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-myo"]{color:#9a78b0!important}:root[data-theme="dark"] body[data-dark="tokens"] #l7-structure{--acc-bg:#062734!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5a93ae!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l7-structure"]{color:#538ca7!important}:root[data-theme="dark"] body[data-dark="tokens"] #l7-wall{--acc-bg:#0b291c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5b987a!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l7-wall"]{color:#549173!important}:root[data-theme="dark"] body[data-dark="tokens"] #l7-athero{--acc-bg:#331d0a!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b58156!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l7-athero"]{color:#ad7a4f!important}:root[data-theme="dark"] body[data-dark="tokens"] #l7-aneurysm{--acc-bg:#311a2a!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#ba75a7!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l7-aneurysm"]{color:#b36ea0!important}:root[data-theme="dark"] body[data-dark="tokens"] #l7-other{--acc-bg:#192239!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#778bbb!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l7-other"]{color:#7084b3!important}:root[data-theme="dark"] body[data-dark="tokens"] #l8-basics{--acc-bg:#271d35!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#9a7fc5!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l8-basics"]{color:#9378be!important}:root[data-theme="dark"] body[data-dark="tokens"] #l8-antibodies{--acc-bg:#251e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#977dd5!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l8-antibodies"]{color:#9076ce!important}:root[data-theme="dark"] body[data-dark="tokens"] #l8-tcells{--acc-bg:#321927!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c4729d!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l8-tcells"]{color:#bc6b96!important}:root[data-theme="dark"] body[data-dark="tokens"] #l8-complement{--acc-bg:#102437!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6d8fb1!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l8-complement"]{color:#6688aa!important}:root[data-theme="dark"] body[data-dark="tokens"] #l9-arf{--acc-bg:#062734!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5a93ae!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l9-arf"]{color:#538ca7!important}:root[data-theme="dark"] body[data-dark="tokens"] #l9-obstructive{--acc-bg:#0b291c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5b987a!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l9-obstructive"]{color:#549173!important}:root[data-theme="dark"] body[data-dark="tokens"] #l9-restrictive{--acc-bg:#331d0a!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b58156!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l9-restrictive"]{color:#ad7a4f!important}:root[data-theme="dark"] body[data-dark="tokens"] #l9-pleura{--acc-bg:#192239!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#778bbb!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l9-pleura"]{color:#7084b3!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l10-neutropenia{--acc-bg:#36191a!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#db686d!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l10-neutropenia"]{color:#d36166!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l10-marrow{--acc-bg:#36191a!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#db686d!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l10-marrow"]{color:#d36166!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l10-lymphoid{--acc-bg:#36191a!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#db686d!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l10-lymphoid"]{color:#d36166!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l10-mcv{--acc-bg:#36191a!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#db686d!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l10-mcv"]{color:#d36166!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l10-erythrocytosis{--acc-bg:#36191a!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#db686d!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l10-erythrocytosis"]{color:#d36166!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l10-coag{--acc-bg:#36191a!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#db686d!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l10-coag"]{color:#d36166!important}:root[data-theme="dark"] body[data-dark="tokens"] #l10-wbc{--acc-bg:#351a15!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#d66d5c!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l10-wbc"]{color:#ce6655!important}:root[data-theme="dark"] body[data-dark="tokens"] #l10-rbc{--acc-bg:#341922!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c6728d!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l10-rbc"]{color:#be6b86!important}:root[data-theme="light"] body[data-dark="tokens"]{--primary-t:#6e1f2f;}</style><!--DARK-TOKENS:END-->
 </head>
 <body data-dark="tokens" data-dark-kind="cram">
 <div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
@@ -122,7 +137,7 @@
   <header class="hero">
     <div class="kicker">Clinical Pathophysiology I · Exam 2 · Class of 2028</div>
     <h1>Clinical Pathophysiology I Exam 2 Cram Sheet</h1>
-    <p class="sub">Lectures 6 Cardiac, 7 Vascular, 8 Immunity and 9 Pulmonary, condensed. Lecture 10 is added when it is posted. Mechanism only, never management.</p>
+    <p class="sub">Lectures 6 Cardiac, 7 Vascular, 8 Immunity, 9 Pulmonary and 10 Blood Disorders, condensed. ★ = the lecturer said to know it. Mechanism only, never management.</p>
     <div class="toc">
       <a href="#l6-chd" style="color:#561825"><span class="dot" style="background:#6e1f2f"></span>L6 · Coronary Heart Disease & Ischemia</a>
       <a href="#l6-plaque" style="color:#6c4610"><span class="dot" style="background:#8a5a14"></span>L6 · Lipoproteins, Atherosclerosis & Plaque</a>
@@ -142,6 +157,9 @@
       <a href="#l9-obstructive" style="color:#24533e"><span class="dot" style="background:#2e6b4f"></span>L9 · Obstructive Disease & Asthma</a>
       <a href="#l9-restrictive" style="color:#5f3a18"><span class="dot" style="background:#7a4a1f"></span>L9 · Restrictive Disease & Acute Respiratory Distress Syndrome</a>
       <a href="#l9-pleura" style="color:#303e5f"><span class="dot" style="background:#3d4f7a"></span>L9 · Pleura, Sleep Apnea & Pneumonia</a>
+      <a href="#crit-l10-neutropenia" style="color:#6c1622"><span class="dot" style="background:#8a1c2b"></span>L10 · Criteria tables</a>
+      <a href="#l10-wbc" style="color:#7b2e22"><span class="dot" style="background:#9e3b2c"></span>L10 · Blood, White Cells & Neoplasia</a>
+      <a href="#l10-rbc" style="color:#5f243a"><span class="dot" style="background:#7a2e4a"></span>L10 · Red Cells, Coagulation & Platelets</a>
     </div>
     <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
       replacement for the full study guide — it assumes you've already learned the material and just need
@@ -522,6 +540,159 @@
           <tr><td class="h">Pneumonia sources</td><td>ASPIRATION (gross aspiration → ANAEROBES, abscess) · inhalation (virus, Mycoplasma) · BLOOD-BORNE (right-sided endocarditis, intravenous drug use).</td></tr>
           <tr><td class="h">Community vs hospital</td><td>Community: at home, or hospitalized &lt; 48 h. Hospital: early (≤ 4 days) susceptible bacteria; LATE = MULTIDRUG-RESISTANT.</td></tr>
           <tr><td class="h">Pulmonary embolism (gathered)</td><td>Raises DEAD SPACE (hypercapnia) · causes pulmonary hypertension by OBSTRUCTION · causes ARDS and acute respiratory failure · EXUDATIVE effusion.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="crit-l10-neutropenia" style="--acc:#8a1c2b;--acc-bg:#efdfe1;--acc-zebra:#f7eff0;--acc-ink:#6c1622">
+    <div class="shead"><span class="dot" style="background:#8a1c2b"></span><h2>L10 · ★ Neutropenia grades (slide 9)</h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term">Grade</th><th>Absolute neutrophil count</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Mild</td><td>1,000–1,500 cells/µL</td></tr>
+          <tr><td class="h">Moderate</td><td>500–1,000 cells/µL</td></tr>
+          <tr><td class="h">Severe</td><td>&lt; 500 cells/µL</td></tr>
+          <tr><td class="h">Agranulocytosis</td><td>&lt; 200 cells/µL</td></tr>
+          <tr><td class="rnote" colspan="2">★ The only lab values the lecturer said to memorize.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">“Fifteen, ten, five, two” — hundreds per microliter, counting down.</p><p class="mnem-key"><span><b>15</b> below 1,500 = mild</span><span><b>10</b> below 1,000 = moderate</span><span><b>5</b> below 500 = severe</span><span><b>2</b> below 200 = agranulocytosis</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l10-marrow" style="--acc:#8a1c2b;--acc-bg:#efdfe1;--acc-zebra:#f7eff0;--acc-ink:#6c1622">
+    <div class="shead"><span class="dot" style="background:#8a1c2b"></span><h2>L10 · ★ Bone marrow neoplasms (slide 18)</h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term">Group</th><th>Process</th><th>Members / note</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Myelodysplastic (MDS)</td><td>Ineffective hematopoiesis with cytopenias and DYSPLASIA</td><td>Can progress to AML</td></tr>
+          <tr><td class="h">Acute myeloid leukemia (AML)</td><td>Impaired DIFFERENTIATION + abnormal BLAST proliferation</td><td>Distinct from MDS</td></tr>
+          <tr><td class="h">Myeloproliferative (MPN)</td><td>CLONAL PROLIFERATION of myeloid cells</td><td>CML · polycythemia vera · essential thrombocythemia · primary myelofibrosis (can cause cytopenias)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Dys-, blasts, pro-: made badly, never grow up, made too many.</p><p class="mnem-key"><span><b>Dys</b> myelodysplastic</span><span><b>Blasts</b> acute myeloid leukemia</span><span><b>Pro</b> myeloproliferative</span></p><p class="mnem-brk"><b>Where it breaks:</b> MPN members by first letters: “Can People Eat Pie?” = CML, Polycythemia vera, Essential thrombocythemia, Primary myelofibrosis.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l10-lymphoid" style="--acc:#8a1c2b;--acc-bg:#efdfe1;--acc-zebra:#f7eff0;--acc-ink:#6c1622">
+    <div class="shead"><span class="dot" style="background:#8a1c2b"></span><h2>L10 · ★ Lymphoid neoplasms (slides 23, 28)</h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term">Cell of origin</th><th>Neoplasm</th><th>Word</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Precursor B or T cells</td><td>Acute lymphoblastic leukemia/lymphoma</td><td>PRECURSOR</td></tr>
+          <tr><td class="h">Mature B cells</td><td>Chronic lymphocytic leukemia / small lymphocytic lymphoma</td><td>MATURE</td></tr>
+          <tr><td class="h">Mature T and NK cells</td><td>Distinct T-cell and NK-cell neoplasms</td><td>MATURE</td></tr>
+          <tr><td class="h">Germinal-center B cells</td><td>Classic Hodgkin lymphoma</td><td>—</td></tr>
+          <tr><td class="h">Differentiated antibody-producing B-lineage cells</td><td>Plasma-cell myeloma</td><td>DIFFERENTIATED</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">A-C-M runs young to old: Acute (precursor) → Chronic (mature) → Myeloma (differentiated).</p><p class="mnem-key"><span><b>A</b> acute lymphoblastic — precursor</span><span><b>C</b> chronic lymphocytic — mature</span><span><b>M</b> myeloma — differentiated</span></p><p class="mnem-brk"><b>Where it breaks:</b> Hodgkin lymphoma sits outside the chain: germinal-center B cells.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l10-mcv" style="--acc:#8a1c2b;--acc-bg:#efdfe1;--acc-zebra:#f7eff0;--acc-ink:#6c1622">
+    <div class="shead"><span class="dot" style="background:#8a1c2b"></span><h2>L10 · Anemia by mean cell volume (slide 33)</h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term">Group</th><th>MCV</th><th>Causes on the slide</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Microcytic</td><td>&lt; 80 fL</td><td>Iron deficiency · thalassemia · inflammation (some cases) · sideroblastic anemia</td></tr>
+          <tr><td class="h">Normocytic</td><td>80–100 fL</td><td>Blood loss or hemolysis · inflammation or renal disease · marrow failure or infiltration · EARLY iron deficiency</td></tr>
+          <tr><td class="h">Macrocytic</td><td>&gt; 100 fL</td><td>Megaloblastic: B12 or folate deficiency · Nonmegaloblastic: liver disease, alcohol, drugs, reticulocytosis</td></tr>
+          <tr><td class="rnote" colspan="3">Marrow response (reticulocytes / RPI): LOW = reduced production or early/blunted response · INCREASED = blood loss, hemolysis or recovery; a rise takes several days.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Micro “TICS”: Thalassemia, Iron deficiency, Chronic inflammation, Sideroblastic.</p><p class="mnem-key"><span><b>T</b> thalassemia</span><span><b>I</b> iron deficiency</span><span><b>C</b> inflammation (chronic, some cases)</span><span><b>S</b> sideroblastic</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l10-erythrocytosis" style="--acc:#8a1c2b;--acc-bg:#efdfe1;--acc-zebra:#f7eff0;--acc-ink:#6c1622">
+    <div class="shead"><span class="dot" style="background:#8a1c2b"></span><h2>L10 · Erythrocytosis (slide 41)</h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term">Type</th><th>Red-cell mass</th><th>Mechanism</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Relative</td><td>Unchanged</td><td>Reduced PLASMA volume (dehydration)</td></tr>
+          <tr><td class="h">Absolute — polycythemia vera</td><td>Increased</td><td>Clonal myeloproliferative neoplasm</td></tr>
+          <tr><td class="h">Absolute — secondary</td><td>Increased</td><td>Erythropoietic response to hypoxia, increased erythropoietin or other stimuli</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Water, clone, or air: plasma lost, a clone, or hypoxia.</p><p class="mnem-key"><span><b>Water</b> relative</span><span><b>Clone</b> polycythemia vera</span><span><b>Air</b> secondary (hypoxia)</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l10-coag" style="--acc:#8a1c2b;--acc-bg:#efdfe1;--acc-zebra:#f7eff0;--acc-ink:#6c1622">
+    <div class="shead"><span class="dot" style="background:#8a1c2b"></span><h2>L10 · ★ Coagulation tests and disorders (slides 43–46)</h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term">Item</th><th>Factors / cause</th></tr></thead>
+        <tbody>
+          <tr><td class="h">PT (prothrombin time)</td><td>Extrinsic VII + common</td></tr>
+          <tr><td class="h">aPTT (activated partial thromboplastin time)</td><td>Intrinsic XII, XI, IX, VIII + common</td></tr>
+          <tr><td class="h">Common pathway</td><td>X, V, II, I</td></tr>
+          <tr><td class="h">Hemophilia A</td><td>Factor VIII deficiency</td></tr>
+          <tr><td class="h">Hemophilia B</td><td>Factor IX deficiency</td></tr>
+          <tr><td class="h">Von Willebrand disease</td><td>VWF supports platelet adhesion and carries/stabilizes factor VIII</td></tr>
+          <tr><td class="h">Factor V Leiden (thrombophilia)</td><td>Genetic mutation</td></tr>
+          <tr><td class="h">Antiphospholipid syndrome (thrombophilia)</td><td>Autoimmune response</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Common pathway = “10, 5, 2, 1” — like a countdown to the clot. PT has the one short factor (VII); PTT the long list (12, 11, 9, 8).</p><p class="mnem-key"><span><b>A→8</b> hemophilia A = VIII</span><span><b>B→9</b> hemophilia B = IX</span></p></div>
+  </section>
+
+  <section class="topic" id="l10-wbc" style="--acc:#9e3b2c;--acc-bg:#f1e4e1;--acc-zebra:#f8f1f0;--acc-ink:#7b2e22">
+    <div class="shead"><span class="dot" style="background:#9e3b2c"></span><h2>L10 · Blood, White Cells & Neoplasia</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Blood</td><td>55% PLASMA, 45% formed elements; plasma 90–92% water; SERUM = fluid left after clotting. Adult hematopoiesis: AXIAL skeleton + PROXIMAL humerus and femur.</td></tr>
+          <tr><td class="h">Lineage</td><td>MYELOID progenitor → erythroid precursors, MEGAKARYOCYTES (platelets), granulocytes, monocytes (→ MACROPHAGES). LYMPHOID → B, T, NK cells.</td></tr>
+          <tr><td class="h">Normal differential</td><td>Neutrophils 40–60% · lymphocytes 20–40% · monocytes 2–8% · eosinophils 1–4% · basophils 0.5–1%.</td></tr>
+          <tr><td class="h">Relative vs absolute</td><td>Absolute = WBC count × relative fraction. A fall in one type can ARTIFICIALLY raise another's percentage.</td></tr>
+          <tr><td class="h">Neutrophils</td><td>First responders; with macrophages, the PHAGOCYTIC leukocytes. Neutrophilia → acute BACTERIAL inflammation. Severe neutropenia → serious infection risk.</td></tr>
+          <tr><td class="h">Bands</td><td>BANDEMIA = more immature neutrophils (LEFT SHIFT). Historical SIRS: &gt; 10% bands. SEPSIS-3 = infection-associated, life-threatening ORGAN DYSFUNCTION.</td></tr>
+          <tr><td class="h">Monocytes ↑</td><td>Chronic myelomonocytic leukemia · autoimmune (sometimes) · chronic infection (CMV, tuberculosis).</td></tr>
+          <tr><td class="h">Eosinophils ↑</td><td>ALLERGY (esp. asthma) · PARASITE · DRUG effect; rarely neoplastic/autoimmune.</td></tr>
+          <tr><td class="h">Basophils ↑</td><td>Bind IgE; parasites and allergy; few on a CBC → consider MALIGNANCY.</td></tr>
+          <tr><td class="h">V(D)J</td><td>B cells rearrange immunoglobulin genes in the MARROW: heavy chains V, D, J; LIGHT chains V and J. Germinal centers: SOMATIC HYPERMUTATION → affinity maturation.</td></tr>
+          <tr><td class="h">Clonality</td><td>Clone = descended from ONE progenitor. PCR finds a dominant receptor-gene rearrangement, but REACTIVE or premalignant cells can be clonal too → not proof of malignancy.</td></tr>
+          <tr><td class="h">Acute leukemia</td><td>★ MATURATION ARREST (transcription-factor mutations) + growth factor–independent proliferation → LYMPHOBLASTS / MYELOBLASTS.</td></tr>
+          <tr><td class="h">Leukemia counts</td><td>Peripheral WBC LOW, NORMAL or HIGH; marrow involvement suppresses normal production → CYTOPENIAS. Hyperleukocytosis = very high count; LEUKOSTASIS = impaired microcirculation + organ injury (LUNGS, BRAIN).</td></tr>
+          <tr><td class="h">Risk factors</td><td>Chemical, viral, radiation MUTAGENS; immunodeficiency. Result: too few normal WBC, RBC, platelets.</td></tr>
+          <tr><td class="h">Lineage figure</td><td>Red-cell line → POLYCYTHEMIA VERA / erythroid leukemia; megakaryocyte → ESSENTIAL THROMBOCYTHEMIA.</td></tr>
+          <tr><td class="h">Multiple myeloma</td><td>CLONAL PLASMA CELLS in marrow. Proteins + infiltration → RENAL injury, ANEMIA, impaired IMMUNITY; altered bone remodeling → OSTEOLYTIC lesions + HYPERCALCEMIA. Active = plasma-cell neoplasm + a MYELOMA-DEFINING EVENT (bone lesions not required).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l10-rbc" style="--acc:#7a2e4a;--acc-bg:#ece2e6;--acc-zebra:#f6f0f2;--acc-ink:#5f243a">
+    <div class="shead"><span class="dot" style="background:#7a2e4a"></span><h2>L10 · Red Cells, Coagulation & Platelets</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Indices</td><td>MCV = average VOLUME · MCH = average hemoglobin MASS per cell · MCHC = hemoglobin CONCENTRATION in packed cells.</td></tr>
+          <tr><td class="h">Morphology clues</td><td>SIZE · HEMOGLOBINIZATION (color: normo-/HYPOCHROMIC) · SHAPE.</td></tr>
+          <tr><td class="h">Small vs big</td><td>Microcytic hypochromic = HEMOGLOBIN SYNTHESIS disorder. Macrocytic = impaired ERYTHROID PRECURSOR MATURATION. Normocytic: SHAPE is the clue.</td></tr>
+          <tr><td class="h">Anemia</td><td>Reduces OXYGEN-CARRYING capacity; defined by HEMOGLOBIN below the cutoff for age, sex, pregnancy. WHO 2024 (15–65): &lt; 13 g/dL men, &lt; 12 g/dL nonpregnant women. Read Hb/Hct against PLASMA volume.</td></tr>
+          <tr><td class="h">Hemolysis</td><td>Survival &lt; ~120 DAYS; breakdown products ↑; EPO and reticulocytes ↑ if marrow compensates; blunted by marrow disease, nutrient deficiency, RENAL disease, infection.</td></tr>
+          <tr><td class="h">Extravascular</td><td>Old red cells die in MACROPHAGES (spleen, liver, marrow) — age-dependent SURFACE PROTEIN changes. Most hemolytic anemias: premature destruction in PHAGOCYTES = EXTRAVASCULAR.</td></tr>
+          <tr><td class="h">Hereditary spherocytosis</td><td>Lose lipid MEMBRANE → RIGID spherocytes → TRAPPED in spleen → eaten by splenic macrophages.</td></tr>
+          <tr><td class="h">Diminished erythropoiesis</td><td>Megaloblastic · vitamin B12 deficiency · IRON deficiency · APLASTIC anemia.</td></tr>
+          <tr><td class="h">Initiation</td><td>★ TISSUE FACTOR–VIIa activates IX and X; external bleeding NOT required.</td></tr>
+          <tr><td class="h">Key reactions</td><td>★ IXa + VIIIa → Xa · Xa + Va → THROMBIN (from prothrombin) · thrombin: fibrinogen → fibrin · XIIIa crosslinks. COFACTORS = VIIIa and Va; Ca²⁺ + phospholipid assemble complexes.</td></tr>
+          <tr><td class="h">Regulation vs fibrinolysis</td><td>LIMIT coagulation: ANTITHROMBIN + activated PROTEIN C with PROTEIN S. Fibrinolysis (separate): plasminogen → PLASMIN degrades fibrin.</td></tr>
+          <tr><td class="h">Thrombocytopenia</td><td>Reduced marrow production · IMMUNE destruction (ITP) · drug reactions (immune HIT).</td></tr>
+          <tr><td class="h">Thrombocytosis</td><td>REACTIVE: inflammation, infection, IRON deficiency · PRIMARY: clonal marrow disorder.</td></tr>
+          <tr><td class="h">Qualitative platelet</td><td>Inherited: ADHESION, AGGREGATION, SECRETION · Acquired: external factors, systemic disease.</td></tr>
+          <tr><td class="h">HIT</td><td>Immune heparin-induced thrombocytopenia: platelet ACTIVATION → THROMBOSIS despite a falling count.</td></tr>
         </tbody>
       </table>
     </div>

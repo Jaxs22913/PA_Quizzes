@@ -149,7 +149,7 @@ QUESTIONS = [
  "q": "How does capillary diameter compare with a red blood cell?",
  "opts": [
   ["Equal to or even slightly smaller",
-   "Correct, and the consequence is that red cells must deform to pass, which brings their membranes into close contact with the endothelium."],
+   "Correct. A capillary is equal to or even slightly smaller than a red blood cell, and it has no media: just an endothelial lining for exchange."],
   ["About ten times larger",
    "A capillary is at most the width of a single red cell rather than many times it."],
   ["About a hundred times larger",
@@ -411,7 +411,7 @@ QUESTIONS = [
   ["Medium-sized muscular arteries",
    "Correct &mdash; the smaller branches of the aorta such as the coronary and renal arteries, roughly 3 to 4 mm. They combine elasticity with musculature to withstand high pulsatile forces and recoil to promote flow."],
   ["Large elastic arteries such as the aorta",
-   "The aorta's characteristic lesion is aneurysm, through loss of elastic tissue."],
+   "Large elastic arteries such as the aorta are assigned aneurysm, from loss of elastic tissue; the principal site given for atherosclerosis is the medium-sized muscular artery."],
   ["Small arteries and arterioles within tissues",
    "Small arteries and arterioles within tissues are the vessels affected by hypertension rather than by atherosclerosis."],
   ["Capillaries",
@@ -461,7 +461,7 @@ QUESTIONS = [
  "q": "What influences stroke volume, and therefore part of cardiac output?",
  "opts": [
   ["Blood volume",
-   "Correct &mdash; sodium excretion or resorption sets the volume, which is why renal sodium handling sits at the center of blood pressure regulation. It is regulated by sodium excretion or resorption."],
+   "Correct. Stroke volume is influenced by blood volume, and blood volume is regulated by sodium excretion or resorption."],
   ["The diameter of the arterioles",
    "Arteriolar diameter regulates vascular resistance, the other determinant of blood pressure in this scheme, not stroke volume."],
   ["The number of capillaries in the tissue",
