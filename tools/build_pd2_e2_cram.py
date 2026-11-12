@@ -339,7 +339,7 @@ topics = [
   "rows": [
     ("Cullen", "Periumbilical ecchymosis", "Internal bleeding"),
     ("Grey Turner", "Flank ecchymosis", "Retroperitoneal or intra-abdominal bleeding"),
-    {"note": "Both possible in severe pancreatitis. Uncommon, may be delayed; absent signs do not exclude significant bleeding."},
+    {"note": "Possible severe pancreatitis or other serious abdominal condition. Uncommon, may be delayed; absent signs do not exclude significant bleeding."},
   ],
   "mnemonic": {"hook": "Cullen is Central; Grey Turner turns to the side.",
                "key": [["Cullen", "around the umbilicus"], ["Turner", "the flank"]]}},
@@ -348,12 +348,12 @@ topics = [
   "cols": ["Measure", "Normal", "Clubbing"], "min_width": "0",
   "rows": [
     ("Nail-fold profile angle", "Under 180°", "Over 180°"),
-    ("Schamroth's window", "Diamond-shaped window between the nails", "Window lost"),
-    ("Phalangeal depth ratio", "Nail-base depth smaller than end-joint depth", "Nail-base depth greater"),
-    {"note": "Clubbing is atypical for uncomplicated anemia: look for a cardiopulmonary, gastrointestinal or other systemic disorder."},
+    ("Schamroth sign (photographs)", "Small gap between the backs of the paired nails", "Gap gone"),
+    ("Phalangeal depth ratio (DPD : IPD)", "DPD smaller than IPD", "DPD greater than IPD"),
+    {"note": "DPD and IPD are the slide's labels (distal phalangeal depth at the nail base, interphalangeal depth at the end joint); the Schamroth gap is read from the photographs. Clubbing is atypical for uncomplicated anemia: look for a cardiopulmonary, gastrointestinal or other systemic disorder."},
   ],
   "mnemonic": {"hook": "Clubbing goes past flat, shuts the window, fattens the tip.",
-               "key": [["Past flat", "angle over 180°"], ["Shuts the window", "Schamroth window lost"], ["Fattens the tip", "nail-base depth exceeds the end joint"]]}},
+               "key": [["Past flat", "angle over 180°"], ["Shuts the window", "Schamroth gap gone"], ["Fattens the tip", "DPD greater than IPD"]]}},
 
  {"id": "l7-history", "label": "The Hematologic History", "color": "#7a3b3b",
   "rows": [
@@ -367,9 +367,9 @@ topics = [
     ["Malabsorption", "Chronic diarrhea, bloating, weight loss. Gastric bypass, gastrectomy, intestinal resection. Celiac disease, inflammatory bowel disease."],
     ["Diet and travel", "Iron-containing foods, animal products, fortified foods, supplements. VEGAN without B12 supplements or fortified foods = B12 risk. Travel: febrile illness, infectious exposures."],
     ["Malignancy questions", "Fever, night sweats, unintentional weight loss."],
-    ["Medications", "Nonsteroidal anti-inflammatory drugs, aspirin, anticoagulants (bleeding); metformin, acid suppression; NITROUS OXIDE with possible B12 deficiency."],
+    ["Medications", "Prescription, over-the-counter and supplements: nonsteroidal anti-inflammatory drugs, aspirin, anticoagulants, metformin, acid-suppressing medications; NITROUS OXIDE exposure with possible B12 deficiency."],
     ["Menstrual", "Duration, flooding, protection changes, daily impact; intermenstrual or postmenopausal bleeding; pregnancy and recent delivery."],
-    ["Family and social", "Anemia, hemoglobinopathy, bleeding, unexplained jaundice; relatives with transfusions or SPLENECTOMY. Ancestry = risk information; hemoglobinopathies in ANY ancestry. Alcohol, nutrition, occupation."],
+    ["Family and social", "Anemia, hemoglobinopathy, bleeding, unexplained jaundice; relatives with transfusions or SPLENECTOMY. Ancestry = risk information; hemoglobinopathies possible in ANY ancestry. Alcohol, nutrition, occupation."],
     ["Exposures and conditions", "LEAD (renovation, pre-1978 buildings), BENZENE (marrow-toxic). Chronic kidney, inflammatory or liver disease, malignancy. Anemia with irritable bowel syndrome: look for another explanation."],
   ]},
 
@@ -388,14 +388,14 @@ topics = [
 
  {"id": "l7-systems", "label": "Other Systems & the Emergency", "color": "#3f5b6b",
   "rows": [
-    ["Cardiovascular", "Tachycardia, hyperdynamic circulation, possible bounding pulses, prominent precordial impulse, possible SYSTOLIC flow murmur. Heart failure in severe or poorly tolerated anemia. Read against symptoms and heart disease."],
+    ["Cardiovascular", "Tachycardia, hyperdynamic circulation, possible bounding pulses, prominent precordial impulse, possible SYSTOLIC flow murmur. Heart failure assessment in severe or poorly tolerated anemia. Read against symptoms and heart disease."],
     ["Bone tenderness", "Sternal or other: possible marrow disease; nonspecific."],
     ["Pulmonary", "Dyspnea, tachypnea; lower oxygen-carrying capacity; NORMAL pulse oximetry. Consider coexisting lung disease or heart failure."],
     ["Abdomen", "Tenderness, masses, hepatomegaly, ascites, splenomegaly. Splenomegaly: hemolysis, infection, portal hypertension, hematologic malignancy. Rectal examination when indicated."],
     ["Stool blood test", "NEGATIVE: bleeding still possible. POSITIVE: source and cause still undetermined."],
     ["B12 neurologic", "Paresthesias; reduced vibration and joint-position sense; sensory ataxia (worse in the DARK); neuropathy; cognitive, psychiatric or visual changes; can occur WITHOUT anemia or macrocytosis."],
     ["Spinal cord", "Posterior columns = vibration and position sense. Lateral corticospinal tracts = spasticity, hyperreflexia."],
-    ["Neurologic examination", "Gait and balance; distal vibration and joint-position sense; strength and reflexes; ROMBERG with protection against falling. Worse with eyes closed = impaired proprioception."],
+    ["Neurologic examination", "Gait and balance; distal vibration and joint-position sense; strength and reflexes; ROMBERG with protection against falling. Greater instability with eyes closed = possible impaired proprioception."],
     ["Urgent assessment", "Active major bleeding, hypotension, syncope, chest pain, dyspnea at rest, altered mental status. Check vital signs, mental status, skin perfusion, ongoing loss; escalate: stabilize, control bleeding, resuscitate."],
     ["General vs cause clues", "General: fatigue, weakness, exertional dyspnea, palpitations, lightheadedness. Cause: bleeding history, jaundice, diet or surgery, neurologic findings, lymphadenopathy, splenomegaly."],
   ]},
