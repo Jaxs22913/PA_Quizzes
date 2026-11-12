@@ -2357,3 +2357,490 @@ TEST_YOURSELF = {
     "Primary spontaneous pneumothorax, typically in tall, thin men aged 20 to 40, comes from rupture of small subpleural apical blebs. Underlying lung disease defines secondary pneumothorax, and air that enters but cannot leave defines tension pneumothorax."),
  ],
 }
+
+
+# =====================================================================================
+# Lecture 10 -- Pathophysiology of Blood Disorders (Ward, 10 November 2026).
+# Spliced in by add_cp_e2_guide_l10.py. Deck: "Pathophysiology of Blood Disorders SV Fall
+# 2026.pptx" (51 slides); two-part Notability recording, one transcript (flags file in the inbox).
+# =====================================================================================
+L10 = "Pathophysiology of Blood Disorders SV Fall 2026.pptx"
+D10 = "cp-exam-2-l10-images/"
+
+TOC_L10 = '''  <a class="top-link" href="#blood">10 &middot; Blood Disorders</a>
+  <a href="#l10-recording">10.0 What the lecture adds</a>
+  <a href="#l10-cells">10.1 Objectives a &amp; b &mdash; Blood and its cells</a>
+  <a href="#l10-molecular">10.2 Objective c &mdash; Molecular mechanisms</a>
+  <a href="#l10-wbc">10.3 Objective d &mdash; White blood cell disorders</a>
+  <a href="#l10-neoplasia">10.4 Objective e &mdash; Bone marrow neoplasia</a>
+  <a href="#l10-mpn">10.5 Objective f &mdash; Myeloproliferative</a>
+  <a href="#l10-mds">10.6 Objective g &mdash; Myelodysplastic</a>
+  <a href="#l10-rbc">10.7 Objective h &mdash; Red blood cell disorders</a>
+  <a href="#l10-coag">10.8 Objective i &mdash; Coagulation disorders</a>
+  <a href="#l10-platelets">10.9 Objective j &mdash; Platelet disorders</a>
+'''
+
+BLOOD = '''
+<section class="deck" id="blood">
+  <h2 class="deck-title">10 &middot; Pathophysiology of Blood Disorders</h2>
+  <p class="lecturer">Lecture 10 &middot; 10 November 2026 &middot; Matthew Ward, DMSc, MBA, PA-C &middot;
+  deck &ldquo;Pathophysiology of Blood Disorders SV Fall 2026&rdquo; (51 slides).</p>
+  <div class="io-box">
+    <h3>Instructional Objectives</h3>
+    <ol type="a">
+      <li>Review the anatomy of the blood cells</li>
+      <li>Review the functions of blood cells</li>
+      <li>Describe the molecular mechanisms of blood disorders</li>
+      <li>Compare and contrast the etiologies and pathophysiological processes of white blood cell disorders</li>
+      <li>Describe the process of bone marrow neoplasia</li>
+      <li>Describe the etiologies and pathophysiological processes of myeloproliferative syndromes</li>
+      <li>Describe the etiologies and pathophysiological processes of myelodysplastic syndromes</li>
+      <li>Discuss the etiologies and pathophysiological processes of red blood cell disorders</li>
+      <li>Describe the etiologies and pathophysiological processes of coagulation disorders</li>
+      <li>Discuss the etiologies and pathophysiological processes of platelet disorders</li>
+    </ol>
+  </div>
+
+  <h3 class="sub" id="l10-recording">10.0 &middot; What the lecture adds</h3>
+  <p>The lecture ran 96 minutes in two recorded parts (slides 3&ndash;26, then 27&ndash;50). The questions
+  follow the minutes spent on each topic, with the slides he flagged counted half again:</p>
+  <table>
+    <tr><th>Where the minutes went</th><th>Min</th></tr>
+    <tr><td>Red-cell indices and morphology (slides 29&ndash;32)</td><td>8.3</td></tr>
+    <tr><td>Leukemia: pathogenesis, counts, leukostasis (slides 19&ndash;22)</td><td>7.9</td></tr>
+    <tr><td>B cells, V(D)J recombination and clonality (slides 14&ndash;17)</td><td>7.3</td></tr>
+    <tr><td>Coagulation reactions and cascade (slides 42&ndash;44)</td><td>7.1</td></tr>
+    <tr><td>Hemolytic anemia (slides 37&ndash;39)</td><td>6.9</td></tr>
+    <tr><td>Anemia by size and marrow response (slides 33&ndash;34)</td><td>6.2</td></tr>
+    <tr><td>Neutrophils, neutropenia and bands (slides 9&ndash;10)</td><td>6.1</td></tr>
+    <tr><td>Lymphoid neoplasms and B/T development (slides 23&ndash;24)</td><td>5.1</td></tr>
+    <tr><td>Platelet disorders (slides 49&ndash;50), covered &ldquo;very quickly&rdquo;</td><td>1.6</td></tr>
+  </table>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized &mdash; stated in the lecture</span>
+  <table>
+    <tr><th>Said</th><th>What it points at</th></tr>
+    <tr><td><em>&ldquo;<mark class="prof-highlight">These are the only lab values that you guys should have
+    memorized.</mark> Everything else, not super important for you guys to have memorized. Just remember the
+    patho.&rdquo;</em> [part 1, 13:11]</td><td>The neutropenia grades by absolute neutrophil count (slide 9,
+    section 10.3).</td></tr>
+    <tr><td><em>&ldquo;This is going to be <mark class="prof-highlight">important for you guys to know the
+    different diagnoses here and how to differentiate between them</mark>.&rdquo;</em> [part 1, 30:32]</td>
+    <td>Myelodysplastic neoplasms vs acute myeloid leukemia vs myeloproliferative neoplasms (slide 18,
+    section 10.4).</td></tr>
+    <tr><td><em>&ldquo;<mark class="prof-highlight">Definitely important to know this slide.</mark>&rdquo;</em>
+    [part 1, 40:46]</td><td>Lymphoid neoplasms by lineage and stage of maturation (slide 23, section 10.3).</td></tr>
+    <tr><td><em>&ldquo;For this lecture, this is pathology, so <mark class="prof-highlight">focus more on how to
+    distinguish between the diseases</mark>.&rdquo;</em> [part 2, 0:00] &mdash; and <em>&ldquo;always remember
+    the words mature, precursor, differentiated, and attach them to the corresponding disease
+    names.&rdquo;</em> [part 2, 4:03]</td><td>Chronic lymphocytic leukemia = mature; acute lymphoblastic
+    leukemia = precursor; plasma-cell myeloma = differentiated (slide 28).</td></tr>
+    <tr><td><em>&ldquo;<mark class="prof-highlight">You guys need to know your cascade</mark> in addition to
+    factor numbers know the factor names&rdquo; &hellip; &ldquo;Make sure you know thrombin generation&rdquo;
+    &hellip; &ldquo;also know your co-factors&rdquo; &hellip; &ldquo;make sure you know your extrinsic,
+    intrinsic, and how they differ.&rdquo;</em> [part 2, 38:03&ndash;43:08]</td><td>Slides 43&ndash;44
+    (section 10.8).</td></tr>
+    <tr><td><em>&ldquo;<mark class="prof-highlight">Definitely know this slide here.</mark>&rdquo;</em>
+    [part 2, 46:11]</td><td>Hemophilia A and B, von Willebrand disease, factor V Leiden and
+    antiphospholipid syndrome (slide 46, section 10.8).</td></tr>
+  </table>
+  </div>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Said to go light on</span>
+  <p>The reference-interval table (slide 34): <em>&ldquo;you don&rsquo;t need to memorize this&rdquo;</em>
+  [part 2, 17:22]. Factor XIII: <em>&ldquo;you don&rsquo;t need to know it&rdquo;</em> [part 2, 39:03].</p>
+  </div>
+  <div class="callout"><strong>Spoken slips; the slides are what is tested.</strong> Twice he said
+  &ldquo;essential throm&shy;bo&shy;cyto&shy;penia&rdquo; for the myeloproliferative neoplasm the slides print as
+  <b>essential thrombocythemia</b> (a HIGH platelet count; slides 18 and 26). He also called the splenic
+  destruction of spherocytes &ldquo;intravascular&rdquo;; the figure on slide 39 shows them destroyed by
+  <b>splenic macrophages</b>, which is extravascular hemolysis. No slide was corrected in the recording.
+  <strong>Not on any slide</strong> (so not asked): demargination, smudge cells in chronic lymphocytic
+  leukemia, rouleaux in myeloma, ferritin and hepcidin, the hematocrit-is-three-times-hemoglobin rule.</div>
+
+  <h3 class="sub" id="l10-cells">10.1 &middot; Objectives a &amp; b &mdash; Blood and its cells</h3>
+  <p><b>Blood composition</b> (slide 3): adult blood volume is usually about <b>4&ndash;6 L</b>. Whole blood
+  is approximately <b>55% plasma and 45% formed elements</b>. Plasma is approximately <b>90&ndash;92%
+  water</b> and carries electrolytes, nutrients, waste products and proteins; plasma proteins include
+  albumin, globulins and <b>clotting factors</b>. <b>Serum is the fluid remaining after blood has
+  clotted</b>.</p>
+  <p><b>Hematopoiesis</b> (slide 4): most hematopoiesis occurs in the bone marrow. <b>In the healthy adult,
+  almost all hematopoiesis occurs in the axial skeleton, and proximal humerus and femur.</b></p>
+  ''' + fig(D10 + "marrow-hematopoiesis.jpg", 650, 308,
+            "Marrow histology with medullary venous sinuses, stromal cells and osteoblast, beside a long-bone diagram of its arterial supply.",
+            "Bone marrow, where most hematopoiesis occurs: medullary venous sinuses, stromal cells and the bone's "
+            "nutrient, metaphyseal and epiphyseal arteries.", "Lecture 10 &middot; Slide 4") + '''
+  ''' + fig(D10 + "hematopoiesis-lineage.png", 1100, 527,
+            "Lineage tree: multipotent stem cell to myeloid and lymphoid progenitors and their mature cells.",
+            "The simplified lineage model. The <b>myeloid progenitor</b> gives erythroid precursors (to "
+            "erythrocytes), <b>megakaryocytes</b> (to platelets), granulocytes (neutrophils, eosinophils, "
+            "basophils) and monocytes (to macrophages). The <b>lymphoid progenitor</b> gives B cells, T cells "
+            "and natural killer cells.", "Lecture 10 &middot; Slide 5") + '''
+  <p><b>Leukocytes</b> (slide 6), literally &ldquo;white cells&rdquo;, are primarily involved in
+  <b>self-defense</b>. They can be characterized as granulocytes vs agranulocytes, phagocytes vs
+  nonphagocytic cells, and myeloid vs lymphoid lineage. Alteration in number may be due to infection,
+  malignancy or autoimmune causes. Plasma cells are generally not listed.</p>
+  ''' + fig(D10 + "wbc-distribution.png", 751, 686,
+            "Table of normal white blood cell distribution as a percentage of the total leukocyte count.",
+            "Normal distribution: <b>neutrophils 40 to 60%</b>, lymphocytes 20 to 40%, monocytes 2 to 8%, "
+            "eosinophils 1 to 4%, basophils 0.5 to 1% of the total leukocyte count.",
+            "Lecture 10 &middot; Slide 6") + '''
+  <table>
+    <tr><th>Cell (slides 9&ndash;15)</th><th>Function</th><th>On the smear (slide pictures)</th></tr>
+    <tr><td>Neutrophil</td><td>First responder to infection; with macrophages, the <b>phagocytic
+    leukocytes</b></td><td>Segmented nucleus (slide 9)</td></tr>
+    <tr><td>Band neutrophil</td><td>Immature neutrophil</td><td><b>Kidney bean shaped nucleus</b> with mature
+    chromatin and no nucleoli; <b>indentation greater than 1/2 diameter</b>; secondary granules only</td></tr>
+    <tr><td>Monocyte</td><td><b>Precursors to macrophages</b></td><td>Kidney shaped nucleus with mature
+    chromatin; vacuoles commonly noted; low nuclear-to-cytoplasmic ratio</td></tr>
+    <tr><td>Eosinophil</td><td>Allergy, parasites, drug effect</td><td>Nucleus with <b>two lobes</b>;
+    eosinophilic (red) secondary granules; low nuclear-to-cytoplasmic ratio</td></tr>
+    <tr><td>Basophil</td><td>Parasite response and allergy; <b>binds IgE (immunoglobulin E)</b></td>
+    <td>Mature nucleus has <b>2&ndash;3 lobes</b>, may be obscured by numerous basophilic secondary
+    granules</td></tr>
+    <tr><td>Lymphocyte</td><td>B cells, T cells, natural killer cells</td><td>Slightly larger than a mature
+    red cell; <b>high nuclear-to-cytoplasmic ratio</b>; round mature nucleus with clumped chromatin; scant,
+    light blue cytoplasm with <b>no granules</b></td></tr>
+    <tr><td>B cell</td><td>Produces antibodies; selected cells become <b>plasma cells or memory B cells</b></td>
+    <td>&mdash;</td></tr>
+  </table>
+  ''' + fig(D10 + "band-neutrophil.png", 400, 400,
+            "Labeled drawing of a band neutrophil.",
+            "Band neutrophil: kidney-bean nucleus indented more than half its diameter, mature chromatin, "
+            "no nucleoli, secondary granules only.", "Lecture 10 &middot; Slide 10") + fig(
+            D10 + "eosinophil.jpg", 400, 400, "Labeled drawing of an eosinophil.",
+            "Eosinophil: nucleus with two lobes, eosinophilic secondary granules, low nuclear-to-cytoplasmic ratio.",
+            "Lecture 10 &middot; Slide 12") + fig(
+            D10 + "basophil.jpg", 400, 400, "Labeled drawing of a basophil.",
+            "Basophil: mature nucleus of 2 to 3 lobes, often obscured by numerous basophilic secondary granules.",
+            "Lecture 10 &middot; Slide 13") + fig(
+            D10 + "lymphocyte.jpg", 400, 400, "Labeled drawing of a lymphocyte.",
+            "Lymphocyte: high nuclear-to-cytoplasmic ratio, round nucleus with clumped chromatin, scant light "
+            "blue cytoplasm with no granules.", "Lecture 10 &middot; Slide 14") + fig(
+            D10 + "monocyte.png", 400, 400, "Labeled drawing of a monocyte.",
+            "Monocyte: kidney-shaped nucleus with mature chromatin, vacuoles commonly noted, low "
+            "nuclear-to-cytoplasmic ratio.", "Lecture 10 &middot; Slide 11") + '''
+
+  <h3 class="sub" id="l10-molecular">10.2 &middot; Objective c &mdash; Molecular mechanisms of blood disorders</h3>
+  <p>No slide is titled &ldquo;molecular mechanisms&rdquo;; these are the molecular steps the deck gives.</p>
+  <table>
+    <tr><th>Step</th><th>Mechanism</th></tr>
+    <tr><td>B-cell development (slide 15)</td><td>B cells develop in bone marrow and <b>rearrange
+    immunoglobulin genes</b>. <b>V(D)J recombination: heavy chains use V, D and J. Light chains use V and
+    J.</b></td></tr>
+    <tr><td>After antigen (slide 15)</td><td>Antigen activation can induce <b>somatic hypermutation</b> and
+    <b>affinity maturation in germinal centers</b>; selected cells differentiate into plasma cells or memory
+    B cells.</td></tr>
+    <tr><td>Malignant transformation (slides 16&ndash;17)</td><td><b>Acquired genetic changes</b> can promote
+    abnormal lymphoid growth. A <b>clone</b> is a cell population <b>descended from a common
+    progenitor</b>; lymphoid malignancies often share a <b>dominant receptor-gene rearrangement</b>, which
+    PCR (polymerase chain reaction) can detect.</td></tr>
+    <tr><td>Acute leukemia (slide 20)</td><td><b>Acquired mutations in transcription factors</b>, which
+    regulate the differentiation of immature lymphoid or myeloid cells, give <b>maturation arrest</b>; other
+    mutations allow tumor cells to proliferate in a <b>growth factor&ndash;independent</b> fashion.</td></tr>
+    <tr><td>Thrombophilia (slide 46)</td><td><b>Factor V Leiden: a genetic mutation</b>.
+    Antiphospholipid syndrome: an autoimmune response.</td></tr>
+  </table>
+  ''' + fig(D10 + "b-cell-development.jpg", 1100, 465,
+            "B-cell development from lymphoid stem cell through pro-B, pre-B, immature, mature and activated B cell to plasma and memory cells.",
+            "B-cell development: immunoglobulin gene rearrangement in the marrow, then antigen-driven "
+            "activation to plasma cell or memory B cell.", "Lecture 10 &middot; Slide 15") + '''
+  ''' + fig(D10 + "clonality-pcr.jpg", 1100, 1145,
+            "Gel and capillary electrophoresis profiles comparing a polyclonal smear with a clonal peak.",
+            "Clonality by PCR (polymerase chain reaction): a polyclonal population gives a spread of products, "
+            "a clonal one a dominant peak. <b>A clonal result alone does not establish malignancy</b>: "
+            "<b>reactive or premalignant populations can also be clonal</b>, so the result is interpreted "
+            "with morphology, immunophenotype and clinical findings.", "Lecture 10 &middot; Slide 16") + '''
+
+  <h3 class="sub" id="l10-wbc">10.3 &middot; Objective d &mdash; White blood cell disorders</h3>
+  <h4 class="subsub">Reading the count (slides 7&ndash;8)</h4>
+  <p>White cell counts may be <b>relative or absolute</b>; read both. <b>An absolute decrease in one type
+  may show an artificially increased relative count in another.</b> To convert relative to absolute:
+  <b>WBC (white blood cell) count &times; relative count as a fraction</b> (a count of 8,000 cells/&micro;L with
+  25% neutrophils is 2,000 neutrophils/&micro;L).</p>
+  <table>
+    <tr><th>Cell population</th><th>Increased count</th><th>Decreased count</th></tr>
+    <tr><td>Total leukocytes</td><td>Leukocytosis</td><td>Leukopenia</td></tr>
+    <tr><td>Lymphocytes</td><td>Lymphocytosis</td><td><b>Lymphocytopenia</b></td></tr>
+    <tr><td>Platelets</td><td>Thrombocytosis</td><td>Thrombocytopenia</td></tr>
+  </table>
+  <p>Neutropenia: decreased absolute neutrophil count. Eosinophilia: increased eosinophil count.
+  <b>Agranulocytosis: profound neutropenia, absolute neutrophil count below 200 cells/&micro;L.</b>
+  <b>Pancytopenia: reduced red cells, white cells and platelets.</b></p>
+  <h4 class="subsub">&#9733; Neutrophils and neutropenia (slide 9)</h4>
+  <p>Neutrophils are the first responders to infection; <b>neutrophils and macrophages are phagocytic
+  leukocytes</b>. <b>Neutrophilia often accompanies acute bacterial inflammation.</b> Neutropenia is classified
+  by absolute neutrophil count, the one set of numbers the lecturer said to memorize:</p>
+  <table>
+    <tr><th>&#9733; Grade</th><th>Absolute neutrophil count</th></tr>
+    <tr><td>Mild</td><td>1,000&ndash;1,500 cells/&micro;L</td></tr>
+    <tr><td>Moderate</td><td>500&ndash;1,000 cells/&micro;L</td></tr>
+    <tr><td>Severe</td><td><b>below 500 cells/&micro;L</b></td></tr>
+    <tr><td>Agranulocytosis</td><td><b>below 200 cells/&micro;L</b></td></tr>
+  </table>
+  <p><b>Severe neutropenia increases the risk of serious infection.</b></p>
+  <div class="pearl"><b>&#9733; &ldquo;Fifteen, ten, five, two.&rdquo;</b> Hundreds of cells per microliter,
+  counting down: below 1,500 mild, below 1,000 moderate, below 500 severe, below 200 agranulocytosis.</div>
+  <p><b>Band neutrophils</b> (slide 10) are immature neutrophils. <b>Bandemia: increased immature
+  neutrophils (left shift)</b>; it may accompany infection or other inflammatory stress. Historical SIRS
+  (systemic inflammatory response syndrome) criterion: <b>&gt;10% immature bands</b>. <b>Sepsis-3:
+  infection-associated, life-threatening organ dysfunction.</b></p>
+  ''' + fig(D10 + "neutrophils-smear.jpg", 400, 272, "Blood smear with two segmented neutrophils among red cells.",
+            "Neutrophils on a peripheral smear.", "Lecture 10 &middot; Slide 9") + '''
+  <h4 class="subsub">Monocytes, eosinophils and basophils (slides 11&ndash;13)</h4>
+  <table>
+    <tr><th>Raised count</th><th>Think of</th></tr>
+    <tr><td>Monocytes (precursors to macrophages)</td><td><b>Chronic myelomonocytic leukemia</b>; autoimmune
+    disorders (sometimes); <b>chronic infections</b> (e.g. cytomegalovirus, tuberculosis)</td></tr>
+    <tr><td>Eosinophils</td><td>Three things: <b>allergy (especially asthma), parasite, drug effect</b>; can
+    rarely be neoplastic or autoimmune</td></tr>
+    <tr><td>Basophils</td><td>Involved in parasite response and allergy; <b>bind IgE (immunoglobulin E)</b>;
+    really shouldn&rsquo;t see many on a CBC (complete blood count); <b>consider malignancy if
+    elevated</b></td></tr>
+  </table>
+  <h4 class="subsub">&#9733; Lymphoid neoplasms (slides 23, 24, 28)</h4>
+  <p><mark class="prof-highlight">Classification uses <b>cell lineage and stage of maturation</b>.</mark></p>
+  <table>
+    <tr><th>Cell of origin</th><th>Neoplasm</th><th>The word to attach</th></tr>
+    <tr><td><b>Precursor B or T cells</b> (lymphoblasts)</td><td><b>Acute lymphoblastic leukemia</b>/lymphoma
+    (B-ALL/LBL from the B-cell precursor in the marrow, T-ALL/LBL from the T-cell precursor in the
+    thymus)</td><td>Precursor</td></tr>
+    <tr><td><b>Mature B cells</b></td><td><b>Chronic lymphocytic leukemia</b>/small lymphocytic lymphoma
+    (CLL/SLL) and other B-cell lymphomas</td><td>Mature</td></tr>
+    <tr><td>Mature T and natural killer cells</td><td>Distinct T-cell and NK-cell neoplasms</td><td>Mature</td></tr>
+    <tr><td><b>Germinal-center B cells</b></td><td><b>Classic Hodgkin lymphoma</b></td><td>&mdash;</td></tr>
+    <tr><td>Differentiated antibody-producing B-lineage cells</td><td><b>Plasma-cell myeloma</b></td>
+    <td>Differentiated</td></tr>
+  </table>
+  ''' + fig(D10 + "b-t-development.png", 1100, 583,
+            "Diagram: stem cell to lymphoid progenitor, then B-cell precursor in bone marrow and T-cell precursor in thymus, to mature cells.",
+            "B- and T-cell development. The <b>B-cell precursor develops in the bone marrow</b> (origin of "
+            "B-ALL/LBL) and the <b>T-cell precursor in the thymus</b> (origin of T-ALL/LBL). Mature naive B cells "
+            "undergo antigen activation and selection to plasma cells or memory B cells; mature T cells are CD4 "
+            "or CD8.", "Lecture 10 &middot; Slide 24") + '''
+
+  <h3 class="sub" id="l10-neoplasia">10.4 &middot; Objective e &mdash; Bone marrow neoplasia</h3>
+  <h4 class="subsub">&#9733; The three bone marrow neoplasms (slide 18)</h4>
+  <table>
+    <tr><th>Myelodysplastic neoplasms (MDS)</th><th>Acute myeloid leukemia (AML)</th><th>Myeloproliferative neoplasms (MPN)</th></tr>
+    <tr><td><b>Ineffective hematopoiesis with cytopenias and dysplasia.</b> MDS can progress to AML.</td>
+    <td>Myeloid malignancy with <b>impaired differentiation and abnormal blast proliferation</b>. Distinct
+    from MDS.</td>
+    <td><b>Clonal proliferation of myeloid cells.</b> CML (chronic myeloid leukemia), polycythemia vera,
+    essential thrombocythemia and primary myelofibrosis. Myelofibrosis can cause cytopenias.</td></tr>
+  </table>
+  <p>WHO (World Health Organization): &ldquo;myelodysplastic neoplasms.&rdquo; &ldquo;Myelodysplastic
+  syndromes&rdquo; remains in use in other frameworks.</p>
+  <div class="pearl"><b>Dys-, pro-, and blasts.</b> <b>Dys</b>plastic = cells made badly (too few work);
+  <b>pro</b>liferative = too many made by a clone; acute leukemia = <b>blasts</b> that never grow up.</div>
+  <h4 class="subsub">Leukemia (slides 19&ndash;22)</h4>
+  <p>Leukemia: malignant cells in blood and bone marrow. <b>The primary pathogenic defect in acute leukemia
+  is maturation arrest.</b> Acquired mutations in <b>transcription factors</b> block differentiation;
+  other mutations let tumor cells proliferate growth factor&ndash;independently. These immature, malignant
+  cells are called <b>&ldquo;lymphoblasts&rdquo; or &ldquo;myeloblasts&rdquo;</b> depending on the
+  lineage.</p>
+  <p><b>Counts</b> (slide 22): <b>the peripheral WBC count may be low, normal or high.</b> <b>Marrow
+  involvement can suppress normal blood-cell production and cause cytopenias.</b>
+  <b>Hyperleukocytosis</b> = a markedly elevated circulating white count. <b>Leukostasis</b> = <b>impaired
+  microcirculation with organ injury, often involving the lungs or brain</b>. A high WBC count alone does not
+  establish leukostasis.</p>
+  <p><b>Risk factors</b> (slide 25) for hematologic neoplasms include exposure to <b>chemical, viral and
+  radiation mutagens</b> and immunodeficiency disorders. The consequence: <b>insufficient production of
+  normal WBC, RBC, platelets</b> (white cells, red cells and platelets).</p>
+  ''' + fig(D10 + "neoplasm-lineages.png", 1100, 513,
+            "Figure dividing hematologic neoplasms into lymphoid and myeloid lineages by cell of origin.",
+            "Neoplasms by lineage. Lymphoid: NK-cell, B-cell (leukemia/lymphoma/myeloma) and T-cell neoplasms. "
+            "Myeloid: granulocytic and monocytic leukemia; <b>red cell &rarr; polycythemia vera / erythroid "
+            "leukemia</b>; <b>megakaryocyte &rarr; essential thrombocythemia</b> / megakaryocytic leukemia.",
+            "Lecture 10 &middot; Slide 26") + '''
+  <h4 class="subsub">Multiple myeloma (slides 27&ndash;28)</h4>
+  <ul>
+    <li><b>Clonal plasma-cell malignancy</b> involving the bone marrow &mdash; a malignancy of differentiated,
+    antibody-producing B-lineage cells.</li>
+    <li>Monoclonal proteins and marrow infiltration can cause <b>renal injury, anemia and impaired
+    immunity</b>.</li>
+    <li><b>Altered bone remodeling</b> can produce <b>osteolytic lesions and hypercalcemia</b>.</li>
+    <li><b>Active myeloma requires a plasma-cell neoplasm plus a myeloma-defining event</b> (SLiM-CRAB).
+    <b>Bone lesions are not required when another defining event is present.</b></li>
+  </ul>
+
+  <h3 class="sub" id="l10-mpn">10.5 &middot; Objective f &mdash; Myeloproliferative syndromes</h3>
+  <p>Myeloproliferative neoplasms are a <b>clonal proliferation of myeloid cells</b>: chronic myeloid
+  leukemia, <b>polycythemia vera</b>, <b>essential thrombocythemia</b> and primary myelofibrosis (slide 18).
+  Polycythemia vera is <b>a clonal myeloproliferative neoplasm</b> raising red-cell mass (slide 41);
+  on the lineage figure it arises from the red-cell line, and essential thrombocythemia from the megakaryocyte
+  (slide 26). Myelofibrosis can cause cytopenias. Primary thrombocytosis is a clonal marrow disorder (slide 50).</p>
+
+  <h3 class="sub" id="l10-mds">10.6 &middot; Objective g &mdash; Myelodysplastic syndromes</h3>
+  <p>Myelodysplastic neoplasms (the WHO term; &ldquo;myelodysplastic syndromes&rdquo; elsewhere) show
+  <b>ineffective hematopoiesis with cytopenias and dysplasia</b>, and they <b>can progress to acute myeloid
+  leukemia</b> while remaining distinct from it (slide 18).</p>
+
+  <h3 class="sub" id="l10-rbc">10.7 &middot; Objective h &mdash; Red blood cell disorders</h3>
+  <p>Red blood cell disorders (slide 29): <b>anemia</b> (of blood loss, hemolytic, of diminished
+  erythropoiesis) and <b>polycythemia</b>.</p>
+  <h4 class="subsub">Indices and morphology (slides 30&ndash;32)</h4>
+  <p>Red cell shape is assessed through visual inspection of peripheral smears. <b>Mean cell volume: the
+  average volume of a red cell.</b> <b>Mean cell hemoglobin: the average content (mass) of hemoglobin per red
+  cell.</b> <b>Mean cell hemoglobin concentration: the average concentration of hemoglobin in a given volume of
+  packed red cells.</b></p>
+  <p>Morphologic characteristics that provide etiologic clues: <b>red cell size</b> (normocytic, microcytic or
+  macrocytic), <b>degree of hemoglobinization, reflected in the color of red cells (normochromic or
+  hypochromic)</b>, and <b>shape</b>.</p>
+  <ul>
+    <li><b>Microcytic hypochromic anemias are caused by disorders of hemoglobin synthesis.</b></li>
+    <li><b>Macrocytic anemias often stem from abnormalities that impair the maturation of erythroid precursors
+    in the bone marrow.</b></li>
+    <li>Normochromic, normocytic anemias have diverse etiologies: characteristic abnormalities of <b>red cell
+    shape</b> provide an important clue to the cause.</li>
+  </ul>
+  <h4 class="subsub">Anemia by size and marrow response (slide 33)</h4>
+  <table>
+    <tr><th>Microcytic &mdash; MCV (mean cell volume) &lt;80 fL (femtoliters)</th><th>Normocytic &mdash; 80&ndash;100 fL</th><th>Macrocytic &mdash; &gt;100 fL</th></tr>
+    <tr><td>Iron deficiency<br>Thalassemia<br>Inflammation (some cases)<br><b>Sideroblastic anemia</b></td>
+    <td>Blood loss or hemolysis<br>Inflammation or renal disease<br>Marrow failure or infiltration<br><b>Early
+    iron deficiency</b></td>
+    <td><b>Megaloblastic: B12 or folate deficiency</b><br>Nonmegaloblastic: <b>liver disease, alcohol</b>,
+    drugs or reticulocytosis</td></tr>
+  </table>
+  <p><b>Marrow response</b>: absolute reticulocytes or the reticulocyte production index. <b>Low or inadequate
+  response</b>: reduced production, or an early/blunted response to loss or destruction. <b>Increased
+  response: blood loss, hemolysis or recovery. A rise usually takes several days.</b></p>
+  <div class="pearl"><b>Small = can&rsquo;t fill it, big = can&rsquo;t finish it.</b> Microcytic cells
+  can&rsquo;t fill with hemoglobin (synthesis); macrocytic cells can&rsquo;t finish maturing (precursor
+  maturation).</div>
+  <p>Example adult reference intervals (slide 34; illustrative only, use the reporting laboratory&rsquo;s
+  ranges; &ldquo;you don&rsquo;t need to memorize this&rdquo;): hemoglobin 13.6&ndash;17.2 g/dL men,
+  12.0&ndash;15.0 women; hematocrit 39&ndash;49% and 33&ndash;43%; reticulocytes 0.5&ndash;1.5%; MCV
+  80&ndash;100 fL; MCH 27&ndash;33 pg; MCHC 33&ndash;37 g/dL; RDW 11.5&ndash;14.5%.</p>
+  <h4 class="subsub">Anemia (slide 35)</h4>
+  <p><b>Anemia reduces the blood&rsquo;s oxygen-carrying capacity.</b> <b>Define anemia primarily by
+  hemoglobin below the cutoff for age, sex and pregnancy status.</b> <b>WHO 2024 (ages 15&ndash;65): Hb
+  (hemoglobin) &lt;13 g/dL in men and &lt;12 g/dL in nonpregnant women.</b> Hematocrit is the proportion of
+  blood volume occupied by red cells and provides supporting information. <b>Interpret hemoglobin and hematocrit
+  in the context of plasma volume</b> and the clinical presentation: a fall in plasma volume raises them
+  without any change in red-cell mass (relative erythrocytosis, slide 41).</p>
+  <p><b>Blood loss anemia</b> (slide 36): acute or chronic. Blood loss sits in the normocytic group and brings an
+  increased reticulocyte response once the marrow has had several days.</p>
+  <h4 class="subsub">Hemolytic anemia (slides 37&ndash;39)</h4>
+  <ul>
+    <li><b>Red-cell survival is shortened below the usual lifespan of about 120 days.</b></li>
+    <li>Hemoglobin breakdown products increase as red cells are destroyed.</li>
+    <li><b>Erythropoietin and reticulocyte production usually increase</b> when the marrow can compensate.</li>
+    <li>The reticulocyte response may be inadequate with <b>marrow disease, nutrient deficiency, renal disease
+    or infection</b>.</li>
+  </ul>
+  <p><b>The physiologic destruction of old red cells takes place within macrophages</b> of the spleen, liver
+  and bone marrow, triggered by <b>age-dependent changes in red cell surface proteins</b>. In the majority of
+  hemolytic anemias <b>the premature destruction of red cells also occurs within phagocytes</b>, an event
+  referred to as <b>extravascular hemolysis</b>; intravascular hemolysis is the other route, destruction
+  within the circulation. Hereditary spherocytosis is the example:</p>
+  ''' + fig(D10 + "spherocytosis-sequence.jpg", 394, 128,
+            "Sequence: biconcave young red cell, loss of membrane, rigid spherocyte, trapped in spleen, eaten by macrophage.",
+            "Hereditary spherocytosis: a biconcave young cell released from the marrow &rarr; <b>loss of lipid "
+            "membrane</b> due to repeated passage through the spleen and circulation &rarr; <b>rigid, inflexible "
+            "spherocytes</b> &rarr; <b>trapped in the spleen</b> &rarr; <b>premature destruction by splenic "
+            "macrophages</b> (extravascular).", "Lecture 10 &middot; Slide 39") + '''
+  <h4 class="subsub">Anemia of diminished erythropoiesis (slide 40)</h4>
+  <p>Too little production rather than loss or destruction: <b>megaloblastic anemia, vitamin B12 deficiency
+  anemia, iron deficiency anemia and aplastic anemia</b>.</p>
+  <div class="pearl"><b>Lose it, break it, or don&rsquo;t make it.</b> Blood loss, hemolysis, diminished
+  erythropoiesis &mdash; the three mechanisms of anemia.</div>
+  <h4 class="subsub">Polycythemia (slide 41)</h4>
+  <table>
+    <tr><th>Type</th><th>Mechanism</th></tr>
+    <tr><td><b>Relative erythrocytosis</b></td><td><b>Reduced plasma volume without increased red-cell
+    mass</b>, such as dehydration</td></tr>
+    <tr><td><b>Absolute erythrocytosis</b></td><td><b>Increased red-cell mass</b></td></tr>
+    <tr><td>&nbsp;&nbsp;Polycythemia vera</td><td><b>A clonal myeloproliferative neoplasm</b></td></tr>
+    <tr><td>&nbsp;&nbsp;Secondary erythrocytosis</td><td><b>An erythropoietic response to hypoxia, increased
+    erythropoietin</b> or other stimuli</td></tr>
+  </table>
+  <p>Erythrocytosis usually presents with elevated hemoglobin and/or hematocrit.</p>
+
+  <h3 class="sub" id="l10-coag">10.8 &middot; Objective i &mdash; Coagulation disorders</h3>
+  <h4 class="subsub">&#9733; The key reactions (slides 43&ndash;44)</h4>
+  ''' + fig(D10 + "coagulation-reactions.png", 1100, 511,
+            "Four-row diagram of coagulation reactions: initiation, factor X activation, thrombin generation, fibrin formation.",
+            "Coagulation key reactions. <b>Initiation: tissue factor + VIIa</b> activates IX and X. <b>Factor X "
+            "activation: IXa + VIIIa.</b> <b>Thrombin generation: Xa + Va</b> converts prothrombin (II) to thrombin "
+            "(IIa). <b>Fibrin formation</b>: thrombin turns fibrinogen (I) into fibrin, and XIIIa crosslinks it. "
+            "<b>VIIIa and Va are cofactors.</b> Ca&sup2;&#8314; and phospholipid surfaces support complex assembly.",
+            "Lecture 10 &middot; Slide 43") + '''
+  <table>
+    <tr><th>&#9733; Slide 44</th><th>What it says</th></tr>
+    <tr><td>Physiologic initiation</td><td><b>Tissue factor&ndash;VIIa activates IX and X. External bleeding is
+    not required.</b></td></tr>
+    <tr><td>Laboratory pathways</td><td><b>PT (prothrombin time) assesses extrinsic (VII) and common
+    factors.</b> <b>aPTT (activated partial thromboplastin time) assesses intrinsic (XII, XI, IX, VIII) and
+    common factors.</b></td></tr>
+    <tr><td>Common pathway</td><td><b>X, V, II and I</b> generate thrombin and fibrin. IXa&ndash;VIIIa activates X,
+    and Xa&ndash;Va generates thrombin.</td></tr>
+    <tr><td>Regulation</td><td><b>Antithrombin and activated protein C with protein S limit
+    coagulation.</b></td></tr>
+    <tr><td>Fibrinolysis</td><td><b>Plasminogen becomes plasmin, which degrades fibrin</b> &mdash; a separate
+    process from regulation.</td></tr>
+  </table>
+  <div class="pearl"><b>&#9733; &ldquo;PT is extrinsic, PTT is intrinsic&rdquo;: the shorter test has the one
+  factor (VII); the longer test name has the longer list (XII, XI, IX, VIII).</b> Both share the common pathway
+  X, V, II, I &mdash; &ldquo;10, 5, 2, 1&rdquo;.</div>
+  <h4 class="subsub">&#9733; Disorders of the coagulation cascade (slide 46)</h4>
+  <table>
+    <tr><th>Bleeding disorders</th><th>Thrombophilia (excessive clotting)</th></tr>
+    <tr><td><b>Hemophilia A: factor VIII deficiency</b><br><b>Hemophilia B: factor IX deficiency</b><br>
+    <b>Von Willebrand disease</b>: VWF (von Willebrand factor) <b>supports platelet adhesion and
+    carries/stabilizes factor VIII</b></td>
+    <td><b>Factor V Leiden: genetic mutation</b><br><b>Antiphospholipid syndrome: autoimmune
+    response</b></td></tr>
+  </table>
+  <div class="pearl"><b>A before B, 8 before 9.</b> Hemophilia A is factor VIII, hemophilia B is factor IX;
+  IXa and VIIIa are partners in the step that activates factor X.</div>
+
+  <h3 class="sub" id="l10-platelets">10.9 &middot; Objective j &mdash; Platelet disorders</h3>
+  <table>
+    <tr><th>Quantitative (slide 50)</th><th>Qualitative</th></tr>
+    <tr><td><b>Thrombocytopenia</b>: reduced marrow production; <b>immune destruction</b>, including ITP (immune
+    thrombocytopenia); drug reactions, including immune HIT<br><b>Thrombocytosis</b>: <b>reactive &mdash;
+    inflammation, infection or iron deficiency</b>; <b>primary &mdash; a clonal marrow disorder</b></td>
+    <td><b>Inherited</b>: adhesion, aggregation, secretion<br><b>Acquired</b>: external factors, systemic
+    diseases</td></tr>
+  </table>
+  <p><b>Immune heparin-induced thrombocytopenia (HIT): platelet activation causes thrombosis despite a falling
+  count.</b></p>
+
+  <button type="button" class="test-yourself-btn" style="--acc:#8a1c2b" onclick="window.openTestYourself('Test yourself — Blood Disorders', TEST_YOURSELF.blood)">Test yourself! &rarr;</button>
+  <footer class="guide-foot">Source: <em>Pathophysiology of Blood Disorders SV Fall 2026</em> (51 slides) and
+  the recording of 10 November 2026. Figures are reproduced from the lecture slides and each is cited to its
+  slide.</footer>
+</section>
+'''
+
+TEST_YOURSELF["blood"] = [
+  Q("Which absolute neutrophil count defines severe neutropenia?",
+    ["Below 200 cells/µL", "Below 500 cells/µL", "500 to 1,000 cells/µL", "1,000 to 1,500 cells/µL"], 1,
+    "Severe neutropenia is below 500 cells/µL; agranulocytosis is below 200, moderate 500 to 1,000, mild 1,000 to 1,500."),
+  Q("Which process defines the myelodysplastic neoplasms?",
+    ["Clonal proliferation of myeloid cells",
+     "Impaired differentiation with blast proliferation",
+     "Ineffective hematopoiesis with cytopenias and dysplasia",
+     "Clonal growth of differentiated plasma cells"], 2,
+    "Myelodysplastic neoplasms show ineffective hematopoiesis with cytopenias and dysplasia and can progress to acute myeloid leukemia. Clonal myeloid proliferation is the myeloproliferative neoplasms; impaired differentiation with blasts is acute myeloid leukemia."),
+  Q("Chronic lymphocytic leukemia arises from which cells?",
+    ["Mature B cells", "Precursor B or T cells", "Germinal-center B cells", "Plasma cells"], 0,
+    "Chronic lymphocytic leukemia is a mature B-cell neoplasm. Acute lymphoblastic leukemia is precursor B or T cells, classic Hodgkin lymphoma germinal-center B cells, myeloma plasma cells."),
+  Q("What is the primary pathogenic defect in acute leukemia?",
+    ["Ineffective hematopoiesis", "Maturation arrest", "Splenic destruction", "Reactive marrow stimulation"], 1,
+    "Acute leukemia's primary defect is maturation arrest: acquired transcription-factor mutations block differentiation, and other mutations allow growth factor-independent proliferation."),
+  Q("Macrocytic anemias often stem from a problem with what?",
+    ["Hemoglobin synthesis", "Red-cell membrane", "Plasma volume", "Erythroid precursor maturation"], 3,
+    "Macrocytic anemias often stem from impaired maturation of erythroid precursors in the marrow (vitamin B12 or folate deficiency). Disorders of hemoglobin synthesis give microcytic hypochromic anemias."),
+  Q("What is relative erythrocytosis?",
+    ["Increased red-cell mass", "A clonal myeloproliferative neoplasm",
+     "Reduced plasma volume without more red-cell mass", "An erythropoietic response to hypoxia"], 2,
+    "Relative erythrocytosis is reduced plasma volume without increased red-cell mass, as in dehydration. Polycythemia vera (clonal) and secondary erythrocytosis (hypoxia, erythropoietin) are absolute increases."),
+  Q("Which pair converts prothrombin to thrombin?",
+    ["Factor Xa with factor Va", "Factor IXa with factor VIIIa", "Tissue factor with VIIa", "Factor XIIIa with fibrin"], 0,
+    "In thrombin generation Xa with its cofactor Va converts prothrombin (II) to thrombin (IIa). IXa with VIIIa activates factor X; tissue factor-VIIa initiates."),
+  Q("What happens in immune heparin-induced thrombocytopenia?",
+    ["Bleeding from the low count", "Reduced marrow production",
+     "A clonal rise in platelets", "Thrombosis despite a falling count"], 3,
+    "In immune heparin-induced thrombocytopenia, platelet activation causes thrombosis despite a falling platelet count."),
+]
