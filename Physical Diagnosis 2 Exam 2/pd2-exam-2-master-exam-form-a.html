@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));window.__paErrQ=[];['error','unhandledrejection'].forEach(function(t){addEventListener(t,function(e){var q=window.__paErrQ;if(q&&!q.done)q.push(e)})});</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #5f8a68; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PD2 Exam 2 Master Exam &mdash; Form A</title>
+<style>
+  :root{
+    --navy:#3a5a40; --indigo:#5f8a68; --gold:#c08a2e; --ice:#eef4ef;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#3a5a40;--gold-l:#c08a2e;--indigo-l:#3a5a40;--navy:#94b799;--indigo:#6a9673;--gold:#c08a2e;--ice:#112917;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#6a9673;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#3a5a40;--indigo-t:#547f5d;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Physical Diagnosis 2 &mdash; Comprehensive Master Exam</h1>
+    <div class="sub">Exam 2 &middot; Lectures 5&ndash;7 &middot; Form A</div>
+    <span class="pill">60 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Sixty questions drawn from all three lectures of the Exam 2 block, in proportion: cardiovascular and peripheral vascular contributes twenty, thorax and lungs twenty-three and hematology seventeen. <b>Weighted toward the longer lectures</b> as far as the reviewed questions allow (Lecture 5 was three hours, Lecture 6 two and Lecture 7 one). <b>No question appears in more than one form</b>, so all five give you 300 distinct questions, drawn from the full written pools, not only the topic quizzes. Every question here passed an independent blind review and audit against its slides. <b>This is a physical diagnosis course</b>: the questions ask what you find, how you find it and what the finding means. Every question cites its slide.</p>
+    <div class="chips"><span class="chip">Cardiovascular &amp; peripheral vascular</span><span class="chip">Thorax &amp; lungs</span><span class="chip">Hematology</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Internal bleeding signs", "io": "List presenting signs and symptoms from other organ systems associated with disorders of the hematological system.", "slot": "manifestation", "q": "What is Cullen sign?", "opts": [["Palatal petechiae", "Palatal petechiae are a mucosal bleeding finding in the mouth. Cullen sign is periumbilical ecchymosis."], ["Yellow sclerae", "Yellow sclerae are scleral icterus. Cullen sign is periumbilical ecchymosis."], ["Flank ecchymosis", "Flank ecchymosis is Grey Turner sign. Cullen sign is around the umbilicus."], ["Periumbilical ecchymosis", "Correct. Cullen sign is periumbilical ecchymosis, a sign of internal bleeding. Grey Turner sign is flank ecchymosis."]], "c": 3, "cite": "Anemia-PDII-Ward-STUDENT-COPY-Updated.pptx, Slides 47, 48", "qid": "1r7ijvi"}, {"topic": "Peripheral inspection", "io": "Define the physical examination findings of peripheral edema", "slot": "test finding", "q": "What does edema do to the surface anatomy of a limb?", "opts": [["Makes veins and tendons more prominent", "Edema obscures them rather than highlighting them."], ["Produces hair loss over the shins", "Loss of hair is a feature of chronic arterial insufficiency."], ["It obscures veins, tendons and bones", "Correct, which is why inspection notes relative size, symmetry and the prominence of those structures — and why one limb is always compared with the other."], ["Changes skin color to brown", "Brown pigmentation is hemosiderin staining, a feature of chronic venous insufficiency."]], "c": 2, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 87", "qid": "1youifg"}, {"topic": "B12 neurologic findings", "io": "List presenting signs and symptoms from other organ systems associated with disorders of the hematological system.", "slot": "manifestation", "q": "Damage to the posterior columns in B12 deficiency impairs which sensations?", "opts": [["Taste and smell", "Taste and smell are cranial nerve senses. The posterior columns carry vibration and position sense."], ["Sight and hearing", "Visual changes are possible in B12 deficiency, but they do not come from the posterior columns, which carry vibration and position sense."], ["Vibration and position", "Correct. Posterior column involvement impairs vibration and position sense; corticospinal tract involvement may add spasticity and hyperreflexia."], ["Pain and temperature", "Pain and temperature are not the posterior column modalities named. Vibration and position sense are."]], "c": 2, "cite": "Anemia-PDII-Ward-STUDENT-COPY-Updated.pptx, Slide 51", "qid": "an1sbr"}, {"topic": "Apical impulse", "io": "Describe the character of the apical impulse with reference to anatomy and ventricular function", "slot": "differential", "q": "Which conditions can produce a pulsation more prominent than the apex beat?", "opts": [["Chronic venous insufficiency", "That is a peripheral vascular condition producing skin changes rather than a precordial pulsation."], ["Mitral stenosis", "Mitral stenosis produces a low-pitched diastolic rumble rather than a prominent precordial pulsation."], ["Right ventricular hypertrophy or aortic aneurysm", "Correct, with left ventricular hypertrophy and chronic obstructive pulmonary disease also named — so the most prominent pulsation is not always the apex. A dilated pulmonary artery and COPD also do it."], ["Anxiety and hyperthyroidism", "Those produce a hyperkinetic impulse from transiently increased stroke volume rather than displacing the most prominent pulsation."]], "c": 2, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 19", "qid": "1rre744"}, {"topic": "Bleeding history", "io": "Define the elements of the medical history that aid in identifying disorders of the hematological system.", "slot": "manifestation", "q": "A patient reports red or maroon blood passed per rectum. What is this called?", "opts": [["Hematochezia", "Correct. Hematochezia is red or maroon blood per rectum. Black, tarry stool is melena, and blood or coffee-ground emesis is hematemesis."], ["Hematemesis", "Hematemesis is blood or coffee-ground emesis, from the mouth. Blood per rectum that is red or maroon is hematochezia."], ["Epistaxis", "Epistaxis is a nosebleed, part of the easy-bleeding questions. Red or maroon blood per rectum is hematochezia."], ["Melena", "Melena is black, tarry stool, not red or maroon blood. Red or maroon blood per rectum is hematochezia."]], "c": 0, "cite": "Anemia-PDII-Ward-STUDENT-COPY-Updated.pptx, Slide 9", "qid": "1rqms4h"}, {"topic": "Hemoptysis", "io": "Identify disease processes that may be associated with clubbing and hemoptysis", "slot": "etiology", "q": "Which condition is a cause of hemoptysis?", "opts": [["Pneumothorax", "Pneumothorax brings sudden unilateral pleuritic pain and dyspnea, not coughed-up blood."], ["Atelectasis", "Atelectasis is collapsed lung, the commonest respiratory problem after surgery, and is not a cause of hemoptysis."], ["Asthma", "Asthma brings episodic wheezing, cough and chest tightness; it is not among the causes of hemoptysis."], ["Bronchiectasis", "Correct: the causes are bacterial pneumonias, chronic bronchitis, bronchiectasis, pulmonary tuberculosis, lung abscess, lung cancer and pulmonary embolism."]], "c": 3, "cite": "6. Thorax - Dr. Crowe.pptx, Slide 24", "qid": "1ni5pee"}, {"topic": "S4", "io": "Compare and contrast the cardiac cycle with reference to timing of heart sounds and gallops", "slot": "etiology", "q": "What is the more common mechanism of S4?", "opts": [["Sudden opening of a stenotic mitral valve", "Abrupt deceleration as a stenotic mitral valve opens produces an opening snap, a high-pitched, very early diastolic sound. S4 is dull and low-pitched, late in diastole. The tell: the snap is heard with the diaphragm right after S2, while S4 needs the bell at the apex just before S1."], ["Hypertrophy or fibrosis stiffening the ventricle", "Correct. The stem asks for the MORE COMMON mechanism of S4: ventricular hypertrophy or fibrosis makes the ventricle stiff, so it resists filling after atrial contraction (decreased compliance). The causes follow from that, namely hypertensive heart disease, aortic stenosis, ischemic and hypertrophic cardiomyopathy, and delayed conduction between the atria and ventricles."], ["High filling pressures with abrupt deceleration of inflow", "High left ventricular filling pressures with abrupt deceleration of inflow are the mechanism of a pathologic S3, the ventricular gallop, at the end of the rapid filling phase. S4 is the atrial gallop, tied to atrial contraction. The tell: S3 comes early in diastole after S2 (Ken-TUC-ky); S4 comes late, just before S1 (Ten-nes-SEE)."], ["Turbulent flow across an incompetent valve", "Turbulent flow across an incompetent valve is regurgitation, which produces a murmur, not a gallop. S4 comes from the atrium contracting into a stiff ventricle. The tell: regurgitation is a 'swoosh' of backward flow, while S4 is a dull, low-pitched sound just before S1 (Ten-nes-SEE)."]], "c": 1, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 42", "qid": "8isqp2"}, {"topic": "Pulmonary findings", "io": "List presenting signs and symptoms from other organ systems associated with disorders of the hematological system.", "slot": "test finding", "q": "What pulse oximetry reading is typical in an anemic patient with dyspnea and no lung disease?", "opts": [["Unreadable because of pallor", "Pallor does not stop the reading; oximetry is normal despite reduced oxygen content."], ["Low during exertion", "Exertional dyspnea is common, but oximetry stays normal in anemia despite reduced oxygen content."], ["Low, matching the fall in hemoglobin", "Oximetry does not fall with the hemoglobin. It stays normal although oxygen content is reduced."], ["Normal, despite reduced oxygen content", "Correct. Pulse oximetry is normal despite reduced oxygen content: lower hemoglobin lowers the oxygen-carrying capacity, not the saturation of the hemoglobin present."]], "c": 3, "cite": "Anemia-PDII-Ward-STUDENT-COPY-Updated.pptx, Slide 43", "qid": "1cb8mfe"}, {"topic": "S2 components", "io": "Compare and contrast the cardiac cycle with reference to timing of heart sounds and gallops", "slot": "manifestation", "q": "Which component of S2 is usually louder, and why?", "opts": [["Whichever closes second", "Loudness is attributed to the pressure in the aorta rather than to the order of closure."], ["Pulmonic, because the valve is closer to the chest wall", "The aortic component is the louder one, and the reason given is aortic pressure rather than proximity."], ["Aortic, reflecting the high pressure in the aorta", "Correct. A2 and P2 are the two components, and the pressure difference between the two circuits is what makes the aortic one dominate."], ["They are always equal in intensity", "The aortic component is usually the louder of the two, reflecting the high pressure in the aorta."]], "c": 2, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 14", "qid": "gyl33z"}, {"topic": "Hemoptysis", "io": "Identify disease processes that may be associated with clubbing and hemoptysis", "slot": "manifestation", "q": "A patient says they coughed up blood. What should be done before the term hemoptysis is used in the chart?", "opts": [["Confirm it has happened more than once", "Repeat episodes are not required; ask when it first started to judge acute against chronic, and confirm where the blood came from."], ["Confirm the blood was bright red", "Color helps (stomach blood is darker), but blood from the nasopharynx can be aspirated and coughed out, so the source must be confirmed."], ["Confirm the source of the bleeding", "Correct: hemoptysis is blood from the LOWER respiratory tract; blood may come from the nose, mouth, pharynx or gastrointestinal tract, so confirm the source first."], ["Confirm the volume exceeds 600 mL", "More than 600 mL in 24 hours defines MASSIVE hemoptysis; any amount from the lower respiratory tract is still hemoptysis."]], "c": 2, "cite": "6. Thorax - Dr. Crowe.pptx, Slide 23", "qid": "1gzppfo"}, {"topic": "Aortic stenosis", "io": "Identify the physical characteristics of cardiac thrills and murmurs", "slot": "test finding", "q": "Describe the murmur of aortic stenosis.", "opts": [["Midsystolic, crescendo-decrescendo, harsh", "Correct, in the aortic area, radiating often to the carotids, down the left sternal border and even to the apex. A thrill implies grade 4 or above. The pitch is medium."], ["Mid to late diastolic, low-pitched rumble", "Aortic stenosis is not diastolic: its murmur is midsystolic, crescendo-decrescendo, medium-pitched and harsh."], ["Early diastolic, decrescendo, high frequency", "Aortic stenosis is a systolic murmur, not early diastolic: midsystolic, crescendo-decrescendo and harsh."], ["Pansystolic, plateau, medium and blowing", "Aortic stenosis is not pansystolic or blowing: it is midsystolic, crescendo-decrescendo, medium-pitched and harsh."]], "c": 0, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 67", "qid": "umzp8g"}, {"topic": "S4", "io": "Compare and contrast the cardiac cycle with reference to timing of heart sounds and gallops", "slot": "test finding", "q": "Where is a right-sided S4 heard, and how does it behave with respiration?", "opts": [["At the apex, louder with expiration", "The apex is where the left-sided S4 is heard with the bell in left lateral decubitus."], ["In the aortic area, unchanged by respiration", "The aortic area is a site for ejection sounds and the murmur of aortic stenosis."], ["Over the carotids, louder with expiration", "The carotids carry the radiation of aortic stenosis rather than a gallop."], ["Lower left sternal border, louder with inspiration", "Correct, and it is associated with pulmonary hypertension and pulmonic stenosis. The left-sided S4 is heard at the apex."]], "c": 3, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 42", "qid": "14b3gln"}, {"topic": "Mediastinal crunch", "io": "Compare and contrast the auscultatory findings of crackles, wheezes, and rhonchi", "slot": "risk factors", "q": "Which history is associated with a mediastinal crunch?", "opts": [["An autoimmune disease", "Autoimmune disease is relevant history for interstitial lung disease, whose sound is fine crackles."], ["A long period of immobility", "Immobility is relevant history for pulmonary embolism, which gives sudden dyspnea, not a crunch in time with the heart."], ["Rapid ascent from scuba diving", "Correct: the crunch is associated with tracheobronchial injury, blunt trauma, pulmonary edema, recreational drugs, childbirth and rapid ascent from scuba diving."], ["Exposure to allergens and cold air", "Allergens and cold air are asthma triggers; asthma gives wheezes, not precordial crackles with each heartbeat."]], "c": 2, "cite": "6. Thorax - Dr. Crowe.pptx, Slide 51", "qid": "14xu8y0"}, {"topic": "Ventricular impulse", "io": "Describe the character of the apical impulse with reference to anatomy and ventricular function", "slot": "differential", "q": "What does a sustained ventricular impulse indicate?", "opts": [["Ventricular dilation from increased preload", "That produces a diffuse impulse, from chronic volume overload."], ["Hypertrophy from chronic pressure load", "Correct — increased afterload. Aortic stenosis and hypertension are the examples, and the duration is sustained rather than under two thirds of systole. That is increased afterload."], ["Inflammation of the pericardial sac", "That produces a pericardial friction rub rather than a change in the impulse."], ["Transiently increased stroke volume", "That produces a hyperkinetic impulse, which does not necessarily indicate heart disease."]], "c": 1, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 22", "qid": "1tyry69"}, {"topic": "Percussion", "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination", "slot": "test finding", "q": "What is the main limitation of chest percussion?", "opts": [["It cannot detect deep-seated lesions", "Correct: percussion shows whether underlying tissue is air-filled, fluid-filled or consolidated, but it cannot help with deep-seated lesions."], ["It cannot tell air from fluid", "Telling air-filled from fluid-filled or consolidated tissue is exactly what percussion does; its limit is deep-seated lesions."], ["It cannot detect a pleural effusion", "A pleural effusion is detected as dullness over the fluid, with a high level of diaphragmatic excursion."], ["It cannot detect a pneumothorax", "A large pneumothorax is detected as unilateral hyperresonance or a tympanic note on the affected side."]], "c": 0, "cite": "6. Thorax - Dr. Crowe.pptx, Slides 41, 42, 62", "qid": "1q20fi9"}, {"topic": "Breathing patterns", "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination", "slot": "manifestation", "q": "Which breathing pattern is defined by prolonged expiration from narrowed airways and increased airflow resistance?", "opts": [["Bradypnea", "Bradypnea is slow breathing, with or without increased tidal volume, rather than prolonged expiration."], ["Tachypnea", "Tachypnea is rapid, shallow breathing; it is defined by rate and depth, not by a prolonged expiration."], ["Sighing respiration", "Sighing respiration is frequent sighs interrupting breathing; occasional sighs are normal and do not prolong expiration."], ["Obstructive breathing", "Correct: obstructive breathing is prolonged expiration due to narrowed airways and increased airflow resistance, which is why the survey notes whether expiration lasts longer than usual."]], "c": 3, "cite": "6. Thorax - Dr. Crowe.pptx, Slides 32, 31", "qid": "126vzws"}, {"topic": "Breathing patterns", "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination", "slot": "manifestation", "q": "Which breathing pattern is defined as rapid, shallow breathing?", "opts": [["Tachypnea", "Correct: tachypnea is rapid, shallow breathing; rapid DEEP breathing is the separate pattern of hyperpnea or hyperventilation."], ["Cheyne-Stokes breathing", "Cheyne-Stokes breathing is deep breathing alternating with apnea, not a steady rapid, shallow pattern."], ["Hyperpnea", "Hyperpnea is rapid DEEP breathing that responds to metabolic demand, not rapid shallow breathing."], ["Bradypnea", "Bradypnea is the opposite: slow breathing, with or without increased tidal volume."]], "c": 0, "cite": "6. Thorax - Dr. Crowe.pptx, Slide 32", "qid": "1v1wba8"}, {"topic": "Diet and travel", "io": "Define the elements of the medical history that aid in identifying disorders of the hematological system.", "slot": "risk factors", "q": "In an anemic patient, which travel detail should be asked about?", "opts": [["Jet lag and sleep loss", "Fatigue from jet lag is not the concern. Ask about destination, timing, febrile illness and infectious exposures."], ["Airline and seat class", "Travel logistics do not matter. The questions are destination, timing, febrile illness and infectious exposures."], ["Febrile illness or infections", "Correct. The travel history asks destination, timing, febrile illness and infectious exposures; malaria, for example, is an extrinsic cause of hemolysis."], ["Altitude of the destination", "Altitude is not on the travel history. It asks destination, timing, febrile illness and infectious exposures."]], "c": 2, "cite": "Anemia-PDII-Ward-STUDENT-COPY-Updated.pptx, Slide 11", "qid": "1aaldh9"}, {"topic": "Dyspnea", "io": "Describe the elements related to interviewing and eliciting a medical history that aid in identifying pulmonary disorders", "slot": "manifestation", "q": "Which question assesses the functional severity of dyspnea?", "opts": [["Did it start suddenly or gradually?", "Sudden or gradual is the ONSET of the symptom, which characterizes dyspnea rather than measuring its functional severity."], ["What makes it better or worse?", "Triggers and relievers characterize dyspnea; functional severity asks about stairs, distance and daily tasks."], ["How many flights of stairs can you climb?", "Correct: functional severity is graded by walking distance, flights of stairs without stopping, everyday tasks and change from baseline."], ["Is it worse when you lie flat?", "Body position is part of characterizing the symptom; severity is measured by what the patient can still do."]], "c": 2, "cite": "6. Thorax - Dr. Crowe.pptx, Slide 15", "qid": "1rh4oe5"}, {"topic": "HEENT", "io": "Define the elements and physical examination findings that aid in identifying disorders of the hematological system.", "slot": "manifestation", "q": "Which part of the eye is inspected for the pallor of anemia?", "opts": [["The retina", "The retina is not where pallor is looked for. Pull the lower lid down and look at the palpebral conjunctiva."], ["The iris", "Iris color says nothing about anemia. Pallor is sought in the palpebral conjunctiva."], ["The conjunctiva", "Correct. Pallor is looked for in the palpebral conjunctiva (pull the lower lid down), with the oral mucosa; the sclera is inspected separately for icterus."], ["The sclera", "The sclera is inspected for icterus (yellowing), not pallor. Pallor is judged on the palpebral conjunctiva."]], "c": 2, "cite": "Anemia-PDII-Ward-STUDENT-COPY-Updated.pptx, Slides 29, 30", "qid": "1kjqerc"}, {"topic": "Breath sounds", "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination", "slot": "test finding", "q": "Bronchial breath sounds are heard over the lung bases, where vesicular sounds are expected. What does this suggest?", "opts": [["A pneumothorax", "A pneumothorax gives decreased or absent breath sounds with hyperresonance, not bronchial sounds at the bases."], ["A normal variant at the bases", "Bronchial sounds are normal only over the manubrium; at the bases they are abnormal and suggest consolidation."], ["Hyperinflated lung", "Hyperinflated lung, as in obstructive disease, gives decreased or distant breath sounds, not bronchial sounds."], ["Consolidated or fluid-filled lung", "Correct: bronchovesicular or bronchial sounds in unexpected places mean air-filled lung has been replaced by fluid-filled or consolidated tissue, as in lobar pneumonia."]], "c": 3, "cite": "6. Thorax - Dr. Crowe.pptx, Slides 44, 56", "qid": "u8umx7"}, {"topic": "B12 neurologic findings", "io": "Characterize the signs and symptoms of anemia with regard to severity of anemia and specificity.", "slot": "differential", "q": "Can the neurologic findings of B12 deficiency occur without anemia?", "opts": [["Yes, even without anemia", "Correct. Neurologic findings of B12 deficiency can occur without anemia or macrocytosis, so a normal blood count does not rule out the deficiency in a patient with these findings."], ["With severe anemia, not mild", "Severity is not required; findings can occur with no anemia at all."], ["No, anemia comes first", "Neurologic findings can appear without anemia or macrocytosis."], ["When macrocytosis is present", "They can occur without macrocytosis as well as without anemia."]], "c": 0, "cite": "Anemia-PDII-Ward-STUDENT-COPY-Updated.pptx, Slide 50", "qid": "1r6cjrs"}, {"topic": "Varicosities", "io": "Compare and contrast the physical examination findings related to abnormal peripheral arterial and venous function", "slot": "manifestation", "q": "What are varicosities?", "opts": [["Ulceration around the medial malleolus", "Ulceration over the medial and lateral malleolus is the typical ulcer of chronic venous insufficiency, with small, painful granulation tissue and irregular borders, not a varicosity. Varicosities are dilated veins. The tell: an ulcer is a break in the skin at the ankle, while a varicosity is a widened vein along the leg."], ["Brown discoloration from hemosiderin", "Brown discoloration from hemosiderin staining is a pigment change of chronic venous insufficiency, a consequence of venous disease rather than the dilated veins themselves. Varicosities are the veins, mildly to severely dilated. The tell: hemosiderin is a color in the skin, while a varicosity is a shape, a widened vein."], ["Thickened arterial walls with reduced elasticity", "Varicosities are a disorder of veins, not arteries, so thickened arterial walls cannot define them. Arterial disease shows up on exam as absent or decreased pulses, which may suggest atherosclerosis or systemic embolism. The tell: varicosities are dilated veins you look for on inspection, while arterial disease is found by palpating the pulses."], ["Mild to severe dilatation of veins", "Correct. Varicosities are mild to severe dilatation of the veins, mainly in the lower extremities, which is the definition the stem asks for. They are one of the skin changes to look for, and venous varicosities are among the associated findings of chronic venous insufficiency, alongside edema, purpura, stasis dermatitis and cyanosis of the foot when dependent."]], "c": 3, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 95", "qid": "14hfiuz"}, {"topic": "Diastole", "io": "Compare and contrast the cardiac cycle with reference to timing of heart sounds and gallops", "slot": "manifestation", "q": "What produces the second heart sound?", "opts": [["Turbulent flow across a narrowed valve", "Turbulent flow across a narrowed valve produces a murmur, a 'swoosh' such as aortic stenosis, rather than a discrete heart sound. S2 is a brief sound made by two valves closing as the ventricles relax. The tell: a murmur lasts through part of systole or diastole, while S2 is the single 'dub' that marks the start of diastole."], ["Closure of the pulmonic and aortic valves", "Correct. S2 comes at the start of diastole: as the ventricles start to relax, the pulmonic and aortic valves close, and that closure is the second heart sound. It has two parts, aortic (A2), usually louder because of the high pressure in the aorta, and pulmonic (P2), normally fused on expiration and audibly split on inspiration."], ["Closure of the mitral and tricuspid valves", "Closure of the mitral and tricuspid valves produces S1, at the start of systole, when ventricular pressure rises above atrial pressure. S2 comes at the start of diastole from the other pair of valves. The tell: the atrioventricular valves (mitral and tricuspid) close for S1, the 'lub'; the aortic and pulmonic valves close for S2, the 'dub'."], ["Atrial contraction against a stiff ventricle", "Atrial contraction against a stiff ventricle produces S4, the atrial gallop, an extra sound late in diastole just before S1. S2 is a normal heart sound made by valves closing, not by the atrium contracting. The tell: S4 needs reduced compliance from hypertrophy or fibrosis, while S2 is one of the two normal heart sounds, the 'dub'."]], "c": 1, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 14", "qid": "o7kpwz"}, {"topic": "S1", "io": "Compare and contrast the cardiac cycle with reference to timing of heart sounds and gallops", "slot": "test finding", "q": "Where and how is S1 best heard, and what is its relation to the carotid pulse?", "opts": [["Diaphragm at the apex, before the carotid pulse", "Correct, and splitting is usually not present. The carotid relationship is what makes palpating the carotid a reliable way to time the cycle."], ["With the diaphragm at the base, preceding the carotid pulse", "S1 is best heard at the apex rather than the base; the base is where S2 is best appreciated."], ["With the bell at the base, following the carotid pulse", "S2 is best heard with the diaphragm at the base and FOLLOWS the carotid pulse, the reverse of S1."], ["With the bell at the apex, following the carotid pulse", "S1 is best heard with the diaphragm and it precedes the carotid pulse."]], "c": 0, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 34", "qid": "114x9n0"}, {"topic": "Bleeding history", "io": "Define the elements of the medical history that aid in identifying disorders of the hematological system.", "slot": "manifestation", "q": "Which question about bleeding belongs in the history of an anemic patient?", "opts": [["The patient's blood type", "Blood type does not identify a bleeding source. The history asks about bruising, nosebleeds, gum bleeding and prolonged procedural bleeding."], ["Whether the patient has ever donated blood", "Blood donation is not on the bleeding history. It asks about easy bruising, nosebleeds, gum bleeding and prolonged bleeding after procedures."], ["Whether bleeding stops with ice", "No such question is part of the history. It covers bruising, nosebleeds, gum bleeding, prolonged procedural bleeding and each source's onset, frequency, amount and duration."], ["Gum bleeding or nosebleeds", "Correct. The bleeding history asks about easy bruising, epistaxis, gum bleeding and prolonged procedural bleeding, then the gastrointestinal, urinary and uterine sources."]], "c": 3, "cite": "Anemia-PDII-Ward-STUDENT-COPY-Updated.pptx, Slide 9", "qid": "1p5c8ge"}, {"topic": "Gastrointestinal examination", "io": "List presenting signs and symptoms from other organ systems associated with disorders of the hematological system.", "slot": "manifestation", "q": "When is a digital rectal examination done in the hematologic examination?", "opts": [["After a positive stool test", "It is not limited to that; it is performed when clinically indicated."], ["When clinically indicated", "Correct. A digital rectal examination is performed when clinically indicated, as part of the gastrointestinal examination, which also checks for tenderness, masses, hepatomegaly, ascites and splenomegaly."], ["It is replaced by stool tests", "Stool tests do not replace it, and a negative one does not exclude bleeding. It is done when clinically indicated."], ["In each patient, whatever the history", "It is not routine for everyone; it is done when clinically indicated."]], "c": 1, "cite": "Anemia-PDII-Ward-STUDENT-COPY-Updated.pptx, Slide 46", "qid": "t5gwhq"}, {"topic": "Apical impulse", "io": "Describe the character of the apical impulse with reference to anatomy and ventricular function", "slot": "manifestation", "q": "What is the apical impulse?", "opts": [["The pulsation of the aortic arch at the sternal notch", "That is a separate finding; the apical impulse comes from the left ventricular apex."], ["The brief impulse of the left ventricular apex", "Correct, occurring during contraction and identified on palpation of the precordium as the point of maximal impulse. It strikes the chest wall during contraction."], ["The impulse of the right ventricle at the lower sternal border", "The right ventricular impulse is felt at the 3rd to 5th left intercostal spaces rather than at the apex."], ["The palpable vibration of a loud murmur", "That is a thrill, assessed with the balls of the hand against the chest wall."]], "c": 1, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 19", "qid": "v8qh3q"}, {"topic": "Venous insufficiency", "io": "Compare and contrast the physical examination findings related to abnormal peripheral arterial and venous function", "slot": "test finding", "q": "What are the findings of chronic venous insufficiency?", "opts": [["Mild or no pain, normal temperature, pitting edema", "Correct. Chronic venous insufficiency brings a normal skin temperature and pitting edema, and the limb is listed with no pain; the only pain named is the small, painful granulation tissue inside a venous ulcer, which is why 'mild or no pain' fits. The rest of the picture: brownish hemosiderin staining, thickened skin, normal pulses, and gangrene that is rare."], ["Painful ulceration with thin shiny skin and hair loss", "Painful ulceration with thin, shiny skin and hair loss describes chronic ARTERIAL insufficiency, where ulcers are painful unless neuropathy is present. Venous ulcers sit around the ankles, with thickened skin, hemosiderin staining and pitting edema. The tell: thin, shiny, hairless skin is arterial; thick, pigmented skin with edema is venous."], ["Cool skin with decreased pulses and no edema", "Cool skin, decreased pulses and no edema are the findings of chronic ARTERIAL insufficiency. Venous insufficiency is the reverse on all three: normal temperature, normal pulses and pitting edema. The tell: edema with normal pulses points to the veins, while cool skin with weak pulses and no swelling points to the arteries."], ["Foot pallor on elevation with dusky rubor", "Foot pallor on elevation and dusky rubor are listed under chronic arterial insufficiency, with cool skin and decreased pulses. Venous insufficiency colors the skin differently: cyanotic or brownish hemosiderin staining and cyanosis of the foot when dependent. The tell: brown pigment means venous; pallor on elevation means arterial."]], "c": 0, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 93", "qid": "sp53iv"}, {"topic": "Diet and travel", "io": "Define the elements of the medical history that aid in identifying disorders of the hematological system.", "slot": "risk factors", "q": "A patient admits to craving and chewing ice. Which deficiency does this suggest?", "opts": [["Folate deficiency", "Folate deficiency shares glossitis and angular cheilitis with iron and B12, but pica is the iron clue specifically."], ["B12 deficiency", "B12 deficiency shows as paresthesias, impaired balance and reduced vibration or position sense, not pica. Ice chewing points to iron deficiency."], ["Lead poisoning", "Lead exposure is asked about as an occupational or renovation history, not through ice cravings. Pica for ice points to iron deficiency."], ["Iron deficiency", "Correct. Pica, particularly craving or chewing ice, is an iron deficiency clue, listed with brittle or spoon-shaped nails and hair shedding."]], "c": 3, "cite": "Anemia-PDII-Ward-STUDENT-COPY-Updated.pptx, Slides 10, 11", "qid": "1cf6f2v"}, {"topic": "Pulmonary findings", "io": "List presenting signs and symptoms from other organ systems associated with disorders of the hematological system.", "slot": "differential", "q": "An anemic patient has increased respiratory effort. What else should be considered?", "opts": [["Anemia alone explains the effort", "Anemia causes dyspnea and tachypnea, but coexisting pulmonary disease or heart failure must be considered."], ["Iron deficiency from the effort", "Effort does not cause iron deficiency. Consider coexisting pulmonary disease or heart failure."], ["A falsely low pulse oximetry reading", "Oximetry is typically normal in anemia. Increased effort raises coexisting pulmonary disease or heart failure."], ["Lung disease or heart failure", "Correct. Respiratory effort is assessed for coexisting pulmonary disease or heart failure, which add to the dyspnea and tachypnea of significant anemia."]], "c": 3, "cite": "Anemia-PDII-Ward-STUDENT-COPY-Updated.pptx, Slide 43", "qid": "1tqc5ny"}, {"topic": "Mediastinal crunch", "io": "Compare and contrast the auscultatory findings of crackles, wheezes, and rhonchi", "slot": "test finding", "q": "In which position is the mediastinal crunch (Hamman sign) best heard?", "opts": [["Sitting, arms folded", "Sitting with arms folded is the position for the posterior lung examination, not for hearing the crunch."], ["Left lateral decubitus", "Correct: the mediastinal crunch, precordial crackles in time with the heartbeat, is best heard with the patient in the left lateral decubitus position."], ["Sitting, leaning forward", "Sitting forward is what relieves pericarditis pain; the mediastinal crunch is best heard in the left lateral decubitus position."], ["Supine", "Supine is used for the anterior chest examination; the crunch is best heard in the left lateral decubitus position."]], "c": 1, "cite": "6. Thorax - Dr. Crowe.pptx, Slide 51", "qid": "accf6g"}, {"topic": "Examination preparation", "io": "Review the classic areas of auscultation to assess cardiac sounds", "slot": "education", "q": "Which lighting is specified for the cardiovascular examination?", "opts": [["Tangential lighting", "Correct, because it casts shadows that reveal the contours of the chest wall — a pulsation visible in raking light can be invisible under direct light. It matters most during inspection."], ["Dim lighting to reduce patient anxiety", "Enough lighting and exposure is required; tangential lighting is the specific instruction."], ["Colored light to highlight cyanosis", "No colored light is described; tangential lighting is what is specified."], ["Bright overhead lighting", "Direct overhead light flattens the contours that inspection is trying to detect."]], "c": 0, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 26", "qid": "3nytf3"}, {"topic": "Pleurae", "io": "Review the anatomical landmarks for a pulmonary physical examination", "slot": "manifestation", "q": "Pain on deep inspiration comes from irritation of which layer?", "opts": [["Bronchial lining", "The bronchi carry air to the alveoli; pain with deep inspiration comes from irritation of the parietal pleura."], ["Parietal pleura", "Correct: the parietal pleura is highly innervated by intercostal and phrenic nerves, so irritating it produces pleuritic pain with deep inspiration."], ["Visceral pleura", "The visceral pleura covers the lung surface and lacks sensory nerves, so irritation of it is not the source of pleuritic pain."], ["Alveolar walls", "The alveoli are the site of gas exchange; pleuritic pain comes from the parietal pleura with its intercostal and phrenic nerve supply."]], "c": 1, "cite": "6. Thorax - Dr. Crowe.pptx, Slide 10", "qid": "12cmpxk"}, {"topic": "Hemoptysis", "io": "Identify disease processes that may be associated with clubbing and hemoptysis", "slot": "differential", "q": "Which feature suggests that blood brought up by a patient came from the stomach rather than the respiratory tract?", "opts": [["Darker blood mixed with food particles", "Correct: blood from the stomach is darker than respiratory blood and comes with food particles, and vomited blood is likely gastrointestinal."], ["Blood following a nosebleed", "Nasopharyngeal blood can be aspirated and then coughed out; it is not darker or mixed with food the way gastric blood is."], ["Blood streaks after throat clearing", "Blood streaks can come from the nose, mouth or pharynx; darker blood with food particles is what points to the stomach."], ["Bright red blood after a coughing fit", "Blood coughed up from the chest points to the lower respiratory tract; stomach blood is darker and mixed with food."]], "c": 0, "cite": "6. Thorax - Dr. Crowe.pptx, Slide 23", "qid": "y4ww3a"}, {"topic": "Aortic stenosis", "io": "Demonstrate the proper clinical skills for maneuvers to evaluate murmurs", "slot": "test finding", "q": "Which maneuvers affect the murmur of aortic stenosis?", "opts": [["Unchanged by any maneuver", "Squatting and leg raise both increase it; Valsalva and standing soften it."], ["Louder with Valsalva and on standing", "Those maneuvers reduce preload, which makes hypertrophic cardiomyopathy louder and aortic stenosis softer."], ["Better sitting forward; louder on squatting", "Correct, because both squatting and leg raise increase venous return and preload, sending more blood past the narrowed valve. Leg raise does the same."], ["Louder with isometric handgrip only", "Handgrip raises left-sided afterload and increases mitral regurgitation, ventricular septal defect, aortic regurgitation and mitral stenosis; the preload maneuvers are what change aortic stenosis."]], "c": 2, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 67", "qid": "ghy22q"}, {"topic": "Breath sounds", "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination", "slot": "test finding", "q": "Which breath sound is soft and relatively low-pitched, with inspiration lasting longer than expiration, and is heard over most of both lungs?", "opts": [["Bronchial", "Bronchial sounds have EXPIRATION longer than inspiration and are loud and relatively high-pitched, over the manubrium."], ["Tracheal", "Tracheal sounds are very loud and relatively high-pitched, with equal phases, over the trachea in the neck."], ["Vesicular", "Correct: vesicular sounds have inspiration longer than expiration, a soft, relatively low-pitched expiratory sound, and are heard over most of both lungs."], ["Bronchovesicular", "Bronchovesicular sounds have inspiration and expiration about EQUAL, intermediate in intensity and pitch, in the 1st and 2nd interspaces and between the scapulae."]], "c": 2, "cite": "6. Thorax - Dr. Crowe.pptx, Slide 45", "qid": "sb95vi"}, {"topic": "Dyspnea onset", "io": "Compare and contrast the physical examination findings of sudden-onset shortness of breath with those of gradual or intermittent presentations", "slot": "risk factors", "q": "Slowly progressive exertional dyspnea, scant sputum and later cough in a patient with alpha-1 antitrypsin deficiency suggest which diagnosis?", "opts": [["Chronic obstructive pulmonary disease", "Correct: this disease is slowly progressive exertional dyspnea with cough developing later, wheezing and scant sputum, with smoking, inhalational exposures or alpha-1 antitrypsin deficiency."], ["Pneumonia", "Pneumonia is ACUTE, with fever, chills and sputum, not slowly progressive exertional dyspnea."], ["Left-sided heart failure", "Heart failure is worse lying flat, with orthopnea, edema and weight gain, in cardiac disease or hypertension."], ["Interstitial lung disease", "Interstitial lung disease is tied to autoimmune disease, medications and occupational exposures, not to alpha-1 antitrypsin deficiency."]], "c": 0, "cite": "6. Thorax - Dr. Crowe.pptx, Slide 16", "qid": "7hkzbf"}, {"topic": "Lymph nodes", "io": "Define the elements and physical examination findings that aid in identifying disorders of the hematological system.", "slot": "manifestation", "q": "Besides location and size, which features of an enlarged lymph node should be recorded?", "opts": [["Tenderness, consistency and mobility", "Correct. An enlarged node is described by location, size, tenderness, consistency and mobility, the five features to record for any enlarged node."], ["Blanching, distribution and palpability", "Distribution and palpability describe petechiae and purpura, which are nonblanching. Nodes are described by tenderness, consistency and mobility."], ["Pulsation, warmth and itch", "None of these is on the node checklist. After location and size come tenderness, consistency and mobility."], ["Color, temperature and odor", "These are not lymph node descriptors. After location and size, record tenderness, consistency and mobility."]], "c": 0, "cite": "Anemia-PDII-Ward-STUDENT-COPY-Updated.pptx, Slide 29", "qid": "1fgs25u"}, {"topic": "HEENT", "io": "Define the elements and physical examination findings that aid in identifying disorders of the hematological system.", "slot": "manifestation", "q": "What does the roof of this patient's mouth show?", "opts": [["Oral mucosal pallor", "Pallor would make the mucosa pale. These are red pinpoint hemorrhages: palatal petechiae."], ["Angular cheilitis", "Angular cheilitis is fissuring at the mouth corners. These are pinpoint red dots on the palate."], ["Glossitis", "Glossitis is a smooth, sore, beefy-red tongue. The finding here is pinpoint red dots on the palate."], ["Palatal petechiae", "Correct. Clustered pinpoint red spots on the palate are palatal petechiae, a form of mucosal bleeding, which raises concern when seen with skin petechiae."]], "c": 3, "cite": "Anemia-PDII-Ward-STUDENT-COPY-Updated.pptx, Slides 32, 29", "img": "pd2-exam-2-quiz-images/l7-fig-02.jpg", "alt": "An open mouth showing the roof of the mouth, with a cluster of small red dots on the soft palate.", "slide": "Slide 32", "qid": "ctj67u"}, {"topic": "Landmarks", "io": "Review the anatomical landmarks for a pulmonary physical examination", "slot": "manifestation", "q": "Where is the needle inserted for a thoracentesis?", "opts": [["Anteriorly, in the 2nd intercostal space", "The 2nd intercostal space anteriorly is for needle decompression of a tension pneumothorax, not for draining fluid."], ["Laterally, between the 4th and 5th ribs", "The space between the 4th and 5th ribs, in the triangle of safety, is the chest tube site rather than the thoracentesis site."], ["Posteriorly, just above the 8th rib", "Correct: thoracentesis is done at T7-T8, the 7th intercostal space, with the needle immediately superior to the 8th rib, to drain a pleural effusion."], ["Posteriorly, just below the 8th rib", "Entry just BELOW a rib meets the neurovascular structures that run along its inferior margin; the needle goes just above the 8th rib."]], "c": 2, "cite": "6. Thorax - Dr. Crowe.pptx, Slides 4, 5", "qid": "1ikul5"}, {"topic": "Carotid pulse", "io": "Demonstrate proper clinical skills for a complete and focused cardiovascular physical examination", "slot": "education", "q": "How is the carotid examined?", "opts": [["Palpate first, then auscultate", "Auscultation comes before palpation, so that the vessel is not disturbed before listening."], ["Palpate both sides simultaneously to compare", "The carotids are palpated ONE AT A TIME, unlike the radial and femoral pulses compared for lag."], ["Auscultate while the patient breathes normally", "The patient is asked to hold their breath, so breath sounds do not obscure a bruit."], ["Auscultate first, then palpate one side at a time", "Correct, with the patient holding their breath, lateral to the trachea. Palpating both at once risks compromising cerebral flow."]], "c": 3, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 97", "qid": "16tlx4a"}, {"topic": "Ankle brachial index", "io": "Demonstrate proper clinical skills for a complete and focused cardiovascular physical examination", "slot": "initial test", "q": "How is the ankle brachial index calculated?", "opts": [["Brachial systolic over the higher ankle pressure", "The ratio runs the other way, with the ankle pressure on top."], ["Average of both ankle pressures over the average brachial", "The higher single ankle pressure is used rather than an average."], ["Higher ankle pressure over brachial systolic", "Correct, calculated for each leg and recorded to two decimal places. The normal range is 0.90 to 1.40."], ["Lower of the two ankle pressures over the brachial systolic", "The HIGHER of the two ankle artery pressures is used as the numerator rather than the lower."]], "c": 2, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 110", "qid": "vwbkce"}, {"topic": "Lymph nodes", "io": "Define the elements and physical examination findings that aid in identifying disorders of the hematological system.", "slot": "manifestation", "q": "Which lymph node groups are examined routinely in the hematologic examination?", "opts": [["Inguinal and femoral", "The inguinal region is examined when indicated, not routinely, and femoral nodes are not named. Cervical and supraclavicular are the routine groups."], ["Mesenteric", "Mesenteric nodes cannot be examined at the bedside. Cervical and supraclavicular nodes are."], ["Cervical and supraclavicular", "Correct. The cervical and supraclavicular nodes are examined, and the axillary and inguinal regions when indicated."], ["Popliteal and epitrochlear", "These are not on the list. Cervical and supraclavicular nodes are examined, axillary and inguinal when indicated."]], "c": 2, "cite": "Anemia-PDII-Ward-STUDENT-COPY-Updated.pptx, Slide 29", "qid": "6mr1is"}, {"topic": "Peripheral inspection", "io": "Compare and contrast the physical examination findings related to abnormal peripheral arterial and venous function", "slot": "test finding", "q": "What is normal capillary refill time?", "opts": [["Two to three seconds", "Correct, tested by pressing on the fingernail and noting how long the nail bed takes to become pink again."], ["Under one second", "The normal window is two to three seconds, so under one second would be unusually brisk."], ["It varies too much to have a normal value", "A normal of two to three seconds is specified, so the measure is not too variable to use."], ["Five to six seconds", "That would be prolonged against the two to three second normal."]], "c": 0, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 85", "qid": "ptd0sn"}, {"topic": "Murmurs", "io": "Identify the physical characteristics of cardiac thrills and murmurs", "slot": "manifestation", "q": "What produces a murmur?", "opts": [["Abrupt deceleration of a stenotic valve opening", "Abrupt deceleration as a stenotic mitral valve opens produces an opening snap, a high-pitched, very early diastolic sound. It is a brief snap, not the sustained sound of turbulent flow. The tell: an opening snap is one sharp sound right after S2, while a murmur is a 'swoosh' that lasts through part of the cycle."], ["Closure of the atrioventricular valves", "Closure of the mitral and tricuspid (atrioventricular) valves produces S1, the 'lub', a brief normal heart sound at the start of systole. A murmur is a longer sound of turbulent blood flow, not a valve closing. The tell: S1 is a discrete normal sound, while a murmur is a 'swoosh' heard across part of the cycle."], ["Inflammation of the pericardial sac", "Inflammation of the pericardial sac is pericarditis, which produces a pericardial friction rub, a scratchy, scraping noise through both systole and diastole. A murmur needs turbulent blood flow, not inflamed pericardium. The tell: the rub is scratchy and comes from the sac around the heart, while a murmur is a 'swoosh' of blood over a valve."], ["Turbulent blood flow over a valve", "Correct. A murmur is the sound made by turbulent blood flow over a heart valve, and it sounds like a 'swoosh'. The turbulence has five named sources: flow across a partially obstructed valve, increased flow through a normal valve of a small child, ejection into a dilated chamber, regurgitant flow across an incompetent valve, and abnormal shunting into a lower pressure chamber."]], "c": 3, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 46", "qid": "81vr42"}, {"topic": "Dyspnea onset", "io": "Compare and contrast the physical examination findings of sudden-onset shortness of breath with those of gradual or intermittent presentations", "slot": "risk factors", "q": "Which history raises suspicion for pulmonary embolism in a patient with sudden dyspnea?", "opts": [["Cold air and exercise as triggers", "Cold air, exercise and allergens are asthma triggers; asthma is episodic rather than sudden and unexplained."], ["Estrogen use and recent immobility", "Correct: the relevant history for pulmonary embolism is prior venous thromboembolism, surgery, immobility, cancer, estrogen and pregnancy or the postpartum period."], ["Autoimmune disease on new medication", "Autoimmune disease and medications are the history for interstitial lung disease, which is gradually progressive."], ["Alpha-1 antitrypsin deficiency", "Alpha-1 antitrypsin deficiency is relevant history for chronic obstructive pulmonary disease, which is slowly progressive."]], "c": 1, "cite": "6. Thorax - Dr. Crowe.pptx, Slide 17", "qid": "11xdum7"}, {"topic": "Ankle brachial index", "io": "Demonstrate proper clinical skills for a complete and focused cardiovascular physical examination", "slot": "test finding", "q": "What does an ankle brachial index above 1.40 suggest?", "opts": [["A normal result", "Normal runs from 0.90 to 1.40; above that suggests calcification."], ["Mild peripheral arterial disease", "Values below 0.90 suggest peripheral arterial disease, at the opposite end of the scale."], ["A non-compressible calcified vessel", "Correct, and it is the counter-intuitive one — a high value reflects a stiff artery rather than good perfusion."], ["Severe peripheral arterial disease", "That is suggested by a value below 0.50."]], "c": 2, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 113", "qid": "1bfl6lx"}, {"topic": "Lungs and lobes", "io": "Review the anatomical landmarks for a pulmonary physical examination", "slot": "manifestation", "q": "Which rib does the right horizontal fissure follow?", "opts": [["6th rib", "The 6th rib anteriorly is where the oblique fissures end, not the line of the horizontal fissure, which follows the 4th rib."], ["2nd rib", "The 2nd rib is not where the horizontal fissure runs; the horizontal fissure follows the 4th rib."], ["8th rib", "The 8th rib is where the inferior lung border crosses the midaxillary line; the horizontal fissure follows the 4th rib."], ["4th rib", "Correct: the right horizontal fissure follows the 4th rib and meets the oblique fissure near the 5th rib at the midaxillary line."]], "c": 3, "cite": "6. Thorax - Dr. Crowe.pptx, Slide 8", "qid": "y2vkoe"}, {"topic": "Emergency", "io": "Characterize the signs and symptoms of anemia with regard to severity of anemia and specificity.", "slot": "escalation", "q": "What is the immediate response to an anemic patient with active major bleeding and hypotension?", "opts": [["Immediate escalation and resuscitation", "Correct. Active major bleeding with hypotension calls for immediate escalation: stabilization, bleeding control and resuscitation, with oxygen and transfusion according to the situation."], ["A complete dietary and travel history first", "The detailed history waits; immediate escalation for stabilization and bleeding control comes first."], ["Repeat hemoglobin in a week", "Waiting is unsafe; instability may precede the hemoglobin fall. Escalate immediately."], ["Outpatient stool blood testing", "Stool testing is not the immediate step: active major bleeding with hypotension needs immediate escalation."]], "c": 0, "cite": "Anemia-PDII-Ward-STUDENT-COPY-Updated.pptx, Slide 54", "qid": "9pngyr"}, {"topic": "Breath sounds", "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination", "slot": "test finding", "q": "Which breath sound is loud and relatively high-pitched, with expiration lasting longer than inspiration, and is normally heard over the manubrium?", "opts": [["Bronchial", "Correct: bronchial sounds have expiration longer than inspiration, loud and relatively high-pitched, over the manubrium and larger proximal airways."], ["Tracheal", "Tracheal sounds are very loud with phases about EQUAL, heard over the trachea in the neck rather than the manubrium."], ["Vesicular", "Vesicular sounds are the reverse: INSPIRATION longer than expiration, soft and relatively low-pitched, over most of both lungs."], ["Bronchovesicular", "Bronchovesicular sounds have equal phases and intermediate intensity, in the 1st and 2nd interspaces and between the scapulae."]], "c": 0, "cite": "6. Thorax - Dr. Crowe.pptx, Slide 45", "qid": "qs0pz9"}, {"topic": "Auscultation", "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination", "slot": "education", "q": "Before auscultating the lungs, what should the patient be asked to do?", "opts": [["Hold the breath", "Breath holding is the test that separates a pleural rub (it disappears) from a pericardial rub, not a step before routine auscultation."], ["Cough once or twice", "Correct: a cough or two clears mild atelectasis or airway mucus that can produce extra sounds; the patient should also be de-robed."], ["Breathe as shallowly as possible", "Shallow breathing does not help; coughing once or twice first clears mucus or mild atelectasis that would add sounds."], ["Say ninety-nine", "Saying a phrase is not a preparation step; the patient is asked to cough once or twice before auscultation."]], "c": 1, "cite": "6. Thorax - Dr. Crowe.pptx, Slide 44", "qid": "frw58h"}, {"topic": "Murmurs", "io": "Identify the physical characteristics of cardiac thrills and murmurs", "slot": "etiology", "q": "Which of these is a named cause of a murmur?", "opts": [["Inflammation of the pericardium", "Inflammation of the pericardial sac (pericarditis) produces a pericardial friction rub, a scratchy, scraping noise, not a murmur. A murmur needs turbulent blood flow over a heart valve or into a chamber. The tell: the rub is heard through both systole and diastole, while every named murmur cause involves blood flow."], ["Ejection into a dilated chamber", "Correct. Ejection into a dilated chamber is one of the five named causes of a murmur, the sound of turbulent blood flow that sounds like a 'swoosh'. The other four are flow across a partially obstructed valve, increased flow through a normal valve in a small child, regurgitant flow across an incompetent valve, and abnormal shunting into a lower pressure chamber."], ["High left ventricular filling pressure", "High left ventricular filling pressure, with abrupt deceleration of inflow, produces a pathologic S3, the ventricular gallop of adults over 40. It is an extra heart sound early in diastole, not a murmur. The tell: the named murmur causes are all about flow through a valve, into a chamber or through a shunt, not how the ventricle fills."], ["Reduced ventricular compliance", "Reduced ventricular compliance, from hypertrophy or fibrosis, produces S4, the atrial gallop, as the atrium contracts against a stiff ventricle. It is an extra heart sound rather than a murmur, so it is not one of the murmur causes. The tell: a gallop is a dull, low-pitched sound just before S1, while a murmur is a 'swoosh' of turbulent flow."]], "c": 1, "cite": "PD II Advanced Cardiovascular & Peripheral Vascular System - Fall 2026.pptx, Slide 46", "qid": "16ghhcs"}, {"topic": "Landmarks", "io": "Review the anatomical landmarks for a pulmonary physical examination", "slot": "manifestation", "q": "At which anterior landmark is a needle inserted to decompress a tension pneumothorax?", "opts": [["10th intercostal space", "The lungs end near the 8th rib at the midaxillary line and T10 posteriorly; the decompression needle goes in at the 2nd space."], ["7th intercostal space", "The 7th intercostal space is the posterior thoracentesis site, immediately above the 8th rib, not the decompression site."], ["4th intercostal space", "The space between the 4th and 5th ribs is the chest tube site; needle decompression is higher, at the 2nd intercostal space."], ["2nd intercostal space", "Correct: the 2nd intercostal space anteriorly is the needle decompression site; the space between the 4th and 5th ribs is kept for chest tubes."]], "c": 3, "cite": "6. Thorax - Dr. Crowe.pptx, Slide 4", "qid": "l6lx6l"}, {"topic": "Dyspnea onset", "io": "Compare and contrast the physical examination findings of sudden-onset shortness of breath with those of gradual or intermittent presentations", "slot": "differential", "q": "A patient with an autoimmune condition has gradually progressive exertional dyspnea, a dry cough, fatigue and weakness. Which diagnosis fits?", "opts": [["Pneumothorax", "Pneumothorax is sudden, with abrupt unilateral pleuritic pain, not gradually progressive."], ["Interstitial lung disease", "Correct: gradually progressive exertional dyspnea with dry cough, fatigue and weakness, in autoimmune disease or after medication or occupational exposure, is interstitial lung disease."], ["Chronic bronchitis", "Chronic bronchitis starts with a chronic PRODUCTIVE cough and sputum; this cough is dry."], ["Asthma", "Asthma is episodic with symptom-free intervals and wheezing, not steadily progressive with a dry cough."]], "c": 1, "cite": "6. Thorax - Dr. Crowe.pptx, Slide 16", "qid": "1jy75c6"}, {"topic": "Internal bleeding signs", "io": "List presenting signs and symptoms from other organ systems associated with disorders of the hematological system.", "slot": "test finding", "q": "A patient with suspected internal bleeding has no Cullen or Grey Turner sign. What does this mean?", "opts": [["Significant bleeding is excluded", "These signs are uncommon and possibly delayed; absent signs do not exclude bleeding."], ["Significant bleeding is still possible", "Correct. Both signs are uncommon and may appear late, so their absence does not exclude significant bleeding."], ["Pancreatitis is excluded", "Absence rules nothing out: the signs are uncommon and may be delayed."], ["The bleeding must be menstrual", "Their absence does not locate the bleeding; significant internal bleeding is still possible."]], "c": 1, "cite": "Anemia-PDII-Ward-STUDENT-COPY-Updated.pptx, Slide 47", "qid": "zbo9he"}, {"topic": "Percussion", "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination", "slot": "test finding", "q": "An abnormally HIGH level of dullness when measuring diaphragmatic excursion suggests which?", "opts": [["Pleural rub at the bases", "A pleural rub is an adventitious sound heard on auscultation, not a percussion level."], ["Effusion or a raised hemidiaphragm", "Correct: an abnormally high level suggests a pleural effusion, or an elevated hemidiaphragm from atelectasis or phrenic nerve injury."], ["Hyperinflation from asthma", "Hyperinflated lungs give generalized hyperresonance; a high level of dullness points to fluid or a raised hemidiaphragm."], ["A large pneumothorax", "A pneumothorax gives hyperresonance or a tympanic note, not a high level of dullness at the base."]], "c": 1, "cite": "6. Thorax - Dr. Crowe.pptx, Slide 43", "qid": "1ndlq4c"}, {"topic": "Emergency", "io": "Characterize the signs and symptoms of anemia with regard to severity of anemia and specificity.", "slot": "escalation", "q": "In an anemia or bleeding emergency, how are oxygen and transfusion given?", "opts": [["According to the clinical situation", "Correct. Oxygen and transfusion are given according to the clinical situation, alongside immediate escalation: stabilization, bleeding control and resuscitation."], ["After the history is complete", "The emergency calls for immediate escalation, not a finished history first. Oxygen and transfusion are given according to the clinical situation."], ["To every anemic patient at arrival", "They are not given to everyone; oxygen and transfusion follow the clinical situation, after vital signs, mental status, perfusion and ongoing loss are assessed."], ["Once the hemoglobin has fallen", "Waiting for the hemoglobin is unsafe, since instability can precede its fall. Oxygen and transfusion follow the clinical situation."]], "c": 0, "cite": "Anemia-PDII-Ward-STUDENT-COPY-Updated.pptx, Slide 54", "qid": "1k430st"}, {"topic": "Pleural rub", "io": "Compare and contrast the auscultatory findings of crackles, wheezes, and rhonchi", "slot": "differential", "q": "A grating, creaking sound over the lower lateral chest is heard in both phases of breathing and disappears when the patient holds their breath. Which sound is it?", "opts": [["Pericardial friction rub", "A pericardial friction rub follows the heart, so it does NOT disappear when the breath is held; that is the distinguishing test."], ["Pleural rub", "Correct: a pleural rub is discontinuous, low-frequency and grating, usually biphasic, and disappears with a breath hold, which separates it from a pericardial friction rub."], ["Mediastinal crunch", "The mediastinal crunch is crackles synchronized with the heartbeat, not with respiration, so it would persist during a breath hold."], ["Coarse crackles", "Coarse crackles are popping sounds from secretions or fluid that do not depend on the pleura and are not described as grating."]], "c": 1, "cite": "6. Thorax - Dr. Crowe.pptx, Slides 50, 51", "qid": "bxgad"}, {"topic": "Sputum", "io": "Describe the elements related to interviewing and eliciting a medical history that aid in identifying pulmonary disorders", "slot": "differential", "q": "A patient coughs up large amounts of foul-smelling sputum every day. Which conditions does this suggest?", "opts": [["Bacterial pneumonia or bronchitis", "Bacterial pneumonia is the purulent pattern, yellow or green; copious and foul-smelling points elsewhere."], ["Cystic fibrosis or bronchiectasis", "Correct: COPIOUS foul-smelling sputum is the pattern for cystic fibrosis and bronchiectasis; foul smell alone suggests an anaerobic lung abscess."], ["Viral infection or postnasal drip", "Viral infection and postnasal drip give mucoid sputum: translucent, white or gray, and not foul-smelling."], ["Asthma or chronic obstructive pulmonary disease", "Asthma brings wheezing, cough and chest tightness, and the obstructive disease scant sputum, not a daily copious foul load."]], "c": 1, "cite": "6. Thorax - Dr. Crowe.pptx, Slides 22, 16", "qid": "8zic9g"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll" && window.startExamModeTour) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

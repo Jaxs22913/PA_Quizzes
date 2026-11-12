@@ -7,8 +7,9 @@ else -- no row here says anything the guide does not ([[cram_sheets_feature]]).
 Numbers are kept exactly as the slides give them: 0.90-1.40, 2-3 seconds,
 10% of body weight, the 2/4/6/8 mm pitting depths, grade 4 = first thrill.
 
-Lectures 5 and 6 so far (Lecture 6 condensed from guide section 2,
-tools/add_pd2_e2_guide_l6.py); Hematology (7) topics get appended when that deck lands.
+Lectures 5, 6 and 7 (Lecture 6 condensed from guide section 2, tools/add_pd2_e2_guide_l6.py;
+Lecture 7 from guide section 3, tools/add_pd2_e2_guide_l7.py, with its criteria and
+classification tables in cols mode plus a memory aid each, [[cram_criteria_tables]]).
 
 The first topic carries the lecturer's emphasis (the rows marked with a star),
 the same convention the Exam 1 sheet uses for its Lecture 3 and 4 marks. The
@@ -287,6 +288,117 @@ topics = [
     ["Pneumonia odds", "Fever and cough plus bronchial breath sounds and egophony: more than triples the likelihood of pneumonia."],
     ["Pulmonary OSCE (objective structured clinical examination)", "10 November. The whole station is on the Pulmonary OSCE run-sheet."],
   ]},
+
+ # ---------------------------------------------------------------- Lecture 7 (guide section 3)
+ {"id": "l7-emphasis", "label": "★ Hematology: what the lecture stressed", "color": "#b8860b",
+  "rows": [
+    ["★ Tested from the slides", "Ward: 'on my tests [you] only get tested on things on the slide.' His stories add context, not content."],
+    ["★ Fatigue is early", "Most common symptom, present even in mild anemia. Rest symptoms, chest pain and syncope are the severe, uncommon ones."],
+    ["★ Ask about nosebleeds and gum bleeding", "The bleeding patients do not report because they do not know it is abnormal."],
+    ["★ Pulse oximetry is NORMAL", "'The main thing to take away from our pulmonary findings.' Less hemoglobin, not less saturated hemoglobin."],
+    ["★ Cullen and Grey Turner", "Uncommon and may appear days later; when you see them, take them very seriously. Absent signs do not exclude bleeding."],
+    ["★ B12 without anemia", "Neurologic findings can occur with a normal hemoglobin and no macrocytosis."],
+    ["★ The hemoglobin lags", "Acute hemorrhage: instability can come before the hemoglobin falls. A normal value does not reassure."],
+  ]},
+
+ {"id": "crit-l7-causes", "label": "Hematology tables: causes, thresholds, lesions, signs", "toc_label": "Hematology criteria & classifications",
+  "color": "#7a3b3b", "cols": ["Mechanism", "Examples on the slides"], "min_width": "0",
+  "rows": [
+    ("Blood LOSS", "Trauma, menstrual, gastrointestinal"),
+    ("DESTRUCTION (hemolysis), intrinsic", "Sickle cell disease, thalassemia syndromes, glucose-6-phosphate dehydrogenase deficiency, hemoglobinopathy, paroxysmal nocturnal hemoglobinuria"),
+    ("DESTRUCTION (hemolysis), extrinsic", "Autoimmune disease (lupus), transfusion reaction, malaria; microangiopathic: disseminated intravascular coagulation, thrombotic thrombocytopenic purpura"),
+    ("Impaired PRODUCTION", "Iron, B12, folic acid deficiency; renal failure; chronic disease; hematologic neoplasm or metastatic disease"),
+  ],
+  "mnemonic": {"hook": "Red cells are LOST, LYSED or never MADE.",
+               "key": [["Lost", "blood loss: trauma, menstrual, gastrointestinal"], ["Lysed", "destruction, hemolysis"], ["Made (not)", "impaired production"]]}},
+
+ {"id": "crit-l7-thresholds", "label": "Anemia thresholds", "toc": False, "color": "#7a3b3b",
+  "cols": ["", "Hemoglobin below", "Hematocrit below"], "min_width": "0",
+  "rows": [
+    ("Females", "11.9 g/dL (119 g/L)", "35 percent"),
+    ("Males", "13.6 g/dL (136 g/L)", "40 percent"),
+    {"note": "Other references (World Health Organization) use 12 and 13 g/dL; the slide values are the ones keyed."},
+  ],
+  "mnemonic": {"hook": "Women 12 minus a tenth, 35; men about 14 minus, 40.",
+               "key": [["11.9 / 35", "females"], ["13.6 / 40", "males: higher on both"]],
+               "breaks": "13.6 is not 13.9: the male value sits four tenths under 14."}},
+
+ {"id": "crit-l7-lesions", "label": "Petechiae, purpura, ecchymoses", "toc": False, "color": "#7a3b3b",
+  "cols": ["Lesion", "Definition"], "min_width": "0",
+  "rows": [
+    ("Petechiae", "Pinpoint, nonblanching skin hemorrhages"),
+    ("Purpura", "Larger nonblanching hemorrhagic lesions"),
+    ("Ecchymoses", "Larger areas of bruising"),
+    {"note": "Describe distribution, extent and palpability. Concern rises with mucosal bleeding or systemic illness."},
+  ],
+  "mnemonic": {"hook": "P, P, E grow in size: Pinpoint, Patch, Expanse.",
+               "key": [["Pinpoint", "petechiae"], ["Patch", "purpura"], ["Expanse", "ecchymosis, the bruise"]]}},
+
+ {"id": "crit-l7-signs", "label": "Signs of internal bleeding", "toc": False, "color": "#7a3b3b",
+  "cols": ["Sign", "Where", "Suggests"], "min_width": "0",
+  "rows": [
+    ("Cullen", "Periumbilical ecchymosis", "Internal bleeding"),
+    ("Grey Turner", "Flank ecchymosis", "Retroperitoneal or intra-abdominal bleeding"),
+    {"note": "Possible severe pancreatitis or other serious abdominal condition. Uncommon, may be delayed; absent signs do not exclude significant bleeding."},
+  ],
+  "mnemonic": {"hook": "Cullen is Central; Grey Turner turns to the side.",
+               "key": [["Cullen", "around the umbilicus"], ["Turner", "the flank"]]}},
+
+ {"id": "crit-l7-clubbing", "label": "Clubbing measures", "toc": False, "color": "#7a3b3b",
+  "cols": ["Measure", "Normal", "Clubbing"], "min_width": "0",
+  "rows": [
+    ("Nail-fold profile angle", "Under 180°", "Over 180°"),
+    ("Schamroth sign (photographs)", "Small gap between the backs of the paired nails", "Gap gone"),
+    ("Phalangeal depth ratio (DPD : IPD)", "DPD smaller than IPD", "DPD greater than IPD"),
+    {"note": "DPD and IPD are the slide's labels (distal phalangeal depth at the nail base, interphalangeal depth at the end joint); the Schamroth gap is read from the photographs. Clubbing is atypical for uncomplicated anemia: look for a cardiopulmonary, gastrointestinal or other systemic disorder."},
+  ],
+  "mnemonic": {"hook": "Clubbing goes past flat, shuts the window, fattens the tip.",
+               "key": [["Past flat", "angle over 180°"], ["Shuts the window", "Schamroth gap gone"], ["Fattens the tip", "DPD greater than IPD"]]}},
+
+ {"id": "l7-history", "label": "The Hematologic History", "color": "#7a3b3b",
+  "rows": [
+    ["Symptoms", "Fatigue (most common), weakness, reduced exercise tolerance, exertional dyspnea, palpitations, dizziness, lightheadedness. Onset, progression, change from baseline."],
+    ["Severity", "Symptoms at rest, chest pain, syncope. Depends on the RATE OF ONSET and CARDIOPULMONARY DISEASE."],
+    ["Bleeding terms", "Hematochezia = red or maroon blood per rectum. Melena = black, tarry stool. Hematemesis = blood or coffee-ground emesis. Plus hematuria and abnormal uterine bleeding."],
+    ["Bleeding questions", "Easy bruising, epistaxis, gum bleeding, prolonged procedural bleeding. For each: onset, frequency, amount, duration."],
+    ["Iron clues", "Pica (craving or chewing ICE), brittle or spoon-shaped nails, possible hair shedding."],
+    ["B12 clues", "Paresthesias, impaired balance, reduced vibration or position sense."],
+    ["Iron, B12 or folate", "Glossitis or angular cheilitis."],
+    ["Malabsorption", "Chronic diarrhea, bloating, weight loss. Gastric bypass, gastrectomy, intestinal resection. Celiac disease, inflammatory bowel disease."],
+    ["Diet and travel", "Iron-containing foods, animal products, fortified foods, supplements. VEGAN without B12 supplements or fortified foods = B12 risk. Travel: febrile illness, infectious exposures."],
+    ["Malignancy questions", "Fever, night sweats, unintentional weight loss."],
+    ["Medications", "Prescription, over-the-counter and supplements: nonsteroidal anti-inflammatory drugs, aspirin, anticoagulants, metformin, acid-suppressing medications; NITROUS OXIDE exposure with possible B12 deficiency."],
+    ["Menstrual", "Duration, flooding, protection changes, daily impact; intermenstrual or postmenopausal bleeding; pregnancy and recent delivery."],
+    ["Family and social", "Anemia, hemoglobinopathy, bleeding, unexplained jaundice; relatives with transfusions or SPLENECTOMY. Ancestry = risk information; hemoglobinopathies possible in ANY ancestry. Alcohol, nutrition, occupation."],
+    ["Exposures and conditions", "LEAD (renovation, pre-1978 buildings), BENZENE (marrow-toxic). Chronic kidney, inflammatory or liver disease, malignancy. Anemia with irritable bowel syndrome: look for another explanation."],
+  ]},
+
+ {"id": "l7-exam", "label": "Skin, Nails, Mouth, Eyes & Nodes", "color": "#8a5a2b",
+  "rows": [
+    ["Focused examination", "Appearance, vital signs, perfusion; skin, conjunctivae, mouth, nails; lymph nodes; heart and lungs; abdomen with liver and spleen; targeted neurologic examination."],
+    ["Pallor", "Conjunctivae (palpebral), oral mucosa, palms, nail beds. Possible anemia; UNRELIABLE hemoglobin estimate. Normal appearance: anemia still possible."],
+    ["Jaundice, scleral icterus", "Hemolytic anemia, including sickle cell disease. Also disorders of bilirubin metabolism."],
+    ["Hair shedding", "Possible iron deficiency; many other causes."],
+    ["Nails", "Brittle, flat, longitudinal ridging = nonspecific. KOILONYCHIA (thin, concave, spoon) = iron deficiency. Nails cannot give cause or severity."],
+    ["Mouth", "Pallor of the oral mucosa; palatal petechiae and other mucosal bleeding."],
+    ["Glossitis", "Smooth, sore, beefy-red tongue. Iron, B12 or folate: NONSPECIFIC."],
+    ["Angular cheilitis", "Inflammation and fissures at the mouth corners. Deficiency, Candida, bacteria, local irritation."],
+    ["Lymph nodes", "Cervical and supraclavicular; axillary and inguinal when indicated. Location, size, tenderness, consistency, mobility."],
+  ]},
+
+ {"id": "l7-systems", "label": "Other Systems & the Emergency", "color": "#3f5b6b",
+  "rows": [
+    ["Cardiovascular", "Tachycardia, hyperdynamic circulation, possible bounding pulses, prominent precordial impulse, possible SYSTOLIC flow murmur. Heart failure assessment in severe or poorly tolerated anemia. Read against symptoms and heart disease."],
+    ["Bone tenderness", "Sternal or other: possible marrow disease; nonspecific."],
+    ["Pulmonary", "Dyspnea, tachypnea; lower oxygen-carrying capacity; NORMAL pulse oximetry. Consider coexisting lung disease or heart failure."],
+    ["Abdomen", "Tenderness, masses, hepatomegaly, ascites, splenomegaly. Splenomegaly: hemolysis, infection, portal hypertension, hematologic malignancy. Rectal examination when indicated."],
+    ["Stool blood test", "NEGATIVE: bleeding still possible. POSITIVE: source and cause still undetermined."],
+    ["B12 neurologic", "Paresthesias; reduced vibration and joint-position sense; sensory ataxia (worse in the DARK); neuropathy; cognitive, psychiatric or visual changes; can occur WITHOUT anemia or macrocytosis."],
+    ["Spinal cord", "Posterior columns = vibration and position sense. Lateral corticospinal tracts = spasticity, hyperreflexia."],
+    ["Neurologic examination", "Gait and balance; distal vibration and joint-position sense; strength and reflexes; ROMBERG with protection against falling. Greater instability with eyes closed = possible impaired proprioception."],
+    ["Urgent assessment", "Active major bleeding, hypotension, syncope, chest pain, dyspnea at rest, altered mental status. Check vital signs, mental status, skin perfusion, ongoing loss; escalate: stabilize, control bleeding, resuscitate."],
+    ["General vs cause clues", "General: fatigue, weakness, exertional dyspnea, palpitations, lightheadedness. Cause: bleeding history, jaundice, diet or surgery, neurologic findings, lymphadenopathy, splenomegaly."],
+  ]},
 ]
 
 for t in topics:
@@ -299,10 +411,10 @@ html = render(
     title="Cram Sheet — Physical Diagnosis 2 Exam 2",
     kicker="Physical Diagnosis 2 Exam 2 · Class of 2028",
     h1="Physical Diagnosis 2 Exam 2 Cram Sheet",
-    sub="Lecture 5, the advanced cardiovascular and peripheral vascular examination: the history, the cardiac cycle and every extra sound, the apical impulse, the listening areas and which end of the stethoscope, how to describe and grade a murmur, all eleven lesions side by side, the maneuvers, and the peripheral vascular examination with edema, the Allen test, the ankle brachial index and Homans sign. Lecture 6, the thorax and lungs: the landmarks and procedures, the respiratory history, clubbing and hemoptysis, dyspnea by onset, the breathing patterns and deformities, percussion and the breath sounds, every adventitious sound, and the five conditions side by side. Hematology is added when that lecture is posted.",
+    sub="Lecture 5, the advanced cardiovascular and peripheral vascular examination: the history, the cardiac cycle and every extra sound, the apical impulse, the listening areas and which end of the stethoscope, how to describe and grade a murmur, all eleven lesions side by side, the maneuvers, and the peripheral vascular examination with edema, the Allen test, the ankle brachial index and Homans sign. Lecture 6, the thorax and lungs: the landmarks and procedures, the respiratory history, clubbing and hemoptysis, dyspnea by onset, the breathing patterns and deformities, percussion and the breath sounds, every adventitious sound, and the five conditions side by side. Lecture 7, the hematological examination: the three causes of anemia and the thresholds, the bleeding, deficiency, diet, medication, menstrual, family and exposure history, pallor, jaundice, nails, petechiae and the mouth, the heart, lungs, abdomen and signs of internal bleeding, clubbing, the B12 neurologic examination, and the emergency.",
     topics=topics,
     guide_href="pd2-exam-2-study-guide.html",
-    footer_note="Condensed from the Physical Diagnosis 2 Exam 2 Study Guide (Class of 2028). Covers Lectures 5 and 6 so far; Exam 2 (Friday 20 November) covers Lectures 5 to 7. Rows marked with a star are what the lecturer repeated, not a statement of what is on the exam. For the full explanation and the figures behind any row, see the full guide.",
+    footer_note="Condensed from the Physical Diagnosis 2 Exam 2 Study Guide (Class of 2028). Covers Lectures 5 to 7, everything on Exam 2 (Friday 20 November). Rows marked with a star are what the lecturer repeated, not a statement of what is on the exam. For the full explanation and the figures behind any row, see the full guide.",
 )
 open(OUT, "w", encoding="utf-8").write(html)
 rows = sum(len([r for r in t["rows"] if not isinstance(r, dict)]) for t in topics)

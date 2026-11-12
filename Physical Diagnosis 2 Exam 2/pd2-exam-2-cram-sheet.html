@@ -93,8 +93,24 @@
     .logo-mark-ink { stroke: #e5e7eb; }
     .logo-mark-accent { stroke: var(--primary); }
   }
+  /* memory-aid box + footnote rows (render.py emits this block only when a
+     topic uses "mnemonic" or a {"note": ...} row); theme variables only, so
+     the designed dark mode (tools/dark_tokens.py) recolours it for free */
+  .mnem{margin:10px 0 0;padding:11px 15px 12px;background:var(--card);border:1px solid var(--line);
+    border-left:4px solid var(--acc);border-radius:12px;box-shadow:var(--shadow);font-size:13.8px;color:var(--body)}
+  .mnem-k{font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--acc-ink,var(--ink));margin:0 0 4px}
+  .mnem p{margin:0 0 5px}
+  .mnem p:last-child{margin-bottom:0}
+  .mnem-hook{font-weight:700;color:var(--ink)}
+  .mnem-key span{display:inline-block;margin:0 16px 3px 0}
+  .mnem-key b{color:var(--acc-ink,var(--ink))}
+  .mnem-brk{color:var(--muted);font-size:13px}
+  .mnem-brk b{color:var(--body)}
+  td.rnote{font-size:12.8px;font-style:italic;color:var(--muted)}
+  @media print{.mnem{box-shadow:none;break-inside:avoid}}
 </style>
-<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--primary-l:#b8860b;--primary:#af8325;}:root[data-theme="dark"] body[data-dark="tokens"] #l5-emphasis{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-emphasis"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-history{--acc-bg:#122917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#729478!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-history"]{color:#6b8d71!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-cycle{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6b9673!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-cycle"]{color:#648f6c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-impulse{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6a9673!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-impulse"]{color:#638f6c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-auscultation{--acc-bg:#052922!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5b9788!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-auscultation"]{color:#549082!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-murmur-describe{--acc-bg:#2f2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b78226!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-murmur-describe"]{color:#ae7b23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-murmurs{--acc-bg:#361919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#bf7977!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-murmurs"]{color:#b77270!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-maneuvers{--acc-bg:#241e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#9282c7!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-maneuvers"]{color:#8b7bbf!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-peripheral{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-peripheral"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-edema{--acc-bg:#082635!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#7290a1!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-edema"]{color:#6b899a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-exam{--acc-bg:#2b2206!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8c8c8c!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-exam"]{color:#858585!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-emphasis{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-emphasis"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-landmarks{--acc-bg:#122917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#729478!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-landmarks"]{color:#6b8d71!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-history{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6b9673!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-history"]{color:#648f6c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-clubbing{--acc-bg:#361919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#bf7977!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-clubbing"]{color:#b77270!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-dyspnea{--acc-bg:#052922!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5b9788!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-dyspnea"]{color:#549082!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-inspect{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6a9673!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-inspect"]{color:#638f6c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-sounds{--acc-bg:#2f2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b78226!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-sounds"]{color:#ae7b23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-adventitious{--acc-bg:#241e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#9282c7!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-adventitious"]{color:#8b7bbf!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-five{--acc-bg:#082635!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#7290a1!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-five"]{color:#6b899a!important}:root[data-theme="light"] body[data-dark="tokens"]{--primary-t:#8f6a1d;}:root[data-theme="light"] body[data-dark="tokens"] #l5-emphasis{--acc-ink:#88661b!important}:root[data-theme="light"] body[data-dark="tokens"] #l5-murmur-describe{--acc-ink:#8e641b!important}:root[data-theme="light"] body[data-dark="tokens"] #l6-emphasis{--acc-ink:#88661b!important}:root[data-theme="light"] body[data-dark="tokens"] #l6-sounds{--acc-ink:#8e641b!important}</style><!--DARK-TOKENS:END-->
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--primary-l:#b8860b;--primary:#af8325;}:root[data-theme="dark"] body[data-dark="tokens"] #l5-emphasis{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-emphasis"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-history{--acc-bg:#122917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#729478!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-history"]{color:#6b8d71!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-cycle{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6b9673!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-cycle"]{color:#648f6c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-impulse{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6a9673!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-impulse"]{color:#638f6c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-auscultation{--acc-bg:#052922!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5b9788!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-auscultation"]{color:#549082!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-murmur-describe{--acc-bg:#2f2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b78226!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-murmur-describe"]{color:#ae7b23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-murmurs{--acc-bg:#361919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#bf7977!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-murmurs"]{color:#b77270!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-maneuvers{--acc-bg:#241e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#9282c7!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-maneuvers"]{color:#8b7bbf!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-peripheral{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-peripheral"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-edema{--acc-bg:#082635!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#7290a1!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-edema"]{color:#6b899a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l5-exam{--acc-bg:#2b2206!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8c8c8c!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l5-exam"]{color:#858585!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-emphasis{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-emphasis"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-landmarks{--acc-bg:#122917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#729478!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-landmarks"]{color:#6b8d71!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-history{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6b9673!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-history"]{color:#648f6c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-clubbing{--acc-bg:#361919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#bf7977!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-clubbing"]{color:#b77270!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-dyspnea{--acc-bg:#052922!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#5b9788!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-dyspnea"]{color:#549082!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-inspect{--acc-bg:#112917!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6a9673!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-inspect"]{color:#638f6c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-sounds{--acc-bg:#2f2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b78226!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-sounds"]{color:#ae7b23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-adventitious{--acc-bg:#241e36!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#9282c7!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-adventitious"]{color:#8b7bbf!important}:root[data-theme="dark"] body[data-dark="tokens"] #l6-five{--acc-bg:#082635!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#7290a1!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l6-five"]{color:#6b899a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l7-emphasis{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l7-emphasis"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l7-causes{--acc-bg:#361919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#bf7977!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l7-causes"]{color:#b77270!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l7-thresholds{--acc-bg:#361919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#bf7977!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l7-thresholds"]{color:#b77270!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l7-lesions{--acc-bg:#361919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#bf7977!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l7-lesions"]{color:#b77270!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l7-signs{--acc-bg:#361919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#bf7977!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l7-signs"]{color:#b77270!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l7-clubbing{--acc-bg:#361919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#bf7977!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l7-clubbing"]{color:#b77270!important}:root[data-theme="dark"] body[data-dark="tokens"] #l7-history{--acc-bg:#361919!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#bf7977!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l7-history"]{color:#b77270!important}:root[data-theme="dark"] body[data-dark="tokens"] #l7-exam{--acc-bg:#321e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48152!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l7-exam"]{color:#ac7a4c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l7-systems{--acc-bg:#082635!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#7290a1!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l7-systems"]{color:#6b899a!important}:root[data-theme="light"] body[data-dark="tokens"]{--primary-t:#8f6a1d;}:root[data-theme="light"] body[data-dark="tokens"] #l5-emphasis{--acc-ink:#88661b!important}:root[data-theme="light"] body[data-dark="tokens"] #l5-murmur-describe{--acc-ink:#8e641b!important}:root[data-theme="light"] body[data-dark="tokens"] #l6-emphasis{--acc-ink:#88661b!important}:root[data-theme="light"] body[data-dark="tokens"] #l6-sounds{--acc-ink:#8e641b!important}:root[data-theme="light"] body[data-dark="tokens"] #l7-emphasis{--acc-ink:#88661b!important}</style><!--DARK-TOKENS:END-->
   <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="pd2-exam-2-cram-sheet.docx" title="Editable Word copy">
 </head>
 <body data-dark="tokens" data-dark-kind="cram">
@@ -122,7 +138,7 @@
   <header class="hero">
     <div class="kicker">Physical Diagnosis 2 Exam 2 · Class of 2028</div>
     <h1>Physical Diagnosis 2 Exam 2 Cram Sheet</h1>
-    <p class="sub">Lecture 5, the advanced cardiovascular and peripheral vascular examination: the history, the cardiac cycle and every extra sound, the apical impulse, the listening areas and which end of the stethoscope, how to describe and grade a murmur, all eleven lesions side by side, the maneuvers, and the peripheral vascular examination with edema, the Allen test, the ankle brachial index and Homans sign. Lecture 6, the thorax and lungs: the landmarks and procedures, the respiratory history, clubbing and hemoptysis, dyspnea by onset, the breathing patterns and deformities, percussion and the breath sounds, every adventitious sound, and the five conditions side by side. Hematology is added when that lecture is posted.</p>
+    <p class="sub">Lecture 5, the advanced cardiovascular and peripheral vascular examination: the history, the cardiac cycle and every extra sound, the apical impulse, the listening areas and which end of the stethoscope, how to describe and grade a murmur, all eleven lesions side by side, the maneuvers, and the peripheral vascular examination with edema, the Allen test, the ankle brachial index and Homans sign. Lecture 6, the thorax and lungs: the landmarks and procedures, the respiratory history, clubbing and hemoptysis, dyspnea by onset, the breathing patterns and deformities, percussion and the breath sounds, every adventitious sound, and the five conditions side by side. Lecture 7, the hematological examination: the three causes of anemia and the thresholds, the bleeding, deficiency, diet, medication, menstrual, family and exposure history, pallor, jaundice, nails, petechiae and the mouth, the heart, lungs, abdomen and signs of internal bleeding, clubbing, the B12 neurologic examination, and the emergency.</p>
     <div class="toc">
       <a href="#l5-emphasis" style="color:#906909"><span class="dot" style="background:#b8860b"></span>★ What the lecture kept coming back to</a>
       <a href="#l5-history" style="color:#2d4632"><span class="dot" style="background:#3a5a40"></span>The Cardiac History</a>
@@ -144,6 +160,11 @@
       <a href="#l6-sounds" style="color:#966c24"><span class="dot" style="background:#c08a2e"></span>Percussion & Breath Sounds</a>
       <a href="#l6-adventitious" style="color:#473a6c"><span class="dot" style="background:#5b4a8a"></span>Adventitious Sounds</a>
       <a href="#l6-five" style="color:#314753"><span class="dot" style="background:#3f5b6b"></span>The Five Conditions & Voice Sounds</a>
+      <a href="#l7-emphasis" style="color:#906909"><span class="dot" style="background:#b8860b"></span>★ Hematology: what the lecture stressed</a>
+      <a href="#crit-l7-causes" style="color:#5f2e2e"><span class="dot" style="background:#7a3b3b"></span>Hematology criteria & classifications</a>
+      <a href="#l7-history" style="color:#5f2e2e"><span class="dot" style="background:#7a3b3b"></span>The Hematologic History</a>
+      <a href="#l7-exam" style="color:#6c4622"><span class="dot" style="background:#8a5a2b"></span>Skin, Nails, Mouth, Eyes & Nodes</a>
+      <a href="#l7-systems" style="color:#314753"><span class="dot" style="background:#3f5b6b"></span>Other Systems & the Emergency</a>
     </div>
     <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
       replacement for the full study guide — it assumes you've already learned the material and just need
@@ -539,8 +560,170 @@
     </div>
   </section>
 
+  <section class="topic" id="l7-emphasis" style="--acc:#b8860b;--acc-bg:#f5eedd;--acc-zebra:#faf7ee;--acc-ink:#906909">
+    <div class="shead"><span class="dot" style="background:#b8860b"></span><h2>★ Hematology: what the lecture stressed</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ Tested from the slides</td><td>Ward: 'on my tests [you] only get tested on things on the slide.' His stories add context, not content.</td></tr>
+          <tr><td class="h">★ Fatigue is early</td><td>Most common symptom, present even in mild anemia. Rest symptoms, chest pain and syncope are the severe, uncommon ones.</td></tr>
+          <tr><td class="h">★ Ask about nosebleeds and gum bleeding</td><td>The bleeding patients do not report because they do not know it is abnormal.</td></tr>
+          <tr><td class="h">★ Pulse oximetry is NORMAL</td><td>'The main thing to take away from our pulmonary findings.' Less hemoglobin, not less saturated hemoglobin.</td></tr>
+          <tr><td class="h">★ Cullen and Grey Turner</td><td>Uncommon and may appear days later; when you see them, take them very seriously. Absent signs do not exclude bleeding.</td></tr>
+          <tr><td class="h">★ B12 without anemia</td><td>Neurologic findings can occur with a normal hemoglobin and no macrocytosis.</td></tr>
+          <tr><td class="h">★ The hemoglobin lags</td><td>Acute hemorrhage: instability can come before the hemoglobin falls. A normal value does not reassure.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="crit-l7-causes" style="--acc:#7a3b3b;--acc-bg:#ece4e4;--acc-zebra:#f6f1f1;--acc-ink:#5f2e2e">
+    <div class="shead"><span class="dot" style="background:#7a3b3b"></span><h2>Hematology tables: causes, thresholds, lesions, signs</h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term">Mechanism</th><th>Examples on the slides</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Blood LOSS</td><td>Trauma, menstrual, gastrointestinal</td></tr>
+          <tr><td class="h">DESTRUCTION (hemolysis), intrinsic</td><td>Sickle cell disease, thalassemia syndromes, glucose-6-phosphate dehydrogenase deficiency, hemoglobinopathy, paroxysmal nocturnal hemoglobinuria</td></tr>
+          <tr><td class="h">DESTRUCTION (hemolysis), extrinsic</td><td>Autoimmune disease (lupus), transfusion reaction, malaria; microangiopathic: disseminated intravascular coagulation, thrombotic thrombocytopenic purpura</td></tr>
+          <tr><td class="h">Impaired PRODUCTION</td><td>Iron, B12, folic acid deficiency; renal failure; chronic disease; hematologic neoplasm or metastatic disease</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Red cells are LOST, LYSED or never MADE.</p><p class="mnem-key"><span><b>Lost</b> blood loss: trauma, menstrual, gastrointestinal</span><span><b>Lysed</b> destruction, hemolysis</span><span><b>Made (not)</b> impaired production</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l7-thresholds" style="--acc:#7a3b3b;--acc-bg:#ece4e4;--acc-zebra:#f6f1f1;--acc-ink:#5f2e2e">
+    <div class="shead"><span class="dot" style="background:#7a3b3b"></span><h2>Anemia thresholds</h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term"></th><th>Hemoglobin below</th><th>Hematocrit below</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Females</td><td>11.9 g/dL (119 g/L)</td><td>35 percent</td></tr>
+          <tr><td class="h">Males</td><td>13.6 g/dL (136 g/L)</td><td>40 percent</td></tr>
+          <tr><td class="rnote" colspan="3">Other references (World Health Organization) use 12 and 13 g/dL; the slide values are the ones keyed.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Women 12 minus a tenth, 35; men about 14 minus, 40.</p><p class="mnem-key"><span><b>11.9 / 35</b> females</span><span><b>13.6 / 40</b> males: higher on both</span></p><p class="mnem-brk"><b>Where it breaks:</b> 13.6 is not 13.9: the male value sits four tenths under 14.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l7-lesions" style="--acc:#7a3b3b;--acc-bg:#ece4e4;--acc-zebra:#f6f1f1;--acc-ink:#5f2e2e">
+    <div class="shead"><span class="dot" style="background:#7a3b3b"></span><h2>Petechiae, purpura, ecchymoses</h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term">Lesion</th><th>Definition</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Petechiae</td><td>Pinpoint, nonblanching skin hemorrhages</td></tr>
+          <tr><td class="h">Purpura</td><td>Larger nonblanching hemorrhagic lesions</td></tr>
+          <tr><td class="h">Ecchymoses</td><td>Larger areas of bruising</td></tr>
+          <tr><td class="rnote" colspan="2">Describe distribution, extent and palpability. Concern rises with mucosal bleeding or systemic illness.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">P, P, E grow in size: Pinpoint, Patch, Expanse.</p><p class="mnem-key"><span><b>Pinpoint</b> petechiae</span><span><b>Patch</b> purpura</span><span><b>Expanse</b> ecchymosis, the bruise</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l7-signs" style="--acc:#7a3b3b;--acc-bg:#ece4e4;--acc-zebra:#f6f1f1;--acc-ink:#5f2e2e">
+    <div class="shead"><span class="dot" style="background:#7a3b3b"></span><h2>Signs of internal bleeding</h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term">Sign</th><th>Where</th><th>Suggests</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Cullen</td><td>Periumbilical ecchymosis</td><td>Internal bleeding</td></tr>
+          <tr><td class="h">Grey Turner</td><td>Flank ecchymosis</td><td>Retroperitoneal or intra-abdominal bleeding</td></tr>
+          <tr><td class="rnote" colspan="3">Possible severe pancreatitis or other serious abdominal condition. Uncommon, may be delayed; absent signs do not exclude significant bleeding.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Cullen is Central; Grey Turner turns to the side.</p><p class="mnem-key"><span><b>Cullen</b> around the umbilicus</span><span><b>Turner</b> the flank</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l7-clubbing" style="--acc:#7a3b3b;--acc-bg:#ece4e4;--acc-zebra:#f6f1f1;--acc-ink:#5f2e2e">
+    <div class="shead"><span class="dot" style="background:#7a3b3b"></span><h2>Clubbing measures</h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term">Measure</th><th>Normal</th><th>Clubbing</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Nail-fold profile angle</td><td>Under 180°</td><td>Over 180°</td></tr>
+          <tr><td class="h">Schamroth sign (photographs)</td><td>Small gap between the backs of the paired nails</td><td>Gap gone</td></tr>
+          <tr><td class="h">Phalangeal depth ratio (DPD : IPD)</td><td>DPD smaller than IPD</td><td>DPD greater than IPD</td></tr>
+          <tr><td class="rnote" colspan="3">DPD and IPD are the slide's labels (distal phalangeal depth at the nail base, interphalangeal depth at the end joint); the Schamroth gap is read from the photographs. Clubbing is atypical for uncomplicated anemia: look for a cardiopulmonary, gastrointestinal or other systemic disorder.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Clubbing goes past flat, shuts the window, fattens the tip.</p><p class="mnem-key"><span><b>Past flat</b> angle over 180°</span><span><b>Shuts the window</b> Schamroth gap gone</span><span><b>Fattens the tip</b> DPD greater than IPD</span></p></div>
+  </section>
+
+  <section class="topic" id="l7-history" style="--acc:#7a3b3b;--acc-bg:#ece4e4;--acc-zebra:#f6f1f1;--acc-ink:#5f2e2e">
+    <div class="shead"><span class="dot" style="background:#7a3b3b"></span><h2>The Hematologic History</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Symptoms</td><td>Fatigue (most common), weakness, reduced exercise tolerance, exertional dyspnea, palpitations, dizziness, lightheadedness. Onset, progression, change from baseline.</td></tr>
+          <tr><td class="h">Severity</td><td>Symptoms at rest, chest pain, syncope. Depends on the RATE OF ONSET and CARDIOPULMONARY DISEASE.</td></tr>
+          <tr><td class="h">Bleeding terms</td><td>Hematochezia = red or maroon blood per rectum. Melena = black, tarry stool. Hematemesis = blood or coffee-ground emesis. Plus hematuria and abnormal uterine bleeding.</td></tr>
+          <tr><td class="h">Bleeding questions</td><td>Easy bruising, epistaxis, gum bleeding, prolonged procedural bleeding. For each: onset, frequency, amount, duration.</td></tr>
+          <tr><td class="h">Iron clues</td><td>Pica (craving or chewing ICE), brittle or spoon-shaped nails, possible hair shedding.</td></tr>
+          <tr><td class="h">B12 clues</td><td>Paresthesias, impaired balance, reduced vibration or position sense.</td></tr>
+          <tr><td class="h">Iron, B12 or folate</td><td>Glossitis or angular cheilitis.</td></tr>
+          <tr><td class="h">Malabsorption</td><td>Chronic diarrhea, bloating, weight loss. Gastric bypass, gastrectomy, intestinal resection. Celiac disease, inflammatory bowel disease.</td></tr>
+          <tr><td class="h">Diet and travel</td><td>Iron-containing foods, animal products, fortified foods, supplements. VEGAN without B12 supplements or fortified foods = B12 risk. Travel: febrile illness, infectious exposures.</td></tr>
+          <tr><td class="h">Malignancy questions</td><td>Fever, night sweats, unintentional weight loss.</td></tr>
+          <tr><td class="h">Medications</td><td>Prescription, over-the-counter and supplements: nonsteroidal anti-inflammatory drugs, aspirin, anticoagulants, metformin, acid-suppressing medications; NITROUS OXIDE exposure with possible B12 deficiency.</td></tr>
+          <tr><td class="h">Menstrual</td><td>Duration, flooding, protection changes, daily impact; intermenstrual or postmenopausal bleeding; pregnancy and recent delivery.</td></tr>
+          <tr><td class="h">Family and social</td><td>Anemia, hemoglobinopathy, bleeding, unexplained jaundice; relatives with transfusions or SPLENECTOMY. Ancestry = risk information; hemoglobinopathies possible in ANY ancestry. Alcohol, nutrition, occupation.</td></tr>
+          <tr><td class="h">Exposures and conditions</td><td>LEAD (renovation, pre-1978 buildings), BENZENE (marrow-toxic). Chronic kidney, inflammatory or liver disease, malignancy. Anemia with irritable bowel syndrome: look for another explanation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l7-exam" style="--acc:#8a5a2b;--acc-bg:#efe8e1;--acc-zebra:#f7f3f0;--acc-ink:#6c4622">
+    <div class="shead"><span class="dot" style="background:#8a5a2b"></span><h2>Skin, Nails, Mouth, Eyes & Nodes</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Focused examination</td><td>Appearance, vital signs, perfusion; skin, conjunctivae, mouth, nails; lymph nodes; heart and lungs; abdomen with liver and spleen; targeted neurologic examination.</td></tr>
+          <tr><td class="h">Pallor</td><td>Conjunctivae (palpebral), oral mucosa, palms, nail beds. Possible anemia; UNRELIABLE hemoglobin estimate. Normal appearance: anemia still possible.</td></tr>
+          <tr><td class="h">Jaundice, scleral icterus</td><td>Hemolytic anemia, including sickle cell disease. Also disorders of bilirubin metabolism.</td></tr>
+          <tr><td class="h">Hair shedding</td><td>Possible iron deficiency; many other causes.</td></tr>
+          <tr><td class="h">Nails</td><td>Brittle, flat, longitudinal ridging = nonspecific. KOILONYCHIA (thin, concave, spoon) = iron deficiency. Nails cannot give cause or severity.</td></tr>
+          <tr><td class="h">Mouth</td><td>Pallor of the oral mucosa; palatal petechiae and other mucosal bleeding.</td></tr>
+          <tr><td class="h">Glossitis</td><td>Smooth, sore, beefy-red tongue. Iron, B12 or folate: NONSPECIFIC.</td></tr>
+          <tr><td class="h">Angular cheilitis</td><td>Inflammation and fissures at the mouth corners. Deficiency, Candida, bacteria, local irritation.</td></tr>
+          <tr><td class="h">Lymph nodes</td><td>Cervical and supraclavicular; axillary and inguinal when indicated. Location, size, tenderness, consistency, mobility.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l7-systems" style="--acc:#3f5b6b;--acc-bg:#e4e8ea;--acc-zebra:#f2f4f5;--acc-ink:#314753">
+    <div class="shead"><span class="dot" style="background:#3f5b6b"></span><h2>Other Systems & the Emergency</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Cardiovascular</td><td>Tachycardia, hyperdynamic circulation, possible bounding pulses, prominent precordial impulse, possible SYSTOLIC flow murmur. Heart failure assessment in severe or poorly tolerated anemia. Read against symptoms and heart disease.</td></tr>
+          <tr><td class="h">Bone tenderness</td><td>Sternal or other: possible marrow disease; nonspecific.</td></tr>
+          <tr><td class="h">Pulmonary</td><td>Dyspnea, tachypnea; lower oxygen-carrying capacity; NORMAL pulse oximetry. Consider coexisting lung disease or heart failure.</td></tr>
+          <tr><td class="h">Abdomen</td><td>Tenderness, masses, hepatomegaly, ascites, splenomegaly. Splenomegaly: hemolysis, infection, portal hypertension, hematologic malignancy. Rectal examination when indicated.</td></tr>
+          <tr><td class="h">Stool blood test</td><td>NEGATIVE: bleeding still possible. POSITIVE: source and cause still undetermined.</td></tr>
+          <tr><td class="h">B12 neurologic</td><td>Paresthesias; reduced vibration and joint-position sense; sensory ataxia (worse in the DARK); neuropathy; cognitive, psychiatric or visual changes; can occur WITHOUT anemia or macrocytosis.</td></tr>
+          <tr><td class="h">Spinal cord</td><td>Posterior columns = vibration and position sense. Lateral corticospinal tracts = spasticity, hyperreflexia.</td></tr>
+          <tr><td class="h">Neurologic examination</td><td>Gait and balance; distal vibration and joint-position sense; strength and reflexes; ROMBERG with protection against falling. Greater instability with eyes closed = possible impaired proprioception.</td></tr>
+          <tr><td class="h">Urgent assessment</td><td>Active major bleeding, hypotension, syncope, chest pain, dyspnea at rest, altered mental status. Check vital signs, mental status, skin perfusion, ongoing loss; escalate: stabilize, control bleeding, resuscitate.</td></tr>
+          <tr><td class="h">General vs cause clues</td><td>General: fatigue, weakness, exertional dyspnea, palpitations, lightheadedness. Cause: bleeding history, jaundice, diet or surgery, neurologic findings, lymphadenopathy, splenomegaly.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   <footer>
-    Condensed from the Physical Diagnosis 2 Exam 2 Study Guide (Class of 2028). Covers Lectures 5 and 6 so far; Exam 2 (Friday 20 November) covers Lectures 5 to 7. Rows marked with a star are what the lecturer repeated, not a statement of what is on the exam. For the full explanation and the figures behind any row, see the full guide.
+    Condensed from the Physical Diagnosis 2 Exam 2 Study Guide (Class of 2028). Covers Lectures 5 to 7, everything on Exam 2 (Friday 20 November). Rows marked with a star are what the lecturer repeated, not a statement of what is on the exam. For the full explanation and the figures behind any row, see the full guide.
     <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
     <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
   </footer>
