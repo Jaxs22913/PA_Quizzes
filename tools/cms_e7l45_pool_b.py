@@ -76,18 +76,6 @@ S(T_MIX, IO_E,
     "A simple metabolic alkalosis would leave the pH above normal, because compensation never fully corrects it. Tell: when the pH is exactly normal and both values are deranged, two primary disorders are pulling in opposite directions.", "common lay belief"]],
   CS(23, 29), "differential"),
 
-S(T_MIX, IO_F,
-  "A primary respiratory disorder is found together with a large anion gap. What does the gap indicate?",
-  [["A coexisting metabolic acidosis",
-    "Correct. A large anion gap is never associated with compensation for a respiratory disorder alone. It signals a primary metabolic process, so the patient has a mixed disorder: the respiratory disorder plus a raised-gap metabolic acidosis."],
-   ["Renal compensation for the lung disorder",
-    "Renal compensation changes the bicarbonate; it does not produce a large anion gap. Tell: a large gap is never compensation for a respiratory disorder alone; it marks a primary metabolic process.", "confused mechanism or drug class"],
-   ["A coexisting second respiratory disorder",
-    "A patient cannot have more than one primary respiratory disorder, and respiratory disorders do not raise the anion gap. Tell: a large gap adds a metabolic disorder to the picture.", "reversed direction or value"],
-   ["A chronic rather than acute course",
-    "Acute versus chronic respiratory acidosis is judged from how much the bicarbonate rose, 1 versus 3.5 mEq/L per 10 mm Hg of carbon dioxide, not from the anion gap. Tell: the gap answers whether a metabolic acid is present.", "adjacent fact"]],
-  CS(26, 24), "test finding"),
-
 # ================================================================ T_MIX: metabolic acidosis + respiratory alkalosis (s28)
 S(T_MIX, IO_F,
   "In a metabolic acidosis, which finding identifies a coexisting respiratory alkalosis?",
