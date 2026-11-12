@@ -203,5 +203,12 @@ TOPIC_MINUTES = {
     T_MALK: 4.6,       # 3.1 + half of case A
 }
 
-REQUIRED_IO = []
+REQUIRED_IO = [
+    # the Winter formula and its reading, s49 ("1.5 times our bicarb plus eight plus or minus two" [P2 11:36])
+    ("Winter formula", r"winter|expected carbon dioxide|metabolic acidosis shows", r".", 1),
+    # change in anion gap against change in bicarbonate, s27/s50 ("this is where it gets new" [P1 30:54])
+    ("Change in anion gap", r"change in (?:the )?anion gap|metabolic acidosis has sodium", r".", 1),
+    # albumin correction, s8 ("add two and a half ... below 4.5" [P1 7:55])
+    ("Albumin-corrected anion gap", r"albumin", r".", 1),
+]
 REQUIRED_VIG = []
