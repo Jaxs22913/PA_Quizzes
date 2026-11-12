@@ -30,7 +30,7 @@ def main():
     src = open(GUIDE, encoding="utf-8").read()
     for tag in ("CPE2L10", "CPE2TOC10"):
         src = re.sub(r"<!--%s-->.*?<!--/%s-->\s*" % (tag, tag), "", src, flags=re.S)
-    src = re.sub(r",\n<!--CPE2TY10-->.*?<!--/CPE2TY10-->", "", src, flags=re.S)
+    src = re.sub(r",?\n<!--CPE2TY10-->.*?<!--/CPE2TY10-->", "", src, flags=re.S)
 
     body = C.BLOOD
     low = re.sub(r"<[^>]+>", " ", body).lower()
@@ -53,7 +53,7 @@ def main():
     anchor = "\n<!--/CPE2TY89-->"
     assert src.count(anchor) == 1
     blob = json.dumps({"blood": qs}, ensure_ascii=False, indent=1)[1:-1].strip("\n")
-    src = src.replace(anchor, anchor + ",\n<!--CPE2TY10-->\n" + blob + "\n<!--/CPE2TY10-->", 1)
+    src = src.replace(anchor, anchor + "\n<!--CPE2TY10-->\n,\n" + blob + "\n<!--/CPE2TY10-->", 1)
 
     if OLD_COVERS in src:
         src = src.replace(OLD_COVERS, NEW_COVERS, 1)
