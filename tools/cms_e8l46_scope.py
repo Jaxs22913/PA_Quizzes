@@ -166,3 +166,10 @@ REQUIRED_VIG = [
     # s103: iron-overload thresholds read from the stem's ferritin and transferrin saturation
     ("Hemochromatosis cut-offs from the iron panel", r"transferrin saturation", r".", 1),
 ]
+
+# Review holds (stem prefixes): flagged again by the audit after their one repair (memory question_quality_pipeline:
+# one repair, then drop). The partition skips them; they stay in the pools for the record.
+HELD = [
+    "A 64-year-old man has had neutropenia on three complete blood counts over 4 months",   # 8664085c: explanation D claim
+    "A 34-year-old woman with acute leukemia on chemotherapy has an absolute neutrophil count of 300",  # ce51733b: stem gives D away
+]

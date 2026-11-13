@@ -241,7 +241,10 @@ def load_guarded(lec, vig):
     pool, origin = [], []
     for m in mods:
         qs = importlib.import_module(m).QUESTIONS
+        held = tuple(getattr(scope, "HELD", ()))    # Exam 8: review holds (stem prefixes) never ship
         for i, q in enumerate(qs):
+            if any(q["q"].startswith(h) for h in held):
+                continue
             q = json.loads(json.dumps(q))          # never mutate the module's list
             q.setdefault("c", 0)
             pt = patches.get(q["q"])
