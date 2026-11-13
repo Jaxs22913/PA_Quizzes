@@ -334,7 +334,7 @@ S(T_APLASTIC, IO_A,
    ["Women are affected far more often",
     "The male-to-female ratio of aplastic anemia is approximately 1:1, so neither sex predominates. Tell: age, not sex, shapes aplastic anemia epidemiology, with half of cases before age 30.", "reversed direction or value"],
    ["Cases are confined to childhood",
-    "Childhood is one small peak, with a second between ages 20 and 25, and acquired causes such as drugs and toxins occur at any age. Tell: Fanconi anemia is the inherited form diagnosed in childhood; aplastic anemia overall spans the first three decades.", "adjacent fact"]],
+    "Childhood is one small peak, with a second between ages 20 and 25. Tell: Fanconi anemia is the inherited form diagnosed in childhood; aplastic anemia overall spans the first three decades.", "adjacent fact"]],
   CS(55, 57), "epidemiology"),
 
 S(T_APLASTIC, IO_A,
