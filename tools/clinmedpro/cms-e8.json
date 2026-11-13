@@ -1,0 +1,467 @@
+{
+ "schema": "clinmedpro/1",
+ "course": "Clinical Medicine and Surgery I",
+ "exam": 8,
+ "block": "Hematology",
+ "folder": "Clinical Medicine and Surgery I Exam 8",
+ "page": "cms-exam-8-clin-med-pro-guide.html",
+ "fields": [
+  "name",
+  "definition",
+  "etiology",
+  "epidemiology",
+  "risk_factors",
+  "pathology",
+  "clinical",
+  "diagnosis",
+  "treatment",
+  "mortality"
+ ],
+ "not_covered": "Not covered in the lecture",
+ "lectures": [
+  {
+   "lecture": 46,
+   "title": "Cytopenias and Hemochromatosis",
+   "lecturer": "Matt Ward, DMSc, MBA, PA-C",
+   "deck": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx",
+   "note": "Built from the slides only; the recording is not transcribed yet, so the stars mark the slides' own visual emphasis (bold, asterisks, underline, the slide 26 arrow) and will be revisited. Prognosis lines come from the guideline-summary slides 104-107. Points the slides state two ways are not keyed one way: the serum iron of anemia of chronic disease (low on slide 13, up or down on slide 27; tell it from iron deficiency by ferritin and total iron-binding capacity), chloroquine as a G6PD trigger (slide 79) or safe (slide 83 table; antimalarials are kept as a class), where G6PD sits (membrane on slide 79, inside the cell on slide 77), the total iron-binding capacity of anemia of chronic disease (normal or low on slide 13, decreased on slide 27) and thalassemia reticulocytes (a reticulocytosis on slide 13, a low reticulocyte index on slide 87). Beta thalassemia ancestry (slide 86) and the chorionic villus sampling week (slide 92) are not keyed. The slides give no epidemiology for lead poisoning, B12 deficiency or neutropenia.",
+   "conditions": [
+    {
+     "id": "l46-iron-deficiency",
+     "name": "Iron deficiency anemia",
+     "prof": true,
+     "prof_note": "Slide emphasis (recording not yet in): chronic blood loss is the most common adult cause; asterisked nail, lip and Plummer-Vinson findings; ferritin is an acute phase reactant; ferrous sulfate and its constipation.",
+     "fields": {
+      "name": "Iron deficiency anemia",
+      "definition": "A microcytic, hypochromic anemia from too little iron; anemia is a reduction in healthy red blood cells or hemoglobin that lowers oxygen delivery to the tissues",
+      "etiology": "[[★ Chronic blood loss, the most common cause of iron deficiency anemia in adults]] (gastrointestinal loss and menses); dietary factors (vegan diet, tea drinkers, calcium antacids, medications, particularly proton pump inhibitors); malabsorption (gastric bypass surgery, celiac sprue, food allergies); increased demand (pregnancy, growth in infancy or adolescence)",
+      "epidemiology": "50% of anemia worldwide; almost 1 million deaths a year, 71% in Africa and Asia, only 1.4% in North America; higher in developing countries. United States: men under 50, 1%; women of childbearing age, 10% (menstrual losses); 9% of children 12 to 36 months are iron deficient and one-third of them develop anemia",
+      "risk_factors": "Menstruation, gastrointestinal bleeding, vegan diet, tea, calcium antacids, proton pump inhibitors, gastric bypass, celiac sprue, pregnancy, infancy and adolescent growth; low-income families are particularly at risk in the United States",
+      "pathology": "Not covered in the lecture",
+      "clinical": "Fatigue, pallor, decreased exercise tolerance, shortness of breath especially with exertion, smooth tongue, pica (common), [[★ nail bed changes such as koilonychia (spoon-shaped nails), cheilosis, Plummer-Vinson syndrome]]",
+      "diagnosis": "Complete blood count: microcytosis (mean corpuscular volume below 80 fL), hypochromia (low mean corpuscular hemoglobin). Iron panel: reduced ferritin, reduced transferrin saturation, increased total iron-binding capacity. Smear: microcytic, hypochromic cells. [[★ Ferritin is an acute phase reactant]]: a normal or high ferritin does not exclude iron deficiency; consider an erythrocyte sedimentation rate and/or C-reactive protein. Also urinalysis, fecal occult blood test (stool guaiac), consider prothrombin and partial thromboplastin times. Differential: anemia of chronic disease, thalassemia, lead poisoning, zinc deficiency, sideroblastic anemia",
+      "treatment": "Treat the underlying cause: oral contraceptive (consider continuous-cycle) for menstrual loss; gastrointestinal bleed: gastroenterology consult for colonoscopy or endoscopy to evaluate for colorectal cancer; stop anticoagulants if anemia is severe (consult cardiology). Iron replacement: [[★ ferrous sulfate]] 325 mg (66 mg elemental iron) once daily or every other day, with at least an as-needed laxative or stool softener for [[★ constipation]]; food lowers side effects and absorption; alternate-day dosing is probably best; or ferrous sulfate 44 mg/5 mL (as elemental iron) once daily in the morning on an empty stomach with a full glass of orange juice. Response: hematocrit halfway to normal in 3 weeks, baseline by 2 months; continue 3 to 6 months after normal values to refill stores. Parenteral iron if intolerant or refractory (most need 1 to 1.5 g). Hematology referral if the diagnosis is not confirmed or there is no response to oral iron",
+      "mortality": "Almost 1 million deaths a year worldwide. Prognosis: usually resolves once the cause and iron stores are corrected"
+     },
+     "slides": {
+      "name": "9",
+      "definition": "6, 15",
+      "etiology": "10",
+      "epidemiology": "11",
+      "risk_factors": "10, 11",
+      "clinical": "12",
+      "diagnosis": "13-16",
+      "treatment": "17-21",
+      "mortality": "11, 106"
+     }
+    },
+    {
+     "id": "l46-chronic-disease",
+     "name": "Anemia of chronic disease",
+     "prof": true,
+     "prof_note": "Slide emphasis: treat the underlying condition is arrowed as most important; ferritin is an acute phase reactant.",
+     "fields": {
+      "name": "Anemia of chronic disease (anemia of chronic inflammation)",
+      "definition": "Anemia caused by any inflammatory condition; initially resembles iron deficiency anemia",
+      "etiology": "Any inflammatory condition: infection, autoimmune disease, neoplasm",
+      "epidemiology": "The second most common anemia; any age; about 1 million people older than 65 in the United States",
+      "risk_factors": "Older age (more chronic inflammatory disease)",
+      "pathology": "Multifactorial: inflammatory cytokines, in particular interleukin-6, upregulate hepcidin, which blocks iron absorption; systemic inflammation inhibits renal erythropoietin production; likely direct inflammatory marrow suppression",
+      "clinical": "Similar to iron deficiency anemia; resembles the causative condition",
+      "diagnosis": "Same labs as iron deficiency; erythrocyte sedimentation rate and/or C-reactive protein if inflammation is not apparent. Ferritin normal or increased (a ferritin below 30 ng/mL, 67 pmol/L, means coexistent iron deficiency); total iron-binding capacity decreased (slide 27; normal or low on slide 13); reticulocytes usually decreased; mean corpuscular volume normal or low. Serum iron: low on slide 13, up or down on slide 27",
+      "treatment": "[[★ Treat the underlying condition (most important)]]; may benefit from erythropoietin (epoetin alfa, Procrit); FDA-approved for hemoglobin below 10 g/dL and anemia due to rheumatoid arthritis, inflammatory bowel disease, hepatitis C, zidovudine therapy in HIV, myelosuppressive chemotherapy of solid malignancy, or chronic kidney disease; may need parenteral iron; hematology referral not usually needed",
+      "mortality": "Prognosis: can persist while the underlying disease is active"
+     },
+     "slides": {
+      "name": "22-23",
+      "definition": "23",
+      "etiology": "23",
+      "epidemiology": "24",
+      "risk_factors": "24",
+      "pathology": "23",
+      "clinical": "24",
+      "diagnosis": "13, 25, 27",
+      "treatment": "26",
+      "mortality": "106"
+     }
+    },
+    {
+     "id": "l46-sideroblastic",
+     "name": "Sideroblastic anemia",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Sideroblastic anemia",
+      "definition": "Anemia defined by ring sideroblasts in the bone marrow: iron-containing mitochondria forming a basophilic ring around the nucleus",
+      "etiology": "Hereditary (usually X-linked); acquired (usually myelodysplastic syndrome); acquired and reversible (alcohol, drugs such as isoniazid and chlorambucil, copper deficiency, hypothermia, lead poisoning). Modern classification: dyserythropoiesis (hypohepcidinemia) or transfusion-dependence (myelodysplastic syndrome, thalassemia)",
+      "epidemiology": "Rare; about two-thirds of cases present in males in early childhood or adolescence, one-third in young to middle-aged females; can occur at any age",
+      "risk_factors": "Alcohol, isoniazid, chlorambucil, copper deficiency, hypothermia, lead exposure, myelodysplastic syndrome",
+      "pathology": "Excess total body iron; iron-laden mitochondria ring the nucleus",
+      "clinical": "No specific features other than those of anemia; usually moderate, hematocrit 20 to 30%",
+      "diagnosis": "Variable microcytosis and hypochromia; dimorphic smear (microcytic, normal and macrocytic cells); increased serum iron, transferrin saturation and ferritin; increased zinc if caused by copper deficiency; bone marrow aspirate with ring sideroblasts (the defining feature)",
+      "treatment": "Remove the offending agent if acquired; red cell transfusion if severe; poor response to recombinant erythropoietin; occasional response to oral pyridoxine (50 to 200 mg/day); luspatercept for myelodysplastic syndrome with ring sideroblasts; hematology referral for diagnostic or transfusion support",
+      "mortality": "Prognosis: variable; clonal forms may require continued follow-up"
+     },
+     "slides": {
+      "name": "28-29",
+      "definition": "32",
+      "etiology": "29-30",
+      "epidemiology": "30",
+      "risk_factors": "29",
+      "pathology": "32",
+      "clinical": "31",
+      "diagnosis": "32",
+      "treatment": "33",
+      "mortality": "106"
+     }
+    },
+    {
+     "id": "l46-lead",
+     "name": "Lead poisoning (plumbism)",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Lead poisoning (plumbism)",
+      "definition": "Lead toxicity causing a microcytic, hypochromic anemia",
+      "etiology": "Industrial exposure, gasoline sniffing, lodged bullets, cooking utensils containing lead, lead-based paint chips, contaminated water (Flint water crisis)",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "The exposures listed under etiology",
+      "pathology": "Basophilic stippling: an abnormal collection of nucleic acids in the cells",
+      "clinical": "Neurologic system most vulnerable: irritability, behavioral changes, peripheral neuropathy. Gastrointestinal: abdominal colic, nausea and constipation, occasionally diarrhea. May be a lead line in the gums",
+      "diagnosis": "Microcytic, hypochromic anemia with basophilic stippling on the smear; treatment is based on the lead level",
+      "treatment": "Stop exposure; treatment based on lead level; severe cases with neurologic effects: chelating agents (succimer (Chemet), dimercaprol, ethylenediaminetetraacetic acid (EDTA))",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "34",
+      "definition": "34",
+      "etiology": "34",
+      "risk_factors": "34",
+      "pathology": "34",
+      "clinical": "35-36",
+      "diagnosis": "34-35",
+      "treatment": "35"
+     }
+    },
+    {
+     "id": "l46-folate",
+     "name": "Megaloblastic anemia: folate deficiency",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Megaloblastic anemia (folate deficiency)",
+      "definition": "A macrocytic anemia (mean corpuscular volume above 100 fL) with megaloblasts (early red cell precursors), macro-ovalocytes and hypersegmented neutrophils; caused by vitamin B12 or folate deficiency",
+      "etiology": "Folate: dietary (impoverished, indigent, alcohol use disorder, elderly); increased demand (pregnancy); impaired absorption (proximal small bowel); drugs (methotrexate, 5-fluorouracil, hydroxyurea, phenytoin, metformin)",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Poverty, alcohol use disorder, older age, pregnancy, proximal small bowel disease, the drugs listed",
+      "pathology": "Impaired DNA synthesis causes nuclear-cytoplasmic asynchrony and impaired hematopoiesis; granulocytes and megakaryocytes affected to a lesser degree",
+      "clinical": "Findings of all anemias: fatigue, pallor, headache; dyspnea and heart failure if severe",
+      "diagnosis": "Complete blood count: red cells, hemoglobin, hematocrit down; mean corpuscular volume up; mean corpuscular hemoglobin and its concentration normal to slightly up; red cell distribution width up; reticulocytes vary. B12 and folate levels first (not very sensitive), smear; if borderline: homocysteine (needs both B12 and folate) and methylmalonic acid (elevated in B12 deficiency but NOT folate deficiency). Non-megaloblastic macrocytosis (alcohol or drug, hypothyroidism, liver failure, marrow dysplasia) usually stays below 115 fL",
+      "treatment": "Before replacing folate, evaluate for B12 deficiency (otherwise labs improve but permanent neurologic symptoms may worsen); folic acid 1 mg orally or parenterally daily for 1 to 2 weeks",
+      "mortality": "Prognosis: counts improve with treatment"
+     },
+     "slides": {
+      "name": "37-39, 42",
+      "definition": "38-39",
+      "etiology": "42",
+      "risk_factors": "42",
+      "pathology": "39",
+      "clinical": "45",
+      "diagnosis": "38, 40-41, 47",
+      "treatment": "49",
+      "mortality": "106"
+     }
+    },
+    {
+     "id": "l46-b12",
+     "name": "Vitamin B12 deficiency and pernicious anemia",
+     "prof": true,
+     "prof_note": "Slide emphasis: pernicious anemia is the most frequent cause; burning of the hands and feet; homocysteine and methylmalonic acid are bold.",
+     "fields": {
+      "name": "Vitamin B12 (cobalamin) deficiency; pernicious anemia",
+      "definition": "Megaloblastic, macrocytic anemia from too little B12; pernicious anemia is the autoimmune form against parietal cells and/or intrinsic factor",
+      "etiology": "[[★ Pernicious anemia, the most frequent cause of B12 deficiency]]",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Not covered in the lecture",
+      "pathology": "Absorption: peptic digestion frees B12; intrinsic factor from parietal cells binds it and protects it; the complex binds cubilin in the distal ileum; B12 binds transcobalamin and is stored in the liver (about 3 to 4 years or more). Pernicious anemia: autoimmune attack causes gastric mucosal atrophy and increased gastric cancer risk. B12 deficiency demyelinates the dorsal and lateral spinal cord tracts",
+      "clinical": "Anemia findings (fatigue, pallor, headache; dyspnea and heart failure if severe); glossitis, oral ulcers. Distinguishing: neurologic findings: neuropsychiatric changes (depression, irritability, insomnia, cognitive slowing, dementia); symmetric numbness, tingling, [[★ burning to hands and feet]] (stocking-and-glove distribution); then unsteady gait and loss of position sense; may or may not improve with B12",
+      "diagnosis": "B12 and folate levels first (not very sensitive) and smear; if borderline: [[★ homocysteine]] (needs both) and [[★ methylmalonic acid]] (elevated in B12 but not folate deficiency). Pernicious anemia: anti-intrinsic factor antibodies (specific, not sensitive); anti-parietal cell antibodies (neither sensitive nor specific); gastric biopsy may show chronic atrophic gastritis; in reality a megaloblastic picture that corrects with B12 is the usual pathway (parenteral B12 trial)",
+      "treatment": "B12 1000 mcg subcutaneously or intramuscularly weekly for 3 weeks, or oral cobalamin 1000 to 2000 mcg daily; evaluate for B12 deficiency before replacing folate",
+      "mortality": "Prognosis: counts improve; delayed B12 treatment may leave neurologic deficits; increased risk of gastric cancer in pernicious anemia"
+     },
+     "slides": {
+      "name": "43-44",
+      "definition": "43-44",
+      "etiology": "44",
+      "pathology": "43-45",
+      "clinical": "45-46",
+      "diagnosis": "47-48, 50",
+      "treatment": "49",
+      "mortality": "44, 106"
+     }
+    },
+    {
+     "id": "l46-ckd",
+     "name": "Anemia of chronic kidney disease",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Anemia of chronic kidney disease (anemia due to renal failure)",
+      "definition": "A normocytic anemia of chronic kidney disease, primarily from decreased erythropoietin",
+      "etiology": "Primarily, but not completely, decreased erythropoietin; inflammation and hepcidin restrict available iron",
+      "epidemiology": "Extremely common in chronic kidney disease; incidence rises as glomerular filtration rate declines; almost universal in dialysis patients",
+      "risk_factors": "Declining glomerular filtration rate; dialysis",
+      "pathology": "Inappropriately low erythropoietin response; iron-restricted erythropoiesis",
+      "clinical": "Not covered in the lecture",
+      "diagnosis": "Complete blood count: red cells, hemoglobin, hematocrit down; mean corpuscular volume, mean corpuscular hemoglobin and its concentration normal; red cell distribution width up; reticulocytes down. Order complete blood count, reticulocyte count, ferritin and transferrin saturation; assess other causes. A low transferrin saturation may mean iron-restricted erythropoiesis despite a normal or high ferritin",
+      "treatment": "Correct iron deficiency; consider oral or intravenous iron and an erythropoiesis-stimulating agent based on chronic kidney disease stage, hemoglobin and risk; ferric pyrophosphate citrate (Triferic) in the dialysate replaces the 5 to 7 mg of iron lost each hemodialysis. Follow-up: monitor hemoglobin, iron and blood pressure; nephrology for advanced disease, erythropoiesis-stimulating agent decisions or uncertainty",
+      "mortality": "Prognosis: often chronic; may improve with iron or an erythropoiesis-stimulating agent"
+     },
+     "slides": {
+      "name": "51-52",
+      "definition": "52",
+      "etiology": "52-53",
+      "epidemiology": "52",
+      "risk_factors": "52",
+      "pathology": "53",
+      "diagnosis": "52-53",
+      "treatment": "21, 53, 106",
+      "mortality": "106"
+     }
+    },
+    {
+     "id": "l46-aplastic",
+     "name": "Aplastic anemia",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Aplastic anemia",
+      "definition": "Pancytopenia (loss of red cells, platelets and white cells) with loss of hematopoietic stem cells, the defining feature",
+      "etiology": "Autoimmune; direct stem cell injury (drugs, chemicals, radiation); viral infections; genetic causes. Drugs and agents: cytotoxic or chemotherapeutic drugs (not aplastic anemia if an expected effect), chloramphenicol, ionizing radiation, toxins (benzene, pesticides). Clonal: paroxysmal nocturnal hemoglobinuria, myelodysplastic syndrome, acute myeloid leukemia. Inherited: Fanconi anemia (diagnosed in childhood)",
+      "epidemiology": "Half of cases in the first three decades, with a small peak in childhood and a second between ages 20 and 25; male-to-female ratio about 1:1; 0.6 to 6.1 cases per million",
+      "risk_factors": "Chloramphenicol, cytotoxic drugs, ionizing radiation, benzene, pesticides, viral infection, inherited conditions (Fanconi anemia)",
+      "pathology": "Drugs, chemicals, viruses or mutations can alter the hematopoietic stem cells and predispose them to autoimmune destruction",
+      "clinical": "Manifestations of pancytopenia: recurrent infections (neutropenia); bleeding, petechiae, purpura (thrombocytopenia); fatigue, pallor",
+      "diagnosis": "Bone marrow biopsy is required for diagnosis and to exclude other causes",
+      "treatment": "Urgent or emergent hematology/oncology consultation; bone marrow transplant; infection and bleeding precautions",
+      "mortality": "Five-year survival above 75% after bone marrow transplant from a suitable donor; most untreated patients die within one year from complications. Prognosis depends on severity and response to treatment"
+     },
+     "slides": {
+      "name": "54-55",
+      "definition": "55",
+      "etiology": "56-57",
+      "epidemiology": "55",
+      "risk_factors": "56-57",
+      "pathology": "56",
+      "clinical": "58",
+      "diagnosis": "58",
+      "treatment": "58, 106",
+      "mortality": "55, 106"
+     }
+    },
+    {
+     "id": "l46-neutropenia",
+     "name": "Leukopenia and neutropenia",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Leukopenia and neutropenia",
+      "definition": "Leukopenia is a low total white blood cell count; neutropenia is defined by the absolute neutrophil count",
+      "etiology": "Viral illness, medications or chemotherapy, autoimmune disease, nutrient deficits, marrow pathology",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Infection risk rises with severity, duration and impaired immune status",
+      "pathology": "Not covered in the lecture",
+      "clinical": "Profound neutropenia may have subtle findings; fever with an absolute neutrophil count below 500 is an emergency",
+      "diagnosis": "Absolute neutrophil count = white count x (neutrophils + bands)% / 100. Mild 1,000 to 1,500; moderate 500 to 999; severe below 500 cells/microliter. Repeat complete blood count with differential, review the trend and smear, check other cell lines. Escalate to hematology for persistent or unexplained severe neutropenia, other cytopenias or an abnormal smear",
+      "treatment": "Fever with an absolute neutrophil count below 500 (or expected to fall below 500): prompt assessment, vitals, targeted examination, cultures, empiric antipseudomonal antibiotics without delay. Chronic: stop an offending drug, correct deficiencies, granulocyte colony-stimulating factor for selected patients. Education: report fever or rigors promptly; monitor counts",
+      "mortality": "Prognosis: transient viral leukopenia often resolves after recovery; persistent or severe neutropenia carries greater infection risk and may indicate marrow disease"
+     },
+     "slides": {
+      "name": "59",
+      "definition": "59",
+      "etiology": "59",
+      "risk_factors": "60",
+      "clinical": "60",
+      "diagnosis": "59",
+      "treatment": "60",
+      "mortality": "60"
+     }
+    },
+    {
+     "id": "l46-aiha",
+     "name": "Autoimmune hemolytic anemia",
+     "prof": true,
+     "prof_note": "Slide emphasis: autoimmune hemolytic anemia carries an increased risk of venous thromboembolism (bold); hemolysis labs bilirubin, haptoglobin, lactate dehydrogenase, schistocytes and jaundice are bold.",
+     "fields": {
+      "name": "Autoimmune hemolytic anemia",
+      "definition": "Hemolytic anemia (shortened red cell survival from premature destruction) caused by antibody against the red cell membrane",
+      "etiology": "Primary (de novo antibody production; almost always IgG) or secondary: viruses (human immunodeficiency virus, hepatitis, Epstein-Barr virus, SARS-CoV-2); autoimmune disorders (lupus, rheumatoid arthritis, scleroderma, ulcerative colitis); lymphoproliferative disorders (leukemia, lymphoma, multiple myeloma); pregnancy. Transfusion reaction is also immune-mediated",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "The secondary causes listed",
+      "pathology": "Extracorpuscular, immune-mediated hemolysis; hemolytic anemias share a shorter red cell life span, compensatory erythropoiesis (marrow hyperplasia, reticulocytosis) and retention of breakdown products",
+      "clinical": "Anemia symptoms (fatigue, shortness of breath, chest pain, pallor; severe: high-output heart failure, shock); differentiating: [[★ jaundice]], splenomegaly, joint pain, hematuria; [[★ increased risk of venous thromboembolism]]",
+      "diagnosis": "Hemolysis labs: complete blood count, reticulocyte count, [[★ bilirubin]] (unconjugated greater than conjugated; jaundice above 2.0 mg/dL), [[★ lactate dehydrogenase]] up, [[★ haptoglobin]] decreased or absent (intravascular), urinalysis, smear ([[★ schistocytes]]). Direct antiglobulin (Coombs) test: positive when the washed red cells carry IgG or complement. Consider D-dimer and bilateral leg ultrasound for deep vein thrombosis or pulmonary embolism",
+      "treatment": "Consider immediate stabilization if hemoglobin below 6, a rapid decline, or instability; contact the blood bank. Rule out secondary causes. Glucocorticoids initially (e.g., prednisone 60 to 100 mg daily); rituximab (anti-CD20); other: immunosuppressants, splenectomy. Venous thromboembolism prophylaxis for inpatients, consider for outpatients",
+      "mortality": "Prognosis: relapse may occur; outcome depends on cause and response"
+     },
+     "slides": {
+      "name": "71",
+      "definition": "61, 71",
+      "etiology": "65, 71",
+      "risk_factors": "71",
+      "pathology": "63, 65",
+      "clinical": "70, 73",
+      "diagnosis": "66-69, 72-73",
+      "treatment": "73-74",
+      "mortality": "107"
+     }
+    },
+    {
+     "id": "l46-g6pd",
+     "name": "G6PD deficiency",
+     "prof": true,
+     "prof_note": "Slide emphasis: fava beans and acute hemolytic anemia are bold. Antimalarials are keyed only as a class (slide 79 lists chloroquine as a trigger, the slide 83 table as safe).",
+     "fields": {
+      "name": "Glucose-6-phosphate dehydrogenase (G6PD) deficiency",
+      "definition": "The most common genetic disorder of erythrocytes: an enzyme deficiency that leaves red cells open to oxidative damage, causing [[★ acute hemolytic anemia]] on oxidative stress",
+      "etiology": "X-linked recessive. Common triggers: [[★ fava beans]], naphthalene (mothballs), antimalarials, nitrofurantoin, trimethoprim-sulfamethoxazole (Bactrim), methylene blue, phenazopyridine, quinolones",
+      "epidemiology": "200 to 400 million people. Prevalence: Kurdish Jews 60 to 70%; Sardinians 4 to 35%; Nigerians 22%; Thai people 17%; American Black people 11 to 12%; Brazilian Black people 8%; Greeks 6%; South China about 6%; India 3%; Japanese and Koreans 0 to 1%",
+      "risk_factors": "Male sex (X-linked recessive; carrier females have two red cell populations and are generally unaffected); exposure to the oxidant triggers",
+      "pathology": "G6PD is needed in the glutathione pathway; without reduced glutathione, oxidative stress forms Heinz bodies inside the red cell; splenic macrophages remove them by taking a chunk of the cell (bite cells); intravascular and extravascular hemolysis",
+      "clinical": "No symptoms until oxidative stress; drug-induced hemolysis is acute, of variable severity, after a lag of 2 to 3 days: abdominal pain, jaundice, dark urine, splenomegaly",
+      "diagnosis": "Labs consistent with hemolytic anemia; during an attack the smear may show Heinz bodies and bite cells; confirmed by a low G6PD level roughly 8 weeks after an attack",
+      "treatment": "Avoid the trigger (\"don't eat that\"); hydrate; transfuse if needed; splenectomy only for recurrent attacks. Education: avoid oxidative triggers; seek care for jaundice or dark urine",
+      "mortality": "Prognosis: usually favorable with trigger avoidance"
+     },
+     "slides": {
+      "name": "76",
+      "definition": "76, 79",
+      "etiology": "76, 79",
+      "epidemiology": "76, 80",
+      "risk_factors": "76, 79",
+      "pathology": "77-78",
+      "clinical": "81",
+      "diagnosis": "82",
+      "treatment": "82, 107",
+      "mortality": "107"
+     }
+    },
+    {
+     "id": "l46-thalassemia",
+     "name": "Thalassemia",
+     "prof": true,
+     "prof_note": "Slide emphasis: the globin imbalance line is bold; iron overload is bold and underlined.",
+     "fields": {
+      "name": "Thalassemia (alpha and beta)",
+      "definition": "A hemoglobinopathy from mutations causing deficient synthesis of alpha or beta globins",
+      "etiology": "Inherited mutations of the globin genes (4 alpha, 2 beta); the phenotype depends on how many are mutated, from silent carrier (one alpha gene lost) to incompatible with life",
+      "epidemiology": "Alpha thalassemia: Southern China, Malaysia, Thailand, Mediterranean region; mild forms in African origin. Asian ancestry often has the alpha thalassemia 1 trait (both deletions on one side, higher risk of hydrops fetalis); African ancestry more often the alpha thalassemia 2 trait (one deletion on each side)",
+      "risk_factors": "Family history (preconception testing and counseling available)",
+      "pathology": "[[★ Imbalance in expression leads to accumulation and precipitation of globin subunits]], causing red cell destruction in the spleen; most erythroblasts die in the marrow",
+      "clinical": "Variable by mutation: hemolytic anemia, [[★ iron overload]], splenomegaly, extramedullary hematopoiesis, jaundice, skeletal changes",
+      "diagnosis": "Generally low hemoglobin, mean corpuscular volume, mean corpuscular hemoglobin and reticulocyte index (marrow failure); Coombs negative (slide 87); slide 13 adds more microcytosis for the hemoglobin level with a normal or high red cell count, and a reticulocytosis, against the low reticulocyte index of slide 87. Complete blood count, iron studies, reticulocyte count; hemoglobin electrophoresis; gene testing",
+      "treatment": "Supportive: transfusion when absolutely necessary (can worsen iron overload); folic acid; genetic counseling. Hematology for severe forms; iron monitoring",
+      "mortality": "Prognosis: trait often mild; severe forms need lifelong monitoring; the most severe genotype is incompatible with life"
+     },
+     "slides": {
+      "name": "84-85",
+      "definition": "85",
+      "etiology": "89",
+      "epidemiology": "86",
+      "risk_factors": "88",
+      "pathology": "85",
+      "clinical": "87",
+      "diagnosis": "13, 87-88",
+      "treatment": "89, 107",
+      "mortality": "89, 107"
+     }
+    },
+    {
+     "id": "l46-sickle",
+     "name": "Sickle cell anemia",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Sickle cell anemia (sickle cell disease)",
+      "definition": "A hemoglobinopathy in which hemoglobin S (two alpha and two mutant beta globins) polymerizes under low oxygen tension and forms a sickle shape",
+      "etiology": "Mutation of a beta globin gene",
+      "epidemiology": "Distribution follows the malaria belt; heterozygous carriers (HbAS) are 90% less likely to have severe malaria",
+      "risk_factors": "Parents carrying the mutation (preconception screening); reactive lung disease increases the risk of acute chest syndrome",
+      "pathology": "Polymerized HbS sickles red cells, causing microvascular occlusion and infarction of any tissue with vascular beds; symptoms begin around 5 months of age as fetal hemoglobin gives way to HbS; fetal hemoglobin of 10 to 20% seems to lessen severity",
+      "clinical": "Anemia almost universal (hematocrit 15 to 30%); pain crisis (acute pain, tenderness, anxiety, tachycardia); splenic infarct, aseptic necrosis of the femoral or humeral heads, retinopathy, kidney disease; leg ulcers; pediatric stroke (300 times unaffected children; 25% have a stroke by 45); priapism; susceptibility to encapsulated bacteria. Infants: failure to thrive, pain, anemia, splenomegaly, chronic infections, swelling of the extremities. Acute chest syndrome: chest pain, fever, shortness of breath, hypoxemia, new infiltrates on chest X-ray",
+      "diagnosis": "Four screening periods: preconception, prenatal (chorionic villus sampling), neonatal (all 50 states; missed cases usually present within two years), post-natal",
+      "treatment": "Hydroxyurea raises fetal hemoglobin and reduces vaso-occlusive events; vaccinations, indicated childhood penicillin prophylaxis, infection education; urgent assessment for fever, chest pain or hypoxemia, new neurologic deficit; transfusion or exchange for selected severe events (watch alloimmunization and iron loading); hematology follow-up, organ surveillance, consideration of curative therapies",
+      "mortality": "Acute chest syndrome is the leading cause of death, with more than 10% mortality in adults. Prognosis: lifelong disease; prevention reduces complications"
+     },
+     "slides": {
+      "name": "90",
+      "definition": "90",
+      "etiology": "90",
+      "epidemiology": "91",
+      "risk_factors": "92, 94",
+      "pathology": "90, 92-93, 97",
+      "clinical": "92-95",
+      "diagnosis": "92",
+      "treatment": "98, 107",
+      "mortality": "94, 107"
+     }
+    },
+    {
+     "id": "l46-hbsc",
+     "name": "Hemoglobin C and hemoglobin SC disease",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Hemoglobin C; hemoglobin SC disease (sickle cell SC)",
+      "definition": "Hemoglobin C comes from a different beta globin mutation and does not polymerize; hemoglobin SC disease combines one beta-C with one beta-S globin",
+      "etiology": "A different mutation in the beta globin gene; SC = inheriting the C and the S mutations",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Not covered in the lecture",
+      "pathology": "HbC does not polymerize",
+      "clinical": "Hemoglobin SC disease generally has a course between sickle cell anemia and sickle cell trait",
+      "diagnosis": "Not covered in the lecture",
+      "treatment": "Not covered in the lecture",
+      "mortality": "Not covered in the lecture"
+     },
+     "slides": {
+      "name": "96",
+      "definition": "96",
+      "etiology": "96",
+      "pathology": "96",
+      "clinical": "96"
+     }
+    },
+    {
+     "id": "l46-hemochromatosis",
+     "name": "Hemochromatosis (primary and secondary)",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Hemochromatosis (iron overload), primary and secondary",
+      "definition": "Excess iron deposition throughout the body",
+      "etiology": "Primary: autosomal recessive mutation of genes that control iron absorption. Secondary: excessive iron supplementation, chronic liver disease, anemia (parenteral iron overload; transfusion-related overload in children)",
+      "epidemiology": "HFE hemochromatosis usually presents in adults",
+      "risk_factors": "Family history (first-degree relatives); iron supplements and excessive alcohol",
+      "pathology": "Iron deposition raises oxidative stress, causing fibrosis and organ dysfunction; liver, heart, joints, endocrine organs and skin most affected; pituitary iron causes hypogonadotropic hypogonadism",
+      "clinical": "Asymptomatic early; fatigue; skin bronzing (face, neck, groin, extensor forearms and lower legs); joint pain, especially the second and third metacarpophalangeal joints and knees; cardiomyopathy, chest pain, dyspnea on exertion; decreased libido, impotence, amenorrhea, small testes, gynecomastia, reduced body hair",
+      "diagnosis": "Iron panel: ferritin below 300 micrograms/L and transferrin saturation below 45% means no iron overload (ferritin is an acute phase reactant: read the whole picture). Liver biopsy with Prussian blue: primary shows hepatic iron sparing the Kupffer cells until later; secondary (parenteral overload) shows iron predominantly in Kupffer cells. Consider HFE testing with elevated transferrin saturation or ferritin; offer first-degree relative screening",
+      "treatment": "Primary: therapeutic phlebotomy with ferritin-guided follow-up. Secondary: treat the cause; consider chelation when phlebotomy is unsuitable. Avoid iron supplements and excessive alcohol; individualize dietary advice",
+      "mortality": "Early treatment can prevent organ damage; assess fibrosis and monitor cirrhosis for liver cancer; established cirrhosis may persist"
+     },
+     "slides": {
+      "name": "99-100",
+      "definition": "100",
+      "etiology": "100, 105",
+      "epidemiology": "105",
+      "risk_factors": "104",
+      "pathology": "100, 102",
+      "clinical": "100-102",
+      "diagnosis": "103-104",
+      "treatment": "104, 107",
+      "mortality": "104, 107"
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinical Medicine and Surgery I &middot; Exam 8 &mdash; Study Guide</title>
+<style>
+  :root{
+    --ink:#251e33;
+    --paper:#faf8f6;
+    --accent:#46491c;      /* olive (Exam 8, the quiz palette navy) */
+    --accent2:#a33a3f;      /* garnet */
+    --accent3:#717533;      /* light olive */
+    --line:#e3e4d8;
+    --soft:#665b5c;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;
+  }
+  header.top{
+    background:linear-gradient(120deg,#33350f,var(--accent) 55%,#c9c58f);
+    color:#fff;
+    padding:34px 26px 30px;
+  }
+  header.top h1{
+    margin:0 0 6px;
+    font-size:2rem;
+    letter-spacing:.2px;
+    font-weight:800;
+  }
+  header.top p{margin:2px 0;color:#f4f4e6;font-size:.95rem;}
+  header.top .hdr-note{margin-top:12px;font-size:.86rem;background:rgba(255,255,255,.14);
+    display:inline-block;padding:7px 13px;border-radius:9px;}
+  header.top .hdr-links{margin-top:14px;display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
+  header.top .hdr-links a{font-size:.83rem;font-weight:700;color:#fff;text-decoration:none;
+    border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:6px 14px;}
+  header.top .hdr-links a:hover{background:rgba(255,255,255,.16);}
+  header.top .hdr-save{margin-top:12px;font-size:.8rem;opacity:.85;}
+  @media print{ header.top .hdr-links, header.top .hdr-save{display:none !important;} }
+
+  .layout{display:flex;max-width:1180px;margin:0 auto;}
+  nav.toc{
+    position:sticky;top:38px;align-self:flex-start;
+    width:280px;min-width:280px;max-height:calc(100vh - 38px);max-height:calc(100dvh - 38px);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+    padding:24px 18px;border-right:1px solid var(--line);
+    background:#f3eee9;
+    font-size:.85rem;
+  }
+  nav.toc h2{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin:14px 0 6px;}
+  nav.toc a{display:block;color:var(--soft);text-decoration:none;padding:3px 0;border-bottom:1px solid transparent;}
+  nav.toc a.top-link{font-weight:700;color:var(--accent2);margin-top:10px;}
+  nav.toc a:hover{color:var(--accent);}
+  main{flex:1;padding:30px 40px 90px;min-width:0;}
+  section.deck{margin-bottom:56px;scroll-margin-top:18px;}
+  h2.deck-title{
+    font-size:1.55rem;color:var(--accent);
+    border-bottom:3px solid var(--accent2);
+    padding-bottom:8px;margin:0 0 6px;
+    font-weight:800;
+  }
+  .lecturer{color:var(--soft);font-style:italic;font-size:.9rem;margin-bottom:14px;}
+  .io-box{
+    background:#f3f3ea;border:1px solid var(--line);
+    border-radius:10px;padding:14px 18px;margin:14px 0 20px;
+  }
+  .io-box h3{
+    margin:0 0 8px;font-size:.8rem;text-transform:uppercase;
+    letter-spacing:1px;color:var(--accent3);
+  }
+  .io-box ol{margin:0;padding-left:20px;}
+  .io-box li{margin-bottom:5px;font-size:.92rem;}
+  h3.sub{
+    color:var(--accent3);font-size:1.14rem;margin:26px 0 6px;font-weight:800;
+  }
+  h4.subsub{
+    color:var(--accent2);font-size:.98rem;margin:16px 0 4px;
+    font-weight:700;
+  }
+  ul,ol{margin:6px 0 12px;}
+  li{margin-bottom:3px;}
+  p{margin:8px 0;}
+  .callout{
+    border-left:4px solid var(--accent3);
+    background:#efeaf4;padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0;
+  }
+  .pearl{
+    border-left:4px solid var(--accent2);
+    background:#f8f0e2;padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0;
+  }
+  table{border-collapse:collapse;width:100%;margin:14px 0;font-size:.9rem;}
+  th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  th{background:var(--accent);color:#fff;font-weight:700;}
+  tr:nth-child(even) td{background:#f5f1ed;}
+  code{background:#ece6df;padding:1px 5px;border-radius:4px;font-size:.85rem;}
+  .tag{
+    display:inline-block;background:var(--accent2);color:#fff;
+    font-size:.68rem;
+    padding:2px 8px;border-radius:10px;letter-spacing:.5px;
+    vertical-align:middle;margin-left:8px;
+  }
+  figure.fig{
+    margin:18px 0;padding:12px;background:#f3eee9;border-radius:10px;
+    border:1px solid var(--line);text-align:center;
+  }
+  figure.fig img{
+    max-width:100%;height:auto;border-radius:6px;background:#fff;
+    box-shadow:0 1px 4px rgba(0,0,0,.1);
+  }
+  figure.fig figcaption{
+    margin-top:8px;font-size:13.5px;color:var(--soft);font-style:italic;line-height:1.45;
+  }
+  .test-yourself-btn{
+    display:inline-block;margin-top:18px;padding:10px 18px;border:none;border-radius:999px;
+    background:var(--acc,var(--accent));color:#fff;font-weight:700;font-size:.92rem;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+  }
+  .test-yourself-btn:hover{filter:brightness(1.08);}
+  footer.guide-foot{margin:34px 40px 0;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--soft);}
+  @media(max-width:820px){
+    nav.toc{display:none;}
+    main{padding:22px 18px 60px;}
+    footer.guide-foot{margin:34px 18px 0;}
+  }
+
+  /* header.top sits outside .wrap (full-bleed banner) so it needs its own
+     dark-mode invert -- everything else lives inside .layout.wrap and gets
+     the site-wide body > .wrap invert from theme.css for free. */
+  :root[data-theme="dark"] header.top { filter: invert(1) hue-rotate(180deg); }
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #6a4fa3; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+
+
+  /* Disease photograph strips (added 2026-08-20). Images are shared with the
+     dermatology comparison chart -- same directory, same files, no duplicates.
+     Images here are eager, never lazy: an image that never scrolled into view
+     is absent from Download as PDF, which cost 74 of 84 photographs on the
+     chart before it was caught. */
+  .figgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));
+    gap:12px;margin:16px 0;padding:14px;background:#f2ece9;border-radius:10px;
+    border:1px solid var(--line)}
+  .figgrid figure{margin:0;text-align:center;display:flex;flex-direction:column}
+  .figgrid img{width:100%;height:132px;object-fit:contain;border-radius:6px;
+    background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+  .figgrid .fg-nopic{width:100%;height:132px;border-radius:6px;background:#fff;
+    border:1px dashed var(--line);display:flex;align-items:center;
+    justify-content:center;font-size:11.5px;color:var(--soft);padding:8px;
+    line-height:1.35;box-sizing:border-box}
+  .figgrid figcaption{margin-top:7px;font-size:12px;line-height:1.35;color:var(--soft)}
+  .figgrid .fg-name{display:block;font-weight:700;color:var(--ink);font-size:12.5px;
+    margin-bottom:2px}
+  .figgrid .fg-cite{display:block;font-size:10.5px;margin-top:3px;opacity:1;color:var(--soft)}
+  .figgrid-h{font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--soft);margin:0 0 4px}
+  @media (max-width:520px){.figgrid{grid-template-columns:repeat(auto-fill,minmax(132px,1fr))}
+    .figgrid img,.figgrid .fg-nopic{height:112px}}
+  /* The GRID must be allowed to break -- a ten-condition strip is taller than a
+     page, so `break-inside:avoid` on the grid cannot be honoured and Chrome
+     splits it through the middle of a figure instead, clipping the photograph
+     and orphaning its caption. Let the grid fragment between rows and protect
+     the individual figure, which always fits. */
+  @media print{.figgrid{break-inside:auto;background:#f7f4f2}
+    .figgrid figure{break-inside:avoid;page-break-inside:avoid}
+    .figgrid img,.figgrid .fg-nopic{break-inside:avoid}}
+
+  /* First-line treatment tables (add_guide_ophtho_treatment.py). The condition
+     column is held narrow so the treatment text gets the width; the urgency
+     column is narrower still and never wraps mid-word. */
+  .txnote{font-size:13px;line-height:1.5;color:var(--soft);margin:0 0 10px}
+  table.txtab td.txc{width:200px;font-weight:700;vertical-align:top}
+  table.txtab td{vertical-align:top;font-size:14px;line-height:1.5}
+  table.txtab .txu{width:120px;font-size:12.5px;line-height:1.4}
+  table.txtab td.txu{font-weight:700}
+  @media(max-width:700px){
+    table.txtab td.txc{width:auto;display:block;border-bottom:none;padding-bottom:0}
+    table.txtab td:not(.txc){display:block;border-top:none;padding-top:3px}
+    table.txtab .txu{width:auto}
+  }
+
+  /* Condition blocks (.cond / dl.eight) use --c-* tokens, defined here as in Exam 5. */
+  :root{--c-line:var(--line);--c-ice:#f8f8ee;--c-mute:var(--soft);--c-panel:var(--accent);--c-panel-fg:#fff;}
+  .callout.warn{border-left-color:#b4541a;background:#fbeee4;}
+  .callout.audio-note{border-left-color:#c1873a;background:#fff7e6;}
+  .audio-pending{display:inline-block;vertical-align:middle;margin-left:8px;font-size:.62rem;font-weight:700;
+    letter-spacing:.04em;text-transform:uppercase;color:#7a5a08;background:#fff3d4;border:1px solid #e3c46a;
+    border-radius:999px;padding:1px 8px;white-space:nowrap;}
+  .cite{font-style:normal;font-size:.72rem;opacity:.85;}
+</style>
+  <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="cms-exam-7-study-guide.docx" title="Editable Word copy">
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--paper:#0f1115;--line:#2a2e37;--soft:#9aa1ac;--muted:#9aa1ac;--card:#191c22;--soft-bg:#232509;--accent-l:#46491c;--accent:#8a8f60;--accent-soft:#232509;--accent2-l:#a33a3f;--accent2:#d66869;--accent2-soft:#361919;--accent3-l:#717533;--accent3:#8b904d;--accent3-soft:#232509;}:root[data-theme="light"] body[data-dark="tokens"]{--accent-t:#46491c;--accent2-t:#a33a3f;--accent3-t:#6a6e2b;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="guide">
+<style>
+  /* Professor-emphasized content. Star + highlight, per the convention set by
+     the CAM/Nutrition guide. Here the marks come from each lecture recording
+     (minutes spoken, repetition, explicit "know this"). */
+  .prof-flag{
+    border:2px solid #d4a017;border-radius:10px;padding:16px 14px 6px;
+    margin:22px 0 14px;position:relative;background:#fffdf5;
+  }
+  .prof-flag-label{
+    position:absolute;top:-13px;left:14px;background:#fef3d4;color:#8a6205;
+    font-size:.72rem;font-weight:700;padding:2px 10px;border-radius:8px;
+    border:1px solid #d4a017;letter-spacing:.3px;
+  }
+  .prof-flag table{margin:6px 0 8px;}
+  mark.prof-highlight{
+    background:#fef3d4;color:#3a2c05;padding:0 3px;border-radius:3px;
+    box-shadow:inset 0 0 0 1px #e8c766;
+  }
+  :root[data-theme="dark"] .prof-flag{background:#241f10;border-color:#a8801a;}
+  :root[data-theme="dark"] .prof-flag-label{
+    background:#3a2f12;color:#f0d98a;border-color:#a8801a;
+  }
+  :root[data-theme="dark"] mark.prof-highlight{
+    background:#4a3a12;color:#f7ecc8;box-shadow:inset 0 0 0 1px #7a6220;
+  }
+  .footer-mark-ink { stroke: #251e33; }
+  .footer-mark-accent { stroke: #6a4fa3; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #cdbde9; }
+  }
+</style>
+<div id="quiz-footer-logo" style="position:fixed;bottom:14px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:14px;pointer-events:none;z-index:500;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(255,255,255,0.8), rgba(255,255,255,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="pointer-events:auto;cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:100px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(255,255,255,0.8), rgba(255,255,255,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<header class="top">
+  <h1>Clinical Medicine and Surgery I &middot; Exam 8 &mdash; Study Guide</h1>
+  <p>PAJ 5500 Clinical Medicine and Surgery I &middot; Class of 2028</p>
+  <p>Hematology Block Exam (Lectures 46&ndash;51; Lecture 47 is not tested) &middot; Monday 30 November 2026 &middot; Lectures in this guide: 46 &middot; Lectures 48, 49, 50, 51 are added as they are built &middot; Instructional Objectives verbatim</p>
+  <p class="hdr-note">&#9733; Starred boxes and highlighted phrases carry each lecturer&rsquo;s emphasis from the lecture recording (our transcript cross-checked against Notability&rsquo;s, or the lecturer&rsquo;s own narration); every fact still comes from the slides</p>
+  <div class="hdr-links"><a href="cms-exam-8-cram-sheet.html">Cram sheet</a><a href="cms-exam-8-clin-med-pro-guide.html">Clin Med Pro guide</a></div>
+</header>
+
+<div class="layout wrap" data-readable>
+<nav class="toc">
+  <a class="top-link" href="#cytopenias-hemochromatosis">1 &middot; Cytopenias and Hemochromatosis</a>
+  <a class="sub-link" href="#l46-approach">1.1 Anemia, the red cell indices and the initial approach</a>
+  <a class="sub-link" href="#l46-ida">1.2 Iron deficiency anemia: causes, epidemiology and signs</a>
+  <a class="sub-link" href="#l46-ida-dx">1.3 Iron deficiency anemia: differential, pitfalls and diagnosis</a>
+  <a class="sub-link" href="#l46-ida-tx">1.4 Iron deficiency anemia: treatment and iron preparations</a>
+  <a class="sub-link" href="#l46-acd">1.5 Anemia of chronic disease (anemia of chronic inflammation)</a>
+  <a class="sub-link" href="#l46-sidero">1.6 Sideroblastic anemia</a>
+  <a class="sub-link" href="#l46-lead">1.7 Lead poisoning (plumbism)</a>
+  <a class="sub-link" href="#l46-macro">1.8 Macrocytic and megaloblastic anemia</a>
+  <a class="sub-link" href="#l46-b12">1.9 Vitamin B12 (cobalamin) deficiency and pernicious anemia</a>
+  <a class="sub-link" href="#l46-b12-labs">1.10 Laboratory evaluation of macrocytic anemia and replacement</a>
+  <a class="sub-link" href="#l46-lab-summary">1.11 The laboratory tests so far</a>
+  <a class="sub-link" href="#l46-ckd">1.12 Anemia of chronic kidney disease (anemia due to renal failure)</a>
+  <a class="sub-link" href="#l46-aplastic">1.13 Aplastic anemia</a>
+  <a class="sub-link" href="#l46-leukopenia">1.14 Leukopenia and neutropenia</a>
+  <a class="sub-link" href="#l46-hemolysis">1.15 Hemolytic anemias: what they share and their causes</a>
+  <a class="sub-link" href="#l46-hemolysis-labs">1.16 Hemolysis: where it happens, labs, smear, workup and presentation</a>
+  <a class="sub-link" href="#l46-aiha">1.17 Autoimmune hemolytic anemia</a>
+  <a class="sub-link" href="#l46-g6pd">1.18 G6PD (glucose-6-phosphate dehydrogenase) deficiency</a>
+  <a class="sub-link" href="#l46-thal">1.19 Thalassemia</a>
+  <a class="sub-link" href="#l46-sickle">1.20 Sickle cell anemia: genetics, distribution, screening and manifestations</a>
+  <a class="sub-link" href="#l46-acs">1.21 Acute chest syndrome and the complications of sickle cell disease</a>
+  <a class="sub-link" href="#l46-sickle-mgmt">1.22 Hemoglobin C, fetal hemoglobin and sickle cell management</a>
+  <a class="sub-link" href="#l46-hemochrom">1.23 Hemochromatosis: primary and secondary</a>
+  <a class="sub-link" href="#l46-lifespan">1.24 Across the lifespan, follow-up and prognosis</a>
+</nav>
+<main>
+
+<section class="deck" id="cytopenias-hemochromatosis">
+  <h2 class="deck-title">1 &middot; Cytopenias and Hemochromatosis</h2>
+  <p class="lecturer">Lecture 46 &middot; Matt Ward, DMSc, MBA, PA-C (&ldquo;Modified and presented by&rdquo;) &middot; Thursday 12 November 2026, 1&ndash;4 PM</p>
+  <div class="io-box">
+    <h3>Instructional Objectives</h3>
+    <p class="tag">HEMATOLOGY &mdash; CYTOPENIAS AND HEMOCHROMATOSIS &mdash; Matt Ward, DMSc, MBA, PA-C</p>
+    <ol>
+      <li>Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure</li>
+      <li>Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias and hemochromatosis: 10. Anemia due to increased destruction of red blood cells 11. Sickle cell anemia 12. Thalassemia 13. G6PD (glucose-6-phosphate dehydrogenase) deficiency 14. Autoimmune hemolytic anemias 15. Hemochromatosis: primary and secondary</li>
+      <li>Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for leukopenia</li>
+      <li>Identify medical care strategies for cytopenias and hemochromatosis in the lecture topic list for the following populations. 1. infants 2. child 3. adolescent 4. adult 5. elderly</li>
+    </ol>
+    <p style="font-size:.8rem;margin:6px 0 0;">Quoted as the syllabus prints it (CMS syllabus pages 20&ndash;21), its own numbering kept: it prints the first two objectives as &ldquo;1.&rdquo; and &ldquo;9.&rdquo; with their disease lists numbered 2&ndash;8 and 10&ndash;15, then the leukopenia and population objectives as &ldquo;c.&rdquo; and &ldquo;d.&rdquo;, the populations restarting at 1 (the leading &ldquo;1.&rdquo; and &ldquo;9.&rdquo; are dropped here). The guide follows the deck&rsquo;s order, which takes leukopenia before the hemolytic anemias: objective 1 in 1.1&ndash;1.13 (the approach and indices 1.1; iron deficiency 1.2&ndash;1.4; chronic disease 1.5; sideroblastic 1.6 with lead poisoning 1.7; megaloblastic, folate and B12 1.8&ndash;1.11; renal failure 1.12; aplastic 1.13); objective 3 (leukopenia) in 1.14; objective 2 in 1.15&ndash;1.23 (hemolysis 1.15&ndash;1.16; autoimmune 1.17; G6PD 1.18; thalassemia 1.19; sickle cell 1.20&ndash;1.22; hemochromatosis 1.23); objective 4 in 1.24, with each disease&rsquo;s education, referral and prognosis also in 1.24.</p>
+  </div>
+
+  <div class="callout" id="l46-emphasis">
+    <p><strong>What the slides themselves stress</strong> <span class="audio-pending">Recording pending</span></p>
+    <p>The lecture recording (three Notability parts, about 2 hours 14 minutes) is being transcribed; what Professor Ward stressed out loud will be added here. Until then, this lists only the slides&rsquo; OWN visual emphasis (bold, asterisks, underline, the green arrow). His rule for his tests, from the same morning: you are tested on what is on the slide.</p>
+    <ul>
+      <li><strong>Chronic blood loss</strong> is the <strong>&ldquo;*Most common cause of iron deficiency anemia in adults*&rdquo;</strong> (bold, between asterisks; slide 10).</li>
+      <li>Asterisks on three iron deficiency findings: <strong>nail bed changes</strong> (koilonychia, pictured), <strong>cheilosis</strong>, <strong>Plummer-Vinson syndrome</strong> (slide 12).</li>
+      <li>Ferritin and, to a lesser degree, transferrin are <strong>acute phase reactants</strong> (bold; slide 14).</li>
+      <li><strong>Ferrous sulfate</strong> (bold) and its side effect &ldquo;especially <strong><u>constipation</u></strong>&rdquo; (bold and underlined; slide 18); the orange juice preparation line is bold (slide 19).</li>
+      <li>Anemia of chronic disease: &ldquo;Treat the underlying condition&rdquo; with a green arrow, <strong>&ldquo;&larr; most important&rdquo;</strong> (slide 26).</li>
+      <li>Sideroblastic anemia: <strong>&ldquo;Variable&rdquo;</strong> microcytosis and hypochromia (bold; slide 32).</li>
+      <li><strong>Pernicious anemia</strong> is the most frequent cause of B12 deficiency (bold; slide 44); numbness, tingling, <strong>burning to hands and feet</strong> (bold; slide 45); <strong>homocysteine level</strong> and <strong>methylmalonic acid level</strong> (bold; slide 47); <strong>microcytic</strong> and <strong>macrocytic</strong> in the lab summary (bold; slide 50).</li>
+      <li>Hemolysis: <strong>haptoglobin</strong> (slide 66); <strong>bilirubin</strong>, <strong>haptoglobin</strong>, <strong>lactate dehydrogenase</strong> (slide 67); <strong>schistocytes</strong> (slide 68); <strong>jaundice</strong> (slide 70), all bold.</li>
+      <li><strong>&ldquo;AIHA is associated with an increased risk of venous thromboembolism&rdquo;</strong> (bold, under &ldquo;Important note&rdquo;; slide 73).</li>
+      <li>G6PD deficiency: <strong>fava beans</strong> first in the trigger list and <strong>acute hemolytic anemia</strong> (bold; slide 79).</li>
+      <li>Thalassemia: <strong>&ldquo;Main problem: imbalance in expression leads to accumulation and precipitation of globin subunits&rdquo;</strong> (bold; slide 85) and <strong><u>iron overload</u></strong> (bold and underlined; slide 87).</li>
+    </ul>
+  </div>
+
+  <div class="callout warn" id="l46-conflicts">
+    <p><strong>Where the slides are loose or disagree</strong> (the slides are what is tested; where two slides differ, the guide says which wording to learn)</p>
+    <ul>
+      <li><strong>Serum iron in anemia of chronic disease (slide 13 against slide 27).</strong> Slide 13 says the serum iron and transferrin saturation are <em>low</em>, the total iron-binding capacity normal or low, ferritin normal or increased. The slide 27 comparison table gives serum iron as &ldquo;&uarr; or &darr;&rdquo;. Both slides agree on what separates it from iron deficiency: <strong>ferritin normal or increased, total iron-binding capacity decreased</strong>. Do not lean on the serum iron direction alone.</li>
+      <li><strong>Chloroquine in G6PD deficiency (slide 79 against slide 83).</strong> Slide 79 lists &ldquo;Antimalarials (chloroquine, etc)&rdquo; as a trigger; the slide 83 UpToDate table (a partial list from another source) puts chloroquine under &ldquo;safe for class II and III variants&rdquo;. Learn <strong>antimalarials as a class</strong>; slide 83 is left out of this guide.</li>
+      <li><strong>Where G6PD sits (slide 79 against slide 77).</strong> Slide 79 calls G6PD an &ldquo;erythrocyte membrane enzyme&rdquo;; slide 77 places it in the glutathione pathway inside the cell. Learn what it does (protects against oxidative damage), not where it sits.</li>
+      <li><strong>Beta thalassemia ancestry (slide 86).</strong> The slide puts beta thalassemia &ldquo;generally in patients of African origin&rdquo;, a loose claim. Learn the alpha thalassemia lines only (below, 1.19).</li>
+      <li><strong>Chorionic villus sampling &ldquo;at 9wk gestation&rdquo; (slide 92).</strong> Learn the four testing periods; the week is not something to memorize.</li>
+      <li><strong>Hemochromatosis symptoms (slide 101)</strong> begin with &ldquo;Fatigue in combination with s&rdquo;: the line is cut off on the slide.</li>
+      <li><strong>Slide 105&rsquo;s footer</strong> names the 2022 European hemochromatosis guidelines as the source of the lifespan table: a footer copied from slide 104.</li>
+      <li><strong>Slide 32:</strong> &ldquo;Increased zinc level if caused by copper deficiency&rdquo;, kept as the slide reads.</li>
+      <li><strong>Slide 76:</strong> &ldquo;Females can only be homozygous dominant or heterozygous&rdquo;. Learn the next line: X-linked recessive, so generally only males are affected; carrier females have two red cell populations and are generally unaffected.</li>
+      <li><strong>Questions the slides ask but do not answer:</strong> parenteral iron &ldquo;Who else is this good for?&rdquo; (slide 21) and why the G6PD level is not checked during an attack, &ldquo;Why not during an attack?&rdquo; (slide 82).</li>
+      <li><strong>Slide typos, corrected here:</strong> &ldquo;benzine&rdquo; = benzene (slide 57); &ldquo;akyrin&rdquo; = ankyrin and &ldquo;redux&rdquo; = redox (slide 62); &ldquo;de nova&rdquo; = de novo, &ldquo;EBC&rdquo; = EBV (Epstein-Barr virus), &ldquo;CARS-CoV-2&rdquo; = SARS-CoV-2 (slide 71); &ldquo;humoral heads&rdquo; = humeral heads (slide 93); &ldquo;cubulin&rdquo; = cubilin (slide 43); &ldquo;sheer stress&rdquo; = shear stress (slides 62, 65); &ldquo;cytoplastic&rdquo; = cytoplasmic (slide 67).</li>
+    </ul>
+  </div>
+
+  <!-- ===================== OBJECTIVE 1: decreased production ===================== -->
+
+  <h3 class="sub" id="l46-approach">1.1 &middot; Anemia, the red cell indices and the initial approach</h3>
+  <ul>
+    <li><strong>Anemia (slide 6):</strong> a reduction in the amount of healthy red blood cells or hemoglobin, leading to a <strong>decrease in the ability to carry oxygen</strong> to the body&rsquo;s tissues.</li>
+  </ul>
+  <div class="tbl-wrap"><table>
+    <tr><th>Red blood cell indices (slide 7): measurements that help diagnose anemia</th><th>What it measures</th><th>Normal range on the slide</th></tr>
+    <tr><td><strong>Mean corpuscular volume (MCV)</strong></td><td>The <strong>average size</strong> of red blood cells</td><td><strong>80&ndash;100 femtoliters (fL)</strong></td></tr>
+    <tr><td><strong>Mean corpuscular hemoglobin (MCH)</strong></td><td>The amount of hemoglobin in each red blood cell</td><td>27&ndash;31 picograms/cell</td></tr>
+    <tr><td><strong>Mean corpuscular hemoglobin concentration (MCHC)</strong></td><td>The amount of hemoglobin relative to the size of each red blood cell</td><td>32&ndash;36 g/dL (320&ndash;360 g/L)</td></tr>
+    <tr><td><strong>Red cell distribution width (RDW)</strong></td><td>Differences in the volume and size of the red blood cells (healthy red cells are usually about the same size)</td><td>&mdash;</td></tr>
+    <tr><td><strong>H&amp;H (hemoglobin and hematocrit)</strong></td><td>Hemoglobin: the amount of hemoglobin in the blood. Hematocrit: the percentage of red blood cells in the total blood volume</td><td>&mdash;</td></tr>
+  </table></div>
+  <p><strong>Initial approach (slide 8):</strong> the history and physical may direct you toward a diagnosis. Then <strong>review the complete blood count (CBC)</strong>:</p>
+  <ol>
+    <li>Consider the <strong>three cell lines</strong>: red blood cells (RBC), white blood cells (WBC) and platelets; evaluate for <strong>pancytopenia</strong>.</li>
+    <li>Evaluate the <strong>MCV</strong> (small cells point to the microcytic anemias of 1.2&ndash;1.7; large cells to the macrocytic anemias of 1.8&ndash;1.11).</li>
+    <li>Review the <strong>reticulocyte index</strong> to determine whether the bone marrow response is adequate.</li>
+  </ol>
+
+  <h3 class="sub" id="l46-ida">1.2 &middot; Iron deficiency anemia: causes, epidemiology and signs</h3>
+  <ul>
+    <li><strong>Etiology (slide 10):</strong>
+      <ul>
+        <li><strong>Chronic blood loss: the most common cause of iron deficiency anemia in adults</strong> (gastrointestinal (GI) loss and menses).</li>
+        <li><strong>Dietary factors:</strong> vegan diet, tea drinkers; antacids (calcium); medications, particularly <strong>proton pump inhibitors (PPI)</strong>.</li>
+        <li><strong>Malabsorption:</strong> gastric bypass surgery, celiac sprue, food allergies.</li>
+        <li><strong>Increased demand:</strong> pregnancy; growth in infancy or adolescence.</li>
+      </ul></li>
+    <li><strong>Epidemiology (slide 11):</strong> <strong>50% of anemia worldwide</strong> is due to iron deficiency; almost 1 million deaths a year (71% in Africa and Asia, only 1.4% in North America); higher rates in developing countries than the United States. In the United States: men under 50, 1%; <strong>women of childbearing age, 10%</strong> (menstrual losses); <strong>9% of children aged 12 to 36 months</strong> are iron-deficient and one third of them develop anemia; <strong>low-income families</strong> are particularly at risk.</li>
+    <li><strong>Signs and symptoms (slide 12):</strong> fatigue; pallor; decreased exercise tolerance; shortness of breath (SOB), especially with exertion; smooth tongue; <strong>pica</strong> (common; the urge to eat things that are not food); and, starred on the slide, <strong>nail bed changes</strong> (<strong>koilonychia</strong>: spoon-shaped, concave nails), <strong>cheilosis</strong> and <strong>Plummer-Vinson syndrome</strong>.</li>
+  </ul>
+  <p class="figgrid-h">Koilonychia (slide 12)</p>
+  <div class="figgrid">
+    <figure><img src="cms-e8-images/l46-s012-koilonychia-spoon-nail.jpg" loading="lazy" width="350" height="281" alt="Side view of a toe or finger tip whose nail curves upward at the edge like a spoon."><figcaption><span class="fg-name">Koilonychia</span>Nail bed change of iron deficiency: the nail turns up at the edge<span class="fg-cite">Slide 12</span></figcaption></figure>
+    <figure><img src="cms-e8-images/l46-s012-koilonychia-thumb.jpg" loading="lazy" width="236" height="314" alt="A thumbnail that is flattened and slightly concave instead of curving over the fingertip."><figcaption><span class="fg-name">Koilonychia</span>Flat, concave (spoon-shaped) thumbnail<span class="fg-cite">Slide 12</span></figcaption></figure>
+  </div>
+
+  <h3 class="sub" id="l46-ida-dx">1.3 &middot; Iron deficiency anemia: differential, pitfalls and diagnosis</h3>
+  <div class="tbl-wrap"><table>
+    <tr><th>Differential diagnosis of iron deficiency (slide 13)</th><th>How the slide tells it apart</th></tr>
+    <tr><td><strong>Anemia of chronic disease</strong> (specifically, anemia of inflammation)</td><td><strong>Normal or increased ferritin</strong>; serum iron and transferrin saturation low; total iron-binding capacity (TIBC) <strong>normal or low</strong></td></tr>
+    <tr><td><strong>Thalassemia</strong></td><td>A <strong>greater degree of microcytosis for any given hemoglobin</strong>; unlike most other anemias, a <strong>normal or elevated RBC count</strong> and a reticulocytosis; the smear resembles severe iron deficiency</td></tr>
+    <tr><td>Lead poisoning</td><td>(1.7)</td></tr>
+    <tr><td>Zinc deficiency</td><td>Listed only</td></tr>
+    <tr><td>Sideroblastic anemia</td><td>(1.6)</td></tr>
+  </table></div>
+  <div class="pearl"><strong>Pitfall (slide 14):</strong> ferritin and, to a lesser degree, transferrin are <strong>acute phase reactants (APRs)</strong>. A patient with an inflammatory condition (infection, autoimmune disease) who also has iron deficiency may have a <strong>normal or even elevated ferritin</strong>. If that is a concern, consider an <strong>erythrocyte sedimentation rate (ESR) and/or C-reactive protein (CRP)</strong>. <strong>A normal or elevated ferritin does not exclude iron deficiency anemia.</strong></div>
+  <ul>
+    <li><strong>Diagnosis (slide 15):</strong>
+      <ul>
+        <li><strong>Complete blood count (CBC):</strong> <strong>microcytosis</strong> (decreased mean corpuscular volume (MCV), <strong>&lt;80 fL</strong>); <strong>hypochromia</strong> (decreased mean corpuscular hemoglobin (MCH), pale red cells on the stained smear).</li>
+        <li><strong>Iron panel:</strong> <strong>reduced serum ferritin</strong> (with the slide 14 caveat); <strong>reduced transferrin saturation (Tsat)</strong>; <strong>increased total iron-binding capacity (TIBC)</strong>.</li>
+        <li><strong>Peripheral smear:</strong> microcytic and hypochromic red blood cells.</li>
+      </ul></li>
+    <li><strong>Additional tests (slide 16):</strong> urinalysis; <strong>fecal occult blood test (stool guaiac test)</strong> for a gastrointestinal bleed; consider coagulation studies (prothrombin time (PT), partial thromboplastin time (PTT)).</li>
+  </ul>
+  <figure class="fig"><img src="cms-e8-images/l46-s016-hemoccult-kit.jpg" loading="lazy" width="240" height="249" alt="A Hemoccult box labeled routine screening test for fecal occult blood, single slides, with a developer bottle and a test card."><figcaption>The fecal occult blood test (stool guaiac test) kit, ordered to look for a gastrointestinal bleed. <span class="cite">Slide 16</span></figcaption></figure>
+
+  <h3 class="sub" id="l46-ida-tx">1.4 &middot; Iron deficiency anemia: treatment and iron preparations</h3>
+  <ul>
+    <li><strong>Treatment (slide 17):</strong> <strong>treat the underlying cause</strong>.
+      <ul>
+        <li>Menstrual blood loss: an oral contraceptive; consider a continuous-cycle contraceptive.</li>
+        <li><strong>Gastrointestinal (GI) bleed: GI consult for colonoscopy/endoscopy to evaluate for colorectal cancer.</strong></li>
+        <li>Discontinue anticoagulants if the anemia is severe, consulting cardiology.</li>
+        <li><strong>Iron replacement.</strong></li>
+        <li><strong>Referral to hematology</strong> if the diagnosis is not confirmed or the patient is <strong>unresponsive to oral iron</strong>.</li>
+      </ul></li>
+    <li><strong>Oral iron salts (slide 18): ferrous sulfate</strong> 325 mg orally once daily or every other day (contains 66 mg of elemental iron). Poor absorption, lots of side effects, poor adherence (&ldquo;people hate it&rdquo;). Gastrointestinal side effects are common: nausea and <strong>especially constipation</strong>, so <strong>always give it with at least an as-needed laxative/stool softener</strong>. <strong>Taking it with food reduces side effects but also decreases absorption.</strong></li>
+    <li><strong>Better ideas (slide 19):</strong> studies show better absorption and fewer side effects with <strong>less frequent dosing</strong>; <strong>alternate-day dosing is probably best</strong>, but adherence can be a problem. Alternative: <strong>ferrous sulfate 44 mg/5 mL (as elemental iron) once daily in the morning, on an empty stomach, with a full glass of orange juice</strong>; the low pH, citric acid and vitamin C help uptake and limit the free iron reaching the rest of the gut, so fewer side effects.</li>
+    <li><strong>Length of treatment (slide 20):</strong> an appropriate response is the <strong>hematocrit halfway back toward normal within 3 weeks</strong> and <strong>back to baseline after 2 months</strong>; continue iron for <strong>3&ndash;6 months after the counts normalize</strong>, to replenish iron stores.</li>
+    <li><strong>Parenteral iron (slide 21):</strong> for patients <strong>intolerant of or refractory to oral iron</strong>. Most iron-deficient patients need 1&ndash;1.5 g of parenteral iron, given over 15 minutes to 1 hour. <strong>Ferric pyrophosphate citrate (Triferic)</strong>: a Food and Drug Administration (FDA)-approved additive to the dialysate that replaces the 5&ndash;7 mg of iron lost in each hemodialysis treatment.</li>
+  </ul>
+  <div class="cond"><h4>Iron deficiency anemia</h4>
+    <p class="give"><b>Defining feature:</b> a microcytic, hypochromic anemia with <b>low ferritin, low transferrin saturation and high total iron-binding capacity</b>; in an adult, look for chronic blood loss</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>Anemia from too little iron, the cause of 50% of anemia worldwide (slide 11).</dd>
+      <dt>Who gets it</dt><dd>Women of childbearing age (10% in the United States), children aged 12&ndash;36 months (9% iron-deficient), low-income families; men under 50 only 1%; far commoner in developing countries (slide 11).</dd>
+      <dt>Risk factors</dt><dd>Chronic blood loss (gastrointestinal, menses; most common adult cause); vegan diet, tea, calcium antacids, proton pump inhibitors; malabsorption (gastric bypass, celiac sprue, food allergies); pregnancy, growth in infancy or adolescence (slide 10).</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Fatigue, decreased exercise tolerance, shortness of breath on exertion, pica (slide 12).</dd>
+      <dt>Physical exam findings</dt><dd>Pallor, smooth tongue, koilonychia (spoon-shaped nails), cheilosis; Plummer-Vinson syndrome (slide 12).</dd>
+      <dt>Diagnostics / tests</dt><dd>Complete blood count: mean corpuscular volume &lt;80 fL, low mean corpuscular hemoglobin; iron panel: low ferritin, low transferrin saturation, high total iron-binding capacity; smear microcytic, hypochromic (slide 15). Ferritin is an acute phase reactant: a normal or high value does not exclude iron deficiency; add ESR and/or CRP (slide 14). Urinalysis, fecal occult blood test, consider PT/PTT (slide 16).</dd>
+      <dt>First-line treatment</dt><dd>Treat the cause (gastrointestinal consult for colonoscopy/endoscopy; contraceptive for menstrual loss); oral ferrous sulfate 325 mg daily or every other day with a stool softener, alternate-day dosing probably best; continue 3&ndash;6 months after counts normalize; parenteral iron if intolerant or refractory; hematology if unconfirmed or unresponsive to oral iron (slides 17&ndash;21).</dd>
+      <dt>Complications</dt><dd>Almost 1 million deaths a year worldwide (slide 11); otherwise not covered in the lecture.</dd>
+    </dl><p class="src">Slides 10&ndash;21, 106</p></div>
+
+  <h3 class="sub" id="l46-acd">1.5 &middot; Anemia of chronic disease (anemia of chronic inflammation)</h3>
+  <ul>
+    <li><strong>What it is (slide 23):</strong> also called anemia of chronic inflammation; due to <strong>any inflammatory condition: infection, autoimmune disease, neoplasm</strong>. It <strong>initially resembles iron deficiency anemia</strong>.</li>
+    <li><strong>Multifactorial etiology (slide 23):</strong> inflammatory cytokines, in particular <strong>interleukin-6 (IL-6), upregulate hepcidin</strong>, which <strong>blocks iron absorption</strong>; systemic inflammation <strong>inhibits renal erythropoietin</strong>; likely direct inflammatory bone marrow suppression too.</li>
+    <li><strong>Epidemiology (slide 24):</strong> the <strong>2nd most common anemia</strong>; any age; <strong>older adults</strong> at increased risk (more chronic inflammatory disease); in the United States about 1 million people older than 65 have it.</li>
+    <li><strong>Signs and symptoms (slide 24):</strong> similar to iron deficiency anemia, and resemble the causative condition.</li>
+    <li><strong>Diagnosis (slide 25):</strong> the same labs as iron deficiency anemia; if inflammation is not clinically known, an <strong>erythrocyte sedimentation rate (ESR) and/or C-reactive protein (CRP)</strong> can help. <strong>Serum ferritin should be normal or increased</strong>; a ferritin <strong>less than 30 ng/mL (67 pmol/L) indicates coexistent iron deficiency</strong>.</li>
+    <li><strong>Treatment (slide 26): treat the underlying condition (&ldquo;most important&rdquo;)</strong>. May benefit from <strong>erythropoietin supplementation (epoetin alfa, Procrit)</strong>; Food and Drug Administration (FDA)-approved indications: <strong>hemoglobin less than 10 g/dL</strong>, and anemia due to rheumatoid arthritis, inflammatory bowel disease (IBD), hepatitis C, zidovudine therapy in patients with human immunodeficiency virus (HIV), myelosuppressive chemotherapy of a solid malignancy, or chronic kidney disease (CKD). May need parenteral iron. <strong>Referral to hematology is not usually needed.</strong></li>
+  </ul>
+  <div class="tbl-wrap"><table>
+    <tr><th>Comparison (slide 27)</th><th>Anemia of chronic disease</th><th>Iron deficiency anemia</th></tr>
+    <tr><td>Red blood cells, hemoglobin, hematocrit</td><td>&darr; decreased (mild)</td><td>&darr; decreased</td></tr>
+    <tr><td>Mean corpuscular volume (MCV)</td><td>Normal or &darr; decreased</td><td>&darr; decreased</td></tr>
+    <tr><td>Mean corpuscular hemoglobin (MCH), MCH concentration (MCHC)</td><td>Normal or &darr; decreased</td><td>&darr; decreased</td></tr>
+    <tr><td>Red cell distribution width (RDW)</td><td>Varies</td><td>&uarr; increased</td></tr>
+    <tr><td>Reticulocytes</td><td>Usually &darr; decreased</td><td>Varies</td></tr>
+    <tr><td>Serum iron</td><td>&uarr; or &darr; (slide 13 says low; see the note above)</td><td>&darr; decreased</td></tr>
+    <tr><td><strong>Ferritin</strong></td><td><strong>Normal or &uarr; increased</strong></td><td><strong>&darr; decreased</strong></td></tr>
+    <tr><td><strong>Total iron-binding capacity (TIBC)</strong></td><td><strong>&darr; decreased</strong></td><td><strong>&uarr; increased</strong></td></tr>
+  </table></div>
+  <div class="cond"><h4>Anemia of chronic disease</h4>
+    <p class="give"><b>Defining feature:</b> anemia in a patient with an inflammatory illness, with <b>ferritin normal or increased and total iron-binding capacity decreased</b> (opposite to iron deficiency)</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>Anemia of inflammation: interleukin-6 raises hepcidin, which blocks iron absorption; inflammation suppresses renal erythropoietin and the marrow (slide 23).</dd>
+      <dt>Who gets it</dt><dd>Any age; older adults at increased risk; the 2nd most common anemia; about 1 million Americans over 65 (slide 24).</dd>
+      <dt>Risk factors</dt><dd>Any inflammatory condition: infection, autoimmune disease, neoplasm (slide 23).</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Similar to iron deficiency; resemble the causative condition (slide 24).</dd>
+      <dt>Physical exam findings</dt><dd>Not covered in the lecture beyond &ldquo;similar to iron deficiency anemia&rdquo; (slide 24).</dd>
+      <dt>Diagnostics / tests</dt><dd>Iron deficiency labs; ESR and/or CRP if inflammation is not known; ferritin normal or increased (less than 30 ng/mL means coexisting iron deficiency); total iron-binding capacity decreased (slides 25, 27).</dd>
+      <dt>First-line treatment</dt><dd>Treat the underlying condition (most important); erythropoietin (epoetin alfa) for hemoglobin &lt;10 g/dL in the approved conditions; possibly parenteral iron; hematology referral not usually needed (slide 26).</dd>
+      <dt>Complications</dt><dd>Not covered in the lecture; slide 106: can persist while the underlying disease is active.</dd>
+    </dl><p class="src">Slides 13, 23&ndash;27, 106</p></div>
+
+  <h3 class="sub" id="l46-sidero">1.6 &middot; Sideroblastic anemia</h3>
+  <ul>
+    <li><strong>Three types (slide 29):</strong> <strong>hereditary</strong> (usually <strong>X-linked</strong>); <strong>acquired</strong> (usually with <strong>myelodysplastic syndrome (MDS)</strong>); <strong>acquired/reversible</strong>: alcohol (EtOH), certain drugs (<strong>isoniazid</strong>, chlorambucil), <strong>copper deficiency</strong>, hypothermia, <strong>lead poisoning</strong>.</li>
+    <li><strong>Modern classification (slide 30):</strong> dyserythropoiesis (that is, hypohepcidinemia) and transfusion-dependence (myelodysplastic syndrome, thalassemia). <strong>Rare.</strong> About <strong>2/3 of cases present in males in early childhood or adolescence</strong>, 1/3 in young to middle-aged females; can occur at any age.</li>
+    <li><strong>Presentation (slide 31):</strong> <strong>no specific clinical features</strong> other than those of anemia; usually <strong>moderate</strong>, hematocrit 20&ndash;30%.</li>
+    <li><strong>Diagnosis (slide 32):</strong> <strong>variable</strong> microcytosis and hypochromia; smear <strong>dimorphic</strong> (microcytes, normal cells and macrocytes); <strong>excess total body iron</strong>: <strong>increased serum iron, transferrin saturation and ferritin</strong>; increased zinc level if caused by copper deficiency; <strong>bone marrow aspirate shows ring sideroblasts, the defining feature</strong> (iron-containing mitochondria form a basophilic ring around the nucleus).</li>
+    <li><strong>Treatment (slide 33):</strong> remove the offending agent if acquired; occasionally red cell transfusions; <strong>typically poor response to recombinant erythropoietin</strong>; occasional responses to <strong>oral pyridoxine (50&ndash;200 mg/day)</strong>; <strong>luspatercept</strong>, recently FDA approved for myelodysplastic syndrome with ringed sideroblasts; <strong>refer to hematology</strong> if diagnostic or transfusion support is needed.</li>
+  </ul>
+  <div class="cond"><h4>Sideroblastic anemia</h4>
+    <p class="give"><b>Defining feature:</b> <b>ring sideroblasts</b> on bone marrow aspirate, with iron overload on the panel (serum iron, transferrin saturation and ferritin all high) and a dimorphic smear</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>An anemia with iron-laden mitochondria ringing the nucleus of red cell precursors; hereditary, acquired (myelodysplastic) or acquired/reversible (slides 29, 32).</dd>
+      <dt>Who gets it</dt><dd>Rare; 2/3 males in early childhood or adolescence, 1/3 young to middle-aged females; any age (slide 30).</dd>
+      <dt>Risk factors</dt><dd>X-linked inheritance; myelodysplastic syndrome; alcohol, isoniazid, chlorambucil, copper deficiency, hypothermia, lead poisoning (slide 29).</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>No specific features beyond anemia; usually moderate, hematocrit 20&ndash;30% (slide 31).</dd>
+      <dt>Physical exam findings</dt><dd>Not covered in the lecture.</dd>
+      <dt>Diagnostics / tests</dt><dd>Variable microcytosis and hypochromia; dimorphic smear; increased serum iron, transferrin saturation and ferritin; bone marrow aspirate with ring sideroblasts (slide 32).</dd>
+      <dt>First-line treatment</dt><dd>Remove the offending agent if acquired; transfusion if severe; pyridoxine sometimes helps; luspatercept for myelodysplastic syndrome with ringed sideroblasts; erythropoietin works poorly; hematology for diagnostic or transfusion support (slide 33).</dd>
+      <dt>Complications</dt><dd>Not covered in the lecture; slide 106: variable prognosis, clonal forms need continued follow-up.</dd>
+    </dl><p class="src">Slides 29&ndash;33, 106</p></div>
+
+  <h3 class="sub" id="l46-lead">1.7 &middot; Lead poisoning (plumbism)</h3>
+  <ul>
+    <li><strong>Blood (slide 34):</strong> a <strong>microcytic/hypochromic anemia</strong> with <strong>basophilic stippling</strong> on the smear (an abnormal collection of nucleic acids in the cells).</li>
+    <li><strong>Causes (slide 34):</strong> industrial exposure; gasoline sniffing; lodged bullets; cooking utensils containing lead; lead-based paint chips; the Flint water crisis.</li>
+    <li><strong>Symptoms (slide 35):</strong> the <strong>neurologic system is most vulnerable</strong> (irritability, behavioral changes, peripheral neuropathy); gastrointestinal symptoms (abdominal colic, nausea and constipation, occasionally diarrhea); there <strong>may be a lead line in the gums</strong>.</li>
+    <li><strong>Treatment (slide 35):</strong> stop the exposure; treatment is based on the <strong>lead level</strong>; in severe cases with neurologic effects, <strong>chelating agents: succimer (Chemet), dimercaprol, EDTA</strong>.</li>
+  </ul>
+  <figure class="fig"><img src="cms-e8-images/l46-s036-lead-line-gums.jpg" loading="lazy" width="539" height="239" alt="Close-up of the front teeth with the gums above them stained a dark blue-gray along the gum line."><figcaption>The <strong>lead line in the gums</strong>: a dark band along the gum margin above the teeth. <span class="cite">Slide 36 (text on slide 35)</span></figcaption></figure>
+  <div class="cond"><h4>Lead poisoning</h4>
+    <p class="give"><b>Defining feature:</b> microcytic anemia with <b>basophilic stippling</b> plus neurologic and gastrointestinal symptoms, sometimes a lead line in the gums</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>Plumbism: lead toxicity causing a microcytic, hypochromic anemia (slide 34); also a reversible cause of sideroblastic anemia (slide 29).</dd>
+      <dt>Who gets it</dt><dd>People exposed to lead (slide 34); otherwise not covered in the lecture.</dd>
+      <dt>Risk factors</dt><dd>Industrial exposure, gasoline sniffing, lodged bullets, lead cooking utensils, lead paint chips, contaminated water (Flint) (slide 34).</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Irritability, behavioral changes, peripheral neuropathy; abdominal colic, nausea, constipation, occasionally diarrhea (slide 35).</dd>
+      <dt>Physical exam findings</dt><dd>A lead line in the gums (slides 35&ndash;36).</dd>
+      <dt>Diagnostics / tests</dt><dd>Microcytic, hypochromic anemia; basophilic stippling on the smear; the lead level guides treatment (slides 34&ndash;35).</dd>
+      <dt>First-line treatment</dt><dd>Stop the exposure; chelation (succimer, dimercaprol, EDTA) in severe cases with neurologic effects (slide 35).</dd>
+      <dt>Complications</dt><dd>Neurologic effects (slide 35); otherwise not covered in the lecture.</dd>
+    </dl><p class="src">Slides 29, 34&ndash;36</p></div>
+
+  <h3 class="sub" id="l46-macro">1.8 &middot; Macrocytic and megaloblastic anemia</h3>
+  <ul>
+    <li><strong>Macrocytic anemia (slide 38):</strong> anemia with a mean corpuscular volume (MCV) <strong>&gt;100 fL</strong>. Two categories:
+      <ul>
+        <li><strong>Megaloblastic anemia</strong>: B12 and folate deficiency.</li>
+        <li><strong>Non-megaloblastic anemia</strong>: alcohol (common) or drug; hypothyroidism; liver failure; bone marrow dysplasia. <strong>Non-megaloblastic causes usually have an MCV &lt;115 fL.</strong></li>
+      </ul></li>
+    <li><strong>Megaloblastic anemia (slide 39):</strong> a macrocytic anemia with <strong>megaloblasts</strong> (early red cell precursors), characterized by macrocytosis with <strong>macro-ovalocytes</strong> and <strong>hypersegmented neutrophils</strong>. <strong>DNA synthesis is impaired</strong>, causing nuclear-cytoplasmic asynchrony and impaired hematopoiesis; other myeloid cells (granulocytes, megakaryocytes) are affected to a lesser degree.</li>
+  </ul>
+  <figure class="fig"><img src="cms-e8-images/l46-s040-megaloblastic-smear.jpg" loading="lazy" width="480" height="359" alt="Blood smear with many large oval red cells of varying size and one neutrophil whose nucleus has many separate lobes."><figcaption>Megaloblastic anemia: large oval red cells (<strong>macro-ovalocytes</strong>) of varied size around a <strong>hypersegmented neutrophil</strong>. <span class="cite">Slide 40</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e8-images/l46-s040-hypersegmented-neutrophil.jpg" loading="lazy" width="480" height="360" alt="Blood smear: an arrowhead points to a neutrophil with a many-lobed nucleus; two arrows point to large oval red cells."><figcaption>The arrowhead marks the <strong>hypersegmented neutrophil</strong>; the arrows mark <strong>macro-ovalocytes</strong>. <span class="cite">Slide 40</span></figcaption></figure>
+  <div class="tbl-wrap"><table>
+    <tr><th>Complete blood count in megaloblastic anemia (slide 41): macrocytic, normochromic</th><th>Result</th></tr>
+    <tr><td>Red blood cells, hemoglobin, hematocrit</td><td>&darr; decreased</td></tr>
+    <tr><td>Mean corpuscular volume (MCV)</td><td><strong>&uarr; increased (macrocytosis)</strong></td></tr>
+    <tr><td>Mean corpuscular hemoglobin (MCH), MCH concentration (MCHC)</td><td>Normal to slightly &uarr; increased</td></tr>
+    <tr><td>Red cell distribution width (RDW)</td><td>&uarr; increased (anisocytosis: cells of unequal size)</td></tr>
+    <tr><td>Reticulocytes</td><td>Varies</td></tr>
+  </table></div>
+  <ul>
+    <li><strong>Folate deficiency: causes (slide 42):</strong> <strong>dietary</strong> (impoverished, indigent, <strong>alcohol use disorder</strong>, elderly); increased demand (<strong>pregnancy</strong>); impaired absorption (<strong>proximal small bowel</strong>); <strong>drugs: methotrexate, 5-fluorouracil (5-FU), hydroxyurea, phenytoin (Dilantin), metformin</strong>.</li>
+  </ul>
+
+  <h3 class="sub" id="l46-b12">1.9 &middot; Vitamin B12 (cobalamin) deficiency and pernicious anemia</h3>
+  <ul>
+    <li><strong>B12 absorption (slide 43):</strong> peptic digestion releases dietary B12; <strong>parietal cells</strong> in the gastric mucosa release <strong>intrinsic factor</strong>, which binds free B12 and protects it from digestive enzymes; the B12&ndash;intrinsic factor complex passes to the <strong>distal ileum</strong> and binds <strong>cubilin</strong> (the intrinsic factor receptor); absorbed B12 binds transcobalamin and is <strong>stored in the liver</strong>. Normal liver stores last <strong>about 3&ndash;4 years or more</strong>.</li>
+    <li><strong>Pernicious anemia (slide 44):</strong> the <strong>most frequent cause of B12 deficiency</strong>; an <strong>autoimmune reaction against parietal cells and/or intrinsic factor</strong>, causing gastric atrophy and an <strong>increased risk of gastric cancer</strong>.</li>
+    <li><strong>Clinical features (slide 45):</strong> findings of all anemias (fatigue, pallor, headache; dyspnea and heart failure when severe); gastrointestinal symptoms (<strong>glossitis</strong>, oral ulcers). <strong>The distinguishing finding of B12 deficiency is neurologic</strong>: demyelination, especially of the <strong>dorsal and lateral spinal cord tracts</strong>; neuropsychiatric changes (depression, irritability, insomnia, cognitive slowing, dementia); symmetric numbness, tingling, <strong>burning to the hands and feet (&ldquo;stocking and glove distribution&rdquo;)</strong>, progressing to an <strong>unsteady gait and loss of position sense</strong>. <strong>Neurologic findings may or may not improve with B12.</strong></li>
+  </ul>
+  <figure class="fig"><img src="cms-e8-images/l46-s043-b12-absorption.jpg" loading="lazy" width="500" height="400" alt="Diagram titled Absorption of Vitamin B12: B12 enters the stomach, binds intrinsic factor, travels to the terminal ileum where it is absorbed, and is carried to the liver where it is stored."><figcaption>Absorption of vitamin B12: B12 binds <strong>intrinsic factor</strong> in the stomach, the complex is absorbed at the <strong>terminal ileum</strong>, and B12 is stored in the <strong>liver</strong>. <span class="cite">Slide 43</span></figcaption></figure>
+  <p class="figgrid-h">Glossitis (slide 46)</p>
+  <div class="figgrid">
+    <figure><img src="cms-e8-images/l46-s046-glossitis-1.jpg" loading="lazy" width="300" height="196" alt="An open mouth with a smooth, red tongue lacking its normal bumpy surface, with redness at the corners of the mouth."><figcaption><span class="fg-name">Glossitis</span>Smooth, red tongue (gastrointestinal finding of B12 deficiency)<span class="fg-cite">Slide 46</span></figcaption></figure>
+    <figure><img src="cms-e8-images/l46-s046-glossitis-2.jpg" loading="lazy" width="598" height="403" alt="Close-up of a tongue with a large beefy red, smooth central area where the surface papillae are lost."><figcaption><span class="fg-name">Glossitis</span>Beefy red, smooth patch where the surface is lost<span class="fg-cite">Slide 46</span></figcaption></figure>
+  </div>
+
+  <h3 class="sub" id="l46-b12-labs">1.10 &middot; Laboratory evaluation of macrocytic anemia and replacement</h3>
+  <ul>
+    <li><strong>All macrocytic anemias (slide 47):</strong> <strong>B12 and folate levels are the initial tests</strong> (<strong>not very sensitive</strong>) plus a peripheral blood smear. If borderline, or suspicion continues:
+      <ul>
+        <li><strong>Homocysteine level:</strong> converting homocysteine to methionine needs <strong>both B12 and folate</strong>, so it rises in either deficiency.</li>
+        <li><strong>Methylmalonic acid (MMA) level:</strong> converting L-methylmalonyl CoA to succinyl CoA needs <strong>only B12</strong>, so <strong>methylmalonic acid is elevated in B12 deficiency but NOT in folate deficiency</strong>.</li>
+      </ul></li>
+    <li><strong>Pernicious anemia (slide 48):</strong> <strong>anti-intrinsic factor (anti-IF) antibodies</strong>: specific but not sensitive; <strong>anti-parietal cell antibodies</strong>: neither sensitive nor specific; gastric biopsy may show <strong>chronic atrophic gastritis</strong>. In reality, <strong>a megaloblastic picture that corrects with B12 is the normal diagnostic pathway</strong>.</li>
+    <li><strong>Replacement (slide 49):</strong> <strong>before replacing folate, evaluate for B12 deficiency</strong>; otherwise the labs may improve while <strong>permanent neurologic symptoms worsen</strong>.
+      <ul>
+        <li>B12 injections 1000 mcg subcutaneously or intramuscularly weekly for 3 weeks; or oral cobalamin 1000&ndash;2000 mcg daily.</li>
+        <li>Folic acid 1 mg by mouth or parenterally daily for 1&ndash;2 weeks.</li>
+      </ul></li>
+  </ul>
+  <div class="tbl-wrap"><table>
+    <tr><th>Homocysteine and methylmalonic acid (slide 47)</th><th>Homocysteine</th><th>Methylmalonic acid</th></tr>
+    <tr><td>B12 deficiency</td><td>Elevated</td><td><strong>Elevated</strong></td></tr>
+    <tr><td>Folate deficiency</td><td>Elevated</td><td><strong>Not elevated</strong></td></tr>
+  </table></div>
+  <div class="cond"><h4>Vitamin B12 deficiency (pernicious anemia)</h4>
+    <p class="give"><b>Defining feature:</b> megaloblastic anemia with <b>neurologic findings</b> (dorsal and lateral column demyelination, stocking and glove paresthesias) and an <b>elevated methylmalonic acid</b></p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>Megaloblastic anemia from lack of B12; pernicious anemia, the most frequent cause, is autoimmune destruction of parietal cells and/or intrinsic factor (slides 39, 44).</dd>
+      <dt>Who gets it</dt><dd>Not covered in the lecture beyond the causes; liver stores last about 3&ndash;4 years, so deficiency is slow to appear (slide 43).</dd>
+      <dt>Risk factors</dt><dd>Autoimmune gastritis (pernicious anemia); anything breaking the absorption chain (stomach, intrinsic factor, distal ileum) (slides 43&ndash;44).</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Fatigue, headache; symmetric numbness, tingling, burning in the hands and feet; depression, irritability, insomnia, cognitive slowing, dementia (slide 45).</dd>
+      <dt>Physical exam findings</dt><dd>Pallor; glossitis (smooth, red tongue), oral ulcers; unsteady gait, loss of position sense (slides 45&ndash;46).</dd>
+      <dt>Diagnostics / tests</dt><dd>MCV &gt;100 fL; macro-ovalocytes and hypersegmented neutrophils; B12 and folate levels first (not very sensitive); homocysteine and methylmalonic acid both elevated; anti-intrinsic factor antibodies (specific, not sensitive); gastric biopsy atrophic gastritis; correction with B12 is the usual diagnostic pathway (slides 38&ndash;41, 47&ndash;48).</dd>
+      <dt>First-line treatment</dt><dd>B12 1000 mcg subcutaneously or intramuscularly weekly for 3 weeks, or oral cobalamin 1000&ndash;2000 mcg daily; check B12 before giving folate (slide 49).</dd>
+      <dt>Complications</dt><dd>Neurologic deficits that may not improve (slides 45, 106); gastric cancer risk in pernicious anemia (slide 44); heart failure if severe (slide 45).</dd>
+    </dl><p class="src">Slides 38&ndash;49, 106</p></div>
+  <div class="cond"><h4>Folate deficiency</h4>
+    <p class="give"><b>Defining feature:</b> megaloblastic anemia with an elevated homocysteine but a <b>normal methylmalonic acid</b>, in a poorly nourished, alcohol-using, pregnant or methotrexate-treated patient</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>Megaloblastic anemia from lack of folate (slides 38&ndash;39, 42).</dd>
+      <dt>Who gets it</dt><dd>The impoverished, indigent, people with alcohol use disorder, the elderly; pregnancy (slide 42).</dd>
+      <dt>Risk factors</dt><dd>Poor diet; pregnancy; proximal small bowel malabsorption; methotrexate, 5-fluorouracil, hydroxyurea, phenytoin, metformin (slide 42).</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Findings of all anemias (slide 45); the neurologic findings are what distinguish B12 deficiency, not folate (slide 45).</dd>
+      <dt>Physical exam findings</dt><dd>Not covered in the lecture separately from B12 deficiency.</dd>
+      <dt>Diagnostics / tests</dt><dd>MCV &gt;100 fL with macro-ovalocytes and hypersegmented neutrophils; folate level; homocysteine elevated, methylmalonic acid not (slides 41, 47).</dd>
+      <dt>First-line treatment</dt><dd>Evaluate for B12 deficiency first; folic acid 1 mg by mouth or parenterally daily for 1&ndash;2 weeks (slide 49).</dd>
+      <dt>Complications</dt><dd>Giving folate to an unrecognized B12 deficiency lets the neurologic damage progress (slide 49).</dd>
+    </dl><p class="src">Slides 38&ndash;42, 47, 49</p></div>
+
+  <h3 class="sub" id="l46-lab-summary">1.11 &middot; The laboratory tests so far</h3>
+  <div class="tbl-wrap"><table>
+    <tr><th>Laboratory tests discussed so far (slide 50)</th><th>Tests</th></tr>
+    <tr><td>All anemias</td><td>Complete blood count (CBC); reticulocyte count; calculate the reticulocyte index</td></tr>
+    <tr><td>For <strong>microcytic</strong> anemia</td><td>Serum iron; transferrin saturation; total iron-binding capacity; serum ferritin; fecal occult blood test; urinalysis</td></tr>
+    <tr><td>For <strong>macrocytic</strong> anemias</td><td>B12 and folate levels; peripheral smear review; homocysteine and methylmalonic acid</td></tr>
+    <tr><td>If pernicious anemia is suspected</td><td>Anti-intrinsic factor antibodies; anti-parietal cell antibodies; parenteral B12 trial</td></tr>
+  </table></div>
+
+  <h3 class="sub" id="l46-ckd">1.12 &middot; Anemia of chronic kidney disease (anemia due to renal failure)</h3>
+  <ul>
+    <li><strong>Slide 52:</strong> <strong>extremely common</strong> in chronic kidney disease (CKD); incidence rises as the glomerular filtration rate (GFR) declines and it is <strong>almost universal in dialysis patients</strong>. Primarily, but not completely, due to <strong>decreased erythropoietin (EPO)</strong>.</li>
+    <li><strong>Slide 53 (guideline summary):</strong>
+      <ul>
+        <li><strong>Mechanism:</strong> the erythropoietin response is inappropriately low; inflammation/hepcidin restrict available iron.</li>
+        <li><strong>Order:</strong> complete blood count, reticulocyte count, ferritin and transferrin saturation (TSAT); assess other causes of anemia.</li>
+        <li><strong>Interpret:</strong> a <strong>low transferrin saturation may indicate iron-restricted erythropoiesis despite a normal or high ferritin</strong>.</li>
+        <li><strong>Treat:</strong> correct iron deficiency; consider oral or intravenous iron and an <strong>erythropoiesis-stimulating agent (ESA)</strong> based on chronic kidney disease stage, hemoglobin and risk.</li>
+        <li><strong>Follow-up:</strong> monitor hemoglobin, iron and <strong>blood pressure</strong>; <strong>nephrology</strong> for advanced chronic kidney disease, erythropoiesis-stimulating agent decisions or uncertainty.</li>
+      </ul></li>
+  </ul>
+  <div class="tbl-wrap"><table>
+    <tr><th>Complete blood count in anemia of chronic kidney disease (slide 52)</th><th>Result</th></tr>
+    <tr><td>Red blood cells, hemoglobin, hematocrit</td><td>&darr; decreased</td></tr>
+    <tr><td>Mean corpuscular volume (MCV)</td><td><strong>Normal</strong> (normocytic)</td></tr>
+    <tr><td>Mean corpuscular hemoglobin (MCH), MCH concentration (MCHC)</td><td>Normal</td></tr>
+    <tr><td>Red cell distribution width (RDW)</td><td>&uarr; increased</td></tr>
+    <tr><td>Reticulocytes</td><td>&darr; decreased</td></tr>
+  </table></div>
+  <div class="cond"><h4>Anemia of chronic kidney disease</h4>
+    <p class="give"><b>Defining feature:</b> a <b>normocytic</b> anemia with low reticulocytes in a patient with falling glomerular filtration rate or on dialysis, from <b>too little erythropoietin</b></p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>Anemia of renal failure, primarily from decreased erythropoietin, with inflammation/hepcidin restricting iron (slides 52&ndash;53).</dd>
+      <dt>Who gets it</dt><dd>Patients with chronic kidney disease; rises as glomerular filtration rate falls; almost universal on dialysis (slide 52).</dd>
+      <dt>Risk factors</dt><dd>Declining glomerular filtration rate; dialysis (slide 52).</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Not covered in the lecture beyond those of anemia.</dd>
+      <dt>Physical exam findings</dt><dd>Not covered in the lecture.</dd>
+      <dt>Diagnostics / tests</dt><dd>CBC (low counts, normal MCV, MCH and MCHC, high RDW, low reticulocytes), reticulocyte count, ferritin and transferrin saturation; low saturation with a normal or high ferritin can mean iron-restricted erythropoiesis; assess other causes (slides 52&ndash;53).</dd>
+      <dt>First-line treatment</dt><dd>Correct iron deficiency (oral or intravenous iron); consider an erythropoiesis-stimulating agent by stage, hemoglobin and risk (slide 53); Triferic in the dialysate replaces the iron lost in each hemodialysis (slide 21).</dd>
+      <dt>Complications</dt><dd>Not covered in the lecture; monitor blood pressure (slide 53); slide 106: often chronic.</dd>
+    </dl><p class="src">Slides 21, 52&ndash;53, 106</p></div>
+
+  <h3 class="sub" id="l46-aplastic">1.13 &middot; Aplastic anemia</h3>
+  <ul>
+    <li><strong>Slide 55:</strong> <strong>pancytopenia</strong>, the loss of all three cell lines (red cells, platelets and white cells). <strong>Loss of hematopoietic stem cells (HSC) is the defining feature.</strong> Half of cases occur in the <strong>first three decades</strong> of life (a small peak in childhood and a 2nd small peak at ages 20&ndash;25); male-to-female ratio about 1:1; 0.6 to 6.1 cases per million. <strong>Five-year survival is &gt;75% after a bone marrow transplant from a suitable donor</strong>; the <strong>majority of untreated patients die within one year</strong>.</li>
+    <li><strong>Pathophysiology (slide 56):</strong> autoimmune; direct injury to hematopoietic stem cells (drugs, chemicals, radiation); viral infections; genetic causes. Drugs, chemicals, viruses or mutations can alter the stem cells and predispose them to autoimmune destruction.</li>
+    <li><strong>Associations (slide 57):</strong> cytotoxic or chemotherapeutic drugs (not called aplastic anemia if it is an expected effect); <strong>chloramphenicol</strong>; ionizing radiation; toxins (<strong>benzene</strong>, pesticides); clonal abnormalities (paroxysmal nocturnal hemoglobinuria (PNH), myelodysplastic syndrome, acute myeloid leukemia (AML)); inherited (<strong>Fanconi anemia</strong>, diagnosed in childhood; other rare conditions).</li>
+    <li><strong>Slide 58:</strong> manifestations of pancytopenia: <strong>recurrent infections</strong> (neutropenia); <strong>bleeding, petechiae, purpura</strong> (thrombocytopenia); fatigue, pallor (anemia). <strong>Bone marrow biopsy is required</strong> for diagnosis and to exclude other causes. <strong>Urgent/emergent consultation with a hematologist/oncologist.</strong> Treatment: <strong>bone marrow transplant</strong>.</li>
+  </ul>
+  <div class="cond"><h4>Aplastic anemia</h4>
+    <p class="give"><b>Defining feature:</b> <b>pancytopenia</b> (infections, bleeding and anemia together) from <b>loss of hematopoietic stem cells</b>, confirmed by bone marrow biopsy</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>Loss of hematopoietic stem cells causing loss of all three cell lines (slide 55).</dd>
+      <dt>Who gets it</dt><dd>Half in the first three decades (peaks in childhood and at 20&ndash;25); males and females equally; 0.6&ndash;6.1 per million (slide 55).</dd>
+      <dt>Risk factors</dt><dd>Chemotherapy (expected effect excluded), chloramphenicol, ionizing radiation, benzene, pesticides, viral infection, paroxysmal nocturnal hemoglobinuria, myelodysplastic syndrome, acute myeloid leukemia, Fanconi anemia (slides 56&ndash;57).</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Recurrent infections, bleeding, fatigue (slide 58).</dd>
+      <dt>Physical exam findings</dt><dd>Petechiae, purpura, pallor (slide 58).</dd>
+      <dt>Diagnostics / tests</dt><dd>CBC showing pancytopenia; bone marrow biopsy is required (slides 55, 58).</dd>
+      <dt>First-line treatment</dt><dd>Urgent/emergent hematology-oncology consultation; bone marrow transplant (slide 58); infection and bleeding precautions (slide 106).</dd>
+      <dt>Complications</dt><dd>Most untreated patients die within one year; five-year survival &gt;75% after transplant from a suitable donor (slide 55).</dd>
+    </dl><p class="src">Slides 55&ndash;58, 106</p></div>
+
+  <!-- ===================== OBJECTIVE 3: leukopenia ===================== -->
+
+  <h3 class="sub" id="l46-leukopenia">1.14 &middot; Leukopenia and neutropenia</h3>
+  <ul>
+    <li><strong>Recognize (slide 59):</strong> <strong>leukopenia</strong> is a low total white blood cell count (WBC); <strong>neutropenia</strong> is defined by the <strong>absolute neutrophil count (ANC)</strong>.</li>
+    <li><strong>Calculate (slide 59):</strong></li>
+  </ul>
+  <p style="text-align:center;font-size:1.05rem;"><strong>ANC = WBC &times; (neutrophils + bands)% / 100</strong></p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Neutropenia severity (slide 59)</th><th>Absolute neutrophil count</th></tr>
+    <tr><td>Mild</td><td>1,000&ndash;1,500 cells/&micro;L</td></tr>
+    <tr><td>Moderate</td><td>500&ndash;999 cells/&micro;L</td></tr>
+    <tr><td><strong>Severe</strong></td><td><strong>&lt;500 cells/&micro;L</strong></td></tr>
+  </table></div>
+  <ul>
+    <li><strong>Common causes (slide 59):</strong> viral illness, medications/chemotherapy, autoimmune disease, nutrient deficits, marrow pathology.</li>
+    <li><strong>Order and interpret (slide 59):</strong> repeat the complete blood count with differential, review the trend and the peripheral smear; check the other cell lines.</li>
+    <li><strong>Escalate (slide 59):</strong> persistent or unexplained severe neutropenia, other cytopenias or an abnormal smear &rarr; <strong>hematology</strong>.</li>
+    <li><strong>Clinical risk (slide 60):</strong> severity, duration and immune status predict infection risk; <strong>profound neutropenia may have subtle findings</strong>.</li>
+    <li><strong>Emergency (slide 60):</strong> <strong>fever with an ANC &lt;500 (or expected to fall below 500)</strong> needs prompt assessment and <strong>empiric antibiotics</strong>. Immediate evaluation: vitals, targeted examination and cultures; <strong>start antipseudomonal therapy without delay</strong>.</li>
+    <li><strong>Chronic care (slide 60):</strong> stop an offending drug when appropriate; correct deficiencies; selected patients need <strong>granulocyte colony-stimulating factor (G-CSF)</strong>.</li>
+    <li><strong>Education and follow-up (slide 60):</strong> <strong>report fever or rigors promptly</strong>; monitor counts; reversible causes often resolve; marrow disorders need specialist care.</li>
+    <li><strong>Prognosis (slide 60):</strong> transient viral leukopenia often resolves after recovery; persistent or severe neutropenia carries greater infection risk and may indicate marrow disease.</li>
+  </ul>
+  <div class="cond"><h4>Leukopenia / neutropenia</h4>
+    <p class="give"><b>Defining feature:</b> a low white count, graded by the <b>absolute neutrophil count</b>; fever with a count below 500 is an emergency</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>Leukopenia: low total white count; neutropenia: defined by the absolute neutrophil count = WBC &times; (neutrophils + bands)% / 100 (slide 59).</dd>
+      <dt>Who gets it</dt><dd>Not covered in the lecture beyond the causes.</dd>
+      <dt>Risk factors</dt><dd>Viral illness, medications/chemotherapy, autoimmune disease, nutrient deficits, marrow pathology (slide 59).</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Infection; fever or rigors; findings may be subtle when neutropenia is profound (slide 60).</dd>
+      <dt>Physical exam findings</dt><dd>Vitals and a targeted examination for a source (slide 60); otherwise not covered in the lecture.</dd>
+      <dt>Diagnostics / tests</dt><dd>Repeat CBC with differential, trend, peripheral smear, other cell lines; grade mild 1,000&ndash;1,500, moderate 500&ndash;999, severe &lt;500 cells/&micro;L; cultures if febrile (slides 59&ndash;60).</dd>
+      <dt>First-line treatment</dt><dd>Fever with ANC &lt;500: prompt empiric antipseudomonal antibiotics; chronic: stop an offending drug, correct deficiencies, G-CSF for selected patients; hematology for persistent or unexplained severe neutropenia (slides 59&ndash;60).</dd>
+      <dt>Complications</dt><dd>Infection, greater when persistent or severe; may signal marrow disease (slide 60).</dd>
+    </dl><p class="src">Slides 59&ndash;60</p></div>
+
+  <!-- ===================== OBJECTIVE 2: increased destruction ===================== -->
+
+  <h3 class="sub" id="l46-hemolysis">1.15 &middot; Hemolytic anemias: what they share and their causes</h3>
+  <ul>
+    <li><strong>Definition (slide 61):</strong> <strong>shortened survival of circulating red cells due to their premature destruction</strong>; numerous causes, mild to severe, acute to chronic. <strong>An unexpected rise in the reticulocyte count, even without anemia or symptoms, should prompt consideration of hemolysis.</strong> The red cell (about 6 &micro;m) squeezes through capillaries of about 2 &micro;m.</li>
+    <li><strong>What lets the red cell survive shear stress (slide 62):</strong> a highly deformable membrane and cytoskeleton; a strong <strong>redox</strong> environment that prevents oxidative stress; an optimal surface-to-volume ratio (the biconcave disc has about 40% more surface area than a sphere; the cytoskeletal proteins are <strong>spectrin and ankyrin</strong>). Hemolysis occurs when the cell can no longer withstand this.</li>
+    <li><strong>Three things all hemolytic anemias share (slide 63):</strong> a decreased red cell life span; a compensatory increase in red cell production; retention of the products of red cell destruction (including iron). So: <strong>marrow hyperplasia and increased reticulocytes</strong>; in severe chronic hemolysis, <strong>extramedullary hematopoiesis</strong> in the liver, spleen and lymph nodes.</li>
+  </ul>
+  <div class="tbl-wrap"><table>
+    <tr><th>Causes of hemolysis</th><th>Examples on the slides</th></tr>
+    <tr><td colspan="2"><strong>Intracorpuscular defects: intrinsic to the red cell itself (slide 64)</strong></td></tr>
+    <tr><td>Hemoglobinopathies</td><td>Sickle cell disease, thalassemia, unstable hemoglobin variants</td></tr>
+    <tr><td>Membrane/cytoskeletal defects</td><td>Hereditary spherocytosis, elliptocytosis, stomatocytosis</td></tr>
+    <tr><td>Metabolic abnormalities</td><td>G6PD and pyruvate kinase deficiencies</td></tr>
+    <tr><td colspan="2"><strong>Extracorpuscular defects (slide 65)</strong></td></tr>
+    <tr><td>Immune-mediated</td><td>Autoimmune hemolytic anemia, transfusion reactions</td></tr>
+    <tr><td>Hypersplenism</td><td>&mdash;</td></tr>
+    <tr><td>Mechanical trauma</td><td>Shear stress</td></tr>
+    <tr><td>Oxidative stress</td><td>G6PD deficiency, methemoglobinemia</td></tr>
+    <tr><td>Infection</td><td>Malaria, babesiosis</td></tr>
+    <tr><td>Toxin</td><td>Snake and insect bites, burns, copper poisoning</td></tr>
+  </table></div>
+  <ul>
+    <li><strong>Genetic causes (slide 75):</strong> defects in the <strong>red cell membrane</strong>, <strong>hemoglobin itself</strong> or <strong>enzymes</strong>.</li>
+  </ul>
+  <figure class="fig"><img src="cms-e8-images/l46-s075-membrane-defect-smears.jpg" loading="lazy" width="220" height="374" alt="Two blood smears labeled A and B. A shows small, round, densely stained red cells without central pallor; B shows many oval and elongated red cells."><figcaption>Two smears beside &ldquo;Genetic causes of hemolytic anemia&rdquo;: <strong>A</strong>, small round cells without central pallor; <strong>B</strong>, oval, elongated cells (the slide&rsquo;s membrane defects include spherocytosis and elliptocytosis, slide 64). The slide itself labels only A and B. <span class="cite">Slide 75</span></figcaption></figure>
+
+  <h3 class="sub" id="l46-hemolysis-labs">1.16 &middot; Hemolysis: where it happens, labs, smear, workup and presentation</h3>
+  <ul>
+    <li><strong>Slide 66:</strong> the cell&rsquo;s contents are released; the concern is mainly <strong>hemoglobin</strong>.
+      <ul>
+        <li><strong>Extravascular hemolysis</strong>, the <strong>more common</strong> way: mainly in the <strong>spleen and liver</strong>; macrophages engulf the red cells and release <strong>unconjugated bilirubin</strong>, which is conjugated in the liver.</li>
+        <li><strong>Intravascular hemolysis:</strong> free hemoglobin is picked up by <strong>haptoglobin</strong> and taken to the liver; this is incomplete, so <strong>some hemoglobin appears in the urine</strong>.</li>
+      </ul></li>
+    <li><strong>Three more tests (slide 67):</strong>
+      <ul>
+        <li><strong>Bilirubin</strong> (conjugated and unconjugated): both likely elevated, <strong>unconjugated &gt; conjugated</strong>; clinical <strong>jaundice appears when total bilirubin exceeds 2.0 mg/dL</strong> (normal 0.3&ndash;1.2 mg/dL).</li>
+        <li><strong>Haptoglobin: DECREASED or absent with intravascular hemolysis.</strong></li>
+        <li><strong>Lactate dehydrogenase (LDH):</strong> a common cytoplasmic enzyme, <strong>elevated with any cell lysis</strong>.</li>
+      </ul></li>
+    <li><strong>Smear (slide 68):</strong> order a peripheral smear on any patient with suspected hemolysis; <strong>the hallmark finding of hemolysis is schistocytes (red blood cell fragments)</strong>.</li>
+    <li><strong>Workup for a suspected hemolytic anemia (slide 69):</strong> complete blood count, reticulocyte count, serum bilirubin, lactate dehydrogenase, haptoglobin, urinalysis, peripheral smear review.</li>
+    <li><strong>Clinical presentation (slide 70):</strong> typical anemia symptoms (fatigue, shortness of breath, chest pain, pallor; severe: chest pain, high-output cardiac failure, shock). <strong>Differentiating findings: jaundice, splenomegaly, joint pain, hematuria.</strong> Often the <strong>first indication is an increase in the reticulocyte count</strong>.</li>
+  </ul>
+  <figure class="fig"><img src="cms-e8-images/l46-s066-extravascular-intravascular-hemolysis.jpg" loading="lazy" width="400" height="470" alt="Diagram in two columns. Left, extravascular hemolysis: a macrophage engulfs red cells and releases unconjugated bilirubin, which travels bound to albumin to the hepatocyte, is conjugated and leaves through the biliary system. Right, headed extravascular and intravascular hemolysis: red cell lysis releases free hemoglobin into the blood; hemoglobin bound to haptoglobin goes to the liver, and free hemoglobin passes through the kidney into the urine."><figcaption>Extravascular hemolysis (left): the <strong>macrophage</strong> releases <strong>unconjugated bilirubin</strong>, conjugated in the hepatocyte. Right column (headed &ldquo;extravascular and intravascular hemolysis&rdquo;): red cell lysis frees hemoglobin, which binds <strong>haptoglobin</strong>; what is left passes the kidney as <strong>hemoglobinuria</strong>. <span class="cite">Slide 66</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e8-images/l46-s068-schistocytes.jpg" loading="lazy" width="440" height="320" alt="Blood smear labeled Wright's times 1000 showing round red cells mixed with small irregular, sharply angled red cell fragments."><figcaption><strong>Schistocytes</strong>: the small, jagged <strong>red blood cell fragments</strong> among the round cells, the hallmark of hemolysis (Wright stain, &times;1000). <span class="cite">Slide 68</span></figcaption></figure>
+
+  <h3 class="sub" id="l46-aiha">1.17 &middot; Autoimmune hemolytic anemia</h3>
+  <ul>
+    <li><strong>Slide 71:</strong> an <strong>antibody against the red cell membrane</strong>; may be <strong>primary</strong> (de novo antibody production) or <strong>secondary</strong>. Transfusion reaction is an example. <strong>Primary autoimmune hemolytic anemia (AIHA) is almost always IgG.</strong> Common secondary causes: <strong>viruses</strong> (human immunodeficiency virus (HIV), hepatitis, Epstein-Barr virus (EBV), SARS-CoV-2); <strong>autoimmune disorders</strong> (lupus, rheumatoid arthritis, scleroderma, ulcerative colitis); <strong>lymphoproliferative disorders</strong> (leukemias and lymphomas, multiple myeloma); <strong>pregnancy</strong>.</li>
+    <li><strong>Direct antiglobulin test (DAT), or Coombs test (slide 72):</strong> the patient&rsquo;s red cells are washed and combined with Coombs reagent; the reagent antibodies bind only cells <strong>coated with IgG or complement</strong>; if positive, they cross-link and the red cells <strong>agglutinate (precipitate)</strong>.</li>
+    <li><strong>Important note (slide 73): autoimmune hemolytic anemia is associated with an increased risk of venous thromboembolism (VTE).</strong> Consider a D-dimer and bilateral leg ultrasound for deep vein thrombosis (DVT) and/or pulmonary embolism (PE); <strong>VTE prophylaxis for inpatients</strong>, and consider it in outpatients.</li>
+    <li><strong>Treatment (slide 74):</strong> consider <strong>immediate stabilization if hemoglobin &lt;6</strong>, a rapid decline, or an unstable patient (<strong>contact the blood bank</strong>: compatible blood must be found). <strong>Rule out secondary causes.</strong> Treat with <strong>glucocorticoids initially</strong> (for example, prednisone 60&ndash;100 mg daily) and <strong>rituximab (Rituxan)</strong>, an anti-CD20 antibody. Other options: immunosuppressants, splenectomy.</li>
+  </ul>
+  <figure class="fig"><img src="cms-e8-images/l46-s072-coombs-test.png" loading="lazy" width="300" height="273" alt="Diagram: red patient erythrocytes plus Y-shaped antiserum antibodies; an arrow leads to the red cells clumped together, linked by the antibodies, labeled agglutination."><figcaption>Coombs (direct antiglobulin) test: patient erythrocytes + antiserum &rarr; <strong>agglutination</strong> when the cells carry IgG or complement. <span class="cite">Slide 72</span></figcaption></figure>
+  <div class="cond"><h4>Autoimmune hemolytic anemia</h4>
+    <p class="give"><b>Defining feature:</b> hemolysis with a <b>positive direct antiglobulin (Coombs) test</b>; watch for venous thromboembolism</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>Antibody against the red cell membrane; primary (almost always IgG) or secondary (slide 71).</dd>
+      <dt>Who gets it</dt><dd>Patients with the secondary causes below; otherwise not covered in the lecture.</dd>
+      <dt>Risk factors</dt><dd>HIV, hepatitis, Epstein-Barr virus, SARS-CoV-2; lupus, rheumatoid arthritis, scleroderma, ulcerative colitis; leukemia, lymphoma, multiple myeloma; pregnancy; transfusion (slide 71).</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Anemia symptoms; jaundice, splenomegaly, joint pain, hematuria (slide 70).</dd>
+      <dt>Physical exam findings</dt><dd>Jaundice, splenomegaly (slide 70); signs of deep vein thrombosis (slide 73).</dd>
+      <dt>Diagnostics / tests</dt><dd>Hemolysis workup (slide 69); positive direct antiglobulin (Coombs) test (slide 72); D-dimer and bilateral leg ultrasound if thrombosis is suspected (slide 73).</dd>
+      <dt>First-line treatment</dt><dd>Stabilize if hemoglobin &lt;6, falling fast or unstable (blood bank); rule out secondary causes; glucocorticoids first (prednisone 60&ndash;100 mg daily), rituximab; immunosuppressants, splenectomy; VTE prophylaxis for inpatients (slides 73&ndash;74).</dd>
+      <dt>Complications</dt><dd>Venous thromboembolism (slide 73); relapse (slide 107).</dd>
+    </dl><p class="src">Slides 69&ndash;74, 107</p></div>
+
+  <h3 class="sub" id="l46-g6pd">1.18 &middot; G6PD (glucose-6-phosphate dehydrogenase) deficiency</h3>
+  <ul>
+    <li><strong>Slide 76:</strong> the <strong>most common genetic disorder of red cells</strong> (200&ndash;400 million people); usually <strong>triggered by drugs with high oxidative potential</strong>. <strong>X-linked recessive, so generally only males are affected</strong>; carrier females have two red cell populations, one normal and one deficient, and are generally unaffected.</li>
+    <li><strong>Pathophysiology (slide 77):</strong> G6PD is needed in the glutathione pathway; without reduced glutathione the red cell is <strong>more susceptible to oxidative damage</strong>. <strong>Heinz bodies</strong> form inside the cell; splenic macrophages remove them by <strong>taking a chunk out of the cell</strong> (the <strong>bite cell</strong>). The result is <strong>intravascular and extravascular hemolysis</strong>.</li>
+    <li><strong>Slide 79:</strong> an X-linked recessive disorder of an enzyme that protects against oxidative damage; exposure to oxidative stress causes an <strong>acute hemolytic anemia</strong>. <strong>Common triggers:</strong>
+      <ul>
+        <li><strong>Fava beans</strong></li>
+        <li>Naphthalene (mothballs)</li>
+        <li>Antimalarials (the slide names chloroquine; see the conflict note above)</li>
+        <li>Nitrofurantoin</li>
+        <li>Trimethoprim/sulfamethoxazole (Bactrim)</li>
+        <li>Methylene blue</li>
+        <li>Phenazopyridine</li>
+        <li>Quinolones</li>
+      </ul></li>
+    <li><strong>Prevalence (slide 80):</strong> Kurdish Jews 60&ndash;70%; Sardinians 4&ndash;35% (by village); Nigerians 22%; Thai 17%; American Black people 11&ndash;12%; Brazilian Black people 8%; Greeks 6%; South China about 6%; India 3%; Japanese and Koreans 0&ndash;1%.</li>
+    <li><strong>Clinical presentation (slide 81):</strong> <strong>no symptoms until exposed to oxidative stress</strong>; drug-induced hemolysis is acute, of variable severity, with a <strong>lag of 2&ndash;3 days</strong>. Symptoms: <strong>abdominal pain, jaundice, dark urine, splenomegaly</strong>.</li>
+    <li><strong>Diagnosis (slide 82):</strong> labs consistent with hemolytic anemia; <strong>during an attack the smear may show Heinz bodies and bite cells</strong>; <strong>confirmed by a low G6PD level roughly 8 weeks after an attack</strong> (the slide asks, unanswered, &ldquo;Why not during an attack?&rdquo;).</li>
+    <li><strong>Treatment (slide 82):</strong> &ldquo;Don&rsquo;t eat that&rdquo; (avoid the trigger); <strong>hydrate</strong>; <strong>transfuse if needed</strong>; possible <strong>splenectomy only for recurrent attacks</strong>.</li>
+  </ul>
+  <figure class="fig"><img src="cms-e8-images/l46-s078-bite-cells.jpg" loading="lazy" width="480" height="324" alt="Blood smear of round pink red cells; arrows point to three cells that have a semicircular notch missing from their edge."><figcaption><strong>Bite cells</strong> (arrows): red cells with a chunk taken out where splenic macrophages removed Heinz bodies. <span class="cite">Slide 78 (text on slide 77)</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e8-images/l46-s078-heinz-bodies.jpg" loading="lazy" width="480" height="360" alt="Blood smear stained blue-green; arrows point to small dark blue dots sitting inside or at the edge of several red cells."><figcaption><strong>Heinz bodies</strong> (arrows): small dark dots <strong>inside</strong> the red cells on a supravital stain. <span class="cite">Slide 78 (text on slide 77)</span></figcaption></figure>
+  <div class="cond"><h4>G6PD deficiency</h4>
+    <p class="give"><b>Defining feature:</b> a male who develops <b>acute hemolysis 2&ndash;3 days after an oxidant</b> (fava beans, nitrofurantoin, trimethoprim/sulfamethoxazole, a quinolone), with <b>Heinz bodies and bite cells</b></p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>X-linked recessive lack of the enzyme that protects red cells from oxidative damage; the most common genetic disorder of red cells (slides 76&ndash;77, 79).</dd>
+      <dt>Who gets it</dt><dd>Generally males (carrier females generally unaffected); highest in Kurdish Jews, Sardinians, Nigerians, Thai people; 11&ndash;12% of American Black people (slides 76, 80).</dd>
+      <dt>Risk factors</dt><dd>Oxidant exposure: fava beans, naphthalene (mothballs), antimalarials, nitrofurantoin, trimethoprim/sulfamethoxazole, methylene blue, phenazopyridine, quinolones (slide 79).</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>No symptoms until exposed; then abdominal pain, jaundice, dark urine after a 2&ndash;3 day lag (slide 81).</dd>
+      <dt>Physical exam findings</dt><dd>Jaundice, splenomegaly (slide 81).</dd>
+      <dt>Diagnostics / tests</dt><dd>Hemolysis labs; Heinz bodies and bite cells on the smear during an attack; confirm with a low G6PD level about 8 weeks after the attack (slide 82).</dd>
+      <dt>First-line treatment</dt><dd>Avoid the trigger; hydrate; transfuse if needed; splenectomy only for recurrent attacks (slide 82).</dd>
+      <dt>Complications</dt><dd>Acute hemolytic anemia (intravascular and extravascular) (slides 77, 79); slide 107: usually favorable with trigger avoidance.</dd>
+    </dl><p class="src">Slides 76&ndash;82, 107</p></div>
+
+  <h3 class="sub" id="l46-thal">1.19 &middot; Thalassemia</h3>
+  <ul>
+    <li><strong>Slide 85:</strong> mutations causing <strong>deficient synthesis of alpha or beta globins</strong>; there is a deficiency of hemoglobin and most erythroblasts die in the marrow. <strong>Main problem: the imbalance in expression leads to accumulation and precipitation of globin subunits</strong>, which causes red cell destruction in the <strong>spleen</strong>.</li>
+    <li><strong>Epidemiology (slide 86):</strong> <strong>alpha thalassemia</strong> is prevalent in Southern China, Malaysia, Thailand and the Mediterranean region, with mild forms in people of African origin. <strong>Asian ancestry</strong> often carries the <strong>alpha thalassemia 1 trait (&alpha;&alpha;/&ndash;&ndash;)</strong>, with a <strong>higher risk of hydrops fetalis</strong>; <strong>African ancestry</strong> more often the <strong>alpha thalassemia 2 trait (&alpha;&ndash;/&alpha;&ndash;)</strong>. (Beta thalassemia: &ldquo;generally in patients of African origin&rdquo;, a loose line; see the note above.)</li>
+    <li><strong>Clinical course (slide 87):</strong> variable by mutation; varying degrees of <strong>hemolytic anemia</strong> (generally &darr; hemoglobin, &darr; mean corpuscular volume, &darr; mean corpuscular hemoglobin, &darr; reticulocyte index (marrow failure), <strong>Coombs negative</strong>), <strong>iron overload</strong> (bold and underlined on the slide), <strong>splenomegaly</strong>, <strong>extramedullary hematopoiesis</strong>, <strong>jaundice</strong>, <strong>skeletal changes</strong>.</li>
+    <li><strong>Laboratory testing (slide 88):</strong> complete blood count, iron studies, reticulocyte count; hemoglobin analysis by <strong>hemoglobin electrophoresis</strong>; gene testing. <strong>Preconception testing and counseling</strong> is available with a family history.</li>
+    <li><strong>Genetics and treatment (slide 89):</strong> <strong>4 alpha globin genes and 2 beta globin genes</strong>; the phenotype depends on how many are mutated, from a <strong>silent carrier (&alpha;&ndash;/&alpha;&alpha;)</strong> to incompatible with life. <strong>Treatment is supportive</strong>: <strong>transfusion only when absolutely necessary (it can worsen iron overload)</strong>, <strong>folic acid</strong>, <strong>genetic counseling</strong>.</li>
+  </ul>
+  <figure class="fig"><img src="cms-e8-images/l46-s087-thalassemia-facies.jpg" loading="lazy" width="187" height="269" alt="Photograph of a young woman's face in three-quarter view with a prominent forehead, broad cheekbones and an overgrown upper jaw pushing the upper teeth forward."><figcaption>The <strong>skeletal changes</strong> of thalassemia: a prominent forehead and an overgrown upper jaw. <span class="cite">Slide 87</span></figcaption></figure>
+  <div class="cond"><h4>Thalassemia</h4>
+    <p class="give"><b>Defining feature:</b> marked microcytosis for the hemoglobin with a <b>normal or high red cell count</b>, Coombs-negative hemolysis, and diagnosis by <b>hemoglobin electrophoresis</b></p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>Deficient alpha or beta globin synthesis; the unpaired globin chains precipitate and the cells are destroyed in the spleen (slide 85).</dd>
+      <dt>Who gets it</dt><dd>Alpha: Southern China, Malaysia, Thailand, the Mediterranean; Asian ancestry often alpha thalassemia 1 trait (&alpha;&alpha;/&ndash;&ndash;, higher risk of hydrops fetalis), African ancestry alpha thalassemia 2 trait (&alpha;&ndash;/&alpha;&ndash;) (slide 86).</dd>
+      <dt>Risk factors</dt><dd>Family history (inherited globin gene mutations; 4 alpha and 2 beta genes) (slides 88&ndash;89).</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Varying hemolytic anemia, jaundice; severity depends on the mutation, from silent carrier to incompatible with life (slides 87, 89).</dd>
+      <dt>Physical exam findings</dt><dd>Splenomegaly, jaundice, skeletal changes (facial bone overgrowth) (slide 87).</dd>
+      <dt>Diagnostics / tests</dt><dd>CBC (low hemoglobin, MCV, MCH and reticulocyte index; normal or high red cell count), iron studies, reticulocyte count, Coombs negative; hemoglobin electrophoresis; gene testing (slides 13, 87&ndash;88).</dd>
+      <dt>First-line treatment</dt><dd>Supportive: transfusion only when absolutely necessary, folic acid, genetic counseling; preconception testing with a family history (slides 88&ndash;89).</dd>
+      <dt>Complications</dt><dd>Iron overload (worsened by transfusion), extramedullary hematopoiesis, hydrops fetalis (slides 86&ndash;87, 89).</dd>
+    </dl><p class="src">Slides 13, 85&ndash;89, 107</p></div>
+
+  <h3 class="sub" id="l46-sickle">1.20 &middot; Sickle cell anemia: genetics, distribution, screening and manifestations</h3>
+  <ul>
+    <li><strong>Slide 90:</strong> a <strong>mutation of a beta globin gene</strong>; hemoglobin S (HbS) is two alpha globins and two mutant beta globins (&alpha;<sub>2</sub>&beta;<sup>S</sup><sub>2</sub>). <strong>Under low oxygen tension, HbS polymerizes and the cell forms a sickle shape.</strong></li>
+    <li><strong>Distribution (slide 91):</strong> <strong>follows the malaria belt closely</strong>; heterozygotes (HbAS, sickle trait) are <strong>90% less likely to have severe malaria</strong> than people with only normal hemoglobin (HbA).</li>
+    <li><strong>Screening: four testing periods (slide 92):</strong>
+      <ol>
+        <li><strong>Preconception</strong>: identify parents whose children would be at risk.</li>
+        <li><strong>Prenatal</strong>: chorionic villus sampling (CVS) (the slide adds &ldquo;at 9wk gestation&rdquo;; see the note above).</li>
+        <li><strong>Neonatal</strong>: now done in <strong>all 50 states</strong>. Affected children who test negative or bypass screening usually present <strong>within the first two years</strong>; symptoms usually start <strong>around 5 months</strong> with the switch from fetal hemoglobin (HbF) to HbS: failure to thrive, pain, anemia, splenomegaly, multiple chronic infections, and <strong>swelling of the hands and feet (extremities) from vaso-occlusion</strong>.</li>
+        <li><strong>Post-natal.</strong></li>
+      </ol></li>
+    <li><strong>Clinical manifestations (slide 93):</strong>
+      <ul>
+        <li><strong>Anemia: almost universal</strong>, hematocrit usually 15&ndash;30%.</li>
+        <li><strong>Sickle cell pain crisis</strong>: microvascular occlusions; acute pain, tenderness, anxiety, tachycardia.</li>
+        <li><strong>Infarction of any tissue with vascular beds</strong>: splenic infarct, aseptic necrosis especially of the femoral or humeral heads, retinopathy, kidney disease.</li>
+        <li>Leg ulcers.</li>
+        <li><strong>Stroke (pediatric)</strong>, 300 times higher than unaffected children; 25% of patients with sickle cell anemia have a stroke (cerebrovascular accident (CVA)) by age 45.</li>
+        <li><strong>Priapism.</strong></li>
+        <li><strong>Increased susceptibility to encapsulated bacteria.</strong></li>
+      </ul></li>
+  </ul>
+  <figure class="fig"><img src="cms-e8-images/l46-s091-sickle-cell-map.jpg" loading="lazy" width="600" height="357" alt="World map shaded by births with sickle cell anemia per 100,000 births in 2015: darkest red across central and western sub-Saharan Africa, orange in parts of India, the Middle East and Brazil, green across most of Europe, Asia and Australia."><figcaption>Births with sickle cell anemia per 100,000 (2015): highest across sub-Saharan Africa, with India, the Middle East and Brazil next, the pattern of the <strong>malaria belt</strong>. <span class="cite">Slide 91</span></figcaption></figure>
+
+  <h3 class="sub" id="l46-acs">1.21 &middot; Acute chest syndrome and the complications of sickle cell disease</h3>
+  <ul>
+    <li><strong>Acute chest syndrome (slide 94):</strong> the <strong>leading cause of death in sickle cell disease (SCD)</strong>; often with an acute pain event; <strong>&gt;10% mortality in adults</strong>. The cause is multifactorial: infection, infarction, pulmonary embolism (PE), fat embolism; <strong>reactive lung disease increases the risk</strong>. <strong>Consider it with chest pain, fever, shortness of breath, signs of a respiratory illness, hypoxemia, and pulmonary infiltrates on a chest X-ray (CXR).</strong></li>
+    <li><strong>Complications diagram (slide 95)</strong>, acute and chronic, head to foot: neurocognitive dysfunction, meningitis, stroke; retinopathy, post-hyphema glaucoma, retinal infarction; pulmonary hypertension, acute chest syndrome, acute pain event; indirect hyperbilirubinemia, sickle hepatopathy, gallstones; cardiomegaly, diastolic heart failure; anemia, leukocytosis, septicemia; albuminuria, isosthenuria, kidney injury, papillary necrosis; functional asplenia, splenic infarction, splenic sequestration; delayed puberty, erectile dysfunction, priapism; complications of pregnancy; avascular necrosis, bone marrow infarction, osteomyelitis; skin ulcers; chronic pain.</li>
+  </ul>
+  <figure class="fig"><img src="cms-e8-images/l46-s094-acute-chest-syndrome-ct.jpg" loading="lazy" width="380" height="380" alt="Axial chest CT at the level of the heart showing patchy white consolidation and ground-glass areas in the back of both lungs."><figcaption>Chest CT in <strong>acute chest syndrome</strong>: patchy opacities in both lungs, the &ldquo;pulmonary infiltrates&rdquo; of the slide&rsquo;s definition. <span class="cite">Slide 94</span></figcaption></figure>
+  <figure class="fig"><img src="cms-e8-images/l46-s095-sickle-cell-complications.jpg" loading="lazy" width="640" height="464" alt="Body diagram with labels around it for acute complications (yellow boxes) and chronic complications (blue boxes) of sickle cell disease, from the brain and eyes down to the bones and skin."><figcaption>Acute (yellow) and chronic (blue) complications of sickle cell disease, organ by organ. <span class="cite">Slide 95 (text on slide 93)</span></figcaption></figure>
+
+  <h3 class="sub" id="l46-sickle-mgmt">1.22 &middot; Hemoglobin C, fetal hemoglobin and sickle cell management</h3>
+  <ul>
+    <li><strong>Hemoglobin C (slide 96):</strong> a <strong>different mutation in the beta globin gene</strong>; <strong>HbC does not polymerize</strong>. <strong>Hemoglobin SC disease</strong> (sickle cell SC) combines a &beta;<sup>C</sup> with a &beta;<sup>S</sup> (HbSC, &alpha;<sub>2</sub>&beta;<sup>S</sup>&beta;<sup>C</sup>) and generally runs a <strong>course between sickle cell anemia (SCA) and sickle cell trait (SCT)</strong>.</li>
+    <li><strong>Fetal hemoglobin (slide 97):</strong> HbF (&alpha;<sub>2</sub>&gamma;<sub>2</sub>) is normally <strong>&lt;1%</strong>. Some people have <strong>hereditary persistence of fetal hemoglobin (HPFH)</strong>; expression varies, but <strong>10&ndash;20% HbF seems to be a threshold for decreased severity</strong> of sickle cell disease or beta thalassemia.</li>
+    <li><strong>Management (slide 98):</strong>
+      <ul>
+        <li><strong>Disease modification:</strong> <strong>hydroxyurea raises fetal hemoglobin and reduces vaso-occlusive events</strong>.</li>
+        <li><strong>Red flags:</strong> fever, chest pain/hypoxemia or a new neurologic deficit need <strong>urgent assessment</strong>.</li>
+        <li><strong>Prevention:</strong> vaccinations, indicated <strong>childhood penicillin prophylaxis</strong> and infection education.</li>
+        <li><strong>Complications:</strong> transfusion/exchange for selected severe events; monitor alloimmunization and iron loading.</li>
+        <li><strong>Long-term:</strong> hematology follow-up, organ surveillance, consideration of curative therapies.</li>
+        <li>Prevention and emergency care vary with age, genotype and clinical history.</li>
+      </ul></li>
+  </ul>
+  <div class="cond"><h4>Sickle cell anemia</h4>
+    <p class="give"><b>Defining feature:</b> HbS polymerizes at low oxygen tension and sickles, causing <b>vaso-occlusive pain crises and infarction</b>; acute chest syndrome is the leading cause of death</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>A beta globin gene mutation making hemoglobin S (&alpha;<sub>2</sub>&beta;<sup>S</sup><sub>2</sub>), which polymerizes and sickles when oxygen is low (slide 90).</dd>
+      <dt>Who gets it</dt><dd>Populations along the malaria belt (sub-Saharan Africa highest); trait (HbAS) protects against severe malaria (slide 91).</dd>
+      <dt>Risk factors</dt><dd>Two sickle genes (both parents carriers, identified by preconception screening); reactive lung disease raises acute chest syndrome risk (slides 92, 94).</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Pain crisis (acute pain, tenderness, anxiety, tachycardia); in babies from about 5 months: failure to thrive, pain, swelling of the hands and feet, infections (slides 92&ndash;93).</dd>
+      <dt>Physical exam findings</dt><dd>Splenomegaly in infants; leg ulcers; priapism; retinopathy (slides 92&ndash;93).</dd>
+      <dt>Diagnostics / tests</dt><dd>Screening in four periods: preconception, prenatal (chorionic villus sampling), neonatal (all 50 states), post-natal (slide 92); hematocrit usually 15&ndash;30% (slide 93).</dd>
+      <dt>First-line treatment</dt><dd>Hydroxyurea (raises fetal hemoglobin, fewer vaso-occlusive events); vaccinations and childhood penicillin prophylaxis; urgent care for fever, chest pain/hypoxemia or neurologic deficit; transfusion/exchange for selected severe events; hematology follow-up (slide 98).</dd>
+      <dt>Complications</dt><dd>Acute chest syndrome (leading cause of death, &gt;10% adult mortality); stroke (300 times the childhood risk; 25% by age 45); splenic infarct, aseptic necrosis of the femoral or humeral heads, kidney disease; encapsulated bacterial infection; iron loading and alloimmunization from transfusion (slides 93&ndash;95, 98).</dd>
+    </dl><p class="src">Slides 90&ndash;98, 107</p></div>
+
+  <h3 class="sub" id="l46-hemochrom">1.23 &middot; Hemochromatosis: primary and secondary</h3>
+  <ul>
+    <li><strong>Slide 100:</strong> <strong>iron overload</strong>, excess iron deposited throughout the body. <strong>Asymptomatic early on</strong>; over time iron deposition causes oxidative stress, fibrosis and organ dysfunction, most commonly in the <strong>liver, heart, joints, endocrine organs and skin</strong>.
+      <ul>
+        <li><strong>Primary:</strong> an <strong>autosomal recessive</strong> disorder of the genes that control iron absorption.</li>
+        <li><strong>Secondary:</strong> excessive iron supplementation, chronic liver disease, anemia.</li>
+      </ul></li>
+    <li><strong>Signs and symptoms (slide 101):</strong> fatigue (the line is cut off on the slide); other symptoms by the organ affected: <strong>skin bronzing</strong> (face, neck, groin, extensor surfaces of the forearms and lower legs); <strong>joint pain</strong>, especially the <strong>second and third metacarpophalangeal joints</strong> and knees; <strong>cardiac</strong>: cardiomyopathy, chest pain, dyspnea on exertion.</li>
+    <li><strong>Clinical pearl (slide 102):</strong> iron in the <strong>pituitary</strong> causes <strong>hypogonadotropic hypogonadism</strong>: decreased libido, impotence or amenorrhea; on exam, <strong>small testes, gynecomastia, reduced body hair</strong>.</li>
+    <li><strong>Diagnosis (slide 103):</strong> the iron panel (see the table). <strong>Ferritin is an acute phase reactant</strong>, so look at the whole lab picture. Primary against secondary on liver biopsy with <strong>Prussian blue</strong> stain:
+      <ul>
+        <li><strong>Primary:</strong> iron accumulates in the liver cells (hepatocytes) with <strong>sparing of Kupffer cells</strong> until later in the disease.</li>
+        <li><strong>Secondary (parenteral iron overload):</strong> iron accumulates <strong>predominantly in Kupffer cells</strong>.</li>
+      </ul></li>
+    <li><strong>Management (slide 104, guideline summary):</strong>
+      <ul>
+        <li><strong>Primary disease: therapeutic phlebotomy</strong> with ferritin-guided follow-up.</li>
+        <li><strong>Family evaluation:</strong> consider <strong>HFE testing</strong> for appropriate patients with elevated transferrin saturation (TSAT)/ferritin; offer <strong>first-degree relative screening</strong>.</li>
+        <li><strong>Education:</strong> <strong>avoid iron supplements and excessive alcohol</strong>; individualize dietary advice.</li>
+        <li><strong>Secondary overload:</strong> treat the cause; consider <strong>chelation when phlebotomy is unsuitable</strong>.</li>
+        <li><strong>Prognosis:</strong> early treatment can prevent organ damage; assess fibrosis and monitor cirrhosis for <strong>liver cancer</strong>.</li>
+      </ul></li>
+  </ul>
+  <div class="tbl-wrap"><table>
+    <tr><th>Iron overload cut-offs (slide 103)</th><th>Result</th></tr>
+    <tr><td><strong>Ferritin &lt;300 micrograms per liter AND transferrin saturation (TSAT) &lt;45%</strong></td><td><strong>No iron overload</strong></td></tr>
+    <tr><td>Caution</td><td>Ferritin is an acute phase reactant: interpret with the entire lab picture</td></tr>
+  </table></div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Liver biopsy, Prussian blue stain (slide 103)</th><th>Where the iron sits</th></tr>
+    <tr><td>Primary hemochromatosis</td><td>Hepatic (liver cell) accumulation, <strong>Kupffer cells spared</strong> until later</td></tr>
+    <tr><td>Secondary (parenteral iron overload)</td><td><strong>Predominantly in Kupffer cells</strong></td></tr>
+  </table></div>
+  <div class="cond"><h4>Hemochromatosis (primary and secondary)</h4>
+    <p class="give"><b>Defining feature:</b> iron overload with fatigue, <b>skin bronzing</b>, second and third metacarpophalangeal joint pain, cardiomyopathy or hypogonadism; ferritin &ge;300 or transferrin saturation &ge;45% means overload is possible</p>
+    <dl class="eight">
+      <dt>Definition</dt><dd>Excess iron deposition causing oxidative stress, fibrosis and organ dysfunction; primary (autosomal recessive iron-absorption genes) or secondary (slide 100).</dd>
+      <dt>Who gets it</dt><dd>HFE hemochromatosis usually presents in adults (slide 105); first-degree relatives (slide 104).</dd>
+      <dt>Risk factors</dt><dd>Primary: inherited (autosomal recessive). Secondary: excessive iron supplementation, chronic liver disease, anemia (slide 100); transfusion in thalassemia (slide 89).</dd>
+      <dt>Classic signs &amp; symptoms</dt><dd>Asymptomatic early; fatigue; joint pain (second and third metacarpophalangeal joints, knees); chest pain, dyspnea on exertion; decreased libido, impotence, amenorrhea (slides 100&ndash;102).</dd>
+      <dt>Physical exam findings</dt><dd>Skin bronzing (face, neck, groin, extensor forearms and lower legs); small testes, gynecomastia, reduced body hair (slides 101&ndash;102).</dd>
+      <dt>Diagnostics / tests</dt><dd>Iron panel: ferritin &lt;300 micrograms per liter and transferrin saturation &lt;45% = no overload (ferritin is an acute phase reactant); HFE testing; liver biopsy with Prussian blue (primary spares Kupffer cells; secondary loads them) (slides 103&ndash;104).</dd>
+      <dt>First-line treatment</dt><dd>Primary: therapeutic phlebotomy with ferritin-guided follow-up; secondary: treat the cause, chelation when phlebotomy is unsuitable; avoid iron supplements and excessive alcohol; screen first-degree relatives (slide 104).</dd>
+      <dt>Complications</dt><dd>Organ dysfunction (liver, heart, joints, endocrine, skin); cardiomyopathy; hypogonadotropic hypogonadism; fibrosis, cirrhosis and liver cancer (slides 100&ndash;104, 107).</dd>
+    </dl><p class="src">Slides 100&ndash;105, 107</p></div>
+
+  <!-- ===================== OBJECTIVE 4: populations ===================== -->
+
+  <h3 class="sub" id="l46-lifespan">1.24 &middot; Across the lifespan, follow-up and prognosis</h3>
+  <div class="tbl-wrap"><table>
+    <tr><th>Cytopenias across the lifespan (slide 105): population</th><th>What changes clinically / care priority</th></tr>
+    <tr><td><strong>Infants</strong></td><td>Use neonatal CBC ranges; recognize inherited anemias and abnormal newborn screens; coordinate pediatric hematology.</td></tr>
+    <tr><td><strong>Child</strong></td><td>Assess diet and inherited anemia; consider rare genetic or transfusion-related iron overload; use weight-based treatment.</td></tr>
+    <tr><td><strong>Adolescent</strong></td><td>Heavy menses: check CBC/ferritin, treat iron deficiency and control bleeding; support adherence and transition to adult care.</td></tr>
+    <tr><td><strong>Adult</strong></td><td>Evaluate GI/gynecologic blood loss, pregnancy and CKD; HFE hemochromatosis usually presents in adults&mdash;screen family.</td></tr>
+    <tr><td><strong>Elderly</strong></td><td>Check iron/B12 deficiency, CKD, drugs and marrow disorders (MDS); tailor treatment to function, comorbidities and goals.</td></tr>
+  </table></div>
+  <p style="font-size:.85rem;color:var(--soft);">In the table: complete blood count (CBC), gastrointestinal (GI), chronic kidney disease (CKD), myelodysplastic syndrome (MDS), as on the slide.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Anemia: follow-up and prognosis (slide 106): condition</th><th>Patient education / referral</th><th>Prognosis</th></tr>
+    <tr><td><strong>Iron deficiency</strong></td><td>Identify blood loss; reinforce iron use; GI referral if indicated.</td><td>Usually resolves once the cause and iron stores are corrected.</td></tr>
+    <tr><td><strong>Chronic disease</strong></td><td>Treat inflammation; monitor CBC and iron; coordinate care.</td><td>Can persist while the underlying disease is active.</td></tr>
+    <tr><td><strong>Sideroblastic</strong></td><td>Remove triggers; refer if cause is unclear or transfusions needed.</td><td>Variable; clonal forms may require continued follow-up.</td></tr>
+    <tr><td><strong>Megaloblastic</strong></td><td>Treat B12/folate deficiency; monitor neurologic recovery.</td><td>Counts improve; delayed B12 treatment may leave deficits.</td></tr>
+    <tr><td><strong>Aplastic</strong></td><td>Urgent hematology; infection/bleeding precautions; discuss therapy.</td><td>Depends on severity and response to treatment.</td></tr>
+    <tr><td><strong>Renal (CKD)</strong></td><td>Monitor Hb, iron and BP; refer for ESA or advanced CKD.</td><td>Often chronic; may improve with iron or ESA as indicated.</td></tr>
+  </table></div>
+  <p style="font-size:.85rem;color:var(--soft);">Hemoglobin (Hb), blood pressure (BP), erythropoiesis-stimulating agent (ESA).</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Hemolysis &amp; iron overload: follow-up (slide 107): condition</th><th>Patient education / referral</th><th>Prognosis</th></tr>
+    <tr><td><strong>Sickle cell</strong></td><td>Vaccines, fever/chest pain precautions, hematology follow-up.</td><td>Lifelong disease; prevention reduces complications.</td></tr>
+    <tr><td><strong>Thalassemia</strong></td><td>Hematology for severe forms; iron monitoring; genetic counseling.</td><td>Trait often mild; severe forms need lifelong monitoring.</td></tr>
+    <tr><td><strong>G6PD deficiency</strong></td><td>Avoid oxidative triggers; seek care for jaundice or dark urine.</td><td>Usually favorable with trigger avoidance.</td></tr>
+    <tr><td><strong>Autoimmune hemolysis</strong></td><td>Treat cause; monitor relapse/thrombosis; hematology care.</td><td>Relapse may occur; outcome depends on cause and response.</td></tr>
+    <tr><td><strong>Hemochromatosis</strong></td><td>Iron monitoring/phlebotomy; family screening; avoid excess iron.</td><td>Early care limits injury; established cirrhosis may persist.</td></tr>
+  </table></div>
+  <p><strong>Population points elsewhere in the deck:</strong> infants and children &mdash; 9% of children aged 12&ndash;36 months are iron-deficient (slide 11), growth raises iron demand (slide 10), sickle cell disease presents around 5 months as HbF gives way to HbS and within the first two years (slide 92), pediatric stroke risk is 300 times higher (slide 93), childhood penicillin prophylaxis (slide 98), Fanconi anemia is diagnosed in childhood (slide 57), aplastic anemia peaks in childhood and at 20&ndash;25 (slide 55); adolescents &mdash; growth (slide 10), 2/3 of sideroblastic anemia presents in boys in childhood or adolescence (slide 30); adults &mdash; women of childbearing age 10% iron-deficient (slide 11); elderly &mdash; anemia of chronic disease (about 1 million Americans over 65, slide 24) and dietary folate deficiency (slide 42).</p>
+</section>
+
+<footer class="guide-foot">
+  <p style="text-align:center;margin:0 0 10px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+  <p style="text-align:center;">Built from your PAJ 5500 lecture decks for personal study &middot; Class of 2028.</p>
+  <p style="text-align:center;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+</footer>
+</main>
+</div>
+
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+
+<style>
+  .cond{border:1px solid var(--c-line);border-radius:10px;padding:12px 15px;margin:12px 0;
+        background:var(--c-ice);}
+  .cond h4{margin:0 0 8px;font-size:1.02rem;display:flex;align-items:baseline;gap:9px;
+           flex-wrap:wrap;}
+  .cond .u{font-size:.66rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+           padding:2px 8px;border-radius:999px;white-space:nowrap;}
+  .cond .u.emerg{background:#8c1d12;color:#fff;} .cond .u.urg{background:#7a5a08;color:#fff;}
+  .cond .u.rout{background:#3f5c46;color:#fff;}
+  .cond .give{margin:0 0 10px;padding:8px 11px;border-radius:8px;background:var(--c-gv-bg,#f7f0dc);
+              color:var(--c-gv-b,#5b4708);font-size:.9rem;}
+  dl.eight{display:grid;grid-template-columns:180px 1fr;gap:6px 14px;margin:0;}
+  dl.eight dt{font-size:.7rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+              color:var(--c-mute);padding-top:3px;}
+  dl.eight dd{margin:0;font-size:.9rem;line-height:1.55;}
+  .cond .src{margin:9px 0 0;font-size:.7rem;color:var(--c-mute);font-variant-numeric:tabular-nums;}
+  .cond figure.fig{float:right;max-width:190px;margin:0 0 10px 14px;}
+  .cond figure.fig img{width:100%;height:auto;border-radius:8px;border:1px solid var(--c-line);}
+  table.wr{width:100%;border-collapse:collapse;font-size:.88rem;}
+  table.wr th{text-align:left;background:var(--c-panel);color:var(--c-panel-fg);padding:8px;}
+  table.wr td{padding:8px;border-top:1px solid var(--c-line);}
+  .tbl-wrap{overflow-x:auto;margin:10px 0;}
+  @media (max-width:640px){dl.eight{grid-template-columns:1fr;gap:2px;}
+    dl.eight dd{margin-bottom:7px;} .cond figure.fig{float:none;max-width:100%;margin:0 0 10px;}}
+</style>
+</body>
+</html>

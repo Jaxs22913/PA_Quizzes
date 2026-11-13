@@ -20,8 +20,10 @@ recordings/cms-l46-cytopenias-hemochromatosis-ward-2026-11-12.flags.md.
 SLIDE CONFLICTS AND LOOSE SLIDES (slides win unless he corrected the slide out loud; memory truth_wins_on_conflict):
   s13 vs s27  s13 (differential of iron deficiency): anemia of chronic disease has LOW serum iron and transferrin
               saturation, normal or low TIBC, normal or increased ferritin. s27's comparison table gives the chronic
-              disease column serum iron as "up or down". Keyed: ferritin normal or up and TIBC down (both slides agree);
-              never key the serum iron direction of anemia of chronic disease alone.
+              disease column serum iron as "up or down" and TIBC "down" (s13: "normal or low"). Keyed: ferritin normal
+              or up (both slides agree) and TIBC low/decreased (s27, inside s13's "normal or low"; never keyed as
+              "normal"); never the serum iron direction of chronic disease alone.
+  s13 vs s87  thalassemia: s13 "reticulocytosis"; s87 "decreased reticulocyte index (marrow failure)". Never keyed.
   s79 vs s83  s79 lists antimalarials "(chloroquine, etc)" as a G6PD trigger; the s83 UpToDate table lists chloroquine
               under "safe for class II and III variants" (and s83 is a partial list from another source). Keyed:
               "antimalarials" as a class only; chloroquine is scope-banned. s83 is excluded from citation.
