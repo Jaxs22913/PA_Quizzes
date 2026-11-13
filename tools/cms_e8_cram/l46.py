@@ -7,8 +7,8 @@ cram_criteria_tables), each with a labeled memory aid. Cells are the slide wordi
 chorionic villus sampling week). The arrow tables (s27, s41, s52, s87) are read from the 1920 px renders; the text
 dump loses the arrows.
 
-The recording is not transcribed yet: the gold card lists the slides' OWN visual emphasis (bold, asterisks,
-underline, the slide 26 "most important" arrow). Fold the recording in when it lands.
+The gold card leads with the slides Prof. Ward flagged out loud (recording 2026-11-12, scope RECORDING notes), then
+the slides' own visual emphasis (bold, asterisks, underline, the slide 26 "most important" arrow).
 Slide typos corrected: benzene (s57), ankyrin and redox (s62), de novo, EBV, SARS-CoV-2 (s71), humeral (s93),
 cubilin (s43), shear stress (s61, s65), cytoplasmic (s67).
 """
@@ -172,7 +172,7 @@ CRITERIA = [
  "cols": ["#", "Common trigger (slide 79)"], "widths": ["10%", "90%"], "rows": [
   ("1", "<b>Fava beans</b>"),
   ("2", "Naphthalene (mothballs)"),
-  ("3", "Antimalarials"),
+  ("3", "Antimalarials (the slide names chloroquine; out loud, chloroquine does <b>not</b> carry the same risk)"),
   ("4", "Nitrofurantoin"),
   ("5", "Trimethoprim-sulfamethoxazole (Bactrim)"),
   ("6", "Methylene blue"),
@@ -182,9 +182,9 @@ CRITERIA = [
   ("Lag", "Drug-induced hemolysis is acute, of variable severity, with a <b>lag of 2&ndash;3 days</b>; no symptoms until exposed to oxidative stress"),
   ("Smear", "During an attack: <b>Heinz bodies and bite cells</b>"),
   ("Confirm", "A low G6PD level <b>roughly 8 weeks after an attack</b> (the slide asks &ldquo;Why not during an attack?&rdquo;)"),
-  {"note": "Slide conflict: slide 79 lists &ldquo;antimalarials (chloroquine, etc)&rdquo; while the slide 83 table lists chloroquine as safe for class II and III variants. Learn <b>antimalarials as a class</b>; no single antimalarial is keyed."},
+  {"note": "Slide conflict: slide 79 lists &ldquo;antimalarials (chloroquine, etc)&rdquo; while the slide 83 table lists chloroquine as safe for class II and III variants. Prof. Ward sided with the table out loud: &ldquo;don&rsquo;t just assume all anti-malarial medications carry that same risk.&rdquo; Some antimalarials trigger hemolysis, not every one; no antimalarial is keyed."},
  ], "mnemonic": {"hook": "Fried Nachos And Nuts Turn My Pee Questionable (dark urine is the symptom).",
-  "key": [["Fried", "Fava beans"], ["Nachos", "Naphthalene (mothballs)"], ["And", "Antimalarials"], ["Nuts", "Nitrofurantoin"],
+  "key": [["Fried", "Fava beans"], ["Nachos", "Naphthalene (mothballs)"], ["And", "Antimalarials (some; not chloroquine, per Prof. Ward)"], ["Nuts", "Nitrofurantoin"],
           ["Turn", "Trimethoprim-sulfamethoxazole"], ["My", "Methylene blue"], ["Pee", "Phenazopyridine"], ["Questionable", "Quinolones"]]}},
 
 {"id": "crit-l46-thal", "label": "Thalassemia: Alpha Genotypes and Labs", "color": L46C,
@@ -318,7 +318,15 @@ CRITERIA = [
 
 TOPICS = [
 {"id": "l46-emph", "label": "★ Emphasized — Cytopenias and Hemochromatosis", "color": "#b8860b", "rows": [
-  ["What this card is", "The <b>slides&rsquo; own emphasis</b> (bold, asterisks, underline, the slide 26 arrow) until the recording is folded in."],
+  ["What this card is", "First the slides <b>Prof. Ward flagged out loud</b> (recording, 12 November); then the <b>slides&rsquo; own emphasis</b> (bold, asterisks, underline, the slide 26 arrow). His rule: you are tested on what is on the slide."],
+  ["★ Said: iron deficiency diagnosis", "&ldquo;You guys want to know this slide&rdquo;: microcytosis, hypochromia, <b>&darr; ferritin, &darr; transferrin saturation, &uarr; total iron-binding capacity</b> (slide 15)."],
+  ["★ Said: chronic disease", "&ldquo;Want to pay attention to this slide?&rdquo;: <b>interleukin 6 &rarr; &uarr; hepcidin</b> (slide 23)."],
+  ["★ Said: B12 vs folate", "&ldquo;Definitely one that you guys want to pay attention to&rdquo;: <b>homocysteine</b> up in both; <b>methylmalonic acid</b> up in B12 only (slide 47)."],
+  ["★ Said: treatment slides", "Aplastic anemia treatment (slide 58); sickle cell management (slide 98); hemochromatosis treatment, <b>therapeutic phlebotomy</b> (slide 104); the lifespan slide (slide 105)."],
+  ["★ Said: smears", "Genetic hemolysis: upper smear = <b>spherocytes</b> (slide 75). G6PD: <b>bite cells</b> (left) and <b>Heinz bodies</b> (right); hemolysis is <b>intravascular and extravascular</b> (slides 77&ndash;78)."],
+  ["★ Said: thalassemia labs", "&ldquo;Did I tell you guys to pay attention to slide 88?&rdquo; (slide 88)."],
+  ["★ Said: acute chest", "&ldquo;A <b>chest x-ray is the first imaging study</b> if you&rsquo;re suspecting acute chest syndrome&rdquo; (slide 94)."],
+  ["Played down", "Luspatercept (slide 33): &ldquo;Sorry, don&rsquo;t know that drug.&rdquo; Chloroquine in G6PD: &ldquo;don&rsquo;t just assume all anti-malarial medications carry that same risk.&rdquo;"],
   ["★ Iron deficiency", "<b>Chronic blood loss is the most common cause in adults</b> (slide 10); asterisked: <b>nail bed changes (koilonychia), cheilosis, Plummer-Vinson syndrome</b> (slide 12)."],
   ["★ Ferritin trap", "Ferritin is an <b>acute phase reactant</b>: a normal or high ferritin does not exclude iron deficiency (slide 14)."],
   ["★ Oral iron", "<b>Ferrous sulfate</b>; side effect <b>constipation</b> (bold, underlined); the orange-juice preparation line is bold (slides 18&ndash;19)."],

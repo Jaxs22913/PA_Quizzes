@@ -43,7 +43,41 @@ SLIDE CONFLICTS AND LOOSE SLIDES (slides win unless he corrected the slide out l
               unaffected; X-linked recessive, so generally only males are affected" (s76, s79).
   s93         "humoral heads" (humeral). Questions say humeral head.
 
-RECORDING: (filled in from the transcripts; see the flags file)
+RECORDING: three Notability parts, our faster-whisper transcripts (medium.en) cms-l46-...-part{1,2,3}.transcript.txt
+(45:11 + 46:42 + 42:02). Notability's own ASR was not available for these notes (dump_notability_asr finds no plist),
+so there is no second transcript to cross-examine; quotes below are from ours, placed against the slide being taught.
+Part 1 starts at about 13:06 inside the iron deficiency material (slides 6-8 are only partly on tape). Lecture ended
+early ("We got out of here a little early"). Flags file: recordings/cms-l46-cytopenias-hemochromatosis-ward-2026-11-12.flags.md.
+He teaches well beyond the slides (hepcidin/ferroportin, linezolid, copper/zinc, chelation at a lead level of 45,
+CKD iron thresholds, B12 and folate dosing schedules, aplastic severity criteria, immunosuppressive therapy, the
+newborn-to-adult ferritin cut-offs by sex): none of that is keyed (slides only).
+
+  Slide flags he gave out loud ([part m]):
+    s15 IDA diagnosis       [p1 7]  "All right, you guys want to know this slide here?"
+    s23 ACD mechanism       [p1 24] "Want to pay attention to this slide?"
+    s47 homocysteine / MMA  [p2 11] "This slide is definitely one that you guys want to pay attention to."
+    s58 aplastic treatment  [p2 26] "All right, be familiar with this slide here."
+    s75 genetic causes      [p2 45] "Be familiar with this slide." (names the upper smear's cells spherocytes)
+    s77-78 G6PD             [p3 1]  "Be familiar with Heinz bodies, what they are, what they represent, and know how ...
+                                     intravascular and extravascular." (left = bite cells, right = Heinz bodies)
+    s88 thalassemia labs    [p3 12-14] "Be familiar with our lab testing." ... "Did I tell you guys to pay attention to slide 88? Yeah"
+    s94 acute chest         [p3 22-23] "Be familiar with our treatments" ... "A chest x-ray is the first imaging study if you're
+                                     suspecting acute chest syndrome."
+    s98 sickle management   [p3 29] "Be familiar with the management here."
+    s104 hemochromatosis tx [p3 34] "Be familiar with treatments here." (therapeutic phlebotomy)
+    s105 lifespan table     [p3 36] "I want to be familiar with this slide, too."
+  Spoken corrections / caveats:
+    s79 vs s83 chloroquine  [p3 2-3] "Chloroquine is a standard regimen. Does not have the same risk as the other medications,
+                                     so don't just assume all anti-malarial medications carry that same risk." He sided with the
+                                     s83 table: chloroquine stays banned, and the one vignette keyed "Antimalarials" (as a class)
+                                     is HELD (below); antimalarials are never keyed as a class trigger.
+    s86 beta thalassemia    [p3 10] "Beta is common in Mediterranean, Middle Eastern, South Asian" (the slide says African origin):
+                                     beta ancestry stays unkeyed.
+    s27 serum iron          [p1 31] "Serum iron's low in both" (the table's chronic disease "up or down"): still unkeyed.
+    s34 stippling           [p2 0]  "You also can see stippling in thalassemia ... absence of basophilic stippling does not ...
+                                     exclude lead exposure."
+    s33 luspatercept        [p1 43] "Sorry, don't know that drug." (de-emphasized; no item keys it)
+  Minutes taught per topic: TOPIC_MINUTES below (teaching minutes, digressions on history-taking removed).
 """
 
 DECK = "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx"
@@ -145,7 +179,26 @@ NAMED = {
 }
 
 # Minutes taught per pool topic: filled from the recording (see RECORDING); weights the forms.
-TOPIC_MINUTES = {}
+TOPIC_MINUTES = {
+    T_APPROACH: 1.5,     # p1 0-1 (the opening minutes before 13:06 are not on tape)
+    T_IDA: 5.0,          # p1 1-6
+    T_IDA_DX: 3.5,       # p1 6-12 less ~3 min on asking about blood thinners
+    T_IDA_TX: 10.5,      # p1 12-24 less ~1.5 min on heavy menses / quality of life
+    T_ACD: 6.0,          # p1 24-32 less ~2 min on vague answers ("a while")
+    T_SIDERO: 16.0,      # p1 32-45 sideroblastic + p2 0-3 lead
+    T_MACRO: 4.0,        # p2 3-7
+    T_B12: 8.0,          # p2 7-15
+    T_CKD: 5.0,          # p2 15-20
+    T_APLASTIC: 8.0,     # p2 20-28
+    T_LEUKO: 3.5,        # p2 28-31.5
+    T_HEMOLYSIS: 8.5,    # p2 31.5-40
+    T_AIHA: 5.0,         # p2 40-45
+    T_G6PD: 10.0,        # p2 45-47 (s75) + p3 0-8
+    T_THAL: 8.0,         # p3 8-16
+    T_SICKLE: 13.5,      # p3 16-29.5
+    T_HEMOCHROM: 6.5,    # p3 29.5-36
+    T_LIFESPAN: 6.0,     # p3 36-42
+}
 
 # (label, stem regex, key regex, minimum per form). The pool must hold at least twice the minimum of each.
 REQUIRED_IO = [
@@ -172,4 +225,5 @@ REQUIRED_VIG = [
 HELD = [
     "A 64-year-old man has had neutropenia on three complete blood counts over 4 months",   # 8664085c: explanation D claim
     "A 34-year-old woman with acute leukemia on chemotherapy has an absolute neutrophil count of 300",  # ce51733b: stem gives D away
+    "A 35-year-old man with known glucose-6-phosphate dehydrogenase deficiency is planning a trip to a malaria-endemic region",  # keys antimalarials as a class; Ward [p3 2-3] said not all antimalarials carry the risk
 ]
