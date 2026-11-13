@@ -78,7 +78,7 @@ html = render(
         (("<b>criteria, scores and classifications</b>" if focus else "<b>Criteria, scores and classifications first</b>") + ": one table per set from the slides, each with "
          "a labeled memory aid. " if criteria else "") +
         "Hematology Block Exam, condensed from the Exam 8 study guide. Lectures covered: %s. "
-        "Each lecture opens with a gold card of what its lecturer stressed (starred; from the recording once it is in); every "
+        "Each lecture opens with a gold card of what its lecturer stressed (starred; from the lecture recording); every "
         "fact still comes from the slides." % covered,
     topics=topics,
     guide_href="cms-exam-8-study-guide.html",

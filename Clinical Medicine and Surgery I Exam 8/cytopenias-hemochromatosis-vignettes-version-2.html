@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));window.__paErrQ=[];['error','unhandledrejection'].forEach(function(t){addEventListener(t,function(e){var q=window.__paErrQ;if(q&&!q.done)q.push(e)})});</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #717533; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c9962a; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cytopenias and Hemochromatosis Vignettes 2 — CMS I Exam 8</title>
+<style>
+  :root{
+    --navy:#46491c; --indigo:#717533; --gold:#c9962a; --ice:#f8f8ee;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#46491c;--gold-l:#c9962a;--indigo-l:#717533;--navy:#acb181;--indigo:#8b904d;--gold:#c9962a;--ice:#232509;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#8b904d;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#46491c;--indigo-t:#717533;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Cytopenias &amp; Hemochromatosis &mdash; Vignettes 2</h1>
+    <div class="sub">Clinical Medicine and Surgery I &middot; Exam 8 &middot; Lecture 46</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Size the cells first (the mean corpuscular volume), then read the iron panel or the hemolysis labs, then check the medication list for anything that caused it or must be avoided. Every laboratory value comes with its normal range; work the absolute neutrophil count from the white count and differential yourself.</p>
+    <div class="chips"><span class="chip">Read the iron panel</span><span class="chip">Small or large cells</span><span class="chip">Count the neutrophils</span><span class="chip">Drugs to avoid</span><span class="chip">Hemolysis labs</span><span class="chip">Comorbidities</span><span class="chip">Across the lifespan</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Hemolysis: labs and workup", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias and hemochromatosis: 10. Anemia due to increased destruction of red blood cells 11. Sickle cell anemia 12. Thalassemia 13. G6PD (glucose-6-phosphate dehydrogenase) deficiency 14. Autoimmune hemolytic anemias 15. Hemochromatosis: primary and secondary", "q": "A 52-year-old woman has fatigue and dark urine. Hemoglobin is 8.8 g/dL (normal 12.0-16.0 g/dL), reticulocytes 6% (normal 0.5-2.5%), and her peripheral smear shows many schistocytes (red blood cell fragments). Which process is most likely?", "opts": [["Sideroblastic anemia", "The hallmark finding of hemolysis is the presence of schistocytes, red blood cell fragments, and her smear shows many; nothing here points to sideroblastic anemia. Tell: her smear shows broken circulating red cells, the hallmark of hemolysis."], ["Aplastic anemia", "Aplastic anemia is marrow failure and would bring a low reticulocyte count. Tell: her reticulocytes are high and her smear shows fragments, so cells are being destroyed, not under-produced."], ["Hemolysis", "Correct. Schistocytes, red blood cell fragments, are the hallmark finding of hemolysis on the peripheral smear. Her anemia with a high reticulocyte count and dark urine fits premature destruction of red cells with a compensating marrow."], ["Megaloblastic anemia", "Her smear shows many schistocytes, and the hallmark finding of hemolysis is the presence of schistocytes; her high reticulocyte count also prompts consideration of hemolysis, not megaloblastic anemia. Tell: fragmented red cells mean destruction."]], "c": 2, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 61, 68, 70", "slot": "test finding", "lead": "diagnosis", "qid": "ww4nlm"}, {"topic": "Autoimmune hemolytic anemia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias and hemochromatosis: 10. Anemia due to increased destruction of red blood cells 11. Sickle cell anemia 12. Thalassemia 13. G6PD (glucose-6-phosphate dehydrogenase) deficiency 14. Autoimmune hemolytic anemias 15. Hemochromatosis: primary and secondary", "q": "A 46-year-old woman with autoimmune hemolytic anemia arrives confused, with heart rate 128/min and blood pressure 82/50 mm Hg. Hemoglobin is 5.2 g/dL (normal 12.0-16.0 g/dL), down from 7.9 g/dL 2 days ago. What is the most appropriate next step?", "opts": [["Stabilize; call the blood bank", "Correct. Immediate stabilization is considered when hemoglobin is below 6 g/dL, falls rapidly or the patient is unstable, and she has all three. Contact the blood bank early."], ["Begin outpatient steroids", "Glucocorticoids are the initial disease treatment, but she is hypotensive and confused with a hemoglobin of 5.2 g/dL. Tell: instability comes first, stabilization and the blood bank."], ["Schedule elective splenectomy", "Splenectomy does not address her unstable state right now. Tell: a hemoglobin below 6 g/dL with instability needs immediate stabilization and blood bank contact."], ["Recheck counts in 1 week", "Waiting ignores a hemoglobin under 6 g/dL that fell 2.7 g/dL in 2 days in an unstable patient. Tell: any of those three findings is a reason to consider immediate stabilization."]], "c": 0, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slide 74", "slot": "escalation", "lead": "next step", "qid": "1e3k4m0"}, {"topic": "G6PD deficiency", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias and hemochromatosis: 10. Anemia due to increased destruction of red blood cells 11. Sickle cell anemia 12. Thalassemia 13. G6PD (glucose-6-phosphate dehydrogenase) deficiency 14. Autoimmune hemolytic anemias 15. Hemochromatosis: primary and secondary", "q": "A 24-year-old man with known glucose-6-phosphate dehydrogenase deficiency has 2 days of dysuria and urinary frequency, and his urinalysis confirms a urinary tract infection. Which of these medications should be avoided?", "opts": [["Oral hydration", "Hydration is part of the treatment of a hemolytic attack in this enzyme deficiency, not a trigger. Tell: the danger lies in the oxidant drugs on the trigger list, such as nitrofurantoin."], ["Amoxicillin", "Amoxicillin does not appear on the list of common triggers. Tell: of these choices, only nitrofurantoin is a listed oxidant trigger for hemolysis."], ["Nitrofurantoin", "Correct. Nitrofurantoin is on the list of common triggers of acute hemolytic anemia in glucose-6-phosphate dehydrogenase deficiency, with trimethoprim-sulfamethoxazole, quinolones and phenazopyridine. His urinary tract infection needs an agent that is not an oxidant trigger."], ["Cephalexin", "Cephalexin is not on the list of common triggers, which names nitrofurantoin, trimethoprim-sulfamethoxazole, quinolones and phenazopyridine among the urinary drugs. Tell: the drug to avoid here is the listed oxidant, nitrofurantoin."]], "c": 2, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slide 79", "slot": "avoid", "lead": "avoid", "qid": "v59t4b"}, {"topic": "Iron deficiency: causes and presentation", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure", "q": "A 74-year-old man with atrial fibrillation takes apixaban. He has fatigue and dark stools; hemoglobin is 6.9 g/dL (normal 13.5-17.5 g/dL), mean corpuscular volume 68 fL (normal 80-100 fL) and ferritin 4 ng/mL (normal 15-200 ng/mL). Besides a gastrointestinal consult, what should be done about his anticoagulant?", "opts": [["Stop it after consulting cardiology", "Correct. His microcytic anemia with a very low ferritin is severe iron deficiency, likely from gastrointestinal blood loss. Anticoagulants are discontinued when the anemia is severe, in consultation with cardiology, because his atrial fibrillation is the reason he takes one."], ["Continue it and start oral iron alone", "Iron replacement is needed, but continuing the anticoagulant while severe iron deficiency and probable bleeding go on ignores the advice to stop it when anemia is severe. Tell: with probable ongoing bleeding, the anticoagulant is reconsidered with cardiology, not left unchanged."], ["Add aspirin for stroke protection", "Adding another antithrombotic agent to a man with dark stools and severe iron deficiency adds bleeding risk. Tell: in severe anemia the anticoagulant is stopped, with cardiology's input, not reinforced."], ["Continue it with erythropoietin", "Erythropoietin supplementation belongs to anemia of chronic disease; his very low ferritin is iron deficiency from blood loss. Tell: the fix for severe iron deficiency on an anticoagulant is stopping the anticoagulant with cardiology and replacing iron."]], "c": 0, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slide 17", "slot": "avoid", "lead": "next step", "qid": "z1ngpv"}, {"topic": "Leukopenia and neutropenia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for leukopenia", "q": "A 38-year-old man recovering from a viral illness has a white blood cell count of 3,000 cells per microliter (normal 4,500-11,000). His differential shows neutrophils 35% (normal 40-70%), bands 5% (normal 0-5%), lymphocytes 52% and monocytes 8%. What is his absolute neutrophil count?", "opts": [["150 cells per microliter", "150 is the bands alone, 3,000 x 5%, leaving out the mature neutrophils. Tell: the formula adds the neutrophil and band percentages, 35 + 5 = 40%, before multiplying."], ["1,050 cells per microliter", "1,050 is the neutrophils alone, 3,000 x 35%, with the bands left out. Tell: bands are added to neutrophils, so the count is 3,000 x 40% = 1,200."], ["1,200 cells per microliter", "Correct. Absolute neutrophil count = white count x (neutrophils + bands)% / 100 = 3,000 x (35 + 5) / 100 = 1,200 cells per microliter, which is mild neutropenia (1,000-1,500). Transient viral leukopenia often resolves after recovery."], ["1,560 cells per microliter", "1,560 is the lymphocyte count, 3,000 x 52%, which is not part of the absolute neutrophil count. Tell: only neutrophils and bands enter the formula."]], "c": 2, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slide 59", "slot": "test finding", "lead": "classify", "qid": "cn261x"}, {"topic": "Iron deficiency: diagnosis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure", "q": "A 58-year-old man has a hemoglobin of 11.0 g/dL (normal 13.5-17.5 g/dL), mean corpuscular volume 78 fL (normal 80-100 fL), ferritin 140 ng/mL (normal 15-200 ng/mL) and total iron-binding capacity 260 mcg/dL (normal 250-450 mcg/dL). He has no known infection or autoimmune disease. Which test helps decide whether inflammation is affecting his ferritin?", "opts": [["Fecal occult blood test and urinalysis", "A fecal occult blood test and urinalysis look for a source of blood loss once iron deficiency is suspected; they do not reveal inflammation behind a normal ferritin. Tell: inflammation is measured with a sedimentation rate or C-reactive protein."], ["Bone marrow aspirate for ring sideroblasts", "A bone marrow aspirate is not a test for inflammation behind a ferritin value; when inflammation is not clinically known, a sedimentation rate and/or C-reactive protein can help. Tell: the question is whether ferritin is an inflamed reading, which blood markers of inflammation answer."], ["Repeat ferritin after a month of iron", "Repeating ferritin after empiric iron does not tell whether inflammation is raising it, because ferritin itself is an acute phase reactant. Tell: check the inflammation directly with a sedimentation rate or C-reactive protein."], ["Sedimentation rate or C-reactive protein", "Correct. Ferritin is an acute phase reactant, so an inflammatory condition can lift it into the normal range even with iron deficiency; a normal ferritin does not exclude iron deficiency. When inflammation is not clinically known, an erythrocyte sedimentation rate and/or C-reactive protein can help."]], "c": 3, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 14, 25", "slot": "initial test", "lead": "test", "qid": "d3omyl"}, {"topic": "Vitamin B12 and pernicious anemia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure", "q": "A 51-year-old woman has confirmed B12 deficiency with a megaloblastic anemia. Pernicious anemia is suspected. Which blood test is specific for pernicious anemia, though not sensitive?", "opts": [["Homocysteine level", "Homocysteine rises in both B12 and folate deficiency because its metabolism needs both vitamins. Tell: it cannot name the cause of her B12 deficiency; anti-intrinsic factor antibodies point to pernicious anemia."], ["Anti-intrinsic factor antibodies", "Correct. Pernicious anemia is an autoimmune reaction against parietal cells and/or intrinsic factor. Anti-intrinsic factor antibodies can sometimes be detected in the blood and are specific but not sensitive, so a positive result supports the diagnosis while a negative one does not exclude it."], ["Anti-parietal cell antibodies", "Anti-parietal cell antibodies may be present but are neither sensitive nor specific for pernicious anemia. Tell: the antibody that is specific is the one against intrinsic factor."], ["Methylmalonic acid level", "Methylmalonic acid confirms B12 deficiency, rising with B12 but not folate deficiency, and her deficiency is already confirmed. Tell: it proves the vitamin is low, not that the cause is autoimmune."]], "c": 1, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 44, 47, 48, 50", "slot": "test finding", "lead": "test", "qid": "4e7h8j"}, {"topic": "Sickle cell disease", "io": "Identify medical care strategies for cytopenias and hemochromatosis in the lecture topic list for the following populations. 1. infants 2. child 3. adolescent 4. adult 5. elderly", "q": "A 2-year-old girl with sickle cell disease is seen for a well-child visit. Her parents ask what can prevent serious infections, since children with her disease are susceptible to encapsulated bacteria. Which preventive plan is indicated?", "opts": [["Penicillin and vaccines", "Correct. Sickle cell disease brings increased susceptibility to encapsulated bacteria, so prevention is vaccinations, indicated childhood penicillin prophylaxis and infection education. Prevention and emergency care vary with age, genotype and clinical history."], ["Iron supplements", "Iron does not prevent infection, and transfusions in sickle cell disease call for monitoring of iron loading. Tell: infection prevention in a child with sickle cell disease is penicillin plus vaccines."], ["Postpone vaccines", "Vaccinations are part of prevention in sickle cell disease, not something to postpone. Tell: vaccines and penicillin prophylaxis protect against encapsulated bacteria."], ["Hydroxyurea instead of prophylaxis", "Hydroxyurea raises fetal hemoglobin and reduces vaso-occlusive events but does not replace infection prevention. Tell: the prevention line names vaccines and childhood penicillin prophylaxis."]], "c": 0, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 93, 98, 107", "slot": "first-line", "lead": "treatment", "qid": "dkndof"}, {"topic": "Sideroblastic anemia and lead poisoning", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure", "q": "A 7-year-old boy has pallor and fatigue; his maternal uncle had the same anemia. His hemoglobin is 9.0 g/dL (normal 11.5-15.5 g/dL), and his marrow shows ring sideroblasts (iron-containing mitochondria in a ring around the nucleus). He takes no medications and has no lead exposure. Which type of sideroblastic anemia fits best?", "opts": [["Acquired reversible, from lead", "Lead poisoning is a reversible cause of sideroblastic anemia, but he has no lead exposure. Tell: an affected maternal uncle points to inheritance, usually X-linked."], ["Hereditary, usually X-linked", "Correct. Sideroblastic anemia has three types: hereditary (usually X-linked), acquired (usually myelodysplastic syndrome) and acquired reversible (alcohol, drugs, copper deficiency, hypothermia, lead). About two thirds of cases present in males in early childhood or adolescence; an affected boy with an affected maternal uncle and no exposures fits the hereditary type."], ["Acquired, from myelodysplasia", "The acquired type is usually associated with myelodysplastic syndrome, a marrow disorder that would not explain an affected maternal uncle. Tell: a young boy with family history points to the hereditary, X-linked type."], ["Acquired reversible, from a drug", "Drugs such as isoniazid or chlorambucil cause the acquired, reversible type, but he takes no medications. Tell: no drug exposure plus family history means hereditary."]], "c": 1, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 29, 30", "slot": "etiology", "lead": "classify", "qid": "1tv1vqf"}, {"topic": "Iron deficiency: iron replacement", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure", "q": "A 50-year-old woman with a microcytic anemia (hemoglobin 9.8 g/dL, normal 12.0-15.5 g/dL; mean corpuscular volume 74 fL, normal 80-100 fL) took oral iron correctly for 3 months with no rise in hemoglobin. Colonoscopy and endoscopy were normal, and her iron studies are equivocal, so the diagnosis is not confirmed. Which referral is most appropriate?", "opts": [["Cardiology referral", "Cardiology is consulted when an anticoagulant may need to be stopped in severe iron deficiency; no anticoagulant is mentioned. Tell: an unconfirmed diagnosis with no response to iron goes to hematology."], ["Dietitian referral", "Diet is unlikely to explain a microcytic anemia that did not respond to 3 months of correctly taken iron. Tell: failure of oral iron with an unclear diagnosis is a hematology question."], ["Repeat gastroenterology referral", "Her colonoscopy and endoscopy were already normal; the gut consult is for a gastrointestinal bleed. Tell: the open questions are the diagnosis and the lack of response, which hematology addresses."], ["Hematology referral", "Correct. Referral to hematology is recommended when the diagnosis of iron deficiency is not confirmed or the patient is unresponsive to oral iron therapy. She has both: no response after 3 months of correct use and equivocal iron studies."]], "c": 3, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slide 17", "slot": "referral", "lead": "referral", "qid": "19589a8"}, {"topic": "Anemia of chronic kidney disease", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure", "q": "A 71-year-old man with advanced chronic kidney disease has a hemoglobin of 8.9 g/dL (normal 13.5-17.5 g/dL) despite iron repletion, and his primary care clinician is unsure whether to begin an erythropoiesis-stimulating agent. Which referral is most appropriate?", "opts": [["Gastroenterology", "Gastroenterology referral is for iron deficiency when a gastrointestinal blood loss source must be found. Tell: his iron is repleted and the open question is the erythropoiesis-stimulating agent, a nephrology decision."], ["Oncology", "Oncology joins hematology for aplastic anemia, which needs urgent consultation and a marrow biopsy. Tell: his anemia is explained by advanced kidney disease, and the referral for agent decisions is nephrology."], ["Nephrology", "Correct. Nephrology referral is advised for advanced chronic kidney disease, erythropoiesis-stimulating agent decisions or uncertainty, and he has all three. Anemia of chronic kidney disease is often chronic and may improve with iron or an erythropoiesis-stimulating agent as indicated."], ["Hematology", "Hematology is the referral for aplastic anemia and for persistent or unexplained severe neutropenia. Tell: his anemia follows his kidney disease, and agent decisions belong to nephrology."]], "c": 2, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 53, 58, 59, 106", "slot": "referral", "lead": "referral", "qid": "2sviur"}, {"topic": "Anemia: indices and first approach", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure", "q": "A 29-year-old woman has fatigue. Her hemoglobin is 10.1 g/dL (normal 12.0-15.5 g/dL), mean corpuscular volume 71 fL (normal 80-100 fL) and mean corpuscular hemoglobin 22 pg (normal 27-31 pg). How should her anemia be classified by these indices?", "opts": [["Normocytic and normochromic", "Normocytic would need a mean corpuscular volume of 80-100 fL and normochromic a mean corpuscular hemoglobin of 27-31 pg; her 71 fL and 22 pg are both below range. Tell: two low indices mean small, pale cells."], ["Macrocytic and normochromic", "A macrocytic, normochromic anemia has a mean corpuscular volume above 100 fL, as in megaloblastic anemia; hers is 71 fL. Tell: macrocytic means big cells, and her cells are small."], ["Microcytic and hyperchromic", "Her cells are microcytic, but a mean corpuscular hemoglobin of 22 pg, below the 27-31 pg range, is hypochromic, not hyperchromic. Tell: less hemoglobin per cell means paler cells."], ["Microcytic and hypochromic", "Correct. Her mean corpuscular volume of 71 fL is below 80 fL, which is microcytosis, and her mean corpuscular hemoglobin of 22 pg is below 27 pg, which is hypochromia (pale cells). That microcytic, hypochromic pattern is the complete blood count of iron deficiency and of its differential."]], "c": 3, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 7, 15", "slot": "test finding", "lead": "classify", "qid": "h5qmty"}, {"topic": "Macrocytic anemia and folate", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure", "q": "A 58-year-old woman with untreated hypothyroidism has fatigue and a hemoglobin of 10.8 g/dL (normal 12-16 g/dL). Her mean corpuscular volume is 106 fL (normal 80-100 fL). B12, folate, homocysteine and methylmalonic acid levels are normal, and the smear shows no macro-ovalocytes or hypersegmented neutrophils. How is her anemia best classified?", "opts": [["Megaloblastic macrocytic", "Megaloblastic anemia is macrocytosis with macro-ovalocytes and hypersegmented neutrophils from B12 or folate deficiency. Tell: her smear lacks both features and her vitamin and metabolite levels are normal."], ["Microcytic", "A microcytic anemia has a mean corpuscular volume below 80 fL, as in iron deficiency or lead poisoning. Tell: her volume is 106 fL, above the normal range, so it is macrocytic."], ["Normocytic", "A normocytic anemia keeps the mean corpuscular volume within 80-100 fL, as in anemia of chronic kidney disease. Tell: her 106 fL is above 100, which defines macrocytosis."], ["Non-megaloblastic macrocytic", "Correct. A mean corpuscular volume above 100 fL makes her anemia macrocytic, and normal B12, folate and metabolite levels with no megaloblastic smear changes make it non-megaloblastic. Hypothyroidism is a listed non-megaloblastic cause, and such causes usually keep the volume below 115 fL, as hers is."]], "c": 3, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 7, 38, 39, 47, 52", "slot": "differential", "lead": "classify", "qid": "1goualn"}, {"topic": "Iron deficiency: iron replacement", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure", "q": "A 28-year-old woman with iron deficiency anemia (hemoglobin 10.6 g/dL, normal 12.0-15.5 g/dL) asks how to take her liquid ferrous sulfate so that she absorbs it best with the fewest side effects. Which instruction is most appropriate?", "opts": [["Empty stomach with orange juice", "Correct. The better-absorbed oral preparation is taken in the morning on an empty stomach with a full glass of orange juice: its low pH, citric acid and vitamin C help uptake and reduce exposure of free iron to the rest of the gut, limiting side effects."], ["With a meal and a glass of milk", "Taking ferrous sulfate with food reduces side effects but also decreases absorption, and calcium works against iron too. Tell: the instruction that helps both absorption and side effects is an empty stomach with orange juice."], ["At bedtime with an antacid tablet", "Antacids (calcium) are a dietary cause of iron deficiency, so taking iron with one undermines absorption. Tell: the preferred partner is acidic orange juice, in the morning."], ["With breakfast and a cup of tea", "Tea drinking is a dietary factor behind iron deficiency, and food lowers absorption. Tell: swap the tea and meal for an empty stomach and a full glass of orange juice."]], "c": 0, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 18, 19", "slot": "education", "lead": "education", "qid": "1jixvyz"}, {"topic": "Sickle cell disease", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias and hemochromatosis: 10. Anemia due to increased destruction of red blood cells 11. Sickle cell anemia 12. Thalassemia 13. G6PD (glucose-6-phosphate dehydrogenase) deficiency 14. Autoimmune hemolytic anemias 15. Hemochromatosis: primary and secondary", "q": "A 21-year-old woman with sickle cell disease has had four vaso-occlusive pain crises requiring admission in the past year. She is stable between crises and wants a treatment that changes the course of her disease. Which drug is indicated?", "opts": [["Methylene blue", "Methylene blue is a listed trigger of hemolysis in glucose-6-phosphate dehydrogenase deficiency and is not a sickle cell therapy. Tell: disease modification is hydroxyurea."], ["Folic acid", "Folic acid is part of supportive care in thalassemia and does not raise fetal hemoglobin. Tell: the drug that reduces vaso-occlusive events is hydroxyurea."], ["Hydroxyurea", "Correct. Disease modification in sickle cell disease is hydroxyurea, which raises fetal hemoglobin and reduces vaso-occlusive events. Her repeated crises are exactly what it is used to reduce; fetal hemoglobin of 10 to 20 percent lessens clinical severity."], ["Penicillin", "Penicillin prophylaxis is childhood prevention against encapsulated bacteria. Tell: her problem is recurrent vaso-occlusion, which the fetal hemoglobin-raising drug reduces."]], "c": 2, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slide 98", "slot": "agent/regimen", "lead": "treatment", "qid": "1yk2gqj"}, {"topic": "Sickle cell disease", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias and hemochromatosis: 10. Anemia due to increased destruction of red blood cells 11. Sickle cell anemia 12. Thalassemia 13. G6PD (glucose-6-phosphate dehydrogenase) deficiency 14. Autoimmune hemolytic anemias 15. Hemochromatosis: primary and secondary", "q": "A 24-year-old man with sickle cell disease is admitted for a pain crisis. On day 2 he develops fever, chest pain, shortness of breath and hypoxemia, and his chest radiograph shows a new pulmonary infiltrate. Which complication does this represent?", "opts": [["Acute chest syndrome", "Correct. Acute chest syndrome should be considered in sickle cell disease with chest pain, fever, shortness of breath, hypoxemia and pulmonary infiltrates on a chest radiograph. It is often associated with an acute pain event, is the leading cause of death in sickle cell disease and carries more than 10 percent mortality in adults."], ["Splenic infarction", "Splenic infarct is a sickle cell infarction, but it does not produce hypoxemia and a lung infiltrate. Tell: chest pain, fever, hypoxemia and a new infiltrate define the chest complication."], ["Aseptic necrosis of the hip", "Aseptic necrosis of the femoral head causes joint pain, not fever with hypoxemia and an infiltrate. Tell: his findings are in the lungs."], ["Uncomplicated pain crisis", "A pain crisis brings pain, tenderness, anxiety and tachycardia, but not new hypoxemia with a pulmonary infiltrate. Tell: an infiltrate during a pain event means the crisis has become acute chest syndrome."]], "c": 0, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 93, 94", "slot": "complication", "lead": "complication", "qid": "1f24p5c"}, {"topic": "Aplastic anemia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure", "q": "A 22-year-old man has 3 weeks of fatigue, two recent bacterial infections, gum bleeding and petechiae. Hemoglobin is 7.8 g/dL (normal 13.5-17.5 g/dL), white blood cell count 1,600 cells per microliter (normal 4,500-11,000), platelets 18,000 per microliter (normal 150,000-450,000) and the reticulocyte count is low. The smear shows no hypersegmented neutrophils, and B12 and folate levels are normal. What is the most likely diagnosis?", "opts": [["Folate deficiency", "Folate deficiency causes a megaloblastic anemia with macro-ovalocytes and hypersegmented neutrophils. Tell: his folate is normal and his smear lacks the megaloblastic changes; his picture is all three lines failing."], ["Aplastic anemia", "Correct. He has pancytopenia, loss of all three cell lines, with recurrent infections from neutropenia, bleeding and petechiae from thrombocytopenia, and fatigue from anemia. Loss of hematopoietic stem cells defines aplastic anemia, and half of cases occur in the first three decades, with a small peak between ages 20 and 25."], ["Vitamin B12 deficiency", "B12 deficiency is a megaloblastic anemia that can affect other myeloid lines to a lesser degree, with neurologic findings as its distinguishing feature. Tell: his B12 is normal and his smear has no hypersegmented neutrophils."], ["Anemia of chronic kidney disease", "Anemia of chronic kidney disease lowers the red cell line through low erythropoietin and is almost universal in dialysis patients. Tell: nothing in his history points to kidney disease, and his white cells and platelets are low too."]], "c": 1, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 39, 52, 55, 58", "slot": "manifestation", "lead": "diagnosis", "qid": "14l9hcv"}, {"topic": "G6PD deficiency", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias and hemochromatosis: 10. Anemia due to increased destruction of red blood cells 11. Sickle cell anemia 12. Thalassemia 13. G6PD (glucose-6-phosphate dehydrogenase) deficiency 14. Autoimmune hemolytic anemias 15. Hemochromatosis: primary and secondary", "q": "A 22-year-old man recovered from an episode of hemolysis triggered by fava beans, and a low glucose-6-phosphate dehydrogenase level later confirmed the deficiency. Which instruction should be part of his education?", "opts": [["Fava beans are safe cooked", "Fava beans are a listed trigger and his own attack came from them; the treatment message is simply do not eat them. Tell: avoiding the trigger is the core of his care."], ["Seek care for dark urine", "Correct. Education for this deficiency is to avoid oxidative triggers and seek care for jaundice or dark urine, the signs of an acute hemolytic attack. With trigger avoidance the prognosis is usually favorable."], ["Take daily iron tablets", "Nothing in his history suggests iron deficiency, so daily iron tablets are not part of his education. Tell: his education centers on avoiding oxidant triggers and recognizing jaundice or dark urine."], ["Expect a splenectomy soon", "Splenectomy is possible only for recurrent attacks, and he has had one. Tell: one attack calls for trigger avoidance and education, not surgery."]], "c": 1, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 79, 82, 107", "slot": "education", "lead": "education", "qid": "1syij5n"}, {"topic": "Thalassemia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias and hemochromatosis: 10. Anemia due to increased destruction of red blood cells 11. Sickle cell anemia 12. Thalassemia 13. G6PD (glucose-6-phosphate dehydrogenase) deficiency 14. Autoimmune hemolytic anemias 15. Hemochromatosis: primary and secondary", "q": "A 16-year-old boy with severe beta thalassemia has received frequent red cell transfusions for years. He now has fatigue and a rising ferritin. Which complication of his disease and its treatment is most concerning?", "opts": [["Iron overload", "Correct. Iron overload is part of the clinical course of thalassemia, and transfusion, used only when absolutely necessary, can exacerbate it. His years of transfusions and rising ferritin point to iron loading, which calls for iron monitoring in follow-up."], ["Iron deficiency", "Iron deficiency would lower the ferritin, while his is rising after repeated transfusions. Tell: transfused iron accumulates, so the risk is overload."], ["Autoimmune hemolysis", "Thalassemia is Coombs negative, and nothing in his story describes an antibody process. Tell: the named transfusion risk in thalassemia is iron overload."], ["Folate excess", "Folic acid is part of supportive care, and excess folate is not a listed concern. Tell: the complication tied to transfusion is iron overload."]], "c": 0, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 87, 89, 107", "slot": "complication", "lead": "complication", "qid": "1fcznd5"}, {"topic": "Anemia of chronic disease", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure", "q": "A 62-year-old woman with long-standing rheumatoid arthritis has fatigue. Her hemoglobin is 10.4 g/dL (normal 12.0-15.5 g/dL), mean corpuscular volume 82 fL (normal 80-100 fL), ferritin 310 ng/mL (normal 15-200 ng/mL), total iron-binding capacity 210 mcg/dL (normal 250-450 mcg/dL), transferrin saturation 12% (normal 20-50%) and reticulocyte count 0.4% (normal 0.5-2.5%). Which anemia do these results fit?", "opts": [["Sideroblastic anemia", "Nothing in her history or panel points to sideroblastic anemia; her saturation is low at 12% alongside a long-standing inflammatory disease. Tell: a low saturation with an inflammatory disease points to chronic disease."], ["Coexistent iron deficiency", "Her panel shows no iron deficiency pattern: the total iron-binding capacity is decreased at 210 mcg/dL, the chronic disease pattern. Tell: iron deficiency raises the binding capacity."], ["Anemia of chronic disease", "Correct. Rheumatoid arthritis is an inflammatory condition, and her panel fits anemia of chronic disease: a mild anemia, normal mean corpuscular volume, ferritin normal or increased (310 ng/mL), total iron-binding capacity decreased (210 mcg/dL), low transferrin saturation and a reticulocyte count that is usually low."], ["Iron deficiency anemia", "Iron deficiency has an increased total iron-binding capacity; hers is decreased at 210 mcg/dL. Tell: a decreased binding capacity with an inflammatory disease points to chronic disease."]], "c": 2, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 13, 27", "slot": "test finding", "lead": "classify", "qid": "ty9k1r"}, {"topic": "Iron deficiency: causes and presentation", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure", "q": "A 66-year-old man has fatigue with a hemoglobin of 9.8 g/dL (normal 13.5-17.5 g/dL), mean corpuscular volume 72 fL (normal 80-100 fL) and ferritin 6 ng/mL (normal 15-200 ng/mL). A fecal occult blood test (stool guaiac test) is positive. Which referral is most appropriate?", "opts": [["Hematology for a bone marrow biopsy and smear", "Hematology is for iron deficiency whose diagnosis is not confirmed or that does not respond to oral iron. His diagnosis is clear and a bleeding source must be found first. Tell: a positive stool test sends him to the gut specialist."], ["Cardiology for an echocardiogram before iron", "Cardiology is consulted when an anticoagulant may need to stop in severe iron deficiency; no anticoagulant is mentioned, and the stool test points to the gut. Tell: the urgent question is the bleeding source, which colonoscopy and endoscopy answer."], ["Dietitian for a high-iron diet before more tests", "Diet is not the issue when blood is found in the stool; chronic blood loss is the most common cause of iron deficiency in adults. Tell: a positive guaiac test needs colonoscopy and endoscopy, not diet advice."], ["Gastroenterology for colonoscopy and endoscopy", "Correct. His microcytic anemia and low ferritin are iron deficiency, and the positive stool guaiac test points to gastrointestinal blood loss. A gastrointestinal bleed calls for a gastrointestinal consult for colonoscopy and endoscopy to evaluate for colorectal cancer, while the cause is treated and iron replaced."]], "c": 3, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 16, 17", "slot": "referral", "lead": "referral", "qid": "d4fwv3"}, {"topic": "Sideroblastic anemia and lead poisoning", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure", "q": "A 30-year-old woman who works at an indoor firing range has mild abdominal colic and constipation and no neurologic symptoms. Her blood lead level is mildly elevated and her hemoglobin is 11.6 g/dL (normal 12.0-15.5 g/dL). What is the first step in management?", "opts": [["Begin oral iron therapy", "Her mild anemia comes from lead, not iron loss, and iron does not stop the exposure. Tell: the first step is removing her from the source of lead."], ["Stop the lead exposure", "Correct. Treatment of lead poisoning starts with stopping exposure, and further treatment is based on the lead level. Chelating agents are kept for severe cases with neurologic effects, which she does not have."], ["Start succimer chelation", "Succimer is used in severe cases with neurologic effects; her symptoms are mild and abdominal only. Tell: removing the exposure comes first, and chelation waits for severity."], ["Start dimercaprol injections", "Dimercaprol is another chelating agent for severe, neurologic lead poisoning; she has mild colic and no neurologic signs. Tell: mild cases begin by ending the exposure."]], "c": 1, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slide 35", "slot": "avoid", "lead": "next step", "qid": "ieyzh"}, {"topic": "Vitamin B12 and pernicious anemia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure", "q": "A 59-year-old man has fatigue and new tingling in his feet. His mean corpuscular volume is 106 fL (normal 80-100 fL) and the smear shows hypersegmented neutrophils. His B12 level is 230 pg/mL (normal 200-900 pg/mL), at the borderline, and his folate level is normal. Clinical suspicion of B12 deficiency continues. Which test should be ordered next?", "opts": [["Methylmalonic acid level", "Correct. B12 and folate levels are the initial tests but are not very sensitive, and his B12 is borderline while suspicion continues. Methylmalonic acid rises with B12 deficiency but not with folate deficiency, because its conversion to succinyl CoA requires only B12, so it settles the question."], ["Anti-parietal cell antibodies", "Anti-parietal cell antibodies may be present in pernicious anemia but are neither sensitive nor specific, and they come after B12 deficiency is established. Tell: first confirm the deficiency with methylmalonic acid, then look for its cause."], ["Bone marrow biopsy", "A bone marrow biopsy is required to diagnose aplastic anemia, which presents with pancytopenia. Tell: a borderline B12 level in a macrocytic anemia is clarified by a blood metabolite, methylmalonic acid, not by sampling the marrow."], ["Ferritin and transferrin saturation", "Ferritin and transferrin saturation belong to the microcytic anemia workup. Tell: his cells are large, so the iron panel does not answer whether he is B12 deficient; methylmalonic acid does."]], "c": 0, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 47, 50", "slot": "initial test", "lead": "test", "qid": "yeww7v"}, {"topic": "Hemochromatosis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias and hemochromatosis: 10. Anemia due to increased destruction of red blood cells 11. Sickle cell anemia 12. Thalassemia 13. G6PD (glucose-6-phosphate dehydrogenase) deficiency 14. Autoimmune hemolytic anemias 15. Hemochromatosis: primary and secondary", "q": "A 25-year-old man with beta thalassemia major has iron overload from years of transfusions. He continues to need transfusions, so phlebotomy is unsuitable. Which treatment should be considered for the overload?", "opts": [["More frequent transfusion", "Transfusion can exacerbate iron overload in thalassemia, so more of it worsens the problem. Tell: overload with phlebotomy unsuitable is treated with chelation."], ["Iron chelation", "Correct. Secondary iron overload is managed by treating the cause and considering chelation when phlebotomy is unsuitable. A patient who still needs transfusion for anemia cannot have blood removed, so chelation is the option."], ["Therapeutic phlebotomy", "Phlebotomy is the treatment of primary hemochromatosis, but removing blood from a transfusion-dependent anemic patient is unsuitable. Tell: when phlebotomy cannot be used, chelation is considered."], ["Glucocorticoids", "Glucocorticoids are the initial treatment of autoimmune hemolytic anemia and do not remove iron. Tell: his problem is transfused iron, removed by chelation."]], "c": 1, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 74, 89, 104", "slot": "escalation", "lead": "treatment", "qid": "1d2x2z0"}, {"topic": "Sideroblastic anemia and lead poisoning", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure", "q": "A 42-year-old man with lead poisoning from refinishing old painted furniture has been removed from the exposure. He has confusion, irritability and peripheral neuropathy, a severely elevated blood lead level, a hemoglobin of 10.9 g/dL (normal 13.5-17.5 g/dL) and basophilic stippling (an abnormal collection of nucleic acids in the cells) on his smear. Which treatment is indicated now?", "opts": [["Oral iron replacement", "His microcytic anemia comes from lead, not iron depletion, and iron does nothing for the neurologic damage. Tell: severe neurologic lead poisoning calls for a chelating agent."], ["Oral pyridoxine", "Pyridoxine occasionally helps sideroblastic anemia; it does not remove lead. Tell: with severe neurologic effects the treatment is chelation."], ["Epoetin alfa", "Epoetin alfa supports red cell production in anemia of chronic disease with a hemoglobin below 10 g/dL; it neither removes lead nor treats neurologic toxicity. Tell: remove the metal with succimer."], ["Chelation with succimer", "Correct. Lead poisoning is treated by stopping exposure and according to the lead level; in severe cases with neurologic effects, chelating agents can be used: succimer, dimercaprol or ethylenediaminetetraacetic acid. He is already removed from the source and has severe neurologic involvement."]], "c": 3, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slide 35", "slot": "escalation", "lead": "treatment", "qid": "edqf3k"}, {"topic": "Hemolysis: labs and workup", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias and hemochromatosis: 10. Anemia due to increased destruction of red blood cells 11. Sickle cell anemia 12. Thalassemia 13. G6PD (glucose-6-phosphate dehydrogenase) deficiency 14. Autoimmune hemolytic anemias 15. Hemochromatosis: primary and secondary", "q": "A 45-year-old woman has new anemia with jaundice and splenomegaly. Hemoglobin is 9.4 g/dL (normal 12.0-16.0 g/dL) and reticulocytes 7% (normal 0.5-2.5%), and hemolytic anemia is suspected. Which test should be ordered to look for its hallmark finding?", "opts": [["Bone marrow biopsy", "Her reticulocytes are high, so the marrow is already responding; a marrow biopsy is not part of the hemolysis workup. Tell: the hallmark of hemolysis is seen in circulating blood, on the smear."], ["Hemoglobin electrophoresis", "Hemoglobin electrophoresis is not among the listed hemolysis tests (complete blood count, reticulocytes, bilirubin, lactate dehydrogenase, haptoglobin, urinalysis, smear). Tell: the first look for hemolysis is the smear for fragments; electrophoresis answers a narrower question."], ["Prussian blue liver biopsy", "A liver biopsy is not part of the hemolysis workup; her jaundice and high reticulocytes call for blood tests and a smear review. Tell: suspected hemolysis is worked up with blood tests and a smear, not a liver biopsy."], ["Peripheral blood smear", "Correct. A peripheral blood smear should be ordered on a patient with suspected hemolytic anemia; the hallmark finding of hemolysis is schistocytes, red blood cell fragments. It belongs to the workup with a complete blood count, reticulocytes, bilirubin, lactate dehydrogenase, haptoglobin and urinalysis."]], "c": 3, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 68, 69", "slot": "initial test", "lead": "test", "qid": "1fwn7xx"}, {"topic": "Autoimmune hemolytic anemia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias and hemochromatosis: 10. Anemia due to increased destruction of red blood cells 11. Sickle cell anemia 12. Thalassemia 13. G6PD (glucose-6-phosphate dehydrogenase) deficiency 14. Autoimmune hemolytic anemias 15. Hemochromatosis: primary and secondary", "q": "A 64-year-old man is admitted with autoimmune hemolytic anemia confirmed by a positive direct antiglobulin test. He is hemodynamically stable with hemoglobin 8.1 g/dL (normal 13.5-17.5 g/dL), and glucocorticoids have been started. Which order should also be part of his admission?", "opts": [["Thromboembolism prophylaxis", "Correct. Autoimmune hemolytic anemia is associated with an increased risk of venous thromboembolism, so remember venous thromboembolism prophylaxis for inpatients, and consider it in outpatients. As an inpatient with this disease he should have it ordered."], ["Immediate splenectomy", "Splenectomy is among the other options after glucocorticoids and rituximab, not an admission step for a stable patient just started on steroids. Tell: the inpatient order flagged for this disease is clot prevention."], ["Oral iron supplement", "Hemolysis retains the products of red cell destruction, including iron, so nothing here suggests iron deficiency. Tell: the important note for this disease is its venous clot risk."], ["Emergency transfusion", "Immediate stabilization is for a hemoglobin below 6 g/dL, a rapid decline or instability. Tell: he is stable at 8.1 g/dL, so the standing need is thromboembolism prophylaxis."]], "c": 0, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slide 73", "slot": "complication", "lead": "next step", "qid": "12cx8f1"}, {"topic": "Across the lifespan and follow-up", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure", "q": "A 56-year-old man has iron deficiency anemia, and evaluation finds no menstrual or obvious source of loss. He asks what happens next while he takes his iron. Which follow-up is appropriate?", "opts": [["Refer for erythropoietin", "Referral for an erythropoiesis-stimulating agent belongs to anemia of chronic kidney disease. Tell: in iron deficiency, find the loss and reinforce iron use."], ["Seek the loss; refer if needed", "Correct. Follow-up of iron deficiency is to identify blood loss, reinforce iron use and refer to gastrointestinal specialists if indicated. With the cause and iron stores corrected, it usually resolves."], ["Urgent hematology referral", "Urgent hematology with infection and bleeding precautions is the aplastic anemia row. Tell: iron deficiency follow-up hunts the source of blood loss."], ["Monitor neurologic recovery", "Monitoring neurologic recovery belongs to megaloblastic anemia after B12 or folate treatment. Tell: iron deficiency needs the blood loss found."]], "c": 1, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slide 106", "slot": "referral", "lead": "referral", "qid": "19v57d4"}, {"topic": "Leukopenia and neutropenia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis for leukopenia", "q": "A 45-year-old woman has a white blood cell count of 2,400 cells per microliter (normal 4,500-11,000). Her differential shows neutrophils 30% (normal 40-70%), bands 5% (normal 0-5%), lymphocytes 55% and monocytes 10%. How is her neutropenia classified?", "opts": [["Not neutropenic", "A white count of 2,400 with 35% neutrophils plus bands gives 840, well under the 1,500 top of the mild range. Tell: a low total white count with this differential is clearly neutropenic."], ["Mild", "Mild neutropenia is 1,000-1,500 cells per microliter, and her count works out to 2,400 x 35% = 840. Tell: below 1,000 the grade drops to moderate."], ["Moderate", "Correct. Absolute neutrophil count = white count x (neutrophils + bands)% / 100 = 2,400 x 35 / 100 = 840 cells per microliter. Moderate neutropenia is 500-999, mild is 1,000-1,500 and severe is below 500."], ["Severe", "Severe neutropenia is below 500 cells per microliter; even neutrophils alone give 2,400 x 30% = 720. Tell: adding the bands makes 840, inside the moderate range of 500-999."]], "c": 2, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slide 59", "slot": "test finding", "lead": "classify", "qid": "jtrw5t"}, {"topic": "Aplastic anemia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following anemias: 2. Anemia due to deficient production of red blood cells 3. Iron deficiency 4. Anemia of chronic disease 5. Sideroblastic anemia 6. Megaloblastic anemia 7. Aplastic anemia 8. Anemia due to renal failure", "q": "A 21-year-old woman has aplastic anemia confirmed by bone marrow biopsy. Her sister is a suitable donor. Which treatment is indicated?", "opts": [["Erythropoiesis-stimulating agent", "An erythropoiesis-stimulating agent is considered for anemia of chronic kidney disease, where erythropoietin is low. Tell: her marrow has lost its stem cells, so there is nothing for the agent to stimulate."], ["Folic acid supplementation", "Folic acid treats folate deficiency, a megaloblastic anemia. Tell: aplastic anemia is not a vitamin shortage, and with a suitable donor its treatment is transplant."], ["Observation with repeat counts", "Watching counts suits transient viral leukopenia, which often resolves. Tell: untreated aplastic anemia kills most patients within a year, so she needs transplant, not observation."], ["Bone marrow transplant", "Correct. The treatment of aplastic anemia is bone marrow transplant, and five-year survival is above 75% for patients transplanted from a suitable donor, as her sister is. Most untreated patients die within one year from disease-related complications."]], "c": 3, "cite": "Cytopenias_Hemochromatosis_Objectives_Enhanced.pptx, Slides 55, 58, 60", "slot": "first-line", "lead": "treatment", "qid": "dezdqr"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll" && window.startExamModeTour) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

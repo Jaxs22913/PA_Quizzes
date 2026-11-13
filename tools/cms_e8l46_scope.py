@@ -226,4 +226,10 @@ HELD = [
     "A 64-year-old man has had neutropenia on three complete blood counts over 4 months",   # 8664085c: explanation D claim
     "A 34-year-old woman with acute leukemia on chemotherapy has an absolute neutrophil count of 300",  # ce51733b: stem gives D away
     "A 35-year-old man with known glucose-6-phosphate dehydrogenase deficiency is planning a trip to a malaria-endemic region",  # keys antimalarials as a class; Ward [p3 2-3] said not all antimalarials carry the risk
+    # failed re-audit after two repairs (2026-11-12 final round):
+    "A 58-year-old man receiving myelosuppressive chemotherapy for a solid tumor has fatigue",   # 0550f4cc
+    "What is the main cause of anemia of chronic kidney disease?",   # d95bc715
+    "Individuals of Asian ancestry with the alpha thalassemia 1 trait",   # 5fd68e93
+    "A 19-year-old woman of Southeast Asian ancestry has lifelong mild anemia, splenomegaly and maxillary overgrowth",   # 8e848f68
+    "A 72-year-old man with a chronic bone infection under treatment has a hemoglobin of 11.1",   # 1ed39413: third audit failure
 ]
