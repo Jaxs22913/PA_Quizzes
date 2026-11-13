@@ -106,6 +106,13 @@ CURATED = {
         "Clinical Medicine and Surgery I Exam 7/cms-e7-images/l39-s007-hypnogram.png",
     "Clinical Medicine and Surgery I Exam 7/cms-exam-7-clin-med-pro-guide.html":
         "Clinical Medicine and Surgery I Exam 7/cms-e7-images/l41-s028-cxr-sarcoid-hilar.jpg",
+    # Exam 8 (hematology): smears and the sickle cell map, not the clinical photos (glossitis, the thalassemia face).
+    "Clinical Medicine and Surgery I Exam 8/cms-exam-8-study-guide.html":
+        "Clinical Medicine and Surgery I Exam 8/cms-e8-images/l46-s068-schistocytes.jpg",
+    "Clinical Medicine and Surgery I Exam 8/cms-exam-8-cram-sheet.html":
+        "Clinical Medicine and Surgery I Exam 8/cms-e8-images/l46-s040-megaloblastic-smear.jpg",
+    "Clinical Medicine and Surgery I Exam 8/cms-exam-8-clin-med-pro-guide.html":
+        "Clinical Medicine and Surgery I Exam 8/cms-e8-images/l46-s091-sickle-cell-map.jpg",
     # Pulmonary OSCE chart: the plain normal chest film, clean at strip height (graphs, tracings and the
     # labeled films read poorly as a strip).
     "Physical Diagnosis 2 Exam 2/pd2-pulm-osce-chart.html":
