@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — CMS I Exam 8</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#b8860b;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+  /* memory-aid box + footnote rows (render.py emits this block only when a
+     topic uses "mnemonic" or a {"note": ...} row); theme variables only, so
+     the designed dark mode (tools/dark_tokens.py) recolours it for free */
+  .mnem{margin:10px 0 0;padding:11px 15px 12px;background:var(--card);border:1px solid var(--line);
+    border-left:4px solid var(--acc);border-radius:12px;box-shadow:var(--shadow);font-size:13.8px;color:var(--body)}
+  .mnem-k{font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--acc-ink,var(--ink));margin:0 0 4px}
+  .mnem p{margin:0 0 5px}
+  .mnem p:last-child{margin-bottom:0}
+  .mnem-hook{font-weight:700;color:var(--ink)}
+  .mnem-key span{display:inline-block;margin:0 16px 3px 0}
+  .mnem-key b{color:var(--acc-ink,var(--ink))}
+  .mnem-brk{color:var(--muted);font-size:13px}
+  .mnem-brk b{color:var(--body)}
+  td.rnote{font-size:12.8px;font-style:italic;color:var(--muted)}
+  @media print{.mnem{box-shadow:none;break-inside:avoid}}
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--primary-l:#b8860b;--primary:#af8325;}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-indices{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-indices"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-acd-vs-ida{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-acd-vs-ida"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-macrocytic{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-macrocytic"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-megalo-cbc{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-megalo-cbc"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-ckd-cbc{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-ckd-cbc"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-b12-folate{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-b12-folate"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-anc{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-anc"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-hemolysis-labs{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-hemolysis-labs"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-intra-extra{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-intra-extra"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-aiha{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-aiha"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-g6pd{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-g6pd"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-thal{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-thal"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-hb-variants{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-hb-variants"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-sickle-screen{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-sickle-screen"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-hemochromatosis{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-hemochromatosis"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-sidero{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-sidero"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-esa{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-esa"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-iron-tx{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-iron-tx"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-lifespan{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-lifespan"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-followup-anemia{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-followup-anemia"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #crit-l46-followup-hemolysis{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#crit-l46-followup-hemolysis"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l46-emph{--acc-bg:#2e2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b18426!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l46-emph"]{color:#a87e23!important}:root[data-theme="dark"] body[data-dark="tokens"] #l46-approach{--acc-bg:#232509!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#8b8f61!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l46-approach"]{color:#84885a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l46-ida{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l46-ida"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l46-acd{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l46-acd"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l46-sidero{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c07a6b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l46-sidero"]{color:#b87364!important}:root[data-theme="dark"] body[data-dark="tokens"] #l46-macro{--acc-bg:#1e260d!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#809260!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l46-macro"]{color:#798b59!important}:root[data-theme="dark"] body[data-dark="tokens"] #l46-b12{--acc-bg:#1e260d!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#809260!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l46-b12"]{color:#798b59!important}:root[data-theme="dark"] body[data-dark="tokens"] #l46-ckd-aplastic{--acc-bg:#2d1b2f!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a480a8!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l46-ckd-aplastic"]{color:#9c79a0!important}:root[data-theme="dark"] body[data-dark="tokens"] #l46-leuko{--acc-bg:#2d1b2f!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a480a8!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l46-leuko"]{color:#9c79a0!important}:root[data-theme="dark"] body[data-dark="tokens"] #l46-hemolysis{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c07a6b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l46-hemolysis"]{color:#b87364!important}:root[data-theme="dark"] body[data-dark="tokens"] #l46-g6pd{--acc-bg:#351a14!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c07a6b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l46-g6pd"]{color:#b87364!important}:root[data-theme="dark"] body[data-dark="tokens"] #l46-thal{--acc-bg:#052731!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6493a2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l46-thal"]{color:#5d8c9a!important}:root[data-theme="dark"] body[data-dark="tokens"] #l46-sickle{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l46-sickle"]{color:#9f7f5f!important}:root[data-theme="dark"] body[data-dark="tokens"] #l46-hemochrom{--acc-bg:#311e09!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a68666!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l46-hemochrom"]{color:#9f7f5f!important}:root[data-theme="light"] body[data-dark="tokens"]{--primary-t:#8f6a1d;}:root[data-theme="light"] body[data-dark="tokens"] #l46-emph{--acc-ink:#88661b!important}</style><!--DARK-TOKENS:END-->
+  <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="cms-exam-8-cram-sheet.docx" title="Editable Word copy">
+</head>
+<body data-dark="tokens" data-dark-kind="cram">
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Clinical Medicine and Surgery I · Exam 8 · Class of 2028</div>
+    <h1>CMS I Exam 8 Cram Sheet</h1>
+    <p class="sub"><b>Criteria, scores and classifications first</b>: one table per set from the slides, each with a labeled memory aid. Hematology Block Exam, condensed from the Exam 8 study guide. Lectures covered: 46 (cytopenias and hemochromatosis). Each lecture opens with a gold card of what its lecturer stressed (starred; from the lecture recording); every fact still comes from the slides.</p>
+    <div class="toc">
+      <a href="#crit-l46-indices" style="color:#373916"><span class="dot" style="background:#46491c"></span>Criteria &amp; Scores (Lectures 46&ndash;46)</a>
+      <a href="#l46-emph" style="color:#906909"><span class="dot" style="background:#b8860b"></span>★ Emphasized — Cytopenias and Hemochromatosis</a>
+      <a href="#l46-approach" style="color:#373916"><span class="dot" style="background:#46491c"></span>Anemia: Definition &amp; First Approach</a>
+      <a href="#l46-ida" style="color:#254953"><span class="dot" style="background:#2f5d6b"></span>Iron Deficiency Anemia</a>
+      <a href="#l46-acd" style="color:#254953"><span class="dot" style="background:#2f5d6b"></span>Anemia of Chronic Disease (Inflammation)</a>
+      <a href="#l46-sidero" style="color:#5f2e24"><span class="dot" style="background:#7a3b2e"></span>Sideroblastic Anemia &amp; Lead Poisoning</a>
+      <a href="#l46-macro" style="color:#3a4621"><span class="dot" style="background:#4a5a2a"></span>Macrocytic, Megaloblastic &amp; Folate</a>
+      <a href="#l46-b12" style="color:#3a4621"><span class="dot" style="background:#4a5a2a"></span>Vitamin B12 &amp; Pernicious Anemia</a>
+      <a href="#l46-ckd-aplastic" style="color:#462d49"><span class="dot" style="background:#5a3a5e"></span>Chronic Kidney Disease &amp; Aplastic Anemia</a>
+      <a href="#l46-leuko" style="color:#462d49"><span class="dot" style="background:#5a3a5e"></span>Leukopenia &amp; Neutropenia</a>
+      <a href="#l46-hemolysis" style="color:#5f2e24"><span class="dot" style="background:#7a3b2e"></span>Hemolytic Anemias &amp; Autoimmune Hemolysis</a>
+      <a href="#l46-g6pd" style="color:#5f2e24"><span class="dot" style="background:#7a3b2e"></span>G6PD Deficiency</a>
+      <a href="#l46-thal" style="color:#254953"><span class="dot" style="background:#2f5d6b"></span>Thalassemia</a>
+      <a href="#l46-sickle" style="color:#49331b"><span class="dot" style="background:#5e4123"></span>Sickle Cell Disease</a>
+      <a href="#l46-hemochrom" style="color:#49331b"><span class="dot" style="background:#5e4123"></span>Hemochromatosis</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="cms-exam-8-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="crit-l46-indices" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Red Blood Cell Indices: Normal Ranges<span class="tag">Reference values &middot; Lecture 46 &middot; slide 7</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:32%">Index</th><th style="width:40%">What it measures</th><th style="width:28%">Normal</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Mean corpuscular volume (MCV)</td><td>Average <b>size</b> of red blood cells</td><td><b>80&ndash;100 fL</b> (femtoliters)</td></tr>
+          <tr><td class="h">Mean corpuscular hemoglobin (MCH)</td><td><b>Amount</b> of hemoglobin in each red blood cell</td><td><b>27&ndash;31 pg/cell</b> (picograms)</td></tr>
+          <tr><td class="h">Mean corpuscular hemoglobin concentration (MCHC)</td><td>Hemoglobin <b>relative to the size</b> of each red blood cell</td><td><b>32&ndash;36 g/dL</b> (320&ndash;360 g/L)</td></tr>
+          <tr><td class="h">Red cell distribution width (RDW)</td><td>Differences in the volume and size of the red cells; healthy cells are about the same size</td><td>No number on the slide</td></tr>
+          <tr><td class="h">Hemoglobin and hematocrit (H&amp;H)</td><td>Hemoglobin: the amount in the blood. Hematocrit: the <b>percentage</b> of red cells in total blood volume</td><td>No number on the slide</td></tr>
+          <tr><td class="rnote" colspan="3">Initial approach (slide 8): history and physical, then the complete blood count: all <b>three cell lines</b> (red cells, white cells, platelets), look for <b>pancytopenia</b>, read the <b>MCV</b>, and use the <b>reticulocyte index</b> to judge whether the marrow response is adequate.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Size up to 100; weight a month&rsquo;s worth; concentration just past the month.</p><p class="mnem-key"><span><b>100</b> MCV 80&ndash;100 fL (size)</span><span><b>A month</b> MCH 27&ndash;31 pg/cell, like the days in a month (weight per cell)</span><span><b>Past the month</b> MCHC 32&ndash;36 g/dL (concentration)</span></p><p class="mnem-brk"><b>Where it breaks:</b> Red cell distribution width and the H&amp;H have no number on the slide.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-acd-vs-ida" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Anemia of Chronic Disease vs Iron Deficiency<span class="tag">Comparison &middot; Lecture 46 &middot; slides 27, 13, 25 &#9733;</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:28%"></th><th style="width:36%">Anemia of chronic disease</th><th style="width:36%">Iron deficiency anemia</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Red cells, hemoglobin, hematocrit</td><td>&darr; (mild)</td><td>&darr;</td></tr>
+          <tr><td class="h">Mean corpuscular volume</td><td>Normal or &darr;</td><td>&darr;</td></tr>
+          <tr><td class="h">Mean corpuscular hemoglobin and its concentration</td><td>Normal or &darr;</td><td>&darr;</td></tr>
+          <tr><td class="h">Red cell distribution width</td><td>Varies</td><td><b>&uarr;</b></td></tr>
+          <tr><td class="h">Reticulocytes</td><td>Usually &darr;</td><td>Varies</td></tr>
+          <tr><td class="h">Serum iron</td><td>&uarr; or &darr; (slide 27)</td><td>&darr;</td></tr>
+          <tr><td class="h"><b>Ferritin</b></td><td><b>Normal or &uarr;</b></td><td><b>&darr;</b></td></tr>
+          <tr><td class="h"><b>Total iron-binding capacity (TIBC)</b></td><td><b>&darr;</b></td><td><b>&uarr;</b></td></tr>
+          <tr><td class="h">Coexisting iron deficiency (slide 25)</td><td>Ferritin <b>&lt;30 ng/mL</b> (67 pmol/L)</td><td>&mdash;</td></tr>
+          <tr><td class="rnote" colspan="3">Slide conflict: slide 13 gives anemia of chronic disease a <b>low</b> serum iron and transferrin saturation with a <b>normal or low</b> TIBC; slide 27 gives its serum iron as &ldquo;&uarr; or &darr;&rdquo;. TIBC also differs: <b>normal or low</b> on slide 13, &darr; on slide 27 (never above normal on either). Both agree on ferritin (normal or &uarr;): tell them apart by ferritin with TIBC, never by serum iron alone. Ferritin is an acute phase reactant, so a normal or high ferritin does <b>not</b> exclude iron deficiency (slide 14); order an ESR (erythrocyte sedimentation rate) and/or CRP (C-reactive protein) if inflammation is a concern.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Iron deficiency: the Tank (ferritin) is empty, so more Trucks (TIBC) go out looking. Chronic disease: hepcidin Locks the tank: the Tank is full or normal, and fewer Trucks are sent.</p><p class="mnem-key"><span><b>Tank empty</b> iron deficiency: ferritin &darr;</span><span><b>More trucks</b> iron deficiency: TIBC &uarr;</span><span><b>Tank locked</b> chronic disease: ferritin normal or &uarr;</span><span><b>Fewer trucks</b> chronic disease: TIBC &darr;</span></p><p class="mnem-brk"><b>Where it breaks:</b> The tank says nothing about serum iron in chronic disease (&uarr; or &darr; on slide 27, low on slide 13), or about the indices and red cell distribution width; &ldquo;fewer trucks&rdquo; is slide 27 (slide 13: normal or low TIBC).</p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-macrocytic" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Macrocytic Anemia: Cut-offs and Categories<span class="tag">Cut-off &middot; Lecture 46 &middot; slides 38&ndash;39</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:24%"></th><th style="width:38%">Megaloblastic</th><th style="width:38%">Non-megaloblastic</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Defined as</td><td>Macrocytic anemia <b>with megaloblasts</b> (early red cell precursors): macro-ovalocytes, <b>hypersegmented neutrophils</b></td><td>Macrocytic anemia without megaloblasts</td></tr>
+          <tr><td class="h">Causes</td><td><b>Vitamin B12 and folate deficiency</b></td><td><b>Alcohol (common) or drug</b>; hypothyroidism; liver failure; bone marrow dysplasia</td></tr>
+          <tr><td class="h">Mean corpuscular volume</td><td><b>&gt;100 fL</b> (all macrocytic anemia)</td><td><b>&gt;100 fL</b>, but <b>usually &lt;115 fL</b></td></tr>
+          <tr><td class="h">Mechanism</td><td>Impaired DNA synthesis &rarr; nuclear-cytoplasmic asynchrony; granulocytes and megakaryocytes affected to a lesser degree</td><td>&mdash;</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Macrocytic starts at 100; non-megaloblastic usually stops at 115. The non-megaloblastic causes: Alcohol Hits Liver and Marrow.</p><p class="mnem-key"><span><b>100</b> MCV &gt;100 fL defines macrocytic anemia</span><span><b>115</b> non-megaloblastic causes usually stay below 115 fL</span><span><b>Alcohol</b> alcohol (common) or drug</span><span><b>Hits</b> hypothyroidism</span><span><b>Liver</b> liver failure</span><span><b>Marrow</b> bone marrow dysplasia</span></p><p class="mnem-brk"><b>Where it breaks:</b> The megaloblastic column (B12 and folate, megaloblasts, hypersegmented neutrophils, impaired DNA synthesis) is not in the hook.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-megalo-cbc" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Complete Blood Count: Megaloblastic Anemia<span class="tag">Lab pattern &middot; Lecture 46 &middot; slide 41</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:44%">Parameter</th><th style="width:56%">Megaloblastic anemia (macrocytic, normochromic)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Red cells, hemoglobin, hematocrit</td><td>&darr;</td></tr>
+          <tr><td class="h">Mean corpuscular volume</td><td><b>&uarr; (macrocytosis)</b></td></tr>
+          <tr><td class="h">Mean corpuscular hemoglobin and its concentration</td><td>Normal to slightly &uarr;</td></tr>
+          <tr><td class="h">Red cell distribution width</td><td><b>&uarr; (anisocytosis)</b></td></tr>
+          <tr><td class="h">Reticulocytes</td><td>Varies</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Big and Uneven: the cells are bigger (MCV up) and of uneven sizes (RDW up); the counts fall and the color stays normal.</p><p class="mnem-key"><span><b>Big</b> MCV &uarr; (macrocytosis)</span><span><b>Uneven</b> RDW &uarr; (anisocytosis)</span><span><b>Counts fall</b> red cells, hemoglobin, hematocrit &darr;</span><span><b>Normal color</b> MCH, MCHC normal to slightly &uarr; (normochromic)</span></p><p class="mnem-brk"><b>Where it breaks:</b> Reticulocytes (varies) are not in the hook.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-ckd-cbc" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Complete Blood Count: Anemia of Chronic Kidney Disease<span class="tag">Lab pattern &middot; Lecture 46 &middot; slides 52&ndash;53</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:44%">Parameter</th><th style="width:56%">Anemia of chronic kidney disease</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Red cells, hemoglobin, hematocrit</td><td>&darr;</td></tr>
+          <tr><td class="h">Mean corpuscular volume</td><td><b>Normal</b></td></tr>
+          <tr><td class="h">Mean corpuscular hemoglobin and its concentration</td><td><b>Normal</b></td></tr>
+          <tr><td class="h">Red cell distribution width</td><td>&uarr;</td></tr>
+          <tr><td class="h">Reticulocytes</td><td><b>&darr;</b></td></tr>
+          <tr><td class="rnote" colspan="2">Primarily, but not completely, from <b>decreased erythropoietin</b>; incidence rises as the glomerular filtration rate falls, almost universal on dialysis (slide 52). Slide 53: a low transferrin saturation may mean iron-restricted erythropoiesis <b>despite a normal or high ferritin</b>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Normal-sized cells with no factory order: the kidney stops sending erythropoietin, so the cells look normal but too few are made.</p><p class="mnem-key"><span><b>Normal-sized</b> MCV, MCH, MCHC normal</span><span><b>No factory order</b> reticulocytes &darr; (low erythropoietin)</span><span><b>Too few</b> red cells, hemoglobin, hematocrit &darr;</span></p><p class="mnem-brk"><b>Where it breaks:</b> The red cell distribution width is &uarr; even though the indices are normal.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-b12-folate" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Vitamin B12 vs Folate: the Labs<span class="tag">Criteria &middot; Lecture 46 &middot; slides 47&ndash;48, 50 &#9733;</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:30%">Test</th><th style="width:44%">What the slide says</th><th style="width:26%">Separates B12 from folate?</th></tr></thead>
+        <tbody>
+          <tr><td class="h">B12 and folate levels</td><td>The <b>initial tests</b> for all macrocytic anemias, with a peripheral smear; <b>not very sensitive</b></td><td>&mdash;</td></tr>
+          <tr><td class="h"><b>Homocysteine</b></td><td>Metabolism of homocysteine to methionine requires <b>both</b> B12 and folate</td><td><b>No</b> (needs both)</td></tr>
+          <tr><td class="h"><b>Methylmalonic acid (MMA)</b></td><td>Metabolism of L-methylmalonyl CoA to succinyl CoA requires <b>only B12</b>: MMA is <b>elevated in B12 deficiency but NOT folate deficiency</b></td><td><b>Yes</b></td></tr>
+          <tr><td class="grp" colspan="3">IF PERNICIOUS ANEMIA IS SUSPECTED (slides 48, 50)</td></tr>
+          <tr><td class="h">Anti-intrinsic factor antibodies</td><td>Sometimes detected; <b>specific but not sensitive</b></td><td></td></tr>
+          <tr><td class="h">Anti-parietal cell antibodies</td><td>May be present; <b>not sensitive or specific</b></td><td></td></tr>
+          <tr><td class="h">Gastric biopsy</td><td>May show chronic atrophic gastritis</td><td></td></tr>
+          <tr><td class="h">Parenteral B12 trial</td><td>In reality, a megaloblastic picture that <b>corrects with B12</b> is the normal diagnostic pathway</td><td></td></tr>
+          <tr><td class="rnote" colspan="3">Homocysteine and MMA are ordered when the B12 and folate levels are borderline or suspicion continues. Before replacing folate, evaluate for B12 deficiency: the labs may improve while permanent neurologic symptoms worsen (slide 49).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Homocysteine is a shared Home (both vitamins live there); MMA is B12&rsquo;s alone: &ldquo;Methylmalonic Means B12 Alone&rdquo;.</p><p class="mnem-key"><span><b>Home</b> homocysteine needs B12 and folate, so it cannot tell them apart</span><span><b>Alone</b> MMA needs only B12: up in B12, not folate, deficiency</span><span><b>Specific, not sensitive</b> anti-intrinsic factor antibodies</span><span><b>Neither</b> anti-parietal cell antibodies</span></p><p class="mnem-brk"><b>Where it breaks:</b> The first-line B12 and folate levels, the gastric biopsy and the B12 trial are not in the hook.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-anc" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Absolute Neutrophil Count &amp; Febrile Neutropenia<span class="tag">Formula and cut-offs &middot; Lecture 46 &middot; slides 59&ndash;60</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:30%">Item</th><th style="width:70%">Slide wording</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Leukopenia vs neutropenia</td><td>Leukopenia = a low <b>total white count</b>; neutropenia is defined by the <b>absolute neutrophil count (ANC)</b></td></tr>
+          <tr><td class="h"><b>Formula</b></td><td><b>ANC = white count &times; (neutrophils + bands)% / 100</b></td></tr>
+          <tr><td class="h"><b>Mild</b></td><td>ANC <b>1,000&ndash;1,500</b> cells/&micro;L</td></tr>
+          <tr><td class="h"><b>Moderate</b></td><td>ANC <b>500&ndash;999</b></td></tr>
+          <tr><td class="h"><b>Severe</b></td><td>ANC <b>&lt;500</b></td></tr>
+          <tr><td class="grp" colspan="2">FEBRILE NEUTROPENIA (slide 60)</td></tr>
+          <tr><td class="h">Emergency</td><td><b>Fever with ANC &lt;500</b> (or expected to fall below 500): prompt assessment and <b>empiric antibiotics</b></td></tr>
+          <tr><td class="h">Immediately</td><td>Vitals, targeted examination and <b>cultures</b>; start <b>antipseudomonal</b> therapy <b>without delay</b></td></tr>
+          <tr><td class="h">Risk</td><td>Severity, duration and immune status predict infection risk; profound neutropenia may have <b>subtle findings</b></td></tr>
+          <tr><td class="h">Escalate to hematology (slide 59)</td><td>Persistent or unexplained severe neutropenia, other cytopenias, or an abnormal smear</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Count the Neutrophils AND the Bands, then step down by 500: 1500, 1000, 500. Fever under 500 is a fire alarm: cultures and antipseudomonal antibiotics now.</p><p class="mnem-key"><span><b>Neutrophils + bands</b> the percentage that multiplies the white count, / 100</span><span><b>Below 1500</b> mild 1,000&ndash;1,500</span><span><b>Below 1000</b> moderate 500&ndash;999</span><span><b>500</b> severe &lt;500</span><span><b>Fire alarm</b> fever + ANC &lt;500 (or expected): empiric antipseudomonal antibiotics without delay</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-hemolysis-labs" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Hemolysis: the Labs<span class="tag">Criteria &middot; Lecture 46 &middot; slides 61, 66&ndash;70 &#9733;</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:32%">Test</th><th style="width:68%">In hemolysis</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><b>Bilirubin</b> (conjugated and unconjugated)</td><td>Both likely elevated, <b>unconjugated &gt; conjugated</b></td></tr>
+          <tr><td class="h">Jaundice</td><td>Appears when total bilirubin <b>exceeds 2.0 mg/dL</b> (normal 0.3&ndash;1.2 mg/dL)</td></tr>
+          <tr><td class="h"><b>Haptoglobin</b></td><td><b>DECREASED or absent</b> with <b>intravascular</b> hemolysis (it picks up free hemoglobin)</td></tr>
+          <tr><td class="h"><b>Lactate dehydrogenase (LDH)</b></td><td>A cytoplasmic enzyme, <b>elevated with any cellular lysis</b></td></tr>
+          <tr><td class="h">Peripheral smear</td><td>The hallmark finding: <b>schistocytes</b> (red blood cell fragments)</td></tr>
+          <tr><td class="h">Reticulocyte count</td><td>Often the <b>first indication</b>; an unexpected rise, even without anemia or symptoms, should prompt consideration of hemolysis</td></tr>
+          <tr><td class="h">Urinalysis</td><td>Some hemoglobin reaches the urine in intravascular hemolysis</td></tr>
+          <tr><td class="rnote" colspan="2">Workup for a suspected hemolytic anemia (slide 69): complete blood count, reticulocyte count, serum bilirubin, LDH, haptoglobin, urinalysis, peripheral smear review. Extravascular hemolysis (spleen and liver macrophages) is the more common route (slide 66).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Broken cells Spill: Bilirubin and LDH go Up, Haptoglobin gets Used up, the Smear shows Shards, and the marrow sends more Retics.</p><p class="mnem-key"><span><b>Up</b> bilirubin (unconjugated &gt; conjugated) and LDH elevated</span><span><b>2.0</b> jaundice above total bilirubin 2.0 mg/dL</span><span><b>Used up</b> haptoglobin decreased or absent (intravascular)</span><span><b>Shards</b> schistocytes, the hallmark</span><span><b>Retics</b> reticulocytes up, often the first sign</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-intra-extra" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Causes of Hemolysis: Intra- vs Extracorpuscular<span class="tag">Classification &middot; Lecture 46 &middot; slides 64&ndash;65</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:34%">Category</th><th style="width:66%">Examples</th></tr></thead>
+        <tbody>
+          <tr><td class="grp" colspan="2">INTRACORPUSCULAR (intrinsic to the red cell)</td></tr>
+          <tr><td class="h">Hemoglobinopathies</td><td>Sickle cell disease, thalassemia, unstable hemoglobin variants</td></tr>
+          <tr><td class="h">Membrane / cytoskeletal defects</td><td>Hereditary spherocytosis, elliptocytosis, stomatocytosis</td></tr>
+          <tr><td class="h">Metabolic abnormalities</td><td><b>G6PD</b> (glucose-6-phosphate dehydrogenase) and pyruvate kinase deficiencies</td></tr>
+          <tr><td class="grp" colspan="2">EXTRACORPUSCULAR</td></tr>
+          <tr><td class="h">Immune-mediated</td><td>Autoimmune hemolytic anemia, transfusion reactions</td></tr>
+          <tr><td class="h">Hypersplenism</td><td></td></tr>
+          <tr><td class="h">Mechanical trauma</td><td>Shear stress</td></tr>
+          <tr><td class="h">Oxidative stress</td><td>G6PD, methemoglobinemia</td></tr>
+          <tr><td class="h">Infection</td><td>Malaria, babesiosis</td></tr>
+          <tr><td class="h">Toxin</td><td>Snake and insect bites, burns, copper poisoning</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Inside the cell it says &ldquo;HMM&rdquo;; from outside a MOTH II attacks it.</p><p class="mnem-key"><span><b>H</b> Hemoglobinopathies (inside)</span><span><b>M</b> Membrane/cytoskeleton (inside)</span><span><b>M</b> Metabolic: G6PD, pyruvate kinase (inside)</span><span><b>M</b> Mechanical trauma (outside)</span><span><b>O</b> Oxidative stress (outside)</span><span><b>T</b> Toxin (outside)</span><span><b>H</b> Hypersplenism (outside)</span><span><b>I</b> Immune-mediated (outside)</span><span><b>I</b> Infection (outside)</span></p><p class="mnem-brk"><b>Where it breaks:</b> G6PD sits on both sides: a metabolic defect inside the cell (slide 64) and oxidative stress outside it (slide 65).</p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-aiha" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Autoimmune Hemolytic Anemia: Stabilize and Treat<span class="tag">Criteria &middot; Lecture 46 &middot; slides 71&ndash;74</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:30%">Item</th><th style="width:70%">Slide wording</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><b>Consider immediate stabilization if</b></td><td>Hemoglobin <b>&lt;6</b>, a <b>rapid decline</b>, or the patient is <b>unstable</b>; contact the <b>blood bank</b> (will need to find compatible blood)</td></tr>
+          <tr><td class="h">Test</td><td><b>Direct antiglobulin (Coombs) test</b>: positive when the washed red cells carry IgG or complement</td></tr>
+          <tr><td class="h">Treat</td><td>Rule out secondary causes; <b>glucocorticoids first</b> (e.g., prednisone 60&ndash;100 mg daily); <b>rituximab</b> (anti-CD20); others: immunosuppressants, splenectomy</td></tr>
+          <tr><td class="h"><b>Important note</b></td><td><b>Increased risk of venous thromboembolism</b>: consider D-dimer and bilateral leg ultrasound; venous thromboembolism prophylaxis for inpatients, consider in outpatients</td></tr>
+          <tr><td class="h">Secondary causes</td><td>Viruses (human immunodeficiency virus (HIV), hepatitis, Epstein-Barr virus (EBV), SARS-CoV-2); autoimmune (lupus, rheumatoid arthritis, scleroderma, ulcerative colitis); lymphoproliferative (leukemia, lymphoma, multiple myeloma); pregnancy. Primary is almost always <b>IgG</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Six, Sliding, Shaky: stabilize now. Then Steroids first, then the anti-CD20, and watch for Clots.</p><p class="mnem-key"><span><b>Six</b> hemoglobin &lt;6</span><span><b>Sliding</b> rapid decline</span><span><b>Shaky</b> unstable patient</span><span><b>Steroids</b> glucocorticoids initially</span><span><b>Anti-CD20</b> rituximab</span><span><b>Clots</b> increased venous thromboembolism risk</span></p><p class="mnem-brk"><b>Where it breaks:</b> The Coombs test and the secondary causes are not in the hook.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-g6pd" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>G6PD Deficiency: Triggers and Timing<span class="tag">Criteria &middot; Lecture 46 &middot; slides 79, 81&ndash;82 &#9733;</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:10%">#</th><th style="width:90%">Common trigger (slide 79)</th></tr></thead>
+        <tbody>
+          <tr><td class="h">1</td><td><b>Fava beans</b></td></tr>
+          <tr><td class="h">2</td><td>Naphthalene (mothballs)</td></tr>
+          <tr><td class="h">3</td><td>Antimalarials (the slide names chloroquine; out loud, chloroquine does <b>not</b> carry the same risk)</td></tr>
+          <tr><td class="h">4</td><td>Nitrofurantoin</td></tr>
+          <tr><td class="h">5</td><td>Trimethoprim-sulfamethoxazole (Bactrim)</td></tr>
+          <tr><td class="h">6</td><td>Methylene blue</td></tr>
+          <tr><td class="h">7</td><td>Phenazopyridine</td></tr>
+          <tr><td class="h">8</td><td>Quinolones</td></tr>
+          <tr><td class="grp" colspan="2">TIMING (slides 81&ndash;82)</td></tr>
+          <tr><td class="h">Lag</td><td>Drug-induced hemolysis is acute, of variable severity, with a <b>lag of 2&ndash;3 days</b>; no symptoms until exposed to oxidative stress</td></tr>
+          <tr><td class="h">Smear</td><td>During an attack: <b>Heinz bodies and bite cells</b></td></tr>
+          <tr><td class="h">Confirm</td><td>A low G6PD level <b>roughly 8 weeks after an attack</b> (the slide asks &ldquo;Why not during an attack?&rdquo;)</td></tr>
+          <tr><td class="rnote" colspan="2">Slide conflict: slide 79 lists &ldquo;antimalarials (chloroquine, etc)&rdquo; while the slide 83 table lists chloroquine as safe for class II and III variants. Prof. Ward sided with the table out loud: &ldquo;don&rsquo;t just assume all anti-malarial medications carry that same risk.&rdquo; Some antimalarials trigger hemolysis, not every one; no antimalarial is keyed.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Fried Nachos And Nuts Turn My Pee Questionable (dark urine is the symptom).</p><p class="mnem-key"><span><b>Fried</b> Fava beans</span><span><b>Nachos</b> Naphthalene (mothballs)</span><span><b>And</b> Antimalarials (some; not chloroquine, per Prof. Ward)</span><span><b>Nuts</b> Nitrofurantoin</span><span><b>Turn</b> Trimethoprim-sulfamethoxazole</span><span><b>My</b> Methylene blue</span><span><b>Pee</b> Phenazopyridine</span><span><b>Questionable</b> Quinolones</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-thal" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Thalassemia: Alpha Genotypes and Labs<span class="tag">Classification &middot; Lecture 46 &middot; slides 86&ndash;89</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:34%">Item</th><th style="width:66%">Slide wording</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Genes</td><td><b>4 alpha</b> globin genes and <b>2 beta</b> globin genes; the phenotype depends on how many are mutated</td></tr>
+          <tr><td class="h">Silent carrier</td><td><b>&alpha;&minus;/&alpha;&alpha;</b>: the mild end of the range</td></tr>
+          <tr><td class="h"><b>Alpha thalassemia 1 trait</b></td><td><b>&alpha;&alpha;/&minus;&minus;</b>: often in <b>Asian ancestry</b>; <b>higher risk of hydrops fetalis</b></td></tr>
+          <tr><td class="h"><b>Alpha thalassemia 2 trait</b></td><td><b>&alpha;&minus;/&alpha;&minus;</b>: more often in <b>African ancestry</b> (mild forms)</td></tr>
+          <tr><td class="h">Far end</td><td>Incompatible with life</td></tr>
+          <tr><td class="h">Where alpha is prevalent</td><td>Southern China, Malaysia, Thailand, the Mediterranean region</td></tr>
+          <tr><td class="grp" colspan="2">LABS (slides 87&ndash;88)</td></tr>
+          <tr><td class="h">Pattern</td><td>Generally &darr; hemoglobin, &darr; MCV, &darr; MCH, <b>&darr; reticulocyte index</b> (marrow failure), <b>Coombs negative</b>; <b>iron overload</b> (bold, underlined)</td></tr>
+          <tr><td class="h">Order</td><td>Complete blood count, iron studies, reticulocyte count; <b>hemoglobin electrophoresis</b>; gene testing</td></tr>
+          <tr><td class="rnote" colspan="2">Slide 13: thalassemia gives more microcytosis for its hemoglobin level, with a <b>normal or elevated red cell count</b>. Slide conflict: slide 13 also says thalassemia has <b>a reticulocytosis</b>, while slide 87 gives a <b>&darr; reticulocyte index</b> (marrow failure); the reticulocyte direction is not keyed. Slide 86 places beta thalassemia &ldquo;generally in patients of African origin&rdquo;; that ancestry claim is not keyed.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Trait 1: both dashes on 1 side of the slash (Asian, hydrops risk). Trait 2: the dashes split over 2 sides (African, mild).</p><p class="mnem-key"><span><b>1 side</b> &alpha;&alpha;/&minus;&minus; = alpha thalassemia 1 trait, Asian ancestry, higher hydrops fetalis risk</span><span><b>2 sides</b> &alpha;&minus;/&alpha;&minus; = alpha thalassemia 2 trait, African ancestry</span><span><b>1 dash</b> &alpha;&minus;/&alpha;&alpha; = silent carrier</span></p><p class="mnem-brk"><b>Where it breaks:</b> The slash rule is about the slide&rsquo;s notation only; the lab pattern is not in the hook.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-hb-variants" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Hemoglobin S, C, SC and F<span class="tag">Classification &middot; Lecture 46 &middot; slides 90&ndash;91, 96&ndash;97</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:24%">Hemoglobin</th><th style="width:34%">Make-up</th><th style="width:42%">Behavior</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><b>S</b> (sickle)</td><td>Two alpha + two mutant beta globins (&alpha;<sub>2</sub>&beta;<sup>S</sup><sub>2</sub>)</td><td><b>Polymerizes</b> under low oxygen tension &rarr; sickle shape</td></tr>
+          <tr><td class="h"><b>C</b></td><td>A different beta globin mutation</td><td><b>Does not polymerize</b></td></tr>
+          <tr><td class="h"><b>SC</b> (sickle cell SC)</td><td>&beta;<sup>C</sup> with &beta;<sup>S</sup> (&alpha;<sub>2</sub>&beta;<sup>S</sup>&beta;<sup>C</sup>)</td><td>Course generally <b>between sickle cell anemia and sickle cell trait</b></td></tr>
+          <tr><td class="h"><b>F</b> (fetal)</td><td>&alpha;<sub>2</sub>&gamma;<sub>2</sub></td><td>Normally <b>&lt;1%</b>; <b>10&ndash;20%</b> seems a threshold for decreased severity of sickle cell disease or beta thalassemia (hereditary persistence of fetal hemoglobin)</td></tr>
+          <tr><td class="rnote" colspan="3">Sickle trait (HbAS) carriers are <b>90% less likely</b> to have severe malaria; the disease follows the malaria belt (slide 91).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">S Sickles, C Can&rsquo;t, SC sits in the Center, F Fends it off at 10&ndash;20%.</p><p class="mnem-key"><span><b>Sickles</b> HbS polymerizes at low oxygen tension</span><span><b>Can&rsquo;t</b> HbC does not polymerize</span><span><b>Center</b> HbSC: between anemia and trait</span><span><b>Fends</b> HbF normally &lt;1%; 10&ndash;20% lessens sickle cell and beta thalassemia severity</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-sickle-screen" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Sickle Cell Disease: the Four Screening Periods<span class="tag">Classification &middot; Lecture 46 &middot; slide 92</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:24%">Period</th><th style="width:76%">Slide wording</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><b>Preconception</b></td><td>Identify parents whose offspring would be at risk</td></tr>
+          <tr><td class="h"><b>Prenatal</b></td><td>Can be done by chorionic villus sampling</td></tr>
+          <tr><td class="h"><b>Neonatal</b></td><td>Now done in <b>all 50 states</b>. Those who test negative or bypass screening usually present <b>within the first two years</b>; symptoms start around <b>5 months</b> (HbF to HbS transition): failure to thrive, pain, anemia, splenomegaly, chronic infections, swelling of the extremities (vaso-occlusion)</td></tr>
+          <tr><td class="h"><b>Post-natal</b></td><td>No detail on the slide</td></tr>
+          <tr><td class="rnote" colspan="2">The slide gives a gestational week for chorionic villus sampling; it is not keyed (the periods are).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Before you Pair, before you&rsquo;re Born, as a Baby, and After.</p><p class="mnem-key"><span><b>Pair</b> preconception</span><span><b>Born</b> prenatal (chorionic villus sampling)</span><span><b>Baby</b> neonatal: all 50 states; symptoms around 5 months</span><span><b>After</b> post-natal</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-hemochromatosis" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Hemochromatosis: Cut-off and Biopsy Pattern<span class="tag">Cut-off &middot; Lecture 46 &middot; slides 100, 103&ndash;104</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:24%"></th><th style="width:38%">Primary</th><th style="width:38%">Secondary</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Cause (slide 100)</td><td><b>Autosomal recessive</b>: mutated genes that control iron absorption</td><td>Excessive iron supplementation, chronic liver disease, anemia</td></tr>
+          <tr><td class="h"><b>Liver biopsy</b> (Prussian blue)</td><td>Hepatic accumulation of iron <b>sparing the Kupffer cells</b> until later in the disease</td><td>Iron (parenteral iron overload) <b>predominantly in Kupffer cells</b></td></tr>
+          <tr><td class="h">Treatment (slide 104)</td><td><b>Therapeutic phlebotomy</b>, ferritin-guided follow-up</td><td>Treat the cause; <b>chelation</b> when phlebotomy is unsuitable</td></tr>
+          <tr><td class="grp" colspan="3">IRON PANEL CUT-OFF (slide 103)</td></tr>
+          <tr><td class="h"><b>No iron overload</b></td><td>Ferritin <b>&lt;300 micrograms/L</b> AND transferrin saturation <b>&lt;45%</b></td><td></td></tr>
+          <tr><td class="rnote" colspan="3">Ferritin is an acute phase reactant: be cautious and look at the entire lab picture (slide 103).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">300 and 45: under both and the tank is not overfull. Primary Passes over the Kupffer cells; Secondary Stuffs them.</p><p class="mnem-key"><span><b>300</b> ferritin &lt;300 micrograms/L</span><span><b>45</b> transferrin saturation &lt;45%</span><span><b>Both</b> both under = no iron overload</span><span><b>Passes</b> primary: Kupffer cells spared until late</span><span><b>Stuffs</b> secondary: iron mainly in Kupffer cells</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-sidero" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Sideroblastic Anemia: Types<span class="tag">Classification &middot; Lecture 46 &middot; slides 29&ndash;30, 32</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:30%">Type</th><th style="width:70%">Slide wording</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><b>Hereditary</b></td><td>Usually <b>X-linked</b></td></tr>
+          <tr><td class="h"><b>Acquired</b></td><td>Usually with <b>myelodysplastic syndrome</b></td></tr>
+          <tr><td class="h"><b>Acquired / reversible</b></td><td>Alcohol; drugs (<b>isoniazid, chlorambucil</b>); copper deficiency; hypothermia; <b>lead poisoning</b></td></tr>
+          <tr><td class="grp" colspan="2">MODERN CLASSIFICATION (slide 30)</td></tr>
+          <tr><td class="h">Two categories</td><td>Dyserythropoiesis (hypohepcidinemia); transfusion-dependence (myelodysplastic syndrome, thalassemia)</td></tr>
+          <tr><td class="rnote" colspan="2">Defining feature (slide 32): <b>ring sideroblasts</b> on bone marrow aspirate (iron-containing mitochondria in a ring around the nucleus); excess total body iron with <b>increased</b> serum iron, transferrin saturation and ferritin.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">The reversible kind: A Drunk Copper Has Lead.</p><p class="mnem-key"><span><b>A</b> Alcohol</span><span><b>Drunk</b> Drugs: isoniazid, chlorambucil</span><span><b>Copper</b> copper deficiency</span><span><b>Has</b> hypothermia</span><span><b>Lead</b> lead poisoning</span></p><p class="mnem-brk"><b>Where it breaks:</b> Covers the reversible list only; hereditary = X-linked, acquired = myelodysplastic syndrome.</p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-esa" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Erythropoietin: FDA-Approved Indications<span class="tag">Criteria &middot; Lecture 46 &middot; slide 26</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:30%">Item</th><th style="width:70%">Slide wording</th></tr></thead>
+        <tbody>
+          <tr><td class="h">First</td><td><b>Treat the underlying condition</b> (the slide&rsquo;s arrow: &ldquo;most important&rdquo;)</td></tr>
+          <tr><td class="h">Agent</td><td>Erythropoietin supplementation (epoetin alfa, Procrit)</td></tr>
+          <tr><td class="h">Hemoglobin</td><td><b>Less than 10 g/dL</b></td></tr>
+          <tr><td class="h">Anemia due to</td><td><b>Rheumatoid arthritis, inflammatory bowel disease, hepatitis C, zidovudine therapy in human immunodeficiency virus (HIV)-infected patients, myelosuppressive chemotherapy of solid malignancy, chronic kidney disease</b></td></tr>
+          <tr><td class="rnote" colspan="2">May require parenteral iron; referral to hematology is not usually needed for anemia of chronic disease.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Under Ten, a Real Inflammation Hurts: Zidovudine, Chemo, Kidneys.</p><p class="mnem-key"><span><b>Ten</b> hemoglobin &lt;10 g/dL</span><span><b>Real</b> rheumatoid arthritis</span><span><b>Inflammation</b> inflammatory bowel disease</span><span><b>Hurts</b> hepatitis C</span><span><b>Zidovudine</b> zidovudine therapy in HIV</span><span><b>Chemo</b> myelosuppressive chemotherapy of a solid malignancy</span><span><b>Kidneys</b> chronic kidney disease</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-iron-tx" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Iron Therapy: the Response Timeline<span class="tag">Cut-off &middot; Lecture 46 &middot; slides 18&ndash;21</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:34%">When</th><th style="width:66%">Expected</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><b>3 weeks</b></td><td>Hematocrit back <b>halfway toward normal</b></td></tr>
+          <tr><td class="h"><b>2 months</b></td><td><b>Full return to baseline</b></td></tr>
+          <tr><td class="h"><b>3&ndash;6 months more</b></td><td>Continue iron after normal values return, to <b>replenish iron stores</b></td></tr>
+          <tr><td class="h">Not responding</td><td><b>Hematology referral</b> if the diagnosis is not confirmed or there is no response to oral iron (slide 17); parenteral iron if intolerant or refractory (most need <b>1&ndash;1.5 g</b>, slide 21)</td></tr>
+          <tr><td class="rnote" colspan="2">Ferrous sulfate 325 mg (66 mg elemental iron) once daily or every other day; <b>constipation</b>, so always give at least a prn laxative or stool softener; food reduces side effects but also absorption. Alternate-day dosing is probably best; or ferrous sulfate 44 mg/5 mL (as elemental iron) once daily in the morning, on an empty stomach with a full glass of orange juice (slides 18&ndash;19).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Halfway in 3 weeks, home in 2 months, then 3&ndash;6 months to restock the pantry.</p><p class="mnem-key"><span><b>Halfway</b> hematocrit halfway to normal by 3 weeks</span><span><b>Home</b> baseline by 2 months</span><span><b>Restock</b> continue 3&ndash;6 months after normal to refill stores</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-lifespan" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Cytopenias Across the Lifespan<span class="tag">Populations &middot; Lecture 46 &middot; slide 105</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:22%">Population</th><th style="width:78%">What changes clinically / care priority</th></tr></thead>
+        <tbody>
+          <tr><td class="h"><b>Infants</b></td><td>Use <b>neonatal</b> complete blood count ranges; recognize inherited anemias and abnormal newborn screens; coordinate pediatric hematology</td></tr>
+          <tr><td class="h"><b>Child</b></td><td>Assess <b>diet</b> and inherited anemia; consider rare genetic or transfusion-related iron overload; <b>weight-based</b> treatment</td></tr>
+          <tr><td class="h"><b>Adolescent</b></td><td><b>Heavy menses</b>: check complete blood count and ferritin, treat iron deficiency and control bleeding; support adherence and transition to adult care</td></tr>
+          <tr><td class="h"><b>Adult</b></td><td>Evaluate gastrointestinal or gynecologic blood loss, <b>pregnancy</b> and chronic kidney disease; <b>HFE hemochromatosis usually presents in adults</b>: screen family</td></tr>
+          <tr><td class="h"><b>Elderly</b></td><td>Check iron and B12 deficiency, chronic kidney disease, <b>drugs</b> and marrow disorders (myelodysplastic syndrome); tailor to function, comorbidities and goals</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Screens, Spoons, Periods, Pregnancy, Pills.</p><p class="mnem-key"><span><b>Screens</b> infants: newborn screens, neonatal ranges</span><span><b>Spoons</b> child: diet, weight-based dosing</span><span><b>Periods</b> adolescent: heavy menses</span><span><b>Pregnancy</b> adult: also blood loss, kidney disease, HFE</span><span><b>Pills</b> elderly: drugs, plus iron/B12, kidney, myelodysplastic syndrome</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-followup-anemia" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Anemia: Follow-up and Prognosis<span class="tag">Follow-up &middot; Lecture 46 &middot; slide 106</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:20%">Condition</th><th style="width:42%">Patient education / referral</th><th style="width:38%">Prognosis</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Iron deficiency</td><td>Identify blood loss; reinforce iron use; gastrointestinal referral if indicated</td><td>Usually <b>resolves</b> once the cause and iron stores are corrected</td></tr>
+          <tr><td class="h">Chronic disease</td><td>Treat inflammation; monitor blood count and iron; coordinate care</td><td>Can <b>persist while the underlying disease is active</b></td></tr>
+          <tr><td class="h">Sideroblastic</td><td>Remove triggers; refer if the cause is unclear or transfusions are needed</td><td><b>Variable</b>; clonal forms may require continued follow-up</td></tr>
+          <tr><td class="h">Megaloblastic</td><td>Treat B12 or folate deficiency; monitor neurologic recovery</td><td>Counts improve; <b>delayed B12 treatment may leave deficits</b></td></tr>
+          <tr><td class="h">Aplastic</td><td><b>Urgent hematology</b>; infection and bleeding precautions; discuss therapy</td><td>Depends on severity and response to treatment</td></tr>
+          <tr><td class="h">Renal (chronic kidney disease)</td><td>Monitor hemoglobin, iron and blood pressure; refer for an erythropoiesis-stimulating agent or advanced disease</td><td>Often <b>chronic</b>; may improve with iron or an erythropoiesis-stimulating agent</td></tr>
+          <tr><td class="rnote" colspan="3">Aplastic anemia (slide 55): five-year survival <b>&gt;75%</b> after a bone marrow transplant from a suitable donor; most <b>untreated</b> patients <b>die within one year</b>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Fix it and it Fades (iron, megaloblastic); it Follows its disease (chronic disease, renal); it Depends (sideroblastic, aplastic).</p><p class="mnem-key"><span><b>Fades</b> iron deficiency resolves; megaloblastic counts improve (late B12 may leave deficits)</span><span><b>Follows</b> chronic disease persists while active; renal often chronic</span><span><b>Depends</b> sideroblastic variable; aplastic depends on severity and response</span></p></div>
+  </section>
+
+  <section class="topic" id="crit-l46-followup-hemolysis" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Hemolysis &amp; Iron Overload: Follow-up<span class="tag">Follow-up &middot; Lecture 46 &middot; slide 107</span></h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:20%">Condition</th><th style="width:42%">Patient education / referral</th><th style="width:38%">Prognosis</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Sickle cell</td><td><b>Vaccines</b>, fever and chest pain precautions, hematology follow-up</td><td>Lifelong; prevention reduces complications</td></tr>
+          <tr><td class="h">Thalassemia</td><td>Hematology for severe forms; iron monitoring; <b>genetic counseling</b></td><td>Trait often mild; severe forms need lifelong monitoring</td></tr>
+          <tr><td class="h">G6PD deficiency</td><td><b>Avoid oxidative triggers</b>; seek care for jaundice or dark urine</td><td>Usually <b>favorable</b> with trigger avoidance</td></tr>
+          <tr><td class="h">Autoimmune hemolysis</td><td>Treat the cause; monitor relapse and <b>thrombosis</b>; hematology care</td><td>Relapse may occur; depends on cause and response</td></tr>
+          <tr><td class="h">Hemochromatosis</td><td>Iron monitoring and <b>phlebotomy</b>; <b>family screening</b>; avoid excess iron</td><td>Early care limits injury; established cirrhosis may persist</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Shots, Genes, Triggers, Clots, Bleeds.</p><p class="mnem-key"><span><b>Shots</b> sickle cell: vaccines</span><span><b>Genes</b> thalassemia: genetic counseling</span><span><b>Triggers</b> G6PD: avoid oxidative triggers</span><span><b>Clots</b> autoimmune hemolysis: watch relapse and thrombosis</span><span><b>Bleeds</b> hemochromatosis: phlebotomy</span></p></div>
+  </section>
+
+  <section class="topic" id="l46-emph" style="--acc:#b8860b;--acc-bg:#f5eedd;--acc-zebra:#faf7ee;--acc-ink:#906909">
+    <div class="shead"><span class="dot" style="background:#b8860b"></span><h2>★ Emphasized — Cytopenias and Hemochromatosis</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">What this card is</td><td>First the slides <b>Prof. Ward flagged out loud</b> (recording, 12 November); then the <b>slides&rsquo; own emphasis</b> (bold, asterisks, underline, the slide 26 arrow). His rule: you are tested on what is on the slide.</td></tr>
+          <tr><td class="h">★ Said: iron deficiency diagnosis</td><td>&ldquo;You guys want to know this slide&rdquo;: microcytosis, hypochromia, <b>&darr; ferritin, &darr; transferrin saturation, &uarr; total iron-binding capacity</b> (slide 15).</td></tr>
+          <tr><td class="h">★ Said: chronic disease</td><td>&ldquo;Want to pay attention to this slide?&rdquo;: <b>interleukin 6 &rarr; &uarr; hepcidin</b> (slide 23).</td></tr>
+          <tr><td class="h">★ Said: B12 vs folate</td><td>&ldquo;Definitely one that you guys want to pay attention to&rdquo;: <b>homocysteine</b> up in both; <b>methylmalonic acid</b> up in B12 only (slide 47).</td></tr>
+          <tr><td class="h">★ Said: treatment slides</td><td>Aplastic anemia treatment (slide 58); sickle cell management (slide 98); hemochromatosis treatment, <b>therapeutic phlebotomy</b> (slide 104); the lifespan slide (slide 105).</td></tr>
+          <tr><td class="h">★ Said: smears</td><td>Genetic hemolysis: upper smear = <b>spherocytes</b> (slide 75). G6PD: <b>bite cells</b> (left) and <b>Heinz bodies</b> (right); hemolysis is <b>intravascular and extravascular</b> (slides 77&ndash;78).</td></tr>
+          <tr><td class="h">★ Said: thalassemia labs</td><td>&ldquo;Did I tell you guys to pay attention to slide 88?&rdquo; (slide 88).</td></tr>
+          <tr><td class="h">★ Said: acute chest</td><td>&ldquo;A <b>chest x-ray is the first imaging study</b> if you&rsquo;re suspecting acute chest syndrome&rdquo; (slide 94).</td></tr>
+          <tr><td class="h">Played down</td><td>Luspatercept (slide 33): &ldquo;Sorry, don&rsquo;t know that drug.&rdquo; Chloroquine in G6PD: &ldquo;don&rsquo;t just assume all anti-malarial medications carry that same risk.&rdquo;</td></tr>
+          <tr><td class="h">★ Iron deficiency</td><td><b>Chronic blood loss is the most common cause in adults</b> (slide 10); asterisked: <b>nail bed changes (koilonychia), cheilosis, Plummer-Vinson syndrome</b> (slide 12).</td></tr>
+          <tr><td class="h">★ Ferritin trap</td><td>Ferritin is an <b>acute phase reactant</b>: a normal or high ferritin does not exclude iron deficiency (slide 14).</td></tr>
+          <tr><td class="h">★ Oral iron</td><td><b>Ferrous sulfate</b>; side effect <b>constipation</b> (bold, underlined); the orange-juice preparation line is bold (slides 18&ndash;19).</td></tr>
+          <tr><td class="h">★ Chronic disease</td><td><b>Treat the underlying condition</b>: arrowed &ldquo;most important&rdquo; (slide 26).</td></tr>
+          <tr><td class="h">★ B12</td><td><b>Pernicious anemia</b> is the most frequent cause; <b>burning to hands and feet</b>; <b>homocysteine</b> and <b>methylmalonic acid</b> levels (slides 44, 45, 47).</td></tr>
+          <tr><td class="h">★ Hemolysis</td><td><b>Haptoglobin</b>; <b>bilirubin, haptoglobin, lactate dehydrogenase</b>; <b>schistocytes</b>; <b>jaundice</b> (slides 66&ndash;68, 70).</td></tr>
+          <tr><td class="h">★ Autoimmune hemolysis</td><td><b>Increased risk of venous thromboembolism</b> (slide 73).</td></tr>
+          <tr><td class="h">★ G6PD</td><td><b>Fava beans</b>; <b>acute hemolytic anemia</b> on oxidative stress (slide 79).</td></tr>
+          <tr><td class="h">★ Thalassemia</td><td><b>Imbalance in expression &rarr; accumulation and precipitation of globin subunits</b> (slide 85); <b>iron overload</b> (slide 87).</td></tr>
+          <tr><td class="h">Also bold</td><td>Sideroblastic microcytosis is <b>variable</b> (slide 32); <b>microcytic</b> vs <b>macrocytic</b> lab lists (slide 50).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l46-approach" style="--acc:#46491c;--acc-bg:#e5e6df;--acc-zebra:#f2f2ef;--acc-ink:#373916">
+    <div class="shead"><span class="dot" style="background:#46491c"></span><h2>Anemia: Definition &amp; First Approach</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Anemia</td><td>A reduction in healthy red blood cells or hemoglobin, decreasing oxygen delivery to the tissues (slide 6).</td></tr>
+          <tr><td class="h">First steps</td><td>History and physical; complete blood count (all three cell lines, pancytopenia?); the MCV; the <b>reticulocyte index</b> for marrow response (slide 8).</td></tr>
+          <tr><td class="h">All anemias</td><td>Complete blood count, reticulocyte count, reticulocyte index (slide 50).</td></tr>
+          <tr><td class="h">Microcytic</td><td>Serum iron, transferrin saturation, total iron-binding capacity, ferritin, fecal occult blood test, urinalysis.</td></tr>
+          <tr><td class="h">Macrocytic</td><td>B12 and folate, smear, homocysteine and methylmalonic acid; for pernicious anemia anti-intrinsic factor and anti-parietal cell antibodies, parenteral B12 trial.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l46-ida" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Iron Deficiency Anemia</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Causes</td><td><b>Chronic blood loss</b> (gastrointestinal, menses; most common in adults); diet (vegan, tea, calcium antacids, <b>proton pump inhibitors</b>); malabsorption (gastric bypass, celiac sprue, food allergies); demand (pregnancy, growth in infancy or adolescence).</td></tr>
+          <tr><td class="h">Who</td><td>50% of anemia worldwide; ~1 million deaths a year (71% Africa and Asia). United States: men under 50 1%, women of childbearing age 10%, 9% of children 12&ndash;36 months (1/3 of them anemic); <b>low-income families</b> at risk.</td></tr>
+          <tr><td class="h">Signs</td><td>Fatigue, pallor, exercise intolerance, dyspnea on exertion, smooth tongue, <b>pica</b> (common), <b>koilonychia</b> (spoon nails), cheilosis, Plummer-Vinson syndrome.</td></tr>
+          <tr><td class="h">Differential</td><td>Anemia of chronic disease, thalassemia, lead poisoning, zinc deficiency, sideroblastic anemia.</td></tr>
+          <tr><td class="h">Diagnosis</td><td>Microcytosis (<b>MCV &lt;80</b>), hypochromia (&darr; MCH); &darr; ferritin, &darr; transferrin saturation, <b>&uarr; total iron-binding capacity</b>; microcytic hypochromic smear. Also urinalysis, <b>fecal occult blood (stool guaiac)</b>, consider prothrombin and partial thromboplastin times.</td></tr>
+          <tr><td class="h">Treat</td><td><b>The cause</b>: oral contraceptive (consider continuous-cycle) for menses; gastrointestinal bleed &rarr; colonoscopy or endoscopy for colorectal cancer; stop anticoagulants if severe (consult cardiology). Then iron replacement.</td></tr>
+          <tr><td class="h">Parenteral</td><td>If intolerant or refractory; over 15 minutes to 1 hour. Ferric pyrophosphate citrate (Triferic) goes in the dialysate to replace the 5&ndash;7 mg lost per hemodialysis.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l46-acd" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Anemia of Chronic Disease (Inflammation)</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Cause</td><td>Any inflammatory condition: infection, autoimmune, neoplasm. <b>Interleukin-6 &rarr; hepcidin &uarr;</b> blocks iron absorption; inflammation inhibits renal erythropoietin; direct marrow suppression.</td></tr>
+          <tr><td class="h">Who</td><td><b>2nd most common anemia</b>; any age; older adults at increased risk (~1 million over 65 in the United States).</td></tr>
+          <tr><td class="h">Picture</td><td>Initially resembles iron deficiency; symptoms like iron deficiency plus the causative condition.</td></tr>
+          <tr><td class="h">Diagnosis</td><td>Same labs as iron deficiency; erythrocyte sedimentation rate and/or C-reactive protein if inflammation not apparent; ferritin <b>normal or increased</b>; <b>ferritin &lt;30 ng/mL = coexistent iron deficiency</b>.</td></tr>
+          <tr><td class="h">Treat</td><td><b>The underlying condition</b>; erythropoietin if indicated (hemoglobin &lt;10); maybe parenteral iron; hematology usually not needed.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l46-sidero" style="--acc:#7a3b2e;--acc-bg:#ece4e2;--acc-zebra:#f6f1f0;--acc-ink:#5f2e24">
+    <div class="shead"><span class="dot" style="background:#7a3b2e"></span><h2>Sideroblastic Anemia &amp; Lead Poisoning</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Who</td><td>Rare; about <b>2/3 males in early childhood or adolescence</b>, 1/3 young to middle-aged females; any age.</td></tr>
+          <tr><td class="h">Picture</td><td>Nothing specific beyond anemia; usually moderate, <b>hematocrit 20&ndash;30%</b>.</td></tr>
+          <tr><td class="h">Diagnosis</td><td>Variable microcytosis; <b>dimorphic smear</b> (microcytic, normal and macrocytic cells); <b>&uarr; serum iron, transferrin saturation, ferritin</b>; zinc &uarr; if from copper deficiency; <b>ring sideroblasts</b> on marrow aspirate = defining.</td></tr>
+          <tr><td class="h">Treat</td><td>Remove the agent; transfusion if severe; poor response to erythropoietin; occasional response to <b>pyridoxine</b> (50&ndash;200 mg/day); <b>luspatercept</b> for myelodysplastic syndrome with ring sideroblasts; hematology for diagnosis or transfusion.</td></tr>
+          <tr><td class="h">Lead (plumbism)</td><td>Microcytic hypochromic anemia with <b>basophilic stippling</b> (abnormal nucleic acid collections). Sources: industrial, gasoline sniffing, lodged bullets, lead cookware, paint chips, Flint water.</td></tr>
+          <tr><td class="h">Lead effects</td><td><b>Neurologic most vulnerable</b> (irritability, behavior change, peripheral neuropathy); abdominal colic, nausea, constipation; <b>lead line in the gums</b>.</td></tr>
+          <tr><td class="h">Lead treatment</td><td>Stop exposure; by lead level; severe with neurologic effects &rarr; <b>chelation</b>: succimer (Chemet), dimercaprol, ethylenediaminetetraacetic acid (EDTA).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l46-macro" style="--acc:#4a5a2a;--acc-bg:#e6e8e1;--acc-zebra:#f2f3f0;--acc-ink:#3a4621">
+    <div class="shead"><span class="dot" style="background:#4a5a2a"></span><h2>Macrocytic, Megaloblastic &amp; Folate</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Macrocytic</td><td><b>MCV &gt;100</b>: megaloblastic (B12, folate) or non-megaloblastic (alcohol or drug, hypothyroidism, liver failure, marrow dysplasia; usually &lt;115).</td></tr>
+          <tr><td class="h">Smear</td><td><b>Macro-ovalocytes and hypersegmented neutrophils</b> (slides 39&ndash;40).</td></tr>
+          <tr><td class="h">Folate causes</td><td>Diet (impoverished, alcohol use disorder, elderly); pregnancy; proximal small bowel malabsorption; drugs: <b>methotrexate, 5-fluorouracil, hydroxyurea, phenytoin, metformin</b>.</td></tr>
+          <tr><td class="h">Folate replacement</td><td>Folic acid 1 mg orally or parenterally daily for 1&ndash;2 weeks, <b>after</b> checking for B12 deficiency.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l46-b12" style="--acc:#4a5a2a;--acc-bg:#e6e8e1;--acc-zebra:#f2f3f0;--acc-ink:#3a4621">
+    <div class="shead"><span class="dot" style="background:#4a5a2a"></span><h2>Vitamin B12 &amp; Pernicious Anemia</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Absorption</td><td>Peptic digestion frees B12 &rarr; <b>intrinsic factor</b> from parietal cells binds it &rarr; binds cubilin in the <b>distal ileum</b> &rarr; transcobalamin &rarr; stored in the liver (<b>~3&ndash;4 years</b> or more).</td></tr>
+          <tr><td class="h">Pernicious anemia</td><td><b>Most frequent cause</b> of B12 deficiency: autoimmune attack on parietal cells and/or intrinsic factor &rarr; gastric atrophy and <b>increased gastric cancer risk</b>.</td></tr>
+          <tr><td class="h">Clinical</td><td>Anemia findings; glossitis, oral ulcers. <b>Distinguishing: neurologic</b> (dorsal and lateral cord demyelination): neuropsychiatric change, <b>stocking-and-glove</b> numbness, tingling, burning of the hands and feet, then unsteady gait and lost position sense; may not improve with B12.</td></tr>
+          <tr><td class="h">Replacement</td><td>B12 1000 mcg subcutaneously or intramuscularly weekly for 3 weeks; or oral cobalamin 1000&ndash;2000 mcg daily.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l46-ckd-aplastic" style="--acc:#5a3a5e;--acc-bg:#e8e3e8;--acc-zebra:#f3f1f4;--acc-ink:#462d49">
+    <div class="shead"><span class="dot" style="background:#5a3a5e"></span><h2>Chronic Kidney Disease &amp; Aplastic Anemia</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Kidney: order</td><td>Complete blood count, reticulocytes, ferritin and transferrin saturation; assess other causes (slide 53).</td></tr>
+          <tr><td class="h">Kidney: treat</td><td>Correct iron deficiency; oral or intravenous iron and an erythropoiesis-stimulating agent by stage, hemoglobin and risk; monitor hemoglobin, iron and blood pressure; nephrology for advanced disease.</td></tr>
+          <tr><td class="h">Aplastic: what</td><td><b>Pancytopenia</b> from loss of hematopoietic stem cells (the defining feature).</td></tr>
+          <tr><td class="h">Aplastic: who</td><td>Half in the first three decades (peaks in childhood and at 20&ndash;25); male:female ~1:1; 0.6&ndash;6.1 per million.</td></tr>
+          <tr><td class="h">Aplastic: causes</td><td>Autoimmune; stem cell injury (cytotoxic drugs, <b>chloramphenicol</b>, ionizing radiation, benzene, pesticides); viruses; clonal (paroxysmal nocturnal hemoglobinuria, myelodysplastic syndrome, acute myeloid leukemia); inherited (<b>Fanconi anemia</b>, childhood).</td></tr>
+          <tr><td class="h">Aplastic: picture</td><td>Recurrent infections (neutropenia), bleeding, petechiae, purpura (thrombocytopenia), fatigue, pallor.</td></tr>
+          <tr><td class="h">Aplastic: plan</td><td><b>Bone marrow biopsy</b> required; <b>urgent hematology/oncology</b>; treatment = <b>bone marrow transplant</b>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l46-leuko" style="--acc:#5a3a5e;--acc-bg:#e8e3e8;--acc-zebra:#f3f1f4;--acc-ink:#462d49">
+    <div class="shead"><span class="dot" style="background:#5a3a5e"></span><h2>Leukopenia &amp; Neutropenia</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Causes</td><td>Viral illness, medications or chemotherapy, autoimmune disease, nutrient deficits, marrow pathology.</td></tr>
+          <tr><td class="h">Workup</td><td>Repeat complete blood count with differential, trend, peripheral smear, other cell lines.</td></tr>
+          <tr><td class="h">Chronic care</td><td>Stop an offending drug; correct deficiencies; selected patients need <b>G-CSF</b> (granulocyte colony-stimulating factor).</td></tr>
+          <tr><td class="h">Teach</td><td><b>Report fever or rigors promptly</b>; monitor counts.</td></tr>
+          <tr><td class="h">Prognosis</td><td>Transient viral leukopenia often resolves; persistent or severe neutropenia = more infection risk, may mean marrow disease.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l46-hemolysis" style="--acc:#7a3b2e;--acc-bg:#ece4e2;--acc-zebra:#f6f1f0;--acc-ink:#5f2e24">
+    <div class="shead"><span class="dot" style="background:#7a3b2e"></span><h2>Hemolytic Anemias &amp; Autoimmune Hemolysis</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Definition</td><td>Shortened red cell survival from premature destruction. Red cell ~6 &micro;m vs capillaries ~2 &micro;m.</td></tr>
+          <tr><td class="h">Red cell defenses</td><td>Deformable membrane and cytoskeleton (<b>spectrin, ankyrin</b>); strong redox environment; biconcave disc (~40% more surface area).</td></tr>
+          <tr><td class="h">All hemolytic anemias</td><td>&darr; red cell life span, compensatory &uarr; erythropoiesis, retention of breakdown products (iron); marrow hyperplasia and &uarr; reticulocytes; extramedullary hematopoiesis (liver, spleen, lymph nodes) if severe and chronic.</td></tr>
+          <tr><td class="h">Routes</td><td><b>Extravascular</b> (more common; spleen and liver macrophages &rarr; unconjugated bilirubin); <b>intravascular</b> (free hemoglobin &rarr; haptoglobin; some into urine).</td></tr>
+          <tr><td class="h">Presentation</td><td>Anemia symptoms; severe: chest pain, high-output heart failure, shock. Differentiating: <b>jaundice, splenomegaly</b>, joint pain, hematuria.</td></tr>
+          <tr><td class="h">Autoimmune</td><td>Antibody against the red cell membrane; primary (de novo, almost always <b>IgG</b>) or secondary; transfusion reaction. <b>Coombs positive</b>; <b>venous thromboembolism risk</b>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l46-g6pd" style="--acc:#7a3b2e;--acc-bg:#ece4e2;--acc-zebra:#f6f1f0;--acc-ink:#5f2e24">
+    <div class="shead"><span class="dot" style="background:#7a3b2e"></span><h2>G6PD Deficiency</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">What</td><td><b>Most common genetic disorder of erythrocytes</b> (200&ndash;400 million); <b>X-linked recessive</b>, so generally only males are affected; carrier females generally unaffected.</td></tr>
+          <tr><td class="h">Mechanism</td><td>No reduced glutathione &rarr; oxidative damage &rarr; <b>Heinz bodies</b> inside the cell; splenic macrophages bite out a chunk (<b>bite cells</b>); intravascular and extravascular hemolysis.</td></tr>
+          <tr><td class="h">Prevalence</td><td>Kurdish Jews 60&ndash;70%; Sardinians 4&ndash;35%; Nigerians 22%; Thai 17%; American Black people 11&ndash;12%; Japanese and Koreans 0&ndash;1%.</td></tr>
+          <tr><td class="h">Symptoms</td><td>None until oxidative stress; then abdominal pain, <b>jaundice, dark urine</b>, splenomegaly.</td></tr>
+          <tr><td class="h">Treat</td><td>&ldquo;Don&rsquo;t eat that&rdquo; (avoid the trigger); hydrate; transfuse if needed; splenectomy only for recurrent attacks.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l46-thal" style="--acc:#2f5d6b;--acc-bg:#e2e8ea;--acc-zebra:#f0f4f5;--acc-ink:#254953">
+    <div class="shead"><span class="dot" style="background:#2f5d6b"></span><h2>Thalassemia</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">What</td><td>Mutations cut alpha or beta globin synthesis; most erythroblasts die in the marrow; <b>globin imbalance &rarr; subunits precipitate &rarr; destruction in the spleen</b>.</td></tr>
+          <tr><td class="h">Course</td><td>Hemolytic anemia, <b>iron overload</b>, splenomegaly, extramedullary hematopoiesis, jaundice, <b>skeletal changes</b> (pictured on slide 87).</td></tr>
+          <tr><td class="h">Treat</td><td><b>Supportive</b>: transfusion only when absolutely necessary (worsens iron overload); <b>folic acid</b>; genetic counseling; preconception testing with a family history.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l46-sickle" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Sickle Cell Disease</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Clinical</td><td>Anemia almost universal, <b>hematocrit 15&ndash;30%</b>; pain crises (microvascular occlusion: pain, tenderness, anxiety, tachycardia).</td></tr>
+          <tr><td class="h">Infarction</td><td>Splenic infarct; <b>aseptic necrosis of the femoral or humeral heads</b>; retinopathy; kidney disease; leg ulcers; <b>priapism</b>; susceptibility to <b>encapsulated bacteria</b>.</td></tr>
+          <tr><td class="h">Stroke</td><td>Pediatric stroke <b>300&times;</b> unaffected children; <b>25% have a stroke by age 45</b>.</td></tr>
+          <tr><td class="h">Acute chest syndrome</td><td><b>Leading cause of death</b>; often with a pain event; <b>&gt;10% adult mortality</b>; infection, infarction, pulmonary or fat embolism; chest pain, fever, dyspnea, hypoxemia, <b>pulmonary infiltrates</b> on a chest X-ray.</td></tr>
+          <tr><td class="h">Management</td><td><b>Hydroxyurea raises HbF</b> and reduces vaso-occlusive events; vaccines and childhood penicillin prophylaxis; transfusion or exchange for selected severe events; red flags: fever, chest pain or hypoxemia, new neurologic deficit.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l46-hemochrom" style="--acc:#5e4123;--acc-bg:#e8e4e0;--acc-zebra:#f4f2f0;--acc-ink:#49331b">
+    <div class="shead"><span class="dot" style="background:#5e4123"></span><h2>Hemochromatosis</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">What</td><td>Iron overload: excess deposition &rarr; oxidative stress, fibrosis, organ dysfunction; <b>asymptomatic early</b>. Liver, heart, joints, endocrine organs, skin.</td></tr>
+          <tr><td class="h">Signs</td><td>Fatigue; <b>skin bronzing</b> (face, neck, groin, extensor forearms and lower legs); joint pain, <b>2nd and 3rd metacarpophalangeal joints</b> and knees; cardiomyopathy.</td></tr>
+          <tr><td class="h">Pearl</td><td>Pituitary iron &rarr; <b>hypogonadotropic hypogonadism</b>: low libido, impotence, amenorrhea, small testes, gynecomastia, less body hair.</td></tr>
+          <tr><td class="h">Family</td><td>Consider HFE testing with elevated transferrin saturation or ferritin; offer first-degree relative screening.</td></tr>
+          <tr><td class="h">Teach</td><td>Avoid iron supplements and excess alcohol. Early treatment prevents organ damage; assess fibrosis, monitor cirrhosis for liver cancer.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the CMS I Exam 8 Study Guide (Class of 2028). For the full explanation behind any of these, see the full guide.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
