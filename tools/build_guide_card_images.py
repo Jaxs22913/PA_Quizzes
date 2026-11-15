@@ -55,6 +55,8 @@ CURATED = {
     # Microbiology Exam 3: two plates that read at strip height (a scheme or tree would not).
     "Microbiology Exam 3/micro-exam-3-study-guide.html":
         "Microbiology Exam 3/micro-exam-3-study-guide-images/l14-s048-emb-agar.jpg",
+    "Microbiology Exam 3/micro-exam-3-webster-review.html":
+        "Microbiology Exam 3/micro-exam-3-study-guide-images/l17-s060-ring-trophozoites.jpg",
     "Microbiology Exam 3/micro-exam-3-cram-sheet.html":
         "Microbiology Exam 3/micro-exam-3-study-guide-images/l14-s064-rainbow-agar.jpg",
     # Clean and unmistakable, instead of the neonatal gonococcal discharge.

@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microbiology &middot; Exam 3 &mdash; Professor Webster&rsquo;s Review</title>
+<style>
+  :root{
+    --ink:#1b241d;
+    --paper:#faf6f7;
+    --accent:#1f4d2b;      /* rose plum */
+    --accent2:#c2903a;      /* warm gold */
+    --accent3:#3f8a55;      /* muted violet */
+    --line:#e5dade;
+    --soft:#665b62;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;
+  }
+  header.top{
+    background:linear-gradient(120deg,#123018,var(--accent) 55%,#5aa872);
+    color:#fff;
+    padding:34px 26px 30px;
+  }
+  header.top h1{
+    margin:0 0 6px;
+    font-size:2rem;
+    letter-spacing:.2px;
+    font-weight:800;
+  }
+  header.top p{margin:2px 0;color:#f5e6ec;font-size:.95rem;}
+  .layout{display:flex;max-width:1180px;margin:0 auto;}
+  nav.toc{
+    position:sticky;top:38px;align-self:flex-start;
+    width:280px;min-width:280px;max-height:calc(100vh - 38px);max-height:calc(100dvh - 38px);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+    padding:24px 18px;border-right:1px solid var(--line);
+    background:#f2e9eb;
+    font-size:.85rem;
+  }
+  nav.toc h2{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin:14px 0 6px;}
+  nav.toc a{display:block;color:var(--soft);text-decoration:none;padding:3px 0;border-bottom:1px solid transparent;}
+  nav.toc a.top-link{font-weight:700;color:var(--accent2);margin-top:10px;}
+  nav.toc a:hover{color:var(--accent);}
+  main{flex:1;padding:30px 40px 90px;min-width:0;}
+  section.deck{margin-bottom:56px;scroll-margin-top:18px;}
+  h2.deck-title{
+    font-size:1.55rem;color:var(--accent);
+    border-bottom:3px solid var(--accent2);
+    padding-bottom:8px;margin:0 0 6px;
+    font-weight:800;
+  }
+  .lecturer{color:var(--soft);font-style:italic;font-size:.9rem;margin-bottom:14px;}
+  .io-box{
+    background:#f3e8ec;border:1px solid var(--line);
+    border-radius:10px;padding:14px 18px;margin:14px 0 20px;
+  }
+  .io-box h3{
+    margin:0 0 8px;font-size:.8rem;text-transform:uppercase;
+    letter-spacing:1px;color:var(--accent3);
+  }
+  .io-box ol{margin:0;padding-left:20px;}
+  .io-box li{margin-bottom:5px;font-size:.92rem;}
+  h3.sub{
+    color:var(--accent3);font-size:1.14rem;margin:26px 0 6px;font-weight:800;
+  }
+  h4.subsub{
+    color:var(--accent2);font-size:.98rem;margin:16px 0 4px;
+    font-weight:700;
+  }
+  ul,ol{margin:6px 0 12px;}
+  li{margin-bottom:3px;}
+  p{margin:8px 0;}
+  .callout{
+    border-left:4px solid var(--accent3);
+    background:#efeaf4;padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0;
+  }
+  .pearl{
+    border-left:4px solid var(--accent2);
+    background:#f8f0e2;padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0;
+  }
+  table{border-collapse:collapse;width:100%;margin:14px 0;font-size:.9rem;}
+  th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  th{background:var(--accent);color:#fff;font-weight:700;}
+  tr:nth-child(even) td{background:#f3ecee;}
+  code{background:#eadfe0;padding:1px 5px;border-radius:4px;font-size:.85rem;}
+  .tag{
+    display:inline-block;background:var(--accent2);color:#fff;
+    font-size:.68rem;
+    padding:2px 8px;border-radius:10px;letter-spacing:.5px;
+    vertical-align:middle;margin-left:8px;
+  }
+  figure.fig{
+    margin:18px 0;padding:12px;background:#f2e9eb;border-radius:10px;
+    border:1px solid var(--line);text-align:center;
+  }
+  figure.fig img{
+    max-width:100%;height:auto;border-radius:6px;background:#fff;
+    box-shadow:0 1px 4px rgba(0,0,0,.1);
+  }
+  figure.fig figcaption{
+    margin-top:8px;font-size:13.5px;color:var(--soft);font-style:italic;line-height:1.45;
+  }
+  .test-yourself-btn{
+    display:inline-block;margin-top:18px;padding:10px 18px;border:none;border-radius:999px;
+    background:var(--acc,var(--accent));color:#fff;font-weight:700;font-size:.92rem;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+  }
+  .test-yourself-btn:hover{filter:brightness(1.08);}
+  footer.guide-foot{margin:34px 40px 0;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--soft);}
+  @media(max-width:820px){
+    nav.toc{display:none;}
+    main{padding:22px 18px 60px;}
+    footer.guide-foot{margin:34px 18px 0;}
+  }
+
+  /* header.top sits outside .wrap (full-bleed banner) so it needs its own
+     dark-mode invert -- everything else lives inside .layout.wrap and gets
+     the site-wide body > .wrap invert from theme.css for free. */
+  :root[data-theme="dark"] header.top { filter: invert(1) hue-rotate(180deg); }
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #1f4d2b; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+
+  .tier{
+    display:inline-block;vertical-align:middle;margin-left:8px;
+    font-size:.62rem;font-weight:700;letter-spacing:.4px;text-transform:uppercase;
+    padding:3px 9px;border-radius:999px;border:1px solid;white-space:nowrap;
+  }
+  .tier-cold{background:#fdecec;color:#8f2020;border-color:#e0a5a5;}
+  .tier-know{background:#eaf3ec;color:#1f4d2b;border-color:#a8c9b3;}
+  .tier-light{background:#f1efe9;color:#6a6152;border-color:#cfc7b6;}
+  :root[data-theme="dark"] .tier-cold{background:#3a1717;color:#f2b8b8;border-color:#7d3636;}
+  :root[data-theme="dark"] .tier-know{background:#16301d;color:#a6d9b5;border-color:#3c6a4b;}
+  :root[data-theme="dark"] .tier-light{background:#2a2721;color:#cdc4b2;border-color:#554e3f;}
+  .asked{
+    border-left:3px solid var(--accent);background:#f2f5f2;
+    padding:10px 14px 10px 16px;margin:10px 0 14px;border-radius:0 8px 8px 0;
+  }
+  .asked-label{
+    display:block;font-size:.66rem;font-weight:700;letter-spacing:.5px;
+    text-transform:uppercase;color:var(--accent);margin-bottom:4px;
+  }
+  .asked p{margin:0;font-style:italic;color:#3f4a42;}
+  :root[data-theme="dark"] .asked{background:#18211b;border-left-color:#a6d9b5;}
+  :root[data-theme="dark"] .asked-label{color:#a6d9b5;}
+  :root[data-theme="dark"] .asked p{color:#c8d3cb;}
+  .prof-flag{
+    border:2px solid #d4a017;border-radius:10px;padding:16px 14px 6px;
+    margin:22px 0 14px;position:relative;background:#fffdf5;
+  }
+  .prof-flag-label{
+    position:absolute;top:-13px;left:14px;background:#fef3d4;color:#8a6205;
+    font-size:.72rem;font-weight:700;padding:2px 10px;border-radius:8px;
+    border:1px solid #d4a017;letter-spacing:.3px;
+  }
+  .prof-flag table{margin:6px 0 8px;}
+  .prof-flag .callout,.prof-flag .pearl{margin-bottom:10px;}
+  mark.prof-highlight{
+    background:#fef3d4;color:#3a2c05;padding:0 3px;border-radius:3px;
+    box-shadow:inset 0 0 0 1px #e8c766;
+  }
+  :root[data-theme="dark"] .prof-flag{background:#241f10;border-color:#a8801a;}
+  :root[data-theme="dark"] .prof-flag-label{
+    background:#3a2f12;color:#f0d98a;border-color:#a8801a;
+  }
+  :root[data-theme="dark"] mark.prof-highlight{
+    background:#4a3a12;color:#f7ecc8;box-shadow:inset 0 0 0 1px #7a6220;
+  }
+  h4.subsub{margin:16px 0 6px;font-size:1rem;}
+  .obj-map{font-size:.84rem;color:var(--soft);margin:-2px 0 10px;}
+  span.src{color:var(--soft);font-size:.88em;}
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:10px 0 14px;}
+  table.chart{font-size:.84rem;min-width:760px;}
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--paper:#0f1115;--line:#2a2e37;--soft:#9aa1ac;--muted:#9aa1ac;--card:#191c22;--soft-bg:#112917;--accent-l:#1f4d2b;--accent:#679771;--accent-soft:#112917;--accent2-l:#c2903a;--accent2:#b38229;--accent2-soft:#2f2006;--accent3-l:#3f8a55;--accent3:#509b65;--accent3-soft:#112917;}:root[data-theme="light"] body[data-dark="tokens"]{--accent-t:#1f4d2b;--accent2-t:#89621a;--accent3-t:#2a7743;}:root[data-theme="light"] body[data-dark="tokens"] .test-yourself-btn[style*="--acc:#3f8a55"]{--acc:#38844f!important}</style><!--DARK-TOKENS:END-->
+  <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="micro-exam-3-webster-review.docx" title="Editable Word copy">
+</head>
+<body data-dark="tokens" data-dark-kind="guide">
+<style>
+  .footer-mark-ink { stroke: #1b241d; }
+  .footer-mark-accent { stroke: #1f4d2b; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #a6d9b5; }
+  }
+</style>
+<div id="quiz-footer-logo" style="position:fixed;bottom:14px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:14px;pointer-events:none;z-index:500;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(255,255,255,0.8), rgba(255,255,255,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="pointer-events:auto;cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:100px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(255,255,255,0.8), rgba(255,255,255,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<header class="top">
+  <h1>Microbiology &middot; Exam 3 &mdash; Professor Webster&rsquo;s Review</h1>
+  <p>PAJ 5200 Microbiology &middot; Class of 2028</p>
+  <p>What she told the class to study on 13 November 2026 &middot; covers Lectures 14, 17 and 18 &mdash; the three she taught &middot; every answer cited to its slide &middot; Exam 3 is on Wednesday 2 December 2026</p>
+</header>
+<div class="layout wrap" data-readable>
+<nav class="toc">
+  <h2>Contents</h2>
+  <a class="top-link" href="#how-to-use">How to use this page</a>
+  <a class="top-link" href="#lec14">1 &middot; Gram-Negative Bacilli</a>
+  <a href="#w14-pseudomonas">1.1 Pseudomonas aeruginosa</a>
+  <a href="#w14-brucella">1.2 Brucella and undulant fever</a>
+  <a href="#w14-francisella">1.3 Francisella tularensis and rabbit fever</a>
+  <a href="#w14-pertussis">1.4 Bordetella pertussis and its two stages</a>
+  <a href="#w14-legionella">1.5 Legionella: the water reservoir</a>
+  <a href="#w14-diarrhea">1.6 Toxigenic versus invasive diarrheal disease</a>
+  <a href="#w14-lactose">1.7 Coliform versus non-coliform: lactose</a>
+  <a href="#w14-ecoli">1.8 The four Escherichia coli types</a>
+  <a href="#w14-o157">1.9 O157:H7 and hemolytic uremic syndrome</a>
+  <a href="#w14-proteus">1.10 Proteus: swarming</a>
+  <a href="#w14-typhi">1.11 Salmonella Typhi and the carrier</a>
+  <a href="#w14-salmonelloses">1.12 The other salmonelloses</a>
+  <a href="#w14-shigella">1.13 Shigella: invasive and bloody</a>
+  <a href="#w14-plague">1.14 Yersinia pestis and the three plagues</a>
+  <a href="#w14-haemophilus">1.15 Haemophilus</a>
+  <a href="#w14-endotoxin">1.16 Endotoxin: the weapon they all have</a>
+  <a class="top-link" href="#lec17">2 &middot; Parasites</a>
+  <a href="#w17-entamoeba">2.1 Entamoeba histolytica; cyst and trophozoite</a>
+  <a href="#w17-naegleria">2.2 Naegleria fowleri and Acanthamoeba</a>
+  <a href="#w17-balantidium">2.3 Balantidium coli, the ciliate</a>
+  <a href="#w17-giardia">2.4 Giardia lamblia</a>
+  <a href="#w17-trichomonas">2.5 Trichomonas vaginalis</a>
+  <a href="#w17-brucei">2.6 Trypanosoma brucei gambiense and sleeping sickness</a>
+  <a href="#w17-cruzi">2.7 Trypanosoma cruzi and Chagas disease</a>
+  <a href="#w17-leishmania">2.8 Leishmania</a>
+  <a href="#w17-plasmodium">2.9 Plasmodium and malaria</a>
+  <a href="#w17-toxoplasma">2.10 Toxoplasma gondii</a>
+  <a href="#w17-coccidia">2.11 Cryptosporidium and Cyclospora</a>
+  <a href="#w17-worm-damage">2.12 What damage worms do</a>
+  <a href="#w17-enterobius">2.13 Enterobius vermicularis, the pinworm</a>
+  <a href="#w17-trichinella">2.14 Trichinella spiralis</a>
+  <a href="#w17-tissue-nematodes">2.15 Loa loa and Toxocara</a>
+  <a href="#w17-flukes">2.16 Schistosoma and Opisthorchis</a>
+  <a href="#w17-tapeworms">2.17 Taenia and Echinococcus</a>
+  <a href="#w17-drugs">2.18 Why so few drugs for parasites</a>
+  <a class="top-link" href="#lec18">3 &middot; DNA Viruses</a>
+  <a href="#w18-replication">3.1 Animal virus replication versus phage replication</a>
+  <a href="#w18-structure">3.2 Animal virus structure; where the envelope comes from</a>
+  <a href="#w18-infections">3.3 Acute, persistent chronic and persistent latent infections</a>
+  <a href="#w18-oncogenic">3.4 Oncogenic viruses</a>
+  <a href="#w18-teratogenic">3.5 Teratogenic viruses</a>
+  <a href="#w18-herpes">3.6 The eight human herpesviruses</a>
+  <a href="#w18-pox">3.7 What is unusual about poxvirus reproduction</a>
+  <a href="#w18-variola">3.8 Variola, smallpox</a>
+  <a href="#w18-mpox">3.9 Mpox and its vaccine</a>
+  <a href="#w18-vzv">3.10 Varicella zoster: when you are contagious</a>
+  <a href="#w18-kaposi">3.11 The herpesvirus of Kaposi sarcoma</a>
+  <a href="#w18-chart">3.12 Her chart: the other DNA viruses</a>
+  <a class="top-link" href="#closing">What she said about the exam</a>
+</nav>
+<main>
+<h2 id="how-to-use">How to use this page</h2>
+<p>This is not a second study guide. It is a record of what Professor Webster told the class to study for Exam 3, on
+13 November 2026, at the end of the DNA Viruses lecture. It begins in the last minute of part 2 of that day&rsquo;s recording &mdash; &ldquo;Do you want to break before I start your review, or do you want me to just plunge into the review? &hellip; I will plunge. If you want to get out where you have your learning objectives, we&rsquo;re going to review&rdquo; [part 2, 55:10&ndash;55:18] &mdash; and runs through all of part 3 (32 minutes): about 15 minutes on Lecture 14, 14 on Lecture 17 and 3 on Lecture 18. She walked her three Exam 3 lectures in order: the
+Gram-negative bacilli organism by organism, the parasites organism by organism, and DNA viruses as a closing list of
+what to know.</p>
+<p>Each item carries her words and then the answer from the slides, cited to the slide. The time in brackets says
+where her words are in the recording: [part 3, 7:31] is seven and a half minutes into part 3. <strong>Her words come
+from one transcript</strong> (ours; no Notability transcript exists for this recording), so a misheard word is
+possible and is corrected in brackets where it matters. The recording only decides the weighting. Every fact comes
+from the slides &mdash; the visible text and pictures, never the speaker notes &mdash; and where what she said differs
+from a slide, the page says so and teaches the slide.</p>
+<table>
+  <tr><th>Tier</th><th>What it means</th></tr>
+  <tr><td><span class="tier tier-cold">Know cold</span></td>
+      <td>She asked the class to answer it, drilled it, or said &ldquo;need to know&rdquo; or &ldquo;should know&rdquo;</td></tr>
+  <tr><td><span class="tier tier-know">Know it</span></td>
+      <td>She walked it without singling it out</td></tr>
+  <tr><td><span class="tier tier-light">Light touch</span></td>
+      <td>She said not to worry about it</td></tr>
+</table>
+<div class="prof-flag"><span class="prof-flag-label">&#9733; Pictures</span>
+  <p>For the parasites she said it twice: &ldquo;if I showed you a picture of them, it&rsquo;s possible that you could
+  need to identify the picture&rdquo; [part 3, 15:10&ndash;15:16], and at the end, &ldquo;if I give you a picture, be
+  able to recognize it&rdquo; [part 3, 28:52]. The deck&rsquo;s pictures are on this page next to each organism; the
+  one she named directly is the <strong>ring form inside red blood cells</strong> (item 2.9), and she reminded the class
+  of the <em>Trichomonas</em> picture (item 2.5).</p>
+</div>
+<div class="callout">
+  <p><strong>Scope.</strong> She reviewed <strong>only the three lectures she taught</strong> &mdash; Lecture 14
+  (Gram-Negative Bacilli of Medical Importance), Lecture 17 (Parasites of Medical Importance) and Lecture 18 (DNA
+  Viruses of Medical Importance). Exam 3, on <strong>Wednesday 2 December 2026</strong>, covers <strong>Lectures
+  14&ndash;19</strong>, so Dr. Fair&rsquo;s lectures are examinable and are <em>not</em> on this page:
+  <strong>Lecture 15</strong> (Fungi of Medical Importance), <strong>Lecture 16</strong> (Food Safety) and
+  <strong>Lecture 19</strong> (RNA Viruses, 20 November). Use the full <a href="micro-exam-3-study-guide.html">Exam 3
+  study guide</a> and the <a href="micro-exam-3-cram-sheet.html">cram sheet</a> for those.</p>
+  <p><strong>Parts of her lectures she did not mention are still on the syllabus list:</strong> in Lecture 17, the
+  intestinal roundworms <em>Ascaris</em>, <em>Trichuris</em>, the hookworm <em>Necator</em> and
+  <em>Strongyloides</em>, the rat lungworm <em>Angiostrongylus</em>, the filarial worms <em>Wuchereria</em> and
+  <em>Onchocerca</em>, and the flukes <em>Fasciola</em> and <em>Paragonimus</em>. In Lecture 18 she named the
+  herpesviruses and poxviruses and left the rest to her chart (item 3.12). For Lecture 14 she gave diseases and
+  identifying features; treatment and prevention she mostly did not mention.</p>
+</div>
+<p class="obj-map"><strong>Lecture numbering.</strong> The site and the class calendar call the parasites lecture
+Lecture 17, and so does this page; its deck file is named &ldquo;Lecture 16 Dr. Webster Parasites of Medical
+Importance.pptx&rdquo;. Slide numbers are that file&rsquo;s.</p>
+<div class="prof-flag"><span class="prof-flag-label">&#9733; Where her words and the slides differ</span>
+  <p>She was reviewing from memory at speed. In each of these the slide wins, and the item explains:</p>
+  <ul>
+    <li><a href="#w14-pseudomonas">1.1</a> <em>Pseudomonas</em> has a <strong>grapelike</strong> odor; &ldquo;rotten&rdquo; is not on the slide.</li>
+    <li><a href="#w14-plague">1.14</a> Plague: the septicemic form is the slide&rsquo;s <strong>black plague</strong>; pneumonic plague is <strong>highly contagious by aerosol</strong> (caught from humans rarely).</li>
+    <li><a href="#w14-endotoxin">1.16</a> Endotoxin is released on lysis <em>and</em> as the cells grow and divide, not only when they die.</li>
+    <li><a href="#w17-naegleria">2.2</a> <em>Acanthamoeba</em> encephalitis has a <strong>longer progression</strong>; the slide gives no incubation time.</li>
+    <li><a href="#w17-cruzi">2.7</a> Chagas disease&rsquo;s vector is the <strong>reduviid bug (kissing bug)</strong>.</li>
+    <li><a href="#w17-leishmania">2.8</a> <em>Leishmania</em> is carried by female <strong>sand flies</strong>, not fleas.</li>
+    <li><a href="#w17-plasmodium">2.9</a> <em>Plasmodium</em> <strong>does</strong> have a trophozoite: the ring inside the red cell is the ring trophozoite, and it is how malaria is diagnosed.</li>
+  </ul>
+</div>
+<h2 id="lec14">1 &middot; Lecture 14 &mdash; Gram-Negative Bacilli of Medical Importance</h2>
+<div class="io-box">
+  <h3>Instructional objectives &mdash; Gram Negative Bacilli of Medical Importance</h3>
+  <ol>
+    <li>Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-negative bacilli of medical importance.</li>
+    <li>Describe the modes of transmission by which humans acquire Gram-negative bacilli of medical importance.</li>
+  </ol>
+</div>
+<p>She set the objectives aside &mdash; &ldquo;of course this is so general, it&rsquo;s not going to be any use for us&rdquo; [part 3, 0:00&ndash;0:05] &mdash; and went organism by organism, in the deck&rsquo;s order, asking the class for most answers. Every item answers <strong>Objective 1</strong> for its organism and, where transmission is given, <strong>Objective 2</strong>.</p>
+<h3 class="sub" id="w14-pseudomonas">1.1 &middot; <em>Pseudomonas aeruginosa</em> <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Pseudomonas aeruginosa. If you recall, these gram-negative organisms are very, very hard to control because they are resistant to most antibiotics, also resistant to a lot of chemical controls. How do you know you have Pseudomonas aeruginosa in the lab? How would you know?” [part 3, 0:13&ndash;0:45] … “we worry about this particularly when we're talking about patients who have respiratory conditions like cystic fibrosis … It can also be a problem for burn patients as well.” [1:01&ndash;1:22]</p></div>
+  <p><strong>How you know it in the lab:</strong> a <strong>grapelike odor</strong> and a <strong>greenish-blue
+  pigment (pyocyanin)</strong>. <span class="src">Lecture 14, Slide 18.</span> Many pseudomonads produce water-soluble pigments &mdash; blue-green,
+  yellow-green, brown, red; they use aerobic respiration and do not ferment carbohydrates, and they produce oxidase
+  and catalase. <span class="src">Lecture 14, Slide 14.</span></p>
+  <p><strong>Why it is hard to control:</strong> resistant to soaps, dyes, quaternary ammonium disinfectants,
+  drugs and drying, and able to survive in nutrient-poor environments; a major agent of nosocomial infections.
+  <span class="src">Lecture 14, Slide 16.</span> Multidrug resistance comes from restricted outer membrane permeability, antibiotic-inactivating
+  enzymes, efflux pumps, horizontal transfer of resistance genes and biofilm formation; it contaminates ventilators,
+  intravenous solutions and anesthesia equipment. <span class="src">Lecture 14, Slide 17.</span></p>
+  <p><strong>Who gets it:</strong> a common cause of nosocomial infections in hosts with <strong>burns</strong>,
+  neoplastic disease and <strong>cystic fibrosis</strong> (the slide&rsquo;s three asterisks); complications
+  include pneumonia, urinary tract infection, abscesses, otitis and corneal disease. <span class="src">Lecture 14, Slide 18.</span> In healthy people:
+  skin rashes, urinary tract infection, otitis externa (swimmer&rsquo;s ear) and corneal ulcers in contact lens
+  wearers. <span class="src">Lecture 14, Slide 19.</span></p>
+  <figure class="fig"><img width="454" height="800" loading="lazy" src="micro-exam-3-study-guide-images/l14-s016-pseudomonas-pigment.jpg" alt="Culture of Pseudomonas aeruginosa showing its blue-green pigment."><figcaption><em>Pseudomonas aeruginosa</em> and its pigment. <span class="src">Source: Lecture 14, Slide 16.</span></figcaption></figure>
+  <div class="callout"><p><strong>Her words and the slide differ; the slide wins.</strong> She said “very distinctive rotten grape
+  odor” [part 3, 0:59]. The slide says <strong>grapelike odor</strong>; “rotten” is not on it. (She also said
+  “yellow-green or blue-green”; Slide 18 names greenish-blue pyocyanin and Slide 14 lists yellow-green among the
+  pseudomonad pigments, so both are on slides.)</p></div>
+  <h4 class="subsub">The <em>Pseudomonas</em>-like opportunists <span class="tier tier-light">Light touch</span></h4>
+  <div class="asked"><span class="asked-label">In her review</span><p>“And there were a number of other organisms
+  that were similar to Pseudomonas that do these opportunistic infections, but don't worry about them so much. Okay,
+  I'd rather know something about Pseudomonas aeruginosa.” [part 3, 1:22&ndash;1:36]</p></div>
+  <p><em>Burkholderia</em>, <em>Acinetobacter</em> and <em>Stenotrophomonas</em>: similar to pseudomonads,
+  obligate aerobes that do not ferment sugars, motile, oxidase positive, opportunistic pathogens. <span class="src">Lecture 14, Slide 21.</span>
+  They are on the syllabus list (item 2), so know that one line.</p>
+
+<h3 class="sub" id="w14-brucella">1.2 &middot; <em>Brucella</em> and undulant fever <span class="tier tier-know">Know it</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Brucella causes Brucellosis or undulant fever. And it's called undulant fever, if you recall, because the fever undulates. It comes, it goes, at kind of regular intervals.” [part 3, 1:36&ndash;1:58]</p></div>
+  <p>Tiny gram-negative coccobacilli; <em>Brucella abortus</em> (cattle) and <em>Brucella suis</em> (pigs).
+  Brucellosis is also called Malta fever, undulant fever and Bang disease. A zoonosis: animal handling or
+  slaughtering, contact with blood, urine and placentas of infected animals, or unpasteurized dairy products; human
+  to human transmission is rare. <span class="src">Lecture 14, Slide 27.</span></p>
+  <p>It enters through damaged skin or mucous membranes; phagocytes carry it to the blood, with lesions in liver,
+  spleen, bone marrow and kidneys. A severe febrile illness with a <strong>fluctuating pattern of fever, weeks to a
+  year (undulant fever)</strong>; chills, sweating, headache, muscle pain, weight loss. Tested with an agglutination
+  titer; animal vaccine available. <span class="src">Lecture 14, Slide 28.</span></p>
+
+<h3 class="sub" id="w14-francisella">1.3 &middot; <em>Francisella tularensis</em> and rabbit fever <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Francisella tularensis. What does this cause? Tularensis, but it's also commonly called rabbit fever. Why is it called rabbit fever? Because you can contract it from rabbits. So this you often get when you're dealing with, you're hunting wild rabbits and you have breaks in your skin.” [part 3, 1:58&ndash;2:34]</p></div>
+  <p><strong>Tularemia, rabbit fever</strong>: a zoonotic disease of mammals endemic to the northern hemisphere,
+  particularly rabbits. <strong>Transmitted by contact with infected animals, water and dust, or bites by
+  vectors</strong>; incubation days to 3 weeks. Headache, backache, fever,
+  chills, malaise and weakness; <strong>ulcerative skin lesions, swollen lymph nodes</strong>; sore throat,
+  intestinal involvement and respiratory infection. 10% death rate in the systemic and pulmonic forms. Attenuated
+  vaccine. <span class="src">Lecture 14, Slide 29.</span></p>
+  <figure class="fig"><img width="220" height="168" loading="lazy" src="micro-exam-3-study-guide-images/l14-s029-tularemia-ulcer.jpg" alt="An ulcerated skin lesion of tularemia on a hand."><figcaption>The ulcerative skin lesion of tularemia. <span class="src">Source: Lecture 14, Slide 29.</span></figcaption></figure>
+  <div class="callout"><p><strong>Her aside, not on a slide.</strong> Hunting wild rabbits with
+  breaks in the skin [part 3, 2:29&ndash;2:34] is her example; the slide gives the routes as contact with infected
+  animals, water and dust, or vector bites.</p></div>
+
+<h3 class="sub" id="w14-pertussis">1.4 &middot; <em>Bordetella pertussis</em> and its two stages <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Bordetella pertussis. What does this cause? Pertussis, whooping cough, yes. And whooping cough, if you recall, it has two different stages. It has the catarrhal stage, which is basically just kind of like a cold. But then, what happens next?” [part 3, 2:34&ndash;3:06]</p></div>
+  <p>A minute, encapsulated coccobacillus causing pertussis (whooping cough), a communicable childhood
+  affliction; often severe in babies; reservoir apparently healthy carriers; transmission by direct contact or
+  inhaled aerosols. <span class="src">Lecture 14, Slide 30.</span></p>
+  <table>
+    <tr><th>Stage</th><th>What happens</th></tr>
+    <tr><td><strong>Catarrhal</strong></td><td>Nasal drainage, congestion, sneezing, occasional cough</td></tr>
+    <tr><td><strong>Paroxysmal</strong></td><td>Recurrent persistent cough, followed by deep inhalation &mdash; the <strong>whoop</strong></td></tr>
+  </table>
+  <p>Toxins destroy and dislodge ciliated cells; loss of the ciliary mechanism builds up mucus and blocks the airway;
+  complications come from compromised respiration. Vaccine DTaP (acellular, toxoid plus other antigens), 5 doses
+  between 2 months and 6 years; Boostrix for ages 10&ndash;18. <span class="src">Lecture 14, Slide 31.</span></p>
+  <figure class="fig"><img width="599" height="416" loading="lazy" src="micro-exam-3-study-guide-images/l14-s032-pertussis-course.jpg" alt="Graph of the course of pertussis through its stages."><figcaption>The course of pertussis. <span class="src">Source: Lecture 14, Slide 32.</span></figcaption></figure>
+
+<h3 class="sub" id="w14-legionella">1.5 &middot; <em>Legionella</em>: the water reservoir <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Legionella causes Legionnaires' disease. All right. And what's the reservoir of infection for Legionella? Water. This is the one that you are typically going to contract from standing water, like on the cooling towers of the hotels, you're breathing in the aerosols” [part 3, 3:38&ndash;4:09] … “particularly if they are smokers” [4:21] … “Or the vegetable sprayers.” [4:44]</p></div>
+  <p><em>Legionella pneumophila</em>: weakly Gram-negative, motile, pleomorphic; cannot be easily cultured.
+  <strong>Widely distributed in water</strong>: tap water, cooling towers, spas, ponds, air conditioning systems,
+  supermarket vegetable spraying systems; <strong>lives in close association with amoebas</strong>. <span class="src">Lecture 14, Slide 39.</span></p>
+  <p><strong>Transmitted by aerosols.</strong> Legionnaires disease and Pontiac fever; prevalent in males over 50;
+  nosocomial; elderly patients with diabetes, cancer, transplants, chronic alcoholism or chronic lung disease, and
+  <strong>smokers</strong>. Fever, cough, diarrhea, abdominal pain, pneumonia. <span class="src">Lecture 14, Slide 40.</span> A Florida outbreak came
+  from the spray of a decorative fountain. <span class="src">Lecture 14, Slide 42.</span></p>
+  <figure class="fig"><img width="304" height="590" loading="lazy" src="micro-exam-3-study-guide-images/l14-s041-legionella.jpg" alt="Legionella growth on charcoal yeast extract agar and Legionella inside amoebas."><figcaption>Growth on charcoal yeast extract agar, and <em>Legionella</em> inside amoebas. <span class="src">Source: Lecture 14, Slide 41.</span></figcaption></figure>
+
+<h3 class="sub" id="w14-diarrhea">1.6 &middot; Toxigenic versus invasive diarrheal disease <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“There are two kinds of diarrheal diseases. What are they? One is the toxigenic and the other one is the invasive. … And what can be one characteristic symptom that is invasive as opposed to toxigenic? The diarrhea is bloody.” [part 3, 5:14&ndash;6:11]</p></div>
+  <p>The Enterobacteriaceae are the most frequent cause of diarrheal disease, by <strong>enterotoxins</strong> or
+  by <strong>invasive infection</strong>. <span class="src">Lecture 14, Slide 43.</span> The slide&rsquo;s picture sets the two side by side:
+  <strong>toxigenic</strong>, example ETEC (enterotoxigenic <em>Escherichia coli</em>); <strong>invasive</strong>,
+  example <em>Shigella</em>. <span class="src">Lecture 14, Slide 44.</span></p>
+  <figure class="fig"><img width="860" height="900" loading="lazy" src="micro-exam-3-study-guide-images/l14-s044-toxigenic-invasive.jpg" alt="Diagram comparing toxigenic diarrhea, where toxin acts on the intestinal lining, with invasive diarrhea, where bacteria enter the mucosa."><figcaption>Toxigenic (left) and invasive (right) diarrheal disease. <span class="src">Source: Lecture 14, Slide 44.</span></figcaption></figure>
+  <p>Bloody stool marks the invasive organisms in the deck: EIEC gives profuse bloody diarrhea with mechanical
+  damage to the intestinal wall and no toxins <span class="src">Lecture 14, Slide 57</span>; <em>Shigella</em> invades the villus of the large
+  intestine and gives watery stool with blood. <span class="src">Lecture 14, Slide 78.</span></p>
+
+<h3 class="sub" id="w14-lactose">1.7 &middot; Coliform versus non-coliform: lactose <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“And how can you distinguish between the coliform enterobacteriaceae and the non-coliform enterobacteriaceae? In the lab, how do you distinguish them? We're looking at what carbohydrate can they or can't they ferment? Lactose. Okay. Remember, lactose fermenters, that's like E. coli. That's why we grew it on EMB and McConkie's.” [part 3, 6:20&ndash;7:13]</p></div>
+  <p>Enterics are facultative anaerobes; all ferment glucose, reduce nitrates to nitrites, are oxidase negative
+  and catalase positive; <strong>coliforms are lactose fermenters, non-coliforms are non-lactose
+  fermenters</strong>. <span class="src">Lecture 14, Slide 46.</span></p>
+  <table>
+    <tr><th>Medium</th><th>Selective for</th><th>Differential for</th></tr>
+    <tr><td><strong>EMB</strong> (eosin and methylene blue) agar</td><td>Gram-negatives</td><td>Lactose fermenters</td></tr>
+    <tr><td><strong>MacConkey&rsquo;s</strong> agar (crystal violet and bile salts)</td><td>Gram-negatives</td><td>Lactose fermenters</td></tr>
+  </table>
+  <p><span class="src">Lecture 14, Slide 48.</span> Coliforms in normal flora: <em>Escherichia coli</em>, <em>Enterobacter</em>, <em>Klebsiella</em>,
+  <em>Hafnia</em>, <em>Citrobacter</em>, <em>Serratia</em>. Non-coliforms: <em>Proteus</em>, <em>Providencia</em>,
+  <em>Morganella</em>, <em>Edwardsiella</em>. <span class="src">Lecture 14, Slide 50.</span> <em>Salmonella</em> and <em>Shigella</em> are non-coliform
+  (lactose-negative) true pathogens. <span class="src">Lecture 14, Slide 69.</span></p>
+  <figure class="fig"><img width="648" height="643" loading="lazy" src="micro-exam-3-study-guide-images/l14-s048-emb-agar.jpg" alt="EMB agar plate with colonies showing a metallic green sheen."><figcaption>EMB agar: the lactose fermenter&rsquo;s colonies. <span class="src">Source: Lecture 14, Slide 48.</span></figcaption></figure>
+  <figure class="fig"><img width="528" height="291" loading="lazy" src="micro-exam-3-study-guide-images/l14-s048-macconkey-agar.jpg" alt="MacConkey agar plate with a lactose-negative streak on one side and a pink lactose-positive Escherichia coli streak on the other."><figcaption>MacConkey agar: lactose negative against lactose positive (<em>E. coli</em>). <span class="src">Source: Lecture 14, Slide 48.</span></figcaption></figure>
+
+<h3 class="sub" id="w14-ecoli">1.8 &middot; The four <em>Escherichia coli</em> types <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“The Escherichia coli types. Alright. We have four different E. coli types. ETEC, EIEC, EPEC, and EHEC. You need to know all four types and what they do.” [part 3, 7:13&ndash;7:45] … “But please review those four types of E. coli. I won't even tell you. There's multiple questions because it's important.” [8:33&ndash;8:51]</p></div>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
+  <p>This is the strongest instruction in her whole review: “You need to know all four types and what
+  they do” and “There&rsquo;s multiple questions because it&rsquo;s important.” Expect more than one question on
+  these four rows.</p></div>
+
+  <table>
+    <tr><th>Type</th><th>What it does</th><th>Signature</th></tr>
+    <tr><td><strong>ETEC</strong> &mdash; enterotoxigenic</td><td>Heat-labile (LT) and heat-stable (ST) toxins promote secretion of fluid and electrolytes in the intestinal epithelium: diarrhea, cramping, low-grade to no fever; fimbriae for adhesion to the small intestine <span class="src">Lecture 14, Slide 56.</span></td><td><strong>70% of traveler&rsquo;s diarrhea</strong>; toxigenic</td></tr>
+    <tr><td><strong>EIEC</strong> &mdash; enteroinvasive</td><td>Inflammatory disease of the large intestine, similar to shigellosis; adhesin proteins bind the intestinal wall; mechanical cell damage; <strong>no toxins</strong>; very young and very old most susceptible <span class="src">Lecture 14, Slide 57.</span></td><td><strong>Profuse bloody diarrhea and high fever</strong>; invasive</td></tr>
+    <tr><td><strong>EPEC</strong> &mdash; enteropathogenic</td><td>Adherence to the intestinal lining with destruction of microvilli; inhibits vitamin B1 (thiamin) uptake; prevention: breast feeding <span class="src">Lecture 14, Slide 58.</span></td><td><strong>Wasting infantile diarrhea</strong>; greatest single cause of infant mortality worldwide</td></tr>
+    <tr><td><strong>EHEC</strong> &mdash; enterohemorrhagic, O157:H7</td><td>Diarrhea, hemorrhagic colitis and hemolytic uremic syndrome; Shiga toxin <span class="src">Lecture 14, Slide 59</span>; reservoir the intestines of cattle; contaminated beef, water, vegetables <span class="src">Lecture 14, Slide 60.</span></td><td><strong>Hemolytic uremic syndrome</strong> (item 1.9)</td></tr>
+  </table>
+  <div class="pearl"><p>The first letter after &ldquo;Entero&rdquo; is what it does: <strong>T</strong>oxin,
+  <strong>I</strong>nvades, <strong>P</strong>ediatric wasting (sticks to and destroys microvilli),
+  <strong>H</strong>emorrhage and hemolytic uremic syndrome.</p></div>
+
+<h3 class="sub" id="w14-o157">1.9 &middot; O157:H7 and hemolytic uremic syndrome <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“What do we worry about with the O157H7? Why are we worried about that one? The enterohemorrhagic. … That's the one that can cause hemolytic uremic syndrome. … And what does that O157H7 even mean? What are we talking about? We're talking about surface antigens. It's how we identify them.” [part 3, 7:45&ndash;8:44]</p></div>
+  <p><strong>O157</strong> is the O (somatic) type antigen 157; <strong>H7</strong> is the H (flagellar) type
+  antigen 7. <span class="src">Lecture 14, Slide 59.</span> The enteric surface antigens are H (flagellar), K (capsule and/or fimbrial) and O (somatic
+  or cell wall; all have it). <span class="src">Lecture 14, Slide 52.</span></p>
+  <figure class="fig"><img width="542" height="483" loading="lazy" src="micro-exam-3-study-guide-images/l14-s053-enteric-antigens.png" alt="Drawing of an enteric rod showing the flagellar H antigen, the capsular K antigen and the somatic O antigen."><figcaption>The H, K and O antigens. <span class="src">Source: Lecture 14, Slide 53.</span></figcaption></figure>
+  <p>EHEC causes diarrhea, hemorrhagic colitis and <strong>hemolytic uremic syndrome</strong>; Shiga toxin binds
+  ribosomes and disrupts protein synthesis, so endothelial cells detach, platelets meet the subendothelium and
+  coagulation starts. <span class="src">Lecture 14, Slide 59.</span> About <strong>10% of cases</strong> develop hemolytic uremic syndrome &mdash; toxins
+  produce apoptosis of renal tubular epithelial cells, and coagulation. Reservoir: the intestines of cattle;
+  infectious dose 100 cells. <span class="src">Lecture 14, Slide 60.</span> Treatment includes dialysis, transfusions and plasmapheresis;
+  <strong>antibiotic therapy may exacerbate hemolytic uremic syndrome</strong>. <span class="src">Lecture 14, Slide 63.</span> On rainbow agar
+  O157:H7 colonies are black (glucuronidase negative). <span class="src">Lecture 14, Slide 64.</span></p>
+
+<h3 class="sub" id="w14-proteus">1.10 &middot; <em>Proteus</em>: swarming <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Then when we have the ones which do not ferment lactose, like Proteus. Proteus, which we see as an agent of urinary tract infections. If we are growing Proteus on a plate of auger, what's it going to do? It, remember, is highly motile, so it swarms the plate.” [part 3, 8:51&ndash;9:34]</p></div>
+  <p>A non-coliform (lactose-negative) opportunist. <span class="src">Lecture 14, Slide 69.</span> <em>Proteus</em>: urinary tract infection, wound
+  infections, pneumonia, septicemia and infant diarrhea; nosocomial; related to bladder and kidney stones;
+  <strong>highly motile</strong>. <span class="src">Lecture 14, Slide 70.</span> Diagnostic growth pattern: the <strong>wavelike, swarming
+  pattern</strong> of <em>Proteus vulgaris</em>, with peritrichous flagella. <span class="src">Lecture 14, Slide 71.</span></p>
+  <figure class="fig"><img width="325" height="568" loading="lazy" src="micro-exam-3-study-guide-images/l14-s071-proteus-swarming.jpg" alt="Agar plate covered by concentric waves of swarming growth."><figcaption>The swarming growth of <em>Proteus</em>. <span class="src">Source: Lecture 14, Slide 71.</span></figcaption></figure>
+
+<h3 class="sub" id="w14-typhi">1.11 &middot; <em>Salmonella</em> Typhi and the carrier <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“We have salmonella typhi causes typhoid fever. Okay. Now, typhoid fever, we worry about that one because there are many individuals who are asymptomatic. Remember Typhoid Mary? … But where does the organism like to go hide? … It's in her gallbladder. … But it gets released with the bile, so it's in every bowel movement.” [part 3, 9:34&ndash;10:36]</p></div>
+  <p><em>Salmonella typhi</em> and <em>S. paratyphi</em> cause typhoid and paratyphoid fever; humans are the
+  exclusive hosts; resistant to bile and dyes; enters with fecally contaminated food or water. <strong>Asymptomatic
+  carriers; some chronic carriers shed bacilli from the gallbladder.</strong> <span class="src">Lecture 14, Slide 73.</span> The bacilli adhere to the
+  small intestine and cause invasive diarrhea that leads to septicemia; sustained fever of 103&ndash;104 degrees,
+  a rash of rose-colored spots; two vaccines give temporary protection. <span class="src">Lecture 14, Slide 74.</span></p>
+  <div class="callout"><p><strong>Her aside, not on a slide.</strong> Typhoid Mary and the
+  bile carrying the organism “in every bowel movement” [part 3, 10:00&ndash;10:36] are her illustration; the
+  slide&rsquo;s fact is that some chronic carriers shed bacilli from the gallbladder.</p></div>
+  <figure class="fig"><img width="511" height="687" loading="lazy" src="micro-exam-3-study-guide-images/l14-s074-typhoid-route.jpg" alt="Diagram of the route of Salmonella Typhi through the body."><figcaption>The course of typhoid fever. <span class="src">Source: Lecture 14, Slide 74.</span></figcaption></figure>
+
+<h3 class="sub" id="w14-salmonelloses">1.12 &middot; The other salmonelloses <span class="tier tier-know">Know it</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“And then we have the other salmonelloses, which are primarily gastrointestinal problems. We can get those from things like improperly cooked chicken, contaminate eggs, your pet turtles, your backyard chickens.” [part 3, 10:42&ndash;11:09]</p></div>
+  <p>Salmonelloses other than typhoid are enteric fevers, <em>Salmonella</em> food poisoning and gastroenteritis;
+  less severe than typhoid but more prevalent. All zoonotic in origin. Acquired by ingestion: cattle, poultry and
+  eggs, rodents, reptiles (pet turtles), animal and dairy products; fomites contaminated with animal intestinal flora.
+  Gastroenteritis: vomiting, diarrhea, fluid loss. <span class="src">Lecture 14, Slide 76.</span> Animal-borne sources on the next slide: backyard
+  flocks, small turtles, bearded dragons. <span class="src">Lecture 14, Slide 77.</span></p>
+
+<h3 class="sub" id="w14-shigella">1.13 &middot; <em>Shigella</em>: invasive and bloody <span class="tier tier-know">Know it</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“And then we have Shigella. And Shigella is a GI organism, which is an invasive GI organism, because that one has a characteristic bloody diarrhea.” [part 3, 11:15&ndash;11:29]</p></div>
+  <p>Shigellosis is an incapacitating dysentery: abdominal cramps and watery stool with blood; 2&ndash;7% also
+  cause hemolytic uremic syndrome. Transmitted by ingesting fecally contaminated food. It <strong>invades the villus
+  of the large intestine</strong>, does not perforate the intestine or invade the blood; endotoxin initiates fever;
+  enterotoxin damages mucosa and villi &mdash; bleeding and mucus secretion. <span class="src">Lecture 14, Slide 78.</span> It is the slide&rsquo;s
+  example of invasive diarrheal disease. <span class="src">Lecture 14, Slide 44.</span></p>
+
+<h3 class="sub" id="w14-plague">1.14 &middot; <em>Yersinia pestis</em> and the three plagues <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Then we have Yersinia pestis. What does Yersinia pestis cause? Plague … You can get bubonic plague. And typically, how do you acquire bubonic plague? From the flea, from a rat flea. … And it can form the buboes, the grossly enlarged lymph nodes. But it can also cause subcutaneous hemorrhaging, which is why it was also called what? The black death. And what is the most serious form of plague? The pneumonic form. And that is the one which can be directly transmitted from person to person.” [part 3, 11:45&ndash;12:55]</p></div>
+  <p>A tiny gram-negative rod with unusual bipolar staining and capsules. <span class="src">Lecture 14, Slide 81.</span> Flea vectors: the bacteria
+  replicate in the flea&rsquo;s gut, coagulase clots blood and blocks its esophagus, the ravenous flea bites more
+  hosts and regurgitated material transmits the bacterium. Found in 200 species of mammals (rodents). <span class="src">Lecture 14, Slide 83.</span></p>
+  <table>
+    <tr><th>Form</th><th>Slide</th></tr>
+    <tr><td><strong>Bubonic</strong></td><td>Bacillus multiplies in the flea bite, enters lymph, causes necrosis and swelling called a <strong>bubo</strong> in groin or axilla</td></tr>
+    <tr><td><strong>Septicemic</strong></td><td>Massive bacterial growth; intravascular coagulation, subcutaneous hemorrhage and purpura degenerating into necrosis and gangrene &mdash; <strong>black plague</strong></td></tr>
+    <tr><td><strong>Pneumonic</strong></td><td>Localized to the lungs, <strong>highly contagious by aerosol</strong>, fatal without treatment</td></tr>
+  </table>
+  <p><span class="src">Lecture 14, Slide 88.</span></p>
+  <figure class="fig"><img width="800" height="397" loading="lazy" src="micro-exam-3-study-guide-images/l14-s084-plague-cycle.jpg" alt="Infection cycle of Yersinia pestis between rodents, fleas and humans."><figcaption>The infection cycle of <em>Yersinia pestis</em>. <span class="src">Source: Lecture 14, Slide 84.</span></figcaption></figure>
+  <div class="callout"><p><strong>Her words and the slide differ; the slide wins.</strong> She
+  tied the subcutaneous hemorrhaging to “the black death” [part 3, 12:29&ndash;12:40]. Slide 88 calls that
+  septicemic form <strong>black plague</strong>; “Black Death” on Slide 94 is the 1346&ndash;1350 pandemic. Use
+  the slide&rsquo;s words.</p></div>
+  <div class="callout"><p><strong>Her words and the slide differ; the slide wins.</strong> She
+  said the pneumonic form “can be directly transmitted from person to person” [part 3, 12:51&ndash;12:55]. Slide 88
+  says it is <strong>highly contagious by aerosol</strong> and fatal without treatment; Slide 83 says plague caught
+  from infected humans is rare. Her “rat flea” [12:12] is the slides&rsquo; flea vector of rodents. {c14('83')}</p></div>
+
+<h3 class="sub" id="w14-haemophilus">1.15 &middot; <em>Haemophilus</em> <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Hemophilus. What can hemophilus do? It doesn't cause influenza, even though it's named inappropriately. But it can cause a meningitis. It can cause chancery. We do have vaccinations against this one.” [part 3, 13:10&ndash;13:34]</p></div>
+  <p>Tiny gram-negative pleomorphic rods (“blood loving”); fastidious; none grow on blood agar without special
+  techniques &mdash; <strong>chocolate agar</strong>; require hemin, NAD or NADP. <span class="src">Lecture 14, Slide 97.</span></p>
+  <table>
+    <tr><th>Species</th><th>Disease</th></tr>
+    <tr><td><em>H. influenzae</em></td><td><strong>Misnamed</strong> as the cause of flu; acute bacterial <strong>meningitis</strong>, epiglottitis, otitis media, sinusitis, pneumonia, bronchitis; vaccine: subunit <strong>Hib</strong> <span class="src">Lecture 14, Slide 98.</span></td></tr>
+    <tr><td><em>H. ducreyi</em></td><td><strong>Chancroid</strong>, a sexually transmitted disease; primarily tropics, primarily males <span class="src">Lecture 14, Slide 100.</span></td></tr>
+    <tr><td><em>H. aegyptius</em></td><td>Conjunctivitis (pink eye), primarily children <span class="src">Lecture 14, Slide 100.</span></td></tr>
+  </table>
+  <div class="callout"><p><strong>Two slides disagree.</strong> Slide 97 says “others (<em>H.
+  parainfluenzae</em>, <em>H. ducreyi</em>) are virulent species responsible for childhood meningitis, and
+  chancroid”; Slide 100 gives <em>H. parainfluenzae</em> as normal oral and nasopharyngeal flora that can cause
+  infective endocarditis, and Slide 98 gives meningitis to <em>H. influenzae</em>. Safe pairing: meningitis &rarr;
+  <em>H. influenzae</em> (Hib vaccine); chancroid &rarr; <em>H. ducreyi</em>.</p></div>
+
+<h3 class="sub" id="w14-endotoxin">1.16 &middot; Endotoxin: the weapon they all have <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Now, what do all of our gram-negative bacilli have as an offensive weapon? … How about endotoxin? Endotoxin. All gram-negatives have endotoxin. And where do they get endotoxin? It is part of the outer membrane of the gram-negative cell wall. And remember, it is released when the organism dies. That's why if you're being treated with antibiotics, then you may feel worse before you feel better. Because mild release just causes very general symptomology, like fever, aches, pains, malaise. But if you get a real heavy dose of it, it can actually cause a septic shock.” [part 3, 13:44&ndash;14:59]</p></div>
+  <p>Endotoxin is a <strong>structural component of the Gram-negative outer membrane</strong>; chemically a
+  <strong>lipopolysaccharide</strong>; <strong>lipid A</strong> is the biologically active component. It is
+  released <strong>on lysis of Gram-negative cells, including through antibiotic therapy</strong>, and <strong>as
+  cells grow and divide, particularly when rapidly proliferating</strong>. <span class="src">Lecture 14, Slide 5.</span> All the aerobic
+  Gram-negative nonenteric bacilli use endotoxin as one of their offensive weapons. <span class="src">Lecture 14, Slide 13.</span></p>
+  <figure class="fig"><img width="900" height="321" loading="lazy" src="micro-exam-3-study-guide-images/l14-s005-lipopolysaccharide.jpg" alt="Gram-negative rods, the cell wall with the lipopolysaccharide on the outer membrane, and one lipopolysaccharide unit with lipid A."><figcaption>Where endotoxin sits: the lipopolysaccharide of the outer membrane. <span class="src">Source: Lecture 14, Slide 5.</span></figcaption></figure>
+  <p><strong>Low levels</strong> give a low-level inflammatory response &mdash; fever, malaise, aches, pains.
+  <strong>A large flood</strong> releases mediators that contribute to <strong>septic shock</strong>: TNF (tumor
+  necrosis factor) and IL-1 (interleukin 1) drive neutrophil-endothelial adhesion and clotting, intravascular
+  microthrombi, “warm shock” first, then falling cardiac output and blood pressure, tissue hypoxia and multisystem
+  organ failure. <span class="src">Lecture 14, Slide 11.</span></p>
+  <div class="callout"><p><strong>Her words and the slide differ; the slide wins.</strong> She
+  said it “is released when the organism dies” [part 3, 14:28]. True, and the slide adds a second release: as the
+  bacteria grow and divide, particularly when rapidly proliferating. Know both.</p></div>
+
+<h2 id="lec17">2 &middot; Lecture 17 &mdash; Parasites of Medical Importance</h2>
+<div class="io-box">
+  <h3>Instructional objectives &mdash; Parasites of Medical Importance</h3>
+  <ol>
+    <li>Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance.</li>
+    <li>Describe the modes of transmission by which humans acquire parasites of medical importance.</li>
+  </ol>
+</div>
+<p>Organism by organism again, protozoa then worms, with the picture warning at the start. The pictures beside each organism are the deck&rsquo;s.</p>
+<h3 class="sub" id="w17-entamoeba">2.1 &middot; <em>Entamoeba histolytica</em>; cyst and trophozoite <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Entamoeba histolytica causes anemic dysentery. And in many of these, we have two different forms of the protozoan parasite. What are the two different forms of the protozoan parasite that you could have? ASSIST, and what's the other one called? Atrophozoite. And what does that mean? … It's the one that is actively moving and feeding.” [part 3, 15:23&ndash;15:57] (The transcript&rsquo;s “anemic” is “amebic”, and “ASSIST … Atrophozoite” is “a cyst … a trophozoite”.)</p></div>
+  <p><strong>The two forms.</strong> Most protozoa propagate by asexual division of the <strong>active feeding
+  cell, the trophozoite</strong>; many also form a <strong>cyst</strong>. <span class="src">Lecture 17, Slide 12.</span> <em>Entamoeba
+  histolytica</em> alternates between a large trophozoite, motile by pseudopods, and a smaller nonmotile cyst.
+  <span class="src">Lecture 17, Slide 16.</span></p>
+  <figure class="fig"><img width="581" height="315" loading="lazy" src="micro-exam-3-study-guide-images/l17-s017-trophozoite-and-cyst.jpg" alt="Micrographs of a trophozoite and a cyst of Entamoeba histolytica, labeled."><figcaption>Trophozoite (a) and cyst (b). <span class="src">Source: Lecture 17, Slide 17.</span></figcaption></figure>
+  <p><strong>The disease.</strong> Humans are the primary hosts; it is ingested. <span class="src">Lecture 17, Slide 16.</span> Swallowed cysts reach
+  the small intestine, where alkaline pH and digestive juices release 4 trophozoites, which attach, multiply, move
+  and feed; asymptomatic in 90%. <span class="src">Lecture 17, Slide 19.</span> Intestinal amebiasis targets cecum, appendix, colon and rectum: the ameba
+  dissolves tissue, causing <strong>dysentery</strong>, abdominal pain, fever, diarrhea and weight loss. <span class="src">Lecture 17, Slide 20.</span>
+  Extraintestinal: most commonly liver abscesses (amebic hepatitis), also lungs and other organs. <span class="src">Lecture 17, Slide 21.</span>
+  Diagnosis: fecal smear; ELISA with monoclonal antibodies. <span class="src">Lecture 17, Slide 23.</span></p>
+  <figure class="fig"><img width="286" height="245" loading="lazy" src="micro-exam-3-study-guide-images/l17-s015-amebas-in-tissue.jpg" alt="Stained tissue section with amebas."><figcaption>Infective amebas in tissue. <span class="src">Source: Lecture 17, Slide 15.</span></figcaption></figure>
+
+<h3 class="sub" id="w17-naegleria">2.2 &middot; <em>Naegleria fowleri</em> and <em>Acanthamoeba</em> <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Now, nigleria fowleri is also one of our infective amoebas. Why do we worry about this one? This is the one which you get by getting water up your nose, burrowing into the brain. And if you do not treat it within the first few days, it is almost invariably fatal. And we worry about this one, because we've got a lot of it here in Florida. Pretty much any of the little ponds, little lakes, fresh water. Acanthoepa caudicosa is the same thing, only a longer incubation time.” [part 3, 16:10&ndash;16:59]</p></div>
+  <p>Amebic meningoencephalitis is caused by <em>Naegleria fowleri</em> and <em>Acanthamoeba</em>, which inhabit
+  standing water with a high bacterial count: hot springs, lakes, streams, unchlorinated swimming pools. <span class="src">Lecture 17, Slide 24.</span>
+  <em>Naegleria</em> is <strong>acquired through nasal contact with water</strong> &mdash; diving, waterskiing, jet
+  skiing, rinsing sinuses even with tap water; most cases are children and young adults. <span class="src">Lecture 17, Slide 28.</span></p>
+  <p><strong>Primary acute meningoencephalitis:</strong> the trophozoite burrows through the nasal mucosa and travels
+  into the brain through the <strong>olfactory nerve</strong>; headache, fever, vomiting, stiff neck; rapid
+  destruction of brain and spinal cord; <strong>coma, death in 3&ndash;7 days</strong>. Over 46% of lakes in Florida
+  have <em>N. fowleri</em>. Treatment must be early. <span class="src">Lecture 17, Slide 29.</span></p>
+  <figure class="fig"><img width="258" height="204" loading="lazy" src="micro-exam-3-study-guide-images/l17-s028-naegleria-trophozoites.jpg" alt="Stained Naegleria fowleri trophozoites."><figcaption><em>Naegleria fowleri</em> trophozoites. <span class="src">Source: Lecture 17, Slide 28.</span></figcaption></figure>
+  <p><strong><em>Acanthamoeba</em>:</strong> freshwater lakes, hot tubs, pools; amebic keratitis in contact lens
+  wearers; granulomatous amebic encephalitis &mdash; enters through a break in the skin or the nasal passages,
+  meningitis symptoms but a <strong>longer progression</strong>; survival only 2&ndash;3%. <span class="src">Lecture 17, Slide 31.</span></p>
+  <div class="callout"><p><strong>Her words and the slide differ; the slide wins.</strong> She said
+  <em>Acanthamoeba</em> is “the same thing, only a longer incubation time” [part 3, 16:56&ndash;16:59]; the slide says
+  meningitis symptoms with a <strong>longer progression</strong>, and gives no incubation time.</p></div>
+
+<h3 class="sub" id="w17-balantidium">2.3 &middot; <em>Balantidium coli</em>, the ciliate <span class="tier tier-light">Light touch</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Ballantinium coli is our ciliate. But unless you're working near a pig farm, I wouldn't worry about that one too much.” [part 3, 17:05&ndash;17:13]</p></div>
+  <p>One line to carry: the intestinal <strong>ciliate</strong>, an occupant of the intestines of domestic animals
+  such as <strong>pigs</strong> and cattle; acquired by ingesting cyst-containing food or water. <span class="src">Lecture 17, Slide 33.</span></p>
+
+<h3 class="sub" id="w17-giardia">2.4 &middot; <em>Giardia lamblia</em> <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Giardia lamblia. How do you acquire Giardia lamblia? This is the one that you'll get if you're camping and you are not drinking decontaminated water … You get the cyst form, which will then grow into the trophozoite form. So you end up with gastrointestinal symptomology.” [part 3, 17:17&ndash;17:47]</p></div>
+  <p>A pathogenic flagellate with a unique symmetrical heart shape and a concave ventral surface that acts like a
+  suction cup; cysts small, compact, multinucleate. Reservoirs include beavers, cattle, coyotes, cats and humans;
+  cysts survive 2 months; <strong>usually ingested with water and food</strong>; infective dose 10&ndash;100 cysts.
+  <span class="src">Lecture 17, Slide 39.</span> Cysts enter the duodenum, germinate, travel to the jejunum to feed and multiply; giardiasis is diarrhea
+  and abdominal pain. Microscopy is difficult because shedding is intermittent; PCR. Killed by boiling, ozone and
+  iodine. <span class="src">Lecture 17, Slide 41.</span></p>
+  <figure class="fig"><img width="300" height="300" loading="lazy" src="micro-exam-3-study-guide-images/l17-s040-giardia-trophozoite-smear.jpg" alt="Stained pear-shaped Giardia trophozoite in a stool smear."><figcaption><em>Giardia</em> trophozoite. <span class="src">Source: Lecture 17, Slide 40.</span></figcaption></figure>
+  <figure class="fig"><img width="300" height="300" loading="lazy" src="micro-exam-3-study-guide-images/l17-s040-giardia-cysts-smear.jpg" alt="Two oval Giardia cysts in a stool smear."><figcaption><em>Giardia</em> cysts. <span class="src">Source: Lecture 17, Slide 40.</span></figcaption></figure>
+  <div class="callout"><p><strong>Her aside, not on a slide.</strong> Camping and the “beautifully nice, clear-looking
+  stream” [part 3, 17:23&ndash;17:35] are her example; the slide&rsquo;s fact is ingestion with water and food, with
+  beavers among the reservoirs.</p></div>
+
+<h3 class="sub" id="w17-trichomonas">2.5 &middot; <em>Trichomonas vaginalis</em> <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Trichomonas vaginalis. Why do we worry about this one? Very common STD. It is a flagellate. … And how will you diagnose this baby? You will look at secretions. You will look at vaginal secretions, or semen. … These little guys swimming around. And I know I gave you a picture on that one too.” [part 3, 18:03&ndash;18:37]</p></div>
+  <p>Trichomonads are small, pear-shaped, with 4 anterior flagella and an undulating membrane; they
+  <strong>exist only in trophozoite form &mdash; no cyst</strong>. <span class="src">Lecture 17, Slide 36.</span> <em>T. vaginalis</em> causes
+  trichomoniasis, the <strong>most common curable sexually transmitted disease in young, sexually active
+  women</strong>; reservoir the human urogenital tract; 60&ndash;70% asymptomatic; women: foul-smelling
+  green-to-yellow discharge, vulvitis, cervicitis; men: urethritis, thin milky discharge. <span class="src">Lecture 17, Slide 37.</span>
+  <strong>Diagnosis by microscopic analysis of a vaginal smear</strong>; treated with metronidazole and tinidazole.
+  <span class="src">Lecture 17, Slide 38.</span></p>
+  <figure class="fig"><img width="300" height="300" loading="lazy" src="micro-exam-3-study-guide-images/l17-s038-trichomonas-smear.jpg" alt="Two stained pear-shaped flagellates with flagella and an undulating membrane."><figcaption>The picture she meant: <em>Trichomonas vaginalis</em>. <span class="src">Source: Lecture 17, Slide 38.</span></figcaption></figure>
+  <div class="callout"><p><strong>Her aside, not on a slide.</strong> She added semen [part 3, 18:27]; the slide names only the vaginal
+  smear.</p></div>
+
+<h3 class="sub" id="w17-brucei">2.6 &middot; <em>Trypanosoma brucei gambiense</em> and sleeping sickness <span class="tier tier-know">Know it</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Then we have other flagellates, trypanosoma. These are blood flagellates. And we will diagnose those by actually seeing those little flagellates swimming around in a blood smear. They are transmitted by insect vectors, trypanosoma brucei gambiense, African sleeping sickness, transmitted by the bite of the tsetse fly. … If not treated, the African sleeping sickness organism can ultimately cause coma and death.” [part 3, 18:44&ndash;19:46]</p></div>
+  <p>Hemoflagellates are obligate blood and tissue parasites spread by blood-sucking insects. <span class="src">Lecture 17, Slide 42.</span>
+  <em>T. brucei</em> causes African sleeping sickness; <em>T. cruzi</em> Chagas disease. <span class="src">Lecture 17, Slide 44.</span> <em>T.
+  brucei</em> is <strong>spread by tsetse flies</strong>; <em>T. b. gambiense</em> is the Gambian strain (West
+  Africa), <em>T. b. rhodesiense</em> the Rhodesian (East Africa). <span class="src">Lecture 17, Slide 45.</span> The bite inoculates trypomastigotes
+  (primary chancre); they disseminate in blood and damage spleen, lymph nodes and brain; the Gambian form is chronic
+  with brain symptoms years later. <span class="src">Lecture 17, Slide 46.</span> Progression to sleep disturbances, tremors, seizures, paralysis and
+  <strong>coma</strong>; trypanosomes are readily demonstrated in blood, spinal fluid or lymph nodes. <span class="src">Lecture 17, Slide 47.</span></p>
+  <figure class="fig"><img width="220" height="156" loading="lazy" src="micro-exam-3-study-guide-images/l17-s046-trypanosomes-blood-smear.jpg" alt="Blood smear with wavy flagellates between red blood cells."><figcaption>Trypanosomes swimming between red blood cells. <span class="src">Source: Lecture 17, Slide 46.</span></figcaption></figure>
+
+<h3 class="sub" id="w17-cruzi">2.7 &middot; <em>Trypanosoma cruzi</em> and Chagas disease <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“The other trypanosoma, trypanosoma cruzi, causes what? Chagas disease. And what is the vector for that one? That one is the reduva beetle or kissing bug … And when it bites you, it defecates and you scratch the bite right and inoculate yourself. … Warming has caused the range of the reduva beetle to come up into our area. … And it can cause cardiac problems.” [part 3, 19:52&ndash;20:53]</p></div>
+  <p><em>T. cruzi</em> causes <strong>Chagas disease</strong> (American trypanosomiasis); millions of cases in
+  Latin America, becoming more of an issue in the southern United States through <strong>vector migration</strong>
+  (three asterisks on the slide); now considered by many to be endemic in the United States. <span class="src">Lecture 17, Slide 48.</span>
+  The <strong>reduviid bug (kissing bug)</strong> is the vector; infection occurs when <strong>bug feces is
+  inoculated into a cutaneous portal</strong>; also congenital, transfusion, transplant and foodborne routes. Romaña
+  sign (chagoma, a swelling of the eyelid with conjunctivitis); <strong>heart muscle</strong> and large intestine
+  harbor amastigotes; chronic inflammation of heart and brain (30&ndash;40% of heart disease in endemic regions).
+  <span class="src">Lecture 17, Slide 49.</span></p>
+  <figure class="fig"><img width="550" height="432" loading="lazy" src="micro-exam-3-study-guide-images/l17-s050-chagas-cycle-and-map.jpg" alt="Chagas disease transmission cycle with the kissing bug, and a distribution map."><figcaption>American trypanosomiasis: the cycle and its range. <span class="src">Source: Lecture 17, Slide 50.</span></figcaption></figure>
+  <div class="callout"><p><strong>Her words and the slide differ; the slide wins.</strong> She said “reduva beetle”; the
+  slide&rsquo;s vector is the <strong>reduviid bug (kissing bug)</strong>.</p></div>
+
+<h3 class="sub" id="w17-leishmania">2.8 &middot; <em>Leishmania</em> <span class="tier tier-know">Know it</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Lishmatii, this is the one that is transmitted by the sand fleas, alternate host the dog, causes things like kala azar.” [part 3, 20:53&ndash;21:18]</p></div>
+  <p>Leishmaniasis is a zoonosis transmitted among mammalian hosts by <strong>female sand flies</strong> that
+  need a blood meal to produce eggs; endemic to equatorial regions; <strong>alternate hosts dogs</strong>.
+  Promastigotes are injected with the bite and convert to amastigotes. <span class="src">Lecture 17, Slide 52.</span> Forms: cutaneous (oriental sore,
+  Baghdad boil), espundia (skin and mucous membranes of the head), systemic visceral &mdash; <strong>kala azar is the
+  most severe and fatal form if untreated</strong>. <span class="src">Lecture 17, Slide 53.</span></p>
+  <figure class="fig"><img width="477" height="397" loading="lazy" src="micro-exam-3-study-guide-images/l17-s054-leishmania-life-cycle.jpg" alt="Life cycle of Leishmania between the sand fly and the human host."><figcaption>The <em>Leishmania</em> life cycle. <span class="src">Source: Lecture 17, Slide 54.</span></figcaption></figure>
+  <div class="callout"><p><strong>Her words and the slide differ; the slide wins.</strong> She said “sand fleas”; the slide says
+  <strong>sand flies</strong> (female). Fleas carry plague and murine typhus (Slide 130).</p></div>
+
+<h3 class="sub" id="w17-plasmodium">2.9 &middot; <em>Plasmodium</em> and malaria <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Plasmonium, what does it cause? Malaria. And plasmonium is transmitted by what arthropod vector? The anopheles mosquito. … goes into what organ first? Goes into your liver … and then cells are released from the liver to go into your blood cells. … It's like a little ring inside, a ring formation inside red blood cells that you should be able to recognize. … And what do you have when you have those bursts of the red blood cell? That's when you have fever and chills. And it happens at regular intervals” [part 3, 21:18&ndash;22:49]</p></div>
+  <p>The <strong>female <em>Anopheles</em> mosquito</strong> is the primary vector (also blood transfusion, mother
+  to fetus); four species, <em>P. malariae</em>, <em>P. vivax</em>, <em>P. falciparum</em>, <em>P. ovale</em>.
+  <span class="src">Lecture 17, Slide 56.</span> The mosquito injects sporozoites, which <strong>localize in the liver</strong> and undergo schizogony;
+  merozoites enter the circulation in 5&ndash;16 days (exoerythrocytic phase), enter red blood cells and
+  <strong>convert to circular ring trophozoites</strong>; the red cell bursts, releasing merozoites (erythrocytic
+  phase). <span class="src">Lecture 17, Slide 58.</span> Regular episodes of chills, fever and sweating; <strong>symptoms at 48&ndash;72 hour intervals
+  as red blood cells rupture</strong>; <em>P. falciparum</em> is the most malignant; <strong>diagnosis by the
+  trophozoite in red blood cells</strong>. <span class="src">Lecture 17, Slide 60.</span></p>
+  <figure class="fig"><img width="676" height="482" loading="lazy" src="micro-exam-3-study-guide-images/l17-s060-ring-trophozoites.jpg" alt="Closely packed red blood cells, many containing a small dark ring, with pointers labeled ring trophozoites and red blood cell."><figcaption>The picture to recognize: <b>ring trophozoites</b> inside red blood cells. <span class="src">Source: Lecture 17, Slide 60.</span></figcaption></figure>
+  <figure class="fig"><img width="660" height="705" loading="lazy" src="micro-exam-3-study-guide-images/l17-s059-plasmodium-life-cycle.jpg" alt="The Plasmodium life cycle through mosquito, liver and red blood cells."><figcaption>The <em>Plasmodium</em> life cycle. <span class="src">Source: Lecture 17, Slide 59.</span></figcaption></figure>
+  <div class="callout"><p><strong>Her words and the slide differ; the slide wins.</strong> She said
+  “It does not have a trophozoite form” [part 3, 21:33]. The slides say the opposite: merozoites “convert to circular
+  ring trophozoites” in red cells {c17('58')}, and diagnosis is “by presence of trophozoite in RBCs” {c17('60')}.
+  The ring she told you to recognize <em>is</em> the trophozoite. (The protozoan the slides give “only in trophozoite
+  form &mdash; no cyst” is <em>Trichomonas</em>, {c17('36')})</p></div>
+
+<h3 class="sub" id="w17-toxoplasma">2.10 &middot; <em>Toxoplasma gondii</em> <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Then we have toxoplasma gondii, which causes toxoplasmosis. How do you get that one? From your cat, yeah. … And why are we worried about that one? Particularly for what group? Pregnant women because they can transmit it to their baby and it can be fatal.” [part 3, 22:54&ndash;23:26]</p></div>
+  <p>Lives naturally in <strong>cats</strong>, which harbor oocysts in the gastrointestinal tract and release them
+  in feces; acquired by <strong>ingesting raw meats or substances contaminated by cat feces</strong>; most cases
+  mild; serious in the immunocompromised (toxoplasma encephalitis). <span class="src">Lecture 17, Slide 64.</span> <strong>Transplacental transmission
+  to the fetus</strong> (33% chance) can result in spontaneous abortion, stillbirth, or severe neurological and ocular
+  disease in the newborn &mdash; hydrocephalus, intracranial calcifications, chorioretinitis. <span class="src">Lecture 17, Slide 65.</span></p>
+  <figure class="fig"><img width="370" height="693" loading="lazy" src="micro-exam-3-study-guide-images/l17-s066-toxoplasma-life-cycle.jpg" alt="The Toxoplasma gondii life cycle from cat to food animals and humans, including a pregnant woman."><figcaption>The <em>Toxoplasma</em> life cycle. <span class="src">Source: Lecture 17, Slide 66.</span></figcaption></figure>
+
+<h3 class="sub" id="w17-coccidia">2.11 &middot; <em>Cryptosporidium</em> and <em>Cyclospora</em> <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Cryptosporidium. How do you get this one? Contaminated food or water. I wouldn't worry too much about isospora, but cyclospora you should know.” [part 3, 23:26&ndash;23:45]</p></div>
+  <p><strong><em>Cryptosporidium</em>:</strong> an intestinal pathogen of mammals, birds and reptiles with tissue
+  and oocyst phases; infectious dose as little as 10 organisms; acquired from recreational water or contaminated
+  water, ice and foodstuffs; <strong>tolerates chlorine in swimming pools</strong>. <span class="src">Lecture 17, Slide 72.</span> Gastroenteritis;
+  chronic persistent diarrhea in AIDS (acquired immunodeficiency syndrome) and other immunocompromised patients; few
+  effective drugs; leading cause of recreational waterborne disease. <span class="src">Lecture 17, Slide 73.</span></p>
+  <p><strong><em>Cyclospora cayetanensis</em>:</strong> an emerging protozoan; <strong>oral-fecal transmission, fresh
+  produce and water</strong>; oocysts invade the small-intestinal mucosa; watery diarrhea, cramps, bloating, fever;
+  diagnosis needs multiple stool samples. <span class="src">Lecture 17, Slide 75.</span> A 2026 outbreak was linked to iceberg lettuce; seen in a fecal
+  smear with <strong>acid-fast stain</strong>. <span class="src">Lecture 17, Slide 76.</span></p>
+  <figure class="fig"><img width="761" height="552" loading="lazy" src="micro-exam-3-study-guide-images/l17-s076-cyclospora-acid-fast.jpg" alt="Acid-fast stained fecal smear with pink-red round oocysts among blue debris, labeled oocysts and bacteria."><figcaption><em>Cyclospora</em> oocysts, acid-fast stain. <span class="src">Source: Lecture 17, Slide 76.</span></figcaption></figure>
+  <h4 class="subsub"><em>Isospora belli</em> <span class="tier tier-light">Light touch</span></h4>
+  <p>“I wouldn&rsquo;t worry too much about isospora.” One line: intracellular intestinal parasite with an oocyst
+  stage, in fecally contaminated food or drink, mainly in immunocompromised hosts. <span class="src">Lecture 17, Slide 74.</span></p>
+
+<h3 class="sub" id="w17-worm-damage">2.12 &middot; What damage worms do <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“What kind of symptoms can worm infections give us? Think about their life cycle. … they migrate through your body. … And so as they are migrating through your tissues, what are they doing? They're feeding on you. They are causing damage to the tissues … Some of them have direct toxic substances that they produce. … they can cause blockages … like the tapeworms, they can hook onto your intestines and they can absorb all your nutrients. So you should know what damage worms can do.” [part 3, 23:54&ndash;25:24]</p></div>
+  <p>The slide answers her question in three lines. <strong>Pathology arises from worms feeding on and migrating
+  through tissues; accumulation of worms in organs, causing blockages; toxic worm secretions.</strong> Effects:
+  enlargement and swelling of organs, hemorrhage, weight loss, anemia. <span class="src">Lecture 17, Slide 85.</span></p>
+  <p>The migration she described is life cycle A: larvae hatch and burrow through tissue, may go to the lungs and
+  then the pharynx and are swallowed, and complete the cycle in the intestine. <span class="src">Lecture 17, Slide 80.</span> Tapeworms have no mouth;
+  nutrients are absorbed through the body, and a scolex grips the intestine. <span class="src">Lecture 17, Slide 118.</span> Defense against worms is
+  eosinophils; diagnosis by eosinophilia, serology, and eggs, larvae or worms in feces, sputum, urine, blood or
+  tissue. <span class="src">Lecture 17, Slide 86.</span></p>
+
+<h3 class="sub" id="w17-enterobius">2.13 &middot; <em>Enterobius vermicularis</em>, the pinworm <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Enterobius vermiculares. What did that do? Which one is that? It's the scourge of the daycare center. That's the pinworm, right? With the scotch pig test” [part 3, 25:38&ndash;25:58] (“scotch tape test”)</p></div>
+  <p>Pinworm or seatworm; enterobiasis is the <strong>most common worm disease of children in temperate
+  zones</strong> (starred on the slide). Eggs are picked up from surroundings and swallowed; adults develop in the
+  intestine; <strong>anal itching</strong> when females emerge to release eggs; self-inoculation is common;
+  <strong>tape test</strong>. <span class="src">Lecture 17, Slide 94.</span></p>
+  <figure class="fig"><img width="184" height="110" loading="lazy" src="micro-exam-3-study-guide-images/l17-s095-pinworm-eggs.jpg" alt="Three oval eggs flattened on one side."><figcaption>Pinworm eggs. <span class="src">Source: Lecture 17, Slide 95.</span></figcaption></figure>
+
+<h3 class="sub" id="w17-trichinella">2.14 &middot; <em>Trichinella spiralis</em> <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Trichinellis spiralis. What does that one do? … Where do you get that one? By eating undercooked pork. Because you are eating the insisted form in the muscle of the pig … And then it goes into your gut, multiplies, and then it wants to go find some more muscle to insist in. And causes damage to skeletal muscle, but also smooth muscle. Could go to the cardiac muscle, right?” [part 3, 25:51&ndash;26:34]</p></div>
+  <p>Life cycle entirely within mammals; life cycle C. <strong>Acquired from eating undercooked pork or bear
+  meat.</strong> Larvae migrate from the intestine to blood vessels, <strong>muscle, heart and brain</strong>, where
+  they form cysts. First symptoms flulike, diarrhea; second, muscle and joint pain, shortness of breath, pronounced
+  eosinophilia; no cure after the larvae have encysted; occasional myocarditis. <span class="src">Lecture 17, Slide 101.</span> Cycle C: a human
+  consumes an encysted worm in undercooked meat; gastric passage releases the larva from the cyst. <span class="src">Lecture 17, Slide 82.</span></p>
+  <figure class="fig"><img width="200" height="200" loading="lazy" src="micro-exam-3-study-guide-images/l17-s101-trichinella-muscle.jpg" alt="Muscle section with coiled larvae in cysts."><figcaption>Encysted larvae in muscle. <span class="src">Source: Lecture 17, Slide 101.</span></figcaption></figure>
+  <div class="callout"><p><strong>Her aside, not on a slide.</strong> “Smooth muscle” [part 3, 26:31] is not on the slide,
+  which names muscle, heart and brain.</p></div>
+
+<h3 class="sub" id="w17-tissue-nematodes">2.15 &middot; <em>Loa loa</em> and <em>Toxocara</em> <span class="tier tier-know">Know it</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“We have the loa loa worm. Loa loa is what kind of worm? It's the eye worm. … So for each of these, you could kind of chug a little phrase to what they do. I'm not going to ask you a picky detail” [part 3, 26:42&ndash;27:10] … “The toxic hair, canis and cateye we get from our, from our dogs and cats.” [27:40&ndash;27:48]</p></div>
+  <p><strong><em>Loa loa</em>, the African eye worm:</strong> spread by the bite of small flies; life cycle D; a
+  temperature-sensitive worm that migrates around and under the skin and may enter the eye; pulled from a small hole
+  in the conjunctiva. <span class="src">Lecture 17, Slide 107.</span></p>
+  <figure class="fig"><img width="240" height="170" loading="lazy" src="micro-exam-3-study-guide-images/l17-s107-loa-loa-eye.jpg" alt="A thin worm being drawn from the surface of an eye."><figcaption>The eye worm. <span class="src">Source: Lecture 17, Slide 107.</span></figcaption></figure>
+  <p><strong><em>Toxocara canis</em> and <em>T. cati</em>, dog and cat roundworms:</strong> humans are accidental
+  hosts, infected by ingesting eggs from feces or undercooked meat of a transport host; larvae migrate; ocular
+  toxocariasis can blind; visceral toxocariasis damages the liver. <span class="src">Lecture 17, Slide 108.</span></p>
+  <div class="pearl"><p>Her own method, “a little phrase to what they do”: pinworm &mdash; daycare, tape test;
+  <em>Trichinella</em> &mdash; undercooked pork, cysts in muscle; <em>Loa loa</em> &mdash; eye worm;
+  <em>Toxocara</em> &mdash; dogs and cats; <em>Schistosoma</em> &mdash; snail, blood fluke; <em>Opisthorchis</em>
+  &mdash; Chinese liver fluke, fish; <em>Taenia</em> &mdash; beef and pork, cysticercosis.</p></div>
+
+<h3 class="sub" id="w17-flukes">2.16 &middot; <em>Schistosoma</em> and <em>Opisthorchis</em> <span class="tier tier-know">Know it</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Schistosoma. This is the one that's schistosomiasis. This is the one with the complex life cycle, where the alternate host is the snail in the water, okay? It's a blood fluke … That's why we don't put our hands in the water where the snails live.” [part 3, 27:14&ndash;27:33] … “Apisicorcus sinensis, that's the Chinese liver fluke. This is why you do not eat fresh water sushi.” [27:48&ndash;27:53]</p></div>
+  <p><strong>Blood flukes, schistosomes:</strong> life cycle D; adults in humans release eggs into water; the
+  miracidium develops in a <strong>freshwater snail</strong> into a cercaria, which <strong>penetrates human
+  skin</strong>, matures in the liver; adults migrate to intestine or bladder, feed on blood and shed eggs in urine
+  and feces. <span class="src">Lecture 17, Slide 112.</span> Prevention: snail control. <span class="src">Lecture 17, Slide 113.</span></p>
+  <figure class="fig"><img width="900" height="768" loading="lazy" src="micro-exam-3-study-guide-images/l17-s114-schistosoma-cycle.jpg" alt="The Schistosoma life cycle with snails, cercariae penetrating skin and adult worms in veins."><figcaption>The <em>Schistosoma</em> life cycle. <span class="src">Source: Lecture 17, Slide 114.</span></figcaption></figure>
+  <p><strong><em>Opisthorchis</em> (<em>Clonorchis</em>) <em>sinensis</em>, the Chinese liver fluke:</strong>
+  cycles between mammals, snails and fish; <strong>humans are infected by eating inadequately cooked fish</strong>
+  containing cercariae; larvae crawl into the bile duct. <span class="src">Lecture 17, Slide 116.</span></p>
+
+<h3 class="sub" id="w17-tapeworms">2.17 &middot; <em>Taenia</em> and <em>Echinococcus</em> <span class="tier tier-know">Know it</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“And then we have our tapeworms. Tenia saginata, tenia solium, we're eating undercooked beef and pork. And solium can also give you the cysticercosis, little brain worms … And then the echinococcus, which is the little tiny worm.” [part 3, 28:03&ndash;28:34]</p></div>
+  <p><strong><em>Taenia saginata</em>, beef tapeworm:</strong> infection from eating raw beef with the encysted
+  larva; few symptoms; proglottids in stool. <span class="src">Lecture 17, Slide 119.</span> <strong><em>Taenia solium</em>, pork tapeworm:</strong>
+  taeniasis if you ingest contaminated meat; <strong>cysticercosis if you ingest embryonated eggs</strong> &mdash;
+  larvae migrate to all tissues and encyst, most damaging in heart, eye or brain (seizures, psychiatric
+  disturbances). <span class="src">Lecture 17, Slide 121.</span></p>
+  <figure class="fig"><img width="762" height="481" loading="lazy" src="micro-exam-3-study-guide-images/l17-s123-cysticercosis-brain-slice.jpg" alt="Brain slice with many small cysts."><figcaption>Cysticercosis in the brain. <span class="src">Source: Lecture 17, Slide 123.</span></figcaption></figure>
+  <p><strong><em>Echinococcus</em>:</strong> tiny tapeworms; cystic echinococcosis (hydatid disease), a 2&ndash;7 mm
+  tapeworm of dogs, slowly enlarging cysts in liver and lungs <span class="src">Lecture 17, Slide 124</span>; acquired from handling infected dogs;
+  treatment often surgical removal of the masses. <span class="src">Lecture 17, Slide 125.</span></p>
+  <figure class="fig"><img width="553" height="412" loading="lazy" src="micro-exam-3-study-guide-images/l17-s125-hydatid-cyst-surgery.jpg" alt="A large white cyst exposed at surgery."><figcaption>A hydatid cyst at surgery. <span class="src">Source: Lecture 17, Slide 125.</span></figcaption></figure>
+
+<h3 class="sub" id="w17-drugs">2.18 &middot; Why so few drugs for parasites <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Why don't we have as many drugs for all of these parasites as we do for bacteria? Because they're eukaryotic, and so we have a lot of a lot of chances for toxic side effects.” [part 3, 28:34&ndash;28:52]</p></div>
+  <p>Antiprotozoan drugs are <strong>relatively few in comparison with antibacterial agents</strong>; they
+  <strong>work against eukaryotic cells</strong>, so there are <strong>toxicity problems and severe side
+  effects</strong> (both lines starred on the slide). <span class="src">Lecture 17, Slide 14.</span> Likewise many antihelminthic drugs have toxic side
+  effects; they target a worm metabolic process that differs from the human one. <span class="src">Lecture 17, Slide 86.</span></p>
+
+<h2 id="lec18">3 &middot; Lecture 18 &mdash; DNA Viruses of Medical Importance</h2>
+<div class="io-box">
+  <h3>Instructional objectives &mdash; DNA Viruses that Infect Humans</h3>
+  <ol>
+    <li>Recall the steps of DNA virus replication.</li>
+    <li>Compare and contrast the characteristics of a lytic viral infection versus a persistent chronic or persistent latent infection.</li>
+    <li>Differentiate between oncogenic and teratogenic viruses.</li>
+    <li>Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of DNA viruses of medical importance.</li>
+    <li>Compare and contrast the mode of transmission, clinical manifestations, and availability of a vaccine for DNA viruses of medical importance.</li>
+  </ol>
+</div>
+<p>She had taught this lecture that afternoon, so the review is a list of what to know [part 3, 29:00&ndash;32:07], which follows the objectives: replication (Objective 1), the three kinds of infection (Objective 2), oncogenic and teratogenic viruses (Objective 3), and the viruses themselves (Objectives 4 and 5). One item per thing she listed.</p>
+<h3 class="sub" id="w18-replication">3.1 &middot; Animal virus replication versus phage replication <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“And what we talked about today, you should know the difference between animal virus replication and phage virus replication.” [part 3, 29:00&ndash;29:20]</p></div>
+  <table>
+    <tr><th></th><th>Phage (bacterial virus)</th><th>Animal virus</th></tr>
+    <tr><td><strong>Entry</strong></td><td>Adsorption, then penetration: viral lysozyme and the tail pin breach the wall and <strong>inject the DNA</strong> <span class="src">Lecture 18, Slide 14.</span></td><td><strong>Entire virion engulfed</strong> <span class="src">Lecture 18, Slide 22.</span></td></tr>
+    <tr><td><strong>Uncoating</strong></td><td>Not needed: only the DNA enters</td><td><strong>Required</strong> to release the genetic material (pH of the cytoplasm against the extracellular fluid) <span class="src">Lecture 18, Slide 22.</span></td></tr>
+    <tr><td><strong>Release</strong></td><td>Lytic: viral lysozyme bursts the cell wall <span class="src">Lecture 18, Slide 14.</span></td><td><strong>Budding</strong>, which may give the envelope <span class="src">Lecture 18, Slide 22.</span></td></tr>
+  </table>
+  <p>Phage replication methods: <strong>lytic</strong>, <strong>lysogenic</strong> and <strong>chronic</strong>
+  (filamentous phages). <span class="src">Lecture 18, Slide 13.</span> Lytic: adsorption, penetration, replication, assembly, maturation, release.
+  <span class="src">Lecture 18, Slide 14.</span> Lysogenic: the viral DNA integrates into the bacterial chromosome as a <strong>prophage</strong>; a shock
+  induces a lytic cycle. <span class="src">Lecture 18, Slide 15.</span> Chronic: filamentous phages are extruded without lysis, only slowing host growth.
+  <span class="src">Lecture 18, Slide 16.</span></p>
+  <figure class="fig"><img width="502" height="600" loading="lazy" src="micro-exam-3-study-guide-images/l18-s022-animal-virus-entry.jpg" alt="Diagram of an enveloped animal virus attaching to receptors, entering by endocytosis, uncoating, synthesizing parts, assembling and budding out of the cell."><figcaption>Animal virus: engulfed whole, uncoated, released by budding. <span class="src">Source: Lecture 18, Slide 22.</span></figcaption></figure>
+  <figure class="fig"><img width="887" height="620" loading="lazy" src="micro-exam-3-study-guide-images/l18-s017-phage-cycles.jpg" alt="Diagram of the lytic, lysogenic and chronic phage cycles in bacteria."><figcaption>Lytic, lysogenic and chronic cycles. <span class="src">Source: Lecture 18, Slide 17.</span></figcaption></figure>
+  <p>Steps for a DNA animal virus (papovavirus): attachment, entry and uncoating, early transcription, biosynthesis
+  (DNA replicated), late translation of capsid proteins, maturation, release; note the necessity for uncoating and
+  release by budding. <span class="src">Lecture 18, Slide 23.</span> Most DNA viruses are budded off the nucleus. <span class="src">Lecture 18, Slide 24.</span></p>
+  <figure class="fig"><img width="500" height="314" loading="lazy" src="micro-exam-3-study-guide-images/l18-s023-dna-virus-replication.jpg" alt="Seven-step replication cycle of a DNA animal virus from attachment to release."><figcaption>Non-phage DNA virus replication. <span class="src">Source: Lecture 18, Slide 23.</span></figcaption></figure>
+
+<h3 class="sub" id="w18-structure">3.2 &middot; Animal virus structure; where the envelope comes from <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Basic structure of the animal viruses. Where do they get that envelope?” [part 3, 29:20&ndash;29:33]</p></div>
+  <p>All viruses have a <strong>capsid</strong>, a protein coat enclosing the nucleic acid (helical, icosahedral,
+  or complex as in phage); they contain DNA or RNA; animal viruses may have an <strong>envelope</strong> or spikes.
+  <strong>The envelope is obtained during budding of the virus through the cell membrane</strong>, and helps evade
+  the immune system. <span class="src">Lecture 18, Slide 9.</span> Animal viruses are categorized by nucleic acid, capsid and presence or absence of an
+  envelope. <span class="src">Lecture 18, Slide 8.</span></p>
+  <figure class="fig"><img width="459" height="600" loading="lazy" src="micro-exam-3-study-guide-images/l18-s030-dna-virus-groups.jpg" alt="Chart of the DNA virus groups that infect humans: enveloped double-stranded (poxviruses, herpesviruses, hepadnaviruses), nonenveloped double-stranded (adenoviruses, polyomaviruses, papillomaviruses) and nonenveloped single-stranded (parvoviruses)."><figcaption>The DNA virus groups that infect humans. <span class="src">Source: Lecture 18, Slide 30.</span></figcaption></figure>
+  <figure class="fig"><img width="900" height="442" loading="lazy" src="micro-exam-3-study-guide-images/l18-s010-naked-and-enveloped.jpg" alt="Drawings of a naked nucleocapsid virus and an enveloped virus with spikes, matrix, capsid and nucleic acid."><figcaption>Naked nucleocapsid and enveloped viruses. <span class="src">Source: Lecture 18, Slide 10.</span></figcaption></figure>
+
+<h3 class="sub" id="w18-infections">3.3 &middot; Acute, persistent chronic and persistent latent infections <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Viral infections, examples of the acute viral infections. Examples of the persistent chronic viral infections. And the persistent latent viral infections.” [part 3, 29:33&ndash;29:58]</p></div>
+  <table>
+    <tr><th>Kind</th><th>What happens</th><th>Slide&rsquo;s examples</th></tr>
+    <tr><td><strong>Acute</strong></td><td>Rapid course; lytic cycle</td><td>Colds, flu</td></tr>
+    <tr><td><strong>Persistent chronic</strong></td><td>Virus detectable in tissue, multiplying slowly; symptoms mild or absent; may integrate into the host chromosome</td><td>HIV, hepatitis B virus</td></tr>
+    <tr><td><strong>Persistent latent</strong></td><td>After a lytic cycle the virus goes dormant, generally not detectable, no symptoms; can reactivate as recurrent infection; viral DNA is an <strong>episome</strong> (in the nucleus, not integrated)</td><td>Herpesviruses</td></tr>
+  </table>
+  <p><span class="src">Lecture 18, Slide 26.</span> Note that the slides use hepatitis B as the chronic example, although most people infected show
+  few symptoms and develop immunity <span class="src">Lecture 18, Slide 88</span>; it is chronic in the small number who go on to chronic liver
+  disease.</p>
+  <figure class="fig"><img width="453" height="533" loading="lazy" src="micro-exam-3-study-guide-images/l18-s027-effects-on-host-cells.jpg" alt="Diagram of the possible effects of a viral infection on a host cell: lytic infection, chronic infection, latent infection with recurrence, and transformation."><figcaption>Possible effects of viral infection on host cells (“think about the similarity of these cycles to the phage cycles”). <span class="src">Source: Lecture 18, Slide 27.</span></figcaption></figure>
+
+<h3 class="sub" id="w18-oncogenic">3.4 &middot; Oncogenic viruses <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“What is an oncogenic virus, and give an example of that.” [part 3, 29:58&ndash;30:03] … “Oncogenic viruses” [31:22]</p></div>
+  <p>Some <strong>persistent viruses are oncogenic</strong>: <span class="src">Lecture 18, Slide 28.</span></p>
+  <table>
+    <tr><th>Virus</th><th>Cancer</th></tr>
+    <tr><td>Epstein-Barr virus</td><td>Burkitt lymphoma</td></tr>
+    <tr><td>Herpesvirus 8</td><td>Kaposi sarcoma</td></tr>
+    <tr><td>Hepatitis B virus</td><td>Hepatic carcinoma</td></tr>
+    <tr><td>Papillomaviruses</td><td>Cervical and penile cancer</td></tr>
+  </table>
+  <figure class="fig"><img width="377" height="401" loading="lazy" src="micro-exam-3-study-guide-images/l18-s076-burkitt-lymphoma.jpg" alt="A child with a grossly swollen jaw and cheek."><figcaption>Burkitt lymphoma, the Epstein-Barr virus tumor that swells the jaw (Slide 77). <span class="src">Source: Lecture 18, Slide 76.</span></figcaption></figure>
+  <p>Adenoviruses are <strong>oncogenic in animals, not in humans</strong> <span class="src">Lecture 18, Slide 93</span>; polyomaviruses induce tumors in
+  experimental animals. <span class="src">Lecture 18, Slide 101.</span></p>
+  <div class="callout"><p><strong>Two slides disagree.</strong> Her
+  chart&rsquo;s herpes simplex 2 row says “Association with Cervical and Penile cancer; often diagnosed with Pap
+  smear” {c18('5')}, while the oncogenic list gives cervical and penile cancer to the <strong>papillomaviruses</strong>
+  {c18('28')}. Learn the Slide 28 pairing; an exam item will not hinge on the chart row.</p></div>
+
+<h3 class="sub" id="w18-teratogenic">3.5 &middot; Teratogenic viruses <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“What is a teratogenic virus, what is that?” [part 3, 30:03&ndash;30:11]</p></div>
+  <p>Several viruses can <strong>cross the placenta</strong>, causing developmental disturbances and permanent
+  defects &mdash; <strong>teratogenic</strong>: <strong>rubella</strong> and <strong>cytomegalovirus</strong>.
+  <span class="src">Lecture 18, Slide 28.</span> Cytomegalovirus in newborns: enlarged liver and spleen, jaundice, capillary bleeding, microcephaly,
+  ocular inflammation; survivors develop neurological sequelae, hearing and visual disturbances. <span class="src">Lecture 18, Slide 72.</span></p>
+  <div class="pearl"><p>Oncogenic causes cancer; teratogenic causes birth defects across the placenta. Other DNA
+  viruses on the slides that harm the fetus or newborn: parvovirus B19 (hydrops fetalis) <span class="src">Lecture 18, Slide 104</span>; herpes of the
+  newborn (from the mother before or during birth). <span class="src">Lecture 18, Slide 64.</span></p></div>
+
+<h3 class="sub" id="w18-herpes">3.6 &middot; The eight human herpesviruses <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“What do all of those delightful little herpes viruses do? 1 through 8, OK, what do each one of them do, are they associated with?” [part 3, 30:11&ndash;30:25]</p></div>
+  <p>All herpesviruses show <strong>latency</strong> and cause recurrent infection (viral DNA forms an episome);
+  large enveloped icosahedral double-stranded DNA; replicate within the nucleus. <span class="src">Lecture 18, Slide 55.</span></p>
+  <table>
+    <tr><th>Virus</th><th>Disease (Slide 57)</th><th>Transmission and other facts</th></tr>
+    <tr><td><strong>HSV-1</strong> (herpes simplex 1)</td><td>Fever blisters, cold sores</td><td>Oropharynx, early childhood <span class="src">Lecture 18, Slide 58</span>; latent in the <strong>trigeminal ganglion</strong> <span class="src">Lecture 18, Slide 59</span>; also gingivostomatitis, keratitis, whitlow <span class="src">Lecture 18, Slide 60.</span></td></tr>
+    <tr><td><strong>HSV-2</strong> (herpes simplex 2)</td><td>Genital infections</td><td>Ages 14&ndash;29; can spread without visible lesions <span class="src">Lecture 18, Slide 58</span>; latent in <strong>lumbosacral</strong> ganglia <span class="src">Lecture 18, Slide 59.</span></td></tr>
+    <tr><td><strong>VZV</strong> (varicella zoster virus)</td><td>Chickenpox and shingles</td><td>Item 3.10</td></tr>
+    <tr><td><strong>CMV</strong> (cytomegalovirus)</td><td>Infects salivary glands and viscera</td><td>Giant cells with inclusions; saliva, breast milk, urine, semen, transplants <span class="src">Lecture 18, Slide 71</span>; teratogenic <span class="src">Lecture 18, Slide 28.</span></td></tr>
+    <tr><td><strong>EBV</strong> (Epstein-Barr virus)</td><td>Lymphoid tissue &mdash; infectious mononucleosis</td><td>Saliva (“kissing disease”) <span class="src">Lecture 18, Slide 75</span>; Burkitt lymphoma, nasopharyngeal carcinoma <span class="src">Lecture 18, Slide 77.</span></td></tr>
+    <tr><td><strong>HHV-6</strong> (human herpesvirus 6)</td><td>Roseola</td><td>Babies 2&ndash;12 months: fever, then a faint rash <span class="src">Lecture 18, Slide 81.</span></td></tr>
+    <tr><td><strong>HHV-7</strong> (human herpesvirus 7)</td><td>Roseola</td><td>Closely related to HHV-6 <span class="src">Lecture 18, Slide 83.</span></td></tr>
+    <tr><td><strong>HHV-8</strong> (human herpesvirus 8)</td><td>Kaposi sarcoma</td><td>Item 3.11</td></tr>
+  </table>
+  <p><span class="src">Lecture 18, Slide 57.</span></p>
+  <figure class="fig"><img width="810" height="436" loading="lazy" src="micro-exam-3-study-guide-images/l18-s056-herpesvirus.jpg" alt="Drawing and electron micrograph of a herpesvirus with glycoprotein spikes, envelope, tegument, capsid and DNA core."><figcaption>Herpesvirus structure. <span class="src">Source: Lecture 18, Slide 56.</span></figcaption></figure>
+  <figure class="fig"><img width="852" height="415" loading="lazy" src="micro-exam-3-study-guide-images/l18-s061-herpetic-whitlow.jpg" alt="A finger with a painful vesicular lesion."><figcaption>Herpetic whitlow (herpes simplex 1 or 2 through a break in the skin). <span class="src">Source: Lecture 18, Slide 61.</span></figcaption></figure>
+  <figure class="fig"><img width="467" height="512" loading="lazy" src="micro-exam-3-study-guide-images/l18-s082-roseola.jpg" alt="A baby with a faint rash on the trunk."><figcaption>Roseola infantum (human herpesvirus 6). <span class="src">Source: Lecture 18, Slide 82.</span></figcaption></figure>
+
+<h3 class="sub" id="w18-pox">3.7 &middot; What is unusual about poxvirus reproduction <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“What's unusual about reproduction in the pox viruses? They're the great big guys. They reproduce in the cytoplasm and not the nucleus.” [part 3, 30:25&ndash;30:38]</p></div>
+  <p>Poxviruses: the <strong>largest and most complex animal viruses</strong>, the largest genome, double-stranded
+  DNA, and they <strong>multiply in the cytoplasm in factory areas</strong>; eruptive pustules (pocks) that scar.
+  <span class="src">Lecture 18, Slide 32.</span> Compare: most DNA viruses are budded off the nucleus <span class="src">Lecture 18, Slide 24</span>, and herpesviruses replicate within the
+  nucleus. <span class="src">Lecture 18, Slide 55.</span></p>
+  <figure class="fig"><img width="796" height="481" loading="lazy" src="micro-exam-3-study-guide-images/l18-s033-poxvirus.jpg" alt="Cutaway drawing of a poxvirus with surface tubules, envelope, outer membrane, core membrane, lateral bodies and a 100 nanometer scale bar."><figcaption>Poxviruses are larger and more complex than other viruses. <span class="src">Source: Lecture 18, Slide 33.</span></figcaption></figure>
+
+<h3 class="sub" id="w18-variola">3.8 &middot; Variola, smallpox <span class="tier tier-know">Know it</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“We talked about variola, the small pox virus, which is, theoretically speaking, the first virus to be eliminated by vaccination.” [part 3, 30:41&ndash;30:54]</p></div>
+  <p>Her chart: smallpox; transmission inhalation, direct contact, fomites; fever, malaise, prostration, rash,
+  possible toxemia, shock; vaccine <strong>yes &mdash; with vaccinia</strong>; “<strong>first disease to be eliminated
+  by vaccine</strong>; no more routine vaccination except for front line”. <span class="src">Lecture 18, Slide 4.</span> Transmission: airborne saliva,
+  material from pustules or scabs, fomites; the early rash (spots on tongue and mouth) is the <strong>stage of greatest
+  contagion</strong>. <span class="src">Lecture 18, Slide 40.</span> Contagious until all scabs have fallen off. <span class="src">Lecture 18, Slide 41.</span> Prevention: vaccination with
+  vaccinia virus, not routinely given since 1972. <span class="src">Lecture 18, Slide 43.</span> Declared eradicated by the World Health Organization in
+  1980. <span class="src">Lecture 18, Slide 45.</span></p>
+  <figure class="fig"><img width="900" height="409" loading="lazy" src="micro-exam-3-study-guide-images/l18-s045-smallpox.jpg" alt="A child and an arm covered with smallpox pustules."><figcaption>Smallpox infections. <span class="src">Source: Lecture 18, Slide 45.</span></figcaption></figure>
+
+<h3 class="sub" id="w18-mpox">3.9 &middot; Mpox and its vaccine <span class="tier tier-know">Know it</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“We talked about the mpox virus, which is something that they're trying to wage war on right now, and even giving you, where do I find a vaccine against this one?” [part 3, 30:54&ndash;31:02]</p></div>
+  <p>Mpox (monkeypox): the virus enters through broken skin, the respiratory tract or mucous membranes, by contact
+  with body fluids or fomites; fever, aches, chills, <strong>swollen lymph nodes</strong>; 1&ndash;3 days after fever a
+  rash starting on the face, through macules, papules, vesicles, pustules and scabs; a 2&ndash;4 week illness.
+  <span class="src">Lecture 18, Slide 48.</span> <strong>Vaccination available</strong>, with a CDC (Centers for Disease Control and Prevention) vaccine
+  locator tool: <strong>JYNNEOS</strong>, a 2-dose series 28 days apart; <strong>ACAM2000</strong>, approved against
+  smallpox and made available to prevent monkeypox. <span class="src">Lecture 18, Slide 52.</span> Jynneos is a smallpox and monkeypox vaccine.
+  <span class="src">Lecture 18, Slide 44.</span></p>
+  <div class="callout"><p><strong>Two slides disagree.</strong> The
+  chart says JYNNEOS “became available April 2024” {c18('4')}; Slide 44 says approved September 24, 2019. Know the
+  vaccine&rsquo;s name and dosing, not the date.</p></div>
+
+<h3 class="sub" id="w18-vzv">3.10 &middot; Varicella zoster: when you are contagious <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Varicella zoster, the chicken pox shingles virus, when you are contagious with that one.” [part 3, 31:22&ndash;31:40]</p></div>
+  <p>Varicella zoster virus causes chickenpox and shingles; humans the only natural host; transmitted by respiratory
+  droplets and contact with fluid from active lesions; <strong>most infectious 24&ndash;48 hours prior to the
+  development of lesions</strong>; the virus enters neurons and stays latent. <span class="src">Lecture 18, Slide 68.</span> Reactivation gives shingles,
+  vesicles along a dermatome, more common in older patients; <strong>shingles patients can infect unvaccinated people,
+  particularly children, who get chickenpox, not shingles</strong>; live attenuated vaccine for chickenpox and
+  shingles. <span class="src">Lecture 18, Slide 69.</span></p>
+  <figure class="fig"><img width="900" height="320" loading="lazy" src="micro-exam-3-study-guide-images/l18-s070-varicella-zoster.jpg" alt="Chickenpox rash on a child, the virus reactivating in a ganglion and traveling down a sensory nerve, and a shingles rash along one dermatome."><figcaption>The relationship between varicella and zoster. <span class="src">Source: Lecture 18, Slide 70.</span></figcaption></figure>
+
+<h3 class="sub" id="w18-kaposi">3.11 &middot; The herpesvirus of Kaposi sarcoma <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“Which herpes virus is associated with Kaposi sarcoma?” [part 3, 31:48&ndash;31:58]</p></div>
+  <p><strong>Human herpesvirus 8</strong>, the Kaposi sarcoma-associated virus, is linked with the common tumor of
+  AIDS patients; also possibly multiple myeloma, primary effusion lymphoma and some forms of Castleman disease. Kaposi
+  sarcoma: small, painless, discolored lumps on the skin that may disseminate to internal organs. <span class="src">Lecture 18, Slide 83.</span> Chart:
+  saliva, sexual contact, blood transfusion, organ transplant; no vaccine. <span class="src">Lecture 18, Slide 6.</span></p>
+  <figure class="fig"><img width="414" height="150" loading="lazy" src="micro-exam-3-study-guide-images/l18-s084-kaposi-sarcoma.jpg" alt="A patient with many small discolored skin lumps."><figcaption>Kaposi sarcoma lesions. <span class="src">Source: Lecture 18, Slide 84.</span></figcaption></figure>
+
+<h3 class="sub" id="w18-chart">3.12 &middot; Her chart: the other DNA viruses <span class="tier tier-cold">Know cold</span></h3>
+  <div class="asked"><span class="asked-label">In her review</span><p>“And again, for each of these, I've given you this chart to help clue you in on. If you can associate what the viruses are and what they do, you should be OK.” [part 3, 31:58&ndash;32:07]</p></div>
+  <p>The chart is Slides 4&ndash;7, under the instruction “For each of the viruses on the following tables, review
+  disease states, modes of transmission, clinical manifestations, whether vaccines are available and any other
+  pertinent information listed.” It is rebuilt here as text, row for row (spelling corrected). <span class="src">Lecture 18, Slides 4&ndash;7.</span></p>
+  <div class="table-wrap"><table class="chart">
+    <tr><th>Virus</th><th>Disease</th><th>Transmission</th><th>Clinical manifestations</th><th>Vaccine</th><th>Other</th></tr>
+    <tr><td><strong>Variola</strong></td><td>Smallpox</td><td>Inhalation, direct contact, fomites</td><td>Fever, malaise, prostration, rash, possible toxemia, shock</td><td>Yes &mdash; with vaccinia</td><td>First disease to be eliminated by vaccine; no more routine vaccination except for front line</td></tr>
+    <tr><td><strong>Molluscum contagiosum</strong></td><td>Molluscum contagiosum</td><td>Direct contact and fomites</td><td>Small, smooth waxy macules on genitals and thighs</td><td>No</td><td>Treatment typically by removal of individual lesions</td></tr>
+    <tr><td><strong>Monkeypox</strong></td><td>Monkeypox</td><td>Contact with infected animals or humans</td><td>Skin pocks, fever, swollen lymph nodes</td><td>Yes &mdash; JYNNEOS</td><td>Major outbreak US 2022&ndash;2023</td></tr>
+    <tr><td><strong>Vaccinia</strong></td><td>Cowpox</td><td>Contact with infected animals (rarely humans)</td><td>Skin pocks typically on hands</td><td>Yes &mdash; used in Europe for animals</td><td>Also found in rodents, cats, zoo and circus animals</td></tr>
+    <tr><td><strong>Herpes simplex 1</strong></td><td>Fever blisters, cold sores</td><td>Direct contact</td><td>Lesions near lips and genitals, herpetic gingivostomatitis, herpetic keratitis, encephalitis occasionally in neonates</td><td>No, but candidate vaccines in trials</td><td></td></tr>
+    <tr><td><strong>Herpes simplex 2</strong></td><td>Genital herpes</td><td>Direct contact</td><td>Anorexia, fever, bilateral groin swelling and tenderness; clusters of sensitive vesicles on genitalia, perineum and buttocks; urethritis, painful urination, cervicitis, itching; vesicles ulcerate</td><td>No, research ongoing</td><td>See the flag in item 3.4</td></tr>
+    <tr><td><strong>Herpes simplex 1 and 2</strong></td><td>Herpetic whitlow; herpes of the newborn</td><td>Direct contact; mother to child</td><td>Pain and swelling of a finger or thumb, blisters, red streaks; lesions on mouth, skin, eyes, central nervous system where potentially fatal</td><td>No</td><td></td></tr>
+    <tr><td><strong>Varicella zoster</strong></td><td>Chickenpox, shingles</td><td>Respiratory droplets and contact with fluid from active skin lesions</td><td>Filled vesicles, malaise, fever; reactivation as shingles, painful vesicles along a dermatome</td><td>Yes, for both</td><td>Shingles is infectious to those never immunized &mdash; manifests as chickenpox</td></tr>
+    <tr><td><strong>Cytomegalovirus</strong></td><td>Retinitis, encephalitis, intestinal tract inflammation</td><td>Direct contact with infectious body fluids (saliva, blood, mucus, tears, breast milk, urine, semen, cervical secretions) or tissues</td><td>Blind spots; encephalitis; enlarged liver and spleen, jaundice, capillary bleeding; fetal microcephaly; survivors with neurological, hearing and visual damage</td><td>None currently; several in trials</td><td>Severe in neonates, fetuses, transplant patients, HIV and other immunocompromised hosts; owl&rsquo;s eye inclusion</td></tr>
+    <tr><td><strong>Epstein-Barr virus</strong></td><td>Infectious mononucleosis; Burkitt lymphoma; nasopharyngeal carcinoma; chronic fatigue syndrome (possible link)</td><td>Direct oral contact or fomites contaminated with saliva</td><td>Sore throat, high fever, cervical lymphadenopathy, splenomegaly; Burkitt: swollen nodes, abdominal pain, night sweats; nasopharyngeal: neck lump, hearing loss, blocked nose</td><td>No preventive vaccine; therapeutic vaccines in trials for its cancers</td><td>Burkitt primarily African boys 5&ndash;7; nasopharyngeal cancer adults 30&ndash;60, family history, salt-cured foods</td></tr>
+    <tr><td><strong>Human herpesvirus 6</strong></td><td>Roseola</td><td>Contact with saliva</td><td>Acute febrile disease followed by rash</td><td>None</td><td>Possible connection with multiple sclerosis and cancers</td></tr>
+    <tr><td><strong>Human herpesvirus 7</strong></td><td>Roseola</td><td>Contact with saliva</td><td>Acute febrile disease followed by rash</td><td>None</td><td>Possible connection with multiple sclerosis and cancers</td></tr>
+    <tr><td><strong>Human herpesvirus 8</strong></td><td>Kaposi sarcoma</td><td>Saliva, sexual contact, blood transfusion, organ transplant</td><td>Small painless discolored skin lumps; may affect internal organs</td><td>None</td><td>Castleman disease, primary effusion lymphoma</td></tr>
+    <tr><td><strong>Hepatitis B</strong></td><td>Hepatitis B</td><td>Contact with blood or serum, sexual contact</td><td>Malaise, fever, chills, anorexia, abdominal discomfort, diarrhea, jaundice, rash, arthritis</td><td>Yes</td><td>Cirrhosis and hepatic cancer; great risk to health care workers from a very low infective dose</td></tr>
+    <tr><td><strong>Adenovirus</strong></td><td>50+ types: common cold, pharyngitis, conjunctivitis, cystitis, infantile gastroenteritis; some strains hepatitis in young children</td><td>Droplets from respiratory and ocular secretions; ingestion</td><td>Upper respiratory symptoms, congestion, cough, fever; gastrointestinal symptoms; hepatitis</td><td>Types 4 and 7, for military in training</td><td></td></tr>
+    <tr><td><strong>Human papillomavirus</strong></td><td>Warts and genital warts</td><td>Direct contact including sexual, or fomites</td><td>Tiny flat bumps to branching cauliflower-like masses</td><td>Vaccines available for genital warts</td><td>Nine strains raise the risk of reproductive system cancers</td></tr>
+    <tr><td><strong>Polyomaviruses (JC, BK)</strong></td><td>JC: progressive multifocal leukoencephalopathy; BK: interstitial nephritis</td><td>Body fluids, contaminated food or water; JC early childhood, BK adolescence</td><td>JC: demyelination, progressive neurological symptoms; BK: after renal transplant, bloody urine</td><td>None for humans</td><td>Most prevalent in the immunosuppressed</td></tr>
+    <tr><td><strong>Parvovirus B19</strong></td><td>Fifth disease; hydrops fetalis; polyarthropathy; cessation of red cell production</td><td>Droplet infection</td><td>Slapped-face rash, low-grade fever; fatal fetal anemia from maternal transmission; massive joint swelling; anemia</td><td></td><td></td></tr>
+  </table></div>
+  <p>The viruses on it she did not name in the review get their own line from the slides. One of them she had
+  flagged earlier that afternoon, in the lecture itself:</p>
+  <div class="asked"><span class="asked-label">In the lecture</span><p>“Three principal viruses associated with
+  hepatitis, hepatitis B, which is the DNA virus, you need to know that one, and then Dr. Fair will talk to you about
+  hepatitis A and C next week because they are RNA viruses.” [part 2, 35:10&ndash;35:25]</p></div>
+  <ul>
+    <li><strong>Hepatitis B</strong> (enveloped, unusual partly double- and partly single-stranded genome, liver
+    tropism <span class="src">Lecture 18, Slide 86</span>): multiplies exclusively in the liver, seeding the blood &mdash; chronic; minute amounts of
+    blood transmit it, also sexual; raises the risk of hepatocellular carcinoma <span class="src">Lecture 18, Slide 87</span>; vaccine from yeast-cloned
+    surface antigen, 3 doses; HBIG (hepatitis B immune globulin) for the exposed. <span class="src">Lecture 18, Slide 91.</span></li>
+    <li><strong>Adenovirus</strong>: nonenveloped double-stranded DNA, acute infection; respiratory and ocular
+    secretions; colds, pharyngitis, conjunctivitis, hemorrhagic cystitis, infantile gastroenteritis <span class="src">Lecture 18, Slide 93</span>;
+    type 41 is associated with hepatitis in children 1&ndash;6; oral vaccine for types 4 and 7 in the military.
+    <span class="src">Lecture 18, Slide 94.</span> (The slide calls that vaccine &ldquo;inactivated&rdquo;; the current military adenovirus vaccine is a
+    live oral vaccine. Answer from the slide if asked.)</li>
+    <li><strong>Human papillomavirus</strong>: warts (common, plantar, genital &mdash; the most common sexually
+    transmitted disease in the United States) <span class="src">Lecture 18, Slide 97</span>; nine types raise reproductive cancer risk; Pap smear;
+    vaccines Gardasil and Cervarix. <span class="src">Lecture 18, Slide 99.</span></li>
+    <li><strong>Polyomaviruses</strong>: JC virus causes progressive multifocal leukoencephalopathy, destruction of
+    myelin-producing cells in the immunosuppressed; BK virus lies dormant in the kidney and causes hemorrhagic
+    cystitis and nephritis after renal transplant. <span class="src">Lecture 18, Slide 102.</span></li>
+    <li><strong>Parvovirus B19</strong>: nonenveloped single-stranded DNA <span class="src">Lecture 18, Slide 103</span>; erythema infectiosum (fifth
+    disease), fever and rash on the cheeks; hydrops fetalis if a pregnant woman passes it to the fetus. <span class="src">Lecture 18, Slide 104.</span></li>
+    <li><strong>Molluscum contagiosum</strong>: direct contact and fomites; in the United States most commonly a
+    sexually transmitted disease; small, smooth waxy lesions. <span class="src">Lecture 18, Slide 46.</span></li>
+    <li><strong>Cowpox</strong>: rare in humans, usually on the hands; rodents are the main reservoir. <span class="src">Lecture 18, Slide 53.</span></li>
+  </ul>
+  <figure class="fig"><img width="691" height="452" loading="lazy" src="micro-exam-3-study-guide-images/l18-s105-fifth-disease.jpg" alt="A child with a bright red rash on the cheek."><figcaption>The “slapped face” rash of fifth disease (parvovirus B19). <span class="src">Source: Lecture 18, Slide 105.</span></figcaption></figure>
+
+<h2 id="closing">What she said about the exam</h2>
+<p><strong>The four <em>E. coli</em> types are the surest question.</strong> &ldquo;You need to know all four types and
+what they do&rdquo; and &ldquo;there&rsquo;s multiple questions because it&rsquo;s important&rdquo; [part 3,
+7:41&ndash;8:51] are the most direct statements about the exam she made.</p>
+<p><strong>Parasites: identity, source, and the picture.</strong> &ldquo;I&rsquo;m not going to ask you a picky
+detail&rdquo; [part 3, 27:08] &mdash; know each organism by &ldquo;a little phrase to what they do&rdquo;: its vector or
+source, its disease, and what it looks like.</p>
+<p><strong>DNA viruses: the list, then the chart.</strong> She taught it that afternoon and closed with a list of what to
+know &mdash; replication, structure and the envelope, the three kinds of infection, oncogenic and teratogenic viruses,
+the eight herpesviruses, poxviruses, smallpox and mpox, varicella zoster&rsquo;s contagious period, Kaposi sarcoma
+&mdash; and pointed to her chart for the rest: &ldquo;If you can associate what the viruses are and what they do, you
+should be OK.&rdquo;</p>
+<p><strong>The review was one-sided by design.</strong> It says nothing about the weight of Dr. Fair&rsquo;s Lectures
+15, 16 and 19 on the exam.</p>
+<div class="callout">
+  <p><strong>Next steps:</strong> the <a href="micro-exam-3-study-guide.html">full Exam 3 study guide</a> covers the
+  whole block, and the <a href="micro-exam-3-cram-sheet.html">cram sheet</a> condenses it. To test yourself on exactly
+  this review, the two <a href="micro-exam-3-webster-review-master-exam-1.html">Webster Review master exams</a>
+  (<a href="micro-exam-3-webster-review-master-exam-2.html">Exam 2</a>), 60 questions each, give every item above a
+  question in each exam, with extra ones on the Know cold items and picture questions on the parasites.</p>
+</div>
+<footer class="guide-foot">
+  <p style="text-align:center;margin:0 0 10px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+  <p style="text-align:center;">Built from Professor Webster&rsquo;s Exam 3 review and her three lecture decks for personal study &middot; Class of 2028.</p>
+  <p style="text-align:center;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+</footer>
+</main>
+</div>
+<script>
+  // High-yield "Test yourself" question sets, one per lecture topic, fed to
+  // window.openTestYourself (theme.js) by each section's button.
+  var TEST_YOURSELF = {
+
+    gramNegativeBacilli: [
+      {q:"Which part of the lipopolysaccharide is biologically active?",
+       choices:["The O antigen","The core polysaccharide","Lipid A","The peptidoglycan"],correct:2,
+       explain:"Lipid A is the biologically active component of endotoxin. The O antigen is unique to each organism; the core polysaccharide is shared by large groups."},
+      {q:"Which three properties sort the Gram-negative bacilli?",
+       choices:["Spores, acid-fastness, capsule","Oxygen, lactose fermentation, oxidase","Catalase, coagulase, hemolysis","Shape, size, pigment"],correct:1,
+       explain:"Oxygen requirement, lactose fermentation and the oxidase enzyme. Coliforms are the lactose-fermenting enterics; Haemophilus and Pasteurella are oxidase positive."},
+      {q:"Which Escherichia coli strain is the leading cause of traveler's diarrhea?",
+       choices:["Enterotoxigenic","Enteroinvasive","Enteropathogenic","Enterohemorrhagic"],correct:0,
+       explain:"Enterotoxigenic Escherichia coli, with its heat-labile and heat-stable toxins. Enteropathogenic causes wasting infantile diarrhea; enterohemorrhagic O157:H7 causes hemolytic uremic syndrome."},
+      {q:"How does an infected flea transmit plague?",
+       choices:["Through its feces","By regurgitating while biting","Through its eggs","Only by being swallowed"],correct:1,
+       explain:"Coagulase clots blood that blocks the flea's esophagus; the ravenous flea bites again and again and regurgitates the bacteria into the bite."},
+      {q:"Why is Haemophilus grown on chocolate agar?",
+       choices:["It needs low oxygen","It needs hemin and similar blood factors","It ferments lactose there","Bile salts kill it"],correct:1,
+       explain:"Haemophilus is fastidious and needs hemin or nicotinamide adenine dinucleotide, which chocolate agar (cooked blood) supplies; none grows on blood agar without special techniques."}
+    ],
+
+    fungi: [
+      {q:"What is thermal dimorphism?",
+       choices:["Growing only at body temperature","A mold at 30 C and a yeast at 37 C","A yeast in soil and a mold in the body","Surviving freezing and boiling"],correct:1,
+       explain:"True fungal pathogens grow as multicellular molds at 30 C and switch to unicellular yeasts at 37 C, human body temperature."},
+      {q:"Which fungal pathogen is linked to soil with bird and bat guano and is NOT spread person to person?",
+       choices:["Coccidioides immitis","Candida albicans","Histoplasma capsulatum","Sporothrix schenckii"],correct:2,
+       explain:"Histoplasma capsulatum, Ohio Valley fever: inhaled conidia from nitrogen-rich soil with guano. Coccidioides lives in alkaline desert soil; Sporothrix enters through a puncture wound."},
+      {q:"What forms in the lungs in coccidioidomycosis?",
+       choices:["Fungal balls","Spherules containing endospores","Germ tubes","Encapsulated budding yeasts"],correct:1,
+       explain:"Inhaled arthrospores become spherules full of endospores. Fungal balls are aspergillosis; an encapsulated budding yeast is Cryptococcus."},
+      {q:"Which tinea is 'jock itch'?",
+       choices:["Tinea cruris","Tinea corporis","Tinea capitis","Tinea barbae"],correct:0,
+       explain:"Tinea cruris affects the groin and scrotal regions. Corporis = smooth skin of the body; capitis = scalp; barbae = beard."},
+      {q:"Why is Pneumocystis pneumonia unusual among fungal infections in its treatment?",
+       choices:["It needs no treatment","It is treated with pentamidine and co-trimoxazole, not traditional antifungals","Only surgery works","It is treated with nystatin alone"],correct:1,
+       explain:"Pentamidine (an anti-protozoan) and co-trimoxazole (an antibacterial) are used; these are not the traditional antifungal drugs."}
+    ],
+
+    foodSafety: [
+      {q:"Which is a food INTOXICATION rather than a food infection?",
+       choices:["Salmonella gastroenteritis","Listeriosis","Botulism from a preformed toxin","Campylobacter diarrhea"],correct:2,
+       explain:"Intoxication = a preformed toxin is eaten (Clostridium botulinum toxin, staphylococcal toxin). Salmonella and Listeria are food infections: live cells multiply."},
+      {q:"Why is Listeria monocytogenes such a concern in stored food?",
+       choices:["It is killed only by freezing","It grows from 1 to 40 C, even in the refrigerator","It needs a living host to grow","It only contaminates canned goods"],correct:1,
+       explain:"Listeria grows well from 1 to 40 C, at refrigerator or room temperature, and survives in the freezer."},
+      {q:"Which organism is the 'indicator organism' of fecal contamination?",
+       choices:["Escherichia coli","Vibrio vulnificus","Bacillus cereus","Clostridium perfringens"],correct:0,
+       explain:"E. coli is associated with human and animal feces; eosin methylene blue plates confirm it in food and water samples."},
+      {q:"What does PulseNet hold?",
+       choices:["Recall notices for pet food","Pulsed-field gel electrophoresis patterns of microbial isolates","Vaccine records","Restaurant inspection scores"],correct:1,
+       explain:"Each isolate's pulsed-field gel electrophoresis pattern goes into the Centers for Disease Control and Prevention's PulseNet database, which finds outbreak causes and cuts detection time."},
+      {q:"When is a person with hepatitis A most contagious?",
+       choices:["About two weeks before symptoms","Only while jaundiced","After symptoms resolve","Only during vomiting"],correct:0,
+       explain:"With the fecal-oral hepatitis viruses (A and E), a person is most contagious about two weeks BEFORE symptoms appear."}
+    ],
+
+    parasites: [
+      {q:"What does the antiprotozoan drugs slide star about these drugs?", choices:["Relatively few compared with antibacterial agents, with severe side effects","More numerous than antibacterial agents, and well tolerated by patients","Aimed only at prokaryotic cells, so human cells are spared","Free of side effects, because protozoa lack mitochondria"],correct:0, explain:"Antiprotozoan drugs are relatively few in comparison with antibacterial agents, and they have toxicity problems with severe side effects, and they work against eukaryotic cells."},
+      {q:"A teenager develops headache, fever, vomiting and a stiff neck a few days after diving in a warm freshwater lake. How did the ameba reach the brain?", choices:["Through the bloodstream from the intestine","Through a break in the skin over several weeks","Through the nasal mucosa and along the olfactory nerve","Through the cornea from a contact lens"],correct:2, explain:"Naegleria fowleri is acquired through nasal contact with water: the trophozoite burrows through the nasal mucosa and travels into the brain along the olfactory nerve, with death in 3 to 7 days. Skin and slow progression describe Acanthamoeba encephalitis; the contact lens is Acanthamoeba keratitis."},
+      {q:"How does Trypanosoma cruzi usually enter a person?", choices:["Tsetse fly saliva injected during a bite","Reduviid (kissing) bug feces inoculated into a skin portal","Promastigotes injected by a sand fly","Sporozoites injected by an Anopheles mosquito"],correct:1, explain:"Chagas disease: infection occurs when the kissing bug feces is inoculated into a cutaneous portal. The tsetse fly spreads T. brucei, the sand fly Leishmania, the Anopheles mosquito Plasmodium."},
+      {q:"Which protozoan exists only as a trophozoite, with no cyst stage?", choices:["Giardia lamblia","Entamoeba histolytica","Balantidium coli","Trichomonas vaginalis"],correct:3, explain:"Trichomonads exist only in trophozoite form, with no cyst: a strict parasite that cannot survive long outside the host, so it spreads sexually. Giardia, Entamoeba and Balantidium all form cysts that are swallowed."},
+      {q:"Pregnant women are told not to clean the cat box because of which parasite?", choices:["Toxoplasma gondii","Cryptosporidium","Babesia microti","Sarcocystis hominis"],correct:0, explain:"Cats harbor Toxoplasma oocysts and release them in feces; infection in pregnancy carries a 33% chance of transplacental transmission, with hydrocephalus, intracranial calcifications and chorioretinitis in the newborn."},
+      {q:"In malaria, which stage leaves the liver and invades red blood cells?", choices:["Sporozoites","Gametocytes","Merozoites","Oocysts"],correct:2, explain:"The mosquito injects sporozoites, which localize in the liver and by schizogony generate merozoites; the merozoites enter red blood cells, become ring trophozoites, multiply and burst the cell. Gametocytes are taken up by the mosquito."},
+      {q:"In a helminth life cycle, where do adulthood and mating occur?", choices:["The intermediate host","The definitive host","The transport host","The vector"],correct:1, explain:"Adulthood and mating occur in the definitive host. Larval development is in the intermediate host; a transport (paratenic) host has no parasitic development."},
+      {q:"How do hookworm larvae enter the human body?", choices:["In undercooked pork","In swallowed eggs on vegetables","By burrowing through the skin of bare feet","Through a mosquito bite"],correct:2, explain:"Life Cycle B: eggs shed in feces hatch into filariform larvae that burrow into the skin of bare feet, pass through the lungs, are swallowed and mature in the small intestine. Blood loss causes anemia."},
+      {q:"A child in daycare has anal itching at night. Which test finds the cause?", choices:["Tape test","Lumbar puncture","Blood smear","Muscle biopsy"],correct:0, explain:"Pinworm (Enterobius vermicularis): mature females emerge from the intestine to lay eggs, causing anal itching; the tape test picks up the eggs. Treatment is pyrantel pamoate."},
+      {q:"After eating raw snails, a patient has a stiff neck and a lumbar puncture full of eosinophils instead of neutrophils. Which parasite?", choices:["Naegleria fowleri","Angiostrongylus cantonensis","Trichinella spiralis","Toxocara canis"],correct:1, explain:"The rat lungworm causes eosinophilic meningitis; snails are its intermediate hosts and people swallow it in snails, water or vegetables. Prevention is snail and slug control and washing produce."},
+      {q:"Swallowing which stage of Taenia solium causes cysticercosis?", choices:["Encysted larvae in pork","Adult proglottids","Embryonated eggs","Cercariae in water"],correct:2, explain:"Embryonated eggs hatch in the intestine and the larvae migrate to all tissues and encyst, most damaging in heart muscle, eye or brain (seizures). Eating cysts in pork causes taeniasis instead."},
+      {q:"Which worm, spread by black flies, causes river blindness through its Wolbachia bacteria?", choices:["Loa loa","Wuchereria bancrofti","Dirofilaria","Onchocerca volvulus"],correct:3, explain:"Onchocerca volvulus: Wolbachia antigens stimulate inflammation that damages the cornea, retina and optic nerve. Treatment is tetracycline and ivermectin. Loa loa is the eye worm spread by small flies; Wuchereria (mosquitoes) causes elephantiasis."}
+    ]
+
+  };
+</script>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

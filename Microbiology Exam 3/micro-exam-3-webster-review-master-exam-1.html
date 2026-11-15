@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));window.__paErrQ=[];['error','unhandledrejection'].forEach(function(t){addEventListener(t,function(e){var q=window.__paErrQ;if(q&&!q.done)q.push(e)})});</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #3f8a55; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c2903a; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webster Review Master Exam 1 &mdash; Microbiology Exam 3</title>
+<style>
+  :root{
+    --navy:#1f4d2b; --indigo:#3f8a55; --gold:#c2903a; --ice:#e8f4ea;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#1f4d2b;--gold-l:#c2903a;--indigo-l:#1f4d2b;--navy:#89ba92;--indigo:#509b65;--gold:#c2903a;--ice:#112917;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#509b65;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#1f4d2b;--indigo-t:#38844f;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Webster Review Master Exam 1 &mdash; Exam 3</h1>
+    <div class="sub">Microbiology &middot; Exam 3 &middot; Lectures 14, 17 and 18 &middot; Exam 1 of 2</div>
+    <span class="pill">60 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px"><p>Built from Professor Webster&rsquo;s own Exam 3 review at the end of the DNA Viruses lecture. Every question is new and written for one item of that review: each of her items gets a question in each exam, the two exams on different facts, and the items she put to the class as questions (<em>know cold</em>) get extra ones &mdash; the four <em>Escherichia coli</em> types most of all. She said a parasite picture may have to be identified, so the parasites include picture questions. What she said not to worry about is left out. Every fact comes from her slides, cited under each answer.</p><p>Questions run in her order: the Gram-negative bacilli, the parasites, then the DNA viruses, 20 each, so the score breakdown matches the headings of the <a href="micro-exam-3-webster-review.html">Webster review page</a>.</p><p><b>Her review covered only her three lectures.</b> Dr. Fair&rsquo;s lectures (Fungi, Food Safety, RNA Viruses) are not in these exams; they are in their own topic quizzes.</p></p>
+    <div class="chips"><span class="chip">Gram-Negative Bacilli</span><span class="chip">Parasites</span><span class="chip">DNA Viruses</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Pseudomonas aeruginosa: persisting despite cleaning", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-negative bacilli of medical importance", "q": "A burn unit keeps finding Pseudomonas aeruginosa on sinks and equipment despite routine cleaning. Which property of the organism best explains this?", "opts": [["It forms heat-resistant spores", "The aerobic Gram-negative nonenteric bacilli are non-spore-forming, so spores cannot explain its persistence. Pseudomonas aeruginosa persists because it resists soaps, disinfectants, drugs and drying."], ["It needs blood-rich surfaces", "Needing chocolate agar and hemin is Haemophilus, a fastidious genus sensitive to drying, temperature extremes and disinfectants. Pseudomonas aeruginosa survives nutrient-poor places and resists disinfectants."], ["It must live inside amebas", "Living in close association with amebas in water is a Legionella trait. Pseudomonas aeruginosa is free living and survives in nutrient-poor environments; it persists because it resists soaps and disinfectants."], ["It resists soaps and disinfectants", "Correct: Pseudomonas aeruginosa is resistant to soaps, dyes, quaternary ammonium disinfectants, drugs and drying, and it survives in nutrient-poor environments, so routine cleaning fails to clear it. That is why it is a major agent of nosocomial infections, including in hosts with burns."]], "c": 3, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 13, 16, 18, 39 and 97", "qid": "1uh64e4"}, {"topic": "Brucellosis: recognizing undulant fever", "io": "2 — Describe the modes of transmission by which humans acquire Gram-negative bacilli of medical importance", "q": "A slaughterhouse worker has had a fever that rises and falls over several months, with chills, sweating, headache, muscle pain and weight loss. Which organism is the most likely cause?", "opts": [["Brucella abortus", "Correct: brucellosis is a zoonosis caught by animal handling or slaughtering, through contact with the blood, urine or placentas of infected animals (Brucella abortus is the cattle species). Its fever fluctuates for weeks to a year, the undulant fever, with chills, sweating, headache, muscle pain and weight loss."], ["Legionella pneumophila", "Legionella pneumophila is caught by inhaling aerosols from water sources such as cooling towers and causes pneumonia with fever and cough. A months-long undulant fever in a slaughterhouse worker is brucellosis."], ["Francisella tularensis", "Francisella tularensis causes tularemia (rabbit fever), caught from infected animals, water, dust or vector bites, with ulcerative skin lesions and swollen lymph nodes. A fever that undulates for months is brucellosis."], ["Salmonella typhi", "Salmonella typhi causes typhoid fever, with a SUSTAINED fever of 103-104 degrees and rose-colored spots, from fecally contaminated food or water; humans are its only hosts. A rising-and-falling fever after slaughter work is brucellosis."]], "c": 0, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 27, 28, 29, 40, 73 and 74", "qid": "1n5xcsi"}, {"topic": "Tularemia: recognizing rabbit fever", "io": "2 — Describe the modes of transmission by which humans acquire Gram-negative bacilli of medical importance", "q": "A hunter who skinned several wild rabbits develops fever, chills and headache, an ulcerating skin lesion and swollen lymph nodes. Which organism is the most likely cause?", "opts": [["Burkholderia pseudomallei", "Burkholderia pseudomallei causes melioidosis, acquired from soil and water of tropical climates by penetrating injury or inhalation, with wound nodules. Skinning wild rabbits points to Francisella tularensis."], ["Francisella tularensis", "Correct: tularemia (rabbit fever) is a zoonosis of mammals of the northern hemisphere, particularly rabbits, transmitted by contact with infected animals. It brings fever, chills and headache with ulcerative skin lesions and swollen lymph nodes."], ["Legionella pneumophila", "Legionella pneumophila lives in water and is inhaled as aerosols, causing pneumonia; it is not described with ulcerative skin lesions. Rabbit contact with an ulcer and swollen nodes points to tularemia."], ["Brucella abortus", "Brucella abortus is the cattle species of brucellosis, caught by handling cattle or drinking unpasteurized dairy, with a fever that fluctuates for weeks to a year. Rabbit contact with ulcerative skin lesions is tularemia."]], "c": 1, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 23, 27, 28, 29, 39 and 40", "qid": "5t96x5"}, {"topic": "Pertussis: recognizing the two stages", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-negative bacilli of medical importance", "q": "A child's cough illness began like a cold, with nasal drainage, congestion and sneezing. It has become fits of persistent coughing, each followed by a deep, noisy inhalation. Which organism is the cause?", "opts": [["Klebsiella pneumoniae", "Klebsiella pneumoniae, a normal inhabitant of the respiratory tract with a large capsule, causes nosocomial pneumonia. A cold-like start followed by paroxysms and a whoop is pertussis from Bordetella pertussis."], ["Legionella pneumophila", "Legionella pneumophila is inhaled in water aerosols and causes Legionnaires disease (fever, cough, pneumonia), mostly in older adults and smokers. A catarrhal stage then a whooping cough is Bordetella pertussis."], ["Haemophilus influenzae", "Haemophilus influenzae causes acute bacterial meningitis, epiglottitis, otitis media, sinusitis, pneumonia and bronchitis, but not a cold-like stage followed by coughing fits and a whoop, which is pertussis."], ["Bordetella pertussis", "Correct: Bordetella pertussis causes pertussis (whooping cough). Its catarrhal stage brings nasal drainage, congestion, sneezing and an occasional cough; the paroxysmal stage brings a recurrent persistent cough followed by a deep inhalation, the whoop."]], "c": 3, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 30, 31, 40, 66 and 98", "qid": "1prx346"}, {"topic": "Legionella: recognizing it from a water spray", "io": "2 — Describe the modes of transmission by which humans acquire Gram-negative bacilli of medical importance", "q": "Several shoppers who stood near a supermarket's vegetable spraying system develop fever, cough and pneumonia. The sickest is an older man who smokes. Which organism is the most likely cause?", "opts": [["Bordetella pertussis", "Bordetella pertussis spreads by direct contact or inhaled aerosols from apparently healthy carriers, not from water systems, and causes whooping cough, a childhood affliction. A water spray outbreak is legionellosis."], ["Haemophilus influenzae", "Haemophilus influenzae causes meningitis, epiglottitis, otitis media, sinusitis, pneumonia and bronchitis, but it is fastidious and sensitive to drying, not a water-system organism. A spray-system outbreak is Legionella."], ["Legionella pneumophila", "Correct: Legionella is widely distributed in water, including supermarket vegetable spraying systems, and is transmitted by aerosols. Legionellosis brings fever, cough and pneumonia and is prevalent in males over 50 and in smokers."], ["Klebsiella pneumoniae", "Klebsiella pneumoniae is a normal inhabitant of the respiratory tract and a cause of nosocomial pneumonia, not an organism spread from water sprays. Pneumonia after exposure to a vegetable sprayer points to Legionella."]], "c": 2, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 30, 39, 40, 66, 97 and 98", "qid": "1hjnhyq"}, {"topic": "Diarrheal disease: where the blood comes from", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-negative bacilli of medical importance", "q": "Diarrheal disease is grouped as toxigenic or invasive. In the invasive type, what produces the blood in the stool?", "opts": [["Bacteria damaging the epithelium", "Correct: in invasive diarrheal disease (example: Shigella) the bacteria enter the intestinal epithelium and damage it, so blood appears. In the toxigenic type (example: enterotoxigenic Escherichia coli) the bacteria stay on the surface and cause oversecretion of fluid."], ["Toxins driving fluid secretion", "Toxins driving oversecretion of fluid mark the toxigenic type (example: enterotoxigenic Escherichia coli), with diarrhea, cramping and low-grade or no fever. The invasive type bleeds because bacteria damage the epithelium."], ["Blocked vitamin B1 uptake", "Inhibiting vitamin B1 (thiamin) uptake, with adherence that destroys microvilli, belongs to enteropathogenic Escherichia coli and its infant wasting diarrhea. Invasive disease bleeds because bacteria damage the epithelium."], ["Low-level endotoxin release", "Low levels of endotoxin cause a low-level inflammatory response, with fever, malaise, aches and pains, not bleeding into the bowel. Invasive disease bleeds because bacteria enter and damage the epithelium."]], "c": 0, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 11, 44, 56 and 58", "qid": "1aydrhc"}, {"topic": "Lactose fermenters on eosin methylene blue agar", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-negative bacilli of medical importance", "q": "A stool sample is plated on eosin methylene blue agar, a medium selective for Gram-negative bacteria and differential for lactose fermenters. The colonies shown grow as lactose fermenters. Which genus fits?", "opts": [["Escherichia", "Correct: the enterics are divided into coliforms (lactose fermenters) and non-coliforms (non-lactose fermenters). Escherichia coli is a coliform, the lactose-positive organism that eosin methylene blue and MacConkey's agar pick out as a lactose fermenter."], ["Salmonella", "Salmonella is a non-coliform, lactose-negative enteric and a true pathogen. A lactose fermenter on eosin methylene blue agar fits a coliform such as Escherichia."], ["Proteus", "Proteus is a non-coliform: a lactose-negative, highly motile opportunist recognized by its swarming growth. A lactose fermenter on eosin methylene blue agar fits a coliform such as Escherichia."], ["Shigella", "Shigella is a non-coliform, lactose-negative enteric and a true pathogen that causes bacillary dysentery. A lactose fermenter on eosin methylene blue agar fits a coliform such as Escherichia."]], "c": 0, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 46, 50, 69 and 71 and image on Slide 48", "img": "micro-exam-3-quiz-images/wr3-fig-01.jpg", "alt": "A petri dish of dark red agar streaked in sections; the heavy growth of small colonies has a shiny, yellow-green metallic sheen", "qid": "xqeod"}, {"topic": "Escherichia coli types: traveler's watery diarrhea", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-negative bacilli of medical importance", "q": "A traveler develops watery diarrhea with cramping and little or no fever. The strain's toxins make the intestinal epithelium secrete fluid and electrolytes. Which type of Escherichia coli is it?", "opts": [["Enterohemorrhagic Escherichia coli", "Enterohemorrhagic Escherichia coli (O157:H7) causes hemorrhagic colitis and can lead to hemolytic uremic syndrome. Watery diarrhea with cramping and little or no fever in a traveler is enterotoxigenic."], ["Enterotoxigenic Escherichia coli", "Correct: enterotoxigenic Escherichia coli makes heat-labile and heat-stable toxins that promote secretion of fluid and electrolytes, giving diarrhea, cramping and low-grade to no fever; it causes most traveler's diarrhea."], ["Enteropathogenic Escherichia coli", "Enteropathogenic Escherichia coli adheres to the intestinal lining and destroys microvilli, causing the wasting form of infantile diarrhea. A traveler's toxin-driven watery diarrhea is enterotoxigenic."], ["Enteroinvasive Escherichia coli", "Enteroinvasive Escherichia coli has no toxins; it damages the large intestinal wall mechanically, giving profuse bloody diarrhea and high fever. Watery, toxin-driven diarrhea with little fever is enterotoxigenic."]], "c": 1, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 56, 57, 58 and 59", "qid": "8u8u7w"}, {"topic": "Escherichia coli types: disease like shigellosis", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-negative bacilli of medical importance", "q": "Which type of Escherichia coli causes an inflammatory disease of the large intestine similar to shigellosis?", "opts": [["Enterohemorrhagic Escherichia coli", "Enterohemorrhagic Escherichia coli carries Shiga toxin and is feared for hemolytic uremic syndrome. The type described as similar to shigellosis, with no toxins, is enteroinvasive Escherichia coli."], ["Enteropathogenic Escherichia coli", "Enteropathogenic Escherichia coli adheres to the intestinal lining and destroys microvilli, causing wasting infantile diarrhea. The shigellosis-like inflammatory disease of the large intestine is enteroinvasive."], ["Enteroinvasive Escherichia coli", "Correct: enteroinvasive Escherichia coli binds the intestinal wall with adhesin proteins and causes an inflammatory disease of the large intestine similar to shigellosis, with profuse bloody diarrhea and high fever."], ["Enterotoxigenic Escherichia coli", "Enterotoxigenic Escherichia coli adheres to the SMALL intestine by fimbriae and causes watery, toxin-driven diarrhea with low-grade or no fever. The shigellosis-like large-intestine disease is enteroinvasive."]], "c": 2, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 56, 57, 58, 59 and 60", "qid": "xssmj5"}, {"topic": "Escherichia coli types: infant wasting diarrhea", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-negative bacilli of medical importance", "q": "An infant has a wasting form of diarrhea. The strain adheres to the intestinal lining and destroys the microvilli. Which type of Escherichia coli is it?", "opts": [["Enterotoxigenic Escherichia coli", "Enterotoxigenic Escherichia coli acts through heat-labile and heat-stable toxins that cause fluid secretion; it is the traveler's diarrhea strain. Destruction of microvilli with infant wasting is enteropathogenic."], ["Enteroinvasive Escherichia coli", "Enteroinvasive Escherichia coli causes a shigellosis-like inflammatory disease of the large intestine with profuse bloody diarrhea and high fever. Infant wasting with microvilli destroyed is enteropathogenic."], ["Enteropathogenic Escherichia coli", "Correct: enteropathogenic Escherichia coli is the leading cause of the wasting form of infantile diarrhea; it adheres to the intestinal lining and destroys microvilli, and breast feeding helps prevent it."], ["Enterohemorrhagic Escherichia coli", "Enterohemorrhagic Escherichia coli comes from cattle and causes hemorrhagic colitis and hemolytic uremic syndrome. Wasting infantile diarrhea with destroyed microvilli is enteropathogenic."]], "c": 2, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 56, 57, 58, 59 and 60", "qid": "1yu2t2d"}, {"topic": "Escherichia coli types: kidney failure after bloody diarrhea", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-negative bacilli of medical importance", "q": "A child develops bloody diarrhea after eating an undercooked hamburger, then hemolytic uremic syndrome. Which type of Escherichia coli is the most likely cause?", "opts": [["Enteroinvasive Escherichia coli", "Enteroinvasive Escherichia coli gives a bloody, shigellosis-like illness but has no toxins and is not tied to beef or hemolytic uremic syndrome. Bloody diarrhea after beef followed by that syndrome is enterohemorrhagic."], ["Enterohemorrhagic Escherichia coli", "Correct: enterohemorrhagic Escherichia coli (the O157:H7 strain) has its reservoir in the intestines of cattle and is spread by contaminated beef, water and vegetables. It causes diarrhea and hemorrhagic colitis, and its toxins can lead to hemolytic uremic syndrome."], ["Enterotoxigenic Escherichia coli", "Enterotoxigenic Escherichia coli causes watery traveler's diarrhea with cramping and low-grade or no fever, through fluid-secreting toxins. Hemolytic uremic syndrome after contaminated beef is enterohemorrhagic."], ["Enteropathogenic Escherichia coli", "Enteropathogenic Escherichia coli causes wasting infantile diarrhea by destroying microvilli. Bloody diarrhea after undercooked beef, followed by hemolytic uremic syndrome, is enterohemorrhagic Escherichia coli."]], "c": 1, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 56, 57, 58, 59 and 60", "qid": "1y9idoi"}, {"topic": "O157:H7: what the H7 identifies", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-negative bacilli of medical importance", "q": "In the name Escherichia coli O157:H7, what does the H7 identify?", "opts": [["Its capsule antigen type", "The capsule and/or fimbrial antigen is the K antigen, which is not part of the name O157:H7. H7 names the flagellar antigen type of the strain."], ["Its cell wall antigen type", "The cell wall (somatic) antigen is the O antigen, here type 157, which all enterics have. H7 names the flagellar antigen type."], ["Its flagellar antigen type", "Correct: the enteric surface antigens are H (flagellar), K (capsule and/or fimbrial) and O (somatic, cell wall). O157:H7 means O (somatic) type antigen 157 and H (flagellar) type antigen 7; these antigens identify the strain."], ["Its Shiga toxin type", "Shiga toxin is a toxin the strain carries (hence Shiga toxin-producing Escherichia coli), not a letter in the name. The H in O157:H7 is the flagellar antigen, type 7."]], "c": 2, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 52, 53 and 59", "qid": "797lg4"}, {"topic": "Proteus: the property behind swarming", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-negative bacilli of medical importance", "q": "A urine culture from a patient with a urinary tract infection spreads across the agar in the wavelike rings shown. Which property of the organism produces this growth?", "opts": [["It makes a soluble pigment", "Water-soluble pigments, such as the greenish-blue pyocyanin of Pseudomonas aeruginosa, color the agar; they do not spread growth in waves. Swarming comes from the high motility of Proteus."], ["It ferments lactose", "Proteus is a non-coliform, a lactose-NEGATIVE enteric; lactose fermentation is what coliforms such as Escherichia show on differential media. The swarming comes from its high motility."], ["It has a large capsule", "A large capsule marks Klebsiella pneumoniae, a coliform seen on a capsule stain. The wavelike swarming growth comes from the high motility and peritrichous flagella of Proteus."], ["It is highly motile", "Correct: this wavelike, swarming growth is the diagnostic pattern of Proteus, an agent of urinary tract infection. Proteus is highly motile, with peritrichous flagella, so it swarms over the plate."]], "c": 3, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 14, 18, 50, 66, 67, 69 and 70 and image on Slide 71", "img": "micro-exam-3-quiz-images/wr3-fig-02.jpg", "alt": "A culture plate in which the growth spreads outward from two central spots as overlapping concentric rings and waves that cover the agar", "qid": "xh0sah"}, {"topic": "Typhoid fever: recognizing it", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-negative bacilli of medical importance", "q": "A patient has a sustained fever of 103-104 degrees, weakness, stomach pains, loss of appetite and a rash of rose-colored spots. Which organism is the most likely cause?", "opts": [["Shigella dysenteriae", "Shigella dysenteriae causes bacillary dysentery with cramps and bloody stool; it invades the large intestine but does not invade the blood. A sustained high fever with rose-colored spots is typhoid fever."], ["Salmonella typhi", "Correct: Salmonella typhi causes typhoid fever. The bacilli adhere to the small intestine and cause an invasive diarrhea that leads to septicemia, with a sustained fever of 103-104 degrees, rose-colored spots, weakness, stomach pains and loss of appetite."], ["Brucella abortus", "Brucella abortus causes brucellosis, whose fever FLUCTUATES for weeks to a year (undulant fever), caught from infected animals or unpasteurized dairy. A sustained fever with rose-colored spots is typhoid fever."], ["Francisella tularensis", "Francisella tularensis causes tularemia (rabbit fever), with fever, ulcerative skin lesions and swollen lymph nodes after contact with infected animals. Rose-colored spots with a sustained fever mark typhoid fever."]], "c": 1, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 27, 28, 29, 73, 74 and 78", "qid": "112dlxg"}, {"topic": "Salmonella gastroenteritis from a pet turtle", "io": "2 — Describe the modes of transmission by which humans acquire Gram-negative bacilli of medical importance", "q": "A child who keeps a small pet turtle develops vomiting, diarrhea and fluid loss. Which organism is the most likely cause?", "opts": [["Salmonella typhi", "Salmonella typhi causes typhoid fever, and humans are its exclusive hosts, so a pet reptile is not its source. Gastroenteritis after contact with a pet turtle is an animal salmonellosis such as Salmonella enteritidis."], ["Francisella tularensis", "Francisella tularensis is caught by contact with infected mammals, particularly rabbits, and gives skin ulcers and swollen lymph nodes, and is caught from mammals such as rabbits, not from pet reptiles. A pet turtle and vomiting point to an animal salmonellosis."], ["Shigella sonnei", "Shigella sonnei causes shigellosis, transmitted by ingestion of fecally contaminated food, with cramps and bloody stool; reptiles are not its source. A pet turtle points to an animal salmonellosis."], ["Salmonella enteritidis", "Correct: the salmonelloses other than typhoid fever, such as Salmonella enteritidis, are zoonotic in origin and are acquired by ingestion from cattle, poultry, eggs, rodents and reptiles (pet turtles). Gastroenteritis brings vomiting, diarrhea and fluid loss."]], "c": 3, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 29, 73, 76, 77 and 78", "qid": "1dl1ndx"}, {"topic": "Shigella: recognizing bacillary dysentery", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-negative bacilli of medical importance", "q": "A child has abdominal cramps and watery stool with blood. The isolate is a non-lactose-fermenting enteric that invades the villus of the large intestine but does not invade the blood. Which genus is it?", "opts": [["Yersinia", "Yersinia enterocolitica enters the SMALL intestinal mucosa and lymphatics, and inflammation of the ileum can mimic appendicitis. Bloody dysentery from invasion of the large intestinal villus is Shigella."], ["Proteus", "Proteus is a non-lactose-fermenting opportunist known for urinary tract infections and swarming growth, not for invasive bloody dysentery. Invasion of the large intestinal villus is Shigella."], ["Salmonella", "Salmonella typhi is also a non-lactose-fermenting true pathogen, but its invasive diarrhea, from the small intestine, leads to septicemia. An enteric that invades the large intestine but not the blood is Shigella."], ["Shigella", "Correct: Shigella causes shigellosis (bacillary dysentery), with abdominal cramps and watery stool with blood. It invades the villus of the large intestine and enters Peyer's patches, but does not perforate the intestine or invade the blood."]], "c": 3, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 69, 70, 74, 78 and 80", "qid": "312hag"}, {"topic": "Plague: recognizing the bubonic form", "io": "2 — Describe the modes of transmission by which humans acquire Gram-negative bacilli of medical importance", "q": "A camper in the western United States is bitten by fleas after handling a dead wild rodent. Days later he has fever and a swollen, necrotic lymph node in the groin. Which organism is the most likely cause?", "opts": [["Yersinia enterocolitica", "Yersinia enterocolitica is an enteric Yersinia caught from animals, fish, produce and water; it enters the small intestinal mucosa and can mimic appendicitis. Flea bites and a groin bubo point to Yersinia pestis."], ["Pseudomonas aeruginosa", "Pseudomonas aeruginosa is a soil and water opportunist that infects burns, wounds and hosts with cystic fibrosis; it has no flea vector. A bubo after flea bites points to Yersinia pestis."], ["Brucella suis", "Brucella suis is the pig species of brucellosis, caught by animal handling or unpasteurized dairy, with an undulant fever. A flea bite followed by a necrotic groin lymph node is bubonic plague."], ["Yersinia pestis", "Correct: Yersinia pestis lives in rodents and is carried by flea vectors; in bubonic plague the bacillus multiplies in the flea bite, enters the lymph and causes necrosis and swelling called a bubo, in the groin or axilla. United States cases occur west of the Mississippi."]], "c": 3, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 16, 18, 27, 80, 83 and 88", "qid": "r5tam8"}, {"topic": "Haemophilus influenzae: recognizing meningitis", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-negative bacilli of medical importance", "q": "A child has fever, vomiting and a stiff neck. Spinal fluid grows tiny, pleomorphic Gram-negative rods that grow only on chocolate agar. A subunit vaccine prevents this infection. Which organism is it?", "opts": [["Haemophilus influenzae", "Correct: Haemophilus are tiny pleomorphic Gram-negative rods that need chocolate agar (cooked blood). Haemophilus influenzae causes acute bacterial meningitis (fever, vomiting, stiff neck, neurological impairment) and is prevented by the Hib (Haemophilus influenzae type b) subunit vaccine."], ["Haemophilus aegyptius", "Haemophilus aegyptius causes conjunctivitis (pink eye), mainly in children, spread by contaminated fingers and insects. Childhood meningitis prevented by a subunit vaccine is Haemophilus influenzae."], ["Haemophilus ducreyi", "Haemophilus ducreyi also needs chocolate agar, but it causes chancroid, a sexually transmitted disease seen mainly in the tropics and in males. A child with meningitis and a subunit vaccine is Haemophilus influenzae."], ["Pasteurella multocida", "Pasteurella multocida is an oxidase-positive zoonotic rod caught from animal bites or scratches, causing local abscesses. Meningitis from chocolate-agar rods prevented by a subunit vaccine is Haemophilus influenzae."]], "c": 0, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 95, 96, 97, 98 and 100", "qid": "110iinv"}, {"topic": "Endotoxin: the effect of a low level", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-negative bacilli of medical importance", "q": "What does a LOW level of Gram-negative endotoxin in the body typically produce?", "opts": [["Fever, malaise, aches and pains", "Correct: low levels of endotoxin cause a low-level inflammatory response with generalized symptoms of fever, malaise, aches and pains. Only a large flood of endotoxin releases enough mediators to contribute to septic shock."], ["Septic shock and organ failure", "Septic shock, with microthrombi, falling blood pressure, tissue hypoxia and multisystem organ failure, follows a LARGE flood of endotoxin. A low level gives fever, malaise, aches and pains."], ["Bloody, invasive diarrhea", "Bloody diarrhea comes from bacteria invading the intestinal mucosa, as in Shigella, not from a general endotoxin effect. A low level of endotoxin gives fever, malaise, aches and pains."], ["Hemolytic uremic syndrome", "Hemolytic uremic syndrome is a complication of enterohemorrhagic Escherichia coli, whose toxins damage renal tubular cells and trigger coagulation. A low level of endotoxin gives fever, malaise, aches and pains."]], "c": 0, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 11, 44, 59 and 60", "qid": "dhgvyp"}, {"topic": "Endotoxin: what it is", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-negative bacilli of medical importance", "q": "All the Gram-negative bacilli use endotoxin as an offensive weapon. What is endotoxin, chemically and structurally?", "opts": [["A polysaccharide capsule", "A capsule is a separate surface layer and virulence factor (the K antigen, large in Klebsiella pneumoniae). Endotoxin is the lipopolysaccharide of the outer membrane, active through lipid A."], ["A protein secreted by the cell", "A secreted protein toxin describes exotoxins, such as exotoxin A of Pseudomonas aeruginosa. Endotoxin is not secreted; it is the lipopolysaccharide built into the outer membrane."], ["A flagellar protein antigen", "Flagellar proteins carry the H antigen used to type enterics such as O157:H7. Endotoxin is the lipopolysaccharide of the outer membrane, whose O antigen polysaccharide is the somatic antigen."], ["Outer-membrane lipopolysaccharide", "Correct: endotoxin is a structural component of the Gram-negative outer membrane; chemically it is a lipopolysaccharide, with lipid A as its biologically active component. It is released when the cells lyse (including through antibiotic therapy) and as they grow and divide."]], "c": 3, "cite": "Lecture 14  Dr. Webster Gram Negative Bacilli of Medical Importance.pptx, Slides 5, 6, 13, 17, 52, 66 and 67", "qid": "1503sfe"}, {"topic": "Entamoeba histolytica: the trophozoite", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "Entamoeba histolytica alternates between two forms. Which form attaches in the bowel, actively moves about and feeds?", "opts": [["The oocyst", "Oocysts are the dormant stage of coccidian parasites such as Cryptosporidium and Cyclospora, swallowed in contaminated water or food. Entamoeba histolytica's feeding form in the bowel is the trophozoite, not an oocyst."], ["The merozoite", "Merozoites are Plasmodium forms released from the liver that enter red blood cells; they are not an Entamoeba stage. Entamoeba histolytica alternates only between a motile, feeding trophozoite and a smaller nonmotile cyst."], ["The cyst", "The cyst is the smaller, nonmotile form: it is the form swallowed to start infection and is produced after the active phase of disease. The form that attaches, moves and feeds, released from the cyst in the small intestine, is the trophozoite."], ["The trophozoite", "Correct: the trophozoite is the large form, motile by means of pseudopods. After cysts are swallowed, the trophozoites they release attach, multiply, actively move about and feed, and active trophozoites also fill the liver abscesses of extraintestinal amebiasis."]], "c": 3, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 16, 19, 21, 58 and 63", "qid": "8hc2ta"}, {"topic": "Entamoeba histolytica: amebic dysentery", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "A person in a tropical region with poor sewage treatment develops dysentery, abdominal pain, fever and weight loss. Amebas that secrete tissue-dissolving enzymes are eroding the colon. Which organism is the cause?", "opts": [["Cryptosporidium", "Cryptosporidium is an apicomplexan, not an ameba; its sporozoites penetrate intestinal cells and cause gastroenteritis with cramps and diarrhea, chronic in immunocompromised people. Amebas dissolving the colon wall with dysentery are Entamoeba histolytica."], ["Entamoeba histolytica", "Correct: Entamoeba histolytica causes amebiasis, or amebic dysentery, spread by the fecal-oral route and prevalent in tropical countries where fertilization practices and sewage treatment allow it. It targets the cecum, appendix, colon and rectum, secreting enzymes that dissolve tissue, with dysentery, pain, fever and weight loss."], ["Giardia lamblia", "Giardia lamblia is a heart-shaped flagellate, not an ameba; its trophozoites feed and multiply in the jejunum and cause giardiasis with diarrhea and abdominal pain. Amebas eroding the colon with dysentery point to Entamoeba histolytica."], ["Naegleria fowleri", "Naegleria fowleri is an ameba, but it is acquired through nasal contact with fresh water and travels along the olfactory nerve to the brain, causing primary acute meningoencephalitis. The colon-eroding ameba that causes dysentery is Entamoeba histolytica."]], "c": 1, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 4, 16, 17, 20, 29, 39, 41, 72 and 73", "qid": "wnoimj"}, {"topic": "Naegleria fowleri: path to the brain", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "A child develops meningoencephalitis after diving into a freshwater lake, and Naegleria fowleri is found. By which path did the organism reach the brain?", "opts": [["Through a break in the skin", "Entry through a break in the skin is typical of Acanthamoeba, whose granulomatous amoebic encephalitis has a longer progression. Naegleria fowleri burrows through the nasal mucosa after water enters the nose and reaches the brain along the olfactory nerve."], ["Through an insect bite and the blood", "An insect bite followed by spread in the blood describes Trypanosoma brucei, inoculated by the tsetse fly before it reaches the brain. Naegleria fowleri has no vector: it lives in warm fresh water and enters through the nose."], ["Through the nose, along the olfactory nerve", "Correct: Naegleria fowleri is acquired through nasal contact with water, as in diving, waterskiing or rinsing the sinuses. The trophozoite burrows through the nasal mucosa and travels into the brain along the olfactory nerve, causing rapid destruction of the brain and spinal cord."], ["From the gut through the bloodstream", "Spread from the gut to other organs fits Entamoeba histolytica, whose swallowed cysts release trophozoites that can invade the liver and other viscera. Naegleria is not swallowed: it enters through nasal contact with water and follows the olfactory nerve."]], "c": 2, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 24, 28, 29, 31, 21, 45 and 46", "qid": "1e8c8un"}, {"topic": "Giardia lamblia: cysts in stool (picture)", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "A stool specimen from a camper with diarrhea and abdominal pain shows the oval bodies pictured. What are they?", "opts": [["Cyclospora oocysts", "Cyclospora oocysts are found with an acid-fast stain of a fecal smear, where they show as round red-staining bodies. The oval, multinucleate bodies here are Giardia lamblia cysts."], ["Giardia lamblia cysts", "Correct: these oval, thick-walled bodies with internal nuclei are Giardia lamblia cysts, which are small, compact and multinucleate. Cysts survive in the environment and are ingested with water and food; in the duodenum they germinate, and the trophozoites feed and multiply in the jejunum."], ["Entamoeba histolytica trophozoites", "Entamoeba histolytica trophozoites are large, move by pseudopods and have one large nucleus; they invade the colon and cause amebic dysentery. Small oval walled bodies in a camper's stool, each holding several nuclei, are Giardia lamblia cysts."], ["Giardia lamblia trophozoites", "The Giardia trophozoite is a symmetrical heart shape with flagella and a concave ventral surface that acts like a suction cup, not an oval walled body. These oval, compact, multinucleate forms are the cysts the camper swallowed and later shed."]], "c": 1, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 4, 39, 41, 16 and 76 and image on Slide 40", "img": "micro-exam-3-quiz-images/wr3-fig-07.jpg", "alt": "Stained stool specimen: two oval, thick-walled bodies with purple internal structures, lying among pink and blue debris", "qid": "f9317i"}, {"topic": "Trichomonas vaginalis: transmission (picture)", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "A vaginal smear shows the flagellates pictured. How is this organism transmitted?", "opts": [["By water entering the nose", "Water entering the nose transmits Naegleria fowleri, an ameba that travels to the brain. The pear-shaped flagellates in a vaginal smear are Trichomonas vaginalis, a strict parasite of the urogenital tract spread by sexual contact."], ["By sexual contact", "Correct: these pear-shaped cells with anterior flagella and an undulating membrane are Trichomonas vaginalis, which causes trichomoniasis, a sexually transmitted disease. Its reservoir is the human urogenital tract; it exists only as a trophozoite with no cyst and cannot survive long outside the host."], ["By swallowing cysts in water", "Swallowed cysts in water spread Giardia lamblia, an intestinal flagellate found in stool. Trichomonas has no cyst form and cannot survive long outside its host, so it passes by sexual contact from the urogenital tract."], ["By the bite of a fly", "A fly bite spreads the blood flagellate Trypanosoma brucei, seen swimming between cells on a blood smear. Flagellates in a vaginal smear are Trichomonas vaginalis, which lives in the urogenital tract and spreads by sexual contact."]], "c": 1, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 4, 36, 37, 39, 45 and 28 and image on Slide 38", "img": "micro-exam-3-quiz-images/wr3-fig-05.jpg", "alt": "Stained smear on a pale green background: two pear-shaped cells, each with a dark nucleus, a wavy membrane along one side and thin whip-like strands", "qid": "185kb9d"}, {"topic": "African sleeping sickness: late course", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "A patient with African sleeping sickness from Trypanosoma brucei gambiense goes untreated, and personality and behavioral changes appear as the organism reaches the nervous system. How does the disease then progress?", "opts": [["Sleep disturbance, then coma", "Correct: once Trypanosoma brucei moves to the nervous system, personality and behavioral changes progress to sleep disturbances, tremors, seizures, paralysis and coma. The Gambian form is chronic, with brain symptoms years after the tsetse fly bite."], ["Watery diarrhea and bloating", "Watery diarrhea, stomach cramps and bloating describe cyclosporiasis, an intestinal infection from fresh produce and water. Trypanosoma brucei is a blood flagellate that reaches the nervous system and leads to sleep disturbances and coma."], ["Elephantiasis of the limbs", "Elephantiasis follows chronic Wuchereria bancrofti infection, whose worms block lymphatic circulation and cause massive swelling of the extremities. Trypanosoma brucei damages the spleen, lymph nodes and brain, ending in sleep disturbances and coma."], ["Chronic heart inflammation", "Chronic inflammation of the heart is the hallmark of Chagas disease, from Trypanosoma cruzi, whose amastigotes mass in heart muscle. Its African cousin, Trypanosoma brucei, attacks the brain and progresses to sleep disturbances, seizures and coma."]], "c": 0, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 45, 46, 47, 104, 49 and 75", "qid": "mdmrp7"}, {"topic": "Chagas disease: how the bug transmits it", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "Chagas disease is spread by the reduviid (kissing) bug. How does Trypanosoma cruzi enter the person during an encounter with the bug?", "opts": [["Water forced up into the nose", "Water forced up the nose transmits Naegleria fowleri, a free-living ameba of warm fresh water. Trypanosoma cruzi has an insect vector, the reduviid bug, and enters when the bug's feces are inoculated into the skin."], ["Its saliva injected with the bite", "Organisms in vector saliva describe malaria: the female Anopheles mosquito injects sporozoites as it feeds, and the tsetse fly's bite inoculates Trypanosoma brucei. The kissing bug spreads Trypanosoma cruzi in its feces, which are inoculated into the skin."], ["Its feces inoculated into the skin", "Correct: infection occurs when the bug's feces are inoculated into a cutaneous portal such as the bite. A local lesion can follow, such as Romana's sign, a swelling of the eyelid with conjunctivitis, then fever and swelling of the lymph nodes, spleen and liver."], ["Larvae burrowing into bare feet", "Larvae burrowing into the skin of bare feet is how hookworms such as Necator americanus enter, from soil contaminated with feces. Trypanosoma cruzi is a protozoan with no larvae; it enters when kissing-bug feces are inoculated into a break in the skin."]], "c": 2, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 49, 5, 46, 58, 96 and 28", "qid": "10o8r6e"}, {"topic": "Leishmania: the vector", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "Leishmaniasis is a zoonosis of equatorial regions. Which insect transmits Leishmania among its mammal hosts?", "opts": [["The female sand fly", "Correct: female sand flies, which need a blood meal to produce eggs, transmit leishmaniasis among mammalian hosts, with dogs as alternate hosts. Promastigotes are injected with the bite and convert to amastigotes, giving cutaneous sores, espundia or the systemic form, kala azar."], ["The Anopheles mosquito", "The female Anopheles mosquito is the primary vector of Plasmodium, the agent of malaria. Leishmaniasis, with the dog as an alternate host, is transmitted by the female sand fly."], ["The tsetse fly", "The tsetse fly spreads Trypanosoma brucei, the cause of African sleeping sickness. Leishmania is a different hemoflagellate, carried among mammals in equatorial regions by the female sand fly."], ["The kissing bug", "The reduviid, or kissing, bug is the vector of Trypanosoma cruzi and Chagas disease, spreading it in its feces. Leishmania promastigotes are injected with the bite of a female sand fly."]], "c": 0, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 52, 5, 45, 49 and 56", "qid": "91dwsx"}, {"topic": "Plasmodium: vector (picture)", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "The forms seen inside these red blood cells cause a disease with regular episodes of chills, fever and sweating. Which vector transmits the organism?", "opts": [["Female sand fly", "The female sand fly transmits Leishmania, whose promastigotes become amastigotes and multiply, causing sores or kala azar. Ring-shaped trophozoites inside red blood cells are Plasmodium, carried by the Anopheles mosquito."], ["Anopheles mosquito", "Correct: ring forms inside red blood cells are Plasmodium trophozoites, the agent of malaria. The female Anopheles mosquito is the primary vector, injecting sporozoites that settle in the liver before merozoites invade red cells; chills and fever recur as the red cells rupture."], ["Blacklegged deer tick", "The blacklegged deer tick carries Babesia microti, which also attacks red blood cells but causes flu-like symptoms and hemolytic anemia. Ring forms inside red cells with regular chills-fever-sweating episodes are Plasmodium, spread by the Anopheles mosquito."], ["Tsetse fly", "The tsetse fly spreads Trypanosoma brucei, a flagellate that swims between blood cells rather than living inside them. Small rings within red blood cells mark Plasmodium, carried by the female Anopheles mosquito."]], "c": 1, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 5, 56, 58, 77, 45 and 52 and image on Slide 60", "img": "micro-exam-3-quiz-images/wr3-fig-09.jpg", "alt": "Stained blood smear: closely packed pale red blood cells, many holding a small purple loop-shaped form; unlabeled pointer lines at the right edge", "qid": "4czpy7"}, {"topic": "Plasmodium: liver, then red cells", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "After Plasmodium multiplies in the liver, merozoites enter the circulation. Which cells do they invade next?", "opts": [["Intestinal cells", "Intestinal cells are penetrated by Cryptosporidium sporozoites after oocysts are swallowed, causing gastroenteritis. Plasmodium is injected by a mosquito, multiplies in the liver, and its merozoites then enter red blood cells."], ["Red blood cells", "Correct: merozoites from the liver attach to and enter red blood cells, convert to circular ring trophozoites and multiply; the red cell then bursts, releasing more merozoites. These bursts, at intervals set by the species, bring the chills, fever and sweating of malaria."], ["Macrophages", "Macrophages hold Leishmania, whose promastigotes convert to amastigotes and multiply; the infection spreads systemically if the macrophage migrates. Plasmodium merozoites leave the liver and invade red blood cells."], ["Heart muscle cells", "Masses of amastigotes in heart muscle belong to Trypanosoma cruzi and chronic Chagas disease. Plasmodium merozoites, released from the liver, attach to and enter red blood cells, where they become ring trophozoites."]], "c": 1, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 58, 59, 60, 52, 73 and 49", "qid": "1wpol0h"}, {"topic": "Toxoplasma gondii: its natural host", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "Toxoplasma gondii can infect virtually all warm-blooded animals. In which animal does it live naturally, shedding oocysts in its feces?", "opts": [["The pig", "Pigs carry Trichinella spiralis and the pork tapeworm, Taenia solium, in their meat. Toxoplasma can sit in food animals' muscle, but it lives naturally in cats, which shed its oocysts in feces."], ["The cat", "Correct: Toxoplasma gondii lives naturally in cats, which harbor oocysts in the gastrointestinal tract and release them in feces. People acquire it by ingesting raw meats or substances contaminated by cat feces."], ["The dog", "Dogs are the definitive host of Echinococcus and an alternate host of Leishmania, not the source of Toxoplasma. Toxoplasma's oocysts come from cats, which harbor them in the gastrointestinal tract and shed them in feces."], ["The snail", "Snails are the intermediate host of Schistosoma and of the other flukes. Toxoplasma gondii has no snail stage; it lives naturally in cats, which release its oocysts through feces."]], "c": 1, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 64, 66, 5, 124, 52, 101, 121 and 112", "qid": "bylre5"}, {"topic": "Cyclospora: source (picture)", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "An acid-fast stained fecal smear from a patient with watery diarrhea shows the round, red-staining bodies pictured. How is this parasite usually acquired?", "opts": [["Sexual contact with a carrier", "Sexual contact spreads Trichomonas vaginalis, diagnosed in a vaginal smear rather than in feces. Cyclospora oocysts in a fecal smear come by the oral-fecal route from contaminated fresh produce and water."], ["Undercooked pork or bear meat", "Undercooked pork or bear meat transmits Trichinella spiralis, whose larvae encyst in muscle. Acid-fast red-staining oocysts in feces with watery diarrhea are Cyclospora, which comes from fresh produce and water."], ["The bite of a mosquito", "A mosquito bite transmits Plasmodium, diagnosed by ring trophozoites in red cells, not oocysts in feces. Cyclospora is an intestinal parasite acquired by the oral-fecal route from fresh produce and water."], ["Contaminated produce or water", "Correct: red-staining bodies on an acid-fast fecal smear are Cyclospora cayetanensis oocysts. Cyclospora spreads by the oral-fecal route in fresh produce and water, as in the widespread outbreak linked to iceberg lettuce; its oocysts invade the small intestine and cause watery diarrhea."]], "c": 3, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 75, 13, 101, 37, 38, 56 and 60 and image on Slide 76", "img": "micro-exam-3-quiz-images/wr3-fig-10.jpg", "alt": "Stained fecal smear: round bodies stained bright pink to red against a blue background, with a 20 micrometer scale bar and unlabeled pointer lines", "qid": "lse1qk"}, {"topic": "Worm damage: blockage", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "A child with a heavy Ascaris lumbricoides load develops abdominal pain and intestinal obstruction. Which mechanism of worm pathology explains the obstruction?", "opts": [["Blood loss at attachment sites", "Significant blood loss and anemia come from hookworms, which hook into the small intestine. Ascaris worms do not attach; under a heavy load the mass of worms blocks the intestine."], ["Masses of worms blocking the bowel", "Correct: one way helminths cause disease is the accumulation of worms in organs, causing blockages. Ascaris worms keep their motility and do not attach, and heavy worm loads cause abdominal pain and intestinal obstruction."], ["Toxic secretions from the worms", "Toxic worm secretions are a real source of helminth pathology, but they do not plug the bowel. An obstruction under a heavy Ascaris load comes from the accumulation of worms in the intestine, causing a blockage."], ["Larvae encysting in muscle", "Larvae encysting in muscle, heart and brain describe Trichinella spiralis after undercooked pork. Intestinal obstruction in a heavy Ascaris infection comes from worms accumulating in the bowel."]], "c": 1, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 85, 92, 96 and 101", "qid": "9fga6o"}, {"topic": "Tapeworms: how they obtain food", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "An adult beef tapeworm lives attached in a person's small intestine. How does it obtain its food?", "opts": [["Biting with its hooked mouth", "Curved ends and hooked mouths mark the hookworms, whose infection brings significant blood loss and anemia. A tapeworm has no mouth; it absorbs nutrients through its body."], ["Ingesting food through its mouth", "A tapeworm has no mouth at all; nutrients are absorbed through its body, and each proglottid is adapted to absorbing food. Specialized mouthparts for attachment are an adaptation of other helminths."], ["Absorption through its body", "Correct: a tapeworm has no mouth, so nutrients are absorbed through its body; its scolex grips the intestine and each proglottid is an independent unit adapted to absorbing food. In the beef tapeworm, the larva attaches to the small intestine and becomes an adult."], ["Feeding on the host's blood", "Feeding on blood is what adult Schistosoma flukes do after they migrate to the intestine or bladder. The beef tapeworm has no mouth and absorbs nutrients through its body."]], "c": 2, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 118, 119, 85, 96 and 112", "qid": "lruhlr"}, {"topic": "Pinworm: the daycare child", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "A child at a daycare center has anal itching that is worst at night, and other children there soon have it too. Which worm is the most likely cause?", "opts": [["Trichuris trichiura", "Trichuris trichiura, the whipworm, attaches in the intestine and can pierce capillaries; heavy infestations cause dysentery and rectal prolapse. Night-time anal itching spreading through a daycare points to the pinworm."], ["Strongyloides stercoralis", "Strongyloides stercoralis larvae penetrate the skin and migrate to the lungs, and the worm can reinfect the same host. Night-time anal itching spreading in daycare is the pinworm, Enterobius vermicularis."], ["Ascaris lumbricoides", "Ascaris lumbricoides is a large roundworm whose heavy loads cause abdominal pain and intestinal obstruction. Anal itching as females emerge to lay eggs, passing child to child in daycare, is Enterobius vermicularis."], ["Enterobius vermicularis", "Correct: Enterobius vermicularis, the pinworm, is very common in daycare and spreads by direct contact and fomites. Anal itching occurs when mature females emerge from the intestine at night to lay eggs on the perianal folds, and self-inoculation is common; the tape test diagnoses it."]], "c": 3, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 6, 94, 95, 93, 92 and 100", "qid": "12vfaor"}, {"topic": "Trichinella spiralis: where larvae encyst", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "After a person eats undercooked pork, Trichinella spiralis larvae migrate from the intestine into blood vessels. Where do they form cysts?", "opts": [["The liver and lungs", "Slowly enlarging cysts in the liver and lungs are cystic echinococcosis, or hydatid disease, from Echinococcus. Trichinella larvae from undercooked pork encyst in muscle, heart and brain."], ["The lymphatic vessels", "The lymphatics are home to Wuchereria bancrofti, whose blockage of lymphatic circulation causes elephantiasis. Trichinella larvae from undercooked pork encyst in muscle, heart and brain instead."], ["Muscle, heart, brain", "Correct: Trichinella larvae migrate from the intestine to blood vessels, muscle, heart and brain, where they form cysts. Muscle and joint pain with pronounced eosinophilia follow, and myocarditis or central nervous system involvement can be life-threatening."], ["Inside the bile ducts", "The bile ducts are where Opisthorchis sinensis larvae mature after inadequately cooked fish. Trichinella larvae from undercooked pork leave the intestine and encyst in muscle, heart and brain."]], "c": 2, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 101, 102, 7, 124, 116 and 104", "qid": "16b1w89"}, {"topic": "Loa loa: the eye worm (picture)", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "The worm pictured is being drawn out of the eye of a patient from Africa through a small opening in the conjunctiva. Which worm is it?", "opts": [["Angiostrongylus cantonensis", "Angiostrongylus cantonensis, the rat lungworm, comes from snails and causes eosinophilic meningitis, with eosinophils in the spinal fluid. A worm moving under the conjunctiva of the eye is Loa loa, the eye worm."], ["Trichinella spiralis", "Trichinella spiralis larvae from undercooked pork encyst in muscle, heart and brain as small coiled forms. A single long worm drawn from the eye is Loa loa, which migrates under the skin and may enter the eye."], ["Loa loa", "Correct: Loa loa, the African eye worm, is spread by the bite of small flies. This temperature-sensitive worm migrates around and under the skin and may enter the eye, where it can be pulled out through a small hole in the conjunctiva."], ["Wuchereria bancrofti", "Wuchereria bancrofti is a mosquito-borne filarial worm that lives in the lymphatics and causes elephantiasis, massive swelling of the extremities. The worm crossing the eye under the conjunctiva is Loa loa."]], "c": 2, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 8, 103, 104, 98, 99 and 101 and image on Slide 107", "img": "micro-exam-3-quiz-images/wr3-fig-13.jpg", "alt": "Close-up of an eye held open with a metal instrument: a thin white coiled worm lies on the reddened surface of the eye", "qid": "195sxg7"}, {"topic": "Schistosoma: how it is acquired", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "Schistosoma is a blood fluke whose early larva develops in a freshwater snail. How do people acquire schistosomiasis?", "opts": [["Larvae penetrating skin in water", "Correct: eggs released into water hatch an early larva that develops in a freshwater snail into a second larva, the cercaria, which penetrates human skin. People acquire it by contact with water in which the snail lives, with itchiness at the entry site; snail control prevents it."], ["Eating inadequately cooked fish", "Inadequately cooked fish carrying cercariae transmits the Chinese liver fluke, Opisthorchis sinensis. Schistosoma cercariae leave the snail and penetrate the skin of people in contact with the water."], ["Eating undercooked crustaceans", "Undercooked crustaceans transmit the lung fluke Paragonimus westermani. Schistosomiasis is not eaten: the cercaria released by the freshwater snail penetrates human skin during contact with the water."], ["Eating raw aquatic plants", "Raw aquatic plants transmit the liver fluke Fasciola hepatica, which cycles between herbivores, snails and plants. Schistosoma reaches people through the skin, as cercariae from snails penetrate it in water."]], "c": 0, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 112, 113, 8, 116 and 117", "qid": "3av1w5"}, {"topic": "Cysticercosis: how it is acquired (picture)", "io": "2 — Describe the modes of transmission by which humans acquire parasites of medical importance", "q": "The brain slice pictured is filled with cysts formed by tapeworm larvae. How did this person acquire the infection?", "opts": [["Swallowing pork tapeworm eggs", "Correct: these brain cysts are cysticercosis from Taenia solium, the pork tapeworm, which follows ingestion of embryonated eggs. The eggs hatch in the intestine and release larvae that migrate to all tissues and encyst, most damaging in heart muscle, eye or brain, with seizures."], ["Eating snails or raw vegetables", "Snails, contaminated water or vegetables transmit Angiostrongylus cantonensis, which causes eosinophilic meningitis rather than brain cysts. Cysts filling the brain are cysticercosis, from Taenia solium eggs."], ["Eating cysts in undercooked beef", "Raw beef with encysted larvae gives Taenia saginata, the beef tapeworm, which becomes an adult in the small intestine with few symptoms. Brain cysts are cysticercosis, from swallowing pork tapeworm eggs."], ["Eating cysts in undercooked pork", "Eating cysts in undercooked pork gives taeniasis: the cysts release larvae that become tapeworms attached to the intestine. Cysticercosis in the brain comes from swallowing Taenia solium's embryonated eggs instead."]], "c": 0, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 8, 121, 119, 98 and 99 and image on Slide 123", "img": "micro-exam-3-quiz-images/wr3-fig-14.jpg", "alt": "Cut slice of a brain on a blue background: several small round dark cavities clustered in one region, with a dark patch above them", "qid": "w15krv"}, {"topic": "Antiprotozoan drugs: why few and toxic", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of parasites of medical importance", "q": "Antiprotozoan drugs are relatively few compared with antibacterial agents and often bring severe side effects. Which feature of protozoa underlies this?", "opts": [["Many form dormant cysts", "Many protozoa do form cysts, but that is a life-cycle feature, not why the drugs are few and toxic. The drugs must work against eukaryotic cells, like the host's own, which causes toxicity problems and severe side effects."], ["Most are spread by vectors", "Vectors spread the hemoflagellates and Plasmodium, but amebas, Giardia and the coccidians come in water and food. Drug scarcity and toxicity come from protozoa being eukaryotic, like the cells of the host."], ["They are prokaryotic cells", "Prokaryotic cells are bacteria, the targets of the many antibacterial agents. Parasitology is the study of eukaryotic parasites, and drugs against eukaryotic cells are few and toxic because the host's cells are eukaryotic too."], ["They are eukaryotic cells", "Correct: protozoa are eukaryotic parasites, like the cells of their human host, and antiprotozoan drugs must work against eukaryotic cells. That is why they are relatively few in comparison with antibacterial agents and carry toxicity problems and severe side effects."]], "c": 3, "cite": "Lecture 16 Dr. Webster Parasites of Medical Importance.pptx, Slides 14, 9, 12, 42, 55, 39 and 72", "qid": "7pt9x7"}, {"topic": "Animal virus entry versus phage penetration", "io": "1 — Recall the steps of DNA virus replication.", "q": "How does an animal virus get its genetic material into a host cell, unlike a bacteriophage?", "opts": [["Its DNA integrates as a prophage", "Integration as a prophage is what happens after entry in the lysogenic phage cycle, when the viral DNA joins the bacterial chromosome. It is not a way of entering a cell; an animal virus enters by being engulfed whole."], ["Its tail injects only the DNA", "Injection is the phage method: in the lytic cycle a phage uses viral lysozyme and a tail pin mechanism to breach the wall and inject its DNA into the bacterium. An animal virus is engulfed whole and then uncoated."], ["The whole virion is engulfed", "Correct: animal viruses differ from phages in that the entire virion is engulfed (taken into a vesicle by endocytosis) and must then be uncoated to free its genetic material. A phage instead breaches the bacterial wall and injects only its DNA."], ["It binds pili without lysozyme", "Attaching to pili or walls without lysozyme, through capsid-receptor protein compatibility, is how filamentous phages of the chronic cycle enter bacteria. An animal virus is instead engulfed whole into the host cell."]], "c": 2, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 14, 16, 22 and 23", "qid": "1ybxvhp"}, {"topic": "Phage cycles: lysogenic prophage", "io": "1 — Recall the steps of DNA virus replication.", "q": "In one bacteriophage cycle, the viral DNA joins the bacterial chromosome and is copied along with it for many generations until a shock releases it. Which cycle is this?", "opts": [["Chronic cycle", "The chronic cycle belongs to filamentous phages, whose virions are extruded continuously without lysing the host, only slowing its growth. DNA that integrates into the chromosome as a prophage marks the lysogenic cycle."], ["Lysogenic cycle", "Correct: in the lysogenic cycle the viral DNA integrates into the bacterial host chromosome as a prophage instead of shutting down the bacterium's metabolism; prophage bacteria persist for generations until a shock induces a lytic cycle."], ["Lytic cycle", "The lytic cycle is a rapid takeover: the phage turns off the bacterium's metabolism, makes many copies and bursts the cell wall with viral lysozyme. Integration into the chromosome for many generations is the lysogenic cycle."], ["Latent cycle", "Latency describes animal herpesviruses, whose DNA sits in the nucleus as an episome that is not integrated. A phage whose DNA integrates into the bacterial chromosome as a prophage is in the lysogenic cycle."]], "c": 1, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 13, 15, 18 and 26", "qid": "1jr6uar"}, {"topic": "Origin of the viral envelope", "io": "4 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of DNA viruses of medical importance.", "q": "Where does an enveloped animal virus get its envelope?", "opts": [["From a host membrane as it buds", "Correct: the envelope is obtained during budding of the virus through a cell membrane; enveloped viruses bud off the membrane carrying away an envelope with the spikes. The envelope helps the virus evade the immune system."], ["From capsid proteins it makes", "Capsid proteins build the capsid, the protein coat that encloses and protects the nucleic acid in every virus. The envelope is a separate outer layer taken from a host cell membrane during budding."], ["From the viral matrix layer", "The matrix is a layer of the virion itself, drawn beneath the envelope and present even in naked nucleocapsid viruses. The envelope is a separate outer layer obtained from a host cell membrane as the virus buds out."], ["From the bacterial cell wall", "Bacterial cell walls are what phages breach with lysozyme or burst at release; they do not supply animal virus envelopes. An animal virus takes its envelope from a host cell membrane as it buds out."]], "c": 0, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 9 and 22 and image on Slide 10", "qid": "1gv6yrm"}, {"topic": "Example of a persistent chronic infection", "io": "2 — Compare and contrast the characteristics of a lytic viral infection versus a persistent chronic or persistent latent infection.", "q": "Which virus is an example of a persistent chronic infection, detectable in tissue and multiplying slowly for years?", "opts": [["Human immunodeficiency virus", "Correct: in a chronic infection the virus is detectable in tissue samples and multiplies at a slow rate with mild or absent symptoms; human immunodeficiency virus and hepatitis B virus are the examples, and this may involve integration into the host chromosome."], ["Herpes simplex virus type 1", "Herpesviruses cause persistent latent infections: after a lytic cycle the virus is dormant and generally not detectable, then can reactivate. Detectable, slowly multiplying virus marks a chronic infection such as human immunodeficiency virus."], ["Influenza virus", "Influenza (flu), like colds, is an acute viral infection: a rapid course with a lytic cycle. A persistent chronic infection, slowly multiplying and detectable for years, is the pattern of human immunodeficiency virus."], ["Epstein-Barr virus", "Epstein-Barr virus is a herpesvirus, so it shows latency: dormancy in B cells with reactivation, its DNA an episome. A virus detectable in tissue and slowly multiplying is chronic, as human immunodeficiency virus is."]], "c": 0, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 26, 55 and 75", "qid": "b62xvi"}, {"topic": "Latent infection: dormancy and reactivation", "io": "2 — Compare and contrast the characteristics of a lytic viral infection versus a persistent chronic or persistent latent infection.", "q": "After an initial lytic cycle, a virus becomes dormant, is generally not detectable and causes no symptoms, but later reactivates to cause recurrent infection. Which type of infection is this?", "opts": [["Persistent latent infection", "Correct: a latent infection follows a lytic cycle with a dormant phase in which the virus is generally not detectable and causes no symptoms; it can reactivate and cause recurrent infections, as herpesviruses do."], ["Persistent chronic infection", "In a chronic infection the virus stays detectable in tissue samples, multiplying at a slow rate, as with human immunodeficiency virus and hepatitis B. A dormant, undetectable virus that later reactivates is latent."], ["Acute infection", "An acute infection has a rapid course with a lytic cycle, such as a cold or flu, and does not go dormant. Dormancy with later reactivation and recurrence is a persistent latent infection."], ["Lysogenic infection", "Lysogeny is a bacteriophage cycle in which DNA integrates into a bacterial chromosome as a prophage. In human viral disease, a dormant, undetectable virus that later reactivates causes a persistent latent infection."]], "c": 0, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 15, 26 and 55", "qid": "4c0g20"}, {"topic": "Oncogenic virus example: hepatitis B", "io": "3 — Differentiate between oncogenic and teratogenic viruses.", "q": "Which persistent virus is oncogenic, linked to hepatic carcinoma?", "opts": [["Adenovirus", "Adenoviruses are oncogenic in animals, not in humans; they cause acute infections such as colds, pharyngitis and conjunctivitis. The persistent virus linked to hepatic carcinoma is hepatitis B virus."], ["JC polyomavirus", "Polyomaviruses induce tumors in experimental animals; in people, JC virus causes progressive multifocal leukoencephalopathy in the immunosuppressed. The persistent virus linked to hepatic carcinoma is hepatitis B."], ["Hepatitis B virus", "Correct: some persistent viruses are oncogenic, and hepatitis B is paired with hepatic carcinoma. Hepatitis B can become chronic, increases the risk of hepatocellular carcinoma and may lead to cirrhosis."], ["Cytomegalovirus", "Cytomegalovirus is a teratogenic virus that crosses the placenta, and it causes severe disease in transplant and immunocompromised patients; it is not the hepatic carcinoma virus. That pairing is hepatitis B."]], "c": 2, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 28, 72, 87, 93 and 101 and image on Slide 6", "qid": "1g0n7un"}, {"topic": "Teratogenic: what the term means", "io": "3 — Differentiate between oncogenic and teratogenic viruses.", "q": "A virus that crosses the placenta and causes developmental disturbances and permanent defects in the fetus is described by which term?", "opts": [["Latent", "Latent describes a virus that goes dormant after a lytic cycle and later reactivates, as herpesviruses do. Crossing the placenta to cause developmental defects is what makes a virus teratogenic."], ["Teratogenic", "Correct: several viruses can cross the placenta causing developmental disturbances and permanent defects; these are teratogenic, and rubella and cytomegalovirus are the examples. Newborns with cytomegalovirus may show microcephaly."], ["Zoonotic", "Zoonoses are infections humans get from animals, often through vectors, such as West Nile fever and hantavirus. Crossing the placenta to cause permanent defects in development is teratogenic."], ["Oncogenic", "Oncogenic viruses are persistent viruses linked to cancer, such as hepatitis B with hepatic carcinoma. A virus that crosses the placenta and causes permanent developmental defects is teratogenic."]], "c": 1, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 24, 26, 28 and 72", "qid": "vc2dzr"}, {"topic": "Herpetic whitlow (picture)", "io": "5 — Compare and contrast the mode of transmission, clinical manifestations, and availability of a vaccine for DNA viruses of medical importance.", "q": "An adult has the extremely painful, itchy lesion shown on one finger, which began at a break in the skin. Which virus causes it?", "opts": [["Human papillomavirus", "Human papillomavirus causes common seed warts on the fingers, but these are painless, elevated, rough growths. An extremely painful, itchy lesion on one finger after a break in the skin is herpetic whitlow from herpes simplex."], ["Molluscum contagiosum virus", "Molluscum contagiosum causes small, smooth, waxy lesions, usually in the genital area and thighs, normally self-limiting. An extremely painful, itchy lesion on one finger is herpetic whitlow from herpes simplex."], ["Cowpox virus", "Cowpox in humans is rare, usually pocks confined to the hands, caught from cats that interacted with rodents or after traumatic injury, and is not described as extremely painful and itchy. That pain and itch at a skin break on one finger is the herpetic whitlow picture."], ["Herpes simplex virus", "Correct: this is herpetic whitlow. Herpes simplex type 1 or type 2 can penetrate a break in the skin and cause a localized infection, usually on one finger, that is extremely painful and itchy."]], "c": 3, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 5, 46, 53, 60 and 97 and image on Slide 61", "img": "micro-exam-3-quiz-images/wr3-fig-16.jpg", "alt": "Close-up of a single finger on a green cloth: the fingertip and the skin around the nail are swollen, with dark red-purple discoloration and grouped, partly broken, fluid-filled areas", "qid": "17aq5ab"}, {"topic": "Epstein-Barr virus and Burkitt lymphoma (picture)", "io": "4 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of DNA viruses of medical importance.", "q": "A child in central Africa has the jaw swelling shown, caused by a B-cell malignancy. Which virus is associated with this tumor?", "opts": [["Adenovirus", "Adenoviruses are oncogenic in animals but not in humans; they cause colds, pharyngitis and conjunctivitis. The jaw-swelling B-cell tumor of central African children is Burkitt lymphoma from Epstein-Barr virus."], ["Hepatitis B virus", "Hepatitis B virus is oncogenic for the liver, linked to hepatic (hepatocellular) carcinoma. A B-cell malignancy grossly swelling a child's jaw is Burkitt lymphoma, associated with Epstein-Barr virus."], ["Human herpesvirus 8", "Human herpesvirus 8 is linked with Kaposi sarcoma, small painless discolored lumps on the skin, common in patients with acquired immunodeficiency syndrome. A B-cell tumor swelling a child's jaw is Burkitt lymphoma from Epstein-Barr virus."], ["Epstein-Barr virus", "Correct: this is Burkitt lymphoma, a B-cell malignancy that usually develops in the jaw and grossly swells the cheek in central African children aged 5 to 7; it is associated with Epstein-Barr virus, an oncogenic herpesvirus."]], "c": 3, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 6, 28, 77, 87 and 93 and image on Slide 76", "img": "micro-exam-3-quiz-images/wr3-fig-19.jpg", "alt": "Photograph of a young child's face with a large, firm swelling of one side of the lower face and jaw", "qid": "wmy5s0"}, {"topic": "Herpes simplex type 1 latency site", "io": "4 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of DNA viruses of medical importance.", "q": "After a first infection, where does herpes simplex virus type 1 remain latent?", "opts": [["Trigeminal ganglion", "Correct: herpes simplex multiplies in sensory neurons and moves to the ganglia; type 1 enters the fifth cranial nerve and is latent in the trigeminal ganglion. Fever, ultraviolet radiation, stress or injury can trigger recurrence."], ["Kidney and bladder lining", "Lying dormant in the kidney and the lining of the ureters and bladder describes BK polyomavirus, which flares after renal transplant. Herpes simplex type 1 is latent in the trigeminal ganglion."], ["Lumbosacral ganglia", "The lumbosacral spinal nerve trunk ganglia are where herpes simplex type 2 goes, fitting its genital lesions. Type 1, with its oral and facial lesions, enters the fifth cranial nerve and is latent in the trigeminal ganglion."], ["B lymphocytes", "Dormancy in B cells, with later reactivation, belongs to Epstein-Barr virus. Herpes simplex type 1 stays latent in a sensory ganglion, the trigeminal ganglion of the fifth cranial nerve."]], "c": 0, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 59, 75 and 102", "qid": "4vj8tv"}, {"topic": "Cytomegalovirus retinitis in acquired immunodeficiency syndrome", "io": "4 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of DNA viruses of medical importance.", "q": "A patient with acquired immunodeficiency syndrome develops retinitis and blind spots. Which herpesvirus most likely causes it?", "opts": [["Herpes simplex virus type 1", "Herpes simplex type 1 affects the eye as herpetic keratitis, an inflammation with a gritty feeling, conjunctivitis, sharp pain and light sensitivity, not retinitis. Retinitis in a patient with acquired immunodeficiency syndrome is cytomegalovirus."], ["Cytomegalovirus", "Correct: in patients with acquired immunodeficiency syndrome, cytomegalovirus causes cytomegalovirus mononucleosis, disseminated disease and retinitis, and blind spots are among its manifestations; severe complications occur in immunocompromised hosts."], ["Human herpesvirus 8", "Human herpesvirus 8 is linked with Kaposi sarcoma, the small painless discolored skin lumps common in patients with acquired immunodeficiency syndrome. Retinitis with blind spots in a patient with acquired immunodeficiency syndrome is cytomegalovirus."], ["Epstein-Barr virus", "In patients with acquired immunodeficiency syndrome, Epstein-Barr virus is linked to hairy leukoplakia, and it also causes infectious mononucleosis and Burkitt lymphoma. Retinitis in acquired immunodeficiency syndrome is cytomegalovirus."]], "c": 1, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 60, 74, 77 and 83 and image on Slide 5", "qid": "62vk52"}, {"topic": "Poxviruses multiply in the cytoplasm", "io": "1 — Recall the steps of DNA virus replication.", "q": "Unlike most DNA viruses, where in the host cell do poxviruses multiply?", "opts": [["In cytoplasmic factory areas", "Correct: poxviruses, the largest and most complex animal viruses, multiply in the cytoplasm in factory areas, with specificity for the cytoplasm of epidermal cells. Most DNA viruses, by contrast, are budded off the nucleus."], ["Integrated in a chromosome", "Integration into a host chromosome is noted for chronic infections such as hepatitis B and for phage prophages; it is not where poxviruses multiply. Poxviruses replicate in cytoplasmic factory areas."], ["Within the host cell nucleus", "Most DNA viruses replicate in and are budded off the nucleus, and herpesviruses replicate within the nucleus. Poxviruses are the exception: they multiply in factory areas of the cytoplasm."], ["As an episome in the nucleus", "An episome in the nucleus is the latent form of herpesvirus DNA, not a site of multiplication. Poxviruses multiply outside the nucleus, in factory areas of the cytoplasm."]], "c": 0, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 24, 26, 32 and 55", "qid": "bgiyct"}, {"topic": "Smallpox: stage of greatest contagion", "io": "5 — Compare and contrast the mode of transmission, clinical manifestations, and availability of a vaccine for DNA viruses of medical importance.", "q": "During smallpox, which stage is the stage of greatest contagion?", "opts": [["The scab stage", "During scabbing the patient remains contagious and stops being contagious only once all scabs fall off, but this is not the peak. The greatest contagion is the early mouth rash that releases large amounts of virus."], ["The fluid-filled sore stage", "By the fourth day the skin sores fill with fluid and fever may rise again; the patient is still contagious. The stage of greatest contagion, though, is the earlier rash on the tongue and mouth."], ["The early rash in the mouth", "Correct: the early rash, small red spots on the tongue and mouth that break open and release large amounts of virus into the mouth and throat, is the stage of greatest contagion; smallpox spreads by inhaling airborne saliva."], ["The incubation period", "During the incubation period, before the high fever, aches and vomiting begin, there is no rash releasing virus. The greatest contagion comes with the early rash in the mouth, when sores break open into the throat."]], "c": 2, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slide 41 and image on Slide 40", "qid": "p1gfat"}, {"topic": "Mpox vaccine: JYNNEOS", "io": "5 — Compare and contrast the mode of transmission, clinical manifestations, and availability of a vaccine for DNA viruses of medical importance.", "q": "Which vaccine is available to prevent mpox?", "opts": [["Adenovirus vaccine", "The adenovirus vaccine, against types 4 and 7, is given to some military personnel in training environments. Mpox, a poxvirus, is prevented with JYNNEOS, a smallpox and monkeypox vaccine."], ["Hepatitis B vaccine", "The hepatitis B vaccine is derived from surface antigen from cloned yeast and protects against hepatitis B, a blood-borne liver infection. Mpox is prevented with JYNNEOS, a smallpox and monkeypox vaccine."], ["JYNNEOS", "Correct: JYNNEOS, held in the Strategic National Stockpile, is a smallpox and monkeypox vaccine, and it is offered to prevent mpox; the smallpox vaccine ACAM2000 has also been made available against it."], ["Gardasil", "Gardasil is one of the two effective human papillomavirus vaccines (with Cervarix), used against warts and papillomavirus infection, not mpox. Mpox is prevented with JYNNEOS, a smallpox and monkeypox vaccine."]], "c": 2, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 44, 52, 91, 94 and 99 and image on Slide 4", "qid": "1yf1bao"}, {"topic": "Chickenpox: most infectious period", "io": "5 — Compare and contrast the mode of transmission, clinical manifestations, and availability of a vaccine for DNA viruses of medical importance.", "q": "When is a person with a primary varicella zoster infection (chickenpox) most infectious?", "opts": [["Only once vesicles have erupted", "Fluid from active lesions does transmit the virus, but the most infectious time comes earlier, 24 to 48 hours prior to lesion development, when no rash is yet visible."], ["Only after all lesions crust over", "Crusted lesions are the end of the eruption, not the peak; the virus spreads by droplets and fluid from active lesions. Varicella zoster is most infectious 24 to 48 hours before lesions develop."], ["When pain follows a dermatome", "Pain along a nerve pathway with vesicles in a dermatome is shingles, the later reactivation of the latent virus. Primary chickenpox is most infectious 24 to 48 hours before lesions appear."], ["In the 24 to 48 hours before lesions", "Correct: varicella zoster is most infectious 24 to 48 hours prior to the development of lesions; it spreads by respiratory droplets and contact with fluid from active skin lesions, so a person can spread it before any rash is seen."]], "c": 3, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 68 and 69 and image on Slide 5", "qid": "akxx1r"}, {"topic": "Kaposi sarcoma virus (picture)", "io": "4 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of DNA viruses of medical importance.", "q": "A patient with acquired immunodeficiency syndrome has many small, painless, discolored skin lumps like those shown. Which herpesvirus is linked to this tumor?", "opts": [["Epstein-Barr virus", "Epstein-Barr virus is the oncogenic herpesvirus of Burkitt lymphoma and nasopharyngeal carcinoma, and of hairy leukoplakia in acquired immunodeficiency syndrome. Small painless discolored skin lumps in acquired immunodeficiency syndrome are Kaposi sarcoma, from human herpesvirus 8."], ["Human herpesvirus 6", "Human herpesvirus 6 causes roseola in babies and has an association (not causation) with Hodgkin lymphoma and some leukemias. Kaposi sarcoma, the common skin tumor of acquired immunodeficiency syndrome, is linked with human herpesvirus 8."], ["Cytomegalovirus", "In patients with acquired immunodeficiency syndrome, cytomegalovirus causes retinitis, mononucleosis and disseminated disease, not skin tumors. Small painless discolored skin lumps are Kaposi sarcoma, linked with human herpesvirus 8."], ["Human herpesvirus 8", "Correct: these are Kaposi sarcoma lesions, small painless discolored lumps on the skin that may disseminate to internal organs. Kaposi sarcoma-associated virus, human herpesvirus 8, is linked with this common tumor of acquired immunodeficiency syndrome patients."]], "c": 3, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 6, 28, 74, 77, 81 and 83 and image on Slide 84", "img": "micro-exam-3-quiz-images/wr3-fig-17.jpg", "alt": "Photograph of a patient lying in a hospital bed with a breathing tube taped at the mouth; the bare chest and abdomen show many scattered small dark raised spots", "qid": "7w550f"}, {"topic": "Hepatitis B: risk to health care workers", "io": "5 — Compare and contrast the mode of transmission, clinical manifestations, and availability of a vaccine for DNA viruses of medical importance.", "q": "Why is hepatitis B virus a great risk to health care workers?", "opts": [["No vaccine exists against it", "A hepatitis B vaccine does exist, made from surface antigen from cloned yeast, and it is the primary prevention. The risk to health care workers comes from the very low infective dose: minute amounts of blood transmit it."], ["It spreads by respiratory droplets", "Droplet spread fits adenovirus and parvovirus B19, not hepatitis B. Hepatitis B passes through blood or serum and sexual contact, and minute amounts of blood are enough to transmit it."], ["Minute amounts of blood transmit it", "Correct: hepatitis B multiplies in the liver, which continuously seeds the blood with virus, so minute amounts of blood or blood products can transmit it; the very low infective dose makes it a great risk to health care workers."], ["It spreads in contaminated food", "Ingesting contaminated food or water is a route for polyomaviruses, and ingestion for adenovirus. Hepatitis B enters through broken skin, mucous membranes or injection, and minute amounts of blood transmit it."]], "c": 2, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 7, 87, 88 and 91 and image on Slide 6", "qid": "1wn5k8w"}, {"topic": "Adenovirus: military vaccine", "io": "5 — Compare and contrast the mode of transmission, clinical manifestations, and availability of a vaccine for DNA viruses of medical importance.", "q": "Which DNA virus has a vaccine against types 4 and 7 that is given to some military personnel in training?", "opts": [["Epstein-Barr virus", "Epstein-Barr virus has no preventive vaccine, only therapeutic vaccines in trials for its related cancers. The vaccine against types 4 and 7 for military trainees is the adenovirus vaccine."], ["Cytomegalovirus", "No cytomegalovirus vaccine is currently available; several are in clinical trials, slowed by the lack of an animal model. The types 4 and 7 vaccine for military trainees is against adenovirus."], ["Adenovirus", "Correct: an inactivated polyvalent vaccine against adenovirus types 4 and 7 is given to some military personnel in training environments. Adenoviruses spread by respiratory and ocular secretions and cause colds and conjunctivitis."], ["JC polyomavirus", "Polyomaviruses, JC virus included, have no vaccine for humans; JC causes progressive multifocal leukoencephalopathy in the immunosuppressed. The types 4 and 7 military vaccine is against adenovirus."]], "c": 2, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 5, 6, 74, 79, 93 and 94 and image on Slide 7", "qid": "s5lcgs"}, {"topic": "JC virus: progressive multifocal leukoencephalopathy", "io": "4 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of DNA viruses of medical importance.", "q": "An immunosuppressed patient develops progressive multifocal leukoencephalopathy, with destruction of the cells that make myelin and progressive neurological symptoms. Which virus causes it?", "opts": [["JC polyomavirus", "Correct: progressive multifocal leukoencephalopathy is an uncommon, often fatal infection caused by JC virus, seen in immunosuppressed patients; the virus can cross the blood-brain barrier and destroys myelin-producing cells."], ["Herpes simplex virus", "Herpes simplex can cause herpetic meningoencephalitis, at first infection or on reactivation, which may be fatal untreated. Progressive multifocal leukoencephalopathy with myelin loss is caused by JC virus."], ["BK polyomavirus", "BK virus, the other important human polyomavirus, lies dormant in the kidney, ureter and bladder lining and causes hematuria and nephritis after renal transplant. Demyelinating leukoencephalopathy is JC virus."], ["Cytomegalovirus", "Cytomegalovirus can cause encephalitis with brain swelling and confusion, and severe disease in transplant and acquired immunodeficiency syndrome patients, but progressive multifocal leukoencephalopathy, destroying myelin-making cells, is JC virus."]], "c": 0, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 5, 62, 101 and 102 and image on Slide 7", "qid": "cq7l46"}, {"topic": "Molluscum contagiosum", "io": "4 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of DNA viruses of medical importance.", "q": "A patient has small, smooth, waxy lesions in the genital area and on the thighs, spread by direct contact and fomites and normally self-limiting. Which virus causes them?", "opts": [["Mpox virus", "Mpox begins with fever, aches and swollen lymph nodes, then a rash often starting on the face that goes from macules to pustules to scabs. Small smooth waxy genital lesions without that course are molluscum contagiosum."], ["Molluscum contagiosum virus", "Correct: molluscum contagiosum, a poxvirus spread by direct contact and fomites, produces small, smooth, waxy lesions in the genital area and thighs that are normally self-limiting; treatment, when used, removes the individual lesions."], ["Human papillomavirus", "Human papillomavirus causes genital warts, ranging from tiny flat bumps to extensive, branching, cauliflower-like masses, not smooth waxy lesions. Smooth, waxy, self-limiting lesions on the genitals and thighs are molluscum."], ["Herpes simplex virus type 2", "Herpes simplex type 2 causes clusters of sensitive vesicles on the genitalia, perineum and buttocks that ulcerate, with groin swelling and painful urination. Smooth, waxy, self-limiting lesions are molluscum."]], "c": 1, "cite": "Lecture 18  Dr. Webster -  DNA viruses of medical importance.pptx, Slides 5, 46, 48, 63 and 97 and image on Slide 4", "qid": "1ms9l5s"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll" && window.startExamModeTour) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
