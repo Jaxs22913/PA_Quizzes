@@ -728,7 +728,9 @@ S3.append(item(18, "w18-infections", "3.3", "Acute, persistent chronic and persi
     <tr><td><strong>Persistent chronic</strong></td><td>Virus detectable in tissue, multiplying slowly; symptoms mild or absent; may integrate into the host chromosome</td><td>HIV, hepatitis B virus</td></tr>
     <tr><td><strong>Persistent latent</strong></td><td>After a lytic cycle the virus goes dormant, generally not detectable, no symptoms; can reactivate as recurrent infection; viral DNA is an <strong>episome</strong> (in the nucleus, not integrated)</td><td>Herpesviruses</td></tr>
   </table>
-  <p>{c18('26')}</p>
+  <p>{c18('26')} Note that the slides use hepatitis B as the chronic example, although most people infected show
+  few symptoms and develop immunity {c18('88')}; it is chronic in the small number who go on to chronic liver
+  disease.</p>
   {fig('l18-s027-effects-on-host-cells.jpg', 453, 533, 'Diagram of the possible effects of a viral infection on a host cell: lytic infection, chronic infection, latent infection with recurrence, and transformation.', 'Possible effects of viral infection on host cells (“think about the similarity of these cycles to the phage cycles”).', 18, '27')}"""))
 
 S3.append(item(18, "w18-oncogenic", "3.4", "Oncogenic viruses", COLD,
@@ -885,7 +887,8 @@ S3.append(item(18, "w18-chart", "3.12", "Her chart: the other DNA viruses", COLD
     <li><strong>Adenovirus</strong>: nonenveloped double-stranded DNA, acute infection; respiratory and ocular
     secretions; colds, pharyngitis, conjunctivitis, hemorrhagic cystitis, infantile gastroenteritis {c18('93')};
     type 41 is associated with hepatitis in children 1&ndash;6; oral vaccine for types 4 and 7 in the military.
-    {c18('94')}</li>
+    {c18('94')} (The slide calls that vaccine &ldquo;inactivated&rdquo;; the current military adenovirus vaccine is a
+    live oral vaccine. Answer from the slide if asked.)</li>
     <li><strong>Human papillomavirus</strong>: warts (common, plantar, genital &mdash; the most common sexually
     transmitted disease in the United States) {c18('97')}; nine types raise reproductive cancer risk; Pap smear;
     vaccines Gardasil and Cervarix. {c18('99')}</li>
