@@ -15359,6 +15359,7 @@ var CHAIN_SETS = [
   // written by tools/build_acid_base_chain.py from arcade-chain/*.json; do not hand-edit
   { id: "pdm-e4", name: "Acid-Base Case Chains", course: "Principles of Diagnostic Medicine I", exam: "Exam 4", color: "accent3", cases: 20, steps: 99, ver: "43d3653453" },
   { id: "cms-e6", name: "Acid-Base Case Chains", course: "Clinical Medicine and Surgery I", exam: "Exam 6", color: "accent3", cases: 20, steps: 122, ver: "3c66704781" },
+  { id: "cms-e7", name: "Acid-Base II Case Chains", course: "Clinical Medicine and Surgery I", exam: "Exam 7", color: "accent3", cases: 21, steps: 143, ver: "9a7d595a2b" },
   // <!--/ABCHAIN-SETS-->
 ];
 function findChainSet(id) { return CHAIN_SETS.find(function (s) { return s.id === id; }); }
@@ -15464,10 +15465,10 @@ var DEMO_CLASSES = [
     ] },
     { id: "exam6", name: "Exam 6", deckIds: [
       "cms-e6-l33-devices", "cms-e6-l33-indications", "cms-e6-l34-normals", "cms-e6-l34-respiratory", "cms-e6-l34-metabolic", "cms-e6-l35-basics", "cms-e6-l35-dx", "cms-e6-l35-rx", "cms-e6-l36-basics", "cms-e6-l36-dx", "cms-e6-l36-rx", "cms-e6-l37-vax-bronch", "cms-e6-l37-pneumonia", "cms-e6-l37-atypical-viral", "cms-e6-l38-tb-dx", "cms-e6-l38-tb-rx"
-    ] },
+    ], chainSets: ["cms-e6"] },
     { id: "exam7", name: "Exam 7", deckIds: [
       "cms-e7-l39-waves", "cms-e7-l39-physiology", "cms-e7-l40-osa", "cms-e7-l40-osa-rx", "cms-e7-l40-csa-ohs", "cms-e7-l41-ild", "cms-e7-l41-sarcoid", "cms-e7-l41-occupational", "cms-e7-l41-ards", "cms-e7-l42-cor-pulmonale", "cms-e7-l42-cor-pulmonale-workup", "cms-e7-l42-pulmonary-hypertension", "cms-e7-l42-pulmonary-hypertension-rx", "cms-e7-l42-pulmonary-edema", "cms-e7-l42-pulmonary-edema-rx", "cms-e7-l42-pe-presentation", "cms-e7-l42-pe-diagnosis", "cms-e7-l42-pe-treatment", "cms-e7-l43-nodules", "cms-e7-l43-cancer-staging", "cms-e7-l43-nsclc", "cms-e7-l43-sclc-paraneoplastic", "cms-e7-l44-pleura-pleurisy", "cms-e7-l44-pneumothorax", "cms-e7-l44-pneumothorax-rx", "cms-e7-l44-tension-hemothorax", "cms-e7-l44-effusion", "cms-e7-l44-lights-exudates", "cms-e7-l45-gas-gap", "cms-e7-l45-compensation", "cms-e7-l45-mixed", "cms-e7-l45-causes", "cms-e7-l45-met-alk"
-    ] },
+    ], chainSets: ["cms-e7"] },
     { id: "exam8", name: "Exam 8", deckIds: [
       "cms-e8-l46-iron-deficiency", "cms-e8-l46-chronic-disease-ckd", "cms-e8-l46-sidero-lead-hemochromatosis", "cms-e8-l46-macrocytic-b12-folate", "cms-e8-l46-aplastic-neutropenia", "cms-e8-l46-hemolysis-aiha-g6pd", "cms-e8-l46-thalassemia-sickle"
     ] }

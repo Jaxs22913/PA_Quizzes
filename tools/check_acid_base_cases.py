@@ -29,6 +29,10 @@ Recomputed per step (cut-offs from each set's own deck):
   saline      CMS: urine chloride low -> responsive (contracted); high -> unresponsive (s37, s41)
   cause/next  the keyed option's category must match the disorder the numbers give, using THIS file's own map of
               cause names to slide lists (PDM s22, s25-29, s32, s34; CMS s26-27, s33-34, s42-43, s55-56, s28/35/44)
+  cms-e7      Lecture 45 set, its own re-derivation (check_case_e7): normal-pH reading, two-process pairs,
+              albumin-corrected gap (s8), Winter both directions (s49), change in gap vs bicarbonate and chloride
+              (s27, s30, s50), acute/chronic/mixed respiratory acidosis (s24, s33-35), 0.75 rule (s24, s29),
+              urine chloride + blood pressure (s51, s53), and the cause step against the processes the numbers show.
 Plus: every value shows its range and the ranges are the deck's; pH within the survivable limits; Henderson-
 Hasselbalch realism within 0.02; four distinct options with exactly one key; key explanation opens "Correct.",
 wrong ones carry a "Tell:"; cites name the right deck and real, non-excluded slides; no banned scope (Winter, ratios
@@ -50,6 +54,11 @@ SETS = {
                    excluded={1, 2, 64, 65, 66, 67}, life=(6.7, 7.6),
                    ranges=dict(ph=(7.35, 7.45), pco2=(36, 44), hco3=(22, 26), na=(135, 145), cl=(98, 106),
                                k=(3.5, 5.0), alb=(3.5, 5.0), po2=(80, 100)),
+                   acid="Acidemia", alk="Alkalemia"),
+    "cms-e7": dict(course="cms45", deck="PAJ5510 Acid Base Disorders II MBF2026sc.pptx", nslides=64,
+                   excluded={1, 2, 60, 61, 62, 64}, life=(6.7, 7.6),
+                   ranges=dict(ph=(7.35, 7.45), pco2=(35, 45), hco3=(22, 26), na=(135, 145), cl=(98, 106),
+                               k=(3.5, 5.0), alb=(3.5, 5.5), po2=(80, 100)),
                    acid="Acidemia", alk="Alkalemia"),
 }
 
@@ -127,6 +136,8 @@ def texts_of(case):
 
 
 def check_case(sid, S, c):
+    if S["course"] == "cms45":
+        return check_case_e7(sid, S, c)
     R = S["ranges"]
     W = c["id"]
     labs = {}
@@ -408,6 +419,331 @@ def check_case(sid, S, c):
         if SELF_REF.search(t):
             fail("%s %s" % (W, where), "refers to the course materials: %r" % SELF_REF.search(t).group(0))
         for rx in BANNED_ALL + (BANNED_PDM if S["course"] == "pdm" else []):
+            if re.search(rx, t):
+                fail("%s %s" % (W, where), "out-of-scope wording /%s/" % rx)
+        for tok in re.findall(r"\b[A-Z]{2,}[A-Za-z0-9]*\b", t):
+            if tok not in ABBR_OK:
+                fail("%s %s" % (W, where), "abbreviation %r" % tok)
+    return positions
+
+
+# ---------------------------------------------------------------- cms-e7 (Lecture 45, Acid-Base Disorders II)
+# Restated from the L45 slides, NOT imported from tools/abchain_cms_e7.py:
+#   gap = Na - (HCO3 + Cl), normal 6-12, raised > 12, decreased < 6 (s7, s44, s47, s48); albumin below 3.5: add 2.5
+#   per 1 g/dL below 4.5 (s8); Winter 1.5 x HCO3 + 8 +/- 2, above = respiratory acidosis, below = respiratory
+#   alkalosis (s49); change in gap = gap - 10, change in bicarbonate = 25 - HCO3 (s27, s50): equal (within 2) =
+#   only; gap change larger (by 5+) = metabolic alkalosis; smaller (by 5+) = check chloride, and bicarbonate change
+#   = gap change + (Cl - 100) within 2 = increased-gap AND normal-gap acidosis (s30, s50); respiratory acidosis
+#   1 / 3.5 per 10 from 40 and 25 (s24, s33-35), outside both = a metabolic process; metabolic alkalosis 0.75 per 1
+#   (s24, s29); urine chloride < 25 responsive, > 40 unresponsive, split by blood pressure (s51, s53).
+E7_CAUSES = {
+    "sepsis with lactic acidosis": "MAH+RAL", "lactic acidosis alone": "MAH", "lactic acidosis": "MAH",
+    "severe pneumonia with lactic acidosis": "MAH+RAC", "pulmonary edema with lactic acidosis": "MAH+RAC",
+    "flail chest with lactic acidosis": "MAH+RAC", "flail chest alone": "RAC",
+    "uremia with vomiting": "MAH+MALK", "uremia alone": "MAH", "uremia": "MAH",
+    "diabetic ketoacidosis with vomiting": "MAH+MALK", "diabetic ketoacidosis alone": "MAH",
+    "alcoholic ketoacidosis with vomiting": "MAH+MALK", "alcoholic ketoacidosis alone": "MAH",
+    "diarrhea with lactic acidosis": "MAH+MAN", "treated diabetic ketoacidosis": "MAH+MAN",
+    "diarrhea alone": "MAN", "diarrhea": "MAN", "renal tubular acidosis": "MAN",
+    "liver disease with diuretics": "MALK+RAL", "high altitude with vomiting": "MALK+RAL", "high altitude alone": "RAL",
+    "high altitude": "RAL", "anxiety": "RAL", "anxiety attack": "RAL", "living at high altitude": "RAL",
+    "persistent vomiting": "MALK", "severe diarrhea": "MAN",
+    "diabetic ketoacidosis without vomiting": "MAH", "septic shock with lactic acidosis": "MAH+RAL",
+    "diabetic ketoacidosis treated with saline": "MAH+MAN", "years of living at very high altitude": "RAL",
+    "primary aldosteronism (adrenal excess)": "MALK", "renal tubular acidosis from a medicine": "MAN",
+    "licorice eaten in large amounts": "MALK", "lactic acidosis without lung failure": "MAH",
+    "diuretic use without lung disease": "MALK", "chronic lung disease without diuretics": "RAC",
+    "vomiting without chest wall disease": "MALK", "chest wall disease without vomiting": "RAC",
+    "vomiting without ketoacidosis": "MALK", "alcoholic ketoacidosis without vomiting": "MAH",
+    "diarrhea without lactic acidosis": "MAN", "lactic acidosis without diarrhea": "MAH",
+    "flail chest without blood loss": "RAC", "vomiting with loss of stomach acid": "MALK",
+    "chronic lung disease on diuretics": "MALK+RAC", "chest wall disease with vomiting": "MALK+RAC",
+    "chronic lung disease alone": "RAC", "chest wall disease alone": "RAC", "diuretics alone": "MALK",
+    "vomiting alone": "MALK", "vomiting": "MALK", "primary aldosteronism": "MALK", "licorice": "MALK",
+    "severe potassium depletion": "MALK", "opioid overdose": "RAC", "chronic obstructive pulmonary disease": "RAC",
+}
+# saline-type group of the single metabolic alkalosis causes (s53)
+E7_MALK_GROUP = {"vomiting": "resp", "primary aldosteronism": "htn", "licorice": "htn",
+                 "severe potassium depletion": "normo", "primary aldosteronism (adrenal excess)": "htn",
+                 "licorice eaten in large amounts": "htn", "vomiting with loss of stomach acid": "resp"}
+E7_SLIDES_OK = set(range(3, 60)) | {63}
+
+
+def check_case_e7(sid, S, c):
+    R = S["ranges"]
+    W = c["id"]
+    labs = {}
+    for r in c["labs"]:
+        k = r["k"]
+        labs[k] = r["n"]
+        lo, hi = R[k]
+        want = ("%.2f to %.2f" % (lo, hi) if k == "ph" else "%.1f to %.1f" % (lo, hi) if k in ("k", "alb")
+                else "%s to %s" % (fmt(lo), fmt(hi)))
+        if r.get("range") != want:
+            fail(W, "%s range shown %r, deck says %r" % (k, r.get("range"), want))
+    ph, p, h = labs["ph"], labs["pco2"], labs["hco3"]
+    for m in re.finditer(r"\b\d+(\.\d+)?\b", c["vignette"]):
+        tail = c["vignette"][m.end():m.end() + 14]
+        head = c["vignette"][max(0, m.start() - 24):m.start()]
+        if re.match(r"[- ](year|month|week|day|hour|minute)", tail) or re.match(r"\s*(years?|months?|weeks?|days?|hours?|minutes?|liters?)\b", tail):
+            continue
+        if re.search(r"urine chloride is $", head) and tail.startswith(" mEq/L"):
+            continue
+        if re.search(r"(blood pressure is |is )$", head) and re.match(r"/\d+ mm Hg", tail):
+            continue
+        if re.match(r"\d*/", c["vignette"][m.start():m.end() + 1]) is None and c["vignette"][m.start() - 1:m.start()] == "/":
+            continue
+        if re.search(r"type $", head):
+            continue
+        fail(W, "vignette number %r is not an age, a duration, a urine chloride or a blood pressure" % m.group(0))
+    hhv = 6.1 + math.log10(h / (0.03 * p))
+    if abs(hhv - ph) > 0.02:
+        fail(W, "pH %.2f does not fit carbon dioxide %s and bicarbonate %s (about %.2f)" % (ph, p, h, hhv))
+    if not (S["life"][0] < ph < S["life"][1]):
+        fail(W, "pH outside survivable limits")
+    d = "acid" if ph < 7.35 else "alk" if ph > 7.45 else "normal"
+    ps, hs = st(p, R["pco2"]), st(h, R["hco3"])
+    alb = labs.get("alb")
+    ag = labs["na"] - (labs["cl"] + h) if "na" in labs else None
+    lowalb = alb is not None and alb < 3.5
+    if alb is not None and 3.5 <= alb < 4.5:
+        fail(W, "albumin %s: inside the range but below 4.5, a band the slide does not settle" % alb)
+    agc = ag + 2.5 * (4.5 - alb) if (ag is not None and lowalb) else ag
+    wk = 1.5 * h + 8
+    # the processes the numbers show (independent of the steps)
+    procs = set()
+    match = []
+    if d == "acid":
+        match = [n for n, ok in (("RAC", ps == "high"), ("MA", hs == "low")) if ok]
+    elif d == "alk":
+        match = [n for n, ok in (("RAL", ps == "low"), ("MALK", hs == "high")) if ok]
+    chron = alkc = wint = None
+    if ps == "high":
+        a_, c_ = 25 + (p - 40) / 10.0, 25 + 3.5 * (p - 40) / 10.0
+        chron = ("acute" if abs(h - a_) <= 1.5 else "chronic" if abs(h - c_) <= 2 else
+                 "malk" if h - c_ >= 3 else "macid" if a_ - h >= 3 else None)
+    if d != "normal" and len(match) == 1:
+        prim = match[0]
+        procs.add(prim)
+        if prim == "RAC":
+            a, ch = 25 + (p - 40) / 10.0, 25 + 3.5 * (p - 40) / 10.0
+            chron = ("acute" if abs(h - a) <= 1.5 else "chronic" if abs(h - ch) <= 2 else
+                     "malk" if h - ch >= 3 else "macid" if a - h >= 3 else None)
+            if chron is None:
+                fail(W, "bicarbonate %s equivocal against acute %.1f / chronic %.1f" % (h, a, ch))
+            procs.add({"malk": "MALK", "macid": "MA"}.get(chron, "RAC"))
+        elif prim == "RAL":
+            fail(W, "simple respiratory alkalosis: no L45 step keys its ratios")
+    else:
+        if ps != "normal":
+            procs.add("RAC" if ps == "high" else "RAL")
+        if hs != "normal":
+            procs.add("MA" if hs == "low" else "MALK")
+    if "MA" in procs or (agc is not None and agc > 12):
+        if wk - 2 <= p <= wk + 2:
+            wint = "only"
+        elif p > wk + 2:
+            wint = "rac"
+        else:
+            wint = "ral"
+    if "MA" in procs and "RAC" not in procs and "RAL" not in procs and wint in ("rac", "ral"):
+        procs.add(wint.upper())
+    if "MALK" in procs and "MA" not in procs:
+        pred = 40 + 0.75 * (h - 25)
+        alkc = "exp" if abs(p - pred) <= 2 else "rac" if p - pred >= 5 else "ral" if pred - p >= 5 else None
+        if alkc is None:
+            fail(W, "carbon dioxide %s equivocal against the 0.75 prediction %.2f" % (p, pred))
+        if alkc in ("rac", "ral") and not ({"RAC", "RAL"} & procs):
+            procs.add(alkc.upper())
+    da = dh = None
+    delta = None
+    if agc is not None:
+        da, dh = agc - 10, 25 - h
+        if agc > 12:
+            procs.discard("MA")
+            procs.add("MAH")
+            if abs(da - dh) <= 2:
+                delta = "only"
+            elif da - dh >= 5:
+                delta = "malk"
+                procs.add("MALK")
+            elif dh - da >= 5:
+                delta = "cl"
+                if labs["cl"] - 100 > 0 and abs(dh - (da + labs["cl"] - 100)) <= 2:
+                    procs.add("MAN")
+                else:
+                    fail(W, "chloride does not account for the extra bicarbonate fall")
+            else:
+                delta = None
+        elif "MA" in procs:
+            procs.discard("MA")
+            procs.add("MAN")
+    if "MA" in procs:
+        fail(W, "metabolic acidosis without an anion gap to type it")
+    want_set = "+".join(sorted(procs))
+    positions, kinds = [], []
+    for s in c["steps"]:
+        WS = "%s %s %s" % (W, s["id"], s["kind"])
+        k = s["kind"]
+        kinds.append(k)
+        opts = [o["t"] for o in s["options"]]
+        if len(opts) != 4 or len(set(opts)) != 4 or not isinstance(s.get("key"), int):
+            fail(WS, "needs four distinct options and a key")
+            continue
+        key = opts[s["key"]]
+        for i, o in enumerate(s["options"]):
+            e = o["e"]
+            if i == s["key"]:
+                if not e.startswith("Correct."):
+                    fail(WS, "key explanation does not open 'Correct.'")
+            elif e.startswith("Correct") or "Tell:" not in e:
+                fail(WS, "wrong option %s must not open 'Correct' and needs a 'Tell:'" % "ABCD"[i])
+            if len(e) < 90:
+                fail(WS, "option %s explanation is thin (%d chars)" % ("ABCD"[i], len(e)))
+        if not s.get("walk") or len(s["walk"]) < 2:
+            fail(WS, "walk-through missing")
+        m = re.match(r"^(.+?), Slides? ([\d, ]+)$", s.get("cite", ""))
+        if not m or m.group(1) != S["deck"]:
+            fail(WS, "cite %r does not name the deck" % s.get("cite"))
+        elif any(int(t) not in E7_SLIDES_OK for t in m.group(2).split(",")):
+            fail(WS, "cites an excluded or out-of-range slide: %s" % m.group(2))
+        want = None
+        if k == "ph":
+            want = {"acid": "Acidemia", "alk": "Alkalemia", "normal": "Normal pH"}[d]
+        elif k == "primary":
+            if d == "normal" or len(match) != 1:
+                fail(WS, "primary step needs an abnormal pH with exactly one matching value (has %s)" % match)
+            else:
+                want = {"RAC": "Respiratory acidosis", "RAL": "Respiratory alkalosis", "MA": "Metabolic acidosis",
+                        "MALK": "Metabolic alkalosis"}[match[0]]
+        elif k == "normal_read":
+            if d != "normal":
+                fail(WS, "normal-pH step on an abnormal pH")
+            want = "A mixed acid-base disorder" if (ps != "normal" or hs != "normal") else \
+                "Check the anion gap before deciding"
+        elif k == "pair":
+            if ps == "normal" or hs == "normal" or (d != "normal" and len(match) != 2):
+                fail(WS, "pair step needs both values abnormal (and both matching an abnormal pH)")
+            else:
+                want = "%s and %s" % ("Metabolic acidosis" if hs == "low" else "Metabolic alkalosis",
+                                      "respiratory acidosis" if ps == "high" else "respiratory alkalosis")
+        elif k == "ag_calc":
+            want = fmt(ag)
+        elif k == "alb_corr":
+            if not lowalb:
+                fail(WS, "albumin correction with a normal albumin")
+            want = fmt(agc)
+        elif k == "ag_read":
+            want = "Elevated anion gap" if agc > 12 else "Normal anion gap" if agc >= 6 else "Decreased anion gap"
+            if 12 < agc < 15 and not lowalb and agc != 15:
+                notes.append("%s: gap %s sits just above 12" % (WS, agc))
+        elif k == "winter_calc":
+            want = "%s to %s mm Hg" % (fmt(wk - 2), fmt(wk + 2))
+        elif k == "winter_read":
+            want = {"only": "Appropriate respiratory compensation", "rac": "Concurrent respiratory acidosis",
+                    "ral": "Concurrent respiratory alkalosis"}.get(wint)
+            if p != wk + 2 and p != wk - 2 and abs(p - wk) in (2.5,):
+                fail(WS, "carbon dioxide on the Winter boundary")
+        elif k == "delta_calc":
+            want = fmt(da)
+        elif k == "delta_read":
+            if agc is None or agc <= 12:
+                fail(WS, "change in gap read without a raised gap")
+            want = {"only": "No second metabolic process", "malk": "Concurrent metabolic alkalosis",
+                    "cl": "Check the change in chloride"}.get(delta)
+            if want is None:
+                fail(WS, "gap change %s vs bicarbonate change %s is equivocal" % (da, dh))
+        elif k == "chloride_read":
+            want = "Increased-gap plus normal-gap acidosis" if delta == "cl" else None
+        elif k == "chronicity":
+            want = {"acute": "Acute respiratory acidosis alone", "chronic": "Chronic respiratory acidosis alone",
+                    "malk": "Concurrent metabolic alkalosis", "macid": "Concurrent metabolic acidosis"}.get(chron)
+            if "40 mm Hg and 25 mEq/L" not in s["prompt"]:
+                fail(WS, "chronicity prompt must give the ratios and baselines")
+        elif k == "alk_comp":
+            want = {"exp": "Expected respiratory compensation", "rac": "Concurrent respiratory acidosis",
+                    "ral": "Concurrent respiratory alkalosis"}.get(alkc)
+        elif k == "saline":
+            u = c.get("urine_cl")
+            if not isinstance(u, (int, float)) or ("urine chloride is %s mEq/L" % fmt(u)) not in c["vignette"]:
+                fail(WS, "urine chloride must be stated in the vignette")
+            elif u < 25:
+                want = "Saline responsive, volume contracted"
+            elif u > 40:
+                sbp = c.get("sbp")
+                if sbp is None or not re.search(r"blood pressure is %d/\d+ mm Hg" % sbp, c["vignette"]):
+                    fail(WS, "unresponsive type needs the blood pressure in the vignette")
+                else:
+                    want = ("Saline unresponsive, hypertensive" if sbp >= 140 else
+                            "Saline unresponsive, normotensive" if sbp < 130 else None)
+            else:
+                fail(WS, "urine chloride between 25 and 40: the slide does not type it")
+        elif k == "potassium":
+            want = "Alkalosis moving potassium into cells" if (d == "alk" and labs["k"] < 3.5) else None
+            if want is None:
+                fail(WS, "potassium step without an alkalemia and a low potassium")
+        elif k == "cause":
+            tags = []
+            for o in s["options"]:
+                mine = E7_CAUSES.get(o["t"].lower())
+                if mine is None:
+                    fail(WS, "option %r is not in the validator's map" % o["t"])
+                elif o.get("cat") != mine:
+                    fail(WS, "option %r tagged %r, map says %r" % (o["t"], o.get("cat"), mine))
+                tags.append(mine)
+            norm = lambda t: "+".join(sorted(t.split("+"))) if t else t
+            vig = c["vignette"].lower()
+            excl = {"licorice": "no licorice", "primary aldosteronism": "no adrenal mass", "vomiting": "not vomited",
+                    "severe potassium depletion": "potassium is normal"}
+            if key.lower() in excl and excl[key.lower()] in vig:
+                fail(WS, "keyed %r but the history rules it out (%r)" % (key, excl[key.lower()]))
+            if want_set == "MALK" and c.get("urine_cl") is not None:
+                u = c["urine_cl"]
+                grp = "resp" if u < 25 else ("htn" if (c.get("sbp") or 0) >= 140 else "normo")
+                if E7_MALK_GROUP.get(key.lower()) != grp:
+                    fail(WS, "keyed %r, not in the %s saline group the numbers give" % (key, grp))
+            if norm(tags[s["key"]]) != want_set:
+                fail(WS, "keyed %r (%s) but the numbers show %s" % (key, tags[s["key"]], want_set))
+            for i, t in enumerate(tags):
+                if i != s["key"] and norm(t) == want_set:
+                    lab = opts[i].lower()
+                    kg = E7_MALK_GROUP.get(key.lower())
+                    og = E7_MALK_GROUP.get(lab)
+                    u = c.get("urine_cl")
+                    grp = None
+                    if u is not None:
+                        grp = "resp" if u < 25 else ("htn" if (c.get("sbp") or 0) >= 140 else "normo")
+                    if want_set == "MALK" and kg == grp and og != grp:
+                        continue        # same process, ruled out by the saline group (s53)
+                    if want_set == "MALK" and kg == grp and og == grp:
+                        if lab in c["vignette"].lower() or ("no " + lab.split()[0]) in c["vignette"].lower() or \
+                                "eats no licorice" in c["vignette"].lower():
+                            continue    # same group, excluded by the history
+                    fail(WS, "distractor %r also fits the numbers (%s)" % (opts[i], t))
+        else:
+            fail(WS, "unknown step kind")
+        if want is not None and key != want:
+            fail(WS, "key %r but the numbers give %r" % (key, want))
+        if k not in ("ag_calc", "alb_corr", "winter_calc", "delta_calc"):
+            positions.append(s["key"])
+        else:
+            vals = [float(re.match(r"^-?[\d.]+", t).group(0)) for t in opts]
+            if vals != sorted(vals):
+                fail(WS, "numeric options not ascending: %s" % opts)
+            if k == "winter_calc":
+                spans = [tuple(float(v) for v in re.findall(r"-?[\d.]+", t)) for t in opts]
+                if any(spans[i][1] >= spans[i + 1][0] for i in range(3)):
+                    fail(WS, "Winter options overlap: %s" % opts)
+    if kinds[0] != "ph":
+        fail(W, "chain must open with the pH")
+    if ("MAH" in procs or "MAN" in procs) and "ag_calc" not in kinds:
+        fail(W, "metabolic acidosis case without the anion gap")
+    if lowalb and "ag_calc" in kinds and "alb_corr" not in kinds:
+        fail(W, "low albumin but no correction step")
+    for where, t in texts_of(c):
+        if SELF_REF.search(t):
+            fail("%s %s" % (W, where), "refers to the course materials: %r" % SELF_REF.search(t).group(0))
+        for rx in (r"(?i)osmolar", r"(?i)\b0\.1\b", r"(?i)\b0\.4\b", r"(?i)1\.3 ", r"(?i)nomogram", r"(?i)delta"):
             if re.search(rx, t):
                 fail("%s %s" % (W, where), "out-of-scope wording /%s/" % rx)
         for tok in re.findall(r"\b[A-Z]{2,}[A-Za-z0-9]*\b", t):

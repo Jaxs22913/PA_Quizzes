@@ -56,7 +56,8 @@ def main():
 
     # Register under CMS I, Exam 7. SCOPED TO THE CMS GROUP ONLY -- a global
     # substitution on an exam id once rewrote three other classes' deck lists.
-    exam7 = ('    { id: "exam7", name: "Exam 7", deckIds: [\n      %s\n    ] }'
+    # chainSets kept (the Case Chains card)
+    exam7 = ('    { id: "exam7", name: "Exam 7", deckIds: [\n      %s\n    ], chainSets: ["cms-e7"] }'
              % ", ".join('"%s"' % d[0] for d in DECKS))
     g_start = src.index('  { id: "cms-1", name: "Clinical Medicine and Surgery I", exams: [')
     g_end = src.index("\n  ]},", g_start) + len("\n  ]},")
