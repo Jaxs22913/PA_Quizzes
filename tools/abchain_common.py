@@ -44,6 +44,13 @@ COURSES = {
         k=(3.5, 5.0), ag=(9, 15), alb=(3.5, 5.0), po2_text="80 to 100", po2=(80, 100),
         acid="Acidemia", alk="Alkalemia", acid_adj="acidemia", alk_adj="alkalemia",
         extreme="Unsustainable pH"),
+    # CMS I Lecture 45 (Finck), Acid-Base Disorders II: pH s3/s10; carbon dioxide 35-45 (s10); bicarbonate 22-26
+    # (s6, s10); albumin 3.5-5.5 (s8); oxygen 80-100 (s6). Sodium, chloride, potassium: scaffolding as for L34.
+    # The cms-e7 set has its own generators (tools/abchain_cms_e7.py); only the ranges and the deck are used here.
+    "cms45": dict(
+        deck="PAJ5510 Acid Base Disorders II MBF2026sc.pptx", ph=(7.35, 7.45), pco2=(35, 45), hco3=(22, 26),
+        na=(135, 145), cl=(98, 106), k=(3.5, 5.0), ag=(6, 12), alb=(3.5, 5.5), po2_text="80 to 100", po2=(80, 100),
+        acid="Acidemia", alk="Alkalemia", acid_adj="acidemia", alk_adj="alkalemia", extreme="Unsustainable pH"),
 }
 
 LABEL = {

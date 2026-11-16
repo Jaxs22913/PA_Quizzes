@@ -22,8 +22,9 @@ from abchain_common import (Ctx, GEN, NUMERIC, COURSES, LABEL, UNIT, ORDER, comp
                             f, fph, ag_read_prompt, ag_calc_prompt)
 import abchain_pdm_e4
 import abchain_cms_e6
+import abchain_cms_e7
 
-MODULES = [abchain_pdm_e4, abchain_cms_e6]
+MODULES = [abchain_pdm_e4, abchain_cms_e6, abchain_cms_e7]
 OUT = os.path.join(ROOT, "arcade-chain")
 # word labels for the phone lab strip (the full table keeps LABEL's "ABBREV (full term)" form)
 SHORT = {"ph": "pH", "pco2": "Carbon dioxide", "hco3": "Bicarbonate", "po2": "Oxygen", "na": "Sodium",
@@ -53,6 +54,13 @@ def lab_rows(course, labs):
 
 
 def raw_steps(mod, case):
+    if hasattr(mod, "raw_steps"):
+        # a set with its own generators (cms-e7): same step shape, same option/key assertions below
+        out = mod.raw_steps(case)
+        for s in out:
+            _check_opts(case, s["kind"], s["opts"], s["key"])
+            s["cite"] = cite(COURSES[mod.COURSE], s.pop("slides"))
+        return out
     x = Ctx(mod.COURSE, case)
     got = computed_answers(x)
     for k, v in case["expect"].items():
@@ -81,6 +89,13 @@ def raw_steps(mod, case):
             else:
                 opts, key, walk, slides = gen(x)
             cats = None
+        _check_opts(case, kind, opts, key)
+        out.append(dict(kind=kind, label=label, prompt=prompt, opts=opts, cats=cats, key=key, walk=walk,
+                        cite=cite(COURSES[mod.COURSE], slides)))
+    return out
+
+
+def _check_opts(case, kind, opts, key):
         texts = [t for t, _ in opts]
         assert len(opts) == 4 and len(set(texts)) == 4, "%s/%s: need four distinct options: %s" % (case["id"], kind,
                                                                                                   texts)
@@ -90,15 +105,13 @@ def raw_steps(mod, case):
                 assert e.startswith("Correct."), "%s/%s: key explanation must open 'Correct.'" % (case["id"], kind)
             else:
                 assert not e.startswith("Correct"), "%s/%s: wrong option opens 'Correct'" % (case["id"], kind)
-        out.append(dict(kind=kind, label=label, prompt=prompt, opts=opts, cats=cats, key=key, walk=walk,
-                        cite=cite(COURSES[mod.COURSE], slides)))
-    return out
 
 
 def build_set(mod):
     rnd = random.Random("%s-%s" % (SEED, mod.SET["id"]))
     cases = [(c, raw_steps(mod, c)) for c in mod.CASES]
-    n_label = sum(1 for _, steps in cases for s in steps if s["kind"] not in NUMERIC)
+    numeric = getattr(mod, "NUMERIC", NUMERIC)
+    n_label = sum(1 for _, steps in cases for s in steps if s["kind"] not in numeric)
     positions = [i % 4 for i in range(n_label)]
     rnd.shuffle(positions)
     pi = 0
@@ -109,7 +122,7 @@ def build_set(mod):
         for i, s in enumerate(steps, 1):
             opts = list(s["opts"])
             cats = list(s["cats"]) if s["cats"] else None
-            if s["kind"] in NUMERIC:
+            if s["kind"] in numeric:
                 order = list(range(4))            # generator already sorted ascending
             else:
                 kidx = [t for t, _ in opts].index(s["key"])
@@ -130,7 +143,7 @@ def build_set(mod):
         nsteps += len(js)
         oc = dict(id=c["id"], n=n, title="Case %d" % n, who=c["who"], vignette=c["vignette"],
                   labs=lab_rows(mod.COURSE, c["labs"]), steps=js, summary=c["summary"])
-        for k in ("urine_cl", "volume"):
+        for k in ("urine_cl", "volume", "sbp"):
             if k in c:
                 oc[k] = c[k]
         out_cases.append(oc)
