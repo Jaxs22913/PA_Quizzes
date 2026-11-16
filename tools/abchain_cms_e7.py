@@ -169,13 +169,17 @@ def g_primary(x):
     word = "acidemia" if x.dir == "acid" else "alkalemia"
     move = "lowers" if x.dir == "acid" else "raises"
     eff_p = {"high": "a high carbon dioxide lowers the pH", "low": "a low carbon dioxide raises the pH",
-             "normal": "a normal carbon dioxide does not move the pH"}[x.ps]
+             "normal": "an in-range carbon dioxide shows no respiratory process on its own"}[x.ps]
     eff_h = {"high": "a high bicarbonate raises the pH", "low": "a low bicarbonate lowers the pH",
-             "normal": "a normal bicarbonate does not move the pH"}[x.hs]
+             "normal": "an in-range bicarbonate shows no metabolic process on its own"}[x.hs]
     E = {}
     if key in (MACID, MALK):
-        other = "The carbon dioxide of %s is %s, and %s, so it did not cause the %s; whether it is only compensation " \
-                "is checked next." % (p, pdesc(x), eff_p, word)
+        if x.ps == "normal":
+            other = ("The carbon dioxide of %s is %s, so by the ranges it is not what moved the pH; whether it is the "
+                     "right carbon dioxide for this bicarbonate is checked next." % (p, pdesc(x)))
+        else:
+            other = ("The carbon dioxide of %s is %s, and %s, so it did not cause the %s; whether it is only "
+                     "compensation is checked next." % (p, pdesc(x), eff_p, word))
         E[key] = ("Correct. The pH of %s is %s, and the bicarbonate of %s is %s: %s, so the primary process is "
                   "metabolic. %s" % (ph, word, h, hdesc(x), eff_h, other))
     else:
@@ -184,10 +188,9 @@ def g_primary(x):
                   "respiratory. %s" % (ph, word, p, pdesc(x), eff_p, other))
     same = [d for d in ((RACID, MACID) if x.dir == "acid" else (RALK, MALK)) if d != key][0]
     if same in (RACID, RALK):
-        E[same] = ("The carbon dioxide of %s is %s, and %s, so it is not what %s this pH; the bicarbonate of %s is. "
-                   "Whether the lungs add a problem of their own is a later check. Tell: the primary process is the "
-                   "value that moves the pH the way it went." % (p, pdesc(x), eff_p, "lowered" if x.dir == "acid"
-                                                                 else "raised", h))
+        E[same] = ("The carbon dioxide of %s is %s, so it is not the primary process behind this pH; the bicarbonate "
+                   "of %s is. Whether the lungs add a problem of their own is a later check. Tell: the primary process "
+                   "is the value that moves the pH the way it went." % (p, pdesc(x), h))
     else:
         E[same] = ("The bicarbonate of %s is %s, and %s, so it is not what %s this pH; the carbon dioxide of %s is. "
                    "Tell: the primary process is the value that moves the pH the way it went."
@@ -197,8 +200,8 @@ def g_primary(x):
                 "found later from the expected compensation. Tell: name the primary from the value that matches the pH."
                 % (d, "raises" if x.dir == "acid" else "lowers", word, ph))
     walk = ["pH %s: %s." % (ph, word),
-            "Carbon dioxide %s (normal 35 to 45): %s, and %s." % (p, x.ps, eff_p),
-            "Bicarbonate %s (normal 22 to 26): %s, and %s." % (h, x.hs, eff_h),
+            "Carbon dioxide %s (normal 35 to 45): %s%s." % (p, x.ps, "" if x.ps == "normal" else ", and " + eff_p),
+            "Bicarbonate %s (normal 22 to 26): %s%s." % (h, x.hs, "" if x.hs == "normal" else ", and " + eff_h),
             "The value that %s the pH the way it went is the %s, so the primary process is %s."
             % (move, "bicarbonate" if key in (MACID, MALK) else "carbon dioxide", key.lower())]
     return [(t, E[t]) for t in (RACID, RALK, MACID, MALK)], key, walk, [10, 11, 58]
@@ -206,7 +209,7 @@ def g_primary(x):
 
 # ------------------------------------------------------------------ normal pH: what do the gases show? (s23, s26, s56, s58)
 MIXED, NONE, FULLC, TWOR, GAPF = ("A mixed acid-base disorder", "No acid-base disorder",
-                                  "A fully compensated simple disorder", "Two respiratory disorders cancelling",
+                                  "A fully compensated simple disorder", "Two respiratory disorders canceling",
                                   "Check the anion gap before deciding")
 
 
@@ -219,12 +222,19 @@ def g_normal_read(x):
     key = normal_read_of(x)
     ph, p, h = fph(x.ph), f(x.p), f(x.h)
     E = {}
+    gas_ok = x.ps == "normal" and x.hs == "normal"
     E[FULLC] = ("Compensation never fully corrects the pH in a simple disorder; it only brings it closer to normal. So a "
                 "normal pH of %s is never a simple disorder that compensated all the way. Tell: a normal pH with "
-                "abnormal values means two processes pulling against each other." % ph)
+                "abnormal values means two processes pulling against each other." % ph) if not gas_ok else (
+        "Here nothing is abnormal for compensation to have corrected: carbon dioxide %s and bicarbonate %s are both in "
+        "range, and a compensated simple disorder would still leave the pH off. Tell: normal gases leave the anion gap "
+        "to check." % (p, h))
     E[TWOR] = ("There can never be more than one primary respiratory disorder: a patient cannot breathe too fast and "
                "too slow at once. Only one process can come from the carbon dioxide; the other must be metabolic. "
-               "Tell: one respiratory process at most, metabolic ones can stack.")
+               "Tell: one respiratory process at most, metabolic ones can stack.") if not gas_ok else (
+        "Two respiratory disorders cannot coexist: a patient cannot breathe too fast and too slow at once. Here the "
+        "carbon dioxide of %s is in range, so by the ranges there is no respiratory abnormality to pair. Tell: only one "
+        "respiratory process is ever possible." % p)
     if key == MIXED:
         r, m = proc_of(x)
         bits = []
@@ -252,17 +262,17 @@ def g_normal_read(x):
                 "returns the pH fully to normal.", "So: a mixed acid-base disorder."]
     else:
         E[GAPF] = ("Correct. The pH of %s, the carbon dioxide of %s and the bicarbonate of %s are all in range, but the "
-                   "anion gap can be abnormal even when sodium, chloride and bicarbonate are normal, and a large gap is "
+                   "anion gap can be abnormal even when the bicarbonate is normal, and a large gap is "
                    "never from a respiratory disorder alone. Calculate it before calling this normal." % (ph, p, h))
-        E[NONE] = ("Normal gases are not the end of the check: the anion gap can be abnormal even when sodium, chloride "
-                   "and bicarbonate are within range, and a sick patient with normal-looking gases needs it. Tell: "
+        E[NONE] = ("Normal gases are not the end of the check: the anion gap can be abnormal even when the bicarbonate "
+                   "is within range, and a sick patient with normal-looking gases needs it. Tell: "
                    "calculate the gap even when everything looks normal.")
         E[MIXED] = ("A mixed disorder may well be present, but nothing shown yet proves it: pH, carbon dioxide and "
                     "bicarbonate are all inside their ranges. The anion gap is the value that can show it. Tell: "
                     "calculate the gap before naming any disorder.")
         opts = [(t, E[t]) for t in (GAPF, NONE, FULLC, TWOR)]
         walk = ["pH %s, carbon dioxide %s and bicarbonate %s: all inside their ranges." % (ph, p, h),
-                "That looks normal, but the anion gap can be abnormal even with normal electrolytes.",
+                "That looks normal, but the anion gap can be abnormal even when the bicarbonate is normal.",
                 "So: check the anion gap before deciding."]
     return opts, key, walk, [23, 26, 56, 58]
 
@@ -479,7 +489,7 @@ def g_winter_calc(x):
     return [(r[1], r[2]) for r in rows], key, walk, [49]
 
 
-ONLY, CRA, CRL, RENC = ("Metabolic acidosis only", "Concurrent respiratory acidosis",
+ONLY, CRA, CRL, RENC = ("Appropriate respiratory compensation", "Concurrent respiratory acidosis",
                         "Concurrent respiratory alkalosis", "Renal compensation for the acidosis")
 
 
@@ -500,11 +510,12 @@ def g_winter_read(x):
     where = {"ONLY": "inside", "CRA": "above", "CRL": "below"}[{ONLY: "ONLY", CRA: "CRA", CRL: "CRL"}[key]]
     innorm = 35 <= x.p <= 45
     E = {}
-    E[ONLY] = ("Metabolic acidosis only means the carbon dioxide sits inside the expected %s mm Hg. The measured %s is "
+    E[ONLY] = ("Appropriate respiratory compensation means the carbon dioxide sits inside the expected %s mm Hg. The measured %s is "
                "%s it, so the lungs are not simply compensating. Tell: outside the Winter range means a second, "
                "respiratory, process." % (r, p, where)) if key != ONLY else (
         "Correct. The measured carbon dioxide of %s sits inside the expected %s mm Hg, so the lungs are compensating "
-        "as predicted: a metabolic acidosis only, with no concurrent respiratory disorder." % (p, r))
+        "as predicted; there is no concurrent respiratory disorder. Other metabolic processes are a separate check."
+        % (p, r))
     if key == CRA:
         E[CRA] = ("Correct. The measured carbon dioxide of %s is above the expected %s mm Hg: the lungs are holding on to "
                   "more carbon dioxide than compensation needs, a concurrent respiratory acidosis.%s"
@@ -525,7 +536,7 @@ def g_winter_read(x):
                "respiratory disorders. The carbon dioxide of %s is the respiratory side, and it sits %s the expected %s. "
                "Tell: a metabolic problem gets a respiratory response." % (p, where, r))
     walk = ["Expected carbon dioxide by the Winter formula: %s mm Hg." % r, "Measured carbon dioxide: %s." % p,
-            "%s is %s the range: inside = metabolic acidosis only; above = concurrent respiratory acidosis; below = "
+            "%s is %s the range: inside = appropriate compensation, no respiratory disorder; above = concurrent respiratory acidosis; below = "
             "concurrent respiratory alkalosis." % (p, where), "So: %s." % key.lower()]
     return [(t, E[t]) for t in (ONLY, CRA, CRL, RENC)], key, walk, [28, 49]
 
@@ -559,8 +570,8 @@ def g_delta_calc(x):
     return [(f(r[0]), r[1]) for r in rows], f(d), walk, [27, 50]
 
 
-DONLY, DMALK, DCL, DRALK = ("Metabolic acidosis only", "Concurrent metabolic alkalosis", "Check the change in chloride",
-                            "Concurrent respiratory alkalosis")
+DONLY, DMALK, DCL, DRALK = ("No second metabolic process", "Concurrent metabolic alkalosis",
+                            "Check the change in chloride", "Decreased anion gap acidosis")
 
 
 def deltas(x):
@@ -585,33 +596,35 @@ def g_delta_read(x):
     cmp_ = "about equal to" if key == DONLY else "larger than" if key == DMALK else "smaller than"
     E = {}
     E[DONLY] = ("Correct. The gap rose %s (%s - 10) and the bicarbonate fell %s (25 - %s): about equal, so the added "
-                "acid explains the whole fall in bicarbonate. A metabolic acidosis only, with no hidden metabolic "
-                "process." % (sa, f(x.agc), sh, f(x.h))) if key == DONLY else (
-        "Metabolic acidosis only needs the two changes to be about equal. Here the gap change of %s is %s the "
+                "acid explains the whole fall in bicarbonate: no second metabolic process is hidden. Any respiratory "
+                "process is judged from the carbon dioxide against the Winter range, not from this comparison." % (sa, f(x.agc), sh, f(x.h))) \
+        if key == DONLY else (
+        "No second metabolic process needs the two changes to be about equal. Here the gap change of %s is %s the "
         "bicarbonate change of %s. Tell: unequal changes mean a second metabolic process." % (sa, cmp_, sh))
     E[DMALK] = ("Correct. The gap rose %s but the bicarbonate fell only %s (25 - %s): more acid was added than the "
                 "bicarbonate shows, so something is holding bicarbonate up, a concurrent metabolic alkalosis. It can only "
                 "be seen this way because the gap is high." % (sa, sh, f(x.h))) if key == DMALK else (
-        "A concurrent metabolic alkalosis shows as a gap change larger than the bicarbonate change. Here %s is %s %s. "
-        "Tell: gap change bigger means a hidden alkalosis." % (sa, cmp_, sh))
+        "A concurrent metabolic alkalosis shows as a gap change clearly larger (by more than about 2) than the "
+        "bicarbonate change. Here %s is %s %s. Tell: a gap change clearly bigger means a hidden alkalosis." % (sa, cmp_, sh))
     E[DCL] = ("Correct. The bicarbonate fell %s (25 - %s), more than the gap rose (%s). The extra fall is not from the "
               "unmeasured anions, so check the change in chloride next." % (sh, f(x.h), sa)) if key == DCL else (
-        "The chloride is checked when the gap change is smaller than the bicarbonate change. Here %s is %s %s. Tell: "
-        "check the chloride only when the bicarbonate fell more than the gap rose." % (sa, cmp_, sh))
-    E[DRALK] = ("The change in gap against the change in bicarbonate looks only for other metabolic processes; a "
-                "respiratory one is found by comparing the carbon dioxide with the expected compensation. Here the gap "
-                "change is %s and the bicarbonate change %s. Tell: this comparison is metabolic against metabolic."
-                % (sa, sh))
-    walk = ["Change in anion gap = %s - 10 = %s." % (f(x.agc), sa),
+        "The chloride is checked when the gap change is clearly smaller (by more than about 2) than the bicarbonate "
+        "change. Here %s is %s %s. Tell: "
+        "check the chloride only when the bicarbonate fell clearly more than the gap rose." % (sa, cmp_, sh))
+    E[DRALK] = ("A decreased gap is below 6, and this gap is %s, raised; the change in gap is compared with the change "
+                "in bicarbonate only when the gap is raised. Here the gap change is %s against a bicarbonate change of "
+                "%s. Tell: read this comparison for a second metabolic process." % (f(x.agc), sa, sh))
+    walk = (["Use the albumin-corrected gap (%s), not the measured %s." % (f(x.agc), f(x.ag))] if x.lowalb() else []) + [
+            "Change in anion gap = %s - 10 = %s." % (f(x.agc), sa),
             "Change in bicarbonate = 25 - %s = %s." % (f(x.h), sh),
-            "Equal: metabolic acidosis only. Gap change larger: concurrent metabolic alkalosis (seen only with a high "
+            "Equal: no second metabolic process. Gap change larger: concurrent metabolic alkalosis (seen only with a high "
             "gap). Gap change smaller: check the change in chloride.", "%s is %s %s, so: %s." % (sa, cmp_, sh,
                                                                                                key.lower())]
     return [(t, E[t]) for t in (DONLY, DMALK, DCL, DRALK)], key, walk, [27, 30, 50]
 
 
 CBOTH, CMALK, CONLY, CRAC = ("Increased-gap plus normal-gap acidosis", "Concurrent metabolic alkalosis",
-                             "Metabolic acidosis only", "Concurrent respiratory acidosis")
+                             "A single increased-gap acidosis", "Concurrent respiratory acidosis")
 
 
 def chloride_read_of(x):
@@ -638,7 +651,7 @@ def g_chloride_read(x):
                 "change is %s against %s; only with the chloride change added (%s) does it match. Tell: a chloride rise "
                 "adds a normal-gap acidosis." % (f(da), f(dh), s)),
         CRAC: ("The chloride check compares metabolic changes only; a respiratory acidosis is found from the carbon "
-               "dioxide against the Winter range. Here the changes balance as %s = %s. Tell: the chloride names a "
+               "dioxide against the Winter range. Here the changes balance: %s, about equal to %s. Tell: the chloride names a "
                "normal-gap acidosis." % (s, f(dh))),
     }
     walk = ["Change in chloride = %s - 100 = %s." % (f(cl), f(dc)),
@@ -650,7 +663,7 @@ def g_chloride_read(x):
 
 
 # ------------------------------------------------------------------ acute vs chronic respiratory acidosis (s24, s33-35)
-CA, CC, CPM, CPA = ("Acute respiratory acidosis", "Chronic respiratory acidosis", "Concurrent metabolic alkalosis",
+CA, CC, CPM, CPA = ("Acute respiratory acidosis alone", "Chronic respiratory acidosis alone", "Concurrent metabolic alkalosis",
                     "Concurrent metabolic acidosis")
 
 
@@ -675,7 +688,7 @@ def chron_of(x, base=B_HCO3):
 
 def chron_prompt(x):
     return ("Bicarbonate rises about 1 mEq/L per 10 mm Hg rise in carbon dioxide when acute and about 3.5 when chronic, "
-            "counting from 40 mm Hg and 25 mEq/L. What does the bicarbonate show?")
+            "counting from 40 mm Hg and 25 mEq/L. Compared with these predictions, what does the measured bicarbonate show?")
 
 
 def g_chronicity(x):
@@ -693,19 +706,23 @@ def g_chronicity(x):
     E[CC] = ("Correct. Carbon dioxide rose %s (40 to %s). Chronic: %s; acute only %s. The measured %s matches the "
              "chronic value: after 24 to 48 hours the kidneys raise bicarbonate 3.5 per 10." % (f(d), p, C, A, h)) \
         if key == CC else (
+        ("Chronic compensation needs 24 to 48 hours and would reach about %s; the measured %s matches the acute "
+         "prediction of %s instead. Tell: a bicarbonate at the acute value means the kidneys have not caught up yet."
+         % (f(c), h, f(a))) if key == CA else
         "Chronic compensation predicts %s. The measured %s is %s. Tell: compensation that overshoots or falls short "
         "points to a mixed disorder." % (C, h, "above even that" if x.h > c else "below it"))
     E[CPM] = ("Correct. Even full chronic compensation predicts only %s, and the measured bicarbonate is %s, higher "
               "than compensation explains. Excess bicarbonate means a concurrent metabolic alkalosis; compensation alone "
               "never brings the pH back to normal." % (C, h)) if key == CPM else (
-        "A concurrent metabolic alkalosis would push the bicarbonate above even the chronic prediction of %s. The "
-        "measured %s is not above it. Tell: call a mixed disorder only when compensation cannot explain the value."
-        % (f(c), h))
+        "A concurrent metabolic alkalosis would leave the bicarbonate clearly above what compensation predicts. The "
+        "measured %s fits the %s prediction of %s instead. Tell: call a mixed disorder only when compensation cannot "
+        "explain the value." % (h, "acute" if key == CA else "chronic", f(a) if key == CA else f(c)))
     E[CPA] = ("Correct. Even acute compensation predicts a bicarbonate of %s, and the measured %s is well below it: "
               "something is using up bicarbonate, a concurrent metabolic acidosis." % (f(a), h)) if key == CPA else (
-        "A concurrent metabolic acidosis would hold the bicarbonate below even the acute prediction of %s. The "
-        "measured %s is not below it. Tell: a bicarbonate that fits a prediction needs no second disorder."
-        % (f(a), h))
+        "A concurrent metabolic acidosis would leave the bicarbonate clearly below what compensation predicts. The "
+        "measured %s %s. Tell: a bicarbonate that fits a prediction needs no second disorder." % (
+            h, "fits the acute prediction of %s" % f(a) if key == CA else "fits the chronic prediction of %s" % f(c)
+            if key == CC else "is above even the chronic prediction of %s" % f(c)))
     walk = ["Rise in carbon dioxide: %s - 40 = %s." % (p, f(d)), "Acute prediction: %s." % A,
             "Chronic prediction: %s." % C,
             "Measured bicarbonate %s: %s." % (h, {CA: "matches the acute prediction", CC: "matches the chronic one",
@@ -752,15 +769,19 @@ def g_alk_comp(x):
         "from the prediction means a second, respiratory, process." % (f(pred), p, f(abs(x.p - pred))))
     E[MRA] = ("Correct. The %s. The measured %s is well above that: more carbon dioxide than compensation needs, a "
               "concurrent respiratory acidosis." % (calc, p)) if key == MRA else (
-        "A concurrent respiratory acidosis shows as a carbon dioxide higher than predicted (about %s). The measured %s "
-        "is not. Tell: higher than predicted is respiratory acidosis." % (f(pred), p))
+        "A concurrent respiratory acidosis shows as a carbon dioxide clearly higher than predicted (about %s). The "
+        "measured %s %s. Tell: higher than predicted is respiratory acidosis." % (
+            f(pred), p, "is within 2 of that prediction, so it is not meaningfully higher" if key == EXP
+            else "is lower than predicted, not higher"))
     E[MRL] = ("Correct. The %s. The measured %s has not risen as predicted: the lungs are blowing carbon dioxide off, a "
               "concurrent respiratory alkalosis, which keeps the pH higher than expected." % (calc, p)) \
         if key == MRL else (
         "A concurrent respiratory alkalosis shows as a carbon dioxide that does not rise as predicted (about %s). The "
-        "measured %s is not below that. Tell: lower than predicted is respiratory alkalosis." % (f(pred), p))
+        "measured %s %s. Tell: lower than predicted is respiratory alkalosis." % (
+            f(pred), p, "is within 2 of that prediction, so it is not meaningfully below it" if key == EXP
+            else "is higher than predicted, not lower"))
     E[BACK] = ("Compensation never fully corrects the pH; only fixing the underlying condition does. %s Tell: a normal "
-               "pH means a mixed disorder, never full compensation." % (
+               "pH beside abnormal values points to a mixed disorder." % (
                    "The pH here is %s, still above 7.45." % fph(x.ph) if x.dir == "alk" else
                    "This pH of %s is normal because a second process is pulling the other way." % fph(x.ph)))
     walk = ["Bicarbonate rise: %s - 25 = %s." % (h, f(dh)), "Expected carbon dioxide rise: 0.75 x %s = %s." % (
@@ -830,12 +851,14 @@ def g_potassium(x):
     ks, ph = f(k, 1), fph(x.ph)
     key = KLI
     E = {KLI: ("Correct. The pH of %s is alkalemic and the potassium of %s is below 3.5. In alkalosis hydrogen ions shift "
-               "out of cells and potassium shifts in, resulting in hypokalemia." % (ph, ks)),
+               "out of cells and potassium shifts in, resulting in hypokalemia. Other losses can add to a low potassium, but "
+               "this shift is the alkalosis's own effect." % (ph, ks)),
          KLO: ("Potassium moving out of cells would raise the blood level, and this potassium is %s, low. In alkalosis "
                "potassium moves into cells. Tell: alkalosis pulls potassium down." % ks),
          KAO: ("This pH of %s is alkalemic, not acidemic, and the potassium of %s is low, not high. Acidosis moves "
                "potassium out of cells and raises it. Tell: match the shift to the pH first." % (ph, ks)),
-         KAI: ("No acidosis is present at a pH of %s, and acidosis would move potassium out of cells anyway. Here "
+         KAI: ("The pH of %s is alkalemic and the values show no acidosis, and acidosis would move potassium out of "
+               "cells anyway. Here "
                "alkalosis has moved it in. Tell: alkalosis means potassium into cells." % ph)}
     walk = ["pH %s: alkalemia." % ph, "Potassium %s against 3.5 to 5.0: low." % ks,
             "Alkalosis shifts potassium into cells (hypokalemia); acidosis shifts it out (hyperkalemia).",
@@ -863,7 +886,7 @@ GEN = {
     "chronicity": ("Acute or chronic", None, g_chronicity),
     "alk_comp": ("Compensation check", ALK_PROMPT, g_alk_comp),
     "saline": ("Type of alkalosis", "Which type of metabolic alkalosis is this?", g_saline),
-    "potassium": ("Potassium", "What best explains the potassium?", g_potassium),
+    "potassium": ("Potassium", "Which potassium shift fits this pH and this potassium?", g_potassium),
 }
 
 
@@ -882,6 +905,12 @@ def raw_steps(case):
         label, prompt, gen = GEN[kind]
         if kind == "chronicity":
             prompt = chron_prompt(x)
+        if kind == "normal_read" and normal_read_of(x) == GAPF:
+            prompt = "The pH, carbon dioxide and bicarbonate are all normal. What is the right conclusion so far?"
+        if kind == "delta_read":
+            prompt = ("%sompare the change in anion gap with the change in bicarbonate (changes within about 2 of each "
+                      "other count as equal). What does it show?" % ("Using the albumin-corrected gap, c" if x.lowalb()
+                                                                     else "C"))
         if kind == "ag_calc" and x.lowalb():
             prompt = "Calculate the anion gap from the measured sodium, bicarbonate and chloride."
         opts, key, walk, slides = gen(x)
@@ -970,10 +999,10 @@ dict(id="e7-03", who="66-year-old man",
           "Correct. Severe pneumonia is a listed cause of respiratory acidosis, and the lactate gives the increased-gap "
           "acidosis. His carbon dioxide of 40 looks normal but is above the Winter range of 30 to 34: he is tiring and "
           "retaining carbon dioxide."),
-         ("Sepsis with lactic acidosis", "MAH+RAL",
+         ("Septic shock with lactic acidosis", "MAH+RAL",
           "Sepsis with lactic acidosis pairs the acidosis with a respiratory alkalosis, a carbon dioxide below the Winter "
           "range. His 40 is above 30 to 34. Tell: above the range is respiratory acidosis."),
-         ("Lactic acidosis alone", "MAH",
+         ("Lactic acidosis without lung failure", "MAH",
           "Lactic acidosis alone would bring the carbon dioxide down into the Winter range, 30 to 34. His is 40. Tell: a "
           "normal-looking carbon dioxide can still be too high for the acidosis."),
          ("Uremia with vomiting", "MAH+MALK",
@@ -992,29 +1021,29 @@ dict(id="e7-04", who="74-year-old woman",
      vignette=("A 74-year-old woman with long-standing heart failure and poor nutrition has acute pulmonary edema: she is "
                "gasping, with crackles through both lungs, cold hands and a blood lactate that is raised. She has no "
                "diarrhea or vomiting, no diabetes, and has taken no toxins."),
-     labs=dict(ph=7.21, pco2=36, hco3=14, na=130, cl=105, k=4.4, alb=2.1),
-     steps=["ph", "primary", "ag_calc", "alb_corr", "ag_read", "winter_calc", "winter_read", "cause"],
+     labs=dict(ph=7.25, pco2=42, hco3=18, na=130, cl=101, k=4.4, alb=2.1),
+     steps=["ph", "primary", "ag_calc", "alb_corr", "ag_read", "winter_calc", "winter_read", "delta_read", "cause"],
      cause=C([
          ("Pulmonary edema with lactic acidosis", "MAH+RAC",
           "Correct. Pulmonary edema is a listed cause of respiratory acidosis, and poor perfusion gives the lactic "
-          "acidosis. The gap is raised only once corrected (17), and the carbon dioxide of 36 is above the Winter range "
-          "of 27 to 31."),
-         ("Lactic acidosis alone", "MAH",
-          "Lactic acidosis alone would bring the carbon dioxide into the Winter range, 27 to 31. Hers is 36, inside the "
+          "acidosis. The gap is raised only once corrected (17), and the carbon dioxide of 42 is above the Winter range "
+          "of 33 to 37."),
+         ("Lactic acidosis without lung failure", "MAH",
+          "Lactic acidosis alone would bring the carbon dioxide into the Winter range, 33 to 37. Hers is 42, inside the "
           "normal range but too high. Tell: compare with the Winter range, not with 35 to 45."),
          ("Diarrhea with lactic acidosis", "MAH+MAN",
-          "Diarrhea adds a normal-gap acidosis with a high chloride; she has no diarrhea, and her process list is an "
-          "increased-gap acidosis with a respiratory acidosis. Tell: her second process comes from the lungs."),
-         ("Sepsis with lactic acidosis", "MAH+RAL",
-          "Sepsis pairs lactic acidosis with a respiratory alkalosis, a carbon dioxide below the Winter range. Hers is 36, "
-          "above 27 to 31, and she has no infection. Tell: above the range is respiratory acidosis."),
+          "Diarrhea adds a normal-gap acidosis with a high chloride; she has no diarrhea, her chloride of 101 is normal, "
+          "and her gap change matches her bicarbonate change (7 and 7). Tell: her second process comes from the lungs."),
+         ("Septic shock with lactic acidosis", "MAH+RAL",
+          "Sepsis pairs lactic acidosis with a respiratory alkalosis, a carbon dioxide below the Winter range. Hers is 42, "
+          "above 33 to 37, and nothing in her story points to infection. Tell: above the range is respiratory acidosis."),
      ], "Pulmonary edema with lactic acidosis",
        ["Processes found: increased-gap metabolic acidosis (corrected gap 17) and a concurrent respiratory acidosis "
-        "(36, above 27 to 31).",
+        "(42, above 33 to 37).",
         "Does the clinical picture fit? Acute pulmonary edema with poor perfusion and a raised lactate.",
         "So: pulmonary edema with lactic acidosis."], [28, 32, 45, 49, 57]),
      summary="A gap that looked normal (11) is raised once corrected for an albumin of 2.1 (17); the normal carbon "
-             "dioxide of 36 is above the Winter range, a concurrent respiratory acidosis from pulmonary edema."),
+             "dioxide of 42 is above the Winter range, a concurrent respiratory acidosis from pulmonary edema."),
 
 # ------------------------------------------------------------------ metabolic alkalosis + respiratory alkalosis (s29)
 dict(id="e7-05", who="59-year-old man",
@@ -1025,19 +1054,20 @@ dict(id="e7-05", who="59-year-old man",
      steps=["ph", "primary", "alk_comp", "cause"],
      cause=C([
          ("Liver disease with diuretics", "MALK+RAL",
-          "Correct. Diuretics cause a metabolic alkalosis, and liver disease drives breathing up, so the carbon dioxide "
-          "of 37 has not risen to the predicted 46: a concurrent respiratory alkalosis that pushes the pH higher than "
-          "expected."),
+          "Correct. Liver disease with diuretics is the classic metabolic alkalosis with respiratory alkalosis: the "
+          "diuretics raise the bicarbonate, and he is breathing a little fast, so the carbon dioxide of 37 has not risen "
+          "to the predicted 46. Both push the pH higher than expected."),
          ("Chronic lung disease on diuretics", "MALK+RAC",
           "Chronic lung disease on diuretics pairs the alkalosis with a respiratory acidosis, a carbon dioxide above the "
-          "predicted value. His 37 is below the predicted 46, and he has no lung disease. Tell: lower than predicted is "
+          "predicted value. His 37 is below the predicted 46, and nothing in his story points to lung disease. Tell: lower than predicted is "
           "alkalosis."),
          ("Vomiting alone", "MALK",
           "A metabolic alkalosis alone would raise the carbon dioxide to about 46. His is 37, and he has not been "
           "vomiting. Tell: a carbon dioxide that does not rise means a respiratory alkalosis too."),
          ("Uremia with vomiting", "MAH+MALK",
-          "Uremia with vomiting hides a metabolic acidosis behind the alkalosis, seen as a raised gap. His gap is 11, "
-          "normal, and he has no kidney failure or vomiting. Tell: his second process is respiratory."),
+          "Uremia with vomiting pairs a metabolic alkalosis with a metabolic acidosis, but he has not been vomiting, "
+          "and his bicarbonate is high with a carbon dioxide below the prediction. Tell: his second process is "
+          "respiratory, shown by the carbon dioxide."),
      ], "Liver disease with diuretics",
        ["Processes found: metabolic alkalosis (bicarbonate 33) and a concurrent respiratory alkalosis (carbon dioxide 37, "
         "below the predicted 46).",
@@ -1052,7 +1082,7 @@ dict(id="e7-06", who="28-year-old woman",
                "diuretics or antacids. Her urine chloride is 10 mEq/L."),
      labs=dict(ph=7.57, pco2=34, hco3=30, na=138, cl=97, k=3.3),
      urine_cl=10, volume_clue="Two days of vomiting with a dry mouth fit a contracted volume.",
-     steps=["ph", "pair", "saline", "cause"],
+     steps=["ph", "pair", "alk_comp", "saline", "cause"],
      cause=C([
          ("High altitude with vomiting", "MALK+RAL",
           "Correct. High altitude drives hyperventilation, a respiratory alkalosis (carbon dioxide 34), and two days of "
@@ -1088,11 +1118,11 @@ dict(id="e7-07", who="70-year-old man",
           "predicted 51, and the two pull the pH to normal."),
          ("Liver disease with diuretics", "MALK+RAL",
           "That pair has a respiratory alkalosis, a carbon dioxide lower than predicted. His 70 is far above the "
-          "predicted 51, and he has no liver disease. Tell: higher than predicted is respiratory acidosis."),
-         ("Diuretics alone", "MALK",
+          "predicted 51, and nothing in his story points to liver disease. Tell: higher than predicted is respiratory acidosis."),
+         ("Diuretic use without lung disease", "MALK",
           "A diuretic alkalosis alone would lift the carbon dioxide to about 51, not 70, and would leave the pH high. "
           "Tell: a normal pH with these values means two processes."),
-         ("Chronic lung disease alone", "RAC",
+         ("Chronic lung disease without diuretics", "RAC",
           "Respiratory acidosis alone would leave the pH low: compensation never brings it back to normal. His pH is "
           "7.38, held up by the diuretic alkalosis. Tell: a normal pH rules out a simple disorder."),
      ], "Chronic lung disease on diuretics",
@@ -1114,10 +1144,10 @@ dict(id="e7-08", who="57-year-old woman",
           "Correct. Kyphoscoliosis is a listed musculoskeletal cause of respiratory acidosis, chronic here, and four "
           "days of vomiting lose gastric acid, a metabolic alkalosis. Her bicarbonate of 41 sits above even the chronic "
           "prediction of 34.1."),
-         ("Chest wall disease alone", "RAC",
+         ("Chest wall disease without vomiting", "RAC",
           "Chronic respiratory acidosis alone predicts a bicarbonate of about 34.1 and a low pH. Hers is 41 with a "
           "normal pH. Tell: a bicarbonate above the chronic prediction is a second process."),
-         ("Vomiting alone", "MALK",
+         ("Vomiting without chest wall disease", "MALK",
           "Vomiting alone would raise the pH above 7.45 and lift the carbon dioxide only modestly. Her carbon dioxide "
           "is 66 and her pH normal. Tell: the lung process is real too."),
          ("Uremia with vomiting", "MAH+MALK",
@@ -1136,7 +1166,7 @@ dict(id="e7-09", who="62-year-old man",
      vignette=("A 62-year-old man with end-stage kidney disease has missed a week of dialysis. He is nauseated, has "
                "vomited many times a day for four days, and looks dry and unwell. He has no diabetes, no diarrhea, and "
                "has taken no toxins."),
-     labs=dict(ph=7.41, pco2=39, hco3=24, na=142, cl=96, k=4.9, alb=4.6),
+     labs=dict(ph=7.37, pco2=43, hco3=24, na=142, cl=96, k=4.9, alb=4.6),
      steps=["ph", "normal_read", "ag_calc", "ag_read", "delta_calc", "delta_read", "cause"],
      cause=C([
          ("Uremia with vomiting", "MAH+MALK",
@@ -1169,15 +1199,16 @@ dict(id="e7-10", who="19-year-old woman",
          ("Diabetic ketoacidosis with vomiting", "MAH+MALK",
           "Correct. Diabetic ketoacidosis raises the gap to 28, and repeated vomiting adds a metabolic alkalosis: the gap "
           "rose 18 while the bicarbonate fell only 9. Her carbon dioxide is inside the Winter range."),
-         ("Diabetic ketoacidosis alone", "MAH",
+         ("Diabetic ketoacidosis without vomiting", "MAH",
           "Ketoacidosis alone would drop the bicarbonate by about as much as the gap rose (18), to about 7. Hers is 16. "
           "Tell: a gap change much larger than the bicarbonate change means a hidden alkalosis."),
-         ("Sepsis with lactic acidosis", "MAH+RAL",
-          "Sepsis adds a respiratory alkalosis, a carbon dioxide below the Winter range. Hers, 31, is inside 30 to 34, "
+         ("Septic shock with lactic acidosis", "MAH+RAL",
+          "Sepsis with lactic acidosis is the pair with a respiratory alkalosis, a carbon dioxide below the Winter range. "
+          "Hers, 31, is inside 30 to 34, "
           "and her ketones name the acid. Tell: inside the range means no respiratory process."),
-         ("Treated diabetic ketoacidosis", "MAH+MAN",
+         ("Diabetic ketoacidosis treated with saline", "MAH+MAN",
           "Treatment with saline adds a normal-gap acidosis, with the bicarbonate change larger than the gap change and "
-          "a high chloride. Hers is the other way round, chloride 92, and she is untreated. Tell: gap change bigger "
+          "a high chloride. Hers is the other way round, chloride 92, and nothing in her story describes saline or other treatment. Tell: gap change bigger "
           "means alkalosis."),
      ], "Diabetic ketoacidosis with vomiting",
        ["Processes found: increased-gap metabolic acidosis (gap 28) and metabolic alkalosis (gap change 18, bicarbonate "
@@ -1191,16 +1222,16 @@ dict(id="e7-11", who="52-year-old man",
      vignette=("A 52-year-old man who drinks heavily and eats little stopped drinking two days ago after a binge, and has "
                "vomited many times since. He is thin and poorly nourished. His glucose is normal, his urine shows "
                "ketones, and he has no kidney disease, no diarrhea, and has taken no toxins."),
-     labs=dict(ph=7.42, pco2=38, hco3=24, na=136, cl=100, k=3.6, alb=2.5),
+     labs=dict(ph=7.37, pco2=43, hco3=24, na=136, cl=100, k=3.6, alb=2.5),
      steps=["ph", "normal_read", "ag_calc", "alb_corr", "ag_read", "delta_read", "cause"],
      cause=C([
          ("Alcoholic ketoacidosis with vomiting", "MAH+MALK",
           "Correct. Alcoholic ketoacidosis is an increased-gap cause, hidden here by the low albumin (12 corrects to "
           "17), and vomiting adds the metabolic alkalosis: the gap rose 7 while the bicarbonate fell only 1."),
-         ("Vomiting alone", "MALK",
+         ("Vomiting without ketoacidosis", "MALK",
           "Vomiting alone would raise the pH and the bicarbonate, with no raised gap. His corrected gap is 17. Tell: "
           "correct the gap for albumin before calling it normal."),
-         ("Alcoholic ketoacidosis alone", "MAH",
+         ("Alcoholic ketoacidosis without vomiting", "MAH",
           "Ketoacidosis alone would lower the bicarbonate by about as much as the gap rose (7), to about 18. His is 24. "
           "Tell: a gap change larger than the bicarbonate change hides an alkalosis."),
          ("Diarrhea with lactic acidosis", "MAH+MAN",
@@ -1210,7 +1241,7 @@ dict(id="e7-11", who="52-year-old man",
        ["Processes found: increased-gap metabolic acidosis (corrected gap 17) and metabolic alkalosis (gap change 7, "
         "bicarbonate change 1).",
         "Does the clinical picture fit? Heavy drinking, little food, ketones, repeated vomiting.",
-        "So: alcoholic ketoacidosis with vomiting."], [8, 30, 45, 50, 57]),
+        "So: alcoholic ketoacidosis with vomiting."], [8, 30, 45, 50, 53, 57]),
      summary="Everything looks normal until the gap is corrected for an albumin of 2.5: a hidden alcoholic "
              "ketoacidosis, with vomiting holding the bicarbonate up."),
 
@@ -1226,10 +1257,10 @@ dict(id="e7-12", who="45-year-old woman",
          ("Diarrhea with lactic acidosis", "MAH+MAN",
           "Correct. Diarrhea loses bicarbonate (the normal-gap part, chloride 112) and shock adds lactate (the "
           "increased-gap part, gap 16); together they explain the bicarbonate fall of 17."),
-         ("Lactic acidosis alone", "MAH",
+         ("Lactic acidosis without diarrhea", "MAH",
           "Lactic acidosis alone would raise the gap by about as much as the bicarbonate fell (17). Her gap rose only "
           "6. Tell: a bicarbonate change bigger than the gap change needs the chloride check."),
-         ("Diarrhea alone", "MAN",
+         ("Diarrhea without lactic acidosis", "MAN",
           "Diarrhea alone gives a normal gap, 6 to 12. Hers is 16, raised. Tell: a raised gap with a high chloride is "
           "two acidoses."),
          ("Uremia with vomiting", "MAH+MALK",
@@ -1261,8 +1292,9 @@ dict(id="e7-13", who="23-year-old man",
           "Diarrhea is a normal-gap cause, and he has none; his gap of 15 is also still above 12. Tell: a raised gap "
           "plus a chloride rise is two acidoses."),
          ("Sepsis with lactic acidosis", "MAH+RAL",
-          "Sepsis adds a respiratory alkalosis, a carbon dioxide below the Winter range. His 26 is inside 24 to 28, and "
-          "he has no infection. Tell: the second process here is metabolic, in the chloride."),
+          "Sepsis with lactic acidosis is the pair with a respiratory alkalosis. His 26 is inside the Winter range of 24 "
+          "to 28, so there is no respiratory alkalosis, and nothing in his story points to sepsis. Tell: the second "
+          "process here is metabolic, in the chloride."),
      ], "Treated diabetic ketoacidosis",
        ["Processes found: increased-gap acidosis (gap 15) and normal-gap acidosis (chloride change 9; 5 + 9 = 14, about "
         "the bicarbonate change of 13).",
@@ -1281,14 +1313,14 @@ dict(id="e7-14", who="34-year-old man",
          ("Opioid overdose", "RAC",
           "Correct. Narcotics are respiratory depressants, a listed central cause of respiratory acidosis. One hour of "
           "slow, shallow breathing fits the acute picture: bicarbonate 28, the acute prediction."),
-         ("Anxiety", "RAL",
-          "Anxiety drives fast breathing and a low carbon dioxide, a respiratory alkalosis. His is 70 with slow "
+         ("Anxiety attack", "RAL",
+          "An anxiety attack drives fast breathing and a low carbon dioxide, a respiratory alkalosis. His is 70 with slow "
           "breathing. Tell: a high carbon dioxide is hypoventilation."),
-         ("Vomiting", "MALK",
-          "Vomiting causes a metabolic alkalosis with a high pH; his pH is 7.22 and he has not vomited. Tell: the pH "
+         ("Persistent vomiting", "MALK",
+          "Persistent vomiting causes a metabolic alkalosis with a high pH; his pH is 7.22 and he has not vomited. Tell: the pH "
           "and carbon dioxide name a respiratory acidosis."),
-         ("Diarrhea", "MAN",
-          "Diarrhea causes a normal-gap metabolic acidosis with a low bicarbonate; his bicarbonate is 28. Tell: a high "
+         ("Severe diarrhea", "MAN",
+          "Severe diarrhea causes a normal-gap metabolic acidosis with a low bicarbonate; his bicarbonate is 28. Tell: a high "
           "carbon dioxide with a low pH is respiratory."),
      ], "Opioid overdose",
        ["Respiratory acidosis causes include central nervous system depression from sedatives; narcotics are "
@@ -1299,20 +1331,20 @@ dict(id="e7-14", who="34-year-old man",
 dict(id="e7-15", who="68-year-old woman",
      vignette=("A 68-year-old woman with long-standing chronic obstructive pulmonary disease comes for a routine clinic "
                "visit. She feels at her usual baseline, has had no recent flare, and takes no diuretics or steroids. "
-               "She has never vomited recently and has no kidney disease."),
+               "She has not vomited recently and has no kidney disease."),
      labs=dict(ph=7.34, pco2=64, hco3=33),
      steps=["ph", "primary", "chronicity", "cause"],
      cause=C([
          ("Chronic obstructive pulmonary disease", "RAC",
           "Correct. Chronic obstructive pulmonary disease is a listed lung-disease cause of respiratory acidosis, and "
           "her stable, long-standing course fits the chronic picture: bicarbonate 33, the chronic prediction."),
-         ("High altitude", "RAL",
-          "High altitude causes hyperventilation, a low carbon dioxide. Hers is 64. Tell: a high carbon dioxide is "
+         ("Years of living at very high altitude", "RAL",
+          "Years at very high altitude causes hyperventilation, a low carbon dioxide. Hers is 64. Tell: a high carbon dioxide is "
           "hypoventilation."),
-         ("Primary aldosteronism", "MALK",
+         ("Primary aldosteronism (adrenal excess)", "MALK",
           "Primary aldosteronism causes a metabolic alkalosis with a high pH; hers is 7.34 and her bicarbonate matches "
           "the chronic compensation. Tell: a bicarbonate that fits compensation is not a second disorder."),
-         ("Renal tubular acidosis", "MAN",
+         ("Renal tubular acidosis from a medicine", "MAN",
           "Renal tubular acidosis lowers the bicarbonate; hers is high, 33. Tell: a high carbon dioxide with a low pH is "
           "respiratory."),
      ], "Chronic obstructive pulmonary disease",
@@ -1331,13 +1363,13 @@ dict(id="e7-16", who="41-year-old man",
          ("Flail chest with lactic acidosis", "MAH+RAC",
           "Correct. Flail chest is a listed thoracic cage injury causing respiratory acidosis (carbon dioxide 60), and "
           "blood loss with shock gives the lactic acidosis (gap 17). Both lower the pH, to 7.10."),
-         ("Flail chest alone", "RAC",
+         ("Flail chest without blood loss", "RAC",
           "A respiratory acidosis alone would leave the bicarbonate normal or high; his is 18 with a gap of 17. Tell: a "
           "low bicarbonate with a high carbon dioxide is two acidoses."),
-         ("Lactic acidosis alone", "MAH",
+         ("Lactic acidosis without lung failure", "MAH",
           "Lactic acidosis alone would bring the carbon dioxide down to the Winter range, 33 to 37. His is 60. Tell: "
           "above the range is a respiratory acidosis too."),
-         ("Sepsis with lactic acidosis", "MAH+RAL",
+         ("Septic shock with lactic acidosis", "MAH+RAL",
           "Sepsis pairs lactic acidosis with a respiratory alkalosis, a low carbon dioxide. His is 60. Tell: a high "
           "carbon dioxide is respiratory acidosis."),
      ], "Flail chest with lactic acidosis",
@@ -1395,20 +1427,20 @@ dict(id="e7-19", who="60-year-old woman",
      steps=["ph", "primary", "alk_comp", "saline", "cause"],
      cause=C([
          ("Severe potassium depletion", "MALK",
-          "Correct. Severe potassium depletion is the listed normotensive, saline-unresponsive cause, and it fits her "
+          "Correct. Severe potassium depletion is a listed normotensive, saline-unresponsive cause, and it fits her "
           "severely low potassium with a normal blood pressure."),
          ("Primary aldosteronism", "MALK",
           "Primary aldosteronism is saline unresponsive but hypertensive, and her blood pressure is 116/72 with no "
           "adrenal mass. Tell: a normal blood pressure points to the normotensive group."),
-         ("Licorice", "MALK",
+         ("Licorice eaten in large amounts", "MALK",
           "Licorice is a hypertensive cause, and she eats none and is normotensive. Tell: in the unresponsive type, "
           "blood pressure sorts the causes."),
-         ("Vomiting", "MALK",
+         ("Vomiting with loss of stomach acid", "MALK",
           "Vomiting is saline responsive with a urine chloride below 25; hers is 58 and she has not vomited. Tell: a high "
           "urine chloride rules out the responsive causes."),
      ], "Severe potassium depletion",
-       ["Saline unresponsive (urine chloride 58) and normotensive (116/72): severe potassium depletion is the listed "
-        "cause.", "Severely depleted potassium; no vomiting, diuretics, steroids, licorice or adrenal mass.",
+       ["Saline unresponsive (urine chloride 58) and normotensive (116/72): severe potassium depletion is a listed "
+        "cause, and her potassium is severely low.", "Severely depleted potassium; no vomiting, diuretics, steroids, licorice or adrenal mass.",
         "So: severe potassium depletion."], [53], prompt="Which cause best fits this patient?"),
      summary="Saline-unresponsive, normotensive metabolic alkalosis from severe potassium depletion."),
 

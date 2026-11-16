@@ -15359,7 +15359,7 @@ var CHAIN_SETS = [
   // written by tools/build_acid_base_chain.py from arcade-chain/*.json; do not hand-edit
   { id: "pdm-e4", name: "Acid-Base Case Chains", course: "Principles of Diagnostic Medicine I", exam: "Exam 4", color: "accent3", cases: 20, steps: 99, ver: "43d3653453" },
   { id: "cms-e6", name: "Acid-Base Case Chains", course: "Clinical Medicine and Surgery I", exam: "Exam 6", color: "accent3", cases: 20, steps: 122, ver: "3c66704781" },
-  { id: "cms-e7", name: "Acid-Base II Case Chains", course: "Clinical Medicine and Surgery I", exam: "Exam 7", color: "accent3", cases: 21, steps: 141, ver: "36674a3990" },
+  { id: "cms-e7", name: "Acid-Base II Case Chains", course: "Clinical Medicine and Surgery I", exam: "Exam 7", color: "accent3", cases: 21, steps: 143, ver: "9a7d595a2b" },
   // <!--/ABCHAIN-SETS-->
 ];
 function findChainSet(id) { return CHAIN_SETS.find(function (s) { return s.id === id; }); }

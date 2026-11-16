@@ -446,7 +446,17 @@ E7_CAUSES = {
     "diarrhea with lactic acidosis": "MAH+MAN", "treated diabetic ketoacidosis": "MAH+MAN",
     "diarrhea alone": "MAN", "diarrhea": "MAN", "renal tubular acidosis": "MAN",
     "liver disease with diuretics": "MALK+RAL", "high altitude with vomiting": "MALK+RAL", "high altitude alone": "RAL",
-    "high altitude": "RAL", "anxiety": "RAL",
+    "high altitude": "RAL", "anxiety": "RAL", "anxiety attack": "RAL", "living at high altitude": "RAL",
+    "persistent vomiting": "MALK", "severe diarrhea": "MAN",
+    "diabetic ketoacidosis without vomiting": "MAH", "septic shock with lactic acidosis": "MAH+RAL",
+    "diabetic ketoacidosis treated with saline": "MAH+MAN", "years of living at very high altitude": "RAL",
+    "primary aldosteronism (adrenal excess)": "MALK", "renal tubular acidosis from a medicine": "MAN",
+    "licorice eaten in large amounts": "MALK", "lactic acidosis without lung failure": "MAH",
+    "diuretic use without lung disease": "MALK", "chronic lung disease without diuretics": "RAC",
+    "vomiting without chest wall disease": "MALK", "chest wall disease without vomiting": "RAC",
+    "vomiting without ketoacidosis": "MALK", "alcoholic ketoacidosis without vomiting": "MAH",
+    "diarrhea without lactic acidosis": "MAN", "lactic acidosis without diarrhea": "MAH",
+    "flail chest without blood loss": "RAC", "vomiting with loss of stomach acid": "MALK",
     "chronic lung disease on diuretics": "MALK+RAC", "chest wall disease with vomiting": "MALK+RAC",
     "chronic lung disease alone": "RAC", "chest wall disease alone": "RAC", "diuretics alone": "MALK",
     "vomiting alone": "MALK", "vomiting": "MALK", "primary aldosteronism": "MALK", "licorice": "MALK",
@@ -454,7 +464,8 @@ E7_CAUSES = {
 }
 # saline-type group of the single metabolic alkalosis causes (s53)
 E7_MALK_GROUP = {"vomiting": "resp", "primary aldosteronism": "htn", "licorice": "htn",
-                 "severe potassium depletion": "normo"}
+                 "severe potassium depletion": "normo", "primary aldosteronism (adrenal excess)": "htn",
+                 "licorice eaten in large amounts": "htn", "vomiting with loss of stomach acid": "resp"}
 E7_SLIDES_OK = set(range(3, 60)) | {63}
 
 
@@ -629,7 +640,7 @@ def check_case_e7(sid, S, c):
         elif k == "winter_calc":
             want = "%s to %s mm Hg" % (fmt(wk - 2), fmt(wk + 2))
         elif k == "winter_read":
-            want = {"only": "Metabolic acidosis only", "rac": "Concurrent respiratory acidosis",
+            want = {"only": "Appropriate respiratory compensation", "rac": "Concurrent respiratory acidosis",
                     "ral": "Concurrent respiratory alkalosis"}.get(wint)
             if p != wk + 2 and p != wk - 2 and abs(p - wk) in (2.5,):
                 fail(WS, "carbon dioxide on the Winter boundary")
@@ -638,14 +649,14 @@ def check_case_e7(sid, S, c):
         elif k == "delta_read":
             if agc is None or agc <= 12:
                 fail(WS, "change in gap read without a raised gap")
-            want = {"only": "Metabolic acidosis only", "malk": "Concurrent metabolic alkalosis",
+            want = {"only": "No second metabolic process", "malk": "Concurrent metabolic alkalosis",
                     "cl": "Check the change in chloride"}.get(delta)
             if want is None:
                 fail(WS, "gap change %s vs bicarbonate change %s is equivocal" % (da, dh))
         elif k == "chloride_read":
             want = "Increased-gap plus normal-gap acidosis" if delta == "cl" else None
         elif k == "chronicity":
-            want = {"acute": "Acute respiratory acidosis", "chronic": "Chronic respiratory acidosis",
+            want = {"acute": "Acute respiratory acidosis alone", "chronic": "Chronic respiratory acidosis alone",
                     "malk": "Concurrent metabolic alkalosis", "macid": "Concurrent metabolic acidosis"}.get(chron)
             if "40 mm Hg and 25 mEq/L" not in s["prompt"]:
                 fail(WS, "chronicity prompt must give the ratios and baselines")
