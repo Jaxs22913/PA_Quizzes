@@ -188,6 +188,38 @@ REQUIRED_VIG = [
 ]
 
 HELD = [
+    # b764547da8865157: held after final audit round (explanation defect; no further repair this build).
+    "A 74-year-old woman with chronic lymphocytic leukemia has had three pneumonias and two sinus infections this year. Her hemoglobin and platelet counts are normal. Which feature of her disease best accounts for these infections?",
+    # 3b15f3e2fc3cc0f5: held after final audit round (explanation defect; no further repair this build).
+    "A 47-year-old woman who grew up in Jamaica has rapidly enlarging lymph nodes and is very ill. She tests positive for HTLV-1 (human T-lymphotropic virus type 1), and node biopsy shows a T-cell lymphoma. Which is the most likely diagnosis?",
+    # 219baf98d9bd13fd: held after final audit round (explanation defect; no further repair this build).
+    "A 64-year-old man with diffuse large B-cell lymphoma is starting rituximab-based multi-drug chemotherapy as an outpatient. Which instruction should he receive?",
+    # b0dcddd15bb3cbad: held after final audit round (explanation defect; no further repair this build).
+    "A 70-year-old man with multiple myeloma has a creatinine that has risen from 1.1 to 2.3 mg/dL (normal 0.6-1.2 mg/dL) over months, with no contrast exposure and no new medicines. Which process most often causes the renal dysfunction of myeloma?",
+    # da9c6d555fd9476b: held after final audit round (explanation defect; no further repair this build).
+    "Which disorder produces an immunoglobulin M monoclonal protein and is separated from multiple myeloma in the differential?",
+    # b9bf98fb324db38c: held after final audit round (explanation defect; no further repair this build).
+    "A 68-year-old man with newly diagnosed multiple myeloma has back and chest pain. Bone marrow biopsy, protein electrophoresis and light chains are done. Which study looks for bone lesions?",
+    # e07b53ec1c09c247: held after final audit round (explanation defect; no further repair this build).
+    "A 67-year-old woman has just begun treatment for multiple myeloma. She asks whether the treatment will cure her. Which counseling statement is accurate?",
+    # 4b141b14a4c0a525: held after final audit round (explanation defect; no further repair this build).
+    "A 63-year-old woman has a rapidly enlarging neck mass with fevers, night sweats and weight loss. Excisional biopsy shows diffuse large B-cell lymphoma, and staging shows nodes above and below the diaphragm. Which regimen is typical?",
+    # e832bfbc65528b9d: held after final audit round (explanation defect; no further repair this build).
+    "Which test makes the diagnosis of non-Hodgkin lymphoma?",
+    # e7cff87183efc218: held after final audit round (explanation defect; no further repair this build).
+    "What is the approximate 5-year relative survival of chronic lymphocytic leukemia in the era of novel agents?",
+    # c45c4a93a09d617a: held after final audit round (explanation defect; no further repair this build).
+    "Which lymphomas require a lumbar puncture as part of the work-up?",
+    # 0541d09aa992f71b: held after final audit round (explanation defect; no further repair this build).
+    "Why are new agents replacing bleomycin in Hodgkin lymphoma regimens?",
+    # 97b54e757dc3b9ae: held after final audit round (explanation defect; no further repair this build).
+    "How does sex affect the frequency of chronic lymphocytic leukemia?",
+    # 15c5a0fb21448830: held after final audit round (explanation defect; no further repair this build).
+    "Who should manage a patient with chronic lymphocytic leukemia?",
+    # 9a44f7f2a13a0bc4: held after final audit round (explanation defect; no further repair this build).
+    "How is the lymphadenopathy of chronic lymphocytic leukemia described?",
+    # c36875be8b4908b0: held after final audit round (explanation defect; no further repair this build).
+    "What is Bence Jones protein?",
     # d8ec9ba5a0ca2d4a: held after final audit round (explanation defect; no further repair this build).
     "About 80% of chronic lymphocytic leukemia cases arise from one of four chromosomal changes. Which is one of them?",
     # 91385c528fc84978: held after final audit round (explanation defect; no further repair this build).

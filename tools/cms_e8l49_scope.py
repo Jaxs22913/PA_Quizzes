@@ -197,6 +197,38 @@ REQUIRED_VIG = [
 
 # Review holds (stem prefixes): flagged again by the audit after their one repair. The partition skips them.
 HELD = [
+    # 0da1d5f95ee22585: held after final audit round (explanation defect; no further repair this build).
+    "A 31-year-old man with acute lymphoblastic leukemia relapses after completing intensive chemotherapy. Which treatment is used where feasible for relapsed disease?",
+    # 65b0882c6be284c3: held after final audit round (explanation defect; no further repair this build).
+    "A 69-year-old man has fatigue, shortness of breath, bruising and a fever. Hemoglobin is 8.1 g/dL (normal 13.5-17.5 g/dL), platelets 38,000 per microliter (normal 150,000-450,000) and white blood cell count 27,000 per microliter (normal 4,500-11,000). His smear shows immature myeloid cells containing Auer rods (fused lysosomes). Which is the most likely diagnosis?",
+    # 4a4c781b81f649fb: held after final audit round (explanation defect; no further repair this build).
+    "What defines secondary acute myeloid leukemia?",
+    # f8d47700201618ac: held after final audit round (explanation defect; no further repair this build).
+    "A 70-year-old man with a strict vegetarian diet has pancytopenia. A nutritional deficiency and acute myeloid leukemia are both being considered. Which test separates them by showing whether a clonal myeloid population is present?",
+    # 6aa537d129dc6af8: held after final audit round (explanation defect; no further repair this build).
+    "A 66-year-old man has anemia and thrombocytopenia. Bone marrow biopsy shows myeloid blasts making up 27% of marrow cells; flow cytometry confirms myeloid lineage. How should this marrow be classified?",
+    # 5c6f5e9bfbc44a82: held after final audit round (explanation defect; no further repair this build).
+    "Which emergent complication does acute promyelocytic leukemia frequently present with?",
+    # 7f170981e64e4d76: held after final audit round (explanation defect; no further repair this build).
+    "A 38-year-old man survived the initial presentation of acute promyelocytic leukemia, including its bleeding, and is now on treatment. He asks about his chance of cure. Which estimate is accurate?",
+    # 56e30698448034c3: held after final audit round (explanation defect; no further repair this build).
+    "A 78-year-old woman has lower-risk myelodysplastic syndrome with symptomatic anemia (hemoglobin 8.6 g/dL, normal 12.0-15.5 g/dL) and a low risk of progression to leukemia. Which treatment fits her?",
+    # 974c89d101587657: held after final audit round (explanation defect; no further repair this build).
+    "Lower-risk myelodysplastic syndrome with anemia is treated with what?",
+    # e985f5ffc46bfc7b: held after final audit round (explanation defect; no further repair this build).
+    "A 66-year-old woman has essential thrombocythemia and had a transient episode of numbness and vision change. Which treatment approach fits?",
+    # e02e8a4df29a2cc4: held after final audit round (explanation defect; no further repair this build).
+    "A 47-year-old woman has a white blood cell count of 154,000 per microliter (normal 4,500-11,000) with a marked increase in granulocytes and splenomegaly. Which test confirms chronic myelogenous leukemia and is also used to monitor her response to treatment?",
+    # 909f951ceb74d76a: held after final audit round (explanation defect; no further repair this build).
+    "A 48-year-old woman has newly diagnosed chronic phase chronic myelogenous leukemia with blasts at 1% of marrow cells and a positive BCR-ABL1 (fusion gene). Which therapy is the hallmark of treatment?",
+    # 13b8161b8782c468: held after final audit round (explanation defect; no further repair this build).
+    "What does multiple myeloma produce in excess?",
+    # 4ee61c560967454a: held after final audit round (explanation defect; no further repair this build).
+    "What determines whether a hematologic malignancy is lymphoid or myeloid?",
+    # f87da075cb5cf88d: held after final audit round (explanation defect; no further repair this build).
+    "Acute lymphoblastic leukemia originates in which cells?",
+    # f3bfa0ff4443fca2: held after final audit round (explanation defect; no further repair this build).
+    "At which stage is myeloid differentiation arrested in acute promyelocytic leukemia?",
     # 273b7f9b2f845369: held after final audit round (explanation defect; no further repair this build).
     "Which cell comes from the lymphoid progenitor rather than the myeloid progenitor?",
     # 7669b0f4cb2106d0: held after final audit round (explanation defect; no further repair this build).

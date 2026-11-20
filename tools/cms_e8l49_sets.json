@@ -1,15 +1,416 @@
 {
  "set1": [
   {
+   "topic": "Acute myeloid leukemia: management and prognosis",
+   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly",
+   "q": "Which group with acute myeloid leukemia has the lowest five-year survival?",
+   "opts": [
+    [
+     "Favorable-risk patients",
+     "Favorable-risk acute myeloid leukemia has the highest survival outside the promyelocytic subtype, about two thirds alive at five years. Tell: the worst outlook is age over 70.",
+     "reversed direction or value"
+    ],
+    [
+     "Younger patients",
+     "Younger patients are listed with favorable risk among the best outcomes. Tell: survival falls with age and is lowest over 70.",
+     "reversed direction or value"
+    ],
+    [
+     "Promyelocytic survivors",
+     "Patients with acute promyelocytic leukemia who survive the initial presentation have an excellent prognosis, above 90% cure. Tell: the lowest five-year survival is in patients over 70.",
+     "reversed direction or value"
+    ],
+    [
+     "Patients over 70",
+     "Correct. Survival is lowest for patients over 70, only 5% at five years, and for adverse-risk or secondary disease, about 10% overall. It is highest, apart from acute promyelocytic leukemia, for favorable-risk disease and younger patients."
+    ]
+   ],
+   "c": 3,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 41, 43",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "Myelodysplastic syndrome",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "What defines myelodysplastic syndromes?",
+   "opts": [
+    [
+     "Dysplastic myeloid cells",
+     "Correct. Myelodysplastic syndromes are a group of myeloid malignancies defined by dysplasia (abnormal appearance) of myeloid cells, with distorted hematopoiesis, immune dysregulation and genomic changes. They present as cytopenias, most often anemia."
+    ],
+    [
+     "Mature cell overproduction",
+     "Atypical proliferation of mature cell lines defines the myeloproliferative neoplasms: polycythemia vera, myelofibrosis and essential thrombocythemia. Tell: myelodysplasia means abnormal-looking cells and low counts.",
+     "competing diagnosis"
+    ],
+    [
+     "Fibrosis of the marrow",
+     "Marrow fibrosis is not the defining feature; myelodysplastic syndromes are defined by dysplasia of myeloid cells. Tell: myelodysplastic syndrome is defined by dysplasia, with a typically hypercellular marrow.",
+     "competing diagnosis"
+    ],
+    [
+     "Blasts of 20% or more",
+     "Myeloid blasts at or above 20% define acute myeloid leukemia. Tell: higher-risk myelodysplastic syndrome may have blasts, but below 20%.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 45, 47, 51",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Chronic myelogenous leukemia: presentation, diagnosis and phases",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "How is blast-phase chronic myelogenous leukemia treated?",
+   "opts": [
+    [
+     "Observation with blood counts",
+     "Watching would ignore a stage that behaves as an acute leukemia with median survival under 12 months. Tell: blast phase needs acute myeloid leukemia-like treatment.",
+     "wrong stage or severity"
+    ],
+    [
+     "Stopping therapy for remission",
+     "Stopping tyrosine kinase inhibitors is considered only after a sustained major molecular response in chronic-phase disease. Tell: blast phase needs intensive acute leukemia-like treatment.",
+     "wrong stage or severity"
+    ],
+    [
+     "Acute myeloid leukemia-like regimens",
+     "Correct. Blast phase, or blast crisis, behaves as an acute leukemia, usually like acute myeloid leukemia, often with unique chromosomal and mutational changes; it requires acute myeloid leukemia-like regimens and responds poorly to tyrosine kinase inhibitors."
+    ],
+    [
+     "A tyrosine kinase inhibitor by itself",
+     "Tyrosine kinase inhibitors are the hallmark of chronic-phase therapy, but blast phase responds poorly to them. Tell: blast crisis is treated like an acute leukemia.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 62, 63, 65",
+   "slot": "escalation"
+  },
+  {
+   "topic": "Acute lymphoblastic leukemia: presentation and diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Why do patients with acute lymphoblastic leukemia have bone or joint pain?",
+   "opts": [
+    [
+     "Fibrosis of the marrow",
+     "Fibrosis is not the cause; the bone or joint pain comes from very excessive marrow production of leukemia cells. Tell: the pain in lymphoblastic leukemia comes from a marrow packed with blasts.",
+     "competing diagnosis"
+    ],
+    [
+     "Thick red cell blood",
+     "Thick blood from too many red cells does not fit; acute lymphoblastic leukemia causes anemia, not excess red cells. Tell: bone pain in acute leukemia comes from marrow expansion, not viscosity.",
+     "competing diagnosis"
+    ],
+    [
+     "Clots from high platelets",
+     "High platelets do not fit; acute lymphoblastic leukemia causes thrombocytopenia, with bruising and bleeding rather than clots. Tell: acute lymphoblastic leukemia lowers platelets; its bone pain is marrow overgrowth.",
+     "reversed direction or value"
+    ],
+    [
+     "Marrow overproduction of blasts",
+     "Correct. Bone or joint pain in acute lymphoblastic leukemia is due to very excessive marrow production of leukemia cells. It sits alongside anemia, bleeding, infections, B-symptoms and, in more than half, lymphadenopathy, hepatomegaly or splenomegaly."
+    ]
+   ],
+   "c": 3,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 22",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Myelodysplastic syndrome",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Which cytopenia is most frequent in myelodysplastic syndrome?",
+   "opts": [
+    [
+     "Lymphocytosis",
+     "A raised lymphocyte count is not a cytopenia at all, so it cannot be the most frequent cytopenia. Tell: myelodysplasia lowers counts, most often red cells.",
+     "reversed direction or value"
+    ],
+    [
+     "Anemia",
+     "Correct. Myelodysplastic syndrome presents most frequently with anemia, causing fatigue, weakness and pale skin; neutropenia and occasional thrombocytopenia also occur. Low-risk disease is commonly defined by anemia."
+    ],
+    [
+     "Neutropenia",
+     "Neutropenia occurs and explains infections, but anemia is the most frequent finding. Tell: myelodysplasia usually announces itself with low red cells.",
+     "adjacent fact"
+    ],
+    [
+     "Thrombocytopenia",
+     "Thrombocytopenia is described as occasional in myelodysplastic syndrome, causing bleeding. Tell: anemia is the most frequent cytopenia.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 45, 46, 47",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Performance status, work-up and transplant terms",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "A patient manages limited self-care and spends more than 50% of waking hours in a bed or chair. What is the ECOG (Eastern Cooperative Oncology Group) performance grade?",
+   "opts": [
+    [
+     "Grade 1",
+     "Grade 1 is ambulatory and restricted only in strenuous activity, still able to do light housework or office work. Tell: a patient in bed or chair most of the day is far below grade 1.",
+     "wrong stage or severity"
+    ],
+    [
+     "Grade 2",
+     "Grade 2 is ambulatory and capable of all self-care, up and about more than 50% of waking hours. Tell: here the bed-or-chair time is the majority and self-care is limited, which is grade 3.",
+     "wrong stage or severity"
+    ],
+    [
+     "Grade 3",
+     "Correct. Capable of limited self-care and confined to bed or chair more than 50% of waking hours is grade 3. Grade 2 is up and about more than half the day with all self-care; grade 4 cannot carry on any self-care."
+    ],
+    [
+     "Grade 4",
+     "Grade 4 is completely disabled, unable to do any self-care and totally confined to bed or chair. Tell: this patient still does some self-care, so the grade is 3.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 10",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "Myelodysplastic syndrome",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "What is the goal of treatment in lower-risk myelodysplastic syndrome?",
+   "opts": [
+    [
+     "Improve quality of life",
+     "Correct. Lower-risk myelodysplastic syndrome has a median survival above 5 years and very low risk of acute myeloid leukemia, but patients often have complications from anemia, bleeding or infections, so the goal of treatment is to improve quality of life."
+    ],
+    [
+     "Cure by transplant",
+     "Allogeneic transplant is the only curative option but is high risk with a limited role, and lower-risk disease rarely justifies it. Tell: the low-risk goal is comfort and function.",
+     "wrong stage or severity"
+    ],
+    [
+     "Remission with 7+3",
+     "Cytarabine plus an anthracycline (7+3) is intensive chemotherapy for fit patients with acute myeloid leukemia. Tell: low-risk myelodysplasia is managed for quality of life.",
+     "competing diagnosis"
+    ],
+    [
+     "Major molecular response",
+     "Major molecular response is the treatment target in chronic myelogenous leukemia on tyrosine kinase inhibitors. Tell: the myelodysplasia goal is quality of life.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 49",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "Hematopoiesis and the malignancy families",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "About what share of all lymphomas are non-Hodgkin lymphomas?",
+   "opts": [
+    [
+     "10%",
+     "About 10% is the share of Hodgkin lymphoma, the type characterized by few Reed-Sternberg cells. Tell: the two shares add to 100, and non-Hodgkin is the large majority.",
+     "reversed direction or value"
+    ],
+    [
+     "50%",
+     "An even split understates non-Hodgkin lymphoma, which makes up about 90% of lymphomas. Tell: Hodgkin lymphoma is the small group at about 10%.",
+     "reversed direction or value"
+    ],
+    [
+     "70%",
+     "Seventy percent understates it; non-Hodgkin lymphoma is about 90% of lymphomas, leaving about 10% for Hodgkin lymphoma. Tell: the split is nine to one.",
+     "reversed direction or value"
+    ],
+    [
+     "90%",
+     "Correct. Non-Hodgkin lymphoma accounts for about 90% of all lymphomas and includes both B-cell and T-cell lymphomas. Hodgkin lymphoma, with its Reed-Sternberg cells, makes up the remaining 10%."
+    ]
+   ],
+   "c": 3,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 15",
+   "slot": "epidemiology"
+  },
+  {
+   "topic": "Essential thrombocythemia",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Which clotting complications are named for essential thrombocythemia?",
+   "opts": [
+    [
+     "Leukemic transformation",
+     "Progression to leukemia is the concern in myelofibrosis and, rarely, polycythemia vera. Tell: the essential thrombocythemia list is clotting.",
+     "adjacent fact"
+    ],
+    [
+     "Stroke and heart attack",
+     "Correct. Complications of essential thrombocythemia are clotting, including stroke (cerebrovascular accident) and heart attack (myocardial infarction). Presentation may also be headaches, fatigue, paresthesias or vision changes from clotting."
+    ],
+    [
+     "Portal hypertension",
+     "Portal hypertension is a complication of myelofibrosis with severe splenomegaly. Tell: essential thrombocythemia clots in arteries of the brain and heart.",
+     "competing diagnosis"
+    ],
+    [
+     "Disseminated coagulopathy",
+     "Disseminated intravascular coagulation belongs to acute promyelocytic leukemia. Tell: essential thrombocythemia is about clots from too many platelets.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 54",
+   "slot": "complication"
+  },
+  {
+   "topic": "Chronic myelogenous leukemia: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "At 12 months of treatment for chronic myelogenous leukemia, the BCR-ABL1 (breakpoint cluster region-Abelson 1) level is 0.05%. Which milestone category is this?",
+   "opts": [
+    [
+     "Failure",
+     "At 12 months, failure needs a level above 1%, far above 0.05%. Failure means the BCR-ABL1 (breakpoint cluster region-Abelson 1) level is above the worst cutoff for that month: above 10% at 6 months, above 1% at 12 months and beyond; it is not defined at 3 months.",
+     "reversed direction or value"
+    ],
+    [
+     "Warning",
+     "At 12 months, warning covers 0.1-1%, and 0.05% is below that band. Warning is the middle band: above 10% at 3 months, 1-10% at 6 months, 0.1-1% at 12 months and beyond 18 months.",
+     "wrong stage or severity"
+    ],
+    [
+     "Optimal",
+     "Correct. At 12 months, the table reads failure above 1%, warning 0.1-1% and optimal below 0.1%. A level of 0.05% is below 0.1%, so the response is optimal; treatment-free remission is not applicable at 12 months."
+    ],
+    [
+     "Treatment-free remission",
+     "At 12 months the treatment-free remission column is not applicable, even for a very low level. Treatment-free remission is defined only beyond 18 months, at a BCR-ABL1 (breakpoint cluster region-Abelson 1) level below 0.01%; at earlier months the column is not applicable.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 64",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "Polycythemia vera",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Polycythemia vera is overproduction of which cells?",
+   "opts": [
+    [
+     "Red blood cells",
+     "Correct. Myeloproliferative neoplasms are rare myeloid malignancies with atypical proliferation of mature cell lines; polycythemia vera is over-production of red blood cells, which increases blood viscosity."
+    ],
+    [
+     "Platelets",
+     "Over-production of platelets is essential thrombocythemia, which risks clotting and, paradoxically, bleeding. Tell: polycythemia means too many red cells.",
+     "competing diagnosis"
+    ],
+    [
+     "Granulocytes",
+     "Increased granulocytes, more mature than blasts, are the picture of chronic myelogenous leukemia with its Philadelphia chromosome. Tell: polycythemia vera raises the red cells.",
+     "competing diagnosis"
+    ],
+    [
+     "Plasma cells",
+     "Excess plasma cells making a single monoclonal M protein is multiple myeloma, a plasma cell disorder rather than a myeloproliferative neoplasm. Tell: polycythemia vera is a red cell disorder that thickens the blood.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 51, 54, 56, 16",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Hematopoiesis and the malignancy families",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Which cell feature defines an acute leukemia?",
+   "opts": [
+    [
+     "Myeloid cells proliferate",
+     "Myeloid versus lymphoid is decided by the underlying cell of origin, a label separate from the acute versus chronic split. Tell: lineage and tempo are separate labels; acute refers to immature cells.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Lymph nodes are involved",
+     "Lymph node involvement is the hallmark of lymphoma, which arises from lymphoid tissue. Tell: a leukemia is a marrow disease; acute versus chronic depends on how immature the cells are.",
+     "competing diagnosis"
+    ],
+    [
+     "Immature cells proliferate",
+     "Correct. Acute leukemias arise from more immature, progenitor white blood cells and cause rapid proliferation of that clone. Chronic leukemias involve proliferation of mature malignant white blood cells."
+    ],
+    [
+     "Mature cells proliferate",
+     "Proliferation of mature malignant white cells is the definition of a chronic leukemia. Tell: acute means immature progenitors growing fast; chronic means mature cells.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 14, 7",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Acute promyelocytic leukemia",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "If a patient survives the initial presentation of acute promyelocytic leukemia, what is the cure rate?",
+   "opts": [
+    [
+     "About 10%",
+     "About 10% is the overall survival of adverse-risk or secondary acute myeloid leukemia. Tell: surviving promyelocytic leukemia patients do far better.",
+     "competing diagnosis"
+    ],
+    [
+     "About 25%",
+     "About 25-30% is the five-year survival of acute myeloid leukemia overall. Tell: the promyelocytic subtype, once past its early bleeding risk, is cured over 90% of the time.",
+     "competing diagnosis"
+    ],
+    [
+     "About 50%",
+     "Half understates the outlook; the cure rate after surviving presentation is above 90%. Tell: the danger is early, and the long-term outlook is excellent.",
+     "reversed direction or value"
+    ],
+    [
+     "Over 90%",
+     "Correct. Acute promyelocytic leukemia has high early mortality from disseminated intravascular coagulation and bleeding, but if the patient survives the initial presentation, the prognosis is excellent, with a cure rate above 90%."
+    ]
+   ],
+   "c": 3,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 41, 43",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "Acute myeloid leukemia: who and why",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "What sorts acute myeloid leukemia into favorable, intermediate and poor risk?",
+   "opts": [
+    [
+     "Cytogenetics and mutations",
+     "Correct. Acute myeloid leukemia shows tremendous variety in cytogenetic abnormalities and mutations, and risk is broken down into favorable, intermediate and poor on that basis. Cytogenetic and mutation analysis is important for prognosis."
+    ],
+    [
+     "The presenting white count",
+     "The white count is often elevated but may be low, and counts above 100,000 need leukapheresis; it does not set the risk group. Tell: the risk categories come from the genetics.",
+     "adjacent fact"
+    ],
+    [
+     "The blast percentage",
+     "The blast percentage, 20% or more, makes the diagnosis rather than the risk group. Tell: once diagnosed, cytogenetics and mutations sort the risk.",
+     "adjacent fact"
+    ],
+    [
+     "The performance grade",
+     "The performance grade measures fitness and steers intensive versus low-intensity therapy, but it is not the basis of the genetic risk groups. Tell: favorable, intermediate and poor risk are read from cytogenetics and mutations.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 32, 38",
+   "slot": "prognosis"
+  },
+  {
    "topic": "Chronic myelogenous leukemia: presentation, diagnosis and phases",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
    "q": "In chronic myelogenous leukemia, a marrow with about 2% blasts fits which phase?",
    "opts": [
-    [
-     "Blast phase",
-     "Blast phase behaves as an acute leukemia, usually like acute myeloid leukemia, with blasts at acute leukemia levels. Tell: 2% blasts is the stable phase.",
-     "wrong stage or severity"
-    ],
     [
      "Acute myeloid leukemia",
      "Acute myeloid leukemia needs myeloid blasts at or above 20% historically. Tell: 2% blasts with a fusion gene is chronic-phase chronic myelogenous leukemia.",
@@ -23,40 +424,16 @@
      "Accelerated phase",
      "The accelerated phase often has 10-19% blasts, with dysplastic granulocytes, fibrosis and significant splenomegaly. Tell: 2% is well below that band.",
      "wrong stage or severity"
-    ]
-   ],
-   "c": 2,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 38, 62",
-   "slot": "test finding"
-  },
-  {
-   "topic": "Acute myeloid leukemia: management and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "About what is the overall five-year survival of acute myeloid leukemia?",
-   "opts": [
-    [
-     "5%",
-     "Five percent is the five-year survival of patients over 70, the lowest group. Tell: the overall figure is about 25-30%.",
-     "adjacent fact"
     ],
     [
-     "25-30%",
-     "Correct. Treatment brings initial remission in many patients, but acute myeloid leukemia frequently relapses and treatment-related mortality is high: overall survival is only 48% at one year and about 25-30% at five years."
-    ],
-    [
-     "48%",
-     "Forty-eight percent is the overall survival at one year, not at five years. Tell: by five years it falls to about 25-30%.",
-     "adjacent fact"
-    ],
-    [
-     "90%",
-     "A cure rate above 90% belongs to acute promyelocytic leukemia in patients who survive the initial presentation. Tell: acute myeloid leukemia overall is about 25-30% at five years.",
-     "competing diagnosis"
+     "Blast phase",
+     "Blast phase behaves as an acute leukemia, usually like acute myeloid leukemia, with blasts at acute leukemia levels. Tell: 2% blasts is the stable phase.",
+     "wrong stage or severity"
     ]
    ],
    "c": 1,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 41",
-   "slot": "prognosis"
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 38, 62",
+   "slot": "test finding"
   },
   {
    "topic": "Myelodysplastic syndrome",
@@ -90,756 +467,31 @@
   {
    "topic": "Chronic myelogenous leukemia: who and why",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Before tyrosine kinase inhibitors, chronic myelogenous leukemia historically progressed to acute leukemia in about how many years?",
+   "q": "Chronic myelogenous leukemia produces increased numbers of which cells?",
    "opts": [
-    [
-     "1-2 years",
-     "One to two years understates the historical course of about 4-6 years. Tell: under 2 years is closer to high-risk myelofibrosis survival.",
-     "reversed direction or value"
-    ],
-    [
-     "4-6 years",
-     "Correct. Chronic myelogenous leukemia historically progressed from a chronic condition to acute leukemia in about 4-6 years and was considered fatal; with tyrosine kinase inhibitors it is now largely a chronic disorder with long-term survival."
-    ],
-    [
-     "10-15 years",
-     "Ten to fifteen years is how long low-risk myelofibrosis patients can live. Tell: untreated chronic myelogenous leukemia historically turned acute in about 4-6 years.",
-     "adjacent fact"
-    ],
-    [
-     "14 years",
-     "Fourteen years is the estimated survival of polycythemia vera. Tell: the historical chronic myelogenous leukemia figure is about 4-6 years to acute leukemia.",
-     "adjacent fact"
-    ]
-   ],
-   "c": 1,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 56",
-   "slot": "prognosis"
-  },
-  {
-   "topic": "Acute myeloid leukemia: management and prognosis",
-   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly",
-   "q": "For an older patient with acute myeloid leukemia who is unfit for intensive chemotherapy, which treatment is used?",
-   "opts": [
-    [
-     "Phlebotomy and hydroxyurea",
-     "Phlebotomy and hydroxyurea are the listed treatment for polycythemia vera. Tell: they are not the low-intensity regimen for unfit acute myeloid leukemia.",
-     "competing diagnosis"
-    ],
-    [
-     "Hypomethylating agent ± venetoclax",
-     "Correct. Unfit patients receive low-intensity therapy, frequently a hypomethylating agent with or without venetoclax. Fitness matters most in older patients, and survival is lowest over age 70."
-    ],
-    [
-     "Cytarabine plus anthracycline",
-     "Cytarabine plus an anthracycline (7+3) is intensive chemotherapy for fit patients. Tell: an unfit patient gets low-intensity therapy instead.",
-     "wrong stage or severity"
-    ],
-    [
-     "Arsenic and retinoic acid",
-     "Arsenic trioxide with all-trans retinoic acid is the unique treatment approach for acute promyelocytic leukemia. Tell: the unfit acute myeloid leukemia patient gets a hypomethylating agent.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 1,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 10, 40, 41, 43, 52",
-   "slot": "agent/regimen"
-  },
-  {
-   "topic": "Myelofibrosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Which presentation is typical of myelofibrosis?",
-   "opts": [
-    [
-     "Itching after warm showers",
-     "Pruritus with warm baths or showers is the classic symptom of polycythemia vera. Tell: abdominal fullness from a big spleen points to myelofibrosis.",
-     "competing diagnosis"
-    ],
-    [
-     "A mediastinal mass",
-     "A mediastinal mass on chest X-ray may be seen in T-cell acute lymphoblastic leukemia. Tell: myelofibrosis enlarges the spleen, not the mediastinum.",
-     "competing diagnosis"
-    ],
-    [
-     "Gum hyperplasia",
-     "Gum involvement is a feature of the myelomonocytic and monocytic subtypes of acute myeloid leukemia. Tell: myelofibrosis symptoms come from splenomegaly.",
-     "competing diagnosis"
-    ],
-    [
-     "Early satiety from splenomegaly",
-     "Correct. Myelofibrosis presents non-specifically with fatigue and abdominal symptoms from splenomegaly, including pain, early satiety and bloating; night sweats, fever and weight loss are also common."
-    ]
-   ],
-   "c": 3,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 53",
-   "slot": "manifestation"
-  },
-  {
-   "topic": "Performance status, work-up and transplant terms",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "What does an allogeneic stem cell transplant use?",
-   "opts": [
-    [
-     "The patient's own stem cells",
-     "Using the person's own stem cells is an autologous transplant, also called stem cell rescue, often given to rescue the marrow after high-dose chemotherapy. Tell: auto means self; allo means a donor.",
-     "adjacent fact"
-    ],
-    [
-     "Donor red cells and platelets",
-     "Red cells and platelets are mature blood cells; they do not replace the marrow the way a stem cell transplant does. Tell: a transplant gives healthy stem cells to a depleted or dysfunctional marrow, not mature blood cells.",
-     "confused mechanism or drug class"
-    ],
-    [
-     "Growth factors for the marrow",
-     "Growth factors push the existing marrow; they do not supply new stem cells, so they are not a transplant. Tell: a transplant gives healthy stem cells to a depleted or dysfunctional marrow.",
-     "confused mechanism or drug class"
-    ],
-    [
-     "A healthy donor's stem cells",
-     "Correct. An allogeneic stem cell transplant uses a healthy donor's stem cells in transplantation, unlike an autologous transplant, which uses the person's own stem cells."
-    ]
-   ],
-   "c": 3,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 12",
-   "slot": "agent/regimen"
-  },
-  {
-   "topic": "Hematopoiesis and the malignancy families",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "In a hematologic malignancy, bleeding is usually due to which count abnormality?",
-   "opts": [
-    [
-     "Thrombocytopenia",
-     "Correct. Hematologic malignancies often present with non-specific symptoms: fatigue from anemia, bleeding from thrombocytopenia, swollen nodes in lymphoma and bone pain in myeloma. Low platelets explain the bruising and bleeding."
-    ],
-    [
-     "Anemia",
-     "Anemia explains fatigue, weakness, lightheadedness, shortness of breath and pale skin, not bleeding. Tell: tiredness points to red cells; bleeding points to platelets.",
-     "adjacent fact"
-    ],
-    [
-     "Neutropenia",
-     "Too few working white cells explains infections, not bleeding. Tell: infections follow ineffective or low white cells, while bruising and bleeding follow low platelets.",
-     "adjacent fact"
-    ],
-    [
-     "Leukocytosis",
-     "A high white count reflects proliferation of the leukemic clone itself; it does not cause bleeding by the stated mechanism. Tell: bleeding is listed under thrombocytopenia, with petechiae and purpura.",
-     "confused mechanism or drug class"
-    ]
-   ],
-   "c": 0,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 11, 22",
-   "slot": "manifestation"
-  },
-  {
-   "topic": "Acute myeloid leukemia: presentation and diagnosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Acute myeloid leukemia has historically been defined by myeloid blasts at or above what percentage?",
-   "opts": [
-    [
-     "5%",
-     "Below 5% blasts describes the chronic phase of chronic myelogenous leukemia. Tell: acute leukemia sits at 20% or more.",
-     "adjacent fact"
-    ],
-    [
-     "10%",
-     "Ten percent or higher is the newer exception for certain genetic mutations, not the historical definition. Tell: the classic line is 20%.",
-     "adjacent fact"
-    ],
-    [
-     "20%",
-     "Correct. Acute myeloid leukemia has historically been defined by myeloid blasts at or above 20%; newer guidelines note that certain genetic mutations may allow the diagnosis with 10% or higher. Below 20%, a dysplastic marrow with blasts is myelodysplastic syndrome."
-    ],
-    [
-     "30%",
-     "Thirty percent overstates the definition; the threshold is 20%. Tell: higher-risk myelodysplastic syndrome may have blasts but below 20%, otherwise it is acute myeloid leukemia.",
-     "reversed direction or value"
-    ]
-   ],
-   "c": 2,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 38, 47",
-   "slot": "gold standard"
-  },
-  {
-   "topic": "Hematopoiesis and the malignancy families",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Which cell characterizes Hodgkin lymphoma?",
-   "opts": [
-    [
-     "Plasma cells",
-     "Plasma cells are the cell of origin of multiple myeloma, which makes a monoclonal M protein. Tell: Hodgkin lymphoma is marked by a few Reed-Sternberg cells in a crowd of immune cells.",
-     "competing diagnosis"
-    ],
-    [
-     "Promyelocytes",
-     "Arrested promyelocytes define acute promyelocytic leukemia, a myeloid cancer caused by the chromosome 15 and 17 translocation. Tell: Hodgkin lymphoma is lymphoid tissue with Reed-Sternberg cells.",
-     "competing diagnosis"
-    ],
     [
      "Lymphoblasts",
-     "Lymphoblasts are the very immature cells of acute lymphoblastic leukemia, which floods the marrow and blood. Tell: Hodgkin lymphoma has few malignant cells, the Reed-Sternberg cells, not a flood of blasts.",
+     "Lymphoblasts, very immature lymphoid cells, are the cells of acute lymphoblastic leukemia. Tell: chronic means more mature cells, and myelogenous means the granulocyte line.",
      "competing diagnosis"
     ],
     [
-     "Reed-Sternberg cells",
-     "Correct. Hodgkin lymphoma, about 10% of lymphomas, is characterized by few malignant Reed-Sternberg cells among numerous immune effector cells. Non-Hodgkin lymphoma makes up the other 90% and includes B-cell and T-cell types."
+     "Red blood cells",
+     "Red cell overproduction is polycythemia vera; in chronic myelogenous leukemia red cell morphology is normal and the hematocrit is not elevated. Tell: the excess here is granulocytes.",
+     "competing diagnosis"
+    ],
+    [
+     "Plasma cells",
+     "Plasma cells are the origin of multiple myeloma, which makes an M protein. Tell: chronic myelogenous leukemia is a granulocyte disorder.",
+     "competing diagnosis"
+    ],
+    [
+     "Granulocytes",
+     "Correct. Chronic myelogenous leukemia originates from hematopoietic stem cells but produces increased numbers of granulocytes, which are more mature than blasts. The marrow shows marked granulocytic proliferation and myelocytes in chronic phase."
     ]
    ],
    "c": 3,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 15",
-   "slot": "test finding"
-  },
-  {
-   "topic": "Acute lymphoblastic leukemia: who and why",
-   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly",
-   "q": "Which age groups carry the highest risk of acute lymphoblastic leukemia?",
-   "opts": [
-    [
-     "Adults near 70",
-     "A median age of 70 belongs to myelodysplastic syndrome, which is often idiopathic in older people. Tell: acute lymphoblastic leukemia is bimodal, with a pediatric peak.",
-     "competing diagnosis"
-    ],
-    [
-     "Adults 45 to 55",
-     "A median age of 45 to 55 years describes chronic myelogenous leukemia. Tell: acute lymphoblastic leukemia is bimodal, peaking in young children and again after 50.",
-     "competing diagnosis"
-    ],
-    [
-     "Under 5 and over 50",
-     "Correct. Acute lymphoblastic leukemia has a bimodal distribution: risk is highest in children under 5 and adults over 50. It is the most common malignancy under age 15, and in adults incidence peaks around 50."
-    ],
-    [
-     "Adults over 60",
-     "Adults over 60 are the group at risk for acute myeloid leukemia, which is unusual in children outside neonates. Tell: acute lymphoblastic leukemia has two peaks, one of them in young children.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 2,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 18, 21",
-   "slot": "epidemiology"
-  },
-  {
-   "topic": "Chronic myelogenous leukemia: management and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "At 6 months of treatment for chronic myelogenous leukemia, the BCR-ABL1 (breakpoint cluster region-Abelson 1) level is 4%. Which milestone category is this?",
-   "opts": [
-    [
-     "Failure",
-     "At 6 months, failure needs a level above 10%, and 4% is below it. Failure means the BCR-ABL1 (breakpoint cluster region-Abelson 1) level is above the worst cutoff for that month: above 10% at 6 months, above 1% at 12 months and beyond; it is not defined at 3 months.",
-     "wrong stage or severity"
-    ],
-    [
-     "Warning",
-     "Correct. At 6 months, the milestone table reads failure above 10%, warning 1-10% and optimal below 1%. A level of 4% sits between 1% and 10%, so it is a warning; treatment-free remission is not applicable at 6 months."
-    ],
-    [
-     "Optimal",
-     "At 6 months, optimal needs a level below 1%, and 4% is above it. Optimal is below 10% at 3 months, below 1% at 6 months, and below 0.1% at 12 months and beyond.",
-     "wrong stage or severity"
-    ],
-    [
-     "Treatment-free remission",
-     "Treatment-free remission is not applicable at 6 months. Treatment-free remission is defined only beyond 18 months, at a BCR-ABL1 (breakpoint cluster region-Abelson 1) level below 0.01%; at earlier months the column is not applicable.",
-     "wrong stage or severity"
-    ]
-   ],
-   "c": 1,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 64",
-   "slot": "prognosis"
-  },
-  {
-   "topic": "Hematopoiesis and the malignancy families",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "What determines whether a hematologic malignancy is lymphoid or myeloid?",
-   "opts": [
-    [
-     "The cell of origin",
-     "Correct. Hematologic malignancies are classified into leukemias, lymphomas and plasma cell disorders, and the underlying cell of origin determines whether the type is lymphoid or myeloid, the two progenitor lines of normal hematopoiesis."
-    ],
-    [
-     "The presenting symptom",
-     "Symptoms such as fatigue, bleeding, swollen nodes or bone pain are non-specific and overlap across the families. Tell: the lineage label follows the cell the cancer started from, not how the patient feels.",
-     "adjacent fact"
-    ],
-    [
-     "The white cell count",
-     "A white count measures how many cells there are, not which progenitor line the cancer came from. Tell: lineage follows the cell of origin; the count only shows how many cells there are.",
-     "adjacent fact"
-    ],
-    [
-     "The age at diagnosis",
-     "Age shifts the likelihood of a given cancer, but it does not define lineage. Tell: lineage is a property of the cancer cell's origin, not of the patient.",
-     "common lay belief"
-    ]
-   ],
-   "c": 0,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 7",
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 56, 60, 61",
    "slot": "etiology"
-  },
-  {
-   "topic": "Myelodysplastic syndrome",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "What defines myelodysplastic syndromes?",
-   "opts": [
-    [
-     "Mature cell overproduction",
-     "Atypical proliferation of mature cell lines defines the myeloproliferative neoplasms: polycythemia vera, myelofibrosis and essential thrombocythemia. Tell: myelodysplasia means abnormal-looking cells and low counts.",
-     "competing diagnosis"
-    ],
-    [
-     "Fibrosis of the marrow",
-     "Marrow fibrosis is not the defining feature; myelodysplastic syndromes are defined by dysplasia of myeloid cells. Tell: myelodysplastic syndrome is defined by dysplasia, with a typically hypercellular marrow.",
-     "competing diagnosis"
-    ],
-    [
-     "Blasts of 20% or more",
-     "Myeloid blasts at or above 20% define acute myeloid leukemia. Tell: higher-risk myelodysplastic syndrome may have blasts, but below 20%.",
-     "wrong stage or severity"
-    ],
-    [
-     "Dysplastic myeloid cells",
-     "Correct. Myelodysplastic syndromes are a group of myeloid malignancies defined by dysplasia (abnormal appearance) of myeloid cells, with distorted hematopoiesis, immune dysregulation and genomic changes. They present as cytopenias, most often anemia."
-    ]
-   ],
-   "c": 3,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 45, 47, 51",
-   "slot": "etiology"
-  },
-  {
-   "topic": "Hematopoiesis and the malignancy families",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Where does normal hematopoiesis begin?",
-   "opts": [
-    [
-     "Splenic tissue",
-     "The spleen is a lymphoid tissue in which some lymphomas arise, but blood cell production does not begin there. Tell: the stem cell that starts hematopoiesis lives in the bone marrow.",
-     "adjacent fact"
-    ],
-    [
-     "Thymic tissue",
-     "The thymus is a lymphoid tissue where some lymphomas and T-cell acute lymphoblastic leukemia can be found, not where hematopoiesis begins. Tell: the hematopoietic stem cell sits in the marrow, upstream of every lymphoid and myeloid line.",
-     "adjacent fact"
-    ],
-    [
-     "Bone marrow stem cells",
-     "Correct. Normal hematopoiesis begins in the bone marrow with hematopoietic stem cells, which differentiate into myeloid and lymphoid progenitors and then into the terminally differentiated cell lines."
-    ],
-    [
-     "Lymph node tissue",
-     "Lymph nodes are lymphoid tissue where lymphomas often arise, not the starting point of blood cell production. Tell: hematopoiesis starts with stem cells in the marrow; lymph nodes are where lymphoma cells collect.",
-     "adjacent fact"
-    ]
-   ],
-   "c": 2,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 5, 15, 19",
-   "slot": "etiology"
-  },
-  {
-   "topic": "Chronic myelogenous leukemia: presentation, diagnosis and phases",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "In chronic myelogenous leukemia, about 14% blasts with significant splenomegaly fits which phase?",
-   "opts": [
-    [
-     "Accelerated phase",
-     "Correct. The accelerated phase often has 10-19% blasts, may show dysplastic granulocytes and fibrosis, and frequently presents with significant splenomegaly; 14% blasts sits inside that band. It is about 4-5% of presentations."
-    ],
-    [
-     "Chronic phase",
-     "The chronic (stable) phase has no or few blasts, below 5%, and makes up 85-90% of presentations. Tell: 14% blasts is far above the chronic-phase level.",
-     "wrong stage or severity"
-    ],
-    [
-     "Blast phase",
-     "Blast phase, or blast crisis, behaves as an acute leukemia, usually like acute myeloid leukemia, which is defined by 20% or more blasts. Tell: 14% is below the acute leukemia line.",
-     "wrong stage or severity"
-    ],
-    [
-     "Myelodysplastic syndrome",
-     "Myelodysplastic syndrome also has blasts below 20%, but it presents as cytopenias, not with the marked leukocytosis and fusion gene of chronic myelogenous leukemia. Tell: the stem names a chronic myelogenous leukemia phase question.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 0,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 38, 47, 62",
-   "slot": "test finding"
-  },
-  {
-   "topic": "Acute myeloid leukemia: who and why",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "What sorts acute myeloid leukemia into favorable, intermediate and poor risk?",
-   "opts": [
-    [
-     "The blast percentage",
-     "The blast percentage, 20% or more, makes the diagnosis rather than the risk group. Tell: once diagnosed, cytogenetics and mutations sort the risk.",
-     "adjacent fact"
-    ],
-    [
-     "The performance grade",
-     "The performance grade measures fitness and steers intensive versus low-intensity therapy, but it is not the basis of the genetic risk groups. Tell: favorable, intermediate and poor risk are read from cytogenetics and mutations.",
-     "confused mechanism or drug class"
-    ],
-    [
-     "Cytogenetics and mutations",
-     "Correct. Acute myeloid leukemia shows tremendous variety in cytogenetic abnormalities and mutations, and risk is broken down into favorable, intermediate and poor on that basis. Cytogenetic and mutation analysis is important for prognosis."
-    ],
-    [
-     "The presenting white count",
-     "The white count is often elevated but may be low, and counts above 100,000 need leukapheresis; it does not set the risk group. Tell: the risk categories come from the genetics.",
-     "adjacent fact"
-    ]
-   ],
-   "c": 2,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 32, 38",
-   "slot": "prognosis"
-  },
-  {
-   "topic": "Acute promyelocytic leukemia",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Which treatment is unique to acute promyelocytic leukemia?",
-   "opts": [
-    [
-     "Arsenic and retinoic acid",
-     "Correct. Acute promyelocytic leukemia has a unique treatment approach: arsenic trioxide and all-trans retinoic acid, rather than the chemotherapy used for other acute myeloid leukemia. Patients who survive the presentation have a cure rate above 90%."
-    ],
-    [
-     "Cytarabine plus anthracycline",
-     "Cytarabine plus an anthracycline (7+3) is intensive chemotherapy for fit patients with other acute myeloid leukemia. Tell: the promyelocytic subtype gets arsenic trioxide and all-trans retinoic acid instead.",
-     "competing diagnosis"
-    ],
-    [
-     "Hypomethylating agent",
-     "Hypomethylating agents, with or without venetoclax, are low-intensity therapy for unfit patients with acute myeloid leukemia. Tell: the promyelocytic subtype has its own regimen.",
-     "competing diagnosis"
-    ],
-    [
-     "Tyrosine kinase inhibitor",
-     "Tyrosine kinase inhibitors treat chronic myelogenous leukemia and Philadelphia-positive lymphoblastic leukemia, the chromosome 9 and 22 diseases. Tell: chromosome 15 and 17 disease gets arsenic and retinoic acid.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 0,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 43",
-   "slot": "first-line"
-  },
-  {
-   "topic": "Essential thrombocythemia",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Why can essential thrombocythemia cause bleeding despite a high platelet count?",
-   "opts": [
-    [
-     "Acquired von Willebrand factor loss",
-     "Correct. Bleeding with high platelets can occur in essential thrombocythemia because of acquired von Willebrand factor deficiency, leaving a shortage of factor at the site of injury."
-    ],
-    [
-     "Low platelets from marrow failure",
-     "Platelets are high, not low, in essential thrombocythemia; thrombocytopenia is the bleeding cause in leukemia. Tell: the paradox is bleeding with high platelets.",
-     "reversed direction or value"
-    ],
-    [
-     "Disseminated coagulopathy",
-     "Disseminated intravascular coagulation is the emergent bleeding of acute promyelocytic leukemia. Tell: essential thrombocythemia bleeds from a von Willebrand factor shortage.",
-     "competing diagnosis"
-    ],
-    [
-     "Portal hypertension",
-     "Portal hypertension with bleeding is a complication of myelofibrosis. Tell: in essential thrombocythemia the bleeding comes from acquired von Willebrand factor loss.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 0,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 54",
-   "slot": "complication"
-  },
-  {
-   "topic": "Acute lymphoblastic leukemia: presentation and diagnosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Where is acute lymphoblastic leukemia typically found, in contrast to an aggressive lymphoma?",
-   "opts": [
-    [
-     "Bone with M protein",
-     "Bone pain with a monoclonal M protein is multiple myeloma, a malignancy of plasma cells. Tell: acute lymphoblastic leukemia is immature lymphoid blasts spread through the marrow and blood.",
-     "competing diagnosis"
-    ],
-    [
-     "Diffuse marrow and blood",
-     "Correct. Acute lymphoblastic leukemia often shows diffuse marrow and peripheral blood involvement, in contrast to aggressive lymphomas, which involve nodal or extranodal sites with minimal bone marrow involvement."
-    ],
-    [
-     "Nodes with little marrow",
-     "Nodal or extranodal disease with minimal marrow involvement describes aggressive lymphomas, the reverse of acute lymphoblastic leukemia. Tell: the leukemia fills the marrow and blood.",
-     "reversed direction or value"
-    ],
-    [
-     "Spleen with fibrosis",
-     "Severe splenomegaly with fibrosis of the marrow is myelofibrosis, the most aggressive of the myeloproliferative neoplasms. Tell: acute lymphoblastic leukemia is a diffuse marrow and blood disease.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 1,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 25, 53, 16",
-   "slot": "differential"
-  },
-  {
-   "topic": "Polycythemia vera",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Which mutation commonly causes polycythemia vera?",
-   "opts": [
-    [
-     "BCR-ABL1 (breakpoint cluster region-Abelson 1)",
-     "The BCR-ABL1 (breakpoint cluster region-Abelson 1) fusion from the chromosome 9 and 22 translocation is the hallmark of chronic myelogenous leukemia. Tell: a red cell overproduction disorder points to the Janus kinase 2 mutation.",
-     "competing diagnosis"
-    ],
-    [
-     "PML-RARA (promyelocytic leukemia-retinoic acid receptor alpha)",
-     "The PML-RARA (promyelocytic leukemia-retinoic acid receptor alpha) fusion from chromosomes 15 and 17 causes acute promyelocytic leukemia. Tell: polycythemia vera is a Janus kinase 2 disease.",
-     "competing diagnosis"
-    ],
-    [
-     "Hyperdiploidy",
-     "Hyperdiploidy, excess chromosome copies, is the favorable childhood finding in acute lymphoblastic leukemia. Tell: the myeloproliferative neoplasms share Janus kinase pathway mutations.",
-     "competing diagnosis"
-    ],
-    [
-     "JAK2 (Janus kinase 2)",
-     "Correct. Polycythemia vera commonly occurs as a result of a JAK2 (Janus kinase 2) mutation. Myelofibrosis and essential thrombocythemia also arise from mutations in the same Janus kinase pathway."
-    ]
-   ],
-   "c": 3,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 52",
-   "slot": "etiology"
-  },
-  {
-   "topic": "Acute myeloid leukemia: who and why",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Which acute myeloid leukemia subtypes may show gum hyperplasia or other extramedullary disease?",
-   "opts": [
-    [
-     "Erythroid and megakaryocytic",
-     "Acute erythroid and acute megakaryocytic leukemias are very rare subtypes, not the ones linked to gum involvement. Tell: extramedullary disease is a monocytic-line feature.",
-     "adjacent fact"
-    ],
-    [
-     "Undifferentiated",
-     "Undifferentiated acute myeloid leukemia is not among the subtypes tied to gum involvement or extramedullary disease. Tell: gum hyperplasia means myelomonocytic or monocytic.",
-     "adjacent fact"
-    ],
-    [
-     "Myelomonocytic and monocytic",
-     "Correct. The myelomonocytic and monocytic subtypes of acute myeloid leukemia tend to have more extramedullary involvement, and they may involve the gums (hyperplasia)."
-    ],
-    [
-     "Promyelocytic",
-     "Acute promyelocytic leukemia is a separate subtype, not one of those tied to gum involvement or extramedullary disease. Tell: gums point to the monocytic subtypes.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 2,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 33, 35",
-   "slot": "manifestation"
-  },
-  {
-   "topic": "Chronic myelogenous leukemia: presentation, diagnosis and phases",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "How is blast-phase chronic myelogenous leukemia treated?",
-   "opts": [
-    [
-     "A tyrosine kinase inhibitor by itself",
-     "Tyrosine kinase inhibitors are the hallmark of chronic-phase therapy, but blast phase responds poorly to them. Tell: blast crisis is treated like an acute leukemia.",
-     "wrong stage or severity"
-    ],
-    [
-     "Observation with blood counts",
-     "Watching would ignore a stage that behaves as an acute leukemia with median survival under 12 months. Tell: blast phase needs acute myeloid leukemia-like treatment.",
-     "wrong stage or severity"
-    ],
-    [
-     "Stopping therapy for remission",
-     "Stopping tyrosine kinase inhibitors is considered only after a sustained major molecular response in chronic-phase disease. Tell: blast phase needs intensive acute leukemia-like treatment.",
-     "wrong stage or severity"
-    ],
-    [
-     "Acute myeloid leukemia-like regimens",
-     "Correct. Blast phase, or blast crisis, behaves as an acute leukemia, usually like acute myeloid leukemia, often with unique chromosomal and mutational changes; it requires acute myeloid leukemia-like regimens and responds poorly to tyrosine kinase inhibitors."
-    ]
-   ],
-   "c": 3,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 62, 63, 65",
-   "slot": "escalation"
-  },
-  {
-   "topic": "Polycythemia vera",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "What is the classic symptom of polycythemia vera?",
-   "opts": [
-    [
-     "Swollen, enlarged gums",
-     "Gum involvement (hyperplasia) is seen in the myelomonocytic and monocytic subtypes of acute myeloid leukemia. Tell: the polycythemia vera clue is itch with warm water.",
-     "competing diagnosis"
-    ],
-    [
-     "Painful bones and joints",
-     "Bone or joint pain from excessive marrow production of leukemia cells is a feature of acute lymphoblastic leukemia. Tell: polycythemia vera classically itches after warm baths or showers.",
-     "competing diagnosis"
-    ],
-    [
-     "Itching after warm showers",
-     "Correct. Polycythemia vera usually presents non-specifically with fatigue, headaches and blurry vision, but the classic symptom is pruritus with warm baths or showers."
-    ],
-    [
-     "Early satiety and bloating",
-     "Early satiety, bloating and abdominal pain from splenomegaly are the presentation of myelofibrosis. Tell: itching after a warm bath is the polycythemia vera clue.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 2,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 52",
-   "slot": "manifestation"
-  },
-  {
-   "topic": "Acute lymphoblastic leukemia: who and why",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Acute lymphoblastic leukemia originates in which cells?",
-   "opts": [
-    [
-     "Lymphoid progenitor cells",
-     "Correct. Acute lymphoblastic leukemia originates in the lymphoid progenitor or stem cells, very immature cells with a rapid ability to proliferate. Mutagenesis happens at the lymphoblast stage as cells differentiate toward B or T lymphocytes."
-    ],
-    [
-     "Myeloid progenitor cells",
-     "Myeloid progenitor cells give rise to acute myeloid leukemia, whose blasts may show Auer rods. Tell: lymphoblastic names the lymphoid line; myeloid leukemia is the other acute leukemia.",
-     "competing diagnosis"
-    ],
-    [
-     "Mature plasma cells",
-     "Plasma cells are terminally differentiated B cells and the origin of multiple myeloma. Tell: acute lymphoblastic leukemia comes from the most immature lymphoid cells, not the most mature.",
-     "wrong stage or severity"
-    ],
-    [
-     "Mature granulocytes",
-     "Increased mature granulocytes are the picture of chronic myelogenous leukemia, a myeloid disease. Tell: acute lymphoblastic leukemia is immature lymphoid blasts, not mature myeloid cells.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 0,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 18, 19",
-   "slot": "etiology"
-  },
-  {
-   "topic": "Acute lymphoblastic leukemia: management and prognosis",
-   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly",
-   "q": "For Philadelphia chromosome-negative acute lymphoblastic leukemia, pediatric-like regimens are usually given below what age?",
-   "opts": [
-    [
-     "15 years",
-     "Fifteen is too low; the pediatric-like regimens extend into adulthood, usually for patients younger than 40. Tell: the regimens extend into adulthood, up to 40.",
-     "adjacent fact"
-    ],
-    [
-     "40 years",
-     "Correct. For Philadelphia chromosome-negative disease, pediatric-like regimens are usually given to patients younger than 40: intensive chemotherapy with induction, consolidation and maintenance phases. In older adults, therapy changes may be needed for tolerance."
-    ],
-    [
-     "60 years",
-     "Sixty is not the cutoff; pediatric-like regimens are usually given to patients younger than 40. Tell: pediatric-like lymphoblastic leukemia regimens are usually given below 40.",
-     "adjacent fact"
-    ],
-    [
-     "70 years",
-     "Seventy is too high; in older adults, therapy changes and dose adjustments may be needed for tolerance instead. Tell: the pediatric-like regimen cutoff is 40.",
-     "adjacent fact"
-    ]
-   ],
-   "c": 1,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 27",
-   "slot": "agent/regimen"
-  },
-  {
-   "topic": "Myelodysplastic syndrome",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "From what does myelodysplastic syndrome often evolve?",
-   "opts": [
-    [
-     "Clonal hematopoiesis",
-     "Correct. Myelodysplastic syndrome often evolves from progression of milder abnormal stem cell clones, called clonal hematopoiesis, until the dysplasia characteristic of the syndrome develops."
-    ],
-    [
-     "Acute myeloid leukemia",
-     "The direction is reversed: very high-risk myelodysplastic syndrome has substantial overlap with acute myeloid leukemia, and low-risk disease a low risk of progression. Tell: myelodysplasia comes before leukemia, not after.",
-     "reversed direction or value"
-    ],
-    [
-     "A viral infection",
-     "A viral infection is not the named origin; myelodysplastic syndrome is often idiopathic, sometimes after prior chemotherapy or radiation. Tell: myelodysplasia grows out of milder abnormal clones.",
-     "adjacent fact"
-    ],
-    [
-     "Reactive leukocytosis",
-     "A reactive leukocytosis is not the named origin; myelodysplastic syndrome evolves from milder abnormal stem cell clones. Tell: myelodysplasia starts from clonal hematopoiesis, an abnormal clone.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 0,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 46",
-   "slot": "etiology"
-  },
-  {
-   "topic": "Polycythemia vera",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Which treatment lowers the red cell excess in polycythemia vera?",
-   "opts": [
-    [
-     "Phlebotomy",
-     "Correct. Treatment of polycythemia vera is phlebotomy, which removes red cells and so lowers the increased blood viscosity, with hydroxyurea as the drug option."
-    ],
-    [
-     "Red cell transfusion",
-     "Red cell transfusions support the anemia of lower-risk myelodysplastic syndrome; adding red cells would worsen polycythemia vera. Tell: here the goal is to remove red cells.",
-     "reversed direction or value"
-    ],
-    [
-     "Erythropoiesis-stimulating agent",
-     "Erythropoiesis-stimulating agents push red cell production in low-risk myelodysplastic syndrome with anemia. Tell: polycythemia vera already has too many red cells.",
-     "reversed direction or value"
-    ],
-    [
-     "Arsenic trioxide",
-     "Arsenic trioxide, with all-trans retinoic acid, is the unique treatment of acute promyelocytic leukemia. Tell: the red cell excess of polycythemia vera is removed by phlebotomy.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 0,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 48, 52",
-   "slot": "first-line"
-  },
-  {
-   "topic": "Acute lymphoblastic leukemia: presentation and diagnosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Why do patients with acute lymphoblastic leukemia have bone or joint pain?",
-   "opts": [
-    [
-     "Fibrosis of the marrow",
-     "Fibrosis is not the cause; the bone or joint pain comes from very excessive marrow production of leukemia cells. Tell: the pain in lymphoblastic leukemia comes from a marrow packed with blasts.",
-     "competing diagnosis"
-    ],
-    [
-     "Thick red cell blood",
-     "Thick blood from too many red cells does not fit; acute lymphoblastic leukemia causes anemia, not excess red cells. Tell: bone pain in acute leukemia comes from marrow expansion, not viscosity.",
-     "competing diagnosis"
-    ],
-    [
-     "Clots from high platelets",
-     "High platelets do not fit; acute lymphoblastic leukemia causes thrombocytopenia, with bruising and bleeding rather than clots. Tell: acute lymphoblastic leukemia lowers platelets; its bone pain is marrow overgrowth.",
-     "reversed direction or value"
-    ],
-    [
-     "Marrow overproduction of blasts",
-     "Correct. Bone or joint pain in acute lymphoblastic leukemia is due to very excessive marrow production of leukemia cells. It sits alongside anemia, bleeding, infections, B-symptoms and, in more than half, lymphadenopathy, hepatomegaly or splenomegaly."
-    ]
-   ],
-   "c": 3,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 22",
-   "slot": "manifestation"
   },
   {
    "topic": "Acute lymphoblastic leukemia: presentation and diagnosis",
@@ -869,739 +521,75 @@
    "c": 1,
    "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 15, 16, 22, 35, 59",
    "slot": "manifestation"
-  }
- ],
- "set2": [
-  {
-   "topic": "Performance status, work-up and transplant terms",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Which test is required in almost every hematologic malignancy to secure the correct diagnosis?",
-   "opts": [
-    [
-     "Lumbar puncture",
-     "Lumbar puncture is part of the acute leukemia work-up to look for central nervous system involvement, not the diagnostic test for every blood cancer. Tell: it stages spread; marrow biopsy or flow cytometry makes the diagnosis.",
-     "adjacent fact"
-    ],
-    [
-     "Marrow biopsy or flow cytometry",
-     "Correct. Almost all hematologic malignancies require a bone marrow biopsy and/or flow cytometry as part of the work-up to ensure the correct diagnosis. Blood counts and chemistry panels may raise the suspicion but do not settle it."
-    ],
-    [
-     "Complete blood count alone",
-     "A complete blood count can detect incidental cytopenias that start the work-up, but it cannot name the malignancy. Tell: abnormal counts raise the question; marrow biopsy or flow cytometry answers it.",
-     "wrong stage or severity"
-    ],
-    [
-     "Chemistry panel",
-     "A chemistry panel may show an elevated protein level that first hints at myeloma, but it does not confirm a diagnosis. Tell: it is a clue on routine labs, not the confirming test.",
-     "wrong stage or severity"
-    ]
-   ],
-   "c": 1,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 11, 25",
-   "slot": "gold standard"
-  },
-  {
-   "topic": "Chronic myelogenous leukemia: who and why",
-   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. a. infant b. child c. adolescent d. adult e. elderly",
-   "q": "What is the median age at diagnosis of chronic myelogenous leukemia?",
-   "opts": [
-    [
-     "Under 15 years",
-     "Under 15 is where acute lymphoblastic leukemia is the most common malignancy. Tell: chronic myelogenous leukemia is a middle-aged adult disease.",
-     "competing diagnosis"
-    ],
-    [
-     "45-55 years",
-     "Correct. The median age of chronic myelogenous leukemia is 45-55 years; it may occur in either sex but is slightly more common in men."
-    ],
-    [
-     "Over 60 years",
-     "Over 60 is the age group for acute myeloid leukemia. Tell: chronic myelogenous leukemia has a younger median, 45-55.",
-     "competing diagnosis"
-    ],
-    [
-     "About 70 years",
-     "A median of 70 is myelodysplastic syndrome. Tell: chronic myelogenous leukemia is diagnosed at a median of 45-55.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 1,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 31, 46, 58",
-   "slot": "epidemiology"
-  },
-  {
-   "topic": "Acute lymphoblastic leukemia: presentation and diagnosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "At presentation, the white count in acute lymphoblastic leukemia is often above what level per microliter?",
-   "opts": [
-    [
-     "10,000",
-     "Ten thousand understates the typical rise; the usual figure is above 30,000. Tell: the level that recurs for acute lymphoblastic leukemia is 30,000.",
-     "reversed direction or value"
-    ],
-    [
-     "30,000",
-     "Correct. White counts are often above 30,000 at presentation, sometimes markedly higher, although about 30% present with neutropenia. Labs also show anemia and thrombocytopenia, with either leukopenia or marked leukocytosis."
-    ],
-    [
-     "100,000",
-     "Counts above 100,000 are the threshold for emergent leukapheresis in acute myeloid leukemia, not the usual lymphoblastic figure. Tell: the usual lymphoblastic leukemia figure is above 30,000.",
-     "adjacent fact"
-    ],
-    [
-     "200,000",
-     "Counts above 200,000 are noted as rare in acute myeloid leukemia, not the usual lymphoblastic leukemia figure. Tell: the typical lymphoblastic leukemia count is above 30,000.",
-     "adjacent fact"
-    ]
-   ],
-   "c": 1,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 22, 35",
-   "slot": "test finding"
-  },
-  {
-   "topic": "Acute myeloid leukemia: management and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Which approach is used for fit patients with acute myeloid leukemia?",
-   "opts": [
-    [
-     "Arsenic and retinoic acid",
-     "Arsenic trioxide with all-trans retinoic acid is the unique treatment of acute promyelocytic leukemia. Tell: it is reserved for the promyelocytic subtype, not acute myeloid leukemia in general.",
-     "competing diagnosis"
-    ],
-    [
-     "Tyrosine kinase inhibitor",
-     "Tyrosine kinase inhibitors are the hallmark of chronic-phase chronic myelogenous leukemia and are used for Philadelphia-positive lymphoblastic leukemia. Tell: fit acute myeloid leukemia gets cytarabine plus an anthracycline.",
-     "competing diagnosis"
-    ],
-    [
-     "Intensive chemotherapy (7+3)",
-     "Correct. Fit patients receive intensive chemotherapy, often cytarabine plus an anthracycline (7+3). Allogeneic stem cell transplant typically follows for most intermediate- and high-risk patients who achieve remission."
-    ],
-    [
-     "Hypomethylating agent",
-     "Hypomethylating agents, with or without venetoclax, are low-intensity therapy for unfit patients. Tell: fitness decides it, and a fit patient gets intensive chemotherapy.",
-     "wrong stage or severity"
-    ]
-   ],
-   "c": 2,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 40",
-   "slot": "first-line"
-  },
-  {
-   "topic": "Myelodysplastic syndrome",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "What is the only curative therapy for myelodysplastic syndrome?",
-   "opts": [
-    [
-     "Autologous stem cell transplant",
-     "An autologous transplant returns the patient's own stem cells, which in myelodysplasia are the abnormal clone. Tell: the curative transplant uses a healthy donor's cells.",
-     "adjacent fact"
-    ],
-    [
-     "Allogeneic stem cell transplant",
-     "Correct. The only curative therapy for myelodysplastic syndrome is allogeneic stem cell transplant, using a healthy donor's stem cells, but it is high risk and has a limited role in therapy."
-    ],
-    [
-     "Hypomethylating agents",
-     "Hypomethylating agents, like chemotherapy, treat higher-risk disease but are not described as curative. Tell: cure requires replacing the marrow with a donor's stem cells.",
-     "wrong stage or severity"
-    ],
-    [
-     "Erythropoiesis-stimulating agents",
-     "Erythropoiesis-stimulating agents support low-risk anemia and improve quality of life; they do not cure. Tell: the curative option is an allogeneic transplant.",
-     "wrong stage or severity"
-    ]
-   ],
-   "c": 1,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 12, 48",
-   "slot": "escalation"
-  },
-  {
-   "topic": "Polycythemia vera",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Which complications are listed for polycythemia vera?",
-   "opts": [
-    [
-     "Portal hypertension",
-     "Portal hypertension with severe splenomegaly is a complication of myelofibrosis. Tell: polycythemia vera's list is thrombosis, splenomegaly and bleeding.",
-     "competing diagnosis"
-    ],
-    [
-     "Central nervous system spread",
-     "Central nervous system involvement is an adverse risk factor in acute lymphoblastic leukemia, checked by lumbar puncture. Tell: polycythemia vera complications are vascular and splenic.",
-     "competing diagnosis"
-    ],
-    [
-     "Thrombosis, splenomegaly, bleeding",
-     "Correct. The complications of polycythemia vera are thrombosis, splenomegaly and bleeding. Its prognosis is still excellent, with an estimated survival of 14 years."
-    ],
-    [
-     "Coagulopathy and early death",
-     "Disseminated intravascular coagulation with high early mortality is the presentation of acute promyelocytic leukemia. Tell: polycythemia vera has a long survival with clotting and bleeding risks.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 2,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 52",
-   "slot": "complication"
-  },
-  {
-   "topic": "Chronic myelogenous leukemia: presentation, diagnosis and phases",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Which lab pattern fits chronic-phase chronic myelogenous leukemia?",
-   "opts": [
-    [
-     "High white cells and platelets",
-     "Correct. Labs show marked leukocytosis, often above 100,000 and up to 500,000, thrombocytosis and anemia, with usually very low blasts unless the disease is in accelerated or blast phase."
-    ],
-    [
-     "Pancytopenia, dysplasia",
-     "Low counts with abnormal-looking neutrophils describe myelodysplastic syndrome. Tell: chronic myelogenous leukemia raises the white count and platelets.",
-     "competing diagnosis"
-    ],
-    [
-     "Blasts of 20% or more",
-     "Blasts at or above 20% define acute leukemia; chronic-phase disease has fewer than 5%. Tell: chronic phase has very few blasts.",
-     "wrong stage or severity"
-    ],
-    [
-     "Raised hematocrit",
-     "An elevated red cell mass is polycythemia vera; in chronic myelogenous leukemia the hematocrit is not elevated. Tell: the chronic myelogenous leukemia excess is white cells and platelets.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 0,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 59, 61, 62",
-   "slot": "test finding"
-  },
-  {
-   "topic": "Myelodysplastic syndrome",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Which cytopenia is most frequent in myelodysplastic syndrome?",
-   "opts": [
-    [
-     "Thrombocytopenia",
-     "Thrombocytopenia is described as occasional in myelodysplastic syndrome, causing bleeding. Tell: anemia is the most frequent cytopenia.",
-     "adjacent fact"
-    ],
-    [
-     "Lymphocytosis",
-     "A raised lymphocyte count is not a cytopenia at all, so it cannot be the most frequent cytopenia. Tell: myelodysplasia lowers counts, most often red cells.",
-     "reversed direction or value"
-    ],
-    [
-     "Anemia",
-     "Correct. Myelodysplastic syndrome presents most frequently with anemia, causing fatigue, weakness and pale skin; neutropenia and occasional thrombocytopenia also occur. Low-risk disease is commonly defined by anemia."
-    ],
-    [
-     "Neutropenia",
-     "Neutropenia occurs and explains infections, but anemia is the most frequent finding. Tell: myelodysplasia usually announces itself with low red cells.",
-     "adjacent fact"
-    ]
-   ],
-   "c": 2,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 45, 46, 47",
-   "slot": "test finding"
   },
   {
    "topic": "Acute myeloid leukemia: management and prognosis",
    "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly",
-   "q": "Which group with acute myeloid leukemia has the lowest five-year survival?",
+   "q": "For an older patient with acute myeloid leukemia who is unfit for intensive chemotherapy, which treatment is used?",
    "opts": [
     [
-     "Patients over 70",
-     "Correct. Survival is lowest for patients over 70, only 5% at five years, and for adverse-risk or secondary disease, about 10% overall. It is highest, apart from acute promyelocytic leukemia, for favorable-risk disease and younger patients."
+     "Hypomethylating agent ± venetoclax",
+     "Correct. Unfit patients receive low-intensity therapy, frequently a hypomethylating agent with or without venetoclax. Fitness matters most in older patients, and survival is lowest over age 70."
     ],
     [
-     "Favorable-risk patients",
-     "Favorable-risk acute myeloid leukemia has the highest survival outside the promyelocytic subtype, about two thirds alive at five years. Tell: the worst outlook is age over 70.",
-     "reversed direction or value"
-    ],
-    [
-     "Younger patients",
-     "Younger patients are listed with favorable risk among the best outcomes. Tell: survival falls with age and is lowest over 70.",
-     "reversed direction or value"
-    ],
-    [
-     "Promyelocytic survivors",
-     "Patients with acute promyelocytic leukemia who survive the initial presentation have an excellent prognosis, above 90% cure. Tell: the lowest five-year survival is in patients over 70.",
-     "reversed direction or value"
-    ]
-   ],
-   "c": 0,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 41, 43",
-   "slot": "prognosis"
-  },
-  {
-   "topic": "Acute lymphoblastic leukemia: presentation and diagnosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Acute lymphoblastic leukemia is defined by lymphoid blasts at or above what percentage of the bone marrow?",
-   "opts": [
-    [
-     "5%",
-     "Below 5% blasts describes the chronic phase of chronic myelogenous leukemia, with no or few blasts. Tell: acute lymphoblastic leukemia needs at least 20% blasts in the marrow.",
-     "adjacent fact"
-    ],
-    [
-     "10%",
-     "Ten percent is the lower threshold some genetic mutations allow in acute myeloid leukemia under newer guidelines, not the definition here. Tell: lymphoblastic leukemia is defined at 20% or more.",
-     "adjacent fact"
-    ],
-    [
-     "20%",
-     "Correct. Acute lymphoblastic leukemia is defined by blast cells of lymphoid origin at or above 20% in the bone marrow, often with diffuse marrow and peripheral blood involvement. Cytogenetics and mutation analysis then refine the prognosis."
-    ],
-    [
-     "30%",
-     "Thirty percent overstates the threshold; the definition is lymphoid blasts at or above 20%. Tell: 20% is the line for acute lymphoblastic leukemia (and historically for acute myeloid leukemia).",
-     "reversed direction or value"
-    ]
-   ],
-   "c": 2,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 25, 38, 62",
-   "slot": "gold standard"
-  },
-  {
-   "topic": "Myelodysplastic syndrome",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "When myeloid growth factors are given for neutropenia in myelodysplastic syndrome, what is the caution?",
-   "opts": [
-    [
-     "Raising blood viscosity",
-     "Raising blood viscosity is not the stated caution; the warning with myeloid growth factors is not to cause overstimulation of blasts. Tell: the stated caution with myeloid growth factors concerns the blasts.",
-     "confused mechanism or drug class"
-    ],
-    [
-     "Triggering coagulopathy",
-     "Coagulopathy is not the stated caution; myeloid growth factors are given for neutropenia with care not to overstimulate blasts. Tell: the growth factor caution in myelodysplasia is blast stimulation.",
-     "competing diagnosis"
-    ],
-    [
-     "Causing marrow fibrosis",
-     "Marrow fibrosis is not the stated caution; the concern with myeloid growth factors is overstimulation of blasts. Tell: the warning is about stimulating blasts.",
-     "competing diagnosis"
-    ],
-    [
-     "Overstimulating the blasts",
-     "Correct. Neutropenia in myelodysplastic syndrome may be treated with myeloid growth factors, but with care not to cause overstimulation of blasts. The disease already sits close to acute myeloid leukemia at the high-risk end."
-    ]
-   ],
-   "c": 3,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 48",
-   "slot": "avoid"
-  },
-  {
-   "topic": "Acute promyelocytic leukemia",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "At which stage is myeloid differentiation arrested in acute promyelocytic leukemia?",
-   "opts": [
-    [
-     "Promyelocyte",
-     "Correct. Acute promyelocytic leukemia is a rare acute myeloid leukemia subtype caused by arrested differentiation at the promyelocyte stage, driven by the chromosome 15 and 17 translocation."
-    ],
-    [
-     "Myeloblast",
-     "The myeloblast level corresponds to the least mature subtypes, undifferentiated and minimal-maturation acute myeloid leukemia. Tell: the name promyelocytic gives the stage away.",
-     "adjacent fact"
-    ],
-    [
-     "Monoblast",
-     "Monoblasts are the cells of acute monocytic leukemia, which may involve the gums. Tell: acute promyelocytic leukemia stops at the promyelocyte.",
-     "adjacent fact"
-    ],
-    [
-     "Lymphoblast",
-     "Lymphoblasts are the immature lymphoid cells of acute lymphoblastic leukemia. Tell: acute promyelocytic leukemia is a myeloid disease arrested at the promyelocyte.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 0,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 33, 43",
-   "slot": "etiology"
-  },
-  {
-   "topic": "Hematopoiesis and the malignancy families",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Which cell feature defines an acute leukemia?",
-   "opts": [
-    [
-     "Immature cells proliferate",
-     "Correct. Acute leukemias arise from more immature, progenitor white blood cells and cause rapid proliferation of that clone. Chronic leukemias involve proliferation of mature malignant white blood cells."
-    ],
-    [
-     "Mature cells proliferate",
-     "Proliferation of mature malignant white cells is the definition of a chronic leukemia. Tell: acute means immature progenitors growing fast; chronic means mature cells.",
-     "reversed direction or value"
-    ],
-    [
-     "Myeloid cells proliferate",
-     "Myeloid versus lymphoid is decided by the underlying cell of origin, a label separate from the acute versus chronic split. Tell: lineage and tempo are separate labels; acute refers to immature cells.",
-     "confused mechanism or drug class"
-    ],
-    [
-     "Lymph nodes are involved",
-     "Lymph node involvement is the hallmark of lymphoma, which arises from lymphoid tissue. Tell: a leukemia is a marrow disease; acute versus chronic depends on how immature the cells are.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 0,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 14, 7",
-   "slot": "etiology"
-  },
-  {
-   "topic": "Acute lymphoblastic leukemia: who and why",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Which site may T-cell acute lymphoblastic leukemia involve, giving it lymphoma-like features?",
-   "opts": [
-    [
-     "The gums",
-     "The gums are not the site linked to T-cell lymphoblastic leukemia; the T-cell form usually has lymphoma-like characteristics and may involve the thymus. Tell: a mass in the chest from the thymus points to T-cell lymphoblastic leukemia.",
-     "competing diagnosis"
-    ],
-    [
-     "Mainly blood and marrow",
-     "Presenting mainly in a leukemic phase, with blasts and marrow involvement, describes B-cell precursor acute lymphoblastic leukemia. Tell: the T-cell form behaves more like a lymphoma and may involve the thymus.",
-     "adjacent fact"
-    ],
-    [
-     "A fibrotic marrow",
-     "A fibrotic marrow is not the T-cell feature; T-cell lymphoblastic leukemia usually has lymphoma-like characteristics and may involve the thymus. Tell: T-cell lymphoblastic leukemia is linked with the thymus and a mediastinal mass, not fibrosis.",
-     "competing diagnosis"
-    ],
-    [
-     "The thymus",
-     "Correct. T-cell acute lymphoblastic leukemia is rarer and usually has lymphoma-like characteristics, and it may involve the thymus. A mediastinal mass may be seen on chest X-ray in T-cell disease."
-    ]
-   ],
-   "c": 3,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 19, 22",
-   "slot": "manifestation"
-  },
-  {
-   "topic": "Polycythemia vera",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Which pair of instructions is given for both polycythemia vera and essential thrombocythemia?",
-   "opts": [
-    [
-     "Janus kinase inhibitor, palliation",
-     "Palliative Janus kinase inhibitors are the treatment of myelofibrosis, the most aggressive myeloproliferative neoplasm. Tell: the two milder neoplasms share referral and smoking cessation.",
-     "competing diagnosis"
-    ],
-    [
-     "Admission for work-up",
-     "Admission for work-up and treatment is the start for acute leukemia. Tell: polycythemia vera and essential thrombocythemia are referred to hematology with smoking cessation.",
+     "Cytarabine plus anthracycline",
+     "Cytarabine plus an anthracycline (7+3) is intensive chemotherapy for fit patients. Tell: an unfit patient gets low-intensity therapy instead.",
      "wrong stage or severity"
     ],
     [
-     "Hematology referral, stop smoking",
-     "Correct. Patients with polycythemia vera and with essential thrombocythemia should be referred to a hematologist and advised to cease smoking."
+     "Arsenic and retinoic acid",
+     "Arsenic trioxide with all-trans retinoic acid is the unique treatment approach for acute promyelocytic leukemia. Tell: the unfit acute myeloid leukemia patient gets a hypomethylating agent.",
+     "competing diagnosis"
     ],
     [
      "Phlebotomy and hydroxyurea",
-     "Hydroxyurea is shared, but phlebotomy is the polycythemia vera treatment for red cell excess; essential thrombocythemia uses aspirin or hydroxyurea. Tell: the shared advice is referral and smoking cessation.",
-     "adjacent fact"
-    ]
-   ],
-   "c": 2,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 29, 52, 53, 54",
-   "slot": "education"
-  },
-  {
-   "topic": "Acute myeloid leukemia: who and why",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Which viral infection is listed as a risk factor for acute myeloid leukemia?",
-   "opts": [
-    [
-     "Epstein-Barr virus",
-     "Epstein-Barr virus is listed among the viral risk factors for acute lymphoblastic leukemia, not for acute myeloid leukemia. Tell: the myeloid leukemia's listed virus is human immunodeficiency virus.",
-     "adjacent fact"
-    ],
-    [
-     "Human T-lymphotropic virus 1",
-     "Human T-cell lymphotropic virus type 1, linked to Caribbean countries, is listed for acute lymphoblastic leukemia. Tell: the myeloid list names human immunodeficiency virus instead.",
-     "adjacent fact"
-    ],
-    [
-     "Pertussis infection",
-     "Pertussis is a bacterial infection that can cause an atypical lymphocytosis mimicking acute lymphoblastic leukemia; it is not a risk factor. Tell: it is a mimic, not a cause.",
-     "competing diagnosis"
-    ],
-    [
-     "Human immunodeficiency virus",
-     "Correct. The viral infection listed for acute myeloid leukemia is human immunodeficiency virus, alongside prior high-dose radiation, benzene, petroleum, alkylating chemotherapy, Down syndrome, Fanconi anemia, age over 60 and male sex."
-    ]
-   ],
-   "c": 3,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 21, 24, 34",
-   "slot": "risk factors"
-  },
-  {
-   "topic": "Essential thrombocythemia",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Which treatment is used to reduce clotting risk in essential thrombocythemia?",
-   "opts": [
-    [
-     "Aspirin or hydroxyurea",
-     "Correct. Essential thrombocythemia is treated with aspirin, hydroxyurea or other agents to reduce clotting risk, and patients are referred to a hematologist and advised to cease smoking."
-    ],
-    [
-     "Phlebotomy",
-     "Phlebotomy lowers the red cell excess of polycythemia vera. Tell: essential thrombocythemia is a platelet problem treated with aspirin or hydroxyurea.",
-     "competing diagnosis"
-    ],
-    [
-     "Platelet transfusion",
-     "Adding platelets would raise an already high count. Tell: the goal in essential thrombocythemia is to reduce clotting risk, with aspirin or hydroxyurea.",
-     "reversed direction or value"
-    ],
-    [
-     "Arsenic trioxide",
-     "Arsenic trioxide with all-trans retinoic acid treats acute promyelocytic leukemia. Tell: essential thrombocythemia uses aspirin or hydroxyurea.",
+     "Phlebotomy and hydroxyurea are the listed treatment for polycythemia vera. Tell: they are not the low-intensity regimen for unfit acute myeloid leukemia.",
      "competing diagnosis"
     ]
    ],
    "c": 0,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 54",
-   "slot": "first-line"
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 10, 40, 41, 43, 52",
+   "slot": "agent/regimen"
   },
   {
    "topic": "Hematopoiesis and the malignancy families",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Multiple myeloma arises from which cell?",
+   "q": "Which cell characterizes Hodgkin lymphoma?",
    "opts": [
     [
-     "Myeloid progenitors",
-     "Myeloid progenitors give rise to acute myeloid leukemia, myelodysplastic syndrome and the myeloproliferative neoplasms. Tell: the name sounds myeloid, but myeloma is a lymphoid-line cancer of antibody-making plasma cells.",
-     "common lay belief"
+     "Promyelocytes",
+     "Arrested promyelocytes define acute promyelocytic leukemia, a myeloid cancer caused by the chromosome 15 and 17 translocation. Tell: Hodgkin lymphoma is lymphoid tissue with Reed-Sternberg cells.",
+     "competing diagnosis"
     ],
     [
      "Lymphoblasts",
-     "Lymphoblasts are the very immature lymphoid cells of acute lymphoblastic leukemia. Tell: myeloma comes from the most mature end of the B-cell line, the terminally differentiated plasma cell.",
-     "wrong stage or severity"
+     "Lymphoblasts are the very immature cells of acute lymphoblastic leukemia, which floods the marrow and blood. Tell: Hodgkin lymphoma has few malignant cells, the Reed-Sternberg cells, not a flood of blasts.",
+     "competing diagnosis"
+    ],
+    [
+     "Reed-Sternberg cells",
+     "Correct. Hodgkin lymphoma, about 10% of lymphomas, is characterized by few malignant Reed-Sternberg cells among numerous immune effector cells. Non-Hodgkin lymphoma makes up the other 90% and includes B-cell and T-cell types."
     ],
     [
      "Plasma cells",
-     "Correct. Multiple myeloma arises from terminally differentiated B cells called plasma cells. Because plasma cells make our antibodies, myeloma produces an excess of a single monoclonal antibody, the M protein."
-    ],
-    [
-     "T cells",
-     "T cells are lymphoid cells that can give rise to T-cell lymphomas and T-cell acute lymphoblastic leukemia, not myeloma. Tell: myeloma is a plasma cell disorder, and plasma cells come from B cells, not T cells.",
-     "adjacent fact"
-    ]
-   ],
-   "c": 2,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 16",
-   "slot": "etiology"
-  },
-  {
-   "topic": "Acute lymphoblastic leukemia: management and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "How is Philadelphia chromosome-positive acute lymphoblastic leukemia treated?",
-   "opts": [
-    [
-     "Arsenic and retinoic acid",
-     "Arsenic trioxide with all-trans retinoic acid is the unique treatment of acute promyelocytic leukemia, the chromosome 15 and 17 disease. Tell: the 9 and 22 translocation calls for a tyrosine kinase inhibitor.",
-     "competing diagnosis"
-    ],
-    [
-     "Phlebotomy and hydroxyurea",
-     "Phlebotomy and hydroxyurea treat polycythemia vera, which overproduces red cells. Tell: a Philadelphia-positive acute leukemia needs a tyrosine kinase inhibitor with chemotherapy.",
-     "competing diagnosis"
-    ],
-    [
-     "Hypomethylating agent alone",
-     "Hypomethylating agents are low-intensity therapy for unfit patients with acute myeloid leukemia and for higher-risk myelodysplastic syndrome. Tell: the Philadelphia chromosome points to a tyrosine kinase inhibitor.",
-     "competing diagnosis"
-    ],
-    [
-     "Kinase inhibitor plus chemotherapy",
-     "Correct. Philadelphia chromosome-positive acute lymphoblastic leukemia, carrying the chromosome 9 and 22 translocation, is treated with a tyrosine kinase inhibitor plus chemotherapy. Allogeneic transplant is added where feasible for adverse-risk or relapsed disease."
-    ]
-   ],
-   "c": 3,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 27",
-   "slot": "first-line"
-  },
-  {
-   "topic": "Myelofibrosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "How is myelofibrosis often treated?",
-   "opts": [
-    [
-     "Arsenic with retinoic acid",
-     "Arsenic trioxide with all-trans retinoic acid is the unique treatment of acute promyelocytic leukemia. Tell: myelofibrosis treatment is palliative Janus kinase inhibition.",
-     "competing diagnosis"
-    ],
-    [
-     "Janus kinase inhibitors",
-     "Correct. Myelofibrosis is often treated with targeted inhibitors, Janus kinase inhibitors, which are palliative. Patients should be referred to a hematologist upon diagnosis."
-    ],
-    [
-     "Phlebotomy",
-     "Phlebotomy removes the red cell excess of polycythemia vera. Tell: myelofibrosis gets palliative Janus kinase inhibitors.",
-     "competing diagnosis"
-    ],
-    [
-     "Tyrosine kinase inhibitors",
-     "Tyrosine kinase inhibitors are the hallmark therapy of chronic-phase chronic myelogenous leukemia. Tell: myelofibrosis is a Janus kinase pathway disease treated with Janus kinase inhibitors.",
-     "confused mechanism or drug class"
-    ]
-   ],
-   "c": 1,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 53",
-   "slot": "first-line"
-  },
-  {
-   "topic": "Hematopoiesis and the malignancy families",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Which chemical exposure is named as a risk factor for hematologic malignancies?",
-   "opts": [
-    [
-     "Aspirin",
-     "Aspirin is used to reduce clotting risk in essential thrombocythemia; it is not listed as a risk factor. Tell: the environmental exposures named are radiation and chemicals like benzene.",
-     "reversed direction or value"
-    ],
-    [
-     "Benzene",
-     "Correct. Environmental risk factors include radiation and specific chemical exposures such as benzene, alongside genetic factors, autoimmune disorders and older age. Benzene is listed again for both acute lymphoblastic and acute myeloid leukemia."
-    ],
-    [
-     "Arsenic",
-     "Arsenic trioxide appears as a treatment, used with all-trans retinoic acid for acute promyelocytic leukemia, not as a named risk factor. Tell: the chemical risk factor is benzene; arsenic is on the therapy side.",
-     "reversed direction or value"
-    ],
-    [
-     "Hydroxyurea",
-     "Hydroxyurea is a treatment for polycythemia vera and essential thrombocythemia, not a listed cause. Tell: the drugs named as risks are certain chemotherapies such as alkylators; the chemical is benzene.",
-     "reversed direction or value"
-    ]
-   ],
-   "c": 1,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 9, 21, 34",
-   "slot": "risk factors"
-  },
-  {
-   "topic": "Chronic myelogenous leukemia: presentation, diagnosis and phases",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Which finding favors a reactive leukocytosis over chronic myelogenous leukemia?",
-   "opts": [
-    [
-     "White count under 50,000, no splenomegaly",
-     "Correct. A reactive leukocytosis from infection has no splenomegaly, a white count usually below 50,000, and a negative BCR-ABL1 (breakpoint cluster region-Abelson 1) result. Chronic myelogenous leukemia counts are often above 100,000."
-    ],
-    [
-     "Positive fusion gene by polymerase chain reaction",
-     "A positive BCR-ABL1 (breakpoint cluster region-Abelson 1) result is definitive for chronic myelogenous leukemia. Tell: a reactive count is negative for the fusion gene.",
-     "reversed direction or value"
-    ],
-    [
-     "Platelet count above normal with anemia",
-     "Elevated platelets with anemia fit the chronic myelogenous leukemia pattern of leukocytosis, thrombocytosis and anemia. Tell: the reactive picture is a modest count without a big spleen.",
-     "reversed direction or value"
-    ],
-    [
-     "Abdominal discomfort from a large spleen",
-     "Splenomegaly causing abdominal swelling is a feature of chronic myelogenous leukemia; the reactive picture lacks it. Tell: no splenomegaly favors a reactive count.",
-     "reversed direction or value"
-    ]
-   ],
-   "c": 0,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 59, 61",
-   "slot": "differential"
-  },
-  {
-   "topic": "Acute myeloid leukemia: who and why",
-   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly",
-   "q": "In which group is acute myeloid leukemia mostly seen?",
-   "opts": [
-    [
-     "Adolescents",
-     "Adolescents are not the group singled out; acute myeloid leukemia is unusual in children outside of neonates. Tell: the named age is adults over 60.",
-     "reversed direction or value"
-    ],
-    [
-     "Adults aged 45 to 55",
-     "Adults aged 45 to 55 are younger than the group named; acute myeloid leukemia is mostly seen in older adults over 60. Tell: acute myeloid leukemia skews older, over 60.",
-     "competing diagnosis"
-    ],
-    [
-     "Adults over 60",
-     "Correct. Acute myeloid leukemia is mostly seen in adults, particularly older adults over 60, and age over 60 is listed among its risk factors. Its incidence in children is unusual outside of neonates."
-    ],
-    [
-     "Children under 5",
-     "Young children are not the group; acute myeloid leukemia is mostly seen in adults, particularly those over 60. Tell: acute myeloid leukemia is unusual in children outside neonates and is an older-adult disease.",
+     "Plasma cells are the cell of origin of multiple myeloma, which makes a monoclonal M protein. Tell: Hodgkin lymphoma is marked by a few Reed-Sternberg cells in a crowd of immune cells.",
      "competing diagnosis"
     ]
    ],
    "c": 2,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 31, 34",
-   "slot": "epidemiology"
-  },
-  {
-   "topic": "Acute lymphoblastic leukemia: presentation and diagnosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Which test separates acute lymphoblastic leukemia from the atypical lymphocytosis of mononucleosis or pertussis?",
-   "opts": [
-    [
-     "Lumbar puncture",
-     "Lumbar puncture checks for central nervous system involvement, an adverse risk factor, after the diagnosis is made. Tell: it stages the leukemia; it does not show whether lymphocytes are clonal.",
-     "wrong stage or severity"
-    ],
-    [
-     "Chest X-ray",
-     "A chest X-ray may show a mediastinal mass in T-cell acute lymphoblastic leukemia, but it cannot tell reactive from malignant lymphocytes. Tell: clonality is read by flow cytometry.",
-     "adjacent fact"
-    ],
-    [
-     "Coagulation panel",
-     "Coagulation tests are part of the wider acute leukemia work-up and matter for bleeding complications. Tell: separating a clone from a reactive infection needs flow cytometry.",
-     "adjacent fact"
-    ],
-    [
-     "Flow cytometry",
-     "Correct. Some infections, including mononucleosis and pertussis, cause atypical lymphocytosis, and flow cytometry differentiates these from acute lymphoblastic leukemia based on its clonal nature. It also shows whether the leukemia is B-cell or T-cell."
-    ]
-   ],
-   "c": 3,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 23, 24",
-   "slot": "differential"
-  },
-  {
-   "topic": "Chronic myelogenous leukemia: management and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "At 3 months of treatment for chronic myelogenous leukemia, the BCR-ABL1 (breakpoint cluster region-Abelson 1) level is 25%. Which milestone category is this?",
-   "opts": [
-    [
-     "Failure",
-     "Failure is not defined at 3 months, so even a high level is read as warning at this point. Failure means the BCR-ABL1 (breakpoint cluster region-Abelson 1) level is above the worst cutoff for that month: above 10% at 6 months, above 1% at 12 months and beyond; it is not defined at 3 months.",
-     "wrong stage or severity"
-    ],
-    [
-     "Warning",
-     "Correct. At 3 months, failure is not applicable; the table reads warning above 10% and optimal below 10%. A level of 25% is above 10%, so it is a warning, not yet a failure."
-    ],
-    [
-     "Optimal",
-     "At 3 months, optimal needs a level below 10%, and 25% is above it. Optimal is below 10% at 3 months, below 1% at 6 months, and below 0.1% at 12 months and beyond.",
-     "wrong stage or severity"
-    ],
-    [
-     "Treatment-free remission",
-     "Treatment-free remission is not applicable at 3 months. Treatment-free remission is defined only beyond 18 months, at a BCR-ABL1 (breakpoint cluster region-Abelson 1) level below 0.01%; at earlier months the column is not applicable.",
-     "wrong stage or severity"
-    ]
-   ],
-   "c": 1,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 64",
-   "slot": "prognosis"
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 15",
+   "slot": "test finding"
   },
   {
    "topic": "Chronic myelogenous leukemia: who and why",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
    "q": "What does the fusion protein of chronic myelogenous leukemia do to the cell?",
    "opts": [
+    [
+     "Adds chromosome copies",
+     "Extra chromosome copies, hyperdiploidy, are the favorable childhood finding in acute lymphoblastic leukemia. Tell: chronic myelogenous leukemia makes a fusion enzyme, not extra chromosomes.",
+     "competing diagnosis"
+    ],
     [
      "Drives growth, blocks apoptosis",
      "Correct. The chromosome 9 and 22 translocation joins two genes, the BCR-ABL1 (breakpoint cluster region-Abelson 1) fusion, making a functional fusion enzyme that promotes cell proliferation and reduces apoptosis: the cell cannot turn off and constantly divides."
@@ -1615,15 +603,68 @@
      "Raises cytokines, fibrosis",
      "Elevated cytokines leading to marrow fibrosis come from Janus kinase pathway mutations in myelofibrosis. Tell: the 9 and 22 fusion protein drives proliferation and blocks apoptosis.",
      "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 57",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Myelofibrosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "How is myelofibrosis often treated?",
+   "opts": [
+    [
+     "Janus kinase inhibitors",
+     "Correct. Myelofibrosis is often treated with targeted inhibitors, Janus kinase inhibitors, which are palliative. Patients should be referred to a hematologist upon diagnosis."
     ],
     [
-     "Adds chromosome copies",
-     "Extra chromosome copies, hyperdiploidy, are the favorable childhood finding in acute lymphoblastic leukemia. Tell: chronic myelogenous leukemia makes a fusion enzyme, not extra chromosomes.",
+     "Phlebotomy",
+     "Phlebotomy removes the red cell excess of polycythemia vera. Tell: myelofibrosis gets palliative Janus kinase inhibitors.",
+     "competing diagnosis"
+    ],
+    [
+     "Tyrosine kinase inhibitors",
+     "Tyrosine kinase inhibitors are the hallmark therapy of chronic-phase chronic myelogenous leukemia. Tell: myelofibrosis is a Janus kinase pathway disease treated with Janus kinase inhibitors.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Arsenic with retinoic acid",
+     "Arsenic trioxide with all-trans retinoic acid is the unique treatment of acute promyelocytic leukemia. Tell: myelofibrosis treatment is palliative Janus kinase inhibition.",
      "competing diagnosis"
     ]
    ],
    "c": 0,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 57",
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 53",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Hematopoiesis and the malignancy families",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Where does normal hematopoiesis begin?",
+   "opts": [
+    [
+     "Splenic tissue",
+     "The spleen is a lymphoid tissue in which some lymphomas arise, but blood cell production does not begin there. Tell: the stem cell that starts hematopoiesis lives in the bone marrow.",
+     "adjacent fact"
+    ],
+    [
+     "Thymic tissue",
+     "The thymus is a lymphoid tissue where some lymphomas and T-cell acute lymphoblastic leukemia can be found, not where hematopoiesis begins. Tell: the hematopoietic stem cell sits in the marrow, upstream of every lymphoid and myeloid line.",
+     "adjacent fact"
+    ],
+    [
+     "Bone marrow stem cells",
+     "Correct. Normal hematopoiesis begins in the bone marrow with hematopoietic stem cells, which differentiate into myeloid and lymphoid progenitors and then into the terminally differentiated cell lines."
+    ],
+    [
+     "Lymph node tissue",
+     "Lymph nodes are lymphoid tissue where lymphomas often arise, not the starting point of blood cell production. Tell: hematopoiesis starts with stem cells in the marrow; lymph nodes are where lymphoma cells collect.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 5, 15, 19",
    "slot": "etiology"
   },
   {
@@ -1656,6 +697,385 @@
    "slot": "escalation"
   },
   {
+   "topic": "Acute lymphoblastic leukemia: who and why",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Which site may T-cell acute lymphoblastic leukemia involve, giving it lymphoma-like features?",
+   "opts": [
+    [
+     "A fibrotic marrow",
+     "A fibrotic marrow is not the T-cell feature; T-cell lymphoblastic leukemia usually has lymphoma-like characteristics and may involve the thymus. Tell: T-cell lymphoblastic leukemia is linked with the thymus and a mediastinal mass, not fibrosis.",
+     "competing diagnosis"
+    ],
+    [
+     "The thymus",
+     "Correct. T-cell acute lymphoblastic leukemia is rarer and usually has lymphoma-like characteristics, and it may involve the thymus. A mediastinal mass may be seen on chest X-ray in T-cell disease."
+    ],
+    [
+     "The gums",
+     "The gums are not the site linked to T-cell lymphoblastic leukemia; the T-cell form usually has lymphoma-like characteristics and may involve the thymus. Tell: a mass in the chest from the thymus points to T-cell lymphoblastic leukemia.",
+     "competing diagnosis"
+    ],
+    [
+     "Mainly blood and marrow",
+     "Presenting mainly in a leukemic phase, with blasts and marrow involvement, describes B-cell precursor acute lymphoblastic leukemia. Tell: the T-cell form behaves more like a lymphoma and may involve the thymus.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 19, 22",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Acute lymphoblastic leukemia: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "How is Philadelphia chromosome-positive acute lymphoblastic leukemia treated?",
+   "opts": [
+    [
+     "Kinase inhibitor plus chemotherapy",
+     "Correct. Philadelphia chromosome-positive acute lymphoblastic leukemia, carrying the chromosome 9 and 22 translocation, is treated with a tyrosine kinase inhibitor plus chemotherapy. Allogeneic transplant is added where feasible for adverse-risk or relapsed disease."
+    ],
+    [
+     "Arsenic and retinoic acid",
+     "Arsenic trioxide with all-trans retinoic acid is the unique treatment of acute promyelocytic leukemia, the chromosome 15 and 17 disease. Tell: the 9 and 22 translocation calls for a tyrosine kinase inhibitor.",
+     "competing diagnosis"
+    ],
+    [
+     "Phlebotomy and hydroxyurea",
+     "Phlebotomy and hydroxyurea treat polycythemia vera, which overproduces red cells. Tell: a Philadelphia-positive acute leukemia needs a tyrosine kinase inhibitor with chemotherapy.",
+     "competing diagnosis"
+    ],
+    [
+     "Hypomethylating agent alone",
+     "Hypomethylating agents are low-intensity therapy for unfit patients with acute myeloid leukemia and for higher-risk myelodysplastic syndrome. Tell: the Philadelphia chromosome points to a tyrosine kinase inhibitor.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 27",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Acute myeloid leukemia: who and why",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Which acute myeloid leukemia subtypes may show gum hyperplasia or other extramedullary disease?",
+   "opts": [
+    [
+     "Undifferentiated",
+     "Undifferentiated acute myeloid leukemia is not among the subtypes tied to gum involvement or extramedullary disease. Tell: gum hyperplasia means myelomonocytic or monocytic.",
+     "adjacent fact"
+    ],
+    [
+     "Myelomonocytic and monocytic",
+     "Correct. The myelomonocytic and monocytic subtypes of acute myeloid leukemia tend to have more extramedullary involvement, and they may involve the gums (hyperplasia)."
+    ],
+    [
+     "Promyelocytic",
+     "Acute promyelocytic leukemia is a separate subtype, not one of those tied to gum involvement or extramedullary disease. Tell: gums point to the monocytic subtypes.",
+     "competing diagnosis"
+    ],
+    [
+     "Erythroid and megakaryocytic",
+     "Acute erythroid and acute megakaryocytic leukemias are very rare subtypes, not the ones linked to gum involvement. Tell: extramedullary disease is a monocytic-line feature.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 33, 35",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Polycythemia vera",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Which complications are listed for polycythemia vera?",
+   "opts": [
+    [
+     "Central nervous system spread",
+     "Central nervous system involvement is an adverse risk factor in acute lymphoblastic leukemia, checked by lumbar puncture. Tell: polycythemia vera complications are vascular and splenic.",
+     "competing diagnosis"
+    ],
+    [
+     "Thrombosis, splenomegaly, bleeding",
+     "Correct. The complications of polycythemia vera are thrombosis, splenomegaly and bleeding. Its prognosis is still excellent, with an estimated survival of 14 years."
+    ],
+    [
+     "Coagulopathy and early death",
+     "Disseminated intravascular coagulation with high early mortality is the presentation of acute promyelocytic leukemia. Tell: polycythemia vera has a long survival with clotting and bleeding risks.",
+     "competing diagnosis"
+    ],
+    [
+     "Portal hypertension",
+     "Portal hypertension with severe splenomegaly is a complication of myelofibrosis. Tell: polycythemia vera's list is thrombosis, splenomegaly and bleeding.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 52",
+   "slot": "complication"
+  },
+  {
+   "topic": "Polycythemia vera",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Which pair of instructions is given for both polycythemia vera and essential thrombocythemia?",
+   "opts": [
+    [
+     "Phlebotomy and hydroxyurea",
+     "Hydroxyurea is shared, but phlebotomy is the polycythemia vera treatment for red cell excess; essential thrombocythemia uses aspirin or hydroxyurea. Tell: the shared advice is referral and smoking cessation.",
+     "adjacent fact"
+    ],
+    [
+     "Janus kinase inhibitor, palliation",
+     "Palliative Janus kinase inhibitors are the treatment of myelofibrosis, the most aggressive myeloproliferative neoplasm. Tell: the two milder neoplasms share referral and smoking cessation.",
+     "competing diagnosis"
+    ],
+    [
+     "Admission for work-up",
+     "Admission for work-up and treatment is the start for acute leukemia. Tell: polycythemia vera and essential thrombocythemia are referred to hematology with smoking cessation.",
+     "wrong stage or severity"
+    ],
+    [
+     "Hematology referral, stop smoking",
+     "Correct. Patients with polycythemia vera and with essential thrombocythemia should be referred to a hematologist and advised to cease smoking."
+    ]
+   ],
+   "c": 3,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 29, 52, 53, 54",
+   "slot": "education"
+  },
+  {
+   "topic": "Chronic myelogenous leukemia: management and prognosis",
+   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. a. infant b. child c. adolescent d. adult e. elderly",
+   "q": "Which patients with chronic myelogenous leukemia are considered for allogeneic stem cell transplant?",
+   "opts": [
+    [
+     "Young, healthy, kinase-resistant",
+     "Correct. Allogeneic stem cell transplant is used in young, healthy patients who have resistance to tyrosine kinase inhibitors or advanced-stage chronic myelogenous leukemia."
+    ],
+    [
+     "Any chronic-phase patient",
+     "Most chronic-phase patients do well on tyrosine kinase inhibitors and live normal lives. Tell: transplant is reserved for resistance or advanced stage in young, healthy patients.",
+     "wrong stage or severity"
+    ],
+    [
+     "Older, unfit patients",
+     "Older, unfit patients are poor transplant candidates; low-intensity therapy is the theme for unfit patients with acute myeloid leukemia. Tell: transplant in chronic myelogenous leukemia is for the young and healthy.",
+     "reversed direction or value"
+    ],
+    [
+     "Those in sustained response",
+     "Patients in sustained major molecular response may consider stopping therapy, not transplant. Tell: transplant is for resistance to tyrosine kinase inhibitors or advanced disease.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 63",
+   "slot": "escalation"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Acute lymphoblastic leukemia: presentation and diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Where is acute lymphoblastic leukemia typically found, in contrast to an aggressive lymphoma?",
+   "opts": [
+    [
+     "Spleen with fibrosis",
+     "Severe splenomegaly with fibrosis of the marrow is myelofibrosis, the most aggressive of the myeloproliferative neoplasms. Tell: acute lymphoblastic leukemia is a diffuse marrow and blood disease.",
+     "competing diagnosis"
+    ],
+    [
+     "Bone with M protein",
+     "Bone pain with a monoclonal M protein is multiple myeloma, a malignancy of plasma cells. Tell: acute lymphoblastic leukemia is immature lymphoid blasts spread through the marrow and blood.",
+     "competing diagnosis"
+    ],
+    [
+     "Diffuse marrow and blood",
+     "Correct. Acute lymphoblastic leukemia often shows diffuse marrow and peripheral blood involvement, in contrast to aggressive lymphomas, which involve nodal or extranodal sites with minimal bone marrow involvement."
+    ],
+    [
+     "Nodes with little marrow",
+     "Nodal or extranodal disease with minimal marrow involvement describes aggressive lymphomas, the reverse of acute lymphoblastic leukemia. Tell: the leukemia fills the marrow and blood.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 25, 53, 16",
+   "slot": "differential"
+  },
+  {
+   "topic": "Acute lymphoblastic leukemia: who and why",
+   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly",
+   "q": "Which age groups carry the highest risk of acute lymphoblastic leukemia?",
+   "opts": [
+    [
+     "Adults over 60",
+     "Adults over 60 are the group at risk for acute myeloid leukemia, which is unusual in children outside neonates. Tell: acute lymphoblastic leukemia has two peaks, one of them in young children.",
+     "competing diagnosis"
+    ],
+    [
+     "Adults near 70",
+     "A median age of 70 belongs to myelodysplastic syndrome, which is often idiopathic in older people. Tell: acute lymphoblastic leukemia is bimodal, with a pediatric peak.",
+     "competing diagnosis"
+    ],
+    [
+     "Adults 45 to 55",
+     "A median age of 45 to 55 years describes chronic myelogenous leukemia. Tell: acute lymphoblastic leukemia is bimodal, peaking in young children and again after 50.",
+     "competing diagnosis"
+    ],
+    [
+     "Under 5 and over 50",
+     "Correct. Acute lymphoblastic leukemia has a bimodal distribution: risk is highest in children under 5 and adults over 50. It is the most common malignancy under age 15, and in adults incidence peaks around 50."
+    ]
+   ],
+   "c": 3,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 18, 21",
+   "slot": "epidemiology"
+  },
+  {
+   "topic": "Acute lymphoblastic leukemia: management and prognosis",
+   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly",
+   "q": "For Philadelphia chromosome-negative acute lymphoblastic leukemia, pediatric-like regimens are usually given below what age?",
+   "opts": [
+    [
+     "15 years",
+     "Fifteen is too low; the pediatric-like regimens extend into adulthood, usually for patients younger than 40. Tell: the regimens extend into adulthood, up to 40.",
+     "adjacent fact"
+    ],
+    [
+     "40 years",
+     "Correct. For Philadelphia chromosome-negative disease, pediatric-like regimens are usually given to patients younger than 40: intensive chemotherapy with induction, consolidation and maintenance phases. In older adults, therapy changes may be needed for tolerance."
+    ],
+    [
+     "60 years",
+     "Sixty is not the cutoff; pediatric-like regimens are usually given to patients younger than 40. Tell: pediatric-like lymphoblastic leukemia regimens are usually given below 40.",
+     "adjacent fact"
+    ],
+    [
+     "70 years",
+     "Seventy is too high; in older adults, therapy changes and dose adjustments may be needed for tolerance instead. Tell: the pediatric-like regimen cutoff is 40.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 27",
+   "slot": "agent/regimen"
+  },
+  {
+   "topic": "Polycythemia vera",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Which treatment lowers the red cell excess in polycythemia vera?",
+   "opts": [
+    [
+     "Arsenic trioxide",
+     "Arsenic trioxide, with all-trans retinoic acid, is the unique treatment of acute promyelocytic leukemia. Tell: the red cell excess of polycythemia vera is removed by phlebotomy.",
+     "competing diagnosis"
+    ],
+    [
+     "Phlebotomy",
+     "Correct. Treatment of polycythemia vera is phlebotomy, which removes red cells and so lowers the increased blood viscosity, with hydroxyurea as the drug option."
+    ],
+    [
+     "Red cell transfusion",
+     "Red cell transfusions support the anemia of lower-risk myelodysplastic syndrome; adding red cells would worsen polycythemia vera. Tell: here the goal is to remove red cells.",
+     "reversed direction or value"
+    ],
+    [
+     "Erythropoiesis-stimulating agent",
+     "Erythropoiesis-stimulating agents push red cell production in low-risk myelodysplastic syndrome with anemia. Tell: polycythemia vera already has too many red cells.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 48, 52",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Acute myeloid leukemia: who and why",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Which viral infection is listed as a risk factor for acute myeloid leukemia?",
+   "opts": [
+    [
+     "Human immunodeficiency virus",
+     "Correct. The viral infection listed for acute myeloid leukemia is human immunodeficiency virus, alongside prior high-dose radiation, benzene, petroleum, alkylating chemotherapy, Down syndrome, Fanconi anemia, age over 60 and male sex."
+    ],
+    [
+     "Epstein-Barr virus",
+     "Epstein-Barr virus is listed among the viral risk factors for acute lymphoblastic leukemia, not for acute myeloid leukemia. Tell: the myeloid leukemia's listed virus is human immunodeficiency virus.",
+     "adjacent fact"
+    ],
+    [
+     "Human T-lymphotropic virus 1",
+     "Human T-cell lymphotropic virus type 1, linked to Caribbean countries, is listed for acute lymphoblastic leukemia. Tell: the myeloid list names human immunodeficiency virus instead.",
+     "adjacent fact"
+    ],
+    [
+     "Pertussis infection",
+     "Pertussis is a bacterial infection that can cause an atypical lymphocytosis mimicking acute lymphoblastic leukemia; it is not a risk factor. Tell: it is a mimic, not a cause.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 21, 24, 34",
+   "slot": "risk factors"
+  },
+  {
+   "topic": "Hematopoiesis and the malignancy families",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Which chemical exposure is named as a risk factor for hematologic malignancies?",
+   "opts": [
+    [
+     "Benzene",
+     "Correct. Environmental risk factors include radiation and specific chemical exposures such as benzene, alongside genetic factors, autoimmune disorders and older age. Benzene is listed again for both acute lymphoblastic and acute myeloid leukemia."
+    ],
+    [
+     "Arsenic",
+     "Arsenic trioxide appears as a treatment, used with all-trans retinoic acid for acute promyelocytic leukemia, not as a named risk factor. Tell: the chemical risk factor is benzene; arsenic is on the therapy side.",
+     "reversed direction or value"
+    ],
+    [
+     "Hydroxyurea",
+     "Hydroxyurea is a treatment for polycythemia vera and essential thrombocythemia, not a listed cause. Tell: the drugs named as risks are certain chemotherapies such as alkylators; the chemical is benzene.",
+     "reversed direction or value"
+    ],
+    [
+     "Aspirin",
+     "Aspirin is used to reduce clotting risk in essential thrombocythemia; it is not listed as a risk factor. Tell: the environmental exposures named are radiation and chemicals like benzene.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 9, 21, 34",
+   "slot": "risk factors"
+  },
+  {
+   "topic": "Chronic myelogenous leukemia: who and why",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Before tyrosine kinase inhibitors, chronic myelogenous leukemia historically progressed to acute leukemia in about how many years?",
+   "opts": [
+    [
+     "1-2 years",
+     "One to two years understates the historical course of about 4-6 years. Tell: under 2 years is closer to high-risk myelofibrosis survival.",
+     "reversed direction or value"
+    ],
+    [
+     "4-6 years",
+     "Correct. Chronic myelogenous leukemia historically progressed from a chronic condition to acute leukemia in about 4-6 years and was considered fatal; with tyrosine kinase inhibitors it is now largely a chronic disorder with long-term survival."
+    ],
+    [
+     "10-15 years",
+     "Ten to fifteen years is how long low-risk myelofibrosis patients can live. Tell: untreated chronic myelogenous leukemia historically turned acute in about 4-6 years.",
+     "adjacent fact"
+    ],
+    [
+     "14 years",
+     "Fourteen years is the estimated survival of polycythemia vera. Tell: the historical chronic myelogenous leukemia figure is about 4-6 years to acute leukemia.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 56",
+   "slot": "prognosis"
+  },
+  {
    "topic": "Polycythemia vera",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
    "q": "How often does polycythemia vera transform to leukemia?",
@@ -1685,62 +1105,642 @@
    "slot": "prognosis"
   },
   {
-   "topic": "Myelodysplastic syndrome",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "What is the goal of treatment in lower-risk myelodysplastic syndrome?",
+   "topic": "Acute lymphoblastic leukemia: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "In acute lymphoblastic leukemia, when is allogeneic stem cell transplant used?",
    "opts": [
     [
-     "Cure by transplant",
-     "Allogeneic transplant is the only curative option but is high risk with a limited role, and lower-risk disease rarely justifies it. Tell: the low-risk goal is comfort and function.",
+     "Adverse-risk or relapsed disease",
+     "Correct. Allogeneic stem cell transplant is used where feasible for adverse-risk acute lymphoblastic leukemia or relapsed disease. Most patients start with intensive chemotherapy, with a tyrosine kinase inhibitor added if Philadelphia-positive."
+    ],
+    [
+     "Hyperdiploid childhood disease",
+     "Hyperdiploidy in children carries a favorable prognosis, and five-year survival under 15 is about 90% with intensive chemotherapy. Tell: transplant is kept for adverse-risk or relapsed disease.",
      "wrong stage or severity"
     ],
     [
-     "Remission with 7+3",
-     "Cytarabine plus an anthracycline (7+3) is intensive chemotherapy for fit patients with acute myeloid leukemia. Tell: low-risk myelodysplasia is managed for quality of life.",
+     "In place of induction",
+     "Induction is the first phase of the intensive chemotherapy regimen; transplant does not replace it. Tell: transplant follows for adverse-risk or relapsed disease, where feasible.",
+     "wrong stage or severity"
+    ],
+    [
+     "Every adult at diagnosis",
+     "Adults start with induction, consolidation and maintenance chemotherapy; transplant is reserved for adverse-risk or relapsed disease. Tell: the trigger is risk or relapse, not adult age by itself.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 27",
+   "slot": "escalation"
+  },
+  {
+   "topic": "Acute myeloid leukemia: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Which approach is used for fit patients with acute myeloid leukemia?",
+   "opts": [
+    [
+     "Arsenic and retinoic acid",
+     "Arsenic trioxide with all-trans retinoic acid is the unique treatment of acute promyelocytic leukemia. Tell: it is reserved for the promyelocytic subtype, not acute myeloid leukemia in general.",
      "competing diagnosis"
     ],
     [
-     "Major molecular response",
-     "Major molecular response is the treatment target in chronic myelogenous leukemia on tyrosine kinase inhibitors. Tell: the myelodysplasia goal is quality of life.",
+     "Tyrosine kinase inhibitor",
+     "Tyrosine kinase inhibitors are the hallmark of chronic-phase chronic myelogenous leukemia and are used for Philadelphia-positive lymphoblastic leukemia. Tell: fit acute myeloid leukemia gets cytarabine plus an anthracycline.",
      "competing diagnosis"
     ],
     [
-     "Improve quality of life",
-     "Correct. Lower-risk myelodysplastic syndrome has a median survival above 5 years and very low risk of acute myeloid leukemia, but patients often have complications from anemia, bleeding or infections, so the goal of treatment is to improve quality of life."
+     "Intensive chemotherapy (7+3)",
+     "Correct. Fit patients receive intensive chemotherapy, often cytarabine plus an anthracycline (7+3). Allogeneic stem cell transplant typically follows for most intermediate- and high-risk patients who achieve remission."
+    ],
+    [
+     "Hypomethylating agent",
+     "Hypomethylating agents, with or without venetoclax, are low-intensity therapy for unfit patients. Tell: fitness decides it, and a fit patient gets intensive chemotherapy.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 40",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Acute lymphoblastic leukemia: presentation and diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Which test separates acute lymphoblastic leukemia from the atypical lymphocytosis of mononucleosis or pertussis?",
+   "opts": [
+    [
+     "Lumbar puncture",
+     "Lumbar puncture checks for central nervous system involvement, an adverse risk factor, after the diagnosis is made. Tell: it stages the leukemia; it does not show whether lymphocytes are clonal.",
+     "wrong stage or severity"
+    ],
+    [
+     "Chest X-ray",
+     "A chest X-ray may show a mediastinal mass in T-cell acute lymphoblastic leukemia, but it cannot tell reactive from malignant lymphocytes. Tell: clonality is read by flow cytometry.",
+     "adjacent fact"
+    ],
+    [
+     "Coagulation panel",
+     "Coagulation tests are part of the wider acute leukemia work-up and matter for bleeding complications. Tell: separating a clone from a reactive infection needs flow cytometry.",
+     "adjacent fact"
+    ],
+    [
+     "Flow cytometry",
+     "Correct. Some infections, including mononucleosis and pertussis, cause atypical lymphocytosis, and flow cytometry differentiates these from acute lymphoblastic leukemia based on its clonal nature. It also shows whether the leukemia is B-cell or T-cell."
     ]
    ],
    "c": 3,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 49",
-   "slot": "prognosis"
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 23, 24",
+   "slot": "differential"
+  },
+  {
+   "topic": "Essential thrombocythemia",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Why can essential thrombocythemia cause bleeding despite a high platelet count?",
+   "opts": [
+    [
+     "Acquired von Willebrand factor loss",
+     "Correct. Bleeding with high platelets can occur in essential thrombocythemia because of acquired von Willebrand factor deficiency, leaving a shortage of factor at the site of injury."
+    ],
+    [
+     "Low platelets from marrow failure",
+     "Platelets are high, not low, in essential thrombocythemia; thrombocytopenia is the bleeding cause in leukemia. Tell: the paradox is bleeding with high platelets.",
+     "reversed direction or value"
+    ],
+    [
+     "Disseminated coagulopathy",
+     "Disseminated intravascular coagulation is the emergent bleeding of acute promyelocytic leukemia. Tell: essential thrombocythemia bleeds from a von Willebrand factor shortage.",
+     "competing diagnosis"
+    ],
+    [
+     "Portal hypertension",
+     "Portal hypertension with bleeding is a complication of myelofibrosis. Tell: in essential thrombocythemia the bleeding comes from acquired von Willebrand factor loss.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 54",
+   "slot": "complication"
+  },
+  {
+   "topic": "Myelodysplastic syndrome",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "When myeloid growth factors are given for neutropenia in myelodysplastic syndrome, what is the caution?",
+   "opts": [
+    [
+     "Triggering coagulopathy",
+     "Coagulopathy is not the stated caution; myeloid growth factors are given for neutropenia with care not to overstimulate blasts. Tell: the growth factor caution in myelodysplasia is blast stimulation.",
+     "competing diagnosis"
+    ],
+    [
+     "Causing marrow fibrosis",
+     "Marrow fibrosis is not the stated caution; the concern with myeloid growth factors is overstimulation of blasts. Tell: the warning is about stimulating blasts.",
+     "competing diagnosis"
+    ],
+    [
+     "Overstimulating the blasts",
+     "Correct. Neutropenia in myelodysplastic syndrome may be treated with myeloid growth factors, but with care not to cause overstimulation of blasts. The disease already sits close to acute myeloid leukemia at the high-risk end."
+    ],
+    [
+     "Raising blood viscosity",
+     "Raising blood viscosity is not the stated caution; the warning with myeloid growth factors is not to cause overstimulation of blasts. Tell: the stated caution with myeloid growth factors concerns the blasts.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 48",
+   "slot": "avoid"
+  },
+  {
+   "topic": "Chronic myelogenous leukemia: presentation, diagnosis and phases",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Which finding favors a reactive leukocytosis over chronic myelogenous leukemia?",
+   "opts": [
+    [
+     "Positive fusion gene by polymerase chain reaction",
+     "A positive BCR-ABL1 (breakpoint cluster region-Abelson 1) result is definitive for chronic myelogenous leukemia. Tell: a reactive count is negative for the fusion gene.",
+     "reversed direction or value"
+    ],
+    [
+     "Platelet count above normal with anemia",
+     "Elevated platelets with anemia fit the chronic myelogenous leukemia pattern of leukocytosis, thrombocytosis and anemia. Tell: the reactive picture is a modest count without a big spleen.",
+     "reversed direction or value"
+    ],
+    [
+     "Abdominal discomfort from a large spleen",
+     "Splenomegaly causing abdominal swelling is a feature of chronic myelogenous leukemia; the reactive picture lacks it. Tell: no splenomegaly favors a reactive count.",
+     "reversed direction or value"
+    ],
+    [
+     "White count under 50,000, no splenomegaly",
+     "Correct. A reactive leukocytosis from infection has no splenomegaly, a white count usually below 50,000, and a negative BCR-ABL1 (breakpoint cluster region-Abelson 1) result. Chronic myelogenous leukemia counts are often above 100,000."
+    ]
+   ],
+   "c": 3,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 59, 61",
+   "slot": "differential"
+  },
+  {
+   "topic": "Chronic myelogenous leukemia: presentation, diagnosis and phases",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Which lab pattern fits chronic-phase chronic myelogenous leukemia?",
+   "opts": [
+    [
+     "Pancytopenia, dysplasia",
+     "Low counts with abnormal-looking neutrophils describe myelodysplastic syndrome. Tell: chronic myelogenous leukemia raises the white count and platelets.",
+     "competing diagnosis"
+    ],
+    [
+     "Blasts of 20% or more",
+     "Blasts at or above 20% define acute leukemia; chronic-phase disease has fewer than 5%. Tell: chronic phase has very few blasts.",
+     "wrong stage or severity"
+    ],
+    [
+     "Raised hematocrit",
+     "An elevated red cell mass is polycythemia vera; in chronic myelogenous leukemia the hematocrit is not elevated. Tell: the chronic myelogenous leukemia excess is white cells and platelets.",
+     "competing diagnosis"
+    ],
+    [
+     "High white cells and platelets",
+     "Correct. Labs show marked leukocytosis, often above 100,000 and up to 500,000, thrombocytosis and anemia, with usually very low blasts unless the disease is in accelerated or blast phase."
+    ]
+   ],
+   "c": 3,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 59, 61, 62",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Acute promyelocytic leukemia",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Which treatment is unique to acute promyelocytic leukemia?",
+   "opts": [
+    [
+     "Cytarabine plus anthracycline",
+     "Cytarabine plus an anthracycline (7+3) is intensive chemotherapy for fit patients with other acute myeloid leukemia. Tell: the promyelocytic subtype gets arsenic trioxide and all-trans retinoic acid instead.",
+     "competing diagnosis"
+    ],
+    [
+     "Hypomethylating agent",
+     "Hypomethylating agents, with or without venetoclax, are low-intensity therapy for unfit patients with acute myeloid leukemia. Tell: the promyelocytic subtype has its own regimen.",
+     "competing diagnosis"
+    ],
+    [
+     "Tyrosine kinase inhibitor",
+     "Tyrosine kinase inhibitors treat chronic myelogenous leukemia and Philadelphia-positive lymphoblastic leukemia, the chromosome 9 and 22 diseases. Tell: chromosome 15 and 17 disease gets arsenic and retinoic acid.",
+     "competing diagnosis"
+    ],
+    [
+     "Arsenic and retinoic acid",
+     "Correct. Acute promyelocytic leukemia has a unique treatment approach: arsenic trioxide and all-trans retinoic acid, rather than the chemotherapy used for other acute myeloid leukemia. Patients who survive the presentation have a cure rate above 90%."
+    ]
+   ],
+   "c": 3,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 43",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Performance status, work-up and transplant terms",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Which test is required in almost every hematologic malignancy to secure the correct diagnosis?",
+   "opts": [
+    [
+     "Complete blood count alone",
+     "A complete blood count can detect incidental cytopenias that start the work-up, but it cannot name the malignancy. Tell: abnormal counts raise the question; marrow biopsy or flow cytometry answers it.",
+     "wrong stage or severity"
+    ],
+    [
+     "Chemistry panel",
+     "A chemistry panel may show an elevated protein level that first hints at myeloma, but it does not confirm a diagnosis. Tell: it is a clue on routine labs, not the confirming test.",
+     "wrong stage or severity"
+    ],
+    [
+     "Lumbar puncture",
+     "Lumbar puncture is part of the acute leukemia work-up to look for central nervous system involvement, not the diagnostic test for every blood cancer. Tell: it stages spread; marrow biopsy or flow cytometry makes the diagnosis.",
+     "adjacent fact"
+    ],
+    [
+     "Marrow biopsy or flow cytometry",
+     "Correct. Almost all hematologic malignancies require a bone marrow biopsy and/or flow cytometry as part of the work-up to ensure the correct diagnosis. Blood counts and chemistry panels may raise the suspicion but do not settle it."
+    ]
+   ],
+   "c": 3,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 11, 25",
+   "slot": "gold standard"
+  },
+  {
+   "topic": "Performance status, work-up and transplant terms",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Which transplant is also called stem cell rescue?",
+   "opts": [
+    [
+     "Red cell transfusion",
+     "A red cell transfusion gives mature red cells, not stem cells, so it is not a stem cell transplant. Tell: the rescue name belongs to giving back the patient's own stem cells.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Leukapheresis",
+     "Leukapheresis removes excess white cells as an emergency when acute myeloid leukemia counts exceed 100,000. Tell: it takes cells out of the blood; stem cell rescue puts the patient's own stem cells back.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Autologous transplant",
+     "Correct. An autologous stem cell transplant uses the person's own stem cells as part of the transplantation process, often to rescue the marrow after high-dose chemotherapy, hence the name stem cell rescue."
+    ],
+    [
+     "Allogeneic transplant",
+     "An allogeneic transplant uses a healthy donor's stem cells rather than the patient's own. Tell: rescue means returning the patient's own cells after high-dose chemotherapy.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 12, 35",
+   "slot": "agent/regimen"
+  },
+  {
+   "topic": "Myelodysplastic syndrome",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Blasts at or above what percentage turn higher-risk myelodysplastic syndrome into acute myeloid leukemia?",
+   "opts": [
+    [
+     "5%",
+     "Below 5% blasts is the chronic phase of chronic myelogenous leukemia. Tell: the myelodysplasia-to-leukemia line is 20%.",
+     "adjacent fact"
+    ],
+    [
+     "10%",
+     "Ten percent is the newer exception for certain genetic mutations in acute myeloid leukemia, and 10-19% is often the accelerated phase of chronic myelogenous leukemia. Tell: the standard cutoff is 20%.",
+     "adjacent fact"
+    ],
+    [
+     "20%",
+     "Correct. Higher-risk myelodysplastic syndrome may have blasts, but below 20%; at 20% or more the diagnosis is acute myeloid leukemia. Very high-risk myelodysplastic syndrome with elevated blasts overlaps substantially with acute myeloid leukemia."
+    ],
+    [
+     "30%",
+     "Thirty percent overstates the line. Tell: anything at 20% or above is acute myeloid leukemia, not myelodysplasia.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 38, 47",
+   "slot": "differential"
   },
   {
    "topic": "Hematopoiesis and the malignancy families",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "About what share of all lymphomas are non-Hodgkin lymphomas?",
+   "q": "Hematologic malignancies result from mutation in and proliferation of what?",
    "opts": [
     [
-     "10%",
-     "About 10% is the share of Hodgkin lymphoma, the type characterized by few Reed-Sternberg cells. Tell: the two shares add to 100, and non-Hodgkin is the large majority.",
+     "Several clones at once",
+     "A mix of unrelated clones would be polyclonal, the opposite of the definition. Tell: the disease grows from one mutated somatic cell, which is why flow cytometry looks for clonality.",
      "reversed direction or value"
     ],
     [
-     "50%",
-     "An even split understates non-Hodgkin lymphoma, which makes up about 90% of lymphomas. Tell: Hodgkin lymphoma is the small group at about 10%.",
-     "reversed direction or value"
+     "Inherited germline cells",
+     "The initial oncogenic mutation occurs in a single somatic cell, not in every cell from birth, even though family history and genetic syndromes raise risk. Tell: genetics can raise risk, but the cancer itself is one acquired clone.",
+     "confused mechanism or drug class"
     ],
     [
-     "70%",
-     "Seventy percent understates it; non-Hodgkin lymphoma is about 90% of lymphomas, leaving about 10% for Hodgkin lymphoma. Tell: the split is nine to one.",
-     "reversed direction or value"
+     "Reactive immune cells",
+     "Reactive cells, as in the atypical lymphocytosis of mononucleosis or pertussis, are not clonal, and flow cytometry separates them from leukemia on that basis. Tell: reactive means a response to infection; malignant means one clone.",
+     "competing diagnosis"
     ],
     [
-     "90%",
-     "Correct. Non-Hodgkin lymphoma accounts for about 90% of all lymphomas and includes both B-cell and T-cell lymphomas. Hodgkin lymphoma, with its Reed-Sternberg cells, makes up the remaining 10%."
+     "A single clone",
+     "Correct. Hematologic malignancies are cancers of blood-forming tissues or the lymphatic system arising from mutation in and proliferation of a hematologic clone, so they are monoclonal. The first oncogenic mutation occurs in a single somatic cell, which then gains a growth advantage."
     ]
    ],
    "c": 3,
-   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 15",
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 6, 7, 24",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Acute myeloid leukemia: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "About what is the overall five-year survival of acute myeloid leukemia?",
+   "opts": [
+    [
+     "5%",
+     "Five percent is the five-year survival of patients over 70, the lowest group. Tell: the overall figure is about 25-30%.",
+     "adjacent fact"
+    ],
+    [
+     "25-30%",
+     "Correct. Treatment brings initial remission in many patients, but acute myeloid leukemia frequently relapses and treatment-related mortality is high: overall survival is only 48% at one year and about 25-30% at five years."
+    ],
+    [
+     "48%",
+     "Forty-eight percent is the overall survival at one year, not at five years. Tell: by five years it falls to about 25-30%.",
+     "adjacent fact"
+    ],
+    [
+     "90%",
+     "A cure rate above 90% belongs to acute promyelocytic leukemia in patients who survive the initial presentation. Tell: acute myeloid leukemia overall is about 25-30% at five years.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 41",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "Chronic myelogenous leukemia: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "What do patients with chronic myelogenous leukemia need to know about how long treatment lasts?",
+   "opts": [
+    [
+     "Until the spleen shrinks",
+     "Spleen size is not the stopping rule; therapy is lifelong unless a sustained major molecular remission is reached. Tell: the decision follows the fusion gene level.",
+     "wrong stage or severity"
+    ],
+    [
+     "Lifelong unless sustained response",
+     "Correct. Treatment is required for life unless the patient achieves a sustained major molecular remission, at which time discontinuation is possible. Many patients live a full life with no detriment to long-term survival if appropriately managed."
+    ],
+    [
+     "A fixed course of 2-5 years",
+     "A 2-5 year intensive course describes the chemotherapy of childhood acute lymphoblastic leukemia. Tell: chronic myelogenous leukemia therapy continues for life unless a sustained deep response allows stopping.",
+     "competing diagnosis"
+    ],
+    [
+     "Until counts first normalize",
+     "Normal blood counts are not the stopping rule; discontinuation depends on a sustained major molecular remission measured by the fusion gene assay. Tell: the target is molecular, not just counts.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 28, 66",
+   "slot": "education"
+  },
+  {
+   "topic": "Chronic myelogenous leukemia: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "What is the hallmark therapy for chronic-phase chronic myelogenous leukemia?",
+   "opts": [
+    [
+     "Cytarabine-based 7+3",
+     "Cytarabine plus an anthracycline (7+3) is intensive chemotherapy for fit patients with acute myeloid leukemia. Tell: chronic phase is managed with an oral targeted drug.",
+     "wrong stage or severity"
+    ],
+    [
+     "Janus kinase inhibitors",
+     "Janus kinase inhibitors are palliative therapy for myelofibrosis. Tell: chronic myelogenous leukemia's fusion enzyme is targeted by tyrosine kinase inhibitors.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Tyrosine kinase inhibitors",
+     "Correct. Tyrosine kinase inhibitors are the hallmark of therapy for chronic-phase chronic myelogenous leukemia, with six approved agents. They turned a once-fatal leukemia into a largely chronic disorder with long-term survival."
+    ],
+    [
+     "Phlebotomy",
+     "Phlebotomy treats the red cell excess of polycythemia vera; in chronic myelogenous leukemia the hematocrit is not elevated. Tell: the fusion enzyme is targeted by tyrosine kinase inhibitors.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 2,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 56, 63",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Hematopoiesis and the malignancy families",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Multiple myeloma arises from which cell?",
+   "opts": [
+    [
+     "Plasma cells",
+     "Correct. Multiple myeloma arises from terminally differentiated B cells called plasma cells. Because plasma cells make our antibodies, myeloma produces an excess of a single monoclonal antibody, the M protein."
+    ],
+    [
+     "T cells",
+     "T cells are lymphoid cells that can give rise to T-cell lymphomas and T-cell acute lymphoblastic leukemia, not myeloma. Tell: myeloma is a plasma cell disorder, and plasma cells come from B cells, not T cells.",
+     "adjacent fact"
+    ],
+    [
+     "Myeloid progenitors",
+     "Myeloid progenitors give rise to acute myeloid leukemia, myelodysplastic syndrome and the myeloproliferative neoplasms. Tell: the name sounds myeloid, but myeloma is a lymphoid-line cancer of antibody-making plasma cells.",
+     "common lay belief"
+    ],
+    [
+     "Lymphoblasts",
+     "Lymphoblasts are the very immature lymphoid cells of acute lymphoblastic leukemia. Tell: myeloma comes from the most mature end of the B-cell line, the terminally differentiated plasma cell.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 16",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Chronic myelogenous leukemia: who and why",
+   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. a. infant b. child c. adolescent d. adult e. elderly",
+   "q": "What is the median age at diagnosis of chronic myelogenous leukemia?",
+   "opts": [
+    [
+     "Under 15 years",
+     "Under 15 is where acute lymphoblastic leukemia is the most common malignancy. Tell: chronic myelogenous leukemia is a middle-aged adult disease.",
+     "competing diagnosis"
+    ],
+    [
+     "45-55 years",
+     "Correct. The median age of chronic myelogenous leukemia is 45-55 years; it may occur in either sex but is slightly more common in men."
+    ],
+    [
+     "Over 60 years",
+     "Over 60 is the age group for acute myeloid leukemia. Tell: chronic myelogenous leukemia has a younger median, 45-55.",
+     "competing diagnosis"
+    ],
+    [
+     "About 70 years",
+     "A median of 70 is myelodysplastic syndrome. Tell: chronic myelogenous leukemia is diagnosed at a median of 45-55.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 31, 46, 58",
    "slot": "epidemiology"
+  },
+  {
+   "topic": "Myelodysplastic syndrome",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "What is the only curative therapy for myelodysplastic syndrome?",
+   "opts": [
+    [
+     "Allogeneic stem cell transplant",
+     "Correct. The only curative therapy for myelodysplastic syndrome is allogeneic stem cell transplant, using a healthy donor's stem cells, but it is high risk and has a limited role in therapy."
+    ],
+    [
+     "Hypomethylating agents",
+     "Hypomethylating agents, like chemotherapy, treat higher-risk disease but are not described as curative. Tell: cure requires replacing the marrow with a donor's stem cells.",
+     "wrong stage or severity"
+    ],
+    [
+     "Erythropoiesis-stimulating agents",
+     "Erythropoiesis-stimulating agents support low-risk anemia and improve quality of life; they do not cure. Tell: the curative option is an allogeneic transplant.",
+     "wrong stage or severity"
+    ],
+    [
+     "Autologous stem cell transplant",
+     "An autologous transplant returns the patient's own stem cells, which in myelodysplasia are the abnormal clone. Tell: the curative transplant uses a healthy donor's cells.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 12, 48",
+   "slot": "escalation"
+  },
+  {
+   "topic": "Acute myeloid leukemia: who and why",
+   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly",
+   "q": "In which group is acute myeloid leukemia mostly seen?",
+   "opts": [
+    [
+     "Adults over 60",
+     "Correct. Acute myeloid leukemia is mostly seen in adults, particularly older adults over 60, and age over 60 is listed among its risk factors. Its incidence in children is unusual outside of neonates."
+    ],
+    [
+     "Children under 5",
+     "Young children are not the group; acute myeloid leukemia is mostly seen in adults, particularly those over 60. Tell: acute myeloid leukemia is unusual in children outside neonates and is an older-adult disease.",
+     "competing diagnosis"
+    ],
+    [
+     "Adolescents",
+     "Adolescents are not the group singled out; acute myeloid leukemia is unusual in children outside of neonates. Tell: the named age is adults over 60.",
+     "reversed direction or value"
+    ],
+    [
+     "Adults aged 45 to 55",
+     "Adults aged 45 to 55 are younger than the group named; acute myeloid leukemia is mostly seen in older adults over 60. Tell: acute myeloid leukemia skews older, over 60.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 31, 34",
+   "slot": "epidemiology"
+  },
+  {
+   "topic": "Hematopoiesis and the malignancy families",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "In a hematologic malignancy, bleeding is usually due to which count abnormality?",
+   "opts": [
+    [
+     "Anemia",
+     "Anemia explains fatigue, weakness, lightheadedness, shortness of breath and pale skin, not bleeding. Tell: tiredness points to red cells; bleeding points to platelets.",
+     "adjacent fact"
+    ],
+    [
+     "Neutropenia",
+     "Too few working white cells explains infections, not bleeding. Tell: infections follow ineffective or low white cells, while bruising and bleeding follow low platelets.",
+     "adjacent fact"
+    ],
+    [
+     "Leukocytosis",
+     "A high white count reflects proliferation of the leukemic clone itself; it does not cause bleeding by the stated mechanism. Tell: bleeding is listed under thrombocytopenia, with petechiae and purpura.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Thrombocytopenia",
+     "Correct. Hematologic malignancies often present with non-specific symptoms: fatigue from anemia, bleeding from thrombocytopenia, swollen nodes in lymphoma and bone pain in myeloma. Low platelets explain the bruising and bleeding."
+    ]
+   ],
+   "c": 3,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 11, 22",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Myelofibrosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Which presentation is typical of myelofibrosis?",
+   "opts": [
+    [
+     "Gum hyperplasia",
+     "Gum involvement is a feature of the myelomonocytic and monocytic subtypes of acute myeloid leukemia. Tell: myelofibrosis symptoms come from splenomegaly.",
+     "competing diagnosis"
+    ],
+    [
+     "Early satiety from splenomegaly",
+     "Correct. Myelofibrosis presents non-specifically with fatigue and abdominal symptoms from splenomegaly, including pain, early satiety and bloating; night sweats, fever and weight loss are also common."
+    ],
+    [
+     "Itching after warm showers",
+     "Pruritus with warm baths or showers is the classic symptom of polycythemia vera. Tell: abdominal fullness from a big spleen points to myelofibrosis.",
+     "competing diagnosis"
+    ],
+    [
+     "A mediastinal mass",
+     "A mediastinal mass on chest X-ray may be seen in T-cell acute lymphoblastic leukemia. Tell: myelofibrosis enlarges the spleen, not the mediastinum.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 53",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Acute myeloid leukemia: presentation and diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Acute myeloid leukemia has historically been defined by myeloid blasts at or above what percentage?",
+   "opts": [
+    [
+     "5%",
+     "Below 5% blasts describes the chronic phase of chronic myelogenous leukemia. Tell: acute leukemia sits at 20% or more.",
+     "adjacent fact"
+    ],
+    [
+     "10%",
+     "Ten percent or higher is the newer exception for certain genetic mutations, not the historical definition. Tell: the classic line is 20%.",
+     "adjacent fact"
+    ],
+    [
+     "20%",
+     "Correct. Acute myeloid leukemia has historically been defined by myeloid blasts at or above 20%; newer guidelines note that certain genetic mutations may allow the diagnosis with 10% or higher. Below 20%, a dysplastic marrow with blasts is myelodysplastic syndrome."
+    ],
+    [
+     "30%",
+     "Thirty percent overstates the definition; the threshold is 20%. Tell: higher-risk myelodysplastic syndrome may have blasts but below 20%, otherwise it is acute myeloid leukemia.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 38, 47",
+   "slot": "gold standard"
   }
  ]
 }
