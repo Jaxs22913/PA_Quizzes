@@ -93,8 +93,24 @@
     .logo-mark-ink { stroke: #e5e7eb; }
     .logo-mark-accent { stroke: var(--primary); }
   }
+  /* memory-aid box + footnote rows (render.py emits this block only when a
+     topic uses "mnemonic" or a {"note": ...} row); theme variables only, so
+     the designed dark mode (tools/dark_tokens.py) recolours it for free */
+  .mnem{margin:10px 0 0;padding:11px 15px 12px;background:var(--card);border:1px solid var(--line);
+    border-left:4px solid var(--acc);border-radius:12px;box-shadow:var(--shadow);font-size:13.8px;color:var(--body)}
+  .mnem-k{font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--acc-ink,var(--ink));margin:0 0 4px}
+  .mnem p{margin:0 0 5px}
+  .mnem p:last-child{margin-bottom:0}
+  .mnem-hook{font-weight:700;color:var(--ink)}
+  .mnem-key span{display:inline-block;margin:0 16px 3px 0}
+  .mnem-key b{color:var(--acc-ink,var(--ink))}
+  .mnem-brk{color:var(--muted);font-size:13px}
+  .mnem-brk b{color:var(--body)}
+  td.rnote{font-size:12.8px;font-style:italic;color:var(--muted)}
+  @media print{.mnem{box-shadow:none;break-inside:avoid}}
 </style>
-<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--primary-l:#26384a;--primary:#788da2;}:root[data-theme="dark"] body[data-dark="tokens"] #scope{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#scope"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-landmarks{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-landmarks"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-normal-film{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-normal-film"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-airway{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-airway"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-technique{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-technique"]{color:#5e8c92!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-modalities{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-modalities"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-safety{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-safety"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-ct{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-ct"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-patterns{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-patterns"]{color:#5e8c92!important}:root[data-theme="dark"] body[data-dark="tokens"] #l19-order{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l19-order"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l19-curve{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l19-curve"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #l19-arterial{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l19-arterial"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #l19-indications{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l19-indications"]{color:#5e8c92!important}:root[data-theme="dark"] body[data-dark="tokens"] #l19-read{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l19-read"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l19-disorders{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l19-disorders"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #l19-gap{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l19-gap"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #l20-equipment{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l20-equipment"]{color:#5e8c92!important}:root[data-theme="dark"] body[data-dark="tokens"] #l20-volumes{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l20-volumes"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l20-spirometry{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l20-spirometry"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #l20-indications{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l20-indications"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #l20-patterns{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l20-patterns"]{color:#5e8c92!important}:root[data-theme="dark"] body[data-dark="tokens"] #l20-reading{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l20-reading"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l20-role{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l20-role"]{color:#5a88ba!important}:root[data-theme="light"] body[data-dark="tokens"]{--primary-t:#26384a;}</style><!--DARK-TOKENS:END-->
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--primary-l:#26384a;--primary:#788da2;}:root[data-theme="dark"] body[data-dark="tokens"] #scope{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#scope"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-landmarks{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-landmarks"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-normal-film{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-normal-film"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-airway{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-airway"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-technique{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-technique"]{color:#5e8c92!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-modalities{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-modalities"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-safety{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-safety"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-ct{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-ct"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-patterns{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-patterns"]{color:#5e8c92!important}:root[data-theme="dark"] body[data-dark="tokens"] #l20-equipment{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l20-equipment"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l20-volumes{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l20-volumes"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #l20-spirometry{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l20-spirometry"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #l20-indications{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l20-indications"]{color:#5e8c92!important}:root[data-theme="dark"] body[data-dark="tokens"] #l20-patterns{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l20-patterns"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l20-reading{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l20-reading"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #l20-role{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l20-role"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #l19-order{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l19-order"]{color:#5e8c92!important}:root[data-theme="dark"] body[data-dark="tokens"] #l19-curve{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l19-curve"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l19-arterial{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l19-arterial"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #l19-indications{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l19-indications"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #l19-read{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l19-read"]{color:#5e8c92!important}:root[data-theme="dark"] body[data-dark="tokens"] #l19-disorders{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l19-disorders"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l19-gap{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l19-gap"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #pocus-focused{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#pocus-focused"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #pocus-role{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#pocus-role"]{color:#5e8c92!important}:root[data-theme="dark"] body[data-dark="tokens"] #pocus-machine{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#pocus-machine"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #pocus-echo{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#pocus-echo"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #pocus-artifacts{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#pocus-artifacts"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #pocus-modes{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#pocus-modes"]{color:#5e8c92!important}:root[data-theme="dark"] body[data-dark="tokens"] #pocus-cardiac{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#pocus-cardiac"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #pocus-lung{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#pocus-lung"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #pocus-abdomen{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#pocus-abdomen"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #pocus-protocols{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#pocus-protocols"]{color:#5e8c92!important}:root[data-theme="dark"] body[data-dark="tokens"] #pocus-soft{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#pocus-soft"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #pocus-integrate{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#pocus-integrate"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #l21-safety{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l21-safety"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #l21-abo{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l21-abo"]{color:#5e8c92!important}:root[data-theme="dark"] body[data-dark="tokens"] #l21-compat{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l21-compat"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l21-emergency{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l21-emergency"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #l21-abo-vs-rh{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l21-abo-vs-rh"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #l21-rh{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l21-rh"]{color:#5e8c92!important}:root[data-theme="dark"] body[data-dark="tokens"] #l21-typing{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l21-typing"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l21-screen{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l21-screen"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #l21-crossmatch{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l21-crossmatch"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #l21-protocol{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l21-protocol"]{color:#5e8c92!important}:root[data-theme="dark"] body[data-dark="tokens"] #l21-reactions{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l21-reactions"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l21-reaction-details{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l21-reaction-details"]{color:#5a88ba!important}:root[data-theme="light"] body[data-dark="tokens"]{--primary-t:#26384a;}</style><!--DARK-TOKENS:END-->
 </head>
 <body data-dark="tokens" data-dark-kind="cram">
 <div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
@@ -121,7 +137,7 @@
   <header class="hero">
     <div class="kicker">Principles of Diagnostic Medicine I Exam 4 · Class of 2028</div>
     <h1>Principles of Diagnostic Medicine I Exam 4 Cram Sheet</h1>
-    <p class="sub">Lectures 17 to 21, the pulmonary block, built lecture by lecture. So far: pulmonary imaging (the landmarks, the normal film, the upper airway films, technique, choosing the study and its cautions, reading computed tomography, and the five patterns), acid-base and blood gases (what each value measures, the curve, arterial against venous, indications, the step-wise read and compensation, the four disorders with potassium, and the anion gap) and pulmonary function testing (the equipment, the volumes and capacities, spirometry, indications, obstruction against restriction, reading a report, each test's role, and oxygenation). Opens with how the exam is written.</p>
+    <p class="sub">Lectures 17 to 21: the pulmonary block, point-of-care ultrasound and transfusion medicine. pulmonary imaging (the landmarks, the normal film, the upper airway films, technique, choosing the study and its cautions, reading computed tomography, and the five patterns), acid-base and blood gases (what each value measures, the curve, arterial against venous, indications, the step-wise read and compensation, the four disorders with potassium, and the anion gap), pulmonary function testing (the equipment, the volumes and capacities, spirometry, indications, obstruction against restriction, reading a report, each test's role, and oxygenation), point-of-care ultrasound (probes, echogenicity and artifacts, the four cardiac windows, lung, gallbladder, inferior vena cava and soft-tissue findings, and the trauma windows) and transfusion medicine (compatibility, RhD, typing and screening, crossmatch tiers and the five reactions). Opens with how the exam is written.</p>
     <div class="toc">
       <a href="#scope" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>How This Exam Is Written</a>
       <a href="#l17-landmarks" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>Landmarks You Can Feel (Lecture 17)</a>
@@ -132,20 +148,44 @@
       <a href="#l17-safety" style="color:#2d5076"><span class="dot" style="background:#3a6797"></span>Contraindications and Cautions</a>
       <a href="#l17-ct" style="color:#6c4616"><span class="dot" style="background:#8a5a1c"></span>Reading Computed Tomography</a>
       <a href="#l17-patterns" style="color:#25494c"><span class="dot" style="background:#2f5d62"></span>The Five Patterns</a>
-      <a href="#l19-order" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>The Blood Gas and What Each Value Measures (Lecture 19)</a>
-      <a href="#l19-curve" style="color:#2d5076"><span class="dot" style="background:#3a6797"></span>The Oxygen-Hemoglobin Curve</a>
-      <a href="#l19-arterial" style="color:#6c4616"><span class="dot" style="background:#8a5a1c"></span>Arterial Against Venous, and the Sample</a>
-      <a href="#l19-indications" style="color:#25494c"><span class="dot" style="background:#2f5d62"></span>When to Order an Arterial Blood Gas</a>
-      <a href="#l19-read" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>Reading the Gas, and Compensation</a>
-      <a href="#l19-disorders" style="color:#2d5076"><span class="dot" style="background:#3a6797"></span>The Four Disorders</a>
-      <a href="#l19-gap" style="color:#6c4616"><span class="dot" style="background:#8a5a1c"></span>The Anion Gap</a>
-      <a href="#l20-equipment" style="color:#25494c"><span class="dot" style="background:#2f5d62"></span>The Equipment and What Each Test Measures (Lecture 20)</a>
-      <a href="#l20-volumes" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>The Four Volumes and Four Capacities</a>
-      <a href="#l20-spirometry" style="color:#2d5076"><span class="dot" style="background:#3a6797"></span>Spirometry and the Forced Values</a>
-      <a href="#l20-indications" style="color:#6c4616"><span class="dot" style="background:#8a5a1c"></span>Why Order Them</a>
-      <a href="#l20-patterns" style="color:#25494c"><span class="dot" style="background:#2f5d62"></span>Obstructive Against Restrictive</a>
-      <a href="#l20-reading" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>Reading a Report</a>
-      <a href="#l20-role" style="color:#2d5076"><span class="dot" style="background:#3a6797"></span>Each Standard Test's Job, and Oxygenation</a>
+      <a href="#l20-equipment" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>The Equipment and What Each Test Measures (Lecture 18)</a>
+      <a href="#l20-volumes" style="color:#2d5076"><span class="dot" style="background:#3a6797"></span>The Four Volumes and Four Capacities</a>
+      <a href="#l20-spirometry" style="color:#6c4616"><span class="dot" style="background:#8a5a1c"></span>Spirometry and the Forced Values</a>
+      <a href="#l20-indications" style="color:#25494c"><span class="dot" style="background:#2f5d62"></span>Why Order Them</a>
+      <a href="#l20-patterns" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>Obstructive Against Restrictive</a>
+      <a href="#l20-reading" style="color:#2d5076"><span class="dot" style="background:#3a6797"></span>Reading a Report</a>
+      <a href="#l20-role" style="color:#6c4616"><span class="dot" style="background:#8a5a1c"></span>Each Standard Test's Job, and Oxygenation</a>
+      <a href="#l19-order" style="color:#25494c"><span class="dot" style="background:#2f5d62"></span>The Blood Gas and What Each Value Measures (Lecture 19)</a>
+      <a href="#l19-curve" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>The Oxygen-Hemoglobin Curve</a>
+      <a href="#l19-arterial" style="color:#2d5076"><span class="dot" style="background:#3a6797"></span>Arterial Against Venous, and the Sample</a>
+      <a href="#l19-indications" style="color:#6c4616"><span class="dot" style="background:#8a5a1c"></span>When to Order an Arterial Blood Gas</a>
+      <a href="#l19-read" style="color:#25494c"><span class="dot" style="background:#2f5d62"></span>Reading the Gas, and Compensation</a>
+      <a href="#l19-disorders" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>The Four Disorders</a>
+      <a href="#l19-gap" style="color:#2d5076"><span class="dot" style="background:#3a6797"></span>The Anion Gap</a>
+      <a href="#pocus-focused" style="color:#6c4616"><span class="dot" style="background:#8a5a1c"></span>Point-of-Care Against Comprehensive Ultrasound (Lecture 20)</a>
+      <a href="#pocus-role" style="color:#25494c"><span class="dot" style="background:#2f5d62"></span>Indications, Contraindications, Procedures</a>
+      <a href="#pocus-machine" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>The Machine, the Probe and Orientation</a>
+      <a href="#pocus-echo" style="color:#2d5076"><span class="dot" style="background:#3a6797"></span>Echogenicity</a>
+      <a href="#pocus-artifacts" style="color:#6c4616"><span class="dot" style="background:#8a5a1c"></span>Artifacts</a>
+      <a href="#pocus-modes" style="color:#25494c"><span class="dot" style="background:#2f5d62"></span>Modes and Color Doppler</a>
+      <a href="#pocus-cardiac" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>The Four Cardiac Windows</a>
+      <a href="#pocus-lung" style="color:#2d5076"><span class="dot" style="background:#3a6797"></span>Pulmonary Assessment</a>
+      <a href="#pocus-abdomen" style="color:#6c4616"><span class="dot" style="background:#8a5a1c"></span>Abdominal Assessment</a>
+      <a href="#pocus-protocols" style="color:#25494c"><span class="dot" style="background:#2f5d62"></span>Protocols and the EFAST Windows</a>
+      <a href="#pocus-soft" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>Soft Tissue and the Veins</a>
+      <a href="#pocus-integrate" style="color:#2d5076"><span class="dot" style="background:#3a6797"></span>Putting It Together</a>
+      <a href="#l21-safety" style="color:#6c4616"><span class="dot" style="background:#8a5a1c"></span>Pre-Transfusion Safety: Human Error at the Bedside (Lecture 21)</a>
+      <a href="#l21-abo" style="color:#25494c"><span class="dot" style="background:#2f5d62"></span>ABO: Carbohydrate Antigens, Natural IgM, Intravascular Lysis</a>
+      <a href="#l21-compat" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>★ Compatibility Matrix: Red Cells and Plasma Run Opposite</a>
+      <a href="#l21-emergency" style="color:#2d5076"><span class="dot" style="background:#3a6797"></span>Emergency Release: O-Negative vs O-Positive</a>
+      <a href="#l21-abo-vs-rh" style="color:#6c4616"><span class="dot" style="background:#8a5a1c"></span>ABO vs RhD Head to Head</a>
+      <a href="#l21-rh" style="color:#25494c"><span class="dot" style="background:#2f5d62"></span>RhD and Hemolytic Disease of the Fetus and Newborn</a>
+      <a href="#l21-typing" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>★ Reading ABO Typing</a>
+      <a href="#l21-screen" style="color:#2d5076"><span class="dot" style="background:#3a6797"></span>Antibody Screen, DAT vs IAT, Type and Screen vs Crossmatch</a>
+      <a href="#l21-crossmatch" style="color:#6c4616"><span class="dot" style="background:#8a5a1c"></span>Crossmatch Tiers</a>
+      <a href="#l21-protocol" style="color:#25494c"><span class="dot" style="background:#2f5d62"></span>★ Any Suspected Reaction: The Universal Response</a>
+      <a href="#l21-reactions" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>★ The Five Reactions: Laboratory Fingerprints</a>
+      <a href="#l21-reaction-details" style="color:#2d5076"><span class="dot" style="background:#3a6797"></span>Reaction by Reaction</a>
     </div>
     <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
       replacement for the full study guide — it assumes you've already learned the material and just need
@@ -306,128 +346,8 @@
     </div>
   </section>
 
-  <section class="topic" id="l19-order" style="--acc:#26384a;--acc-bg:#e1e3e6;--acc-zebra:#f0f1f2;--acc-ink:#1e2c3a">
-    <div class="shead"><span class="dot" style="background:#26384a"></span><h2>The Blood Gas and What Each Value Measures (Lecture 19)</h2></div>
-    <div class="scroll">
-      <table>
-        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
-        <tbody>
-          <tr><td class="h">The frame</td><td>The arterial blood gas assesses OXYGENATION (oxygen), VENTILATION (carbon dioxide) and ACID-BASE status (pH, bicarbonate, carbon dioxide). Used with vital signs, the exam, a complete blood count and metabolic panel, intake and urine output.</td></tr>
-          <tr><td class="h">Carbon dioxide pressure</td><td>Dissolved carbon dioxide: alveolar gas exchange, the rate and depth of breathing, alveolar ventilation. The major chemical driver of ventilation: as it rises, ventilation increases.</td></tr>
-          <tr><td class="h">★ Oxygen pressure</td><td>Oxygen DISSOLVED in plasma (less than 2%); 98% rides on hemoglobin. Directly affected by the fraction of inspired oxygen ("remember this"). Used to judge oxygenation and oxygen therapy.</td></tr>
-          <tr><td class="h">Saturation</td><td>A RATIO: hemoglobin's actual oxygen over its maximum capacity. The oxygen-hemoglobin relationship, not the content. Also measured by pulse oximetry.</td></tr>
-          <tr><td class="h">Oxygen content</td><td>The actual amount of oxygen in the blood (bound + dissolved).</td></tr>
-          <tr><td class="h">Carboxyhemoglobin</td><td>Hemoglobin exposed to carbon monoxide (affinity 240 times oxygen's); indicates the amount of carbon monoxide poisoning. Normal under 2%.</td></tr>
-          <tr><td class="h">Base excess</td><td>Whole blood buffer base: bicarbonate is half, plasma proteins and phosphates the other half. Separates respiratory from nonrespiratory change. Positive = base excess; negative = base deficit (lactic acidosis, ketoacidosis).</td></tr>
-          <tr><td class="h">Acids</td><td>Volatile: carbonic acid. Nonvolatile: dietary, lactic, ketoacids (★ the classic ones).</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="topic" id="l19-curve" style="--acc:#3a6797;--acc-bg:#e3eaf0;--acc-zebra:#f1f4f8;--acc-ink:#2d5076">
-    <div class="shead"><span class="dot" style="background:#3a6797"></span><h2>The Oxygen-Hemoglobin Curve</h2></div>
-    <div class="scroll">
-      <table>
-        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
-        <tbody>
-          <tr><td class="h">High oxygen pressure</td><td>Pulmonary capillaries: oxygen BINDS hemoglobin.</td></tr>
-          <tr><td class="h">Low oxygen pressure</td><td>Tissue capillaries: oxygen is RELEASED.</td></tr>
-          <tr><td class="h">★ Alkalosis (high pH)</td><td>LEFT shift: hemoglobin holds on; oxygen bonds more tightly.</td></tr>
-          <tr><td class="h">★ Acidosis (low pH)</td><td>RIGHT shift: hemoglobin lets go; oxygen released more easily.</td></tr>
-          <tr><td class="h">What shifts it right</td><td>More hydrogen ions, more carbon dioxide, higher temperature, more BPG (2,3-bisphosphoglycerate).</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="topic" id="l19-arterial" style="--acc:#8a5a1c;--acc-bg:#efe8df;--acc-zebra:#f7f3ef;--acc-ink:#6c4616">
-    <div class="shead"><span class="dot" style="background:#8a5a1c"></span><h2>Arterial Against Venous, and the Sample</h2></div>
-    <div class="scroll">
-      <table>
-        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
-        <tbody>
-          <tr><td class="h">Why arterial</td><td>A better mixture of blood. Venous blood reflects its phlebotomy site (temperature, perfusion, movement, local infection).</td></tr>
-          <tr><td class="h">What it shows, what it cannot</td><td>How well the lungs oxygenate and whether the heart and circulation are failing; NOT the degree of any abnormality: examine the patient.</td></tr>
-          <tr><td class="h">Venous values</td><td>Carbon dioxide higher (41 to 57), oxygen far lower (30 to 40), pH lower (7.31 to 7.41), content lower. Read each value against its own sample's range.</td></tr>
-          <tr><td class="h">★ Site</td><td>Radial artery usually; check collateral supply (ulnar and radial: the Allen test). No collateral = choose another site (femoral, brachial).</td></tr>
-          <tr><td class="h">A good site</td><td>Collateral flow, superficial and accessible, non-sensitive surrounding tissue. Arterial line or direct stick.</td></tr>
-          <tr><td class="h">Handling</td><td>Pre-heparinized syringe, air bubbles out, on ice; ★ note room air or supplemental oxygen; usable only under 3 hours; pressure at least 2 minutes.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="topic" id="l19-indications" style="--acc:#2f5d62;--acc-bg:#e2e8e9;--acc-zebra:#f0f4f4;--acc-ink:#25494c">
-    <div class="shead"><span class="dot" style="background:#2f5d62"></span><h2>When to Order an Arterial Blood Gas</h2></div>
-    <div class="scroll">
-      <table>
-        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
-        <tbody>
-          <tr><td class="h">Indications</td><td>Oxygenation, ventilation, acid-base status; monitor response to therapy; monitor the critically ill; baseline before and after surgery.</td></tr>
-          <tr><td class="h">★ Treat the patient</td><td>The gas does not show severity. Do the labs fit the clinical presentation?</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="topic" id="l19-read" style="--acc:#26384a;--acc-bg:#e1e3e6;--acc-zebra:#f0f1f2;--acc-ink:#1e2c3a">
-    <div class="shead"><span class="dot" style="background:#26384a"></span><h2>Reading the Gas, and Compensation</h2></div>
-    <div class="scroll">
-      <table>
-        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
-        <tbody>
-          <tr><td class="h">★ Step-wise</td><td>1 the pH (low acidosis, high alkalosis); 2 which values are out of range (the carbon dioxide next); 3 do the labs fit the patient?</td></tr>
-          <tr><td class="h">Definitions</td><td>Acidosis pH below 7.35; alkalosis above 7.45. Buffers: mainly lungs and kidneys (bones and blood less).</td></tr>
-          <tr><td class="h">Carbon dioxide UP</td><td>Retention from hypoventilation: obstructive lung disease; impaired respiratory center (anesthesia, narcotics, barbiturates, head trauma).</td></tr>
-          <tr><td class="h">Carbon dioxide DOWN</td><td>Hyperventilation: hypoxia, pulmonary emboli, ★ anxiety (the classic), pain, pregnancy.</td></tr>
-          <tr><td class="h">Oxygen DOWN</td><td>Low atmospheric oxygen, cardiac dysfunction, shunts, obstructive or restrictive lung disease, edema, embolism, neuromuscular hypoventilation, too little inspired oxygen.</td></tr>
-          <tr><td class="h">Oxygen UP</td><td>More inspired oxygen, hyperventilation.</td></tr>
-          <tr><td class="h">Respiratory compensation</td><td>Kidney bicarbonate, over DAYS: acidosis bicarbonate up; alkalosis bicarbonate down.</td></tr>
-          <tr><td class="h">Metabolic compensation</td><td>Breathing and carbon dioxide, over MINUTES TO HOURS: acidosis carbon dioxide down; alkalosis carbon dioxide up.</td></tr>
-          <tr><td class="h">Same way or opposite</td><td>Metabolic: pH, bicarbonate and carbon dioxide all move the same way. Respiratory: pH and carbon dioxide move opposite.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="topic" id="l19-disorders" style="--acc:#3a6797;--acc-bg:#e3eaf0;--acc-zebra:#f1f4f8;--acc-ink:#2d5076">
-    <div class="shead"><span class="dot" style="background:#3a6797"></span><h2>The Four Disorders</h2></div>
-    <div class="scroll">
-      <table>
-        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
-        <tbody>
-          <tr><td class="h">Respiratory acidosis, acute</td><td>pH low, carbon dioxide HIGH, bicarbonate normal: respiratory depression (opioids, barbiturates, anesthetics).</td></tr>
-          <tr><td class="h">Respiratory acidosis, chronic</td><td>Carbon dioxide high, bicarbonate RISES, pH tries to normalize: long-standing lung or chest wall disease.</td></tr>
-          <tr><td class="h">Respiratory acidosis causes</td><td>Chest wall (kyphoscoliosis), airway obstruction (extrathoracic tumor, asthma, bronchitis, emphysema), circulatory (heart failure, shock).</td></tr>
-          <tr><td class="h">Respiratory alkalosis</td><td>pH high, carbon dioxide LOW, bicarbonate normal: hyperventilation; brainstem stimulation (anxiety, fever, pregnancy); mild heart failure; mechanical over-ventilation.</td></tr>
-          <tr><td class="h">Mixed</td><td>Salicylates and sepsis: respiratory alkalosis + metabolic acidosis. Severe heart failure: hypoperfusion, lactic acidosis.</td></tr>
-          <tr><td class="h">Metabolic acidosis</td><td>pH low, carbon dioxide normal, bicarbonate LOW. Acid gain (renal failure, ★ ketoacidosis, lactic acidosis, anaerobic metabolism) or base loss (diarrhea, renal tubular acidosis).</td></tr>
-          <tr><td class="h">Metabolic alkalosis</td><td>pH high, carbon dioxide normal, bicarbonate HIGH. Base gain (bicarbonate given), acid loss (vomiting, nasogastric suction), potassium or chloride depletion.</td></tr>
-          <tr><td class="h">★ Potassium</td><td>"Put a star on this slide": acidosis shifts potassium OUT of cells (hyperkalemia); alkalosis shifts it IN (hypokalemia).</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="topic" id="l19-gap" style="--acc:#8a5a1c;--acc-bg:#efe8df;--acc-zebra:#f7f3ef;--acc-ink:#6c4616">
-    <div class="shead"><span class="dot" style="background:#8a5a1c"></span><h2>The Anion Gap</h2></div>
-    <div class="scroll">
-      <table>
-        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
-        <tbody>
-          <tr><td class="h">What it is</td><td>Anions other than chloride and bicarbonate; albumin is most of the normal gap.</td></tr>
-          <tr><td class="h">★ The formula</td><td>Sodium minus (chloride plus bicarbonate). No potassium. Normal 9 to 15 (varies by source).</td></tr>
-          <tr><td class="h">Elevated</td><td>Usually MORE unmeasured anions (ketoacids, lactate, phosphate, albumin); less often FEWER unmeasured cations (calcium, magnesium, potassium, gamma-globulins).</td></tr>
-          <tr><td class="h">Decreased</td><td>More unmeasured cations (lithium); low albumin; severe hyperlipidemia (skews sodium and chloride).</td></tr>
-          <tr><td class="h">Albumin correction</td><td>Correct the gap if albumin is abnormal: ADD 2.5 for each 1 g/dL below 4.5.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="topic" id="l20-equipment" style="--acc:#2f5d62;--acc-bg:#e2e8e9;--acc-zebra:#f0f4f4;--acc-ink:#25494c">
-    <div class="shead"><span class="dot" style="background:#2f5d62"></span><h2>The Equipment and What Each Test Measures (Lecture 20)</h2></div>
+  <section class="topic" id="l20-equipment" style="--acc:#26384a;--acc-bg:#e1e3e6;--acc-zebra:#f0f1f2;--acc-ink:#1e2c3a">
+    <div class="shead"><span class="dot" style="background:#26384a"></span><h2>The Equipment and What Each Test Measures (Lecture 18)</h2></div>
     <div class="scroll">
       <table>
         <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
@@ -443,8 +363,8 @@
     </div>
   </section>
 
-  <section class="topic" id="l20-volumes" style="--acc:#26384a;--acc-bg:#e1e3e6;--acc-zebra:#f0f1f2;--acc-ink:#1e2c3a">
-    <div class="shead"><span class="dot" style="background:#26384a"></span><h2>The Four Volumes and Four Capacities</h2></div>
+  <section class="topic" id="l20-volumes" style="--acc:#3a6797;--acc-bg:#e3eaf0;--acc-zebra:#f1f4f8;--acc-ink:#2d5076">
+    <div class="shead"><span class="dot" style="background:#3a6797"></span><h2>The Four Volumes and Four Capacities</h2></div>
     <div class="scroll">
       <table>
         <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
@@ -463,8 +383,8 @@
     </div>
   </section>
 
-  <section class="topic" id="l20-spirometry" style="--acc:#3a6797;--acc-bg:#e3eaf0;--acc-zebra:#f1f4f8;--acc-ink:#2d5076">
-    <div class="shead"><span class="dot" style="background:#3a6797"></span><h2>Spirometry and the Forced Values</h2></div>
+  <section class="topic" id="l20-spirometry" style="--acc:#8a5a1c;--acc-bg:#efe8df;--acc-zebra:#f7f3ef;--acc-ink:#6c4616">
+    <div class="shead"><span class="dot" style="background:#8a5a1c"></span><h2>Spirometry and the Forced Values</h2></div>
     <div class="scroll">
       <table>
         <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
@@ -484,8 +404,8 @@
     </div>
   </section>
 
-  <section class="topic" id="l20-indications" style="--acc:#8a5a1c;--acc-bg:#efe8df;--acc-zebra:#f7f3ef;--acc-ink:#6c4616">
-    <div class="shead"><span class="dot" style="background:#8a5a1c"></span><h2>Why Order Them</h2></div>
+  <section class="topic" id="l20-indications" style="--acc:#2f5d62;--acc-bg:#e2e8e9;--acc-zebra:#f0f4f4;--acc-ink:#25494c">
+    <div class="shead"><span class="dot" style="background:#2f5d62"></span><h2>Why Order Them</h2></div>
     <div class="scroll">
       <table>
         <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
@@ -499,8 +419,8 @@
     </div>
   </section>
 
-  <section class="topic" id="l20-patterns" style="--acc:#2f5d62;--acc-bg:#e2e8e9;--acc-zebra:#f0f4f4;--acc-ink:#25494c">
-    <div class="shead"><span class="dot" style="background:#2f5d62"></span><h2>Obstructive Against Restrictive</h2></div>
+  <section class="topic" id="l20-patterns" style="--acc:#26384a;--acc-bg:#e1e3e6;--acc-zebra:#f0f1f2;--acc-ink:#1e2c3a">
+    <div class="shead"><span class="dot" style="background:#26384a"></span><h2>Obstructive Against Restrictive</h2></div>
     <div class="scroll">
       <table>
         <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
@@ -520,8 +440,8 @@
     </div>
   </section>
 
-  <section class="topic" id="l20-reading" style="--acc:#26384a;--acc-bg:#e1e3e6;--acc-zebra:#f0f1f2;--acc-ink:#1e2c3a">
-    <div class="shead"><span class="dot" style="background:#26384a"></span><h2>Reading a Report</h2></div>
+  <section class="topic" id="l20-reading" style="--acc:#3a6797;--acc-bg:#e3eaf0;--acc-zebra:#f1f4f8;--acc-ink:#2d5076">
+    <div class="shead"><span class="dot" style="background:#3a6797"></span><h2>Reading a Report</h2></div>
     <div class="scroll">
       <table>
         <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
@@ -538,8 +458,8 @@
     </div>
   </section>
 
-  <section class="topic" id="l20-role" style="--acc:#3a6797;--acc-bg:#e3eaf0;--acc-zebra:#f1f4f8;--acc-ink:#2d5076">
-    <div class="shead"><span class="dot" style="background:#3a6797"></span><h2>Each Standard Test's Job, and Oxygenation</h2></div>
+  <section class="topic" id="l20-role" style="--acc:#8a5a1c;--acc-bg:#efe8df;--acc-zebra:#f7f3ef;--acc-ink:#6c4616">
+    <div class="shead"><span class="dot" style="background:#8a5a1c"></span><h2>Each Standard Test's Job, and Oxygenation</h2></div>
     <div class="scroll">
       <table>
         <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
@@ -557,8 +477,518 @@
     </div>
   </section>
 
+  <section class="topic" id="l19-order" style="--acc:#2f5d62;--acc-bg:#e2e8e9;--acc-zebra:#f0f4f4;--acc-ink:#25494c">
+    <div class="shead"><span class="dot" style="background:#2f5d62"></span><h2>The Blood Gas and What Each Value Measures (Lecture 19)</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">The frame</td><td>The arterial blood gas assesses OXYGENATION (oxygen), VENTILATION (carbon dioxide) and ACID-BASE status (pH, bicarbonate, carbon dioxide). Used with vital signs, the exam, a complete blood count and metabolic panel, intake and urine output.</td></tr>
+          <tr><td class="h">Carbon dioxide pressure</td><td>Dissolved carbon dioxide: alveolar gas exchange, the rate and depth of breathing, alveolar ventilation. The major chemical driver of ventilation: as it rises, ventilation increases.</td></tr>
+          <tr><td class="h">★ Oxygen pressure</td><td>Oxygen DISSOLVED in plasma (less than 2%); 98% rides on hemoglobin. Directly affected by the fraction of inspired oxygen ("remember this"). Used to judge oxygenation and oxygen therapy.</td></tr>
+          <tr><td class="h">Saturation</td><td>A RATIO: hemoglobin's actual oxygen over its maximum capacity. The oxygen-hemoglobin relationship, not the content. Also measured by pulse oximetry.</td></tr>
+          <tr><td class="h">Oxygen content</td><td>The actual amount of oxygen in the blood (bound + dissolved).</td></tr>
+          <tr><td class="h">Carboxyhemoglobin</td><td>Hemoglobin exposed to carbon monoxide (affinity 240 times oxygen's); indicates the amount of carbon monoxide poisoning. Normal under 2%.</td></tr>
+          <tr><td class="h">Base excess</td><td>Whole blood buffer base: bicarbonate is half, plasma proteins and phosphates the other half. Separates respiratory from nonrespiratory change. Positive = base excess; negative = base deficit (lactic acidosis, ketoacidosis).</td></tr>
+          <tr><td class="h">Acids</td><td>Volatile: carbonic acid. Nonvolatile: dietary, lactic, ketoacids (★ the classic ones).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l19-curve" style="--acc:#26384a;--acc-bg:#e1e3e6;--acc-zebra:#f0f1f2;--acc-ink:#1e2c3a">
+    <div class="shead"><span class="dot" style="background:#26384a"></span><h2>The Oxygen-Hemoglobin Curve</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">High oxygen pressure</td><td>Pulmonary capillaries: oxygen BINDS hemoglobin.</td></tr>
+          <tr><td class="h">Low oxygen pressure</td><td>Tissue capillaries: oxygen is RELEASED.</td></tr>
+          <tr><td class="h">★ Alkalosis (high pH)</td><td>LEFT shift: hemoglobin holds on; oxygen bonds more tightly.</td></tr>
+          <tr><td class="h">★ Acidosis (low pH)</td><td>RIGHT shift: hemoglobin lets go; oxygen released more easily.</td></tr>
+          <tr><td class="h">What shifts it right</td><td>More hydrogen ions, more carbon dioxide, higher temperature, more BPG (2,3-bisphosphoglycerate).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l19-arterial" style="--acc:#3a6797;--acc-bg:#e3eaf0;--acc-zebra:#f1f4f8;--acc-ink:#2d5076">
+    <div class="shead"><span class="dot" style="background:#3a6797"></span><h2>Arterial Against Venous, and the Sample</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Why arterial</td><td>A better mixture of blood. Venous blood reflects its phlebotomy site (temperature, perfusion, movement, local infection).</td></tr>
+          <tr><td class="h">What it shows, what it cannot</td><td>How well the lungs oxygenate and whether the heart and circulation are failing; NOT the degree of any abnormality: examine the patient.</td></tr>
+          <tr><td class="h">Venous values</td><td>Carbon dioxide higher (41 to 57), oxygen far lower (30 to 40), pH lower (7.31 to 7.41), content lower. Read each value against its own sample's range.</td></tr>
+          <tr><td class="h">★ Site</td><td>Radial artery usually; check collateral supply (ulnar and radial: the Allen test). No collateral = choose another site (femoral, brachial).</td></tr>
+          <tr><td class="h">A good site</td><td>Collateral flow, superficial and accessible, non-sensitive surrounding tissue. Arterial line or direct stick.</td></tr>
+          <tr><td class="h">Handling</td><td>Pre-heparinized syringe, air bubbles out, on ice; ★ note room air or supplemental oxygen; usable only under 3 hours; pressure at least 2 minutes.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l19-indications" style="--acc:#8a5a1c;--acc-bg:#efe8df;--acc-zebra:#f7f3ef;--acc-ink:#6c4616">
+    <div class="shead"><span class="dot" style="background:#8a5a1c"></span><h2>When to Order an Arterial Blood Gas</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Indications</td><td>Oxygenation, ventilation, acid-base status; monitor response to therapy; monitor the critically ill; baseline before and after surgery.</td></tr>
+          <tr><td class="h">★ Treat the patient</td><td>The gas does not show severity. Do the labs fit the clinical presentation?</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l19-read" style="--acc:#2f5d62;--acc-bg:#e2e8e9;--acc-zebra:#f0f4f4;--acc-ink:#25494c">
+    <div class="shead"><span class="dot" style="background:#2f5d62"></span><h2>Reading the Gas, and Compensation</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ Step-wise</td><td>1 the pH (low acidosis, high alkalosis); 2 which values are out of range (the carbon dioxide next); 3 do the labs fit the patient?</td></tr>
+          <tr><td class="h">Definitions</td><td>Acidosis pH below 7.35; alkalosis above 7.45. Buffers: mainly lungs and kidneys (bones and blood less).</td></tr>
+          <tr><td class="h">Carbon dioxide UP</td><td>Retention from hypoventilation: obstructive lung disease; impaired respiratory center (anesthesia, narcotics, barbiturates, head trauma).</td></tr>
+          <tr><td class="h">Carbon dioxide DOWN</td><td>Hyperventilation: hypoxia, pulmonary emboli, ★ anxiety (the classic), pain, pregnancy.</td></tr>
+          <tr><td class="h">Oxygen DOWN</td><td>Low atmospheric oxygen, cardiac dysfunction, shunts, obstructive or restrictive lung disease, edema, embolism, neuromuscular hypoventilation, too little inspired oxygen.</td></tr>
+          <tr><td class="h">Oxygen UP</td><td>More inspired oxygen, hyperventilation.</td></tr>
+          <tr><td class="h">Respiratory compensation</td><td>Kidney bicarbonate, over DAYS: acidosis bicarbonate up; alkalosis bicarbonate down.</td></tr>
+          <tr><td class="h">Metabolic compensation</td><td>Breathing and carbon dioxide, over MINUTES TO HOURS: acidosis carbon dioxide down; alkalosis carbon dioxide up.</td></tr>
+          <tr><td class="h">Same way or opposite</td><td>Metabolic: pH, bicarbonate and carbon dioxide all move the same way. Respiratory: pH and carbon dioxide move opposite.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l19-disorders" style="--acc:#26384a;--acc-bg:#e1e3e6;--acc-zebra:#f0f1f2;--acc-ink:#1e2c3a">
+    <div class="shead"><span class="dot" style="background:#26384a"></span><h2>The Four Disorders</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Respiratory acidosis, acute</td><td>pH low, carbon dioxide HIGH, bicarbonate normal: respiratory depression (opioids, barbiturates, anesthetics).</td></tr>
+          <tr><td class="h">Respiratory acidosis, chronic</td><td>Carbon dioxide high, bicarbonate RISES, pH tries to normalize: long-standing lung or chest wall disease.</td></tr>
+          <tr><td class="h">Respiratory acidosis causes</td><td>Chest wall (kyphoscoliosis), airway obstruction (extrathoracic tumor, asthma, bronchitis, emphysema), circulatory (heart failure, shock).</td></tr>
+          <tr><td class="h">Respiratory alkalosis</td><td>pH high, carbon dioxide LOW, bicarbonate normal: hyperventilation; brainstem stimulation (anxiety, fever, pregnancy); mild heart failure; mechanical over-ventilation.</td></tr>
+          <tr><td class="h">Mixed</td><td>Salicylates and sepsis: respiratory alkalosis + metabolic acidosis. Severe heart failure: hypoperfusion, lactic acidosis.</td></tr>
+          <tr><td class="h">Metabolic acidosis</td><td>pH low, carbon dioxide normal, bicarbonate LOW. Acid gain (renal failure, ★ ketoacidosis, lactic acidosis, anaerobic metabolism) or base loss (diarrhea, renal tubular acidosis).</td></tr>
+          <tr><td class="h">Metabolic alkalosis</td><td>pH high, carbon dioxide normal, bicarbonate HIGH. Base gain (bicarbonate given), acid loss (vomiting, nasogastric suction), potassium or chloride depletion.</td></tr>
+          <tr><td class="h">★ Potassium</td><td>"Put a star on this slide": acidosis shifts potassium OUT of cells (hyperkalemia); alkalosis shifts it IN (hypokalemia).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l19-gap" style="--acc:#3a6797;--acc-bg:#e3eaf0;--acc-zebra:#f1f4f8;--acc-ink:#2d5076">
+    <div class="shead"><span class="dot" style="background:#3a6797"></span><h2>The Anion Gap</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">What it is</td><td>Anions other than chloride and bicarbonate; albumin is most of the normal gap.</td></tr>
+          <tr><td class="h">★ The formula</td><td>Sodium minus (chloride plus bicarbonate). No potassium. Normal 9 to 15 (varies by source).</td></tr>
+          <tr><td class="h">Elevated</td><td>Usually MORE unmeasured anions (ketoacids, lactate, phosphate, albumin); less often FEWER unmeasured cations (calcium, magnesium, potassium, gamma-globulins).</td></tr>
+          <tr><td class="h">Decreased</td><td>More unmeasured cations (lithium); low albumin; severe hyperlipidemia (skews sodium and chloride).</td></tr>
+          <tr><td class="h">Albumin correction</td><td>Correct the gap if albumin is abnormal: ADD 2.5 for each 1 g/dL below 4.5.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="pocus-focused" style="--acc:#8a5a1c;--acc-bg:#efe8df;--acc-zebra:#f7f3ef;--acc-ink:#6c4616">
+    <div class="shead"><span class="dot" style="background:#8a5a1c"></span><h2>Point-of-Care Against Comprehensive Ultrasound (Lecture 20)</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ Point-of-care</td><td>Bedside, REAL-TIME answers to a diagnostic question; FOCUSED, limited, goal directed; INTERPRETED BY THE PROVIDER PERFORMING IT.</td></tr>
+          <tr><td class="h">Traditional (comprehensive)</td><td>Ordered AFTER evaluating the patient; comprehensive but takes HOURS TO DAYS; performed by a certified SONOGRAPHER, read by a RADIOLOGIST.</td></tr>
+          <tr><td class="h">Its place</td><td>An extension of the history and physical exam (often when the patient can't give enough information); a complement to the workup; formal imaging may often still follow.</td></tr>
+          <tr><td class="h">Stable patient</td><td>Likely deep vein thrombosis, stable: "needs formal US [ultrasound], probably not POCUS [point-of-care ultrasound]."</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="pocus-role" style="--acc:#2f5d62;--acc-bg:#e2e8e9;--acc-zebra:#f0f4f4;--acc-ink:#25494c">
+    <div class="shead"><span class="dot" style="background:#2f5d62"></span><h2>Indications, Contraindications, Procedures</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Indicated</td><td>Trauma, cardiac, pulmonary, vasculature, ophthalmic, renal, gallbladder, appendix, scrotal, obstetric/gynecologic.</td></tr>
+          <tr><td class="h">★ Contraindicated ("not very often")</td><td>GLOBE RUPTURE; must NOT DELAY LIFESAVING MEASURES; some locations not amenable to ultrasound.</td></tr>
+          <tr><td class="h">Procedures</td><td>Central venous catheter insertion, paracentesis, thoracentesis; vascular: central lines, ultrasound-guided intravenous lines, deep vein thrombosis.</td></tr>
+          <tr><td class="h">Artery or vein</td><td>Artery: pulsatile, minimal compressibility. Vein: COMPLETELY compressible (unless filled with clot).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="pocus-machine" style="--acc:#26384a;--acc-bg:#e1e3e6;--acc-zebra:#f0f1f2;--acc-ink:#1e2c3a">
+    <div class="shead"><span class="dot" style="background:#26384a"></span><h2>The Machine, the Probe and Orientation</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Ultrasound</td><td>Sound above human hearing (more than 20,000 hertz); piezoelectric crystals in the probe send the wave and read the echo.</td></tr>
+          <tr><td class="h">Frequency</td><td>HIGHER = better RESOLUTION, less depth. LOWER = better DEPTH, less resolution. Short wavelength = high frequency.</td></tr>
+          <tr><td class="h">Depth · gain</td><td>Depth = how far you are zoomed in. Gain = brightness.</td></tr>
+          <tr><td class="h">Transducer movements</td><td>Fan, rock, sweep, slide, rotate, compress.</td></tr>
+          <tr><td class="h">Probes</td><td>Phased array (cardiac), linear (pneumothorax), curvilinear (effusion, edema, pneumonia), endocavitary.</td></tr>
+          <tr><td class="h">★ Indicator</td><td>Probe/orientation marker: point it to YOUR LEFT (the patient's right); CARDIOLOGY PUTS IT OPPOSITE; match the screen marker.</td></tr>
+          <tr><td class="h">Planes</td><td>Transverse (axial: indicator to your left, look through the patient) · sagittal (longitudinal) · coronal (frontal).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="pocus-echo" style="--acc:#3a6797;--acc-bg:#e3eaf0;--acc-zebra:#f1f4f8;--acc-ink:#2d5076">
+    <div class="shead"><span class="dot" style="background:#3a6797"></span><h2>Echogenicity</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>Looks · because · examples</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Anechoic</td><td>BLACK · echoes nothing back · fluid-filled structures</td></tr>
+          <tr><td class="h">Hypoechoic</td><td>GRAY · less echo than surroundings · liver, spleen</td></tr>
+          <tr><td class="h">Hyperechoic</td><td>WHITE · dense, more echoes · bone, stones</td></tr>
+          <tr><td class="h">Isoechoic</td><td>SAME as surroundings · same density</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Read the prefix as the amount of echo coming back.</p><p class="mnem-key"><span><b>An-</b> none (black)</span><span><b>Hypo-</b> less (gray)</span><span><b>Hyper-</b> more (white)</span><span><b>Iso-</b> equal (blends in)</span></p></div>
+  </section>
+
+  <section class="topic" id="pocus-artifacts" style="--acc:#8a5a1c;--acc-bg:#efe8df;--acc-zebra:#f7f3ef;--acc-ink:#6c4616">
+    <div class="shead"><span class="dot" style="background:#8a5a1c"></span><h2>Artifacts</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Acoustic shadowing</td><td>Behind HYPERECHOIC structures (ribs, stones): a dark band. Air shadows look "dirtier" than bone.</td></tr>
+          <tr><td class="h">Posterior acoustic enhancement</td><td>Behind FLUID-filled structures: the area deep to it looks BRIGHT (can obscure it).</td></tr>
+          <tr><td class="h">Edge artifact</td><td>REFRACTION: sound "bends" off the edge of a fluid-filled structure.</td></tr>
+          <tr><td class="h">★ Mirror image</td><td>REVERBERATION off a strong reflector (the diaphragm): the liver mirrored above it. Normal.</td></tr>
+          <tr><td class="h">Ring down</td><td>Foci of AIR (hepatic pneumobilia).</td></tr>
+          <tr><td class="h">Side lobe</td><td>A strong reflector OUTSIDE the central beam appears inside it (echoes in the gallbladder).</td></tr>
+          <tr><td class="h">★ A lines · comet tails · B lines</td><td>Reverberations. A lines: horizontal, NORMAL lung. Comet tails: vertical off calcifications, cholesterol, metal. B lines: vertical in the LUNG, air-water interface = PULMONARY EDEMA.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="pocus-modes" style="--acc:#2f5d62;--acc-bg:#e2e8e9;--acc-zebra:#f0f4f4;--acc-ink:#25494c">
+    <div class="shead"><span class="dot" style="background:#2f5d62"></span><h2>Modes and Color Doppler</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">B-mode</td><td>Brightness: the standard two-dimensional gray-scale image.</td></tr>
+          <tr><td class="h">M-mode</td><td>Motion: ONE LINE of the B-mode image over time. Common uses: FETAL ultrasound and PNEUMOTHORAX.</td></tr>
+          <tr><td class="h">Seashore vs barcode</td><td>M-mode over the chest: "ocean" above the pleural line + "sand on the beach" below = NO pneumothorax; lines all the way down (barcode) = PNEUMOTHORAX.</td></tr>
+          <tr><td class="h">★ Color Doppler</td><td>Direction and velocity by color. BART: Blue Away, Red Towards; perpendicular = black. Blue/red do NOT mean vein/artery. Artifacts: twinkle, aliasing.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="pocus-cardiac" style="--acc:#26384a;--acc-bg:#e1e3e6;--acc-zebra:#f0f1f2;--acc-ink:#1e2c3a">
+    <div class="shead"><span class="dot" style="background:#26384a"></span><h2>The Four Cardiac Windows</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Window</th><th>How · what for</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Parasternal long axis</td><td>Beside the sternum, heart lengthwise · OFTEN THE EASIEST view</td></tr>
+          <tr><td class="h">Parasternal short axis</td><td>Rotate 90 degrees, marker to the patient's RIGHT HIP · cross-section of the ventricles; MITRAL and AORTIC VALVES</td></tr>
+          <tr><td class="h">★ Subxiphoid (subcostal)</td><td>Under the xiphoid, just right of midline, LIVER as the window · BEST for PERICARDIAL EFFUSION (most are inferior)</td></tr>
+          <tr><td class="h">Apical four chamber</td><td>From the apex; sometimes difficult · ALL FOUR chambers; RIGHT VENTRICULAR DILATION/STRAIN; rotate for the 5-chamber view (aortic valve/outflow tract)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Each window's one job, in the order it is taught.</p><p class="mnem-key"><span><b>Long</b> = least effort (easiest)</span><span><b>Short</b> = see the valves</span><span><b>Sub</b> = the sac (effusion)</span><span><b>Apex</b> = all four + right strain</span></p><p class="mnem-brk"><b>Where it breaks:</b> The probe for all four is the phased array; this aid covers the job, not the probe position.</p></div>
+  </section>
+
+  <section class="topic" id="pocus-lung" style="--acc:#3a6797;--acc-bg:#e3eaf0;--acc-zebra:#f1f4f8;--acc-ink:#2d5076">
+    <div class="shead"><span class="dot" style="background:#3a6797"></span><h2>Pulmonary Assessment</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ Probes</td><td>LINEAR for pneumothorax; CURVILINEAR for effusion, edema, pneumonia. Anterior and posterior views; BLUE protocol (bilateral lung ultrasound in emergency).</td></tr>
+          <tr><td class="h">Normal</td><td>A lines, lung sliding, the seashore.</td></tr>
+          <tr><td class="h">Pulmonary edema</td><td>B lines (vertical, air-water interface).</td></tr>
+          <tr><td class="h">★ Pleural effusion</td><td>Dark fluid above the diaphragm; ABSENCE OF MIRRORING; the SPINE SIGN (fluid carries the sound, vertebrae seen).</td></tr>
+          <tr><td class="h">Pneumonia</td><td>Bronchograms; B lines; HEPATIZATION (lung looks like liver); effusion or empyema; spine sign.</td></tr>
+          <tr><td class="h">★ Pneumothorax</td><td>Barcode in M-mode; LUNG POINT rules it in (BLUE tree: sliding abolished, A'-profile + lung point).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="pocus-abdomen" style="--acc:#8a5a1c;--acc-bg:#efe8df;--acc-zebra:#f7f3ef;--acc-ink:#6c4616">
+    <div class="shead"><span class="dot" style="background:#8a5a1c"></span><h2>Abdominal Assessment</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Targets</td><td>Gallbladder, inferior vena cava, aorta, many others.</td></tr>
+          <tr><td class="h">Cholecystitis</td><td>STONE (posterior acoustic shadow) + WALL THICKENING + PERICHOLECYSTIC FLUID + SONOGRAPHIC MURPHY SIGN.</td></tr>
+          <tr><td class="h">Inferior vena cava</td><td>Volume status and fluid responsiveness. COLLAPSE MORE THAN 50% WITH INSPIRATION = dehydration or fluid responsiveness. Probe longitudinal, just RIGHT of midline.</td></tr>
+          <tr><td class="h">Aorta</td><td>Arteries pulsatile, minimally compressible; the vena cava and aorta side by side over the vertebral body shadow.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Cholecystitis on ultrasound: S-W-F + M.</p><p class="mnem-key"><span><b>S</b> stone with its shadow</span><span><b>W</b> wall thickening</span><span><b>F</b> fluid around it (pericholecystic)</span><span><b>M</b> sonographic Murphy sign</span></p></div>
+  </section>
+
+  <section class="topic" id="pocus-protocols" style="--acc:#2f5d62;--acc-bg:#e2e8e9;--acc-zebra:#f0f4f4;--acc-ink:#25494c">
+    <div class="shead"><span class="dot" style="background:#2f5d62"></span><h2>Protocols and the EFAST Windows</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Window or protocol</th><th>Looks for · scenario</th></tr></thead>
+        <tbody>
+          <tr><td class="h">FAST/EFAST (focused assessment with sonography in trauma; extended)</td><td>Trauma</td></tr>
+          <tr><td class="h">BLUE (bilateral lung ultrasound in emergency)</td><td>Lungs</td></tr>
+          <tr><td class="h">RUSH (rapid ultrasound in shock and hypotension)</td><td>Shock/hypotension</td></tr>
+          <tr><td class="h">★ Right and left upper quadrants</td><td>Peritoneal AND pleural free fluid (a dark stripe in Morison's pouch, fluid at the spleen)</td></tr>
+          <tr><td class="h">Suprapubic</td><td>Peritoneal free fluid</td></tr>
+          <tr><td class="h">Subxiphoid, or parasternal long axis</td><td>Pericardial effusion</td></tr>
+          <tr><td class="h">Right and left anterior chest</td><td>Pneumothorax</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="pocus-soft" style="--acc:#26384a;--acc-bg:#e1e3e6;--acc-zebra:#f0f1f2;--acc-ink:#1e2c3a">
+    <div class="shead"><span class="dot" style="background:#26384a"></span><h2>Soft Tissue and the Veins</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ Cellulitis</td><td>Distortion of soft tissue; COBBLESTONING.</td></tr>
+          <tr><td class="h">Abscess</td><td>Anechoic/hypoechoic COLLECTION (varies a lot); PUS SHIFTS WITH COMPRESSING.</td></tr>
+          <tr><td class="h">★ Deep vein thrombosis</td><td>Compress: THROMBUS WILL NOT COMPRESS (major diagnostic feature). Content hypo- or hyperechoic with CHRONICITY. May LOSE COLOR FLOW.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="pocus-integrate" style="--acc:#3a6797;--acc-bg:#e3eaf0;--acc-zebra:#f1f4f8;--acc-ink:#2d5076">
+    <div class="shead"><span class="dot" style="background:#3a6797"></span><h2>Putting It Together</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Unstable, undifferentiated</td><td>Sudden respiratory distress: a bedside answer now. Very high blood pressure + crackles + diffuse B lines = FLASH PULMONARY EDEMA.</td></tr>
+          <tr><td class="h">Stable</td><td>Likely deep vein thrombosis with normal vital signs: formal ultrasound, probably not point-of-care.</td></tr>
+          <tr><td class="h">What the deck integrates</td><td>Scan + history + exam + vital signs (and the protocols). No laboratory values or electrocardiograms are shown in this lecture.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l21-safety" style="--acc:#8a5a1c;--acc-bg:#efe8df;--acc-zebra:#f7f3ef;--acc-ink:#6c4616">
+    <div class="shead"><span class="dot" style="background:#8a5a1c"></span><h2>Pre-Transfusion Safety: Human Error at the Bedside (Lecture 21)</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ Fatal ABO reactions</td><td>Almost universally CLERICAL: the blood bank typed correctly, the unit reached the wrong patient (mislabeled sample, "wrong blood in tube", or a failed two-person bedside check).</td></tr>
+          <tr><td class="h">Anchor case</td><td>Unit for bay 2 given in bay 1 → within 5 minutes rigors, severe flank pain, tachypnea, hypotension, dark port-wine urine.</td></tr>
+          <tr><td class="h">Sample labeling</td><td>At the bedside, in front of the patient. Never pre-label; never label away from the patient.</td></tr>
+          <tr><td class="h">Two-identifier check</td><td>Name, medical record number, unit blood type and unit serial number matched directly against the WRISTBAND.</td></tr>
+          <tr><td class="h">First 15 minutes</td><td>Infuse the first 25–50 mL slowly: a severe acute hemolytic reaction can follow as little as 25 mL.</td></tr>
+          <tr><td class="h">★ Second-sample rule</td><td>No prior verified type on record → a second, separate sample is drawn and tested to confirm ABO/Rh.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l21-abo" style="--acc:#2f5d62;--acc-bg:#e2e8e9;--acc-zebra:#f0f4f4;--acc-ink:#25494c">
+    <div class="shead"><span class="dot" style="background:#2f5d62"></span><h2>ABO: Carbohydrate Antigens, Natural IgM, Intravascular Lysis</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Antigens</td><td>Oligosaccharides on membrane glycoproteins. Group O = only the unmodified H core. A = N-acetylgalactosamine transferase; B = D-galactosyltransferase; AB = both antigens.</td></tr>
+          <tr><td class="h">Antibodies</td><td>NATURALLY OCCURRING (no transfusion needed), primed in infancy by gut flora and food carbohydrates. You make antibodies against the ABO antigens you lack.</td></tr>
+          <tr><td class="h">Class</td><td>IgM: large pentamer, avid complement fixer (C1q binding).</td></tr>
+          <tr><td class="h">The cascade</td><td>Membrane attack complex (C5b-9) in the circulation → immediate lysis, free hemoglobin in plasma → C3a and C5a: vasodilation, hypotension, shock → free hemoglobin: tubular precipitation / acute tubular necrosis; procoagulants: disseminated intravascular coagulation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l21-compat" style="--acc:#26384a;--acc-bg:#e1e3e6;--acc-zebra:#f0f1f2;--acc-ink:#1e2c3a">
+    <div class="shead"><span class="dot" style="background:#26384a"></span><h2>★ Compatibility Matrix: Red Cells and Plasma Run Opposite</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term" style="width:10%">Group</th><th style="width:20%">Red cell antigens</th><th style="width:22%">Plasma antibodies</th><th style="width:24%">Red cells from</th><th style="width:24%">Plasma from</th></tr></thead>
+        <tbody>
+          <tr><td class="h">O</td><td>None (H antigen)</td><td>Anti-A and anti-B</td><td>O only</td><td>O, A, B, AB (universal)</td></tr>
+          <tr><td class="h">A</td><td>A antigen</td><td>Anti-B</td><td>A, O</td><td>A, AB</td></tr>
+          <tr><td class="h">B</td><td>B antigen</td><td>Anti-A</td><td>B, O</td><td>B, AB</td></tr>
+          <tr><td class="h">AB</td><td>A and B antigens</td><td>None</td><td>AB, A, B, O (universal)</td><td>AB only</td></tr>
+          <tr><td class="rnote" colspan="5">Red cells: O = universal donor, AB = universal recipient. Plasma: AB = universal donor (no anti-A or anti-B), O = universal recipient.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">"O gives cells, AB gives plasma" — and whoever gives one TAKES the other.</p><p class="mnem-key"><span><b>O</b> gives red cells to all; takes plasma from all</span><span><b>AB</b> gives plasma to all; takes red cells from all</span></p><p class="mnem-brk"><b>Where it breaks:</b> Covers the universal rows only. Groups A and B: red cells from their own group or O; plasma from their own group or AB.</p></div>
+  </section>
+
+  <section class="topic" id="l21-emergency" style="--acc:#3a6797;--acc-bg:#e3eaf0;--acc-zebra:#f1f4f8;--acc-ink:#2d5076">
+    <div class="shead"><span class="dot" style="background:#3a6797"></span><h2>Emergency Release: O-Negative vs O-Positive</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ O-negative</td><td>Scarce (~6–7%). Strict reserve: MANDATORY for females of childbearing potential (<50 years) with an unknown type → prevents lifelong anti-D and fetal hydrops in future pregnancies. Sent uncrossmatched while confirmatory testing proceeds.</td></tr>
+          <tr><td class="h">★ O-positive</td><td>Abundant (~37–39%). Massive transfusion standard for adult males and post-menopausal females.</td></tr>
+          <tr><td class="h">Rh-negative man given O-positive</td><td>NO immediate intravascular hemolysis (no natural anti-D). Anti-D may form later; surviving the hemorrhage comes first.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l21-abo-vs-rh" style="--acc:#8a5a1c;--acc-bg:#efe8df;--acc-zebra:#f7f3ef;--acc-ink:#6c4616">
+    <div class="shead"><span class="dot" style="background:#8a5a1c"></span><h2>ABO vs RhD Head to Head</h2></div>
+    <div class="scroll">
+      <table style="min-width:0">
+        <thead><tr><th class="term" style="width:26%">Feature</th><th style="width:37%">ABO</th><th style="width:37%">RhD</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Antigen</td><td>Carbohydrate oligosaccharides (A, B, H)</td><td>Transmembrane protein (D)</td></tr>
+          <tr><td class="h">Baseline antibody</td><td>Naturally occurring</td><td>Absent until sensitized (transfusion or pregnancy)</td></tr>
+          <tr><td class="h">Antibody class</td><td>IgM (pentamer, complement)</td><td>IgG (monomer, crosses the placenta)</td></tr>
+          <tr><td class="h">Hemolysis site</td><td>Intravascular</td><td>Extravascular (splenic macrophages)</td></tr>
+          <tr><td class="h">Severity</td><td>Acute, dramatic: shock, acute DIC (disseminated intravascular coagulation), acute tubular necrosis</td><td>Gradual: asymptomatic hemoglobin drop, mild jaundice (spherocytes, low haptoglobin)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">ABO is born with it and bursts cells in the blood; Rh needs a Rehearsal, is Removed by the spleen and Reaches the baby.</p><p class="mnem-key"><span><b>Born with it</b> natural antibody</span><span><b>Bursts in the blood</b> IgM, complement, intravascular</span><span><b>Rehearsal</b> needs prior exposure</span><span><b>Removed by the spleen</b> extravascular</span><span><b>Reaches the baby</b> IgG crosses the placenta</span></p><p class="mnem-brk"><b>Where it breaks:</b> Says nothing about the antigen chemistry (ABO carbohydrate, RhD protein).</p></div>
+  </section>
+
+  <section class="topic" id="l21-rh" style="--acc:#2f5d62;--acc-bg:#e2e8e9;--acc-zebra:#f0f4f4;--acc-ink:#25494c">
+    <div class="shead"><span class="dot" style="background:#2f5d62"></span><h2>RhD and Hemolytic Disease of the Fetus and Newborn</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">RhD</td><td>Transmembrane protein; the MOST immunogenic red cell antigen outside ABO. Rh-positive = the RhD polypeptide is present.</td></tr>
+          <tr><td class="h">No natural anti-D</td><td>Rh-negative people have ZERO anti-D at baseline; exposure = Rh-positive transfusion or feto-maternal hemorrhage. Anti-D is IgG (IgG1, IgG3); weeks to months to mature.</td></tr>
+          <tr><td class="h">How the disease happens</td><td>RhD-negative mother, RhD-positive fetus → feto-maternal bleed (delivery, trauma) → IgG anti-D → in LATER pregnancies crosses the placenta (Fc receptors) → splenic destruction, anemia, extramedullary hematopoiesis, high-output heart failure (hydrops fetalis).</td></tr>
+          <tr><td class="h">★ Rh immune globulin</td><td>Masks and clears fetal D-positive cells before maternal B cells respond. ~28 weeks to every non-sensitized RhD-negative mother; within 72 hours of delivering an RhD-positive baby; after miscarriage, ectopic, abortion, amniocentesis or abdominal trauma.</td></tr>
+          <tr><td class="h">Kleihauer-Betke test</td><td>Quantifies the fetal-maternal bleed → are extra vials of Rh immune globulin needed?</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l21-typing" style="--acc:#26384a;--acc-bg:#e1e3e6;--acc-zebra:#f0f1f2;--acc-ink:#1e2c3a">
+    <div class="shead"><span class="dot" style="background:#26384a"></span><h2>★ Reading ABO Typing</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term" style="width:32%">Forward (cells + anti-A, anti-B): detects ANTIGENS</th><th style="width:18%">Reads as</th><th style="width:32%">Reverse (plasma + A1, B cells): detects ANTIBODIES</th><th style="width:18%">Reads as</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Agglutinates with anti-A</td><td>A antigen present</td><td>Agglutinates B cells only</td><td>Anti-B → group A</td></tr>
+          <tr><td class="h">Agglutinates with anti-B</td><td>B antigen present</td><td>Agglutinates A1 cells only</td><td>Anti-A → group B</td></tr>
+          <tr><td class="h">Agglutinates with anti-D</td><td>RhD-positive</td><td>Agglutinates both A1 and B cells</td><td>Group O</td></tr>
+          <tr><td class="h">No agglutination with anti-A or anti-B</td><td>Group O</td><td>No agglutination of either cell</td><td>Group AB</td></tr>
+          <tr><td class="rnote" colspan="4">Forward and reverse MUST match before blood is released; any discrepancy → immediate investigation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">Forward finds the antigen you HAVE; reverse finds the antibody for what you LACK — so the two halves name the same group from opposite sides.</p><p class="mnem-brk"><b>Where it breaks:</b> Anti-D (Rh) is read only on the forward side.</p></div>
+  </section>
+
+  <section class="topic" id="l21-screen" style="--acc:#3a6797;--acc-bg:#e3eaf0;--acc-zebra:#f1f4f8;--acc-ink:#2d5076">
+    <div class="shead"><span class="dot" style="background:#3a6797"></span><h2>Antibody Screen, DAT vs IAT, Type and Screen vs Crossmatch</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Antibody screen</td><td>An indirect antiglobulin test: plasma + 2–3 group O reagent cells, then antihuman globulin. Finds UNEXPECTED IgG alloantibodies (Kell, Duffy, Kidd, Rh C/E). Negative in ~95–98%.</td></tr>
+          <tr><td class="h">Positive screen</td><td>Alloantibody from prior transfusion, transplantation or pregnancy → 11- to 16-cell identification panel → antigen-negative donor units (hours to days) → order the type and screen well before elective surgery.</td></tr>
+          <tr><td class="h">★ Direct antiglobulin test (DAT)</td><td>"ALREADY coated in the body?" Patient's washed red cells; polyspecific anti-IgG + anti-C3d, then monospecific if positive. Hemolytic reactions, autoimmune hemolytic anemia, hemolytic disease of the newborn.</td></tr>
+          <tr><td class="h">Indirect antiglobulin test (IAT)</td><td>"FREE antibody in the plasma?" Plasma + reagent cells (in vitro). Pre-transfusion screen, prenatal antibody screen, crossmatching.</td></tr>
+          <tr><td class="h">Type and screen</td><td>ABO, Rh, unexpected antibodies; ZERO units held. Transfusion possible but not expected (routine surgery, stable gastrointestinal bleed).</td></tr>
+          <tr><td class="h">Type and crossmatch</td><td>Physically matches donor units; specific units tagged and RESERVED (unavailable to others until released). Transfusion planned, highly probable or ongoing.</td></tr>
+          <tr><td class="h">★ 3-day specimen rule</td><td>Sample valid only 72 hours if transfused or pregnant within 3 months, or history uncertain: new alloantibodies form fast after re-exposure → expired = redraw and retest.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l21-crossmatch" style="--acc:#8a5a1c;--acc-bg:#efe8df;--acc-zebra:#f7f3ef;--acc-ink:#6c4616">
+    <div class="shead"><span class="dot" style="background:#8a5a1c"></span><h2>Crossmatch Tiers</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term" style="width:20%">Tier</th><th style="width:34%">Requirement</th><th style="width:30%">Purpose</th><th style="width:16%">Turnaround</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Electronic (computer)</td><td>Negative screen AND ≥2 concordant type records</td><td>Software verifies ABO/Rh compatibility</td><td><1 minute</td></tr>
+          <tr><td class="h">Immediate-spin</td><td>Negative screen, no history of significant antibodies</td><td>Final ABO check; rules out clerical mismatch</td><td>~5–10 minutes</td></tr>
+          <tr><td class="h">Full antiglobulin</td><td>Positive screen OR history of significant antibodies</td><td>37 °C + antihuman globulin: weak IgG to minor antigens</td><td>45–60+ min per unit</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">E-I-F, from fastest to slowest:</p><p class="mnem-key"><span><b>E</b> Electronic: Everything clean (negative screen + two records)</span><span><b>I</b> Immediate spin: Is it ABO-compatible?</span><span><b>F</b> Full: Found an antibody</span></p><p class="mnem-brk"><b>Where it breaks:</b> The letters carry the requirement, not the turnaround times.</p></div>
+  </section>
+
+  <section class="topic" id="l21-protocol" style="--acc:#2f5d62;--acc-bg:#e2e8e9;--acc-zebra:#f0f4f4;--acc-ink:#25494c">
+    <div class="shead"><span class="dot" style="background:#2f5d62"></span><h2>★ Any Suspected Reaction: The Universal Response</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">1. Stop</td><td>Halt the infusion immediately; do NOT just slow it. Disconnect the tubing at the catheter hub.</td></tr>
+          <tr><td class="h">2. Keep the line</td><td>Fresh normal saline through NEW tubing; never flush the remaining blood into the patient.</td></tr>
+          <tr><td class="h">3. Clerical recheck</td><td>Wristband vs unit label, bag paperwork and compatibility slip.</td></tr>
+          <tr><td class="h">4. Notify</td><td>Blood bank and attending.</td></tr>
+          <tr><td class="h">5. Return</td><td>Remaining product, intact tubing and tags → blood bank for testing and cultures.</td></tr>
+          <tr><td class="h">6. Labs</td><td>Repeat ABO/Rh, direct antiglobulin test, complete blood count, metabolic panel, free plasma hemoglobin, urinalysis.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l21-reactions" style="--acc:#26384a;--acc-bg:#e1e3e6;--acc-zebra:#f0f1f2;--acc-ink:#1e2c3a">
+    <div class="shead"><span class="dot" style="background:#26384a"></span><h2>★ The Five Reactions: Laboratory Fingerprints</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term" style="width:14%">Reaction</th><th style="width:12%">Onset</th><th style="width:10%">Fever</th><th style="width:10%">Low BP</th><th style="width:11%">DAT</th><th style="width:22%">Hemolysis labs</th><th style="width:21%">Distinguishing</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Acute hemolytic</td><td>Minutes–24 h</td><td>Yes</td><td>Yes (shock)</td><td>Positive (new)*</td><td>Marked: pink plasma, red urine, low haptoglobin, high LDH</td><td>ABO mismatch on recheck; acute DIC</td></tr>
+          <tr><td class="h">Delayed hemolytic</td><td>3–30 days</td><td>Mild/variable</td><td>Rare</td><td>Positive (new)</td><td>Extravascular: spherocytes, high indirect bilirubin, hemoglobin drop</td><td>New alloantibody on screen (Kidd, Rh)</td></tr>
+          <tr><td class="h">Febrile non-hemolytic</td><td>During–4 h</td><td>Yes (≥1 °C)</td><td>No</td><td>Negative</td><td>Normal (clear plasma, urine)</td><td>Diagnosis of exclusion</td></tr>
+          <tr><td class="h">Allergic</td><td>During–4 h</td><td>No</td><td>No</td><td>Negative</td><td>Normal</td><td>Pruritus/urticaria; responds to H1-blocker</td></tr>
+          <tr><td class="h">Anaphylaxis</td><td>Seconds–minutes</td><td>No</td><td>Yes (shock)</td><td>Negative</td><td>Normal</td><td>Stridor/wheeze; high tryptase; anti-IgA</td></tr>
+          <tr><td class="rnote" colspan="7">DAT = direct antiglobulin test; LDH = lactate dehydrogenase; DIC = disseminated intravascular coagulation; BP = blood pressure. *May be negative if every donor cell is already lysed.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mnem"><div class="mnem-k">Memory aid</div><p class="mnem-hook">The two A's are Afebrile; the two Hemolytics are DAT-positive.</p><p class="mnem-key"><span><b>Afebrile</b> Allergic and Anaphylaxis: no fever</span><span><b>DAT-positive</b> Acute and Delayed hemolytic</span><span><b>Shock</b> Acute hemolytic and Anaphylaxis</span></p><p class="mnem-brk"><b>Where it breaks:</b> The febrile non-hemolytic reaction is the leftover: fever, normal labs, negative DAT. Delayed hemolytic fever is only mild/variable.</p></div>
+  </section>
+
+  <section class="topic" id="l21-reaction-details" style="--acc:#3a6797;--acc-bg:#e3eaf0;--acc-zebra:#f1f4f8;--acc-ink:#2d5076">
+    <div class="shead"><span class="dot" style="background:#3a6797"></span><h2>Reaction by Reaction</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Acute hemolytic</td><td>ABO (90%+ clerical), IgM + complement, within minutes. Triad: fever/rigors, flank pain, red urine. Labs: absent haptoglobin, very high LDH (lactate dehydrogenase), later indirect bilirubin; DIC labs (long clotting times, high D-dimer, low fibrinogen and platelets); rising creatinine, hyperkalemia.</td></tr>
+          <tr><td class="h">★ Delayed hemolytic</td><td>Anamnestic IgG to minor antigens (Kidd, Rh, Duffy, Kell); old antibody undetectable on the screen. Day 3–30 (peak 5–15). Hemoglobin drops or fails to rise; mild jaundice. New positive DAT + new alloantibody (anti-Jka); spherocytes.</td></tr>
+          <tr><td class="h">Sickle cell disease</td><td>A delayed reaction mimics a pain crisis; hemoglobin A falls disproportionately. Hyperhemolysis: donor AND own cells destroyed, reticulocytopenia, further transfusion can be fatal.</td></tr>
+          <tr><td class="h">Febrile non-hemolytic</td><td>Stored cytokines or anti-white cell (HLA, human leukocyte antigen) antibodies. Rise ≥1 °C to ≥38 °C during or within 4 h; stable. All labs normal. Sepsis workup if ≥2 °C, hypotension or platelets. Prevent: pre-storage leukoreduction; no routine premedication.</td></tr>
+          <tr><td class="h">★ Allergic</td><td>Recipient IgE vs donor plasma proteins; plasma-rich products. Hives only: NO fever, wheeze or hypotension; labs normal. Pause, H1-blocker, re-check at 20–30 min → the SAME unit may restart slower within the 4-hour hang time. Wheeze/fever/hypotension → never restart.</td></tr>
+          <tr><td class="h">Anaphylactic</td><td>Severe IgA deficiency with anti-IgA; seconds after 1–5 mL; NO fever (separates it from sepsis and acute hemolysis). Intramuscular epinephrine first, never delayed. Tryptase within 1–3 h, IgA level, anti-IgA. Future: washed red cells or IgA-deficient donors.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   <footer>
-    Condensed from the Principles of Diagnostic Medicine I Exam 4 Study Guide (Class of 2028). Covers Lectures 17, 19, 20 so far (lecture content). Emphasis rows quote the 20, 26 and 27 October 2026 recordings; ★ = emphasized in a recording.
+    Condensed from the Principles of Diagnostic Medicine I Exam 4 Study Guide (Class of 2028). Covers Lectures 17, 18, 19, 20, 21 so far (lecture content). Emphasis rows quote the 20, 26 and 27 October and 17 and 19 November 2026 recordings; ★ = emphasized in a recording.
     <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
     <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
   </footer>

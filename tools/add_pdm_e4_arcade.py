@@ -23,17 +23,25 @@ SPIRO_ICON = ('<path d="M3 3v18h18"/><path d="M6 17c1.5-6 3-9 6-10s5-1 8-1"/>')
 # A pH scale: a bar with a marker.
 PH_ICON = ('<path d="M3 12h18"/><path d="M3 9v6M21 9v6M12 7v10"/><circle cx="15" cy="12" r="2"/>')
 
+# An ultrasound sector: a fan opening downward from the probe.
+PROBE_ICON = ('<path d="M10 3h4v3h-4z"/><path d="M12 6L4 19a10 10 0 0 0 16 0z"/>')
+
+# A blood drop.
+DROP_ICON = ('<path d="M12 3c3 4.5 6 8 6 11a6 6 0 0 1-12 0c0-3 3-6.5 6-11z"/>')
+
 SPEC = [
- (17, "pdm-pulmonary-imaging", "Pulmonary Imaging", "accent1", LUNGS_ICON),
- (19, "pdm-acid-base", "Acid-Base and Blood Gases", "accent3", PH_ICON),
- (20, "pdm-pulmonary-function", "Pulmonary Function Testing", "accent2", SPIRO_ICON),
+ ("l17", "pdm-pulmonary-imaging", "Pulmonary Imaging", "accent1", LUNGS_ICON),
+ ("l19", "pdm-acid-base", "Acid-Base and Blood Gases", "accent3", PH_ICON),
+ ("l20", "pdm-pulmonary-function", "Pulmonary Function Testing", "accent2", SPIRO_ICON),
+ ("pocus", "pdm-pocus", "Point-of-Care Ultrasound", "accent1", PROBE_ICON),
+ ("l21", "pdm-transfusion", "Transfusion Medicine", "accent3", DROP_ICON),
 ]
 
 
 def decks():
     out = []
     for n, did, name, colour, icon in SPEC:
-        cards = json.load(open(os.path.join(FRAG, "l%d_cards.json" % n), encoding="utf-8"))
+        cards = json.load(open(os.path.join(FRAG, "%s_cards.json" % n), encoding="utf-8"))
         # Optional Match pairs under "<deck>:match" (crisp term -> short definition); without them
         # Match falls back to the cards.
         assert set(cards) - {did + ":match"} == {did}, (n, list(cards))
