@@ -138,4 +138,14 @@ REQUIRED_VIG = [
     ("Plasma cell disorder from the numbers", r"plasma cells", r"MGUS|monoclonal gammopathy|smoldering|myeloma", 1),
 ]
 
-HELD = []
+HELD = [
+    # e8d309fe39290812: s6 says CLL has no known environmental risk, but s23 lists radiation, DDT farming and EBV for
+    # non-Hodgkin lymphoma and s15 places CLL/SLL inside NHL, so three options are defensible.
+    "Which statement about environmental risk factors for chronic lymphocytic leukemia is accurate?",
+    # d3635344ea9ac8c4: lymphoplasmacytic lymphoma is an NHL, so s23's NHL risks (prior radiation, family history)
+    # make the radiation and sibling options defensible alongside farming/pesticides.
+    "Which exposure is a risk factor for lymphoplasmacytic lymphoma?",
+    # f320c15f8d1aa37d: hepatitis C also raises serum globulins (polyclonal hypergammaglobulinemia), so two options
+    # are defensible; s49 names only cirrhosis and chronic inflammation.
+    "Which condition can raise serum globulins and must be separated from a plasma cell disorder?",
+]

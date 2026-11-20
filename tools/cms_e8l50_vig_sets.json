@@ -81,7 +81,7 @@
     ],
     [
      "Bleomycin",
-     "Bleomycin is part of the historical Hodgkin lymphoma regimen and is being replaced because of pulmonary toxicity. Tell: symptomatic chronic lymphocytic leukemia is treated with targeted therapy such as a Bruton tyrosine kinase inhibitor.",
+     "Bleomycin is a chemotherapy drug used in a Hodgkin lymphoma regimen, not a chronic lymphocytic leukemia therapy. Tell: symptomatic chronic lymphocytic leukemia is treated with targeted therapy such as a Bruton tyrosine kinase inhibitor.",
      "confused mechanism or drug class"
     ]
    ],
@@ -226,7 +226,7 @@
     ],
     [
      "Allogeneic stem cell transplant",
-     "Allogeneic stem cell transplant is used after relapse of Hodgkin lymphoma treated first-line, not for new indolent follicular lymphoma. Tell: indolent, asymptomatic disease is observed.",
+     "Allogeneic stem cell transplant is not first treatment for new, asymptomatic indolent follicular lymphoma. Tell: indolent, asymptomatic disease is observed.",
      "adjacent fact"
     ],
     [
@@ -427,7 +427,7 @@
    "opts": [
     [
      "Rituximab-based chemotherapy",
-     "Rituximab targets CD20 (cluster of differentiation 20) on B cells; his lymphoma is a T-cell disease. Tell: T-cell lymphomas never get the anti-CD20 (cluster of differentiation 20) antibody, and this one is treated at the skin.",
+     "Rituximab targets CD20 (cluster of differentiation 20) on B cells; his lymphoma is a T-cell disease. Tell: T-cell lymphomas do not usually get the anti-CD20 (cluster of differentiation 20) antibody, and this one is treated at the skin.",
      "confused mechanism or drug class"
     ],
     [
@@ -621,7 +621,7 @@
     ],
     [
      "Four factors",
-     "Four would need her age over 60 and an elevated lactate dehydrogenase or a performance status above 2; she has none of these. Tell: she scores on extranodal disease and stage only.",
+     "Four would need two more of: age over 60, elevated lactate dehydrogenase, or a performance status above 2; she has none of these. Tell: she scores on extranodal disease and stage only.",
      "wrong stage or severity"
     ]
    ],
@@ -843,11 +843,11 @@
   {
    "topic": "Hodgkin lymphoma: management and prognosis",
    "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly",
-   "q": "A 67-year-old woman has classical Hodgkin lymphoma of the mixed cellularity subtype, stage II and not bulky. Which feature of her case predicts inferior results?",
+   "q": "A 67-year-old woman has classical Hodgkin lymphoma of the mixed cellularity subtype, stage II and not bulky. Which features of her case predict inferior results?",
    "opts": [
     [
-     "Her bulky disease",
-     "Bulky disease does predict inferior results, but her disease is stated not to be bulky. Tell: her risk factors are age and the mixed cellularity subtype.",
+     "Her age and bulky disease",
+     "Older age counts, and bulky disease does predict inferior results, but her disease is stated not to be bulky. Tell: her risk factors are age and the mixed cellularity subtype.",
      "ruled out by a stated finding"
     ],
     [
@@ -855,18 +855,18 @@
      "Correct. Hodgkin lymphoma is generally curable, but inferior results are seen in older patients, those with bulky disease and those with certain subtypes (lymphocyte depleted or mixed cellularity). She is older and has mixed cellularity; her disease is not bulky."
     ],
     [
-     "Her sex",
-     "Sex is not listed among the factors predicting inferior Hodgkin results; those are older age, bulky disease and the lymphocyte-depleted or mixed cellularity subtypes. Tell: look at her age and subtype.",
+     "Her sex and stage",
+     "Neither sex nor stage II spread is listed among the factors predicting inferior Hodgkin results; those are older age, bulky disease and the lymphocyte-depleted or mixed cellularity subtypes. Tell: look at her age and subtype.",
      "common lay belief"
     ],
     [
-     "Her stage II spread",
-     "Stage II is early disease, treated with chemotherapy, and is not named as a predictor of inferior results. Tell: her age and mixed cellularity subtype are the named factors.",
+     "Her stage and subtype",
+     "Her mixed cellularity subtype counts, but stage II is early disease, treated with chemotherapy, and is not named as a predictor of inferior results. Tell: her age, not her stage, is the second named factor.",
      "wrong stage or severity"
     ]
    ],
    "c": 1,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 42",
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 41, 42",
    "slot": "prognosis",
    "lead": "complication"
   },
@@ -1099,7 +1099,7 @@
     ],
     [
      "Allogeneic transplant",
-     "Allogeneic stem cell transplant is for Hodgkin lymphoma that relapses after first-line therapy, not new localized low-grade disease. Tell: one node, low grade, radiation.",
+     "Allogeneic stem cell transplant is not used for new localized low-grade disease. Tell: one node, low grade, radiation.",
      "wrong stage or severity"
     ],
     [
@@ -1313,7 +1313,7 @@
     ],
     [
      "Doxorubicin, bleomycin, vinblastine and dacarbazine for two cycles",
-     "Doxorubicin, bleomycin, vinblastine and dacarbazine is the historical Hodgkin lymphoma regimen, not diffuse large B-cell lymphoma. Tell: an aggressive B-cell non-Hodgkin lymphoma gets rituximab-based multi-drug chemotherapy.",
+     "Doxorubicin, bleomycin, vinblastine and dacarbazine is a Hodgkin lymphoma regimen, not diffuse large B-cell lymphoma. Tell: an aggressive B-cell non-Hodgkin lymphoma gets rituximab-based multi-drug chemotherapy.",
      "competing diagnosis"
     ]
    ],

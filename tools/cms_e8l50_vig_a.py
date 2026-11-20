@@ -229,7 +229,7 @@ V(T_CLL_TX, IO_II,
    ["Radiation to one node",
     "Radiation is the approach for a single-node, non-aggressive non-Hodgkin lymphoma; his disease is a systemic leukemia with B symptoms. Tell: chronic lymphocytic leukemia is treated with targeted drugs.", "adjacent fact"],
    ["Bleomycin",
-    "Bleomycin is part of the historical Hodgkin lymphoma regimen and is being replaced because of pulmonary toxicity. Tell: symptomatic chronic lymphocytic leukemia is treated with targeted therapy such as a Bruton tyrosine kinase inhibitor.", "confused mechanism or drug class"]],
+    "Bleomycin is a chemotherapy drug used in a Hodgkin lymphoma regimen, not a chronic lymphocytic leukemia therapy. Tell: symptomatic chronic lymphocytic leukemia is treated with targeted therapy such as a Bruton tyrosine kinase inhibitor.", "confused mechanism or drug class"]],
   C(11), "first-line", "treatment"),
 
 V(T_CLL_TX, IO_II,
