@@ -1,0 +1,397 @@
+# -*- coding: utf-8 -*-
+"""Lecture 50 vignette pool C -- Hematologic Malignancies Part II: Hodgkin lymphoma (s36-42) and multiple myeloma with
+the other plasma cell disorders (s44-57): MGUS versus smoldering myeloma versus myeloma from the stem's numbers
+(s50, s56, s57), R-ISS stage (s51 table), CRAB (calcium, renal, anemia, bone) features, work-up, management, prognosis and education. Every slide in
+the range viewed at 1920 px.
+
+KEYS ARE WRITTEN SHORT ON PURPOSE -- detail lives in the explanation.
+EXPLANATIONS follow tools/question_writing/EXPLAIN_DEEP.md.
+
+Plasma cell stems stay off every boundary: no M-protein of exactly 3 g/dL, no marrow plasma cells of exactly 10% or
+60% (scope conflicts s47/s57, s56/s57). Smoldering stems give both an M-protein above 3 g/dL and plasma cells inside
+10-60%. R-ISS stems stay off 3.5 and 5.5 mg/L for beta-2 microglobulin and off 3.5 g/dL for albumin. Hodgkin
+staging uses the same s40 picture captions as the non-Hodgkin pool.
+
+Deliberately NOT written: Hodgkin relapse "may require allogeneic stem cell transplant" (s42) -- held, see report;
+s41 drug list is used with doxorubicin in place of the brand name.
+"""
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _cmse3_q import Q
+from cms_e8l50_scope import *
+
+
+def S(topic, io, q, opts, cite, slot):
+    d = Q(topic, io, q, opts, cite); d["slot"] = slot; return d
+
+
+def V(topic, io, q, opts, cite, slot, lead):
+    d = S(topic, io, q, opts, cite, slot); d["lead"] = lead; return d
+
+
+def ORD(d, asc):
+    d["ordered"] = True; d["asc"] = asc; return d
+
+
+MGUS = "Monoclonal gammopathy of undetermined significance"
+SMM = "Smoldering multiple myeloma"
+MM = "Multiple myeloma"
+REACT = "Reactive hypergammaglobulinemia of cirrhosis"
+
+QUESTIONS = [
+
+# ---------------------------------------------------------------- Hodgkin lymphoma: presentation and work-up (s36-39)
+V(T_HL, IO_I,
+  "A 24-year-old woman has a painless, rubbery left cervical lymph node that aches after she drinks alcohol, and intense itching for 2 months. Chest x-ray shows a mediastinal mass. Which is the most likely diagnosis?",
+  [["Hodgkin lymphoma",
+    "Correct. Hodgkin lymphoma has a bimodal incidence with a peak in adults in their 20s and presents with painless lymphadenopathy, usually cervical, that may hurt with alcohol, intense pruritus and a mediastinal mass on chest x-ray. Her picture matches item by item."],
+   ["Chronic lymphocytic leukemia",
+    "Chronic lymphocytic leukemia is a disease of older adults (median age 70) found by lymphocytosis on blood work. Tell: a 24-year-old with node pain after alcohol and a mediastinal mass is Hodgkin lymphoma.", "competing diagnosis"],
+   ["Burkitt lymphoma",
+    "Burkitt lymphoma grows visibly within a day with B symptoms; it is not described with alcohol-related node pain or pruritus. Tell: alcohol pain and itching point to Hodgkin lymphoma.", "competing diagnosis"],
+   ["Follicular lymphoma",
+    "Follicular lymphoma is indolent, with waxing and waning painless nodes, and has none of the alcohol pain, pruritus or mediastinal mass she shows. Tell: those three features are classic Hodgkin lymphoma.", "competing diagnosis"]],
+  CS(37, 38), "manifestation", "diagnosis"),
+
+V(T_HL, IO_I,
+  "A 27-year-old man has a persistent, enlarging 3-cm painless supraclavicular lymph node. Excisional biopsy shows a few large Reed-Sternberg cells (binucleated, neoplastic B cells) among numerous immune cells. Which marker pattern confirms classical Hodgkin lymphoma?",
+  [["CD15 (cluster of differentiation 15) and CD30 (cluster of differentiation 30)",
+    "Correct. Classical Hodgkin lymphoma expresses CD15 (cluster of differentiation 15) and CD30 (cluster of differentiation 30). Its few malignant Reed-Sternberg cells (binucleated, neoplastic B cells) sit among numerous immune effector cells, which his biopsy shows."],
+   ["CD19 (cluster of differentiation 19) and CD5 (cluster of differentiation 5)",
+    "Coexpression of CD19 (cluster of differentiation 19) and CD5 (cluster of differentiation 5) on blood lymphocytes confirms chronic lymphocytic leukemia by flow cytometry. Tell: Reed-Sternberg cells in a node point to the CD15 (cluster of differentiation 15) and CD30 (cluster of differentiation 30) pattern.", "adjacent fact"],
+   ["Cyclin D1 gene translocation t(11;14)",
+    "Cyclin D1 translocation t(11;14) identifies mantle cell lymphoma, a rare, usually aggressive non-Hodgkin lymphoma of men aged 60-70. Tell: a young man with Reed-Sternberg cells has Hodgkin lymphoma.", "competing diagnosis"],
+   ["Translocation t(14;18) placing the BCL-2 (B-cell lymphoma 2) gene",
+    "The t(14;18) translocation moving BCL-2 (B-cell lymphoma 2) to chromosome 14 is follicular lymphoma, an indolent disease with packed follicles. Tell: binucleated Reed-Sternberg cells mean classical Hodgkin markers.", "competing diagnosis"]],
+  C(39), "test finding", "test"),
+
+V(T_HL, IO_I,
+  "A 29-year-old woman has a painless, persistent 3-cm cervical lymph node, and Hodgkin lymphoma is suspected. The team is planning how to sample it. Which approach should be avoided?",
+  [["Fine-needle aspiration",
+    "Correct. Fine-needle aspiration should be avoided: excisional biopsy is required to observe lymph node architecture, and aspiration may miss the diagnosis. Hodgkin lymphoma is diagnosed by excisional lymph node biopsy."],
+   ["Excisional lymph node biopsy",
+    "Excisional lymph node biopsy is how Hodgkin lymphoma is diagnosed, because it preserves the node architecture. Tell: the approach to avoid is the needle, not the excision.", "reversed direction or value"],
+   ["Chest x-ray",
+    "A chest x-ray is part of the work-up, ruling out a mediastinal mass or adenopathy. Tell: it is recommended, while fine-needle aspiration is avoided.", "reversed direction or value"],
+   ["Complete blood count",
+    "A complete blood count is part of the work-up, showing cytopenias with bone marrow involvement. Tell: blood work belongs in the plan; the needle sample does not.", "reversed direction or value"]],
+  C(39), "avoid", "avoid"),
+
+V(T_HL, IO_I,
+  "A 22-year-old man has biopsy-proven classical Hodgkin lymphoma presenting as a painless cervical node. Which imaging study in the initial work-up checks for a mediastinal mass or adenopathy?",
+  [["Chest x-ray",
+    "Correct. A chest x-ray rules out a mediastinal mass or adenopathy, which is common in Hodgkin lymphoma. Work-up also includes a complete blood count, chemistries (electrolytes, for tumor lysis), lactate dehydrogenase and bone marrow biopsy."],
+   ["Lumbar puncture",
+    "Lumbar puncture is required in high-grade lymphomas such as Burkitt, and it does not image the chest. Tell: the mediastinum is checked on a chest x-ray.", "adjacent fact"],
+   ["Upper endoscopy",
+    "Upper endoscopy looks for gastric mucosa-associated lymphoid tissue lymphoma. Tell: a mediastinal mass is a chest finding, seen on chest x-ray.", "adjacent fact"],
+   ["Skull x-ray",
+    "Skull films show the punched-out lytic lesions of multiple myeloma, not mediastinal disease. Tell: Hodgkin work-up images the chest.", "competing diagnosis"]],
+  C(39), "initial test", "test"),
+
+# ---------------------------------------------------------------- Hodgkin staging (s40)
+V(T_HL, IO_I,
+  "A 25-year-old woman has classical Hodgkin lymphoma. Staging imaging shows involved right cervical lymph nodes and mediastinal lymph nodes; nothing is involved below the diaphragm and no organ is involved. What is her stage?",
+  [["Stage 2",
+    "Correct. Cervical and mediastinal nodes are two node regions, both above the diaphragm, with no organ disease. Two or more lymph node regions on the same side of the diaphragm is stage 2; Hodgkin lymphoma spreads to contiguous nodes in an orderly fashion."],
+   ["Stage 1",
+    "Stage 1 is one node region or one organ; she has cervical and mediastinal regions. Tell: two regions on one side make stage 2.", "wrong stage or severity"],
+   ["Stage 3",
+    "Stage 3 requires node regions above and below the diaphragm; hers are all above it. Tell: the neck and the mediastinum are the same side.", "wrong stage or severity"],
+   ["Stage 4",
+    "Stage 4 is widespread disease with multiple organs; she has nodes only. Tell: no organ spread means no stage 4.", "wrong stage or severity"]],
+  C(40), "test finding", "classify"),
+
+V(T_HL, IO_I_POP,
+  "A 66-year-old man has classical Hodgkin lymphoma. Staging imaging shows involved left cervical lymph nodes and right inguinal lymph nodes, with no liver, bone marrow or other organ involvement. What is his stage?",
+  [["Stage 3",
+    "Correct. Cervical nodes are above the diaphragm and inguinal nodes below it; with no organ involvement, two or more node regions above and below the diaphragm is stage 3. His age over 60 is the second peak of Hodgkin lymphoma's bimodal incidence."],
+   ["Stage 1",
+    "Stage 1 is a single node region or single organ; he has two regions. Tell: more than one region is never stage 1.", "wrong stage or severity"],
+   ["Stage 2",
+    "Stage 2 keeps every region on one side of the diaphragm; his neck and groin are on opposite sides. Tell: crossing the diaphragm is stage 3.", "wrong stage or severity"],
+   ["Stage 4",
+    "Stage 4 needs widespread organ involvement, and he has none. Tell: nodes on both sides without organs stop at stage 3.", "wrong stage or severity"]],
+  C(40), "test finding", "classify"),
+
+# ---------------------------------------------------------------- Hodgkin management and prognosis (s41, s42)
+V(T_HL_TX, IO_I,
+  "A 26-year-old woman has stage I classical Hodgkin lymphoma in one cervical node region. The disease is not bulky, and she has no fevers, night sweats or weight loss. Which treatment is appropriate?",
+  [["A short course of chemotherapy",
+    "Correct. Early stage I, and stage II without B symptoms, Hodgkin lymphoma is treated with a short course of chemotherapy (historically doxorubicin, bleomycin, vinblastine and dacarbazine). Her disease is stage I, not bulky and without B symptoms."],
+   ["Chemotherapy plus radiation",
+    "Chemotherapy plus radiation is for bulky stage I or II disease or disease with B symptoms; hers is not bulky and she has none. Tell: early, non-bulky disease without B symptoms gets chemotherapy alone, short course.", "wrong stage or severity"],
+   ["Watch and wait",
+    "Watch and wait suits indolent follicular lymphoma or asymptomatic chronic lymphocytic leukemia, not Hodgkin lymphoma, which is generally curable with treatment. Tell: early Hodgkin lymphoma is treated, briefly.", "adjacent fact"],
+   ["Rituximab alone",
+    "Rituximab alone is used for low-grade B-cell non-Hodgkin lymphomas that need treatment. Tell: Hodgkin lymphoma is treated with a chemotherapy regimen.", "competing diagnosis"]],
+  C(41), "first-line", "treatment"),
+
+V(T_HL_TX, IO_I,
+  "A 29-year-old man has classical Hodgkin lymphoma with cervical nodes and a bulky mediastinal mass, all above the diaphragm, and drenching night sweats. Which treatment approach is appropriate?",
+  [["Chemotherapy plus radiation",
+    "Correct. His nodes are on one side of the diaphragm (stage II), and the disease is bulky with B symptoms (night sweats). Bulky stage I or II disease, or disease with B symptoms, is treated with chemotherapy plus radiation."],
+   ["A short course of chemotherapy",
+    "A short course of chemotherapy is for early stage I, or stage II without B symptoms, that is not bulky and has no B symptoms; he has a bulky mass and night sweats. Tell: bulky or B symptoms add radiation.", "wrong stage or severity"],
+   ["Radiation alone",
+    "Radiation alone is the plan for a single node of non-aggressive non-Hodgkin lymphoma. Tell: bulky Hodgkin lymphoma with B symptoms needs chemotherapy plus radiation.", "adjacent fact"],
+   ["Observation",
+    "Observation fits indolent non-Hodgkin lymphoma, not bulky Hodgkin lymphoma with night sweats. Tell: Hodgkin lymphoma is generally curable and is treated.", "wrong stage or severity"]],
+  C(41), "first-line", "treatment"),
+
+V(T_HL_TX, IO_I,
+  "A 34-year-old woman with interstitial lung disease has newly diagnosed classical Hodgkin lymphoma. The historical regimen of doxorubicin, bleomycin, vinblastine and dacarbazine is being considered. Which drug in it is the concern because of her lungs?",
+  [["Bleomycin",
+    "Correct. Bleomycin carries pulmonary toxicities, which is why newer agents are replacing it in Hodgkin lymphoma regimens. With pre-existing interstitial lung disease she is the patient in whom bleomycin is most worrying."],
+   ["Doxorubicin",
+    "Doxorubicin is kept in the regimen; the drug being replaced because of pulmonary toxicity is bleomycin. Tell: her lung disease points to the lung-toxic drug.", "confused mechanism or drug class"],
+   ["Vinblastine",
+    "Vinblastine is not the drug flagged for pulmonary toxicity. Tell: newer agents are replacing bleomycin, not vinblastine, because of the lungs.", "confused mechanism or drug class"],
+   ["Dacarbazine",
+    "Dacarbazine is not the drug being replaced for lung toxicity. Tell: bleomycin is the regimen's pulmonary concern.", "confused mechanism or drug class"]],
+  C(41), "avoid", "avoid"),
+
+ORD(V(T_HL, IO_I,
+  "A 23-year-old woman has just been diagnosed with Hodgkin lymphoma. Her 20-year-old sister asks how her own risk compares with the general population. How much higher is the risk for a same-sex sibling?",
+  [["About 10 times higher",
+    "Correct. Same-sex siblings of a patient with Hodgkin lymphoma have a 10-fold increased risk of also developing it. Epstein-Barr virus is a suspected risk factor (found in 40-50% of cases), with HIV (human immunodeficiency virus), human herpesvirus 6 and tuberculosis also listed."],
+   ["About 2 times higher",
+    "Two-fold understates it; same-sex siblings have a 10-fold increased risk. Tell: the sibling figure is ten.", "reversed direction or value"],
+   ["About 5 times higher",
+    "Five-fold is half the figure; same-sex siblings carry a 10-fold increased risk. Tell: same sex, ten times.", "reversed direction or value"],
+   ["About 50 times higher",
+    "Fifty-fold overstates it; the increase for a same-sex sibling is 10-fold. Tell: the risk is raised tenfold, not fiftyfold.", "reversed direction or value"]],
+  C(37), "risk factors", "education"), [1, 2, 0, 3]),
+
+V(T_HL_TX, IO_I,
+  "A 46-year-old man was treated with chemotherapy for Hodgkin lymphoma at age 25 and has been in remission since. He now has new cytopenias, and marrow evaluation shows a myelodysplastic syndrome. How is this best explained?",
+  [["A delayed toxicity of his therapy",
+    "Correct. Hodgkin lymphoma is generally curable (more than 90% alive at 5 years), but survivors may have delayed toxicities, including myelodysplastic syndrome, secondary leukemia and other cancers. Two decades after chemotherapy, his new marrow disease fits."],
+   ["A relapse of Hodgkin lymphoma",
+    "Relapse would return as lymphoma (nodes, mediastinal mass), not as a myelodysplastic marrow. Tell: a new marrow cancer years later is a delayed treatment toxicity.", "competing diagnosis"],
+   ["Richter transformation",
+    "Richter transformation is chronic lymphocytic leukemia turning into an aggressive B-cell lymphoma. Tell: he never had that leukemia; his risk comes from prior Hodgkin therapy.", "competing diagnosis"],
+   ["His inherited sibling risk",
+    "The 10-fold sibling risk concerns developing Hodgkin lymphoma itself, not later myelodysplasia. Tell: myelodysplasia after old chemotherapy is a delayed toxicity.", "adjacent fact"]],
+  C(42), "complication", "complication"),
+
+V(T_HL_TX, IO_I_POP,
+  "A 67-year-old woman has classical Hodgkin lymphoma of the mixed cellularity subtype, stage II and not bulky. Which feature of her case predicts inferior results?",
+  [["Her age and subtype",
+    "Correct. Hodgkin lymphoma is generally curable, but inferior results are seen in older patients, those with bulky disease and those with certain subtypes (lymphocyte depleted or mixed cellularity). She is older and has mixed cellularity; her disease is not bulky."],
+   ["Her sex",
+    "Sex is not listed among the factors predicting inferior Hodgkin results; those are older age, bulky disease and the lymphocyte-depleted or mixed cellularity subtypes. Tell: look at her age and subtype.", "common lay belief"],
+   ["Her stage II spread",
+    "Stage II is early disease, treated with chemotherapy, and is not named as a predictor of inferior results. Tell: her age and mixed cellularity subtype are the named factors.", "wrong stage or severity"],
+   ["Her bulky disease",
+    "Bulky disease does predict inferior results, but her disease is stated not to be bulky. Tell: her risk factors are age and the mixed cellularity subtype.", "ruled out by a stated finding"]],
+  C(42), "prognosis", "complication"),
+
+# ---------------------------------------------------------------- MGUS vs smoldering vs myeloma (s50, s56, s57)
+V(T_MGUS, IO_II,
+  "A 67-year-old man has a monoclonal protein found incidentally. The M-protein is 1.3 g/dL, and bone marrow biopsy shows 4% clonal plasma cells. Calcium, creatinine and hemoglobin are normal, he has no bone lesions, and he has no symptoms. How should his plasma cell disorder be classified?",
+  [[MGUS,
+    "Correct. Reading the criteria: M-protein below 3 g/dL (1.3), clonal marrow plasma cells below 10% (4%), and no myeloma-defining characteristics (normal calcium, kidneys, hemoglobin, bones). That is monoclonal gammopathy of undetermined significance, asymptomatic by definition, progressing to myeloma at about 1% per year."],
+   [SMM,
+    "Smoldering myeloma needs an M-protein above 3 g/dL and 10-60% marrow plasma cells; his are 1.3 g/dL and 4%. Tell: both of his numbers are below the smoldering thresholds.", "wrong stage or severity"],
+   [MM,
+    "Multiple myeloma needs at least 10% marrow plasma cells (or a plasmacytoma) plus at least one CRAB (calcium, renal, anemia, bone) feature; he has 4% and no CRAB (calcium, renal, anemia, bone) feature. Tell: no end-organ damage, no myeloma.", "wrong stage or severity"],
+   [REACT,
+    "Reactive hypergammaglobulinemia follows cirrhosis or chronic inflammation, which he does not have, and his marrow shows a clonal plasma cell population. Tell: a monoclonal protein from clonal plasma cells is a plasma cell disorder.", "ruled out by a stated finding"]],
+  CS(56, 57), "differential", "classify"),
+
+V(T_MGUS, IO_II,
+  "A 63-year-old woman has an M-protein of 3.9 g/dL, and bone marrow biopsy shows 24% clonal plasma cells. She has no symptoms; calcium, creatinine and hemoglobin are normal, and whole-body imaging shows no bone lesions. How should her plasma cell disorder be classified?",
+  [[SMM,
+    "Correct. Reading the criteria: M-protein above 3 g/dL (3.9) and marrow plasma cells within 10-60% (24%), with no myeloma-defining events (no anemia, bone lesions, renal failure or hypercalcemia). That is smoldering myeloma, an intermediate stage that typically does not require treatment."],
+   [MGUS,
+    "That precursor needs an M-protein below 3 g/dL and fewer than 10% plasma cells; she has 3.9 g/dL and 24%. Tell: both values cross the thresholds into the intermediate stage.", "wrong stage or severity"],
+   [MM,
+    "Myeloma needs at least one CRAB (calcium, renal, anemia, bone) feature with the marrow plasma cells; her calcium, kidneys, hemoglobin and bones are normal. Tell: high numbers without end-organ damage is smoldering.", "wrong stage or severity"],
+   [REACT,
+    "Reactive hypergammaglobulinemia follows cirrhosis or chronic inflammation, and she has 24% clonal plasma cells. Tell: a clonal marrow population with a large M-protein is a plasma cell disorder.", "ruled out by a stated finding"]],
+  CS(56, 57), "differential", "classify"),
+
+V(T_MM_DX, IO_II,
+  "A 69-year-old man has back pain and constipation. His M-protein is 4.6 g/dL and bone marrow biopsy shows 38% clonal plasma cells. Calcium is 12.1 mg/dL (normal 8.5-10.5 mg/dL), hemoglobin 9.2 g/dL (normal 13.5-17.5 g/dL), creatinine 2.0 mg/dL (normal 0.6-1.2 mg/dL), and imaging shows lytic lesions in the spine. How should his plasma cell disorder be classified?",
+  [[MM,
+    "Correct. Myeloma is diagnosed by at least 10% marrow plasma cells (38%) plus at least one CRAB (calcium, renal, anemia, bone) feature; he has all four: hypercalcemia (12.1), renal insufficiency (creatinine 2.0), anemia (9.2) and lytic bone lesions."],
+   [SMM,
+    "His M-protein and plasma cells would fit smoldering myeloma, but smoldering myeloma has no myeloma-defining events, and he has hypercalcemia, renal insufficiency, anemia and bone lesions. Tell: CRAB (calcium, renal, anemia, bone) features make it myeloma.", "wrong stage or severity"],
+   [MGUS,
+    "That precursor needs an M-protein below 3 g/dL, under 10% plasma cells and no myeloma-defining features; he fails all three. Tell: end-organ damage excludes the asymptomatic precursors.", "wrong stage or severity"],
+   [REACT,
+    "Reactive hypergammaglobulinemia from cirrhosis or chronic inflammation does not cause clonal marrow plasma cells or lytic lesions. Tell: clonal plasma cells with CRAB (calcium, renal, anemia, bone) damage are myeloma.", "competing diagnosis"]],
+  CS(47, 50), "differential", "classify"),
+
+V(T_MM_DX, IO_II,
+  "A 71-year-old woman has a painful rib mass; biopsy of the mass proves a plasmacytoma. Her M-protein is 2.1 g/dL and bone marrow shows 7% clonal plasma cells. Calcium is 11.9 mg/dL (normal 8.5-10.5 mg/dL); creatinine and hemoglobin are normal. How should her plasma cell disorder be classified?",
+  [[MM,
+    "Correct. Myeloma is diagnosed by at least 10% marrow plasma cells or a biopsy-proven plasmacytoma, plus at least one CRAB (calcium, renal, anemia, bone) feature. Her plasmacytoma takes the place of the marrow count, and her calcium of 11.9 mg/dL is hypercalcemia."],
+   [MGUS,
+    "Her M-protein (2.1 g/dL) and plasma cells (7%) are in the precursor range, but that precursor requires no myeloma-defining characteristics; she has a plasmacytoma and hypercalcemia. Tell: end-organ damage overrides the low numbers.", "ruled out by a stated finding"],
+   [SMM,
+    "Smoldering myeloma needs an M-protein above 3 g/dL with 10-60% plasma cells and no myeloma-defining events; she has neither number and does have hypercalcemia. Tell: a plasmacytoma plus a CRAB (calcium, renal, anemia, bone) feature is myeloma.", "wrong stage or severity"],
+   [REACT,
+    "Reactive hypergammaglobulinemia from cirrhosis or chronic inflammation does not form a plasmacytoma or raise calcium. Tell: a biopsy-proven plasmacytoma is a clonal plasma cell disease.", "competing diagnosis"]],
+  CS(50, 56), "differential", "classify"),
+
+# ---------------------------------------------------------------- R-ISS staging (s51)
+V(T_MM_DX, IO_II,
+  "A 66-year-old man has newly diagnosed multiple myeloma. His beta-2 microglobulin is 2.9 mg/L (normal 0.8-2.2 mg/L), albumin 4.0 g/dL (normal 3.5-5.0 g/dL), chromosomal studies show only standard-risk abnormalities, and lactate dehydrogenase is normal. What is his R-ISS (Revised International Staging System) stage?",
+  [["Stage I",
+    "Correct. R-ISS (Revised International Staging System) stage I requires every item: beta-2 microglobulin below 3.5 mg/L (2.9), albumin at least 3.5 g/dL (4.0), standard-risk chromosomal abnormalities, and normal lactate dehydrogenase. He meets all four. The stage is prognostic and does not broadly change treatment."],
+   ["Stage II",
+    "Stage II is any patient who is not stage I or III; he meets every stage I item. Tell: below 3.5 mg/L, albumin 3.5 or more, standard risk and normal lactate dehydrogenase is stage I.", "wrong stage or severity"],
+   ["Stage III",
+    "Stage III needs beta-2 microglobulin of at least 5.5 mg/L with high-risk chromosomes (deletion 17p, t(4;14) or t(14;16)) and high lactate dehydrogenase; he has none of these. Tell: all four of his values are favorable.", "wrong stage or severity"],
+   ["Stage IV",
+    "The R-ISS (Revised International Staging System) table has three stages; there is no stage IV. Tell: his favorable values put him in stage I, the lowest.", "reversed direction or value"]],
+  C(51), "prognosis", "classify"),
+
+V(T_MM_DX, IO_II,
+  "A 72-year-old woman has newly diagnosed multiple myeloma. Her beta-2 microglobulin is 6.8 mg/L (normal 0.8-2.2 mg/L), albumin 3.9 g/dL (normal 3.5-5.0 g/dL), chromosomal studies show deletion 17p, and lactate dehydrogenase is above the upper limit of normal. What is her R-ISS (Revised International Staging System) stage?",
+  [["Stage III",
+    "Correct. R-ISS (Revised International Staging System) stage III: beta-2 microglobulin at least 5.5 mg/L regardless of albumin (6.8), high-risk chromosomal abnormalities (deletion 17p), and high lactate dehydrogenase. She meets all three, so her normal albumin does not matter."],
+   ["Stage I",
+    "Stage I needs beta-2 microglobulin below 3.5 mg/L, standard-risk chromosomes and normal lactate dehydrogenase; she fails all three. Tell: a normal albumin alone cannot make stage I.", "wrong stage or severity"],
+   ["Stage II",
+    "Stage II is anyone who is neither stage I nor III; she meets every stage III item. Tell: high beta-2 microglobulin, deletion 17p and high lactate dehydrogenase together are stage III.", "wrong stage or severity"],
+   ["Stage IV",
+    "The R-ISS (Revised International Staging System) table stops at stage III. Tell: her high-risk findings put her in the highest stage, III.", "reversed direction or value"]],
+  C(51), "prognosis", "classify"),
+
+V(T_MM_DX, IO_II,
+  "A 64-year-old man has newly diagnosed multiple myeloma. His beta-2 microglobulin is 6.4 mg/L (normal 0.8-2.2 mg/L) and albumin 3.8 g/dL (normal 3.5-5.0 g/dL); chromosomal studies show only standard-risk abnormalities, and lactate dehydrogenase is normal. What is his R-ISS (Revised International Staging System) stage?",
+  [["Stage II",
+    "Correct. Stage III needs all of beta-2 microglobulin at least 5.5 mg/L, high-risk chromosomes and high lactate dehydrogenase; he has only the high beta-2 microglobulin. Stage I needs beta-2 microglobulin below 3.5 mg/L, and his is 6.4. Not stage I or III is stage II."],
+   ["Stage I",
+    "His albumin, chromosomes and lactate dehydrogenase fit stage I, but stage I also needs beta-2 microglobulin below 3.5 mg/L, and his is 6.4. Tell: one failed stage I item drops him out of stage I.", "wrong stage or severity"],
+   ["Stage III",
+    "A beta-2 microglobulin above 5.5 mg/L alone is not enough; stage III also requires high-risk chromosomes and high lactate dehydrogenase, and both of his are favorable. Tell: the stage III criteria are joined by 'and'.", "wrong stage or severity"],
+   ["Stage IV",
+    "There is no R-ISS (Revised International Staging System) stage IV; the table has stages I to III. Tell: a mixed picture is stage II.", "reversed direction or value"]],
+  C(51), "prognosis", "classify"),
+
+# ---------------------------------------------------------------- myeloma presentation, work-up and management (s45-55)
+V(T_MM, IO_II_POP,
+  "A 72-year-old Black man has 2 months of back and pelvic pain, constipation, increased thirst, urinary frequency, fatigue and ankle swelling. Calcium is 11.9 mg/dL (normal 8.5-10.5 mg/dL), hemoglobin 9.6 g/dL (normal 13.5-17.5 g/dL) and creatinine 1.9 mg/dL (normal 0.6-1.2 mg/dL); skull x-ray shows multiple punched-out lytic lesions. Which is the most likely diagnosis?",
+  [["Multiple myeloma",
+    "Correct. His findings are the CRAB (calcium, renal, anemia, bone) features: hypercalcemia (constipation, thirst, urinary frequency), renal insufficiency (swelling), anemia (fatigue) and bone pain with punched-out osteolytic lesions. Age over 65 and African American race raise myeloma risk."],
+   ["Waldenstrom macroglobulinemia",
+    "Waldenstrom macroglobulinemia makes IgM and causes hyperviscosity (blurred vision, headache), not hypercalcemia and lytic bone lesions. Tell: punched-out lesions with high calcium are myeloma.", "competing diagnosis"],
+   ["Chronic lymphocytic leukemia",
+    "Chronic lymphocytic leukemia shows lymphocytosis and painless lymphadenopathy, not hypercalcemia or lytic skull lesions. Tell: the CRAB (calcium, renal, anemia, bone) pattern points to a plasma cell malignancy.", "competing diagnosis"],
+   ["Hodgkin lymphoma",
+    "Hodgkin lymphoma presents with painless cervical nodes, a mediastinal mass and pruritus, not lytic bone lesions with renal failure. Tell: calcium, kidneys, anemia and bones together are myeloma.", "competing diagnosis"]],
+  CS(46, 48), "manifestation", "diagnosis"),
+
+V(T_MM_DX, IO_II,
+  "A 70-year-old woman has back pain, a hemoglobin of 9.8 g/dL (normal 12.0-15.5 g/dL) and a calcium of 11.4 mg/dL (normal 8.5-10.5 mg/dL). Multiple myeloma is suspected. Which blood test shows the characteristic finding?",
+  [["Serum protein electrophoresis",
+    "Correct. A monoclonal protein on serum protein electrophoresis is characteristic of myeloma, with a positive urine monoclonal protein (Bence Jones protein) on 24-hour urine electrophoresis. Work-up adds light chain ratio, bone marrow biopsy with flow, and imaging."],
+   ["Flow cytometry of blood",
+    "Flow cytometry of peripheral blood confirms chronic lymphocytic leukemia; myeloma flow is done on the bone marrow biopsy. Tell: the characteristic blood finding in myeloma is a monoclonal protein.", "adjacent fact"],
+   ["Lactate dehydrogenase",
+    "Lactate dehydrogenase enters the R-ISS (Revised International Staging System) stage once myeloma is diagnosed; it is not the characteristic diagnostic finding. Tell: look for the monoclonal protein.", "wrong stage or severity"],
+   ["Uric acid level",
+    "Uric acid is followed for tumor lysis syndrome in aggressive lymphoma. Tell: suspected myeloma is screened with protein electrophoresis.", "adjacent fact"]],
+  C(50), "initial test", "test"),
+
+V(T_MM_DX, IO_II,
+  "A 68-year-old man with newly diagnosed multiple myeloma has back and chest pain. Bone marrow biopsy, protein electrophoresis and light chains are done. Which study looks for bone lesions?",
+  [["Whole-body computed tomography",
+    "Correct. Myeloma work-up includes imaging for bone lesions, classically whole-body computed tomography, looking for the osteolytic (punched-out) lesions that cause bone pain in the back, chest or pelvis."],
+   ["Lumbar puncture",
+    "Lumbar puncture is required for high-grade lymphomas such as Burkitt, not for finding bone lesions. Tell: bones are imaged, classically with whole-body computed tomography.", "adjacent fact"],
+   ["Excisional node biopsy",
+    "Excisional lymph node biopsy diagnoses lymphoma; it says nothing about his bones. Tell: myeloma bone disease is found on whole-body imaging.", "adjacent fact"],
+   ["Chest x-ray alone",
+    "A chest x-ray rules out a mediastinal mass in Hodgkin lymphoma; it is not the bone survey for myeloma. Tell: the classic study is whole-body computed tomography.", "adjacent fact"]],
+  C(50), "initial test", "next step"),
+
+V(T_MM_TX, IO_II,
+  "A 64-year-old woman has newly diagnosed symptomatic multiple myeloma. Which initial regimen is used?",
+  [["Proteasome inhibitor, immunomodulatory drug and steroid",
+    "Correct. Newly diagnosed patients are treated with a 3- or 4-drug regimen with a proteasome inhibitor and immunomodulatory drug backbone with steroids. The goal is prolonged remission to improve survival and quality of life, as myeloma is incurable."],
+   ["Rituximab with cyclophosphamide and doxorubicin",
+    "Rituximab-based multi-drug chemotherapy is used for aggressive B-cell non-Hodgkin lymphoma. Tell: myeloma's backbone is a proteasome inhibitor plus an immunomodulatory drug with steroids.", "competing diagnosis"],
+   ["Doxorubicin, bleomycin, vinblastine and dacarbazine",
+    "That four-drug regimen is the historical Hodgkin lymphoma treatment. Tell: newly diagnosed myeloma gets a proteasome inhibitor, an immunomodulatory drug and steroids.", "competing diagnosis"],
+   ["Venetoclax with obinutuzumab for a fixed duration",
+    "Venetoclax with a monoclonal antibody for a fixed duration is a chronic lymphocytic leukemia option. Tell: myeloma's 3- or 4-drug regimen is built on a proteasome inhibitor and immunomodulatory drug.", "adjacent fact"]],
+  C(53), "agent/regimen", "treatment"),
+
+V(T_MM_TX, IO_II,
+  "A 58-year-old man with multiple myeloma has responded to initial 3-drug therapy and is a transplant candidate. Which plan has been shown to improve overall survival?",
+  [["Autologous transplant, then maintenance",
+    "Correct. For a transplant candidate, autologous transplant has been shown to improve overall survival, as has maintenance therapy after transplant. Most patients still relapse and need continuous therapy for disease control."],
+   ["Stop treatment once in remission",
+    "Myeloma is incurable and most patients relapse; maintenance after transplant improves survival, and continuous therapy keeps control. Tell: remission is maintained, not left alone.", "common lay belief"],
+   ["Radiation to the spine alone",
+    "Radiation alone is the plan for a single-node, non-aggressive non-Hodgkin lymphoma, not systemic myeloma. Tell: a fit myeloma patient goes to autologous transplant.", "adjacent fact"],
+   ["Watch and wait for relapse",
+    "Watch and wait suits smoldering myeloma or indolent lymphoma, not active myeloma in a transplant candidate. Tell: transplant then maintenance improves survival.", "wrong stage or severity"]],
+  C(53), "escalation", "treatment"),
+
+V(T_MGUS, IO_II,
+  "A 61-year-old woman has smoldering multiple myeloma: M-protein 3.6 g/dL and 18% clonal bone marrow plasma cells, with no anemia, bone lesions, renal failure or hypercalcemia. No high-risk subgroup feature is identified. What is the most appropriate management?",
+  [["Monitor without treatment",
+    "Correct. Smoldering myeloma typically does not require treatment, although early intervention may be considered for some high-risk subgroups; she has none identified. It progresses at about 10% per year, so monitoring continues."],
+   ["Start a 3-drug regimen now",
+    "A proteasome inhibitor, immunomodulatory drug and steroid regimen treats myeloma, which is symptomatic by definition; she has no myeloma-defining event. Tell: smoldering disease is typically watched.", "wrong stage or severity"],
+   ["Autologous stem cell transplant",
+    "Autologous transplant improves survival in active myeloma after initial therapy, not in smoldering disease. Tell: no CRAB (calcium, renal, anemia, bone) feature, no transplant.", "wrong stage or severity"],
+   ["Allopurinol and fluids",
+    "Allopurinol and fluids prevent tumor lysis before treating aggressive lymphoma. Tell: smoldering myeloma is monitored, with no tumor lysis concern.", "adjacent fact"]],
+  C(57), "first-line", "next step"),
+
+V(T_MM, IO_II,
+  "A 70-year-old man with multiple myeloma has a creatinine that has risen from 1.1 to 2.3 mg/dL (normal 0.6-1.2 mg/dL) over months, with no contrast exposure and no new medicines. Which process most often causes the renal dysfunction of myeloma?",
+  [["Light chain and calcium phosphate deposition",
+    "Correct. Renal dysfunction in myeloma often comes from light chain and calcium phosphate deposition; myeloma activates osteoclasts, releasing calcium. Renal insufficiency is the R of the CRAB (calcium, renal, anemia, bone) features."],
+   ["Uric acid crystals after tumor lysis",
+    "Uric acid crystal kidney injury is tumor lysis syndrome, which follows rapid tumor breakdown in aggressive lymphoma treatment. Tell: myeloma kidneys are damaged by light chains and calcium phosphate.", "adjacent fact"],
+   ["IgM hyperviscosity of the blood",
+    "Hyperviscosity from IgM is Waldenstrom macroglobulinemia, causing blurred vision and headache; myeloma most commonly makes IgG. Tell: myeloma's kidney injury is light chain deposition.", "competing diagnosis"],
+   ["Anemia from marrow involvement",
+    "Anemia in myeloma is partly a result of renal dysfunction, along with marrow involvement, not its cause. Tell: the arrow runs from the kidney to the anemia.", "reversed direction or value"]],
+  C(45), "complication", "complication"),
+
+V(T_MM_TX, IO_II,
+  "A 67-year-old woman has just begun treatment for multiple myeloma. She asks whether the treatment will cure her. Which counseling statement is accurate?",
+  [["Lifelong treatment with remissions and relapses",
+    "Correct. Myeloma is currently considered incurable (this may change during her life); treatment is likely lifelong, with periods of remission followed by worsening, and lifelong follow-up for labs and treatment. Survival over 10 years is now possible."],
+   ["Cure after one transplant",
+    "Autologous transplant improves overall survival, but myeloma remains incurable and most patients relapse. Tell: transplant lengthens remission; it does not end the disease.", "common lay belief"],
+   ["Six months of therapy, then stop",
+    "Most patients relapse and need continuous therapy, and treatment is likely lifelong. Tell: myeloma care is open-ended.", "wrong stage or severity"],
+   ["Survival is usually under a year",
+    "Five-year relative survival is about 60%, and newly diagnosed patients may now survive more than 10 years. Tell: incurable is not the same as short survival.", "reversed direction or value"]],
+  CS(54, 55), "education", "education"),
+
+V(T_MM_TX, IO_II,
+  "A 73-year-old man's primary care clinician finds hypercalcemia, anemia and an M-protein, and bone marrow biopsy confirms multiple myeloma. Which referral is most appropriate?",
+  [["Hematology/oncology, ideally a myeloma expert",
+    "Correct. Multiple myeloma requires referral to and management by a hematologist/oncologist, ideally a myeloma expert, with lifelong follow-up for lab monitoring and treatment."],
+   ["Nephrology for kidney evaluation alone",
+    "Renal insufficiency is one CRAB (calcium, renal, anemia, bone) feature, but the disease itself is managed by a hematologist/oncologist. Tell: refer the cancer, not just one organ it affects.", "adjacent fact"],
+   ["Orthopedic surgery for the bone lesions",
+    "Bone lesions are part of the disease, but myeloma care is led by a hematologist/oncologist, ideally a myeloma expert. Tell: systemic plasma cell cancer goes to hematology/oncology.", "adjacent fact"],
+   ["Endocrinology for the high calcium",
+    "His hypercalcemia comes from myeloma activating osteoclasts, not a gland disorder. Tell: treat the cause by referring to hematology/oncology.", "confused mechanism or drug class"]],
+  C(55), "referral", "referral"),
+
+ORD(V(T_MGUS, IO_II,
+  "A 66-year-old woman has monoclonal gammopathy of undetermined significance: M-protein 1.1 g/dL, 3% clonal bone marrow plasma cells and no myeloma-defining characteristics. She asks how likely it is to become myeloma. Which rate is accurate?",
+  [["About 1% per year",
+    "Correct. The risk of progression from monoclonal gammopathy of undetermined significance to myeloma is about 1% per year. Her low M-protein, under 10% plasma cells and lack of myeloma-defining features keep her in this low-risk precursor stage."],
+   ["About 10% per year",
+    "About 10% per year is the progression rate of smoldering myeloma, the intermediate stage with an M-protein above 3 g/dL and 10-60% plasma cells. Tell: her precursor is lower risk, about 1% per year.", "adjacent fact"],
+   ["About 25% per year",
+    "A quarter per year greatly overstates the risk for this asymptomatic precursor. Tell: the figure for her is about 1% per year.", "reversed direction or value"],
+   ["About 50% per year",
+    "A risk above 50% (within 2 years) applies to some high-risk smoldering myeloma groups, not to her. Tell: low M-protein and few plasma cells mean about 1% per year.", "adjacent fact"]],
+  C(56), "prognosis", "education"), [0, 1, 2, 3]),
+
+]
