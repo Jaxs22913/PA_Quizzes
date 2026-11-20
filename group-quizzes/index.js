@@ -483,6 +483,7 @@ window.GROUP_INDEX = {
 "microbiology-exam-2-micro-exam-2-webster-review-quiz-version-2":{"title":"Webster Review Quiz 2 — Microbiology Exam 2","category":"Microbiology","exam":"Exam 2","sem":"fall-2026","n":40},
 "microbiology-exam-2-misc-bacterial-agents-quiz":{"title":"Miscellaneous Bacterial Agents — Quiz 1","category":"Microbiology","exam":"Exam 2","sem":"fall-2026","n":30},
 "microbiology-exam-2-novel-antimicrobial-therapy-quiz":{"title":"Novel Antimicrobial Therapy — Quiz 1","category":"Microbiology","exam":"Exam 2","sem":"fall-2026","n":30},
+"microbiology-exam-3-dna-viruses-of-medical-importance-quiz":{"title":"DNA Viruses of Medical Importance — Quiz 1","category":"Microbiology","exam":"Exam 3","sem":"fall-2026","n":30},
 "microbiology-exam-3-food-safety-quiz":{"title":"Food Safety — Quiz 1","category":"Microbiology","exam":"Exam 3","sem":"fall-2026","n":30},
 "microbiology-exam-3-fungi-of-medical-importance-quiz":{"title":"Fungi of Medical Importance — Quiz 1","category":"Microbiology","exam":"Exam 3","sem":"fall-2026","n":30},
 "microbiology-exam-3-gram-negative-bacilli-quiz":{"title":"Gram-Negative Bacilli — Quiz 1","category":"Microbiology","exam":"Exam 3","sem":"fall-2026","n":30},

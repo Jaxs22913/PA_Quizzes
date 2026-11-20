@@ -1,0 +1,291 @@
+[
+  {
+    "id": "crit-l18-phage-cycles",
+    "label": "Phage Cycles: Lytic, Lysogenic, Chronic",
+    "color": "#2e4f7a",
+    "toc": false,
+    "tag": "Comparison &middot; Lecture 18 &middot; slides 14&ndash;18",
+    "cols": ["Cycle", "What happens", "What it leaves behind"],
+    "widths": ["20%", "38%", "42%"],
+    "min_width": "0",
+    "rows": [
+      ["Lytic", "Rapid takeover of bacterial metabolism; production of multiple copies of virus", "Destruction of the host cell (viral lysozyme bursts the wall); generalized transduction: random pieces of the host DNA may be transmitted to other bacteria"],
+      ["Lysogenic", "Integration of viral genes as a prophage; viral genes replicated with the host cell", "May acquire new traits (ability to make a toxin); immune to reinfection; specialized transduction: all cells carry the same DNA from the host"],
+      ["Chronic", "Penetration via protein compatibility (no lysozyme); virions assembled and released chronically", "Bacterial growth slowed, the host not lysed; a cooperative arrangement: the host gains benefits that contribute to pathogenicity (toxins and biofilms)"],
+      {"note": "Lysogenic: adsorption and penetration are the same as in the lytic cycle; a shock of some kind induces the prophage to release and start a lytic cycle (slide 15). Chronic: filamentous phages, flexible rods with single-stranded DNA (slide 16). Slide 17: virulent phages have only lytic cycles; temperate phages have lysogenic cycles and lytic or chronic cycles."}
+    ],
+    "mnemonic": {
+      "hook": "Burst, Hide, Leak.",
+      "key": [
+        ["Burst", "lytic: the host cell is destroyed and the new virions released"],
+        ["Hide", "lysogenic: the viral genes hide in the bacterial chromosome as a prophage"],
+        ["Leak", "chronic: virions are released slowly while the bacterium lives on, its growth slowed"]
+      ],
+      "breaks": "A lysogenic prophage does not hide forever: a shock induces it into a lytic cycle. The chronic “leak” also helps the host (toxins, biofilms)."
+    }
+  },
+  {
+    "id": "crit-l18-animal-vs-phage",
+    "label": "Animal Virus Versus Phage Replication",
+    "color": "#6b3a7a",
+    "toc": false,
+    "tag": "&#9733; Comparison &middot; Lecture 18 &middot; slides 14, 16, 22&ndash;24",
+    "cols": ["Step", "Phage (in a bacterium)", "Animal virus"],
+    "widths": ["22%", "39%", "39%"],
+    "min_width": "0",
+    "rows": [
+      ["Entry", "Adsorption, then penetration: viral lysozyme and a tail pin breach the wall and inject the viral DNA (slide 14)", "&#9733; The entire virion is engulfed (slide 22)"],
+      ["Uncoating", "Not needed: only the DNA goes in", "&#9733; Required to release the genetic material (the pH of the cytoplasm versus the extracellular fluid) (slide 22)"],
+      ["Where the DNA virus replicates", "The bacterium becomes a viral factory: DNA first, then capsid components (slide 14)", "Most DNA viruses are budded off the nucleus; most RNA viruses multiply in the cytoplasm (slide 24)"],
+      ["Release", "Lytic: viral lysozyme makes the host cell wall burst (slide 14); chronic: extruded without lysis (slide 16)", "&#9733; Budding, which may assist in acquisition of the envelope (slide 22)"],
+      {"note": "&#9733; The recording: &ldquo;This you need to know.&rdquo; The exception to the nucleus row: poxviruses multiply in the cytoplasm, in factory areas (slide 32)."}
+    ],
+    "mnemonic": {
+      "hook": "Gulp, Unwrap, Nucleus, Bud.",
+      "key": [
+        ["Gulp", "entry: the whole animal virion is engulfed (a phage injects only its DNA)"],
+        ["Unwrap", "uncoating is required to free the genetic material"],
+        ["Nucleus", "most DNA viruses are made in, and budded off, the nucleus"],
+        ["Bud", "release by budding, which gives the envelope (a lytic phage bursts the wall)"]
+      ],
+      "breaks": "Poxviruses break “Nucleus”: they multiply in the cytoplasm. A chronic phage also leaves without bursting the cell, but it is extruded, not budded."
+    }
+  },
+  {
+    "id": "crit-l18-infections",
+    "label": "Acute, Persistent Chronic, Persistent Latent",
+    "color": "#2e4f7a",
+    "toc": false,
+    "tag": "&#9733; Classification &middot; Lecture 18 &middot; slides 26&ndash;27",
+    "cols": ["Kind of infection", "What happens", "The slide&rsquo;s examples"],
+    "widths": ["22%", "50%", "28%"],
+    "min_width": "0",
+    "rows": [
+      ["Acute (&ldquo;acute viral agent&rdquo;)", "A rapid course; the lytic cycle", "Colds, flu"],
+      ["Persistent chronic", "The virus is detectable in tissue samples, multiplying at a slow rate; symptoms mild or absent; may involve integration of the genetic material into the host chromosome", "Human immunodeficiency virus; &#9733; hepatitis B virus"],
+      ["Persistent latent", "After a lytic cycle the virus enters a dormant phase: generally not detectable, no symptoms; can reactivate and result in recurrent infections. The viral DNA is an episome: in the nucleus but not integrated", "Herpesviruses"],
+      {"note": "Persistent infections last many years or a lifetime; there are 2 types (slide 26). Slide 27 (possible effects on host cells): lytic infection, latent infection with recurrence, chronic infection, transformation to malignancy: &ldquo;Think about the similarity of these cycles to the phage cycles.&rdquo; &#9733; The recording: &ldquo;different kinds of viral infections that you need to know&rdquo;; hepatitis B is &ldquo;a chronic, persistent infection, as opposed to the latent, which are the herpes viruses&rdquo;."}
+    ],
+    "mnemonic": {
+      "hook": "Fast, Simmer, Sleep.",
+      "key": [
+        ["Fast", "acute: a rapid lytic course (colds, flu)"],
+        ["Simmer", "persistent chronic: detectable, multiplying slowly, few symptoms (human immunodeficiency virus, hepatitis B)"],
+        ["Sleep", "persistent latent: dormant and undetectable, then wakes as a recurrent infection (herpesviruses)"]
+      ],
+      "breaks": "Hepatitis B simmers in only some patients: slide 88 says most infected eventually develop immunity and a small number develop chronic liver disease."
+    }
+  },
+  {
+    "id": "crit-l18-onco-terato",
+    "label": "Oncogenic Versus Teratogenic Viruses",
+    "color": "#6b3a7a",
+    "toc": false,
+    "tag": "Comparison &middot; Lecture 18 &middot; slide 28",
+    "cols": ["Kind", "What it means", "The slide&rsquo;s examples"],
+    "widths": ["20%", "36%", "44%"],
+    "min_width": "0",
+    "rows": [
+      ["Oncogenic", "Some persistent viruses cause cancer", "Epstein-Barr virus: Burkitt&rsquo;s lymphoma<br>Herpesvirus 8: Kaposi&rsquo;s sarcoma<br>Hepatitis B: hepatic carcinoma<br>Papillomaviruses: cervical and penile cancer"],
+      ["Teratogenic", "Several viruses cross the placenta, causing developmental disturbances and permanent defects", "Rubella<br>&#9733; Cytomegalovirus"],
+      {"note": "Her chart (slide 5) gives herpes simplex 2 an &ldquo;association with cervical and penile cancer; often diagnosed with Pap smear&rdquo;; slide 28 gives cervical and penile cancer to the papillomaviruses, and slide 99 ties the Pap smear to human papillomavirus. Not resolved here."},
+      {"note": "Burkitt lymphoma&rsquo;s patients: her chart (slide 6) says &ldquo;primarily affects African boys 5&ndash;7&rdquo;; slide 77 says &ldquo;central African children 5&ndash;7 years old&rdquo;."}
+    ],
+    "mnemonic": {
+      "hook": "Every Kid Has Papers; Rubella and Cytomegalovirus Cross.",
+      "key": [
+        ["Every", "Epstein-Barr virus: Burkitt&rsquo;s lymphoma"],
+        ["Kid", "Kaposi&rsquo;s sarcoma: herpesvirus 8"],
+        ["Has", "Hepatitis B: hepatic carcinoma"],
+        ["Papers", "Papillomaviruses: cervical and penile cancer"],
+        ["Rubella and Cytomegalovirus Cross", "the two teratogens cross the placenta"]
+      ],
+      "breaks": "“Kid” stands for the disease (Kaposi), not the virus name, and is not about children; the four oncogenic letters cover cancers, the last line the fetus."
+    }
+  },
+  {
+    "id": "crit-l18-groups",
+    "label": "The DNA Virus Groups That Infect Humans",
+    "color": "#2e4f7a",
+    "toc": false,
+    "tag": "Classification &middot; Lecture 18 &middot; slides 30&ndash;31, 92",
+    "cols": ["Group", "Families", "Viruses in this lecture"],
+    "widths": ["26%", "26%", "48%"],
+    "min_width": "0",
+    "rows": [
+      ["Enveloped, double-stranded", "Poxviruses<br>Herpesviruses<br>Hepadnaviruses", "Variola, vaccinia, molluscum contagiosum, mpox, cowpox, orf<br>Herpes simplex 1 and 2, varicella zoster, cytomegalovirus, Epstein-Barr virus, human herpesviruses 6, 7, 8<br>Hepatitis B"],
+      ["Nonenveloped, double-stranded", "Adenoviruses<br>Polyomaviruses<br>Papillomaviruses", "Adenovirus; JC and BK viruses; human papillomavirus"],
+      ["Nonenveloped, single-stranded", "Parvoviruses", "Parvovirus B19; adeno-associated virus"],
+      {"note": "Slide 92 lists all four nonenveloped families together; slide 30&rsquo;s chart splits the parvoviruses off as the single-stranded group. Slide 86: the hepadnaviruses have an unusual genome containing both double- and single-stranded DNA."}
+    ],
+    "mnemonic": {
+      "hook": "Wrapped: Pox, Herpes, Hepadna. Naked: Adeno, Polyoma, Papilloma. Single: Parvo.",
+      "key": [
+        ["Wrapped", "enveloped double-stranded: poxviruses, herpesviruses, hepadnaviruses"],
+        ["Naked", "nonenveloped double-stranded: adeno-, polyoma-, papillomaviruses"],
+        ["Single", "nonenveloped single-stranded: the parvoviruses alone"]
+      ],
+      "breaks": "Hepadnaviruses (hepatitis B) sit with the double-stranded viruses but carry partly single-stranded DNA."
+    }
+  },
+  {
+    "id": "crit-l18-herpes-eight",
+    "label": "&#9733; The Eight Human Herpesviruses",
+    "color": "#6b3a7a",
+    "toc": false,
+    "tag": "&#9733; Classification &middot; Lecture 18 &middot; slide 57 (latency: slides 59, 68, 71, 75)",
+    "cols": ["Virus", "What it does (slide 57)", "Where it stays latent"],
+    "widths": ["30%", "36%", "34%"],
+    "min_width": "0",
+    "rows": [
+      ["Herpes simplex virus type 1", "Fever blisters", "Enters the 5th cranial nerve; latent in the trigeminal ganglion"],
+      ["Herpes simplex virus type 2", "Genital infections", "Enters the lumbosacral spinal nerve trunk ganglia"],
+      ["Varicella zoster virus", "Chickenpox and shingles", "Enters neurons and remains latent"],
+      ["Cytomegalovirus", "Infects salivary glands and viscera", "Commonly latent in various tissues"],
+      ["Epstein-Barr virus", "Lymphoid tissue: infectious mononucleosis", "Dormancy in B cells"],
+      ["Human herpesvirus 6", "Roseola", "Not given"],
+      ["Human herpesvirus 7", "Roseola", "Not given"],
+      ["Human herpesvirus 8", "Kaposi&rsquo;s sarcoma", "Not given"],
+      {"note": "&#9733; The recording: &ldquo;Put a star on this little slide.&rdquo; All herpesviruses show latency and cause recurrent infection; the viral DNA forms an episome (slide 55)."}
+    ],
+    "mnemonic": {
+      "hook": "Lips, Genitals, Pox-then-Shingles, Spit glands, Kissing, Rose, Rose, Kaposi.",
+      "key": [
+        ["Lips", "herpes simplex 1: fever blisters"],
+        ["Genitals", "herpes simplex 2: genital infections"],
+        ["Pox-then-Shingles", "varicella zoster: chickenpox first, shingles on reactivation"],
+        ["Spit glands", "cytomegalovirus: salivary glands and viscera"],
+        ["Kissing", "Epstein-Barr virus: mononucleosis, the kissing disease (slide 75)"],
+        ["Rose", "human herpesvirus 6: roseola"],
+        ["Rose", "human herpesvirus 7: roseola"],
+        ["Kaposi", "human herpesvirus 8: Kaposi&rsquo;s sarcoma"]
+      ],
+      "breaks": "The order is slide 57&rsquo;s; the slides number only herpes simplex 1 and 2 and herpesviruses 6, 7, 8. Slide 58 says herpes simplex 2 is possibly oral too, and slide 60 says whitlow can be either type."
+    }
+  },
+  {
+    "id": "crit-l18-herpes-spread",
+    "label": "Herpesviruses: How They Spread, Is There a Vaccine",
+    "color": "#2e4f7a",
+    "toc": false,
+    "tag": "Comparison &middot; Lecture 18 &middot; her chart, slides 4&ndash;6",
+    "cols": ["Virus", "Transmission (chart)", "Vaccine (chart)"],
+    "widths": ["28%", "44%", "28%"],
+    "min_width": "0",
+    "rows": [
+      ["Herpes simplex virus type 1", "Direct contact", "No, but candidate vaccines in trials"],
+      ["Herpes simplex virus type 2", "Direct contact", "No, research ongoing"],
+      ["Herpes simplex 1 and 2: herpetic whitlow; herpes of the newborn", "Direct contact; transmission mother to child", "No"],
+      ["Varicella zoster virus", "Respiratory droplets and contact with fluid from active skin lesions", "Yes, vaccines for both chickenpox and shingles"],
+      ["Cytomegalovirus", "Direct contact with infectious body fluids (saliva, blood, mucus, tears, breast milk, urine, semen, cervical secretions) or tissues", "None currently available, but several in clinical trials"],
+      ["Epstein-Barr virus", "Direct oral contact or contact with fomites contaminated with saliva", "No preventive vaccines; several therapeutic vaccines in clinical trials for Epstein-Barr virus related cancers"],
+      ["Human herpesvirus 6", "Contact with saliva", "None"],
+      ["Human herpesvirus 7", "Contact with saliva", "None"],
+      ["Human herpesvirus 8", "Saliva, sexual contact, blood transfusion, organ transplant", "None"],
+      {"note": "&#9733; Herpes simplex can be spread without visible lesions: genital herpes can be transmitted in the absence of lesions (slide 59). &#9733; Varicella zoster is most infectious 24&ndash;48 hours before lesions develop, and shingles patients can give the unvaccinated chickenpox, not shingles (slides 68&ndash;69)."},
+      {"note": "Epstein-Barr virus therapeutic vaccines: the chart says &ldquo;in clinical trials&rdquo;; slide 79 says &ldquo;available&rdquo;. Both say no preventive vaccine."}
+    ],
+    "mnemonic": {
+      "hook": "Touch, Touch, Touch, Breath, Fluids, Spit, Spit, Spit, Spit-plus; only the Breath virus gets a vaccine.",
+      "key": [
+        ["Touch", "herpes simplex 1: direct contact"],
+        ["Touch", "herpes simplex 2: direct contact"],
+        ["Touch", "whitlow and the newborn: direct contact, mother to child"],
+        ["Breath", "varicella zoster: respiratory droplets (and lesion fluid); the only herpesvirus with a vaccine"],
+        ["Fluids", "cytomegalovirus: body fluids or tissues"],
+        ["Spit", "Epstein-Barr virus: oral contact, saliva on fomites"],
+        ["Spit", "human herpesvirus 6: saliva"],
+        ["Spit", "human herpesvirus 7: saliva"],
+        ["Spit-plus", "human herpesvirus 8: saliva plus sex, transfusion, transplant"]
+      ],
+      "breaks": "Varicella zoster also spreads by lesion fluid, not only breath; cytomegalovirus&rsquo;s fluids include saliva."
+    }
+  },
+  {
+    "id": "crit-l18-pox",
+    "label": "The Poxviruses Side by Side",
+    "color": "#6b3a7a",
+    "toc": false,
+    "tag": "Comparison &middot; Lecture 18 &middot; her chart, slide 4; slides 40&ndash;54",
+    "cols": ["Virus", "How it spreads", "What to know"],
+    "widths": ["22%", "38%", "40%"],
+    "min_width": "0",
+    "rows": [
+      ["Variola (smallpox)", "Inhalation of airborne saliva; contact with material from pustules or scabs; fomites (slide 40)", "&#9733; Early rash is the stage of greatest contagion; &#9733; the first disease eliminated by vaccine (chart); prevented by vaccination with vaccinia virus (slide 43)"],
+      ["Molluscum contagiosum", "Direct contact and fomites; in the United States most commonly a sexually transmitted disease (slide 46)", "Small, smooth, waxy lesions on the genital area and thighs, self-limiting; tumor-like growths of the face in acquired immunodeficiency syndrome; no vaccine (chart)"],
+      ["Mpox (monkeypox)", "Enters through broken skin, the respiratory tract or mucous membranes; body fluids or fomites (slide 48); infected animals or humans (chart)", "Fever, aches, swollen lymph nodes, then a rash from the face: macules, papules, vesicles, pustules, scabs (slide 48); &#9733; vaccine available, with a vaccine locator tool (slide 52)"],
+      ["Cowpox", "Rodents the primary reservoirs; handling cats that interacted with rodents; traumatic injury (slide 53)", "Rare in humans, usually confined to the hands; a vaccine only for animals, in Europe (slide 53)"],
+      ["Orf (a parapox virus)", "Handling sheep and goats: feeding, shearing, bites (slide 54)", "Sore mouth (contagious ecthyma) in the animals; more serious in the immunocompromised"],
+      {"note": "Her chart&rsquo;s fourth row (slide 4) reads Virus &ldquo;Vaccinia&rdquo;, Disease &ldquo;Cowpox&rdquo;, with cowpox&rsquo;s facts; slide 43 teaches vaccinia as the smallpox vaccine virus and slide 53 teaches cowpox as its own virus."},
+      {"note": "JYNNEOS: the chart says it &ldquo;became available April 2024&rdquo;; slide 44 says it was approved in 2019. Slide 52: JYNNEOS is a 2-dose series 28 days apart; ACAM2000 is a single dose with multiple needle pricks."}
+    ],
+    "mnemonic": {
+      "hook": "Gone, Waxy, Nodes, Hands, Sheep.",
+      "key": [
+        ["Gone", "variola: smallpox, the first disease eliminated by vaccine"],
+        ["Waxy", "molluscum contagiosum: small, smooth, waxy lesions"],
+        ["Nodes", "mpox: swollen lymph nodes before the rash"],
+        ["Hands", "cowpox: human lesions usually on the hands"],
+        ["Sheep", "orf: caught from handling sheep and goats"]
+      ],
+      "breaks": "Orf&rsquo;s human lesion is also on the hand (slide 54&rsquo;s picture), so “Hands” alone does not separate cowpox from orf; the animal does."
+    }
+  },
+  {
+    "id": "crit-l18-nonenveloped",
+    "label": "Hepatitis B and the Nonenveloped DNA Viruses",
+    "color": "#2e4f7a",
+    "toc": false,
+    "tag": "Comparison &middot; Lecture 18 &middot; her chart, slides 6&ndash;7; slides 87&ndash;104",
+    "cols": ["Virus", "Transmission", "Disease and the hook"],
+    "widths": ["22%", "36%", "42%"],
+    "min_width": "0",
+    "rows": [
+      ["&#9733; Hepatitis B", "Contact with blood or serum, sexual contact (chart); minute amounts of blood and blood products (slide 87)", "Chronic in some; liver cancer (hepatocellular carcinoma); a great risk to health care workers from a very low infective dose; vaccine: yes"],
+      ["Adenovirus", "Respiratory and ocular secretions (slide 93); ingestion (chart)", "Colds, pharyngitis, conjunctivitis, hemorrhagic cystitis, infantile gastroenteritis; type 41 hepatitis in children; vaccine for types 4 and 7 for the military"],
+      ["Human papillomavirus", "Direct contact or contaminated fomites (slide 97); including sexual contact (chart)", "Common, plantar and genital warts; nine types raise the risk of reproductive cancer; &#9733; early detection by Pap smear; vaccines available"],
+      ["Polyomaviruses: JC and BK", "Body fluids, contaminated food or water; JC in early childhood, BK in adolescence (chart)", "JC: progressive multifocal leukoencephalopathy (myelin destroyed); BK: interstitial nephritis, hematuria, hemorrhagic cystitis after renal transplant; none for humans"],
+      ["Parvovirus B19", "Droplet infection (chart)", "Fifth disease: slapped face rash; &#9733; passed from a pregnant woman to the fetus: severe fatal anemia, hydrops fetalis; adults: polyarthropathy, red blood cell production stops; vaccine cell blank"],
+      {"note": "Hepatitis B is the odd one out here: an enveloped hepadnavirus (slide 86), placed with these because it shares her chart&rsquo;s slides 6&ndash;7 with them. Slide 94 calls the adenovirus vaccine inactivated and oral."}
+    ],
+    "mnemonic": {
+      "hook": "Needle, Eye, Wart, Brain-or-Kidney, Slap.",
+      "key": [
+        ["Needle", "hepatitis B: blood-borne; minute amounts of blood transmit it; a risk to health care workers"],
+        ["Eye", "adenovirus: ocular and respiratory secretions; conjunctivitis"],
+        ["Wart", "human papillomavirus: warts, and cervical cancer screening"],
+        ["Brain-or-Kidney", "polyomaviruses: JC the brain, BK the kidney"],
+        ["Slap", "parvovirus B19: the slapped face rash of fifth disease"]
+      ],
+      "breaks": "Adenovirus is not only the eye (colds, cystitis, gut); parvovirus B19&rsquo;s worst harm is to the fetus, not the cheek."
+    }
+  },
+  {
+    "id": "crit-l18-vaccines",
+    "label": "Is There a Vaccine?",
+    "color": "#6b3a7a",
+    "toc": false,
+    "tag": "Classification &middot; Lecture 18 &middot; her chart, slides 4&ndash;7; slides 43, 52&ndash;53, 69, 74, 79, 91, 94, 99",
+    "cols": ["Answer", "Viruses", "What the slides say"],
+    "widths": ["20%", "34%", "46%"],
+    "min_width": "0",
+    "rows": [
+      ["Yes", "Variola, mpox, varicella zoster, hepatitis B, human papillomavirus", "Vaccinia, a live virus vaccine, no longer routine; JYNNEOS and ACAM2000, with a vaccine locator tool; a live attenuated vaccine for chickenpox and shingles; yeast-cloned surface antigen; Gardasil and Cervarix"],
+      ["Yes, military only", "Adenovirus", "Types 4 and 7, oral, for military personnel in training"],
+      ["Animals only", "Cowpox", "Used in Europe for circus and zoo animals"],
+      ["No", "Molluscum contagiosum, herpes simplex 1 and 2, cytomegalovirus, Epstein-Barr virus, human herpesviruses 6, 7, 8, polyomaviruses", "Herpes simplex: candidates in trials or research ongoing; cytomegalovirus: hard without an animal model; Epstein-Barr virus: no preventive vaccine; polyomaviruses: none for humans"],
+      ["Not stated", "Parvovirus B19, orf", "Parvovirus B19&rsquo;s vaccine cell on the chart is blank"]
+    ],
+    "mnemonic": {
+      "hook": "Vaccines Make Very Healthy People; the Army gets Adeno; Cows only in the zoo; the rest get No; Parvo left blank.",
+      "key": [
+        ["Vaccines Make Very Healthy People", "Variola, Mpox, Varicella zoster, Hepatitis B, Papillomavirus: yes"],
+        ["Army", "adenovirus: the military only"],
+        ["Cows", "cowpox: animals only"],
+        ["No", "every other herpesvirus, molluscum, the polyomaviruses"],
+        ["Blank", "parvovirus B19 (and orf): not stated"]
+      ],
+      "breaks": "The “Variola” vaccine is vaccinia virus, and routine vaccination has ended. Varicella zoster is the one herpesvirus that breaks the “no” pattern of its family."
+    }
+  }
+]
