@@ -462,6 +462,662 @@
      }
     }
    ]
+  },
+  {
+   "lecture": 49,
+   "title": "Hematologic Malignancies Part I",
+   "lecturer": "Nicole Gannon, PA-C",
+   "deck": "49. Hematologic Malignancies Part I - Gannon.pptx",
+   "note": "Built from the slides only. Prof. Gannon's spoken flags (recording, 18 November) lead each note; the stars also mark the slides' own visual emphasis (bold, underline). The deck splits the syllabus differently: this lecture teaches ALL and AML (syllabus Hematological Malignancies 1) and MDS, the myeloproliferative neoplasms and CML (syllabus Hematologic Malignancies II); lymphoma, CLL and myeloma are Lecture 50, and secondary polycythemia is on neither deck. Points the slides state two ways are not keyed one way: \"the most common leukemia\" (AML on slide 31, CLL in Lecture 50, CML 15-20% on slide 58), the ALL ages (under 15 and peak ~50 on slide 18; under 5 and over 50 on slide 21), children's and adults' ALL survival (>90% vs ~90%; ~30-40% vs ~40%), and the wording for stopping TKIs (major molecular response on slide 63, remission on slide 66). Spoken numbers that differ from the slides (chronic phase \"five to 6%\" blasts, blast phase \">20%\", stopping after 3 or 5 years) are not used; the slides' are. The joke protocol slides 26 and 39 are excluded. The slides give no diagnostics for myelofibrosis and no epidemiology for the MPNs beyond \"rare\".",
+   "conditions": [
+    {
+     "id": "l49-all",
+     "name": "Acute lymphoblastic leukemia (ALL)",
+     "prof": true,
+     "prof_note": "Said: \"Remember that ALL is associated with this BCR-ABL mutation ... chromosome nine and 22. Write it down\" (slide 20); \"remember ALL in children and then older adults\" (bimodal, slide 18); \"20% or greater blast in the bone marrow\" (slide 25); the lumbar puncture is \"the big one\" because CNS leukemia is common in ALL. Slide emphasis: most common malignancy under 15 (underlined); flow cytometry and bone marrow biopsy (underlined); Ph+ ALL = TKI + chemotherapy (bold).",
+     "fields": {
+      "name": "Acute lymphoblastic leukemia (ALL)",
+      "definition": "A leukemia originating with the lymphoid progenitor/stem cells: very immature cells with a rapid ability to proliferate; [[★ defined by blast cells of lymphoid origin >= 20% in bone marrow]]",
+      "etiology": "Mutagenesis at the lymphoblast stage, at various stages of differentiation into B or T lymphocytes. Children: often excess chromosome copies (hyperdiploidy, favorable prognosis). Adults: [[★ the most common mutation is BCR-ABL, from translocation of chromosomes 9 and 22 (the Philadelphia chromosome)]]. One-third of adult and pediatric patients have no chromosome abnormalities (need mutation analysis; relatively favorable)",
+      "epidemiology": "[[★ Bimodal distribution]]: the most common malignancy under the age of 15 (United States 5-year survival >90%); adult peak incidence around 50 years of age. Slide 21: children under 5 and adults over age 50; male gender",
+      "risk_factors": "Radiation exposure (prior radiation for cancer treatment; atomic bomb exposure in Japan); chemical exposures (benzene, certain chemotherapies); viral infections (EBV (Epstein-Barr virus), HTLV-1 (human T-lymphotropic virus type 1), Caribbean countries); genetic syndromes (Down syndrome, Fanconi anemia, others; ?family history); age (children under 5, adults over 50); male gender",
+      "pathology": "B-cell precursor ALL often presents in a leukemic phase (primarily blasts and marrow involvement); T-cell ALL is rarer, usually with lymphoma-like characteristics, and may involve the thymus; subtype lymphoblastic lymphoma (immature, aggressive, more lymphoma features). Often diffuse marrow and peripheral blood involvement, in contrast to aggressive lymphomas (nodal or extranodal, minimal marrow)",
+      "clinical": "Symptoms of excessive blast production and lymphoid (nodal) characteristics. Anemia: fatigue, weakness, lightheadedness, shortness of breath, pale skin. Thrombocytopenia: bruising (often petechiae or purpura), bleeding. Ineffective white cells: infections. [[★ B-symptoms: weight loss, fever, night sweats]], loss of appetite. >50% present with lymphadenopathy, hepatomegaly or splenomegaly. Bone or joint pain from excessive marrow production. Mediastinal mass on chest X-ray in T-cell ALL",
+      "diagnosis": "Labs: anemia, thrombocytopenia, leukopenia or marked leukocytosis (white count often > 30K; 30% with neutropenia). Confirmed by [[★ flow cytometry and bone marrow biopsy]]: flow identifies the markers and B-cell or T-cell nature; biopsy shows marrow infiltration and allows chromosome and mutation testing. Also imaging, counts, electrolytes, coagulation and [[★ lumbar puncture]] (central nervous system (CNS) involvement is an adverse risk factor). [[★ Lymphoid blasts >= 20% in bone marrow]]. Cytogenetics and mutation analyses for prognosis. Differential: acute myeloid leukemia (AML); chronic lymphocytic leukemia (CLL), aggressive lymphomas; hairy cell leukemia; lymphoblastic lymphoma (hard to tell apart, treated similarly); atypical lymphocytosis of mononucleosis or pertussis (flow cytometry shows ALL is clonal)",
+      "treatment": "Philadelphia chromosome-negative: pediatric-like regimens usually for patients < 40 (intensive chemotherapy with induction, consolidation and maintenance; chemotherapy, steroids, often targeted agents); older adults may need therapy changes and dose adjustments. [[★ Philadelphia chromosome-positive: tyrosine kinase inhibitors (TKI) + chemotherapy]]. Allogeneic stem cell transplant where feasible for adverse risk or relapsed ALL. Referral to and management by a hematologist/oncologist (ideally an ALL specialist); most are admitted for work-up and treatment; frequent follow-up and life-long surveillance; clinical trials where feasible",
+      "mortality": "Often positive, particularly for children: five-year overall survival ~90% under 15, with intensive chemotherapy for 2-5 years. Adults: five-year overall survival historically ~40%, cure rate decreasing with age (outcomes poor over 40); improving with immunotherapies. central nervous system involvement is an adverse risk factor"
+     },
+     "slides": {
+      "name": "17-18",
+      "definition": "18, 25",
+      "etiology": "19-20",
+      "epidemiology": "18, 21",
+      "risk_factors": "21",
+      "pathology": "19, 25",
+      "clinical": "22",
+      "diagnosis": "22-25",
+      "treatment": "27, 29",
+      "mortality": "18, 25, 28"
+     }
+    },
+    {
+     "id": "l49-aml",
+     "name": "Acute myeloid leukemia (AML)",
+     "prof": true,
+     "prof_note": "Said: \"Highlight, star, underline ... Auer rods ... pathognomonic for AML\" (slides 31, 36); \"20% blast in your bone marrow\" (slide 38); bone marrow biopsy and flow cytometry are \"your backbone testing\" (slide 36). Played down: the FAB table (slide 33) and the secondary-AML subgroup modifiers (slide 38). Slide emphasis: Auer rods confirm myeloid etiology (underlined); secondary AML poor outcome, gum involvement, fit vs unfit therapy, allogeneic transplant IF remission (bold).",
+     "fields": {
+      "name": "Acute myeloid leukemia (AML)",
+      "definition": "A leukemia originating with the myeloid progenitor/stem cells: very immature cells with a rapid ability to proliferate; [[★ Auer rods are pathognomonic]]; defined by myeloid blasts >= 20% (certain genetic mutations: 10% or higher)",
+      "etiology": "Multiple subtypes by initial mutation and stage of maturation; tremendous cytogenetic and mutational variety, so risk is favorable, intermediate or poor. Secondary AML: arising from another myeloid neoplasm (myelodysplastic syndrome (MDS), myeloproliferative neoplasm (MPN), others) or after treatment of another cancer, with poor outcomes. Historically ~8 FAB subtypes (M0-M7), now 18 by WHO",
+      "epidemiology": "Mostly adults, particularly older adults (>60 years old); unusual in children outside of neonates; male gender",
+      "risk_factors": "Prior high-dose radiation; benzene, petroleum, certain chemotherapies (alkylators); HIV; Down syndrome, Fanconi anemia, others, ?family history; age over 60; male gender; prior MDS or MPN; prior cancer therapy",
+      "pathology": "FAB: M0 undifferentiated, M1 minimal maturation, M2 with maturation, M3 acute promyelocytic (APL), M4 acute myelomonocytic, M5 acute monocytic, M6 acute erythroid, M7 acute megakaryocytic. M4 and M5 tend to have more extramedullary involvement; erythroid and megakaryocytic leukemias are very rare. Auer rods are fused lysosomes",
+      "clinical": "Symptoms of excess blast production, immune dysfunction and infections. Anemia: fatigue, weakness, lightheadedness, shortness of breath, pale skin. Thrombocytopenia: bruising (often petechiae or purpura), bleeding. Infections. B-symptoms: weight loss, fever, night sweats. Myelomonocytic and monocytic subtypes may have gum involvement (hyperplasia) or extramedullary disease",
+      "diagnosis": "Labs: anemia, thrombocytopenia, white count often elevated but may be low; unlike ALL, > 200K is rare, and all > 100K need emergent leukapheresis. Confirmed by [[★ flow cytometry and bone marrow biopsy]] (flow differentiates it from ALL); [[★ morphology showing Auer rods confirms myeloid etiology]]; counts, electrolytes, coagulation, mutation sequencing, lumbar puncture. [[★ Myeloid blasts >= 20%]] (10% or higher with certain genetic mutations); cytogenetics and mutations for prognosis; AML with prior MDS or MPN and therapy-related AML = secondary AML. Differential: ALL, CML, MDS, myeloproliferative disorders; pancytopenia of infection, aplastic anemia, nutritional deficiency, drugs (flow shows AML is clonal)",
+      "treatment": "Fit patients: intensive chemotherapy, often cytarabine + anthracycline (7+3). Unfit patients: low-intensity therapy, frequently hypomethylating agents +/- a BCL-2 inhibitor (venetoclax). Allogeneic stem cell transplant for most intermediate- and high-risk patients IF able to achieve remission. Referral to and management by a hematologist/oncologist (ideally a leukemia specialist); admission for work-up and treatment; life-long surveillance; clinical trials",
+      "mortality": "Frequent relapse and high treatment-related mortality; overall 48% alive at 1 year, about 25-30% at 5 years; highest for favorable risk (about 2/3 at 5 years) and younger patients; over 70 only 5% at 5 years; adverse risk or secondary AML about 10%"
+     },
+     "slides": {
+      "name": "30-31",
+      "definition": "31, 38",
+      "etiology": "32-33",
+      "epidemiology": "31",
+      "risk_factors": "34, 38",
+      "pathology": "32-33, 36",
+      "clinical": "35",
+      "diagnosis": "35-38",
+      "treatment": "40, 42",
+      "mortality": "41"
+     }
+    },
+    {
+     "id": "l49-apl",
+     "name": "Acute promyelocytic leukemia (APL)",
+     "prof": true,
+     "prof_note": "Said: \"The thing I want you to remember about APL, bleeding, DIC, coagulopathy, and that it does not need chemotherapy. ATRA and arsenic are the treatments for APL\" (slide 43). Slide emphasis: DIC and bleeding, arsenic trioxide and ATRA, >90% cure (bold). PML-RARA was not said aloud.",
+     "fields": {
+      "name": "Acute promyelocytic leukemia (APL)",
+      "definition": "A rare AML subtype (FAB M3) caused by arrested differentiation at the promyelocyte",
+      "etiology": "Translocation of chromosomes 15 and 17, fusing the PML-RARA genes",
+      "epidemiology": "Rare AML subtype; otherwise not covered in the lecture",
+      "risk_factors": "Not covered in the lecture",
+      "pathology": "Arrested differentiation at the promyelocyte; t(15;17) PML-RARA fusion",
+      "clinical": "[[★ Frequently presents with emergent complications, including DIC (disseminated intravascular coagulation) and bleeding]]",
+      "diagnosis": "The AML work-up (flow cytometry, bone marrow biopsy, coagulation); t(15;17) PML-RARA",
+      "treatment": "[[★ Unique treatment approach: arsenic trioxide and all-trans-retinoic acid (ATRA)]]",
+      "mortality": "High early mortality; if the initial presentation is survived, excellent prognosis (>90% cure rate)"
+     },
+     "slides": {
+      "name": "43",
+      "definition": "32, 43",
+      "etiology": "43",
+      "epidemiology": "43",
+      "pathology": "43",
+      "clinical": "43",
+      "diagnosis": "36, 43",
+      "treatment": "43",
+      "mortality": "43"
+     }
+    },
+    {
+     "id": "l49-mds",
+     "name": "Myelodysplastic syndrome (MDS)",
+     "prof": true,
+     "prof_note": "Said: the blast drill on slide 47 (\"If it's 10%, is it leukemia? No. If it's 15%, leukemia? No.\"; 20% = leukemia). Slide emphasis: defined by dysplasia; cytopenias, frequently anemia; low risk defined by anemia; more common in men; low risk + anemia = erythropoiesis-stimulating agents; the only cure is allogeneic transplant (bold).",
+     "fields": {
+      "name": "Myelodysplastic syndrome (MDS)",
+      "definition": "A group of myeloid malignancies defined by dysplasia (abnormal appearing) of myeloid cells, distorting hematopoiesis, with immune dysregulation and genomic changes (mutations)",
+      "etiology": "Often evolves from milder abnormal stem cell clones (clonal hematopoiesis) until the dysplasia of MDS develops; often idiopathic; sometimes prior chemotherapy or radiation",
+      "epidemiology": "Older population (median 70 years); more common in men",
+      "risk_factors": "Older age; male sex; prior chemotherapy or radiation; often idiopathic",
+      "pathology": "Typically a hypercellular marrow, but the cells are not functional. Low risk MDS is commonly defined by anemia with a low risk of AML progression; very high-risk MDS has elevated blasts and substantial overlap with AML",
+      "clinical": "Many are asymptomatic and found incidentally. Fatigue, weakness, pale skin from anemia; infections from ineffective white cells; bleeding from thrombocytopenia",
+      "diagnosis": "Most frequently anemia; neutropenia; occasional thrombocytopenia; neutrophils with morphological abnormalities; often red cell abnormalities (multinucleated or hyperplastic); [[★ higher risk MDS may have blasts but < 20% (otherwise AML)]]",
+      "treatment": "Highly dependent on blood counts, risk status and mutations. [[★ Low risk + anemia: erythropoiesis-stimulating agents (ESA)]] and red cell transfusions as needed; neutropenia: myeloid growth factors (careful not to overstimulate blasts); higher risk: chemotherapy or hypomethylating agents; [[★ the only curative therapy is allogeneic stem cell transplant]], but high risk and a limited role",
+      "mortality": "Highly variable by risk: lower risk median survival > 5 years with very low risk of AML; very high risk median overall survival 9 months and > 80% risk of AML within 5 years. Low risk patients often have complications from anemia, bleeding and/or infections; the goal of treatment is quality of life. Prior MDS makes AML secondary (poor outcome)"
+     },
+     "slides": {
+      "name": "44-45",
+      "definition": "45",
+      "etiology": "46",
+      "epidemiology": "46",
+      "risk_factors": "46",
+      "pathology": "46",
+      "clinical": "45, 47",
+      "diagnosis": "47",
+      "treatment": "48",
+      "mortality": "49, 38"
+     }
+    },
+    {
+     "id": "l49-pv",
+     "name": "Polycythemia vera",
+     "prof": true,
+     "prof_note": "Said: \"Polycythemia vera, JAK2 mutation, you may come across this on your testing, you might wanna remember that or write that down\" (slide 52). Slide emphasis: classic pruritus with warm baths or showers (bold). Not said aloud: the 14-year survival, ~5% transformation, smoking cessation. Secondary polycythemia (a syllabus item) is not on the deck.",
+     "fields": {
+      "name": "Polycythemia vera",
+      "definition": "A myeloproliferative neoplasm (a rare myeloid malignancy with atypical proliferation of mature cell lines): over-production of red blood cells, increasing blood viscosity",
+      "etiology": "[[★ Commonly the result of a JAK2 mutation]]",
+      "epidemiology": "Myeloproliferative neoplasms are rare; otherwise not covered in the lecture",
+      "risk_factors": "JAK2 mutation; otherwise not covered in the lecture",
+      "pathology": "Over-production of red blood cells (increased blood viscosity)",
+      "clinical": "Usually non-specific: fatigue, headaches, blurry vision. [[★ Classic: pruritus with warm baths or showers]]",
+      "diagnosis": "JAK2 mutation; otherwise not covered in the lecture",
+      "treatment": "Phlebotomy, hydroxyurea; refer to a hematologist; advise to stop smoking",
+      "mortality": "Complications: thrombosis, splenomegaly, bleeding. Prognosis excellent: estimated survival of 14 years; leukemic transformation rare (~5% of cases)"
+     },
+     "slides": {
+      "name": "50-52",
+      "definition": "51",
+      "etiology": "52",
+      "epidemiology": "51",
+      "risk_factors": "52",
+      "pathology": "51",
+      "clinical": "52",
+      "diagnosis": "52",
+      "treatment": "52",
+      "mortality": "52"
+     }
+    },
+    {
+     "id": "l49-mf",
+     "name": "Myelofibrosis",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Myelofibrosis",
+      "definition": "A myeloproliferative neoplasm: over-production of mature myeloid cell lines, eventually causing fibrosis of the marrow; the most aggressive of the MPNs",
+      "etiology": "Abnormal JAK-STAT pathway mutations, causing elevated cytokines and marked excess proliferation of all myeloid cell lines",
+      "epidemiology": "Myeloproliferative neoplasms are rare; otherwise not covered in the lecture",
+      "risk_factors": "JAK-STAT pathway mutations; otherwise not covered in the lecture",
+      "pathology": "Elevated cytokines, excess proliferation of all myeloid cell lines, then fibrosis of the marrow",
+      "clinical": "Usually non-specific: fatigue and abdominal symptoms from splenomegaly (pain, early satiety and/or bloating); night sweats, fever, weight loss also common",
+      "diagnosis": "Not covered in the lecture",
+      "treatment": "Often targeted inhibitors (JAK inhibitors), which are palliative; refer to a hematologist upon diagnosis",
+      "mortality": "Complications: severe splenomegaly, portal hypertension, bleeding, progression to secondary AML. Prognosis highly variable: low risk can live 10-15 years; high risk often survive less than 2 years"
+     },
+     "slides": {
+      "name": "53",
+      "definition": "51, 53",
+      "etiology": "53",
+      "epidemiology": "51",
+      "risk_factors": "53",
+      "pathology": "53",
+      "clinical": "53",
+      "treatment": "53",
+      "mortality": "53"
+     }
+    },
+    {
+     "id": "l49-et",
+     "name": "Essential thrombocythemia",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Essential thrombocythemia",
+      "definition": "A myeloproliferative neoplasm: over-production of platelets",
+      "etiology": "Often gene mutations in the JAK-STAT pathway, causing overproduction of platelets; rarely inherited",
+      "epidemiology": "Myeloproliferative neoplasms are rare; otherwise not covered in the lecture",
+      "risk_factors": "JAK-STAT pathway gene mutations; rarely inherited",
+      "pathology": "Bleeding despite high platelets can occur from acquired von Willebrand factor deficiency (a shortage of the factor at the site of injury)",
+      "clinical": "Mostly asymptomatic, but may present with clotting (headaches, fatigue, paresthesias or vision changes) or bleeding",
+      "diagnosis": "High platelets; otherwise not covered in the lecture",
+      "treatment": "[[★ Aspirin, hydroxyurea]], or other agents to reduce clotting risk; refer to a hematologist; advise to stop smoking",
+      "mortality": "Complications: clotting, including CVA (stroke) and MI (myocardial infarction). Prognosis excellent: generally a normal life span with appropriate management"
+     },
+     "slides": {
+      "name": "54",
+      "definition": "51",
+      "etiology": "54",
+      "epidemiology": "51",
+      "risk_factors": "54",
+      "pathology": "54",
+      "clinical": "54",
+      "diagnosis": "54",
+      "treatment": "54",
+      "mortality": "54"
+     }
+    },
+    {
+     "id": "l49-cml",
+     "name": "Chronic myelogenous leukemia (CML)",
+     "prof": true,
+     "prof_note": "Said: she walked through the slide 64 milestones (optimal BCR-ABL1 under 10% at 3 months, under 1% at 6, under 0.1% at 12) and shows the table to nearly every patient. Not taught aloud: the slide 61 differential. Slide emphasis: BCR-ABL / Philadelphia chromosome and \"now largely a chronic disorder\" (bold); splenomegaly and bone marrow biopsy + PCR for BCR-ABL1 (underlined); the phases and tyrosine kinase inhibitors (bold). Out loud she called chronic phase \"five to 6% blast\" (slide: <5%).",
+     "fields": {
+      "name": "Chronic myelogenous leukemia (CML)",
+      "definition": "A leukemia originating from hematopoietic stem cells that produces increased numbers of granulocytes (more mature than blasts); historically progressed from a chronic condition to acute leukemia in ~4-6 years",
+      "etiology": "[[★ Hallmark BCR-ABL mutation from fusion of chromosomes 22 and 9: the Philadelphia chromosome]]. The translocation attaches the BCR gene to the ABL1 gene; the BCR-ABL fusion protein is a functional enzyme that promotes cell proliferation and reduces apoptosis (the cell \"can't turn off\" and constantly divides)",
+      "epidemiology": "15-20% of all leukemias; median age 45-55 years; either sex, slightly more common in men",
+      "risk_factors": "May be more common in radiation bomb victims (Japan); no other identified risk factors",
+      "pathology": "Marrow: marked granulocytic proliferation and myelocytes in chronic phase. Phases: chronic (stable), early proliferative, no or few blasts (<5%), 85-90% of presentations, excellent prognosis; accelerated, often 10-19% blasts, dysplastic granulocytes and fibrosis, significant splenomegaly, ~4-5%; blast phase/crisis, behaves as an acute leukemia (usually AML-like), unique chromosomal and mutational abnormalities, ~1-2%",
+      "clinical": "~50% asymptomatic at diagnosis (found from leukocytosis on a complete blood count). Anemia: fatigue, weakness, lightheadedness, shortness of breath. [[★ Abdominal swelling or discomfort from splenomegaly]]. B-symptoms: weight loss, fever, night sweats, loss of appetite",
+      "diagnosis": "Labs: [[★ marked leukocytosis, thrombocytosis]], anemia; white count often > 100K and up to 500K; platelets usually elevated; very low blasts unless accelerated or blast phase. [[★ Confirmed by bone marrow biopsy and PCR for the BCR-ABL1 mutation]]: PCR in a patient with marked granulocytosis confirms the diagnosis and monitors treatment response; flow cytometry for lineage and mutation analysis. Differential: other myeloproliferative disorders, namely myelofibrosis (the slide also names CMML, never expanded): in CML red cell morphology is normal and the hematocrit is not elevated; definitive when BCR/ABL1 is positive on PCR. Reactive leukocytosis of infection: no splenomegaly, white count usually < 50K, BCR/ABL1 negative",
+      "treatment": "[[★ Tyrosine kinase inhibitors are the hallmark of therapy for chronic phase CML]] (6 approved agents). Milestones (BCR-ABL1): optimal < 10% at 3 months, < 1% at 6 months, < 0.1% at 12 and > 18 months; warning > 10% at 3 months, 1-10% at 6, 0.1-1% at 12 and > 18; failure > 10% at 6 months, > 1% at 12 and > 18; < 0.01% after 18 months = treatment-free remission range. Major molecular response for 2 years may allow stopping (recurrence in 50%; most recapture deep responses). Advanced CML (accelerated or blast phase) has different considerations; blast phase needs AML-like regimens (poor responses to TKIs). Allogeneic stem cell transplant for young healthy patients with TKI resistance or advanced stage. Referral to and management by a hematologist; treatment for life unless sustained major molecular remission x 2 years; clinical trials for advanced phase",
+      "mortality": "Once fatal; [[★ now largely a chronic disorder: most patients live normal lives on TKIs]] or stay off therapy after sustained major molecular response. Accelerated or blast phase outcomes remain poor (median survival < 12 months)"
+     },
+     "slides": {
+      "name": "55-56",
+      "definition": "56",
+      "etiology": "56-57",
+      "epidemiology": "58",
+      "risk_factors": "58",
+      "pathology": "60, 62",
+      "clinical": "59",
+      "diagnosis": "59-61",
+      "treatment": "62-64, 66",
+      "mortality": "56, 65"
+     }
+    }
+   ]
+  },
+  {
+   "lecture": 50,
+   "title": "Hematologic Malignancies Part II",
+   "lecturer": "Nicole Gannon, PA-C",
+   "deck": "50. Hematologic Malignancies Part II - Gannon.pptx",
+   "note": "Built from the slides only. Ms. Gannon's spoken flags (recording, 18 November, parts 3-4) lead each note; the stars also mark the slides' own bold and underline. Her one spoken correction: the slides' 50% cure for aggressive lymphoma (slide 30) and diffuse large B-cell lymphoma (slide 34) - she said closer to 70%, so no cure percentage is given for them. Slide 41 is titled \"Management of NHL\" but teaches Hodgkin. \"Most common leukemia\" is not keyed (slides 4 and 6 against Lecture 49 slide 31). Smoldering myeloma is printed \"M-protein > 3 g/dl AND 10-60% plasma cells\" (slide 57). The slides give no epidemiology for MGUS or smoldering myeloma and no treatment for MGUS, mantle cell or marginal zone lymphoma beyond the general non-Hodgkin lines.",
+   "conditions": [
+    {
+     "id": "l50-cll",
+     "name": "Chronic lymphocytic leukemia (small lymphocytic lymphoma)",
+     "prof": true,
+     "prof_note": "Said: \"High white count, painless lymphadenopathy, underline, underline, star, star\"; flow cytometry is the most important work-up, CD19 + CD5 pathognomonic so no marrow biopsy; Richter transformation \"you should highlight\"; an isolated white count alone does not equal treatment. Slide emphasis: mature B cells, asymptomatic on routine labs, lymphocytosis >5K, watch and wait.",
+     "fields": {
+      "name": "Chronic lymphocytic leukemia (small lymphocytic lymphoma)",
+      "definition": "A proliferative leukemia of [[★ mature B-cell lymphocytes in blood, bone marrow, lymph nodes, and spleen]]; called small lymphocytic lymphoma in the nodes. Rare mature T-cell leukemias are T-cell prolymphocytic leukemia",
+      "etiology": "Mutagenesis in mature B cells gives a clonal population; 80% of cases come from loss or addition of chromosomal material in one of four abnormalities: [[★ deletion 13q, deletion 11q, trisomy 12, deletion 17p]]",
+      "epidemiology": "1% of all new cancer cases in the United States; median age at diagnosis 70 years; twice as common in males; more common in Eastern Europeans and those of Jewish descent",
+      "risk_factors": "Age (median onset 70); male sex; Eastern European or Jewish descent; no known occupational or environmental risk factors",
+      "pathology": "A clone of mature B cells coexpressing [[★ CD19 and CD5]] accumulates in blood, marrow, nodes and spleen; ineffective white cells cause infections, marrow crowding causes anemia and thrombocytopenia",
+      "clinical": "[[★ Frequently diagnosed while asymptomatic]] on routine blood work; [[★ painless lymphadenopathy (50-90%)]], localized or generalized, firm, mobile; B symptoms (weight loss, night sweats, fevers) in 5-10%; anemia: fatigue; thrombocytopenia: easy bruising, bleeding; infections; splenomegaly (~40%), less commonly hepatomegaly",
+      "diagnosis": "[[★ Lymphocytosis (must be >5K; often >100K)]], frequently anemia; [[★ diagnosis confirmed by flow cytometry]] (clonal B-cell population); absolute lymphocyte count >5K for 3 months, or <5K with lymphadenopathy or other symptoms; coexpression of CD19 and CD5; cytogenetics for prognosis; bone marrow biopsy usually not required. Rai stage (0 asymptomatic lymphocytosis; I + lymphadenopathy; II + organomegaly; III + anemia; IV + thrombocytopenia) from exam and labs. Differential: monoclonal B lymphocytosis (elevated count but <5K with no nodes, organomegaly, cytopenias or symptoms; progresses to chronic lymphocytic leukemia 1-2% per year), atypical lymphocytosis with infection (pertussis), Waldenstrom macroglobulinemia, hairy cell leukemia, lymphomas in leukemic phase",
+      "treatment": "[[★ Watch and wait]] if asymptomatic until rapid progression (lymphocyte count doubling in <6 months) or disease-related symptoms. Bruton tyrosine kinase inhibitors (ibrutinib, acalabrutinib, zanubrutinib), usually continuous as monotherapy; BCL-2 inhibitor venetoclax combined with monoclonal antibodies for a fixed duration; monoclonal antibodies (rituximab, obinutuzumab, ofatumumab); trend toward combinations. Referral to and management by hematology/oncology; unlikely to need hospitalization; pill therapy (once or twice daily, indefinite) or infusion + pill (time-limited, more intensive)",
+      "mortality": "5-year relative survival ~88% (since 2013); [[★ risk of Richter transformation]] to an aggressive B-cell lymphoma with poor outcomes; many patients will die with chronic lymphocytic leukemia rather than from it; very good long-term prognosis likely"
+     },
+     "slides": {
+      "name": "3, 4",
+      "definition": "4",
+      "etiology": "5",
+      "epidemiology": "4, 6",
+      "risk_factors": "6",
+      "pathology": "5, 7-8",
+      "clinical": "7",
+      "diagnosis": "7-10",
+      "treatment": "11, 13",
+      "mortality": "12-13"
+     }
+    },
+    {
+     "id": "l50-nhl",
+     "name": "Non-Hodgkin lymphoma (the group)",
+     "prof": true,
+     "prof_note": "Said: on a test expect HIV, EBV, HTLV-1, H. pylori; excisional biopsy is the key (never trust a negative fine needle aspiration); LDH on every lymphoma; staging by the diaphragm; T cells always worse than B cells. Slide emphasis: 85% B-cell, >2/3 lymphadenopathy, B symptoms, CT or PET.",
+     "fields": {
+      "name": "Non-Hodgkin lymphoma (the group)",
+      "definition": "A [[★ diverse group of malignancies of lymphoid tissues derived from B cells, T cells, or NK cells]] that present frequently with lymphadenopathy; [[★ 85% B-cell]], 15% T-cell or NK-cell; ranges from very aggressive (Burkitt, diffuse large B-cell, T-cell leukemia/lymphoma) to indolent (follicular, marginal zone, chronic lymphocytic leukemia/small lymphocytic lymphoma)",
+      "etiology": "Immunosuppression, autoimmunity, chronic infection and environmental exposure (the risk factor list); subtype-defining genes: t(14;18) BCL-2 (follicular), cyclin D1 t(11;14) (mantle cell), MYC (Burkitt), MYD88 (lymphoplasmacytic)",
+      "epidemiology": "4% of all new cancer diagnoses in the United States; higher incidence in White individuals and developed countries; male gender",
+      "risk_factors": "Male gender; immunosuppression (prior immunotherapy, chemotherapy, radiation, malignancy; prior transplantation); autoimmune conditions (lupus, Sjogren, celiac); Crohn's; environmental exposures including DDT (farming); chronic infections: H. pylori gastritis (MALT), HTLV-1, hepatitis C, HIV, Epstein-Barr virus, Lyme disease, HHV-8; family history",
+      "pathology": "Not covered in the lecture",
+      "clinical": "[[★ Peripheral lymphadenopathy in >2/3]]; [[★ B symptoms (weight loss, night sweats, fever of unknown origin)]], rash, hypersensitivity reactions, fatigue, pruritus, malaise, ascites, effusion; about half develop extranodal disease; CNS lymphoma: headaches, lethargy, neurologic defects; primary mediastinal B-cell lymphoma: large mediastinal mass, cough, abnormal chest X-ray",
+      "diagnosis": "[[★ Excisional lymph node biopsy]] for significant enlargement (2 cm), persistent, progressive; avoid fine needle aspiration (architecture needed; may miss the diagnosis); [[★ imaging (usually CT or PET) to characterize and stage]]; complete blood count (cytopenias with marrow involvement), chemistries (electrolytes, rule out tumor lysis syndrome), LDH (rapid proliferation); bone marrow biopsy; lumbar puncture for high-grade lymphomas including Burkitt. Lugano staging (modified Ann Arbor): 1 single node region or organ; 2 two or more regions same side of the diaphragm; 3 above and below the diaphragm; 4 widespread, multiple organs",
+      "treatment": "Highly dependent on subtype: single node, non-aggressive: radiation; low-grade B-cell: rituximab (anti-CD20) if treatment required +/- chemotherapy if extensive; aggressive B-cell: multi-drug chemotherapy such as R-CHOP (rituximab, cyclophosphamide, vincristine, doxorubicin, prednisone); T-cell: CHOP minus rituximab (no CD20 on T cells). Hematologist referral, ideally a lymphoma expert; hospitalization for aggressive disease with electrolyte abnormalities, otherwise outpatient; drink plenty of fluids and take allopurinol on starting treatment",
+      "mortality": "[[★ Tumor lysis syndrome]] (medical emergency); infections, bleeding, anemia, electrolyte abnormalities, diarrhea with all chemotherapy. Indolent lymphomas incurable but survival often 10-15+ years, with risk of progression to aggressive lymphoma; aggressive lymphomas often treatable and curable with chemotherapy, 5-year survival 60-70% (the slide's cure percentage was corrected out loud upward, to about 70%); T-cell respond less well than B-cell. Poor prognosis: age >60, extranodal sites, ECOG performance status >2, stage III or IV, elevated LDH"
+     },
+     "slides": {
+      "name": "14, 15",
+      "definition": "15",
+      "etiology": "16-18, 20, 31",
+      "epidemiology": "15, 23",
+      "risk_factors": "23",
+      "clinical": "24",
+      "diagnosis": "25-26",
+      "treatment": "27, 34",
+      "mortality": "28-30"
+     }
+    },
+    {
+     "id": "l50-follicular",
+     "name": "Follicular lymphoma",
+     "prof": false,
+     "prof_note": "Said of t(14;18) and BCL-2: \"You probably don't need to know this.\"",
+     "fields": {
+      "name": "Follicular lymphoma",
+      "definition": "The most common indolent histology of non-Hodgkin lymphoma",
+      "etiology": "Chromosomal translocation t(14;18) places the BCL-2 gene on chromosome 14, preventing cell death",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Not covered in the lecture",
+      "pathology": "Microscopy often shows clusters of packed follicles",
+      "clinical": "Typically indolent: waxing and waning painless lymphadenopathy",
+      "diagnosis": "Microscopy: clusters of packed follicles; excisional biopsy and staging as for non-Hodgkin lymphoma",
+      "treatment": "Frequently no treatment required (watch and wait); intermittent low-intensity therapy if symptomatic; high-risk follicular lymphoma may need more aggressive chemotherapies and immunotherapies",
+      "mortality": "Often no treatment or only intermittent treatment, but incurable; indolent lymphomas survive often 10-15+ years with risk of progression to aggressive lymphoma"
+     },
+     "slides": {
+      "name": "16",
+      "definition": "16",
+      "etiology": "16",
+      "pathology": "16",
+      "clinical": "16",
+      "diagnosis": "16",
+      "treatment": "16",
+      "mortality": "30, 34"
+     }
+    },
+    {
+     "id": "l50-marginal-zone",
+     "name": "Marginal zone lymphoma (including MALT lymphoma)",
+     "prof": false,
+     "prof_note": "Said: gastric MALT with H. pylori \"you may want to know that\"; nodal and splenic subtypes \"you probably won't be asked that\".",
+     "fields": {
+      "name": "Marginal zone lymphoma (including MALT lymphoma)",
+      "definition": "Indolent non-Hodgkin lymphomas, 5-17% of all non-Hodgkin lymphoma, most commonly the extranodal subtype; subtypes: extranodal or mucosa-associated lymphoid tissue (MALT, most common), nodal marginal zone, splenic marginal zone",
+      "etiology": "Gastric MALT: 2/3 of cases associated with H. pylori; splenic marginal zone associated with hepatitis C",
+      "epidemiology": "5-17% of non-Hodgkin lymphoma; more common in older adults",
+      "risk_factors": "H. pylori gastritis; hepatitis C; older age",
+      "pathology": "MALT involves organs with mucosa: gastrointestinal tract, eyes, lungs",
+      "clinical": "Not covered in the lecture",
+      "diagnosis": "Not covered in the lecture",
+      "treatment": "Not covered in the lecture",
+      "mortality": "Indolent lymphomas: incurable but survival often 10-15+ years"
+     },
+     "slides": {
+      "name": "17",
+      "definition": "17",
+      "etiology": "17",
+      "epidemiology": "17",
+      "risk_factors": "17, 23",
+      "pathology": "17",
+      "mortality": "30"
+     }
+    },
+    {
+     "id": "l50-lymphoplasmacytic",
+     "name": "Lymphoplasmacytic lymphoma (Waldenstrom macroglobulinemia)",
+     "prof": true,
+     "prof_note": "Said: farming, pesticides - \"kind of always choose that on the test if you see it\".",
+     "fields": {
+      "name": "Lymphoplasmacytic lymphoma (Waldenstrom macroglobulinemia)",
+      "definition": "An indolent lymphoma, also known as Waldenstrom macroglobulinemia, affecting lymphoplasmacytoid cells and plasma cells (terminally differentiated B cells)",
+      "etiology": "MYD88 mutation frequently found (~90% of cases)",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Genetic (familial); environmental (farming, pesticides)",
+      "pathology": "Excess IgM production: a large antibody that causes hyperviscosity",
+      "clinical": "Hyperviscosity: blurred vision, headache, rarely stroke (cerebrovascular accident)",
+      "diagnosis": "MYD88 mutation; IgM monoclonal protein (different pathophysiology and treatment from myeloma)",
+      "treatment": "Not covered in the lecture",
+      "mortality": "Good prognosis overall; relative 5-year survival 78%"
+     },
+     "slides": {
+      "name": "18",
+      "definition": "18",
+      "etiology": "18",
+      "risk_factors": "18",
+      "pathology": "18",
+      "clinical": "18",
+      "diagnosis": "18, 49",
+      "mortality": "18"
+     }
+    },
+    {
+     "id": "l50-dlbcl",
+     "name": "Diffuse large B-cell lymphoma",
+     "prof": false,
+     "prof_note": "Said: the slide's 50% cure is too low, \"more closely to 70%\"; stage matters less for treatment because it behaves aggressively.",
+     "fields": {
+      "name": "Diffuse large B-cell lymphoma",
+      "definition": "An aggressive B-cell lymphoma, the most common non-Hodgkin lymphoma in adults, with many subtypes by location, mutations and infectious associations",
+      "etiology": "Many subtypes based on location, mutations, and infectious associations",
+      "epidemiology": "Most common non-Hodgkin lymphoma in adults",
+      "risk_factors": "Older age, family history, autoimmune conditions, infections, environmental",
+      "pathology": "Not covered in the lecture",
+      "clinical": "Fast-growing mass/swelling and/or B symptoms (fever, fatigue, night sweats, weight loss)",
+      "diagnosis": "Excisional biopsy, CT or PET staging and labs as for non-Hodgkin lymphoma",
+      "treatment": "Aggressive B-cell lymphoma: multi-drug chemotherapy such as R-CHOP (rituximab, cyclophosphamide, vincristine, doxorubicin, prednisone)",
+      "mortality": "Often treatable and curable with multi-agent chemotherapy (slide 34 prints a cure percentage that she corrected out loud: \"more closely to 70%\"); aggressive lymphomas: 5-year survival 60-70%; tumor lysis syndrome risk"
+     },
+     "slides": {
+      "name": "19",
+      "definition": "19",
+      "etiology": "19",
+      "epidemiology": "19",
+      "risk_factors": "19",
+      "clinical": "19",
+      "diagnosis": "25-26",
+      "treatment": "27",
+      "mortality": "30, 34"
+     }
+    },
+    {
+     "id": "l50-mantle-cell",
+     "name": "Mantle cell lymphoma",
+     "prof": false,
+     "prof_note": "Said: \"pretty rare, I'm surprised it's even on here\".",
+     "fields": {
+      "name": "Mantle cell lymphoma",
+      "definition": "A rare subtype of non-Hodgkin lymphoma identified by the cyclin D1 gene translocation t(11;14); typically aggressive, though an indolent variant has been described",
+      "etiology": "Cyclin D1 gene translocation t(11;14)",
+      "epidemiology": "5% of all non-Hodgkin lymphoma; more common in men; median age 60-70 years",
+      "risk_factors": "Male sex; age 60-70",
+      "pathology": "Not covered in the lecture",
+      "clinical": "Not covered in the lecture",
+      "diagnosis": "Cyclin D1 translocation t(11;14)",
+      "treatment": "Not covered in the lecture",
+      "mortality": "Median survival from under 2 years to over 9, depending on the aggressive or indolent variant"
+     },
+     "slides": {
+      "name": "20",
+      "definition": "20",
+      "etiology": "20",
+      "epidemiology": "20",
+      "risk_factors": "20",
+      "diagnosis": "20",
+      "mortality": "20"
+     }
+    },
+    {
+     "id": "l50-t-cell",
+     "name": "T-cell lymphomas, including cutaneous T-cell lymphoma (mycosis fungoides, Sezary syndrome)",
+     "prof": false,
+     "prof_note": "Said: T cells behave more aggressively than B cells; HTLV-1 \"you should know\".",
+     "fields": {
+      "name": "T-cell lymphomas, including cutaneous T-cell lymphoma (mycosis fungoides, Sezary syndrome)",
+      "definition": "A diverse group of non-Hodgkin lymphomas with many subtypes: peripheral T-cell lymphoma, not otherwise specified (most common, 1/3), nodal T-cell, anaplastic large cell (aggressive), adult T-cell leukemia/lymphoma (very aggressive), intestinal, extranodal NK/T-cell (often nasal), hepatosplenic; cutaneous T-cell lymphoma = mycosis fungoides, with a more aggressive form, Sezary syndrome",
+      "etiology": "Adult T-cell leukemia/lymphoma is associated with HTLV-1",
+      "epidemiology": "15% of non-Hodgkin lymphoma are T-cell or NK-cell; adult T-cell leukemia/lymphoma more common in the Caribbean, Central and South America",
+      "risk_factors": "HTLV-1 infection",
+      "pathology": "Mycosis fungoides often has no visceral involvement",
+      "clinical": "Mycosis fungoides: skin lesions that resemble fungal infections, progressing to nodular lesions that may ulcerate; Sezary syndrome: widespread, red, itchy rash (erythroderma) with severe pruritus and diminished quality of life; extranodal NK/T-cell lymphoma often affects the nasal region",
+      "diagnosis": "Not covered in the lecture",
+      "treatment": "T-cell lymphomas: CHOP-type regimens minus rituximab (no CD20 expression on T cells); cutaneous T-cell lymphoma: treatment focused on the skin manifestations",
+      "mortality": "T-cell lymphomas respond less well than B-cell lymphomas; adult T-cell leukemia/lymphoma very aggressive"
+     },
+     "slides": {
+      "name": "21-22",
+      "definition": "21-22",
+      "etiology": "21",
+      "epidemiology": "15, 21",
+      "risk_factors": "21, 23",
+      "pathology": "22",
+      "clinical": "21-22",
+      "treatment": "22, 27",
+      "mortality": "21, 30"
+     }
+    },
+    {
+     "id": "l50-burkitt",
+     "name": "Burkitt lymphoma",
+     "prof": true,
+     "prof_note": "Said: \"If a pathologist ever says starry sky, you think Burkitt's ... you'll definitely see that on a test\"; endemic region sub-Saharan Africa, strongly associated with EBV. Slide emphasis: prompt treatment with emergent referral; tumor lysis.",
+     "fields": {
+      "name": "Burkitt lymphoma",
+      "definition": "A very aggressive lymphoma variant with three types: endemic, sporadic, immunodeficiency-associated",
+      "etiology": "Associated with MYC gene upregulation, resulting in stimulated cell growth and division; endemic type strongly associated with Epstein-Barr virus; immunodeficiency type associated with HIV/AIDS",
+      "epidemiology": "Endemic: largely sub-Saharan Africa and New Guinea; sporadic: United States and Western Europe, more in males, almost always under age 35; immunodeficiency-associated: HIV/AIDS",
+      "risk_factors": "Epstein-Barr virus (endemic); HIV/AIDS; male sex and age under 35 (sporadic)",
+      "pathology": "[[★ \"Starry sky\" appearance]]: sheets of lymphoma with benign macrophages clearing out dying lymphoma cells; extremely fast doubling time",
+      "clinical": "Very rapidly growing, often painless swelling (visible change within one day); commonly B symptoms (fever, night sweats, weight loss)",
+      "diagnosis": "Pathology: starry sky; high-grade lymphomas including Burkitt require a lumbar puncture",
+      "treatment": "[[★ Prompt treatment with emergent referral to a hematologist]]; rapid transfer of care; multi-agent chemotherapy; caution starting therapy because of tumor lysis syndrome",
+      "mortality": "Excellent long-term prognosis if identified and treated early: >90% in children, 50-90% in adults; [[★ tumor lysis syndrome]], which can occur spontaneously"
+     },
+     "slides": {
+      "name": "31-33",
+      "definition": "31",
+      "etiology": "31-32",
+      "epidemiology": "32",
+      "risk_factors": "32",
+      "pathology": "32-33",
+      "clinical": "31",
+      "diagnosis": "25, 32",
+      "treatment": "33-34",
+      "mortality": "28, 33"
+     }
+    },
+    {
+     "id": "l50-hodgkin",
+     "name": "Hodgkin lymphoma",
+     "prof": true,
+     "prof_note": "Said: Reed-Sternberg cells - \"automatically think of Hodgkin's\"; ABVD + painless lymphadenopathy = Hodgkin; node pain after alcohol as a test clue. Slide emphasis: bimodal, EBV 40-50%, painless cervical nodes, >90% alive at 5 years.",
+     "fields": {
+      "name": "Hodgkin lymphoma",
+      "definition": "A type of B-cell lymphoma characterized by few malignant cells ([[★ Reed-Sternberg cells]]: binucleated, neoplastic B cells) among numerous immune effector cells; contiguous, orderly spread through lymph nodes",
+      "etiology": "Epstein-Barr virus suspected (identified in 40-50% of cases); others including HIV, HHV-6, tuberculosis",
+      "epidemiology": "~10-15% of all lymphoma diagnoses worldwide; [[★ bimodal incidence]]: adults in their 20s and adults >60",
+      "risk_factors": "Same-sex siblings have a 10x increased risk; [[★ Epstein-Barr virus (40-50%)]]; HIV, HHV-6, tuberculosis",
+      "pathology": "Reed-Sternberg cells; classical Hodgkin lymphoma expresses CD15 and CD30; spreads contiguously",
+      "clinical": "[[★ Painless asymptomatic lymphadenopathy (70%)]], [[★ usually cervical]], could be supraclavicular or mediastinal; [[★ pain may worsen with alcohol consumption]]; mediastinal mass on chest X-ray; splenomegaly (~30%), sometimes hepatomegaly; pruritus, may be very intense",
+      "diagnosis": "Excisional lymph node biopsy (avoid fine needle aspiration); classical type CD15 and CD30; chest X-ray rules out mediastinal mass/adenopathy; complete blood count, chemistries (rule out tumor lysis), LDH; bone marrow biopsy; Lugano staging (modified Ann Arbor)",
+      "treatment": "Early stage I and IIA: short course of chemotherapy ([[★ ABVD]] historically); bulky stage I or II or B symptoms: chemotherapy + radiation; stage III or IV: chemotherapy. ABVD: doxorubicin (Adriamycin), bleomycin, vinblastine, dacarbazine; new agents replacing bleomycin because of pulmonary toxicities. Relapse after first line: allogeneic stem cell transplant",
+      "mortality": "[[★ Generally curable, >90% alive at 5 years]]; inferior results with older patients, bulky disease, lymphocyte-depleted or mixed-cellularity subtypes; delayed toxicities: myelodysplastic syndrome, secondary leukemia, other cancers"
+     },
+     "slides": {
+      "name": "35, 36",
+      "definition": "36",
+      "etiology": "37",
+      "epidemiology": "36-37",
+      "risk_factors": "37",
+      "pathology": "36, 39",
+      "clinical": "38",
+      "diagnosis": "39-40",
+      "treatment": "41-42",
+      "mortality": "42"
+     }
+    },
+    {
+     "id": "l50-multiple-myeloma",
+     "name": "Multiple myeloma",
+     "prof": true,
+     "prof_note": "Said: CRAB - \"it will 100% be on a test in some form\"; myeloma needs only 10% marrow plasma cells (vs 20% blasts in acute leukemia); remember Bence Jones protein; \"we don't use staging too much in myeloma\". Slide emphasis: diagnosis line, 3- or 4-drug regimen, most relapse, incurable.",
+     "fields": {
+      "name": "Multiple myeloma",
+      "definition": "A malignant, incurable clonal disorder of plasma cells (terminally differentiated B cells), at the far end of the plasma cell disorder spectrum from MGUS",
+      "etiology": "Clonal evolution of plasma cells produces a single, overproduced antibody type, most commonly IgG",
+      "epidemiology": "10% of all hematologic malignancies; most diagnoses over age 65; African Americans at higher risk",
+      "risk_factors": "Age (most over 65); African American race; family history; prior MGUS or smoldering myeloma; environmental exposures (radiation, chemical, occupational)",
+      "pathology": "Activates osteoclasts, releasing calcium into the bloodstream; renal dysfunction from light chain and calcium phosphate deposition; anemia from renal dysfunction and marrow involvement; osteolytic \"punched out\" lesions",
+      "clinical": "[[★ CRAB]]: calcium (hypercalcemia: constipation, increased thirst, urinary frequency, nausea); renal insufficiency (swelling); anemia (fatigue, shortness of breath); bone lesions/pain (back, chest, pelvis). May be asymptomatic with certain lab findings (SLiM: bone marrow plasma cells >=60%, light chain ratio >100:1, MRI >=2 lesions). Higher risk of infections; also amyloidosis, hyperviscosity, polyneuropathies",
+      "diagnosis": "[[★ >=10% bone marrow plasma cells or biopsy-proven plasmacytoma + 1 or more CRAB feature]]; monoclonal protein on serum protein electrophoresis is characteristic; urine [[★ Bence Jones protein]]; complete blood count, metabolic/electrolyte panel, 24-hour urine protein electrophoresis, bone marrow biopsy with flow, kappa/lambda light chain ratio, beta-2 microglobulin, whole-body CT for bone lesions. R-ISS: I beta-2 microglobulin <3.5 mg/L, albumin >=3.5 g/dL, standard-risk chromosomes, normal LDH; II not I or III; III beta-2 microglobulin >=5.5 mg/L, high-risk chromosomes (del 17p, t(4;14), t(14;16)), high LDH; prognostic only. Differential: smoldering myeloma, MGUS, Waldenstrom (IgM), chronic lymphocytic leukemia, non-Hodgkin lymphoma, amyloidosis, reactive hypergammaglobulinemia (cirrhosis, chronic inflammation)",
+      "treatment": "[[★ Goal: prolonged remissions to improve survival and quality of life]]; [[★ newly diagnosed: 3- or 4-drug regimen]] with a proteasome inhibitor and immunomodulatory drug backbone with steroids; autologous transplant (and maintenance after) if a candidate; continuous therapy at relapse; CAR-T, bispecifics, antibody-drug conjugates for relapsed myeloma. Hematologist/oncologist, ideally a myeloma expert; lifelong treatment and follow-up",
+      "mortality": "5-year relative survival ~60% (2018-2022); [[★ each line of therapy has shorter remissions; incurable/fatal]]; [[★ most patients relapse]]; newly diagnosed patients today may survive >10 years"
+     },
+     "slides": {
+      "name": "43, 44",
+      "definition": "44",
+      "etiology": "45",
+      "epidemiology": "44, 46",
+      "risk_factors": "46",
+      "pathology": "45, 48",
+      "clinical": "47",
+      "diagnosis": "49-51",
+      "treatment": "52-53, 55",
+      "mortality": "53-54"
+     }
+    },
+    {
+     "id": "l50-mgus",
+     "name": "Monoclonal gammopathy of undetermined significance (MGUS)",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Monoclonal gammopathy of undetermined significance (MGUS)",
+      "definition": "A clonal, low-level plasma cell disorder: M-protein <3 g/dL, clonal bone marrow plasma cells <10%, no myeloma-defining characteristics; by definition asymptomatic (the slide title says \"unknown significance\")",
+      "etiology": "Not covered in the lecture",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Not covered in the lecture",
+      "pathology": "Clonal proliferation of plasma cells at a low level",
+      "clinical": "Asymptomatic by definition",
+      "diagnosis": "M-protein <3 g/dL; clonal bone marrow plasma cells <10%; no myeloma-defining characteristics",
+      "treatment": "Not covered in the lecture",
+      "mortality": "Risk of progression to myeloma ~1% per year; a risk factor for multiple myeloma"
+     },
+     "slides": {
+      "name": "44, 56",
+      "definition": "56",
+      "pathology": "56",
+      "clinical": "44, 56",
+      "diagnosis": "56",
+      "mortality": "46, 56"
+     }
+    },
+    {
+     "id": "l50-smoldering",
+     "name": "Smoldering myeloma",
+     "prof": false,
+     "prof_note": "",
+     "fields": {
+      "name": "Smoldering myeloma",
+      "definition": "An intermediate-stage clonal plasma cell disorder: M-protein >3 g/dL AND 10-60% bone marrow plasma cells, with no myeloma-defining events",
+      "etiology": "Not covered in the lecture",
+      "epidemiology": "Not covered in the lecture",
+      "risk_factors": "Not covered in the lecture",
+      "pathology": "Intermediate stage between MGUS and myeloma; a more indolent process",
+      "clinical": "No myeloma-defining events (anemia, bone lesions, renal failure, etc.); no symptoms",
+      "diagnosis": "M-protein >3 g/dL and 10-60% bone marrow plasma cells without anemia, bone lesions or renal failure",
+      "treatment": "Typically does not require treatment (often monitored); may consider early intervention for some subgroups",
+      "mortality": "[[★ Progression approximately 10% per year]]; some high-risk groups >50% risk of progression within 2 years; a risk factor for multiple myeloma"
+     },
+     "slides": {
+      "name": "44, 57",
+      "definition": "57",
+      "pathology": "49, 57",
+      "clinical": "57",
+      "diagnosis": "57",
+      "treatment": "49, 57",
+      "mortality": "46, 57"
+     }
+    },
+    {
+     "id": "l50-tumor-lysis",
+     "name": "Tumor lysis syndrome",
+     "prof": true,
+     "prof_note": "Said: \"Very important to know this ... an oncologic emergency. You need to know it, you need to recognize it for your testing\"; high potassium, high phosphorus, high uric acid (she added low calcium, not on the slide); fluids and allopurinol.",
+     "fields": {
+      "name": "Tumor lysis syndrome",
+      "definition": "A [[★ medical emergency]] due to rapid tumor breakdown and release of cellular products (potassium, phosphorus, uric acid)",
+      "etiology": "Rapid tumor breakdown, spontaneously in highly aggressive lymphomas (Burkitt) or on starting therapy",
+      "epidemiology": "Aggressive lymphoma (Burkitt); also acute lymphoblastic and acute myeloid leukemia with marked leukocytosis",
+      "risk_factors": "Highly aggressive lymphoma; starting chemotherapy",
+      "pathology": "Release of potassium, phosphorus and uric acid; uric acid and calcium phosphate crystals precipitate in the renal tubules",
+      "clinical": "Arrhythmia from hyperkalemia; acute renal failure",
+      "diagnosis": "Chemistries (electrolytes) in the lymphoma work-up to rule it out",
+      "treatment": "[[★ Requires aggressive IV fluid hydration]]; anticipate in aggressive lymphoma: allopurinol (hypouricemic agent) and fluids in advance; patients drink plenty of fluids and take allopurinol",
+      "mortality": "Largest risk: hyperkalemia leading to arrhythmia and potential death; acute renal failure"
+     },
+     "slides": {
+      "name": "28",
+      "definition": "28",
+      "etiology": "28, 33",
+      "epidemiology": "28",
+      "risk_factors": "28",
+      "pathology": "28",
+      "clinical": "28",
+      "diagnosis": "25",
+      "treatment": "28, 34",
+      "mortality": "28"
+     }
+    }
+   ]
   }
  ]
 }

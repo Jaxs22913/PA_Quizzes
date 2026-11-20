@@ -26,7 +26,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, os.path.join(HERE, "cram-sheet-template"))
 from render import render
 
-NAMES = {46: "cytopenias and hemochromatosis"}
+NAMES = {46: "cytopenias and hemochromatosis", 49: "hematologic malignancies part I", 50: "hematologic malignancies part II"}
 topics, criteria, focus, have = [], [], [], []
 for n in (46, 48, 49, 50, 51):    # Lecture 47 (smoking cessation) is not tested
     p = os.path.join(HERE, "cms_e8_cram", "l%d.py" % n)

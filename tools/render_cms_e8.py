@@ -40,6 +40,41 @@ SPEC = {
    intro="Size the cells first (the mean corpuscular volume), then read the iron panel or the hemolysis labs, then "
          "check the medication list for anything that caused it or must be avoided. Every laboratory value comes "
          "with its normal range; work the absolute neutrophil count from the white count and differential yourself."),
+ "l49io": dict(sets="cms_e8l49_sets.json",
+   files=["hematologic-malignancies-i-quiz.html", "hematologic-malignancies-i-quiz-version-2.html"],
+   title="Hematologic Malignancies I Quiz %d — CMS I Exam 8",
+   h1="Hematologic Malignancies I &mdash; Quiz %d",
+   sub=SUB % 49,
+   chips=["Malignancy families", "Performance status", "Acute lymphoblastic leukemia", "Acute myeloid leukemia",
+          "Acute promyelocytic leukemia", "Myelodysplastic syndrome", "Myeloproliferative neoplasms",
+          "Chronic myelogenous leukemia"]),
+ "l49vig": dict(sets="cms_e8l49_vig_sets.json",
+   files=["hematologic-malignancies-i-vignettes.html", "hematologic-malignancies-i-vignettes-version-2.html"],
+   title="Hematologic Malignancies I Vignettes %d — CMS I Exam 8",
+   h1="Hematologic Malignancies I &mdash; Vignettes %d",
+   sub=SUB % 49,
+   chips=["Count the blasts", "Grade the fitness", "Stage the CML", "Read the milestone", "Pick the treatment",
+          "Comorbidities", "Across the lifespan"],
+   intro="Count the blasts first (marrow blast percentage decides acute leukemia against myelodysplasia, and the "
+         "phase of chronic myelogenous leukemia), then the cell line and the hallmark finding, then the patient's "
+         "fitness and comorbidities before choosing a treatment. Every laboratory value comes with its normal range."),
+ "l50io": dict(sets="cms_e8l50_sets.json",
+   files=["hematologic-malignancies-ii-quiz.html", "hematologic-malignancies-ii-quiz-version-2.html"],
+   title="Hematologic Malignancies II Quiz %d — CMS I Exam 8",
+   h1="Hematologic Malignancies II &mdash; Quiz %d",
+   sub=SUB % 50,
+   chips=["Chronic lymphocytic leukemia", "Rai staging", "Indolent lymphomas", "Aggressive lymphomas",
+          "Burkitt lymphoma", "Tumor lysis syndrome", "Hodgkin lymphoma", "Multiple myeloma", "Monoclonal gammopathy and smoldering"]),
+ "l50vig": dict(sets="cms_e8l50_vig_sets.json",
+   files=["hematologic-malignancies-ii-vignettes.html", "hematologic-malignancies-ii-vignettes-version-2.html"],
+   title="Hematologic Malignancies II Vignettes %d — CMS I Exam 8",
+   h1="Hematologic Malignancies II &mdash; Vignettes %d",
+   sub=SUB % 50,
+   chips=["Stage it (Rai, Lugano, R-ISS)", "Count the plasma cells", "Lymph node biopsy", "Prevent tumor lysis",
+          "Pick the regimen", "Comorbidities", "Across the lifespan"],
+   intro="Find the cell first (mature B lymphocytes in the blood, a lymph node mass, or plasma cells in the marrow), "
+         "then stage it from what the stem gives you, then decide between watching and treating. Every laboratory "
+         "value comes with its normal range."),
 }[sys.argv[1] if len(sys.argv) > 1 else "l46io"]
 
 S = json.load(open(os.path.join(HERE, SPEC["sets"]), encoding="utf-8"))

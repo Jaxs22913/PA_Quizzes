@@ -1,0 +1,333 @@
+# -*- coding: utf-8 -*-
+"""Lecture 50 vignette pool A -- Hematologic Malignancies Part II: chronic lymphocytic leukemia (s4-13): who gets it,
+presentation, diagnosis by flow cytometry, monoclonal B lymphocytosis and other differentials, Rai staging (s10),
+management, prognosis, Richter transformation and patient education. Every slide in the range viewed at 1920 px.
+
+KEYS ARE WRITTEN SHORT ON PURPOSE -- detail lives in the explanation.
+EXPLANATIONS follow tools/question_writing/EXPLAIN_DEEP.md: the key names the decisive clue and the slide fact;
+each wrong choice says why it fails for THIS patient, the replacing fact, and a "Tell:".
+
+Laboratory ranges: the deck gives the lymphocytosis cut-off (absolute lymphocyte count above 5,000 per microliter for
+3 months, s8) and the monoclonal B lymphocytosis picture (elevated but below 5,000 with no nodes, organomegaly,
+cytopenias or symptoms, s9). The other ranges (absolute lymphocyte count 1,000-4,000 per microliter, hemoglobin,
+platelets) are standard adult reference ranges and only set the scene; Rai anemia and thrombocytopenia stems are
+clearly below range. No stem sits at exactly 5,000.
+
+Deliberately NOT keyed: "most common leukemia" (s4/s6 conflict with Lecture 49), the CLL International Prognostic
+Index (named, not shown), doses and pill schedules, CAR-T and bispecific details.
+"""
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _cmse3_q import Q
+from cms_e8l50_scope import *
+
+
+def S(topic, io, q, opts, cite, slot):
+    d = Q(topic, io, q, opts, cite); d["slot"] = slot; return d
+
+
+def V(topic, io, q, opts, cite, slot, lead):
+    d = S(topic, io, q, opts, cite, slot); d["lead"] = lead; return d
+
+
+def ORD(d, asc):
+    d["ordered"] = True; d["asc"] = asc; return d
+
+
+QUESTIONS = [
+
+# ---------------------------------------------------------------- Rai staging (s10)
+V(T_CLL_STAGE, IO_II,
+  "A 71-year-old man has an absolute lymphocyte count of 14,500 per microliter (normal 1,000-4,000) that has persisted for 4 months, and flow cytometry confirms chronic lymphocytic leukemia. He has no symptoms, no palpable lymph nodes and no hepatomegaly or splenomegaly. Hemoglobin is 14.6 g/dL (normal 13.5-17.5 g/dL) and platelets 228,000 per microliter (normal 150,000-450,000). What is his Rai stage?",
+  [["Stage 0",
+    "Correct. Reading the Rai table item by item: lymphocytosis yes (14,500); lymphadenopathy no; organomegaly (hepatomegaly or splenomegaly) no; anemia no (14.6 g/dL); thrombocytopenia no (228,000). Asymptomatic lymphocytosis alone is stage 0, staged from the exam and labs without advanced imaging."],
+   ["Stage I",
+    "Stage I is lymphocytosis plus lymphadenopathy, and his examination finds no palpable lymph nodes. Tell: without nodes, organs or low counts, lymphocytosis alone stays at stage 0.", "wrong stage or severity"],
+   ["Stage II",
+    "Stage II is lymphocytosis, lymphadenopathy and organomegaly (hepatomegaly and/or splenomegaly); he has neither nodes nor an enlarged liver or spleen. Tell: stage II needs an organ finding on examination.", "wrong stage or severity"],
+   ["Stage III",
+    "Stage III is lymphocytosis with anemia, with or without nodes or organomegaly; his hemoglobin of 14.6 g/dL is inside 13.5-17.5 g/dL. Tell: a normal hemoglobin and platelet count keep him out of stages III and IV.", "wrong stage or severity"]],
+  C(10), "test finding", "classify"),
+
+V(T_CLL_STAGE, IO_II,
+  "A 68-year-old woman with chronic lymphocytic leukemia confirmed by flow cytometry has an absolute lymphocyte count of 22,000 per microliter (normal 1,000-4,000). She has painless, firm, mobile cervical and axillary lymph nodes; the liver and spleen are not enlarged. Hemoglobin is 13.1 g/dL (normal 12.0-15.5 g/dL) and platelets 210,000 per microliter (normal 150,000-450,000). What is her Rai stage?",
+  [["Stage I",
+    "Correct. Item by item: lymphocytosis yes (22,000); lymphadenopathy yes (cervical and axillary nodes); organomegaly no; anemia no (13.1 g/dL); thrombocytopenia no (210,000). Lymphocytosis with lymphadenopathy and nothing more is Rai stage I."],
+   ["Stage 0",
+    "Stage 0 is asymptomatic lymphocytosis with no other finding, but she has palpable cervical and axillary nodes. Tell: adding lymphadenopathy to lymphocytosis moves the stage up to I.", "wrong stage or severity"],
+   ["Stage II",
+    "Stage II adds organomegaly (hepatomegaly and/or splenomegaly) to lymphocytosis and lymphadenopathy; her liver and spleen are not enlarged. Tell: nodes without an organ finding stop at stage I.", "wrong stage or severity"],
+   ["Stage III",
+    "Stage III needs anemia with the lymphocytosis; her hemoglobin of 13.1 g/dL sits inside 12.0-15.5 g/dL. Tell: Rai stages III and IV are driven by low blood counts, and hers are normal.", "wrong stage or severity"]],
+  C(10), "test finding", "classify"),
+
+V(T_CLL_STAGE, IO_II,
+  "A 74-year-old man with chronic lymphocytic leukemia confirmed by flow cytometry has an absolute lymphocyte count of 31,000 per microliter (normal 1,000-4,000). He has painless cervical lymphadenopathy, and the spleen is palpable below the left costal margin. Hemoglobin is 14.0 g/dL (normal 13.5-17.5 g/dL) and platelets 190,000 per microliter (normal 150,000-450,000). What is his Rai stage?",
+  [["Stage II",
+    "Correct. Item by item: lymphocytosis yes (31,000); lymphadenopathy yes; organomegaly yes (splenomegaly counts, as organomegaly means hepatomegaly and/or splenomegaly); anemia no (14.0 g/dL); thrombocytopenia no (190,000). That is Rai stage II."],
+   ["Stage I",
+    "Stage I is lymphocytosis with lymphadenopathy only; his palpable spleen adds organomegaly. Tell: an enlarged spleen or liver on examination moves nodes-only stage I up to stage II.", "wrong stage or severity"],
+   ["Stage III",
+    "Stage III requires anemia, and his hemoglobin of 14.0 g/dL is inside the normal range. Tell: organomegaly alone never reaches stage III; it takes a low hemoglobin.", "wrong stage or severity"],
+   ["Stage IV",
+    "Stage IV requires thrombocytopenia, and his platelets of 190,000 per microliter are normal. Tell: stage IV is set by a low platelet count, with or without nodes, organs or anemia.", "wrong stage or severity"]],
+  C(10), "test finding", "classify"),
+
+V(T_CLL_STAGE, IO_II,
+  "A 77-year-old woman with chronic lymphocytic leukemia confirmed by flow cytometry reports fatigue. Her absolute lymphocyte count is 56,000 per microliter (normal 1,000-4,000). She has axillary lymphadenopathy and splenomegaly. Hemoglobin is 9.4 g/dL (normal 12.0-15.5 g/dL) and platelets 182,000 per microliter (normal 150,000-450,000). What is her Rai stage?",
+  [["Stage III",
+    "Correct. Item by item: lymphocytosis yes (56,000); lymphadenopathy and splenomegaly yes; anemia yes (9.4 g/dL, below 12.0); thrombocytopenia no (182,000). Lymphocytosis with anemia is stage III, with or without nodes and organomegaly, so the anemia sets the stage."],
+   ["Stage I",
+    "Stage I is lymphocytosis with lymphadenopathy alone; she also has splenomegaly and a hemoglobin of 9.4 g/dL. Tell: once anemia is present, the nodes no longer decide the stage.", "wrong stage or severity"],
+   ["Stage II",
+    "Stage II fits her nodes and spleen, but her hemoglobin of 9.4 g/dL adds anemia, which defines stage III with or without nodes and organomegaly. Tell: a low hemoglobin outranks organ findings in Rai staging.", "wrong stage or severity"],
+   ["Stage IV",
+    "Stage IV is lymphocytosis with thrombocytopenia; her platelets are 182,000 per microliter, inside the normal range. Tell: anemia without a low platelet count stops at stage III.", "wrong stage or severity"]],
+  C(10), "test finding", "classify"),
+
+V(T_CLL_STAGE, IO_II,
+  "A 79-year-old man with chronic lymphocytic leukemia confirmed by flow cytometry has easy bruising. His absolute lymphocyte count is 88,000 per microliter (normal 1,000-4,000). He has no palpable lymph nodes and no hepatomegaly or splenomegaly. Hemoglobin is 13.9 g/dL (normal 13.5-17.5 g/dL) and platelets 64,000 per microliter (normal 150,000-450,000). What is his Rai stage?",
+  [["Stage IV",
+    "Correct. Item by item: lymphocytosis yes (88,000); lymphadenopathy no; organomegaly no; anemia no (13.9 g/dL); thrombocytopenia yes (64,000, with easy bruising). Lymphocytosis with thrombocytopenia is stage IV with or without nodes, organomegaly or anemia."],
+   ["Stage 0",
+    "Stage 0 is asymptomatic lymphocytosis with normal counts; his platelets of 64,000 per microliter and easy bruising are thrombocytopenia. Tell: having no nodes does not mean a low stage when the platelets are low.", "ruled out by a stated finding"],
+   ["Stage II",
+    "Stage II needs lymphadenopathy and organomegaly, and he has neither. Tell: his only finding beyond lymphocytosis is a low platelet count, which goes straight to stage IV.", "wrong stage or severity"],
+   ["Stage III",
+    "Stage III is lymphocytosis with anemia, but his hemoglobin of 13.9 g/dL is normal; the low line is platelets. Tell: anemia means stage III, thrombocytopenia means stage IV.", "adjacent fact"]],
+  C(10), "test finding", "classify"),
+
+# ---------------------------------------------------------------- CLL versus monoclonal B lymphocytosis (s8, s9)
+V(T_CLL_DX, IO_II,
+  "A 66-year-old woman has an absolute lymphocyte count of 4,600 per microliter (normal 1,000-4,000) on routine blood work. Flow cytometry shows a clonal B-cell population. She has no symptoms, no lymphadenopathy and no hepatomegaly or splenomegaly; hemoglobin and platelets are normal. How should this finding be classified?",
+  [["Monoclonal B lymphocytosis",
+    "Correct. Her absolute lymphocyte count is elevated but below 5,000 per microliter, and she has no lymphadenopathy, organomegaly, cytopenias or symptoms. That is monoclonal B lymphocytosis, which progresses to chronic lymphocytic leukemia at about 1-2% per year."],
+   ["Chronic lymphocytic leukemia",
+    "Chronic lymphocytic leukemia needs a count above 5,000 per microliter for 3 months, or a count below 5,000 with lymphadenopathy or other symptoms; she has 4,600 and no nodes or symptoms. Tell: a sub-5,000 count with a clean examination is monoclonal B lymphocytosis.", "wrong stage or severity"],
+   ["Infectious atypical lymphocytosis",
+    "Atypical lymphocytosis from infections such as pertussis is reactive, not a clonal B-cell population, and she has no infection. Tell: flow cytometry showing a clone points away from a reactive cause.", "ruled out by a stated finding"],
+   ["Waldenstrom macroglobulinemia",
+    "Waldenstrom macroglobulinemia is a lymphoplasmacytic lymphoma producing excess IgM with hyperviscosity (blurred vision, headache); she has none of this. Tell: a small clonal B-cell count with no other findings is monoclonal B lymphocytosis.", "competing diagnosis"]],
+  CS(8, 9), "differential", "classify"),
+
+V(T_CLL_DX, IO_II,
+  "A 70-year-old man has painless, firm, mobile lymph nodes in the neck and both axillae. His absolute lymphocyte count is 4,500 per microliter (normal 1,000-4,000), and flow cytometry shows a clonal B-cell population coexpressing CD19 (cluster of differentiation 19) and CD5 (cluster of differentiation 5). How should this be classified?",
+  [["Chronic lymphocytic leukemia",
+    "Correct. Chronic lymphocytic leukemia is diagnosed with a count above 5,000 for 3 months or a count below 5,000 with lymphadenopathy or other symptoms. His count is 4,500, but he has lymphadenopathy, and the clone coexpresses CD19 (cluster of differentiation 19) and CD5 (cluster of differentiation 5)."],
+   ["Monoclonal B lymphocytosis",
+    "Monoclonal B lymphocytosis is a count below 5,000 with no lymphadenopathy, organomegaly, cytopenias or symptoms; his neck and axillary nodes exclude it. Tell: a sub-5,000 count plus lymphadenopathy is chronic lymphocytic leukemia.", "ruled out by a stated finding"],
+   ["Infectious atypical lymphocytosis",
+    "Atypical lymphocytosis with infections such as pertussis is reactive, while his flow cytometry shows a clonal B-cell population. Tell: a clone with the CD19 (cluster of differentiation 19) and CD5 (cluster of differentiation 5) pattern is leukemia, not infection.", "ruled out by a stated finding"],
+   ["Classical Hodgkin lymphoma",
+    "Classical Hodgkin lymphoma is diagnosed by excisional node biopsy and expresses CD15 (cluster of differentiation 15) and CD30 (cluster of differentiation 30), not a circulating CD5 (cluster of differentiation 5) clone. Tell: the blood clone points to chronic lymphocytic leukemia.", "competing diagnosis"]],
+  CS(8, 9), "differential", "classify"),
+
+# ---------------------------------------------------------------- presentation and diagnosis (s6-9)
+V(T_CLL_DX, IO_II,
+  "A 73-year-old man is found on routine blood work to have an absolute lymphocyte count of 46,000 per microliter (normal 1,000-4,000), persisting for 5 months. He has mild fatigue, painless, firm, mobile cervical lymph nodes and splenomegaly. Hemoglobin is 13.8 g/dL (normal 13.5-17.5 g/dL). Which is the most likely diagnosis?",
+  [["Chronic lymphocytic leukemia",
+    "Correct. Chronic lymphocytic leukemia is often found on routine blood work in an older adult (median age 70, twice as common in men). Lymphocytosis above 5,000 (often far higher), painless, firm, mobile nodes and splenomegaly (about 40%) complete the picture."],
+   ["Follicular lymphoma",
+    "Follicular lymphoma is an indolent non-Hodgkin lymphoma of the lymph nodes, not a leukemia of the blood; his lymphocyte count of 46,000 for 5 months meets the chronic lymphocytic leukemia mark of lymphocytosis above 5,000. Tell: marked lymphocytosis for months points to chronic lymphocytic leukemia.", "competing diagnosis"],
+   ["Hodgkin lymphoma",
+    "Hodgkin lymphoma is not the fit: his blood lymphocyte count of 46,000 for 5 months meets the chronic lymphocytic leukemia criterion of lymphocytosis above 5,000, with the painless, firm, mobile nodes and splenomegaly that leukemia shows. Tell: a count of 46,000 is a blood leukemia.", "competing diagnosis"],
+   ["Burkitt lymphoma",
+    "Burkitt lymphoma is a very aggressive lymphoma, while his picture is months of lymphocytosis above 5,000 with painless, firm, mobile nodes and mild fatigue. Tell: a 73-year-old with months of lymphocytosis and splenomegaly fits chronic lymphocytic leukemia.", "competing diagnosis"]],
+  CS(6, 7, 15), "manifestation", "diagnosis"),
+
+V(T_CLL_DX, IO_II,
+  "A 69-year-old woman has an absolute lymphocyte count of 18,000 per microliter (normal 1,000-4,000) on two blood counts 3 months apart. She feels well, with no lymphadenopathy or organomegaly. Which test confirms the suspected diagnosis?",
+  [["Flow cytometry",
+    "Correct. Her persistent lymphocytosis above 5,000 suggests chronic lymphocytic leukemia, which is confirmed by flow cytometry identifying a clonal B-cell population (coexpressing CD19 (cluster of differentiation 19) and CD5 (cluster of differentiation 5)). It usually does not need a bone marrow biopsy."],
+   ["Bone marrow biopsy",
+    "Chronic lymphocytic leukemia usually does not require a bone marrow biopsy for diagnosis; the clone is found in her blood. Tell: the confirming test reads the circulating cells, so the marrow is not sampled first.", "wrong stage or severity"],
+   ["Excisional node biopsy",
+    "Excisional lymph node biopsy diagnoses lymphoma by showing node architecture; she has no lymphadenopathy, and her disease is in the blood. Tell: blood lymphocytosis is confirmed on blood, by flow cytometry.", "adjacent fact"],
+   ["Protein electrophoresis",
+    "Serum protein electrophoresis finds the monoclonal protein of plasma cell disorders such as myeloma; it does not identify a clonal B-lymphocyte population. Tell: lymphocytosis calls for flow cytometry, not a protein study.", "competing diagnosis"]],
+  C(8), "gold standard", "test"),
+
+V(T_CLL_DX, IO_II,
+  "A 72-year-old man has an absolute lymphocyte count of 25,000 per microliter (normal 1,000-4,000) for 4 months and no symptoms. Flow cytometry is sent on his peripheral blood. Which result supports chronic lymphocytic leukemia?",
+  [["A clonal B-cell population",
+    "Correct. Flow cytometry confirms chronic lymphocytic leukemia by identifying a clonal B-cell population with coexpression of CD19 (cluster of differentiation 19) and CD5 (cluster of differentiation 5) on the lymphocytes. With his count above 5,000 for 3 months, that confirms it."],
+   ["Binucleated Reed-Sternberg cells",
+    "Binucleated Reed-Sternberg cells expressing CD15 (cluster of differentiation 15) and CD30 (cluster of differentiation 30) are classical Hodgkin lymphoma, found on node biopsy, not in blood lymphocytosis. Tell: CD19 (cluster of differentiation 19) with CD5 (cluster of differentiation 5) is the leukemia's pattern.", "competing diagnosis"],
+   ["Polyclonal reactive T cells",
+    "A reactive, non-clonal lymphocytosis fits infection (such as pertussis), not leukemia, which arises from a clone of mature B cells. Tell: chronic lymphocytic leukemia is a clonal B-cell disease.", "reversed direction or value"],
+   ["Clonal plasma cells making IgG",
+    "Clonal plasma cells making a single antibody, most commonly IgG, are multiple myeloma, a marrow disease with CRAB (calcium, renal, anemia, bone) features. Tell: circulating clonal B lymphocytes are chronic lymphocytic leukemia.", "competing diagnosis"]],
+  C(8), "test finding", "test"),
+
+V(T_CLL_DX, IO_II,
+  "A 34-year-old woman being treated for laboratory-confirmed pertussis has an absolute lymphocyte count of 7,900 per microliter (normal 1,000-4,000) with atypical lymphocytes on the smear. She has no lymphadenopathy or organomegaly. What is the best interpretation of her lymphocytosis?",
+  [["Reactive infectious lymphocytosis",
+    "Correct. Atypical lymphocytosis can be seen with some infections, including pertussis, which is on the differential of chronic lymphocytic leukemia. Her proven infection, young age (that leukemia has a median age of 70) and clean examination fit a reactive cause."],
+   ["Chronic lymphocytic leukemia",
+    "Chronic lymphocytic leukemia needs a clonal B-cell population on flow cytometry, usually in an older adult (median age 70), and a count above 5,000 persisting 3 months. Tell: her count rose during a proven pertussis infection.", "competing diagnosis"],
+   ["Monoclonal B lymphocytosis",
+    "Monoclonal B lymphocytosis is a clonal count below 5,000; hers is 7,900 and explained by pertussis. Tell: an infection-linked atypical lymphocytosis is reactive, not a monoclonal disorder.", "ruled out by a stated finding"],
+   ["Burkitt lymphoma",
+    "Burkitt lymphoma presents with a very rapidly growing, often painless swelling and B symptoms; she has no mass. Tell: atypical lymphocytes during a known infection are reactive.", "competing diagnosis"]],
+  C(9), "differential", "diagnosis"),
+
+V(T_CLL_STAGE, IO_II,
+  "A 70-year-old man has newly confirmed chronic lymphocytic leukemia. His physical examination and complete blood count are recorded to stage the disease. Which study is not needed to assign his Rai stage?",
+  [["Computed tomography scan",
+    "Correct. Rai staging does not require advanced imaging; it is done with the physical examination (nodes, liver, spleen) and labs (hemoglobin, platelets). A computed tomography scan adds nothing to the Rai stage."],
+   ["Spleen and liver examination",
+    "Organomegaly (hepatomegaly and/or splenomegaly) defines Rai stage II, so the examination of the liver and spleen is required. Tell: Rai is built on what the hands and the blood count find.", "reversed direction or value"],
+   ["Hemoglobin measurement",
+    "Anemia defines Rai stage III, so a hemoglobin is required. Tell: the labs in Rai are the hemoglobin and the platelet count, and both are needed.", "reversed direction or value"],
+   ["Platelet count",
+    "Thrombocytopenia defines Rai stage IV, so the platelet count is required. Tell: leaving it out could miss the highest stage.", "reversed direction or value"]],
+  C(10), "initial test", "avoid"),
+
+V(T_CLL_DX, IO_II,
+  "A 67-year-old woman has chronic lymphocytic leukemia confirmed by flow cytometry. She asks whether any other test will help predict her course and guide her therapy. Which test serves that purpose?",
+  [["Cytogenetics",
+    "Correct. Cytogenetics is important for prognosis and has some treatment considerations. About 80% of cases carry one of four chromosomal abnormalities: deletion 13q, deletion 11q, trisomy 12 or deletion 17p."],
+   ["Bone marrow biopsy",
+    "Bone marrow biopsy is usually not required in chronic lymphocytic leukemia; the diagnosis was made on blood. Tell: the prognostic test is a chromosomal analysis, not a marrow sample.", "wrong stage or severity"],
+   ["Positron emission tomography",
+    "Advanced imaging is not required to stage chronic lymphocytic leukemia; Rai uses the examination and labs. Tell: prognosis here comes from the chromosomes.", "adjacent fact"],
+   ["Urine protein electrophoresis",
+    "Urine protein electrophoresis looks for the monoclonal light chains of plasma cell disorders such as myeloma. Tell: chronic lymphocytic leukemia prognosis rests on cytogenetics.", "competing diagnosis"]],
+  CS(5, 8), "test finding", "test"),
+
+# ---------------------------------------------------------------- management (s10, s11)
+V(T_CLL_TX, IO_II,
+  "A 72-year-old man has chronic lymphocytic leukemia, Rai stage 0, found on routine blood work. He has no symptoms, and his absolute lymphocyte count of 12,000 per microliter (normal 1,000-4,000) has been stable for 9 months. What is the most appropriate management?",
+  [["Observation (watch and wait)",
+    "Correct. Asymptomatic patients may be observed (watch and wait) until there is rapid progression (lymphocyte count doubling in under 6 months) or disease-related symptoms. Treatment begins with symptomatic disease or rapid progression; he has neither."],
+   ["Start ibrutinib now",
+    "Ibrutinib, a Bruton tyrosine kinase inhibitor, is a targeted therapy for disease that needs treatment, which begins with symptoms or rapid progression. His count is stable and he has no symptoms. Tell: no symptoms and no doubling means watch and wait.", "wrong stage or severity"],
+   ["Venetoclax plus rituximab",
+    "Venetoclax with a monoclonal antibody is a fixed-duration targeted regimen for disease that needs treatment; asymptomatic, stable disease does not. Tell: therapy starts at symptoms or a doubling under 6 months.", "wrong stage or severity"],
+   ["Excision of the nodes",
+    "He has no lymphadenopathy, and excision is a lymphoma diagnostic biopsy, not a treatment for chronic lymphocytic leukemia. Tell: asymptomatic stable disease is simply observed.", "confused mechanism or drug class"]],
+  CS(10, 11), "first-line", "next step"),
+
+V(T_CLL_TX, IO_II,
+  "A 75-year-old woman with chronic lymphocytic leukemia has been observed for 2 years. She has no symptoms, but her absolute lymphocyte count has risen from 18,000 to 41,000 per microliter (normal 1,000-4,000) over 4 months. What is the next step?",
+  [["Begin targeted therapy",
+    "Correct. Observation lasts until rapid progression or disease-related symptoms. Her count has more than doubled in 4 months, under the 6-month mark, which is rapid progression and an indication to treat, with targeted therapies such as a Bruton tyrosine kinase inhibitor."],
+   ["Continue watch and wait",
+    "Watch and wait suits asymptomatic disease without rapid progression; her count more than doubled in 4 months. Tell: a doubling time under 6 months ends observation even without symptoms.", "wrong stage or severity"],
+   ["Repeat the count in a year",
+    "Waiting a year ignores a lymphocyte count that more than doubled in 4 months, which is the definition of rapid progression. Tell: doubling in under 6 months is an indication to treat.", "wrong stage or severity"],
+   ["Obtain a bone marrow biopsy",
+    "A bone marrow biopsy is usually not required to diagnose chronic lymphocytic leukemia, and rapid progression is itself the indication for treatment. Tell: the count doubling in 4 months decides.", "adjacent fact"]],
+  CS(8, 11), "escalation", "next step"),
+
+V(T_CLL_TX, IO_II,
+  "A 72-year-old man with chronic lymphocytic leukemia has drenching night sweats, fevers and a 7-kg weight loss over 3 months, with enlarging cervical lymph nodes. Which therapy is most appropriate?",
+  [["Ibrutinib",
+    "Correct. His B symptoms (weight loss, night sweats, fevers) are disease-related symptoms, so treatment begins. Targeted therapies are used: Bruton tyrosine kinase inhibitors such as ibrutinib, usually continuous as monotherapy, or venetoclax with a monoclonal antibody."],
+   ["Continued observation",
+    "Observation is for asymptomatic patients; fevers, night sweats and weight loss are disease-related symptoms that start treatment. Tell: B symptoms end watch and wait.", "wrong stage or severity"],
+   ["Radiation to one node",
+    "Radiation is the approach for a single-node, non-aggressive non-Hodgkin lymphoma; his disease is a systemic leukemia with B symptoms. Tell: chronic lymphocytic leukemia is treated with targeted drugs.", "adjacent fact"],
+   ["Bleomycin",
+    "Bleomycin is part of the Hodgkin lymphoma regimen (doxorubicin, bleomycin, vinblastine, dacarbazine), not a chronic lymphocytic leukemia therapy. Tell: symptomatic chronic lymphocytic leukemia is treated with targeted therapy such as a Bruton tyrosine kinase inhibitor.", "confused mechanism or drug class"]],
+  CS(11, 27, 41), "first-line", "treatment"),
+
+V(T_CLL_TX, IO_II,
+  "A 69-year-old woman with chronic lymphocytic leukemia now needs treatment for symptomatic disease. She prefers a time-limited course rather than taking pills indefinitely, even if it is more intensive. Which approach fits her preference?",
+  [["Venetoclax with obinutuzumab",
+    "Correct. A BCL-2 (B-cell lymphoma 2) inhibitor, venetoclax, is combined with a monoclonal antibody such as obinutuzumab for a fixed duration (infusion plus pill, time limited but more intensive). Bruton tyrosine kinase inhibitors are usually continuous as monotherapy."],
+   ["Ibrutinib monotherapy",
+    "Ibrutinib is a Bruton tyrosine kinase inhibitor, usually given continuously as monotherapy, which is the open-ended pill plan she wants to avoid. Tell: the fixed-duration option pairs venetoclax with an antibody.", "adjacent fact"],
+   ["Acalabrutinib monotherapy",
+    "Acalabrutinib is another Bruton tyrosine kinase inhibitor, also usually continuous when used alone. Tell: her wish for a time-limited course points to venetoclax plus a monoclonal antibody.", "adjacent fact"],
+   ["Observation alone",
+    "Observation is for asymptomatic disease without rapid progression; she has symptomatic disease that needs treatment. Tell: once symptoms start, the choice is between continuous and fixed-duration targeted therapy.", "wrong stage or severity"]],
+  CS(11, 13), "agent/regimen", "treatment"),
+
+# ---------------------------------------------------------------- complications and prognosis (s7, s12)
+V(T_CLL_TX, IO_II,
+  "A 76-year-old man has had chronic lymphocytic leukemia, observed without treatment, for 6 years. Over 3 weeks one cervical lymph node has grown rapidly, and he now has fevers, night sweats and weight loss. Which complication has most likely occurred?",
+  [["Richter transformation",
+    "Correct. Richter transformation is chronic lymphocytic leukemia transforming into an aggressive B-cell lymphoma, with poor outcomes. A long, stable course that suddenly turns into a rapidly growing node with B symptoms is that picture."],
+   ["Tumor lysis syndrome",
+    "Tumor lysis syndrome is a medical emergency of rapid tumor breakdown that releases potassium, phosphorus and uric acid; it is a chemical crisis, not one node growing over weeks. Tell: a growing node with B symptoms is transformation, not lysis.", "competing diagnosis"],
+   ["Monoclonal B lymphocytosis",
+    "Monoclonal B lymphocytosis is the precursor that progresses to chronic lymphocytic leukemia at 1-2% per year, not a complication of it. Tell: the move here is from leukemia to an aggressive lymphoma.", "reversed direction or value"],
+   ["Smoldering myeloma",
+    "Smoldering myeloma is an intermediate-stage clonal plasma cell disorder, not a complication of chronic lymphocytic leukemia, and it does not explain a rapidly growing node. Tell: a fast-growing node with B symptoms in this leukemia is Richter transformation.", "competing diagnosis"]],
+  CS(9, 12, 28, 57), "complication", "complication"),
+
+V(T_CLL_DX, IO_II,
+  "A 74-year-old woman with chronic lymphocytic leukemia has had three pneumonias and two sinus infections this year. Her hemoglobin and platelet counts are normal. Which feature of her disease best accounts for these infections?",
+  [["Ineffective white blood cells",
+    "Correct. In chronic lymphocytic leukemia the clonal white cells are ineffective, which leads to infections; anemia causes fatigue and thrombocytopenia causes easy bruising and bleeding. Her normal hemoglobin and platelets leave ineffective white cells as the cause."],
+   ["Thrombocytopenia",
+    "Thrombocytopenia causes easy bruising and bleeding, not infections, and her platelets are normal. Tell: infections come from the ineffective white cells.", "ruled out by a stated finding"],
+   ["Anemia",
+    "Anemia causes fatigue, and her hemoglobin is normal. Tell: repeated infections are the white-cell problem of this leukemia.", "ruled out by a stated finding"],
+   ["IgM hyperviscosity",
+    "Excess IgM with hyperviscosity (blurred vision, headache) belongs to Waldenstrom macroglobulinemia, not to infections in chronic lymphocytic leukemia. Tell: the infection risk here comes from ineffective white cells.", "competing diagnosis"]],
+  C(7), "complication", "complication"),
+
+# ---------------------------------------------------------------- patient education and referral (s6, s9, s12, s13)
+V(T_CLL, IO_II,
+  "A 71-year-old farmer with newly diagnosed chronic lymphocytic leukemia asks whether the pesticides he sprayed for decades caused his leukemia. Which response is accurate?",
+  [["No exposure is a known risk",
+    "Correct. Chronic lymphocytic leukemia has no known occupational or environmental risk factors. Its risk factors are age (median onset 70), male sex (twice as common), and Eastern European or Jewish descent."],
+   ["Pesticides likely caused it",
+    "Farming and pesticides are listed as environmental risk factors for lymphoplasmacytic lymphoma (Waldenstrom macroglobulinemia), not for chronic lymphocytic leukemia. Tell: this leukemia has no known occupational risk factors.", "adjacent fact"],
+   ["Hepatitis C caused it",
+    "Hepatitis C is associated with splenic marginal zone lymphoma, not chronic lymphocytic leukemia. Tell: his leukemia's risks are age, male sex and ancestry, not infection or exposure.", "adjacent fact"],
+   ["Radiation likely caused it",
+    "Radiation is an environmental risk factor listed for multiple myeloma, not for chronic lymphocytic leukemia. Tell: there is no known occupational or environmental risk for this leukemia.", "adjacent fact"]],
+  C(6), "risk factors", "education"),
+
+V(T_CLL_TX, IO_II_POP,
+  "A 78-year-old woman has just been told she has chronic lymphocytic leukemia, Rai stage 0. She asks what her long-term outlook is. Which statement is accurate?",
+  [["She is likely to die with it, not of it",
+    "Correct. Five-year relative survival is about 88%, much improved by novel agents, and the elderly age at onset with ongoing new therapies means many patients will die with chronic lymphocytic leukemia rather than from it. Long-term prognosis is likely very good."],
+   ["She is likely to die of it in 2 years",
+    "Survival is far better: about 88% are alive at 5 years in the modern era. Tell: in an elderly patient this leukemia is usually something she lives with.", "reversed direction or value"],
+   ["It is cured by a short chemotherapy course",
+    "Treatment is targeted therapy, continuous pills or a time-limited infusion plus pill, and it is not described as a short curative course; asymptomatic disease is simply observed. Tell: the outlook is long survival with the disease, not cure.", "common lay belief"],
+   ["It turns into aggressive lymphoma in a year",
+    "Richter transformation to an aggressive B-cell lymphoma is a risk with poor outcomes, but it is not the expected course. Tell: most patients live long with this leukemia.", "wrong stage or severity"]],
+  C(12), "prognosis", "education"),
+
+V(T_CLL_TX, IO_II,
+  "A 73-year-old man with symptomatic chronic lymphocytic leukemia is starting a Bruton tyrosine kinase inhibitor alone. He asks what treatment will be like. Which counseling point is accurate?",
+  [["Daily pills, likely indefinitely",
+    "Correct. Pill therapy may be taken once or more each day and continued indefinitely, and Bruton tyrosine kinase inhibitors are usually continuous as monotherapy. He is unlikely to need hospitalization but will need follow-up for lab monitoring."],
+   ["A hospital stay for each cycle",
+    "Chronic lymphocytic leukemia treatment is unlikely to require hospitalization. Tell: his pill-based therapy is taken at home with outpatient lab follow-up.", "common lay belief"],
+   ["Six months of pills, then stop",
+    "A fixed, time-limited course belongs to the infusion-plus-pill plan (venetoclax with a monoclonal antibody); inhibitor monotherapy is usually continuous. Tell: monotherapy means open-ended pills.", "adjacent fact"],
+   ["Monthly infusions by themselves",
+    "Infusions (monoclonal antibodies) are combined with a pill in the time-limited plan; he is on pill monotherapy. Tell: a Bruton tyrosine kinase inhibitor alone is an oral, continuous treatment.", "confused mechanism or drug class"]],
+  CS(11, 13), "education", "education"),
+
+V(T_CLL_TX, IO_II,
+  "A 70-year-old woman's primary care clinician finds an absolute lymphocyte count of 16,000 per microliter (normal 1,000-4,000), and flow cytometry confirms chronic lymphocytic leukemia. She has no symptoms. Which referral is appropriate?",
+  [["Hematology/oncology",
+    "Correct. Chronic lymphocytic leukemia requires referral to, and management by, a hematologist/oncologist, even when asymptomatic and observed. Treatment choice depends on patient preferences and mutations, and follow-up includes lab monitoring."],
+   ["Infectious disease",
+    "Infections are a complication of ineffective white cells, but the leukemia itself is managed by a hematologist/oncologist. Tell: a confirmed clonal leukemia goes to hematology/oncology.", "adjacent fact"],
+   ["Surgical oncology",
+    "Chronic lymphocytic leukemia is not treated surgically, and she has no node to remove. Tell: diagnosis was made on blood and care is with hematology/oncology.", "confused mechanism or drug class"],
+   ["No referral is needed",
+    "Asymptomatic disease may be observed, but the disease requires referral to and management by a hematologist/oncologist. Tell: watch and wait is still done by the specialist.", "common lay belief"]],
+  C(13), "referral", "referral"),
+
+ORD(V(T_CLL_DX, IO_II,
+  "A 64-year-old man has monoclonal B lymphocytosis: an absolute lymphocyte count of 4,300 per microliter (normal 1,000-4,000) with a clonal B-cell population and no lymphadenopathy, organomegaly, cytopenias or symptoms. He asks how often this progresses to chronic lymphocytic leukemia. Which rate is accurate?",
+  [["About 1-2% per year",
+    "Correct. Monoclonal B lymphocytosis progresses to chronic lymphocytic leukemia at a rate of about 1-2% per year. His count below 5,000 with no nodes, organomegaly, cytopenias or symptoms keeps him in the precursor state for now."],
+   ["About 10% per year",
+    "About 10% per year is the progression rate of smoldering myeloma to multiple myeloma, not of monoclonal B lymphocytosis. Tell: the B-cell precursor progresses at 1-2% per year.", "adjacent fact"],
+   ["About 25% per year",
+    "A quarter per year greatly overstates the risk; monoclonal B lymphocytosis progresses to chronic lymphocytic leukemia at about 1-2% per year. Tell: it is a slow, low-rate precursor.", "reversed direction or value"],
+   ["About 50% per year",
+    "A risk above 50% within 2 years is quoted for some high-risk smoldering myeloma groups, not for monoclonal B lymphocytosis. Tell: this precursor progresses at about 1-2% per year.", "adjacent fact"]],
+  CS(9, 57), "prognosis", "education"), [0, 1, 2, 3]),
+
+]
