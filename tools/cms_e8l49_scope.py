@@ -196,4 +196,43 @@ REQUIRED_VIG = [
 ]
 
 # Review holds (stem prefixes): flagged again by the audit after their one repair. The partition skips them.
-HELD = []
+HELD = [
+    # 273b7f9b2f845369: held after final audit round (explanation defect; no further repair this build).
+    "Which cell comes from the lymphoid progenitor rather than the myeloid progenitor?",
+    # 7669b0f4cb2106d0: held after final audit round (explanation defect; no further repair this build).
+    "Which blood count pattern is most typical of a leukemia?",
+    # 47dcfa90de0cbd26: held after final audit round (explanation defect; no further repair this build).
+    "What is the most common mutation in adult acute lymphoblastic leukemia?",
+    # a7aa2578ad5df3a6: held after final audit round (explanation defect; no further repair this build).
+    "In children with acute lymphoblastic leukemia, which genetic finding is common and favorable?",
+    # ba888eb5941cf2d5: held after final audit round (explanation defect; no further repair this build).
+    "How is a patient with newly diagnosed acute leukemia usually first managed?",
+    # b9e1569e2f8da47e: held after final audit round (explanation defect; no further repair this build).
+    "Which finding is pathognomonic of acute myeloid leukemia?",
+    # f4c5aa23d7faa085: held after final audit round (explanation defect; no further repair this build).
+    "Which chemotherapy class is named as a risk factor for acute myeloid leukemia?",
+    # 1307c89be507f01f: held after final audit round (explanation defect; no further repair this build).
+    "Which test differentiates acute myeloid leukemia from acute lymphoblastic leukemia by cell markers?",
+    # efdb29f1634e0fb9: held after final audit round (explanation defect; no further repair this build).
+    "On morphology, Auer rods (fused lysosomes) confirm which lineage?",
+    # 051e14aba74742dc: held after final audit round (explanation defect; no further repair this build).
+    "Which condition is in the differential of acute myeloid leukemia because it can also cause pancytopenia?",
+    # 67a7330c7e5655e7: held after final audit round (explanation defect; no further repair this build).
+    "Under newer guidelines, certain genetic mutations allow acute myeloid leukemia to be diagnosed with myeloid blasts at or above what percentage?",
+    # 621873016ab0db10: held after final audit round (explanation defect; no further repair this build).
+    "Which translocation causes acute promyelocytic leukemia?",
+    # 88bc98b92a9cd5bd: held after final audit round (explanation defect; no further repair this build).
+    "What does the bone marrow typically look like in myelodysplastic syndrome?",
+    # 1943c5a0f9224e05: held after final audit round (explanation defect; no further repair this build).
+    "Very high-risk myelodysplastic syndrome carries what risk of developing acute myeloid leukemia within 5 years?",
+    # cb233c0fc2efbfda: near-duplicate of 5454806a664d2011 (polycythemia vera leukemic transformation, about 5%).
+    "A 60-year-old woman newly diagnosed with polycythemia vera asks how often it turns into leukemia.",
+    # 5d745fa924bbdb39: near-duplicate of 2002620b718611e4 (BCR-ABL1 below 0.01% beyond 18 months, deepest milestone).
+    "A 54-year-old woman with chronic phase chronic myelogenous leukemia has taken a tyrosine kinase inhibitor for 30 months.",
+    # ef5fa59de6b103a0: failed audit after one repair.
+    'Besides characterizing fitness, what is the ECOG (Eastern Cooperative Oncology Group) performance score frequently used for?',
+    # 6b519b12db14f823: failed audit after one repair.
+    'Which test confirms chronic myelogenous leukemia in a patient with a marked rise in granulocytes?',
+    # 8d1aefe29aee5ada: held by audit.
+    'Which French-American-British subtype is acute promyelocytic leukemia?',
+]

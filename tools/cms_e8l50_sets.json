@@ -1,120 +1,178 @@
 {
  "set1": [
   {
-   "topic": "Hodgkin lymphoma: who, presentation and diagnosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Classical Hodgkin lymphoma cells express which pair of cluster of differentiation markers?",
-   "opts": [
-    [
-     "19 and 5",
-     "Coexpression of cluster of differentiation 19 and 5 identifies chronic lymphocytic leukemia on flow cytometry. Tell: 19 and 5 are the leukemia; 15 and 30 are Hodgkin.",
-     "competing diagnosis"
-    ],
-    [
-     "20 and 5",
-     "Cluster of differentiation 20 is the rituximab target on B cells and 5 is part of the chronic lymphocytic leukemia pair. Tell: classical Hodgkin is 15 and 30.",
-     "adjacent fact"
-    ],
-    [
-     "19 and 30",
-     "Cluster of differentiation 19 belongs to the chronic lymphocytic leukemia pair (with 5). Tell: Hodgkin pairs 30 with 15.",
-     "adjacent fact"
-    ],
-    [
-     "15 and 30",
-     "Correct. Classical Hodgkin lymphoma expresses cluster of differentiation 15 and cluster of differentiation 30. The diagnosis itself is made by excisional lymph node biopsy, avoiding fine needle aspiration."
-    ]
-   ],
-   "c": 3,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 39",
-   "slot": "test finding"
-  },
-  {
    "topic": "Non-Hodgkin lymphoma: risk, presentation, work-up and staging",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Which presentation fits primary mediastinal B-cell lymphoma?",
+   "q": "Which system is used to stage lymphoma?",
    "opts": [
     [
-     "Erythroderma and itching",
-     "Widespread red itchy erythroderma is Sezary syndrome, a cutaneous T-cell lymphoma. Tell: a mediastinal B-cell lymphoma is a chest mass.",
-     "competing diagnosis"
+     "Lugano classification",
+     "Correct. Lymphoma staging is based on the Lugano classification, a modified version of the older Ann Arbor system, which stages by the involved node regions and organs relative to the diaphragm."
     ],
     [
-     "Blurred vision and headache",
-     "Blurred vision and headache come from immunoglobulin M hyperviscosity in lymphoplasmacytic lymphoma. Tell: thick blood blurs vision; a mediastinal mass causes cough.",
-     "competing diagnosis"
-    ],
-    [
-     "Cough and abnormal chest X-ray",
-     "Correct. Primary mediastinal B-cell lymphomas present with a large mediastinal mass, cough and an abnormal chest X-ray. Central nervous system lymphoma, by contrast, presents with headaches, lethargy and neurologic deficits."
-    ],
-    [
-     "Headache and neurologic deficits",
-     "Headaches, lethargy and neurologic deficits that mirror primary brain tumors describe central nervous system lymphoma. Tell: mediastinal disease shows in the chest.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 2,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 24",
-   "slot": "manifestation"
-  },
-  {
-   "topic": "Chronic lymphocytic leukemia: presentation and diagnosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "At what rate does monoclonal B lymphocytosis progress to chronic lymphocytic leukemia?",
-   "opts": [
-    [
-     "1-2% per year",
-     "Correct. Monoclonal B lymphocytosis, a count below 5,000 with no nodes, organomegaly, cytopenias or symptoms, progresses to chronic lymphocytic leukemia at a rate of 1-2% per year."
-    ],
-    [
-     "About 10% per year",
-     "About 10% per year is the progression rate of smoldering myeloma to multiple myeloma. Tell: 10% belongs to smoldering myeloma; 1-2% to monoclonal B lymphocytosis.",
+     "Rai classification",
+     "The Rai classification stages chronic lymphocytic leukemia from the exam and labs. Tell: Rai is for the leukemia; Lugano is for lymphoma.",
      "adjacent fact"
     ],
     [
-     "About 25% per year",
-     "A quarter per year overstates the risk; monoclonal B lymphocytosis progresses at only 1-2% per year. Tell: it is a low-risk precursor.",
-     "reversed direction or value"
+     "Revised International Staging System",
+     "The Revised International Staging System stages multiple myeloma with beta-2 microglobulin, albumin, chromosomes and lactate dehydrogenase. Tell: that is myeloma staging.",
+     "adjacent fact"
     ],
     [
-     "About 50% per year",
-     "Above 50% within 2 years is the risk in some high-risk smoldering myeloma groups, not the yearly rate for monoclonal B lymphocytosis. Tell: 1-2% per year here.",
+     "Eastern Cooperative Oncology Group",
+     "The Eastern Cooperative Oncology Group scale grades performance status, a prognostic factor, not the anatomic stage. Tell: performance is not stage; Lugano stages.",
      "adjacent fact"
     ]
    ],
    "c": 0,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 9",
-   "slot": "prognosis"
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 10, 26, 30, 51",
+   "slot": "test finding"
   },
   {
-   "topic": "Non-Hodgkin lymphoma: risk, presentation, work-up and staging",
+   "topic": "Burkitt lymphoma",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "In the Lugano staging of lymphoma, involved lymph node regions both above and below the diaphragm are which stage?",
+   "q": "What produces the starry sky appearance of Burkitt lymphoma?",
    "opts": [
     [
-     "Stage 1",
-     "Stage 1 is localized disease, a single lymph node region or a single organ. Tell: more than one region crossing the diaphragm is beyond stage 1.",
+     "Benign macrophages among lymphoma",
+     "Correct. The starry sky appearance is sheets of lymphoma cells with benign macrophages that are clearing out the dying lymphoma cells. The pale macrophages are the stars against the dark sheet of tumor."
+    ],
+    [
+     "Binucleated Reed-Sternberg cells",
+     "Binucleated neoplastic B cells (Reed-Sternberg cells) among many immune cells define Hodgkin lymphoma. Tell: few large binucleated cells mean Hodgkin; macrophages in sheets mean Burkitt.",
+     "competing diagnosis"
+    ],
+    [
+     "Clusters of packed follicles",
+     "Clusters of packed follicles are the microscopy of follicular lymphoma. Tell: follicles mean follicular; starry sky means Burkitt.",
+     "competing diagnosis"
+    ],
+    [
+     "Clonal marrow plasma cells",
+     "Plasma cells, terminally differentiated B cells, give rise to the plasma cell disorders such as multiple myeloma. Tell: plasma cells mean myeloma.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 32, 16, 36, 44",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Chronic lymphocytic leukemia: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Who should manage a patient with chronic lymphocytic leukemia?",
+   "opts": [
+    [
+     "A hematologist/oncologist",
+     "Correct. Chronic lymphocytic leukemia requires referral to and management by a hematologist/oncologist, with follow-ups for lab monitoring and treatment, even though hospitalization is unlikely."
+    ],
+    [
+     "The primary care clinician alone",
+     "Referral to and management by a hematologist/oncologist is required, even for a patient who is only being observed. Tell: watch and wait is still specialist-led.",
      "wrong stage or severity"
     ],
     [
-     "Stage 2",
-     "Stage 2 is two or more node regions on the same side of the diaphragm. Tell: crossing the diaphragm moves it to stage 3.",
+     "A radiation oncologist",
+     "Radiation is a treatment for a single-node, non-aggressive non-Hodgkin lymphoma, not the core of this leukemia's care. Tell: the referral is to hematology/oncology.",
+     "adjacent fact"
+    ],
+    [
+     "An infectious disease specialist",
+     "Infections are a risk from ineffective white cells, but they do not make the disease an infectious disease referral. Tell: the managing specialist is a hematologist/oncologist.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 7, 13, 27",
+   "slot": "referral"
+  },
+  {
+   "topic": "Multiple myeloma: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "What is the goal of treatment in multiple myeloma?",
+   "opts": [
+    [
+     "Cure after a single regimen",
+     "Myeloma is considered incurable, and each line of therapy gives shorter remissions. Tell: the aim is long remission, not cure.",
+     "common lay belief"
+    ],
+    [
+     "Observation until symptoms appear",
+     "Myeloma is by definition symptomatic; it is smoldering myeloma, a more indolent process, that is often monitored. Tell: active myeloma is treated.",
      "wrong stage or severity"
     ],
     [
-     "Stage 3",
-     "Correct. In the Lugano classification (a modified Ann Arbor system), stage 3 is two or more lymph node regions above and below the diaphragm. Stage 2 keeps them on the same side; stage 4 is widespread disease in multiple organs."
+     "Complete bone marrow eradication",
+     "Eradication is not the stated aim; the disease remains incurable and relapsing. Tell: prolong remission, protect quality of life.",
+     "common lay belief"
     ],
     [
-     "Stage 4",
-     "Stage 4 is widespread disease with multiple organs involved, with or without nodes. Tell: nodes on both sides without organ spread stop at stage 3.",
+     "Long remissions and quality of life",
+     "Correct. Because myeloma is by definition symptomatic and considered incurable, the goal of treatment is maintaining prolonged remissions to improve survival while maintaining quality of life."
+    ]
+   ],
+   "c": 3,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 49, 52, 54",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Multiple myeloma: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Which statement belongs in education for a patient with multiple myeloma?",
+   "opts": [
+    [
+     "Treatment is likely lifelong",
+     "Correct. Myeloma treatment is likely lifelong, with periods of remission (disease control) followed by worsening symptoms, and life-long follow-up for lab monitoring. Care is by a hematologist/oncologist, ideally a myeloma expert."
+    ],
+    [
+     "One course of therapy cures it",
+     "Myeloma is currently considered incurable, although that may change during the patient's life. Tell: lifelong treatment, not a single course.",
+     "common lay belief"
+    ],
+    [
+     "Follow-up ends after remission",
+     "Life-long follow-ups for lab monitoring and treatment are required. Tell: remission is followed by relapse, so monitoring continues.",
+     "common lay belief"
+    ],
+    [
+     "Primary care can manage it alone",
+     "Myeloma requires referral to and management by a hematologist/oncologist, ideally a myeloma expert. Tell: specialist care is required.",
      "wrong stage or severity"
     ]
    ],
-   "c": 2,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 26",
-   "slot": "test finding"
+   "c": 0,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 55",
+   "slot": "education"
+  },
+  {
+   "topic": "Chronic lymphocytic leukemia: who and why",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "How does sex affect the frequency of chronic lymphocytic leukemia?",
+   "opts": [
+    [
+     "Ten times as common in males",
+     "A tenfold figure belongs to Hodgkin lymphoma, where same-sex siblings of a patient carry a 10 times higher risk. Chronic lymphocytic leukemia is about twice as common in males. Tell: two times for male sex here; ten times is the Hodgkin sibling risk.",
+     "adjacent fact"
+    ],
+    [
+     "Twice as common in males",
+     "Correct. Chronic lymphocytic leukemia is twice as common in males. Other epidemiologic clues are a median onset age of 70 and a higher frequency in Eastern Europeans and people of Jewish descent."
+    ],
+    [
+     "Twice as common in females",
+     "This reverses the sex ratio: chronic lymphocytic leukemia is twice as common in males, not females. Tell: the male predominance is the fact to remember.",
+     "reversed direction or value"
+    ],
+    [
+     "Equal in males and females",
+     "The disease is not evenly split by sex; it occurs twice as often in males. Tell: a sex difference exists, and it favors males.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 6",
+   "slot": "epidemiology"
   },
   {
    "topic": "Non-Hodgkin lymphoma: risk, presentation, work-up and staging",
@@ -146,149 +204,207 @@
    "slot": "risk factors"
   },
   {
-   "topic": "Non-Hodgkin lymphoma: aggressive and T-cell types",
+   "topic": "Non-Hodgkin lymphoma: definition and indolent types",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Which T-cell lymphoma often affects the nasal region?",
+   "q": "Splenic marginal zone lymphoma is associated with which infection?",
    "opts": [
     [
-     "Extranodal natural killer/T-cell",
-     "Correct. Extranodal natural killer/T-cell lymphoma often affects the nasal region. It is one of the diverse T-cell lymphomas, alongside peripheral T-cell (most common), anaplastic large cell and hepatosplenic types."
+     "Hepatitis C",
+     "Correct. Splenic marginal zone lymphoma is associated with hepatitis C. Marginal zone lymphomas make up 5-17% of non-Hodgkin lymphoma, are more common in older adults, and the gastric extranodal form is tied to H. pylori."
     ],
     [
-     "Hepatosplenic T-cell lymphoma",
-     "Hepatosplenic T-cell lymphoma is named for the liver and spleen, not the nose. Tell: the nasal one is extranodal natural killer/T-cell lymphoma.",
-     "competing diagnosis"
+     "Helicobacter pylori",
+     "Helicobacter pylori is linked to gastric mucosa-associated lymphoid tissue lymphoma, the extranodal subtype. Tell: H. pylori is the stomach; hepatitis C is the spleen.",
+     "adjacent fact"
     ],
     [
-     "Intestinal T-cell lymphoma",
-     "Intestinal T-cell lymphomas involve the bowel. Tell: a nasal mass points to the extranodal natural killer/T-cell type.",
-     "competing diagnosis"
+     "Human immunodeficiency virus",
+     "Human immunodeficiency virus is tied to immunodeficiency-associated Burkitt lymphoma and is a general lymphoma risk. Tell: the splenic marginal zone association is hepatitis C.",
+     "adjacent fact"
     ],
     [
-     "Peripheral T-cell, unspecified type",
-     "Peripheral T-cell lymphoma, not otherwise specified, is the most common T-cell lymphoma (one third of cases) but is not tied to the nose. Tell: most common is peripheral; nasal is extranodal natural killer/T-cell.",
+     "Human herpesvirus 8",
+     "Human herpesvirus 8 is on the list of chronic infections that raise non-Hodgkin lymphoma risk, without a link to the splenic subtype. Tell: spleen plus marginal zone means hepatitis C.",
      "adjacent fact"
     ]
    ],
    "c": 0,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 21",
-   "slot": "manifestation"
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 17",
+   "slot": "risk factors"
   },
   {
-   "topic": "Burkitt lymphoma",
-   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly",
-   "q": "Sporadic Burkitt lymphoma is almost always seen below which age?",
+   "topic": "Chronic lymphocytic leukemia: who and why",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Which group has a higher frequency of chronic lymphocytic leukemia?",
    "opts": [
     [
-     "20 years",
-     "Twenty is too young a cut-off; the sporadic type is almost always seen below age 35. Tell: young adults up to their mid-30s are included.",
-     "reversed direction or value"
+     "People of Caribbean descent",
+     "The Caribbean, Central America and South America are where adult T-cell leukemia/lymphoma, linked to human T-lymphotropic virus 1, is more common. Tell: Caribbean origin points to that T-cell lymphoma, not to chronic lymphocytic leukemia.",
+     "adjacent fact"
     ],
+    [
+     "African American people",
+     "African Americans carry a higher risk of multiple myeloma than other races. The group named for chronic lymphocytic leukemia is Eastern European and Jewish descent. Tell: African American race is a stated risk for multiple myeloma.",
+     "adjacent fact"
+    ],
+    [
+     "People from sub-Saharan Africa",
+     "Sub-Saharan Africa and New Guinea are where endemic Burkitt lymphoma, strongly tied to Epstein-Barr virus, is seen. Tell: sub-Saharan Africa means endemic Burkitt, not chronic lymphocytic leukemia.",
+     "adjacent fact"
+    ],
+    [
+     "People of Jewish descent",
+     "Correct. Chronic lymphocytic leukemia is more common in Eastern Europeans and in people of Jewish descent, and twice as common in males. No occupational or environmental risk factor is known."
+    ]
+   ],
+   "c": 3,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 6, 21, 32, 46",
+   "slot": "risk factors"
+  },
+  {
+   "topic": "Multiple myeloma: pathogenesis, risk and CRAB",
+   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. a. infant b. child c. adolescent d. adult e. elderly",
+   "q": "Most multiple myeloma diagnoses occur above which age?",
+   "opts": [
     [
      "35 years",
-     "Correct. Sporadic Burkitt lymphoma is typically seen in the United States and Western Europe, more in males, and almost always below age 35. That makes it a disease of children and young adults."
+     "Thirty-five is far too young; myeloma risk increases with age, and most diagnoses are made over 65. Tell: myeloma is a disease of older adults, mostly over 65.",
+     "adjacent fact"
     ],
     [
-     "50 years",
-     "Fifty is too high; sporadic Burkitt is almost always below 35. Tell: Burkitt is a disease of the young.",
+     "45 years",
+     "Forty-five is too young; most myeloma diagnoses are over 65. Tell: think of an older adult.",
      "reversed direction or value"
     ],
     [
-     "60 years",
-     "Age over 60 is a poor prognostic factor in non-Hodgkin lymphoma and the older Hodgkin peak, not the sporadic Burkitt cut-off. Tell: sporadic Burkitt is under 35.",
+     "65 years",
+     "Correct. Myeloma risk increases with age, and most diagnoses are made over age 65. It is a disease of older adults, also more common in African Americans and in those with prior monoclonal gammopathy or smoldering myeloma."
+    ],
+    [
+     "85 years",
+     "Eighty-five overshoots; most diagnoses come after 65. Tell: the threshold is 65.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 46",
+   "slot": "epidemiology"
+  },
+  {
+   "topic": "Non-Hodgkin lymphoma: definition and indolent types",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Which chromosomal translocation causes follicular lymphoma?",
+   "opts": [
+    [
+     "t(14;18)",
+     "Correct. Follicular lymphoma arises from the t(14;18) translocation, which places the B-cell lymphoma 2 gene on chromosome 14 and prevents cell death. Microscopy often shows clusters of packed follicles."
+    ],
+    [
+     "t(11;14)",
+     "The t(11;14) translocation is not the one that places the B-cell lymphoma 2 gene on chromosome 14 to prevent cell death. Tell: 14;18 is follicular.",
+     "competing diagnosis"
+    ],
+    [
+     "t(4;14)",
+     "The t(4;14) translocation is not the change named for follicular lymphoma, which is t(14;18) placing the B-cell lymphoma 2 gene on chromosome 14. Tell: follicular lymphoma is 14;18.",
+     "adjacent fact"
+    ],
+    [
+     "t(14;16)",
+     "The t(14;16) translocation is not the follicular lymphoma change; that is t(14;18), which prevents cell death through the B-cell lymphoma 2 gene. Tell: the follicular pair is 14 and 18.",
      "adjacent fact"
     ]
    ],
-   "c": 1,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 32",
-   "slot": "epidemiology"
+   "c": 0,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 16",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Hodgkin lymphoma: who, presentation and diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "How much is Hodgkin lymphoma risk raised in a same-sex sibling of a patient?",
+   "opts": [
+    [
+     "2 times",
+     "Twice is the male excess in chronic lymphocytic leukemia, not the Hodgkin sibling risk. Tell: Hodgkin sibling risk is tenfold.",
+     "adjacent fact"
+    ],
+    [
+     "4 times",
+     "Four times understates the sibling risk, which is 10 times. Tell: the same-sex sibling figure is ten.",
+     "reversed direction or value"
+    ],
+    [
+     "10 times",
+     "Correct. Same-sex siblings of a patient have a 10 times increased risk of also developing Hodgkin lymphoma. Epstein-Barr virus is a suspected risk factor, found in 40-50% of cases."
+    ],
+    [
+     "50 times",
+     "Fifty times overstates it; the increase for a same-sex sibling is 10 times. Tell: a tenfold rise.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 6, 37",
+   "slot": "risk factors"
   },
   {
    "topic": "Non-Hodgkin lymphoma: treatment, tumor lysis and prognosis",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "How is a single-node, non-aggressive non-Hodgkin lymphoma treated?",
+   "q": "Outside of lymphoma, in which setting can tumor lysis syndrome also be seen?",
    "opts": [
     [
-     "Radiation",
-     "Correct. Management depends heavily on subtype and presentation; a single-node, non-aggressive lymphoma is treated with radiation. Aggressive B-cell lymphomas instead get multi-drug chemotherapy with rituximab."
-    ],
-    [
-     "Multi-drug chemotherapy",
-     "Multi-drug chemotherapy is the approach to aggressive B-cell lymphomas. Tell: one node and non-aggressive means radiation.",
+     "Monoclonal B lymphocytosis below 5,000",
+     "Monoclonal B lymphocytosis is an elevated lymphocyte count below 5,000 with no lymphadenopathy, organomegaly, cytopenias or symptoms. Tell: tumor lysis needs rapid tumor breakdown.",
      "wrong stage or severity"
     ],
     [
-     "Autologous transplant",
-     "Autologous transplant improves survival in transplant-eligible multiple myeloma. Tell: transplant belongs to myeloma; a single indolent node gets radiation.",
-     "adjacent fact"
+     "Acute leukemia with marked leukocytosis",
+     "Correct. Tumor lysis syndrome can be seen outside lymphomas, in acute lymphocytic leukemia and acute myelogenous leukemia with marked leukocytosis. Within lymphoma it can occur spontaneously in highly aggressive types such as Burkitt."
     ],
     [
-     "Allopurinol and fluids",
-     "Allopurinol and fluids prevent tumor lysis syndrome before aggressive lymphoma treatment; they do not treat the lymphoma. Tell: prevention, not therapy.",
-     "confused mechanism or drug class"
+     "Asymptomatic monoclonal gammopathy",
+     "Monoclonal gammopathy of undetermined significance is an asymptomatic plasma cell condition with a low risk of progression, not a rapidly breaking-down tumor. Tell: tumor lysis needs rapid tumor breakdown.",
+     "wrong stage or severity"
+    ],
+    [
+     "Untreated indolent follicular lymphoma",
+     "Follicular lymphoma is indolent and frequently needs no treatment (watch and wait), so there is no rapid tumor breakdown. Tell: tumor lysis follows rapid breakdown, as in aggressive lymphomas or leukemia with a high count.",
+     "wrong stage or severity"
     ]
    ],
-   "c": 0,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 27",
-   "slot": "first-line"
+   "c": 1,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 9, 16, 28, 44",
+   "slot": "complication"
   },
   {
-   "topic": "Multiple myeloma: management and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "What is the backbone of treatment for newly diagnosed multiple myeloma?",
+   "topic": "Chronic lymphocytic leukemia: management and prognosis",
+   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. a. infant b. child c. adolescent d. adult e. elderly",
+   "q": "Why are many patients expected to die with chronic lymphocytic leukemia rather than from it?",
    "opts": [
     [
-     "Rituximab with four-drug chemotherapy",
-     "Rituximab with multi-drug chemotherapy is the aggressive B-cell lymphoma regimen. Tell: plasma cell disease uses a proteasome inhibitor backbone.",
-     "adjacent fact"
+     "It rarely affects the marrow",
+     "The disease involves the blood, bone marrow, lymph nodes and spleen. Tell: the favorable outlook comes from elderly onset and novel agents, not from sparing the marrow.",
+     "reversed direction or value"
     ],
     [
-     "Novel cellular therapy as first treatment",
-     "Novel therapies, including cellular therapies and bispecific antibodies, are currently used for relapsed myeloma. Tell: they are kept for relapse, not first-line.",
-     "wrong stage or severity"
+     "Older onset and better therapies",
+     "Correct. Ongoing development of novel therapies (such as cellular and bispecific antibody therapies) and the elderly age at onset, median 70 years, mean many patients will die with chronic lymphocytic leukemia rather than from it."
     ],
     [
-     "Proteasome inhibitor, immunomodulatory drug and steroid",
-     "Correct. Newly diagnosed patients are treated with a 3- or 4-drug regimen built on a proteasome inhibitor and immunomodulatory drug backbone with steroids. Transplant candidates add autologous transplant and maintenance."
+     "The disease often regresses alone",
+     "Spontaneous regression is not described; asymptomatic disease is watched until rapid progression or symptoms. Tell: the reasons are age at onset and novel therapies.",
+     "common lay belief"
     ],
     [
-     "Bruton tyrosine kinase inhibitor given continuously",
-     "Continuous Bruton tyrosine kinase inhibitor monotherapy is a chronic lymphocytic leukemia approach. Tell: myeloma starts on proteasome inhibitor, immunomodulatory drug and steroid.",
-     "adjacent fact"
+     "One chemotherapy course cures it",
+     "Survival improved because of novel agents rather than historical chemotherapy, and pill therapy may be indefinite. Tell: control with modern agents in older patients, not a one-course cure.",
+     "common lay belief"
     ]
    ],
-   "c": 2,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 53",
-   "slot": "agent/regimen"
-  },
-  {
-   "topic": "MGUS and smoldering myeloma",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "An M-protein of 1.5 g/dL, clonal marrow plasma cells of 4% and no anemia, bone lesions or renal failure fit which disorder?",
-   "opts": [
-    [
-     "Smoldering multiple myeloma, intermediate stage",
-     "Smoldering myeloma needs an M-protein above 3 g/dL and 10-60% marrow plasma cells. Tell: 1.5 g/dL and 4% are both below those lines.",
-     "wrong stage or severity"
-    ],
-    [
-     "Active multiple myeloma with end-organ damage",
-     "Myeloma needs 10% or more marrow plasma cells or a plasmacytoma plus a CRAB (calcium, renal insufficiency, anemia, bone lesions) feature. Tell: 4% and no end-organ damage rule it out.",
-     "ruled out by a stated finding"
-    ],
-    [
-     "Lymphoplasmacytic lymphoma (Waldenstrom macroglobulinemia)",
-     "Waldenstrom macroglobulinemia is a lymphoma producing immunoglobulin M with hyperviscosity. Tell: no immunoglobulin M or hyperviscosity is given; the numbers fit the low-level plasma cell disorder.",
-     "competing diagnosis"
-    ],
-    [
-     "MGUS (monoclonal gammopathy of undetermined significance)",
-     "Correct. An M-protein below 3 g/dL (1.5 g/dL), clonal marrow plasma cells below 10% (4%) and no myeloma-defining characteristics meet every part of MGUS (monoclonal gammopathy of undetermined significance), which progresses at about 1% per year."
-    ]
-   ],
-   "c": 3,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 56, 57",
-   "slot": "differential"
+   "c": 1,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 12, 4",
+   "slot": "prognosis"
   },
   {
    "topic": "Multiple myeloma: diagnosis and staging",
@@ -320,68 +436,15 @@
    "slot": "prognosis"
   },
   {
-   "topic": "Chronic lymphocytic leukemia: management and prognosis",
-   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. a. infant b. child c. adolescent d. adult e. elderly",
-   "q": "Why are many patients expected to die with chronic lymphocytic leukemia rather than from it?",
-   "opts": [
-    [
-     "The disease often regresses alone",
-     "Spontaneous regression is not described; asymptomatic disease is watched until rapid progression or symptoms. Tell: the reasons are age at onset and novel therapies.",
-     "common lay belief"
-    ],
-    [
-     "One chemotherapy course cures it",
-     "Survival improved because of novel agents rather than historical chemotherapy, and pill therapy may be indefinite. Tell: control with modern agents in older patients, not a one-course cure.",
-     "common lay belief"
-    ],
-    [
-     "It rarely affects the marrow",
-     "The disease involves the blood, bone marrow, lymph nodes and spleen. Tell: the favorable outlook comes from elderly onset and novel agents, not from sparing the marrow.",
-     "reversed direction or value"
-    ],
-    [
-     "Older onset and better therapies",
-     "Correct. Ongoing development of novel therapies (such as cellular and bispecific antibody therapies) and the elderly age at onset, median 70 years, mean many patients will die with chronic lymphocytic leukemia rather than from it."
-    ]
-   ],
-   "c": 3,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 12",
-   "slot": "prognosis"
-  },
-  {
-   "topic": "Burkitt lymphoma",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Endemic Burkitt lymphoma is strongly associated with which virus?",
-   "opts": [
-    [
-     "Hepatitis C virus",
-     "Hepatitis C is associated with splenic marginal zone lymphoma. Tell: the endemic Burkitt virus is Epstein-Barr.",
-     "adjacent fact"
-    ],
-    [
-     "Human T-lymphotropic virus 1",
-     "Human T-lymphotropic virus 1 is linked to adult T-cell leukemia/lymphoma. Tell: Burkitt is a B-cell lymphoma tied to Epstein-Barr virus.",
-     "adjacent fact"
-    ],
-    [
-     "Epstein-Barr virus",
-     "Correct. Endemic Burkitt lymphoma, seen largely in sub-Saharan Africa and New Guinea, is strongly associated with Epstein-Barr virus. The sporadic type is seen in the United States and Western Europe, and the third type with immunodeficiency."
-    ],
-    [
-     "Human immunodeficiency virus",
-     "Human immunodeficiency virus is linked to the immunodeficiency-associated type, not the endemic type. Tell: endemic is the African type, linked to Epstein-Barr virus.",
-     "adjacent fact"
-    ]
-   ],
-   "c": 2,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 32",
-   "slot": "risk factors"
-  },
-  {
    "topic": "Non-Hodgkin lymphoma: treatment, tumor lysis and prognosis",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
    "q": "Which is a poor prognostic factor in non-Hodgkin lymphoma?",
    "opts": [
+    [
+     "Stage I disease",
+     "Stage III or IV, not stage I, predicts a poor prognosis. Tell: localized disease is favorable.",
+     "reversed direction or value"
+    ],
     [
      "B-cell rather than T-cell type",
      "T-cell lymphomas respond less well than B-cell lymphomas, so a B-cell type is not the adverse factor. Tell: T-cell is worse.",
@@ -395,102 +458,39 @@
      "Age under 60",
      "Age over 60 is the poor prognostic factor in non-Hodgkin lymphoma. Tell: younger age is favorable.",
      "reversed direction or value"
-    ],
-    [
-     "Stage I disease",
-     "Stage III or IV, not stage I, predicts a poor prognosis. Tell: localized disease is favorable.",
-     "reversed direction or value"
     ]
    ],
-   "c": 1,
+   "c": 2,
    "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 30",
    "slot": "prognosis"
   },
   {
-   "topic": "Hodgkin lymphoma: management and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "How is early, non-bulky stage I or II Hodgkin lymphoma without B symptoms treated?",
-   "opts": [
-    [
-     "Watch and wait",
-     "Watch and wait suits asymptomatic chronic lymphocytic leukemia or follicular lymphoma, not Hodgkin lymphoma. Tell: early Hodgkin is treated, briefly.",
-     "wrong stage or severity"
-    ],
-    [
-     "Allogeneic stem cell transplant",
-     "Allogeneic stem cell transplant may be required after relapse following first-line therapy. Tell: transplant is for relapse, not early disease.",
-     "wrong stage or severity"
-    ],
-    [
-     "A short course of chemotherapy",
-     "Correct. Early stage I and stage II Hodgkin lymphoma without bulk or B symptoms is treated with a short course of chemotherapy, historically ABVD (doxorubicin, bleomycin, vinblastine, dacarbazine). Bulky disease or B symptoms add radiation."
-    ],
-    [
-     "Chemotherapy plus radiation",
-     "Chemotherapy plus radiation is for bulky stage I or II disease or B symptoms. Tell: early, non-bulky disease without B symptoms needs chemotherapy alone, short course.",
-     "wrong stage or severity"
-    ]
-   ],
-   "c": 2,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 41",
-   "slot": "first-line"
-  },
-  {
-   "topic": "Multiple myeloma: pathogenesis, risk and CRAB",
+   "topic": "Multiple myeloma: diagnosis and staging",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Which group is at higher risk of developing multiple myeloma?",
+   "q": "In the R-ISS (Revised International Staging System), which finding belongs to stage I?",
    "opts": [
     [
-     "People of Jewish descent",
-     "Jewish and Eastern European descent are tied to chronic lymphocytic leukemia. Tell: myeloma's race risk is African American.",
-     "adjacent fact"
-    ],
-    [
-     "People of Caribbean descent",
-     "The Caribbean is where adult T-cell leukemia/lymphoma is more common. Tell: myeloma's higher-risk group is African American.",
-     "adjacent fact"
-    ],
-    [
-     "People from New Guinea",
-     "New Guinea and sub-Saharan Africa are where endemic Burkitt lymphoma is seen. Tell: myeloma's race risk is African American.",
-     "adjacent fact"
-    ],
-    [
-     "African Americans",
-     "Correct. African Americans are at higher risk of developing multiple myeloma than other races. Other risks are older age (most diagnoses over 65), family history, prior monoclonal gammopathy or smoldering myeloma, and radiation, chemical or occupational exposures."
-    ]
-   ],
-   "c": 3,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 46",
-   "slot": "risk factors"
-  },
-  {
-   "topic": "MGUS and smoldering myeloma",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "What is the approximate yearly risk of MGUS (monoclonal gammopathy of undetermined significance) progressing to myeloma?",
-   "opts": [
-    [
-     "About 1% per year",
-     "Correct. MGUS (monoclonal gammopathy of undetermined significance) carries a risk of myeloma progression of about 1% per year. Smoldering myeloma progresses faster, about 10% per year."
-    ],
-    [
-     "About 10% per year",
-     "About 10% per year is the progression rate of smoldering myeloma. Tell: smoldering is 10%; the earlier, lower-risk state is about 1%.",
-     "adjacent fact"
-    ],
-    [
-     "About 25% per year",
-     "A quarter per year overstates it; the premalignant state carries about 1% per year. Tell: low risk of progression.",
+     "Deletion 17p",
+     "Deletion 17p is a high-risk chromosomal abnormality, part of stage III. Tell: stage I needs standard-risk chromosomes.",
      "reversed direction or value"
     ],
     [
-     "About 50% per year",
-     "Above 50% within 2 years applies to some high-risk smoldering myeloma groups. Tell: the asymptomatic low-level disorder is about 1% per year.",
-     "adjacent fact"
+     "High lactate dehydrogenase",
+     "A lactate dehydrogenase above the upper limit of normal is a stage III criterion. Tell: stage I needs a normal lactate dehydrogenase.",
+     "reversed direction or value"
+    ],
+    [
+     "Albumin of at least 3.5 g/dL",
+     "Correct. R-ISS (Revised International Staging System) stage I is beta-2 microglobulin under 3.5 mg/L, albumin of at least 3.5 g/dL, standard-risk chromosomal abnormalities and a normal lactate dehydrogenase."
+    ],
+    [
+     "Beta-2 microglobulin of 5.5 mg/L or more",
+     "Beta-2 microglobulin of 5.5 mg/L or more, regardless of albumin, is a stage III criterion. Tell: high beta-2 microglobulin points to stage III.",
+     "reversed direction or value"
     ]
    ],
-   "c": 0,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 56",
+   "c": 2,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 51",
    "slot": "prognosis"
   },
   {
@@ -498,15 +498,6 @@
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
    "q": "What is needed to assign a Rai stage in chronic lymphocytic leukemia?",
    "opts": [
-    [
-     "A physical exam and labs",
-     "Correct. Rai staging does not require advanced imaging; it can be performed with the physical exam and labs, by checking for lymphadenopathy, organomegaly, anemia and thrombocytopenia alongside the lymphocytosis."
-    ],
-    [
-     "Computed tomography imaging",
-     "Rai staging does not require advanced imaging. Computed tomography or positron emission tomography is used to stage lymphomas. Tell: Rai is a bedside-plus-blood-count staging system.",
-     "adjacent fact"
-    ],
     [
      "A bone marrow biopsy",
      "A marrow biopsy is not needed for Rai staging and is usually not needed for diagnosis either. Tell: the stage comes from the exam and the blood counts.",
@@ -516,1143 +507,48 @@
      "A chromosomal analysis",
      "Cytogenetics inform prognosis and some treatment choices but are not part of the Rai stage. Tell: Rai uses nodes, organs, hemoglobin and platelets, not chromosomes.",
      "adjacent fact"
+    ],
+    [
+     "A physical exam and labs",
+     "Correct. Rai staging does not require advanced imaging; it can be performed with the physical exam and labs, by checking for lymphadenopathy, organomegaly, anemia and thrombocytopenia alongside the lymphocytosis."
+    ],
+    [
+     "Computed tomography imaging",
+     "Rai staging does not require advanced imaging. Computed tomography or positron emission tomography is used to stage lymphomas. Tell: Rai is a bedside-plus-blood-count staging system.",
+     "adjacent fact"
     ]
    ],
-   "c": 0,
+   "c": 2,
    "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 10",
    "slot": "initial test"
   },
   {
-   "topic": "Hodgkin lymphoma: who, presentation and diagnosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "How much is Hodgkin lymphoma risk raised in a same-sex sibling of a patient?",
-   "opts": [
-    [
-     "2 times",
-     "Twice is the male excess in chronic lymphocytic leukemia, not the Hodgkin sibling risk. Tell: Hodgkin sibling risk is tenfold.",
-     "adjacent fact"
-    ],
-    [
-     "4 times",
-     "Four times understates the sibling risk, which is 10 times. Tell: the same-sex sibling figure is ten.",
-     "reversed direction or value"
-    ],
-    [
-     "10 times",
-     "Correct. Same-sex siblings of a patient have a 10 times increased risk of also developing Hodgkin lymphoma. Epstein-Barr virus is a suspected risk factor, found in 40-50% of cases."
-    ],
-    [
-     "50 times",
-     "Fifty times overstates it; the increase for a same-sex sibling is 10 times. Tell: a tenfold rise.",
-     "reversed direction or value"
-    ]
-   ],
-   "c": 2,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 37",
-   "slot": "risk factors"
-  },
-  {
-   "topic": "Multiple myeloma: management and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Which statement belongs in education for a patient with multiple myeloma?",
-   "opts": [
-    [
-     "Primary care can manage it alone",
-     "Myeloma requires referral to and management by a hematologist/oncologist, ideally a myeloma expert. Tell: specialist care is required.",
-     "wrong stage or severity"
-    ],
-    [
-     "Treatment is likely lifelong",
-     "Correct. Myeloma treatment is likely lifelong, with periods of remission (disease control) followed by worsening symptoms, and life-long follow-up for lab monitoring. Care is by a hematologist/oncologist, ideally a myeloma expert."
-    ],
-    [
-     "One course of therapy cures it",
-     "Myeloma is currently considered incurable, although that may change during the patient's life. Tell: lifelong treatment, not a single course.",
-     "common lay belief"
-    ],
-    [
-     "Follow-up ends after remission",
-     "Life-long follow-ups for lab monitoring and treatment are required. Tell: remission is followed by relapse, so monitoring continues.",
-     "common lay belief"
-    ]
-   ],
-   "c": 1,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 55",
-   "slot": "education"
-  },
-  {
-   "topic": "Non-Hodgkin lymphoma: definition and indolent types",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Which chromosomal translocation causes follicular lymphoma?",
-   "opts": [
-    [
-     "t(14;16)",
-     "The t(14;16) translocation is another high-risk abnormality in the myeloma staging table. Tell: myeloma lists 4;14 and 14;16; follicular lymphoma is 14;18.",
-     "adjacent fact"
-    ],
-    [
-     "t(14;18)",
-     "Correct. Follicular lymphoma arises from the t(14;18) translocation, which places the B-cell lymphoma 2 gene on chromosome 14 and prevents cell death. Microscopy often shows clusters of packed follicles."
-    ],
-    [
-     "t(11;14)",
-     "The t(11;14) translocation of the cyclin D1 gene identifies mantle cell lymphoma, an aggressive type. Tell: 11;14 is mantle cell; 14;18 is follicular.",
-     "competing diagnosis"
-    ],
-    [
-     "t(4;14)",
-     "The t(4;14) translocation is a high-risk chromosomal abnormality in the myeloma staging table. Tell: it belongs to multiple myeloma, not to a lymphoma.",
-     "adjacent fact"
-    ]
-   ],
-   "c": 1,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 16",
-   "slot": "etiology"
-  },
-  {
-   "topic": "Chronic lymphocytic leukemia: management and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Which agent used in chronic lymphocytic leukemia is a Bruton tyrosine kinase inhibitor?",
-   "opts": [
-    [
-     "Venetoclax",
-     "Venetoclax is the B-cell lymphoma 2 inhibitor, combined with monoclonal antibodies for a fixed duration. Tell: the kinase inhibitors end in -brutinib.",
-     "confused mechanism or drug class"
-    ],
-    [
-     "Obinutuzumab",
-     "Obinutuzumab is a monoclonal antibody, listed with rituximab and ofatumumab. Tell: monoclonal antibodies end in -mab; the kinase inhibitors end in -brutinib.",
-     "confused mechanism or drug class"
-    ],
-    [
-     "Allopurinol",
-     "Allopurinol is a hypouricemic agent given with fluids before aggressive lymphoma treatment to prevent tumor lysis syndrome. Tell: it prevents a complication; it is not a targeted leukemia therapy.",
-     "confused mechanism or drug class"
-    ],
-    [
-     "Ibrutinib",
-     "Correct. The Bruton tyrosine kinase inhibitors are ibrutinib, acalabrutinib and zanubrutinib, usually given continuously when used as monotherapy. They are one of the targeted therapies for chronic lymphocytic leukemia."
-    ]
-   ],
-   "c": 3,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 11",
-   "slot": "agent/regimen"
-  },
-  {
-   "topic": "Chronic lymphocytic leukemia: who and why",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "About 80% of chronic lymphocytic leukemia cases arise from one of four chromosomal changes. Which is one of them?",
-   "opts": [
-    [
-     "Translocation t(14;18)",
-     "The t(14;18) translocation places the B-cell lymphoma 2 gene on chromosome 14 and prevents cell death in follicular lymphoma. Tell: chronic lymphocytic leukemia changes are deletions or a trisomy, not this translocation.",
-     "adjacent fact"
-    ],
-    [
-     "Translocation t(11;14)",
-     "The t(11;14) translocation of the cyclin D1 gene identifies mantle cell lymphoma. Tell: the four chronic lymphocytic leukemia changes are deletion 13q, deletion 11q, trisomy 12 and deletion 17p.",
-     "adjacent fact"
-    ],
-    [
-     "Translocation t(4;14)",
-     "The t(4;14) translocation is a high-risk chromosomal abnormality in the myeloma staging table, not one of the four chronic lymphocytic leukemia changes. Tell: myeloma high-risk changes are translocations plus deletion 17p.",
-     "adjacent fact"
-    ],
-    [
-     "Deletion 17p",
-     "Correct. About 80% of cases result from loss or addition of chromosomal material in one of four abnormalities: deletion 13q, deletion 11q, trisomy 12 and deletion 17p. These are why cytogenetics matters for prognosis."
-    ]
-   ],
-   "c": 3,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 5",
-   "slot": "etiology"
-  },
-  {
-   "topic": "Multiple myeloma: diagnosis and staging",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Which disorder produces an immunoglobulin M monoclonal protein and is separated from multiple myeloma in the differential?",
-   "opts": [
-    [
-     "Amyloidosis",
-     "Amyloidosis is another disorder with a paraprotein in the differential, but immunoglobulin M production is the Waldenstrom signature. Tell: M means Waldenstrom.",
-     "competing diagnosis"
-    ],
-    [
-     "Waldenstrom macroglobulinemia",
-     "Correct. Waldenstrom macroglobulinemia often produces an immunoglobulin M monoclonal protein, with a different pathophysiology and treatment from myeloma, which most commonly makes immunoglobulin G."
-    ],
-    [
-     "Smoldering myeloma",
-     "Smoldering myeloma is an intermediate plasma cell disorder on the path to myeloma, often monitored. Tell: the immunoglobulin M producer is Waldenstrom macroglobulinemia.",
-     "competing diagnosis"
-    ],
-    [
-     "Reactive hypergammaglobulinemia",
-     "Reactive hypergammaglobulinemia, from cirrhosis or chronic inflammation, is a non-clonal mimic. Tell: a monoclonal immunoglobulin M points to Waldenstrom.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 1,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 49",
-   "slot": "differential"
-  },
-  {
-   "topic": "Hodgkin lymphoma: management and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Which delayed toxicity can follow Hodgkin lymphoma treatment?",
-   "opts": [
-    [
-     "Hyperviscosity",
-     "Hyperviscosity is caused by immunoglobulin M in lymphoplasmacytic lymphoma. Tell: the delayed Hodgkin toxicities are myelodysplastic syndrome, secondary leukemia and other cancers.",
-     "adjacent fact"
-    ],
-    [
-     "Erythroderma",
-     "Erythroderma is the widespread red itchy rash of Sezary syndrome. Tell: Hodgkin treatment's late harms are new marrow cancers.",
-     "adjacent fact"
-    ],
-    [
-     "Secondary leukemia",
-     "Correct. Hodgkin lymphoma treatment may have delayed toxicities, including myelodysplastic syndrome, secondary leukemia and other cancers. Bleomycin also carries pulmonary toxicity."
-    ],
-    [
-     "Richter transformation",
-     "Richter transformation is chronic lymphocytic leukemia changing into an aggressive B-cell lymphoma. Tell: Richter is a leukemia event, not a Hodgkin treatment toxicity.",
-     "adjacent fact"
-    ]
-   ],
-   "c": 2,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 42",
-   "slot": "complication"
-  },
-  {
-   "topic": "Hodgkin lymphoma: who, presentation and diagnosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Where is the lymphadenopathy of Hodgkin lymphoma usually found?",
-   "opts": [
-    [
-     "Mesenteric nodes",
-     "Abdominal nodes are not named; Hodgkin lymphoma is usually cervical, supraclavicular or mediastinal. Tell: above the diaphragm, in the neck.",
-     "adjacent fact"
-    ],
-    [
-     "Cervical nodes",
-     "Correct. Hodgkin lymphoma is characterized by painless asymptomatic lymphadenopathy (70%), usually cervical, but it could be supraclavicular or mediastinal. A mediastinal mass may show on chest X-ray."
-    ],
-    [
-     "Inguinal nodes",
-     "The usual site named is cervical, with supraclavicular or mediastinal as alternatives. Tell: think neck first.",
-     "adjacent fact"
-    ],
-    [
-     "Axillary nodes",
-     "Axillary nodes are not the usual site; the typical Hodgkin node is cervical. Tell: the neck is the classic location.",
-     "adjacent fact"
-    ]
-   ],
-   "c": 1,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 38",
-   "slot": "manifestation"
-  },
-  {
-   "topic": "Hodgkin lymphoma: who, presentation and diagnosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Which symptom pattern is characteristic of Hodgkin lymphoma?",
-   "opts": [
-    [
-     "Node pain worse with alcohol",
-     "Correct. In Hodgkin lymphoma, node pain may worsen with alcohol consumption. Other features are painless cervical lymphadenopathy (70%), a mediastinal mass, splenomegaly (about 30%) and pruritus that may be very intense."
-    ],
-    [
-     "Nodes that grow within a day",
-     "Visible growth over one day is Burkitt lymphoma. Tell: same-day growth means Burkitt; alcohol-related pain means Hodgkin.",
-     "competing diagnosis"
-    ],
-    [
-     "Blurred vision and headache",
-     "Blurred vision and headache come from immunoglobulin M hyperviscosity in lymphoplasmacytic lymphoma. Tell: thick blood, not Hodgkin.",
-     "competing diagnosis"
-    ],
-    [
-     "Bone pain in the back",
-     "Back, chest or pelvic bone pain is a CRAB (calcium, renal insufficiency, anemia, bone lesions) feature of multiple myeloma. Tell: bone pain means myeloma.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 0,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 38",
-   "slot": "manifestation"
-  },
-  {
-   "topic": "Chronic lymphocytic leukemia: management and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "How is asymptomatic chronic lymphocytic leukemia without rapid progression managed?",
-   "opts": [
-    [
-     "Observation (watch and wait)",
-     "Correct. Asymptomatic patients may be observed, watch and wait, until there is evidence of rapid progression (a lymphocyte count doubling in under 6 months) or disease-related symptoms. Treatment begins with symptomatic disease or rapid progression."
-    ],
-    [
-     "Immediate targeted therapy",
-     "Targeted therapy is started for symptomatic disease or rapid progression, not for a stable asymptomatic patient. Tell: no symptoms and no rapid doubling means observe.",
-     "wrong stage or severity"
-    ],
-    [
-     "Allogeneic stem cell transplant",
-     "Allogeneic stem cell transplant is named for Hodgkin lymphoma relapsing after first-line treatment, not for asymptomatic chronic lymphocytic leukemia. Tell: stable, symptom-free disease is watched.",
-     "wrong stage or severity"
-    ],
-    [
-     "Single-node radiation",
-     "Radiation is the treatment for a single-node, non-aggressive non-Hodgkin lymphoma. Tell: an asymptomatic leukemia needs no treatment until symptoms or rapid progression appear.",
-     "adjacent fact"
-    ]
-   ],
-   "c": 0,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 11",
-   "slot": "first-line"
-  },
-  {
-   "topic": "Non-Hodgkin lymphoma: risk, presentation, work-up and staging",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "At what size is a persistent, enlarging lymph node considered significant enough for biopsy?",
-   "opts": [
-    [
-     "0.5 cm",
-     "Half a centimeter is well under the threshold; biopsy is reserved for significant enlargement of 2 cm. Tell: the cut-off is 2 cm.",
-     "reversed direction or value"
-    ],
-    [
-     "1 cm",
-     "One centimeter is below the stated threshold of 2 cm for significant enlargement. Tell: double it.",
-     "reversed direction or value"
-    ],
-    [
-     "2 cm",
-     "Correct. Excisional biopsy is reserved for significant enlargement (2 cm), persistent, and progressively increasing in size. The whole node is removed so its architecture can be seen."
-    ],
-    [
-     "5 cm",
-     "Five centimeters overshoots; a persistent, progressively enlarging node of 2 cm already qualifies. Tell: waiting for 5 cm would delay diagnosis.",
-     "reversed direction or value"
-    ]
-   ],
-   "c": 2,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 25",
-   "slot": "initial test"
-  },
-  {
-   "topic": "Non-Hodgkin lymphoma: definition and indolent types",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Splenic marginal zone lymphoma is associated with which infection?",
-   "opts": [
-    [
-     "Helicobacter pylori",
-     "Helicobacter pylori is linked to gastric mucosa-associated lymphoid tissue lymphoma, the extranodal subtype. Tell: H. pylori is the stomach; hepatitis C is the spleen.",
-     "adjacent fact"
-    ],
-    [
-     "Human immunodeficiency virus",
-     "Human immunodeficiency virus is tied to immunodeficiency-associated Burkitt lymphoma and is a general lymphoma risk. Tell: the splenic marginal zone association is hepatitis C.",
-     "adjacent fact"
-    ],
-    [
-     "Human herpesvirus 8",
-     "Human herpesvirus 8 is on the list of chronic infections that raise non-Hodgkin lymphoma risk, without a link to the splenic subtype. Tell: spleen plus marginal zone means hepatitis C.",
-     "adjacent fact"
-    ],
-    [
-     "Hepatitis C",
-     "Correct. Splenic marginal zone lymphoma is associated with hepatitis C. Marginal zone lymphomas make up 5-17% of non-Hodgkin lymphoma, are more common in older adults, and the gastric extranodal form is tied to H. pylori."
-    ]
-   ],
-   "c": 3,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 17",
-   "slot": "risk factors"
-  }
- ],
- "set2": [
-  {
-   "topic": "Multiple myeloma: pathogenesis, risk and CRAB",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "What causes the renal dysfunction of multiple myeloma?",
-   "opts": [
-    [
-     "Uric acid crystals",
-     "Uric acid and calcium phosphate crystals in the tubules cause the renal failure of tumor lysis syndrome. Tell: uric acid is tumor lysis; light chains are myeloma.",
-     "competing diagnosis"
-    ],
-    [
-     "Hyperviscosity",
-     "Hyperviscosity comes from immunoglobulin M in lymphoplasmacytic lymphoma and causes blurred vision and headache. Tell: myeloma kidneys clog with light chains.",
-     "competing diagnosis"
-    ],
-    [
-     "Osteoclast activation",
-     "Osteoclast activation releases calcium into the blood and causes the hypercalcemia and bone lesions. Tell: osteoclasts explain calcium and bone, not the kidney.",
-     "adjacent fact"
-    ],
-    [
-     "Light chain deposition",
-     "Correct. Renal dysfunction in myeloma often comes from light chain and calcium phosphate deposition. Anemia is multifactorial, from renal dysfunction and bone marrow involvement."
-    ]
-   ],
-   "c": 3,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 45",
-   "slot": "etiology"
-  },
-  {
-   "topic": "Non-Hodgkin lymphoma: risk, presentation, work-up and staging",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "About what share of non-Hodgkin lymphoma patients develop extranodal disease?",
-   "opts": [
-    [
-     "About 10%",
-     "Ten percent understates it; about half develop extranodal disease. Tell: extranodal spread is common, not rare.",
-     "reversed direction or value"
-    ],
-    [
-     "About 25%",
-     "A quarter understates it; about half of patients develop lymphoma outside the nodes. Tell: think one in two.",
-     "reversed direction or value"
-    ],
-    [
-     "About 50%",
-     "Correct. Approximately half of patients develop extranodal disease, lymphoma outside the lymph nodes, such as central nervous system lymphoma. Peripheral lymphadenopathy is present in more than two thirds."
-    ],
-    [
-     "About 90%",
-     "Ninety percent overstates it; peripheral lymphadenopathy (over two thirds) is the most frequent finding, and about half develop extranodal disease. Tell: half, not nearly every patient.",
-     "reversed direction or value"
-    ]
-   ],
-   "c": 2,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 24",
-   "slot": "manifestation"
-  },
-  {
-   "topic": "Non-Hodgkin lymphoma: treatment, tumor lysis and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "In tumor lysis syndrome, which released product carries the largest risk of death?",
-   "opts": [
-    [
-     "Potassium",
-     "Correct. Tumor lysis syndrome releases potassium, phosphorus and uric acid; the largest risk is hyperkalemia, which leads to arrhythmia and potential death. It is a medical emergency needing aggressive intravenous fluids."
-    ],
-    [
-     "Phosphorus",
-     "Phosphorus is released and, as calcium phosphate crystals, contributes to acute renal failure, but the largest risk is from potassium. Tell: the killer is the arrhythmia of hyperkalemia.",
-     "adjacent fact"
-    ],
-    [
-     "Uric acid",
-     "Uric acid precipitates in the renal tubules and causes acute renal failure, which allopurinol helps prevent. Tell: uric acid harms the kidney; potassium causes the fatal arrhythmia.",
-     "adjacent fact"
-    ],
-    [
-     "Calcium",
-     "Calcium phosphate crystals form in the tubules, but calcium itself is not the released product named as the largest risk. Tell: hyperkalemia drives the arrhythmia.",
-     "reversed direction or value"
-    ]
-   ],
-   "c": 0,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 28",
-   "slot": "complication"
-  },
-  {
-   "topic": "Burkitt lymphoma",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Burkitt lymphoma is associated with upregulation of which gene?",
-   "opts": [
-    [
-     "Cyclin D1",
-     "Cyclin D1 translocation t(11;14) identifies mantle cell lymphoma. Tell: cyclin D1 is mantle cell.",
-     "competing diagnosis"
-    ],
-    [
-     "MYD88 (myeloid differentiation primary response 88)",
-     "MYD88 (myeloid differentiation primary response 88) mutation is found in about 90% of lymphoplasmacytic lymphoma. Tell: that marks Waldenstrom macroglobulinemia, not Burkitt.",
-     "competing diagnosis"
-    ],
-    [
-     "MYC (myelocytomatosis oncogene)",
-     "Correct. Burkitt lymphoma is associated with MYC (myelocytomatosis oncogene) upregulation, which stimulates cell growth and division. That explains a swelling that can visibly enlarge over one day."
-    ],
-    [
-     "BCL-2 (B-cell lymphoma 2)",
-     "BCL-2 (B-cell lymphoma 2) is moved to chromosome 14 by t(14;18) in follicular lymphoma, preventing cell death. Tell: the cell-death gene is follicular; Burkitt is the growth gene.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 2,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 31",
-   "slot": "etiology"
-  },
-  {
-   "topic": "Multiple myeloma: diagnosis and staging",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Which criterion diagnoses multiple myeloma?",
-   "opts": [
-    [
-     "Marrow plasma cells of 10% or more with a CRAB (calcium, renal insufficiency, anemia, bone lesions) feature",
-     "Correct. Multiple myeloma is diagnosed by bone marrow plasma cells of 10% or more, or a biopsy-proven plasmacytoma, plus one or more CRAB (calcium, renal insufficiency, anemia, bone lesions) features. A monoclonal protein is characteristic."
-    ],
-    [
-     "Marrow plasma cells under 10% with no CRAB (calcium, renal insufficiency, anemia, bone lesions) feature",
-     "Plasma cells under 10% with no myeloma-defining feature and a small monoclonal protein describe monoclonal gammopathy of undetermined significance. Tell: low cells and no CRAB (calcium, renal insufficiency, anemia, bone lesions) means the premalignant state.",
-     "wrong stage or severity"
-    ],
-    [
-     "Marrow plasma cells of 10% or more and a high monoclonal protein alone",
-     "Plasma cells of 10-60% with a monoclonal protein above 3 g/dL and no myeloma-defining event is smoldering myeloma. Tell: without a CRAB (calcium, renal insufficiency, anemia, bone lesions) feature it is smoldering, not myeloma.",
-     "wrong stage or severity"
-    ],
-    [
-     "An absolute lymphocyte count above 5,000 for 3 months",
-     "A lymphocyte count above 5,000 for 3 months is the blood criterion for chronic lymphocytic leukemia. Tell: lymphocytes are the leukemia; marrow plasma cells plus CRAB (calcium, renal insufficiency, anemia, bone lesions) are myeloma.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 0,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 50",
-   "slot": "gold standard"
-  },
-  {
-   "topic": "Hodgkin lymphoma: management and prognosis",
-   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly",
-   "q": "Which group of Hodgkin lymphoma patients has inferior treatment results?",
-   "opts": [
-    [
-     "Patients in their 20s",
-     "Adults in their 20s form one incidence peak, but inferior results are tied to older age. Tell: young age is not the adverse factor.",
-     "reversed direction or value"
-    ],
-    [
-     "Non-bulky stage I disease",
-     "Bulky disease, not non-bulky early disease, gives inferior results. Tell: small, early disease does well.",
-     "reversed direction or value"
-    ],
-    [
-     "Patients with cervical nodes",
-     "Cervical nodes are the usual presentation and carry no stated adverse meaning. Tell: the adverse groups are older age, bulk and certain subtypes.",
-     "adjacent fact"
-    ],
-    [
-     "Older patients",
-     "Correct. Inferior results are seen with older patients, those with bulky disease and those with certain subtypes (lymphocyte depleted or mixed cellularity). Hodgkin lymphoma is otherwise generally curable."
-    ]
-   ],
-   "c": 3,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 42",
-   "slot": "prognosis"
-  },
-  {
-   "topic": "Non-Hodgkin lymphoma: risk, presentation, work-up and staging",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "In the lymphoma work-up, what does an elevated lactate dehydrogenase reflect?",
-   "opts": [
-    [
-     "Paraprotein level",
-     "A monoclonal protein is measured by protein electrophoresis in the plasma cell disorders. Tell: lactate dehydrogenase tracks proliferation, not a paraprotein.",
-     "adjacent fact"
-    ],
-    [
-     "Rapid proliferation",
-     "Correct. The work-up includes LDH (lactate dehydrogenase), which reflects rapid proliferation, alongside a complete blood count for cytopenias from marrow involvement and chemistries to rule out tumor lysis syndrome."
-    ],
-    [
-     "Marrow involvement",
-     "Bone marrow involvement shows as cytopenias on the complete blood count. Tell: cytopenias reflect the marrow; lactate dehydrogenase reflects rapid proliferation.",
-     "adjacent fact"
-    ],
-    [
-     "Hyperviscosity",
-     "Hyperviscosity comes from excess immunoglobulin M in lymphoplasmacytic lymphoma, not from lactate dehydrogenase. Tell: the enzyme marks fast cell turnover.",
-     "adjacent fact"
-    ]
-   ],
-   "c": 1,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 25",
-   "slot": "test finding"
-  },
-  {
-   "topic": "Non-Hodgkin lymphoma: aggressive and T-cell types",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Which is the more aggressive form of cutaneous T-cell lymphoma?",
-   "opts": [
-    [
-     "Sezary syndrome",
-     "Correct. Sezary syndrome is the more aggressive form of cutaneous T-cell lymphoma, with a widespread, red, itchy rash (erythroderma) that may cause severe pruritus and a diminished quality of life."
-    ],
-    [
-     "Mycosis fungoides",
-     "Mycosis fungoides is the cutaneous T-cell lymphoma itself, skin lesions resembling fungal infection that can progress to ulcerating nodules. Tell: the more aggressive form with erythroderma is Sezary syndrome.",
-     "wrong stage or severity"
-    ],
-    [
-     "Marginal zone lymphoma",
-     "Marginal zone lymphoma is an indolent B-cell lymphoma of mucosal organs, spleen or nodes. Tell: a skin T-cell lymphoma's aggressive form is Sezary syndrome.",
-     "competing diagnosis"
-    ],
-    [
-     "Anaplastic large cell lymphoma",
-     "Anaplastic large cell lymphoma is an aggressive T-cell lymphoma, but it is not the named aggressive cutaneous form. Tell: red itchy erythroderma means Sezary syndrome.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 0,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 22",
-   "slot": "manifestation"
-  },
-  {
-   "topic": "Chronic lymphocytic leukemia: management and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "What is the approximate 5-year relative survival of chronic lymphocytic leukemia in the era of novel agents?",
-   "opts": [
-    [
-     "About 50%",
-     "About 50% is the cure rate of diffuse large B-cell lymphoma, not the survival of chronic lymphocytic leukemia. Tell: this leukemia now has a very good long-term outlook.",
-     "adjacent fact"
-    ],
-    [
-     "About 60%",
-     "About 60% is the 5-year relative survival of multiple myeloma. Tell: chronic lymphocytic leukemia survival is higher, about 88%.",
-     "adjacent fact"
-    ],
-    [
-     "About 78%",
-     "About 78% is the relative 5-year survival of lymphoplasmacytic lymphoma (Waldenstrom macroglobulinemia). Tell: chronic lymphocytic leukemia sits about ten points higher.",
-     "adjacent fact"
-    ],
-    [
-     "About 88%",
-     "Correct. The 5-year relative survival rate, beginning in 2013, is about 88%, much improved compared with historical chemotherapy because of novel agent development."
-    ]
-   ],
-   "c": 3,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 12",
-   "slot": "prognosis"
-  },
-  {
-   "topic": "Hodgkin lymphoma: management and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "If Hodgkin lymphoma relapses after first-line treatment, what may be required?",
-   "opts": [
-    [
-     "Allogeneic stem cell transplant",
-     "Correct. Hodgkin lymphoma that relapses after first-line treatment may require an allogeneic stem cell transplant. Overall, more than 90% of patients are alive at 5 years."
-    ],
-    [
-     "Autologous transplant and maintenance",
-     "Autologous transplant with maintenance therapy improves survival in transplant-eligible multiple myeloma. Tell: for Hodgkin lymphoma relapsing after first-line treatment, the transplant named is allogeneic.",
-     "adjacent fact"
-    ],
-    [
-     "Single-node radiation",
-     "Radiation is for a single-node, non-aggressive non-Hodgkin lymphoma. Tell: relapsed Hodgkin may need a transplant.",
-     "wrong stage or severity"
-    ],
-    [
-     "Observation alone",
-     "Observation suits asymptomatic indolent disease, not relapsed Hodgkin lymphoma. Tell: relapse after first-line therapy escalates to transplant.",
-     "wrong stage or severity"
-    ]
-   ],
-   "c": 0,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 42",
-   "slot": "escalation"
-  },
-  {
-   "topic": "Non-Hodgkin lymphoma: definition and indolent types",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "About what share of non-Hodgkin lymphomas are B-cell lymphomas?",
-   "opts": [
-    [
-     "4%",
-     "Four percent is the share of all new cancer diagnoses in the United States that are non-Hodgkin lymphoma, not the B-cell fraction. Tell: 4% is of all cancers; 85% is the B-cell share of these lymphomas.",
-     "adjacent fact"
-    ],
-    [
-     "15%",
-     "Fifteen percent is the T-cell or natural killer-cell share, not the B-cell share. Tell: B-cell lymphomas are the large majority.",
-     "reversed direction or value"
-    ],
-    [
-     "50%",
-     "The split is not even; B-cell types make up about 85%. Tell: the T-cell and natural killer-cell types are the minority at 15%.",
-     "reversed direction or value"
-    ],
-    [
-     "85%",
-     "Correct. About 85% of non-Hodgkin lymphomas are B-cell and 15% are T-cell or natural killer-cell. Non-Hodgkin lymphoma is a diverse group of lymphoid malignancies that present frequently with lymphadenopathy."
-    ]
-   ],
-   "c": 3,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 15",
-   "slot": "epidemiology"
-  },
-  {
-   "topic": "Multiple myeloma: management and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "How do remissions change with each line of multiple myeloma therapy?",
-   "opts": [
-    [
-     "They become shorter",
-     "Correct. Ultimately each line of therapy has shorter periods of remission, and the disease remains incurable and fatal. That is why most patients need continuous therapy to maintain disease control."
-    ],
-    [
-     "They become longer",
-     "Remissions shorten, not lengthen, with each line. Tell: each relapse is harder to control.",
-     "reversed direction or value"
-    ],
-    [
-     "They stay the same",
-     "Remissions do not stay constant; each line has shorter periods of remission. Tell: they shrink over time.",
-     "reversed direction or value"
-    ],
-    [
-     "They become curative",
-     "Myeloma is considered incurable; later lines do not cure it. Tell: shorter remissions, not cure.",
-     "common lay belief"
-    ]
-   ],
-   "c": 0,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 54",
-   "slot": "prognosis"
-  },
-  {
-   "topic": "Non-Hodgkin lymphoma: definition and indolent types",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "What is the usual management of follicular lymphoma that causes no symptoms?",
-   "opts": [
-    [
-     "Allogeneic stem cell transplant",
-     "Allogeneic stem cell transplant is named for Hodgkin lymphoma relapsing after first-line treatment. Tell: asymptomatic follicular lymphoma is observed.",
-     "wrong stage or severity"
-    ],
-    [
-     "Watch and wait",
-     "Correct. Follicular lymphoma frequently needs no treatment (watch and wait), though it may be treated with intermittent low-intensity therapy if symptomatic; high-risk disease may need more aggressive therapy. It is incurable, but often needs no treatment or only intermittent treatment."
-    ],
-    [
-     "Immediate multi-agent chemotherapy",
-     "Multi-agent chemotherapy is the approach to aggressive B-cell lymphomas. Tell: an asymptomatic indolent lymphoma is watched; intensive therapy is kept for high-risk disease.",
-     "wrong stage or severity"
-    ],
-    [
-     "Emergent hematology transfer",
-     "Rapid transfer of care is required for Burkitt lymphoma, whose doubling time is extremely fast. Tell: emergency transfer is for Burkitt, not an indolent lymphoma.",
-     "wrong stage or severity"
-    ]
-   ],
-   "c": 1,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 16, 34, 42",
-   "slot": "first-line"
-  },
-  {
-   "topic": "Non-Hodgkin lymphoma: treatment, tumor lysis and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Low-grade B-cell lymphoma that needs treatment is treated first with which agent?",
-   "opts": [
-    [
-     "Ibrutinib",
-     "Ibrutinib, a Bruton tyrosine kinase inhibitor, is not the agent named for low-grade B-cell lymphoma; that agent is rituximab. Tell: for a low-grade B-cell lymphoma needing treatment, the named agent is rituximab.",
-     "confused mechanism or drug class"
-    ],
-    [
-     "Bleomycin",
-     "Bleomycin is part of the Hodgkin lymphoma regimen and is being replaced because of pulmonary toxicity. Tell: bleomycin is Hodgkin; rituximab is low-grade B-cell lymphoma.",
-     "adjacent fact"
-    ],
-    [
-     "Allopurinol",
-     "Allopurinol is a hypouricemic agent to prevent tumor lysis syndrome, not a lymphoma therapy. Tell: it protects the kidneys; rituximab treats the lymphoma.",
-     "confused mechanism or drug class"
-    ],
-    [
-     "Rituximab",
-     "Correct. Low-grade B-cell lymphomas are treated with rituximab, an anti-cluster of differentiation 20 monoclonal antibody, if treatment is required, with chemotherapy added if the disease is extensive."
-    ]
-   ],
-   "c": 3,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 27",
-   "slot": "first-line"
-  },
-  {
-   "topic": "Non-Hodgkin lymphoma: risk, presentation, work-up and staging",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "Which test makes the diagnosis of non-Hodgkin lymphoma?",
-   "opts": [
-    [
-     "Positron emission tomography",
-     "Computed tomography or positron emission tomography is required to characterize and stage the lymphoma, not to diagnose it. Tell: imaging stages; the excised node diagnoses.",
-     "adjacent fact"
-    ],
-    [
-     "Excisional lymph node biopsy",
-     "Correct. The diagnosis is made by excisional lymph node biopsy, because the whole node is needed to observe its architecture. Fine needle aspiration is avoided because it may miss the diagnosis."
-    ],
-    [
-     "Fine needle aspiration",
-     "Fine needle aspiration is avoided: it cannot show lymph node architecture and may miss the diagnosis. Tell: lymphoma needs the whole node.",
-     "wrong stage or severity"
-    ],
-    [
-     "Peripheral flow cytometry",
-     "Flow cytometry of the blood confirms chronic lymphocytic leukemia by showing a clonal B-cell population. Tell: blood flow is for the leukemia; an excised node is for lymphoma.",
-     "adjacent fact"
-    ]
-   ],
-   "c": 1,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 25",
-   "slot": "gold standard"
-  },
-  {
-   "topic": "Non-Hodgkin lymphoma: treatment, tumor lysis and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "How is tumor lysis syndrome prevented before treating an aggressive lymphoma?",
-   "opts": [
-    [
-     "Delaying treatment until stable",
-     "Aggressive lymphomas, especially Burkitt, need prompt treatment; prevention means preparing with fluids and allopurinol, not waiting. Tell: anticipate and protect, then treat.",
-     "wrong stage or severity"
-    ],
-    [
-     "Fluid restriction during therapy",
-     "Tumor lysis syndrome requires aggressive intravenous fluid hydration; restricting fluids would worsen crystal precipitation. Tell: give fluids, never restrict them.",
-     "reversed direction or value"
-    ],
-    [
-     "Allopurinol and fluids beforehand",
-     "Correct. Tumor lysis syndrome should be anticipated in aggressive lymphoma, and patients are given allopurinol (a hypouricemic agent) and fluids in advance. Patients are told to drink plenty of fluids and take allopurinol on starting treatment."
-    ],
-    [
-     "Potassium replacement beforehand",
-     "Tumor lysis releases potassium, and hyperkalemia is its greatest danger, so extra potassium is the opposite of prevention. Tell: the goal is clearing products, not adding potassium.",
-     "reversed direction or value"
-    ]
-   ],
-   "c": 2,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 28, 34",
-   "slot": "first-line"
-  },
-  {
-   "topic": "MGUS and smoldering myeloma",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Which set of findings defines MGUS (monoclonal gammopathy of undetermined significance)?",
-   "opts": [
-    [
-     "Lymphocytes under 5,000 with no nodes",
-     "A lymphocyte count below 5,000 with no nodes, organomegaly or cytopenias is monoclonal B lymphocytosis. Tell: that is a lymphocyte clone, not a plasma cell clone.",
-     "competing diagnosis"
-    ],
-    [
-     "M-protein under 3 g/dL, plasma cells under 10%",
-     "Correct. MGUS (monoclonal gammopathy of undetermined significance) is by definition asymptomatic: M-protein below 3 g/dL, clonal bone marrow plasma cells below 10% and no myeloma-defining characteristics. It progresses to myeloma at about 1% per year."
-    ],
-    [
-     "M-protein over 3 g/dL, plasma cells 10-60%",
-     "An M-protein above 3 g/dL with 10-60% marrow plasma cells and no myeloma-defining events is smoldering myeloma. Tell: higher numbers without CRAB (calcium, renal insufficiency, anemia, bone lesions) features mean smoldering.",
-     "wrong stage or severity"
-    ],
-    [
-     "Plasma cells 10% or more with bone lesions",
-     "Plasma cells of 10% or more plus a CRAB (calcium, renal insufficiency, anemia, bone lesions) feature such as bone lesions defines multiple myeloma. Tell: an end-organ feature means myeloma.",
-     "wrong stage or severity"
-    ]
-   ],
-   "c": 1,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 56",
-   "slot": "test finding"
-  },
-  {
-   "topic": "Chronic lymphocytic leukemia: management and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "When used as monotherapy, how long is a Bruton tyrosine kinase inhibitor usually given?",
-   "opts": [
-    [
-     "Continuously",
-     "Correct. Bruton tyrosine kinase inhibitors (ibrutinib, acalabrutinib, zanubrutinib) are usually continuous when used as monotherapy; pill therapy may be indefinite. Time-limited courses belong to the combination regimens."
-    ],
-    [
-     "For a fixed course",
-     "A fixed duration describes venetoclax combined with monoclonal antibodies. Tell: kinase inhibitor monotherapy keeps going.",
-     "confused mechanism or drug class"
-    ],
-    [
-     "Until the count halves",
-     "No count-based stopping point is given; the drug is usually continuous as monotherapy. Tell: monotherapy is open-ended.",
-     "common lay belief"
-    ],
-    [
-     "Until symptoms settle",
-     "Kinase inhibitor monotherapy is not stopped when symptoms improve; it is usually continuous and the pill may be indefinite. Tell: continuous, not symptom-guided.",
-     "common lay belief"
-    ]
-   ],
-   "c": 0,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 11",
-   "slot": "agent/regimen"
-  },
-  {
-   "topic": "Chronic lymphocytic leukemia: who and why",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Chronic lymphocytic leukemia is a proliferation of which cell type?",
-   "opts": [
-    [
-     "Clonal plasma cells",
-     "Clonal plasma cells, terminally differentiated B cells, define the plasma cell disorders such as multiple myeloma, not chronic lymphocytic leukemia. Tell: plasma cells make a monoclonal protein; this leukemia is a lymphocytosis of mature B cells.",
-     "competing diagnosis"
-    ],
-    [
-     "Mature B lymphocytes",
-     "Correct. Chronic lymphocytic leukemia is a proliferative leukemia of mature B-cell lymphocytes found in the blood, bone marrow, lymph nodes and spleen. Mutagenesis occurs in mature B cells, which is why the disease presents as a clonal population."
-    ],
-    [
-     "Immature lymphoblasts",
-     "Immature blasts describe an acute leukemia, not this chronic disease, whose cells are mature B lymphocytes. Tell: chronic means mature cells accumulating; acute means blasts.",
-     "competing diagnosis"
-    ],
-    [
-     "Mature T lymphocytes",
-     "Mature T-cell leukemias exist but are rare and carry another name, T-cell prolymphocytic leukemia. Chronic lymphocytic leukemia itself is a B-cell disease. Tell: the common chronic lymphocytic leukemia is B-cell; the T-cell form is rare and named separately.",
-     "adjacent fact"
-    ]
-   ],
-   "c": 1,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 4",
-   "slot": "etiology"
-  },
-  {
    "topic": "Chronic lymphocytic leukemia: presentation and diagnosis",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "Which organ enlargement is most often found on exam in chronic lymphocytic leukemia?",
+   "q": "How is chronic lymphocytic leukemia most often first discovered?",
    "opts": [
     [
-     "Nasal mass",
-     "A nasal-region mass points to extranodal natural killer/T-cell lymphoma, not chronic lymphocytic leukemia. Tell: this leukemia enlarges the spleen in about 40%.",
-     "competing diagnosis"
-    ],
-    [
-     "Splenomegaly",
-     "Correct. On exam, splenomegaly is found in about 40% of patients, while hepatomegaly is less common. Organ enlargement also moves the Rai stage to II when lymphocytosis and lymphadenopathy are present."
-    ],
-    [
-     "Hepatomegaly",
-     "Hepatomegaly can occur but is less common than splenomegaly (about 40%). Tell: the spleen is the organ enlarged most often here.",
+     "From B symptoms",
+     "Only 5-10% of patients develop B symptoms (weight loss, night sweats, fevers), so they are not the usual route to diagnosis. Tell: most patients have no symptoms at all when the count is found.",
      "wrong stage or severity"
     ],
     [
-     "Mediastinal mass",
-     "A mediastinal mass on chest X-ray is a feature of Hodgkin lymphoma and of primary mediastinal B-cell lymphoma, not the usual exam finding here. Tell: a chest mass suggests a lymphoma; the spleen is the organ that enlarges in this leukemia.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 1,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 7",
-   "slot": "manifestation"
-  },
-  {
-   "topic": "Multiple myeloma: management and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "What is the goal of treatment in multiple myeloma?",
-   "opts": [
-    [
-     "Long remissions and quality of life",
-     "Correct. Because myeloma is by definition symptomatic and considered incurable, the goal of treatment is maintaining prolonged remissions to improve survival while maintaining quality of life."
-    ],
-    [
-     "Cure after a single regimen",
-     "Myeloma is considered incurable, and each line of therapy gives shorter remissions. Tell: the aim is long remission, not cure.",
-     "common lay belief"
-    ],
-    [
-     "Observation until symptoms appear",
-     "Myeloma is by definition symptomatic; observation fits smoldering myeloma or monoclonal gammopathy. Tell: active myeloma is treated.",
+     "From a bleeding episode",
+     "Thrombocytopenia can cause easy bruising and bleeding, but most patients are asymptomatic when diagnosed. Tell: bleeding is a cytopenia symptom, not the common first clue.",
      "wrong stage or severity"
     ],
     [
-     "Complete bone marrow eradication",
-     "Eradication is not the stated aim; the disease remains incurable and relapsing. Tell: prolong remission, protect quality of life.",
-     "common lay belief"
-    ]
-   ],
-   "c": 0,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 52",
-   "slot": "first-line"
-  },
-  {
-   "topic": "Hodgkin lymphoma: who, presentation and diagnosis",
-   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly",
-   "q": "Hodgkin lymphoma has a bimodal incidence. Which two age groups are affected?",
-   "opts": [
-    [
-     "Adults in their 40s and over 80",
-     "The peaks are earlier: adults in their 20s and adults over 60. Tell: one peak in young adulthood, one past 60.",
-     "reversed direction or value"
+     "From a fast-growing mass",
+     "A very rapidly growing swelling, with changes visible during the course of one day, describes Burkitt lymphoma, a very aggressive lymphoma. Chronic lymphocytic leukemia nodes are painless, firm and mobile, and the disease is often silent. Tell: rapid growth means Burkitt.",
+     "competing diagnosis"
     ],
     [
-     "Adults in their 20s and 40s",
-     "The younger peak in the 20s is right, but the second is in adults over 60, not the 40s. Tell: the older peak is past 60.",
-     "reversed direction or value"
-    ],
-    [
-     "Adults in their 20s and over 60",
-     "Correct. Hodgkin lymphoma has a bimodal incidence, peaking in adults in their 20s and in adults over 60 years old. Older patients also have inferior results with treatment."
-    ],
-    [
-     "Children under 5 and over 60",
-     "Early childhood is not one of the peaks; the younger peak is adults in their 20s. Tell: young adults, not toddlers.",
-     "reversed direction or value"
-    ]
-   ],
-   "c": 2,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 37",
-   "slot": "epidemiology"
-  },
-  {
-   "topic": "Multiple myeloma: pathogenesis, risk and CRAB",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "What causes the hypercalcemia of multiple myeloma?",
-   "opts": [
-    [
-     "Light chain deposition",
-     "Light chain and calcium phosphate deposition cause the renal dysfunction of myeloma, not the hypercalcemia. Tell: light chains hit the kidney; osteoclasts release the calcium.",
-     "adjacent fact"
-    ],
-    [
-     "Tumor lysis",
-     "Tumor lysis releases potassium, phosphorus and uric acid, not calcium from bone. Tell: myeloma calcium comes from bone resorption.",
-     "adjacent fact"
-    ],
-    [
-     "Renal calcium retention",
-     "Renal dysfunction in myeloma comes from light chain and calcium phosphate deposition; the calcium itself comes from bone. Tell: osteoclasts are the source.",
-     "reversed direction or value"
-    ],
-    [
-     "Osteoclast activation",
-     "Correct. Myeloma activates osteoclasts, resulting in calcium release into the bloodstream. Hypercalcemia causes constipation, increased thirst, urinary frequency and nausea, and the same bone resorption makes punched-out lesions."
+     "On routine blood work",
+     "Correct. Chronic lymphocytic leukemia is frequently diagnosed while the patient is asymptomatic, on routine blood work that shows a lymphocytosis. Symptoms, when present, come from nodes, cytopenias or B symptoms."
     ]
    ],
    "c": 3,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 45",
-   "slot": "etiology"
-  },
-  {
-   "topic": "Chronic lymphocytic leukemia: Rai staging",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "In the Rai classification, lymphocytosis with lymphadenopathy and splenomegaly, with normal hemoglobin and platelets, is which stage?",
-   "opts": [
-    [
-     "Stage I",
-     "Stage I is lymphocytosis with lymphadenopathy only. Tell: an enlarged spleen counts as organomegaly and moves the stage to II.",
-     "wrong stage or severity"
-    ],
-    [
-     "Stage II",
-     "Correct. Rai stage II is lymphocytosis, lymphadenopathy and organomegaly, defined as hepatomegaly and/or splenomegaly. With no anemia and no thrombocytopenia, the stage does not rise to III or IV."
-    ],
-    [
-     "Stage III",
-     "Stage III requires anemia. Tell: the hemoglobin is normal, so organomegaly alone stops at stage II.",
-     "wrong stage or severity"
-    ],
-    [
-     "Stage IV",
-     "Stage IV requires thrombocytopenia. Tell: the platelets are normal, so the stage cannot reach IV.",
-     "wrong stage or severity"
-    ]
-   ],
-   "c": 1,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 10",
-   "slot": "test finding"
-  },
-  {
-   "topic": "Chronic lymphocytic leukemia: who and why",
-   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. a. infant b. child c. adolescent d. adult e. elderly",
-   "q": "What is the median age at diagnosis of chronic lymphocytic leukemia?",
-   "opts": [
-    [
-     "40 years",
-     "Forty is far too young for the median; chronic lymphocytic leukemia is a disease of older adults with a median age of 70 years. Tell: think of an older adult found on routine blood work, not a young adult.",
-     "reversed direction or value"
-    ],
-    [
-     "55 years",
-     "Fifty-five falls well short of the median age of 70 years for chronic lymphocytic leukemia. Tell: the median sits a decade above 60, not below it.",
-     "reversed direction or value"
-    ],
-    [
-     "70 years",
-     "Correct. The median age at diagnosis, and at onset, of chronic lymphocytic leukemia is 70 years, so it is a disease of older adults. That elderly onset is one reason many patients are expected to die with the disease rather than from it."
-    ],
-    [
-     "85 years",
-     "Eighty-five overshoots; the median age at diagnosis is 70 years. Tell: the median is 70, so half of patients are diagnosed younger than that.",
-     "reversed direction or value"
-    ]
-   ],
-   "c": 2,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 4, 6",
-   "slot": "epidemiology"
-  },
-  {
-   "topic": "Chronic lymphocytic leukemia: presentation and diagnosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "What share of chronic lymphocytic leukemia patients develop B symptoms?",
-   "opts": [
-    [
-     "5-10%",
-     "Correct. Only 5-10% of patients develop B symptoms (weight loss, night sweats, fevers). Most are diagnosed while asymptomatic, and painless lymphadenopathy (50-90%) is far more frequent."
-    ],
-    [
-     "About 40%",
-     "About 40% is the frequency of splenomegaly on exam, not of B symptoms. Tell: B symptoms are uncommon, at 5-10%.",
-     "adjacent fact"
-    ],
-    [
-     "50-90%",
-     "Fifty to 90% is the frequency of painless lymphadenopathy in chronic lymphocytic leukemia, not of B symptoms. Tell: nodes are common; B symptoms are rare at 5-10%.",
-     "adjacent fact"
-    ],
-    [
-     "About 70%",
-     "Seventy percent is the share of Hodgkin lymphoma patients with painless asymptomatic lymphadenopathy, not of B symptoms in chronic lymphocytic leukemia. Tell: B symptoms here are a small minority, 5-10%.",
-     "adjacent fact"
-    ]
-   ],
-   "c": 0,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 7",
-   "slot": "manifestation"
-  },
-  {
-   "topic": "Non-Hodgkin lymphoma: definition and indolent types",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
-   "q": "What is the typical presentation of follicular lymphoma?",
-   "opts": [
-    [
-     "Node pain after alcohol",
-     "Node pain that worsens with alcohol is a Hodgkin lymphoma feature. Tell: alcohol-linked pain points to Hodgkin; follicular nodes are painless and fluctuate in size.",
-     "competing diagnosis"
-    ],
-    [
-     "Erythroderma with itching",
-     "A widespread red itchy rash (erythroderma) is Sezary syndrome, the aggressive form of cutaneous T-cell lymphoma. Tell: skin disease means a T-cell lymphoma; follicular lymphoma presents with nodes.",
-     "competing diagnosis"
-    ],
-    [
-     "Waxing and waning painless nodes",
-     "Correct. Follicular lymphoma typically has an indolent presentation with waxing and waning painless lymphadenopathy. It is the most common indolent histology of non-Hodgkin lymphoma."
-    ],
-    [
-     "Rapid swelling within a day",
-     "Swelling that visibly grows over one day is Burkitt lymphoma, a very aggressive variant. Tell: day-to-day growth means Burkitt; waxing and waning means follicular.",
-     "competing diagnosis"
-    ]
-   ],
-   "c": 2,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 16",
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 7, 31",
    "slot": "manifestation"
   },
   {
@@ -1685,39 +581,275 @@
    "slot": "gold standard"
   },
   {
-   "topic": "Chronic lymphocytic leukemia: management and prognosis",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
-   "q": "How is venetoclax typically given in chronic lymphocytic leukemia?",
+   "topic": "Burkitt lymphoma",
+   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly",
+   "q": "How does the long-term prognosis of promptly treated Burkitt lymphoma differ between children and adults?",
    "opts": [
     [
-     "With radiation, for one node",
-     "Radiation is used for a single-node, non-aggressive non-Hodgkin lymphoma, not combined with venetoclax. Tell: venetoclax pairs with a monoclonal antibody.",
+     "Poor in both, under 20%",
+     "Burkitt lymphoma is very aggressive, but with early multi-agent chemotherapy its long-term prognosis is excellent. Tell: aggressive does not mean hopeless here.",
+     "common lay belief"
+    ],
+    [
+     "Over 90% in children, 50-90% in adults",
+     "Correct. With early identification and multi-agent chemotherapy, long-term prognosis is excellent: above 90% in children and 50-90% in adults. Prompt treatment with emergent hematology referral is the key."
+    ],
+    [
+     "50-90% in children, over 90% in adults",
+     "This reverses the groups: children do best, above 90%, and adults reach 50-90%. Tell: the pediatric figure is the higher one.",
+     "reversed direction or value"
+    ],
+    [
+     "Equal, about 60% in both groups",
+     "Outcomes are not equal; children exceed 90% while adults range 50-90%. Tell: age matters, favoring children.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 33",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "Hodgkin lymphoma: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "If Hodgkin lymphoma relapses after first-line treatment, what may be required?",
+   "opts": [
+    [
+     "Single-node radiation",
+     "Radiation is for a single-node, non-aggressive non-Hodgkin lymphoma. Tell: relapsed Hodgkin may need a transplant.",
+     "wrong stage or severity"
+    ],
+    [
+     "Observation alone",
+     "Observation (watch and wait) suits asymptomatic follicular lymphoma, not relapsed Hodgkin lymphoma. Tell: relapse after first-line therapy escalates to transplant.",
+     "wrong stage or severity"
+    ],
+    [
+     "Allogeneic stem cell transplant",
+     "Correct. Hodgkin lymphoma that relapses after first-line treatment may require an allogeneic stem cell transplant. Overall, more than 90% of patients are alive at 5 years."
+    ],
+    [
+     "Autologous transplant and maintenance",
+     "Autologous transplant followed by maintenance therapy is the step shown to improve overall survival in transplant-eligible multiple myeloma; for Hodgkin lymphoma that relapses after first-line treatment, the transplant named is allogeneic. Tell: relapsed Hodgkin may require an allogeneic stem cell transplant.",
      "adjacent fact"
-    ],
-    [
-     "As maintenance after transplant",
-     "Maintenance therapy after autologous transplant improves survival in multiple myeloma. Tell: transplant maintenance belongs to myeloma; venetoclax is a time-limited combination here.",
-     "adjacent fact"
-    ],
-    [
-     "With an antibody, for a fixed time",
-     "Correct. Venetoclax, the B-cell lymphoma 2 inhibitor, is combined with monoclonal antibodies for a fixed duration. That contrasts with Bruton tyrosine kinase inhibitors, which are usually continuous when used alone."
-    ],
-    [
-     "Alone, continued indefinitely",
-     "Continuous monotherapy describes the Bruton tyrosine kinase inhibitors such as ibrutinib. Tell: venetoclax is paired with an antibody and given for a set time.",
-     "confused mechanism or drug class"
     ]
    ],
    "c": 2,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 11",
-   "slot": "agent/regimen"
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 42, 16, 27, 53",
+   "slot": "escalation"
+  },
+  {
+   "topic": "Non-Hodgkin lymphoma: treatment, tumor lysis and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "In tumor lysis syndrome, which released product carries the largest risk of death?",
+   "opts": [
+    [
+     "Uric acid",
+     "Uric acid precipitates in the renal tubules and causes acute renal failure, which allopurinol helps prevent. Tell: uric acid harms the kidney; potassium causes the fatal arrhythmia.",
+     "adjacent fact"
+    ],
+    [
+     "Calcium",
+     "Calcium phosphate crystals form in the tubules, but calcium itself is not the released product named as the largest risk. Tell: hyperkalemia drives the arrhythmia.",
+     "reversed direction or value"
+    ],
+    [
+     "Potassium",
+     "Correct. Tumor lysis syndrome releases potassium, phosphorus and uric acid; the largest risk is hyperkalemia, which leads to arrhythmia and potential death. It is a medical emergency needing aggressive intravenous fluids."
+    ],
+    [
+     "Phosphorus",
+     "Phosphorus is released and, as calcium phosphate crystals, contributes to acute renal failure, but the largest risk is from potassium. Tell: the killer is the arrhythmia of hyperkalemia.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 28",
+   "slot": "complication"
+  },
+  {
+   "topic": "MGUS and smoldering myeloma",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Which set of findings defines MGUS (monoclonal gammopathy of undetermined significance)?",
+   "opts": [
+    [
+     "Lymphocytes under 5,000 with no nodes",
+     "A lymphocyte count below 5,000 with no nodes, organomegaly or cytopenias is monoclonal B lymphocytosis. Tell: that is a lymphocyte clone, not a plasma cell clone.",
+     "competing diagnosis"
+    ],
+    [
+     "M-protein under 3 g/dL, plasma cells under 10%",
+     "Correct. MGUS (monoclonal gammopathy of undetermined significance) is by definition asymptomatic: M-protein below 3 g/dL, clonal bone marrow plasma cells below 10% and no myeloma-defining characteristics. It progresses to myeloma at about 1% per year."
+    ],
+    [
+     "M-protein over 3 g/dL, plasma cells 10-60%",
+     "An M-protein above 3 g/dL with 10-60% marrow plasma cells and no myeloma-defining events is smoldering myeloma. Tell: higher numbers without CRAB (calcium, renal insufficiency, anemia, bone lesions) features mean smoldering.",
+     "wrong stage or severity"
+    ],
+    [
+     "Plasma cells 10% or more with bone lesions",
+     "Plasma cells of 10% or more plus a CRAB (calcium, renal insufficiency, anemia, bone lesions) feature such as bone lesions defines multiple myeloma. Tell: an end-organ feature means myeloma.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 9, 47, 50, 56",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Multiple myeloma: pathogenesis, risk and CRAB",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "What causes the renal dysfunction of multiple myeloma?",
+   "opts": [
+    [
+     "Osteoclast activation",
+     "Osteoclast activation releases calcium into the bloodstream; the kidney injury itself is named as light chain and calcium phosphate deposition. Tell: osteoclasts raise calcium; the main kidney injury named is light chain deposition.",
+     "adjacent fact"
+    ],
+    [
+     "Light chain deposition",
+     "Correct. Renal dysfunction in myeloma often comes from light chain and calcium phosphate deposition. Anemia is multifactorial, from renal dysfunction and bone marrow involvement."
+    ],
+    [
+     "Uric acid crystals",
+     "Uric acid and calcium phosphate crystals in the tubules cause the renal failure of tumor lysis syndrome. Tell: uric acid is tumor lysis; light chains are myeloma.",
+     "competing diagnosis"
+    ],
+    [
+     "Hyperviscosity",
+     "Hyperviscosity is not the named cause of myeloma kidney injury, which is light chain and calcium phosphate deposition. Tell: myeloma kidneys clog with light chains.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 45, 28",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Hodgkin lymphoma: who, presentation and diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "How does Hodgkin lymphoma typically spread?",
+   "opts": [
+    [
+     "Randomly, skipping nodes",
+     "Hodgkin lymphoma spreads contiguously in an orderly fashion, not by skipping. Tell: orderly is the key word.",
+     "reversed direction or value"
+    ],
+    [
+     "Mainly to the skin",
+     "Skin lesions that resemble fungal infections are the presentation of cutaneous T-cell lymphoma. Tell: Hodgkin spreads node to adjacent node.",
+     "competing diagnosis"
+    ],
+    [
+     "Mainly to the bone",
+     "Osteolytic, punched-out bone lesions are a feature of multiple myeloma. Tell: Hodgkin spreads through contiguous nodes.",
+     "competing diagnosis"
+    ],
+    [
+     "Contiguously, node to node",
+     "Correct. Hodgkin lymphoma is marked by contiguous spread through the lymph nodes in an orderly fashion. Its malignant cells are few binucleated Reed-Sternberg cells among numerous immune effector cells."
+    ]
+   ],
+   "c": 3,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 22, 36, 48",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Non-Hodgkin lymphoma: risk, presentation, work-up and staging",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Why is fine needle aspiration avoided when lymphoma is suspected?",
+   "opts": [
+    [
+     "It spreads the lymphoma",
+     "Seeding is not the reason given; aspiration is avoided because it cannot show the node's architecture and may miss the diagnosis. Tell: the problem is too little tissue.",
+     "common lay belief"
+    ],
+    [
+     "It triggers tumor lysis",
+     "Tumor lysis syndrome comes from rapid tumor breakdown, which can occur spontaneously in highly aggressive lymphomas, not from a needle. Tell: the concern is a missed diagnosis.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It needs general anesthesia",
+     "The reason given is diagnostic, not procedural: the needle sample loses the node architecture. Tell: architecture decides the method.",
+     "common lay belief"
+    ],
+    [
+     "It cannot show node architecture",
+     "Correct. Fine needle aspiration is avoided because an excisional biopsy is required to observe the lymph node architecture, and aspiration may miss the diagnosis. Biopsy is reserved for significant (2 cm), persistent and progressively enlarging nodes."
+    ]
+   ],
+   "c": 3,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 25, 28",
+   "slot": "avoid"
+  },
+  {
+   "topic": "Chronic lymphocytic leukemia: presentation and diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "At what rate does monoclonal B lymphocytosis progress to chronic lymphocytic leukemia?",
+   "opts": [
+    [
+     "1-2% per year",
+     "Correct. Monoclonal B lymphocytosis, a count below 5,000 with no nodes, organomegaly, cytopenias or symptoms, progresses to chronic lymphocytic leukemia at a rate of 1-2% per year."
+    ],
+    [
+     "About 10% per year",
+     "About 10% per year is the progression rate of smoldering myeloma to multiple myeloma. Tell: 10% belongs to smoldering myeloma; 1-2% to monoclonal B lymphocytosis.",
+     "adjacent fact"
+    ],
+    [
+     "About 25% per year",
+     "A quarter per year overstates the risk; monoclonal B lymphocytosis progresses at only 1-2% per year. Tell: it is a low-risk precursor.",
+     "reversed direction or value"
+    ],
+    [
+     "About 50% per year",
+     "Above 50% within 2 years is the risk in some high-risk smoldering myeloma groups, not the yearly rate for monoclonal B lymphocytosis. Tell: 1-2% per year here.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 9",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "Non-Hodgkin lymphoma: treatment, tumor lysis and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "How is tumor lysis syndrome prevented before treating an aggressive lymphoma?",
+   "opts": [
+    [
+     "Potassium replacement beforehand",
+     "Tumor lysis releases potassium, and hyperkalemia is its greatest danger, so extra potassium is the opposite of prevention. Tell: the goal is clearing products, not adding potassium.",
+     "reversed direction or value"
+    ],
+    [
+     "Delaying treatment until stable",
+     "Aggressive lymphomas, especially Burkitt, need prompt treatment; prevention means preparing with fluids and allopurinol, not waiting. Tell: anticipate and protect, then treat.",
+     "wrong stage or severity"
+    ],
+    [
+     "Fluid restriction during therapy",
+     "Tumor lysis syndrome requires aggressive intravenous fluid hydration; restricting fluids would worsen crystal precipitation. Tell: give fluids, never restrict them.",
+     "reversed direction or value"
+    ],
+    [
+     "Allopurinol and fluids beforehand",
+     "Correct. Tumor lysis syndrome should be anticipated in aggressive lymphoma, and patients are given allopurinol (a hypouricemic agent) and fluids in advance. Patients are told to drink plenty of fluids and take allopurinol on starting treatment."
+    ]
+   ],
+   "c": 3,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 28, 34",
+   "slot": "first-line"
   },
   {
    "topic": "Non-Hodgkin lymphoma: aggressive and T-cell types",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
    "q": "Mantle cell lymphoma is identified by which translocation?",
    "opts": [
+    [
+     "t(11;14)",
+     "Correct. Mantle cell lymphoma is a rare subtype identified by the cyclin D1 gene translocation t(11;14). It typically has an aggressive course, is more common in men and has a median age of 60-70 years."
+    ],
     [
      "t(14;18)",
      "The t(14;18) translocation places the B-cell lymphoma 2 gene on chromosome 14 in follicular lymphoma. Tell: 14;18 is follicular; 11;14 is mantle cell.",
@@ -1730,17 +862,885 @@
     ],
     [
      "t(14;16)",
-     "The t(14;16) translocation is a high-risk myeloma abnormality. Tell: mantle cell lymphoma is the cyclin D1 translocation, 11;14.",
+     "The t(14;16) translocation is a high-risk chromosomal abnormality in the myeloma staging table. Tell: mantle cell lymphoma is the cyclin D1 translocation, 11;14.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 20, 16, 51",
+   "slot": "etiology"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Chronic lymphocytic leukemia: who and why",
+   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. a. infant b. child c. adolescent d. adult e. elderly",
+   "q": "What is the median age at diagnosis of chronic lymphocytic leukemia?",
+   "opts": [
+    [
+     "40 years",
+     "Forty is far too young for the median; chronic lymphocytic leukemia is a disease of older adults with a median age of 70 years. Tell: think of an older adult found on routine blood work, not a young adult.",
+     "reversed direction or value"
+    ],
+    [
+     "55 years",
+     "Fifty-five falls well short of the median age of 70 years for chronic lymphocytic leukemia. Tell: the median sits a decade above 60, not below it.",
+     "reversed direction or value"
+    ],
+    [
+     "70 years",
+     "Correct. The median age at diagnosis, and at onset, of chronic lymphocytic leukemia is 70 years, so it is a disease of older adults. That elderly onset is one reason many patients are expected to die with the disease rather than from it."
+    ],
+    [
+     "85 years",
+     "Eighty-five overshoots; the median age at diagnosis is 70 years. Tell: the median is 70, so half of patients are diagnosed younger than that.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 4, 6",
+   "slot": "epidemiology"
+  },
+  {
+   "topic": "Non-Hodgkin lymphoma: treatment, tumor lysis and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Which regimen is an example of multi-drug therapy for aggressive B-cell lymphoma?",
+   "opts": [
+    [
+     "Venetoclax plus obinutuzumab for a fixed duration",
+     "Venetoclax, a B-cell lymphoma 2 inhibitor, combined with a monoclonal antibody such as obinutuzumab for a fixed duration is a chronic lymphocytic leukemia targeted therapy. Tell: that is a leukemia combination; aggressive lymphoma gets rituximab with CHOP (cyclophosphamide, doxorubicin, vincristine, prednisone).",
      "adjacent fact"
     ],
     [
-     "t(11;14)",
-     "Correct. Mantle cell lymphoma is a rare subtype identified by the cyclin D1 gene translocation t(11;14). It typically has an aggressive course, is more common in men and has a median age of 60-70 years."
+     "Rituximab plus CHOP (cyclophosphamide, doxorubicin, vincristine, prednisone)",
+     "Correct. Aggressive B-cell lymphomas are often treated with multi-drug chemotherapy such as R-CHOP (rituximab, cyclophosphamide, vincristine, doxorubicin, prednisone). Rituximab is the anti-cluster of differentiation 20 monoclonal antibody."
+    ],
+    [
+     "ABVD (doxorubicin, bleomycin, vinblastine, dacarbazine) without rituximab",
+     "ABVD (doxorubicin, bleomycin, vinblastine, dacarbazine) was historically the short course of chemotherapy for early-stage Hodgkin lymphoma. Tell: that regimen is Hodgkin; rituximab with CHOP (cyclophosphamide, doxorubicin, vincristine, prednisone) is aggressive B-cell.",
+     "adjacent fact"
+    ],
+    [
+     "CHOP (cyclophosphamide, doxorubicin, vincristine, prednisone) without rituximab",
+     "CHOP (cyclophosphamide, doxorubicin, vincristine, prednisone) without rituximab is the similar regimen used for T-cell lymphomas, because T cells have no cluster of differentiation 20; it leaves out the rituximab of the B-cell example. Tell: a B-cell lymphoma keeps the rituximab.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 27, 11, 41",
+   "slot": "agent/regimen"
+  },
+  {
+   "topic": "Burkitt lymphoma",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Burkitt lymphoma is associated with upregulation of which gene?",
+   "opts": [
+    [
+     "MYC (myelocytomatosis oncogene)",
+     "Correct. Burkitt lymphoma is associated with MYC (myelocytomatosis oncogene) upregulation, which stimulates cell growth and division. That explains a swelling that can visibly enlarge over one day."
+    ],
+    [
+     "BCL-2 (B-cell lymphoma 2)",
+     "BCL-2 (B-cell lymphoma 2) is moved to chromosome 14 by t(14;18) in follicular lymphoma, preventing cell death. Tell: the cell-death gene is follicular; Burkitt is the growth gene.",
+     "competing diagnosis"
+    ],
+    [
+     "Cyclin D1",
+     "Cyclin D1 translocation t(11;14) identifies mantle cell lymphoma. Tell: cyclin D1 is mantle cell.",
+     "competing diagnosis"
+    ],
+    [
+     "MYD88 (myeloid differentiation primary response 88)",
+     "MYD88 (myeloid differentiation primary response 88) mutation is found in about 90% of lymphoplasmacytic lymphoma. Tell: that marks Waldenstrom macroglobulinemia, not Burkitt.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 16, 18, 20, 31",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Multiple myeloma: pathogenesis, risk and CRAB",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "What causes the hypercalcemia of multiple myeloma?",
+   "opts": [
+    [
+     "Tumor lysis",
+     "Tumor lysis releases potassium, phosphorus and uric acid, not calcium from bone. Tell: myeloma calcium comes from bone resorption.",
+     "adjacent fact"
+    ],
+    [
+     "Renal calcium retention",
+     "Renal dysfunction in myeloma comes from light chain and calcium phosphate deposition; the calcium itself comes from bone. Tell: osteoclasts are the source.",
+     "reversed direction or value"
+    ],
+    [
+     "Osteoclast activation",
+     "Correct. Myeloma activates osteoclasts, resulting in calcium release into the bloodstream. Hypercalcemia causes constipation, increased thirst, urinary frequency and nausea, and osteolytic, punched-out lesions are the bone finding."
+    ],
+    [
+     "Light chain deposition",
+     "Light chain and calcium phosphate deposition cause the renal dysfunction of myeloma, not the hypercalcemia. Tell: light chains hit the kidney; osteoclasts release the calcium.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 28, 45, 47, 48",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Non-Hodgkin lymphoma: treatment, tumor lysis and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "How is a single-node, non-aggressive non-Hodgkin lymphoma treated?",
+   "opts": [
+    [
+     "Allopurinol and fluids",
+     "Allopurinol and fluids prevent tumor lysis syndrome before aggressive lymphoma treatment; they do not treat the lymphoma. Tell: prevention, not therapy.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Radiation",
+     "Correct. Management depends heavily on subtype and presentation; a single-node, non-aggressive lymphoma is treated with radiation. Aggressive B-cell lymphomas instead get multi-drug chemotherapy with rituximab."
+    ],
+    [
+     "Multi-drug chemotherapy",
+     "Multi-drug chemotherapy is the approach to aggressive B-cell lymphomas. Tell: one node and non-aggressive means radiation.",
+     "wrong stage or severity"
+    ],
+    [
+     "Autologous transplant",
+     "Autologous transplant improves survival in transplant-eligible multiple myeloma. Tell: transplant belongs to myeloma; a single indolent node gets radiation.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 27",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Chronic lymphocytic leukemia: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "When used as monotherapy, how long is a Bruton tyrosine kinase inhibitor usually given?",
+   "opts": [
+    [
+     "Until the count halves",
+     "No count-based stopping point is given; the drug is usually continuous as monotherapy. Tell: monotherapy is open-ended.",
+     "common lay belief"
+    ],
+    [
+     "Until symptoms settle",
+     "Kinase inhibitor monotherapy is not stopped when symptoms improve; it is usually continuous. Tell: continuous, not symptom-guided.",
+     "common lay belief"
+    ],
+    [
+     "Continuously",
+     "Correct. Bruton tyrosine kinase inhibitors (ibrutinib, acalabrutinib, zanubrutinib) are usually continuous when used as monotherapy. Time-limited courses belong to the combination regimens."
+    ],
+    [
+     "For a fixed course",
+     "A fixed duration describes venetoclax combined with monoclonal antibodies. Tell: kinase inhibitor monotherapy keeps going.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 11",
+   "slot": "agent/regimen"
+  },
+  {
+   "topic": "Hodgkin lymphoma: who, presentation and diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Classical Hodgkin lymphoma cells express which pair of cluster of differentiation markers?",
+   "opts": [
+    [
+     "19 and 30",
+     "Cluster of differentiation 19 belongs to the chronic lymphocytic leukemia pair (with 5). Tell: Hodgkin pairs 30 with 15.",
+     "adjacent fact"
+    ],
+    [
+     "15 and 30",
+     "Correct. Classical Hodgkin lymphoma expresses cluster of differentiation 15 and cluster of differentiation 30. The diagnosis itself is made by excisional lymph node biopsy, avoiding fine needle aspiration."
+    ],
+    [
+     "19 and 5",
+     "Coexpression of cluster of differentiation 19 and 5 identifies chronic lymphocytic leukemia on flow cytometry. Tell: 19 and 5 are the leukemia; 15 and 30 are Hodgkin.",
+     "competing diagnosis"
+    ],
+    [
+     "20 and 5",
+     "Cluster of differentiation 20 is the rituximab target on B cells and 5 is part of the chronic lymphocytic leukemia pair. Tell: classical Hodgkin is 15 and 30.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 8, 27, 39",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Chronic lymphocytic leukemia: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Which statement belongs in education for a patient newly diagnosed with chronic lymphocytic leukemia?",
+   "opts": [
+    [
+     "Admission is needed to start therapy",
+     "Hospital admission is described for aggressive lymphomas with electrolyte abnormalities, not for this leukemia. Tell: chronic lymphocytic leukemia care is outpatient pills or infusions.",
+     "adjacent fact"
+    ],
+    [
+     "No follow-up is needed once stable",
+     "Patients will require follow-ups for lab monitoring and treatment. Tell: monitoring continues even when the outlook is good.",
+     "common lay belief"
+    ],
+    [
+     "The long-term outlook is poor",
+     "The long-term prognosis is likely very good, with 5-year relative survival about 88%. Tell: poor outcomes belong to Richter transformation, not to the usual course.",
+     "reversed direction or value"
+    ],
+    [
+     "Hospital stays are unlikely",
+     "Correct. Patients are unlikely to require hospitalization, and treatment is likely based on patient preferences and mutations. They will need follow-up for lab monitoring and treatment, but the long-term prognosis is likely very good."
     ]
    ],
    "c": 3,
-   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 20",
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 13, 34",
+   "slot": "education"
+  },
+  {
+   "topic": "Multiple myeloma: diagnosis and staging",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "What is Bence Jones protein?",
+   "opts": [
+    [
+     "Monoclonal protein in the serum",
+     "A monoclonal protein on serum protein electrophoresis is characteristic of myeloma, but Bence Jones protein is the urine finding. Tell: Bence Jones is urine.",
+     "adjacent fact"
+    ],
+    [
+     "Excess immunoglobulin M",
+     "Excess immunoglobulin M is the product of Waldenstrom macroglobulinemia, causing hyperviscosity. Tell: Bence Jones is a urine monoclonal protein.",
+     "competing diagnosis"
+    ],
+    [
+     "Free light chain ratio",
+     "Light chains (kappa and lambda) are measured in the blood and their ratio is checked; that is a separate test. Tell: Bence Jones is the monoclonal protein found in the urine.",
+     "adjacent fact"
+    ],
+    [
+     "Monoclonal protein in the urine",
+     "Correct. A positive urine monoclonal protein is called Bence Jones protein, found with the 24-hour urine protein electrophoresis. A monoclonal protein on serum protein electrophoresis is characteristic of myeloma."
+    ]
+   ],
+   "c": 3,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 50",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Non-Hodgkin lymphoma: definition and indolent types",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "About what share of non-Hodgkin lymphomas are B-cell lymphomas?",
+   "opts": [
+    [
+     "4%",
+     "Four percent is the share of all new cancer diagnoses in the United States that are non-Hodgkin lymphoma, not the B-cell fraction. Tell: 4% is of all cancers; 85% is the B-cell share of these lymphomas.",
+     "adjacent fact"
+    ],
+    [
+     "15%",
+     "Fifteen percent is the T-cell or natural killer-cell share, not the B-cell share. Tell: B-cell lymphomas are the large majority.",
+     "reversed direction or value"
+    ],
+    [
+     "50%",
+     "The split is not even; B-cell types make up about 85%. Tell: the T-cell and natural killer-cell types are the minority at 15%.",
+     "reversed direction or value"
+    ],
+    [
+     "85%",
+     "Correct. About 85% of non-Hodgkin lymphomas are B-cell and 15% are T-cell or natural killer-cell. Non-Hodgkin lymphoma is a diverse group of lymphoid malignancies that present frequently with lymphadenopathy."
+    ]
+   ],
+   "c": 3,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 15",
+   "slot": "epidemiology"
+  },
+  {
+   "topic": "Non-Hodgkin lymphoma: aggressive and T-cell types",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Which is the more aggressive form of cutaneous T-cell lymphoma?",
+   "opts": [
+    [
+     "Marginal zone lymphoma",
+     "Marginal zone lymphoma is not a cutaneous T-cell lymphoma; the named aggressive form of skin T-cell lymphoma is Sezary syndrome, with erythroderma. Tell: a skin T-cell lymphoma's aggressive form is Sezary syndrome.",
+     "competing diagnosis"
+    ],
+    [
+     "Anaplastic large cell lymphoma",
+     "Anaplastic large cell lymphoma is an aggressive T-cell lymphoma, but it is not the named aggressive cutaneous form. Tell: red itchy erythroderma means Sezary syndrome.",
+     "competing diagnosis"
+    ],
+    [
+     "Sezary syndrome",
+     "Correct. Sezary syndrome is the more aggressive form of cutaneous T-cell lymphoma, with a widespread, red, itchy rash (erythroderma) that may cause severe pruritus and a diminished quality of life."
+    ],
+    [
+     "Mycosis fungoides",
+     "Mycosis fungoides is the cutaneous T-cell lymphoma itself, skin lesions resembling fungal infection that can progress to ulcerating nodules. Tell: the more aggressive form with erythroderma is Sezary syndrome.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 22",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Non-Hodgkin lymphoma: treatment, tumor lysis and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Low-grade B-cell lymphoma that needs treatment is treated first with which agent?",
+   "opts": [
+    [
+     "Rituximab",
+     "Correct. Low-grade B-cell lymphomas are treated with rituximab, an anti-cluster of differentiation 20 monoclonal antibody, if treatment is required, with chemotherapy added if the disease is extensive."
+    ],
+    [
+     "Ibrutinib",
+     "Ibrutinib is a Bruton tyrosine kinase inhibitor, a targeted therapy for chronic lymphocytic leukemia; low-grade B-cell lymphoma is treated with rituximab. Tell: for a low-grade B-cell lymphoma needing treatment, the named agent is rituximab.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Bleomycin",
+     "Bleomycin is part of the Hodgkin lymphoma regimen (doxorubicin, bleomycin, vinblastine, dacarbazine), and novel agents are replacing it because of pulmonary toxicities. Tell: bleomycin is Hodgkin; rituximab is low-grade B-cell lymphoma.",
+     "adjacent fact"
+    ],
+    [
+     "Allopurinol",
+     "Allopurinol is a hypouricemic agent to prevent tumor lysis syndrome, not a lymphoma therapy. Tell: it protects the kidneys; rituximab treats the lymphoma.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 27, 11, 41",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Non-Hodgkin lymphoma: risk, presentation, work-up and staging",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "In the lymphoma work-up, what does an elevated lactate dehydrogenase reflect?",
+   "opts": [
+    [
+     "Paraprotein level",
+     "A monoclonal protein on serum protein electrophoresis is characteristic of multiple myeloma. Tell: lactate dehydrogenase tracks proliferation, not a paraprotein.",
+     "adjacent fact"
+    ],
+    [
+     "Rapid proliferation",
+     "Correct. The work-up includes LDH (lactate dehydrogenase), which reflects rapid proliferation, alongside a complete blood count for cytopenias from marrow involvement and chemistries to rule out tumor lysis syndrome."
+    ],
+    [
+     "Marrow involvement",
+     "Bone marrow involvement shows as cytopenias on the complete blood count. Tell: cytopenias reflect the marrow; lactate dehydrogenase reflects rapid proliferation.",
+     "adjacent fact"
+    ],
+    [
+     "Hyperviscosity",
+     "Hyperviscosity comes from excess immunoglobulin M in lymphoplasmacytic lymphoma, not from lactate dehydrogenase. Tell: the enzyme marks fast cell turnover.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 25, 18, 50",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Non-Hodgkin lymphoma: risk, presentation, work-up and staging",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "In the Lugano staging of lymphoma, involved lymph node regions both above and below the diaphragm are which stage?",
+   "opts": [
+    [
+     "Stage 1",
+     "Stage 1 is localized disease, a single lymph node region or a single organ. Tell: more than one region crossing the diaphragm is beyond stage 1.",
+     "wrong stage or severity"
+    ],
+    [
+     "Stage 2",
+     "Stage 2 is two or more node regions on the same side of the diaphragm. Tell: crossing the diaphragm moves it to stage 3.",
+     "wrong stage or severity"
+    ],
+    [
+     "Stage 3",
+     "Correct. In the Lugano classification (a modified Ann Arbor system), stage 3 is two or more lymph node regions above and below the diaphragm. Stage 2 keeps them on the same side; stage 4 is widespread disease in multiple organs."
+    ],
+    [
+     "Stage 4",
+     "Stage 4 is widespread disease with multiple organs involved, with or without nodes. Tell: nodes on both sides without organ spread stop at stage 3.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 26",
+   "slot": "test finding"
+  },
+  {
+   "topic": "MGUS and smoldering myeloma",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "An M-protein of 1.5 g/dL, clonal marrow plasma cells of 4% and no anemia, bone lesions or renal failure fit which disorder?",
+   "opts": [
+    [
+     "Active multiple myeloma with end-organ damage",
+     "Myeloma needs 10% or more marrow plasma cells or a plasmacytoma plus a CRAB (calcium, renal insufficiency, anemia, bone lesions) feature. Tell: 4% and no end-organ damage rule it out.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Lymphoplasmacytic lymphoma (Waldenstrom macroglobulinemia)",
+     "Waldenstrom macroglobulinemia (lymphoplasmacytic lymphoma) results in excess immunoglobulin M, a large antibody that causes hyperviscosity. Tell: no immunoglobulin M or hyperviscosity is given; the numbers fit the low-level plasma cell disorder.",
+     "competing diagnosis"
+    ],
+    [
+     "MGUS (monoclonal gammopathy of undetermined significance)",
+     "Correct. An M-protein below 3 g/dL (1.5 g/dL), clonal marrow plasma cells below 10% (4%) and no myeloma-defining characteristics meet every part of MGUS (monoclonal gammopathy of undetermined significance), which progresses at about 1% per year."
+    ],
+    [
+     "Smoldering multiple myeloma, intermediate stage",
+     "Smoldering myeloma needs an M-protein above 3 g/dL and 10-60% marrow plasma cells. Tell: 1.5 g/dL and 4% are both below those lines.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 18, 50, 56, 57",
+   "slot": "differential"
+  },
+  {
+   "topic": "Multiple myeloma: pathogenesis, risk and CRAB",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Which symptoms reflect the hypercalcemia of multiple myeloma?",
+   "opts": [
+    [
+     "Constipation and thirst",
+     "Correct. In the CRAB (calcium, renal insufficiency, anemia, bone lesions) features, hypercalcemia causes constipation, increased thirst, urinary frequency and nausea. Renal insufficiency causes swelling and anemia causes fatigue and shortness of breath."
+    ],
+    [
+     "Generalized swelling",
+     "Swelling is the symptom linked to renal insufficiency, the R of CRAB (calcium, renal insufficiency, anemia, bone lesions). Tell: swelling is renal; constipation and thirst are calcium.",
+     "adjacent fact"
+    ],
+    [
+     "Fatigue and breathlessness",
+     "Fatigue and shortness of breath reflect anemia, the A of CRAB (calcium, renal insufficiency, anemia, bone lesions). Tell: those are anemia symptoms, not calcium symptoms.",
+     "adjacent fact"
+    ],
+    [
+     "Back and pelvic pain",
+     "Pain in the back, chest or pelvis reflects bone lesions, the B of CRAB (calcium, renal insufficiency, anemia, bone lesions). Tell: bone pain is the B; constipation and thirst are the C.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 47",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Chronic lymphocytic leukemia: presentation and diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Which organ enlargement is most often found on exam in chronic lymphocytic leukemia?",
+   "opts": [
+    [
+     "Nasal mass",
+     "A nasal-region mass points to extranodal natural killer/T-cell lymphoma, not chronic lymphocytic leukemia. Tell: this leukemia enlarges the spleen in about 40%.",
+     "competing diagnosis"
+    ],
+    [
+     "Splenomegaly",
+     "Correct. On exam, splenomegaly is found in about 40% of patients, while hepatomegaly is less common. Painless, firm, mobile lymphadenopathy (50-90% of cases) is the other common finding on exam."
+    ],
+    [
+     "Hepatomegaly",
+     "Hepatomegaly can occur but is less common than splenomegaly (about 40%). Tell: the spleen is the organ enlarged most often here.",
+     "wrong stage or severity"
+    ],
+    [
+     "Mediastinal mass",
+     "A mediastinal mass on chest X-ray is a feature of Hodgkin lymphoma and of primary mediastinal B-cell lymphoma, not the usual exam finding here. Tell: a chest mass suggests a lymphoma; the spleen is the organ that enlarges in this leukemia.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 7, 21, 24, 38",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Hodgkin lymphoma: management and prognosis",
+   "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly",
+   "q": "Which group of Hodgkin lymphoma patients has inferior treatment results?",
+   "opts": [
+    [
+     "Patients in their 20s",
+     "Adults in their 20s form one incidence peak, but inferior results are tied to older age. Tell: young age is not the adverse factor.",
+     "reversed direction or value"
+    ],
+    [
+     "Non-bulky stage I disease",
+     "Bulky disease, not non-bulky early disease, gives inferior results. Tell: small, early disease does well.",
+     "reversed direction or value"
+    ],
+    [
+     "Patients with cervical nodes",
+     "Cervical nodes are the usual presentation and carry no stated adverse meaning. Tell: the adverse groups are older age, bulk and certain subtypes.",
+     "adjacent fact"
+    ],
+    [
+     "Older patients",
+     "Correct. Inferior results are seen with older patients, those with bulky disease and those with certain subtypes (lymphocyte depleted or mixed cellularity). Hodgkin lymphoma is otherwise generally curable."
+    ]
+   ],
+   "c": 3,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 37, 38, 42",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "Hodgkin lymphoma: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "What proportion of Hodgkin lymphoma patients are alive at 5 years?",
+   "opts": [
+    [
+     "About 50%",
+     "About 50% is far below the outlook of Hodgkin lymphoma, which is generally curable. Tell: Hodgkin is generally curable, over 90% at 5 years.",
+     "adjacent fact"
+    ],
+    [
+     "About 60%",
+     "About 60% is the 5-year relative survival of multiple myeloma. Tell: Hodgkin lymphoma does better, over 90%.",
+     "adjacent fact"
+    ],
+    [
+     "About 78%",
+     "About 78% is the relative 5-year survival of lymphoplasmacytic lymphoma. Tell: Hodgkin lymphoma survival exceeds 90%.",
+     "adjacent fact"
+    ],
+    [
+     "Over 90%",
+     "Correct. Hodgkin lymphoma is generally curable, with more than 90% of patients alive at 5 years. Relapse after first-line treatment may require allogeneic stem cell transplant."
+    ]
+   ],
+   "c": 3,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 18, 30, 42, 54",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "MGUS and smoldering myeloma",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "How is smoldering myeloma usually managed?",
+   "opts": [
+    [
+     "Autologous transplant",
+     "Autologous transplant improves survival in transplant-eligible active myeloma. Tell: smoldering disease is usually monitored, not transplanted.",
+     "wrong stage or severity"
+    ],
+    [
+     "Allopurinol and fluids",
+     "Allopurinol and fluids are given in advance in aggressive lymphoma, where tumor lysis syndrome should be anticipated. Tell: smoldering myeloma usually needs no treatment at all.",
+     "adjacent fact"
+    ],
+    [
+     "Usually no treatment",
+     "Correct. Smoldering myeloma typically does not require treatment, though early intervention may be considered for some subgroups. It progresses at about 10% per year, faster in some high-risk groups."
+    ],
+    [
+     "Immediate 3-drug regimen",
+     "A 3- or 4-drug regimen is for newly diagnosed, symptomatic multiple myeloma. Tell: smoldering has no myeloma-defining events and is usually not treated.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 28, 53, 57",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Chronic lymphocytic leukemia: presentation and diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Which infection can cause an atypical lymphocytosis that mimics chronic lymphocytic leukemia?",
+   "opts": [
+    [
+     "Pertussis",
+     "Correct. Atypical lymphocytosis can be seen with some infections, including pertussis, so an infection-related rise belongs in the differential of a high lymphocyte count before chronic lymphocytic leukemia is called."
+    ],
+    [
+     "Helicobacter pylori",
+     "Helicobacter pylori gastritis is tied to gastric mucosa-associated lymphoid tissue lymphoma in two thirds of cases, not to a reactive lymphocytosis. Tell: H. pylori means gastric lymphoma.",
+     "adjacent fact"
+    ],
+    [
+     "Hepatitis C",
+     "Hepatitis C is associated with splenic marginal zone lymphoma and is listed among the chronic infections that are non-Hodgkin lymphoma risk factors, not the named cause of atypical lymphocytosis. Tell: the mimic named is pertussis.",
+     "adjacent fact"
+    ],
+    [
+     "Lyme disease",
+     "Lyme disease is listed among the chronic infections that raise non-Hodgkin lymphoma risk. Tell: a reactive lymphocytosis mimic here is pertussis.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 9, 17, 23",
+   "slot": "differential"
+  },
+  {
+   "topic": "Chronic lymphocytic leukemia: who and why",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Chronic lymphocytic leukemia is a proliferation of which cell type?",
+   "opts": [
+    [
+     "Mature B lymphocytes",
+     "Correct. Chronic lymphocytic leukemia is a proliferative leukemia of mature B-cell lymphocytes found in the blood, bone marrow, lymph nodes and spleen. Mutagenesis occurs in mature B cells, which is why the disease presents as a clonal population."
+    ],
+    [
+     "Immature lymphoblasts",
+     "Immature lymphoblasts are not the cell of this disease: chronic lymphocytic leukemia is a proliferative leukemia of mature B-cell lymphocytes. Tell: match the word mature, and the B-cell lineage.",
+     "competing diagnosis"
+    ],
+    [
+     "Mature T lymphocytes",
+     "Mature T-cell leukemias exist but are rare and carry another name, T-cell prolymphocytic leukemia. Chronic lymphocytic leukemia itself is a B-cell disease. Tell: the common chronic lymphocytic leukemia is B-cell; the T-cell form is rare and named separately.",
+     "adjacent fact"
+    ],
+    [
+     "Clonal plasma cells",
+     "Clonal plasma cells, terminally differentiated B cells, define the plasma cell disorders such as multiple myeloma, not chronic lymphocytic leukemia. Tell: myeloma arises from plasma cells; this leukemia is a proliferation of mature B lymphocytes.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 4, 44",
    "slot": "etiology"
+  },
+  {
+   "topic": "Non-Hodgkin lymphoma: risk, presentation, work-up and staging",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Which presentation fits primary mediastinal B-cell lymphoma?",
+   "opts": [
+    [
+     "Blurred vision and headache",
+     "Blurred vision and headache come from immunoglobulin M hyperviscosity in lymphoplasmacytic lymphoma. Tell: thick blood blurs vision; a mediastinal mass causes cough.",
+     "competing diagnosis"
+    ],
+    [
+     "Cough and abnormal chest X-ray",
+     "Correct. Primary mediastinal B-cell lymphomas present with a large mediastinal mass, cough and an abnormal chest X-ray. Central nervous system lymphoma, by contrast, presents with headaches, lethargy and neurologic deficits."
+    ],
+    [
+     "Headache and neurologic deficits",
+     "Headaches, lethargy and neurologic deficits that mirror primary brain tumors describe central nervous system lymphoma. Tell: mediastinal disease shows in the chest.",
+     "competing diagnosis"
+    ],
+    [
+     "Erythroderma and itching",
+     "Widespread red itchy erythroderma is Sezary syndrome, a cutaneous T-cell lymphoma. Tell: a mediastinal B-cell lymphoma is a chest mass.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 24, 18, 22",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Non-Hodgkin lymphoma: definition and indolent types",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "What is the usual management of follicular lymphoma that causes no symptoms?",
+   "opts": [
+    [
+     "Immediate multi-agent chemotherapy",
+     "Multi-agent chemotherapy is the approach to aggressive B-cell lymphomas. Tell: an asymptomatic indolent lymphoma is watched; intensive therapy is kept for high-risk disease.",
+     "wrong stage or severity"
+    ],
+    [
+     "Emergent hematology transfer",
+     "Rapid transfer of care is required for Burkitt lymphoma, whose doubling time is extremely fast. Tell: emergency transfer is for Burkitt, not an indolent lymphoma.",
+     "wrong stage or severity"
+    ],
+    [
+     "Allogeneic stem cell transplant",
+     "Allogeneic stem cell transplant may be required for Hodgkin lymphoma that relapses after first-line treatment. Tell: asymptomatic follicular lymphoma is observed.",
+     "wrong stage or severity"
+    ],
+    [
+     "Watch and wait",
+     "Correct. Follicular lymphoma frequently needs no treatment (watch and wait), though it may be treated with intermittent low-intensity therapy if symptomatic; high-risk disease may need more aggressive therapy. It is incurable, but often needs no treatment or only intermittent treatment."
+    ]
+   ],
+   "c": 3,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 16, 27, 34, 42",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Chronic lymphocytic leukemia: presentation and diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "How is the lymphadenopathy of chronic lymphocytic leukemia described?",
+   "opts": [
+    [
+     "Painful and fluctuant",
+     "Chronic lymphocytic leukemia nodes are painless, not tender or fluctuant. Tell: the classic node here is painless, firm and mobile.",
+     "reversed direction or value"
+    ],
+    [
+     "Painful after drinking alcohol",
+     "Node pain that worsens with alcohol is a feature of Hodgkin lymphoma, not chronic lymphocytic leukemia. Tell: alcohol-related node pain points to Hodgkin lymphoma.",
+     "competing diagnosis"
+    ],
+    [
+     "Waxing and waning over months",
+     "Waxing and waning painless lymphadenopathy is the typical indolent presentation of follicular lymphoma. Tell: waxing and waning means follicular; firm, mobile, painless nodes with lymphocytosis mean chronic lymphocytic leukemia.",
+     "competing diagnosis"
+    ],
+    [
+     "Painless, firm and mobile",
+     "Correct. Painless lymphadenopathy occurs in 50-90% of cases and may be localized or generalized; the nodes are firm and mobile. Splenomegaly is found in about 40% and hepatomegaly less often."
+    ]
+   ],
+   "c": 3,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 7",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Non-Hodgkin lymphoma: treatment, tumor lysis and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Which statement describes the prognosis of indolent lymphomas?",
+   "opts": [
+    [
+     "Incurable, but survival often 10-15+ years",
+     "Correct. Indolent lymphomas are incurable but survival is often 10-15 or more years with intermittent treatment, with a risk of progression to an aggressive, difficult-to-treat lymphoma. Aggressive lymphomas, by contrast, are often treatable."
+    ],
+    [
+     "Curable in about half with chemotherapy",
+     "Cure with chemotherapy describes aggressive lymphomas, not indolent ones, which stay incurable even with treatment. Tell: aggressive lymphomas can be cured; indolent ones are incurable but slow.",
+     "reversed direction or value"
+    ],
+    [
+     "Curable in over 90% at 5 years",
+     "More than 90% alive at 5 years describes Hodgkin lymphoma, which is generally curable. Tell: that is Hodgkin, not an indolent non-Hodgkin lymphoma.",
+     "adjacent fact"
+    ],
+    [
+     "Median survival under two years",
+     "Survival under 2 years is not the outlook for indolent lymphomas; patients often survive 10-15 or more years. Tell: indolent means incurable but slow.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 30, 42",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "Chronic lymphocytic leukemia: Rai staging",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "In the Rai classification, lymphocytosis with lymphadenopathy and splenomegaly, with normal hemoglobin and platelets, is which stage?",
+   "opts": [
+    [
+     "Stage I",
+     "Stage I is lymphocytosis with lymphadenopathy only. Tell: an enlarged spleen counts as organomegaly and moves the stage to II.",
+     "wrong stage or severity"
+    ],
+    [
+     "Stage II",
+     "Correct. Rai stage II is lymphocytosis, lymphadenopathy and organomegaly, defined as hepatomegaly and/or splenomegaly. With no anemia and no thrombocytopenia, the stage does not rise to III or IV."
+    ],
+    [
+     "Stage III",
+     "Stage III requires anemia. Tell: the hemoglobin is normal, so organomegaly alone stops at stage II.",
+     "wrong stage or severity"
+    ],
+    [
+     "Stage IV",
+     "Stage IV requires thrombocytopenia. Tell: the platelets are normal, so the stage cannot reach IV.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slide 10",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Multiple myeloma: management and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "For a transplant candidate with multiple myeloma, which step has been shown to improve overall survival?",
+   "opts": [
+    [
+     "Autologous stem cell transplant",
+     "Correct. If the patient is a transplant candidate, autologous transplant has been shown to improve overall survival, as has maintenance therapy after transplant. Most patients still relapse and need continuous therapy."
+    ],
+    [
+     "Allogeneic stem cell transplant",
+     "Allogeneic stem cell transplant is not the survival-improving step named for myeloma; it is named for Hodgkin lymphoma that relapses after first-line treatment. Tell: myeloma uses the patient's own cells, autologous.",
+     "adjacent fact"
+    ],
+    [
+     "Stopping therapy after remission",
+     "Most myeloma patients relapse and need continuous therapy, and maintenance after transplant improves survival. Tell: therapy continues; it is not stopped at remission.",
+     "reversed direction or value"
+    ],
+    [
+     "Radiation to every bone lesion",
+     "Radiation of each lesion is not described as a survival-improving step. Tell: the survival benefit comes from autologous transplant and maintenance.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 53, 42",
+   "slot": "escalation"
+  },
+  {
+   "topic": "Multiple myeloma: pathogenesis, risk and CRAB",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)",
+   "q": "Which antibody type is most commonly overproduced in multiple myeloma?",
+   "opts": [
+    [
+     "Immunoglobulin M",
+     "Immunoglobulin M is the monoclonal protein that Waldenstrom macroglobulinemia often produces, a different disorder in the myeloma differential. Tell: M is Waldenstrom; G is myeloma.",
+     "competing diagnosis"
+    ],
+    [
+     "Immunoglobulin E",
+     "Immunoglobulin E is not named as a myeloma protein; the most common is immunoglobulin G. Tell: G is the usual myeloma antibody.",
+     "common lay belief"
+    ],
+    [
+     "Immunoglobulin A",
+     "Immunoglobulin A is not the antibody named; myeloma most commonly overproduces immunoglobulin G. Tell: most commonly G.",
+     "adjacent fact"
+    ],
+    [
+     "Immunoglobulin G",
+     "Correct. Clonal evolution of myeloma produces a single, overproduced antibody type, most commonly immunoglobulin G. Normal plasma cells are responsible for producing antibodies."
+    ]
+   ],
+   "c": 3,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 45, 49",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Hodgkin lymphoma: who, presentation and diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin",
+   "q": "Which virus is a suspected risk factor found in 40-50% of Hodgkin lymphoma cases?",
+   "opts": [
+    [
+     "Epstein-Barr virus",
+     "Correct. Epstein-Barr virus is suspected as a risk factor and is identified in 40-50% of Hodgkin lymphoma cases. Others include human immunodeficiency virus, human herpesvirus 6 and tuberculosis."
+    ],
+    [
+     "Hepatitis C virus",
+     "Hepatitis C is associated with splenic marginal zone lymphoma. Tell: the Hodgkin virus found in about half of cases is Epstein-Barr.",
+     "adjacent fact"
+    ],
+    [
+     "Human T-lymphotropic virus 1",
+     "Human T-lymphotropic virus 1 is associated with adult T-cell leukemia/lymphoma. Tell: Hodgkin is a B-cell lymphoma, and Epstein-Barr virus is its suspected virus.",
+     "adjacent fact"
+    ],
+    [
+     "Human herpesvirus 8",
+     "Human herpesvirus 8 is on the non-Hodgkin lymphoma risk list; the herpesvirus named for Hodgkin is type 6, and the main suspect is Epstein-Barr virus. Tell: 40-50% of cases carry Epstein-Barr virus.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "50. Hematologic Malignancies Part II - Gannon.pptx, Slides 17, 21, 23, 37",
+   "slot": "risk factors"
   }
  ]
 }
