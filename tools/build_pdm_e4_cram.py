@@ -31,11 +31,12 @@ SCOPE = {"id": "scope", "label": "How This Exam Is Written", "color": "#26384a",
 def main():
     topics = [SCOPE]
     lectures = []
-    for n in range(17, 22):
-        p = os.path.join(FRAG, "l%d_cram.json" % n)
+    # (displayed number, stem) in syllabus order; Pulmonary Function Testing is Lecture 18 with the l20 file prefix.
+    for num, stem in [(17, "l17"), (18, "l20"), (19, "l19"), (20, "pocus"), (21, "l21")]:
+        p = os.path.join(FRAG, "%s_cram.json" % stem)
         if not os.path.exists(p):
             continue
-        lectures.append(n)
+        lectures.append(num)
         topics += [dict(t) for t in json.load(open(p, encoding="utf-8"))]
     assert lectures, "no lecture rows"
     for i, t in enumerate(topics[1:]):

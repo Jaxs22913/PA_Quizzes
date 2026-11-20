@@ -24,16 +24,16 @@ SPIRO_ICON = ('<path d="M3 3v18h18"/><path d="M6 17c1.5-6 3-9 6-10s5-1 8-1"/>')
 PH_ICON = ('<path d="M3 12h18"/><path d="M3 9v6M21 9v6M12 7v10"/><circle cx="15" cy="12" r="2"/>')
 
 SPEC = [
- (17, "pdm-pulmonary-imaging", "Pulmonary Imaging", "accent1", LUNGS_ICON),
- (19, "pdm-acid-base", "Acid-Base and Blood Gases", "accent3", PH_ICON),
- (20, "pdm-pulmonary-function", "Pulmonary Function Testing", "accent2", SPIRO_ICON),
+ ("l17", "pdm-pulmonary-imaging", "Pulmonary Imaging", "accent1", LUNGS_ICON),
+ ("l19", "pdm-acid-base", "Acid-Base and Blood Gases", "accent3", PH_ICON),
+ ("l20", "pdm-pulmonary-function", "Pulmonary Function Testing", "accent2", SPIRO_ICON),
 ]
 
 
 def decks():
     out = []
     for n, did, name, colour, icon in SPEC:
-        cards = json.load(open(os.path.join(FRAG, "l%d_cards.json" % n), encoding="utf-8"))
+        cards = json.load(open(os.path.join(FRAG, "%s_cards.json" % n), encoding="utf-8"))
         # Optional Match pairs under "<deck>:match" (crisp term -> short definition); without them
         # Match falls back to the cards.
         assert set(cards) - {did + ":match"} == {did}, (n, list(cards))

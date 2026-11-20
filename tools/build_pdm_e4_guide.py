@@ -30,10 +30,13 @@ OUTDIR = os.path.join(ROOT, "Principles of Diagnostic Medicine I Exam 4")
 OUT = os.path.join(OUTDIR, "pdm-exam-4-study-guide.html")
 FRAG = os.path.join(HERE, "pdm_e4")
 IMG = "pdm-exam-4-study-guide-images"
-LECTURES = range(17, 22)
+# (displayed lecture number, fragment stem) in syllabus order. The syllabus Topic Outline numbers the block 17-21;
+# the calendar printed Pulmonary Function Testing as "#20" (and POCUS as "#20" too). Pulmonary Function Testing is
+# shown as 18 and keeps its original l20 file prefix; POCUS (20) uses the "pocus" stem; Transfusion (21) "l21".
+ORDER = [(17, "l17"), (18, "l20"), (19, "l19"), (20, "pocus"), (21, "l21")]
 
-TY_KEYS = {17: ("pulmonaryimaging", "Pulmonary Imaging"), 19: ("acidbase", "Acid-Base and Blood Gases"),
-           20: ("pulmonaryfunction", "Pulmonary Function Testing")}
+TY_KEYS = {"l17": ("pulmonaryimaging", "Pulmonary Imaging"), "l19": ("acidbase", "Acid-Base and Blood Gases"),
+           "l20": ("pulmonaryfunction", "Pulmonary Function Testing")}
 
 # Exam 3 palette -> Exam 4 palette (same roles). Quizzes use navy #1c2733, indigo #3a6797,
 # gold #c9873a; amber is too light for heading text, so the guide's third accent is the same hue,
@@ -71,7 +74,7 @@ HOW = '''<div class="prof-flag"><span class="prof-flag-label">&#9733; How this e
     <tr><td>Questions are vignette and next-best-test: <em>&ldquo;what would be the next test that you would order?&rdquo;</em></td><td>In imaging the next test is a study: the radiograph first; the angiogram first for a suspected pulmonary embolism; computed tomography when the radiograph is inconclusive; the ventilation/perfusion scan when contrast cannot be given (17.7).</td></tr>
     <tr><td>Images are in play: radiographs and scans alongside the vignette.</td><td>Expect a film or a slice. Read the technique first (17.6), then the structures (17.1&ndash;17.5), then the pattern (17.8).</td></tr>
     <tr><td>Blood gases: every pH, gas pressure, bicarbonate and electrolyte in a stem comes with its normal range. The anion gap is the one calculation: <em>&ldquo;I do want you to memorize and understand this equation&rdquo;</em> (Professor Finck, Lecture 19).</td><td>Read the gas step by step: the pH, then the values outside their range (the carbon dioxide for the lungs, the bicarbonate for the metabolic side), then whether the labs fit the patient (19.5). Know the four patterns and their compensation (19.5, 19.6). Work out the gap as sodium minus (chloride plus bicarbonate), with no potassium (19.7).</td></tr>
-    <tr><td>Pulmonary function tests: a value comes with its reference (percent of predicted, or the report&rsquo;s own reference column).</td><td>Read a report in order: the ratio first, then the forced vital capacity, then the total lung capacity (20.6). Expect a tracing, a loop or a report: know the normal shapes and the scoop and the witch&rsquo;s hat (20.5). The next test: spirometry for obstruction, lung volumes for restriction, the diffusing capacity for a gas transfer problem (20.7).</td></tr>
+    <tr><td>Pulmonary function tests: a value comes with its reference (percent of predicted, or the report&rsquo;s own reference column).</td><td>Read a report in order: the ratio first, then the forced vital capacity, then the total lung capacity (18.6). Expect a tracing, a loop or a report: know the normal shapes and the scoop and the witch&rsquo;s hat (18.5). The next test: spirometry for obstruction, lung volumes for restriction, the diffusing capacity for a gas transfer problem (18.7).</td></tr>
   </table>
 </div>'''
 
@@ -132,9 +135,19 @@ TY = {
 }
 
 
-def toc_for(n, frag):
+# Later lectures keep their five self-checks beside their fragment: tools/pdm_e4/<stem>_ty.json =
+# {"key": ..., "title": ..., "qs": [{"q", "choices", "correct", "explain"}, ...]}.
+for _num, _stem in ORDER:
+    _p = os.path.join(FRAG, "%s_ty.json" % _stem)
+    if _stem not in TY_KEYS and os.path.exists(_p):
+        _t = json.load(open(_p, encoding="utf-8"))
+        TY_KEYS[_stem] = (_t["key"], _t["title"])
+        TY[_t["key"]] = _t["qs"]
+
+
+def toc_for(n, frag):  # n = fragment stem
     m = re.search(r'<section class="deck" id="([^"]+)">\s*<h2 class="deck-title"[^>]*>(.*?)</h2>', frag, re.S)
-    assert m, "lecture %d: no section/deck-title" % n
+    assert m, "lecture %s: no section/deck-title" % n
     out = ['  <a class="top-link" href="#%s">%s</a>' % (m.group(1), m.group(2).strip())]
     for sid, txt in re.findall(r'<h3 class="sub" id="([^"]+)">(.*?)</h3>', frag, re.S):
         out.append('  <a href="#%s">%s</a>' % (sid, txt.strip()))
@@ -142,10 +155,10 @@ def toc_for(n, frag):
 
 
 def section(n):
-    frag = open(os.path.join(FRAG, "l%d_guide.html" % n), encoding="utf-8").read().strip()
+    frag = open(os.path.join(FRAG, "%s_guide.html" % n), encoding="utf-8").read().strip()
     assert frag.startswith('<section class="deck"') and frag.endswith("</section>"), n
     assert frag.count("<section") == 1 and "<details" not in frag, n
-    assert '<footer class="guide-foot">' in frag, "lecture %d: the fragment carries its own source footer" % n
+    assert '<footer class="guide-foot">' in frag, "lecture %s: the fragment carries its own source footer" % n
     # The deck title gets its own id so the lecture's opening (frame, emphasis box) is its own
     # linkable section for build_guide_links.py.
     sid = re.search(r'<section class="deck" id="([^"]+)">', frag).group(1)
@@ -191,8 +204,8 @@ def main():
 
     toc = ['<nav class="toc">', "  <h2>Contents</h2>"]
     sections = []
-    for n in LECTURES:
-        if not os.path.exists(os.path.join(FRAG, "l%d_guide.html" % n)):
+    for _num, n in ORDER:
+        if not os.path.exists(os.path.join(FRAG, "%s_guide.html" % n)):
             continue
         frag = section(n)
         _sid, entries = toc_for(n, frag)

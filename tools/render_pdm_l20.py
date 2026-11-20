@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Render the two PDM I Lecture 20 (Pulmonary Function Testing and Oxygenation) quizzes."""
+"""Render the two PDM I Lecture 18 (Pulmonary Function Testing and Oxygenation) quizzes.
+
+The syllabus numbers this lecture 18; the calendar printed it as #20 (and POCUS also as #20). The files keep
+their original l20 prefix; only the displayed number is 18."""
 import sys, os, json
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "quiz-template"))
@@ -30,7 +33,7 @@ for n in (1, 2):
     html = render(
         title="Pulmonary Function Testing Quiz %d &mdash; Principles of Diagnostic Medicine I" % n,
         h1="Pulmonary Function Testing and Oxygenation",
-        sub="Principles of Diagnostic Medicine I &middot; Exam 4 &middot; Lecture 20",
+        sub="Principles of Diagnostic Medicine I &middot; Exam 4 &middot; Lecture 18",
         pill="%d questions" % len(qs), chips=CHIPS, intro=INTRO,
         questions=qs, already_converted=True, **PALETTE)
     os.makedirs(OUT, exist_ok=True)
