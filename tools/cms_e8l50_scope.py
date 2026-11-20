@@ -188,6 +188,8 @@ REQUIRED_VIG = [
 ]
 
 HELD = [
+    # b58d2ec269804f8c: held after final audit round (explanation defect; no further repair this build).
+    "A 70-year-old woman's primary care clinician finds an absolute lymphocyte count of 16,000 per microliter (normal 1,000-4,000), and flow cytometry confirms chronic lymphocytic leukemia. She has no symptoms. Which referral is appropriate?",
     # b764547da8865157: held after final audit round (explanation defect; no further repair this build).
     "A 74-year-old woman with chronic lymphocytic leukemia has had three pneumonias and two sinus infections this year. Her hemoglobin and platelet counts are normal. Which feature of her disease best accounts for these infections?",
     # 3b15f3e2fc3cc0f5: held after final audit round (explanation defect; no further repair this build).

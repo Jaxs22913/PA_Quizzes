@@ -315,7 +315,7 @@ V(T_CLL_TX, IO_II,
    ["Surgical oncology",
     "Chronic lymphocytic leukemia is not treated surgically, and she has no node to remove. Tell: diagnosis was made on blood and care is with hematology/oncology.", "confused mechanism or drug class"],
    ["No referral is needed",
-    "Asymptomatic disease may be observed, but the deck states the disease requires referral to and management by a hematologist/oncologist. Tell: watch and wait is still done by the specialist.", "common lay belief"]],
+    "Asymptomatic disease may be observed, but the disease requires referral to and management by a hematologist/oncologist. Tell: watch and wait is still done by the specialist.", "common lay belief"]],
   C(13), "referral", "referral"),
 
 ORD(V(T_CLL_DX, IO_II,
