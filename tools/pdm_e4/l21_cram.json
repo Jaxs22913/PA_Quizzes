@@ -1,0 +1,530 @@
+[
+ {
+  "id": "l21-safety",
+  "label": "Pre-Transfusion Safety: Human Error at the Bedside (Lecture 21)",
+  "color": "#26384a",
+  "rows": [
+   [
+    "★ Fatal ABO reactions",
+    "Almost universally CLERICAL: the blood bank typed correctly, the unit reached the wrong patient (mislabeled sample, \"wrong blood in tube\", or a failed two-person bedside check)."
+   ],
+   [
+    "Anchor case",
+    "Unit for bay 2 given in bay 1 → within 5 minutes rigors, severe flank pain, tachypnea, hypotension, dark port-wine urine."
+   ],
+   [
+    "Sample labeling",
+    "At the bedside, in front of the patient. Never pre-label; never label away from the patient."
+   ],
+   [
+    "Two-identifier check",
+    "Name, medical record number, unit blood type and unit serial number matched directly against the WRISTBAND."
+   ],
+   [
+    "First 15 minutes",
+    "Infuse the first 25–50 mL slowly: a severe acute hemolytic reaction can follow as little as 25 mL."
+   ],
+   [
+    "★ Second-sample rule",
+    "No prior verified type on record → a second, separate sample is drawn and tested to confirm ABO/Rh."
+   ]
+  ]
+ },
+ {
+  "id": "l21-abo",
+  "label": "ABO: Carbohydrate Antigens, Natural IgM, Intravascular Lysis",
+  "color": "#26384a",
+  "rows": [
+   [
+    "Antigens",
+    "Oligosaccharides on membrane glycoproteins. Group O = only the unmodified H core. A = N-acetylgalactosamine transferase; B = D-galactosyltransferase; AB = both antigens."
+   ],
+   [
+    "Antibodies",
+    "NATURALLY OCCURRING (no transfusion needed), primed in infancy by gut flora and food carbohydrates. You make antibodies against the ABO antigens you lack."
+   ],
+   [
+    "Class",
+    "IgM: large pentamer, avid complement fixer (C1q binding)."
+   ],
+   [
+    "The cascade",
+    "Membrane attack complex (C5b-9) in the circulation → immediate lysis, free hemoglobin in plasma → C3a and C5a: vasodilation, hypotension, shock → free hemoglobin: tubular precipitation / acute tubular necrosis; procoagulants: disseminated intravascular coagulation."
+   ]
+  ]
+ },
+ {
+  "id": "l21-compat",
+  "label": "★ Compatibility Matrix: Red Cells and Plasma Run Opposite",
+  "color": "#26384a",
+  "cols": [
+   "Group",
+   "Red cell antigens",
+   "Plasma antibodies",
+   "Red cells from",
+   "Plasma from"
+  ],
+  "widths": [
+   "10%",
+   "20%",
+   "22%",
+   "24%",
+   "24%"
+  ],
+  "rows": [
+   [
+    "O",
+    "None (H antigen)",
+    "Anti-A and anti-B",
+    "O only",
+    "O, A, B, AB (universal)"
+   ],
+   [
+    "A",
+    "A antigen",
+    "Anti-B",
+    "A, O",
+    "A, AB"
+   ],
+   [
+    "B",
+    "B antigen",
+    "Anti-A",
+    "B, O",
+    "B, AB"
+   ],
+   [
+    "AB",
+    "A and B antigens",
+    "None",
+    "AB, A, B, O (universal)",
+    "AB only"
+   ],
+   {
+    "note": "Red cells: O = universal donor, AB = universal recipient. Plasma: AB = universal donor (no anti-A or anti-B), O = universal recipient."
+   }
+  ],
+  "mnemonic": {
+   "hook": "\"O gives cells, AB gives plasma\" — and whoever gives one TAKES the other.",
+   "key": [
+    [
+     "O",
+     "gives red cells to all; takes plasma from all"
+    ],
+    [
+     "AB",
+     "gives plasma to all; takes red cells from all"
+    ]
+   ],
+   "breaks": "Covers the universal rows only. Groups A and B: red cells from their own group or O; plasma from their own group or AB."
+  }
+ },
+ {
+  "id": "l21-emergency",
+  "label": "Emergency Release: O-Negative vs O-Positive",
+  "color": "#26384a",
+  "rows": [
+   [
+    "★ O-negative",
+    "Scarce (~6–7%). Strict reserve: MANDATORY for females of childbearing potential (<50 years) with an unknown type → prevents lifelong anti-D and fetal hydrops in future pregnancies. Sent uncrossmatched while confirmatory testing proceeds."
+   ],
+   [
+    "★ O-positive",
+    "Abundant (~37–39%). Massive transfusion standard for adult males and post-menopausal females."
+   ],
+   [
+    "Rh-negative man given O-positive",
+    "NO immediate intravascular hemolysis (no natural anti-D). Anti-D may form later; surviving the hemorrhage comes first."
+   ]
+  ]
+ },
+ {
+  "id": "l21-abo-vs-rh",
+  "label": "ABO vs RhD Head to Head",
+  "color": "#26384a",
+  "cols": [
+   "Feature",
+   "ABO",
+   "RhD"
+  ],
+  "widths": [
+   "26%",
+   "37%",
+   "37%"
+  ],
+  "min_width": "0",
+  "rows": [
+   [
+    "Antigen",
+    "Carbohydrate oligosaccharides (A, B, H)",
+    "Transmembrane protein (D)"
+   ],
+   [
+    "Baseline antibody",
+    "Naturally occurring",
+    "Absent until sensitized (transfusion or pregnancy)"
+   ],
+   [
+    "Antibody class",
+    "IgM (pentamer, complement)",
+    "IgG (monomer, crosses the placenta)"
+   ],
+   [
+    "Hemolysis site",
+    "Intravascular",
+    "Extravascular (splenic macrophages)"
+   ],
+   [
+    "Severity",
+    "Acute, dramatic: shock, acute DIC (disseminated intravascular coagulation), acute tubular necrosis",
+    "Gradual: asymptomatic hemoglobin drop, mild jaundice (spherocytes, low haptoglobin)"
+   ]
+  ],
+  "mnemonic": {
+   "hook": "ABO is born with it and bursts cells in the blood; Rh needs a Rehearsal, is Removed by the spleen and Reaches the baby.",
+   "key": [
+    [
+     "Born with it",
+     "natural antibody"
+    ],
+    [
+     "Bursts in the blood",
+     "IgM, complement, intravascular"
+    ],
+    [
+     "Rehearsal",
+     "needs prior exposure"
+    ],
+    [
+     "Removed by the spleen",
+     "extravascular"
+    ],
+    [
+     "Reaches the baby",
+     "IgG crosses the placenta"
+    ]
+   ],
+   "breaks": "Says nothing about the antigen chemistry (ABO carbohydrate, RhD protein)."
+  }
+ },
+ {
+  "id": "l21-rh",
+  "label": "RhD and Hemolytic Disease of the Fetus and Newborn",
+  "color": "#26384a",
+  "rows": [
+   [
+    "RhD",
+    "Transmembrane protein; the MOST immunogenic red cell antigen outside ABO. Rh-positive = the RhD polypeptide is present."
+   ],
+   [
+    "No natural anti-D",
+    "Rh-negative people have ZERO anti-D at baseline; exposure = Rh-positive transfusion or feto-maternal hemorrhage. Anti-D is IgG (IgG1, IgG3); weeks to months to mature."
+   ],
+   [
+    "How the disease happens",
+    "RhD-negative mother, RhD-positive fetus → feto-maternal bleed (delivery, trauma) → IgG anti-D → in LATER pregnancies crosses the placenta (Fc receptors) → splenic destruction, anemia, extramedullary hematopoiesis, high-output heart failure (hydrops fetalis)."
+   ],
+   [
+    "★ Rh immune globulin",
+    "Masks and clears fetal D-positive cells before maternal B cells respond. ~28 weeks to every non-sensitized RhD-negative mother; within 72 hours of delivering an RhD-positive baby; after miscarriage, ectopic, abortion, amniocentesis or abdominal trauma."
+   ],
+   [
+    "Kleihauer-Betke test",
+    "Quantifies the fetal-maternal bleed → are extra vials of Rh immune globulin needed?"
+   ]
+  ]
+ },
+ {
+  "id": "l21-typing",
+  "label": "★ Reading ABO Typing",
+  "color": "#26384a",
+  "cols": [
+   "Forward (cells + anti-A, anti-B): detects ANTIGENS",
+   "Reads as",
+   "Reverse (plasma + A1, B cells): detects ANTIBODIES",
+   "Reads as"
+  ],
+  "widths": [
+   "32%",
+   "18%",
+   "32%",
+   "18%"
+  ],
+  "rows": [
+   [
+    "Agglutinates with anti-A",
+    "A antigen present",
+    "Agglutinates B cells only",
+    "Anti-B → group A"
+   ],
+   [
+    "Agglutinates with anti-B",
+    "B antigen present",
+    "Agglutinates A1 cells only",
+    "Anti-A → group B"
+   ],
+   [
+    "Agglutinates with anti-D",
+    "RhD-positive",
+    "Agglutinates both A1 and B cells",
+    "Group O"
+   ],
+   [
+    "No agglutination with anti-A or anti-B",
+    "Group O",
+    "No agglutination of either cell",
+    "Group AB"
+   ],
+   {
+    "note": "Forward and reverse MUST match before blood is released; any discrepancy → immediate investigation."
+   }
+  ],
+  "mnemonic": {
+   "hook": "Forward finds the antigen you HAVE; reverse finds the antibody for what you LACK — so the two halves name the same group from opposite sides.",
+   "breaks": "Anti-D (Rh) is read only on the forward side."
+  }
+ },
+ {
+  "id": "l21-screen",
+  "label": "Antibody Screen, DAT vs IAT, Type and Screen vs Crossmatch",
+  "color": "#26384a",
+  "rows": [
+   [
+    "Antibody screen",
+    "An indirect antiglobulin test: plasma + 2–3 group O reagent cells, then antihuman globulin. Finds UNEXPECTED IgG alloantibodies (Kell, Duffy, Kidd, Rh C/E). Negative in ~95–98%."
+   ],
+   [
+    "Positive screen",
+    "Alloantibody from prior transfusion, transplantation or pregnancy → 11- to 16-cell identification panel → antigen-negative donor units (hours to days) → order the type and screen well before elective surgery."
+   ],
+   [
+    "★ Direct antiglobulin test (DAT)",
+    "\"ALREADY coated in the body?\" Patient's washed red cells; polyspecific anti-IgG + anti-C3d, then monospecific if positive. Hemolytic reactions, autoimmune hemolytic anemia, hemolytic disease of the newborn."
+   ],
+   [
+    "Indirect antiglobulin test (IAT)",
+    "\"FREE antibody in the plasma?\" Plasma + reagent cells (in vitro). Pre-transfusion screen, prenatal antibody screen, crossmatching."
+   ],
+   [
+    "Type and screen",
+    "ABO, Rh, unexpected antibodies; ZERO units held. Transfusion possible but not expected (routine surgery, stable gastrointestinal bleed)."
+   ],
+   [
+    "Type and crossmatch",
+    "Physically matches donor units; specific units tagged and RESERVED (unavailable to others until released). Transfusion planned, highly probable or ongoing."
+   ],
+   [
+    "★ 3-day specimen rule",
+    "Sample valid only 72 hours if transfused or pregnant within 3 months, or history uncertain: new alloantibodies form fast after re-exposure → expired = redraw and retest."
+   ]
+  ]
+ },
+ {
+  "id": "l21-crossmatch",
+  "label": "Crossmatch Tiers",
+  "color": "#26384a",
+  "cols": [
+   "Tier",
+   "Requirement",
+   "Purpose",
+   "Turnaround"
+  ],
+  "widths": [
+   "20%",
+   "34%",
+   "30%",
+   "16%"
+  ],
+  "rows": [
+   [
+    "Electronic (computer)",
+    "Negative screen AND ≥2 concordant type records",
+    "Software verifies ABO/Rh compatibility",
+    "<1 minute"
+   ],
+   [
+    "Immediate-spin",
+    "Negative screen, no history of significant antibodies",
+    "Final ABO check; rules out clerical mismatch",
+    "~5–10 minutes"
+   ],
+   [
+    "Full antiglobulin",
+    "Positive screen OR history of significant antibodies",
+    "37 °C + antihuman globulin: weak IgG to minor antigens",
+    "45–60+ min per unit"
+   ]
+  ],
+  "mnemonic": {
+   "hook": "E-I-F, from fastest to slowest:",
+   "key": [
+    [
+     "E",
+     "Electronic: Everything clean (negative screen + two records)"
+    ],
+    [
+     "I",
+     "Immediate spin: Is it ABO-compatible?"
+    ],
+    [
+     "F",
+     "Full: Found an antibody"
+    ]
+   ],
+   "breaks": "The letters carry the requirement, not the turnaround times."
+  }
+ },
+ {
+  "id": "l21-protocol",
+  "label": "★ Any Suspected Reaction: The Universal Response",
+  "color": "#26384a",
+  "rows": [
+   [
+    "1. Stop",
+    "Halt the infusion immediately; do NOT just slow it. Disconnect the tubing at the catheter hub."
+   ],
+   [
+    "2. Keep the line",
+    "Fresh normal saline through NEW tubing; never flush the remaining blood into the patient."
+   ],
+   [
+    "3. Clerical recheck",
+    "Wristband vs unit label, bag paperwork and compatibility slip."
+   ],
+   [
+    "4. Notify",
+    "Blood bank and attending."
+   ],
+   [
+    "5. Return",
+    "Remaining product, intact tubing and tags → blood bank for testing and cultures."
+   ],
+   [
+    "6. Labs",
+    "Repeat ABO/Rh, direct antiglobulin test, complete blood count, metabolic panel, free plasma hemoglobin, urinalysis."
+   ]
+  ]
+ },
+ {
+  "id": "l21-reactions",
+  "label": "★ The Five Reactions: Laboratory Fingerprints",
+  "color": "#26384a",
+  "cols": [
+   "Reaction",
+   "Onset",
+   "Fever",
+   "Low BP",
+   "DAT",
+   "Hemolysis labs",
+   "Distinguishing"
+  ],
+  "widths": [
+   "14%",
+   "12%",
+   "10%",
+   "10%",
+   "11%",
+   "22%",
+   "21%"
+  ],
+  "rows": [
+   [
+    "Acute hemolytic",
+    "Minutes–24 h",
+    "Yes",
+    "Yes (shock)",
+    "Positive (new)*",
+    "Marked: pink plasma, red urine, low haptoglobin, high LDH",
+    "ABO mismatch on recheck; acute DIC"
+   ],
+   [
+    "Delayed hemolytic",
+    "3–30 days",
+    "Mild/variable",
+    "Rare",
+    "Positive (new)",
+    "Extravascular: spherocytes, high indirect bilirubin, hemoglobin drop",
+    "New alloantibody on screen (Kidd, Rh)"
+   ],
+   [
+    "Febrile non-hemolytic",
+    "During–4 h",
+    "Yes (≥1 °C)",
+    "No",
+    "Negative",
+    "Normal (clear plasma, urine)",
+    "Diagnosis of exclusion"
+   ],
+   [
+    "Allergic",
+    "During–4 h",
+    "No",
+    "No",
+    "Negative",
+    "Normal",
+    "Pruritus/urticaria; responds to H1-blocker"
+   ],
+   [
+    "Anaphylaxis",
+    "Seconds–minutes",
+    "No",
+    "Yes (shock)",
+    "Negative",
+    "Normal",
+    "Stridor/wheeze; high tryptase; anti-IgA"
+   ],
+   {
+    "note": "DAT = direct antiglobulin test; LDH = lactate dehydrogenase; DIC = disseminated intravascular coagulation; BP = blood pressure. *May be negative if every donor cell is already lysed."
+   }
+  ],
+  "mnemonic": {
+   "hook": "The two A's are Afebrile; the two Hemolytics are DAT-positive.",
+   "key": [
+    [
+     "Afebrile",
+     "Allergic and Anaphylaxis: no fever"
+    ],
+    [
+     "DAT-positive",
+     "Acute and Delayed hemolytic"
+    ],
+    [
+     "Shock",
+     "Acute hemolytic and Anaphylaxis"
+    ]
+   ],
+   "breaks": "The febrile non-hemolytic reaction is the leftover: fever, normal labs, negative DAT. Delayed hemolytic fever is only mild/variable."
+  }
+ },
+ {
+  "id": "l21-reaction-details",
+  "label": "Reaction by Reaction",
+  "color": "#26384a",
+  "rows": [
+   [
+    "Acute hemolytic",
+    "ABO (90%+ clerical), IgM + complement, within minutes. Triad: fever/rigors, flank pain, red urine. Labs: absent haptoglobin, very high LDH (lactate dehydrogenase), later indirect bilirubin; DIC labs (long clotting times, high D-dimer, low fibrinogen and platelets); rising creatinine, hyperkalemia."
+   ],
+   [
+    "★ Delayed hemolytic",
+    "Anamnestic IgG to minor antigens (Kidd, Rh, Duffy, Kell); old antibody undetectable on the screen. Day 3–30 (peak 5–15). Hemoglobin drops or fails to rise; mild jaundice. New positive DAT + new alloantibody (anti-Jka); spherocytes."
+   ],
+   [
+    "Sickle cell disease",
+    "A delayed reaction mimics a pain crisis; hemoglobin A falls disproportionately. Hyperhemolysis: donor AND own cells destroyed, reticulocytopenia, further transfusion can be fatal."
+   ],
+   [
+    "Febrile non-hemolytic",
+    "Stored cytokines or anti-white cell (HLA, human leukocyte antigen) antibodies. Rise ≥1 °C to ≥38 °C during or within 4 h; stable. All labs normal. Sepsis workup if ≥2 °C, hypotension or platelets. Prevent: pre-storage leukoreduction; no routine premedication."
+   ],
+   [
+    "★ Allergic",
+    "Recipient IgE vs donor plasma proteins; plasma-rich products. Hives only: NO fever, wheeze or hypotension; labs normal. Pause, H1-blocker, re-check at 20–30 min → the SAME unit may restart slower within the 4-hour hang time. Wheeze/fever/hypotension → never restart."
+   ],
+   [
+    "Anaphylactic",
+    "Severe IgA deficiency with anti-IgA; seconds after 1–5 mL; NO fever (separates it from sepsis and acute hemolysis). Intramuscular epinephrine first, never delayed. Tryptase within 1–3 h, IgA level, anti-IgA. Future: washed red cells or IgA-deficient donors."
+   ]
+  ]
+ }
+]
