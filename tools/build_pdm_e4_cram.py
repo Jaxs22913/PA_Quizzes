@@ -44,19 +44,24 @@ def main():
     ids = [t["id"] for t in topics]
     assert len(ids) == len(set(ids)), "duplicate topic ids"
     for t in topics:
+        width = len(t["cols"]) if t.get("cols") else 2   # criteria tables (cram_criteria_tables) carry "cols"
         for r in t["rows"]:
-            assert len(r) == 2 and all(x.strip() for x in r), (t["id"], r)
+            if isinstance(r, dict):                      # {"note": ...} rows
+                continue
+            assert len(r) == width and all(str(x).strip() for x in r), (t["id"], r)
 
     html = render(
         title="Cram Sheet — Principles of Diagnostic Medicine I Exam 4",
         kicker="Principles of Diagnostic Medicine I Exam 4 · Class of 2028",
         h1="Principles of Diagnostic Medicine I Exam 4 Cram Sheet",
-        sub="Lectures 17 to 21, the pulmonary block, built lecture by lecture. So far: pulmonary imaging (the landmarks, the normal film, the upper airway films, technique, choosing the study and its cautions, reading computed tomography, and the five patterns), acid-base and blood gases (what each value measures, the curve, arterial against venous, indications, the step-wise read and compensation, the four disorders with potassium, and the anion gap) and pulmonary function testing (the equipment, the volumes and capacities, spirometry, indications, obstruction against restriction, reading a report, each test's role, and oxygenation). Opens with how the exam is written.",
+        sub="Lectures 17 to 21: the pulmonary block, point-of-care ultrasound and transfusion medicine. pulmonary imaging (the landmarks, the normal film, the upper airway films, technique, choosing the study and its cautions, reading computed tomography, and the five patterns), acid-base and blood gases (what each value measures, the curve, arterial against venous, indications, the step-wise read and compensation, the four disorders with potassium, and the anion gap), pulmonary function testing (the equipment, the volumes and capacities, spirometry, indications, obstruction against restriction, reading a report, each test's role, and oxygenation), point-of-care ultrasound (probes, echogenicity and artifacts, the four cardiac windows, lung, gallbladder, inferior vena cava and soft-tissue findings, and the trauma windows) and transfusion medicine (compatibility, RhD, typing and screening, crossmatch tiers and the five reactions). Opens with how the exam is written.",
         topics=topics,
         guide_href="pdm-exam-4-study-guide.html",
-        footer_note="Condensed from the Principles of Diagnostic Medicine I Exam 4 Study Guide (Class of 2028). Covers Lecture%s %s so far (lecture content). Emphasis rows quote the 20, 26 and 27 October 2026 recordings; ★ = emphasized in a recording." % ("s" if len(lectures) > 1 else "", ", ".join(map(str, lectures))),
+        footer_note="Condensed from the Principles of Diagnostic Medicine I Exam 4 Study Guide (Class of 2028). Covers Lecture%s %s so far (lecture content). Emphasis rows quote the 20, 26 and 27 October and 17 and 19 November 2026 recordings; ★ = emphasized in a recording." % ("s" if len(lectures) > 1 else "", ", ".join(map(str, lectures))),
     )
-    assert not re.search(r"(?i)ha[e]m|(?<!angi)o[e]dem|tumo[u]r|colo[u]r|cent[r]e|ana[e]m|o[e]soph", html)
+    # CSS comments are the template's own (the mnemonic block says "recolours"); check the content only
+    assert not re.search(r"(?i)ha[e]m|(?<!angi)o[e]dem|tumo[u]r|colo[u]r|cent[r]e|ana[e]m|o[e]soph",
+                         re.sub(r"/\*.*?\*/", "", html, flags=re.S))
     open(OUT, "w", encoding="utf-8").write(html)
     print("wrote %s (%d KB, %d topics, %d rows)" % (os.path.basename(OUT), len(html) // 1024,
           len(topics), sum(len(t["rows"]) for t in topics)))

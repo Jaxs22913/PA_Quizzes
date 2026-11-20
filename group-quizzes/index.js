@@ -808,5 +808,7 @@ window.GROUP_INDEX = {
 "principles-of-diagnostic-medicine-i-exam-2-pdm-exam-2-master-exam-form-b":{"title":"PDM I Exam 2 Master Exam — Form B","category":"Principles of Diagnostic Medicine I","exam":"Exam 2","sem":"fall-2026","n":60},
 "principles-of-diagnostic-medicine-i-exam-2-pdm-exam-2-master-exam-form-c":{"title":"PDM I Exam 2 Master Exam — Form C","category":"Principles of Diagnostic Medicine I","exam":"Exam 2","sem":"fall-2026","n":60},
 "principles-of-diagnostic-medicine-i-exam-2-pdm-exam-2-master-exam-form-d":{"title":"PDM I Exam 2 Master Exam — Form D","category":"Principles of Diagnostic Medicine I","exam":"Exam 2","sem":"fall-2026","n":60},
-"principles-of-diagnostic-medicine-i-exam-2-pdm-exam-2-master-exam-form-e":{"title":"PDM I Exam 2 Master Exam — Form E","category":"Principles of Diagnostic Medicine I","exam":"Exam 2","sem":"fall-2026","n":60}
+"principles-of-diagnostic-medicine-i-exam-2-pdm-exam-2-master-exam-form-e":{"title":"PDM I Exam 2 Master Exam — Form E","category":"Principles of Diagnostic Medicine I","exam":"Exam 2","sem":"fall-2026","n":60},
+"principles-of-diagnostic-medicine-i-exam-4-transfusion-medicine-blood-bank-quiz":{"title":"Transfusion Medicine and Blood Banking Quiz 1 — Principles of Diagnostic Medicine I","category":"Principles of Diagnostic Medicine I","exam":"Exam 4","sem":"fall-2026","n":30},
+"principles-of-diagnostic-medicine-i-exam-4-transfusion-medicine-blood-bank-quiz-version-2":{"title":"Transfusion Medicine and Blood Banking Quiz 2 — Principles of Diagnostic Medicine I","category":"Principles of Diagnostic Medicine I","exam":"Exam 4","sem":"fall-2026","n":30}
 };
