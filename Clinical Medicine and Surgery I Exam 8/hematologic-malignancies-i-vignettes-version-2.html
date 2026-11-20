@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));window.__paErrQ=[];['error','unhandledrejection'].forEach(function(t){addEventListener(t,function(e){var q=window.__paErrQ;if(q&&!q.done)q.push(e)})});</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #717533; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c9962a; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hematologic Malignancies I Vignettes 2 — CMS I Exam 8</title>
+<style>
+  :root{
+    --navy:#46491c; --indigo:#717533; --gold:#c9962a; --ice:#f8f8ee;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#46491c;--gold-l:#c9962a;--indigo-l:#717533;--navy:#acb181;--indigo:#8b904d;--gold:#c9962a;--ice:#232509;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#8b904d;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#46491c;--indigo-t:#717533;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Hematologic Malignancies I &mdash; Vignettes 2</h1>
+    <div class="sub">Clinical Medicine and Surgery I &middot; Exam 8 &middot; Lecture 49</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Count the blasts first (marrow blast percentage decides acute leukemia against myelodysplasia, and the phase of chronic myelogenous leukemia), then the cell line and the hallmark finding, then the patient's fitness and comorbidities before choosing a treatment. Every laboratory value comes with its normal range.</p>
+    <div class="chips"><span class="chip">Count the blasts</span><span class="chip">Grade the fitness</span><span class="chip">Stage the CML</span><span class="chip">Read the milestone</span><span class="chip">Pick the treatment</span><span class="chip">Comorbidities</span><span class="chip">Across the lifespan</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Acute lymphoblastic leukemia: presentation and diagnosis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin", "q": "A 4-year-old boy has 3 weeks of fatigue, pallor, bruising with petechiae (pinpoint skin bleeds), bone pain and fever. He has hepatosplenomegaly. White blood cell count is 48,000 per microliter (normal 5,000-15,000) with many lymphoid blasts, hemoglobin 7.9 g/dL (normal 11.0-14.0 g/dL) and platelets 31,000 per microliter (normal 150,000-450,000). Which is the most likely diagnosis?", "opts": [["Chronic myelogenous leukemia", "Chronic myelogenous leukemia is a chronic leukemia, and chronic leukemias are proliferations of mature malignant white cells; he is 4 with many lymphoid blasts and low platelets. Tell: blasts with cytopenias mean an acute leukemia."], ["Infectious mononucleosis", "Mononucleosis can cause an atypical lymphocytosis, but not lymphoid blasts with anemia, thrombocytopenia and bone pain; flow cytometry separates them by the clonal nature of the leukemia. Tell: blasts plus failing red cells and platelets are leukemia."], ["Acute lymphoblastic leukemia", "Correct. Acute lymphoblastic leukemia is the most common malignancy under age 15. He shows anemia (fatigue, pallor), thrombocytopenia (petechiae), bone pain from excessive marrow production, organomegaly and a white count above 30,000 with lymphoid blasts."], ["Acute myeloid leukemia", "Acute myeloid leukemia is mostly seen in adults, particularly those over 60, and its blasts are myeloid. Tell: a preschool child with lymphoid blasts points to the lymphoblastic leukemia."]], "c": 2, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 18, 22, 14, 24, 31", "slot": "manifestation", "lead": "diagnosis", "qid": "19z4a1s"}, {"topic": "Hematopoiesis and the malignancy families", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)", "q": "A 68-year-old man has bone pain, anemia, kidney dysfunction, hypercalcemia and repeated infections. His chemistry panel shows an elevated protein level from excess production of a single monoclonal antibody. Which hematologic malignancy is most likely?", "opts": [["Multiple myeloma", "Correct. Multiple myeloma arises from plasma cells, the antibody producers, and is marked by excess production of a single monoclonal antibody (the M protein). Bone pain, anemia, renal dysfunction and hypercalcemia (the CRAB (calcium, renal, anemia, bone) features) with infections from immune compromise fit it."], ["Hodgkin lymphoma", "Lymphomas often present with enlarged lymph nodes, night sweats, weight loss and fevers; Hodgkin lymphoma does not produce a monoclonal antibody with hypercalcemia and kidney dysfunction. Tell: a single excess antibody points to a plasma cell disorder."], ["Chronic myelogenous leukemia", "Chronic myelogenous leukemia shows marked leukocytosis with high platelets and splenomegaly, confirmed by the BCR-ABL1 (fusion gene) test; it does not make a monoclonal protein. Tell: bone pain, kidney damage and a monoclonal antibody are myeloma."], ["Acute lymphoblastic leukemia", "Acute lymphoblastic leukemia is a proliferation of immature lymphoid blasts with cytopenias, not of antibody-producing plasma cells. Tell: a monoclonal M protein comes from terminally differentiated plasma cells."]], "c": 0, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 11, 16", "slot": "manifestation", "lead": "diagnosis", "qid": "1kafxeh"}, {"topic": "Acute myeloid leukemia: management and prognosis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin", "q": "A 57-year-old woman has just been diagnosed with acute myeloid leukemia in an urgent care clinic. Which plan is most appropriate?", "opts": [["Admit and refer to a leukemia specialist", "Correct. Acute myeloid leukemia requires referral to and management by a hematologist/oncologist, ideally a leukemia specialist, and most patients with acute leukemia are admitted initially for work-up and initiation of treatment."], ["Outpatient blood counts in one month", "A month of outpatient counts delays treatment of a leukemia made of very immature cells with rapid ability to proliferate. Tell: acute leukemia means admission now."], ["Refer to a hematologist next quarter", "A specialist is right but the timing is wrong; most patients with acute leukemia are admitted for work-up and treatment at diagnosis. Tell: the referral is urgent and inpatient."], ["Start oral iron and recheck", "Iron treats iron deficiency; her anemia comes from marrow failure due to leukemia. Tell: a new acute leukemia needs admission and a specialist, not iron."]], "c": 0, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 42", "slot": "referral", "lead": "referral", "qid": "19lg55v"}, {"topic": "Acute lymphoblastic leukemia: management and prognosis", "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly", "q": "A 76-year-old woman has Philadelphia chromosome-negative acute lymphoblastic leukemia (no 9;22 translocation) and is starting treatment. How should her chemotherapy plan differ from a 25-year-old's?", "opts": [["Arsenic trioxide with retinoic acid", "Arsenic trioxide with all-trans retinoic acid is the treatment for acute promyelocytic leukemia, a myeloid leukemia from a 15;17 translocation. Tell: an older adult with lymphoblastic leukemia gets an adjusted chemotherapy plan."], ["Changes and dose adjustments for tolerance", "Correct. Pediatric-like intensive regimens are usually given below age 40; in older adults like her, therapy changes and dose adjustments may be necessary for tolerance. Her disease is Philadelphia-negative, so no tyrosine kinase inhibitor is indicated."], ["The same pediatric-like regimen unchanged", "Pediatric-like regimens are usually given to patients younger than 40; at 76 she may not tolerate them unchanged. Tell: in older adults the regimen is changed and adjusted for tolerance."], ["A tyrosine kinase inhibitor in place of it", "Tyrosine kinase inhibitors are added for Philadelphia chromosome-positive disease; she has no 9;22 translocation. Tell: her age changes the intensity, not the target."]], "c": 1, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 27", "slot": "agent/regimen", "lead": "treatment", "qid": "d7ozh5"}, {"topic": "Polycythemia vera", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)", "q": "A 55-year-old man has polycythemia vera with a hematocrit of 58% (normal 41-50%), headaches and blurry vision. Which treatment lowers his red cell excess directly?", "opts": [["Leukapheresis", "Leukapheresis removes white cells and is needed emergently in acute myeloid leukemia above 100,000; his excess is red cells. Tell: red cells are removed by phlebotomy."], ["Red cell transfusion", "Transfusion adds red cells, as for anemia in myelodysplastic syndrome; he already has too many. Tell: polycythemia vera needs blood removed, not added."], ["Erythropoiesis-stimulating agent", "Erythropoiesis-stimulating agents push red cell production up, used for anemia in low-risk myelodysplasia; that would worsen his excess. Tell: phlebotomy lowers red cells."], ["Phlebotomy", "Correct. Treatment of polycythemia vera is phlebotomy, with hydroxyurea also listed. Removing blood directly lowers the red cell excess that raises blood viscosity and causes his headaches and blurry vision."]], "c": 3, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 52", "slot": "first-line", "lead": "treatment", "qid": "1sgux79"}, {"topic": "Acute promyelocytic leukemia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin", "q": "A 41-year-old man has acute promyelocytic leukemia with a translocation of chromosomes 15 and 17 and active bleeding. Which treatment approach is used for this subtype?", "opts": [["Tyrosine kinase inhibitor plus chemotherapy", "A tyrosine kinase inhibitor plus chemotherapy treats Philadelphia chromosome-positive lymphoblastic leukemia, the 9;22 translocation. Tell: his translocation is 15;17, which has its own unique approach."], ["Phlebotomy and hydroxyurea", "Phlebotomy and hydroxyurea are the treatment of polycythemia vera, not of acute promyelocytic leukemia. Tell: a bleeding promyelocytic leukemia needs its unique retinoic acid and arsenic approach."], ["All-trans retinoic acid plus arsenic trioxide", "Correct. Acute promyelocytic leukemia has a unique treatment approach: arsenic trioxide and all-trans retinoic acid. It frequently presents with disseminated intravascular coagulation and bleeding, and if the patient survives the initial presentation the cure rate is above 90%."], ["Hypomethylating agent plus venetoclax", "A hypomethylating agent with or without venetoclax is low-intensity therapy for unfit patients with other acute myeloid leukemia; promyelocytic leukemia has its own approach. Tell: the 15;17 translocation calls for retinoic acid and arsenic."]], "c": 2, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 27, 40, 43, 52", "slot": "first-line", "lead": "treatment", "qid": "bgafnb"}, {"topic": "Performance status, work-up and transplant terms", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin", "q": "A 73-year-old man newly diagnosed with acute myeloid leukemia asks why his team recorded an Eastern Cooperative Oncology Group performance status. Which explanation is accurate?", "opts": [["It rates fitness, which shapes prognosis", "Correct. Performance status scores are used to characterize fitness, and the prognosis of hematologic malignancies is often dictated by patient fitness, particularly in older patients like him. The score is also frequently part of clinical trial entry criteria."], ["It stages how far the cancer has spread", "Spread is evaluated with imaging and other testing, not with the fitness scale; the performance status grades describe what the patient can do in a day. Tell: the grade rows read like a description of daily activity, not of the tumor."], ["It counts the blasts in his marrow", "The blast percentage comes from the bone marrow biopsy, which defines acute myeloid leukemia at 20% or more; it is not part of the fitness scale. Tell: the performance status table never mentions a laboratory value."], ["It decides his stem cell donor match", "A donor matters for an allogeneic stem cell transplant, which uses a healthy donor's stem cells; the fitness scale describes the patient's activity and self-care. Tell: the scale rates the patient, not a donor."]], "c": 0, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 10", "slot": "prognosis", "lead": "education", "qid": "7blsws"}, {"topic": "Chronic myelogenous leukemia: presentation, diagnosis and phases", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)", "q": "A 57-year-old man with chronic myelogenous leukemia has blasts at 14% of marrow cells, dysplastic changes in granulocytes, some marrow fibrosis and significant splenomegaly. Which phase is he in?", "opts": [["Myelodysplastic syndrome", "Dysplasia occurs, but he has known chronic myelogenous leukemia, and blasts of 10-19% in that disease define the accelerated phase. Tell: in established chronic myelogenous leukemia, read the phase from the blasts."], ["Accelerated phase", "Correct. Accelerated phase often has 10-19% blasts, may show dysplastic granulocytes and fibrosis, and frequently presents with significant splenomegaly; his 14% blasts with these changes fit. It is about 4-5% of presentations."], ["Chronic phase", "Chronic phase has no or few blasts, under 5%; his are 14%. Tell: 10-19% blasts with dysplasia and fibrosis is accelerated."], ["Blast phase", "Blast phase behaves as an acute leukemia, usually like acute myeloid leukemia, with blasts beyond the accelerated range; his 14% sits within 10-19%. Tell: 14% is accelerated, not yet blast crisis."]], "c": 1, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 62", "slot": "test finding", "lead": "classify", "qid": "5jysrs"}, {"topic": "Chronic myelogenous leukemia: management and prognosis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)", "q": "A 50-year-old woman with chronic phase chronic myelogenous leukemia on a tyrosine kinase inhibitor asks whether she must take it forever. Which answer is accurate?", "opts": [["It stops after a fixed 6-month course", "Treatment is not a fixed short course; it is for life unless a sustained major molecular response allows discontinuation. Tell: milestones run beyond 18 months."], ["Stopping is unsafe once started", "Stopping is possible with sustained major molecular remission, though recurrences occur in about half of cases. Tell: discontinuation is an option, not forbidden."], ["Lifelong, unless sustained deep remission", "Correct. Treatment is for life unless the patient achieves sustained major molecular remission, at which point discontinuation is possible; recurrences occur in about half, and most who recur recapture deep responses. Most patients live full lives."], ["It can stop once counts are normal", "Normal blood counts are not the stopping rule; discontinuation needs a sustained major molecular response measured by BCR-ABL1 (fusion gene) testing. Tell: the decision is molecular."]], "c": 2, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 63, 65, 66", "slot": "education", "lead": "education", "qid": "1n0tp0f"}, {"topic": "Myelofibrosis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)", "q": "A 68-year-old man with myelofibrosis asks which serious complications his disease can lead to. Which answer is accurate?", "opts": [["Kidney failure and hypercalcemia", "Renal dysfunction with hypercalcemia belongs to the CRAB (calcium, renal, anemia, bone) features of multiple myeloma. Tell: myelofibrosis complications come from the huge spleen and leukemic change."], ["Stroke and heart attack from platelets", "Clotting such as stroke and heart attack is the complication of essential thrombocythemia with high platelets. Tell: myelofibrosis leads to portal hypertension and secondary leukemia."], ["Pruritus after warm showers", "Itching after warm baths or showers is the classic symptom of polycythemia vera, not a serious complication of myelofibrosis. Tell: the spleen and leukemic progression are the dangers."], ["Portal hypertension and secondary leukemia", "Correct. Myelofibrosis is the most aggressive myeloproliferative neoplasm; its complications are severe splenomegaly, portal hypertension, bleeding and progression to secondary acute myeloid leukemia. High-risk patients often survive less than 2 years."]], "c": 3, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 16, 52, 53, 54", "slot": "complication", "lead": "complication", "qid": "1kt4vb2"}, {"topic": "Acute myeloid leukemia: management and prognosis", "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly", "q": "A 79-year-old man with chronic obstructive pulmonary disease on home oxygen and prior heart attacks has newly diagnosed acute myeloid leukemia; he is unfit for aggressive therapy. Which treatment approach should be avoided?", "opts": [["Intensive cytarabine plus anthracycline", "Correct. Intensive chemotherapy, often cytarabine plus an anthracycline, is for fit patients. He is 79 and unfit with lung and heart disease, so he should get low-intensity therapy (a hypomethylating agent with or without venetoclax) instead."], ["Hypomethylating agent plus venetoclax", "A hypomethylating agent with or without venetoclax is exactly the low-intensity option for unfit patients like him. Tell: this is what he should receive, not what to avoid."], ["Referral to a leukemia specialist", "Every patient with acute myeloid leukemia needs referral to a hematologist/oncologist, ideally a leukemia specialist. Tell: referral is required, whatever his fitness."], ["Consideration of a clinical trial", "Patients with acute myeloid leukemia should be considered for clinical trials where feasible, including older patients. Tell: trial consideration is encouraged, not avoided."]], "c": 0, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 40", "slot": "avoid", "lead": "avoid", "qid": "isj21m"}, {"topic": "Polycythemia vera", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)", "q": "A 58-year-old man has headaches, fatigue and blurry vision, and he itches intensely after warm showers. His hemoglobin is 20.1 g/dL (normal 13.5-17.5 g/dL) and hematocrit 61% (normal 41-50%); the spleen is enlarged. Which is the most likely diagnosis?", "opts": [["Essential thrombocythemia", "Essential thrombocythemia is overproduction of platelets and is mostly asymptomatic; his problem is a high hemoglobin and hematocrit. Tell: too many red cells with itching after showers is polycythemia vera."], ["Chronic myelogenous leukemia", "Chronic myelogenous leukemia shows marked leukocytosis with normal red cell morphology and a hematocrit that is not elevated; his hematocrit is 61%. Tell: a raised hematocrit argues against chronic myelogenous leukemia."], ["Myelodysplastic syndrome", "Myelodysplastic syndrome presents with cytopenias, most often anemia; he has too many red cells. Tell: high hemoglobin is the opposite of myelodysplasia."], ["Polycythemia vera", "Correct. Polycythemia vera is overproduction of red cells, raising blood viscosity. It presents non-specifically with fatigue, headaches and blurry vision, the classic clue is pruritus with warm baths or showers, and splenomegaly is a complication."]], "c": 3, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 51, 52", "slot": "manifestation", "lead": "diagnosis", "qid": "1rj9uf9"}, {"topic": "Acute lymphoblastic leukemia: presentation and diagnosis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin", "q": "A 17-year-old boy has acute lymphoblastic leukemia, and his chest X-ray shows a mediastinal mass. Which lineage is flow cytometry most likely to show?", "opts": [["B-cell precursor", "B-cell precursor disease often presents in a leukemic phase, mainly blasts and marrow involvement, rather than with a chest mass. Tell: a mediastinal (thymic) mass points to T-cell disease."], ["Myeloid", "Myeloid blasts define acute myeloid leukemia; he has acute lymphoblastic leukemia, which is lymphoid by definition. Tell: the choice is between B-cell and T-cell, and the chest mass picks T-cell."], ["Plasma cell", "Plasma cells are terminally differentiated B-cells that cause myeloma, not an acute lymphoblastic leukemia with a chest mass. Tell: a thymic mass in a teenager with lymphoblastic leukemia is T-cell."], ["T-cell", "Correct. T-cell acute lymphoblastic leukemia is rarer, usually has lymphoma-like characteristics and may involve the thymus; a mediastinal mass may be seen on chest X-ray in T-cell disease. Flow cytometry identifies the B-cell or T-cell nature."]], "c": 3, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 19, 22", "slot": "test finding", "lead": "classify", "qid": "s0wdtr"}, {"topic": "Myelodysplastic syndrome", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)", "q": "A 58-year-old man with myelodysplastic syndrome asks whether any treatment can cure it. Which answer is accurate?", "opts": [["Erythropoiesis-stimulating agents", "Erythropoiesis-stimulating agents treat anemia in low-risk disease to improve quality of life; they do not cure it. Tell: cure requires replacing the marrow with donor cells."], ["Myeloid growth factors", "Myeloid growth factors treat neutropenia, with care not to overstimulate blasts; they do not cure myelodysplasia. Tell: the only curative option is an allogeneic transplant."], ["Autologous stem cell transplant", "An autologous transplant returns the patient's own stem cells, which here are the dysplastic clone; the curative transplant uses a healthy donor's cells. Tell: cure is allogeneic."], ["Allogeneic transplant, with high risk", "Correct. The only curative therapy for myelodysplastic syndrome is allogeneic stem cell transplant, but it is high risk and has a limited role in therapy. Most care is chosen by blood counts, risk status and mutations."]], "c": 3, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 48", "slot": "prognosis", "lead": "education", "qid": "7oy1pv"}, {"topic": "Acute promyelocytic leukemia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin", "q": "A 29-year-old woman is admitted with newly diagnosed acute promyelocytic leukemia. Her team warns that the first days are the most dangerous. Which complication drives her high early mortality?", "opts": [["Massive splenomegaly", "Severe splenomegaly is a complication of myelofibrosis, and significant splenomegaly is common in accelerated-phase chronic myelogenous leukemia; it is not the early killer in promyelocytic leukemia. Tell: the early danger here is bleeding."], ["Clotting from high platelets", "Clotting such as stroke or heart attack is the complication of essential thrombocythemia with its overproduced platelets. Tell: promyelocytic leukemia bleeds through disseminated intravascular coagulation."], ["Hypercalcemia and kidney injury", "Hypercalcemia with renal dysfunction belongs to the CRAB (calcium, renal, anemia, bone) features of multiple myeloma. Tell: the emergency in promyelocytic leukemia is bleeding."], ["Bleeding from clotting failure", "Correct. Acute promyelocytic leukemia frequently presents with emergent complications, including disseminated intravascular coagulation and bleeding, and has high early mortality. If she survives the initial presentation, her prognosis is excellent."]], "c": 3, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 43", "slot": "complication", "lead": "complication", "qid": "17v4wvg"}, {"topic": "Chronic myelogenous leukemia: presentation, diagnosis and phases", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)", "q": "A 61-year-old woman with chronic myelogenous leukemia now has blasts at 38% of marrow cells, and the disease behaves like acute myeloid leukemia with new chromosomal abnormalities. Which phase is she in?", "opts": [["Chronic phase", "Chronic phase has under 5% blasts and an excellent prognosis; she has 38%. Tell: many blasts rule out the stable phase."], ["Optimal response", "Optimal response is a treatment milestone read from the BCR-ABL1 (fusion gene) level over time, not a disease phase. Tell: a phase is read from blasts, and hers are acute-leukemia high."], ["Blast phase", "Correct. Blast phase (crisis) behaves as an acute leukemia, usually like acute myeloid leukemia, often with unique chromosomal and mutational abnormalities. Her 38% blasts are beyond the accelerated range (often 10-19%). It is 1-2% of presentations."], ["Accelerated phase", "Accelerated phase often has 10-19% blasts; hers are 38% and the disease acts like an acute leukemia. Tell: acute-leukemia behavior is blast phase."]], "c": 2, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 62", "slot": "test finding", "lead": "classify", "qid": "uejxus"}, {"topic": "Polycythemia vera", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)", "q": "A 52-year-old woman with newly found polycythemia vera, hypertension and a 30 pack-year smoking history asks what she should do now besides blood removal. Which advice is appropriate?", "opts": [["Follow up with primary care alone", "Polycythemia vera should be referred to a hematologist, not followed by primary care alone. Tell: referral plus smoking cessation is the advice."], ["Stop smoking and see a hematologist", "Correct. Patients with polycythemia vera should be referred to a hematologist and advised to cease smoking. Her disease already raises blood viscosity and the risk of thrombosis, and smoking adds to that risk."], ["Start oral iron supplements", "Iron replaces stores in iron deficiency anemia; she has too many red cells, not too few. Tell: her advice is referral and smoking cessation."], ["Take warm baths for the itching", "Pruritus with warm baths or showers is the classic symptom of polycythemia vera, so warm baths trigger the itching rather than relieve it. Tell: the advice that matters is quitting smoking and seeing a hematologist."]], "c": 1, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 52", "slot": "education", "lead": "education", "qid": "353s62"}, {"topic": "Myelodysplastic syndrome", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)", "q": "An 82-year-old man has lower-risk myelodysplastic syndrome with anemia and a very low risk of leukemia. His daughter asks what his treatment is aiming for. Which answer is accurate?", "opts": [["Improving his quality of life", "Correct. Lower-risk myelodysplastic syndrome has a median survival above 5 years and a very low risk of acute myeloid leukemia; these patients often have complications from anemia, bleeding or infections, and the goal of treatment is to improve quality of life."], ["Curing the disease with transplant", "Allogeneic transplant is the only curative option but is high risk with a limited role; for a lower-risk 82-year-old the aim is comfort and function. Tell: low risk means quality of life."], ["Preventing imminent leukemia", "Lower-risk disease has a very low risk of developing acute myeloid leukemia; the high leukemia risk belongs to very high-risk disease. Tell: his problems are anemia, bleeding and infection."], ["Lowering his red cell mass", "Lowering red cell mass is the aim in polycythemia vera; he is anemic. Tell: in lower-risk myelodysplasia, anemia is supported to improve quality of life."]], "c": 0, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 49", "slot": "prognosis", "lead": "education", "qid": "euk2z4"}, {"topic": "Performance status, work-up and transplant terms", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin", "q": "A 71-year-old woman with acute myeloid leukemia can feed herself but needs help to bathe and dress, and she spends about two-thirds of her waking hours in bed or a chair. Which Eastern Cooperative Oncology Group performance status grade fits her?", "opts": [["Grade 2", "Grade 2 is capable of all self-care and up and about more than half of waking hours; she needs help with bathing and dressing and spends most of the day in bed or a chair. Tell: limited self-care with most of the day in a chair is grade 3."], ["Grade 3", "Correct. She is capable of only limited self-care (she feeds herself but needs help bathing and dressing) and is confined to bed or chair more than 50% of waking hours, about two-thirds of the day. That row is grade 3."], ["Grade 4", "Grade 4 is completely disabled, cannot carry on any self-care and is totally confined to bed or chair; she still feeds herself and is up for part of the day. Tell: some self-care left means grade 3, not 4."], ["Grade 5", "Grade 5 is dead, the last row of the scale; she is a living patient whose fitness is being graded. Tell: grade 5 is never used to describe a living patient's day."]], "c": 1, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 10", "slot": "prognosis", "lead": "classify", "qid": "hd9azo"}, {"topic": "Acute lymphoblastic leukemia: who and why", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin", "q": "A 7-year-old boy has acute lymphoblastic leukemia, and cytogenetics show excess copies of a chromosome (hyperdiploidy). What does this finding mean for his outlook?", "opts": [["Poor prognosis", "Poor outcomes belong to adults over 40 and to central nervous system involvement, an adverse risk factor; hyperdiploidy in a child is favorable. Tell: extra chromosome copies in a child are a good sign."], ["Adverse risk needing a transplant", "Allogeneic stem cell transplant is used where feasible for adverse-risk or relapsed disease; hyperdiploidy is a favorable finding. Tell: transplant is for adverse risk or relapse, not for a good-risk child."], ["Likely change to myeloid leukemia", "Hyperdiploidy does not signal a switch to a myeloid leukemia; it is the common favorable change in childhood lymphoblastic leukemia. Tell: the finding speaks to prognosis, and the prognosis is good."], ["Favorable prognosis", "Correct. Particularly in children, acute lymphoblastic leukemia often results from excess copies of a chromosome (hyperdiploidy), which carries a favorable prognosis. Childhood disease already has five-year survival around 90%."]], "c": 3, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 20", "slot": "prognosis", "lead": "complication", "qid": "1cfv9mp"}, {"topic": "Myelodysplastic syndrome", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)", "q": "A 77-year-old man has fatigue and pale skin found to be from anemia (hemoglobin 9.4 g/dL, normal 13.5-17.5 g/dL) with neutropenia. His neutrophils look abnormal, the marrow is hypercellular with dysplastic myeloid cells, and myeloid blasts are 3% of marrow cells. How should this be classified?", "opts": [["Myelodysplastic syndrome", "Correct. Myelodysplastic syndromes are defined by dysplasia (abnormal-appearing) myeloid cells, typically in a hypercellular marrow whose cells are not functional, presenting most often with anemia. Blasts at 3% are well below the 20% that would make it acute myeloid leukemia."], ["Acute myeloid leukemia", "Acute myeloid leukemia needs myeloid blasts at 20% or more; his are 3%. Tell: dysplasia with blasts below 20% stays myelodysplastic syndrome."], ["Chronic myelogenous leukemia", "Chronic myelogenous leukemia presents with marked leukocytosis and high platelets; he is anemic and neutropenic. Tell: low counts with dysplastic cells are myelodysplasia, high counts with granulocytes are chronic myelogenous leukemia."], ["Polycythemia vera", "Polycythemia vera overproduces red cells and raises blood viscosity; he has anemia. Tell: too few cells with dysplasia is myelodysplasia, too many red cells is polycythemia vera."]], "c": 0, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 45, 47", "slot": "test finding", "lead": "classify", "qid": "4icsa2"}, {"topic": "Performance status, work-up and transplant terms", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin", "q": "A 59-year-old man has fatigue, and a routine complete blood count shows unexplained anemia and thrombocytopenia with abnormal white cells. A hematologic malignancy is suspected. Which evaluation is needed to ensure the correct diagnosis?", "opts": [["A chemistry panel for protein levels", "Elevated protein levels on a chemistry panel can first flag myeloma, but a chemistry panel cannot name the malignancy behind abnormal white cells. Tell: the diagnosis is made from the marrow and from flow cytometry."], ["Chest and abdominal imaging", "Imaging evaluates the degree of spread once a malignancy is identified; it does not establish what the abnormal cells are. Tell: imaging stages, while marrow biopsy and flow cytometry diagnose."], ["Bone marrow biopsy and flow cytometry", "Correct. Hematologic malignancies frequently present with non-specific symptoms such as fatigue or are found through incidental cytopenias on a complete blood count, and almost all will require a bone marrow biopsy and/or flow cytometry to ensure the correct diagnosis."], ["A repeat blood count in six months", "Waiting six months leaves unexplained cytopenias with abnormal white cells undiagnosed; incidental cytopenias are a common way these cancers are first detected. Tell: abnormal counts lead to a marrow biopsy and flow cytometry now."]], "c": 2, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 11", "slot": "gold standard", "lead": "test", "qid": "1ju9lcr"}, {"topic": "Acute myeloid leukemia: presentation and diagnosis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin", "q": "A 58-year-old man with newly diagnosed acute myeloid leukemia has a white blood cell count of 142,000 per microliter (normal 4,500-11,000). What is the next step for this white count?", "opts": [["Start a tyrosine kinase inhibitor", "Tyrosine kinase inhibitors are the hallmark therapy of chronic phase chronic myelogenous leukemia, not the emergency step for a very high count in acute myeloid leukemia. Tell: every presentation above 100,000 needs emergent leukapheresis."], ["Therapeutic phlebotomy", "Phlebotomy is a treatment for polycythemia vera, not for acute myeloid leukemia; his problem is a white count above 100,000. Tell: above 100,000 in acute myeloid leukemia, the step is emergent leukapheresis."], ["Emergent leukapheresis", "Correct. Presentations of acute myeloid leukemia with a white count above 200,000 are rare, and every presentation above 100,000 needs emergent leukapheresis. His count of 142,000 is above that line."], ["Repeat count in one week", "Waiting a week ignores a count above 100,000, which calls for emergent leukapheresis. Tell: over 100,000 in acute myeloid leukemia is an emergency."]], "c": 2, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 35, 52, 63", "slot": "escalation", "lead": "next step", "qid": "1e1vcvm"}, {"topic": "Myelofibrosis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)", "q": "A 70-year-old woman with myelofibrosis has massive splenomegaly causing early satiety and pain. Which treatment is often used, and with what intent?", "opts": [["Aspirin, preventive", "Aspirin reduces clotting risk in essential thrombocythemia; it does not shrink a fibrotic marrow's huge spleen. Tell: myelofibrosis gets a palliative Janus kinase inhibitor."], ["Janus kinase inhibitor, palliative", "Correct. Myelofibrosis, the most aggressive myeloproliferative neoplasm, is often treated with targeted Janus kinase inhibitors, which are palliative. They address the disease's Janus kinase pathway mutations without curing it."], ["Phlebotomy, curative", "Phlebotomy treats polycythemia vera by removing red cells and is not a cure; myelofibrosis is not a red cell excess. Tell: the targeted option here is a palliative Janus kinase inhibitor."], ["Tyrosine kinase inhibitor, curative", "Tyrosine kinase inhibitors are the hallmark therapy of chronic myelogenous leukemia, driven by the BCR-ABL1 (fusion gene). Tell: myelofibrosis is a Janus kinase disease, and its inhibitor is palliative."]], "c": 1, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 53", "slot": "agent/regimen", "lead": "treatment", "qid": "ldbhez"}, {"topic": "Chronic myelogenous leukemia: management and prognosis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)", "q": "A 51-year-old man with chronic phase chronic myelogenous leukemia has taken a tyrosine kinase inhibitor for 12 months. His BCR-ABL1 (fusion gene) level is 0.4%. How should this milestone response be classified?", "opts": [["Failure", "Failure at 12 months is above 1%; his 0.4% is below that. Tell: 0.1-1% at 12 months is a warning."], ["Treatment-free remission", "Treatment-free remission needs a level below 0.01% beyond 18 months; he has 0.4% at 12 months. Tell: he is in the warning band."], ["Warning", "Correct. At 12 months, a BCR-ABL1 (fusion gene) level below 0.1% is optimal, 0.1-1% is a warning and above 1% is failure. His 0.4% falls in the 0.1-1% band, a warning."], ["Optimal", "Optimal at 12 months needs a level below 0.1%; his is 0.4%. Tell: 0.4% would be optimal at 6 months but is a warning at 12."]], "c": 2, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 64", "slot": "test finding", "lead": "classify", "qid": "apqxck"}, {"topic": "Acute myeloid leukemia: management and prognosis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin", "q": "A 66-year-old woman with acute myeloid leukemia is in remission after initial treatment and asks what the main risk ahead is. Which answer is accurate?", "opts": [["Progression to polycythemia vera", "Polycythemia vera is a separate myeloid disease that itself rarely results in leukemic transformation (about 5%); acute myeloid leukemia does not turn into it. Tell: after remission the stated danger is relapse."], ["Iron overload from transfusion", "Transfusions support anemia, but the stated danger after remission in acute myeloid leukemia is frequent relapse, with high treatment-related mortality. Tell: relapse is the main risk."], ["Conversion to chronic leukemia", "Acute myeloid leukemia is already the acute form; the stated risk after remission is relapse. Tell: after remission, think relapse, not a change of leukemia type."], ["Relapse of the leukemia", "Correct. Treatment results in initial remission in many patients, but acute myeloid leukemia frequently relapses, and treatment-related mortality is high. Overall survival is only about 48% at 1 year and about 25-30% at 5 years."]], "c": 3, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 41, 52", "slot": "complication", "lead": "complication", "qid": "4jlqc5"}, {"topic": "Acute myeloid leukemia: who and why", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin", "q": "A 63-year-old woman with newly diagnosed acute myeloid leukemia has swollen, overgrown gums (gum hyperplasia) and skin nodules from leukemia outside the marrow. Which subtype group fits this picture?", "opts": [["Undifferentiated myeloid leukemia", "Undifferentiated acute myeloid leukemia arises from the most immature myeloid cells; the extramedullary and gum findings belong to the monocytic subtypes. Tell: gums and tissue spread mean monocytic lineage."], ["Myelomonocytic or monocytic leukemia", "Correct. The acute myelomonocytic and monocytic leukemias tend to have more extramedullary involvement, and these subtypes may show gum involvement (hyperplasia). Her gum hyperplasia and skin disease outside the marrow fit them."], ["Acute promyelocytic leukemia", "Acute promyelocytic leukemia typically presents with emergent bleeding and disseminated intravascular coagulation, not gum hyperplasia. Tell: bleeding and clotting failure point to promyelocytic; gums and skin point to monocytic."], ["Acute erythroid leukemia", "Acute erythroid leukemia is a very rare subtype, and gum hyperplasia with extramedullary disease is linked to the monocytic subtypes instead. Tell: gum involvement is the monocytic clue."]], "c": 1, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 33, 35", "slot": "manifestation", "lead": "classify", "qid": "c8p80l"}, {"topic": "Acute lymphoblastic leukemia: management and prognosis", "io": "Identify medical care strategies for disorders of hematological malignancies in the lecture topic list for the following populations. Infant a. child b. adolescent c. adult d. elderly", "q": "A 63-year-old man has newly diagnosed acute lymphoblastic leukemia. He read that most children with this leukemia are cured and asks whether his outlook is the same. Which answer is accurate?", "opts": [["Outlook depends on his blood type", "Outcome is shaped by age, cytogenetic and mutation testing and central nervous system involvement, not by blood type. Tell: chromosome and mutation testing carry the prognostic weight."], ["Outlook is poorer and falls with age", "Correct. The outlook for acute lymphoblastic leukemia is often positive particularly for children, but outcomes for adults over 40 are poor, and the cure rate decreases by age. Results are improving with new treatment options, including immunotherapies."], ["Outlook matches that of children", "Children do best: the outlook is often positive particularly for those under 15, while adults over 40 have poor outcomes. Tell: at 63 he is in the group whose cure rate falls with age."], ["Outlook is better than in children", "The reverse is true: pediatric disease has the most favorable outcomes, and adult cure rates decrease by age. Tell: age works against him, not for him."]], "c": 1, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slides 18, 25, 28", "slot": "prognosis", "lead": "education", "qid": "wg81vy"}, {"topic": "Essential thrombocythemia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Chronic lymphocytic leukemia 2. Chronic myelogenous leukemia 3. Polycythemia vera a. primary b. secondary 4. Multiple myeloma 5. Myelodysplasia (myelodysplastic syndromes)", "q": "A 52-year-old man with essential thrombocythemia and platelets of 1,600,000 per microliter (normal 150,000-450,000) has gum bleeding and easy bruising. Which explains bleeding despite his high platelets?", "opts": [["Hyperviscosity from red cells", "Increased viscosity from red cell overproduction is polycythemia vera; his excess is platelets. Tell: bleeding in essential thrombocythemia is a von Willebrand factor problem."], ["Acquired von Willebrand factor shortage", "Correct. In essential thrombocythemia, bleeding with high platelets can occur from acquired von Willebrand factor deficiency, leaving a shortage of factor at the site of injury. Clotting remains its main complication."], ["Disseminated intravascular coagulation", "Disseminated intravascular coagulation with bleeding is the emergent presentation of acute promyelocytic leukemia, a leukemia with low counts. Tell: high platelets that bleed point to lost von Willebrand factor."], ["Marrow failure lowering platelets", "Bleeding from thrombocytopenia occurs in acute leukemia and myelodysplasia; his platelets are 1,600,000. Tell: the platelets are many but the factor is short."]], "c": 1, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 54", "slot": "complication", "lead": "complication", "qid": "1r7qsbt"}, {"topic": "Acute lymphoblastic leukemia: presentation and diagnosis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hematological malignancies: 1. Acute lymphocytic leukemia 2. Acute myelogenous leukemia 3. Lymphoma 4. Hodgkin 5. Non-Hodgkin", "q": "A 15-year-old boy has newly diagnosed acute lymphoblastic leukemia. Before treatment, his team wants to know whether the leukemia involves the central nervous system, an adverse risk factor. Which procedure answers this?", "opts": [["Lumbar puncture", "Correct. Central nervous system involvement can occur in acute lymphoblastic leukemia and is an adverse risk factor, so lumbar puncture is an important part of the work-up alongside blood tests and imaging."], ["Bone marrow biopsy", "The bone marrow biopsy shows marrow infiltration and allows chromosome and mutation testing, but it does not sample the central nervous system. Tell: spinal fluid comes from a lumbar puncture."], ["Flow cytometry of blood", "Flow cytometry of blood identifies leukemia markers and the B-cell or T-cell nature; it cannot show spread to the central nervous system. Tell: the nervous system question needs spinal fluid."], ["Chest X-ray", "A chest X-ray may show a mediastinal mass in T-cell disease, but it does not look at the central nervous system. Tell: central nervous system involvement is checked with a lumbar puncture."]], "c": 0, "cite": "49. Hematologic Malignancies Part I - Gannon.pptx, Slide 25", "slot": "initial test", "lead": "test", "qid": "5tza7j"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll" && window.startExamModeTour) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

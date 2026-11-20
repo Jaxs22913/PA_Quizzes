@@ -136,7 +136,11 @@ _BRAND = re.compile(r"\b(Lipitor|Crestor|Zocor|Pravachol|Livalo|Zetia|Vytorin|Re
                     # Exam 8 (2026-11-12): hematology brands (L46 deck: Triferic, Procrit, Chemet, Rituxan, Dilantin)
                     r"Triferic|Procrit|Epogen|Retacrit|Aranesp|Chemet|Rituxan|Reblozyl|Hydrea|Droxia|Siklos|Feraheme|"
                     r"Injectafer|Venofer|Infed|Monoferric|Ferrlecit|Neupogen|Neulasta|Pyridium|Exjade|Jadenu|Desferal|"
-                    r"Ferriprox|Atgam|Promacta|Soliris|Ultomiris|Trexan|Adrucil|Folvite|Nascobal|Trimpex|Septra)\b")
+                    r"Ferriprox|Atgam|Promacta|Soliris|Ultomiris|Trexan|Adrucil|Folvite|Nascobal|Trimpex|Septra|"
+                    # Lectures 49-50 (2026-11-19): leukemia, lymphoma, myeloma and MPN brands
+                    r"Gleevec|Sprycel|Tasigna|Bosulif|Iclusig|Scemblix|Imbruvica|Calquence|Brukinsa|Venclexta|Gazyva|"
+                    r"Arzerra|Jakafi|Inrebic|Vonjo|Ojjaara|Trisenox|Vesanoid|Zyloprim|Elitek|Adriamycin|Velcade|Kyprolis|"
+                    r"Revlimid|Pomalyst|Thalomid|Darzalex|Vidaza|Dacogen|Idhifa|Tibsovo|Xospata|Rydapt|Blincyto|Oncaspar)\b")
 
 # Mechanism-of-action STEMS (Carter: "no mechanism of action questions").
 # Disease pathophysiology is not banned -- drug mechanism is.
